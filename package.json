@@ -1,0 +1,25 @@
+{
+  "name": "f1-insightx",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Portfolio-grade Formula 1 race strategy and fantasy analytics platform.",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace web",
+    "build": "npm run build --workspace web",
+    "lint": "npm run lint --workspace web",
+    "typecheck": "npx tsc --noEmit --project apps/web/tsconfig.json",
+    "data:install": "python -m pip install -r data/requirements.txt"
+  },
+  "keywords": [
+    "formula-1",
+    "nextjs",
+    "supabase",
+    "analytics",
+    "fantasy-sports"
+  ],
+  "author": "",
+  "license": "MIT"
+}

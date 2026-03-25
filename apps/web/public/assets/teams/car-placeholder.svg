@@ -1,0 +1,27 @@
+<svg width="800" height="420" viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" rx="24" fill="#0B0F14"/>
+  <rect x="22" y="22" width="756" height="376" rx="16" fill="#0E141C" stroke="#242A33" stroke-width="2"/>
+  <path d="M50 82H750" stroke="url(#paint0_linear_430_11)" stroke-width="2"/>
+  <path d="M50 338H750" stroke="url(#paint1_linear_430_11)" stroke-width="2"/>
+  <rect x="64" y="108" width="672" height="188" rx="14" fill="#111923"/>
+  <rect x="64" y="108" width="672" height="188" rx="14" stroke="#2B3440" stroke-width="2"/>
+  <path d="M96 142H394" stroke="#394453" stroke-width="2"/>
+  <path d="M96 172H560" stroke="#2A313B" stroke-width="2"/>
+  <path d="M96 202H494" stroke="#2A313B" stroke-width="2"/>
+  <path d="M96 232H610" stroke="#2A313B" stroke-width="2"/>
+  <path d="M96 262H438" stroke="#394453" stroke-width="2"/>
+  <text x="96" y="340" fill="#D8DEE7" font-family="IBM Plex Mono, monospace" font-size="22" letter-spacing="7">TEAM MEDIA PLACEHOLDER</text>
+  <text x="96" y="370" fill="#7B8795" font-family="IBM Plex Mono, monospace" font-size="16" letter-spacing="4">SWAP WITH OPEN-LICENSE TEAM IMAGE WHEN AVAILABLE</text>
+  <defs>
+    <linearGradient id="paint0_linear_430_11" x1="50" y1="82" x2="750" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11161E"/>
+      <stop offset="0.55" stop-color="#E10600"/>
+      <stop offset="1" stop-color="#11161E"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_430_11" x1="50" y1="338" x2="750" y2="338" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11161E"/>
+      <stop offset="0.55" stop-color="#E10600"/>
+      <stop offset="1" stop-color="#11161E"/>
+    </linearGradient>
+  </defs>
+</svg>
