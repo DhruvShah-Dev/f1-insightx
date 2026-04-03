@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { parseBoolean, parseNumber, readCuratedCsv, readCuratedCsvOptional } from "@/lib/server/csv";
 import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { groupBy, roundTo } from "@/lib/server/utils";
 
 export type RaceHistorySummary = {
   id: string;
@@ -142,6 +143,65 @@ type CsvDataset = {
   lookups: LookupMaps;
 };
 
+type SupabaseRaceRow = {
+  id: string;
+  season: number;
+  round: number;
+  race_name: string;
+  official_name: string | null;
+  circuit_id: string;
+  scheduled_at: string;
+  sprint_weekend: boolean;
+};
+
+type SupabaseDriverRow = {
+  id: string;
+  full_name: string;
+};
+
+type SupabaseConstructorRow = {
+  id: string;
+  name: string;
+};
+
+type SupabaseCircuitRow = {
+  id: string;
+  name: string;
+  location: string | null;
+  country: string | null;
+  lat: number | null;
+  lng: number | null;
+};
+
+type SupabaseRaceResultRow = {
+  race_id: string;
+  driver_id: string;
+  constructor_id: string;
+  grid_position: number | null;
+  finish_position: number | null;
+  finish_status: string | null;
+  points: number | null;
+  laps_completed: number | null;
+  fastest_lap_rank: number | null;
+};
+
+type SupabaseQualifyingRow = {
+  race_id: string;
+  driver_id: string;
+  constructor_id: string;
+  position: number | null;
+};
+
+type SupabaseSprintRow = {
+  race_id: string;
+  driver_id: string;
+  constructor_id: string;
+  grid_position: number | null;
+  finish_position: number | null;
+  finish_status: string | null;
+  points: number | null;
+};
+
 const loadCsvDataset = cache(async (): Promise<CsvDataset> => {
   const [races, raceResults, qualifyingResults, sprintResults, drivers, constructors, circuits] =
     await Promise.all([
@@ -167,23 +227,31 @@ const loadCsvDataset = cache(async (): Promise<CsvDataset> => {
   };
 });
 
-export async function listCompletedRaceHistory(limit = 16): Promise<RaceHistorySummary[]> {
+export const listCompletedRaceHistory = cache(async (limit = 16): Promise<RaceHistorySummary[]> => {
   const supabase = getSupabaseAdminClient();
   if (supabase) {
-    return listCompletedRaceHistoryFromSupabase(limit);
+    try {
+      return await listCompletedRaceHistoryFromSupabase(limit);
+    } catch {
+      return listCompletedRaceHistoryFromCsv(limit);
+    }
   }
 
   return listCompletedRaceHistoryFromCsv(limit);
-}
+});
 
-export async function getRaceDetail(raceId: string): Promise<RaceDetail | null> {
+export const getRaceDetail = cache(async (raceId: string): Promise<RaceDetail | null> => {
   const supabase = getSupabaseAdminClient();
   if (supabase) {
-    return getRaceDetailFromSupabase(raceId);
+    try {
+      return await getRaceDetailFromSupabase(raceId);
+    } catch {
+      return getRaceDetailFromCsv(raceId);
+    }
   }
 
   return getRaceDetailFromCsv(raceId);
-}
+});
 
 async function listCompletedRaceHistoryFromCsv(limit: number): Promise<RaceHistorySummary[]> {
   const dataset = await loadCsvDataset();
@@ -220,23 +288,34 @@ async function listCompletedRaceHistoryFromSupabase(limit: number): Promise<Race
   }
 
   const now = new Date().toISOString();
-  const [racesResult, raceResultsResult, driversResult, constructorsResult, circuitsResult] = await Promise.all([
-    supabase
-      .from("races")
-      .select("id, season, round, race_name, official_name, circuit_id, scheduled_at, sprint_weekend")
-      .lte("scheduled_at", now)
-      .order("scheduled_at", { ascending: false })
-      .limit(limit * 3),
+  const { data: races, error: racesError } = await supabase
+    .from("races")
+    .select("id, season, round, race_name, official_name, circuit_id, scheduled_at, sprint_weekend")
+    .lte("scheduled_at", now)
+    .order("scheduled_at", { ascending: false })
+    .limit(limit * 3);
+
+  if (racesError) {
+    throw new Error("Failed to load race history from Supabase.");
+  }
+
+  const raceRows = (races ?? []) as SupabaseRaceRow[];
+  const raceIds = raceRows.map((race) => race.id);
+  if (raceIds.length === 0) {
+    return [];
+  }
+
+  const [raceResultsResult, driversResult, constructorsResult, circuitsResult] = await Promise.all([
     supabase
       .from("race_results")
-      .select("race_id, driver_id, constructor_id, grid_position, finish_position, finish_status, points, laps_completed, fastest_lap_rank"),
+      .select("race_id, driver_id, constructor_id, grid_position, finish_position, finish_status, points, laps_completed, fastest_lap_rank")
+      .in("race_id", raceIds),
     supabase.from("drivers").select("id, full_name"),
     supabase.from("constructors").select("id, name"),
     supabase.from("circuits").select("id, name, location, country, lat, lng"),
   ]);
 
   if (
-    racesResult.error ||
     raceResultsResult.error ||
     driversResult.error ||
     constructorsResult.error ||
@@ -245,11 +324,16 @@ async function listCompletedRaceHistoryFromSupabase(limit: number): Promise<Race
     throw new Error("Failed to load race history from Supabase.");
   }
 
+  const driverRows = (driversResult.data ?? []) as SupabaseDriverRow[];
+  const constructorRows = (constructorsResult.data ?? []) as SupabaseConstructorRow[];
+  const circuitRows = (circuitsResult.data ?? []) as SupabaseCircuitRow[];
+  const raceResultRows = (raceResultsResult.data ?? []) as SupabaseRaceResultRow[];
+
   const lookups: LookupMaps = {
-    driverNames: new Map((driversResult.data ?? []).map((driver) => [driver.id, driver.full_name])),
-    constructorNames: new Map((constructorsResult.data ?? []).map((constructor) => [constructor.id, constructor.name])),
+    driverNames: new Map(driverRows.map((driver) => [driver.id, driver.full_name])),
+    constructorNames: new Map(constructorRows.map((constructor) => [constructor.id, constructor.name])),
     circuits: new Map(
-      (circuitsResult.data ?? []).map((circuit) => [
+      circuitRows.map((circuit) => [
         circuit.id,
         {
           id: circuit.id,
@@ -264,7 +348,7 @@ async function listCompletedRaceHistoryFromSupabase(limit: number): Promise<Race
   };
 
   const resultsByRace = groupBy(
-    (raceResultsResult.data ?? []).map((row) => ({
+    raceResultRows.map((row) => ({
       race_id: String(row.race_id),
       driver_id: String(row.driver_id),
       constructor_id: String(row.constructor_id),
@@ -278,7 +362,7 @@ async function listCompletedRaceHistoryFromSupabase(limit: number): Promise<Race
     (row) => row.race_id,
   );
 
-  return (racesResult.data ?? [])
+  return raceRows
     .filter((race) => (resultsByRace.get(race.id)?.length ?? 0) > 0)
     .slice(0, limit)
     .map((race) =>
@@ -330,7 +414,12 @@ async function getRaceDetailFromSupabase(raceId: string): Promise<RaceDetail | n
       supabase.from("circuits").select("id, name, location, country, lat, lng"),
     ]);
 
-  if (raceResult.error || !raceResult.data) {
+  const typedRaceResult = raceResult as unknown as {
+    data: SupabaseRaceRow | null;
+    error: { message: string } | null;
+  };
+
+  if (typedRaceResult.error || !typedRaceResult.data) {
     return null;
   }
 
@@ -338,11 +427,19 @@ async function getRaceDetailFromSupabase(raceId: string): Promise<RaceDetail | n
     throw new Error("Failed to load race detail from Supabase.");
   }
 
+  const driverRows = (driversResult.data ?? []) as SupabaseDriverRow[];
+  const constructorRows = (constructorsResult.data ?? []) as SupabaseConstructorRow[];
+  const circuitRows = (circuitsResult.data ?? []) as SupabaseCircuitRow[];
+  const raceResultRows = (raceResultsResult.data ?? []) as SupabaseRaceResultRow[];
+  const qualifyingRows = (qualifyingResult.data ?? []) as SupabaseQualifyingRow[];
+  const sprintResultRows = (sprintResult.data ?? []) as SupabaseSprintRow[];
+  const typedRace = typedRaceResult.data;
+
   const lookups: LookupMaps = {
-    driverNames: new Map((driversResult.data ?? []).map((driver) => [driver.id, driver.full_name])),
-    constructorNames: new Map((constructorsResult.data ?? []).map((constructor) => [constructor.id, constructor.name])),
+    driverNames: new Map(driverRows.map((driver) => [driver.id, driver.full_name])),
+    constructorNames: new Map(constructorRows.map((constructor) => [constructor.id, constructor.name])),
     circuits: new Map(
-      (circuitsResult.data ?? []).map((circuit) => [
+      circuitRows.map((circuit) => [
         circuit.id,
         {
           id: circuit.id,
@@ -359,7 +456,7 @@ async function getRaceDetailFromSupabase(raceId: string): Promise<RaceDetail | n
   const sprintRows =
     sprintResult.error && sprintResult.error.message.includes("sprint_results")
       ? []
-      : (sprintResult.data ?? []).map((row) => ({
+      : sprintResultRows.map((row) => ({
           race_id: String(row.race_id),
           driver_id: String(row.driver_id),
           constructor_id: String(row.constructor_id),
@@ -371,16 +468,16 @@ async function getRaceDetailFromSupabase(raceId: string): Promise<RaceDetail | n
 
   return buildDetail(
     {
-      id: raceResult.data.id,
-      season: String(raceResult.data.season),
-      round: String(raceResult.data.round),
-      race_name: raceResult.data.race_name,
-      official_name: raceResult.data.official_name ?? "",
-      circuit_id: raceResult.data.circuit_id,
-      scheduled_at: raceResult.data.scheduled_at,
-      sprint_weekend: String(raceResult.data.sprint_weekend),
+      id: typedRace.id,
+      season: String(typedRace.season),
+      round: String(typedRace.round),
+      race_name: typedRace.race_name,
+      official_name: typedRace.official_name ?? "",
+      circuit_id: typedRace.circuit_id,
+      scheduled_at: typedRace.scheduled_at,
+      sprint_weekend: String(typedRace.sprint_weekend),
     },
-    (raceResultsResult.data ?? []).map((row) => ({
+    raceResultRows.map((row) => ({
       race_id: String(row.race_id),
       driver_id: String(row.driver_id),
       constructor_id: String(row.constructor_id),
@@ -391,7 +488,7 @@ async function getRaceDetailFromSupabase(raceId: string): Promise<RaceDetail | n
       laps_completed: String(row.laps_completed ?? ""),
       fastest_lap_rank: String(row.fastest_lap_rank ?? ""),
     })),
-    (qualifyingResult.data ?? []).map((row) => ({
+    qualifyingRows.map((row) => ({
       race_id: String(row.race_id),
       driver_id: String(row.driver_id),
       constructor_id: String(row.constructor_id),
@@ -523,24 +620,4 @@ function stripClassificationEntry(entry: RaceClassificationEntry): RaceActorSumm
     constructorId: entry.constructorId,
     constructorName: entry.constructorName,
   };
-}
-
-function groupBy<T>(items: T[], key: (item: T) => string) {
-  const map = new Map<string, T[]>();
-
-  for (const item of items) {
-    const groupKey = key(item);
-    const group = map.get(groupKey);
-    if (group) {
-      group.push(item);
-    } else {
-      map.set(groupKey, [item]);
-    }
-  }
-
-  return map;
-}
-
-function roundTo(value: number, digits: number) {
-  return Number(value.toFixed(digits));
 }

@@ -36,6 +36,8 @@ const qualifyingOverrideSchema = z.object({
 export const raceScenarioSchema = z.object({
   raceId: z.string().min(1),
   driverIds: z.array(z.string().min(1)).min(1).max(20),
+  comparisonTargetType: z.enum(["driver", "constructor"]).optional(),
+  comparisonTargetId: z.string().min(1).optional(),
   constructorFocus: z.array(z.string().min(1)).max(10).default([]),
   pitStopCount: z.coerce.number().int().min(1).max(4),
   tirePlan: z.array(tireStintSchema).min(1).max(4),

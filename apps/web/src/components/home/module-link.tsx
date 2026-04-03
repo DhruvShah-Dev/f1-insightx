@@ -7,7 +7,6 @@ type ModuleLinkProps = {
   title: string;
   summary: string;
   state: string;
-  points: string[];
   visualTeamId?: string;
 };
 
@@ -17,7 +16,6 @@ export function ModuleLink({
   title,
   summary,
   state,
-  points,
   visualTeamId,
 }: ModuleLinkProps) {
   return (
@@ -38,11 +36,6 @@ export function ModuleLink({
           />
         </div>
       ) : null}
-      <div className="module-link__points">
-        {points.map((point) => (
-          <span key={point}>{point}</span>
-        ))}
-      </div>
     </Link>
   );
 }

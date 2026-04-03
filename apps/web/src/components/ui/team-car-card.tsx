@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import { AssetImage } from "@/components/ui/asset-image";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
+import { TeamBadge } from "@/components/ui/team-badge";
 
 type TeamCarCardProps = {
   teamId: string;
@@ -75,7 +76,10 @@ export function TeamCarCard({
       </div>
       {showMeta ? (
         <div className="team-car-card__body">
-          <span className="team-car-card__eyebrow">{displaySubtitle}</span>
+          <div className="team-car-card__body-topline">
+            <span className="team-car-card__eyebrow">{displaySubtitle}</span>
+            <TeamBadge teamId={teamId} compact label={team.shortLabel} />
+          </div>
           <strong className="team-car-card__title">{displayTitle}</strong>
         </div>
       ) : null}

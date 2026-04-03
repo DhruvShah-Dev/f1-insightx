@@ -1,11 +1,30 @@
 import type { z } from "zod";
 import { raceScenarioSchema } from "@/lib/api/validation";
 import type { RaceContext, RaceContextEntrant } from "@/lib/server/race-context";
+import { roundTo } from "@/lib/server/utils";
 
 type RaceScenarioInput = z.infer<typeof raceScenarioSchema>;
 type ConfidenceLabel = "high" | "medium" | "low";
+type ComparisonTargetType = NonNullable<RaceScenarioInput["comparisonTargetType"]>;
 
-type SimulatedEntrant = {
+type ComparisonTarget = {
+  type: ComparisonTargetType;
+  id: string;
+  label: string;
+  entrantIds: string[];
+};
+
+type StrategyProfile = {
+  pitStopCount: number;
+  tirePlan: RaceScenarioInput["tirePlan"];
+  safetyCarProbability: number;
+  weatherScenario: RaceScenarioInput["weatherScenario"];
+  aggressionFactor: number;
+  reliabilityBias: number;
+  constructorFocus: string[];
+};
+
+type ScoredEntrant = {
   driverId: string;
   fullName: string;
   constructorId: string;
@@ -20,20 +39,61 @@ type SimulatedEntrant = {
   explanation: string[];
 };
 
+type TargetOutcomeEntrant = {
+  driverId: string;
+  fullName: string;
+  constructorId: string;
+  constructorName: string;
+  qualifyingPosition: number;
+  baselineFinish: number;
+  projectedFinish: number;
+  finishDelta: number;
+  baselinePoints: number;
+  projectedPoints: number;
+  pointsDelta: number;
+  podiumProbability: number;
+  undercutImpact: number;
+  confidence: ConfidenceLabel;
+  explanationSummary: string;
+};
+
 export type RaceSimulationResponse = {
   raceId: string;
   raceName: string;
+  comparisonTarget: {
+    type: ComparisonTargetType;
+    id: string;
+    label: string;
+    entrantCount: number;
+  } | null;
   scenarioSummary: {
+    fieldSize: number;
     selectedDrivers: number;
     weatherScenario: RaceScenarioInput["weatherScenario"];
     pitStopCount: number;
     safetyCarProbability: number;
     aggressionFactor: number;
+    baselineMode: string;
   };
   confidence: ConfidenceLabel;
   confidenceReason: string;
   undercutNarrative: string;
-  finishingOrder: SimulatedEntrant[];
+  targetSummary: {
+    title: string;
+    narrative: string;
+    averageFinishDelta: number;
+    aggregatePointsDelta: number;
+    entrants: TargetOutcomeEntrant[];
+  } | null;
+  finishingOrder: Array<
+    ScoredEntrant & {
+      baselineFinish: number;
+      finishDelta: number;
+      baselinePoints: number;
+      pointsDelta: number;
+      isTarget: boolean;
+    }
+  >;
 };
 
 const POINTS_BY_POSITION: Record<number, number> = {
@@ -57,21 +117,171 @@ const COMPOUND_SCORES: Record<string, number> = {
   wet: 6,
 };
 
+const BASELINE_PROFILE: StrategyProfile = {
+  pitStopCount: 2,
+  tirePlan: [
+    { compound: "medium", laps: 18 },
+    { compound: "hard", laps: 24 },
+    { compound: "soft", laps: 15 },
+  ],
+  safetyCarProbability: 0.35,
+  weatherScenario: "dry",
+  aggressionFactor: 50,
+  reliabilityBias: 0,
+  constructorFocus: [],
+};
+
 export function simulateRaceScenario(input: RaceScenarioInput, context: RaceContext): RaceSimulationResponse {
   const selectedEntrants = selectEntrants(context.entrants, input.driverIds);
   const qualifyingOverrideMap = new Map(input.qualifyingOverrides.map((item) => [item.driverId, item.position]));
-  const tirePlanQuality = scoreTirePlan(input);
-  const weatherAlignment = scoreWeatherAlignment(input);
-  const undercutNarrative = buildUndercutNarrative(input);
+  const target = resolveComparisonTarget(input, selectedEntrants);
+  const baselineField = simulateField({
+    entrants: selectedEntrants,
+    qualifyingOverrideMap,
+    context,
+    input,
+    target,
+    mode: "baseline",
+  });
+  const comparisonField = simulateField({
+    entrants: selectedEntrants,
+    qualifyingOverrideMap,
+    context,
+    input,
+    target,
+    mode: "comparison",
+  });
+  const baselineMap = new Map(baselineField.map((entrant) => [entrant.driverId, entrant]));
+  const undercutNarrative = buildUndercutNarrative(input, target);
 
-  const finishingOrder = selectedEntrants
+  const finishingOrder = comparisonField.map((entrant) => {
+    const baseline = baselineMap.get(entrant.driverId) ?? entrant;
+    return {
+      ...entrant,
+      baselineFinish: baseline.projectedFinish,
+      finishDelta: baseline.projectedFinish - entrant.projectedFinish,
+      baselinePoints: baseline.projectedPoints,
+      pointsDelta: entrant.projectedPoints - baseline.projectedPoints,
+      isTarget: target?.entrantIds.includes(entrant.driverId) ?? false,
+    };
+  });
+
+  return {
+    raceId: context.race.id,
+    raceName: context.race.raceName,
+    comparisonTarget: target
+      ? {
+          type: target.type,
+          id: target.id,
+          label: target.label,
+          entrantCount: target.entrantIds.length,
+        }
+      : null,
+    scenarioSummary: {
+      fieldSize: comparisonField.length,
+      selectedDrivers: comparisonField.length,
+      weatherScenario: input.weatherScenario,
+      pitStopCount: input.pitStopCount,
+      safetyCarProbability: input.safetyCarProbability,
+      aggressionFactor: input.aggressionFactor,
+      baselineMode: "Everyone else uses the default race profile.",
+    },
+    confidence: overallConfidence(input, context),
+    confidenceReason: describeConfidence(input, context, target),
+    undercutNarrative,
+    targetSummary: buildTargetSummary(finishingOrder, target),
+    finishingOrder,
+  };
+}
+
+function resolveComparisonTarget(
+  input: RaceScenarioInput,
+  entrants: RaceContextEntrant[],
+): ComparisonTarget | null {
+  if (input.comparisonTargetType === "driver" && input.comparisonTargetId) {
+    const entrant = entrants.find((candidate) => candidate.driverId === input.comparisonTargetId);
+    if (!entrant) {
+      return null;
+    }
+
+    return {
+      type: "driver",
+      id: entrant.driverId,
+      label: entrant.fullName,
+      entrantIds: [entrant.driverId],
+    };
+  }
+
+  if (input.comparisonTargetType === "constructor" && input.comparisonTargetId) {
+    const constructorEntrants = entrants.filter(
+      (candidate) => candidate.constructorId === input.comparisonTargetId,
+    );
+    if (constructorEntrants.length === 0) {
+      return null;
+    }
+
+    return {
+      type: "constructor",
+      id: input.comparisonTargetId,
+      label: constructorEntrants[0]?.constructorName ?? input.comparisonTargetId,
+      entrantIds: constructorEntrants.map((entrant) => entrant.driverId),
+    };
+  }
+
+  if (input.constructorFocus.length === 1) {
+    const constructorEntrants = entrants.filter(
+      (candidate) => candidate.constructorId === input.constructorFocus[0],
+    );
+    if (constructorEntrants.length > 0) {
+      return {
+        type: "constructor",
+        id: input.constructorFocus[0],
+        label: constructorEntrants[0]?.constructorName ?? input.constructorFocus[0],
+        entrantIds: constructorEntrants.map((entrant) => entrant.driverId),
+      };
+    }
+  }
+
+  if (input.driverIds.length === 1) {
+    const entrant = entrants.find((candidate) => candidate.driverId === input.driverIds[0]);
+    if (entrant) {
+      return {
+        type: "driver",
+        id: entrant.driverId,
+        label: entrant.fullName,
+        entrantIds: [entrant.driverId],
+      };
+    }
+  }
+
+  return null;
+}
+
+function simulateField({
+  entrants,
+  qualifyingOverrideMap,
+  context,
+  input,
+  target,
+  mode,
+}: {
+  entrants: RaceContextEntrant[];
+  qualifyingOverrideMap: Map<string, number>;
+  context: RaceContext;
+  input: RaceScenarioInput;
+  target: ComparisonTarget | null;
+  mode: "baseline" | "comparison";
+}) {
+  return entrants
     .map((entrant) =>
       scoreEntrant({
         entrant,
-        input,
+        context,
         qualifyingOverrideMap,
-        tirePlanQuality,
-        weatherAlignment,
+        strategy:
+          mode === "comparison" && isTargetEntrant(entrant.driverId, target)
+            ? buildTargetProfile(input)
+            : buildBaselineProfile(input),
       }),
     )
     .sort((left, right) => right.score - left.score)
@@ -87,22 +297,30 @@ export function simulateRaceScenario(input: RaceScenarioInput, context: RaceCont
         confidence: confidenceLabel(scoreGap, input, context),
       };
     });
+}
 
+function buildTargetProfile(input: RaceScenarioInput): StrategyProfile {
   return {
-    raceId: context.race.id,
-    raceName: context.race.raceName,
-    scenarioSummary: {
-      selectedDrivers: finishingOrder.length,
-      weatherScenario: input.weatherScenario,
-      pitStopCount: input.pitStopCount,
-      safetyCarProbability: input.safetyCarProbability,
-      aggressionFactor: input.aggressionFactor,
-    },
-    confidence: overallConfidence(input, context),
-    confidenceReason: describeConfidence(input, context),
-    undercutNarrative,
-    finishingOrder,
+    pitStopCount: input.pitStopCount,
+    tirePlan: input.tirePlan,
+    safetyCarProbability: input.safetyCarProbability,
+    weatherScenario: input.weatherScenario,
+    aggressionFactor: input.aggressionFactor,
+    reliabilityBias: input.reliabilityBias,
+    constructorFocus: input.constructorFocus,
   };
+}
+
+function buildBaselineProfile(input: RaceScenarioInput): StrategyProfile {
+  return {
+    ...BASELINE_PROFILE,
+    safetyCarProbability: input.safetyCarProbability,
+    weatherScenario: input.weatherScenario,
+  };
+}
+
+function isTargetEntrant(driverId: string, target: ComparisonTarget | null) {
+  return target?.entrantIds.includes(driverId) ?? false;
 }
 
 function selectEntrants(entrants: RaceContextEntrant[], driverIds: string[]) {
@@ -114,16 +332,14 @@ function selectEntrants(entrants: RaceContextEntrant[], driverIds: string[]) {
 
 function scoreEntrant({
   entrant,
-  input,
+  context,
   qualifyingOverrideMap,
-  tirePlanQuality,
-  weatherAlignment,
+  strategy,
 }: {
   entrant: RaceContextEntrant;
-  input: RaceScenarioInput;
+  context: RaceContext;
   qualifyingOverrideMap: Map<string, number>;
-  tirePlanQuality: number;
-  weatherAlignment: number;
+  strategy: StrategyProfile;
 }) {
   const overriddenGrid = qualifyingOverrideMap.get(entrant.driverId);
   const gridPosition = overriddenGrid ?? entrant.gridPosition;
@@ -132,14 +348,18 @@ function scoreEntrant({
   const gridScore = Math.max(0, 21 - gridPosition) * 3.4;
   const formScore = entrant.recentPointsAverage * 1.35;
   const overtakingScore = entrant.overtakeScore * 0.28;
-  const reliabilityScore = (entrant.reliabilityScore + input.reliabilityBias) * 0.18;
-  const aggressionScore = (input.aggressionFactor - 50) * (entrant.overtakeScore >= 55 ? 0.12 : 0.04);
-  const teamFocusScore = input.constructorFocus.includes(entrant.constructorId) ? 3.2 : 0;
+  const reliabilityScore = (entrant.reliabilityScore + strategy.reliabilityBias) * 0.18;
+  const aggressionScore =
+    (strategy.aggressionFactor - 50) * (entrant.overtakeScore >= 55 ? 0.12 : 0.04);
+  const teamFocusScore = strategy.constructorFocus.includes(entrant.constructorId) ? 3.2 : 0;
   const safetyCarScore =
-    input.safetyCarProbability * ((entrant.overtakeScore - 50) * 0.11 + (21 - gridPosition) * 0.18);
-  const pitWindowScore = scorePitWindow(input.pitStopCount, entrant);
+    strategy.safetyCarProbability *
+    ((entrant.overtakeScore - 50) * 0.11 + (21 - gridPosition) * 0.18);
+  const pitWindowScore = scorePitWindow(strategy.pitStopCount, entrant);
+  const tirePlanQuality = scoreTirePlan(strategy.tirePlan, strategy.pitStopCount);
+  const weatherAlignment = scoreWeatherAlignment(strategy.weatherScenario, strategy.tirePlan);
   const undercutImpact = roundTo(
-    pitWindowScore + safetyCarScore * 0.45 + (input.aggressionFactor - 50) * 0.08,
+    pitWindowScore + safetyCarScore * 0.45 + (strategy.aggressionFactor - 50) * 0.08,
     2,
   );
 
@@ -158,9 +378,9 @@ function scoreEntrant({
 
   const explanation = [
     `${entrant.fullName} starts from P${gridPosition}, contributing a grid baseline of ${roundTo(gridScore, 1)}.`,
-    `Recent form adds ${roundTo(formScore, 1)} points from an average of ${entrant.recentPointsAverage.toFixed(1)} prior-race points.`,
+    `Recent form adds ${roundTo(formScore, 1)} from an average of ${entrant.recentPointsAverage.toFixed(1)} prior-race points.`,
     `Overtaking and reliability profiles contribute ${roundTo(overtakingScore + reliabilityScore, 1)} combined scenario points.`,
-    buildStrategyExplanation(input, entrant, undercutImpact),
+    buildStrategyExplanation(strategy, entrant, undercutImpact, context.race.round),
   ];
 
   return {
@@ -175,33 +395,31 @@ function scoreEntrant({
   };
 }
 
-function scoreTirePlan(input: RaceScenarioInput) {
-  const stintScore = input.tirePlan.reduce(
-    (total, stint) => total + (COMPOUND_SCORES[stint.compound] ?? 5),
-    0,
-  );
-  const averageCompoundScore = stintScore / input.tirePlan.length;
-  const totalLaps = input.tirePlan.reduce((sum, stint) => sum + stint.laps, 0);
+function scoreTirePlan(tirePlan: RaceScenarioInput["tirePlan"], pitStopCount: number) {
+  const stintScore = tirePlan.reduce((total, stint) => total + (COMPOUND_SCORES[stint.compound] ?? 5), 0);
+  const averageCompoundScore = stintScore / tirePlan.length;
+  const totalLaps = tirePlan.reduce((sum, stint) => sum + stint.laps, 0);
   const lengthPenalty = totalLaps > 70 ? -2 : totalLaps < 35 ? -1.5 : 0;
-  const pitWindowAdjustment = input.pitStopCount === input.tirePlan.length - 1 ? 2.6 : -1.8;
+  const pitWindowAdjustment = pitStopCount === tirePlan.length - 1 ? 2.6 : -1.8;
 
   return roundTo(averageCompoundScore + pitWindowAdjustment + lengthPenalty, 2);
 }
 
-function scoreWeatherAlignment(input: RaceScenarioInput) {
-  const includesWetCompound = input.tirePlan.some((stint) =>
-    ["intermediate", "wet"].includes(stint.compound),
-  );
+function scoreWeatherAlignment(
+  weatherScenario: RaceScenarioInput["weatherScenario"],
+  tirePlan: RaceScenarioInput["tirePlan"],
+) {
+  const includesWetCompound = tirePlan.some((stint) => ["intermediate", "wet"].includes(stint.compound));
 
-  if (input.weatherScenario === "dry" && includesWetCompound) {
+  if (weatherScenario === "dry" && includesWetCompound) {
     return -6;
   }
 
-  if (input.weatherScenario !== "dry" && !includesWetCompound) {
+  if (weatherScenario !== "dry" && !includesWetCompound) {
     return -4;
   }
 
-  return input.weatherScenario === "dry" ? 2 : 1;
+  return weatherScenario === "dry" ? 2 : 1;
 }
 
 function scorePitWindow(pitStopCount: number, entrant: RaceContextEntrant) {
@@ -256,9 +474,13 @@ function overallConfidence(input: RaceScenarioInput, context: RaceContext): Conf
   return "high";
 }
 
-function describeConfidence(input: RaceScenarioInput, context: RaceContext) {
+function describeConfidence(
+  input: RaceScenarioInput,
+  context: RaceContext,
+  target: ComparisonTarget | null,
+) {
   if (input.weatherScenario !== "dry") {
-    return "Confidence is lower because mixed or wet assumptions create larger strategy variance than this baseline model can explain.";
+    return "Confidence is lower because mixed or wet assumptions create larger strategy variance than this baseline comparison model can explain.";
   }
 
   if (input.safetyCarProbability > 0.6) {
@@ -269,41 +491,116 @@ function describeConfidence(input: RaceScenarioInput, context: RaceContext) {
     return "Confidence is moderate because early-season races provide less prior form for calibration.";
   }
 
-  if (input.driverIds.length < 8) {
-    return "Confidence is moderate because the selected field is narrow, so race-traffic interactions are only partially represented.";
+  if (target?.type === "constructor") {
+    return "Confidence is strongest when constructor comparisons stay close to the normal field profile and the model can isolate the effect of the chosen team strategy.";
   }
 
-  return "Confidence is strongest here because the scenario is dry, the field sample is broader, and the model can lean on stable grid and form signals.";
+  return "Confidence is strongest here because the field stays on a stable baseline and the model is isolating one target strategy against it.";
 }
 
-function buildUndercutNarrative(input: RaceScenarioInput) {
+function buildUndercutNarrative(input: RaceScenarioInput, target: ComparisonTarget | null) {
+  const subject = target?.type === "constructor" ? "the selected constructor" : "the selected strategy";
+
   if (input.pitStopCount >= 3) {
-    return "This setup favors aggressive track-position swings. The simulator expects undercut attempts to matter more than stint stability.";
+    return `This setup pushes ${subject} toward aggressive track-position swings. The simulator expects undercut attempts to matter more than stint stability.`;
   }
 
   if (input.pitStopCount === 2) {
-    return "This is the simulator sweet spot for balanced undercut pressure: pit timing matters without completely dominating outright pace.";
+    return `This is the comparison sweet spot for ${subject}: pit timing matters without completely overwhelming outright pace.`;
   }
 
-  return "With only one planned stop, the simulator discounts undercut upside and leans more on clean air, tire preservation, and reliability.";
+  return `With only one planned stop, the model discounts undercut upside for ${subject} and leans more on clean air, tire preservation, and reliability.`;
 }
 
 function buildStrategyExplanation(
-  input: RaceScenarioInput,
+  strategy: StrategyProfile,
   entrant: RaceContextEntrant,
   undercutImpact: number,
+  round: number,
 ) {
-  if (input.pitStopCount >= 3) {
+  if (strategy.pitStopCount >= 3) {
     return `An aggressive multi-stop plan produces an undercut impact of ${undercutImpact.toFixed(1)} for ${entrant.fullName}, rewarding overtaking strength but carrying more variance.`;
   }
 
-  if (input.weatherScenario !== "dry") {
-    return `The ${input.weatherScenario} weather assumption raises variance, so ${entrant.fullName}'s reliability score of ${entrant.reliabilityScore.toFixed(0)} matters more than usual.`;
+  if (strategy.weatherScenario !== "dry") {
+    return `The ${strategy.weatherScenario} weather assumption raises variance, so ${entrant.fullName}'s reliability score of ${entrant.reliabilityScore.toFixed(0)} matters more than usual.`;
   }
 
-  return `The chosen two-stop style is close to the model sweet spot, giving ${entrant.fullName} an undercut impact of ${undercutImpact.toFixed(1)} without overcommitting on pit risk.`;
+  if (round <= 3) {
+    return `This scenario still leans on limited early-season data, so ${entrant.fullName}'s grid and recent form signals stay more important than edge-case strategy swings.`;
+  }
+
+  return `The two-stop profile sits close to the model sweet spot, giving ${entrant.fullName} an undercut impact of ${undercutImpact.toFixed(1)} without overcommitting on pit risk.`;
 }
 
-function roundTo(value: number, digits: number) {
-  return Number(value.toFixed(digits));
+function buildTargetSummary(
+  finishingOrder: RaceSimulationResponse["finishingOrder"],
+  target: ComparisonTarget | null,
+): RaceSimulationResponse["targetSummary"] {
+  if (!target) {
+    return null;
+  }
+
+  const targetEntrants = finishingOrder.filter((entrant) => entrant.isTarget);
+  if (targetEntrants.length === 0) {
+    return null;
+  }
+
+  const averageFinishDelta = roundTo(
+    targetEntrants.reduce((sum, entrant) => sum + entrant.finishDelta, 0) / targetEntrants.length,
+    2,
+  );
+  const aggregatePointsDelta = roundTo(
+    targetEntrants.reduce((sum, entrant) => sum + entrant.pointsDelta, 0),
+    1,
+  );
+
+  return {
+    title: target.type === "constructor" ? `${target.label} strategy delta` : `${target.label} strategy delta`,
+    narrative: buildTargetNarrative(target, averageFinishDelta, aggregatePointsDelta),
+    averageFinishDelta,
+    aggregatePointsDelta,
+    entrants: targetEntrants.map((entrant) => ({
+      driverId: entrant.driverId,
+      fullName: entrant.fullName,
+      constructorId: entrant.constructorId,
+      constructorName: entrant.constructorName,
+      qualifyingPosition: entrant.qualifyingPosition,
+      baselineFinish: entrant.baselineFinish,
+      projectedFinish: entrant.projectedFinish,
+      finishDelta: entrant.finishDelta,
+      baselinePoints: entrant.baselinePoints,
+      projectedPoints: entrant.projectedPoints,
+      pointsDelta: entrant.pointsDelta,
+      podiumProbability: entrant.podiumProbability,
+      undercutImpact: entrant.undercutImpact,
+      confidence: entrant.confidence,
+      explanationSummary: entrant.explanation.at(-1) ?? entrant.explanation[0] ?? "",
+    })),
+  };
+}
+
+function buildTargetNarrative(
+  target: ComparisonTarget,
+  averageFinishDelta: number,
+  aggregatePointsDelta: number,
+) {
+  const finishPhrase =
+    averageFinishDelta > 0.2
+      ? `gains an average of ${averageFinishDelta.toFixed(1)} places`
+      : averageFinishDelta < -0.2
+        ? `gives away ${Math.abs(averageFinishDelta).toFixed(1)} places on average`
+        : "holds baseline track position";
+  const pointsPhrase =
+    aggregatePointsDelta > 0
+      ? `worth roughly +${aggregatePointsDelta.toFixed(1)} points versus the baseline field`
+      : aggregatePointsDelta < 0
+        ? `costing about ${Math.abs(aggregatePointsDelta).toFixed(1)} points against the baseline field`
+        : "with points effectively flat to baseline";
+
+  if (target.type === "constructor") {
+    return `${target.label} ${finishPhrase}, ${pointsPhrase}.`;
+  }
+
+  return `${target.label} ${finishPhrase}, ${pointsPhrase}.`;
 }

@@ -26,6 +26,7 @@ export function RaceSimulationCharts({ simulation }: Props) {
     finish: entrant.projectedFinish,
     delta: entrant.qualifyingPosition - entrant.projectedFinish,
     fill: getTeamMeta(entrant.constructorId).primary,
+    isTarget: entrant.isTarget,
   }));
 
   const podiumData = simulation.finishingOrder.slice(0, 8).map((entrant) => ({
@@ -33,13 +34,14 @@ export function RaceSimulationCharts({ simulation }: Props) {
     podium: entrant.podiumProbability,
     undercut: entrant.undercutImpact,
     fill: getTeamMeta(entrant.constructorId).primary,
+    isTarget: entrant.isTarget,
   }));
 
   return (
     <div className="chart-grid">
       <ChartFrame
-        title="Grid vs projected finish"
-        subtitle="Positive delta means the scenario expects positions gained."
+        title="Baseline vs scenario finish"
+        subtitle="The selected target is plotted against a normal-race field baseline."
       >
         <BarChart data={comparisonData} margin={{ left: -16, right: 8, top: 8 }}>
           <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
@@ -57,7 +59,10 @@ export function RaceSimulationCharts({ simulation }: Props) {
           <Bar dataKey="grid" fill="rgba(208, 215, 226, 0.55)" radius={[3, 3, 0, 0]} />
           <Bar dataKey="finish" radius={[3, 3, 0, 0]}>
             {comparisonData.map((entry) => (
-              <Cell key={entry.name} fill={entry.fill} />
+              <Cell
+                key={entry.name}
+                fill={entry.isTarget ? "var(--accent-strong)" : entry.fill}
+              />
             ))}
           </Bar>
         </BarChart>
@@ -65,7 +70,7 @@ export function RaceSimulationCharts({ simulation }: Props) {
 
       <ChartFrame
         title="Podium pressure"
-        subtitle="Front-runners by podium probability with undercut intensity."
+        subtitle="Top scenario entrants by podium probability and undercut intensity."
         dark
       >
         <BarChart data={podiumData} margin={{ left: -16, right: 8, top: 8 }}>
@@ -86,7 +91,13 @@ export function RaceSimulationCharts({ simulation }: Props) {
             {podiumData.map((entry) => (
               <Cell
                 key={entry.name}
-                fill={entry.podium >= 50 ? entry.fill : "rgba(208, 215, 226, 0.72)"}
+                fill={
+                  entry.isTarget
+                    ? "var(--accent-strong)"
+                    : entry.podium >= 50
+                      ? entry.fill
+                      : "rgba(208, 215, 226, 0.72)"
+                }
               />
             ))}
           </Bar>

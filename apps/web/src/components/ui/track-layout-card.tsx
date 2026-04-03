@@ -17,11 +17,12 @@ export function TrackLayoutCard({
   showMeta = true,
 }: TrackLayoutCardProps) {
   const circuit = getCircuitAsset(circuitId);
+  const variantClass = compact ? "track-map--card" : "track-map--hero";
 
   return (
     <div className={`track-layout-card ${compact ? "track-layout-card--compact" : ""}`}>
       <div className="track-layout-card__media">
-        <div className="track-map track-map--card">
+        <div className={`track-map ${variantClass}`}>
           <div className="track-map__grid" aria-hidden="true" />
           <div className="track-map__glow" aria-hidden="true" />
           {circuit.layoutAssetPath ? (
@@ -29,9 +30,9 @@ export function TrackLayoutCard({
               src={circuit.layoutAssetPath}
               alt={title ?? `${circuit.region} circuit layout`}
               className="track-map__image"
-              width={420}
-              height={260}
-              sizes="(max-width: 959px) 100vw, 18rem"
+              width={compact ? 420 : 960}
+              height={compact ? 260 : 620}
+              sizes={compact ? "(max-width: 959px) 100vw, 18rem" : "(max-width: 959px) 100vw, 32rem"}
             />
           ) : (
             <div className="track-map__fallback">

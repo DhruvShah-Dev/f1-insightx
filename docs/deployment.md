@@ -6,7 +6,7 @@
 - `Database`: Supabase Free
 - `Scheduled data refresh`: GitHub Actions
 
-This keeps the public app deployable at `$0` while preserving a realistic production shape.
+This keeps the app inexpensive to run while preserving a realistic production shape for demos and portfolio use.
 
 ## Vercel setup
 
@@ -47,7 +47,7 @@ python data/normalize_results.py
 python data/load_supabase.py
 ```
 
-### Recommended Supabase secrets
+### Recommended Supabase environment variables
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
@@ -81,7 +81,7 @@ If Supabase env vars are missing, the app can still run locally against `data/cu
 That is useful for:
 
 - local UI work
-- demoing the app without a live DB
+- demoing the UI without a live DB
 - development before the first Supabase bootstrap
 
 ## Recommended release flow

@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { FantasyCharts } from "@/components/fantasy/fantasy-charts";
 import { TeamBadge } from "@/components/ui/team-badge";
+import { StatePanel } from "@/components/ui/state-panel";
 import { TeamCarCard } from "@/components/ui/team-car-card";
+import { getNetworkErrorMessage, readClientErrorMessage } from "@/lib/errors/client";
 
 type DatasetResponse = {
   ok: boolean;
@@ -95,6 +97,7 @@ export function FantasyWorkspace({ season }: Props) {
   const [preferredDriverIds, setPreferredDriverIds] = useState<string[]>([]);
   const [preferredConstructorIds, setPreferredConstructorIds] = useState<string[]>([]);
   const [recommendations, setRecommendations] = useState<RecommendResponse["data"] | null>(null);
+  const [datasetReloadKey, setDatasetReloadKey] = useState(0);
 
   useEffect(() => {
     let active = true;
@@ -111,10 +114,17 @@ export function FantasyWorkspace({ season }: Props) {
           setDataset(payload.data);
           setPreferredDriverIds(payload.data.drivers.slice(0, 2).map((driver) => driver.id));
           setPreferredConstructorIds(payload.data.constructors.slice(0, 1).map((constructor) => constructor.id));
+          return;
+        }
+
+        if (active) {
+          setDataset(null);
+          setError(readClientErrorMessage(payload, "The fantasy dataset is unavailable right now."));
         }
       } catch {
         if (active) {
-          setError("Fantasy dataset could not be loaded.");
+          setDataset(null);
+          setError(getNetworkErrorMessage("Fantasy dataset loading"));
         }
       } finally {
         if (active) {
@@ -128,7 +138,7 @@ export function FantasyWorkspace({ season }: Props) {
     return () => {
       active = false;
     };
-  }, [season]);
+  }, [datasetReloadKey, season]);
 
   const topDrivers = useMemo(() => dataset?.drivers.slice(0, 12) ?? [], [dataset]);
   const topConstructors = useMemo(() => dataset?.constructors.slice(0, 8) ?? [], [dataset]);
@@ -181,14 +191,14 @@ export function FantasyWorkspace({ season }: Props) {
 
       const payload = (await response.json()) as RecommendResponse;
       if (!payload.ok || !payload.data) {
-        setError(payload.error?.message ?? "Recommendation failed.");
+        setError(readClientErrorMessage(payload, "The lineup engine could not complete that run."));
         setRecommendations(null);
         return;
       }
 
       setRecommendations(payload.data);
     } catch {
-      setError("Recommendation failed.");
+      setError(getNetworkErrorMessage("Fantasy recommendation"));
       setRecommendations(null);
     } finally {
       setIsOptimizing(false);
@@ -233,6 +243,24 @@ export function FantasyWorkspace({ season }: Props) {
                 </p>
               </div>
             </div>
+          ) : null}
+
+          {error && !dataset && !isLoading ? (
+            <StatePanel
+              eyebrow="Fantasy dataset"
+              title="The optimizer could not load the race-week dataset."
+              message={error}
+              tone="error"
+              action={(
+                <button
+                  type="button"
+                  className="hero__cta hero__cta--secondary"
+                  onClick={() => setDatasetReloadKey((current) => current + 1)}
+                >
+                  Retry dataset
+                </button>
+              )}
+            />
           ) : null}
 
           <div className="result-summary fantasy-summary">
@@ -381,7 +409,7 @@ export function FantasyWorkspace({ season }: Props) {
               : "Generate a lineup to compare roster styles."}
           </div>
 
-          {error ? <p className="lab-error">{error}</p> : null}
+          {error && dataset ? <p className="lab-error">{error}</p> : null}
           {isLoading ? <div className="loading-block">Loading fantasy dataset...</div> : null}
           {!isLoading && dataset && !recommendations ? (
             <div className="status-banner">

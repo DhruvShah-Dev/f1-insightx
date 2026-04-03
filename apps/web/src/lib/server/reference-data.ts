@@ -1,4 +1,5 @@
 import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { compareSeasonRoundDesc } from "@/lib/server/utils";
 import { parseBoolean, parseNumber, readCuratedCsv } from "@/lib/server/csv";
 
 type ReferenceFilters = {
@@ -48,6 +49,45 @@ export type Race = {
   circuitId: string;
   scheduledAt: string;
   sprintWeekend: boolean;
+};
+
+type SupabaseDriverRow = {
+  id: string;
+  driver_code: string | null;
+  permanent_number: number | null;
+  first_name: string;
+  last_name: string;
+  full_name: string;
+  nationality: string | null;
+  date_of_birth: string | null;
+};
+
+type SupabaseConstructorRow = {
+  id: string;
+  constructor_code: string | null;
+  name: string;
+  nationality: string | null;
+};
+
+type SupabaseCircuitRow = {
+  id: string;
+  circuit_code: string | null;
+  name: string;
+  location: string | null;
+  country: string | null;
+  lat: number | null;
+  lng: number | null;
+};
+
+type SupabaseRaceRow = {
+  id: string;
+  season: number;
+  round: number;
+  race_name: string;
+  official_name: string | null;
+  circuit_id: string;
+  scheduled_at: string;
+  sprint_weekend: boolean;
 };
 
 async function loadDriversFromCsv(filters: ReferenceFilters): Promise<Driver[]> {
@@ -131,7 +171,6 @@ async function loadRacesFromCsv(filters: RacesFilters): Promise<Race[]> {
 
   return rows
     .filter((row) => !filters.season || Number(row.season) === filters.season)
-    .slice(0, filters.limit)
     .map((row) => ({
       id: row.id,
       season: Number(row.season),
@@ -141,7 +180,9 @@ async function loadRacesFromCsv(filters: RacesFilters): Promise<Race[]> {
       circuitId: row.circuit_id,
       scheduledAt: row.scheduled_at,
       sprintWeekend: parseBoolean(row.sprint_weekend),
-    }));
+    }))
+    .sort(compareSeasonRoundDesc)
+    .slice(0, filters.limit);
 }
 
 export async function listDrivers(filters: ReferenceFilters) {
@@ -161,21 +202,26 @@ export async function listDrivers(filters: ReferenceFilters) {
     query = query.or(`full_name.ilike.%${filters.search}%,driver_code.ilike.%${filters.search}%,id.ilike.%${filters.search}%`);
   }
 
-  const { data, error } = await query;
-  if (error) {
-    throw new Error(`Failed to query drivers: ${error.message}`);
-  }
+  try {
+    const { data, error } = await query;
+    if (error) {
+      throw new Error(`Failed to query drivers: ${error.message}`);
+    }
 
-  return data.map((row) => ({
-    id: row.id,
-    driverCode: row.driver_code,
-    permanentNumber: row.permanent_number,
-    firstName: row.first_name,
-    lastName: row.last_name,
-    fullName: row.full_name,
-    nationality: row.nationality,
-    dateOfBirth: row.date_of_birth,
-  }));
+    const rows = data as SupabaseDriverRow[];
+    return rows.map((row) => ({
+      id: row.id,
+      driverCode: row.driver_code,
+      permanentNumber: row.permanent_number,
+      firstName: row.first_name,
+      lastName: row.last_name,
+      fullName: row.full_name,
+      nationality: row.nationality,
+      dateOfBirth: row.date_of_birth,
+    }));
+  } catch {
+    return loadDriversFromCsv(filters);
+  }
 }
 
 export async function listConstructors(filters: ReferenceFilters) {
@@ -194,17 +240,22 @@ export async function listConstructors(filters: ReferenceFilters) {
     query = query.or(`name.ilike.%${filters.search}%,constructor_code.ilike.%${filters.search}%,id.ilike.%${filters.search}%`);
   }
 
-  const { data, error } = await query;
-  if (error) {
-    throw new Error(`Failed to query constructors: ${error.message}`);
-  }
+  try {
+    const { data, error } = await query;
+    if (error) {
+      throw new Error(`Failed to query constructors: ${error.message}`);
+    }
 
-  return data.map((row) => ({
-    id: row.id,
-    constructorCode: row.constructor_code,
-    name: row.name,
-    nationality: row.nationality,
-  }));
+    const rows = data as SupabaseConstructorRow[];
+    return rows.map((row) => ({
+      id: row.id,
+      constructorCode: row.constructor_code,
+      name: row.name,
+      nationality: row.nationality,
+    }));
+  } catch {
+    return loadConstructorsFromCsv(filters);
+  }
 }
 
 export async function listCircuits(filters: ReferenceFilters) {
@@ -224,20 +275,25 @@ export async function listCircuits(filters: ReferenceFilters) {
     query = query.or(`name.ilike.%${filters.search}%,country.ilike.%${filters.search}%,location.ilike.%${filters.search}%,id.ilike.%${filters.search}%`);
   }
 
-  const { data, error } = await query;
-  if (error) {
-    throw new Error(`Failed to query circuits: ${error.message}`);
-  }
+  try {
+    const { data, error } = await query;
+    if (error) {
+      throw new Error(`Failed to query circuits: ${error.message}`);
+    }
 
-  return data.map((row) => ({
-    id: row.id,
-    circuitCode: row.circuit_code,
-    name: row.name,
-    location: row.location,
-    country: row.country,
-    lat: row.lat,
-    lng: row.lng,
-  }));
+    const rows = data as SupabaseCircuitRow[];
+    return rows.map((row) => ({
+      id: row.id,
+      circuitCode: row.circuit_code,
+      name: row.name,
+      location: row.location,
+      country: row.country,
+      lat: row.lat,
+      lng: row.lng,
+    }));
+  } catch {
+    return loadCircuitsFromCsv(filters);
+  }
 }
 
 export async function listRaces(filters: RacesFilters) {
@@ -250,28 +306,33 @@ export async function listRaces(filters: RacesFilters) {
     .from("races")
     .select("id, season, round, race_name, official_name, circuit_id, scheduled_at, sprint_weekend")
     .order("season", { ascending: false })
-    .order("round", { ascending: true })
+    .order("round", { ascending: false })
     .limit(filters.limit);
 
   if (filters.season) {
     query = query.eq("season", filters.season);
   }
 
-  const { data, error } = await query;
-  if (error) {
-    throw new Error(`Failed to query races: ${error.message}`);
-  }
+  try {
+    const { data, error } = await query;
+    if (error) {
+      throw new Error(`Failed to query races: ${error.message}`);
+    }
 
-  return data.map((row) => ({
-    id: row.id,
-    season: row.season,
-    round: row.round,
-    raceName: row.race_name,
-    officialName: row.official_name,
-    circuitId: row.circuit_id,
-    scheduledAt: row.scheduled_at,
-    sprintWeekend: row.sprint_weekend,
-  }));
+    const rows = data as SupabaseRaceRow[];
+    return rows.map((row) => ({
+      id: row.id,
+      season: row.season,
+      round: row.round,
+      raceName: row.race_name,
+      officialName: row.official_name,
+      circuitId: row.circuit_id,
+      scheduledAt: row.scheduled_at,
+      sprintWeekend: row.sprint_weekend,
+    }));
+  } catch {
+    return loadRacesFromCsv(filters);
+  }
 }
 
 export async function listAvailableSeasons() {
@@ -281,10 +342,15 @@ export async function listAvailableSeasons() {
     return [...new Set(rows.map((row) => Number(row.season)))].sort((a, b) => b - a);
   }
 
-  const { data, error } = await supabase.from("races").select("season").order("season", { ascending: false });
-  if (error) {
-    throw new Error(`Failed to query seasons: ${error.message}`);
-  }
+  try {
+    const { data, error } = await supabase.from("races").select("season").order("season", { ascending: false });
+    if (error) {
+      throw new Error(`Failed to query seasons: ${error.message}`);
+    }
 
-  return [...new Set(data.map((row) => row.season))];
+    return [...new Set((data as Array<{ season: number }>).map((row) => row.season))];
+  } catch {
+    const rows = await readCuratedCsv("races.csv");
+    return [...new Set(rows.map((row) => Number(row.season)))].sort((a, b) => b - a);
+  }
 }

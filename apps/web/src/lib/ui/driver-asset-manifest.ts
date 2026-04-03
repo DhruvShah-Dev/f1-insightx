@@ -70,7 +70,7 @@ const currentDriverMap: Record<string, CurrentDriverMeta> = {
   antonelli: createDriver("antonelli", "Kimi Antonelli", "Kimi", "Antonelli", "mercedes", "Mercedes", "ANT", "Italian", "mercedes", "andant01", {
     photoScale: 1.04,
   }),
-  leclerc: createDriver("leclerc", "Charles Leclerc", "Charles", "Leclerc", "ferrari", "Ferrari", "LEC", "Monégasque", "ferrari", "chalec01", {
+  leclerc: createDriver("leclerc", "Charles Leclerc", "Charles", "Leclerc", "ferrari", "Ferrari", "LEC", "Monegasque", "ferrari", "chalec01", {
     photoScale: 1.03,
   }),
   hamilton: createDriver("hamilton", "Lewis Hamilton", "Lewis", "Hamilton", "ferrari", "Ferrari", "HAM", "British", "ferrari", "lewham01", {
@@ -192,3 +192,4 @@ function createDriver(
     ...overrides,
   };
 }
+

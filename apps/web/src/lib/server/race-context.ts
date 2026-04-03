@@ -1,4 +1,5 @@
 import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { roundTo } from "@/lib/server/utils";
 import { parseNumber, readCuratedCsv } from "@/lib/server/csv";
 import type { Race } from "@/lib/server/reference-data";
 
@@ -43,6 +44,15 @@ type CsvStrategyProfile = {
   reliability_score: string;
 };
 
+type CsvModelFeature = {
+  race_id: string;
+  driver_id: string;
+  constructor_id: string;
+  recent_points_avg_3: string;
+  overtake_score: string;
+  reliability_score: string;
+};
+
 type CsvDriver = {
   id: string;
   full_name: string;
@@ -64,17 +74,73 @@ type CsvRace = {
   sprint_weekend: string;
 };
 
+type SupabaseRaceRow = {
+  id: string;
+  season: number;
+  round: number;
+  race_name: string;
+  official_name: string | null;
+  circuit_id: string;
+  scheduled_at: string;
+  sprint_weekend: boolean;
+};
+
+type SupabaseDriverRow = {
+  id: string;
+  full_name: string;
+};
+
+type SupabaseConstructorRow = {
+  id: string;
+  name: string;
+};
+
+type SupabaseQualifyingRow = {
+  race_id: string;
+  driver_id: string;
+  constructor_id: string;
+  position: number | null;
+};
+
+type SupabaseStrategyRow = {
+  race_id: string;
+  driver_id: string;
+  overtake_score: number | null;
+  reliability_score: number | null;
+};
+
+type SupabaseRaceResultRow = {
+  race_id: string;
+  driver_id: string;
+  constructor_id: string;
+  finish_position: number | null;
+  points: number | null;
+};
+
+type SupabaseFeatureRow = {
+  race_id: string;
+  driver_id: string;
+  constructor_id: string;
+  recent_points_avg_3: number | null;
+  overtake_score: number | null;
+  reliability_score: number | null;
+};
+
 export async function getRaceContext(raceId: string): Promise<RaceContext | null> {
   const supabase = getSupabaseAdminClient();
   if (supabase) {
-    return getRaceContextFromSupabase(raceId);
+    try {
+      return await getRaceContextFromSupabase(raceId);
+    } catch {
+      return getRaceContextFromCsv(raceId);
+    }
   }
 
   return getRaceContextFromCsv(raceId);
 }
 
 async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null> {
-  const [races, drivers, constructors, qualifyingResults, raceResults, strategyProfiles] =
+  const [races, drivers, constructors, qualifyingResults, raceResults, strategyProfiles, modelFeatures] =
     await Promise.all([
       readCuratedCsv("races.csv") as Promise<CsvRace[]>,
       readCuratedCsv("drivers.csv") as Promise<CsvDriver[]>,
@@ -82,6 +148,7 @@ async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null
       readCuratedCsv("qualifying_results.csv") as Promise<CsvQualifyingResult[]>,
       readCuratedCsv("race_results.csv") as Promise<CsvRaceResult[]>,
       readCuratedCsv("strategy_profiles.csv") as Promise<CsvStrategyProfile[]>,
+      readCuratedCsv("model_features.csv") as Promise<CsvModelFeature[]>,
     ]);
 
   const raceRow = races.find((row) => row.id === raceId);
@@ -98,6 +165,18 @@ async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null
       .map((row) => [
         row.driver_id,
         {
+          overtakeScore: parseNumber(row.overtake_score) ?? 50,
+          reliabilityScore: parseNumber(row.reliability_score) ?? 75,
+        },
+      ]),
+  );
+  const featureMap = new Map(
+    modelFeatures
+      .filter((row) => row.race_id === raceId)
+      .map((row) => [
+        row.driver_id,
+        {
+          recentPointsAverage: parseNumber(row.recent_points_avg_3) ?? 0,
           overtakeScore: parseNumber(row.overtake_score) ?? 50,
           reliabilityScore: parseNumber(row.reliability_score) ?? 75,
         },
@@ -128,6 +207,7 @@ async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null
       driverPrior.map((result) => Number(result.points)).filter((value) => !Number.isNaN(value)),
     );
     const strategy = strategyMap.get(row.driver_id);
+    const feature = featureMap.get(row.driver_id);
     const qualifyingPosition = parseNumber(row.position) ?? 20;
 
     return {
@@ -138,9 +218,9 @@ async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null
       gridPosition: qualifyingPosition,
       qualifyingPosition,
       baselineFinish: averageFinish,
-      recentPointsAverage: roundTo(averagePoints ?? 0, 2),
-      overtakeScore: strategy?.overtakeScore ?? 50,
-      reliabilityScore: strategy?.reliabilityScore ?? 75,
+      recentPointsAverage: roundTo(feature?.recentPointsAverage ?? averagePoints ?? 0, 2),
+      overtakeScore: feature?.overtakeScore ?? strategy?.overtakeScore ?? 50,
+      reliabilityScore: feature?.reliabilityScore ?? strategy?.reliabilityScore ?? 75,
     };
   });
 
@@ -163,18 +243,19 @@ async function getRaceContextFromSupabase(raceId: string): Promise<RaceContext |
     return null;
   }
 
+  const typedRaceRow = raceRow as SupabaseRaceRow;
   const race = {
-    id: raceRow.id,
-    season: raceRow.season,
-    round: raceRow.round,
-    raceName: raceRow.race_name,
-    officialName: raceRow.official_name,
-    circuitId: raceRow.circuit_id,
-    scheduledAt: raceRow.scheduled_at,
-    sprintWeekend: raceRow.sprint_weekend,
+    id: typedRaceRow.id,
+    season: typedRaceRow.season,
+    round: typedRaceRow.round,
+    raceName: typedRaceRow.race_name,
+    officialName: typedRaceRow.official_name,
+    circuitId: typedRaceRow.circuit_id,
+    scheduledAt: typedRaceRow.scheduled_at,
+    sprintWeekend: typedRaceRow.sprint_weekend,
   };
 
-  const [driversResult, constructorsResult, qualifyingResult, strategyResult, priorResultsResult] =
+  const [driversResult, constructorsResult, qualifyingResult, strategyResult, priorResultsResult, featuresResult] =
     await Promise.all([
       supabase.from("drivers").select("id, full_name"),
       supabase.from("constructors").select("id, name"),
@@ -191,6 +272,10 @@ async function getRaceContextFromSupabase(raceId: string): Promise<RaceContext |
         .from("race_results")
         .select("race_id, driver_id, constructor_id, finish_position, points")
         .like("race_id", `${race.season}-%`),
+      supabase
+        .from("model_features")
+        .select("race_id, driver_id, constructor_id, recent_points_avg_3, overtake_score, reliability_score")
+        .eq("race_id", raceId),
     ]);
 
   if (
@@ -198,17 +283,23 @@ async function getRaceContextFromSupabase(raceId: string): Promise<RaceContext |
     constructorsResult.error ||
     qualifyingResult.error ||
     strategyResult.error ||
-    priorResultsResult.error
+    priorResultsResult.error ||
+    featuresResult.error
   ) {
     throw new Error("Failed to build race context from Supabase.");
   }
 
-  const driverMap = new Map((driversResult.data ?? []).map((driver) => [driver.id, driver.full_name]));
-  const constructorMap = new Map(
-    (constructorsResult.data ?? []).map((constructor) => [constructor.id, constructor.name]),
-  );
+  const driverRows = (driversResult.data ?? []) as SupabaseDriverRow[];
+  const constructorRows = (constructorsResult.data ?? []) as SupabaseConstructorRow[];
+  const strategyRows = (strategyResult.data ?? []) as SupabaseStrategyRow[];
+  const featureRows = (featuresResult.data ?? []) as SupabaseFeatureRow[];
+  const priorResultRows = (priorResultsResult.data ?? []) as SupabaseRaceResultRow[];
+  const qualifyingRows = (qualifyingResult.data ?? []) as SupabaseQualifyingRow[];
+
+  const driverMap = new Map(driverRows.map((driver) => [driver.id, driver.full_name]));
+  const constructorMap = new Map(constructorRows.map((constructor) => [constructor.id, constructor.name]));
   const strategyMap = new Map(
-    (strategyResult.data ?? []).map((row) => [
+    strategyRows.map((row) => [
       row.driver_id,
       {
         overtakeScore: row.overtake_score ?? 50,
@@ -216,12 +307,22 @@ async function getRaceContextFromSupabase(raceId: string): Promise<RaceContext |
       },
     ]),
   );
-  const priorResults = (priorResultsResult.data ?? []).filter((row) => {
+  const featureMap = new Map(
+    featureRows.map((row) => [
+      row.driver_id,
+      {
+        recentPointsAverage: row.recent_points_avg_3 ?? 0,
+        overtakeScore: row.overtake_score ?? 50,
+        reliabilityScore: row.reliability_score ?? 75,
+      },
+    ]),
+  );
+  const priorResults = priorResultRows.filter((row) => {
     const rowRound = Number(String(row.race_id).split("-")[1]);
     return rowRound < race.round;
   });
 
-  const entrants = (qualifyingResult.data ?? []).map((row) => {
+  const entrants = qualifyingRows.map((row) => {
     const driverPrior = priorResults.filter((result) => result.driver_id === row.driver_id);
     const averageFinish = average(
       driverPrior
@@ -236,6 +337,7 @@ async function getRaceContextFromSupabase(raceId: string): Promise<RaceContext |
         .filter((value) => !Number.isNaN(value)),
     );
     const strategy = strategyMap.get(row.driver_id);
+    const feature = featureMap.get(row.driver_id);
     const qualifyingPosition = row.position ?? 20;
 
     return {
@@ -246,9 +348,9 @@ async function getRaceContextFromSupabase(raceId: string): Promise<RaceContext |
       gridPosition: qualifyingPosition,
       qualifyingPosition,
       baselineFinish: averageFinish,
-      recentPointsAverage: roundTo(averagePoints ?? 0, 2),
-      overtakeScore: strategy?.overtakeScore ?? 50,
-      reliabilityScore: strategy?.reliabilityScore ?? 75,
+      recentPointsAverage: roundTo(feature?.recentPointsAverage ?? averagePoints ?? 0, 2),
+      overtakeScore: feature?.overtakeScore ?? strategy?.overtakeScore ?? 50,
+      reliabilityScore: feature?.reliabilityScore ?? strategy?.reliabilityScore ?? 75,
     };
   });
 
@@ -274,8 +376,4 @@ function average(values: number[]) {
   }
 
   return values.reduce((sum, value) => sum + value, 0) / values.length;
-}
-
-function roundTo(value: number, digits: number) {
-  return Number(value.toFixed(digits));
 }

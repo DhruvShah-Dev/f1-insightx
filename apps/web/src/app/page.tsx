@@ -1,94 +1,119 @@
 import Link from "next/link";
+import { HomeAccountEntry } from "@/components/account/home-account-entry";
+import { ConstructorStandingsSection } from "@/components/home/constructor-standings-section";
 import { DriverStandingsSection } from "@/components/home/driver-standings-section";
-import { LiveStatus } from "@/components/home/live-status";
+import { HomeScrollReveal } from "@/components/home/home-scroll-reveal";
+import { MainPageBackground } from "@/components/home/main-page-background";
 import { ModuleLink } from "@/components/home/module-link";
 import { RaceHistoryRail } from "@/components/home/race-history-rail";
-import { TeamFieldShowcase } from "@/components/home/team-field-showcase";
+import { getServerEnv } from "@/lib/env";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
-import { getCurrentSeasonDriverStandings } from "@/lib/server/standings";
+import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
 
 export default async function Home() {
-  const raceHistory = await listCompletedRaceHistory(18);
-  const driverStandings = await getCurrentSeasonDriverStandings();
+  const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
+  const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
+  const [constructorStandings, raceHistory, driverStandings] = await Promise.all([
+    getCurrentSeasonConstructorStandings(),
+    listCompletedRaceHistory(10),
+    getCurrentSeasonDriverStandings(),
+  ]);
 
   return (
     <main className="home-shell">
-      <header className="topbar">
-        <div>
-          <p className="topbar__brand">F1 InsightX</p>
-          <p className="topbar__caption">Race strategy intelligence and fantasy lineup design</p>
-        </div>
-        <nav className="topbar__nav">
-          <Link href="/lab">Prediction Lab</Link>
-          <Link href="/fantasy">Fantasy Builder</Link>
-        </nav>
-      </header>
+      <MainPageBackground />
+      <HomeScrollReveal />
 
-      <section className="hero">
-        <div className="hero__backdrop" />
-        <div className="hero__content">
-          <div className="hero__copy">
-            <h1 className="hero__brand">F1 InsightX</h1>
-            <p className="hero__line">Read a Grand Prix like a strategist</p>
-            <p className="hero__line">Draft a fantasy team like an analyst</p>
-            <p className="hero__summary">
-              F1 InsightX combines scenario-based race simulation, constructor-aware visual identity,
-              and fantasy roster optimization inside one premium motorsport analytics surface.
-            </p>
-            <div className="hero__action-label">Start exploring</div>
-            <div className="hero__actions">
-              <Link href="/lab" className="hero__cta hero__cta--primary">
-                Open Prediction Lab
+      <div className="home-shell__content">
+        <header className="topbar">
+          <div className="topbar__nav-shell">
+            <nav className="topbar__nav">
+              <Link href="/predictions" className="topbar__nav-item">
+                Race Week
               </Link>
-              <Link href="/fantasy" className="hero__cta hero__cta--secondary">
-                Open Fantasy Builder
+              <Link href="/lab" className="topbar__nav-item">
+                Strategy Lab
               </Link>
+              <Link href="/fantasy" className="topbar__nav-item">
+                Fantasy Builder
+              </Link>
+              <HomeAccountEntry hasSupabaseAuth={hasSupabaseAuth} hasProfilePersistence={hasProfilePersistence} />
+            </nav>
+          </div>
+        </header>
+
+        <section className="hero">
+          <div className="hero__backdrop" />
+          <div className="hero__content">
+            <div className="hero__copy">
+              <h1 className="hero__brand">F1 InsightX</h1>
+              <p className="hero__tagline" aria-label="Analyze, Strategize, Execute">
+                <span>Analyze</span>
+                <span className="hero__tagline-dot" aria-hidden="true">
+                  &middot;
+                </span>
+                <span>Strategize</span>
+                <span className="hero__tagline-dot" aria-hidden="true">
+                  &middot;
+                </span>
+                <span>Execute</span>
+              </p>
+              <div className="hero__actions">
+                <Link href="/lab" className="hero__cta hero__cta--primary">
+                  Open Strategy Lab
+                </Link>
+                <Link href="/fantasy" className="hero__cta hero__cta--secondary">
+                  Open Fantasy Builder
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <DriverStandingsSection standings={driverStandings} />
-      <RaceHistoryRail races={raceHistory} />
+        <ConstructorStandingsSection standings={constructorStandings} />
 
-      <section className="feature-showcase">
-        <div className="section-shell feature-showcase__header">
-          <div>
-            <div className="section-meta">Core modules</div>
-            <h2 className="section-title">Strategy and fantasy, built as working tools.</h2>
-            <p className="section-copy">
-              Move from race scenario analysis into roster optimization without leaving the product surface.
-            </p>
+        <section className="feature-showcase" data-home-reveal>
+          <div className="section-shell feature-showcase__header">
+            <div className="section-meta">Products</div>
+            <h2 className="section-title">Strategy and fantasy.</h2>
+            <p className="section-copy">Two focused surfaces for race week.</p>
           </div>
-          <div className="feature-showcase__status">
-            <span className="feature-showcase__status-label">Data mode</span>
-            <LiveStatus />
+
+          <div className="module-grid feature-showcase__grid">
+            <ModuleLink
+              href="/lab"
+              index="01"
+              state="Live"
+              title="Strategy Lab"
+              summary="Scenario simulator"
+              visualTeamId="red_bull"
+            />
+            <ModuleLink
+              href="/fantasy"
+              index="02"
+              state="Live"
+              title="Fantasy Builder"
+              summary="Lineup optimizer"
+              visualTeamId="mclaren"
+            />
           </div>
-        </div>
+        </section>
 
-        <div className="module-grid feature-showcase__grid">
-          <ModuleLink
-            href="/lab"
-            index="01"
-            state="Live"
-            title="Race Prediction Lab"
-            summary="Model pit windows, weather, qualifying position, and safety-car pressure against a historical grid."
-            points={["Scenario editor", "Confidence output", "Undercut logic"]}
-            visualTeamId="red_bull"
-          />
-          <ModuleLink
-            href="/fantasy"
-            index="02"
-            state="Live"
-            title="Fantasy Team Builder"
-            summary="Balance budget, value, and volatility across a five-driver, two-constructor roster."
-            points={["Budget planner", "Captain logic", "Aggressive variants"]}
-            visualTeamId="mclaren"
-          />
-        </div>
-      </section>
+        <RaceHistoryRail races={raceHistory} />
+        <DriverStandingsSection standings={driverStandings} />
 
-      <TeamFieldShowcase />
+        <footer className="home-footer">
+          <nav className="home-footer__nav" aria-label="Homepage footer">
+            <Link href="/predictions">Race Week</Link>
+            <span aria-hidden="true">|</span>
+            <Link href="/lab">Strategy Lab</Link>
+            <span aria-hidden="true">|</span>
+            <Link href="/fantasy">Fantasy Builder</Link>
+            <span aria-hidden="true">|</span>
+            <Link href="/profile">Profile</Link>
+          </nav>
+        </footer>
+      </div>
     </main>
   );
 }

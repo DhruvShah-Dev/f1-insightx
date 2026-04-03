@@ -1,67 +1,108 @@
 # Data Workspace
 
-This folder will contain the Python ingestion and feature-engineering layer for F1 InsightX.
+This directory contains the F1 InsightX data pipeline: raw source fetches, normalized curated tables, and product-facing feature views.
 
-## Planned responsibilities
+## Layers
 
-- fetch public F1 datasets
-- normalize historical race and qualifying data
-- compute fantasy value metrics
-- compute strategy priors and circuit profiles
-- load curated outputs into Supabase
+### 1. Raw
 
-## Install
+- `data/raw/reference`
+- Snapshotted public API responses from Jolpica
+- Schedule, race results, qualifying, sprint, and metadata provenance
+
+### 2. Curated
+
+- `drivers.csv`
+- `constructors.csv`
+- `circuits.csv`
+- `races.csv`
+- `qualifying_results.csv`
+- `race_results.csv`
+- `sprint_results.csv`
+- `strategy_profiles.csv`
+- `fantasy_pricing.csv`
+
+These files are normalized from raw source payloads and form the canonical event/session layer.
+
+### 3. Product analytics / feature layer
+
+- `driver_standings.csv`
+- `constructor_standings.csv`
+- `race_week_context.csv`
+- `model_features.csv`
+- `prediction_snapshots.csv`
+- `fantasy_inputs.csv`
+
+These are the product-facing views used by the homepage, Strategy Lab, Fantasy Builder, race-week predictions, and future forecasting work.
+
+## Pipeline
+
+### 1. Fetch raw data
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -r data/requirements.txt
+python data/fetch_reference_data.py --start-season 2025 --end-season 2026
 ```
 
-## Early execution plan
-
-The first scripts added in M1 should be:
-
-1. `fetch_reference_data.py`
-2. `normalize_results.py`
-3. `load_supabase.py`
-
-## M1 pipeline
-
-### 1. Fetch raw data snapshots
-
-```bash
-python data/fetch_reference_data.py --start-season 2024 --end-season 2025
-```
-
-This writes raw Jolpica responses into `data/raw/reference`.
-
-### 2. Normalize into curated CSVs
+### 2. Normalize staged tables
 
 ```bash
 python data/normalize_results.py
 ```
 
-This produces:
+### 3. Build product views and prediction inputs
 
-- `data/curated/drivers.csv`
-- `data/curated/constructors.csv`
-- `data/curated/circuits.csv`
-- `data/curated/races.csv`
-- `data/curated/qualifying_results.csv`
-- `data/curated/race_results.csv`
-- `data/curated/strategy_profiles.csv`
-- `data/curated/fantasy_pricing.csv`
+```bash
+python data/build_product_views.py
+```
 
-### 3. Load into Supabase/Postgres
-
-Set `DATABASE_URL` in `.env.local`, then run:
+### 4. Load into Supabase / Postgres
 
 ```bash
 python data/load_supabase.py
 ```
 
-## Scope notes
+## Product outputs
 
-- `strategy_profiles.csv` is intentionally lightweight in M1 and only derives simple rolling overtake and reliability scores from historical results.
-- `fantasy_pricing.csv` is a schema placeholder in M1 so the downstream app can depend on a stable table shape before live pricing ingestion is added.
+### Race week context
+
+`race_week_context.csv` identifies:
+
+- latest completed race
+- next scheduled race
+- schedule status per round
+- prior-race context for point-in-time features
+
+### Point-in-time features
+
+`model_features.csv` is leakage-safe for pre-race prediction:
+
+- recent finish / qualifying trends
+- recent points trend
+- teammate delta
+- consistency and DNF rate
+- constructor form
+- standings context
+- strategy-derived overtake / reliability priors
+
+### Prediction snapshots
+
+`prediction_snapshots.csv` stores one prediction snapshot per upcoming race-week field:
+
+- projected finish
+- winner / podium / top-10 probabilities
+- model version
+- generated timestamp
+- compact rationale
+
+### Fantasy inputs
+
+`fantasy_inputs.csv` converts prediction snapshots into reusable fantasy scores and price proxies for both drivers and constructors.
+
+## Update workflow through the season
+
+1. Run `fetch_reference_data.py` daily or before race-week refreshes.
+2. Run `normalize_results.py` after new raw data arrives.
+3. Run `build_product_views.py` to regenerate standings, features, and prediction snapshots.
+4. Run `load_supabase.py` to publish tables for the web app.
+
+This keeps the app current without hardcoding "latest race" content into UI components.

@@ -9,6 +9,7 @@ Desktop.ini
 .venv/
 __pycache__/
 *.pyc
+.python-version
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -17,6 +18,11 @@ node_modules/
 out/
 dist/
 coverage/
+.cache/
+.vercel/
+playwright-report/
+test-results/
+reports/
 *.log
 tmp_*
 *.tmp
@@ -25,6 +31,13 @@ tmp_*
 .vscode/
 *.swp
 *.swo
+*.tsbuildinfo
+*.seed
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.orig
 data/raw/*
 !data/raw/.gitkeep
 data/curated/*

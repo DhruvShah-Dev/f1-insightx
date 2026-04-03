@@ -1,5 +1,6 @@
 import type { z } from "zod";
 import { fantasyRequestSchema } from "@/lib/api/validation";
+import { roundTo } from "@/lib/server/utils";
 import type {
   FantasyConstructorCandidate,
   FantasyDataset,
@@ -255,10 +256,6 @@ function combinations<T>(items: T[], size: number): T[][] {
 
 function sum(values: number[]) {
   return values.reduce((total, value) => total + value, 0);
-}
-
-function roundTo(value: number, digits: number) {
-  return Number(value.toFixed(digits));
 }
 
 function estimateMinimumBudget(dataset: FantasyDataset) {

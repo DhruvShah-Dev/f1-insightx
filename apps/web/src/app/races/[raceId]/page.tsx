@@ -1,7 +1,9 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CircuitHeroPanel } from "@/components/races/circuit-hero-panel";
+import { StatePanel } from "@/components/ui/state-panel";
+import { HomeLink } from "@/components/ui/home-link";
 import { TeamBadge } from "@/components/ui/team-badge";
+import { logServerError } from "@/lib/errors/logger";
 import { getRaceDetail } from "@/lib/server/race-history";
 
 type Props = {
@@ -12,7 +14,24 @@ type Props = {
 
 export default async function RaceDetailPage({ params }: Props) {
   const { raceId } = await params;
-  const detail = await getRaceDetail(raceId);
+  let detail = null;
+  try {
+    detail = await getRaceDetail(raceId);
+  } catch (error) {
+    logServerError("page:race-detail", error, { raceId });
+    return (
+      <main className="subpage-shell">
+        <StatePanel
+          eyebrow="Race detail"
+          title="This race weekend could not be loaded."
+          message="The archive record is temporarily unavailable. Try again in a moment."
+          tone="error"
+          actionHref="/"
+          actionLabel="Back to homepage"
+        />
+      </main>
+    );
+  }
 
   if (!detail) {
     notFound();
@@ -21,9 +40,7 @@ export default async function RaceDetailPage({ params }: Props) {
   return (
     <main className="subpage-shell">
       <header className="subpage-header">
-        <Link href="/" className="subpage-link">
-          Back to overview
-        </Link>
+        <HomeLink />
       </header>
 
       <CircuitHeroPanel detail={detail} />
