@@ -49,6 +49,9 @@ primeEnvFile(path.join(configDir, ".env.local"));
 primeEnvFile(path.join(configDir, ".env"));
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: workspaceRoot,
+  },
   async headers() {
     return [
       {
