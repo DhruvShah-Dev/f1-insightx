@@ -1,5 +1,4 @@
 import { apiOk } from "@/lib/api/errors";
-import { getServerEnv } from "@/lib/env";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 
@@ -12,10 +11,10 @@ export async function GET(request: Request) {
     );
   }
 
-  const env = getServerEnv();
-
-  return apiOk({
-    status: "ok",
-    mode: env.hasSupabaseAdmin ? "supabase" : "local-curated-csv",
-  }, { headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
+  return apiOk(
+    {
+      status: "ok",
+    },
+    { headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) },
+  );
 }

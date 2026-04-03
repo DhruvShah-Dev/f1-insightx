@@ -44,6 +44,8 @@ Copy `.env.example` to `.env.local` at the repo root. The Next app is configured
 
 Required/optional variables are documented in [.env.example](./.env.example).
 
+On a minimal setup, some standings, archive, and race-week surfaces may render empty states until you either connect Supabase or generate local curated datasets through the data pipeline.
+
 Rate-limit and abuse-protection defaults are documented in [Abuse Protection](./docs/abuse-protection.md). They do not require extra paid infrastructure.
 
 ### 3. Run the web app
