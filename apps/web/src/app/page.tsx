@@ -6,6 +6,7 @@ import { HomeScrollReveal } from "@/components/home/home-scroll-reveal";
 import { MainPageBackground } from "@/components/home/main-page-background";
 import { ModuleLink } from "@/components/home/module-link";
 import { RaceHistoryRail } from "@/components/home/race-history-rail";
+import { LegalLinks } from "@/components/legal/legal-links";
 import { getServerEnv } from "@/lib/env";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
 import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
@@ -103,14 +104,15 @@ export default async function Home() {
         <DriverStandingsSection standings={driverStandings} />
 
         <footer className="home-footer">
-          <nav className="home-footer__nav" aria-label="Homepage footer">
+          <LegalLinks className="home-footer__nav home-footer__nav--legal" />
+          <nav className="home-footer__nav home-footer__nav--products" aria-label="Homepage footer">
             <Link href="/predictions">Race Week</Link>
             <span aria-hidden="true">|</span>
             <Link href="/lab">Strategy Lab</Link>
             <span aria-hidden="true">|</span>
             <Link href="/fantasy">Fantasy Builder</Link>
             <span aria-hidden="true">|</span>
-            <Link href="/profile">Profile</Link>
+            <Link href="/account">Profile</Link>
           </nav>
         </footer>
       </div>

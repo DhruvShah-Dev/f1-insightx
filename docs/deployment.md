@@ -24,6 +24,7 @@ Create a Vercel project from this repository and set:
 Set these in the Vercel project:
 
 - `NEXT_PUBLIC_APP_URL`
+- `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL`
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
@@ -32,6 +33,7 @@ Notes:
 
 - `SUPABASE_SERVICE_ROLE_KEY` is only used server-side in route handlers.
 - `DATABASE_URL` is not required on Vercel because the deployed app uses the Supabase HTTP client, not direct Postgres connections.
+- `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL` should point to a monitored address before public launch so manual deletion and privacy requests have a visible contact path.
 
 ## Supabase setup
 
@@ -98,6 +100,13 @@ npm run build
 4. Merge to `main`.
 5. Vercel deploys automatically.
 6. Trigger `Data Refresh` manually the first time, then rely on the schedule.
+
+## Privacy and cookie launch baseline
+
+- The current app uses necessary Supabase authentication/session cookies.
+- The repo currently does not ship analytics or advertising trackers by default.
+- If you add analytics, A/B testing, or marketing tags later, review cookie-consent requirements before enabling them publicly.
+- Review the public `/privacy`, `/terms`, and `/cookies` pages before launch and confirm they match your actual infrastructure, support process, and jurisdictions.
 
 ## Free-tier tradeoffs
 

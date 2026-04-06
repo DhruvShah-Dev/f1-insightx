@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { isTrustedOrigin } from "@/lib/security/request";
 
 export async function POST(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.signOut);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.signOut);
   if (!rateLimit.ok) {
     return NextResponse.json(
       { error: "Too many sign-out requests. Try again shortly." },
@@ -15,13 +15,13 @@ export async function POST(request: Request) {
   }
 
   const { appUrl } = getServerEnv();
-  if (!isTrustedOrigin(request, appUrl)) {
+  if (!isTrustedOrigin(request, appUrl, { allowMissingHeaders: false })) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
   }
 
   const supabase = await getSupabaseServerClient();
   if (!supabase) {
-    return NextResponse.json({ error: "Supabase Auth is not configured." }, { status: 503, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
+    return NextResponse.json({ error: "Authentication is unavailable right now." }, { status: 503, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
   }
 
   const { error } = await supabase.auth.signOut();

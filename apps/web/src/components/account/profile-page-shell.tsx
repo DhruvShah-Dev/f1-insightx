@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { LegalLinks } from "@/components/legal/legal-links";
 import type { AccountConstructorOption, AccountDriverOption } from "@/lib/account/options";
 import { getProfileTheme } from "@/lib/account/profile-theme";
 import { AccountAvatar } from "@/components/account/account-avatar";
@@ -27,6 +28,7 @@ type ProfilePageShellProps = {
   email: string;
   provider: string;
   hasProfilePersistence: boolean;
+  privacyContactEmail: string | null;
   constructors: AccountConstructorOption[];
   drivers: AccountDriverOption[];
   initialProfile: ProfileSnapshot | null;
@@ -107,6 +109,7 @@ export function ProfilePageShell({
   email,
   provider,
   hasProfilePersistence,
+  privacyContactEmail,
   constructors,
   drivers,
   initialProfile,
@@ -124,6 +127,7 @@ export function ProfilePageShell({
   const [noticeMessage, setNoticeMessage] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [isSigningOut, setIsSigningOut] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
   const [pendingConfirmation, setPendingConfirmation] = useState(false);
   const [suggestedUsername, setSuggestedUsername] = useState(initialProfile?.username ?? "");
   const [isUsernameEditing, setIsUsernameEditing] = useState(false);
@@ -187,7 +191,6 @@ export function ProfilePageShell({
         const params = new URLSearchParams();
         if (constructorId) params.set("constructorId", constructorId);
         if (driverId) params.set("driverId", driverId);
-        params.set("excludeUserId", userId);
         const response = await fetch(`/api/account/username/suggest?${params.toString()}`, { signal: controller.signal });
         const payload = (await response.json().catch(() => null)) as { username?: string; error?: string } | null;
         if (!response.ok || !payload?.username) {
@@ -244,7 +247,7 @@ export function ProfilePageShell({
       setAvailabilityState("checking");
       try {
         const response = await fetch(
-          `/api/account/username/check?username=${encodeURIComponent(username)}&excludeUserId=${encodeURIComponent(userId)}`,
+          `/api/account/username/check?username=${encodeURIComponent(username)}`,
           { signal: controller.signal },
         );
         const payload = (await response.json().catch(() => null)) as { available?: boolean; error?: string } | null;
@@ -334,7 +337,7 @@ export function ProfilePageShell({
     setNoticeMessage("");
 
     if (!hasProfilePersistence) {
-      setErrorMessage("Profile saving is not configured for this environment.");
+      setErrorMessage("Profile saving is unavailable right now.");
       return;
     }
 
@@ -399,6 +402,36 @@ export function ProfilePageShell({
     }
   };
 
+  const handleExport = async () => {
+    setIsExporting(true);
+    setErrorMessage("");
+    setNoticeMessage("");
+
+    try {
+      const response = await fetch("/api/account/export", { method: "POST" });
+      if (!response.ok) {
+        const payload = (await response.json().catch(() => null)) as { error?: string | { message?: string } } | null;
+        setErrorMessage(readClientErrorMessage(payload, "Unable to export your account data right now."));
+        return;
+      }
+
+      const blob = await response.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = "f1-insightx-account-export.json";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(objectUrl);
+      setNoticeMessage("Account data export downloaded.");
+    } catch {
+      setErrorMessage(getNetworkErrorMessage("Account export"));
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   return (
     <main className={`subpage-shell account-page ${activeTheme.className}`} style={activeTheme.style}>
       <header className="account-profile-header">
@@ -456,7 +489,7 @@ export function ProfilePageShell({
 
           {!hasProfilePersistence ? (
             <div className="status-banner">
-              Profile saving is not configured in this environment. Sign-in still works, but profile updates are unavailable.
+              Profile saving is temporarily unavailable. Sign-in still works, but profile updates are unavailable.
             </div>
           ) : null}
 
@@ -620,6 +653,30 @@ export function ProfilePageShell({
             </div>
           </form>
         </section>
+
+        <aside className="workspace-panel account-privacy-panel">
+          <div className="workspace-panel__eyebrow">Privacy</div>
+          <div className="account-profile-identity__copy">
+            <strong>Account data controls</strong>
+            <p>Download the account and profile data currently stored for your user.</p>
+            <div className="account-form__actions">
+              <button className="hero__cta hero__cta--secondary" type="button" onClick={handleExport} disabled={isExporting}>
+                {isExporting ? "Preparing export..." : "Download my data"}
+              </button>
+            </div>
+            <p>
+              Profile edits happen in-product. Account deletion requests are currently handled manually.
+              {privacyContactEmail ? (
+                <>
+                  {" "}Contact <a href={`mailto:${privacyContactEmail}?subject=${encodeURIComponent("F1 InsightX account deletion request")}`}>{privacyContactEmail}</a>.
+                </>
+              ) : (
+                " Configure NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL before public launch so deletion requests have a visible contact path."
+              )}
+            </p>
+            <LegalLinks className="legal-links legal-links--stacked" />
+          </div>
+        </aside>
       </section>
     </main>
   );

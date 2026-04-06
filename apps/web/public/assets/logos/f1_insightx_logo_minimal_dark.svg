@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="160" viewBox="0 0 780 160" role="img" aria-labelledby="title">
+  <title id="title">F1 InsightX Minimal Dark Logo</title>
+  <rect width="780" height="160" fill="#06080C"/>
+  <g transform="translate(50 42)">
+    <path d="M0 24 C28 10, 66 2, 114 0 L176 0 L166 24 L108 24 C70 26, 38 34, 6 50 Z" fill="#FF2A2A"/>
+    <path d="M10 60 C46 46, 82 40, 130 38 L156 38 L149 54 L116 54 C82 56, 48 64, 18 78 Z" fill="#FF2A2A" opacity="0.82"/>
+    <g transform="translate(96 34) skewX(-14)">
+      <rect x="0" y="0" width="12" height="12" fill="#F4F4F4"/>
+      <rect x="12" y="12" width="12" height="12" fill="#F4F4F4"/>
+      <rect x="24" y="0" width="12" height="12" fill="#F4F4F4"/>
+      <rect x="24" y="24" width="12" height="12" fill="#F4F4F4"/>
+    </g>
+  </g>
+  <text x="228" y="102" fill="#EAEAEA" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="68" letter-spacing="10">INSIGHTX</text>
+</svg>

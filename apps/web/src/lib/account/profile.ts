@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { SupabaseClient, User } from "@supabase/supabase-js";
 import { z } from "zod";
 import { ACCOUNT_CONSTRUCTOR_OPTIONS, ACCOUNT_DRIVER_OPTIONS } from "@/lib/account/options";
@@ -244,7 +246,7 @@ export async function ensureProfileFromUserMetadata(user: User) {
         code: "config_error",
         status: 503,
         message: `User profile schema is outdated: ${error.message}`,
-        userMessage: "Your profile schema is out of date. Run the latest Supabase SQL update, then try again.",
+        userMessage: "Profile setup could not be completed right now. Try again shortly.",
       });
     }
 
@@ -381,7 +383,7 @@ export async function upsertUserProfileWithClient(
         code: "config_error",
         status: 503,
         message: `User profile schema is outdated: ${error.message}`,
-        userMessage: "Your profile schema is out of date. Run the latest Supabase SQL update, then save the profile again.",
+        userMessage: "Profile saving is temporarily unavailable. Try again shortly.",
       });
     }
 

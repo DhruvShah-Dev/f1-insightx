@@ -14,7 +14,7 @@ import { getServerEnv } from "@/lib/env";
 import { createAppError } from "@/lib/errors/app-error";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import { isTrustedOrigin } from "@/lib/security/request";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { getSupabaseAdminClient } from "@/lib/server/supabase";
 
 async function verifyProfileReferenceData(
@@ -37,7 +37,7 @@ async function verifyProfileReferenceData(
       code: "service_unavailable",
       status: 503,
       message: `Failed to verify profile reference data: ${constructorError?.message ?? driverError?.message ?? "unknown error"}`,
-      userMessage: "Profile setup could not verify the current F1 reference data.",
+      userMessage: "Profile setup could not be completed right now.",
       cause: constructorError ?? driverError ?? undefined,
     });
   }
@@ -48,8 +48,7 @@ async function verifyProfileReferenceData(
       code: "config_error",
       status: 503,
       message: `Profile reference data is missing in Supabase for constructor "${constructorId}" and/or driver "${driverId}".`,
-      userMessage:
-        "Your account is ready, but the driver and constructor reference data has not been loaded into Supabase yet. Run the data loader, then save the profile again.",
+      userMessage: "Profile setup is temporarily unavailable. Try again shortly.",
     });
   }
 }
@@ -81,7 +80,7 @@ async function getAuthenticatedUser() {
 
 export async function GET(request: Request) {
   try {
-    const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.profileRead);
+    const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.profileRead);
     if (!rateLimit.ok) {
       return NextResponse.json(
         { error: "Too many profile requests. Try again shortly." },
@@ -120,7 +119,7 @@ export async function GET(request: Request) {
 
 export async function PATCH(request: Request) {
   try {
-    const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.profileWrite);
+    const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.profileWrite);
     if (!rateLimit.ok) {
       return NextResponse.json(
         { error: "Too many profile updates. Try again later." },
@@ -129,7 +128,7 @@ export async function PATCH(request: Request) {
     }
 
     const { appUrl } = getServerEnv();
-    if (!isTrustedOrigin(request, appUrl)) {
+    if (!isTrustedOrigin(request, appUrl, { allowMissingHeaders: false })) {
       return apiError({
         status: 403,
         code: "forbidden",
@@ -153,7 +152,7 @@ export async function PATCH(request: Request) {
       return apiError({
         status: 503,
         code: "config_error",
-        message: "Profile saving is not configured yet.",
+        message: "Profile saving is unavailable right now.",
         headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
       });
     }

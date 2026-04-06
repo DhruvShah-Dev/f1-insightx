@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="520" viewBox="0 0 1800 520" role="img" aria-labelledby="title desc">
+  <title id="title">F1 InsightX Hero Logo</title>
+  <desc id="desc">Premium motorsport-inspired hero logo for F1 InsightX on a dark background.</desc>
+  <defs>
+    <linearGradient id="accentRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF2A2A"/>
+      <stop offset="100%" stop-color="#FF6B00"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#ECECEC"/>
+      <stop offset="100%" stop-color="#CFCFCF"/>
+    </linearGradient>
+    <filter id="redGlow" x="-40%" y="-120%" width="180%" height="340%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0
+                0 0.15 0 0 0
+                0 0 0.1 0 0
+                0 0 0 0.6 0" />
+    </filter>
+  </defs>
+
+  <rect width="1800" height="520" fill="#06080C"/>
+  <g transform="translate(70 90)">
+    <g transform="translate(0 90)">
+      <path d="M0 80 C70 40, 150 10, 260 0 L390 0 L372 50 L245 50 C160 54, 88 72, 16 114 Z" fill="url(#accentRed)"/>
+      <path d="M12 136 C98 104, 172 88, 280 84 L348 84 L336 120 L244 120 C172 124, 96 142, 30 174 Z" fill="url(#accentRed)" opacity="0.88"/>
+      <path d="M88 166 L182 166 L156 228 L0 228 Z" fill="url(#metal)" opacity="0.96"/>
+      <g transform="translate(210 116) skewX(-14)">
+        <rect x="0" y="0" width="26" height="26" fill="#F4F4F4"/>
+        <rect x="26" y="26" width="26" height="26" fill="#F4F4F4"/>
+        <rect x="52" y="0" width="26" height="26" fill="#F4F4F4"/>
+        <rect x="52" y="52" width="26" height="26" fill="#F4F4F4"/>
+      </g>
+    </g>
+
+    <g transform="translate(420 0)" fill="url(#metal)" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-style="italic">
+      <text x="0" y="240" font-size="210" letter-spacing="-8">F1</text>
+      <text x="250" y="240" font-size="150" letter-spacing="-5">INSIGHT</text>
+      <text x="1160" y="240" font-size="170" letter-spacing="-4" fill="url(#accentRed)">X</text>
+    </g>
+
+    <g transform="translate(650 300)">
+      <path d="M0 18 C120 4, 220 26, 332 12 C415 0, 500 -4, 598 14 C678 28, 756 20, 860 8" fill="none" stroke="#8B8F99" stroke-width="5" opacity="0.7"/>
+      <g filter="url(#redGlow)">
+        <circle cx="170" cy="24" r="12" fill="#FF8A1F"/>
+        <circle cx="320" cy="42" r="12" fill="#FF6B00"/>
+        <circle cx="495" cy="14" r="12" fill="#F2F2F2"/>
+        <circle cx="655" cy="30" r="12" fill="#FF2A2A"/>
+        <circle cx="810" cy="8" r="12" fill="#FF2A2A"/>
+      </g>
+      <path d="M170 24 L320 42 L495 14 L655 30 L810 8" fill="none" stroke="url(#accentRed)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

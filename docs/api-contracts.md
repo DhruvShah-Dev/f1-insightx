@@ -4,7 +4,7 @@
 
 The M2 API layer can run in two modes:
 
-- `supabase`: uses `NEXT_PUBLIC_SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`
+- `supabase`: uses `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY` on the server
 - `local-curated-csv`: reads from `data/curated/*.csv` when Supabase is not configured
 
 This keeps local development unblocked after M1 while preserving the production path.
@@ -13,7 +13,7 @@ This keeps local development unblocked after M1 while preserving the production 
 
 ### `GET /api/health`
 
-Returns runtime mode and basic service status.
+Returns a minimal public health payload with service status only.
 
 ### `GET /api/reference/drivers?search=&limit=`
 

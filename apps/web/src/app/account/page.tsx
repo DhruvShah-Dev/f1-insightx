@@ -1,10 +1,11 @@
-import { redirect } from "next/navigation";
 import { AccountAuthPanel } from "@/components/account/account-auth-panel";
+import { ProfilePageContent } from "@/components/account/profile-page-content";
 import { StatePanel } from "@/components/ui/state-panel";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { mapAuthErrorCode } from "@/lib/auth/navigation";
 import { getServerEnv } from "@/lib/env";
 import { logServerError } from "@/lib/errors/logger";
+import type { User } from "@supabase/supabase-js";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
   const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
   const params = (await searchParams) ?? {};
   const initialError = mapAuthErrorCode(decodeURIComponent(readErrorMessage(params.error) || ""));
+  let authenticatedUser: User | null = null;
 
   try {
     const supabase = await getSupabaseServerClient();
@@ -36,10 +38,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-
-      if (user) {
-        redirect("/profile");
-      }
+      authenticatedUser = user;
     }
   } catch (error) {
     logServerError("page:account:load-user", error);
@@ -54,6 +53,22 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
           actionLabel="Back to homepage"
         />
       </main>
+    );
+  }
+
+  if (authenticatedUser) {
+    return (
+      <ProfilePageContent
+        user={authenticatedUser}
+        hasSupabaseAdmin={hasSupabaseAdmin}
+        getProfileClient={async () => {
+          const profileClient = await getSupabaseServerClient();
+          if (!profileClient) {
+            throw new Error("Supabase server client unavailable");
+          }
+          return profileClient;
+        }}
+      />
     );
   }
 

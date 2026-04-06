@@ -34,10 +34,7 @@ export function DriverStandingsSection({ standings, hideHeader = false }: Driver
     <section className="driver-standings">
       <article className="driver-standings__intro championship-intro championship-intro--drivers">
         <div className="championship-intro__content">
-          <h2 className="section-title">
-            <span>Drivers</span>
-            <span>Championship</span>
-          </h2>
+          <h2 className="section-title">Drivers Championship</h2>
           <span className="section-meta">2026</span>
           <p className="championship-intro__description">Championship momentum across the 2026 grid.</p>
         </div>

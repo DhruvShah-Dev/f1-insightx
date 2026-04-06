@@ -6,6 +6,7 @@ type RateLimitBucket = {
 };
 
 type RateLimitStore = Map<string, RateLimitBucket>;
+type UpstashPipelineResult = Array<{ result?: number | string | null }>;
 
 export type RateLimitPolicy = {
   name: string;
@@ -20,6 +21,11 @@ export type RateLimitResult = {
   resetAt: number;
   retryAfterSeconds: number;
   headers: Record<string, string>;
+};
+
+type UpstashConfig = {
+  url: string;
+  token: string;
 };
 
 declare global {
@@ -52,23 +58,26 @@ function pruneStore(store: RateLimitStore, now: number, windowMs: number) {
 }
 
 function readClientAddress(request: Request) {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  if (forwardedFor) {
-    const firstForwarded = forwardedFor.split(",")[0]?.trim();
-    if (firstForwarded) {
-      return firstForwarded;
-    }
-  }
-
   const candidates = [
-    request.headers.get("x-real-ip"),
-    request.headers.get("cf-connecting-ip"),
     request.headers.get("x-vercel-forwarded-for"),
+    request.headers.get("cf-connecting-ip"),
+    request.headers.get("x-real-ip"),
   ];
 
   for (const candidate of candidates) {
     if (candidate?.trim()) {
       return candidate.trim();
+    }
+  }
+
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    const forwardedChain = forwardedFor
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean);
+    if (forwardedChain.length > 0) {
+      return forwardedChain[0];
     }
   }
 
@@ -148,4 +157,110 @@ export function checkRateLimit(request: Request, policy: RateLimitPolicy, subjec
       "X-RateLimit-Reset": String(Math.ceil(nextResetAt / 1000)),
     },
   };
+}
+
+function getUpstashConfig(): UpstashConfig | null {
+  const url = process.env.UPSTASH_REDIS_REST_URL?.trim();
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN?.trim();
+  if (!url || !token) {
+    return null;
+  }
+
+  return { url, token };
+}
+
+async function callUpstashPipeline(config: UpstashConfig, commands: Array<Array<string | number>>) {
+  const response = await fetch(`${config.url}/pipeline`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${config.token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(commands),
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Upstash pipeline failed with status ${response.status}.`);
+  }
+
+  return (await response.json()) as UpstashPipelineResult;
+}
+
+async function checkRateLimitWithUpstash(
+  request: Request,
+  policy: RateLimitPolicy,
+  subject?: string,
+): Promise<RateLimitResult> {
+  const config = getUpstashConfig();
+  if (!config) {
+    return checkRateLimit(request, policy, subject);
+  }
+
+  const now = Date.now();
+  const key = `${policy.name}:${getRateLimitIdentifier(request, subject)}`;
+  const firstPass = await callUpstashPipeline(config, [
+    ["INCR", key],
+    ["PTTL", key],
+  ]);
+
+  const hitCount = Number(firstPass[0]?.result ?? 0);
+  let ttlMs = Number(firstPass[1]?.result ?? -1);
+
+  if (!Number.isFinite(hitCount) || hitCount <= 0) {
+    throw new Error("Invalid Upstash rate-limit count.");
+  }
+
+  if (hitCount === 1 || ttlMs < 0) {
+    const secondPass = await callUpstashPipeline(config, [
+      ["PEXPIRE", key, policy.windowMs],
+      ["PTTL", key],
+    ]);
+    ttlMs = Number(secondPass[1]?.result ?? policy.windowMs);
+  }
+
+  const safeTtlMs = Number.isFinite(ttlMs) && ttlMs > 0 ? ttlMs : policy.windowMs;
+  const resetAt = now + safeTtlMs;
+
+  if (hitCount > policy.limit) {
+    const retryAfterSeconds = Math.max(1, Math.ceil(safeTtlMs / 1000));
+    return {
+      ok: false,
+      limit: policy.limit,
+      remaining: 0,
+      resetAt,
+      retryAfterSeconds,
+      headers: {
+        "X-RateLimit-Limit": String(policy.limit),
+        "X-RateLimit-Remaining": "0",
+        "X-RateLimit-Reset": String(Math.ceil(resetAt / 1000)),
+        "Retry-After": String(retryAfterSeconds),
+      },
+    };
+  }
+
+  return {
+    ok: true,
+    limit: policy.limit,
+    remaining: Math.max(0, policy.limit - hitCount),
+    resetAt,
+    retryAfterSeconds: Math.max(1, Math.ceil(safeTtlMs / 1000)),
+    headers: {
+      "X-RateLimit-Limit": String(policy.limit),
+      "X-RateLimit-Remaining": String(Math.max(0, policy.limit - hitCount)),
+      "X-RateLimit-Reset": String(Math.ceil(resetAt / 1000)),
+    },
+  };
+}
+
+export async function checkRateLimitAsync(
+  request: Request,
+  policy: RateLimitPolicy,
+  subject?: string,
+): Promise<RateLimitResult> {
+  try {
+    return await checkRateLimitWithUpstash(request, policy, subject);
+  } catch {
+    return checkRateLimit(request, policy, subject);
+  }
 }

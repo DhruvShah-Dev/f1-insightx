@@ -93,7 +93,7 @@ export function HomeAccountEntry({
 
       if (user) {
         setAuthState("authenticated");
-        router.push("/profile");
+        router.push("/account");
         router.refresh();
         return;
       }

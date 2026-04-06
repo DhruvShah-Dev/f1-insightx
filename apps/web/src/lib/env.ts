@@ -1,3 +1,5 @@
+import "server-only";
+
 const hasValue = (value: string | undefined) => Boolean(value && value.trim().length > 0);
 
 export function getServerEnv() {

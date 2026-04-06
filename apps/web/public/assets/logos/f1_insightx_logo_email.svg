@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="120" viewBox="0 0 620 120" role="img" aria-labelledby="title">
+  <title id="title">F1 InsightX Email Logo</title>
+  <rect width="620" height="120" fill="#FFFFFF"/>
+  <g transform="translate(24 28)">
+    <path d="M0 18 C22 8, 48 2, 84 0 L126 0 L119 18 L80 18 C54 20, 28 26, 4 38 Z" fill="#D90F22"/>
+    <path d="M8 44 C32 34, 58 30, 92 28 L110 28 L105 40 L84 40 C58 42, 34 48, 12 58 Z" fill="#D90F22" opacity="0.82"/>
+  </g>
+  <text x="170" y="74" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="46" letter-spacing="2">F1 InsightX</text>
+</svg>

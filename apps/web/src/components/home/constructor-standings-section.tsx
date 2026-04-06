@@ -44,10 +44,7 @@ export function ConstructorStandingsSection({
     <section className="constructor-standings">
       <article className="constructor-standings__intro championship-intro championship-intro--constructors">
         <div className="championship-intro__content">
-          <h2 className="section-title">
-            <span>Constructors</span>
-            <span>Championship</span>
-          </h2>
+          <h2 className="section-title">Constructors Championship</h2>
           <span className="section-meta">2026</span>
           <p className="championship-intro__description">Team order across the 2026 season.</p>
         </div>

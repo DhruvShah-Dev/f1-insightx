@@ -30,6 +30,10 @@ type CsvConstructor = {
   name: string;
 };
 
+type CsvRaceResult = {
+  race_id: string;
+};
+
 type CsvDriverStanding = {
   race_id: string;
   season: string;
@@ -96,15 +100,6 @@ type CsvFantasyInput = {
   podium_probability: string;
   top10_probability: string;
   volatility_proxy: string;
-};
-
-type SupabaseRaceWeekContextRow = {
-  race_id: string;
-  circuit_id: string;
-  season: number;
-  round: number;
-  status: string;
-  is_next_race: boolean;
 };
 
 type SupabaseRaceRow = {
@@ -264,6 +259,7 @@ type CsvPlatformDataset = {
   circuits: Map<string, CsvCircuit>;
   drivers: Map<string, CsvDriver>;
   constructors: Map<string, CsvConstructor>;
+  raceResults: CsvRaceResult[];
   driverStandings: CsvDriverStanding[];
   constructorStandings: CsvConstructorStanding[];
   raceWeekContext: CsvRaceWeekContext[];
@@ -272,12 +268,13 @@ type CsvPlatformDataset = {
 };
 
 const loadCsvPlatformDataset = cache(async (): Promise<CsvPlatformDataset> => {
-  const [races, circuits, drivers, constructors, driverStandings, constructorStandings, raceWeekContext, predictionSnapshots, fantasyInputs] =
+  const [races, circuits, drivers, constructors, raceResults, driverStandings, constructorStandings, raceWeekContext, predictionSnapshots, fantasyInputs] =
     await Promise.all([
       readCuratedCsv("races.csv") as Promise<CsvRace[]>,
       readCuratedCsv("circuits.csv") as Promise<CsvCircuit[]>,
       readCuratedCsv("drivers.csv") as Promise<CsvDriver[]>,
       readCuratedCsv("constructors.csv") as Promise<CsvConstructor[]>,
+      readCuratedCsv("race_results.csv") as Promise<CsvRaceResult[]>,
       readCuratedCsv("driver_standings.csv") as Promise<CsvDriverStanding[]>,
       readCuratedCsv("constructor_standings.csv") as Promise<CsvConstructorStanding[]>,
       readCuratedCsv("race_week_context.csv") as Promise<CsvRaceWeekContext[]>,
@@ -290,6 +287,7 @@ const loadCsvPlatformDataset = cache(async (): Promise<CsvPlatformDataset> => {
     circuits: new Map(circuits.map((item) => [item.id, item])),
     drivers: new Map(drivers.map((item) => [item.id, item])),
     constructors: new Map(constructors.map((item) => [item.id, item])),
+    raceResults,
     driverStandings,
     constructorStandings,
     raceWeekContext,
@@ -318,15 +316,19 @@ export const getCurrentDriverStandingsSnapshot = cache(async (): Promise<{
   items: DriverStandingSnapshot[];
 } | null> => {
   const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await getCurrentDriverStandingsSnapshotFromSupabase();
-    } catch {
-      return getCurrentDriverStandingsSnapshotFromCsv();
-    }
+  if (!supabase) {
+    return getCurrentDriverStandingsSnapshotFromCsv();
   }
 
-  return getCurrentDriverStandingsSnapshotFromCsv();
+  const [supabaseResult, csvResult] = await Promise.allSettled([
+    getCurrentDriverStandingsSnapshotFromSupabase(),
+    getCurrentDriverStandingsSnapshotFromCsv(),
+  ]);
+
+  return pickFresherStandingsSnapshot(
+    supabaseResult.status === "fulfilled" ? supabaseResult.value : null,
+    csvResult.status === "fulfilled" ? csvResult.value : null,
+  );
 });
 
 export const getCurrentConstructorStandingsSnapshot = cache(async (): Promise<{
@@ -336,15 +338,19 @@ export const getCurrentConstructorStandingsSnapshot = cache(async (): Promise<{
   items: ConstructorStandingSnapshot[];
 } | null> => {
   const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await getCurrentConstructorStandingsSnapshotFromSupabase();
-    } catch {
-      return getCurrentConstructorStandingsSnapshotFromCsv();
-    }
+  if (!supabase) {
+    return getCurrentConstructorStandingsSnapshotFromCsv();
   }
 
-  return getCurrentConstructorStandingsSnapshotFromCsv();
+  const [supabaseResult, csvResult] = await Promise.allSettled([
+    getCurrentConstructorStandingsSnapshotFromSupabase(),
+    getCurrentConstructorStandingsSnapshotFromCsv(),
+  ]);
+
+  return pickFresherStandingsSnapshot(
+    supabaseResult.status === "fulfilled" ? supabaseResult.value : null,
+    csvResult.status === "fulfilled" ? csvResult.value : null,
+  );
 });
 
 export const getUpcomingRacePrediction = cache(async (): Promise<UpcomingRacePrediction | null> => {
@@ -375,27 +381,7 @@ export const getFantasyInputsForCurrentRaceWeek = cache(async (season?: number, 
 
 async function getRaceWeekOverviewFromCsv(): Promise<RaceWeekOverview | null> {
   const dataset = await loadCsvPlatformDataset();
-  const latestCompleted = dataset.raceWeekContext
-    .filter((row) => row.status === "completed")
-    .sort((left, right) =>
-      compareSeasonRoundDesc(
-        { season: Number(left.season), round: Number(left.round) },
-        { season: Number(right.season), round: Number(right.round) },
-      ),
-    )[0];
-  const nextRace = dataset.raceWeekContext.find((row) => row.is_next_race === "true" || row.is_next_race === "True");
-
-  const currentSeason =
-    parseNumber(nextRace?.season) ?? parseNumber(latestCompleted?.season) ?? null;
-  if (currentSeason === null) {
-    return null;
-  }
-
-  return {
-    currentSeason,
-    latestCompletedRace: latestCompleted ? mapRaceRef(latestCompleted.race_id, dataset) : null,
-    nextRace: nextRace ? mapRaceRef(nextRace.race_id, dataset) : null,
-  };
+  return deriveCsvRaceWeekOverview(dataset);
 }
 
 async function getCurrentDriverStandingsSnapshotFromCsv() {
@@ -407,7 +393,7 @@ async function getCurrentDriverStandingsSnapshotFromCsv() {
 
   const items = dataset.driverStandings
     .filter((row) => row.race_id === overview.latestCompletedRace?.id)
-    .sort((left, right) => Number(left.standing_position) - Number(right.standing_position))
+    .sort((left, right) => compareDriverStandingRows(left, right))
     .map((row) => ({
       driverId: row.driver_id,
       driverName: dataset.drivers.get(row.driver_id)?.full_name ?? row.driver_id,
@@ -423,7 +409,7 @@ async function getCurrentDriverStandingsSnapshotFromCsv() {
     season: overview.latestCompletedRace.season,
     round: overview.latestCompletedRace.round,
     race: overview.latestCompletedRace,
-    items,
+    items: sortDriverStandingSnapshots(items),
   };
 }
 
@@ -436,7 +422,13 @@ async function getCurrentConstructorStandingsSnapshotFromCsv() {
 
   const items = dataset.constructorStandings
     .filter((row) => row.race_id === overview.latestCompletedRace?.id)
-    .sort((left, right) => Number(left.standing_position) - Number(right.standing_position))
+    .sort(
+      (left, right) =>
+        Number(right.points) - Number(left.points) ||
+        Number(right.wins) - Number(left.wins) ||
+        Number(left.standing_position) - Number(right.standing_position) ||
+        left.constructor_id.localeCompare(right.constructor_id),
+    )
     .map((row) => ({
       constructorId: row.constructor_id,
       constructorName: dataset.constructors.get(row.constructor_id)?.name ?? row.constructor_id,
@@ -449,7 +441,7 @@ async function getCurrentConstructorStandingsSnapshotFromCsv() {
     season: overview.latestCompletedRace.season,
     round: overview.latestCompletedRace.round,
     race: overview.latestCompletedRace,
-    items,
+    items: sortConstructorStandingSnapshots(items),
   };
 }
 
@@ -524,44 +516,49 @@ async function getRaceWeekOverviewFromSupabase(): Promise<RaceWeekOverview | nul
     return null;
   }
 
-  const { data: contexts, error: contextError } = await supabase
-    .from("race_week_context")
-    .select("*")
-    .order("season", { ascending: false })
-    .order("round", { ascending: false });
-
-  if (contextError) {
-    throw new Error("Failed to load canonical race week overview.");
-  }
-
-  const contextRows = (contexts ?? []) as SupabaseRaceWeekContextRow[];
-  const latestCompleted = contextRows.find((row) => row.status === "completed");
-  const nextRace = contextRows.find((row) => row.is_next_race === true);
-  const currentSeason = nextRace?.season ?? latestCompleted?.season ?? null;
-  if (!currentSeason) {
-    return null;
-  }
-
-  const raceIds = [latestCompleted?.race_id, nextRace?.race_id].filter(Boolean);
-  const circuitIds = [latestCompleted?.circuit_id, nextRace?.circuit_id].filter(Boolean);
-  const [racesResult, circuitsResult] = await Promise.all([
-    supabase.from("races").select("id, season, round, race_name, circuit_id, scheduled_at").in("id", raceIds),
-    supabase.from("circuits").select("id, name, country").in("id", circuitIds),
+  const [racesResult, raceResultsResult] = await Promise.all([
+    supabase
+      .from("races")
+      .select("id, season, round, race_name, circuit_id, scheduled_at")
+      .order("season", { ascending: true })
+      .order("round", { ascending: true }),
+    supabase.from("race_results").select("race_id"),
   ]);
 
-  if (racesResult.error || circuitsResult.error) {
+  if (racesResult.error || raceResultsResult.error) {
     throw new Error("Failed to load canonical race week overview.");
   }
 
   const raceRows = (racesResult.data ?? []) as SupabaseRaceRow[];
-  const circuitRows = (circuitsResult.data ?? []) as SupabaseCircuitRow[];
+  const completedRaceIds = new Set(
+    ((raceResultsResult.data ?? []) as Array<{ race_id: string }>).map((row) => String(row.race_id)),
+  );
+  const { latestCompletedRaceRow, nextRaceRow } = deriveSupabaseRaceRows(raceRows, completedRaceIds);
+  const currentSeason = nextRaceRow?.season ?? latestCompletedRaceRow?.season ?? null;
+  if (!currentSeason) {
+    return null;
+  }
+
+  const circuitIds = [latestCompletedRaceRow?.circuit_id, nextRaceRow?.circuit_id].filter(Boolean);
+  const { data: circuits, error: circuitsError } = await supabase
+    .from("circuits")
+    .select("id, name, country")
+    .in("id", circuitIds);
+
+  if (circuitsError) {
+    throw new Error("Failed to load canonical race week overview.");
+  }
+
+  const circuitRows = (circuits ?? []) as SupabaseCircuitRow[];
   const raceMap = new Map(raceRows.map((race) => [race.id, race]));
   const circuitMap = new Map(circuitRows.map((circuit) => [circuit.id, circuit]));
 
   return {
     currentSeason,
-    latestCompletedRace: latestCompleted ? mapSupabaseRaceRef(latestCompleted.race_id, raceMap, circuitMap) : null,
-    nextRace: nextRace ? mapSupabaseRaceRef(nextRace.race_id, raceMap, circuitMap) : null,
+    latestCompletedRace: latestCompletedRaceRow
+      ? mapSupabaseRaceRef(latestCompletedRaceRow.id, raceMap, circuitMap)
+      : null,
+    nextRace: nextRaceRow ? mapSupabaseRaceRef(nextRaceRow.id, raceMap, circuitMap) : null,
   };
 }
 
@@ -596,7 +593,7 @@ async function getCurrentDriverStandingsSnapshotFromSupabase() {
     season: overview.latestCompletedRace.season,
     round: overview.latestCompletedRace.round,
     race: overview.latestCompletedRace,
-    items: standingsRows.map((row) => ({
+    items: sortDriverStandingSnapshots(standingsRows.map((row) => ({
       driverId: String(row.driver_id),
       driverName: driverMap.get(String(row.driver_id))?.full_name ?? String(row.driver_id),
       nationality: driverMap.get(String(row.driver_id))?.nationality ?? null,
@@ -605,7 +602,7 @@ async function getCurrentDriverStandingsSnapshotFromSupabase() {
       standingPosition: Number(row.standing_position),
       points: Number(row.points),
       wins: Number(row.wins ?? 0),
-    })),
+    }))),
   };
 }
 
@@ -636,13 +633,13 @@ async function getCurrentConstructorStandingsSnapshotFromSupabase() {
     season: overview.latestCompletedRace.season,
     round: overview.latestCompletedRace.round,
     race: overview.latestCompletedRace,
-    items: standingsRows.map((row) => ({
+    items: sortConstructorStandingSnapshots(standingsRows.map((row) => ({
       constructorId: String(row.constructor_id),
       constructorName: constructorMap.get(String(row.constructor_id))?.name ?? String(row.constructor_id),
       standingPosition: Number(row.standing_position),
       points: Number(row.points),
       wins: Number(row.wins ?? 0),
-    })),
+    }))),
   };
 }
 
@@ -817,4 +814,104 @@ function buildConstructorOutlook(entries: UpcomingPredictionEntry[]) {
       ),
     }))
     .sort((left, right) => left.averageProjectedFinish - right.averageProjectedFinish);
+}
+
+function deriveCsvRaceWeekOverview(dataset: CsvPlatformDataset): RaceWeekOverview | null {
+  const completedRaceIds = new Set(dataset.raceResults.map((row) => row.race_id));
+  const now = Date.now();
+  const latestCompletedRace = [...dataset.races]
+    .filter((race) => new Date(race.scheduled_at).getTime() <= now && completedRaceIds.has(race.id))
+    .sort((left, right) =>
+      compareSeasonRoundDesc(
+        { season: Number(left.season), round: Number(left.round) },
+        { season: Number(right.season), round: Number(right.round) },
+      ),
+    )[0];
+  const nextRace = [...dataset.races]
+    .filter((race) => new Date(race.scheduled_at).getTime() > now)
+    .sort((left, right) => new Date(left.scheduled_at).getTime() - new Date(right.scheduled_at).getTime())[0];
+
+  const currentSeason = parseNumber(nextRace?.season) ?? parseNumber(latestCompletedRace?.season) ?? null;
+  if (currentSeason === null) {
+    return null;
+  }
+
+  return {
+    currentSeason,
+    latestCompletedRace: latestCompletedRace ? mapRaceRef(latestCompletedRace.id, dataset) : null,
+    nextRace: nextRace ? mapRaceRef(nextRace.id, dataset) : null,
+  };
+}
+
+function deriveSupabaseRaceRows(races: SupabaseRaceRow[], completedRaceIds: Set<string>) {
+  const now = Date.now();
+  const latestCompletedRaceRow = [...races]
+    .filter((race) => new Date(race.scheduled_at).getTime() <= now && completedRaceIds.has(race.id))
+    .sort((left, right) =>
+      compareSeasonRoundDesc(
+        { season: left.season, round: left.round },
+        { season: right.season, round: right.round },
+      ),
+    )[0];
+  const nextRaceRow = [...races]
+    .filter((race) => new Date(race.scheduled_at).getTime() > now)
+    .sort((left, right) => new Date(left.scheduled_at).getTime() - new Date(right.scheduled_at).getTime())[0];
+
+  return { latestCompletedRaceRow, nextRaceRow };
+}
+
+function compareDriverStandingRows(left: CsvDriverStanding, right: CsvDriverStanding) {
+  return (
+    Number(right.points) - Number(left.points) ||
+    Number(right.wins) - Number(left.wins) ||
+    Number(left.standing_position) - Number(right.standing_position) ||
+    left.driver_id.localeCompare(right.driver_id)
+  );
+}
+
+function sortDriverStandingSnapshots(items: DriverStandingSnapshot[]) {
+  return [...items].sort(
+    (left, right) =>
+      right.points - left.points ||
+      right.wins - left.wins ||
+      left.standingPosition - right.standingPosition ||
+      left.driverId.localeCompare(right.driverId),
+  );
+}
+
+function sortConstructorStandingSnapshots(items: ConstructorStandingSnapshot[]) {
+  return [...items].sort(
+    (left, right) =>
+      right.points - left.points ||
+      right.wins - left.wins ||
+      left.standingPosition - right.standingPosition ||
+      left.constructorId.localeCompare(right.constructorId),
+  );
+}
+
+function pickFresherStandingsSnapshot<
+  T extends {
+    season: number;
+    round: number;
+    race: CanonicalRaceRef;
+    items: unknown[];
+  },
+>(preferred: T | null, fallback: T | null): T | null {
+  if (!preferred) {
+    return fallback;
+  }
+  if (!fallback) {
+    return preferred;
+  }
+
+  const preferredKey = preferred.season * 100 + preferred.round;
+  const fallbackKey = fallback.season * 100 + fallback.round;
+  if (fallbackKey > preferredKey) {
+    return fallback;
+  }
+  if (preferredKey > fallbackKey) {
+    return preferred;
+  }
+
+  return preferred.items.length >= fallback.items.length ? preferred : fallback;
 }

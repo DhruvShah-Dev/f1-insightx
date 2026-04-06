@@ -14,7 +14,7 @@ F1 InsightX is a Formula 1 analytics web app built around two product surfaces: 
 
 - Frontend: Next.js 16, React, TypeScript, Tailwind CSS
 - Backend: Next.js App Router server routes
-- Data pipeline: Python, Jolpica, OpenF1
+- Data pipeline: Python, Jolpica, FastF1
 - Database target: Supabase Postgres
 - Automation: GitHub Actions
 - Deployment target: Vercel Hobby + Supabase Free
@@ -55,6 +55,10 @@ npm run dev
 ```
 
 App URL: `http://localhost:3000`
+
+Optional public-contact variable:
+
+- `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL` for privacy/deletion request routing in the app UI and legal pages
 
 ## Data pipeline
 
@@ -102,3 +106,6 @@ python scripts/refresh_driver_portraits.py
 - [Supabase Auth Setup](./docs/supabase-auth-setup.md)
 - [Abuse Protection](./docs/abuse-protection.md)
 - [Error Handling](./docs/error-handling.md)
+- [Privacy Policy](./apps/web/src/app/privacy/page.tsx)
+- [Terms of Use](./apps/web/src/app/terms/page.tsx)
+- [Cookie Notice](./apps/web/src/app/cookies/page.tsx)

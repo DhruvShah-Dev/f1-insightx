@@ -1,5 +1,5 @@
 import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
-import { createPublicCacheHeaders, mergeHeaders } from "@/lib/http/headers";
+import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { getUpcomingRacePrediction } from "@/lib/server/f1-platform";
 
@@ -12,7 +12,7 @@ export async function GET(request: Request) {
       status: 429,
       code: "rate_limited",
       message: "Too many prediction requests. Try again shortly.",
-      headers: mergeHeaders(cacheHeaders, rateLimit.headers),
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }
 
@@ -22,7 +22,7 @@ export async function GET(request: Request) {
   } catch (error) {
     return apiErrorFrom(error, {
       fallbackMessage: "Prediction data is unavailable right now.",
-      headers: mergeHeaders(cacheHeaders, rateLimit.headers),
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
       logContext: "api:predictions:upcoming",
     });
   }

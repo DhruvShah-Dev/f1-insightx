@@ -5,30 +5,37 @@ import { getServerEnv } from "@/lib/env";
 import { ensureProfileFromUserMetadata } from "@/lib/account/profile";
 import { sanitizeInternalRedirectPath } from "@/lib/auth/navigation";
 import { logServerError } from "@/lib/errors/logger";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+
+function applyResponseHeaders(response: NextResponse, headers: Record<string, string>) {
+  for (const [key, value] of Object.entries(headers)) {
+    response.headers.set(key, value);
+  }
+}
 
 export async function GET(request: Request) {
   const { supabaseUrl, supabaseAnonKey, hasSupabaseAuth, hasSupabaseAdmin, appUrl } = getServerEnv();
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.authCallback);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.authCallback);
   if (!rateLimit.ok) {
     return NextResponse.redirect(new URL("/account?error=too-many-auth-attempts", request.url), {
-      headers: rateLimit.headers,
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }
 
   if (!hasSupabaseAuth || !supabaseUrl || !supabaseAnonKey) {
     return NextResponse.redirect(new URL("/account?error=supabase-auth-not-configured", request.url), {
-      headers: rateLimit.headers,
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }
 
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
-  const next = sanitizeInternalRedirectPath(requestUrl.searchParams.get("next"), "/profile");
+  const next = sanitizeInternalRedirectPath(requestUrl.searchParams.get("next"), "/account");
 
   if (!code) {
     return NextResponse.redirect(new URL("/account?error=missing-auth-code", request.url), {
-      headers: rateLimit.headers,
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }
 
@@ -52,9 +59,7 @@ export async function GET(request: Request) {
   if (error) {
     logServerError("auth:callback:exchange-code", error, { next });
     response.headers.set("location", new URL("/account?error=auth-callback-failed", request.url).toString());
-    Object.entries(rateLimit.headers).forEach(([key, value]) => {
-      response.headers.set(key, value);
-    });
+    applyResponseHeaders(response, mergeHeaders(NO_STORE_HEADERS, rateLimit.headers));
     return response;
   }
 
@@ -68,15 +73,11 @@ export async function GET(request: Request) {
     } catch (error) {
       logServerError("auth:callback:profile-bootstrap", error, { userId: user.id });
       response.headers.set("location", new URL("/account?error=profile-bootstrap-failed", request.url).toString());
-      Object.entries(rateLimit.headers).forEach(([key, value]) => {
-        response.headers.set(key, value);
-      });
+      applyResponseHeaders(response, mergeHeaders(NO_STORE_HEADERS, rateLimit.headers));
       return response;
     }
   }
 
-  Object.entries(rateLimit.headers).forEach(([key, value]) => {
-    response.headers.set(key, value);
-  });
+  applyResponseHeaders(response, mergeHeaders(NO_STORE_HEADERS, rateLimit.headers));
   return response;
 }

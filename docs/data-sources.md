@@ -24,32 +24,19 @@ Why:
 Reference:
 - https://github.com/jolpica/jolpica-f1
 
-### OpenF1
-
-Role:
-- session-level timing context
-- weather
-- positions
-- pit and stint-adjacent context when available
-
-Why:
-- modern free API
-- useful for richer scenario features later
-
-Reference:
-- https://openf1.org/
-
 ### FastF1
 
 Role:
-- Python-first analysis
 - session loading
-- telemetry and lap-level enrichment
-- feature engineering and backtesting
+- lap-level timing
+- weather
+- results
+- optional telemetry and position extraction
+- Python-side analysis and feature engineering
 
 Why:
-- ideal for the Python part of the project
-- strong tooling for later model development
+- now powers the session-rich ingestion layer in this repository
+- strong tooling for later model development and backtesting
 
 Reference:
 - https://docs.fastf1.dev/
@@ -92,4 +79,4 @@ Reference:
 
 ## Modeling principle
 
-Historical structured data should be trusted first. Rich telemetry and weather features should be additive, not required, until the ingestion pipeline is stable.
+Historical structured data should be trusted first. Rich telemetry and weather features are now ingested through FastF1, but should remain additive rather than mandatory for every product surface.

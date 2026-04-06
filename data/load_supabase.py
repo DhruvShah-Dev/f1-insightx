@@ -141,7 +141,132 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
             "source_label",
         ],
     ),
+    (
+        "driver_form_snapshots",
+        "features/driver_form_snapshots.csv",
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "regulation_era",
+            "season_weight",
+            "session_completeness",
+            "recent_pace_rank",
+            "recent_gap_to_best_s",
+            "fp1_setup_gap_s",
+            "fp2_long_run_pace_s",
+            "fp2_degradation_s_per_lap",
+            "fp3_short_run_pace_s",
+            "qualifying_pace_s",
+            "teammate_delta_s",
+            "top_speed_kph",
+            "reliability_index",
+            "weather_risk_index",
+            "source_label",
+        ],
+    ),
+    (
+        "constructor_form_snapshots",
+        "features/constructor_form_snapshots.csv",
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "constructor_id",
+            "regulation_era",
+            "two_car_long_run_pace_s",
+            "two_car_quali_pace_s",
+            "recent_pace_rank",
+            "reliability_index",
+            "weather_risk_index",
+            "source_label",
+        ],
+    ),
+    (
+        "prediction_feature_snapshots",
+        "model_inputs/prediction_model_inputs.csv",
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "regulation_era",
+            "session_completeness",
+            "recent_pace_rank",
+            "recent_gap_to_best_s",
+            "fp1_setup_gap_s",
+            "fp2_long_run_pace_s",
+            "fp2_degradation_s_per_lap",
+            "fp3_short_run_pace_s",
+            "qualifying_pace_s",
+            "teammate_delta_s",
+            "constructor_long_run_pace_s",
+            "constructor_quali_pace_s",
+            "constructor_reliability_index",
+            "weather_risk_index",
+            "driver_reliability_index",
+            "source_label",
+        ],
+    ),
+    (
+        "strategy_baselines",
+        "predictions/strategy_baselines.csv",
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "recommended_stop_count",
+            "preferred_primary_compound",
+            "preferred_secondary_compound",
+            "pit_window_start_lap",
+            "pit_window_end_lap",
+            "tyre_life_index",
+            "degradation_risk",
+            "strategy_confidence",
+            "rationale",
+            "source_label",
+        ],
+    ),
+    (
+        "fastf1_prediction_snapshots",
+        "predictions/fastf1_prediction_snapshots.csv",
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "generated_at",
+            "model_version",
+            "predicted_score",
+            "projected_finish",
+            "winner_probability",
+            "podium_probability",
+            "top10_probability",
+            "confidence_score",
+            "rationale",
+            "source_label",
+        ],
+    ),
 ]
+
+OPTIONAL_TABLES = {
+    "driver_form_snapshots",
+    "constructor_form_snapshots",
+    "prediction_feature_snapshots",
+    "strategy_baselines",
+    "fastf1_prediction_snapshots",
+}
 
 SUPPLEMENTAL_DRIVERS: dict[str, dict[str, str]] = {
     "arvid_lindblad": {"driver_code": "LIN", "first_name": "Arvid", "last_name": "Lindblad", "full_name": "Arvid Lindblad", "nationality": "British"},
@@ -191,6 +316,11 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     "model_features": {"season", "round", "driver_standing_position", "constructor_standing_position"},
     "prediction_snapshots": {"season", "round", "projected_finish"},
     "fantasy_inputs": {"season", "round"},
+    "driver_form_snapshots": {"season", "round", "session_completeness"},
+    "constructor_form_snapshots": {"season", "round"},
+    "prediction_feature_snapshots": {"season", "round", "session_completeness"},
+    "strategy_baselines": {"season", "round", "recommended_stop_count", "pit_window_start_lap", "pit_window_end_lap"},
+    "fastf1_prediction_snapshots": {"season", "round", "projected_finish"},
 }
 
 
@@ -323,6 +453,12 @@ def copy_csv(
                 buffer.truncate(0)
 
 
+def resolve_table_path(settings, file_name: str) -> Path:
+    if "/" in file_name or "\\" in file_name:
+        return settings.curated_dir.parent / Path(file_name)
+    return settings.curated_dir / file_name
+
+
 def main() -> None:
     args = parse_args()
     load_dotenv(ROOT_DIR / ".env")
@@ -332,7 +468,10 @@ def main() -> None:
         raise RuntimeError("DATABASE_URL is required to load data into Supabase/Postgres.")
 
     settings = load_settings()
-    schema_sql = (settings.sql_dir / "001_core_schema.sql").read_text(encoding="utf-8")
+    schema_sql = "\n\n".join(
+        path.read_text(encoding="utf-8")
+        for path in sorted(settings.sql_dir.glob("*.sql"))
+    )
     missing_driver_ids, missing_constructor_ids = scan_missing_reference_ids(settings.curated_dir)
 
     with psycopg.connect(database_url) as connection:
@@ -341,16 +480,19 @@ def main() -> None:
                 cursor.execute(schema_sql)
 
             cursor.execute(
-                "TRUNCATE TABLE fantasy_inputs, prediction_snapshots, model_features, race_week_context, constructor_standings, driver_standings, fantasy_pricing, strategy_profiles, sprint_results, race_results, qualifying_results, races, circuits, constructors, drivers RESTART IDENTITY CASCADE"
+                "TRUNCATE TABLE fastf1_prediction_snapshots, strategy_baselines, prediction_feature_snapshots, constructor_form_snapshots, driver_form_snapshots, fantasy_inputs, prediction_snapshots, model_features, race_week_context, constructor_standings, driver_standings, fantasy_pricing, strategy_profiles, sprint_results, race_results, qualifying_results, races, circuits, constructors, drivers RESTART IDENTITY CASCADE"
             )
 
             for table, file_name, columns in TABLE_LOAD_ORDER:
                 extra_rows: list[dict[str, str]] | None = None
+                file_path = resolve_table_path(settings, file_name)
+                if table in OPTIONAL_TABLES and not file_path.exists():
+                    continue
                 if table == "drivers":
                     extra_rows = build_supplemental_rows(table, missing_driver_ids, columns)
                 elif table == "constructors":
                     extra_rows = build_supplemental_rows(table, missing_constructor_ids, columns)
-                copy_csv(cursor, table, columns, settings.curated_dir / file_name, extra_rows=extra_rows)
+                copy_csv(cursor, table, columns, file_path, extra_rows=extra_rows)
 
         connection.commit()
 

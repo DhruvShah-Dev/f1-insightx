@@ -3,6 +3,7 @@
 import { startTransition, useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { LegalLinks } from "@/components/legal/legal-links";
 import { getSupabaseBrowserClient } from "@/lib/auth/supabase-browser";
 import { getNetworkErrorMessage } from "@/lib/errors/client";
 
@@ -31,10 +32,10 @@ function getFriendlyErrorMessage(message: string) {
     return "Check your inbox and confirm your email before signing in.";
   }
   if (normalized.includes("user already registered")) {
-    return "An account already exists for this email.";
+    return "If an account already exists for this email, sign in or check your inbox for a confirmation link.";
   }
   if (normalized.includes("provider is not enabled") || normalized.includes("unsupported provider")) {
-    return "Google sign-in is not enabled yet. Turn it on in Supabase under Authentication > Providers > Google.";
+    return "Google sign-in is unavailable right now. Try email sign-in instead.";
   }
   if (normalized.includes("rate limit")) {
     return "Too many attempts were made from this browser. Wait a moment and try again.";
@@ -94,7 +95,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
 
     try {
       const supabase = getSupabaseBrowserClient();
-      const redirectTo = `${window.location.origin}/auth/callback?next=/profile`;
+      const redirectTo = `${window.location.origin}/auth/callback?next=/account`;
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo },
@@ -116,7 +117,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
     setNoticeMessage("");
 
     if (!hasSupabaseAuth) {
-      setErrorMessage("Supabase Auth is not configured yet.");
+      setErrorMessage("Authentication is unavailable right now.");
       return;
     }
 
@@ -134,7 +135,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
     setNoticeMessage("");
 
     if (!hasSupabaseAuth) {
-      setErrorMessage("Supabase Auth is not configured yet.");
+      setErrorMessage("Authentication is unavailable right now.");
       return;
     }
 
@@ -164,12 +165,12 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
           return;
         }
 
-        router.push("/profile");
+        router.push("/account");
         router.refresh();
         return;
       }
 
-      const redirectTo = `${window.location.origin}/auth/callback?next=/profile`;
+      const redirectTo = `${window.location.origin}/auth/callback?next=/account`;
       const { data, error } = await supabase.auth.signUp({
         email: email.trim(),
         password,
@@ -180,18 +181,12 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
 
       if (error) {
         const friendly = getFriendlyErrorMessage(error.message);
-        if (friendly === "An account already exists for this email.") {
-          setMode("sign-in");
-          setPassword("");
-          setNoticeMessage("An account already exists for this email. Sign in to continue to your profile.");
-          return;
-        }
         setErrorMessage(friendly);
         return;
       }
 
       if (data.session) {
-        router.push("/profile");
+        router.push("/account");
         router.refresh();
         return;
       }
@@ -259,12 +254,12 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
 
         {!hasSupabaseAuth ? (
           <div className="status-banner">
-            Authentication is not configured yet. Add the required public auth settings to enable email and Google sign-in.
+            Authentication is temporarily unavailable right now.
           </div>
         ) : null}
         {hasSupabaseAuth && !hasProfilePersistence ? (
           <div className="status-banner">
-            Profile saving is not configured yet. Sign-in still works, but profile customization is currently unavailable.
+            Profile customization is temporarily unavailable. Sign-in still works.
           </div>
         ) : null}
 
@@ -352,6 +347,11 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
             </div>
           </form>
         )}
+
+        <div className="account-legal-copy">
+          By creating an account or signing in, you acknowledge the Privacy Policy and Cookie Notice and agree to the Terms of Use.
+          <LegalLinks className="legal-links legal-links--inline" />
+        </div>
       </div>
     </section>
   );
