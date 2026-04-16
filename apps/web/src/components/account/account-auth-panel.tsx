@@ -68,6 +68,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
   const [noticeMessage, setNoticeMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const isModalSurface = surface === "modal";
 
   useEffect(() => {
     if (mode === "sign-up" && signUpStep === "credentials") {
@@ -227,12 +228,12 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
       <div className={`account-card ${surface === "modal" ? "account-card--modal" : ""}`}>
         {surface === "modal" ? (
           <div className="account-card__modal-header">
-            <div>
-              <p className="subpage-eyebrow">Profile Access</p>
+            <div className="account-card__modal-copyblock">
+              <p className="subpage-eyebrow">Account</p>
               <h2 id="account-modal-title" className="account-card__modal-title">
                 Enter F1 InsightX
               </h2>
-              <p className="account-card__modal-copy">Sign in to continue or create a new profile in a cleaner, lighter flow.</p>
+              <p className="account-card__modal-copy">Sign in or create a profile.</p>
             </div>
             {onClose ? (
               <button type="button" className="account-modal__close" onClick={onClose} aria-label="Close profile access dialog">
@@ -267,11 +268,11 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
         {noticeMessage ? <div className="account-feedback account-feedback--notice">{noticeMessage}</div> : null}
 
         {mode === "sign-up" && signUpStep === "identity" ? (
-          <form className="account-form" onSubmit={handleContinueToSignUp}>
+          <form className={`account-form ${isModalSurface ? "account-form--modal" : ""}`} onSubmit={handleContinueToSignUp}>
             <div className="account-form__section account-form__section--first">
               <div className="account-form__heading">
                 <strong>Create your profile</strong>
-                <p>Start with your email, or use Google and go straight into your profile.</p>
+                {isModalSurface ? <p>Email first. Finish the rest inside your profile.</p> : <p>Start with your email, or use Google and go straight into your profile.</p>}
               </div>
               <label className="account-field">
                 <span>Email</span>
@@ -279,7 +280,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
               </label>
             </div>
 
-            <div className="account-form__actions account-form__actions--stacked">
+            <div className={`account-form__actions account-form__actions--stacked ${isModalSurface ? "account-form__actions--modal" : ""}`}>
               <button className="hero__cta hero__cta--primary" type="submit" disabled={!hasSupabaseAuth}>
                 Continue with email
               </button>
@@ -294,15 +295,19 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
             </div>
           </form>
         ) : (
-          <form className="account-form" onSubmit={handleSubmit}>
+          <form className={`account-form ${isModalSurface ? "account-form--modal" : ""}`} onSubmit={handleSubmit}>
             <div className="account-form__section account-form__section--first">
               <div className="account-form__heading">
-                <strong>{mode === "sign-in" ? "Sign in to your profile" : "Finish your account"}</strong>
-                <p>
-                  {mode === "sign-in"
-                    ? "Use your email and password or jump in with Google."
-                    : `Use ${readEmailPreview(email)} as the account email, then set a secure password.`}
-                </p>
+                <strong>{mode === "sign-in" ? "Sign in" : "Finish your account"}</strong>
+                {isModalSurface ? (
+                  <p>{mode === "sign-in" ? "Email and password, or Google." : `Password for ${readEmailPreview(email)}.`}</p>
+                ) : (
+                  <p>
+                    {mode === "sign-in"
+                      ? "Use your email and password or jump in with Google."
+                      : `Use ${readEmailPreview(email)} as the account email, then set a secure password.`}
+                  </p>
+                )}
               </div>
 
               <div className="account-field-grid">
@@ -318,7 +323,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
                     onChange={(event) => setPassword(event.target.value)}
                     placeholder={mode === "sign-in" ? "Enter your password" : "At least 8 characters"}
                   />
-                  {mode === "sign-up" ? (
+                  {mode === "sign-up" && !isModalSurface ? (
                     <small className="account-field__hint">
                       A default username is created automatically. You can review your avatar, favorites, and username after you land in your profile.
                     </small>
@@ -327,7 +332,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
               </div>
             </div>
 
-            <div className="account-form__actions">
+            <div className={`account-form__actions ${isModalSurface ? "account-form__actions--modal" : ""}`}>
               <button className="hero__cta hero__cta--primary" type="submit" disabled={isSubmitting || !hasSupabaseAuth}>
                 {isSubmitting ? "Working..." : mode === "sign-up" ? "Create account" : "Sign in"}
               </button>
@@ -348,8 +353,10 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
           </form>
         )}
 
-        <div className="account-legal-copy">
-          By creating an account or signing in, you acknowledge the Privacy Policy and Cookie Notice and agree to the Terms of Use.
+        <div className={`account-legal-copy ${isModalSurface ? "account-legal-copy--modal" : ""}`}>
+          {isModalSurface
+            ? "Privacy, cookies, and terms apply."
+            : "By creating an account or signing in, you acknowledge the Privacy Policy and Cookie Notice and agree to the Terms of Use."}
           <LegalLinks className="legal-links legal-links--inline" />
         </div>
       </div>

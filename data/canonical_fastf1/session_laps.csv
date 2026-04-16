@@ -1,0 +1,1 @@
+id,session_id,event_entry_id,race_id,driver_id,constructor_id,lap_number,stint_number,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,top_speed_kph,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg,source_label

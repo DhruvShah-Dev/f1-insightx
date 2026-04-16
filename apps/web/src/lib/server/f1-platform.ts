@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { parseNumber, readCuratedCsv } from "@/lib/server/csv";
+import { getRaceWeekProductOverview } from "@/lib/server/race-week-product";
 import { getSupabaseAdminClient } from "@/lib/server/supabase";
 import { compareSeasonRoundDesc, groupBy, roundTo } from "@/lib/server/utils";
 
@@ -297,6 +298,15 @@ const loadCsvPlatformDataset = cache(async (): Promise<CsvPlatformDataset> => {
 });
 
 export const getRaceWeekOverview = cache(async (): Promise<RaceWeekOverview | null> => {
+  const productOverview = await getRaceWeekProductOverview();
+  if (productOverview?.nextRace || productOverview?.latestCompletedRace) {
+    return {
+      currentSeason: productOverview.currentSeason,
+      latestCompletedRace: productOverview.latestCompletedRace,
+      nextRace: productOverview.nextRace,
+    };
+  }
+
   const supabase = getSupabaseAdminClient();
   if (supabase) {
     try {

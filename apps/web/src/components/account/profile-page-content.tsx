@@ -1,9 +1,10 @@
 import { ProfilePageShell } from "@/components/account/profile-page-shell";
 import { StatePanel } from "@/components/ui/state-panel";
 import { ACCOUNT_CONSTRUCTOR_OPTIONS, ACCOUNT_DRIVER_OPTIONS } from "@/lib/account/options";
-import { ensureProfileFromUserMetadata, getAuthProviderLabel, getUserProfileByIdWithClient } from "@/lib/account/profile";
+import { ensureProfileFromUserMetadata, getUserProfileByIdWithClient } from "@/lib/account/profile";
 import { logServerError } from "@/lib/errors/logger";
 import { getPrivacyContactEmail } from "@/lib/public-config";
+import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
 import type { User } from "@supabase/supabase-js";
 
 type ProfilePageContentProps = {
@@ -21,6 +22,10 @@ export async function ProfilePageContent({
   hasSupabaseAdmin,
   getProfileClient,
 }: ProfilePageContentProps) {
+  const [constructorStandings, driverStandings] = await Promise.all([
+    getCurrentSeasonConstructorStandings(),
+    getCurrentSeasonDriverStandings(),
+  ]);
   let profile = null;
   if (hasSupabaseAdmin) {
     try {
@@ -66,11 +71,12 @@ export async function ProfilePageContent({
     <ProfilePageShell
       userId={user.id}
       email={user.email ?? ""}
-      provider={getAuthProviderLabel(user)}
       hasProfilePersistence={hasSupabaseAdmin}
       privacyContactEmail={getPrivacyContactEmail()}
       constructors={ACCOUNT_CONSTRUCTOR_OPTIONS}
       drivers={ACCOUNT_DRIVER_OPTIONS}
+      constructorPositions={Object.fromEntries((constructorStandings?.items ?? []).map((item) => [item.constructorId, item.standingPosition]))}
+      driverPositions={Object.fromEntries((driverStandings?.items ?? []).map((item) => [item.driverId, item.standingPosition]))}
       initialProfile={
         profile
           ? {

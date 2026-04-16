@@ -1,0 +1,12 @@
+id,season,round,race_id,constructor_id,team_pace_s,long_run_pace_s,quali_pace_s,degradation_profile,reliability_score,track_affinity_score,avg_finish_position_recent,strategy_tendency_score,strategy_confidence,source_label
+2026-04-miami|alpine,2026,4,2026-04-miami,alpine,90.52,90.52,81.25999999999999,0.07125,0.3,0.30510835913312695,13.2,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|aston_martin,2026,4,2026-04-miami,aston_martin,93.16,93.16,82.58,0.09875,0.3,0.38811145510835915,14.9,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|audi,2026,4,2026-04-miami,audi,91.6,91.6,81.80000000000001,0.08249999999999999,0.5,0.35231051484921455,14.0,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|cadillac,2026,4,2026-04-miami,cadillac,92.56,92.56,82.28,0.0925,0.16666666666666669,0.36062378167641324,16.5,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|ferrari,2026,4,2026-04-miami,ferrari,88.84,88.84,80.42,0.05375,1.0,0.7094943240454077,5.5,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|haas,2026,4,2026-04-miami,haas,90.64,90.64,81.32,0.07250000000000001,0.4,0.40701754385964917,12.2,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|mclaren,2026,4,2026-04-miami,mclaren,89.44,89.44,80.72,0.06,0.7,0.7941176470588236,8.3,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|mercedes,2026,4,2026-04-miami,mercedes,88.36,88.36,80.18,0.04875,1.0,0.675266597867217,4.2,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|rb,2026,4,2026-04-miami,rb,90.64,90.64,81.32,0.07250000000000001,0.4666666666666667,0.4218500797448166,11.266666666666666,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|red_bull,2026,4,2026-04-miami,red_bull,90.28,90.28,81.13999999999999,0.06875,0.6000000000000001,0.6320376103657837,10.7,1.5,0.4,race_week_constructor_features_v2
+2026-04-miami|williams,2026,4,2026-04-miami,williams,92.32,92.32,82.16,0.09,0.5,0.46478844169246647,13.6,1.5,0.4,race_week_constructor_features_v2

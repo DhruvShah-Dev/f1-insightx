@@ -1,0 +1,3 @@
+id,season,round,race_id,entity_type,entity_id,storyline_type,priority_rank,headline,body,confidence_band,signal_confidence,source_label
+2026-04-miami|story|lead,2026,4,2026-04-miami,driver,antonelli,lead_signal,1,Andrea Kimi Antonelli sets the strongest opening signal,"Andrea Kimi Antonelli is strongest on one-lap pace, consistency. Confidence is low.",low,0.293995,race_week_storyline_v2
+2026-04-miami|story|deg,2026,4,2026-04-miami,constructor,aston_martin,degradation_warning,2,Aston Martin is carrying the sharpest tyre fade warning,Degradation is the weakest part of this constructor's weekend signal.,high,0.738492,race_week_storyline_v2

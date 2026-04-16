@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { FormEvent } from "react";
+import type { CSSProperties, FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { LegalLinks } from "@/components/legal/legal-links";
+import { ACCOUNT_API_ROUTES, buildUsernameCheckUrl, buildUsernameSuggestUrl, readAccountApiData } from "@/lib/account/api";
 import type { AccountConstructorOption, AccountDriverOption } from "@/lib/account/options";
 import { getProfileTheme } from "@/lib/account/profile-theme";
-import { AccountAvatar } from "@/components/account/account-avatar";
+import { AssetImage } from "@/components/ui/asset-image";
 import { getNetworkErrorMessage, readClientErrorMessage } from "@/lib/errors/client";
+import { getTeamAsset } from "@/lib/ui/asset-manifest";
 
 type ProfileSnapshot = {
   username: string;
@@ -26,15 +28,16 @@ type ProfileSnapshot = {
 type ProfilePageShellProps = {
   userId: string;
   email: string;
-  provider: string;
   hasProfilePersistence: boolean;
   privacyContactEmail: string | null;
   constructors: AccountConstructorOption[];
   drivers: AccountDriverOption[];
+  constructorPositions: Record<string, number>;
+  driverPositions: Record<string, number>;
   initialProfile: ProfileSnapshot | null;
 };
 
-type AvailabilityState = "idle" | "checking" | "available" | "taken" | "invalid";
+type AvailabilityState = "idle" | "checking" | "available" | "taken" | "invalid" | "error";
 
 function formatLockDate(value: string | null) {
   if (!value) {
@@ -81,11 +84,19 @@ function formatCountdown(value: string | null, now: number) {
 }
 
 function readProfileFromPayload(payload: unknown): ProfileSnapshot | null {
-  if (!payload || typeof payload !== "object" || !("profile" in payload) || !payload.profile || typeof payload.profile !== "object") {
+  const accountPayload = readAccountApiData<{ profile?: unknown }>(payload);
+  const candidateProfile =
+    accountPayload && typeof accountPayload === "object" && "profile" in accountPayload
+      ? accountPayload.profile
+      : payload && typeof payload === "object" && "profile" in payload
+        ? (payload as Record<string, unknown>).profile
+        : null;
+
+  if (!candidateProfile || typeof candidateProfile !== "object") {
     return null;
   }
 
-  const profile = payload.profile as Record<string, unknown>;
+  const profile = candidateProfile as Record<string, unknown>;
   if (typeof profile.username !== "string") {
     return null;
   }
@@ -107,11 +118,12 @@ function readProfileFromPayload(payload: unknown): ProfileSnapshot | null {
 export function ProfilePageShell({
   userId,
   email,
-  provider,
   hasProfilePersistence,
   privacyContactEmail,
   constructors,
   drivers,
+  constructorPositions,
+  driverPositions,
   initialProfile,
 }: ProfilePageShellProps) {
   const router = useRouter();
@@ -139,9 +151,10 @@ export function ProfilePageShell({
     [constructorId, constructors],
   );
   const selectedDriver = useMemo(() => drivers.find((item) => item.id === driverId) ?? null, [driverId, drivers]);
-  const savedConstructor = useMemo(
-    () => constructors.find((item) => item.id === savedProfile?.favoriteConstructorId) ?? null,
-    [constructors, savedProfile?.favoriteConstructorId],
+  const constructorAsset = useMemo(() => getTeamAsset(constructorId || savedProfile?.favoriteConstructorId), [constructorId, savedProfile?.favoriteConstructorId]);
+  const selectedDriverTeamAsset = useMemo(
+    () => getTeamAsset(selectedDriver?.teamId ?? constructorId ?? savedProfile?.favoriteConstructorId),
+    [constructorId, savedProfile?.favoriteConstructorId, selectedDriver?.teamId],
   );
 
   const usernameLockEndsOn = formatLockDate(savedProfile?.usernameLockedUntil ?? null);
@@ -151,7 +164,6 @@ export function ProfilePageShell({
   const usernameCountdown = formatCountdown(savedProfile?.usernameLockedUntil ?? null, countdownNow);
   const profileLockEndsOn = formatLockDate(savedProfile?.profileLockedUntil ?? null);
   const profileLocked = Boolean(savedProfile?.profileLockedUntil && new Date(savedProfile.profileLockedUntil).getTime() > countdownNow);
-  const profileCountdown = formatCountdown(savedProfile?.profileLockedUntil ?? null, countdownNow);
   const customUsernamePending = username.trim().length > 0 && suggestedUsername && username.trim().toLowerCase() !== suggestedUsername.toLowerCase();
   const displayName = username.trim() || "f1_user";
   const constructorLabel = selectedConstructor?.label ?? "No constructor selected";
@@ -160,6 +172,23 @@ export function ProfilePageShell({
   const activeTheme = getProfileTheme(savedProfile?.favoriteConstructorId);
   const constructorFieldLocked = profileLocked;
   const avatarFieldLocked = profileLocked;
+  const constructorLogoMedia = constructorAsset.badgeAssetPath;
+  const driverIdentityMedia = selectedDriver?.photoPath ?? selectedDriver?.fallbackPhotoPath ?? null;
+  const constructorStanding = selectedConstructor ? constructorPositions[selectedConstructor.id] ?? null : null;
+  const driverStanding = selectedDriver ? driverPositions[selectedDriver.id] ?? null : null;
+  const usernameHintMessage = usernameLocked
+    ? `Custom username locked${usernameLockEndsOn ? ` until ${usernameLockEndsOn}` : ""}.`
+    : availabilityState === "checking"
+      ? "Checking availability..."
+      : availabilityState === "error"
+        ? availabilityMessage || "Username availability could not be checked right now."
+        : isUsernameEditing
+          ? availabilityMessage || ""
+          : "";
+  const constructorHintMessage =
+    constructorFieldLocked && profileLockEndsOn ? `Constructor locked until ${profileLockEndsOn}.` : constructorFieldLocked ? "Constructor locked." : "";
+  const avatarHintMessage =
+    avatarFieldLocked && profileLockEndsOn ? `Profile image style locked until ${profileLockEndsOn}.` : avatarFieldLocked ? "Profile image style locked." : "";
 
   useEffect(() => {
     const hasAnyCountdown = usernameLocked || profileLocked;
@@ -188,13 +217,13 @@ export function ProfilePageShell({
     const controller = new AbortController();
     const loadSuggestion = async () => {
       try {
-        const params = new URLSearchParams();
-        if (constructorId) params.set("constructorId", constructorId);
-        if (driverId) params.set("driverId", driverId);
-        const response = await fetch(`/api/account/username/suggest?${params.toString()}`, { signal: controller.signal });
+        const response = await fetch(
+          buildUsernameSuggestUrl({ constructorId, driverId }),
+          { signal: controller.signal },
+        );
         const payload = (await response.json().catch(() => null)) as { username?: string; error?: string } | null;
         if (!response.ok || !payload?.username) {
-          setAvailabilityState("idle");
+          setAvailabilityState("error");
           setAvailabilityMessage("Username suggestion is unavailable right now.");
           return;
         }
@@ -212,7 +241,7 @@ export function ProfilePageShell({
         }
       } catch (error) {
         if (!(error instanceof DOMException && error.name === "AbortError")) {
-          setAvailabilityState("idle");
+          setAvailabilityState("error");
           setAvailabilityMessage("Username suggestion is unavailable right now.");
         }
       }
@@ -246,16 +275,17 @@ export function ProfilePageShell({
     const timeoutId = window.setTimeout(async () => {
       setAvailabilityState("checking");
       try {
-        const response = await fetch(
-          `/api/account/username/check?username=${encodeURIComponent(username)}`,
-          { signal: controller.signal },
-        );
+        const response = await fetch(buildUsernameCheckUrl(username), { signal: controller.signal });
         const payload = (await response.json().catch(() => null)) as { available?: boolean; error?: string } | null;
         if (!response.ok) {
-          setAvailabilityState("invalid");
-          const message = payload?.error ?? "Username is not available.";
+          const isValidationFailure = response.status === 400;
+          const state = isValidationFailure ? "invalid" : "error";
+          const message = isValidationFailure
+            ? payload?.error ?? "That username cannot be used."
+            : "Username availability could not be checked right now.";
+          setAvailabilityState(state);
           setAvailabilityMessage(message);
-          lastUsernameCheckRef.current = { username: normalizedUsername, state: "invalid", message };
+          lastUsernameCheckRef.current = { username: normalizedUsername, state, message };
           return;
         }
 
@@ -271,8 +301,8 @@ export function ProfilePageShell({
         lastUsernameCheckRef.current = { username: normalizedUsername, state, message };
       } catch (error) {
         if (!(error instanceof DOMException && error.name === "AbortError")) {
-          setAvailabilityState("idle");
-          setAvailabilityMessage("");
+          setAvailabilityState("error");
+          setAvailabilityMessage("Username availability could not be checked right now.");
         }
       }
     }, 400);
@@ -289,7 +319,7 @@ export function ProfilePageShell({
     setIsSaving(true);
 
     try {
-      const response = await fetch("/api/account/profile", {
+      const response = await fetch(ACCOUNT_API_ROUTES.profile, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -408,7 +438,7 @@ export function ProfilePageShell({
     setNoticeMessage("");
 
     try {
-      const response = await fetch("/api/account/export", { method: "POST" });
+      const response = await fetch(ACCOUNT_API_ROUTES.export, { method: "POST" });
       if (!response.ok) {
         const payload = (await response.json().catch(() => null)) as { error?: string | { message?: string } } | null;
         setErrorMessage(readClientErrorMessage(payload, "Unable to export your account data right now."));
@@ -435,77 +465,101 @@ export function ProfilePageShell({
   return (
     <main className={`subpage-shell account-page ${activeTheme.className}`} style={activeTheme.style}>
       <header className="account-profile-header">
-        <Link href="/" className="profile-return-link">
-          <span aria-hidden="true">/</span>
-          Return home
-        </Link>
+        <div className="account-profile-header__bar">
+          <Link href="/" className="profile-return-link">
+            <span aria-hidden="true">/</span>
+            Return home
+          </Link>
+          <div className="account-profile-header__title">Profile</div>
+          <button className="account-signout account-signout--header" type="button" onClick={handleSignOut} disabled={isSigningOut}>
+            {isSigningOut ? "Signing out..." : "Sign out"}
+          </button>
+        </div>
 
         <div className="account-profile-hero">
-          <div className="account-profile-hero__identity">
-            <div className="account-profile-hero__avatar">
-              <AccountAvatar constructorId={constructorId} driverId={driverId} avatarType={avatarType} />
-            </div>
-            <div className="account-profile-hero__copy">
-              <p className="subpage-eyebrow">{activeTheme.eyebrow}</p>
-              <h1 className="subpage-title">{displayName}</h1>
-              <div className="account-profile-hero__meta">
-                <span>{savedProfile?.usernameIsCustom ? "Custom username" : "Default username"}</span>
-                <span>{provider}</span>
-                <span>{email}</span>
-                {savedProfile?.favoriteConstructorId ? <span>{activeTheme.label}</span> : null}
+          <div className="account-profile-strip">
+            <article className="account-profile-hero__snapshot-card account-profile-hero__snapshot-card--constructor">
+              <div className="account-profile-hero__snapshot-media account-profile-hero__snapshot-media--team">
+                {constructorLogoMedia ? (
+                  <AssetImage
+                    src={constructorLogoMedia}
+                    fallbackSrc={constructorAsset.fallbackImagePath}
+                    alt={`${constructorLabel} logo`}
+                    fill
+                    className="account-profile-hero__snapshot-image account-profile-hero__snapshot-image--logo"
+                    sizes="112px"
+                    priority
+                    style={{ objectFit: "contain", objectPosition: "center center" }}
+                  />
+                ) : (
+                  <div className="account-profile-hero__snapshot-fallback">{constructorLabel}</div>
+                )}
               </div>
-            </div>
-          </div>
+              <div className="account-profile-hero__snapshot-copy">
+                <strong>{constructorLabel}</strong>
+                <p>{constructorStanding ? `P${constructorStanding} - Constructors Championship` : "Constructors Championship"}</p>
+              </div>
+            </article>
 
-          <div className="account-profile-hero__actions">
-            <div className="account-profile-hero__summary">
-              <strong>{selectedConstructor?.shortLabel ?? "F1"}</strong>
-              <p>{constructorLabel}</p>
+            <div className="account-profile-strip__username">
+              <h1 className="subpage-title">{displayName}</h1>
             </div>
-            <div className="account-profile-hero__summary">
-              <strong>{selectedDriver?.code ?? "USR"}</strong>
-              <p>{driverLabel}</p>
-            </div>
-            <button className="account-signout" type="button" onClick={handleSignOut} disabled={isSigningOut}>
-              {isSigningOut ? "Signing out..." : "Sign out"}
-            </button>
+
+            <article className="account-profile-hero__snapshot-card account-profile-hero__snapshot-card--driver">
+              <div
+                className="account-profile-hero__snapshot-media account-profile-hero__snapshot-media--driver"
+                style={
+                  {
+                    "--driver-team-primary": selectedDriverTeamAsset.primary,
+                    "--driver-team-accent": selectedDriverTeamAsset.accent,
+                  } as CSSProperties
+                }
+              >
+                {driverIdentityMedia ? (
+                  <AssetImage
+                    src={driverIdentityMedia}
+                    fallbackSrc={selectedDriver?.fallbackPhotoPath ?? "/assets/drivers/driver-placeholder.svg"}
+                    alt={`${driverLabel} portrait`}
+                    fill
+                    className="account-profile-hero__snapshot-image"
+                    sizes="112px"
+                    style={{ objectFit: "contain", objectPosition: "center center" }}
+                  />
+                ) : (
+                  <div className="account-profile-hero__snapshot-fallback">{driverLabel}</div>
+                )}
+              </div>
+              <div className="account-profile-hero__snapshot-copy">
+                <strong>{driverLabel}</strong>
+                <p>{driverStanding ? `P${driverStanding} - Drivers Championship` : "Drivers Championship"}</p>
+              </div>
+            </article>
           </div>
         </div>
       </header>
 
       <section className="account-profile-layout">
-        <aside className="workspace-panel account-profile-identity">
-          <div className="workspace-panel__eyebrow">Saved profile</div>
-          <div className="account-profile-identity__copy">
-            <strong>{displayName}</strong>
-            <p>{savedConstructor ? savedConstructor.label : "Default styling"}</p>
-            <p>{profileLocked ? `Constructor locked for ${profileCountdown ?? "cooldown active"}` : "Driver stays editable after save."}</p>
-          </div>
-        </aside>
-
         <section className="workspace-panel account-profile-editor">
-          <div className="workspace-panel__eyebrow">Profile settings</div>
-          <div className="workspace-panel__headline">Choose a constructor to personalize the profile. Driver changes stay open between race weeks.</div>
+          <div className="account-profile-editor__header">
+            <div className="account-profile-editor__copy">
+              <strong>Identity settings</strong>
+              <p>Choose the constructor, driver, and identity style tied to your profile.</p>
+            </div>
+          </div>
 
           {!hasProfilePersistence ? (
             <div className="status-banner">
-              Profile saving is temporarily unavailable. Sign-in still works, but profile updates are unavailable.
+              Profile saving is temporarily unavailable.
             </div>
           ) : null}
 
-          {profileLocked && profileLockEndsOn ? (
-            <div className="status-banner">Constructor and profile theme are locked until {profileLockEndsOn}. Favorite driver remains editable.</div>
-          ) : (
-            <div className="status-banner">Saving locks constructor and profile theme choices for 7 days. Favorite driver remains editable.</div>
-          )}
-
           {usernameLocked && usernameLockEndsOn ? (
-            <div className="status-banner">Your custom username is locked until {usernameLockEndsOn}. You can still update the rest of your profile.</div>
+            <div className="status-banner">Custom username locked until {usernameLockEndsOn}.</div>
           ) : null}
 
           {pendingConfirmation ? (
             <div className="account-feedback account-feedback--notice">
-              Saving a custom username will lock username edits for 7 days.
+              Saving a custom username locks edits for 7 days.
               <div className="account-form__actions">
                 <button className="hero__cta hero__cta--primary" type="button" onClick={handleConfirmUsernameChange} disabled={isSaving}>
                   {isSaving ? "Saving..." : "Accept and save"}
@@ -561,32 +615,27 @@ export function ProfilePageShell({
                     {usernameLocked ? <span>{usernameCountdown ?? "Locked"}</span> : <span aria-hidden="true">Edit</span>}
                   </button>
                 </div>
-                <small
-                  className={`account-field__hint ${
-                    availabilityState === "taken" || availabilityState === "invalid"
-                      ? "is-error"
-                      : availabilityState === "available"
-                        ? "is-success"
-                        : ""
-                  }`}
-                >
-                  {usernameLocked
-                    ? `Custom username locked${usernameLockEndsOn ? ` until ${usernameLockEndsOn}` : ""}.`
-                    : availabilityState === "checking"
-                      ? "Checking availability..."
-                      : !isUsernameEditing
-                        ? "Username is view-only until you unlock editing."
-                        : availabilityMessage || "Generated from constructor and driver abbreviations with a unique number."}
-                </small>
+                {usernameHintMessage ? (
+                  <small
+                    className={`account-field__hint ${
+                      availabilityState === "taken" || availabilityState === "invalid"
+                        ? "is-error"
+                        : availabilityState === "available"
+                          ? "is-success"
+                          : ""
+                    }`}
+                  >
+                    {usernameHintMessage}
+                  </small>
+                ) : null}
               </label>
               <label className="account-field">
                 <span>Email</span>
                 <input type="email" value={email} disabled />
-                <small className="account-field__hint">Managed by your sign-in provider.</small>
               </label>
             </div>
 
-            <div className="account-field-grid">
+            <div className="account-field-grid account-field-grid--paired">
               <label className="account-field">
                 <span>Favorite constructor</span>
                 <select value={constructorId} onChange={(event) => setConstructorId(event.target.value)} disabled={constructorFieldLocked}>
@@ -597,11 +646,6 @@ export function ProfilePageShell({
                     </option>
                   ))}
                 </select>
-                <small className="account-field__hint">
-                  {constructorFieldLocked
-                    ? `Constructor locked${profileLockEndsOn ? ` until ${profileLockEndsOn}` : ""}.`
-                    : "Saving locks the constructor theme for 7 days."}
-                </small>
               </label>
               <label className="account-field">
                 <span>Favorite driver</span>
@@ -613,13 +657,13 @@ export function ProfilePageShell({
                     </option>
                   ))}
                 </select>
-                <small className="account-field__hint is-success">Driver selection stays editable during the 7-day profile lock.</small>
               </label>
+              {constructorHintMessage ? <small className="account-field-grid__note">{constructorHintMessage}</small> : null}
             </div>
 
-            <fieldset className={`account-radio-group ${avatarFieldLocked ? "is-disabled" : ""}`}>
+            <fieldset className={`account-radio-group account-radio-group--identity ${avatarFieldLocked ? "is-disabled" : ""}`}>
               <legend>Profile image</legend>
-              <label>
+              <label className={avatarType === "constructor_logo" ? "is-selected" : ""}>
                 <input
                   type="radio"
                   name="profile-avatar"
@@ -627,9 +671,23 @@ export function ProfilePageShell({
                   onChange={() => setAvatarType("constructor_logo")}
                   disabled={avatarFieldLocked}
                 />
-                Use constructor identity
+                <div className="account-radio-card__media account-radio-card__media--team">
+                  <AssetImage
+                    src={constructorAsset.badgeAssetPath ?? constructorAsset.carImagePath ?? constructorAsset.fallbackImagePath}
+                    fallbackSrc={constructorAsset.fallbackImagePath}
+                    alt={`${constructorLabel} identity`}
+                    fill
+                    className="account-radio-card__image account-radio-card__image--team"
+                    sizes="112px"
+                    style={{ objectFit: constructorAsset.badgeAssetPath ? "contain" : "cover", objectPosition: constructorAsset.imagePosition ?? "center center" }}
+                  />
+                </div>
+                <div className="account-radio-card__copy">
+                  <strong>Use constructor identity</strong>
+                  <span>{constructorLabel}</span>
+                </div>
               </label>
-              <label>
+              <label className={avatarType === "driver_image" ? "is-selected" : ""}>
                 <input
                   type="radio"
                   name="profile-avatar"
@@ -637,13 +695,35 @@ export function ProfilePageShell({
                   onChange={() => setAvatarType("driver_image")}
                   disabled={avatarFieldLocked}
                 />
-                Use favorite driver image
+                <div
+                  className="account-radio-card__media account-radio-card__media--driver"
+                  style={
+                    {
+                      "--driver-team-primary": selectedDriverTeamAsset.primary,
+                      "--driver-team-accent": selectedDriverTeamAsset.accent,
+                    } as CSSProperties
+                  }
+                >
+                  {driverIdentityMedia ? (
+                    <AssetImage
+                      src={driverIdentityMedia}
+                      fallbackSrc={selectedDriver?.fallbackPhotoPath ?? "/assets/drivers/driver-placeholder.svg"}
+                      alt={`${driverLabel} portrait`}
+                      fill
+                      className="account-radio-card__image"
+                      sizes="112px"
+                      style={{ objectFit: "contain", objectPosition: "center center" }}
+                    />
+                  ) : (
+                    <div className="account-radio-card__fallback">{selectedDriver?.code ?? "DRV"}</div>
+                  )}
+                </div>
+                <div className="account-radio-card__copy">
+                  <strong>Use favorite driver image</strong>
+                  <span>{driverLabel}</span>
+                </div>
               </label>
-              <small className="account-field__hint">
-                {avatarFieldLocked
-                  ? `Profile image style locked${profileLockEndsOn ? ` until ${profileLockEndsOn}` : ""}.`
-                  : "Saving locks the constructor-driven profile presentation for 7 days."}
-              </small>
+              {avatarHintMessage ? <small className="account-field__hint">{avatarHintMessage}</small> : null}
             </fieldset>
 
             <div className="account-form__actions">
@@ -652,32 +732,32 @@ export function ProfilePageShell({
               </button>
             </div>
           </form>
-        </section>
 
-        <aside className="workspace-panel account-privacy-panel">
-          <div className="workspace-panel__eyebrow">Privacy</div>
-          <div className="account-profile-identity__copy">
-            <strong>Account data controls</strong>
-            <p>Download the account and profile data currently stored for your user.</p>
+          <section className="account-privacy-panel account-privacy-panel--inline">
+            <div className="account-profile-identity__copy">
+              <strong>Data controls</strong>
+              <p>Export your profile data or contact us to request deletion.</p>
+            </div>
             <div className="account-form__actions">
               <button className="hero__cta hero__cta--secondary" type="button" onClick={handleExport} disabled={isExporting}>
                 {isExporting ? "Preparing export..." : "Download my data"}
               </button>
             </div>
-            <p>
-              Profile edits happen in-product. Account deletion requests are currently handled manually.
+            <p className="account-privacy-panel__note">
+              Deletion requests are handled by email.
               {privacyContactEmail ? (
                 <>
                   {" "}Contact <a href={`mailto:${privacyContactEmail}?subject=${encodeURIComponent("F1 InsightX account deletion request")}`}>{privacyContactEmail}</a>.
                 </>
               ) : (
-                " Configure NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL before public launch so deletion requests have a visible contact path."
+                " Add a privacy contact before public launch."
               )}
             </p>
             <LegalLinks className="legal-links legal-links--stacked" />
-          </div>
-        </aside>
+          </section>
+        </section>
       </section>
     </main>
   );
 }
+

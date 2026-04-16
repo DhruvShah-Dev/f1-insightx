@@ -2,8 +2,8 @@ import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
 import { flattenZodError, raceScenarioSchema } from "@/lib/api/validation";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
-import { getRaceContext } from "@/lib/server/race-context";
-import { simulateRaceScenario } from "@/lib/server/race-simulator";
+import { getStrategyLabRaceProduct } from "@/lib/server/strategy-lab-product";
+import { simulateRaceScenario } from "@/lib/server/strategy-lab-simulator";
 
 export async function POST(request: Request) {
   const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.raceScenarioSimulate);
@@ -38,18 +38,18 @@ export async function POST(request: Request) {
   }
 
   try {
-    const raceContext = await getRaceContext(parsed.data.raceId);
-    if (!raceContext) {
+    const raceProduct = await getStrategyLabRaceProduct(parsed.data.raceId);
+    if (!raceProduct) {
         return apiError({
           status: 404,
           code: "not_found",
-          message: "Race context was not found for the requested scenario.",
+          message: "Strategy Lab data was not found for the requested scenario.",
           headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
         });
       }
 
     const missingDrivers = parsed.data.driverIds.filter(
-      (driverId) => !raceContext.entrants.some((entrant) => entrant.driverId === driverId),
+      (driverId) => !raceProduct.entrants.some((entrant) => entrant.driverId === driverId),
     );
 
     if (missingDrivers.length > 0) {
@@ -62,7 +62,9 @@ export async function POST(request: Request) {
         });
       }
 
-    return apiOk(simulateRaceScenario(parsed.data, raceContext), { headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
+    return apiOk(simulateRaceScenario(parsed.data, raceProduct), {
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+    });
   } catch (error) {
     return apiErrorFrom(error, {
       fallbackMessage: "The strategy engine could not run that scenario right now.",

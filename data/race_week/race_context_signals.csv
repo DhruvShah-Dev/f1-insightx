@@ -1,0 +1,2 @@
+id,season,round,race_id,strategic_complexity_signal,weather_signal,safety_car_signal,overtaking_signal,high_speed_signal,source_label
+2026-04-miami,2026,4,2026-04-miami,1.0,0.0,1.0,0.5,0.5,race_week_context_signals_v1

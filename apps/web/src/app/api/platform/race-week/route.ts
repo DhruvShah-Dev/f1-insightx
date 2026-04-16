@@ -1,7 +1,7 @@
 import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
-import { getRaceWeekOverview } from "@/lib/server/f1-platform";
+import { getRaceWeekProduct } from "@/lib/server/race-week-product";
 
 const cacheHeaders = createPublicCacheHeaders({ browserMaxAgeSeconds: 60, edgeMaxAgeSeconds: 300, staleWhileRevalidateSeconds: 900 });
 
@@ -17,8 +17,8 @@ export async function GET(request: Request) {
   }
 
   try {
-    const overview = await getRaceWeekOverview();
-    return apiOk({ overview }, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
+    const raceWeek = await getRaceWeekProduct();
+    return apiOk({ raceWeek }, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
   } catch (error) {
     return apiErrorFrom(error, {
       fallbackMessage: "Race-week data is unavailable right now.",

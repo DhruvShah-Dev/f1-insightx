@@ -7,6 +7,7 @@ import { MainPageBackground } from "@/components/home/main-page-background";
 import { ModuleLink } from "@/components/home/module-link";
 import { RaceHistoryRail } from "@/components/home/race-history-rail";
 import { LegalLinks } from "@/components/legal/legal-links";
+import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
 import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
@@ -14,10 +15,28 @@ import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings }
 export default async function Home() {
   const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
   const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
-  const [constructorStandings, raceHistory, driverStandings] = await Promise.all([
+  const authStatePromise = (async () => {
+    if (!hasSupabaseAuth) {
+      return "anonymous" as const;
+    }
+
+    const supabase = await getSupabaseServerClient();
+    if (!supabase) {
+      return "anonymous" as const;
+    }
+
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
+    return session?.user ? ("authenticated" as const) : ("anonymous" as const);
+  })();
+
+  const [constructorStandings, raceHistory, driverStandings, initialAuthState] = await Promise.all([
     getCurrentSeasonConstructorStandings(),
     listCompletedRaceHistory(10),
     getCurrentSeasonDriverStandings(),
+    authStatePromise,
   ]);
 
   return (
@@ -38,7 +57,11 @@ export default async function Home() {
               <Link href="/fantasy" className="topbar__nav-item">
                 Fantasy Builder
               </Link>
-              <HomeAccountEntry hasSupabaseAuth={hasSupabaseAuth} hasProfilePersistence={hasProfilePersistence} />
+              <HomeAccountEntry
+                hasSupabaseAuth={hasSupabaseAuth}
+                hasProfilePersistence={hasProfilePersistence}
+                initialAuthState={initialAuthState}
+              />
             </nav>
           </div>
         </header>

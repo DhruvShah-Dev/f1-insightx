@@ -16,23 +16,23 @@ export default async function RaceLabPage() {
         </div>
         <div className="subpage-header__copy subpage-header__copy--lab">
           <div>
-            <h1 className="subpage-title">Build one race plan. Compare it against the field.</h1>
+            <h1 className="subpage-title">Scenario the race before the lights go out.</h1>
             <p className="race-detail__lede">
-              Strategy Lab isolates one driver or constructor, keeps the rest of the race stable, and returns a focused comparison brief instead of a broad prediction dump.
+              Strategy Lab turns the race-week priors into a scenario experience: choose the race shape, aim it at one target, then read the projection as a race story instead of a simulation dump.
             </p>
           </div>
           <div className="strategy-header-summary" aria-label="Strategy Lab workflow summary">
             <div className="strategy-header-summary__item">
-              <span>Target</span>
-              <strong>Choose one driver or constructor</strong>
+              <span>Setup</span>
+              <strong>Start with the race shape</strong>
             </div>
             <div className="strategy-header-summary__item">
-              <span>Scenario</span>
-              <strong>Adjust tires, stops, pressure, and weather</strong>
+              <span>Compare</span>
+              <strong>Read finish bands and risk</strong>
             </div>
             <div className="strategy-header-summary__item">
-              <span>Output</span>
-              <strong>Read one clear delta against the field baseline</strong>
+              <span>Narrative</span>
+              <strong>Understand why the call works</strong>
             </div>
           </div>
         </div>

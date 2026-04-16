@@ -23,6 +23,10 @@ def main() -> None:
         + (["--force"] if args.force else []),
         [sys.executable, str(data_dir / "build_fastf1_features.py")],
         [sys.executable, str(data_dir / "build_fastf1_models.py")],
+        [sys.executable, str(data_dir / "build_race_week_layers.py")],
+        [sys.executable, str(data_dir / "build_strategy_lab_layers.py")],
+        [sys.executable, str(data_dir / "build_fastf1_track_paths.py"), "--season-from", str(args.start_season)]
+        + (["--force"] if args.force else []),
     ]
 
     for command in commands:

@@ -1,0 +1,2 @@
+id,season,round,race_id,race_name,circuit_id,archetype_label,race_difficulty,nominal_race_laps,pit_loss_estimate_s,best_strategy_code,best_strategy_label,key_insight,confidence_score,source_label
+2026-04-miami,2026,4,2026-04-miami,Miami Grand Prix,miami,Balanced circuit,High,57,22.5,attack_2_stop,Attack two-stop,Attack two-stop projects as the cleanest opening profile for Miami Grand Prix because pit loss is around 22.5s and tyre stress trends Low.,0.25183,strategy_lab_overview_v1

@@ -1,38 +1,103 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import type { AuthChangeEvent, Session } from "@supabase/supabase-js";
 import { AccountAuthPanel } from "@/components/account/account-auth-panel";
 import { getSupabaseBrowserClient } from "@/lib/auth/supabase-browser";
 
+type AuthState = "unknown" | "authenticated" | "anonymous";
+
 type HomeAccountEntryProps = {
   hasSupabaseAuth: boolean;
   hasProfilePersistence: boolean;
+  initialAuthState?: Exclude<AuthState, "unknown">;
 };
 
 export function HomeAccountEntry({
   hasSupabaseAuth,
   hasProfilePersistence,
+  initialAuthState = "anonymous",
 }: HomeAccountEntryProps) {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
-  const [authState, setAuthState] = useState<"unknown" | "authenticated" | "anonymous">(
-    hasSupabaseAuth ? "unknown" : "anonymous",
-  );
+  const [isModalMounted, setIsModalMounted] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [authState, setAuthState] = useState<AuthState>(hasSupabaseAuth ? initialAuthState : "anonymous");
   const [isCheckingAuth, setIsCheckingAuth] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+
+  const openModal = () => {
+    setIsModalMounted(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
 
   useEffect(() => {
-    if (!isOpen) {
+    if (!isModalMounted) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      setIsModalVisible(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [isModalMounted]);
+
+  useEffect(() => {
+    if (!isModalMounted) {
       return;
     }
 
     const previousOverflow = document.body.style.overflow;
+    document.body.classList.add("account-modal-open");
     document.body.style.overflow = "hidden";
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeModal();
+        return;
+      }
+
+      if (event.key !== "Tab" || !panelRef.current) {
+        return;
+      }
+
+      const focusable = Array.from(
+        panelRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((node) => node.offsetParent !== null);
+
+      if (focusable.length === 0) {
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const activeElement = document.activeElement as HTMLElement | null;
+
+      if (!activeElement || !panelRef.current.contains(activeElement)) {
+        first.focus();
+        event.preventDefault();
+        return;
+      }
+
+      if (event.shiftKey && activeElement === first) {
+        last.focus();
+        event.preventDefault();
+        return;
+      }
+
+      if (!event.shiftKey && activeElement === last) {
+        first.focus();
+        event.preventDefault();
       }
     };
 
@@ -40,9 +105,36 @@ export function HomeAccountEntry({
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      document.body.classList.remove("account-modal-open");
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [isOpen]);
+  }, [isModalMounted]);
+
+  useEffect(() => {
+    if (!isModalMounted || !isModalVisible) {
+      return;
+    }
+
+    const focusTarget =
+      panelRef.current?.querySelector<HTMLElement>('input:not([disabled]), button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])') ??
+      panelRef.current;
+    focusTarget?.focus();
+  }, [isModalMounted, isModalVisible]);
+
+  useEffect(() => {
+    if (!isModalMounted || isModalVisible) {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setIsModalMounted(false);
+      triggerRef.current?.focus();
+    }, 220);
+
+    return () => {
+      window.clearTimeout(timeout);
+    };
+  }, [isModalMounted, isModalVisible]);
 
   useEffect(() => {
     if (!hasSupabaseAuth) {
@@ -50,37 +142,33 @@ export function HomeAccountEntry({
       return;
     }
 
-    let isMounted = true;
+    let isActive = true;
     const supabase = getSupabaseBrowserClient();
-
-    const loadUser = async () => {
-      const result = await supabase.auth.getUser();
-      if (!isMounted) {
-        return;
-      }
-      setAuthState(result.data.user ? "authenticated" : "anonymous");
-    };
-
-    void loadUser();
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
-      if (!isMounted) {
+      if (!isActive) {
         return;
       }
       setAuthState(session?.user ? "authenticated" : "anonymous");
     });
 
     return () => {
-      isMounted = false;
+      isActive = false;
       subscription.unsubscribe();
     };
   }, [hasSupabaseAuth]);
 
   const handleEntryClick = async () => {
     if (!hasSupabaseAuth) {
-      setIsOpen(true);
+      openModal();
+      return;
+    }
+
+    if (authState === "authenticated") {
+      router.push("/account");
+      router.refresh();
       return;
     }
 
@@ -88,10 +176,10 @@ export function HomeAccountEntry({
     try {
       const supabase = getSupabaseBrowserClient();
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
+        data: { session },
+      } = await supabase.auth.getSession();
 
-      if (user) {
+      if (session?.user) {
         setAuthState("authenticated");
         router.push("/account");
         router.refresh();
@@ -99,38 +187,48 @@ export function HomeAccountEntry({
       }
 
       setAuthState("anonymous");
-      setIsOpen(true);
+      openModal();
+    } catch {
+      setAuthState("anonymous");
+      openModal();
     } finally {
       setIsCheckingAuth(false);
     }
   };
 
+  const modalContent = isModalMounted ? (
+    <div
+      className={`account-modal ${isModalVisible ? "account-modal--open" : "account-modal--closing"}`}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="account-modal-title"
+    >
+      <div className="account-modal__backdrop" onMouseDown={closeModal} />
+      <div ref={panelRef} className="account-modal__panel" onMouseDown={(event) => event.stopPropagation()} tabIndex={-1}>
+        <AccountAuthPanel
+          hasSupabaseAuth={hasSupabaseAuth}
+          hasProfilePersistence={hasProfilePersistence}
+          surface="modal"
+          initialMode="sign-in"
+          onClose={closeModal}
+        />
+      </div>
+    </div>
+  ) : null;
+
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         className="account-entry account-entry--header topbar__nav-item"
         onClick={handleEntryClick}
         aria-haspopup={authState === "authenticated" ? undefined : "dialog"}
-        aria-expanded={isOpen}
+        aria-expanded={isModalMounted}
       >
         {isCheckingAuth ? "Checking" : authState === "authenticated" ? "Profile" : "Account"}
       </button>
-
-      {isOpen ? (
-        <div className="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-modal-title" onMouseDown={() => setIsOpen(false)}>
-          <div className="account-modal__backdrop" />
-          <div className="account-modal__panel" onMouseDown={(event) => event.stopPropagation()}>
-            <AccountAuthPanel
-              hasSupabaseAuth={hasSupabaseAuth}
-              hasProfilePersistence={hasProfilePersistence}
-              surface="modal"
-              initialMode="sign-in"
-              onClose={() => setIsOpen(false)}
-            />
-          </div>
-        </div>
-      ) : null}
+      {typeof document !== "undefined" ? createPortal(modalContent, document.body) : null}
     </>
   );
 }

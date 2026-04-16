@@ -5,13 +5,14 @@ import { parse } from "csv-parse/sync";
 
 const projectRoot = process.cwd();
 const curatedDir = path.join(projectRoot, "..", "..", "data", "curated");
+const dataRootDir = path.join(projectRoot, "..", "..", "data");
 
 type CsvRow = Record<string, string>;
-const missingCuratedCsvWarnings = new Set<string>();
+const missingCsvWarnings = new Set<string>();
 
-const readCsv = cache(async (fileName: string) => {
+const readCsv = cache(async (directory: string, fileName: string) => {
   try {
-    const content = await readFile(path.join(curatedDir, fileName), "utf-8");
+    const content = await readFile(path.join(directory, fileName), "utf-8");
     return parse(content, {
       columns: true,
       skip_empty_lines: true,
@@ -19,10 +20,11 @@ const readCsv = cache(async (fileName: string) => {
     }) as CsvRow[];
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
-      if (!missingCuratedCsvWarnings.has(fileName)) {
-        missingCuratedCsvWarnings.add(fileName);
+      const warningKey = `${directory}:${fileName}`;
+      if (!missingCsvWarnings.has(warningKey)) {
+        missingCsvWarnings.add(warningKey);
         console.warn(
-          `[curated-csv:missing] ${fileName} was not found in data/curated. Falling back to empty data.`,
+          `[data-csv:missing] ${fileName} was not found in ${directory}. Falling back to empty data.`,
         );
       }
 
@@ -34,11 +36,15 @@ const readCsv = cache(async (fileName: string) => {
 });
 
 export async function readCuratedCsv(fileName: string) {
-  return readCsv(fileName);
+  return readCsv(curatedDir, fileName);
 }
 
 export async function readCuratedCsvOptional(fileName: string) {
-  return readCsv(fileName);
+  return readCsv(curatedDir, fileName);
+}
+
+export async function readDataCsv(relativeDirectory: string, fileName: string) {
+  return readCsv(path.join(dataRootDir, relativeDirectory), fileName);
 }
 
 export function parseNumber(value: string | undefined) {

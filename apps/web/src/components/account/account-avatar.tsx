@@ -54,6 +54,22 @@ export function AccountAvatar({
     );
   }
 
+  if (team.carImagePath) {
+    return (
+      <div className={`${avatarClassName} account-avatar--team`}>
+        <AssetImage
+          src={team.carImagePath}
+          fallbackSrc={team.fallbackImagePath}
+          alt={`${team.label} identity`}
+          fill
+          className="account-avatar__image account-avatar__image--contain"
+          sizes={size === "sm" ? "64px" : "120px"}
+          style={{ objectFit: "contain", objectPosition: team.imagePosition ?? "center center" }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={`${avatarClassName} account-avatar--team`}

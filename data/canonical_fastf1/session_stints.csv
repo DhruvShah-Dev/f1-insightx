@@ -1,0 +1,1 @@
+id,session_id,event_entry_id,race_id,driver_id,constructor_id,stint_number,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life,session_code,source_label

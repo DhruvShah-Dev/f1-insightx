@@ -1,0 +1,12 @@
+id,season,round,race_id,constructor_id,pit_efficiency_score,pit_loss_adjustment_s,strategy_success_proxy,double_stack_risk_score,confidence_score,source_label
+2026-04-miami|alpine,2026,4,2026-04-miami,alpine,0.135,0.664,0.286507,0.9055,0.387511,strategy_lab_constructor_profile_v1
+2026-04-miami|aston_martin,2026,4,2026-04-miami,aston_martin,0.135,0.664,0.113287,0.9055,0.098811,strategy_lab_constructor_profile_v1
+2026-04-miami|audi,2026,4,2026-04-miami,audi,0.225,0.52,0.276439,0.8425,0.310731,strategy_lab_constructor_profile_v1
+2026-04-miami|cadillac,2026,4,2026-04-miami,cadillac,0.07499999999999997,0.76,0.112138,0.9475,0.136896,strategy_lab_constructor_profile_v1
+2026-04-miami|ferrari,2026,4,2026-04-miami,ferrari,0.45,0.16,0.634169,0.685,0.756949,strategy_lab_constructor_profile_v1
+2026-04-miami|haas,2026,4,2026-04-miami,haas,0.18000000000000002,0.592,0.314521,0.874,0.404202,strategy_lab_constructor_profile_v1
+2026-04-miami|mclaren,2026,4,2026-04-miami,mclaren,0.315,0.376,0.508747,0.7795,0.637912,strategy_lab_constructor_profile_v1
+2026-04-miami|mercedes,2026,4,2026-04-miami,mercedes,0.45,0.16,0.664516,0.685,0.807527,strategy_lab_constructor_profile_v1
+2026-04-miami|rb,2026,4,2026-04-miami,rb,0.21000000000000002,0.544,0.335411,0.853,0.419018,strategy_lab_constructor_profile_v1
+2026-04-miami|red_bull,2026,4,2026-04-miami,red_bull,0.2700000000000001,0.448,0.412322,0.811,0.507204,strategy_lab_constructor_profile_v1
+2026-04-miami|williams,2026,4,2026-04-miami,williams,0.225,0.52,0.234587,0.8425,0.240979,strategy_lab_constructor_profile_v1
