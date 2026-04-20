@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -39,6 +40,9 @@ SCENARIO_TEMPLATES: list[dict[str, Any]] = [
     },
 ]
 
+STRATEGY_LAB_MODEL_VERSION = "strategy_lab_model_v2"
+STRATEGY_LAB_SCENARIO_TEMPLATE_VERSION = "strategy_templates_v1"
+
 
 def read_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
@@ -54,6 +58,12 @@ def ensure_columns(frame: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
         if column not in normalized.columns:
             normalized[column] = None
     return normalized[columns]
+
+
+def build_materialization_metadata(prefix: str) -> tuple[str, str]:
+    generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    build_version = f"{prefix}_{generated_at.replace('-', '').replace(':', '')}"
+    return generated_at, build_version
 
 
 def clamp01(value: float | int | None, default: float = 0.0) -> float:
@@ -206,6 +216,7 @@ def main() -> None:
     comparison_rows: list[dict[str, Any]] = []
     pit_window_rows: list[dict[str, Any]] = []
     projection_rows: list[dict[str, Any]] = []
+    strategy_lab_generated_at, strategy_lab_build_version = build_materialization_metadata("strategy_lab")
 
     for _, overview_row in race_week_overview.iterrows():
         race_id = str(overview_row["race_id"])
@@ -230,6 +241,7 @@ def main() -> None:
         driver_signals_for_race = driver_signals[driver_signals["race_id"].astype(str) == race_id].copy()
         constructor_features_for_race = constructor_features[constructor_features["race_id"].astype(str) == race_id].copy()
         constructor_signals_for_race = constructor_signals[constructor_signals["race_id"].astype(str) == race_id].copy()
+        feature_build_version = str(overview_row.get("build_version") or "")
 
         constructor_profile_map: dict[str, dict[str, Any]] = {}
         for _, constructor_row in constructor_features_for_race.iterrows():
@@ -306,6 +318,8 @@ def main() -> None:
 
             consistency_score = clamp01(parse_num(frame_value(feature_row, "consistency_score"), 0.5), 0.5)
             racecraft_proxy = clamp01(parse_num(frame_value(signal_row, "racecraft_signal"), 0.5), 0.5)
+            # These strategy-profile heuristics are bounded proxies, not observed truths.
+            # They should shape scenario comparisons without overpowering direct pace and degradation inputs.
             aggressive_tendency = round(clamp01(racecraft_proxy * 0.7 + (1 - consistency_score) * 0.3, 0.5), 6)
             tyre_management_score = round(clamp01((1 - min(0.18, degradation_anchor) / 0.18) * 0.65 + consistency_score * 0.35, 0.5), 6)
             early_pit_bias = round(clamp01(0.45 + (degradation_bias - 5) * 0.05 + aggressive_tendency * 0.1, 0.5), 6)
@@ -432,15 +446,15 @@ def main() -> None:
             )
             base_projection = int(parse_num(driver_row["projected_finish"], 10))
             for recommendation_rank, comparison in enumerate(comparison_candidates, start=1):
-                delta_vs_baseline_s = round(comparison["total_race_time_s"] - baseline_time, 3)
+                delta_vs_baseline_s = round(comparison["total_race_time_s"] - baseline_time, 1)
                 finish_adjustment = int(round(delta_vs_baseline_s / 2.3))
                 estimated_finish_position = max(1, min(len(driver_board_for_race), base_projection + finish_adjustment))
-                projection_band = max(1, int(round((1 - driver_confidence) * 5 + abs(delta_vs_baseline_s) * 0.25)))
+                projection_band = max(2, int(round((1 - driver_confidence) * 5 + abs(delta_vs_baseline_s) * 0.35)))
                 confidence_score = round(clamp01(driver_confidence * 0.75 + float(constructor_profile["confidence_score"]) * 0.25, 0.35), 6)
                 rationale = (
-                    f"{comparison['scenario_label']} projects {'less' if delta_vs_baseline_s <= 0 else 'more'} race time than the baseline "
-                    f"because {driver_name_map.get(driver_id, driver_id)} carries a tyre-management score of {tyre_management_score:.2f} "
-                    f"and {constructor_name_map.get(constructor_id, constructor_id)} has a pit-efficiency score of {float(constructor_profile['pit_efficiency_score']):.2f}."
+                    f"{comparison['scenario_label']} ranks {'ahead of' if delta_vs_baseline_s <= 0 else 'behind'} the baseline "
+                    f"because tyre-management proxy {tyre_management_score:.2f} and pit-efficiency proxy {float(constructor_profile['pit_efficiency_score']):.2f} "
+                    f"shift the expected stint loss profile."
                 )
                 comparison_rows.append(
                     {
@@ -454,7 +468,7 @@ def main() -> None:
                         "scenario_label": comparison["scenario_label"],
                         "pit_stop_count": comparison["pit_stop_count"],
                         "compound_sequence": comparison["compound_sequence"],
-                        "total_race_time_s": comparison["total_race_time_s"],
+                        "total_race_time_s": round(comparison["total_race_time_s"], 1),
                         "delta_vs_baseline_s": delta_vs_baseline_s,
                         "average_stint_degradation_s": comparison["average_stint_degradation_s"],
                         "estimated_finish_position": estimated_finish_position,
@@ -500,12 +514,12 @@ def main() -> None:
                     "driver_id": driver_id,
                     "constructor_id": constructor_id,
                     "baseline_strategy_code": baseline_strategy_code,
-                    "baseline_total_time_s": baseline_time,
+                    "baseline_total_time_s": round(baseline_time, 1),
                     "projected_finish": base_projection,
-                    "finish_band_low": max(1, base_projection - max(1, int(round((1 - driver_confidence) * 4)))),
-                    "finish_band_high": min(len(driver_board_for_race), base_projection + max(1, int(round((1 - driver_confidence) * 4)))),
-                    "win_probability": round(max(0.1, 28 - base_projection * 1.2), 3),
-                    "podium_probability": round(max(1.0, 70 - base_projection * 3.2), 3),
+                    "finish_band_low": max(1, base_projection - max(2, int(round((1 - driver_confidence) * 4.5)))),
+                    "finish_band_high": min(len(driver_board_for_race), base_projection + max(2, int(round((1 - driver_confidence) * 4.5)))),
+                    "win_probability": round(max(5.0, min(55.0, 32 - base_projection * 1.5)) / 5) * 5,
+                    "podium_probability": round(max(10.0, min(85.0, 76 - base_projection * 3.8)) / 5) * 5,
                     "confidence_score": driver_confidence,
                     "source_label": "strategy_lab_projection_v1",
                 }
@@ -534,6 +548,11 @@ def main() -> None:
                 "best_strategy_label": best_strategy_template["scenario_label"],
                 "key_insight": key_insight,
                 "confidence_score": round(clamp01(parse_num(context_signal["confidence_score"].iloc[0], 0.3) if not context_signal.empty else 0.3, 0.3), 6),
+                "model_version": STRATEGY_LAB_MODEL_VERSION,
+                "scenario_template_version": STRATEGY_LAB_SCENARIO_TEMPLATE_VERSION,
+                "feature_build_version": feature_build_version or None,
+                "generated_at": strategy_lab_generated_at,
+                "build_version": strategy_lab_build_version,
                 "source_label": "strategy_lab_overview_v1",
             }
         )
@@ -571,7 +590,7 @@ def main() -> None:
             [
                 "id", "season", "round", "race_id", "race_name", "circuit_id", "archetype_label", "race_difficulty",
                 "nominal_race_laps", "pit_loss_estimate_s", "best_strategy_code", "best_strategy_label",
-                "key_insight", "confidence_score", "source_label",
+                "key_insight", "confidence_score", "model_version", "scenario_template_version", "feature_build_version", "generated_at", "build_version", "source_label",
             ],
         ),
         "strategy_comparison": ensure_columns(

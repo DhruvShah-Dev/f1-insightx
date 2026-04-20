@@ -1,14 +1,21 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
-export function updateAuthSession(request: NextRequest, supabaseUrl: string, supabaseAnonKey: string) {
+type ServerClientFactory = typeof createServerClient;
+
+export async function updateAuthSession(
+  request: NextRequest,
+  supabaseUrl: string,
+  supabaseAnonKey: string,
+  createClient: ServerClientFactory = createServerClient,
+) {
   let response = NextResponse.next({
     request: {
       headers: request.headers,
     },
   });
 
-  const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+  const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     cookies: {
       getAll() {
         return request.cookies.getAll();
@@ -27,7 +34,7 @@ export function updateAuthSession(request: NextRequest, supabaseUrl: string, sup
     },
   });
 
-  void supabase.auth.getUser();
+  await supabase.auth.getUser();
 
   return response;
 }

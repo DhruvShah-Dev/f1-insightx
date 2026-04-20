@@ -10,7 +10,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "tsx --test src/lib/auth/supabase-middleware.test.ts src/lib/server/runtime-source.test.ts src/lib/server/strategy-lab-simulator.test.ts src/app/api/strategy-lab/races/[raceId]/response.test.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.0",
@@ -31,6 +32,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
+    "tsx": "^4.20.6",
     "typescript": "^5"
   }
 }

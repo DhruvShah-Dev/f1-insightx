@@ -459,8 +459,14 @@ CREATE TABLE IF NOT EXISTS race_week_overview (
     strategy_difficulty text,
     weather_risk_index numeric,
     signal_confidence numeric,
+    generated_at timestamptz,
+    build_version text,
     source_label text NOT NULL DEFAULT 'race_week_overview_v1'
 );
+
+ALTER TABLE race_week_overview
+    ADD COLUMN IF NOT EXISTS generated_at timestamptz,
+    ADD COLUMN IF NOT EXISTS build_version text;
 
 CREATE UNIQUE INDEX IF NOT EXISTS idx_race_week_overview_race ON race_week_overview (race_id);
 
@@ -544,3 +550,44 @@ FROM race_week_strategy;
 CREATE OR REPLACE VIEW race_week_storylines_view AS
 SELECT *
 FROM race_week_storylines;
+
+ALTER TABLE race_week_overview ENABLE ROW LEVEL SECURITY;
+ALTER TABLE race_week_driver_board ENABLE ROW LEVEL SECURITY;
+ALTER TABLE race_week_constructor_board ENABLE ROW LEVEL SECURITY;
+ALTER TABLE race_week_strategy ENABLE ROW LEVEL SECURITY;
+ALTER TABLE race_week_storylines ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Public can read race week overview" ON race_week_overview;
+CREATE POLICY "Public can read race week overview"
+ON race_week_overview
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read race week driver board" ON race_week_driver_board;
+CREATE POLICY "Public can read race week driver board"
+ON race_week_driver_board
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read race week constructor board" ON race_week_constructor_board;
+CREATE POLICY "Public can read race week constructor board"
+ON race_week_constructor_board
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read race week strategy" ON race_week_strategy;
+CREATE POLICY "Public can read race week strategy"
+ON race_week_strategy
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read race week storylines" ON race_week_storylines;
+CREATE POLICY "Public can read race week storylines"
+ON race_week_storylines
+FOR SELECT
+TO anon, authenticated
+USING (true);

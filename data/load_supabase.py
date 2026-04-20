@@ -376,7 +376,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "race_week_overview",
         "race_week/race_week_overview.csv",
-        ["id", "season", "round", "race_id", "race_name", "circuit_id", "circuit_name", "scheduled_at", "status", "sprint_weekend", "latest_completed_race_id", "archetype_label", "strategy_difficulty", "weather_risk_index", "signal_confidence", "source_label"],
+        ["id", "season", "round", "race_id", "race_name", "circuit_id", "circuit_name", "scheduled_at", "status", "sprint_weekend", "latest_completed_race_id", "archetype_label", "strategy_difficulty", "weather_risk_index", "signal_confidence", "generated_at", "build_version", "source_label"],
     ),
     (
         "race_week_driver_board",
@@ -429,7 +429,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
         [
             "id", "season", "round", "race_id", "race_name", "circuit_id", "archetype_label", "race_difficulty",
             "nominal_race_laps", "pit_loss_estimate_s", "best_strategy_code", "best_strategy_label",
-            "key_insight", "confidence_score", "source_label",
+            "key_insight", "confidence_score", "model_version", "scenario_template_version", "feature_build_version", "generated_at", "build_version", "source_label",
         ],
     ),
     (
@@ -711,6 +711,42 @@ def resolve_table_path(settings, file_name: str) -> Path:
     return settings.curated_dir / file_name
 
 
+def validate_csv_headers(file_path: Path, expected_columns: list[str]) -> list[str]:
+    with file_path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.reader(handle)
+        try:
+            header = next(reader)
+        except StopIteration:
+            return [f"{file_path} is empty."]
+
+    missing_columns = [column for column in expected_columns if column not in header]
+    if missing_columns:
+        return [
+            f"{file_path} is missing required columns: {', '.join(missing_columns)}"
+        ]
+
+    return []
+
+
+def validate_load_inputs(settings) -> None:
+    errors: list[str] = []
+
+    for table, file_name, columns in TABLE_LOAD_ORDER:
+        file_path = resolve_table_path(settings, file_name)
+        if not file_path.exists():
+            if table in OPTIONAL_TABLES:
+                continue
+            errors.append(f"Missing required dataset for {table}: {file_path}")
+            continue
+
+        errors.extend(validate_csv_headers(file_path, columns))
+
+    if errors:
+        raise RuntimeError(
+            "Load preflight failed before publish:\n- " + "\n- ".join(errors)
+        )
+
+
 def main() -> None:
     args = parse_args()
     load_dotenv(ROOT_DIR / ".env")
@@ -724,6 +760,7 @@ def main() -> None:
         path.read_text(encoding="utf-8")
         for path in sorted(settings.sql_dir.glob("*.sql"))
     )
+    validate_load_inputs(settings)
     missing_driver_ids, missing_constructor_ids = scan_missing_reference_ids(settings.curated_dir)
 
     with psycopg.connect(database_url) as connection:

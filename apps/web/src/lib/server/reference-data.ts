@@ -1,4 +1,5 @@
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getSupabasePublicClient } from "@/lib/server/supabase";
+import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { compareSeasonRoundDesc } from "@/lib/server/utils";
 import { parseBoolean, parseNumber, readCuratedCsv } from "@/lib/server/csv";
 
@@ -50,6 +51,9 @@ export type Race = {
   scheduledAt: string;
   sprintWeekend: boolean;
 };
+
+export type ReferenceListResult<T> = RuntimeSourceResult<T[]>;
+export type ReferenceSeasonsResult = RuntimeSourceResult<number[]>;
 
 type SupabaseDriverRow = {
   id: string;
@@ -186,9 +190,34 @@ async function loadRacesFromCsv(filters: RacesFilters): Promise<Race[]> {
 }
 
 export async function listDrivers(filters: ReferenceFilters) {
-  const supabase = getSupabaseAdminClient();
+  const result = await listDriversResult(filters);
+  return getRuntimeData(result) ?? [];
+}
+
+export async function listConstructors(filters: ReferenceFilters) {
+  const result = await listConstructorsResult(filters);
+  return getRuntimeData(result) ?? [];
+}
+
+export async function listCircuits(filters: ReferenceFilters) {
+  const result = await listCircuitsResult(filters);
+  return getRuntimeData(result) ?? [];
+}
+
+export async function listRaces(filters: RacesFilters) {
+  const result = await listRacesResult(filters);
+  return getRuntimeData(result) ?? [];
+}
+
+export async function listAvailableSeasons() {
+  const result = await listAvailableSeasonsResult();
+  return getRuntimeData(result) ?? [];
+}
+
+async function loadDriversFromSupabase(filters: ReferenceFilters): Promise<Driver[]> {
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return loadDriversFromCsv(filters);
+    return [];
   }
 
   let query = supabase
@@ -202,32 +231,28 @@ export async function listDrivers(filters: ReferenceFilters) {
     query = query.or(`full_name.ilike.%${filters.search}%,driver_code.ilike.%${filters.search}%,id.ilike.%${filters.search}%`);
   }
 
-  try {
-    const { data, error } = await query;
-    if (error) {
-      throw new Error(`Failed to query drivers: ${error.message}`);
-    }
-
-    const rows = data as SupabaseDriverRow[];
-    return rows.map((row) => ({
-      id: row.id,
-      driverCode: row.driver_code,
-      permanentNumber: row.permanent_number,
-      firstName: row.first_name,
-      lastName: row.last_name,
-      fullName: row.full_name,
-      nationality: row.nationality,
-      dateOfBirth: row.date_of_birth,
-    }));
-  } catch {
-    return loadDriversFromCsv(filters);
+  const { data, error } = await query;
+  if (error) {
+    throw new Error(`Failed to query drivers: ${error.message}`);
   }
+
+  const rows = data as SupabaseDriverRow[];
+  return rows.map((row) => ({
+    id: row.id,
+    driverCode: row.driver_code,
+    permanentNumber: row.permanent_number,
+    firstName: row.first_name,
+    lastName: row.last_name,
+    fullName: row.full_name,
+    nationality: row.nationality,
+    dateOfBirth: row.date_of_birth,
+  }));
 }
 
-export async function listConstructors(filters: ReferenceFilters) {
-  const supabase = getSupabaseAdminClient();
+async function loadConstructorsFromSupabase(filters: ReferenceFilters): Promise<Constructor[]> {
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return loadConstructorsFromCsv(filters);
+    return [];
   }
 
   let query = supabase
@@ -240,28 +265,24 @@ export async function listConstructors(filters: ReferenceFilters) {
     query = query.or(`name.ilike.%${filters.search}%,constructor_code.ilike.%${filters.search}%,id.ilike.%${filters.search}%`);
   }
 
-  try {
-    const { data, error } = await query;
-    if (error) {
-      throw new Error(`Failed to query constructors: ${error.message}`);
-    }
-
-    const rows = data as SupabaseConstructorRow[];
-    return rows.map((row) => ({
-      id: row.id,
-      constructorCode: row.constructor_code,
-      name: row.name,
-      nationality: row.nationality,
-    }));
-  } catch {
-    return loadConstructorsFromCsv(filters);
+  const { data, error } = await query;
+  if (error) {
+    throw new Error(`Failed to query constructors: ${error.message}`);
   }
+
+  const rows = data as SupabaseConstructorRow[];
+  return rows.map((row) => ({
+    id: row.id,
+    constructorCode: row.constructor_code,
+    name: row.name,
+    nationality: row.nationality,
+  }));
 }
 
-export async function listCircuits(filters: ReferenceFilters) {
-  const supabase = getSupabaseAdminClient();
+async function loadCircuitsFromSupabase(filters: ReferenceFilters): Promise<Circuit[]> {
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return loadCircuitsFromCsv(filters);
+    return [];
   }
 
   let query = supabase
@@ -275,31 +296,27 @@ export async function listCircuits(filters: ReferenceFilters) {
     query = query.or(`name.ilike.%${filters.search}%,country.ilike.%${filters.search}%,location.ilike.%${filters.search}%,id.ilike.%${filters.search}%`);
   }
 
-  try {
-    const { data, error } = await query;
-    if (error) {
-      throw new Error(`Failed to query circuits: ${error.message}`);
-    }
-
-    const rows = data as SupabaseCircuitRow[];
-    return rows.map((row) => ({
-      id: row.id,
-      circuitCode: row.circuit_code,
-      name: row.name,
-      location: row.location,
-      country: row.country,
-      lat: row.lat,
-      lng: row.lng,
-    }));
-  } catch {
-    return loadCircuitsFromCsv(filters);
+  const { data, error } = await query;
+  if (error) {
+    throw new Error(`Failed to query circuits: ${error.message}`);
   }
+
+  const rows = data as SupabaseCircuitRow[];
+  return rows.map((row) => ({
+    id: row.id,
+    circuitCode: row.circuit_code,
+    name: row.name,
+    location: row.location,
+    country: row.country,
+    lat: row.lat,
+    lng: row.lng,
+  }));
 }
 
-export async function listRaces(filters: RacesFilters) {
-  const supabase = getSupabaseAdminClient();
+async function loadRacesFromSupabase(filters: RacesFilters): Promise<Race[]> {
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return loadRacesFromCsv(filters);
+    return [];
   }
 
   let query = supabase
@@ -313,44 +330,142 @@ export async function listRaces(filters: RacesFilters) {
     query = query.eq("season", filters.season);
   }
 
-  try {
-    const { data, error } = await query;
-    if (error) {
-      throw new Error(`Failed to query races: ${error.message}`);
-    }
-
-    const rows = data as SupabaseRaceRow[];
-    return rows.map((row) => ({
-      id: row.id,
-      season: row.season,
-      round: row.round,
-      raceName: row.race_name,
-      officialName: row.official_name,
-      circuitId: row.circuit_id,
-      scheduledAt: row.scheduled_at,
-      sprintWeekend: row.sprint_weekend,
-    }));
-  } catch {
-    return loadRacesFromCsv(filters);
+  const { data, error } = await query;
+  if (error) {
+    throw new Error(`Failed to query races: ${error.message}`);
   }
+
+  const rows = data as SupabaseRaceRow[];
+  return rows.map((row) => ({
+    id: row.id,
+    season: row.season,
+    round: row.round,
+    raceName: row.race_name,
+    officialName: row.official_name,
+    circuitId: row.circuit_id,
+    scheduledAt: row.scheduled_at,
+    sprintWeekend: row.sprint_weekend,
+  }));
 }
 
-export async function listAvailableSeasons() {
-  const supabase = getSupabaseAdminClient();
+async function loadAvailableSeasonsFromCsv() {
+  const rows = await readCuratedCsv("races.csv");
+  return [...new Set(rows.map((row) => Number(row.season)))].sort((a, b) => b - a);
+}
+
+async function loadAvailableSeasonsFromSupabase() {
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
-    const rows = await readCuratedCsv("races.csv");
-    return [...new Set(rows.map((row) => Number(row.season)))].sort((a, b) => b - a);
+    return [];
   }
 
-  try {
-    const { data, error } = await supabase.from("races").select("season").order("season", { ascending: false });
-    if (error) {
-      throw new Error(`Failed to query seasons: ${error.message}`);
-    }
-
-    return [...new Set((data as Array<{ season: number }>).map((row) => row.season))];
-  } catch {
-    const rows = await readCuratedCsv("races.csv");
-    return [...new Set(rows.map((row) => Number(row.season)))].sort((a, b) => b - a);
+  const { data, error } = await supabase.from("races").select("season").order("season", { ascending: false });
+  if (error) {
+    throw new Error(`Failed to query seasons: ${error.message}`);
   }
+
+  return [...new Set((data as Array<{ season: number }>).map((row) => row.season))];
+}
+
+function describeReferenceList<T>(items: T[]) {
+  return {
+    sourceLabel: items.length > 0 ? "loaded" : "empty",
+  };
+}
+
+function describeSeasons(seasons: number[]) {
+  return {
+    season: seasons[0] ?? null,
+    sourceLabel: seasons.length > 0 ? "loaded" : "empty",
+  };
+}
+
+export async function listDriversResult(filters: ReferenceFilters): Promise<ReferenceListResult<Driver>> {
+  return resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => loadDriversFromSupabase(filters),
+      describe: describeReferenceList,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: async () => loadDriversFromCsv(filters),
+      describe: describeReferenceList,
+    },
+  });
+}
+
+export async function listConstructorsResult(filters: ReferenceFilters): Promise<ReferenceListResult<Constructor>> {
+  return resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => loadConstructorsFromSupabase(filters),
+      describe: describeReferenceList,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: async () => loadConstructorsFromCsv(filters),
+      describe: describeReferenceList,
+    },
+  });
+}
+
+export async function listCircuitsResult(filters: ReferenceFilters): Promise<ReferenceListResult<Circuit>> {
+  return resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => loadCircuitsFromSupabase(filters),
+      describe: describeReferenceList,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: async () => loadCircuitsFromCsv(filters),
+      describe: describeReferenceList,
+    },
+  });
+}
+
+export async function listRacesResult(filters: RacesFilters): Promise<ReferenceListResult<Race>> {
+  return resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => loadRacesFromSupabase(filters),
+      describe: describeReferenceList,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: async () => loadRacesFromCsv(filters),
+      describe: describeReferenceList,
+    },
+  });
+}
+
+export async function listAvailableSeasonsResult(): Promise<ReferenceSeasonsResult> {
+  return resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: loadAvailableSeasonsFromSupabase,
+      describe: describeSeasons,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: loadAvailableSeasonsFromCsv,
+      describe: describeSeasons,
+    },
+  });
 }

@@ -2,7 +2,7 @@ import { apiError, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { racesQuerySchema, flattenZodError } from "@/lib/api/validation";
-import { listAvailableSeasons, listRaces } from "@/lib/server/reference-data";
+import { listAvailableSeasonsResult, listRacesResult } from "@/lib/server/reference-data";
 
 const cacheHeaders = createPublicCacheHeaders({ browserMaxAgeSeconds: 120, edgeMaxAgeSeconds: 900, staleWhileRevalidateSeconds: 3600 });
 
@@ -31,16 +31,30 @@ export async function GET(request: Request) {
   }
 
   try {
-    const [races, availableSeasons] = await Promise.all([
-      listRaces(parsed.data),
-      listAvailableSeasons(),
+    const [racesResult, seasonsResult] = await Promise.all([
+      listRacesResult(parsed.data),
+      listAvailableSeasonsResult(),
     ]);
+
+    if (racesResult.mode === "unavailable" || seasonsResult.mode === "unavailable") {
+      return apiError({
+        status: 503,
+        code: "service_unavailable",
+        message: "Race reference data is unavailable right now.",
+        details: racesResult.mode === "unavailable" ? racesResult.meta : seasonsResult.meta,
+        headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+      });
+    }
+
+    const races = racesResult.data;
+    const availableSeasons = seasonsResult.data;
 
     return apiOk({
       items: races,
       count: races.length,
       availableSeasons,
       filters: parsed.data,
+      runtime: racesResult.meta,
     }, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
   } catch {
     return apiError({

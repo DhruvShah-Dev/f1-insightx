@@ -2,16 +2,17 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { TeamBadge } from "@/components/ui/team-badge";
+import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { StatePanel } from "@/components/ui/state-panel";
 import { TrackLayoutCard } from "@/components/ui/track-layout-card";
 import { getNetworkErrorMessage, readClientErrorMessage } from "@/lib/errors/client";
-import type { Race } from "@/lib/server/reference-data";
-import type { StrategyLabRaceProduct } from "@/lib/server/strategy-lab-product";
+import type { StrategyLabRaceProduct, StrategyLabRaceSummary } from "@/lib/server/strategy-lab-product";
+import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
 import type { RaceSimulationResponse } from "@/lib/server/strategy-lab-simulator";
 
-type StrategyLabResponse = { ok: boolean; data?: StrategyLabRaceProduct; error?: { message: string } };
+type StrategyLabResponse = { ok: boolean; data?: { product: StrategyLabRaceProduct; runtime: RuntimeSourceMetadata }; error?: { message: string } };
 type SimulationResponse = { ok: boolean; data?: RaceSimulationResponse; error?: { message: string } };
-type Props = { races: Race[] };
+type Props = { races: StrategyLabRaceSummary[] };
 type TargetType = "driver" | "constructor";
 type Stint = { compound: string; laps: number };
 
@@ -42,6 +43,11 @@ const fmtDelta = (value?: number | null, suffix = "") =>
   value === null || value === undefined ? "Flat" : Math.abs(value) < 0.1 ? `Flat${suffix}` : `${value > 0 ? "+" : ""}${value.toFixed(1)}${suffix}`;
 const fmtConfidence = (score?: number | null) => (score == null ? "Calibrating" : score >= 0.74 ? "High confidence" : score >= 0.48 ? "Medium confidence" : "Low confidence");
 const fmtRisk = (weather: "dry" | "mixed" | "wet", sc: number) => (weather !== "dry" || sc >= 0.58 ? "High variance" : sc >= 0.38 ? "Moderate variance" : "Controlled variance");
+const fmtOddsProxy = (value?: number | null) => (value == null ? "n/a" : `${Math.round(value / 5) * 5}%`); 
+const avg = (values: Array<number | null | undefined>) => {
+  const cleaned = values.filter((value): value is number => value !== null && value !== undefined);
+  return cleaned.length > 0 ? cleaned.reduce((sum, value) => sum + value, 0) / cleaned.length : null;
+};
 
 function scalePlan(plan: Stint[], totalLaps: number) {
   const total = plan.reduce((sum, stint) => sum + stint.laps, 0) || totalLaps;
@@ -84,9 +90,48 @@ function StintTimeline({ label, plan, totalLaps, active = false }: { label: stri
   );
 }
 
+function buildCaveats({
+  raceProduct,
+  weatherScenario,
+  safetyCarProbability,
+  targetType,
+  simulation,
+}: {
+  raceProduct: StrategyLabRaceProduct | null;
+  weatherScenario: "dry" | "mixed" | "wet";
+  safetyCarProbability: number;
+  targetType: TargetType;
+  simulation: RaceSimulationResponse | null;
+}) {
+  const notes = [];
+
+  if (weatherScenario !== "dry") {
+    notes.push("Confidence softens outside dry running because the current priors are calibrated around dry baseline behavior.");
+  }
+
+  if (safetyCarProbability >= 0.55) {
+    notes.push("A high safety-car assumption can invalidate the precomputed pit-window advantage and flatten timing deltas quickly.");
+  }
+
+  if ((raceProduct?.overview.confidenceScore ?? 0) < 0.5) {
+    notes.push("The weekend read is still building, so the strategy recommendation carries less signal than a fully populated race week.");
+  }
+
+  if (targetType === "constructor") {
+    notes.push("Constructor scenarios inherit a two-car assumption, so one weak driver can dilute the headline upside of the strategy call.");
+  }
+
+  if (simulation?.confidenceReason) {
+    notes.push(simulation.confidenceReason);
+  }
+
+  return notes.slice(0, 3);
+}
+
 export function RaceLabWorkspace({ races }: Props) {
   const [selectedRaceId, setSelectedRaceId] = useState(races[0]?.id ?? "");
   const [raceProduct, setRaceProduct] = useState<StrategyLabRaceProduct | null>(null);
+  const [runtimeMeta, setRuntimeMeta] = useState<RuntimeSourceMetadata | null>(null);
   const [simulation, setSimulation] = useState<RaceSimulationResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -106,6 +151,7 @@ export function RaceLabWorkspace({ races }: Props) {
     setLoading(true);
     setError(null);
     setSimulation(null);
+    setRuntimeMeta(null);
     void fetch(`/api/strategy-lab/races/${selectedRaceId}`, { cache: "no-store" })
       .then((res) => res.json() as Promise<StrategyLabResponse>)
       .then((payload) => {
@@ -113,16 +159,19 @@ export function RaceLabWorkspace({ races }: Props) {
         if (!payload.ok || !payload.data) {
           setError(readClientErrorMessage(payload, "The selected race context is unavailable right now."));
           setRaceProduct(null);
+          setRuntimeMeta(null);
           return;
         }
-        setRaceProduct(payload.data);
+        setRaceProduct(payload.data.product);
+        setRuntimeMeta(payload.data.runtime);
         setTargetType("driver");
-        setSelectedTargetId(payload.data.entrants[0]?.driverId ?? "");
+        setSelectedTargetId(payload.data.product.entrants[0]?.driverId ?? "");
       })
       .catch(() => {
         if (active) {
           setError(getNetworkErrorMessage("Strategy Lab loading"));
           setRaceProduct(null);
+          setRuntimeMeta(null);
         }
       })
       .finally(() => { if (active) setLoading(false); });
@@ -171,6 +220,28 @@ export function RaceLabWorkspace({ races }: Props) {
       rationale: values[0]?.rationale ?? "",
     })).sort((a, b) => a.rank - b.rank);
   }, [targetEntrants]);
+  const bestPrecomputedScenario = precomputedScenarios[0] ?? null;
+  const liveTargetEntrants = simulation?.targetSummary?.entrants ?? [];
+  const liveFinishBand = liveTargetEntrants.length > 0
+    ? {
+        low: Math.min(...liveTargetEntrants.map((entrant) => entrant.projectedFinishBandLow)),
+        high: Math.max(...liveTargetEntrants.map((entrant) => entrant.projectedFinishBandHigh)),
+      }
+    : null;
+  const projectedGain = avg(liveTargetEntrants.map((entrant) => entrant.finishDelta)) ?? simulation?.targetSummary?.averageFinishDelta ?? null;
+  const targetPitWindows = useMemo(
+    () =>
+      targetEntrants.map((entrant) => ({
+        driverId: entrant.driverId,
+        fullName: entrant.fullName,
+        constructorId: entrant.constructorId,
+        constructorName: entrant.constructorName,
+        windows: entrant.pitWindows
+          .filter((window) => window.scenarioCode === (entrant.baselineStrategyCode ?? entrant.scenarios[0]?.scenarioCode))
+          .sort((a, b) => (a.stopNumber ?? 0) - (b.stopNumber ?? 0)),
+      })),
+    [targetEntrants],
+  );
 
   const whyItWorks = useMemo(() => {
     if (!representativeEntrant) return [];
@@ -181,6 +252,17 @@ export function RaceLabWorkspace({ races }: Props) {
       { label: "Racecraft", value: (representativeEntrant.driverProfile.racecraftProxyScore ?? 0.5) >= 0.6 ? "Traffic recovery is a strength" : "Track position matters more than overtaking upside" },
     ];
   }, [representativeEntrant]);
+  const caveats = useMemo(
+    () =>
+      buildCaveats({
+        raceProduct,
+        weatherScenario,
+        safetyCarProbability,
+        targetType,
+        simulation,
+      }),
+    [raceProduct, weatherScenario, safetyCarProbability, targetType, simulation],
+  );
 
   const setupStats = useMemo(() => {
     const entrants = raceProduct?.entrants ?? [];
@@ -242,6 +324,7 @@ export function RaceLabWorkspace({ races }: Props) {
             <h2 className="strategy-lab-hero__title">{selectedRace?.raceName ?? "Strategy Lab"}</h2>
             <p className="strategy-lab-hero__lede">{selectedRaceDateLabel} {selectedRaceDateLabel ? "|" : ""} scenario the race before lights out.</p>
             <p className="lab-copy">{raceProduct?.overview.keyInsight ?? "Compare one race call against the field baseline and surface the most likely strategic swing."}</p>
+            <ProductRuntimeNote runtime={runtimeMeta} className="strategy-lab-hero__runtime" primaryLabel="Primary Strategy Lab race view" degradedLabel="Fallback Strategy Lab race snapshot" />
             <div className="strategy-lab-overview">{setupStats.map((item) => <div key={item.label} className="strategy-lab-overview__item"><span>{item.label}</span><strong>{item.value}</strong></div>)}</div>
           </div>
         </div>
@@ -279,6 +362,25 @@ export function RaceLabWorkspace({ races }: Props) {
             <aside className="strategy-setup-rail">
               <div className="strategy-setup-rail__header"><span>Scenario brief</span><strong>{scenarioPresets[preset].label}</strong></div>
               <p className="lab-copy">{scenarioPresets[preset].pitch} with {fmtRisk(weatherScenario, safetyCarProbability).toLowerCase()}.</p>
+              {representativeEntrant ? (
+                <div className="strategy-setup-rail__focus">
+                  <div>
+                    <span>Focus target</span>
+                    <strong>{representativeEntrant.fullName}</strong>
+                    <p>{fmtBand(representativeEntrant.finishBandLow, representativeEntrant.finishBandHigh, representativeEntrant.projectedFinish)} baseline band</p>
+                  </div>
+                  <TeamBadge teamId={representativeEntrant.constructorId} label={representativeEntrant.constructorName} compact />
+                </div>
+              ) : null}
+              {bestPrecomputedScenario ? (
+                <div className="strategy-setup-rail__focus strategy-setup-rail__focus--recommendation">
+                  <div>
+                    <span>Current recommendation</span>
+                    <strong>{raceProduct?.overview.bestStrategyLabel ?? bestPrecomputedScenario.label}</strong>
+                    <p>{bestPrecomputedScenario.rationale}</p>
+                  </div>
+                </div>
+              ) : null}
               <div className="strategy-setup-rail__stats"><div><span>Confidence</span><strong>{fmtConfidence(raceProduct?.overview.confidenceScore)}</strong></div><div><span>Risk</span><strong>{fmtRisk(weatherScenario, safetyCarProbability)}</strong></div><div><span>Pit shape</span><strong>{scenarioPresets[preset].pitStopCount} stop{scenarioPresets[preset].pitStopCount === 1 ? "" : "s"}</strong></div></div>
               <button type="button" className="hero__cta hero__cta--primary" onClick={() => void runSimulation()} disabled={loading || simulating || !selectedTargetId}>{simulating ? "Running scenario" : "Run scenario"}</button>
             </aside>
@@ -289,24 +391,76 @@ export function RaceLabWorkspace({ races }: Props) {
         <section className="strategy-lab-section">
           <div className="strategy-lab-section__header"><div className="section-meta">2. Strategy comparison</div><h3>Read the likely finish range before you commit.</h3><p className="lab-copy">These cards surface ranking, finish band, and confidence instead of raw timing totals.</p></div>
           <div className="strategy-comparison-grid">
-            {simulation?.targetSummary ? <article className="strategy-comparison-card strategy-comparison-card--live"><span>Live simulation</span><strong>{selectedTargetId ? targetOptions.find((item) => item.id === selectedTargetId)?.label : "Scenario"}</strong><div className="strategy-comparison-card__band">{simulation.targetSummary.averageFinishDelta > 0 ? "Gain" : simulation.targetSummary.averageFinishDelta < 0 ? "Loss" : "Flat"} {Math.abs(simulation.targetSummary.averageFinishDelta).toFixed(1)} places</div><p>{simulation.targetSummary.narrative}</p><div className="strategy-comparison-card__meta"><span>{simulation.confidence}</span><strong>{fmtRisk(weatherScenario, safetyCarProbability)}</strong></div></article> : null}
-            {precomputedScenarios.map((scenario) => <article key={scenario.code} className="strategy-comparison-card"><span>{scenario.rank === 1 ? "Top precomputed call" : "Fallback scenario"}</span><strong>{scenario.label}</strong><div className="strategy-comparison-card__band">{fmtBand(scenario.low, scenario.high, null)}</div><p>{scenario.rationale}</p><div className="strategy-comparison-card__meta"><span>{fmtConfidence(scenario.confidence)}</span><strong>{fmtDelta(scenario.delta, "s vs baseline")}</strong></div></article>)}
+            {simulation?.targetSummary ? <article className="strategy-comparison-card strategy-comparison-card--live"><span>Live simulation</span><strong>{selectedTargetId ? targetOptions.find((item) => item.id === selectedTargetId)?.label : "Scenario"}</strong><div className="strategy-comparison-card__band">{liveFinishBand ? fmtBand(liveFinishBand.low, liveFinishBand.high, liveFinishBand.low) : "Open range"}</div><p>{simulation.targetSummary.narrative}</p><div className="strategy-comparison-card__meta"><span>{simulation.confidence}</span><strong>{fmtDelta(projectedGain, " pos vs baseline")}</strong></div></article> : null}
+            {bestPrecomputedScenario ? <article className="strategy-comparison-card strategy-comparison-card--recommended"><span>Recommended baseline</span><strong>{raceProduct?.overview.bestStrategyLabel ?? bestPrecomputedScenario.label}</strong><div className="strategy-comparison-card__band">{fmtBand(bestPrecomputedScenario.low, bestPrecomputedScenario.high, null)}</div><p>{bestPrecomputedScenario.rationale}</p><div className="strategy-comparison-card__meta"><span>{fmtConfidence(bestPrecomputedScenario.confidence)}</span><strong>{fmtDelta(bestPrecomputedScenario.delta, "s vs baseline")}</strong></div></article> : null}
+            {precomputedScenarios.slice(0, 2).map((scenario) => <article key={scenario.code} className="strategy-comparison-card"><span>{scenario.rank === 1 ? "Top precomputed call" : "Alternative"}</span><strong>{scenario.label}</strong><div className="strategy-comparison-card__band">{fmtBand(scenario.low, scenario.high, null)}</div><p>{scenario.rationale}</p><div className="strategy-comparison-card__meta"><span>{fmtConfidence(scenario.confidence)}</span><strong>{fmtDelta(scenario.delta, "s vs baseline")}</strong></div></article>)}
           </div>
         </section>
 
         <section className="strategy-lab-section">
           <div className="strategy-lab-section__header"><div className="section-meta">3. Race projection</div><h3>Translate the scenario into a race outcome.</h3></div>
           <div className="strategy-projection-grid">
-            {targetEntrants.map((entrant) => <article key={entrant.driverId} className="strategy-projection-card"><div className="strategy-projection-card__head"><div><span className="section-meta">Projection</span><h4>{entrant.fullName}</h4></div><TeamBadge teamId={entrant.constructorId} label={entrant.constructorName} compact /></div><div className="strategy-projection-card__metrics"><div><span>Baseline range</span><strong>{fmtBand(entrant.finishBandLow, entrant.finishBandHigh, entrant.projectedFinish)}</strong></div><div><span>Podium chance</span><strong>{entrant.podiumProbability != null ? `${Math.round(entrant.podiumProbability)}%` : "n/a"}</strong></div><div><span>Win chance</span><strong>{entrant.winProbability != null ? `${Math.round(entrant.winProbability)}%` : "n/a"}</strong></div><div><span>Confidence</span><strong>{fmtConfidence(entrant.confidenceScore)}</strong></div></div><p className="lab-copy">{simulation?.targetSummary?.entrants.find((item) => item.driverId === entrant.driverId)?.explanationSummary ?? `${entrant.fullName} starts from a ${fmtBand(entrant.finishBandLow, entrant.finishBandHigh, entrant.projectedFinish)} baseline before the scenario moves the race shape.`}</p></article>)}
+            {targetEntrants.map((entrant) => <article key={entrant.driverId} className="strategy-projection-card"><div className="strategy-projection-card__head"><div><span className="section-meta">Projection</span><h4>{entrant.fullName}</h4></div><TeamBadge teamId={entrant.constructorId} label={entrant.constructorName} compact /></div><div className="strategy-projection-card__metrics"><div><span>Baseline range</span><strong>{fmtBand(entrant.finishBandLow, entrant.finishBandHigh, entrant.projectedFinish)}</strong></div><div><span>Podium odds proxy</span><strong>{fmtOddsProxy(entrant.podiumProbability)}</strong></div><div><span>Win odds proxy</span><strong>{fmtOddsProxy(entrant.winProbability)}</strong></div><div><span>Confidence</span><strong>{fmtConfidence(entrant.confidenceScore)}</strong></div></div><p className="lab-copy">{simulation?.targetSummary?.entrants.find((item) => item.driverId === entrant.driverId)?.explanationSummary ?? `${entrant.fullName} starts from a ${fmtBand(entrant.finishBandLow, entrant.finishBandHigh, entrant.projectedFinish)} baseline before the scenario moves the race shape.`}</p></article>)}
             {simulation ? <article className="strategy-projection-card strategy-projection-card--field"><div className="strategy-projection-card__head"><div><span className="section-meta">Field read</span><h4>Projected order</h4></div></div><div className="strategy-field-order">{simulation.finishingOrder.slice(0, 8).map((entrant) => <div key={entrant.driverId} className={`strategy-field-order__item ${entrant.isTarget ? "strategy-field-order__item--target" : ""}`}><span>P{entrant.projectedFinish}</span><strong>{entrant.fullName}</strong><em>{entrant.isTarget ? fmtDelta(entrant.finishDelta, " pos") : entrant.constructorName}</em></div>)}</div></article> : null}
           </div>
         </section>
 
+        <section className="strategy-lab-section">
+          <div className="strategy-lab-section__header"><div className="section-meta">4. Pit windows and stint timeline</div><h3>Make the race shape readable at a glance.</h3><p className="lab-copy">Pit windows and compounds should feel like race choreography, not hidden configuration.</p></div>
+          <div className="strategy-pit-grid">
+            <div className="strategy-pit-grid__timelines">
+              {baselinePlan.length > 0 ? <StintTimeline label="Baseline race" plan={baselinePlan} totalLaps={totalLaps} /> : null}
+              <StintTimeline label="Scenario preview" plan={scenarioPlan} totalLaps={totalLaps} active />
+            </div>
+            <div className="strategy-pit-grid__windows">
+              {targetPitWindows.map((entrant) => (
+                <article key={entrant.driverId} className="strategy-pit-window-card">
+                  <div className="strategy-pit-window-card__head">
+                    <div>
+                      <span className="section-meta">Pit window</span>
+                      <strong>{entrant.fullName}</strong>
+                    </div>
+                    <TeamBadge teamId={entrant.constructorId} label={entrant.constructorName} compact />
+                  </div>
+                  <div className="strategy-pit-window-list">
+                    {entrant.windows.length > 0 ? entrant.windows.map((window) => (
+                      <div key={`${entrant.driverId}-${window.scenarioCode}-${window.stopNumber}`} className="strategy-pit-window-list__item">
+                        <span>Stop {window.stopNumber}</span>
+                        <strong>Laps {window.windowStartLap ?? "--"}-{window.windowEndLap ?? "--"}</strong>
+                        <p>{window.compoundOut ?? "Current"} to {window.compoundIn ?? "next compound"}</p>
+                      </div>
+                    )) : <p className="lab-copy">No precomputed pit window is available for this target yet.</p>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="strategy-lab-section strategy-lab-section--final">
-          <div className="strategy-lab-section__header"><div className="section-meta">4. Key insight</div><h3>Explain the scenario in race language, not simulator language.</h3></div>
+          <div className="strategy-lab-section__header"><div className="section-meta">5. Why this strategy works</div><h3>Explain the scenario in race language, not simulator language.</h3></div>
           <div className="strategy-explanation-grid">
             <article className="strategy-explanation-card"><span>Why this works</span><strong>{targetOptions.find((item) => item.id === selectedTargetId)?.label ?? "Target"}</strong><div className="strategy-reason-list">{whyItWorks.map((reason) => <div key={reason.label} className="strategy-reason-list__item"><span>{reason.label}</span><p>{reason.value}</p></div>)}</div></article>
             <article className="strategy-explanation-card"><span>Scenario narrative</span><strong>{scenarioPresets[preset].label}</strong><p className="lab-copy">{simulation?.undercutNarrative ?? `${scenarioPresets[preset].label} pushes the race toward ${preset === "aggressive" ? "undercut pressure and earlier movement." : preset === "conservative" ? "long-run control and reduced pit-lane exposure." : "the default strategic balance."}`}</p>{error && raceProduct ? <p className="lab-error">{error}</p> : null}</article>
+          </div>
+        </section>
+
+        <section className="strategy-lab-section">
+          <div className="strategy-lab-section__header"><div className="section-meta">6. Confidence and caveats</div><h3>Keep the recommendation transparent.</h3><p className="lab-copy">The strongest call is only useful if the user can see what makes it robust and what can still break it.</p></div>
+          <div className="strategy-caveat-grid">
+            <article className="strategy-explanation-card">
+              <span>Confidence</span>
+              <strong>{simulation?.confidence ? `${simulation.confidence} confidence` : fmtConfidence(raceProduct?.overview.confidenceScore)}</strong>
+              <p className="lab-copy">{simulation?.confidenceReason ?? "Confidence is anchored to the precomputed race-week priors, signal completeness, and agreement across strategy features."}</p>
+              {simulation?.modelMeta ? <p className="lab-copy">Engine {simulation.modelMeta.simulatorVersion} · templates {simulation.modelMeta.scenarioTemplateVersion}{simulation.modelMeta.featureBuildVersion ? ` · feature build ${simulation.modelMeta.featureBuildVersion}` : ""}</p> : null}
+            </article>
+            <article className="strategy-explanation-card">
+              <span>Caveats</span>
+              <strong>{fmtRisk(weatherScenario, safetyCarProbability)}</strong>
+              <div className="strategy-reason-list">
+                {caveats.map((caveat) => <div key={caveat} className="strategy-reason-list__item"><p>{caveat}</p></div>)}
+              </div>
+            </article>
           </div>
         </section>
       </section>

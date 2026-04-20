@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -1706,6 +1707,12 @@ def ensure_columns(frame: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
     return normalized[columns]
 
 
+def build_materialization_metadata(prefix: str) -> tuple[str, str]:
+    generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    build_version = f"{prefix}_{generated_at.replace('-', '').replace(':', '')}"
+    return generated_at, build_version
+
+
 def main() -> None:
     settings = load_settings()
     curated = settings.curated_dir
@@ -1736,7 +1743,7 @@ def main() -> None:
         "weekend_readiness_summary": ["id", "season", "round", "race_id", "driver_id", "constructor_id", "readiness_score", "signal_confidence", "readiness_rank", "rationale", "source_label"],
         "standings_context_snapshot": ["id", "season", "round", "race_id", "entity_type", "entity_id", "constructor_id", "standing_position", "points", "wins", "source_race_id", "source_label"],
         "race_week_storylines": ["id", "season", "round", "race_id", "entity_type", "entity_id", "storyline_type", "priority_rank", "headline", "body", "confidence_band", "signal_confidence", "source_label"],
-        "race_week_overview": ["id", "season", "round", "race_id", "race_name", "circuit_id", "circuit_name", "scheduled_at", "status", "sprint_weekend", "latest_completed_race_id", "archetype_label", "strategy_difficulty", "weather_risk_index", "signal_confidence", "source_label"],
+        "race_week_overview": ["id", "season", "round", "race_id", "race_name", "circuit_id", "circuit_name", "scheduled_at", "status", "sprint_weekend", "latest_completed_race_id", "archetype_label", "strategy_difficulty", "weather_risk_index", "signal_confidence", "generated_at", "build_version", "source_label"],
         "race_week_driver_board": ["id", "season", "round", "race_id", "driver_id", "constructor_id", "driver_name", "constructor_name", "long_run_pace_s", "gap_to_long_run_best_s", "one_lap_pace_s", "gap_to_one_lap_best_s", "degradation_s_per_lap", "readiness_score", "signal_confidence", "projected_finish", "summary", "source_label"],
         "race_week_constructor_board": ["id", "season", "round", "race_id", "constructor_id", "constructor_name", "long_run_pace_s", "one_lap_pace_s", "degradation_index", "readiness_score", "signal_confidence", "summary", "source_label"],
         "race_week_strategy": ["id", "season", "round", "race_id", "driver_id", "constructor_id", "recommended_stop_count", "preferred_primary_compound", "preferred_secondary_compound", "pit_window_start_lap", "pit_window_end_lap", "degradation_risk", "strategy_confidence", "rationale", "source_label"],
@@ -1837,6 +1844,12 @@ def main() -> None:
         strategy_view=processed.get("race_week_strategy", pd.DataFrame()),
         intelligence=intelligence,
     )
+    race_week_generated_at, race_week_build_version = build_materialization_metadata("race_week")
+    if not product_views.get("race_week_overview", pd.DataFrame()).empty:
+        product_views["race_week_overview"] = product_views["race_week_overview"].assign(
+            generated_at=race_week_generated_at,
+            build_version=race_week_build_version,
+        )
     processed = processed | intelligence
     for table_name, frame in product_views.items():
         if not frame.empty:

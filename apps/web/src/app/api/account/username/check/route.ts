@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { isUsernameAvailable, validateUsername } from "@/lib/account/usernames";
 import { getServerEnv } from "@/lib/env";
@@ -48,7 +48,7 @@ export async function GET(request: Request) {
     );
   }
 
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePrivilegedClient();
   if (!supabase) {
     return NextResponse.json(
       { error: "Username checks are unavailable right now." },

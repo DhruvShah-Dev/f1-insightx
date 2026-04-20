@@ -1,7 +1,8 @@
 import { cache } from "react";
 import { parseNumber, readCuratedCsv } from "@/lib/server/csv";
-import { getRaceWeekProductOverview } from "@/lib/server/race-week-product";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getRaceWeekProductResult } from "@/lib/server/race-week-product";
+import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
+import { getSupabasePublicClient } from "@/lib/server/supabase";
 import { compareSeasonRoundDesc, groupBy, roundTo } from "@/lib/server/utils";
 
 type CsvRace = {
@@ -255,6 +256,23 @@ export type CanonicalFantasyInput = {
   volatilityProxy: number;
 };
 
+type RaceWeekOverviewResult = RuntimeSourceResult<RaceWeekOverview>;
+type DriverStandingsSnapshot = {
+  season: number;
+  round: number;
+  race: CanonicalRaceRef;
+  items: DriverStandingSnapshot[];
+};
+type DriverStandingsSnapshotResult = RuntimeSourceResult<DriverStandingsSnapshot>;
+type ConstructorStandingsSnapshot = {
+  season: number;
+  round: number;
+  race: CanonicalRaceRef;
+  items: ConstructorStandingSnapshot[];
+};
+type ConstructorStandingsSnapshotResult = RuntimeSourceResult<ConstructorStandingsSnapshot>;
+type UpcomingRacePredictionResult = RuntimeSourceResult<UpcomingRacePrediction>;
+
 type CsvPlatformDataset = {
   races: CsvRace[];
   circuits: Map<string, CsvCircuit>;
@@ -298,86 +316,27 @@ const loadCsvPlatformDataset = cache(async (): Promise<CsvPlatformDataset> => {
 });
 
 export const getRaceWeekOverview = cache(async (): Promise<RaceWeekOverview | null> => {
-  const productOverview = await getRaceWeekProductOverview();
-  if (productOverview?.nextRace || productOverview?.latestCompletedRace) {
-    return {
-      currentSeason: productOverview.currentSeason,
-      latestCompletedRace: productOverview.latestCompletedRace,
-      nextRace: productOverview.nextRace,
-    };
-  }
-
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await getRaceWeekOverviewFromSupabase();
-    } catch {
-      return getRaceWeekOverviewFromCsv();
-    }
-  }
-
-  return getRaceWeekOverviewFromCsv();
+  const result = await getRaceWeekOverviewResult();
+  return getRuntimeData(result);
 });
 
-export const getCurrentDriverStandingsSnapshot = cache(async (): Promise<{
-  season: number;
-  round: number;
-  race: CanonicalRaceRef;
-  items: DriverStandingSnapshot[];
-} | null> => {
-  const supabase = getSupabaseAdminClient();
-  if (!supabase) {
-    return getCurrentDriverStandingsSnapshotFromCsv();
-  }
-
-  const [supabaseResult, csvResult] = await Promise.allSettled([
-    getCurrentDriverStandingsSnapshotFromSupabase(),
-    getCurrentDriverStandingsSnapshotFromCsv(),
-  ]);
-
-  return pickFresherStandingsSnapshot(
-    supabaseResult.status === "fulfilled" ? supabaseResult.value : null,
-    csvResult.status === "fulfilled" ? csvResult.value : null,
-  );
+export const getCurrentDriverStandingsSnapshot = cache(async (): Promise<DriverStandingsSnapshot | null> => {
+  const result = await getCurrentDriverStandingsSnapshotResult();
+  return getRuntimeData(result);
 });
 
-export const getCurrentConstructorStandingsSnapshot = cache(async (): Promise<{
-  season: number;
-  round: number;
-  race: CanonicalRaceRef;
-  items: ConstructorStandingSnapshot[];
-} | null> => {
-  const supabase = getSupabaseAdminClient();
-  if (!supabase) {
-    return getCurrentConstructorStandingsSnapshotFromCsv();
-  }
-
-  const [supabaseResult, csvResult] = await Promise.allSettled([
-    getCurrentConstructorStandingsSnapshotFromSupabase(),
-    getCurrentConstructorStandingsSnapshotFromCsv(),
-  ]);
-
-  return pickFresherStandingsSnapshot(
-    supabaseResult.status === "fulfilled" ? supabaseResult.value : null,
-    csvResult.status === "fulfilled" ? csvResult.value : null,
-  );
+export const getCurrentConstructorStandingsSnapshot = cache(async (): Promise<ConstructorStandingsSnapshot | null> => {
+  const result = await getCurrentConstructorStandingsSnapshotResult();
+  return getRuntimeData(result);
 });
 
 export const getUpcomingRacePrediction = cache(async (): Promise<UpcomingRacePrediction | null> => {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await getUpcomingRacePredictionFromSupabase();
-    } catch {
-      return getUpcomingRacePredictionFromCsv();
-    }
-  }
-
-  return getUpcomingRacePredictionFromCsv();
+  const result = await getUpcomingRacePredictionResult();
+  return getRuntimeData(result);
 });
 
 export const getFantasyInputsForCurrentRaceWeek = cache(async (season?: number, round?: number) => {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   if (supabase) {
     try {
       return await getFantasyInputsForCurrentRaceWeekFromSupabase(season, round);
@@ -388,6 +347,172 @@ export const getFantasyInputsForCurrentRaceWeek = cache(async (season?: number, 
 
   return getFantasyInputsForCurrentRaceWeekFromCsv(season, round);
 });
+
+function describeOverview(overview: RaceWeekOverview) {
+  return {
+    eventId: overview.nextRace?.id ?? overview.latestCompletedRace?.id ?? null,
+    season: overview.nextRace?.season ?? overview.latestCompletedRace?.season ?? overview.currentSeason,
+    round: overview.nextRace?.round ?? overview.latestCompletedRace?.round ?? null,
+  };
+}
+
+function describeSnapshot(snapshot: DriverStandingsSnapshot | ConstructorStandingsSnapshot) {
+  return {
+    eventId: snapshot.race.id,
+    season: snapshot.season,
+    round: snapshot.round,
+  };
+}
+
+function describePrediction(prediction: UpcomingRacePrediction) {
+  return {
+    eventId: prediction.race.id,
+    season: prediction.race.season,
+    round: prediction.race.round,
+    generatedAt: prediction.generatedAt,
+    buildVersion: prediction.modelVersion,
+  };
+}
+
+export const getRaceWeekOverviewResult = cache(async (): Promise<RaceWeekOverviewResult> => {
+  const raceWeekProductResult = await getRaceWeekProductResult();
+  if (raceWeekProductResult.mode !== "unavailable") {
+    const productOverview = raceWeekProductResult.data.overview;
+    if (!(productOverview?.nextRace || productOverview?.latestCompletedRace)) {
+      return resolveRuntimeSource({
+        surface: "homepage",
+        primary: {
+          sourceKind: "database",
+          sourceLabel: "canonical_tables",
+          load: async () => {
+            const supabase = getSupabasePublicClient();
+            if (!supabase) {
+              return null;
+            }
+            return getRaceWeekOverviewFromSupabase();
+          },
+          describe: describeOverview,
+        },
+        degraded: {
+          sourceKind: "csv-canonical",
+          sourceLabel: "curated_csv",
+          load: getRaceWeekOverviewFromCsv,
+          describe: describeOverview,
+        },
+      });
+    }
+
+    const overview = {
+      currentSeason: productOverview.currentSeason,
+      latestCompletedRace: productOverview.latestCompletedRace,
+      nextRace: productOverview.nextRace,
+    };
+
+    return {
+      mode: raceWeekProductResult.mode,
+      data: overview,
+      meta: {
+        ...raceWeekProductResult.meta,
+        surface: "homepage",
+        ...describeOverview(overview),
+      },
+    };
+  }
+
+  return resolveRuntimeSource({
+    surface: "homepage",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+        return getRaceWeekOverviewFromSupabase();
+      },
+      describe: describeOverview,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: getRaceWeekOverviewFromCsv,
+      describe: describeOverview,
+    },
+  });
+});
+
+export const getCurrentDriverStandingsSnapshotResult = cache(async (): Promise<DriverStandingsSnapshotResult> =>
+  resolveRuntimeSource({
+    surface: "homepage",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+        return getCurrentDriverStandingsSnapshotFromSupabase();
+      },
+      describe: describeSnapshot,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: getCurrentDriverStandingsSnapshotFromCsv,
+      describe: describeSnapshot,
+    },
+  }),
+);
+
+export const getCurrentConstructorStandingsSnapshotResult = cache(async (): Promise<ConstructorStandingsSnapshotResult> =>
+  resolveRuntimeSource({
+    surface: "homepage",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+        return getCurrentConstructorStandingsSnapshotFromSupabase();
+      },
+      describe: describeSnapshot,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: getCurrentConstructorStandingsSnapshotFromCsv,
+      describe: describeSnapshot,
+    },
+  }),
+);
+
+export const getUpcomingRacePredictionResult = cache(async (): Promise<UpcomingRacePredictionResult> =>
+  resolveRuntimeSource({
+    surface: "homepage",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+        return getUpcomingRacePredictionFromSupabase();
+      },
+      describe: describePrediction,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: getUpcomingRacePredictionFromCsv,
+      describe: describePrediction,
+    },
+  }),
+);
 
 async function getRaceWeekOverviewFromCsv(): Promise<RaceWeekOverview | null> {
   const dataset = await loadCsvPlatformDataset();
@@ -521,7 +646,7 @@ async function getFantasyInputsForCurrentRaceWeekFromCsv(season?: number, round?
 }
 
 async function getRaceWeekOverviewFromSupabase(): Promise<RaceWeekOverview | null> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
     return null;
   }
@@ -573,7 +698,7 @@ async function getRaceWeekOverviewFromSupabase(): Promise<RaceWeekOverview | nul
 }
 
 async function getCurrentDriverStandingsSnapshotFromSupabase() {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   const overview = await getRaceWeekOverviewFromSupabase();
   if (!supabase || !overview?.latestCompletedRace) {
     return null;
@@ -617,7 +742,7 @@ async function getCurrentDriverStandingsSnapshotFromSupabase() {
 }
 
 async function getCurrentConstructorStandingsSnapshotFromSupabase() {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   const overview = await getRaceWeekOverviewFromSupabase();
   if (!supabase || !overview?.latestCompletedRace) {
     return null;
@@ -654,7 +779,7 @@ async function getCurrentConstructorStandingsSnapshotFromSupabase() {
 }
 
 async function getUpcomingRacePredictionFromSupabase(): Promise<UpcomingRacePrediction | null> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   const overview = await getRaceWeekOverviewFromSupabase();
   if (!supabase || !overview?.nextRace) {
     return null;
@@ -707,7 +832,7 @@ async function getUpcomingRacePredictionFromSupabase(): Promise<UpcomingRacePred
 }
 
 async function getFantasyInputsForCurrentRaceWeekFromSupabase(season?: number, round?: number) {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   const overview = await getRaceWeekOverviewFromSupabase();
   if (!supabase) {
     return [];
@@ -897,31 +1022,4 @@ function sortConstructorStandingSnapshots(items: ConstructorStandingSnapshot[]) 
       left.standingPosition - right.standingPosition ||
       left.constructorId.localeCompare(right.constructorId),
   );
-}
-
-function pickFresherStandingsSnapshot<
-  T extends {
-    season: number;
-    round: number;
-    race: CanonicalRaceRef;
-    items: unknown[];
-  },
->(preferred: T | null, fallback: T | null): T | null {
-  if (!preferred) {
-    return fallback;
-  }
-  if (!fallback) {
-    return preferred;
-  }
-
-  const preferredKey = preferred.season * 100 + preferred.round;
-  const fallbackKey = fallback.season * 100 + fallback.round;
-  if (fallbackKey > preferredKey) {
-    return fallback;
-  }
-  if (preferredKey > fallbackKey) {
-    return preferred;
-  }
-
-  return preferred.items.length >= fallback.items.length ? preferred : fallback;
 }

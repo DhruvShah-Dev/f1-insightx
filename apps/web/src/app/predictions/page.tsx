@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { HomeLink } from "@/components/ui/home-link";
+import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { TrackMap } from "@/components/ui/track-map";
 import { TeamBadge } from "@/components/ui/team-badge";
-import { getRaceWeekProduct } from "@/lib/server/race-week-product";
+import { getRaceWeekProductResult } from "@/lib/server/race-week-product";
 import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
 import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
 
@@ -127,7 +128,8 @@ function getStrategicTone(value: string | null) {
 }
 
 export default async function PredictionsPage() {
-  const raceWeek = await getRaceWeekProduct();
+  const raceWeekResult = await getRaceWeekProductResult();
+  const raceWeek = raceWeekResult.mode === "unavailable" ? null : raceWeekResult.data;
 
   if (!raceWeek?.overview.nextRace) {
     return (
@@ -214,6 +216,8 @@ export default async function PredictionsPage() {
                 <strong>{getConfidenceTone(overview.signalConfidence)}</strong>
               </div>
             </div>
+
+            <ProductRuntimeNote runtime={raceWeekResult.meta} className="race-week-hero__runtime" primaryLabel="Race Week live product view" degradedLabel="Race Week fallback snapshot" />
 
             <div className="race-week-hero__actions">
               <Link href="/lab" className="race-week-hero__cta race-week-hero__cta--primary">

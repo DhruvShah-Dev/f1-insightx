@@ -1,7 +1,7 @@
 import { apiError, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
-import { getRaceContext } from "@/lib/server/race-context";
+import { getRaceContextResult } from "@/lib/server/race-context";
 
 type RouteContext = {
   params: Promise<{
@@ -25,17 +25,19 @@ export async function GET(request: Request, context: RouteContext) {
   const { raceId } = await context.params;
 
   try {
-    const raceContext = await getRaceContext(raceId);
-    if (!raceContext) {
+    const result = await getRaceContextResult(raceId);
+    if (result.mode === "unavailable") {
+      const looksLikeMissingRace = result.meta.reason?.includes("returned no data") ?? false;
       return apiError({
-        status: 404,
-        code: "not_found",
-        message: "Race context was not found.",
+        status: looksLikeMissingRace ? 404 : 503,
+        code: looksLikeMissingRace ? "not_found" : "service_unavailable",
+        message: looksLikeMissingRace ? "Race context was not found." : "Race context is unavailable right now.",
+        details: result.meta,
         headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
       });
     }
 
-    return apiOk(raceContext, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
+    return apiOk({ raceContext: result.data, runtime: result.meta }, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
   } catch {
     return apiError({
       status: 500,

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { suggestUniqueUsername } from "@/lib/account/usernames";
 import { getServerEnv } from "@/lib/env";
@@ -42,7 +42,7 @@ export async function GET(request: Request) {
     );
   }
 
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePrivilegedClient();
   if (!supabase) {
     return NextResponse.json(
       { error: "Username suggestions are unavailable right now." },

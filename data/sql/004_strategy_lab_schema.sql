@@ -77,8 +77,20 @@ CREATE TABLE IF NOT EXISTS strategy_lab_overview (
     best_strategy_label text,
     key_insight text,
     confidence_score numeric,
+    model_version text,
+    scenario_template_version text,
+    feature_build_version text,
+    generated_at timestamptz,
+    build_version text,
     source_label text NOT NULL DEFAULT 'strategy_lab_overview_v1'
 );
+
+ALTER TABLE strategy_lab_overview
+    ADD COLUMN IF NOT EXISTS model_version text,
+    ADD COLUMN IF NOT EXISTS scenario_template_version text,
+    ADD COLUMN IF NOT EXISTS feature_build_version text,
+    ADD COLUMN IF NOT EXISTS generated_at timestamptz,
+    ADD COLUMN IF NOT EXISTS build_version text;
 
 CREATE UNIQUE INDEX IF NOT EXISTS idx_strategy_lab_overview_race ON strategy_lab_overview (race_id);
 
@@ -160,3 +172,60 @@ FROM pit_window;
 CREATE OR REPLACE VIEW race_projection_view AS
 SELECT *
 FROM race_projection;
+
+ALTER TABLE strategy_features ENABLE ROW LEVEL SECURITY;
+ALTER TABLE driver_strategy_profile ENABLE ROW LEVEL SECURITY;
+ALTER TABLE constructor_strategy_profile ENABLE ROW LEVEL SECURITY;
+ALTER TABLE strategy_lab_overview ENABLE ROW LEVEL SECURITY;
+ALTER TABLE strategy_comparison ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pit_window ENABLE ROW LEVEL SECURITY;
+ALTER TABLE race_projection ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Public can read strategy features" ON strategy_features;
+CREATE POLICY "Public can read strategy features"
+ON strategy_features
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read driver strategy profile" ON driver_strategy_profile;
+CREATE POLICY "Public can read driver strategy profile"
+ON driver_strategy_profile
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read constructor strategy profile" ON constructor_strategy_profile;
+CREATE POLICY "Public can read constructor strategy profile"
+ON constructor_strategy_profile
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read strategy lab overview" ON strategy_lab_overview;
+CREATE POLICY "Public can read strategy lab overview"
+ON strategy_lab_overview
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read strategy comparison" ON strategy_comparison;
+CREATE POLICY "Public can read strategy comparison"
+ON strategy_comparison
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read pit window" ON pit_window;
+CREATE POLICY "Public can read pit window"
+ON pit_window
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read race projection" ON race_projection;
+CREATE POLICY "Public can read race projection"
+ON race_projection
+FOR SELECT
+TO anon, authenticated
+USING (true);

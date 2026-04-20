@@ -2,7 +2,7 @@ import { apiError, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { referenceQuerySchema, flattenZodError } from "@/lib/api/validation";
-import { listDrivers } from "@/lib/server/reference-data";
+import { listDriversResult } from "@/lib/server/reference-data";
 
 const cacheHeaders = createPublicCacheHeaders({ browserMaxAgeSeconds: 300, edgeMaxAgeSeconds: 3600, staleWhileRevalidateSeconds: 86400 });
 
@@ -31,11 +31,23 @@ export async function GET(request: Request) {
   }
 
   try {
-    const drivers = await listDrivers(parsed.data);
+    const result = await listDriversResult(parsed.data);
+    if (result.mode === "unavailable") {
+      return apiError({
+        status: 503,
+        code: "service_unavailable",
+        message: "Driver reference data is unavailable right now.",
+        details: result.meta,
+        headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+      });
+    }
+
+    const drivers = result.data;
     return apiOk({
       items: drivers,
       count: drivers.length,
       filters: parsed.data,
+      runtime: result.meta,
     }, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
   } catch {
     return apiError({

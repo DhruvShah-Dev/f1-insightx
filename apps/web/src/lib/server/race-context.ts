@@ -1,4 +1,5 @@
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getSupabasePublicClient } from "@/lib/server/supabase";
+import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { roundTo } from "@/lib/server/utils";
 import { parseNumber, readCuratedCsv } from "@/lib/server/csv";
 import type { Race } from "@/lib/server/reference-data";
@@ -20,6 +21,8 @@ export type RaceContext = {
   race: Race;
   entrants: RaceContextEntrant[];
 };
+
+export type RaceContextResult = RuntimeSourceResult<RaceContext>;
 
 type CsvRaceResult = {
   race_id: string;
@@ -127,16 +130,40 @@ type SupabaseFeatureRow = {
 };
 
 export async function getRaceContext(raceId: string): Promise<RaceContext | null> {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await getRaceContextFromSupabase(raceId);
-    } catch {
-      return getRaceContextFromCsv(raceId);
-    }
-  }
+  const result = await getRaceContextResult(raceId);
+  return getRuntimeData(result);
+}
 
-  return getRaceContextFromCsv(raceId);
+function describeRaceContext(context: RaceContext) {
+  return {
+    eventId: context.race.id,
+    season: context.race.season,
+    round: context.race.round,
+  };
+}
+
+export async function getRaceContextResult(raceId: string): Promise<RaceContextResult> {
+  return resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+        return getRaceContextFromSupabase(raceId);
+      },
+      describe: describeRaceContext,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: () => getRaceContextFromCsv(raceId),
+      describe: describeRaceContext,
+    },
+  });
 }
 
 async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null> {
@@ -228,7 +255,7 @@ async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null
 }
 
 async function getRaceContextFromSupabase(raceId: string): Promise<RaceContext | null> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
     return null;
   }

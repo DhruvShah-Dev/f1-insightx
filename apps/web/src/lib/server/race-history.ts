@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { parseBoolean, parseNumber, readCuratedCsv, readCuratedCsvOptional } from "@/lib/server/csv";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
+import { getSupabasePublicClient } from "@/lib/server/supabase";
 import { groupBy, roundTo } from "@/lib/server/utils";
 
 export type RaceHistorySummary = {
@@ -69,6 +70,9 @@ export type RaceDetail = RaceHistorySummary & {
     >;
   } | null;
 };
+
+export type RaceHistoryListResult = RuntimeSourceResult<RaceHistorySummary[]>;
+export type RaceDetailResult = RuntimeSourceResult<RaceDetail>;
 
 type CsvRace = {
   id: string;
@@ -228,30 +232,83 @@ const loadCsvDataset = cache(async (): Promise<CsvDataset> => {
 });
 
 export const listCompletedRaceHistory = cache(async (limit = 16): Promise<RaceHistorySummary[]> => {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await listCompletedRaceHistoryFromSupabase(limit);
-    } catch {
-      return listCompletedRaceHistoryFromCsv(limit);
-    }
-  }
-
-  return listCompletedRaceHistoryFromCsv(limit);
+  const result = await listCompletedRaceHistoryResult(limit);
+  return getRuntimeData(result) ?? [];
 });
 
 export const getRaceDetail = cache(async (raceId: string): Promise<RaceDetail | null> => {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await getRaceDetailFromSupabase(raceId);
-    } catch {
-      return getRaceDetailFromCsv(raceId);
-    }
-  }
-
-  return getRaceDetailFromCsv(raceId);
+  const result = await getRaceDetailResult(raceId);
+  return getRuntimeData(result);
 });
+
+function describeHistoryList(items: RaceHistorySummary[]) {
+  const latest = items[0] ?? null;
+  return {
+    eventId: latest?.id ?? null,
+    season: latest?.season ?? null,
+    round: latest?.round ?? null,
+  };
+}
+
+function describeRaceDetail(detail: RaceDetail) {
+  return {
+    eventId: detail.id,
+    season: detail.season,
+    round: detail.round,
+  };
+}
+
+export const listCompletedRaceHistoryResult = cache(async (limit = 16): Promise<RaceHistoryListResult> =>
+  resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+        const items = await listCompletedRaceHistoryFromSupabase(limit);
+        return items.length > 0 ? items : null;
+      },
+      describe: describeHistoryList,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: async () => {
+        const items = await listCompletedRaceHistoryFromCsv(limit);
+        return items.length > 0 ? items : null;
+      },
+      describe: describeHistoryList,
+    },
+  }),
+);
+
+export const getRaceDetailResult = cache(async (raceId: string): Promise<RaceDetailResult> =>
+  resolveRuntimeSource({
+    surface: "reference",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "canonical_tables",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+        return getRaceDetailFromSupabase(raceId);
+      },
+      describe: describeRaceDetail,
+    },
+    degraded: {
+      sourceKind: "csv-canonical",
+      sourceLabel: "curated_csv",
+      load: () => getRaceDetailFromCsv(raceId),
+      describe: describeRaceDetail,
+    },
+  }),
+);
 
 async function listCompletedRaceHistoryFromCsv(limit: number): Promise<RaceHistorySummary[]> {
   const dataset = await loadCsvDataset();
@@ -282,7 +339,7 @@ async function getRaceDetailFromCsv(raceId: string): Promise<RaceDetail | null> 
 }
 
 async function listCompletedRaceHistoryFromSupabase(limit: number): Promise<RaceHistorySummary[]> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
     return [];
   }
@@ -384,7 +441,7 @@ async function listCompletedRaceHistoryFromSupabase(limit: number): Promise<Race
 }
 
 async function getRaceDetailFromSupabase(raceId: string): Promise<RaceDetail | null> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
     return null;
   }

@@ -15,10 +15,10 @@ import { createAppError } from "@/lib/errors/app-error";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import { isTrustedOrigin } from "@/lib/security/request";
 import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 
 async function verifyProfileReferenceData(
-  supabaseAdmin: NonNullable<ReturnType<typeof getSupabaseAdminClient>>,
+  supabaseAdmin: NonNullable<ReturnType<typeof getSupabasePrivilegedClient>>,
   constructorId?: string | null,
   driverId?: string | null,
 ) {
@@ -147,7 +147,7 @@ export async function PATCH(request: Request) {
       });
     }
 
-    const supabaseAdmin = getSupabaseAdminClient();
+    const supabaseAdmin = getSupabasePrivilegedClient();
     if (!supabaseAdmin) {
       return apiError({
         status: 503,

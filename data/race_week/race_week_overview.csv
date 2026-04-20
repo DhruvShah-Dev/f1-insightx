@@ -1,2 +1,2 @@
-id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,source_label
-2026-04-miami,2026,4,2026-04-miami,Miami Grand Prix,miami,miami,2026-05-03T20:00:00Z,upcoming,True,2026-03-suzuka,Balanced circuit,High,0.0,0.2518301363636363,race_week_overview_v2
+id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
+2026-04-miami,2026,4,2026-04-miami,Miami Grand Prix,miami,miami,2026-05-03T20:00:00Z,upcoming,True,2026-03-suzuka,Balanced circuit,High,0.0,0.2518301363636363,2026-04-16T21:48:51Z,race_week_20260416T214851Z,race_week_overview_v2

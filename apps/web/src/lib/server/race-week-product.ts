@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { readCuratedCsv, readDataCsv } from "@/lib/server/csv";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
+import { getSupabasePublicClient } from "@/lib/server/supabase";
 
 export type RaceWeekCanonicalRaceRef = {
   id: string;
@@ -74,6 +75,15 @@ export type RaceWeekProduct = {
   }>;
 };
 
+type RaceWeekProductWithRuntime = RaceWeekProduct & {
+  runtime?: {
+    generatedAt: string | null;
+    buildVersion: string | null;
+  };
+};
+
+export type RaceWeekProductResult = RuntimeSourceResult<RaceWeekProduct>;
+
 type RaceWeekOverviewRow = {
   id: string;
   season: number | string;
@@ -88,6 +98,8 @@ type RaceWeekOverviewRow = {
   strategy_difficulty: string | null;
   weather_risk_index: number | string | null;
   signal_confidence: number | string | null;
+  generated_at?: string | null;
+  build_version?: string | null;
 };
 
 type RaceRow = {
@@ -190,6 +202,18 @@ function mapRaceRef(row: RaceRefSource, circuit: CircuitRow | null): RaceWeekCan
   };
 }
 
+function attachRaceWeekRuntimeMetadata(
+  product: RaceWeekProduct,
+  overviewRow: Pick<RaceWeekOverviewRow, "generated_at" | "build_version"> | null,
+): RaceWeekProduct {
+  return Object.assign(product, {
+    runtime: {
+      generatedAt: overviewRow?.generated_at ?? null,
+      buildVersion: overviewRow?.build_version ?? null,
+    },
+  }) as RaceWeekProductWithRuntime;
+}
+
 async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
   const [overviewRows, driverBoardRows, constructorBoardRows, strategyRows, storylineRows, races, circuits] = await Promise.all([
     readDataCsv("race_week", "race_week_overview.csv") as Promise<RaceWeekOverviewRow[]>,
@@ -215,7 +239,7 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
     ? mapRaceRef(latestCompletedRow, circuitMap.get(latestCompletedRow.circuit_id) ?? null)
     : null;
 
-  return {
+  return attachRaceWeekRuntimeMetadata({
     overview: {
       currentSeason: Number(overviewRow.season),
       latestCompletedRace,
@@ -281,18 +305,18 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
         confidenceBand: row.confidence_band,
         signalConfidence: parseNumber(row.signal_confidence),
       })),
-  };
+  }, overviewRow);
 }
 
 async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   if (!supabase) {
     return null;
   }
 
   const { data: overviewData, error: overviewError } = await supabase
     .from("race_week_overview_view")
-    .select("id, season, round, race_id, race_name, circuit_id, circuit_name, scheduled_at, latest_completed_race_id, archetype_label, strategy_difficulty, weather_risk_index, signal_confidence")
+    .select("id, season, round, race_id, race_name, circuit_id, circuit_name, scheduled_at, latest_completed_race_id, archetype_label, strategy_difficulty, weather_risk_index, signal_confidence, generated_at, build_version")
     .order("season", { ascending: false })
     .order("round", { ascending: false })
     .limit(1);
@@ -344,7 +368,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     }
   }
 
-  return {
+  return attachRaceWeekRuntimeMetadata({
     overview: {
       currentSeason: Number(overviewRow.season),
       latestCompletedRace,
@@ -401,20 +425,48 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
       confidenceBand: row.confidence_band,
       signalConfidence: parseNumber(row.signal_confidence),
     })),
+  }, overviewRow);
+}
+
+function describeRaceWeekProduct(product: RaceWeekProduct) {
+  const runtime = (product as RaceWeekProductWithRuntime).runtime;
+  return {
+    eventId: product.overview.nextRace?.id ?? product.overview.latestCompletedRace?.id ?? null,
+    season: product.overview.nextRace?.season ?? product.overview.latestCompletedRace?.season ?? product.overview.currentSeason,
+    round: product.overview.nextRace?.round ?? product.overview.latestCompletedRace?.round ?? null,
+    generatedAt: runtime?.generatedAt ?? null,
+    buildVersion: runtime?.buildVersion ?? null,
   };
 }
 
-export const getRaceWeekProduct = cache(async (): Promise<RaceWeekProduct | null> => {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await buildProductFromSupabase();
-    } catch {
-      return buildProductFromCsv();
-    }
-  }
+export const getRaceWeekProductResult = cache(async (): Promise<RaceWeekProductResult> =>
+  resolveRuntimeSource({
+    surface: "race-week",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "race_week_views",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
 
-  return buildProductFromCsv();
+        return buildProductFromSupabase();
+      },
+      describe: describeRaceWeekProduct,
+    },
+    degraded: {
+      sourceKind: "csv-product",
+      sourceLabel: "race_week_csv",
+      load: buildProductFromCsv,
+      describe: describeRaceWeekProduct,
+    },
+  }),
+);
+
+export const getRaceWeekProduct = cache(async (): Promise<RaceWeekProduct | null> => {
+  const result = await getRaceWeekProductResult();
+  return getRuntimeData(result);
 });
 
 export const getRaceWeekProductOverview = cache(async (): Promise<RaceWeekProductOverview | null> => {

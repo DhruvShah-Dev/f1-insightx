@@ -33,21 +33,32 @@ const qualifyingOverrideSchema = z.object({
   position: z.coerce.number().int().min(1).max(20),
 });
 
-export const raceScenarioSchema = z.object({
-  raceId: z.string().min(1),
-  driverIds: z.array(z.string().min(1)).min(1).max(20),
-  comparisonTargetType: z.enum(["driver", "constructor"]).optional(),
-  comparisonTargetId: z.string().min(1).optional(),
-  constructorFocus: z.array(z.string().min(1)).max(10).default([]),
-  pitStopCount: z.coerce.number().int().min(1).max(4),
-  tirePlan: z.array(tireStintSchema).min(1).max(4),
-  safetyCarProbability: z.coerce.number().min(0).max(1),
-  weatherScenario: z.enum(["dry", "mixed", "wet"]),
-  aggressionFactor: z.coerce.number().min(0).max(100),
-  reliabilityBias: z.coerce.number().min(-25).max(25),
-  qualifyingOverrides: z.array(qualifyingOverrideSchema).max(20).default([]),
-  notes: z.string().max(500).optional(),
-});
+export const raceScenarioSchema = z
+  .object({
+    raceId: z.string().min(1),
+    driverIds: z.array(z.string().min(1)).min(1).max(20),
+    comparisonTargetType: z.enum(["driver", "constructor"]).optional(),
+    comparisonTargetId: z.string().min(1).optional(),
+    constructorFocus: z.array(z.string().min(1)).max(10).default([]),
+    pitStopCount: z.coerce.number().int().min(1).max(4),
+    tirePlan: z.array(tireStintSchema).min(1).max(4),
+    safetyCarProbability: z.coerce.number().min(0).max(1),
+    weatherScenario: z.enum(["dry", "mixed", "wet"]),
+    aggressionFactor: z.coerce.number().min(0).max(100),
+    reliabilityBias: z.coerce.number().min(-25).max(25),
+    qualifyingOverrides: z.array(qualifyingOverrideSchema).max(20).default([]),
+    notes: z.string().max(500).optional(),
+  })
+  .superRefine((value, context) => {
+    const expectedStops = Math.max(0, value.tirePlan.length - 1);
+    if (value.pitStopCount !== expectedStops) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["pitStopCount"],
+        message: "Pit stop count must match the compound sequence length.",
+      });
+    }
+  });
 
 export const fantasyRequestSchema = z.object({
   season: z.coerce.number().int().min(1950).max(2100),

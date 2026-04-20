@@ -281,6 +281,111 @@ ALTER TABLE prediction_snapshots ENABLE ROW LEVEL SECURITY;
 ALTER TABLE fantasy_inputs ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_profiles ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Public can read drivers" ON drivers;
+CREATE POLICY "Public can read drivers"
+ON drivers
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read constructors" ON constructors;
+CREATE POLICY "Public can read constructors"
+ON constructors
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read circuits" ON circuits;
+CREATE POLICY "Public can read circuits"
+ON circuits
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read races" ON races;
+CREATE POLICY "Public can read races"
+ON races
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read qualifying results" ON qualifying_results;
+CREATE POLICY "Public can read qualifying results"
+ON qualifying_results
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read race results" ON race_results;
+CREATE POLICY "Public can read race results"
+ON race_results
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read sprint results" ON sprint_results;
+CREATE POLICY "Public can read sprint results"
+ON sprint_results
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read strategy profiles" ON strategy_profiles;
+CREATE POLICY "Public can read strategy profiles"
+ON strategy_profiles
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read fantasy pricing" ON fantasy_pricing;
+CREATE POLICY "Public can read fantasy pricing"
+ON fantasy_pricing
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read driver standings" ON driver_standings;
+CREATE POLICY "Public can read driver standings"
+ON driver_standings
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read constructor standings" ON constructor_standings;
+CREATE POLICY "Public can read constructor standings"
+ON constructor_standings
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read race week context" ON race_week_context;
+CREATE POLICY "Public can read race week context"
+ON race_week_context
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read model features" ON model_features;
+CREATE POLICY "Public can read model features"
+ON model_features
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read prediction snapshots" ON prediction_snapshots;
+CREATE POLICY "Public can read prediction snapshots"
+ON prediction_snapshots
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read fantasy inputs" ON fantasy_inputs;
+CREATE POLICY "Public can read fantasy inputs"
+ON fantasy_inputs
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
 DROP POLICY IF EXISTS "Users can view their own profile" ON user_profiles;
 CREATE POLICY "Users can view their own profile"
 ON user_profiles

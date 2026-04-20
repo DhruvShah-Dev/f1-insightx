@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { readCuratedCsv, readDataCsv } from "@/lib/server/csv";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
+import { getSupabasePublicClient } from "@/lib/server/supabase";
 import type { Race } from "@/lib/server/reference-data";
 
 type Numeric = number | string | null | undefined;
@@ -17,6 +18,11 @@ type StrategyLabOverviewRow = {
   best_strategy_label: string | null;
   key_insight: string | null;
   confidence_score: Numeric;
+  model_version?: string | null;
+  scenario_template_version?: string | null;
+  feature_build_version?: string | null;
+  generated_at?: string | null;
+  build_version?: string | null;
 };
 
 type StrategyFeatureRow = {
@@ -136,6 +142,9 @@ export type StrategyLabRaceProduct = {
     bestStrategyLabel: string | null;
     keyInsight: string;
     confidenceScore: number | null;
+    modelVersion: string | null;
+    scenarioTemplateVersion: string | null;
+    featureBuildVersion: string | null;
   };
   entrants: Array<{
     driverId: string;
@@ -205,6 +214,33 @@ export type StrategyLabRaceProduct = {
     }>;
   }>;
 };
+
+type StrategyLabRaceProductWithRuntime = StrategyLabRaceProduct & {
+  runtime?: {
+    generatedAt: string | null;
+    buildVersion: string | null;
+  };
+};
+
+export type StrategyLabRaceSummary = {
+  id: string;
+  season: number;
+  round: number;
+  raceName: string;
+  circuitId: string;
+  circuitName: string;
+  circuitCountry: string | null;
+  scheduledAt: string;
+  raceDifficulty: string | null;
+  bestStrategyLabel: string | null;
+  keyInsight: string;
+  confidenceScore: number | null;
+  generatedAt?: string | null;
+  buildVersion?: string | null;
+};
+
+export type StrategyLabRaceProductResult = RuntimeSourceResult<StrategyLabRaceProduct>;
+export type StrategyLabRaceListResult = RuntimeSourceResult<StrategyLabRaceSummary[]>;
 
 function parseNumber(value: Numeric) {
   if (value === null || value === undefined || value === "") return null;
@@ -398,9 +434,24 @@ function buildProductFromRows({
       bestStrategyLabel: overviewRow.best_strategy_label ?? null,
       keyInsight: overviewRow.key_insight ?? "",
       confidenceScore: parseNumber(overviewRow.confidence_score),
+      modelVersion: overviewRow.model_version ?? null,
+      scenarioTemplateVersion: overviewRow.scenario_template_version ?? null,
+      featureBuildVersion: overviewRow.feature_build_version ?? null,
     },
     entrants,
   };
+}
+
+function attachStrategyLabRuntimeMetadata(
+  product: StrategyLabRaceProduct,
+  overviewRow: Pick<StrategyLabOverviewRow, "generated_at" | "build_version"> | null,
+): StrategyLabRaceProduct {
+  return Object.assign(product, {
+    runtime: {
+      generatedAt: overviewRow?.generated_at ?? null,
+      buildVersion: overviewRow?.build_version ?? null,
+    },
+  }) as StrategyLabRaceProductWithRuntime;
 }
 
 async function buildFromCsv(raceId: string): Promise<StrategyLabRaceProduct | null> {
@@ -419,7 +470,7 @@ async function buildFromCsv(raceId: string): Promise<StrategyLabRaceProduct | nu
       readCuratedCsv("circuits.csv") as Promise<CircuitRow[]>,
     ]);
 
-  return buildProductFromRows({
+  const product = buildProductFromRows({
     raceId,
     overviewRows,
     featureRows,
@@ -433,15 +484,16 @@ async function buildFromCsv(raceId: string): Promise<StrategyLabRaceProduct | nu
     constructors,
     circuits,
   });
+  return product ? attachStrategyLabRuntimeMetadata(product, overviewRows.find((row) => row.race_id === raceId) ?? null) : null;
 }
 
 async function buildFromSupabase(raceId: string): Promise<StrategyLabRaceProduct | null> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePublicClient();
   if (!supabase) return null;
 
   const [overviewResult, raceResult, driversResult, constructorsResult, circuitsResult, featuresResult, driverProfileResult, constructorProfileResult, comparisonResult, pitWindowResult, projectionResult] =
     await Promise.all([
-      supabase.from("strategy_lab_overview_view").select("race_id, race_name, circuit_id, archetype_label, race_difficulty, nominal_race_laps, pit_loss_estimate_s, best_strategy_code, best_strategy_label, key_insight, confidence_score").eq("race_id", raceId).single<StrategyLabOverviewRow>(),
+      supabase.from("strategy_lab_overview_view").select("race_id, race_name, circuit_id, archetype_label, race_difficulty, nominal_race_laps, pit_loss_estimate_s, best_strategy_code, best_strategy_label, key_insight, confidence_score, model_version, scenario_template_version, feature_build_version, generated_at, build_version").eq("race_id", raceId).single<StrategyLabOverviewRow>(),
       supabase.from("races").select("id, season, round, race_name, official_name, circuit_id, scheduled_at, sprint_weekend").eq("id", raceId).single<RaceRow>(),
       supabase.from("drivers").select("id, full_name"),
       supabase.from("constructors").select("id, name"),
@@ -462,7 +514,7 @@ async function buildFromSupabase(raceId: string): Promise<StrategyLabRaceProduct
     throw new Error("Failed to load Strategy Lab product data.");
   }
 
-  return buildProductFromRows({
+  const product = buildProductFromRows({
     raceId,
     overviewRows: overviewResult.data ? [overviewResult.data] : [],
     featureRows: (featuresResult.data ?? []) as StrategyFeatureRow[],
@@ -476,16 +528,179 @@ async function buildFromSupabase(raceId: string): Promise<StrategyLabRaceProduct
     constructors: (constructorsResult.data ?? []) as ConstructorRow[],
     circuits: (circuitsResult.data ?? []) as CircuitRow[],
   });
+  return product ? attachStrategyLabRuntimeMetadata(product, overviewResult.data ?? null) : null;
 }
 
-export const getStrategyLabRaceProduct = cache(async (raceId: string): Promise<StrategyLabRaceProduct | null> => {
-  const supabase = getSupabaseAdminClient();
-  if (supabase) {
-    try {
-      return await buildFromSupabase(raceId);
-    } catch {
-      return buildFromCsv(raceId);
-    }
+async function listFromCsv(): Promise<StrategyLabRaceSummary[]> {
+  const [overviewRows, races, circuits] = await Promise.all([
+    readDataCsv("strategy_lab", "strategy_lab_overview.csv") as Promise<StrategyLabOverviewRow[]>,
+    readCuratedCsv("races.csv") as Promise<RaceRow[]>,
+    readCuratedCsv("circuits.csv") as Promise<CircuitRow[]>,
+  ]);
+
+  const raceMap = new Map(races.map((row) => [row.id, row]));
+  const circuitMap = new Map(circuits.map((row) => [row.id, row]));
+
+  const summaries = overviewRows
+    .map((row) => {
+      const raceRow = raceMap.get(row.race_id);
+      if (!raceRow) return null;
+      const circuit = circuitMap.get(raceRow.circuit_id);
+      return {
+        id: row.race_id,
+        season: Number(raceRow.season),
+        round: Number(raceRow.round),
+        raceName: raceRow.race_name,
+        circuitId: raceRow.circuit_id,
+        circuitName: circuit?.name ?? raceRow.circuit_id,
+        circuitCountry: circuit?.country ?? null,
+        scheduledAt: raceRow.scheduled_at,
+        raceDifficulty: row.race_difficulty ?? null,
+        bestStrategyLabel: row.best_strategy_label ?? null,
+        keyInsight: row.key_insight ?? "",
+        confidenceScore: parseNumber(row.confidence_score),
+        generatedAt: row.generated_at ?? null,
+        buildVersion: row.build_version ?? null,
+      } as StrategyLabRaceSummary;
+    })
+    .filter((row): row is StrategyLabRaceSummary => row !== null);
+
+  return summaries.sort((left, right) => (right.season - left.season) || (right.round - left.round));
+}
+
+async function listFromSupabase(): Promise<StrategyLabRaceSummary[]> {
+  const supabase = getSupabasePublicClient();
+  if (!supabase) return [];
+
+  const [overviewResult, racesResult, circuitsResult] = await Promise.all([
+    supabase
+      .from("strategy_lab_overview_view")
+      .select("race_id, race_name, circuit_id, race_difficulty, best_strategy_label, key_insight, confidence_score, generated_at, build_version"),
+    supabase
+      .from("races")
+      .select("id, season, round, race_name, circuit_id, scheduled_at"),
+    supabase
+      .from("circuits")
+      .select("id, name, country"),
+  ]);
+
+  if (overviewResult.error || racesResult.error || circuitsResult.error) {
+    throw new Error("Failed to list Strategy Lab races.");
   }
-  return buildFromCsv(raceId);
+
+  const raceMap = new Map(((racesResult.data ?? []) as Array<Pick<RaceRow, "id" | "season" | "round" | "race_name" | "circuit_id" | "scheduled_at">>).map((row) => [row.id, row]));
+  const circuitMap = new Map(((circuitsResult.data ?? []) as CircuitRow[]).map((row) => [row.id, row]));
+
+  const summaries = ((overviewResult.data ?? []) as Array<Pick<StrategyLabOverviewRow, "race_id" | "race_name" | "circuit_id" | "race_difficulty" | "best_strategy_label" | "key_insight" | "confidence_score" | "generated_at" | "build_version">>)
+    .map((row) => {
+      const raceRow = raceMap.get(row.race_id);
+      if (!raceRow) return null;
+      const circuit = circuitMap.get(raceRow.circuit_id);
+      return {
+        id: row.race_id,
+        season: Number(raceRow.season),
+        round: Number(raceRow.round),
+        raceName: raceRow.race_name,
+        circuitId: raceRow.circuit_id,
+        circuitName: circuit?.name ?? raceRow.circuit_id,
+        circuitCountry: circuit?.country ?? null,
+        scheduledAt: raceRow.scheduled_at,
+        raceDifficulty: row.race_difficulty ?? null,
+        bestStrategyLabel: row.best_strategy_label ?? null,
+        keyInsight: row.key_insight ?? "",
+        confidenceScore: parseNumber(row.confidence_score),
+        generatedAt: row.generated_at ?? null,
+        buildVersion: row.build_version ?? null,
+      } as StrategyLabRaceSummary;
+    })
+    .filter((row): row is StrategyLabRaceSummary => row !== null);
+
+  return summaries.sort((left, right) => (right.season - left.season) || (right.round - left.round));
+}
+
+function describeStrategyLabProduct(product: StrategyLabRaceProduct) {
+  const runtime = (product as StrategyLabRaceProductWithRuntime).runtime;
+  return {
+    eventId: product.race.id,
+    season: product.race.season,
+    round: product.race.round,
+    generatedAt: runtime?.generatedAt ?? null,
+    buildVersion: runtime?.buildVersion ?? null,
+  };
+}
+
+export const getStrategyLabRaceProductResult = cache(async (raceId: string): Promise<StrategyLabRaceProductResult> =>
+  resolveRuntimeSource({
+    surface: "strategy-lab",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "strategy_lab_views",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+
+        return buildFromSupabase(raceId);
+      },
+      describe: describeStrategyLabProduct,
+    },
+    degraded: {
+      sourceKind: "csv-product",
+      sourceLabel: "strategy_lab_csv",
+      load: () => buildFromCsv(raceId),
+      describe: describeStrategyLabProduct,
+    },
+  }),
+);
+
+export const getStrategyLabRaceProduct = cache(async (raceId: string): Promise<StrategyLabRaceProduct | null> => {
+  const result = await getStrategyLabRaceProductResult(raceId);
+  return getRuntimeData(result);
+});
+
+function describeStrategyLabRaceList(races: StrategyLabRaceSummary[]) {
+  const latestRace = races[0] ?? null;
+
+  return {
+    eventId: latestRace?.id ?? null,
+    season: latestRace?.season ?? null,
+    round: latestRace?.round ?? null,
+    generatedAt: latestRace?.generatedAt ?? null,
+    buildVersion: latestRace?.buildVersion ?? null,
+  };
+}
+
+export const listStrategyLabRacesResult = cache(async (): Promise<StrategyLabRaceListResult> =>
+  resolveRuntimeSource({
+    surface: "strategy-lab",
+    primary: {
+      sourceKind: "database",
+      sourceLabel: "strategy_lab_views",
+      load: async () => {
+        const supabase = getSupabasePublicClient();
+        if (!supabase) {
+          return null;
+        }
+
+        const races = await listFromSupabase();
+        return races.length > 0 ? races : null;
+      },
+      describe: describeStrategyLabRaceList,
+    },
+    degraded: {
+      sourceKind: "csv-product",
+      sourceLabel: "strategy_lab_csv",
+      load: async () => {
+        const races = await listFromCsv();
+        return races.length > 0 ? races : null;
+      },
+      describe: describeStrategyLabRaceList,
+    },
+  }),
+);
+
+export const listStrategyLabRaces = cache(async (): Promise<StrategyLabRaceSummary[]> => {
+  const result = await listStrategyLabRacesResult();
+  return getRuntimeData(result) ?? [];
 });

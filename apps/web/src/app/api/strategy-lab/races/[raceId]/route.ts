@@ -1,7 +1,9 @@
 import { apiError, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
 import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
-import { getStrategyLabRaceProduct } from "@/lib/server/strategy-lab-product";
+import { getStrategyLabRaceProductResult } from "@/lib/server/strategy-lab-product";
+import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
+import { classifyStrategyLabUnavailable } from "./response";
 
 type RouteContext = {
   params: Promise<{
@@ -15,7 +17,23 @@ const cacheHeaders = createPublicCacheHeaders({
   staleWhileRevalidateSeconds: 900,
 });
 
-export async function GET(request: Request, context: RouteContext) {
+type StrategyLabRouteResult = {
+  mode: "primary" | "degraded";
+  data: NonNullable<Awaited<ReturnType<typeof getStrategyLabRaceProductResult>>["data"]>;
+  meta: RuntimeSourceMetadata;
+} | {
+  mode: "unavailable";
+  data: null;
+  meta: RuntimeSourceMetadata;
+};
+
+export async function handleStrategyLabRaceGet(
+  request: Request,
+  context: RouteContext,
+  deps: {
+    getRaceProductResult?: (raceId: string) => Promise<StrategyLabRouteResult>;
+  } = {},
+) {
   const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.publicRead);
   if (!rateLimit.ok) {
     return apiError({
@@ -29,17 +47,19 @@ export async function GET(request: Request, context: RouteContext) {
   const { raceId } = await context.params;
 
   try {
-    const product = await getStrategyLabRaceProduct(raceId);
-    if (!product) {
+    const result = await (deps.getRaceProductResult ?? getStrategyLabRaceProductResult)(raceId);
+    if (result.mode === "unavailable") {
+      const unavailable = classifyStrategyLabUnavailable(result.meta);
       return apiError({
-        status: 404,
-        code: "not_found",
-        message: "Strategy Lab data was not found for this race.",
+        status: unavailable.status,
+        code: unavailable.code,
+        message: unavailable.message,
+        details: result.meta,
         headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
       });
     }
 
-    return apiOk(product, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
+    return apiOk({ product: result.data, runtime: result.meta }, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
   } catch {
     return apiError({
       status: 500,
@@ -48,4 +68,8 @@ export async function GET(request: Request, context: RouteContext) {
       headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }
+}
+
+export async function GET(request: Request, context: RouteContext) {
+  return handleStrategyLabRaceGet(request, context);
 }

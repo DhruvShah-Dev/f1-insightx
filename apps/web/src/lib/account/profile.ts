@@ -11,7 +11,7 @@ import {
   validateUsername,
 } from "@/lib/account/usernames";
 import { createAppError } from "@/lib/errors/app-error";
-import { getSupabaseAdminClient } from "@/lib/server/supabase";
+import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 
 export const avatarTypeSchema = z.enum(["constructor_logo", "driver_image"]);
 export const PROFILE_LOCK_DAYS = 7;
@@ -195,7 +195,7 @@ export async function getUserProfileByIdWithClient(
 }
 
 export async function getUserProfileById(userId: string): Promise<UserProfileRecord | null> {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePrivilegedClient();
   if (!supabase) {
     throw new Error("Supabase admin client is not configured.");
   }
@@ -203,7 +203,7 @@ export async function getUserProfileById(userId: string): Promise<UserProfileRec
 }
 
 export async function ensureProfileFromUserMetadata(user: User) {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePrivilegedClient();
   if (!supabase) {
     throw new Error("Supabase admin client is not configured.");
   }
@@ -289,7 +289,7 @@ export async function upsertUserProfile(
     onboardingCompleted?: boolean;
   },
 ) {
-  const supabase = getSupabaseAdminClient();
+  const supabase = getSupabasePrivilegedClient();
   if (!supabase) {
     throw new Error("Supabase admin client is not configured.");
   }
