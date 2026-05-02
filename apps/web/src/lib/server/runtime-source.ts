@@ -3,7 +3,7 @@ export type RuntimeMode = "primary" | "degraded" | "unavailable";
 export type RuntimeSourceKind = "database" | "csv-product" | "csv-canonical";
 
 export type RuntimeSourceMetadata = {
-  surface: "homepage" | "race-week" | "strategy-lab" | "reference";
+  surface: "homepage" | "race-week" | "strategy-lab" | "analytics" | "reference";
   mode: RuntimeMode;
   sourceKind: RuntimeSourceKind | null;
   sourceLabel: string | null;
