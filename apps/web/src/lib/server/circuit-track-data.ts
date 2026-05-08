@@ -15,12 +15,11 @@ export type CircuitTrackData = {
 
 type CircuitTrackMap = Record<string, CircuitTrackData>;
 
-const dataRootDir = path.join(process.cwd(), "..", "..", "data");
+const circuitTrackPathsFile = path.join(process.cwd(), "..", "..", "data", "race_week", "circuit_track_paths.json");
 
 const loadCircuitTrackData = cache(async (): Promise<CircuitTrackMap> => {
-  const filePath = path.join(dataRootDir, "race_week", "circuit_track_paths.json");
   try {
-    const content = await readFile(filePath, "utf-8");
+    const content = await readFile(circuitTrackPathsFile, "utf-8");
     return JSON.parse(content) as CircuitTrackMap;
   } catch {
     return {};

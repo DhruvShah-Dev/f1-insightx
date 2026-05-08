@@ -1,27 +1,21 @@
 # Deployment
 
-## Target stack
+## Target Stack
 
-- `Frontend + API routes`: Vercel Hobby
-- `Database`: Supabase Free
-- `Scheduled data refresh`: GitHub Actions
+- Next.js App Router on Vercel
+- Supabase for auth, profile, and database-backed surfaces
+- Offline Python builders for FastF1, Strategy Lab, and Analytics product views
 
-This keeps the app inexpensive to run while preserving a realistic production shape for demos and portfolio use.
+## Vercel Setup
 
-## Vercel setup
-
-### Recommended project configuration
-
-Create a Vercel project from this repository and set:
+Recommended project settings:
 
 - `Framework Preset`: Next.js
 - `Root Directory`: `apps/web`
-- `Build Command`: leave default for Next.js
-- `Install Command`: leave default or `npm install`
+- `Install Command`: `npm install`
+- `Build Command`: `npm run build`
 
-### Required environment variables
-
-Set these in the Vercel project:
+Required environment variables:
 
 - `NEXT_PUBLIC_APP_URL`
 - `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL`
@@ -29,87 +23,54 @@ Set these in the Vercel project:
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
 
-Notes:
+`SUPABASE_SERVICE_ROLE_KEY` must remain server-side only.
 
-- `SUPABASE_SERVICE_ROLE_KEY` is only used server-side in route handlers.
-- `DATABASE_URL` is not required on Vercel because the deployed app uses the Supabase HTTP client, not direct Postgres connections.
-- `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL` should point to a monitored address before public launch so manual deletion and privacy requests have a visible contact path.
+## Generated Data Expectations
 
-## Supabase setup
+The app is designed to consume compact product views. Raw FastF1 data, staged data, cache files, and telemetry parquet should never be deployed.
 
-### Initial database bootstrapping
-
-1. Create a Supabase project on the free plan.
-2. Copy the pooled connection string into local `.env.local` as `DATABASE_URL`.
-3. Run:
+If Analytics or Strategy Lab needs bundled CSV/JSON artifacts in production, generate them before packaging:
 
 ```bash
-python data/fetch_reference_data.py --start-season 2024 --end-season 2025
-python data/normalize_results.py
-python data/load_supabase.py
+python build_canonical_fastf1.py --start-season 2020 --end-season 2026
+python build_telemetry_features.py --start-season 2020 --end-season 2026
+python data/build_strategy_lab_layers.py
+python data/build_analytics_views.py
+python data/build_analytics_indexes.py
+python validate_canonical_fastf1.py
+python validate_telemetry_features.py
+python validate_analytics_views.py
+python build_product_manifest.py
+python validate_product_manifest.py
+python check_generated_artifacts.py
 ```
 
-### Recommended Supabase environment variables
+For normal GitHub syncs, keep large generated outputs ignored and publish them through an explicit artifact process if deployment needs them.
 
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `DATABASE_URL`
+## Runtime Boundaries
 
-## GitHub Actions setup
+- API routes should read product views only.
+- Analytics detail modes should use session-scoped indexed shards.
+- Raw telemetry processing belongs in offline Python builders.
+- Energy deployment is a proxy, not true battery or ERS telemetry.
+- Segment IDs are approximate until manually refined circuit maps exist.
 
-The repo includes:
-
-- [CI workflow](../.github/workflows/ci.yml)
-- [Data refresh workflow](../.github/workflows/data-refresh.yml)
-
-### Repository secrets
-
-Add these GitHub repository secrets:
-
-- `DATABASE_URL`
-- `JOLPICA_BASE_URL` optional if overriding the default
-
-The scheduled refresh workflow will:
-
-1. fetch fresh reference data
-2. normalize curated outputs
-3. load them into Supabase
-
-## Local fallback mode
-
-If Supabase env vars are missing, the app can still run locally against `data/curated/*.csv`.
-
-That is useful for:
-
-- local UI work
-- demoing the UI without a live DB
-- development before the first Supabase bootstrap
-
-## Recommended release flow
-
-1. Run local checks:
+## Release Checks
 
 ```bash
-npm run lint
-npm run build
+npm run test --workspace web
+npm run typecheck
+npm run lint --workspace web
+npm run build --workspace web
+python validate_canonical_fastf1.py
+python validate_telemetry_features.py
+python validate_analytics_views.py
+python build_product_manifest.py
+python validate_product_manifest.py
+python check_generated_artifacts.py
+python -m pytest tests/test_analytics_views.py tests/test_telemetry_features.py
 ```
 
-2. Push to GitHub.
-3. Let GitHub Actions run CI.
-4. Merge to `main`.
-5. Vercel deploys automatically.
-6. Trigger `Data Refresh` manually the first time, then rely on the schedule.
+## Privacy Baseline
 
-## Privacy and cookie launch baseline
-
-- The current app uses necessary Supabase authentication/session cookies.
-- The repo currently does not ship analytics or advertising trackers by default.
-- If you add analytics, A/B testing, or marketing tags later, review cookie-consent requirements before enabling them publicly.
-- Review the public `/privacy`, `/terms`, and `/cookies` pages before launch and confirm they match your actual infrastructure, support process, and jurisdictions.
-
-## Free-tier tradeoffs
-
-- Vercel Hobby is fine for a portfolio app, but function limits still apply.
-- Supabase Free can pause inactive projects, so keep the project in occasional use.
-- GitHub Actions scheduled jobs are reliable enough for this use case, but not a substitute for full production orchestration.
+The app ships legal/privacy/cookie surfaces and Supabase session cookies. Before public launch, confirm the privacy contact address, data retention behavior, and any analytics or monitoring additions match the published policy.

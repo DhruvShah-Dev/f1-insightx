@@ -57,3 +57,21 @@ data_pipeline/fastf1/cache/*
 !data_pipeline/fastf1/cache/.gitkeep
 data_pipeline/fastf1/logs/*
 !data_pipeline/fastf1/logs/.gitkeep
+
+# Generated FastF1 and telemetry-derived artifacts.
+# Keep builders, validators, docs, tests, and small intentional fixtures in git;
+# regenerate these local data products from the documented pipeline.
+data/canonical_fastf1/*.csv
+data/telemetry_features/*
+!data/telemetry_features/.gitkeep
+data/analytics/*.csv
+data/analytics/indexed/*
+!data/analytics/indexed/.gitkeep
+data/analytics/indexed/sessions/*
+data/reports/*
+!data/reports/.gitkeep
+data/strategy_lab/telemetry_strategy_signals.csv
+data/strategy_lab/track_archetype_weights.csv
+*.parquet
+*.feather
+*.arrow

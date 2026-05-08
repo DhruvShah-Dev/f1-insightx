@@ -1,4 +1,4 @@
-import { readCuratedCsv } from "@/lib/server/csv";
+import { readCsvFile } from "@/lib/server/csv";
 import { getFantasyInputsForCurrentRaceWeek, getRaceWeekOverview } from "@/lib/server/f1-platform";
 import { roundTo } from "@/lib/server/utils";
 
@@ -64,8 +64,8 @@ export async function getFantasyDataset(season?: number, round?: number): Promis
 
   const [inputs, drivers, constructors] = await Promise.all([
     getFantasyInputsForCurrentRaceWeek(targetSeason, targetRound ?? undefined),
-    readCuratedCsv("drivers.csv") as Promise<CsvDriver[]>,
-    readCuratedCsv("constructors.csv") as Promise<CsvConstructor[]>,
+    readCsvFile<CsvDriver>("curated.drivers"),
+    readCsvFile<CsvConstructor>("curated.constructors"),
   ]);
 
   const driverMap = new Map(drivers.map((driver) => [driver.id, driver.full_name]));

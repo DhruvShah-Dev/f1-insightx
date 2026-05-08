@@ -19,7 +19,10 @@
     "audit": "npm audit",
     "audit:prod": "npm audit --omit=dev",
     "typecheck": "npx tsc --noEmit --project apps/web/tsconfig.json",
-    "data:install": "python -m pip install -r data/requirements.txt"
+    "data:install": "python -m pip install -r data/requirements.txt",
+    "data:manifest": "python build_product_manifest.py",
+    "data:validate": "python validate_product_manifest.py",
+    "data:guard": "python check_generated_artifacts.py"
   },
   "overrides": {
     "eslint": {

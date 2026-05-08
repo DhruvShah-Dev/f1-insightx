@@ -3,7 +3,7 @@ import test from "node:test";
 import type { z } from "zod";
 import { raceScenarioSchema } from "@/lib/api/validation";
 import type { StrategyLabRaceProduct } from "@/lib/server/strategy-lab-product";
-import { simulateRaceScenario } from "@/lib/server/strategy-lab-simulator";
+import { fuelCorrectionS, nonlinearTyreLossS, simulateRaceScenario, trafficLossS } from "@/lib/server/strategy-lab-simulator";
 
 type RaceScenarioInput = z.infer<typeof raceScenarioSchema>;
 
@@ -53,6 +53,26 @@ const baseProduct: StrategyLabRaceProduct = {
         baseQualiPaceS: 88.9,
         paceEvolutionSPerLap: 0.017,
         pitLossS: 21.6,
+        fuelCorrectionSPerLap: 0.035,
+        trafficSensitivityScore: 0.62,
+        weatherGripSensitivityScore: 0.58,
+        energyDeploymentProxyScore: 0.64,
+        cornerSpeedStrength: 0.58,
+        brakingStrength: 0.62,
+        throttlePickupStrength: 0.6,
+        tractionExitStrength: 0.64,
+        straightLineStrength: 0.7,
+        energyDeploymentProxyStrength: 0.64,
+        liftAndCoastTendency: 0.08,
+        clippingRiskProxy: 0.2,
+        overtakingAttackScore: 0.68,
+        defendingStrengthScore: 0.66,
+        tyreStressProxy: 0.45,
+        undercutSuitabilityScore: 0.61,
+        highDegradationRiskScore: 0.5,
+        trackArchetype: "power-sensitive",
+        trackPositionSensitivityScore: 0.36,
+        telemetryProxyConfidence: 0.72,
         baselineStopCount: 2,
         baselinePitWindowStartLap: 17,
         baselinePitWindowEndLap: 21,
@@ -177,4 +197,82 @@ test("simulateRaceScenario makes weather mode materially affect pace assumptions
     wetEntrant.explanation.some((line) => line.includes("Wet conditions")),
   );
   assert.equal(wet.modelMeta.simulatorVersion, "strategy_lab_sim_v2");
+});
+
+test("fuel correction separates early fuel mass from tyre degradation trend", () => {
+  assert.ok(fuelCorrectionS(1, 50, 0.035) > fuelCorrectionS(45, 50, 0.035));
+  assert.ok(fuelCorrectionS(45, 50, 0.035) < 0);
+});
+
+test("nonlinear tyre model has warmup/plateau/cliff phase behavior", () => {
+  const warmup = nonlinearTyreLossS("soft", 2, 20, 0.08, 0.6);
+  const plateau = nonlinearTyreLossS("soft", 10, 20, 0.08, 0.6);
+  const cliff = nonlinearTyreLossS("soft", 20, 20, 0.08, 0.6);
+
+  assert.ok(warmup < plateau);
+  assert.ok(cliff > plateau);
+});
+
+test("traffic model penalizes low pace advantage behind traffic", () => {
+  const trapped = trafficLossS({ gridPosition: 12, racecraftScore: 0.45, trafficSensitivityScore: 0.8, overtakeDifficulty: 1.2, paceAdvantageS: 0.1 });
+  const clear = trafficLossS({ gridPosition: 3, racecraftScore: 0.8, trafficSensitivityScore: 0.4, overtakeDifficulty: 0.8, paceAdvantageS: 0.9 });
+
+  assert.ok(trapped > clear);
+});
+
+test("energy behavior is explicitly labelled as proxy, not true ERS", () => {
+  const response = simulateRaceScenario(buildScenarioInput(), baseProduct);
+
+  assert.ok(response.sensitivity.some((item) => item.factor === "energy_proxy"));
+  assert.ok(response.modelMeta.assumptions.some((line) => line.toLowerCase().includes("proxy")));
+  assert.ok(response.finishingOrder[0].explanation.some((line) => line.includes("not true ERS")));
+});
+
+test("track archetype telemetry signals alter sensitivity and outcome", () => {
+  const powerSensitive = simulateRaceScenario(buildScenarioInput(), baseProduct);
+  const trackPositionProduct: StrategyLabRaceProduct = {
+    ...baseProduct,
+    entrants: baseProduct.entrants.map((entrant) => ({
+      ...entrant,
+      strategyFeature: {
+        ...entrant.strategyFeature,
+        straightLineStrength: 0.28,
+        overtakingAttackScore: 0.3,
+        defendingStrengthScore: 0.42,
+        trafficSensitivityScore: 0.82,
+        undercutSuitabilityScore: 0.72,
+        trackArchetype: "track-position-dominant",
+        trackPositionSensitivityScore: 0.86,
+      },
+    })),
+  };
+  const trackPosition = simulateRaceScenario(buildScenarioInput(), trackPositionProduct);
+
+  assert.notEqual(trackPosition.finishingOrder[0].totalRaceTimeS, powerSensitive.finishingOrder[0].totalRaceTimeS);
+  assert.ok(trackPosition.sensitivity.some((item) => item.factor === "track_position_sensitivity" && item.explanation.includes("Track-position")));
+});
+
+test("telemetry signal changes strategy sensitivity explanation", () => {
+  const response = simulateRaceScenario(buildScenarioInput(), baseProduct);
+
+  assert.ok(response.sensitivity.some((item) => item.factor === "straight_line_strength"));
+  assert.ok(response.sensitivity.some((item) => item.explanation.includes("telemetry") || item.explanation.includes("proxy")));
+});
+
+test("strategy intelligence layer surfaces bands, top drivers, weakest assumption, and outcome cause", () => {
+  const response = simulateRaceScenario(
+    buildScenarioInput({
+      weatherScenario: "mixed",
+      safetyCarProbability: 0.62,
+    }),
+    baseProduct,
+  );
+
+  assert.ok(response.positionTransitionBands.length > 0);
+  assert.match(response.positionTransitionBands[0]!.projectedBand, /^P\d+/);
+  assert.equal(response.topSensitivityDrivers.length, 3);
+  assert.ok(response.topSensitivityDrivers.every((item) => item.impactS > 0));
+  assert.equal(response.weakestAssumption.factor, "weather");
+  assert.ok(response.confidenceReason.includes("finish bands"));
+  assert.ok(response.whatChangedOutcome.drivers.some((line) => line.includes("Weather") || line.includes("Tyre") || line.includes("Pit")));
 });

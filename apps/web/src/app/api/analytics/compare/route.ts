@@ -10,7 +10,7 @@ const cacheHeaders = createPublicCacheHeaders({
 });
 
 export async function GET(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.publicRead);
+  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.analyticsCompare);
   if (!rateLimit.ok) {
     return apiError({
       status: 429,
@@ -25,6 +25,7 @@ export async function GET(request: Request) {
     sessionId: url.searchParams.get("sessionId"),
     driverA: url.searchParams.get("driverA"),
     driverB: url.searchParams.get("driverB"),
+    mode: url.searchParams.get("mode"),
   });
 
   if (!validation.ok) {
@@ -37,8 +38,8 @@ export async function GET(request: Request) {
   }
 
   try {
-    const { sessionId, driverA, driverB } = validation.value;
-    const result = await getAnalyticsComparisonResult(sessionId, driverA, driverB);
+    const { sessionId, driverA, driverB, mode } = validation.value;
+    const result = await getAnalyticsComparisonResult(sessionId, driverA, driverB, mode);
     if (result.mode === "unavailable") {
       return apiError({
         status: 404,

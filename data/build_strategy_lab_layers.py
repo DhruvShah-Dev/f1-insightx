@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -42,6 +43,42 @@ SCENARIO_TEMPLATES: list[dict[str, Any]] = [
 
 STRATEGY_LAB_MODEL_VERSION = "strategy_lab_model_v2"
 STRATEGY_LAB_SCENARIO_TEMPLATE_VERSION = "strategy_templates_v1"
+FUEL_CORRECTION_S_PER_LAP = 0.035
+TELEMETRY_SIGNAL_FORMULAS = {
+    "corner_speed_strength": "1 - mean speed_delta_vs_session_best normalized to a 0-35 kph practical range",
+    "braking_strength": "mean late_brake_score and brake_intensity_proxy blend",
+    "throttle_pickup_strength": "inverse normalized throttle_pickup_distance_m with traction_exit_score support",
+    "traction_exit_strength": "mean traction_exit_score",
+    "straight_line_strength": "terminal speed rank blended with straight acceleration_score",
+    "energy_deployment_proxy_strength": "mean deployment_proxy_score; proxy only, not ERS/battery state",
+    "lift_and_coast_tendency": "mean high-speed low-throttle non-brake proxy",
+    "clipping_risk_proxy": "mean speed plateau proxy on straights",
+}
+DRIVER_CODE_FALLBACK = {
+    "albon": "ALB",
+    "alonso": "ALO",
+    "antonelli": "ANT",
+    "bearman": "BEA",
+    "bottas": "BOT",
+    "colapinto": "COL",
+    "doohan": "DOO",
+    "gasly": "GAS",
+    "hadjar": "HAD",
+    "hamilton": "HAM",
+    "hulkenberg": "HUL",
+    "lawson": "LAW",
+    "leclerc": "LEC",
+    "max_verstappen": "VER",
+    "norris": "NOR",
+    "ocon": "OCO",
+    "perez": "PER",
+    "piastri": "PIA",
+    "russell": "RUS",
+    "sainz": "SAI",
+    "stroll": "STR",
+    "tsunoda": "TSU",
+    "zhou": "ZHO",
+}
 
 
 def read_csv(path: Path) -> pd.DataFrame:
@@ -162,6 +199,8 @@ def simulate_strategy(
     tyre_management_score: float,
     pit_efficiency_adjustment_s: float,
     aggression_score: float,
+    energy_deployment_proxy_score: float = 0.5,
+    race_season: int = 2025,
 ) -> tuple[float, float]:
     cumulative_time = 0.0
     global_lap = 0
@@ -173,15 +212,363 @@ def simulate_strategy(
         compound_delta = compound_deltas.get(compound, 0.0)
         for stint_lap in range(1, stint_laps + 1):
             global_lap += 1
-            fuel_offset = ((total_laps - global_lap) / max(total_laps, 1) - 0.5) * 0.9
+            fuel_offset = (total_laps - global_lap - total_laps / 2) * FUEL_CORRECTION_S_PER_LAP
             pace_evolution = global_lap * pace_evolution_s_per_lap * (1.0 - aggression_score * 0.08)
-            lap_time = base_race_pace_s + compound_delta + fuel_offset + pace_evolution + (stint_lap - 1) * degradation_rate
+            phase = stint_lap / max(stint_laps, 1)
+            plateau = 0.55 if phase < 0.45 else 1.0 if phase < 0.78 else 1.35
+            cliff_start = 0.82 if compound == "soft" else 0.88 if compound == "medium" else 0.93
+            cliff = ((phase - cliff_start) / max(1 - cliff_start, 0.01)) ** 2 if phase > cliff_start else 0.0
+            nonlinear_degradation = max(0.0, (stint_lap - 1) * degradation_rate * plateau + cliff * degradation_rate * 8)
+            warmup_penalty = (0.32 if compound == "hard" else 0.18 if compound == "medium" else 0.10) if stint_lap == 1 else 0.0
+            energy_proxy_offset = -(energy_deployment_proxy_score - 0.5) * 0.05 * phase if race_season >= 2026 else 0.0
+            lap_time = base_race_pace_s + compound_delta + fuel_offset + pace_evolution + nonlinear_degradation + warmup_penalty + energy_proxy_offset
             cumulative_time += lap_time
         degradation_samples.append(degradation_rate)
         if stint_index < len(compounds) - 1:
             cumulative_time += max(16.0, pit_loss_s + pit_efficiency_adjustment_s - aggression_score * 0.35)
 
     return round(cumulative_time, 3), round(sum(degradation_samples) / max(len(degradation_samples), 1), 4)
+
+
+def telemetry_energy_score(energy_proxy: pd.DataFrame, driver_code: str, season: int, round_number: int) -> float:
+    if energy_proxy.empty or not driver_code or "deployment_proxy_score" not in energy_proxy.columns:
+        return 0.5
+    frame = energy_proxy[energy_proxy["driver"].astype(str).str.upper() == driver_code.upper()].copy()
+    if frame.empty:
+        return 0.5
+    frame["season"] = pd.to_numeric(frame["season"], errors="coerce")
+    frame["round"] = pd.to_numeric(frame["round"], errors="coerce")
+    same_event = frame[(frame["season"] == season) & (frame["round"] == round_number)]
+    prior = frame[(frame["season"] < season) | ((frame["season"] == season) & (frame["round"] < round_number))]
+    source = same_event if not same_event.empty else prior if not prior.empty else frame
+    scores = pd.to_numeric(source["deployment_proxy_score"], errors="coerce").dropna()
+    if scores.empty:
+        return 0.5
+    confidence_multiplier = 1.0 if not same_event.empty else 0.35
+    return round(0.5 + (float(scores.tail(80).mean()) - 0.5) * confidence_multiplier, 6)
+
+
+def bounded_score(value: Any, default: float = 0.5) -> float:
+    if value is None or pd.isna(value):
+        return default
+    return round(max(0.0, min(1.0, float(value))), 6)
+
+
+def event_slug(value: Any) -> str:
+    text = str(value or "").lower()
+    return "".join(char if char.isalnum() else "-" for char in text).strip("-")
+
+
+def driver_code_for(driver_id: str, driver_code_map: dict[str, Any]) -> str:
+    mapped = str(driver_code_map.get(driver_id, "") or "")
+    return mapped if mapped else DRIVER_CODE_FALLBACK.get(driver_id, "")
+
+
+def driver_signal_source(frame: pd.DataFrame, driver_code: str, season: int, round_number: int) -> tuple[pd.DataFrame, float]:
+    if frame.empty or not driver_code or "driver" not in frame.columns:
+        return pd.DataFrame(), 0.0
+    source = frame[frame["driver"].astype(str).str.upper() == driver_code.upper()].copy()
+    if source.empty:
+        return pd.DataFrame(), 0.0
+    source["season"] = pd.to_numeric(source["season"], errors="coerce")
+    source["round"] = pd.to_numeric(source["round"], errors="coerce")
+    same_event = source[(source["season"] == season) & (source["round"] == round_number)]
+    prior = source[(source["season"] < season) | ((source["season"] == season) & (source["round"] < round_number))]
+    if not same_event.empty:
+        return same_event, 1.0
+    if not prior.empty:
+        return prior.tail(240), 0.55
+    return source.tail(240), 0.35
+
+
+def telemetry_strategy_signals(
+    *,
+    driver_code: str,
+    season: int,
+    round_number: int,
+    corner_speed: pd.DataFrame,
+    corner_braking: pd.DataFrame,
+    corner_throttle: pd.DataFrame,
+    straight_speed: pd.DataFrame,
+    energy_proxy: pd.DataFrame,
+    lap_summary: pd.DataFrame,
+    track_position_sensitivity: float,
+    degradation_anchor: float,
+) -> dict[str, Any]:
+    speed_source, speed_conf = driver_signal_source(corner_speed, driver_code, season, round_number)
+    braking_source, braking_conf = driver_signal_source(corner_braking, driver_code, season, round_number)
+    throttle_source, throttle_conf = driver_signal_source(corner_throttle, driver_code, season, round_number)
+    straight_source, straight_conf = driver_signal_source(straight_speed, driver_code, season, round_number)
+    energy_source, energy_conf = driver_signal_source(energy_proxy, driver_code, season, round_number)
+    lap_source, lap_conf = driver_signal_source(lap_summary, driver_code, season, round_number)
+
+    corner_delta = pd.to_numeric(speed_source.get("speed_delta_vs_session_best"), errors="coerce") if not speed_source.empty else pd.Series(dtype=float)
+    corner_speed_strength = bounded_score(1 - float(corner_delta.mean()) / 35.0) if corner_delta.notna().any() else 0.5
+    late_brake = pd.to_numeric(braking_source.get("late_brake_score"), errors="coerce") if not braking_source.empty else pd.Series(dtype=float)
+    brake_intensity = pd.to_numeric(braking_source.get("brake_intensity_proxy"), errors="coerce") if not braking_source.empty else pd.Series(dtype=float)
+    braking_strength = bounded_score(late_brake.mean() * 0.65 + brake_intensity.mean() * 0.35) if late_brake.notna().any() else 0.5
+    pickup = pd.to_numeric(throttle_source.get("throttle_pickup_distance_m"), errors="coerce") if not throttle_source.empty else pd.Series(dtype=float)
+    traction = pd.to_numeric(throttle_source.get("traction_exit_score"), errors="coerce") if not throttle_source.empty else pd.Series(dtype=float)
+    throttle_pickup_strength = bounded_score((1 - pickup.rank(pct=True).mean()) * 0.55 + traction.mean() * 0.45) if pickup.notna().any() and traction.notna().any() else 0.5
+    traction_exit_strength = bounded_score(traction.mean()) if traction.notna().any() else 0.5
+    terminal_speed = pd.to_numeric(straight_source.get("terminal_speed_kph"), errors="coerce") if not straight_source.empty else pd.Series(dtype=float)
+    acceleration = pd.to_numeric(straight_source.get("acceleration_score"), errors="coerce") if not straight_source.empty else pd.Series(dtype=float)
+    straight_line_strength = bounded_score(terminal_speed.rank(pct=True).mean() * 0.55 + acceleration.mean() * 0.45) if terminal_speed.notna().any() else 0.5
+    deployment = pd.to_numeric(energy_source.get("deployment_proxy_score"), errors="coerce") if not energy_source.empty else pd.Series(dtype=float)
+    lift_coast = pd.to_numeric(energy_source.get("lift_and_coast_score"), errors="coerce") if not energy_source.empty else pd.Series(dtype=float)
+    clipping = pd.to_numeric(energy_source.get("clipping_proxy_score"), errors="coerce") if not energy_source.empty else pd.Series(dtype=float)
+    energy_strength = bounded_score(deployment.mean()) if deployment.notna().any() else 0.5
+    lift_and_coast = bounded_score(lift_coast.mean(), 0.0) if lift_coast.notna().any() else 0.0
+    clipping_risk = bounded_score(clipping.mean(), 0.0) if clipping.notna().any() else 0.0
+    braking_pct = pd.to_numeric(lap_source.get("braking_pct"), errors="coerce") if not lap_source.empty else pd.Series(dtype=float)
+    full_throttle_pct = pd.to_numeric(lap_source.get("full_throttle_pct"), errors="coerce") if not lap_source.empty else pd.Series(dtype=float)
+    tyre_stress = bounded_score((braking_pct.mean() / 28.0) * 0.45 + (full_throttle_pct.mean() / 100.0) * 0.25 + clipping_risk * 0.15 + lift_and_coast * 0.15) if braking_pct.notna().any() else 0.5
+
+    overtaking_attack = bounded_score(straight_line_strength * 0.34 + braking_strength * 0.24 + energy_strength * 0.22 + corner_speed_strength * 0.2)
+    defending_strength = bounded_score(straight_line_strength * 0.36 + traction_exit_strength * 0.24 + energy_strength * 0.24 + braking_strength * 0.16)
+    traffic_sensitivity = bounded_score(track_position_sensitivity * 0.65 + (1 - overtaking_attack) * 0.35)
+    undercut_suitability = bounded_score(tyre_stress * 0.36 + traffic_sensitivity * 0.22 + throttle_pickup_strength * 0.18 + overtaking_attack * 0.14 + (1 - lift_and_coast) * 0.1)
+    high_degradation_risk = bounded_score(min(degradation_anchor, 0.18) / 0.18 * 0.5 + tyre_stress * 0.5)
+    proxy_confidence = round(max(0.0, min(1.0, (speed_conf + braking_conf + throttle_conf + straight_conf + energy_conf + lap_conf) / 6)), 6)
+
+    return {
+        "corner_speed_strength": corner_speed_strength,
+        "braking_strength": braking_strength,
+        "throttle_pickup_strength": throttle_pickup_strength,
+        "traction_exit_strength": traction_exit_strength,
+        "straight_line_strength": straight_line_strength,
+        "energy_deployment_proxy_strength": energy_strength,
+        "lift_and_coast_tendency": lift_and_coast,
+        "clipping_risk_proxy": clipping_risk,
+        "overtaking_attack_score": overtaking_attack,
+        "defending_strength_score": defending_strength,
+        "tyre_stress_proxy": tyre_stress,
+        "traffic_sensitivity_score": traffic_sensitivity,
+        "undercut_suitability_score": undercut_suitability,
+        "high_degradation_risk_score": high_degradation_risk,
+        "telemetry_proxy_confidence": proxy_confidence,
+        "telemetry_signal_source": "same_event" if proxy_confidence >= 0.95 else "historical_prior" if proxy_confidence > 0 else "fallback",
+    }
+
+
+def track_archetype_from_features(
+    event_name: str,
+    corner_speed: pd.DataFrame,
+    corner_braking: pd.DataFrame,
+    corner_throttle: pd.DataFrame,
+    straight_speed: pd.DataFrame,
+    stints: pd.DataFrame,
+) -> dict[str, Any]:
+    slug = event_slug(event_name)
+    event_filter = lambda frame: frame[frame["event"].astype(str).map(event_slug).str.contains(slug[:10], na=False)] if not frame.empty and "event" in frame.columns else pd.DataFrame()
+    corners = event_filter(corner_speed)
+    braking = event_filter(corner_braking)
+    throttle = event_filter(corner_throttle)
+    straights = event_filter(straight_speed)
+    event_stints = stints[stints["event_name"].astype(str).map(event_slug).str.contains(slug[:10], na=False)] if not stints.empty and "event_name" in stints.columns else pd.DataFrame()
+
+    straight_score = bounded_score(pd.to_numeric(straights.get("terminal_speed_kph"), errors="coerce").mean() / 340.0 * 0.6 + pd.to_numeric(straights.get("acceleration_score"), errors="coerce").mean() * 0.4) if not straights.empty else 0.5
+    braking_score = bounded_score(pd.to_numeric(braking.get("brake_intensity_proxy"), errors="coerce").mean() * 1.9) if not braking.empty else 0.5
+    traction_score = bounded_score(1 - pd.to_numeric(throttle.get("traction_exit_score"), errors="coerce").mean()) if not throttle.empty else 0.5
+    degradation_score = bounded_score(pd.to_numeric(event_stints.get("degradation_per_lap_s"), errors="coerce").clip(lower=0, upper=0.18).mean() / 0.18) if not event_stints.empty else 0.5
+    track_position_score = bounded_score((1 - straight_score) * 0.5 + traction_score * 0.28 + braking_score * 0.22)
+
+    weights = {
+        "straight_line_weight": straight_score,
+        "braking_weight": braking_score,
+        "traction_weight": traction_score,
+        "degradation_weight": degradation_score,
+        "track_position_weight": track_position_score,
+    }
+    dominant = max(weights.items(), key=lambda item: item[1])[0]
+    archetype = {
+        "straight_line_weight": "power-sensitive",
+        "braking_weight": "braking-heavy",
+        "traction_weight": "traction-sensitive",
+        "degradation_weight": "high-degradation",
+        "track_position_weight": "track-position-dominant",
+    }.get(dominant, "mixed")
+    if max(weights.values()) - min(weights.values()) < 0.18:
+        archetype = "mixed"
+    return {
+        "track_archetype": archetype,
+        **{key: round(value, 6) for key, value in weights.items()},
+        "archetype_confidence": 0.62 if not straights.empty and not corners.empty else 0.35,
+    }
+
+
+def rank01(series: pd.Series) -> pd.Series:
+    numeric = pd.to_numeric(series, errors="coerce")
+    if numeric.notna().sum() <= 1:
+        return pd.Series(0.5, index=series.index)
+    return numeric.rank(pct=True).fillna(0.5)
+
+
+def build_track_archetype_table(
+    corner_speed: pd.DataFrame,
+    corner_braking: pd.DataFrame,
+    corner_throttle: pd.DataFrame,
+    straight_speed: pd.DataFrame,
+    lap_summary: pd.DataFrame,
+    stints: pd.DataFrame,
+) -> pd.DataFrame:
+    if straight_speed.empty and corner_speed.empty:
+        return pd.DataFrame()
+
+    def with_slug(frame: pd.DataFrame, event_column: str = "event") -> pd.DataFrame:
+        if frame.empty or event_column not in frame.columns:
+            return pd.DataFrame()
+        copy = frame.copy()
+        copy["event_slug"] = copy[event_column].map(event_slug)
+        return copy
+
+    corner = with_slug(corner_speed)
+    braking = with_slug(corner_braking)
+    throttle = with_slug(corner_throttle)
+    straight = with_slug(straight_speed)
+    laps = with_slug(lap_summary)
+    stint_frame = with_slug(stints, "event_name")
+
+    event_index = sorted(
+        set(corner.get("event_slug", pd.Series(dtype=str)).dropna())
+        | set(braking.get("event_slug", pd.Series(dtype=str)).dropna())
+        | set(throttle.get("event_slug", pd.Series(dtype=str)).dropna())
+        | set(straight.get("event_slug", pd.Series(dtype=str)).dropna())
+        | set(laps.get("event_slug", pd.Series(dtype=str)).dropna())
+    )
+    rows = pd.DataFrame({"event_slug": event_index})
+    if rows.empty:
+        return rows
+
+    if not corner.empty:
+        corner_agg = corner.groupby("event_slug").agg(
+            race_name=("event", "last"),
+            apex_speed_mean=("apex_speed_kph", "mean"),
+            corner_count=("corner_id", "nunique"),
+        )
+        rows = rows.merge(corner_agg, on="event_slug", how="left")
+    if not braking.empty:
+        braking_agg = braking.groupby("event_slug").agg(
+            brake_intensity_mean=("brake_intensity_proxy", "mean"),
+            late_brake_mean=("late_brake_score", "mean"),
+        )
+        rows = rows.merge(braking_agg, on="event_slug", how="left")
+    if not throttle.empty:
+        throttle_agg = throttle.groupby("event_slug").agg(
+            traction_exit_mean=("traction_exit_score", "mean"),
+            throttle_pickup_distance_mean=("throttle_pickup_distance_m", "mean"),
+        )
+        rows = rows.merge(throttle_agg, on="event_slug", how="left")
+    if not straight.empty:
+        straight_agg = straight.groupby("event_slug").agg(
+            terminal_speed_mean=("terminal_speed_kph", "mean"),
+            acceleration_mean=("acceleration_score", "mean"),
+            clipping_mean=("clipping_proxy_score", "mean"),
+            straight_count=("segment_id", "nunique"),
+        )
+        rows = rows.merge(straight_agg, on="event_slug", how="left")
+    if not laps.empty:
+        lap_agg = laps.groupby("event_slug").agg(
+            avg_speed_mean=("avg_speed_kph", "mean"),
+            full_throttle_mean=("full_throttle_pct", "mean"),
+            braking_pct_mean=("braking_pct", "mean"),
+        )
+        rows = rows.merge(lap_agg, on="event_slug", how="left")
+    if not stint_frame.empty and "degradation_per_lap_s" in stint_frame.columns:
+        stint_agg = stint_frame.groupby("event_slug").agg(
+            degradation_mean=("degradation_per_lap_s", lambda series: pd.to_numeric(series, errors="coerce").clip(lower=0, upper=0.18).mean())
+        )
+        rows = rows.merge(stint_agg, on="event_slug", how="left")
+
+    for column in [
+        "apex_speed_mean", "brake_intensity_mean", "late_brake_mean", "traction_exit_mean",
+        "throttle_pickup_distance_mean", "terminal_speed_mean", "acceleration_mean", "clipping_mean",
+        "avg_speed_mean", "full_throttle_mean", "braking_pct_mean", "degradation_mean",
+    ]:
+        if column not in rows.columns:
+            rows[column] = pd.NA
+
+    terminal_rank = rank01(rows["terminal_speed_mean"])
+    avg_speed_rank = rank01(rows["avg_speed_mean"])
+    full_throttle_rank = rank01(rows["full_throttle_mean"])
+    acceleration_rank = rank01(rows["acceleration_mean"])
+    brake_pct_rank = rank01(rows["braking_pct_mean"])
+    brake_intensity_rank = rank01(rows["brake_intensity_mean"])
+    late_brake_rank = rank01(rows["late_brake_mean"])
+    apex_rank = rank01(rows["apex_speed_mean"])
+    traction_exit_rank = rank01(rows["traction_exit_mean"])
+    pickup_rank = rank01(rows["throttle_pickup_distance_mean"])
+    degradation_rank = rank01(rows["degradation_mean"])
+    clipping_rank = rank01(rows["clipping_mean"])
+    corner_count_rank = rank01(rows.get("corner_count", pd.Series(0.5, index=rows.index)))
+
+    rows["straight_line_weight"] = (terminal_rank * 0.45 + avg_speed_rank * 0.20 + full_throttle_rank * 0.20 + acceleration_rank * 0.15).clip(0, 1)
+    rows["braking_weight"] = (brake_pct_rank * 0.35 + brake_intensity_rank * 0.35 + late_brake_rank * 0.30).clip(0, 1)
+    rows["traction_weight"] = ((1 - apex_rank) * 0.25 + (1 - traction_exit_rank) * 0.35 + pickup_rank * 0.25 + (1 - avg_speed_rank) * 0.15).clip(0, 1)
+    rows["degradation_weight"] = (degradation_rank * 0.65 + clipping_rank * 0.15 + brake_pct_rank * 0.20).clip(0, 1)
+    rows["track_position_weight"] = ((1 - rows["straight_line_weight"]) * 0.34 + rows["traction_weight"] * 0.26 + rows["braking_weight"] * 0.14 + corner_count_rank * 0.26).clip(0, 1)
+
+    label_map = {
+        "straight_line_weight": "power-sensitive",
+        "braking_weight": "braking-heavy",
+        "traction_weight": "traction-sensitive",
+        "degradation_weight": "high-degradation",
+        "track_position_weight": "track-position-dominant",
+    }
+    weight_columns = list(label_map)
+    labels: list[str] = []
+    confidence: list[float] = []
+    for _, row in rows.iterrows():
+        weights = {column: float(row[column]) for column in weight_columns}
+        ordered = sorted(weights.items(), key=lambda item: item[1], reverse=True)
+        spread = ordered[0][1] - ordered[-1][1]
+        labels.append("mixed" if spread < 0.16 else label_map[ordered[0][0]])
+        confidence.append(round(max(0.25, min(0.86, 0.35 + spread * 0.9)), 6))
+
+    rows["track_archetype"] = labels
+    rows["archetype_confidence"] = confidence
+    rows["race_name"] = rows["race_name"].fillna(rows["event_slug"].str.replace("-", " ").str.title()) if "race_name" in rows.columns else rows["event_slug"].str.replace("-", " ").str.title()
+    rows["id"] = rows["event_slug"]
+    rows["race_id"] = rows["event_slug"]
+    rows["season"] = None
+    rows["round"] = None
+    rows["formula_note"] = "normalized telemetry-feature archetype; approximate circuit segmentation, bounded multi-label weights"
+    rows["source_label"] = "strategy_lab_track_archetype_v2"
+    output_columns = [
+        "id", "season", "round", "race_id", "race_name", "track_archetype", "straight_line_weight",
+        "braking_weight", "traction_weight", "degradation_weight", "track_position_weight",
+        "archetype_confidence", "formula_note", "source_label",
+    ]
+    for column in weight_columns:
+        rows[column] = rows[column].round(6)
+    return rows[output_columns].sort_values("race_name").reset_index(drop=True)
+
+
+def resolve_track_archetype(race_name: str, archetypes: pd.DataFrame) -> dict[str, Any]:
+    if archetypes.empty:
+        return {
+            "track_archetype": "mixed",
+            "straight_line_weight": 0.5,
+            "braking_weight": 0.5,
+            "traction_weight": 0.5,
+            "degradation_weight": 0.5,
+            "track_position_weight": 0.5,
+            "archetype_confidence": 0.25,
+        }
+    slug = event_slug(race_name)
+    exact = archetypes[archetypes["id"].astype(str) == slug]
+    if exact.empty:
+        exact = archetypes[archetypes["id"].astype(str).str.contains(slug[:10], na=False)]
+    row = exact.iloc[0] if not exact.empty else archetypes.iloc[0]
+    return {
+        "track_archetype": row["track_archetype"],
+        "straight_line_weight": float(row["straight_line_weight"]),
+        "braking_weight": float(row["braking_weight"]),
+        "traction_weight": float(row["traction_weight"]),
+        "degradation_weight": float(row["degradation_weight"]),
+        "track_position_weight": float(row["track_position_weight"]),
+        "archetype_confidence": float(row["archetype_confidence"]),
+    }
 
 
 def main() -> None:
@@ -206,8 +593,16 @@ def main() -> None:
     driver_signals = read_csv(race_week / "driver_signals.csv")
     constructor_signals = read_csv(race_week / "constructor_signals.csv")
     race_week_confidence = read_csv(race_week / "race_week_confidence.csv")
+    telemetry_lap_summary = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "telemetry_lap_summary.csv")
+    corner_speed = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "corner_speed_profile.csv")
+    corner_braking = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "corner_braking_profile.csv")
+    corner_throttle = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "corner_throttle_profile.csv")
+    straight_speed = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "straight_speed_profile.csv")
+    energy_proxy = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "energy_deployment_proxy.csv")
+    canonical_stints = read_csv(settings.canonical_fastf1_dir / "stints_canonical.csv")
 
     driver_name_map = dict(zip(drivers["id"], drivers["full_name"])) if not drivers.empty else {}
+    driver_code_map = dict(zip(drivers["id"], drivers["driver_code"])) if not drivers.empty and "driver_code" in drivers.columns else {}
     constructor_name_map = dict(zip(constructors["id"], constructors["name"])) if not constructors.empty else {}
     overview_rows: list[dict[str, Any]] = []
     strategy_feature_rows: list[dict[str, Any]] = []
@@ -216,6 +611,15 @@ def main() -> None:
     comparison_rows: list[dict[str, Any]] = []
     pit_window_rows: list[dict[str, Any]] = []
     projection_rows: list[dict[str, Any]] = []
+    telemetry_signal_rows: list[dict[str, Any]] = []
+    all_track_archetypes = build_track_archetype_table(
+        corner_speed,
+        corner_braking,
+        corner_throttle,
+        straight_speed,
+        telemetry_lap_summary,
+        canonical_stints,
+    )
     strategy_lab_generated_at, strategy_lab_build_version = build_materialization_metadata("strategy_lab")
 
     for _, overview_row in race_week_overview.iterrows():
@@ -234,6 +638,7 @@ def main() -> None:
         high_speed_bias = parse_num(context_row["high_speed_bias"].iloc[0], 5.0) if not context_row.empty else 5.0
         strategic_complexity_score = parse_num(context_row["strategic_complexity_score"].iloc[0], 58.0) if not context_row.empty else 58.0
         nominal_race_laps = infer_nominal_race_laps(race_id, races, race_results)
+        track_signals = resolve_track_archetype(race_name, all_track_archetypes)
         pit_loss_estimate_s = round(17.5 + overtake_difficulty * 0.72 + high_speed_bias * 0.28, 2)
         driver_board_for_race = race_week_driver_board[race_week_driver_board["race_id"].astype(str) == race_id].copy()
         strategy_for_race = race_week_strategy[race_week_strategy["race_id"].astype(str) == race_id].copy()
@@ -318,11 +723,43 @@ def main() -> None:
 
             consistency_score = clamp01(parse_num(frame_value(feature_row, "consistency_score"), 0.5), 0.5)
             racecraft_proxy = clamp01(parse_num(frame_value(signal_row, "racecraft_signal"), 0.5), 0.5)
+            driver_code = driver_code_for(driver_id, driver_code_map)
+            energy_proxy_score = telemetry_energy_score(energy_proxy, driver_code, season, round_number)
+            telemetry_signals = telemetry_strategy_signals(
+                driver_code=driver_code,
+                season=season,
+                round_number=round_number,
+                corner_speed=corner_speed,
+                corner_braking=corner_braking,
+                corner_throttle=corner_throttle,
+                straight_speed=straight_speed,
+                energy_proxy=energy_proxy,
+                lap_summary=telemetry_lap_summary,
+                track_position_sensitivity=float(track_signals["track_position_weight"]),
+                degradation_anchor=float(degradation_anchor),
+            )
+            telemetry_signal_rows.append(
+                {
+                    "id": f"{race_id}|{driver_id}",
+                    "season": season,
+                    "round": round_number,
+                    "race_id": race_id,
+                    "driver_id": driver_id,
+                    "constructor_id": constructor_id,
+                    "driver_code": driver_code,
+                    "track_archetype": track_signals["track_archetype"],
+                    **telemetry_signals,
+                    "proxy_note": "derived from precomputed FastF1 telemetry features; energy fields are proxy only, not true ERS/battery state",
+                    "source_label": "strategy_lab_telemetry_signals_v1",
+                }
+            )
+            traffic_sensitivity_score = round(clamp01(telemetry_signals["traffic_sensitivity_score"] * 0.68 + (overtake_difficulty / 10) * 0.22 + (1 - racecraft_proxy) * 0.10, 0.55), 6)
+            weather_grip_sensitivity_score = round(clamp01(parse_num(frame_value(context_row, "weather_risk_index"), 45.0) / 100), 6)
             # These strategy-profile heuristics are bounded proxies, not observed truths.
             # They should shape scenario comparisons without overpowering direct pace and degradation inputs.
             aggressive_tendency = round(clamp01(racecraft_proxy * 0.7 + (1 - consistency_score) * 0.3, 0.5), 6)
-            tyre_management_score = round(clamp01((1 - min(0.18, degradation_anchor) / 0.18) * 0.65 + consistency_score * 0.35, 0.5), 6)
-            early_pit_bias = round(clamp01(0.45 + (degradation_bias - 5) * 0.05 + aggressive_tendency * 0.1, 0.5), 6)
+            tyre_management_score = round(clamp01((1 - min(0.18, degradation_anchor) / 0.18) * 0.45 + consistency_score * 0.30 + (1 - telemetry_signals["tyre_stress_proxy"]) * 0.25, 0.5), 6)
+            early_pit_bias = round(clamp01(0.38 + telemetry_signals["undercut_suitability_score"] * 0.32 + (degradation_bias - 5) * 0.035 + aggressive_tendency * 0.08, 0.5), 6)
             late_pit_bias = round(clamp01(0.45 + tyre_management_score * 0.15 - aggressive_tendency * 0.1, 0.5), 6)
             driver_confidence = round(clamp01(parse_num(confidence_row["confidence_score"].iloc[0], 0.3) if not confidence_row.empty else 0.3, 0.3), 6)
 
@@ -335,9 +772,10 @@ def main() -> None:
             compound_delta_soft = round(default_compound_delta("soft") - aggressive_tendency * 0.08, 4)
             compound_delta_medium = round(default_compound_delta("medium"), 4)
             compound_delta_hard = round(default_compound_delta("hard") + (degradation_bias - 5) * 0.03 - tyre_management_score * 0.06, 4)
-            degradation_soft = round(default_compound_degradation("soft") * (0.7 + degradation_bias / 8.0) * (1.08 - tyre_management_score * 0.18), 4)
-            degradation_medium = round(default_compound_degradation("medium") * (0.72 + degradation_bias / 9.0) * (1.05 - tyre_management_score * 0.15), 4)
-            degradation_hard = round(default_compound_degradation("hard") * (0.75 + degradation_bias / 10.0) * (1.02 - tyre_management_score * 0.12), 4)
+            tyre_stress_multiplier = 0.9 + telemetry_signals["tyre_stress_proxy"] * 0.28 + track_signals["degradation_weight"] * 0.12
+            degradation_soft = round(default_compound_degradation("soft") * (0.7 + degradation_bias / 8.0) * (1.08 - tyre_management_score * 0.18) * tyre_stress_multiplier, 4)
+            degradation_medium = round(default_compound_degradation("medium") * (0.72 + degradation_bias / 9.0) * (1.05 - tyre_management_score * 0.15) * tyre_stress_multiplier, 4)
+            degradation_hard = round(default_compound_degradation("hard") * (0.75 + degradation_bias / 10.0) * (1.02 - tyre_management_score * 0.12) * tyre_stress_multiplier, 4)
             stint_soft = max(10, min(22, int(round(nominal_race_laps * (0.22 + tyre_management_score * 0.04)))))
             stint_medium = max(14, min(28, int(round(nominal_race_laps * (0.33 + tyre_management_score * 0.05)))))
             stint_hard = max(18, min(34, int(round(nominal_race_laps * (0.40 + tyre_management_score * 0.06)))))
@@ -355,6 +793,26 @@ def main() -> None:
                     "base_quali_pace_s": round(base_quali_pace_s, 4),
                     "pace_evolution_s_per_lap": pace_evolution,
                     "pit_loss_s": pit_loss_estimate_s,
+                    "fuel_correction_s_per_lap": FUEL_CORRECTION_S_PER_LAP,
+                    "traffic_sensitivity_score": traffic_sensitivity_score,
+                    "weather_grip_sensitivity_score": weather_grip_sensitivity_score,
+                    "energy_deployment_proxy_score": energy_proxy_score,
+                    "corner_speed_strength": telemetry_signals["corner_speed_strength"],
+                    "braking_strength": telemetry_signals["braking_strength"],
+                    "throttle_pickup_strength": telemetry_signals["throttle_pickup_strength"],
+                    "traction_exit_strength": telemetry_signals["traction_exit_strength"],
+                    "straight_line_strength": telemetry_signals["straight_line_strength"],
+                    "energy_deployment_proxy_strength": telemetry_signals["energy_deployment_proxy_strength"],
+                    "lift_and_coast_tendency": telemetry_signals["lift_and_coast_tendency"],
+                    "clipping_risk_proxy": telemetry_signals["clipping_risk_proxy"],
+                    "overtaking_attack_score": telemetry_signals["overtaking_attack_score"],
+                    "defending_strength_score": telemetry_signals["defending_strength_score"],
+                    "tyre_stress_proxy": telemetry_signals["tyre_stress_proxy"],
+                    "undercut_suitability_score": telemetry_signals["undercut_suitability_score"],
+                    "high_degradation_risk_score": telemetry_signals["high_degradation_risk_score"],
+                    "track_archetype": track_signals["track_archetype"],
+                    "track_position_sensitivity_score": track_signals["track_position_weight"],
+                    "telemetry_proxy_confidence": telemetry_signals["telemetry_proxy_confidence"],
                     "baseline_stop_count": baseline_stop_count,
                     "baseline_strategy_code": baseline_strategy_code,
                     "baseline_pit_window_start_lap": baseline_window_start,
@@ -368,7 +826,7 @@ def main() -> None:
                     "stint_length_soft_laps": stint_soft,
                     "stint_length_medium_laps": stint_medium,
                     "stint_length_hard_laps": stint_hard,
-                    "source_label": "strategy_lab_features_v1",
+                    "source_label": "strategy_lab_features_v2",
                 }
             )
 
@@ -425,6 +883,8 @@ def main() -> None:
                     tyre_management_score=tyre_management_score,
                     pit_efficiency_adjustment_s=float(constructor_profile["pit_loss_adjustment_s"]),
                     aggression_score=aggressive_tendency,
+                    energy_deployment_proxy_score=energy_proxy_score,
+                    race_season=season,
                 )
 
                 comparison_candidates.append(
@@ -563,10 +1023,34 @@ def main() -> None:
             [
                 "id", "season", "round", "race_id", "driver_id", "constructor_id", "nominal_race_laps",
                 "base_race_pace_s", "base_quali_pace_s", "pace_evolution_s_per_lap", "pit_loss_s",
+                "fuel_correction_s_per_lap", "traffic_sensitivity_score", "weather_grip_sensitivity_score", "energy_deployment_proxy_score",
+                "corner_speed_strength", "braking_strength", "throttle_pickup_strength", "traction_exit_strength",
+                "straight_line_strength", "energy_deployment_proxy_strength", "lift_and_coast_tendency", "clipping_risk_proxy",
+                "overtaking_attack_score", "defending_strength_score", "tyre_stress_proxy", "undercut_suitability_score",
+                "high_degradation_risk_score", "track_archetype", "track_position_sensitivity_score", "telemetry_proxy_confidence",
                 "baseline_stop_count", "baseline_strategy_code", "baseline_pit_window_start_lap", "baseline_pit_window_end_lap",
                 "compound_delta_soft_s", "compound_delta_medium_s", "compound_delta_hard_s",
                 "degradation_soft_s_per_lap", "degradation_medium_s_per_lap", "degradation_hard_s_per_lap",
                 "stint_length_soft_laps", "stint_length_medium_laps", "stint_length_hard_laps", "source_label",
+            ],
+        ),
+        "telemetry_strategy_signals": ensure_columns(
+            pd.DataFrame(telemetry_signal_rows),
+            [
+                "id", "season", "round", "race_id", "driver_id", "constructor_id", "driver_code", "track_archetype",
+                "corner_speed_strength", "braking_strength", "throttle_pickup_strength", "traction_exit_strength",
+                "straight_line_strength", "energy_deployment_proxy_strength", "lift_and_coast_tendency", "clipping_risk_proxy",
+                "overtaking_attack_score", "defending_strength_score", "tyre_stress_proxy", "traffic_sensitivity_score",
+                "undercut_suitability_score", "high_degradation_risk_score", "telemetry_proxy_confidence",
+                "telemetry_signal_source", "proxy_note", "source_label",
+            ],
+        ),
+        "track_archetype_weights": ensure_columns(
+            all_track_archetypes,
+            [
+                "id", "season", "round", "race_id", "race_name", "track_archetype", "straight_line_weight",
+                "braking_weight", "traction_weight", "degradation_weight", "track_position_weight",
+                "archetype_confidence", "formula_note", "source_label",
             ],
         ),
         "driver_strategy_profile": ensure_columns(
@@ -621,6 +1105,36 @@ def main() -> None:
 
     for name, frame in outputs.items():
         frame.to_csv(strategy_lab_dir / f"{name}.csv", index=False)
+
+    signal_frame = outputs["telemetry_strategy_signals"]
+    archetype_frame = outputs["track_archetype_weights"]
+    report = {
+        "model_version": STRATEGY_LAB_MODEL_VERSION,
+        "telemetry_signal_coverage": {
+            "rows": int(len(signal_frame)),
+            "drivers_with_signals": int(signal_frame["driver_id"].nunique()) if not signal_frame.empty else 0,
+            "missing_signal_count": int(signal_frame.isna().sum().sum()) if not signal_frame.empty else 0,
+        },
+        "track_archetype_coverage": {
+            "rows": int(len(archetype_frame)),
+            "archetypes": sorted(archetype_frame["track_archetype"].dropna().unique().tolist()) if not archetype_frame.empty else [],
+        },
+        "proxy_confidence_distribution": {
+            "min": round(float(signal_frame["telemetry_proxy_confidence"].min()), 4) if not signal_frame.empty else None,
+            "median": round(float(signal_frame["telemetry_proxy_confidence"].median()), 4) if not signal_frame.empty else None,
+            "max": round(float(signal_frame["telemetry_proxy_confidence"].max()), 4) if not signal_frame.empty else None,
+        },
+        "formula_notes": TELEMETRY_SIGNAL_FORMULAS,
+        "proxy_note": "Energy deployment fields are proxy-derived from precomputed telemetry features only; no true ERS or battery state is available.",
+        "validation_errors": [],
+    }
+    if signal_frame.empty:
+        report["validation_errors"].append("telemetry_strategy_signals has zero rows")
+    if archetype_frame.empty:
+        report["validation_errors"].append("track_archetype_weights has zero rows")
+    reports_dir = settings.strategy_lab_dir.parent / "reports"
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    (reports_dir / "strategy_lab_signal_quality.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
 
 
 if __name__ == "__main__":

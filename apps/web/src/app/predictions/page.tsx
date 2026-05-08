@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { HomeLink } from "@/components/ui/home-link";
+import { SiteHeader } from "@/components/ui/site-header";
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { TrackMap } from "@/components/ui/track-map";
 import { TeamBadge } from "@/components/ui/team-badge";
@@ -180,15 +181,11 @@ export default async function PredictionsPage() {
       }
     >
       <section className="race-week-hero">
-        <div className="race-week-hero__topbar">
-          <Link href="/" className="race-week-hero__nav-link">
-            Return home
-          </Link>
-          <div className="race-week-hero__title">Race Week</div>
-          <Link href="/lab" className="race-week-hero__nav-link race-week-hero__nav-link--accent">
-            Strategy Lab
-          </Link>
-        </div>
+        <SiteHeader
+          title="Race Week"
+          actionHref="/lab"
+          actionLabel="Strategy Lab"
+        />
 
         <div className="race-week-hero__grid">
           <div className="race-week-hero__copy">

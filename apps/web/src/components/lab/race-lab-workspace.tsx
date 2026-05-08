@@ -44,6 +44,7 @@ const fmtDelta = (value?: number | null, suffix = "") =>
 const fmtConfidence = (score?: number | null) => (score == null ? "Calibrating" : score >= 0.74 ? "High confidence" : score >= 0.48 ? "Medium confidence" : "Low confidence");
 const fmtRisk = (weather: "dry" | "mixed" | "wet", sc: number) => (weather !== "dry" || sc >= 0.58 ? "High variance" : sc >= 0.38 ? "Moderate variance" : "Controlled variance");
 const fmtOddsProxy = (value?: number | null) => (value == null ? "n/a" : `${Math.round(value / 5) * 5}%`); 
+const fmtSensitivity = (factor: string) => factor.split("_").map((part) => part[0]?.toUpperCase() + part.slice(1)).join(" ");
 const avg = (values: Array<number | null | undefined>) => {
   const cleaned = values.filter((value): value is number => value !== null && value !== undefined);
   return cleaned.length > 0 ? cleaned.reduce((sum, value) => sum + value, 0) / cleaned.length : null;
@@ -222,6 +223,7 @@ export function RaceLabWorkspace({ races }: Props) {
   }, [targetEntrants]);
   const bestPrecomputedScenario = precomputedScenarios[0] ?? null;
   const liveTargetEntrants = simulation?.targetSummary?.entrants ?? [];
+  const liveTransitionBands = simulation?.positionTransitionBands.filter((band) => liveTargetEntrants.some((entrant) => entrant.driverId === band.driverId)) ?? [];
   const liveFinishBand = liveTargetEntrants.length > 0
     ? {
         low: Math.min(...liveTargetEntrants.map((entrant) => entrant.projectedFinishBandLow)),
@@ -402,6 +404,25 @@ export function RaceLabWorkspace({ races }: Props) {
           <div className="strategy-projection-grid">
             {targetEntrants.map((entrant) => <article key={entrant.driverId} className="strategy-projection-card"><div className="strategy-projection-card__head"><div><span className="section-meta">Projection</span><h4>{entrant.fullName}</h4></div><TeamBadge teamId={entrant.constructorId} label={entrant.constructorName} compact /></div><div className="strategy-projection-card__metrics"><div><span>Baseline range</span><strong>{fmtBand(entrant.finishBandLow, entrant.finishBandHigh, entrant.projectedFinish)}</strong></div><div><span>Podium odds proxy</span><strong>{fmtOddsProxy(entrant.podiumProbability)}</strong></div><div><span>Win odds proxy</span><strong>{fmtOddsProxy(entrant.winProbability)}</strong></div><div><span>Confidence</span><strong>{fmtConfidence(entrant.confidenceScore)}</strong></div></div><p className="lab-copy">{simulation?.targetSummary?.entrants.find((item) => item.driverId === entrant.driverId)?.explanationSummary ?? `${entrant.fullName} starts from a ${fmtBand(entrant.finishBandLow, entrant.finishBandHigh, entrant.projectedFinish)} baseline before the scenario moves the race shape.`}</p></article>)}
             {simulation ? <article className="strategy-projection-card strategy-projection-card--field"><div className="strategy-projection-card__head"><div><span className="section-meta">Field read</span><h4>Projected order</h4></div></div><div className="strategy-field-order">{simulation.finishingOrder.slice(0, 8).map((entrant) => <div key={entrant.driverId} className={`strategy-field-order__item ${entrant.isTarget ? "strategy-field-order__item--target" : ""}`}><span>P{entrant.projectedFinish}</span><strong>{entrant.fullName}</strong><em>{entrant.isTarget ? fmtDelta(entrant.finishDelta, " pos") : entrant.constructorName}</em></div>)}</div></article> : null}
+            {simulation && liveTransitionBands.length > 0 ? (
+              <article className="strategy-projection-card strategy-projection-card--transition">
+                <div className="strategy-projection-card__head">
+                  <div>
+                    <span className="section-meta">Position transition</span>
+                    <h4>Scenario bands</h4>
+                  </div>
+                </div>
+                <div className="strategy-transition-list">
+                  {liveTransitionBands.map((band) => (
+                    <div key={band.driverId} className={`strategy-transition-list__item strategy-transition-list__item--${band.transition}`}>
+                      <span>{band.fullName}</span>
+                      <strong>{band.baselineBand} to {band.projectedBand}</strong>
+                      <em>{band.transition === "gain" ? "Gaining range" : band.transition === "loss" ? "Losing range" : "Stable range"} | {band.confidence} confidence</em>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ) : null}
           </div>
         </section>
 
@@ -442,6 +463,15 @@ export function RaceLabWorkspace({ races }: Props) {
           <div className="strategy-explanation-grid">
             <article className="strategy-explanation-card"><span>Why this works</span><strong>{targetOptions.find((item) => item.id === selectedTargetId)?.label ?? "Target"}</strong><div className="strategy-reason-list">{whyItWorks.map((reason) => <div key={reason.label} className="strategy-reason-list__item"><span>{reason.label}</span><p>{reason.value}</p></div>)}</div></article>
             <article className="strategy-explanation-card"><span>Scenario narrative</span><strong>{scenarioPresets[preset].label}</strong><p className="lab-copy">{simulation?.undercutNarrative ?? `${scenarioPresets[preset].label} pushes the race toward ${preset === "aggressive" ? "undercut pressure and earlier movement." : preset === "conservative" ? "long-run control and reduced pit-lane exposure." : "the default strategic balance."}`}</p>{error && raceProduct ? <p className="lab-error">{error}</p> : null}</article>
+            {simulation ? (
+              <article className="strategy-explanation-card strategy-explanation-card--wide">
+                <span>What changed this outcome?</span>
+                <strong>{simulation.whatChangedOutcome.headline}</strong>
+                <div className="strategy-reason-list">
+                  {simulation.whatChangedOutcome.drivers.map((driver) => <div key={driver} className="strategy-reason-list__item"><p>{driver}</p></div>)}
+                </div>
+              </article>
+            ) : null}
           </div>
         </section>
 
@@ -461,6 +491,27 @@ export function RaceLabWorkspace({ races }: Props) {
                 {caveats.map((caveat) => <div key={caveat} className="strategy-reason-list__item"><p>{caveat}</p></div>)}
               </div>
             </article>
+            {simulation ? (
+              <article className="strategy-explanation-card">
+                <span>Top sensitivity drivers</span>
+                <strong>{simulation.topSensitivityDrivers.length} modeled factors</strong>
+                <div className="strategy-reason-list">
+                  {simulation.topSensitivityDrivers.map((driver) => (
+                    <div key={driver.factor} className="strategy-reason-list__item">
+                      <span>{fmtSensitivity(driver.factor)} | {driver.impactS.toFixed(1)}s</span>
+                      <p>{driver.explanation}</p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ) : null}
+            {simulation ? (
+              <article className="strategy-explanation-card strategy-explanation-card--assumption">
+                <span>Weakest assumption</span>
+                <strong>{simulation.weakestAssumption.title}</strong>
+                <p className="lab-copy">{simulation.weakestAssumption.detail}</p>
+              </article>
+            ) : null}
           </div>
         </section>
       </section>

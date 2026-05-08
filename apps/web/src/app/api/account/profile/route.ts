@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import {
@@ -82,10 +81,12 @@ export async function GET(request: Request) {
   try {
     const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.profileRead);
     if (!rateLimit.ok) {
-      return NextResponse.json(
-        { error: "Too many profile requests. Try again shortly." },
-        { status: 429, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) },
-      );
+      return apiError({
+        status: 429,
+        code: "rate_limited",
+        message: "Too many profile requests. Try again shortly.",
+        headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+      });
     }
 
     const { supabase, user } = await getAuthenticatedUser();
@@ -121,10 +122,12 @@ export async function PATCH(request: Request) {
   try {
     const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.profileWrite);
     if (!rateLimit.ok) {
-      return NextResponse.json(
-        { error: "Too many profile updates. Try again later." },
-        { status: 429, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) },
-      );
+      return apiError({
+        status: 429,
+        code: "rate_limited",
+        message: "Too many profile updates. Try again later.",
+        headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+      });
     }
 
     const { appUrl } = getServerEnv();

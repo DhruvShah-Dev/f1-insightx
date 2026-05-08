@@ -12,14 +12,24 @@ from f1_insightx_data.era import regulation_era_for_season, season_similarity_we
 from f1_insightx_data.settings import PipelineSettings
 
 
-SESSION_PREFERENCE = ("FP1", "FP2", "FP3", "Q", "S", "R")
+SESSION_PREFERENCE = ("FP1", "FP2", "FP3", "Q", "SQ", "S", "R")
 SESSION_WEIGHTS: dict[str, float] = {
     "FP1": 0.45,
     "FP2": 1.0,
     "FP3": 0.65,
     "Q": 1.15,
+    "SQ": 1.05,
     "S": 0.9,
     "R": 1.25,
+}
+
+WEATHER_COLUMNS = {
+    "AirTemp": "air_temp_c",
+    "TrackTemp": "track_temp_c",
+    "Humidity": "humidity_pct",
+    "Rainfall": "rainfall",
+    "WindSpeed": "wind_speed_mps",
+    "WindDirection": "wind_direction_deg",
 }
 
 
@@ -44,6 +54,30 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
+def bool_series(value: Any) -> pd.Series:
+    series = value if isinstance(value, pd.Series) else pd.Series(value)
+    return series.astype("boolean").fillna(False).astype(bool)
+
+
+def safe_int_value(value: Any) -> int | None:
+    if value is None:
+        return None
+    try:
+        if pd.isna(value):
+            return None
+    except (TypeError, ValueError):
+        pass
+    try:
+        return int(value)
+    except (TypeError, ValueError, OverflowError):
+        return None
+
+
+def nullable_int_series(value: Any) -> pd.Series:
+    series = value if isinstance(value, pd.Series) else pd.Series(value)
+    return pd.to_numeric(series, errors="coerce").astype("Int64")
+
+
 def lap_time_seconds(value: Any) -> float | None:
     if value is None or (isinstance(value, float) and pd.isna(value)):
         return None
@@ -62,6 +96,91 @@ def lap_time_seconds(value: Any) -> float | None:
     return float(timedelta_value.total_seconds())
 
 
+def weather_summary_from_weather(weather: pd.DataFrame) -> dict[str, Any]:
+    summary: dict[str, Any] = {
+        "air_temp_c": None,
+        "track_temp_c": None,
+        "humidity_pct": None,
+        "rainfall": None,
+        "wind_speed_mps": None,
+        "wind_direction_deg": None,
+    }
+    if weather.empty:
+        return summary
+
+    renamed = weather.rename(columns=WEATHER_COLUMNS)
+    for column in ("air_temp_c", "track_temp_c", "humidity_pct", "wind_speed_mps", "wind_direction_deg"):
+        if column in renamed.columns:
+            values = pd.to_numeric(renamed[column], errors="coerce")
+            if values.notna().any():
+                summary[column] = float(values.mean())
+    if "rainfall" in renamed.columns:
+        summary["rainfall"] = bool_series(renamed["rainfall"]).any()
+    return summary
+
+
+def attach_weather_to_laps(laps: pd.DataFrame, weather: pd.DataFrame) -> pd.DataFrame:
+    if laps.empty or weather.empty:
+        return laps
+
+    result = laps.copy()
+    weather_frame = weather.rename(columns=WEATHER_COLUMNS).copy()
+    available_weather = [column for column in WEATHER_COLUMNS.values() if column in weather_frame.columns]
+    if not available_weather or "Time" not in weather_frame.columns:
+        return result
+
+    weather_frame["_weather_seconds"] = pd.to_timedelta(weather_frame["Time"], errors="coerce").dt.total_seconds()
+    if weather_frame["_weather_seconds"].isna().all():
+        parsed_time = pd.to_datetime(weather_frame["Time"], errors="coerce", utc=True)
+        if parsed_time.notna().any():
+            weather_frame["_weather_seconds"] = (parsed_time - parsed_time.min()).dt.total_seconds()
+    weather_frame = weather_frame.dropna(subset=["_weather_seconds"]).sort_values("_weather_seconds")
+    if weather_frame.empty:
+        return result
+
+    lap_seconds = pd.Series(pd.NA, index=result.index, dtype="Float64")
+    if "lap_start_time" in result.columns:
+        lap_start = pd.to_datetime(result["lap_start_time"], errors="coerce", utc=True)
+        if lap_start.notna().any():
+            weather_origin = float(weather_frame["_weather_seconds"].min())
+            lap_seconds = (lap_start - lap_start.dropna().min()).dt.total_seconds() + weather_origin
+
+    if lap_seconds.isna().all() and "lap_number" in result.columns:
+        lap_number = pd.to_numeric(result["lap_number"], errors="coerce")
+        if lap_number.notna().any() and lap_number.nunique(dropna=True) > 1:
+            lap_min = float(lap_number.min())
+            lap_max = float(lap_number.max())
+            weather_min = float(weather_frame["_weather_seconds"].min())
+            weather_max = float(weather_frame["_weather_seconds"].max())
+            lap_seconds = (lap_number - lap_min) / (lap_max - lap_min) * (weather_max - weather_min) + weather_min
+
+    if lap_seconds.isna().all():
+        return result
+
+    join_left = pd.DataFrame({"_row_id": result.index, "_weather_seconds": lap_seconds}).dropna()
+    joined = pd.merge_asof(
+        join_left.sort_values("_weather_seconds"),
+        weather_frame[["_weather_seconds", *available_weather]].sort_values("_weather_seconds"),
+        on="_weather_seconds",
+        direction="nearest",
+    ).set_index("_row_id")
+
+    for column in available_weather:
+        if column not in result.columns:
+            result[column] = pd.NA
+        if column == "rainfall":
+            fill_values = joined[column].reindex(result.index).astype("boolean")
+            current = result[column].astype("boolean")
+            result[column] = current.combine_first(fill_values)
+            result[column] = bool_series(result[column])
+            continue
+        fill_values = pd.to_numeric(joined[column].reindex(result.index), errors="coerce")
+        result[column] = pd.to_numeric(result[column], errors="coerce")
+        result[column] = result[column].where(result[column].notna(), fill_values)
+
+    return result
+
+
 def normalize_lap_frame(
     laps: pd.DataFrame,
     *,
@@ -69,6 +188,7 @@ def normalize_lap_frame(
     round_number: int,
     event_name: str,
     session_code: str,
+    weather: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     if laps.empty:
         return pd.DataFrame(
@@ -167,10 +287,12 @@ def normalize_lap_frame(
     normalized["team"] = normalized["team"].fillna("").astype(str)
     normalized["compound"] = normalized["compound"].fillna("").astype(str)
     normalized["track_status"] = normalized["track_status"].fillna("").astype(str)
-    normalized["fresh_tyre"] = normalized["fresh_tyre"].fillna(False).astype(bool)
-    normalized["is_personal_best"] = normalized["is_personal_best"].fillna(False).astype(bool)
-    normalized["is_accurate"] = normalized["is_accurate"].fillna(False).astype(bool)
-    normalized["deleted"] = normalized["deleted"].fillna(False).astype(bool)
+    normalized["fresh_tyre"] = bool_series(normalized["fresh_tyre"])
+    normalized["is_personal_best"] = bool_series(normalized["is_personal_best"])
+    normalized["is_accurate"] = bool_series(normalized["is_accurate"])
+    normalized["deleted"] = bool_series(normalized["deleted"])
+    if weather is not None and not weather.empty:
+        normalized = attach_weather_to_laps(normalized, weather)
     return normalized
 
 
@@ -261,7 +383,10 @@ def session_summary_from_laps(laps: pd.DataFrame) -> pd.DataFrame:
                 "top_speed_kph",
                 "air_temp_c",
                 "track_temp_c",
+                "humidity_pct",
                 "rainfall_flag",
+                "wind_speed_mps",
+                "wind_direction_deg",
             ]
         )
 
@@ -293,7 +418,10 @@ def session_summary_from_laps(laps: pd.DataFrame) -> pd.DataFrame:
                 "top_speed_kph": float(driver_rows[["speed_i1", "speed_i2", "speed_fl", "speed_st"]].max().max()),
                 "air_temp_c": float(driver_rows["air_temp_c"].dropna().mean()) if driver_rows["air_temp_c"].notna().any() else None,
                 "track_temp_c": float(driver_rows["track_temp_c"].dropna().mean()) if driver_rows["track_temp_c"].notna().any() else None,
-                "rainfall_flag": bool(driver_rows["rainfall"].fillna(False).astype(bool).any()),
+                "humidity_pct": float(driver_rows["humidity_pct"].dropna().mean()) if driver_rows["humidity_pct"].notna().any() else None,
+                "rainfall_flag": bool(bool_series(driver_rows["rainfall"]).any()),
+                "wind_speed_mps": float(driver_rows["wind_speed_mps"].dropna().mean()) if driver_rows["wind_speed_mps"].notna().any() else None,
+                "wind_direction_deg": float(driver_rows["wind_direction_deg"].dropna().mean()) if driver_rows["wind_direction_deg"].notna().any() else None,
             }
         )
 

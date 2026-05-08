@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { parseNumber, readCuratedCsv } from "@/lib/server/csv";
+import { parseNumber, readCsvFile } from "@/lib/server/csv";
 import { getRaceWeekProductResult } from "@/lib/server/race-week-product";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { getSupabasePublicClient } from "@/lib/server/supabase";
@@ -289,16 +289,16 @@ type CsvPlatformDataset = {
 const loadCsvPlatformDataset = cache(async (): Promise<CsvPlatformDataset> => {
   const [races, circuits, drivers, constructors, raceResults, driverStandings, constructorStandings, raceWeekContext, predictionSnapshots, fantasyInputs] =
     await Promise.all([
-      readCuratedCsv("races.csv") as Promise<CsvRace[]>,
-      readCuratedCsv("circuits.csv") as Promise<CsvCircuit[]>,
-      readCuratedCsv("drivers.csv") as Promise<CsvDriver[]>,
-      readCuratedCsv("constructors.csv") as Promise<CsvConstructor[]>,
-      readCuratedCsv("race_results.csv") as Promise<CsvRaceResult[]>,
-      readCuratedCsv("driver_standings.csv") as Promise<CsvDriverStanding[]>,
-      readCuratedCsv("constructor_standings.csv") as Promise<CsvConstructorStanding[]>,
-      readCuratedCsv("race_week_context.csv") as Promise<CsvRaceWeekContext[]>,
-      readCuratedCsv("prediction_snapshots.csv") as Promise<CsvPredictionSnapshot[]>,
-      readCuratedCsv("fantasy_inputs.csv") as Promise<CsvFantasyInput[]>,
+      readCsvFile<CsvRace>("curated.races"),
+      readCsvFile<CsvCircuit>("curated.circuits"),
+      readCsvFile<CsvDriver>("curated.drivers"),
+      readCsvFile<CsvConstructor>("curated.constructors"),
+      readCsvFile<CsvRaceResult>("curated.raceResults"),
+      readCsvFile<CsvDriverStanding>("curated.driverStandings"),
+      readCsvFile<CsvConstructorStanding>("curated.constructorStandings"),
+      readCsvFile<CsvRaceWeekContext>("curated.raceWeekContext"),
+      readCsvFile<CsvPredictionSnapshot>("curated.predictionSnapshots"),
+      readCsvFile<CsvFantasyInput>("curated.fantasyInputs"),
     ]);
 
   return {

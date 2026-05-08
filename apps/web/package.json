@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test src/lib/auth/supabase-middleware.test.ts src/lib/server/runtime-source.test.ts src/lib/server/strategy-lab-simulator.test.ts src/lib/server/analytics-product.test.ts src/app/api/analytics/compare/route.test.ts src/app/api/strategy-lab/races/[raceId]/response.test.ts"
+    "test": "tsx --test src/lib/auth/supabase-middleware.test.ts src/lib/server/runtime-source.test.ts src/lib/server/csv.test.ts src/lib/server/strategy-lab-simulator.test.ts src/lib/server/analytics-product.test.ts src/app/api/analytics/compare/route.test.ts src/app/api/strategy-lab/races/[raceId]/response.test.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.0",

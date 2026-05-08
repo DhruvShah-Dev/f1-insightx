@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { readCuratedCsv, readDataCsv } from "@/lib/server/csv";
+import { readCsvFile } from "@/lib/server/csv";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { getSupabasePublicClient } from "@/lib/server/supabase";
 import type { Race } from "@/lib/server/reference-data";
@@ -34,6 +34,26 @@ type StrategyFeatureRow = {
   base_quali_pace_s: Numeric;
   pace_evolution_s_per_lap: Numeric;
   pit_loss_s: Numeric;
+  fuel_correction_s_per_lap?: Numeric;
+  traffic_sensitivity_score?: Numeric;
+  weather_grip_sensitivity_score?: Numeric;
+  energy_deployment_proxy_score?: Numeric;
+  corner_speed_strength?: Numeric;
+  braking_strength?: Numeric;
+  throttle_pickup_strength?: Numeric;
+  traction_exit_strength?: Numeric;
+  straight_line_strength?: Numeric;
+  energy_deployment_proxy_strength?: Numeric;
+  lift_and_coast_tendency?: Numeric;
+  clipping_risk_proxy?: Numeric;
+  overtaking_attack_score?: Numeric;
+  defending_strength_score?: Numeric;
+  tyre_stress_proxy?: Numeric;
+  undercut_suitability_score?: Numeric;
+  high_degradation_risk_score?: Numeric;
+  track_archetype?: string | null;
+  track_position_sensitivity_score?: Numeric;
+  telemetry_proxy_confidence?: Numeric;
   baseline_stop_count: Numeric;
   baseline_strategy_code: string | null;
   baseline_pit_window_start_lap: Numeric;
@@ -165,6 +185,26 @@ export type StrategyLabRaceProduct = {
       baseQualiPaceS: number | null;
       paceEvolutionSPerLap: number | null;
       pitLossS: number | null;
+      fuelCorrectionSPerLap?: number | null;
+      trafficSensitivityScore?: number | null;
+      weatherGripSensitivityScore?: number | null;
+      energyDeploymentProxyScore?: number | null;
+      cornerSpeedStrength?: number | null;
+      brakingStrength?: number | null;
+      throttlePickupStrength?: number | null;
+      tractionExitStrength?: number | null;
+      straightLineStrength?: number | null;
+      energyDeploymentProxyStrength?: number | null;
+      liftAndCoastTendency?: number | null;
+      clippingRiskProxy?: number | null;
+      overtakingAttackScore?: number | null;
+      defendingStrengthScore?: number | null;
+      tyreStressProxy?: number | null;
+      undercutSuitabilityScore?: number | null;
+      highDegradationRiskScore?: number | null;
+      trackArchetype?: string | null;
+      trackPositionSensitivityScore?: number | null;
+      telemetryProxyConfidence?: number | null;
       baselineStopCount: number | null;
       baselinePitWindowStartLap: number | null;
       baselinePitWindowEndLap: number | null;
@@ -370,6 +410,26 @@ function buildProductFromRows({
           baseQualiPaceS: parseNumber(featureRow.base_quali_pace_s),
           paceEvolutionSPerLap: parseNumber(featureRow.pace_evolution_s_per_lap),
           pitLossS: parseNumber(featureRow.pit_loss_s),
+          fuelCorrectionSPerLap: parseNumber(featureRow.fuel_correction_s_per_lap),
+          trafficSensitivityScore: parseNumber(featureRow.traffic_sensitivity_score),
+          weatherGripSensitivityScore: parseNumber(featureRow.weather_grip_sensitivity_score),
+          energyDeploymentProxyScore: parseNumber(featureRow.energy_deployment_proxy_score),
+          cornerSpeedStrength: parseNumber(featureRow.corner_speed_strength),
+          brakingStrength: parseNumber(featureRow.braking_strength),
+          throttlePickupStrength: parseNumber(featureRow.throttle_pickup_strength),
+          tractionExitStrength: parseNumber(featureRow.traction_exit_strength),
+          straightLineStrength: parseNumber(featureRow.straight_line_strength),
+          energyDeploymentProxyStrength: parseNumber(featureRow.energy_deployment_proxy_strength),
+          liftAndCoastTendency: parseNumber(featureRow.lift_and_coast_tendency),
+          clippingRiskProxy: parseNumber(featureRow.clipping_risk_proxy),
+          overtakingAttackScore: parseNumber(featureRow.overtaking_attack_score),
+          defendingStrengthScore: parseNumber(featureRow.defending_strength_score),
+          tyreStressProxy: parseNumber(featureRow.tyre_stress_proxy),
+          undercutSuitabilityScore: parseNumber(featureRow.undercut_suitability_score),
+          highDegradationRiskScore: parseNumber(featureRow.high_degradation_risk_score),
+          trackArchetype: featureRow.track_archetype ?? null,
+          trackPositionSensitivityScore: parseNumber(featureRow.track_position_sensitivity_score),
+          telemetryProxyConfidence: parseNumber(featureRow.telemetry_proxy_confidence),
           baselineStopCount: parseNumber(featureRow.baseline_stop_count),
           baselinePitWindowStartLap: parseNumber(featureRow.baseline_pit_window_start_lap),
           baselinePitWindowEndLap: parseNumber(featureRow.baseline_pit_window_end_lap),
@@ -457,17 +517,17 @@ function attachStrategyLabRuntimeMetadata(
 async function buildFromCsv(raceId: string): Promise<StrategyLabRaceProduct | null> {
   const [overviewRows, featureRows, driverProfileRows, constructorProfileRows, comparisonRows, pitRows, projectionRows, races, drivers, constructors, circuits] =
     await Promise.all([
-      readDataCsv("strategy_lab", "strategy_lab_overview.csv") as Promise<StrategyLabOverviewRow[]>,
-      readDataCsv("strategy_lab", "strategy_features.csv") as Promise<StrategyFeatureRow[]>,
-      readDataCsv("strategy_lab", "driver_strategy_profile.csv") as Promise<DriverStrategyProfileRow[]>,
-      readDataCsv("strategy_lab", "constructor_strategy_profile.csv") as Promise<ConstructorStrategyProfileRow[]>,
-      readDataCsv("strategy_lab", "strategy_comparison.csv") as Promise<StrategyComparisonRow[]>,
-      readDataCsv("strategy_lab", "pit_window.csv") as Promise<PitWindowRow[]>,
-      readDataCsv("strategy_lab", "race_projection.csv") as Promise<RaceProjectionRow[]>,
-      readCuratedCsv("races.csv") as Promise<Array<{ id: string; season: string; round: string; race_name: string; official_name: string; circuit_id: string; scheduled_at: string; sprint_weekend: string }>>,
-      readCuratedCsv("drivers.csv") as Promise<DriverRow[]>,
-      readCuratedCsv("constructors.csv") as Promise<ConstructorRow[]>,
-      readCuratedCsv("circuits.csv") as Promise<CircuitRow[]>,
+      readCsvFile<StrategyLabOverviewRow>("strategyLab.overview"),
+      readCsvFile<StrategyFeatureRow>("strategyLab.features"),
+      readCsvFile<DriverStrategyProfileRow>("strategyLab.driverProfile"),
+      readCsvFile<ConstructorStrategyProfileRow>("strategyLab.constructorProfile"),
+      readCsvFile<StrategyComparisonRow>("strategyLab.comparison"),
+      readCsvFile<PitWindowRow>("strategyLab.pitWindow"),
+      readCsvFile<RaceProjectionRow>("strategyLab.projection"),
+      readCsvFile<{ id: string; season: string; round: string; race_name: string; official_name: string; circuit_id: string; scheduled_at: string; sprint_weekend: string }>("curated.races"),
+      readCsvFile<DriverRow>("curated.drivers"),
+      readCsvFile<ConstructorRow>("curated.constructors"),
+      readCsvFile<CircuitRow>("curated.circuits"),
     ]);
 
   const product = buildProductFromRows({
@@ -533,9 +593,9 @@ async function buildFromSupabase(raceId: string): Promise<StrategyLabRaceProduct
 
 async function listFromCsv(): Promise<StrategyLabRaceSummary[]> {
   const [overviewRows, races, circuits] = await Promise.all([
-    readDataCsv("strategy_lab", "strategy_lab_overview.csv") as Promise<StrategyLabOverviewRow[]>,
-    readCuratedCsv("races.csv") as Promise<RaceRow[]>,
-    readCuratedCsv("circuits.csv") as Promise<CircuitRow[]>,
+    readCsvFile<StrategyLabOverviewRow>("strategyLab.overview"),
+    readCsvFile<RaceRow>("curated.races"),
+    readCsvFile<CircuitRow>("curated.circuits"),
   ]);
 
   const raceMap = new Map(races.map((row) => [row.id, row]));

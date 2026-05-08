@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { parseBoolean, parseNumber, readCuratedCsv, readCuratedCsvOptional } from "@/lib/server/csv";
+import { parseBoolean, parseNumber, readCsvFile, readOptionalCsvFile } from "@/lib/server/csv";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { getSupabasePublicClient } from "@/lib/server/supabase";
 import { groupBy, roundTo } from "@/lib/server/utils";
@@ -209,13 +209,13 @@ type SupabaseSprintRow = {
 const loadCsvDataset = cache(async (): Promise<CsvDataset> => {
   const [races, raceResults, qualifyingResults, sprintResults, drivers, constructors, circuits] =
     await Promise.all([
-      readCuratedCsv("races.csv") as Promise<CsvRace[]>,
-      readCuratedCsv("race_results.csv") as Promise<CsvRaceResult[]>,
-      readCuratedCsv("qualifying_results.csv") as Promise<CsvQualifyingResult[]>,
-      readCuratedCsvOptional("sprint_results.csv") as Promise<CsvSprintResult[]>,
-      readCuratedCsv("drivers.csv") as Promise<CsvDriver[]>,
-      readCuratedCsv("constructors.csv") as Promise<CsvConstructor[]>,
-      readCuratedCsv("circuits.csv") as Promise<CsvCircuit[]>,
+      readCsvFile<CsvRace>("curated.races"),
+      readCsvFile<CsvRaceResult>("curated.raceResults"),
+      readCsvFile<CsvQualifyingResult>("curated.qualifyingResults"),
+      readOptionalCsvFile<CsvSprintResult>("curated.sprintResults"),
+      readCsvFile<CsvDriver>("curated.drivers"),
+      readCsvFile<CsvConstructor>("curated.constructors"),
+      readCsvFile<CsvCircuit>("curated.circuits"),
     ]);
 
   return {

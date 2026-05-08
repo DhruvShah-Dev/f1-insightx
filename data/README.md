@@ -11,8 +11,13 @@ This directory contains the F1 InsightX data platform: raw source fetches, norma
 - Schedule, race results, qualifying, sprint, and metadata provenance
 
 - `data/raw/fastf1`
-- FastF1 schedule snapshots and ingestion manifests
-- Local cache-backed session bookkeeping for incremental reruns
+- FastF1 schedule snapshots, per-session manifests, and resumable ingestion logs
+- Root artifacts:
+  - `ingestion_manifest.jsonl`
+  - `ingestion_manifest_index.csv`
+  - `failed_sessions.jsonl`
+  - `completion_summary.json`
+- Optional telemetry and position parquet for heavier analysis workflows
 
 ### 2. Curated
 
@@ -36,6 +41,7 @@ These files are normalized from raw source payloads and form the canonical event
   - `laps.csv`
   - `stints.csv`
   - `session_summary.csv`
+  - `best_laps.csv`
   - optional `results.csv`
   - optional `weather.csv`
 
@@ -92,6 +98,8 @@ python data/load_supabase.py
 ### 5. Run the FastF1 intelligence pipeline
 
 ```bash
+python data/fastf1_ingest.py --start-season 2020 --end-season 2026 --only-missing --sleep-seconds 2
+python data/validate_fastf1_archive.py --start-season 2020 --end-season 2026 --sessions FP1 FP2 FP3 Q SQ S R
 python data/run_fastf1_pipeline.py --start-season 2024 --end-season 2026
 ```
 
@@ -137,6 +145,7 @@ python data/run_fastf1_pipeline.py --start-season 2024 --end-season 2026
 The FastF1 layer is designed around:
 
 - `raw/fastf1`: schedule and ingestion manifests
+- `raw/fastf1`: raw archive, resumable manifests, failed-session log, optional telemetry parquet
 - `staged/fastf1`: session-level extracted tables
 - `features`: reusable driver and constructor form snapshots
 - `model_inputs`: strategy and prediction modeling inputs
@@ -161,5 +170,16 @@ The FastF1 layer is designed around:
 3. Run `build_product_views.py` to regenerate standings, features, and prediction snapshots.
 4. Run `load_supabase.py` to publish tables for the web app.
 5. Run `run_fastf1_pipeline.py` when you want session-rich practice, degradation, and race-week modeling outputs.
+
+### Telemetry note
+
+Telemetry is optional because it is materially heavier than the core session archive. Use it selectively for qualifying and race sessions first if you want:
+
+- speed, braking, throttle, gear, and DRS traces
+- corner delta comparisons
+- track path generation
+- energy deployment proxy analysis
+
+Do not label these outputs as true battery usage unless direct ERS or battery telemetry is available.
 
 This keeps the app current without hardcoding "latest race" content into UI components.

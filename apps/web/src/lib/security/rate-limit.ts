@@ -105,6 +105,7 @@ export const RATE_LIMIT_POLICIES = {
   fantasyValidate: { name: "fantasy-validate", limit: 60, windowMs: 60_000 },
   raceScenarioSimulate: { name: "race-simulate", limit: 12, windowMs: 5 * 60_000 },
   raceScenarioValidate: { name: "race-validate", limit: 60, windowMs: 60_000 },
+  analyticsCompare: { name: "analytics-compare", limit: 45, windowMs: 60_000 },
   publicRead: { name: "public-read", limit: 120, windowMs: 60_000 },
   health: { name: "health", limit: 30, windowMs: 60_000 },
 } as const satisfies Record<string, RateLimitPolicy>;

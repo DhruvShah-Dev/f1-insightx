@@ -1,7 +1,7 @@
 import { getSupabasePublicClient } from "@/lib/server/supabase";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { roundTo } from "@/lib/server/utils";
-import { parseNumber, readCuratedCsv } from "@/lib/server/csv";
+import { parseNumber, readCsvFile } from "@/lib/server/csv";
 import type { Race } from "@/lib/server/reference-data";
 
 export type RaceContextEntrant = {
@@ -169,13 +169,13 @@ export async function getRaceContextResult(raceId: string): Promise<RaceContextR
 async function getRaceContextFromCsv(raceId: string): Promise<RaceContext | null> {
   const [races, drivers, constructors, qualifyingResults, raceResults, strategyProfiles, modelFeatures] =
     await Promise.all([
-      readCuratedCsv("races.csv") as Promise<CsvRace[]>,
-      readCuratedCsv("drivers.csv") as Promise<CsvDriver[]>,
-      readCuratedCsv("constructors.csv") as Promise<CsvConstructor[]>,
-      readCuratedCsv("qualifying_results.csv") as Promise<CsvQualifyingResult[]>,
-      readCuratedCsv("race_results.csv") as Promise<CsvRaceResult[]>,
-      readCuratedCsv("strategy_profiles.csv") as Promise<CsvStrategyProfile[]>,
-      readCuratedCsv("model_features.csv") as Promise<CsvModelFeature[]>,
+      readCsvFile<CsvRace>("curated.races"),
+      readCsvFile<CsvDriver>("curated.drivers"),
+      readCsvFile<CsvConstructor>("curated.constructors"),
+      readCsvFile<CsvQualifyingResult>("curated.qualifyingResults"),
+      readCsvFile<CsvRaceResult>("curated.raceResults"),
+      readCsvFile<CsvStrategyProfile>("curated.strategyProfiles"),
+      readCsvFile<CsvModelFeature>("curated.modelFeatures"),
     ]);
 
   const raceRow = races.find((row) => row.id === raceId);

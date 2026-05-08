@@ -53,10 +53,38 @@ It is designed to be reproducible, low-cost, cache-aware, and era-aware.
 - FP2 receives the strongest race-simulation weight
 - FP1 and FP3 remain useful for adaptation, setup, and track evolution
 
+## Downloader
+
+The FastF1 downloader is now cache-first, resumable, and manifest-driven.
+
+- primary archive: `data/raw/fastf1`
+- staged session layer: `data/staged/fastf1`
+- root files:
+  - `ingestion_manifest.jsonl`
+  - `ingestion_manifest_index.csv`
+  - `failed_sessions.jsonl`
+  - `completion_summary.json`
+
+If FastF1 raises its hourly API limit, the downloader stops the run, writes the current summary, and leaves completed session manifests intact. Wait for the limit window to reset, then rerun with `--only-missing` or `--retry-failed`.
+
+Telemetry and position data are optional and stored as parquet only when explicitly requested. They are intended for:
+
+- speed comparisons
+- braking maps
+- throttle maps
+- gear maps
+- corner delta analysis
+- track path generation
+- energy deployment proxy analysis
+
+Do not treat telemetry-derived deployment patterns as true battery or ERS usage unless direct ERS data is available.
+
 ## Commands
 
 ```bash
-python data/fastf1_ingest.py --start-season 2024 --end-season 2026
+python data/fastf1_ingest.py --start-season 2020 --end-season 2026 --only-missing --sleep-seconds 2
+python data/fastf1_ingest.py --start-season 2020 --end-season 2026 --sessions FP1 FP2 FP3 Q SQ S R --retry-failed --max-retries 3
+python data/fastf1_ingest.py --start-season 2026 --end-season 2026 --include-telemetry --sessions Q R --only-missing --sleep-seconds 3
 python data/build_fastf1_features.py
 python data/build_fastf1_models.py
 ```
@@ -65,6 +93,12 @@ Orchestrated:
 
 ```bash
 python data/run_fastf1_pipeline.py --start-season 2024 --end-season 2026
+```
+
+Validation:
+
+```bash
+python data/validate_fastf1_archive.py --start-season 2020 --end-season 2026 --sessions FP1 FP2 FP3 Q SQ S R
 ```
 
 ## Training and evaluation plan

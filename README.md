@@ -1,111 +1,133 @@
 # F1 InsightX
 
-F1 InsightX is a Formula 1 analytics web app built around two product surfaces: a race strategy simulator and a fantasy lineup optimizer. The project is designed to be portfolio-ready, visually polished, and deployable on low-cost infrastructure.
+F1 InsightX is a production-minded Formula 1 analytics platform built with Next.js, Supabase, and Python data pipelines. It combines race-week context, deterministic strategy simulation, fantasy inputs, and telemetry-derived analytics without using machine learning in the simulation path.
 
-## Features
+## Product Surfaces
 
-- Strategy Lab with scenario-based race simulation, projected finishing order, and confidence output
-- Fantasy Builder with budget-aware optimization, safe vs aggressive variants, and captain recommendations
-- Current-season constructors and drivers standings, plus recent race archive coverage on the home page
-- Dedicated race detail pages with circuit visuals, podium, fastest lap, qualifying, and classification context
-- Centralized local asset pipeline for teams, drivers, and circuit visuals
+- `Race Week`: upcoming and recent race context, schedule state, and race-specific product views.
+- `Strategy Lab`: deterministic lap/stint strategy simulation using tyre degradation, pit loss, weather, traffic, fuel correction, telemetry-derived strategy signals, track archetypes, and confidence scoring.
+- `Analytics`: driver-vs-driver telemetry feature comparisons using precomputed product views and session-scoped indexed shards.
+- `Fantasy Builder`: fantasy-oriented driver and constructor inputs from curated race-week and prediction views.
+- `Account/Profile`: Supabase-backed authentication, profile surfaces, and legal/privacy/cookie pages.
 
-## Tech stack
+## Data Architecture
 
-- Frontend: Next.js 16, React, TypeScript, Tailwind CSS
-- Backend: Next.js App Router server routes
-- Data pipeline: Python, Jolpica, FastF1
-- Database target: Supabase Postgres
-- Automation: GitHub Actions
-- Deployment target: Vercel Hobby + Supabase Free
+The web app reads compact product views. It does not read raw FastF1 telemetry at runtime.
 
-## Repository structure
+1. `data/raw/fastf1`: generated FastF1 archive, manifests, failed-session logs, cache-adjacent artifacts.
+2. `data/staged/fastf1`: generated per-session CSV extracts.
+3. `data/canonical_fastf1`: generated canonical FastF1 tables with manifest gating and weather propagation.
+4. `data/telemetry_features`: generated telemetry-derived lap, segment, braking, throttle, straight-line, and energy deployment proxy features.
+5. `data/strategy_lab`: Strategy Lab product views and deterministic simulation inputs.
+6. `data/analytics`: generated Analytics product views and indexed session shards.
+7. Supabase: auth/profile and deployable database-backed surfaces where configured.
 
-```text
-apps/
-  web/        Next.js app, UI components, server routes, local assets
-config/       Environment and shared project notes
-data/         Python ingestion, normalization, and SQL schema
-docs/         Architecture, data-source, API, and deployment documentation
-scripts/      Local setup and maintenance utilities
-```
-
-## Getting started
-
-### 1. Install dependencies
+## Local Setup
 
 ```bash
 npm install
+npm run data:install
 ```
 
-### 2. Configure environment
+Create `.env.local` from `.env.example` if you need Supabase-backed auth/profile flows. Never commit real `.env*` files.
 
-Copy `.env.example` to `.env.local` at the repo root. The Next app is configured to read root-level env files in this monorepo. If Supabase variables are missing, the public read-only parts of the app can still fall back to curated CSV data.
-
-Required/optional variables are documented in [.env.example](./.env.example).
-
-On a minimal setup, some standings, archive, and race-week surfaces may render empty states until you either connect Supabase or generate local curated datasets through the data pipeline.
-
-Rate-limit and abuse-protection defaults are documented in [Abuse Protection](./docs/abuse-protection.md). They do not require extra paid infrastructure.
-
-### 3. Run the web app
+## Development
 
 ```bash
 npm run dev
+npm run test --workspace web
+npm run typecheck
+npm run lint --workspace web
+npm run build --workspace web
 ```
 
-App URL: `http://localhost:3000`
+## Data Commands
 
-Optional public-contact variable:
-
-- `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL` for privacy/deletion request routing in the app UI and legal pages
-
-## Data pipeline
-
-### Python setup
+Canonical FastF1:
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -r data/requirements.txt
+python build_canonical_fastf1.py --start-season 2020 --end-season 2026
+python validate_canonical_fastf1.py
 ```
 
-### Refresh reference data
+Telemetry features:
 
 ```bash
-python data/fetch_reference_data.py --start-season 2024 --end-season 2026
-python data/normalize_results.py
+python build_telemetry_features.py --start-season 2020 --end-season 2026
+python validate_telemetry_features.py
 ```
 
-### Load into Supabase/Postgres
+Strategy Lab:
 
 ```bash
-python data/load_supabase.py
+python data/build_strategy_lab_layers.py
 ```
 
-### Refresh local driver portraits
+Analytics product views and session indexes:
 
 ```bash
-python scripts/refresh_driver_portraits.py
+python data/build_analytics_views.py
+python data/build_analytics_indexes.py
+python validate_analytics_views.py
 ```
 
-## Project status
+Product freshness manifest:
 
-- Current state: feature-complete portfolio build with ongoing UI and data refinement
-- Deployment config is included, but production infrastructure still needs your own Vercel/Supabase setup
-- The repository is structured for public GitHub, portfolio, and demo use
+```bash
+python build_product_manifest.py
+python validate_product_manifest.py
+```
 
-## Documentation
+Full local product refresh order:
 
-- [Architecture](./docs/architecture.md)
-- [Data Sources](./docs/data-sources.md)
-- [Schema Outline](./docs/schema-outline.md)
-- [API Contracts](./docs/api-contracts.md)
-- [Deployment Guide](./docs/deployment.md)
-- [Milestones](./docs/milestones.md)
-- [Supabase Auth Setup](./docs/supabase-auth-setup.md)
-- [Abuse Protection](./docs/abuse-protection.md)
-- [Error Handling](./docs/error-handling.md)
-- [Privacy Policy](./apps/web/src/app/privacy/page.tsx)
-- [Terms of Use](./apps/web/src/app/terms/page.tsx)
-- [Cookie Notice](./apps/web/src/app/cookies/page.tsx)
+```bash
+python build_canonical_fastf1.py --start-season 2020 --end-season 2026
+python validate_canonical_fastf1.py
+python build_telemetry_features.py --start-season 2020 --end-season 2026
+python validate_telemetry_features.py
+python data/build_strategy_lab_layers.py
+python data/build_analytics_views.py
+python data/build_analytics_indexes.py
+python validate_analytics_views.py
+python build_product_manifest.py
+python validate_product_manifest.py
+python check_generated_artifacts.py
+```
+
+Python tests:
+
+```bash
+python -m pytest tests/test_analytics_views.py tests/test_telemetry_features.py
+```
+
+## Data Artifact Policy
+
+Commit source scripts, SQL, docs, tests, and intentionally small product fixtures. Do not commit raw FastF1 archives, cache data, parquet telemetry, canonical CSVs, telemetry feature CSVs, or large Analytics product/index outputs unless there is an explicit release reason.
+
+Generated artifacts are ignored and should be regenerated with the commands above.
+
+## Product Honesty
+
+- Energy deployment is a proxy derived from speed, throttle, RPM, gear, DRS, and segment behavior. It is not true ERS or battery telemetry.
+- Analytics uses approximate segment identifiers. It does not claim exact named-corner precision yet.
+- Strategy Lab returns finish bands, gain/loss ranges, confidence, weakest assumptions, and sensitivity drivers. It should not be presented as exact race prediction.
+
+## Deployment Notes
+
+The web app is intended for Vercel with Next.js App Router. Supabase variables are required for deployed auth/profile flows:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `NEXT_PUBLIC_APP_URL`
+- `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL`
+
+If generated CSV product views are required in a deployment, regenerate them before packaging or publish them through an explicit artifact/data release process. Keep raw telemetry and cache artifacts out of the deployment bundle.
+
+More detail:
+
+- [Development](docs/DEVELOPMENT.md)
+- [Data Pipeline](docs/DATA_PIPELINE.md)
+- [Strategy Lab](docs/STRATEGY_LAB.md)
+- [Analytics](docs/ANALYTICS.md)
+- [Deployment](docs/deployment.md)

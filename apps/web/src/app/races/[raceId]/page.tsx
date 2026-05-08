@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { CircuitHeroPanel } from "@/components/races/circuit-hero-panel";
 import { StatePanel } from "@/components/ui/state-panel";
-import { HomeLink } from "@/components/ui/home-link";
+import { SiteHeader } from "@/components/ui/site-header";
+import { SiteFooter } from "@/components/ui/site-footer";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { logServerError } from "@/lib/errors/logger";
 import { getRaceDetail } from "@/lib/server/race-history";
@@ -38,10 +39,8 @@ export default async function RaceDetailPage({ params }: Props) {
   }
 
   return (
-    <main className="subpage-shell">
-      <header className="subpage-header">
-        <HomeLink />
-      </header>
+    <main className="subpage-shell race-detail-layout">
+      <SiteHeader title="Race Archive" />
 
       <CircuitHeroPanel detail={detail} />
 
@@ -198,6 +197,8 @@ export default async function RaceDetailPage({ params }: Props) {
           ) : null}
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 import { getSupabasePublicClient } from "@/lib/server/supabase";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { compareSeasonRoundDesc } from "@/lib/server/utils";
-import { parseBoolean, parseNumber, readCuratedCsv } from "@/lib/server/csv";
+import { parseBoolean, parseNumber, readCsvFile } from "@/lib/server/csv";
 
 type ReferenceFilters = {
   search?: string;
@@ -95,7 +95,7 @@ type SupabaseRaceRow = {
 };
 
 async function loadDriversFromCsv(filters: ReferenceFilters): Promise<Driver[]> {
-  const rows = await readCuratedCsv("drivers.csv");
+  const rows = await readCsvFile("curated.drivers");
   const search = filters.search?.toLowerCase();
 
   return rows
@@ -122,7 +122,7 @@ async function loadDriversFromCsv(filters: ReferenceFilters): Promise<Driver[]> 
 }
 
 async function loadConstructorsFromCsv(filters: ReferenceFilters): Promise<Constructor[]> {
-  const rows = await readCuratedCsv("constructors.csv");
+  const rows = await readCsvFile("curated.constructors");
   const search = filters.search?.toLowerCase();
 
   return rows
@@ -145,7 +145,7 @@ async function loadConstructorsFromCsv(filters: ReferenceFilters): Promise<Const
 }
 
 async function loadCircuitsFromCsv(filters: ReferenceFilters): Promise<Circuit[]> {
-  const rows = await readCuratedCsv("circuits.csv");
+  const rows = await readCsvFile("curated.circuits");
   const search = filters.search?.toLowerCase();
 
   return rows
@@ -171,7 +171,7 @@ async function loadCircuitsFromCsv(filters: ReferenceFilters): Promise<Circuit[]
 }
 
 async function loadRacesFromCsv(filters: RacesFilters): Promise<Race[]> {
-  const rows = await readCuratedCsv("races.csv");
+  const rows = await readCsvFile("curated.races");
 
   return rows
     .filter((row) => !filters.season || Number(row.season) === filters.season)
@@ -349,7 +349,7 @@ async function loadRacesFromSupabase(filters: RacesFilters): Promise<Race[]> {
 }
 
 async function loadAvailableSeasonsFromCsv() {
-  const rows = await readCuratedCsv("races.csv");
+  const rows = await readCsvFile("curated.races");
   return [...new Set(rows.map((row) => Number(row.season)))].sort((a, b) => b - a);
 }
 

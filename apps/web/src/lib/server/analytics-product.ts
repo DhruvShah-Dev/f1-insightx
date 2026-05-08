@@ -1,5 +1,9 @@
 import { cache } from "react";
-import { parseNumber, readDataCsv } from "@/lib/server/csv";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import { promisify } from "node:util";
+import { gunzip } from "node:zlib";
+import { parseNumber, readCsvFile } from "@/lib/server/csv";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceMetadata, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 
 type Numeric = number | string | null | undefined;
@@ -48,6 +52,74 @@ type TrackSummaryRow = {
   degradation_weight: Numeric;
   track_position_weight: Numeric;
   archetype_confidence: Numeric;
+};
+
+type SegmentComparisonRow = {
+  session_id: string;
+  segment_id: string;
+  segment_kind: string;
+  segment_confidence: Numeric;
+  driver_a: string;
+  driver_b: string;
+  entry_speed_delta_kph: Numeric;
+  apex_speed_delta_kph: Numeric;
+  exit_speed_delta_kph: Numeric;
+  min_speed_delta_kph: Numeric;
+  faster_driver: string;
+  confidence: Numeric;
+};
+
+type BrakingComparisonRow = {
+  session_id: string;
+  segment_id: string;
+  driver_a: string;
+  driver_b: string;
+  braking_start_delta_m: Numeric;
+  braking_duration_delta_s: Numeric;
+  braking_distance_delta_m: Numeric;
+  late_brake_delta: Numeric;
+  brake_intensity_delta: Numeric;
+  confidence: Numeric;
+  favorable_driver: string;
+};
+
+type ThrottleComparisonRow = {
+  session_id: string;
+  segment_id: string;
+  driver_a: string;
+  driver_b: string;
+  throttle_pickup_delta_m: Numeric;
+  full_throttle_exit_delta_m: Numeric;
+  traction_exit_delta: Numeric;
+  confidence: Numeric;
+  favorable_driver: string;
+};
+
+type StraightComparisonRow = {
+  session_id: string;
+  segment_id: string;
+  driver_a: string;
+  driver_b: string;
+  entry_speed_delta_kph: Numeric;
+  terminal_speed_delta_kph: Numeric;
+  acceleration_delta: Numeric;
+  drs_active_delta_pct: Numeric;
+  clipping_proxy_delta: Numeric;
+  confidence: Numeric;
+  favorable_driver: string;
+};
+
+type EnergyProxyComparisonRow = {
+  session_id: string;
+  segment_id: string;
+  driver_a: string;
+  driver_b: string;
+  deployment_proxy_delta: Numeric;
+  lift_and_coast_delta: Numeric;
+  clipping_proxy_delta: Numeric;
+  recovery_zone_delta: Numeric;
+  confidence: Numeric;
+  proxy_note: string;
 };
 
 export type AnalyticsSessionSummary = {
@@ -154,6 +226,8 @@ export type AnalyticsEnergyProxyHighlight = {
   proxyNote: string;
 };
 
+export type AnalyticsCompareMode = "overview" | "segments" | "braking" | "throttle" | "straights" | "energy-proxy" | "all";
+
 export type AnalyticsComparisonPayload = {
   session: AnalyticsSessionSummary;
   drivers: {
@@ -171,6 +245,14 @@ export type AnalyticsComparisonPayload = {
   energyProxyHighlights: AnalyticsEnergyProxyHighlight[];
   proxyNote: string;
   runtime: RuntimeSourceMetadata;
+  detailMode: AnalyticsCompareMode;
+  rowCaps: {
+    segments: number;
+    braking: number;
+    throttle: number;
+    straights: number;
+    energyProxy: number;
+  };
 };
 
 export type AnalyticsCompareValidation =
@@ -180,6 +262,7 @@ export type AnalyticsCompareValidation =
         sessionId: string;
         driverA: string;
         driverB: string;
+        mode: AnalyticsCompareMode;
       };
     }
   | {
@@ -194,10 +277,64 @@ export type AnalyticsDriversResult = RuntimeSourceResult<AnalyticsDriverOption[]
 export type AnalyticsComparisonResult = RuntimeSourceResult<AnalyticsComparisonPayload>;
 
 export const ANALYTICS_ENERGY_PROXY_NOTE = "Energy deployment is a telemetry-derived proxy, not true ERS or battery state.";
+export const ANALYTICS_DETAIL_ROW_CAP = 10;
+export const ANALYTICS_COMPARE_MODES = ["overview", "segments", "braking", "throttle", "straights", "energy-proxy", "all"] as const satisfies readonly AnalyticsCompareMode[];
 
-const readSessionRows = cache(async () => readDataCsv("analytics", "analytics_session_index.csv") as Promise<SessionIndexRow[]>);
-const readDriverComparisonRows = cache(async () => readDataCsv("analytics", "analytics_driver_comparison.csv") as Promise<DriverComparisonRow[]>);
-const readTrackSummaryRows = cache(async () => readDataCsv("analytics", "analytics_track_summary.csv") as Promise<TrackSummaryRow[]>);
+const readSessionRows = cache(async () => readCsvFile<SessionIndexRow>("analytics.sessionIndex"));
+const analyticsIndexedDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data", "analytics", "indexed");
+const gunzipAsync = promisify(gunzip);
+
+type AnalyticsIndexedManifest = {
+  version: number;
+  row_cap: number;
+  sessions: Record<string, {
+    file: string;
+    season: number;
+    round: number;
+    event: string;
+    session: string;
+    counts: Record<string, number>;
+  }>;
+};
+
+type AnalyticsIndexedSessionPayload = {
+  session: SessionIndexRow;
+  drivers: AnalyticsDriverOption[];
+  overview: DriverComparisonRow[];
+  track_summary: TrackSummaryRow[];
+  segments: SegmentComparisonRow[];
+  braking: BrakingComparisonRow[];
+  throttle: ThrottleComparisonRow[];
+  straights: StraightComparisonRow[];
+  energy_proxy: EnergyProxyComparisonRow[];
+};
+
+const readIndexedManifest = cache(async (): Promise<AnalyticsIndexedManifest> => {
+  const filePath = path.join(analyticsIndexedDir, "analytics_session_manifest.json");
+  const content = await readFile(filePath, "utf-8");
+  return JSON.parse(content) as AnalyticsIndexedManifest;
+});
+
+const readIndexedSessionPayload = cache(async (sessionId: string): Promise<AnalyticsIndexedSessionPayload | null> => {
+  const manifest = await readIndexedManifest();
+  const entry = manifest.sessions[sessionId];
+  if (!entry?.file || entry.file.includes("..") || path.isAbsolute(entry.file)) {
+    return null;
+  }
+
+  try {
+    const filePath = path.join(analyticsIndexedDir, "sessions", entry.file);
+    const content = entry.file.endsWith(".gz")
+      ? (await gunzipAsync(await readFile(filePath))).toString("utf-8")
+      : await readFile(filePath, "utf-8");
+    return JSON.parse(content) as AnalyticsIndexedSessionPayload;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return null;
+    }
+    throw error;
+  }
+});
 
 function clamp01(value: number | null) {
   if (value === null || !Number.isFinite(value)) {
@@ -262,6 +399,85 @@ function orientDriver(row: DriverComparisonRow, driverA: string, driverB: string
     confidence: clamp01(asNumber(row.confidence)),
     weakestAssumption: row.weakest_assumption || "Approximate segment IDs from precomputed telemetry features.",
     strategyRelevanceNote: row.strategy_relevance_note || "Use this as a product-level comparison, not a raw telemetry trace.",
+  };
+}
+
+function orientSegment(row: SegmentComparisonRow, driverA: string, driverB: string): AnalyticsSegmentHighlight {
+  const sameOrder = isRequestedOrder(row, driverA, driverB);
+  const flip = (value: Numeric) => sameOrder ? asNumber(value) : invertNumber(asNumber(value));
+
+  return {
+    segmentId: row.segment_id,
+    segmentKind: row.segment_kind || "approximate segment",
+    segmentConfidence: clamp01(asNumber(row.segment_confidence)),
+    entrySpeedDeltaKph: flip(row.entry_speed_delta_kph),
+    apexSpeedDeltaKph: flip(row.apex_speed_delta_kph),
+    exitSpeedDeltaKph: flip(row.exit_speed_delta_kph),
+    minSpeedDeltaKph: flip(row.min_speed_delta_kph),
+    fasterDriver: row.faster_driver || null,
+    confidence: clamp01(asNumber(row.confidence)),
+  };
+}
+
+function orientBraking(row: BrakingComparisonRow, driverA: string, driverB: string): AnalyticsBrakingHighlight {
+  const sameOrder = isRequestedOrder(row, driverA, driverB);
+  const flip = (value: Numeric) => sameOrder ? asNumber(value) : invertNumber(asNumber(value));
+
+  return {
+    segmentId: row.segment_id,
+    brakingStartDeltaM: flip(row.braking_start_delta_m),
+    brakingDurationDeltaS: flip(row.braking_duration_delta_s),
+    brakingDistanceDeltaM: flip(row.braking_distance_delta_m),
+    lateBrakeDelta: flip(row.late_brake_delta),
+    brakeIntensityDelta: flip(row.brake_intensity_delta),
+    favorableDriver: row.favorable_driver || null,
+    confidence: clamp01(asNumber(row.confidence)),
+  };
+}
+
+function orientThrottle(row: ThrottleComparisonRow, driverA: string, driverB: string): AnalyticsThrottleHighlight {
+  const sameOrder = isRequestedOrder(row, driverA, driverB);
+  const flip = (value: Numeric) => sameOrder ? asNumber(value) : invertNumber(asNumber(value));
+
+  return {
+    segmentId: row.segment_id,
+    throttlePickupDeltaM: flip(row.throttle_pickup_delta_m),
+    fullThrottleExitDeltaM: flip(row.full_throttle_exit_delta_m),
+    tractionExitDelta: flip(row.traction_exit_delta),
+    favorableDriver: row.favorable_driver || null,
+    confidence: clamp01(asNumber(row.confidence)),
+  };
+}
+
+function orientStraight(row: StraightComparisonRow, driverA: string, driverB: string): AnalyticsStraightHighlight {
+  const sameOrder = isRequestedOrder(row, driverA, driverB);
+  const flip = (value: Numeric) => sameOrder ? asNumber(value) : invertNumber(asNumber(value));
+
+  return {
+    segmentId: row.segment_id,
+    entrySpeedDeltaKph: flip(row.entry_speed_delta_kph),
+    terminalSpeedDeltaKph: flip(row.terminal_speed_delta_kph),
+    accelerationDelta: flip(row.acceleration_delta),
+    drsActiveDeltaPct: flip(row.drs_active_delta_pct),
+    clippingProxyDelta: flip(row.clipping_proxy_delta),
+    favorableDriver: row.favorable_driver || null,
+    confidence: clamp01(asNumber(row.confidence)),
+  };
+}
+
+function orientEnergyProxy(row: EnergyProxyComparisonRow, driverA: string, driverB: string): AnalyticsEnergyProxyHighlight {
+  const sameOrder = isRequestedOrder(row, driverA, driverB);
+  const flip = (value: Numeric) => sameOrder ? asNumber(value) : invertNumber(asNumber(value));
+  const proxyNote = row.proxy_note?.toLowerCase().includes("proxy") ? row.proxy_note : ANALYTICS_ENERGY_PROXY_NOTE;
+
+  return {
+    segmentId: row.segment_id,
+    deploymentProxyDelta: flip(row.deployment_proxy_delta),
+    liftAndCoastDelta: flip(row.lift_and_coast_delta),
+    clippingProxyDelta: flip(row.clipping_proxy_delta),
+    recoveryZoneDelta: flip(row.recovery_zone_delta),
+    confidence: clamp01(asNumber(row.confidence)),
+    proxyNote,
   };
 }
 
@@ -362,6 +578,57 @@ function buildPrimaryInsight(overview: AnalyticsComparisonOverview, track: Analy
   return "The comparison is closely matched across the precomputed telemetry product views.";
 }
 
+function isCompareMode(value: string | null | undefined): value is AnalyticsCompareMode {
+  return ANALYTICS_COMPARE_MODES.includes(value as AnalyticsCompareMode);
+}
+
+function topByMagnitude<T>(rows: T[], score: (row: T) => number) {
+  return rows
+    .slice()
+    .sort((left, right) => Math.abs(score(right)) - Math.abs(score(left)))
+    .slice(0, ANALYTICS_DETAIL_ROW_CAP);
+}
+
+function matchPair<T extends { session_id: string; driver_a: string; driver_b: string }>(sessionId: string, driverA: string, driverB: string) {
+  const targetKey = pairKey(sessionId, driverA, driverB);
+  return (row: T) => rowPairKey(row) === targetKey;
+}
+
+function loadSegmentHighlights(rows: SegmentComparisonRow[], sessionId: string, driverA: string, driverB: string) {
+  return topByMagnitude(
+    rows.filter(matchPair(sessionId, driverA, driverB)).map((row) => orientSegment(row, driverA, driverB)),
+    (row) => Math.max(Math.abs(row.apexSpeedDeltaKph ?? 0), Math.abs(row.exitSpeedDeltaKph ?? 0), Math.abs(row.entrySpeedDeltaKph ?? 0)),
+  );
+}
+
+function loadBrakingHighlights(rows: BrakingComparisonRow[], sessionId: string, driverA: string, driverB: string) {
+  return topByMagnitude(
+    rows.filter(matchPair(sessionId, driverA, driverB)).map((row) => orientBraking(row, driverA, driverB)),
+    (row) => Math.max(Math.abs(row.lateBrakeDelta ?? 0), Math.abs(row.brakeIntensityDelta ?? 0), Math.abs(row.brakingDistanceDeltaM ?? 0)),
+  );
+}
+
+function loadThrottleHighlights(rows: ThrottleComparisonRow[], sessionId: string, driverA: string, driverB: string) {
+  return topByMagnitude(
+    rows.filter(matchPair(sessionId, driverA, driverB)).map((row) => orientThrottle(row, driverA, driverB)),
+    (row) => Math.max(Math.abs(row.tractionExitDelta ?? 0), Math.abs(row.throttlePickupDeltaM ?? 0)),
+  );
+}
+
+function loadStraightHighlights(rows: StraightComparisonRow[], sessionId: string, driverA: string, driverB: string) {
+  return topByMagnitude(
+    rows.filter(matchPair(sessionId, driverA, driverB)).map((row) => orientStraight(row, driverA, driverB)),
+    (row) => Math.max(Math.abs(row.terminalSpeedDeltaKph ?? 0), Math.abs(row.accelerationDelta ?? 0)),
+  );
+}
+
+function loadEnergyProxyHighlights(rows: EnergyProxyComparisonRow[], sessionId: string, driverA: string, driverB: string) {
+  return topByMagnitude(
+    rows.filter(matchPair(sessionId, driverA, driverB)).map((row) => orientEnergyProxy(row, driverA, driverB)),
+    (row) => Math.max(Math.abs(row.deploymentProxyDelta ?? 0), Math.abs(row.clippingProxyDelta ?? 0)),
+  );
+}
+
 async function listFromCsv(): Promise<AnalyticsSessionSummary[]> {
   const rows = await readSessionRows();
   return rows
@@ -370,40 +637,35 @@ async function listFromCsv(): Promise<AnalyticsSessionSummary[]> {
 }
 
 async function driversFromCsv(sessionId: string): Promise<AnalyticsDriverOption[]> {
-  const rows = (await readDriverComparisonRows()).filter((row) => row.session_id === sessionId);
-  const drivers = new Map<string, AnalyticsDriverOption>();
-
-  for (const row of rows) {
-    drivers.set(normalizedCode(row.driver_a), { code: normalizedCode(row.driver_a), team: row.driver_a_team || null });
-    drivers.set(normalizedCode(row.driver_b), { code: normalizedCode(row.driver_b), team: row.driver_b_team || null });
-  }
-
-  return Array.from(drivers.values()).sort((left, right) => left.code.localeCompare(right.code));
+  const payload = await readIndexedSessionPayload(sessionId);
+  return (payload?.drivers ?? []).map((driver) => ({
+    code: normalizedCode(driver.code),
+    team: driver.team || null,
+  })).sort((left, right) => left.code.localeCompare(right.code));
 }
 
-async function comparisonFromCsv(sessionId: string, driverA: string, driverB: string): Promise<AnalyticsComparisonPayload | null> {
-  const [sessions, drivers, driverRows, trackRows] = await Promise.all([
+async function comparisonFromCsv(sessionId: string, driverA: string, driverB: string, mode: AnalyticsCompareMode): Promise<AnalyticsComparisonPayload | null> {
+  const [sessions, payload] = await Promise.all([
     listFromCsv(),
-    driversFromCsv(sessionId),
-    readDriverComparisonRows(),
-    readTrackSummaryRows(),
+    readIndexedSessionPayload(sessionId),
   ]);
   const session = sessions.find((item) => item.id === sessionId) ?? null;
-  if (!session) return null;
+  if (!session || !payload) return null;
 
   const requestedA = normalizedCode(driverA);
   const requestedB = normalizedCode(driverB);
+  const drivers = payload.drivers.map((driver) => ({ code: normalizedCode(driver.code), team: driver.team || null }));
   const driverMap = new Map(drivers.map((driver) => [driver.code, driver]));
   const driverOptionA = driverMap.get(requestedA);
   const driverOptionB = driverMap.get(requestedB);
   if (!driverOptionA || !driverOptionB) return null;
 
   const targetKey = pairKey(sessionId, requestedA, requestedB);
-  const driverRow = driverRows.find((row) => rowPairKey(row) === targetKey);
+  const driverRow = payload.overview.find((row) => rowPairKey(row) === targetKey);
   if (!driverRow) return null;
 
   const overview = orientDriver(driverRow, requestedA, requestedB);
-  const trackSummary = trackRows.find((row) => row.session_id === sessionId);
+  const trackSummary = payload.track_summary.find((row) => row.session_id === sessionId);
   const mappedTrackSummary = trackSummary ? mapTrackSummary(trackSummary) : null;
 
   const runtime: RuntimeSourceMetadata = {
@@ -418,6 +680,11 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
     season: session.season,
     round: session.round,
   };
+  const segmentHighlights = mode === "segments" || mode === "all" ? loadSegmentHighlights(payload.segments, sessionId, requestedA, requestedB) : [];
+  const brakingHighlights = mode === "braking" || mode === "all" ? loadBrakingHighlights(payload.braking, sessionId, requestedA, requestedB) : [];
+  const throttleHighlights = mode === "throttle" || mode === "all" ? loadThrottleHighlights(payload.throttle, sessionId, requestedA, requestedB) : [];
+  const straightHighlights = mode === "straights" || mode === "all" ? loadStraightHighlights(payload.straights, sessionId, requestedA, requestedB) : [];
+  const energyProxyHighlights = mode === "energy-proxy" || mode === "all" ? loadEnergyProxyHighlights(payload.energy_proxy, sessionId, requestedA, requestedB) : [];
 
   return {
     session,
@@ -429,13 +696,21 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
     primaryInsight: buildPrimaryInsight(overview, mappedTrackSummary),
     dataStrengthLabel: dataStrengthLabel(overview.confidence, session.telemetryQualityMean),
     trackSummary: mappedTrackSummary,
-    segmentHighlights: [],
-    brakingHighlights: [],
-    throttleHighlights: [],
-    straightHighlights: [],
-    energyProxyHighlights: [],
-    proxyNote: ANALYTICS_ENERGY_PROXY_NOTE,
+    segmentHighlights,
+    brakingHighlights,
+    throttleHighlights,
+    straightHighlights,
+    energyProxyHighlights,
+    proxyNote: energyProxyHighlights[0]?.proxyNote ?? ANALYTICS_ENERGY_PROXY_NOTE,
     runtime,
+    detailMode: mode,
+    rowCaps: {
+      segments: ANALYTICS_DETAIL_ROW_CAP,
+      braking: ANALYTICS_DETAIL_ROW_CAP,
+      throttle: ANALYTICS_DETAIL_ROW_CAP,
+      straights: ANALYTICS_DETAIL_ROW_CAP,
+      energyProxy: ANALYTICS_DETAIL_ROW_CAP,
+    },
   };
 }
 
@@ -443,6 +718,7 @@ export function validateAnalyticsCompareParams(input: {
   sessionId?: string | null;
   driverA?: string | null;
   driverB?: string | null;
+  mode?: string | null;
 }): AnalyticsCompareValidation {
   const sessionId = input.sessionId?.trim();
   const driverA = input.driverA?.trim();
@@ -465,6 +741,15 @@ export function validateAnalyticsCompareParams(input: {
       message: "Choose two different drivers for an Analytics comparison.",
     };
   }
+  const mode = input.mode?.trim() || "overview";
+  if (!isCompareMode(mode)) {
+    return {
+      ok: false,
+      status: 400,
+      code: "validation_error",
+      message: "Choose a valid Analytics comparison mode.",
+    };
+  }
 
   return {
     ok: true,
@@ -472,6 +757,7 @@ export function validateAnalyticsCompareParams(input: {
       sessionId,
       driverA: normalizedCode(driverA),
       driverB: normalizedCode(driverB),
+      mode,
     },
   };
 }
@@ -525,19 +811,19 @@ export const getAnalyticsDrivers = cache(async (sessionId: string): Promise<Anal
   return getRuntimeData(result) ?? [];
 });
 
-export const getAnalyticsComparisonResult = cache(async (sessionId: string, driverA: string, driverB: string): Promise<AnalyticsComparisonResult> =>
+export const getAnalyticsComparisonResult = cache(async (sessionId: string, driverA: string, driverB: string, mode: AnalyticsCompareMode = "overview"): Promise<AnalyticsComparisonResult> =>
   resolveRuntimeSource({
     surface: "analytics",
     primary: {
       sourceKind: "csv-product",
       sourceLabel: "analytics_csv_product_views",
-      load: () => comparisonFromCsv(sessionId, driverA, driverB),
+      load: () => comparisonFromCsv(sessionId, driverA, driverB, mode),
       describe: describeComparison,
     },
   }),
 );
 
-export const getAnalyticsComparison = cache(async (sessionId: string, driverA: string, driverB: string): Promise<AnalyticsComparisonPayload | null> => {
-  const result = await getAnalyticsComparisonResult(sessionId, driverA, driverB);
+export const getAnalyticsComparison = cache(async (sessionId: string, driverA: string, driverB: string, mode: AnalyticsCompareMode = "overview"): Promise<AnalyticsComparisonPayload | null> => {
+  const result = await getAnalyticsComparisonResult(sessionId, driverA, driverB, mode);
   return getRuntimeData(result);
 });

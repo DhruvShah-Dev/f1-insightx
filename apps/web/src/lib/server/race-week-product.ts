@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { readCuratedCsv, readDataCsv } from "@/lib/server/csv";
+import { readCsvFile } from "@/lib/server/csv";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 import { getSupabasePublicClient } from "@/lib/server/supabase";
 
@@ -216,13 +216,13 @@ function attachRaceWeekRuntimeMetadata(
 
 async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
   const [overviewRows, driverBoardRows, constructorBoardRows, strategyRows, storylineRows, races, circuits] = await Promise.all([
-    readDataCsv("race_week", "race_week_overview.csv") as Promise<RaceWeekOverviewRow[]>,
-    readDataCsv("race_week", "race_week_driver_board.csv") as Promise<DriverBoardRow[]>,
-    readDataCsv("race_week", "race_week_constructor_board.csv") as Promise<ConstructorBoardRow[]>,
-    readDataCsv("race_week", "race_week_strategy.csv") as Promise<StrategyRow[]>,
-    readDataCsv("race_week", "race_week_storylines.csv") as Promise<StorylineRow[]>,
-    readCuratedCsv("races.csv") as Promise<RaceRow[]>,
-    readCuratedCsv("circuits.csv") as Promise<CircuitRow[]>,
+    readCsvFile<RaceWeekOverviewRow>("raceWeek.overview"),
+    readCsvFile<DriverBoardRow>("raceWeek.driverBoard"),
+    readCsvFile<ConstructorBoardRow>("raceWeek.constructorBoard"),
+    readCsvFile<StrategyRow>("raceWeek.strategy"),
+    readCsvFile<StorylineRow>("raceWeek.storylines"),
+    readCsvFile<RaceRow>("curated.races"),
+    readCsvFile<CircuitRow>("curated.circuits"),
   ]);
 
   const overviewRow = overviewRows
