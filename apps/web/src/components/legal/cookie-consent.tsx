@@ -67,8 +67,7 @@ export function CookieConsent() {
               <p className="cookie-consent__eyebrow">Privacy baseline</p>
               <h2 className="cookie-consent__title">Cookie preferences</h2>
               <p className="cookie-consent__text">
-                F1 InsightX currently uses necessary cookies for sign-in, account security, and core site operation. You
-                can accept the current baseline, reject future non-essential cookies, or review preferences.
+                Necessary cookies keep sign-in, security, and core site operation working.
               </p>
               <p className="cookie-consent__meta">
                 Read the <Link href="/cookies">Cookie Notice</Link> and <Link href="/privacy">Privacy Policy</Link>.
@@ -93,8 +92,7 @@ export function CookieConsent() {
               <p className="cookie-consent__eyebrow">Cookie settings</p>
               <h2 className="cookie-consent__title">Review your preferences</h2>
               <p className="cookie-consent__text">
-                Necessary cookies remain on because the account and auth flows depend on them. Analytics or marketing
-                cookies are not currently active in the product.
+                Necessary cookies stay on for account and security flows. Analytics and marketing cookies are not active.
               </p>
             </div>
 

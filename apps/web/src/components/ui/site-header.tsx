@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { AppHeader } from "@/components/ui/app-header";
 
 type SiteHeaderProps = {
   title: string;
@@ -10,24 +10,8 @@ type SiteHeaderProps = {
 
 export function SiteHeader({
   title,
-  backHref = "/",
-  backLabel = "Return home",
   actionHref,
   actionLabel
 }: SiteHeaderProps) {
-  return (
-    <div className="race-week-hero__topbar">
-      <Link href={backHref} className="race-week-hero__nav-link">
-        {backLabel}
-      </Link>
-      <div className="race-week-hero__title">{title}</div>
-      {actionHref && actionLabel ? (
-        <Link href={actionHref} className="race-week-hero__nav-link race-week-hero__nav-link--accent">
-          {actionLabel}
-        </Link>
-      ) : (
-        <div />
-      )}
-    </div>
-  );
+  return <AppHeader title={title} actionHref={actionHref} actionLabel={actionLabel} compact />;
 }

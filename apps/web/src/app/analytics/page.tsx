@@ -1,4 +1,4 @@
-import { HomeLink } from "@/components/ui/home-link";
+import { AppHeader } from "@/components/ui/app-header";
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
@@ -6,6 +6,7 @@ import { TeamBadge } from "@/components/ui/team-badge";
 import { withServerFallback } from "@/lib/errors/logger";
 import {
   getAnalyticsComparisonResult,
+  getAnalyticsDefaultDriverPair,
   getAnalyticsDrivers,
   listAnalyticsSessionsResult,
   type AnalyticsBrakingHighlight,
@@ -17,6 +18,7 @@ import {
   type AnalyticsStraightHighlight,
   type AnalyticsThrottleHighlight,
 } from "@/lib/server/analytics-product";
+import { formatSeasonRaceLabel, getSeasonState, type SeasonState } from "@/lib/server/season-state";
 import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
 
 type AnalyticsPageProps = {
@@ -47,21 +49,39 @@ type SegmentOption = {
   confidence: number | null;
 };
 
+type DominantEdge = {
+  label: string;
+  driver: string;
+  value: string;
+  note: string;
+  tone?: "proxy";
+};
+
 const analyticsTabs: Array<{ id: AnalyticsTab; label: string }> = [
   { id: "overview", label: "Overview" },
   { id: "segments", label: "Segments" },
   { id: "braking", label: "Braking" },
   { id: "throttle", label: "Throttle" },
   { id: "straights", label: "Straights" },
-  { id: "energy-proxy", label: "Energy Proxy" },
+  { id: "energy-proxy", label: "Energy proxy" },
 ];
+
+const sessionPriority: Record<string, number> = {
+  R: 7,
+  Q: 6,
+  SQ: 5,
+  S: 4,
+  FP3: 3,
+  FP2: 2,
+  FP1: 1,
+};
 
 const unavailableRuntime: RuntimeSourceMetadata = {
   surface: "analytics",
   mode: "unavailable",
   sourceKind: null,
   sourceLabel: null,
-  reason: "Analytics product views failed to load.",
+  reason: "Analytics data failed to load.",
   generatedAt: null,
   buildVersion: null,
   eventId: null,
@@ -82,9 +102,21 @@ function normalizeTab(value: string | string[] | undefined): AnalyticsTab {
   return analyticsTabs.some((tab) => tab.id === candidate) ? candidate as AnalyticsTab : "overview";
 }
 
-function formatPercent(value: number | null | undefined) {
-  if (value === null || value === undefined) return "n/a";
-  return `${Math.round(value * 100)}%`;
+function confidenceTier(confidence: number | null | undefined, telemetryQuality?: number | null) {
+  const score = Math.min(confidence ?? 0, telemetryQuality ?? confidence ?? 0);
+  if (score >= 0.86) return "Strong telemetry agreement";
+  if (score >= 0.68) return "Moderate telemetry confidence";
+  if (score >= 0.45) return "Traffic-adjusted inference";
+  if (score > 0) return "Limited clean-lap data";
+  return "Incomplete session confidence";
+}
+
+function telemetryQualityTier(value: number | null | undefined) {
+  if (value === null || value === undefined) return "Telemetry unavailable";
+  if (value >= 0.95) return "Clean telemetry set";
+  if (value >= 0.8) return "Mostly clean telemetry";
+  if (value >= 0.55) return "Partial telemetry set";
+  return "Incomplete telemetry";
 }
 
 function formatSigned(value: number | null | undefined, unit = "") {
@@ -111,6 +143,62 @@ function edgeLabel(value: number | null | undefined, driverA: string, driverB: s
   }
 
   return value > 0 ? driverA : driverB;
+}
+
+function buildDominantEdge(comparison: AnalyticsComparisonPayload): DominantEdge {
+  const { overview } = comparison;
+  const driverA = overview.driverA;
+  const driverB = overview.driverB;
+  const segmentMargin = overview.segmentAdvantageCountA - overview.segmentAdvantageCountB;
+  const straightDelta = overview.avgStraightDeltaKph ?? 0;
+  const brakingDelta = overview.brakingAdvantageScore ?? 0;
+  const tractionDelta = overview.tractionAdvantageScore ?? 0;
+  const energyDelta = overview.energyDeploymentProxyDelta ?? 0;
+  const candidates: Array<DominantEdge & { score: number }> = [
+    {
+      label: "Segment command",
+      driver: segmentMargin === 0 ? "Even" : segmentMargin > 0 ? driverA : driverB,
+      value: `${Math.abs(segmentMargin)} seg`,
+      note: "Approximate segment count edge",
+      score: Math.abs(segmentMargin) / Math.max(1, overview.segmentAdvantageCountA + overview.segmentAdvantageCountB),
+    },
+    {
+      label: "Straight-line edge",
+      driver: edgeLabel(straightDelta, driverA, driverB),
+      value: formatCompactSigned(straightDelta, " kph"),
+      note: "Terminal-speed and acceleration signal",
+      score: Math.min(1, Math.abs(straightDelta) / 8),
+    },
+    {
+      label: "Braking edge",
+      driver: edgeLabel(brakingDelta, driverA, driverB),
+      value: formatCompactSigned(brakingDelta),
+      note: "Late-brake and intensity signal",
+      score: Math.min(1, Math.abs(brakingDelta) / 0.12),
+    },
+    {
+      label: "Traction exit",
+      driver: edgeLabel(tractionDelta, driverA, driverB),
+      value: formatCompactSigned(tractionDelta),
+      note: "Throttle pickup and exit traction",
+      score: Math.min(1, Math.abs(tractionDelta) / 0.12),
+    },
+    {
+      label: "Energy deployment proxy",
+      driver: edgeLabel(energyDelta, driverA, driverB),
+      value: formatCompactSigned(energyDelta),
+      note: "Proxy only; speed-shape evidence",
+      tone: "proxy",
+      score: Math.min(1, Math.abs(energyDelta) / 0.12),
+    },
+  ];
+
+  return [...candidates].sort((a, b) => b.score - a.score)[0] ?? {
+    label: "Telemetry edge",
+    driver: "Even",
+    value: "Even",
+    note: "No single area dominates",
+  };
 }
 
 function countEdgeLabel(countA: number, countB: number, driverA: string, driverB: string) {
@@ -153,14 +241,54 @@ function buildMetricCards(comparison: AnalyticsComparisonPayload): MetricCard[] 
     },
     {
       label: "Data strength",
-      value: comparison.dataStrengthLabel,
-      note: `${formatPercent(overview.confidence)} comparison confidence`,
+      value: confidenceTier(overview.confidence, comparison.session.telemetryQualityMean),
+      note: "Telemetry quality plus agreement",
     },
   ];
 }
 
 function sessionLabel(session: AnalyticsSessionSummary) {
-  return `${session.season} R${session.round} ${session.event} - ${session.session}`;
+  const sessionName = session.session === "R" ? "Race" : session.session === "Q" ? "Qualifying" : session.session;
+  return `${sessionName} - ${telemetryQualityTier(session.telemetryQualityMean)}`;
+}
+
+function sessionGroupLabel(session: AnalyticsSessionSummary, seasonState: SeasonState | null) {
+  const latestTelemetry = seasonState?.latest_completed_race_with_analytics;
+  const suffix = latestTelemetry?.season === session.season && latestTelemetry.round === session.round ? " - latest telemetry" : "";
+  return `${session.season} R${session.round} ${session.event}${suffix}`;
+}
+
+function groupSessions(sessions: AnalyticsSessionSummary[], seasonState: SeasonState | null) {
+  const groups = new Map<string, { label: string; sessions: AnalyticsSessionSummary[] }>();
+  for (const session of sessions) {
+    const key = `${session.season}-${session.round}-${session.event}`;
+    const group = groups.get(key) ?? { label: sessionGroupLabel(session, seasonState), sessions: [] };
+    group.sessions.push(session);
+    groups.set(key, group);
+  }
+
+  return [...groups.values()].map((group) => ({
+    ...group,
+    sessions: group.sessions.sort((left, right) => (sessionPriority[right.session] ?? 0) - (sessionPriority[left.session] ?? 0)),
+  }));
+}
+
+function pickSessionByRace(sessions: AnalyticsSessionSummary[], race: SeasonState["latest_completed_race_with_analytics"] | null | undefined) {
+  if (!race?.season || !race.round) {
+    return null;
+  }
+
+  const raceSessions = sessions.filter((session) => session.season === race.season && session.round === race.round);
+  return raceSessions.sort((left, right) => (sessionPriority[right.session] ?? 0) - (sessionPriority[left.session] ?? 0))[0] ?? null;
+}
+
+function selectDefaultSession(sessions: AnalyticsSessionSummary[], sessionIdParam: string | undefined, seasonState: SeasonState | null) {
+  return (
+    sessions.find((session) => session.id === sessionIdParam)
+    ?? pickSessionByRace(sessions, seasonState?.latest_completed_race_with_analytics)
+    ?? sessions[0]
+    ?? null
+  );
 }
 
 function segmentShortLabel(segmentId: string, fallbackKind = "approximate segment") {
@@ -199,7 +327,7 @@ function ChartRows({ rows, driverA, driverB, selectedSegmentId }: { rows: ChartB
     return (
       <div className="analytics-page__empty-chart">
         <span>No detail rows</span>
-        <p>This comparison mode has no capped product-view rows for the selected pair.</p>
+        <p>This mode has no prepared rows for the selected pair.</p>
       </div>
     );
   }
@@ -216,7 +344,7 @@ function ChartRows({ rows, driverA, driverB, selectedSegmentId }: { rows: ChartB
           <div className={`analytics-chart__row${row.segmentId === selectedSegmentId ? " analytics-chart__row--selected" : ""}`} key={row.label}>
             <div className="analytics-chart__meta">
               <strong>{row.label}</strong>
-              <span>{row.segmentId === selectedSegmentId ? "Selected | " : ""}{formatPercent(row.confidence)} confidence</span>
+              <span>{row.segmentId === selectedSegmentId ? "Selected - " : ""}{confidenceTier(row.confidence)}</span>
             </div>
             <div className="analytics-chart__track">
               <div className="analytics-chart__midline" />
@@ -391,17 +519,31 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
   const driverBParam = firstParam(params.driverB);
   const segmentIdParam = firstParam(params.segmentId);
   const activeTab = normalizeTab(params.tab);
-
-  const sessionResult = await withServerFallback(
-    () => listAnalyticsSessionsResult(),
-    { mode: "unavailable" as const, data: null, meta: unavailableRuntime },
-    "page:analytics:sessions",
-  );
+  const [seasonState, sessionResult] = await Promise.all([
+    getSeasonState(),
+    withServerFallback(
+      () => listAnalyticsSessionsResult(),
+      { mode: "unavailable" as const, data: null, meta: unavailableRuntime },
+      "page:analytics:sessions",
+    ),
+  ]);
   const sessions = sessionResult.mode === "unavailable" ? [] : sessionResult.data;
-  const selectedSession = sessions.find((session) => session.id === sessionIdParam) ?? sessions[0] ?? null;
-  const drivers = selectedSession ? await withServerFallback(() => getAnalyticsDrivers(selectedSession.id), [], "page:analytics:drivers", { sessionId: selectedSession.id }) : [];
-  const selectedDriverA = drivers.find((driver) => driver.code === driverAParam)?.code ?? drivers[0]?.code ?? null;
-  const selectedDriverB = drivers.find((driver) => driver.code === driverBParam && driver.code !== selectedDriverA)?.code ?? drivers.find((driver) => driver.code !== selectedDriverA)?.code ?? null;
+  const selectedSession = selectDefaultSession(sessions, sessionIdParam, seasonState);
+  const sessionGroups = groupSessions(sessions, seasonState);
+  const [drivers, defaultPair] = selectedSession
+    ? await Promise.all([
+      withServerFallback(() => getAnalyticsDrivers(selectedSession.id), [], "page:analytics:drivers", { sessionId: selectedSession.id }),
+      withServerFallback(() => getAnalyticsDefaultDriverPair(selectedSession.id), null, "page:analytics:default-pair", { sessionId: selectedSession.id }),
+    ])
+    : [[], null] as const;
+  const selectedDriverA = drivers.find((driver) => driver.code === driverAParam)?.code
+    ?? drivers.find((driver) => driver.code === defaultPair?.driverA)?.code
+    ?? drivers[0]?.code
+    ?? null;
+  const selectedDriverB = drivers.find((driver) => driver.code === driverBParam && driver.code !== selectedDriverA)?.code
+    ?? drivers.find((driver) => driver.code === defaultPair?.driverB && driver.code !== selectedDriverA)?.code
+    ?? drivers.find((driver) => driver.code !== selectedDriverA)?.code
+    ?? null;
 
   const comparisonResult = selectedSession && selectedDriverA && selectedDriverB
     ? await withServerFallback(
@@ -418,45 +560,42 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
   const selectedSegmentCards = comparison ? selectedSegmentMetrics(comparison, activeTab, selectedSegment?.segmentId ?? null) : [];
   const chartRows = comparison ? activeChartRows(comparison, activeTab) : [];
   const selectedTabLabel = analyticsTabs.find((tab) => tab.id === activeTab)?.label ?? "Overview";
+  const dominantEdge = comparison ? buildDominantEdge(comparison) : null;
+  const confidenceLabel = comparison ? confidenceTier(comparison.overview.confidence, comparison.session.telemetryQualityMean) : "Incomplete session confidence";
+  const telemetryLabel = telemetryQualityTier(selectedSession?.telemetryQualityMean);
+  const latestTelemetryLabel = formatSeasonRaceLabel(seasonState?.latest_completed_race_with_analytics);
+  const selectedSessionIsLatestTelemetry = selectedSession?.season === seasonState?.latest_completed_race_with_analytics?.season
+    && selectedSession?.round === seasonState?.latest_completed_race_with_analytics?.round;
 
   return (
     <main className="analytics-page">
+      <AppHeader title="Analytics" actionHref="/lab" actionLabel="Strategy Lab" compact />
       <header className="analytics-page__hero">
-        <div className="strategy-lab-page__topbar">
-          <div className="strategy-lab-page__kicker">
-            <span>Analytics</span>
-            <strong>Telemetry product views</strong>
-          </div>
-          <HomeLink />
-        </div>
-
         <div className="analytics-page__hero-body">
           <div className="analytics-page__hero-copy">
-            <p className="strategy-lab-page__eyebrow">Driver comparison</p>
-            <h1 className="analytics-page__title">Compare pace signals without raw telemetry noise.</h1>
-            <p className="analytics-page__lede">
-              Segment, braking, traction, straight-line, DRS, and energy deployment proxy signals from precomputed Analytics views.
-            </p>
+            <p className="strategy-lab-page__eyebrow">Telemetry workstation</p>
+            <h1 className="analytics-page__title">Driver edge, by signal.</h1>
+            <p className="analytics-page__lede">Telemetry-derived comparisons across approximate segments, race pace signals, and energy deployment proxy.</p>
           </div>
 
           <div className="analytics-page__hero-rail">
             <div className="analytics-page__hero-card">
-              <span>Sessions</span>
-              <strong>{sessions.length}</strong>
-              <p>Only validated Analytics product views are served at runtime.</p>
+              <span>Completed race</span>
+              <strong>{formatSeasonRaceLabel(seasonState?.latest_completed_race)}</strong>
+              <p>{seasonState?.missing_data_flags.includes("latest_completed_results_missing") ? "Results pending" : "Results ready"}</p>
             </div>
               <div className="analytics-page__hero-card">
-                <span>Selected</span>
-                <strong>{selectedSession ? `${selectedSession.event} ${selectedSession.session}` : "Unavailable"}</strong>
-                <p>{selectedSession ? `${selectedSession.driverCount} drivers | ${selectedSession.segmentCount} approximate segments` : "No Analytics session index is available."}</p>
+                <span>Next race</span>
+                <strong>{formatSeasonRaceLabel(seasonState?.next_race)}</strong>
+                <p>{seasonState?.current_race_week.available ? "Race Week ready" : "No telemetry yet"}</p>
               </div>
               <div className="analytics-page__hero-card analytics-page__hero-card--strength">
-                <span>Telemetry quality</span>
-                <strong>{formatPercent(selectedSession?.telemetryQualityMean)}</strong>
-                <p>{selectedSession ? `${selectedSession.trackArchetype} context with product-view freshness metadata.` : "Waiting for validated product data."}</p>
+                <span>Latest telemetry</span>
+                <strong>{latestTelemetryLabel || (selectedSession ? `${selectedSession.event} ${selectedSession.session}` : "Unavailable")}</strong>
+                <p>{selectedSessionIsLatestTelemetry ? telemetryLabel : "Select latest race"}</p>
               </div>
           </div>
-          <ProductRuntimeNote runtime={sessionResult.meta} className="analytics-page__runtime" primaryLabel="Analytics product views" />
+          <ProductRuntimeNote runtime={sessionResult.meta} className="analytics-page__runtime" primaryLabel="Analytics data" />
         </div>
       </header>
 
@@ -464,18 +603,22 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
         <>
           <section className="analytics-page__controls">
             <div className="analytics-page__section-header">
-              <span>Comparison setup</span>
-              <h2>Pick a session and two drivers.</h2>
+              <span>Setup</span>
+              <h2>{selectedSessionIsLatestTelemetry ? "Latest telemetry loaded." : "Session and pair."}</h2>
             </div>
 
             <form className="analytics-page__form" action="/analytics">
               <label className="analytics-page__field">
                 <span>Session</span>
                 <select name="sessionId" defaultValue={selectedSession.id}>
-                  {sessions.map((session) => (
-                    <option key={session.id} value={session.id}>
-                      {sessionLabel(session)}
-                    </option>
+                  {sessionGroups.map((group) => (
+                    <optgroup key={group.label} label={group.label}>
+                      {group.sessions.map((session) => (
+                        <option key={session.id} value={session.id}>
+                          {sessionLabel(session)}
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </select>
               </label>
@@ -509,12 +652,6 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
 
           {comparison ? (
             <section className="analytics-page__results">
-              <div className="analytics-page__insight">
-                <span>Primary insight</span>
-                <strong>{comparison.primaryInsight}</strong>
-                <p>{comparison.overview.strategyRelevanceNote}</p>
-              </div>
-
               <div className="analytics-page__driver-strip" aria-label="Selected driver comparison">
                 <article className="analytics-page__driver-card analytics-page__driver-card--a">
                   <span>Driver A</span>
@@ -528,14 +665,28 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                   <TeamBadge teamId={normalizeTeamId(comparison.overview.driverBTeam)} label={comparison.overview.driverBTeam ?? "Constructor"} compact />
                 </article>
                 <article className="analytics-page__strength-card">
-                  <span>Data strength</span>
-                  <strong>{comparison.dataStrengthLabel}</strong>
-                  <div className="analytics-page__strength-meter" aria-label={`Telemetry quality ${formatPercent(comparison.session.telemetryQualityMean)}`}>
+                  <span>Agreement</span>
+                  <strong>{confidenceLabel}</strong>
+                  <div className="analytics-page__strength-meter" aria-label={confidenceLabel}>
                     <i style={{ width: `${Math.round(Math.min(comparison.session.telemetryQualityMean ?? 0, comparison.overview.confidence ?? 0) * 100)}%` }} />
                   </div>
-                  <p>{formatPercent(comparison.session.telemetryQualityMean)} telemetry quality | {formatPercent(comparison.overview.confidence)} confidence</p>
+                  <p>{telemetryLabel}</p>
                 </article>
               </div>
+
+              {dominantEdge ? (
+                <div className={`analytics-page__edge-hero${dominantEdge.tone ? ` analytics-page__edge-hero--${dominantEdge.tone}` : ""}`}>
+                  <div>
+                    <span>Dominant telemetry edge</span>
+                    <strong>{dominantEdge.driver}</strong>
+                  </div>
+                  <div>
+                    <em>{dominantEdge.label}</em>
+                    <b>{dominantEdge.value}</b>
+                    <p>{dominantEdge.note}</p>
+                  </div>
+                </div>
+              ) : null}
 
               <div className="analytics-page__metric-grid">
                 {metricCards.map((card) => (
@@ -551,7 +702,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <article className="analytics-page__trust-card">
                   <span>Track context</span>
                   <strong>{comparison.trackSummary?.trackArchetype ?? selectedSession.trackArchetype}</strong>
-                  <p>{comparison.trackSummary ? `${formatPercent(comparison.trackSummary.archetypeConfidence)} archetype confidence` : "Track weighting is unavailable for this session."}</p>
+                  <p>{comparison.trackSummary ? confidenceTier(comparison.trackSummary.archetypeConfidence) : "Track weighting unavailable"}</p>
                 </article>
                 <article className="analytics-page__trust-card">
                   <span>Weakest assumption</span>
@@ -561,7 +712,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <article className="analytics-page__trust-card analytics-page__trust-card--proxy">
                   <span>Energy deployment proxy</span>
                   <strong>Proxy only</strong>
-                  <p>{comparison.proxyNote}</p>
+                  <p>Telemetry-derived speed shape.</p>
                 </article>
               </div>
 
@@ -588,7 +739,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <section className="analytics-page__segment-workbench">
                   <div className="analytics-page__section-header">
                     <span>{selectedTabLabel} selector</span>
-                    <h2>Select an approximate segment.</h2>
+                    <h2>Approx segment focus.</h2>
                   </div>
                   {segmentOptions.length > 0 ? (
                     <>
@@ -606,7 +757,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                             })}
                           >
                             <strong>{segment.label}</strong>
-                            <span>{segment.kind} | {formatPercent(segment.confidence)}</span>
+                            <span>{segment.kind} - {confidenceTier(segment.confidence)}</span>
                           </a>
                         ))}
                       </div>
@@ -615,7 +766,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                           <article className="analytics-page__selected-segment-card">
                             <span>Selected segment</span>
                             <strong>{selectedSegment.label}</strong>
-                            <p>{selectedSegment.kind} | {formatPercent(selectedSegment.confidence)} segment confidence. Segment IDs are approximate product-view identifiers.</p>
+                            <p>{selectedSegment.kind} - {confidenceTier(selectedSegment.confidence)}.</p>
                           </article>
                           {selectedSegmentCards.map((card) => (
                             <article key={card.label} className={`analytics-page__selected-segment-card${card.tone ? ` analytics-page__selected-segment-card--${card.tone}` : ""}`}>
@@ -630,7 +781,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                   ) : (
                     <div className="analytics-page__empty-chart">
                       <span>No segment selector</span>
-                      <p>This mode has no capped segment rows for the selected driver pair.</p>
+                      <p>No prepared rows for this pair.</p>
                     </div>
                   )}
                 </section>
@@ -640,7 +791,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <section className="analytics-page__detail-panel">
                   <div className="analytics-page__section-header">
                     <span>Segment speed delta</span>
-                    <h2>Largest approximate segment speed deltas.</h2>
+                    <h2>Speed delta.</h2>
                   </div>
                   <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
                 </section>
@@ -650,7 +801,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <section className="analytics-page__detail-panel">
                   <div className="analytics-page__section-header">
                     <span>Braking delta</span>
-                    <h2>Late-brake and brake-intensity signals.</h2>
+                    <h2>Late-brake signal.</h2>
                   </div>
                   <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
                 </section>
@@ -660,7 +811,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <section className="analytics-page__detail-panel">
                   <div className="analytics-page__section-header">
                     <span>Throttle and traction</span>
-                    <h2>Exit traction from approximate segments.</h2>
+                    <h2>Exit signal.</h2>
                   </div>
                   <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
                 </section>
@@ -670,7 +821,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <section className="analytics-page__detail-panel">
                   <div className="analytics-page__section-header">
                     <span>Straight-line delta</span>
-                    <h2>Terminal speed and acceleration signals.</h2>
+                    <h2>Terminal speed.</h2>
                   </div>
                   <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
                 </section>
@@ -680,10 +831,10 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <section className="analytics-page__detail-panel analytics-page__detail-panel--proxy">
                   <div className="analytics-page__section-header">
                     <span>Energy deployment proxy</span>
-                    <h2>Proxy signal from speed, throttle, RPM, gear, and DRS features.</h2>
+                    <h2>Proxy signal.</h2>
                   </div>
                   <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
-                  <p className="analytics-page__proxy-note">{comparison.proxyNote}</p>
+                  <p className="analytics-page__proxy-note">Energy deployment proxy only. Telemetry-derived, not direct energy data.</p>
                 </section>
               ) : null}
             </section>
@@ -691,7 +842,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
             <StatePanel
               eyebrow="Analytics"
               title="No comparison is available for this selection."
-              message="Choose two different drivers from a validated session. The page only reads precomputed Analytics product views."
+              message="Choose two different drivers from a validated session."
               tone="notice"
             />
           )}
@@ -699,8 +850,8 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
       ) : (
         <StatePanel
           eyebrow="Analytics"
-          title="Analytics product views are unavailable."
-          message="The session index could not be loaded from data/analytics. Rebuild or restore the Analytics product views before using this page."
+          title="Analytics data is unavailable."
+          message="Analytics data is unavailable."
           tone="error"
           actionHref="/"
           actionLabel="Back to homepage"

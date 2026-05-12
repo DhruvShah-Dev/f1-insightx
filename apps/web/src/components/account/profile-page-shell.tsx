@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, FormEvent } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { LegalLinks } from "@/components/legal/legal-links";
+import { AppFooter } from "@/components/ui/app-footer";
+import { AppHeader } from "@/components/ui/app-header";
 import { ACCOUNT_API_ROUTES, buildUsernameCheckUrl, buildUsernameSuggestUrl, readAccountApiData } from "@/lib/account/api";
 import type { AccountConstructorOption, AccountDriverOption } from "@/lib/account/options";
 import { getProfileTheme } from "@/lib/account/profile-theme";
@@ -464,18 +465,16 @@ export function ProfilePageShell({
 
   return (
     <main className={`subpage-shell account-page ${activeTheme.className}`} style={activeTheme.style}>
-      <header className="account-profile-header">
-        <div className="account-profile-header__bar">
-          <Link href="/" className="profile-return-link">
-            <span aria-hidden="true">/</span>
-            Return home
-          </Link>
-          <div className="account-profile-header__title">Profile</div>
+      <AppHeader
+        title="Profile"
+        compact
+        accountSlot={(
           <button className="account-signout account-signout--header" type="button" onClick={handleSignOut} disabled={isSigningOut}>
             {isSigningOut ? "Signing out..." : "Sign out"}
           </button>
-        </div>
-
+        )}
+      />
+      <header className="account-profile-header">
         <div className="account-profile-hero">
           <div className="account-profile-strip">
             <article className="account-profile-hero__snapshot-card account-profile-hero__snapshot-card--constructor">
@@ -757,6 +756,7 @@ export function ProfilePageShell({
           </section>
         </section>
       </section>
+      <AppFooter />
     </main>
   );
 }

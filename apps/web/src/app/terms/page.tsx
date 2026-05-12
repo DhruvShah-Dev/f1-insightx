@@ -1,4 +1,6 @@
 import { LegalLinks } from "@/components/legal/legal-links";
+import { SiteFooter } from "@/components/ui/site-footer";
+import { SiteHeader } from "@/components/ui/site-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,6 +13,7 @@ const UPDATED_AT = "April 6, 2026";
 export default function TermsPage() {
   return (
     <main className="subpage-shell legal-page">
+      <SiteHeader title="Terms" />
       <header className="legal-page__header">
         <p className="subpage-eyebrow">Terms of Use</p>
         <h1 className="subpage-title">Terms for using F1 InsightX.</h1>
@@ -79,6 +82,7 @@ export default function TermsPage() {
           </p>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

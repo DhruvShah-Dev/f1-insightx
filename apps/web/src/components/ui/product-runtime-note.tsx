@@ -29,8 +29,8 @@ function formatRuntimeTimestamp(value: string | null | undefined) {
 export function ProductRuntimeNote({
   runtime,
   className,
-  primaryLabel = "Primary product view",
-  degradedLabel = "Fallback snapshot",
+  primaryLabel = "Data ready",
+  degradedLabel = "Backup data source",
 }: ProductRuntimeNoteProps) {
   if (!runtime || runtime.mode === "unavailable") {
     return null;
@@ -49,10 +49,10 @@ export function ProductRuntimeNote({
       className={["product-runtime-note", runtime.mode === "degraded" ? "product-runtime-note--degraded" : "", className]
         .filter(Boolean)
         .join(" ")}
-      title={titleParts.length > 0 ? titleParts.join(" · ") : undefined}
+      title={titleParts.length > 0 ? titleParts.join(" - ") : undefined}
     >
       {runtime.mode === "degraded" ? (
-        <span className="product-runtime-note__badge">Fallback</span>
+        <span className="product-runtime-note__badge">Backup</span>
       ) : null}
       <span className="product-runtime-note__text">{detailLabel}</span>
     </div>

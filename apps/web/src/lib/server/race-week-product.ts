@@ -348,7 +348,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     strategyResult.error ||
     storylineResult.error
   ) {
-    throw new Error("Failed to load Race Week product views.");
+    throw new Error("Failed to load Race Week data.");
   }
 
   const circuitMap = new Map(((circuitsResult.data ?? []) as CircuitRow[]).map((circuit) => [circuit.id, circuit]));

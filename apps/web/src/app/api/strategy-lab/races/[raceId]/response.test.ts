@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { classifyStrategyLabUnavailable } from "./response";
 
-test("classifyStrategyLabUnavailable returns 404 for non-materialized races", () => {
+test("classifyStrategyLabUnavailable returns 404 for races without ready data", () => {
   const result = classifyStrategyLabUnavailable({
     surface: "strategy-lab",
     mode: "unavailable",
@@ -19,7 +19,7 @@ test("classifyStrategyLabUnavailable returns 404 for non-materialized races", ()
   assert.deepEqual(result, {
     status: 404,
     code: "not_found",
-    message: "Strategy Lab data has not been materialized for this race.",
+    message: "Strategy Lab data is not ready for this race.",
   });
 });
 

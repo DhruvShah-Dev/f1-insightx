@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parent
 MANIFEST_PATH = ROOT / "data" / "reports" / "product_manifest.json"
 REQUIRED_SURFACES = {
     "race_week",
+    "season_state",
     "strategy_lab",
     "telemetry_features",
     "analytics",

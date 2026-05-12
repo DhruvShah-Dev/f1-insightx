@@ -43,7 +43,7 @@ const fmtDelta = (value?: number | null, suffix = "") =>
   value === null || value === undefined ? "Flat" : Math.abs(value) < 0.1 ? `Flat${suffix}` : `${value > 0 ? "+" : ""}${value.toFixed(1)}${suffix}`;
 const fmtConfidence = (score?: number | null) => (score == null ? "Calibrating" : score >= 0.74 ? "High confidence" : score >= 0.48 ? "Medium confidence" : "Low confidence");
 const fmtRisk = (weather: "dry" | "mixed" | "wet", sc: number) => (weather !== "dry" || sc >= 0.58 ? "High variance" : sc >= 0.38 ? "Moderate variance" : "Controlled variance");
-const fmtOddsProxy = (value?: number | null) => (value == null ? "n/a" : `${Math.round(value / 5) * 5}%`); 
+const fmtOddsProxy = (value?: number | null) => (value == null ? "n/a" : `${Math.round(value / 5) * 5}%`);
 const fmtSensitivity = (factor: string) => factor.split("_").map((part) => part[0]?.toUpperCase() + part.slice(1)).join(" ");
 const avg = (values: Array<number | null | undefined>) => {
   const cleaned = values.filter((value): value is number => value !== null && value !== undefined);
@@ -326,7 +326,7 @@ export function RaceLabWorkspace({ races }: Props) {
             <h2 className="strategy-lab-hero__title">{selectedRace?.raceName ?? "Strategy Lab"}</h2>
             <p className="strategy-lab-hero__lede">{selectedRaceDateLabel} {selectedRaceDateLabel ? "|" : ""} scenario the race before lights out.</p>
             <p className="lab-copy">{raceProduct?.overview.keyInsight ?? "Compare one race call against the field baseline and surface the most likely strategic swing."}</p>
-            <ProductRuntimeNote runtime={runtimeMeta} className="strategy-lab-hero__runtime" primaryLabel="Primary Strategy Lab race view" degradedLabel="Fallback Strategy Lab race snapshot" />
+            <ProductRuntimeNote runtime={runtimeMeta} className="strategy-lab-hero__runtime" primaryLabel="Strategy Lab data" degradedLabel="Backup data source" />
             <div className="strategy-lab-overview">{setupStats.map((item) => <div key={item.label} className="strategy-lab-overview__item"><span>{item.label}</span><strong>{item.value}</strong></div>)}</div>
           </div>
         </div>
@@ -347,11 +347,11 @@ export function RaceLabWorkspace({ races }: Props) {
           <div className="strategy-config-grid">
             <div className="strategy-config-main">
               <div className="lab-grid-two lab-grid-two--top">
-                <div className="control-block control-block--tight"><label className="control-label">Race</label><select className="control-select" value={selectedRaceId} onChange={(event) => setSelectedRaceId(event.target.value)}>{races.map((race) => <option key={race.id} value={race.id}>{race.season} R{race.round} | {race.raceName}</option>)}</select></div>
+                <div className="control-block control-block--tight"><label className="control-label">Race</label><select className="control-select" value={selectedRaceId} onChange={(event) => setSelectedRaceId(event.target.value)}>{races.map((race) => <option key={race.id} value={race.id}>{race.season} R{race.round} - {race.raceName}</option>)}</select></div>
                 <div className="control-block control-block--tight"><label className="control-label">Target type</label><div className="segmented-row">{(["driver", "constructor"] as const).map((value) => <button key={value} type="button" className={`segment ${targetType === value ? "segment--active" : ""}`} onClick={() => setTargetType(value)}>{value}</button>)}</div></div>
               </div>
               <div className="lab-grid-two">
-                <div className="control-block"><label className="control-label">Target</label><select className="control-select" value={selectedTargetId} onChange={(event) => setSelectedTargetId(event.target.value)} disabled={!raceProduct || targetOptions.length === 0}>{targetOptions.map((option) => <option key={option.id} value={option.id}>{option.label} | {option.meta}</option>)}</select></div>
+                <div className="control-block"><label className="control-label">Target</label><select className="control-select" value={selectedTargetId} onChange={(event) => setSelectedTargetId(event.target.value)} disabled={!raceProduct || targetOptions.length === 0}>{targetOptions.map((option) => <option key={option.id} value={option.id}>{option.label} - {option.meta}</option>)}</select></div>
                 <div className="strategy-target-note"><span>Scenario focus</span><strong>{targetOptions.find((item) => item.id === selectedTargetId)?.label ?? "Select a target"}</strong><p>{targetType === "constructor" ? "Both cars inherit the scenario while the field stays on the baseline strategy." : "Only the selected driver changes strategy. The field remains stable."}</p></div>
               </div>
               <div className="strategy-adjustments">
@@ -417,7 +417,7 @@ export function RaceLabWorkspace({ races }: Props) {
                     <div key={band.driverId} className={`strategy-transition-list__item strategy-transition-list__item--${band.transition}`}>
                       <span>{band.fullName}</span>
                       <strong>{band.baselineBand} to {band.projectedBand}</strong>
-                      <em>{band.transition === "gain" ? "Gaining range" : band.transition === "loss" ? "Losing range" : "Stable range"} | {band.confidence} confidence</em>
+                      <em>{band.transition === "gain" ? "Gaining range" : band.transition === "loss" ? "Losing range" : "Stable range"} - {band.confidence} confidence</em>
                     </div>
                   ))}
                 </div>
@@ -482,7 +482,7 @@ export function RaceLabWorkspace({ races }: Props) {
               <span>Confidence</span>
               <strong>{simulation?.confidence ? `${simulation.confidence} confidence` : fmtConfidence(raceProduct?.overview.confidenceScore)}</strong>
               <p className="lab-copy">{simulation?.confidenceReason ?? "Confidence is anchored to the precomputed race-week priors, signal completeness, and agreement across strategy features."}</p>
-              {simulation?.modelMeta ? <p className="lab-copy">Engine {simulation.modelMeta.simulatorVersion} · templates {simulation.modelMeta.scenarioTemplateVersion}{simulation.modelMeta.featureBuildVersion ? ` · feature build ${simulation.modelMeta.featureBuildVersion}` : ""}</p> : null}
+              {simulation?.modelMeta ? <p className="lab-copy">Engine {simulation.modelMeta.simulatorVersion} - templates {simulation.modelMeta.scenarioTemplateVersion}{simulation.modelMeta.featureBuildVersion ? ` - feature build ${simulation.modelMeta.featureBuildVersion}` : ""}</p> : null}
             </article>
             <article className="strategy-explanation-card">
               <span>Caveats</span>
@@ -498,7 +498,7 @@ export function RaceLabWorkspace({ races }: Props) {
                 <div className="strategy-reason-list">
                   {simulation.topSensitivityDrivers.map((driver) => (
                     <div key={driver.factor} className="strategy-reason-list__item">
-                      <span>{fmtSensitivity(driver.factor)} | {driver.impactS.toFixed(1)}s</span>
+                      <span>{fmtSensitivity(driver.factor)} - {driver.impactS.toFixed(1)}s</span>
                       <p>{driver.explanation}</p>
                     </div>
                   ))}

@@ -275,10 +275,23 @@ export type AnalyticsCompareValidation =
 export type AnalyticsSessionListResult = RuntimeSourceResult<AnalyticsSessionSummary[]>;
 export type AnalyticsDriversResult = RuntimeSourceResult<AnalyticsDriverOption[]>;
 export type AnalyticsComparisonResult = RuntimeSourceResult<AnalyticsComparisonPayload>;
+export type AnalyticsDriverPair = {
+  driverA: string;
+  driverB: string;
+};
 
 export const ANALYTICS_ENERGY_PROXY_NOTE = "Energy deployment is a telemetry-derived proxy, not true ERS or battery state.";
 export const ANALYTICS_DETAIL_ROW_CAP = 10;
 export const ANALYTICS_COMPARE_MODES = ["overview", "segments", "braking", "throttle", "straights", "energy-proxy", "all"] as const satisfies readonly AnalyticsCompareMode[];
+const ANALYTICS_SESSION_PRIORITY: Record<string, number> = {
+  R: 7,
+  Q: 6,
+  SQ: 5,
+  S: 4,
+  FP3: 3,
+  FP2: 2,
+  FP1: 1,
+};
 
 const readSessionRows = cache(async () => readCsvFile<SessionIndexRow>("analytics.sessionIndex"));
 const analyticsIndexedDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data", "analytics", "indexed");
@@ -535,9 +548,11 @@ function describeComparison(comparison: AnalyticsComparisonPayload) {
 
 function dataStrengthLabel(confidence: number | null, telemetryQuality: number | null) {
   const score = Math.min(confidence ?? 0, telemetryQuality ?? 0);
-  if (score >= 0.82) return "High data strength";
-  if (score >= 0.62) return "Medium data strength";
-  return "Limited data strength";
+  if (score >= 0.86) return "Strong telemetry agreement";
+  if (score >= 0.68) return "Moderate telemetry confidence";
+  if (score >= 0.45) return "Traffic-adjusted inference";
+  if (score > 0) return "Limited clean-lap data";
+  return "Incomplete session confidence";
 }
 
 function signedLeader(value: number | null, driverA: string, driverB: string) {
@@ -575,7 +590,17 @@ function buildPrimaryInsight(overview: AnalyticsComparisonOverview, track: Analy
     return `${segmentDriver} leads more approximate segments, but confidence should be read with the segment-quality note.`;
   }
 
-  return "The comparison is closely matched across the precomputed telemetry product views.";
+  return "The comparison is closely matched across the prepared telemetry signals.";
+}
+
+function defaultPairScore(row: DriverComparisonRow) {
+  return (
+    (asNumber(row.confidence) ?? 0) * 2
+    + Math.min(1, Math.abs(asNumber(row.avg_segment_delta_kph) ?? 0) / 8)
+    + Math.min(1, Math.abs(asNumber(row.avg_straight_delta_kph) ?? 0) / 10)
+    + Math.min(1, Math.abs(asNumber(row.braking_advantage_score) ?? 0) / 0.15)
+    + Math.min(1, Math.abs(asNumber(row.traction_advantage_score) ?? 0) / 0.15)
+  );
 }
 
 function isCompareMode(value: string | null | undefined): value is AnalyticsCompareMode {
@@ -633,7 +658,7 @@ async function listFromCsv(): Promise<AnalyticsSessionSummary[]> {
   const rows = await readSessionRows();
   return rows
     .map(mapSession)
-    .sort((left, right) => (right.season - left.season) || (right.round - left.round) || left.session.localeCompare(right.session));
+    .sort((left, right) => (right.season - left.season) || (right.round - left.round) || ((ANALYTICS_SESSION_PRIORITY[right.session] ?? 0) - (ANALYTICS_SESSION_PRIORITY[left.session] ?? 0)));
 }
 
 async function driversFromCsv(sessionId: string): Promise<AnalyticsDriverOption[]> {
@@ -809,6 +834,22 @@ export const getAnalyticsDriversResult = cache(async (sessionId: string): Promis
 export const getAnalyticsDrivers = cache(async (sessionId: string): Promise<AnalyticsDriverOption[]> => {
   const result = await getAnalyticsDriversResult(sessionId);
   return getRuntimeData(result) ?? [];
+});
+
+export const getAnalyticsDefaultDriverPair = cache(async (sessionId: string): Promise<AnalyticsDriverPair | null> => {
+  const payload = await readIndexedSessionPayload(sessionId);
+  const bestRow = payload?.overview
+    ?.filter((row) => normalizedCode(row.driver_a) !== normalizedCode(row.driver_b))
+    .sort((left, right) => defaultPairScore(right) - defaultPairScore(left))[0];
+
+  if (!bestRow) {
+    return null;
+  }
+
+  return {
+    driverA: normalizedCode(bestRow.driver_a),
+    driverB: normalizedCode(bestRow.driver_b),
+  };
 });
 
 export const getAnalyticsComparisonResult = cache(async (sessionId: string, driverA: string, driverB: string, mode: AnalyticsCompareMode = "overview"): Promise<AnalyticsComparisonResult> =>

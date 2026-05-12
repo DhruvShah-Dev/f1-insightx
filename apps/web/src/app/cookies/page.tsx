@@ -1,4 +1,6 @@
 import { LegalLinks } from "@/components/legal/legal-links";
+import { SiteFooter } from "@/components/ui/site-footer";
+import { SiteHeader } from "@/components/ui/site-header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,6 +13,7 @@ const UPDATED_AT = "April 6, 2026";
 export default function CookiesPage() {
   return (
     <main className="subpage-shell legal-page">
+      <SiteHeader title="Cookies" />
       <header className="legal-page__header">
         <p className="subpage-eyebrow">Cookie Notice</p>
         <h1 className="subpage-title">Cookies and storage technologies.</h1>
@@ -66,6 +69,7 @@ export default function CookiesPage() {
           </p>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

@@ -7,7 +7,7 @@ export function classifyStrategyLabUnavailable(meta: RuntimeSourceMetadata) {
     status: looksLikeMissingRace ? 404 : 503,
     code: looksLikeMissingRace ? ("not_found" as const) : ("service_unavailable" as const),
     message: looksLikeMissingRace
-      ? "Strategy Lab data has not been materialized for this race."
+      ? "Strategy Lab data is not ready for this race."
       : "Strategy Lab product data is unavailable right now.",
   };
 }

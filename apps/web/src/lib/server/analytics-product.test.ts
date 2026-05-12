@@ -6,6 +6,7 @@ import {
   ANALYTICS_DETAIL_ROW_CAP,
   getAnalyticsDriverPairKey,
   getAnalyticsComparison,
+  getAnalyticsDefaultDriverPair,
   getAnalyticsDrivers,
   listAnalyticsSessions,
   validateAnalyticsCompareParams,
@@ -98,6 +99,33 @@ test("Analytics comparison detail payload is capped and proxy-safe", async () =>
   assert.ok(comparison.energyProxyHighlights.length <= ANALYTICS_DETAIL_ROW_CAP);
   assert.match(comparison.proxyNote.toLowerCase(), /proxy/);
   assert.doesNotMatch(comparison.proxyNote.toLowerCase(), /battery usage|ers data/);
+});
+
+test("Analytics default driver pair is deterministic and usable", async () => {
+  const sessions = await listAnalyticsSessions();
+  const session = sessions[0];
+  assert.ok(session);
+
+  const pair = await getAnalyticsDefaultDriverPair(session.id);
+  assert.ok(pair);
+  assert.notEqual(pair.driverA, pair.driverB);
+
+  const comparison = await getAnalyticsComparison(session.id, pair.driverA, pair.driverB, "overview");
+  assert.ok(comparison);
+  assert.equal(comparison.overview.driverA, pair.driverA);
+  assert.equal(comparison.overview.driverB, pair.driverB);
+});
+
+test("Analytics sessions expose latest Miami race data first when available", async () => {
+  const sessions = await listAnalyticsSessions();
+  assert.ok(sessions.length > 0);
+
+  assert.equal(sessions[0].season, 2026);
+  assert.equal(sessions[0].round, 4);
+  assert.equal(sessions[0].session, "R");
+
+  const miamiRace = sessions.find((session) => session.season === 2026 && session.round === 4 && session.session === "R");
+  assert.ok(miamiRace);
 });
 
 test("Analytics comparison detail modes expose capped selectable segment rows", async () => {

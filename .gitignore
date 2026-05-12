@@ -22,6 +22,7 @@ coverage/
 playwright-report/
 test-results/
 reports/
+artifacts/
 *.log
 tmp_*
 *.tmp
@@ -41,12 +42,19 @@ data/raw/*
 !data/raw/.gitkeep
 data/curated/*
 !data/curated/.gitkeep
+!data/curated/circuit_segments_template.csv
+!data/curated/circuit_segment_aliases_template.csv
 data/staged/*
 !data/staged/.gitkeep
 data/features/*
 !data/features/.gitkeep
 data/model_inputs/*
 !data/model_inputs/.gitkeep
+data/ml/*
+!data/ml/.gitkeep
+!data/ml/README.md
+!data/ml/schema_templates/
+!data/ml/schema_templates/*.csv
 data/predictions/*
 !data/predictions/.gitkeep
 data/.cache/*
@@ -68,6 +76,8 @@ data/analytics/*.csv
 data/analytics/indexed/*
 !data/analytics/indexed/.gitkeep
 data/analytics/indexed/sessions/*
+data/race_analysis/*
+!data/race_analysis/.gitkeep
 data/reports/*
 !data/reports/.gitkeep
 data/strategy_lab/telemetry_strategy_signals.csv

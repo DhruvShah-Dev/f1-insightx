@@ -1,6 +1,7 @@
 import { FantasyWorkspace } from "@/components/fantasy/fantasy-workspace";
 import { StatePanel } from "@/components/ui/state-panel";
-import { HomeLink } from "@/components/ui/home-link";
+import { AppHeader } from "@/components/ui/app-header";
+import { SiteFooter } from "@/components/ui/site-footer";
 import { withServerFallback } from "@/lib/errors/logger";
 import { getRaceWeekOverview } from "@/lib/server/f1-platform";
 
@@ -10,19 +11,17 @@ export default async function FantasyPage() {
 
   return (
     <main className="subpage-shell">
+      <AppHeader title="Fantasy Builder" actionHref="/predictions" actionLabel="Race Week" compact />
       <header className="subpage-header">
         <div>
           <p className="subpage-eyebrow">Fantasy Team Builder</p>
           <h1 className="subpage-title">Constraint-based lineup optimizer.</h1>
         </div>
-        <HomeLink />
       </header>
 
       <section className="section-shell">
         <div className="section-meta">Engine</div>
-        <p className="section-copy">
-          Searches valid lineups under budget and scores them from the current race-week prediction baseline.
-        </p>
+        <p className="section-copy">Build valid lineups from the current Race Week baseline.</p>
       </section>
 
       {season ? (
@@ -37,6 +36,7 @@ export default async function FantasyPage() {
           actionLabel="Back to homepage"
         />
       )}
+      <SiteFooter />
     </main>
   );
 }

@@ -26,6 +26,16 @@ SURFACES: dict[str, dict[str, Any]] = {
         "validation_command": "python validate_canonical_fastf1.py",
         "stale_after_hours": 2160,
     },
+    "season_state": {
+        "artifact_paths": [
+            "data/season_state.json",
+            "data/reports/season_state_quality_report.json",
+        ],
+        "source_files": ["data/curated", "data/canonical_fastf1", "data/telemetry_features", "data/analytics", "data/strategy_lab", "data/race_week"],
+        "quality_report": "data/reports/season_state_quality_report.json",
+        "validation_command": "python build_season_state.py && python validate_season_state.py",
+        "stale_after_hours": 168,
+    },
     "telemetry_features": {
         "artifact_paths": [
             "data/telemetry_features/telemetry_lap_summary.csv",
@@ -94,6 +104,28 @@ SURFACES: dict[str, dict[str, Any]] = {
         "source_files": ["data/analytics/*.csv"],
         "quality_report": "data/reports/analytics_index_report.json",
         "validation_command": "python data/build_analytics_indexes.py && python validate_analytics_views.py",
+        "stale_after_hours": 720,
+    },
+    "race_analysis": {
+        "artifact_paths": [
+            "data/race_analysis/race_analysis_index.csv",
+            "data/race_analysis/race_analysis_summary.csv",
+            "data/race_analysis/race_analysis_story_points.csv",
+            "data/race_analysis/race_analysis_stints.csv",
+            "data/race_analysis/race_analysis_pit_strategy.csv",
+            "data/race_analysis/race_analysis_pace_evolution.csv",
+            "data/race_analysis/race_analysis_position_changes.csv",
+            "data/race_analysis/race_analysis_weather_context.csv",
+            "data/race_analysis/race_analysis_links.csv",
+            "data/race_analysis/race_analysis_track_status.csv",
+            "data/race_analysis/race_analysis_neutralization_phases.csv",
+            "data/race_analysis/race_analysis_position_timeline.csv",
+            "data/race_analysis/race_analysis_position_swing_events.csv",
+            "data/race_analysis/race_analysis_traffic_proxy.csv",
+        ],
+        "source_files": ["data/canonical_fastf1", "data/curated", "data/analytics", "data/strategy_lab"],
+        "quality_report": "data/reports/race_analysis_quality_report.json",
+        "validation_command": "python data/build_race_analysis_views.py && python validate_race_analysis_views.py",
         "stale_after_hours": 720,
     },
 }
@@ -187,6 +219,8 @@ def build_surface(name: str, config: dict[str, Any]) -> dict[str, Any]:
             continue
         if path.is_file() and path.suffix.lower() == ".csv":
             row_counts[path.stem] = csv_row_count(path)
+        elif path.is_file() and path.suffix.lower() == ".json":
+            row_counts[path.stem] = 1
         elif path.is_dir():
             row_counts[path.name] = sum(1 for child in path.rglob("*") if child.is_file())
 

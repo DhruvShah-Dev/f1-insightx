@@ -6,10 +6,12 @@ import { HomeScrollReveal } from "@/components/home/home-scroll-reveal";
 import { MainPageBackground } from "@/components/home/main-page-background";
 import { ModuleLink } from "@/components/home/module-link";
 import { RaceHistoryRail } from "@/components/home/race-history-rail";
-import { LegalLinks } from "@/components/legal/legal-links";
+import { AppFooter } from "@/components/ui/app-footer";
+import { AppHeader } from "@/components/ui/app-header";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
+import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
 import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
 
 export default async function Home() {
@@ -38,6 +40,7 @@ export default async function Home() {
     getCurrentSeasonDriverStandings(),
     authStatePromise,
   ]);
+  const seasonState = await getSeasonState();
 
   return (
     <main className="home-shell">
@@ -45,26 +48,15 @@ export default async function Home() {
       <HomeScrollReveal />
 
       <div className="home-shell__content">
-        <header className="topbar">
-          <div className="topbar__nav-shell">
-            <nav className="topbar__nav">
-              <Link href="/predictions" className="topbar__nav-item">
-                Race Week
-              </Link>
-              <Link href="/lab" className="topbar__nav-item">
-                Strategy Lab
-              </Link>
-              <Link href="/fantasy" className="topbar__nav-item">
-                Fantasy Builder
-              </Link>
-              <HomeAccountEntry
-                hasSupabaseAuth={hasSupabaseAuth}
-                hasProfilePersistence={hasProfilePersistence}
-                initialAuthState={initialAuthState}
-              />
-            </nav>
-          </div>
-        </header>
+        <AppHeader
+          accountSlot={(
+            <HomeAccountEntry
+              hasSupabaseAuth={hasSupabaseAuth}
+              hasProfilePersistence={hasProfilePersistence}
+              initialAuthState={initialAuthState}
+            />
+          )}
+        />
 
         <section className="hero">
           <div className="hero__backdrop" />
@@ -83,12 +75,17 @@ export default async function Home() {
                 <span>Execute</span>
               </p>
               <div className="hero__actions">
-                <Link href="/lab" className="hero__cta hero__cta--primary">
+                <Link href="/analytics" className="hero__cta hero__cta--primary">
+                  Open Analytics
+                </Link>
+                <Link href="/lab" className="hero__cta hero__cta--secondary">
                   Open Strategy Lab
                 </Link>
-                <Link href="/fantasy" className="hero__cta hero__cta--secondary">
-                  Open Fantasy Builder
-                </Link>
+              </div>
+              <div className="hero__season-state" aria-label="Season state">
+                <span>Completed: {formatSeasonRaceLabel(seasonState?.latest_completed_race)}</span>
+                <span>Next: {formatSeasonRaceLabel(seasonState?.next_race)}</span>
+                <span>Telemetry: {formatSeasonRaceLabel(seasonState?.latest_completed_race_with_analytics)}</span>
               </div>
             </div>
           </div>
@@ -99,8 +96,8 @@ export default async function Home() {
         <section className="feature-showcase" data-home-reveal>
           <div className="section-shell feature-showcase__header">
             <div className="section-meta">Products</div>
-            <h2 className="section-title">Strategy and fantasy.</h2>
-            <p className="section-copy">Two focused surfaces for race week.</p>
+            <h2 className="section-title">Telemetry and strategy.</h2>
+              <p className="section-copy">Flagship analysis, simulation, and race-week tools.</p>
           </div>
 
           <div className="module-grid feature-showcase__grid">
@@ -120,24 +117,21 @@ export default async function Home() {
               summary="Lineup optimizer"
               visualTeamId="mclaren"
             />
+            <ModuleLink
+              href="/analytics"
+              index="03"
+              state="Live"
+              title="Analytics"
+              summary="Driver comparison"
+              visualTeamId="mercedes"
+            />
           </div>
         </section>
 
         <RaceHistoryRail races={raceHistory} />
         <DriverStandingsSection standings={driverStandings} />
 
-        <footer className="home-footer">
-          <LegalLinks className="home-footer__nav home-footer__nav--legal" />
-          <nav className="home-footer__nav home-footer__nav--products" aria-label="Homepage footer">
-            <Link href="/predictions">Race Week</Link>
-            <span aria-hidden="true">|</span>
-            <Link href="/lab">Strategy Lab</Link>
-            <span aria-hidden="true">|</span>
-            <Link href="/fantasy">Fantasy Builder</Link>
-            <span aria-hidden="true">|</span>
-            <Link href="/account">Profile</Link>
-          </nav>
-        </footer>
+        <AppFooter />
       </div>
     </main>
   );

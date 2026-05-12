@@ -234,13 +234,11 @@ export function FantasyWorkspace({ season }: Props) {
               <TeamCarCard
                 teamId={preferredConstructorIds[0]}
                 title={dataset?.constructors.find((constructor) => constructor.id === preferredConstructorIds[0])?.name}
-                subtitle="Repo-backed team media with premium fallback"
+                subtitle="Team visual"
               />
               <div>
                 <div className="section-meta">Constructor visual</div>
-                <p className="section-copy">
-                  Team media is driven by one shared asset manifest.
-                </p>
+                <p className="section-copy">Your preferred constructor anchors the lineup.</p>
               </div>
             </div>
           ) : null}

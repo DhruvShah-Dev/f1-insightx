@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { HomeLink } from "@/components/ui/home-link";
 import { SiteHeader } from "@/components/ui/site-header";
+import { SiteFooter } from "@/components/ui/site-footer";
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
+import { StatePanel } from "@/components/ui/state-panel";
 import { TrackMap } from "@/components/ui/track-map";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { getRaceWeekProductResult } from "@/lib/server/race-week-product";
+import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
 import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
 import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
 
@@ -70,14 +72,14 @@ function formatRaceDate(iso: string | null | undefined) {
 
 function formatDelta(value: number | null, digits = 2) {
   if (value === null || Number.isNaN(value)) {
-    return "Signal building";
+    return "Not enough data";
   }
   return `${value > 0 ? "+" : ""}${value.toFixed(digits)}s`;
 }
 
 function formatTime(value: number | null, digits = 3) {
   if (value === null || Number.isNaN(value)) {
-    return "Signal building";
+    return "Not enough data";
   }
   return `${value.toFixed(digits)}s`;
 }
@@ -91,7 +93,7 @@ function formatPercent(value: number | null) {
 
 function getConfidenceTone(value: number | null) {
   if (value === null) {
-    return "Signal building";
+    return "Not enough data";
   }
   if (value >= 0.7) {
     return "High confidence";
@@ -129,22 +131,36 @@ function getStrategicTone(value: string | null) {
 }
 
 export default async function PredictionsPage() {
-  const raceWeekResult = await getRaceWeekProductResult();
+  const [raceWeekResult, seasonState] = await Promise.all([getRaceWeekProductResult(), getSeasonState()]);
   const raceWeek = raceWeekResult.mode === "unavailable" ? null : raceWeekResult.data;
+
+  if (seasonState && !seasonState.current_race_week.available) {
+    return (
+      <main className="subpage-shell race-week-page">
+        <SiteHeader title="Race Week" actionHref="/lab" actionLabel="Strategy Lab" />
+        <StatePanel
+          eyebrow="Race Week"
+          title={`${formatSeasonRaceLabel(seasonState.next_race)} build pending.`}
+          message={`Current product view targets ${formatSeasonRaceLabel(seasonState.current_race_week.product_view_race)}. Latest completed race is ${formatSeasonRaceLabel(seasonState.latest_completed_race)}.`}
+          tone="notice"
+          actionHref="/analytics"
+          actionLabel="Open Analytics"
+        />
+        <SiteFooter />
+      </main>
+    );
+  }
 
   if (!raceWeek?.overview.nextRace) {
     return (
       <main className="subpage-shell race-week-page">
+        <SiteHeader title="Race Week" />
         <section className="race-week-empty">
-          <div className="race-week-empty__topbar">
-            <HomeLink />
-          </div>
           <p className="race-week-empty__eyebrow">Race Week</p>
           <h1 className="race-week-empty__title">No weekend read is ready yet.</h1>
-          <p className="race-week-empty__copy">
-            The Race Week surface activates once the current event and its product views are available in the data pipeline.
-          </p>
+          <p className="race-week-empty__copy">Data will appear when the next event is ready.</p>
         </section>
+        <SiteFooter />
       </main>
     );
   }
@@ -214,7 +230,7 @@ export default async function PredictionsPage() {
               </div>
             </div>
 
-            <ProductRuntimeNote runtime={raceWeekResult.meta} className="race-week-hero__runtime" primaryLabel="Race Week live product view" degradedLabel="Race Week fallback snapshot" />
+            <ProductRuntimeNote runtime={raceWeekResult.meta} className="race-week-hero__runtime" primaryLabel="Race Week data" degradedLabel="Backup data source" />
 
             <div className="race-week-hero__actions">
               <Link href="/lab" className="race-week-hero__cta race-week-hero__cta--primary">
@@ -439,23 +455,22 @@ export default async function PredictionsPage() {
         <div className="race-week-close__copy">
           <p className="race-week-section-kicker">Carry the weekend forward</p>
           <h2>Move from the read into action.</h2>
-          <p>
-            Use Strategy Lab when you want to pressure-test scenarios. Use Fantasy Builder when you want to turn the same weekend signal into lineup value.
-          </p>
+          <p>Pressure-test strategy or build a lineup from the same weekend board.</p>
         </div>
         <div className="race-week-close__links">
           <Link href="/lab" className="race-week-close__link">
             <span>01</span>
             <strong>Open Strategy Lab</strong>
-            <p>Stress the race shape against alternative calls and confidence assumptions.</p>
+            <p>Stress alternative calls.</p>
           </Link>
           <Link href="/fantasy" className="race-week-close__link">
             <span>02</span>
             <strong>Open Fantasy Builder</strong>
-            <p>Carry the same weekend board into value, volatility, and lineup tradeoffs.</p>
+            <p>Find value and volatility.</p>
           </Link>
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }
