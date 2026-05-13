@@ -57,6 +57,14 @@ type DominantEdge = {
   tone?: "proxy";
 };
 
+type TelemetryInstrument = {
+  label: string;
+  value: string;
+  leader: string;
+  fill: number;
+  tone?: "brake" | "throttle" | "speed" | "proxy";
+};
+
 const analyticsTabs: Array<{ id: AnalyticsTab; label: string }> = [
   { id: "overview", label: "Overview" },
   { id: "segments", label: "Segments" },
@@ -109,6 +117,15 @@ function confidenceTier(confidence: number | null | undefined, telemetryQuality?
   if (score >= 0.45) return "Traffic-adjusted inference";
   if (score > 0) return "Limited clean-lap data";
   return "Incomplete session confidence";
+}
+
+function compactSignalLabel(confidence: number | null | undefined) {
+  const tier = confidenceTier(confidence);
+  if (tier === "Traffic-adjusted inference") return "Telemetry-derived";
+  if (tier === "Strong telemetry agreement") return "Strong signal";
+  if (tier === "Moderate telemetry confidence") return "Moderate signal";
+  if (tier === "Limited clean-lap data") return "Limited signal";
+  return "Incomplete signal";
 }
 
 function telemetryQualityTier(value: number | null | undefined) {
@@ -247,6 +264,48 @@ function buildMetricCards(comparison: AnalyticsComparisonPayload): MetricCard[] 
   ];
 }
 
+function instrumentFill(value: number | null | undefined, scale: number) {
+  if (value === null || value === undefined || !Number.isFinite(value)) return 8;
+  return Math.max(8, Math.min(100, Math.abs(value) / scale * 100));
+}
+
+function buildTelemetryInstruments(comparison: AnalyticsComparisonPayload): TelemetryInstrument[] {
+  const { overview } = comparison;
+  const driverA = overview.driverA;
+  const driverB = overview.driverB;
+
+  return [
+    {
+      label: "Speed",
+      value: formatCompactSigned(overview.avgStraightDeltaKph, " kph"),
+      leader: edgeLabel(overview.avgStraightDeltaKph, driverA, driverB),
+      fill: instrumentFill(overview.avgStraightDeltaKph, 8),
+      tone: "speed",
+    },
+    {
+      label: "Brake",
+      value: formatCompactSigned(overview.brakingAdvantageScore),
+      leader: edgeLabel(overview.brakingAdvantageScore, driverA, driverB),
+      fill: instrumentFill(overview.brakingAdvantageScore, 0.12),
+      tone: "brake",
+    },
+    {
+      label: "Traction",
+      value: formatCompactSigned(overview.tractionAdvantageScore),
+      leader: edgeLabel(overview.tractionAdvantageScore, driverA, driverB),
+      fill: instrumentFill(overview.tractionAdvantageScore, 0.12),
+      tone: "throttle",
+    },
+    {
+      label: "Energy proxy",
+      value: formatCompactSigned(overview.energyDeploymentProxyDelta),
+      leader: edgeLabel(overview.energyDeploymentProxyDelta, driverA, driverB),
+      fill: instrumentFill(overview.energyDeploymentProxyDelta, 0.12),
+      tone: "proxy",
+    },
+  ];
+}
+
 function sessionLabel(session: AnalyticsSessionSummary) {
   const sessionName = session.session === "R" ? "Race" : session.session === "Q" ? "Qualifying" : session.session;
   return `${sessionName} - ${telemetryQualityTier(session.telemetryQualityMean)}`;
@@ -344,7 +403,7 @@ function ChartRows({ rows, driverA, driverB, selectedSegmentId }: { rows: ChartB
           <div className={`analytics-chart__row${row.segmentId === selectedSegmentId ? " analytics-chart__row--selected" : ""}`} key={row.label}>
             <div className="analytics-chart__meta">
               <strong>{row.label}</strong>
-              <span>{row.segmentId === selectedSegmentId ? "Selected - " : ""}{confidenceTier(row.confidence)}</span>
+              <span>{row.segmentId === selectedSegmentId ? "Selected - " : ""}{compactSignalLabel(row.confidence)}</span>
             </div>
             <div className="analytics-chart__track">
               <div className="analytics-chart__midline" />
@@ -555,6 +614,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
     : null;
   const comparison = comparisonResult?.mode === "unavailable" ? null : comparisonResult?.data ?? null;
   const metricCards = comparison ? buildMetricCards(comparison) : [];
+  const telemetryInstruments = comparison ? buildTelemetryInstruments(comparison) : [];
   const segmentOptions = comparison ? buildSegmentOptions(comparison, activeTab) : [];
   const selectedSegment = segmentOptions.find((segment) => segment.segmentId === segmentIdParam) ?? segmentOptions[0] ?? null;
   const selectedSegmentCards = comparison ? selectedSegmentMetrics(comparison, activeTab, selectedSegment?.segmentId ?? null) : [];
@@ -574,9 +634,27 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
         <div className="analytics-page__hero-body">
           <div className="analytics-page__hero-copy">
             <p className="strategy-lab-page__eyebrow">Telemetry workstation</p>
-            <h1 className="analytics-page__title">Driver edge, by signal.</h1>
-            <p className="analytics-page__lede">Telemetry-derived comparisons across approximate segments, race pace signals, and energy deployment proxy.</p>
+            <h1 className="analytics-page__title">Telemetry battle.</h1>
+            <p className="analytics-page__lede">{selectedSession ? `${selectedSession.event} ${selectedSession.session} - telemetry-derived, approximate segment comparison.` : "Telemetry-derived driver comparison."}</p>
           </div>
+
+          {comparison && dominantEdge ? (
+            <div className="analytics-page__hero-battle" aria-label="Driver battle summary">
+              <div className="analytics-page__hero-driver">
+                <span>{comparison.overview.driverATeam ?? "Driver A"}</span>
+                <strong>{comparison.overview.driverA}</strong>
+              </div>
+              <div className="analytics-page__hero-edge">
+                <span>{dominantEdge.label}</span>
+                <strong>{dominantEdge.driver}</strong>
+                <b>{dominantEdge.value}</b>
+              </div>
+              <div className="analytics-page__hero-driver analytics-page__hero-driver--right">
+                <span>{comparison.overview.driverBTeam ?? "Driver B"}</span>
+                <strong>{comparison.overview.driverB}</strong>
+              </div>
+            </div>
+          ) : null}
 
           <div className="analytics-page__hero-rail">
             <div className="analytics-page__hero-card">
@@ -688,6 +766,21 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 </div>
               ) : null}
 
+              <div className="analytics-page__instrument-grid" aria-label="Telemetry instruments">
+                {telemetryInstruments.map((instrument) => (
+                  <article key={instrument.label} className={`analytics-page__instrument analytics-page__instrument--${instrument.tone ?? "speed"}`}>
+                    <div>
+                      <span>{instrument.label}</span>
+                      <strong>{instrument.value}</strong>
+                    </div>
+                    <b>{instrument.leader}</b>
+                    <div className="analytics-page__instrument-rail" aria-hidden="true">
+                      <i style={{ width: `${instrument.fill}%` }} />
+                    </div>
+                  </article>
+                ))}
+              </div>
+
               <div className="analytics-page__metric-grid">
                 {metricCards.map((card) => (
                   <article key={card.label} className={`analytics-page__metric-card${card.tone ? ` analytics-page__metric-card--${card.tone}` : ""}`}>
@@ -756,8 +849,9 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                               segmentId: segment.segmentId,
                             })}
                           >
+                            <i style={{ width: `${Math.max(12, Math.min(100, (segment.confidence ?? 0.35) * 100))}%` }} aria-hidden="true" />
                             <strong>{segment.label}</strong>
-                            <span>{segment.kind} - {confidenceTier(segment.confidence)}</span>
+                            <span>{segment.kind} - {compactSignalLabel(segment.confidence)}</span>
                           </a>
                         ))}
                       </div>

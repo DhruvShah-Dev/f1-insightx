@@ -1,7 +1,7 @@
 import "server-only";
 
 import { cache } from "react";
-import { parseBoolean, parseNumber, readCsvFile } from "@/lib/server/csv";
+import { parseBoolean, parseNumber, readOptionalCsvFile } from "@/lib/server/csv";
 
 type Numeric = number | string | null | undefined;
 
@@ -421,8 +421,8 @@ function mapIndex(row: IndexRow, summary?: SummaryRow): RaceAnalysisIndexItem {
 
 const loadBaseRows = cache(async () => {
   const [index, summaries] = await Promise.all([
-    readCsvFile<IndexRow>("raceAnalysis.index"),
-    readCsvFile<SummaryRow>("raceAnalysis.summary"),
+    readOptionalCsvFile<IndexRow>("raceAnalysis.index"),
+    readOptionalCsvFile<SummaryRow>("raceAnalysis.summary"),
   ]);
   return { index, summaries };
 });
@@ -444,16 +444,16 @@ export const getRaceAnalysisDetail = cache(async (raceId: string): Promise<RaceA
   }
 
   const [storyRows, stintRows, pitRows, paceRows, positionRows, swingRows, trafficRows, neutralRows, weatherRows, linkRows] = await Promise.all([
-    readCsvFile<StoryPointRow>("raceAnalysis.storyPoints"),
-    readCsvFile<StintRow>("raceAnalysis.stints"),
-    readCsvFile<PitStrategyRow>("raceAnalysis.pitStrategy"),
-    readCsvFile<PaceEvolutionRow>("raceAnalysis.paceEvolution"),
-    readCsvFile<PositionTimelineRow>("raceAnalysis.positionTimeline"),
-    readCsvFile<PositionSwingRow>("raceAnalysis.positionSwingEvents"),
-    readCsvFile<TrafficProxyRow>("raceAnalysis.trafficProxy"),
-    readCsvFile<NeutralizationRow>("raceAnalysis.neutralizationPhases"),
-    readCsvFile<WeatherContextRow>("raceAnalysis.weatherContext"),
-    readCsvFile<LinkRow>("raceAnalysis.links"),
+    readOptionalCsvFile<StoryPointRow>("raceAnalysis.storyPoints"),
+    readOptionalCsvFile<StintRow>("raceAnalysis.stints"),
+    readOptionalCsvFile<PitStrategyRow>("raceAnalysis.pitStrategy"),
+    readOptionalCsvFile<PaceEvolutionRow>("raceAnalysis.paceEvolution"),
+    readOptionalCsvFile<PositionTimelineRow>("raceAnalysis.positionTimeline"),
+    readOptionalCsvFile<PositionSwingRow>("raceAnalysis.positionSwingEvents"),
+    readOptionalCsvFile<TrafficProxyRow>("raceAnalysis.trafficProxy"),
+    readOptionalCsvFile<NeutralizationRow>("raceAnalysis.neutralizationPhases"),
+    readOptionalCsvFile<WeatherContextRow>("raceAnalysis.weatherContext"),
+    readOptionalCsvFile<LinkRow>("raceAnalysis.links"),
   ]);
 
   const base = mapIndex(indexRow, summaryRow);

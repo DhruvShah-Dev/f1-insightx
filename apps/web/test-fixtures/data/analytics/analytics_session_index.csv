@@ -1,0 +1,2 @@
+session_id,season,round,event,session,driver_count,segment_count,straight_count,telemetry_quality_mean,track_archetype,generated_at,build_version
+2026_04_R_Miami Grand Prix,2026,4,Miami Grand Prix,R,2,3,2,0.92,traction-sensitive,2026-05-09T23:55:00Z,analytics_fixture_v1

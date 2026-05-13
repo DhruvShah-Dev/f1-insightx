@@ -6,6 +6,18 @@ import { createAppError } from "@/lib/errors/app-error";
 
 type CsvRow = Record<string, string>;
 
+function isTestRun() {
+  return process.env.NODE_ENV === "test" || process.env.npm_lifecycle_event === "test";
+}
+
+function getAnalyticsTestFixturePath(csvName: string) {
+  const configuredTestRoot = process.env.F1_INSIGHTX_TEST_DATA_ROOT;
+  const testRoot = configuredTestRoot
+    ? path.resolve(/*turbopackIgnore: true*/ process.cwd(), configuredTestRoot)
+    : path.join(/*turbopackIgnore: true*/ process.cwd(), "test-fixtures", "data");
+  return path.join(testRoot, "analytics", csvName);
+}
+
 export const csvFileMap = {
   "analytics.driverComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_driver_comparison.csv"),
   "analytics.brakingComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_braking_comparison.csv"),
@@ -63,6 +75,10 @@ const largeCsvWarnings = new Set<string>();
 const largeCsvWarningThresholdBytes = 50 * 1024 * 1024;
 
 function getCsvFileUrl(fileKey: string) {
+  if (isTestRun() && fileKey === "analytics.sessionIndex") {
+    return getAnalyticsTestFixturePath("analytics_session_index.csv");
+  }
+
   const fileUrl = csvFileMap[fileKey as CsvFileKey];
   if (!fileUrl) {
     throw createAppError({

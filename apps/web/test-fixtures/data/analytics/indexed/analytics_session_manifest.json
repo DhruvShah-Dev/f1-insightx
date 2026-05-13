@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "row_cap": 10,
+  "sessions": {
+    "2026_04_R_Miami Grand Prix": {
+      "file": "2026-04-r-miami-grand-prix-fixture.json",
+      "season": 2026,
+      "round": 4,
+      "event": "Miami Grand Prix",
+      "session": "R",
+      "counts": {
+        "drivers": 2,
+        "overview": 1,
+        "track_summary": 1,
+        "segments": 3,
+        "braking": 2,
+        "throttle": 2,
+        "straights": 2,
+        "energy_proxy": 2
+      }
+    }
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "session": {
+    "session_id": "2026_04_R_Miami Grand Prix",
+    "season": 2026,
+    "round": 4,
+    "event": "Miami Grand Prix",
+    "session": "R",
+    "driver_count": 2,
+    "segment_count": 3,
+    "straight_count": 2,
+    "telemetry_quality_mean": 0.92,
+    "track_archetype": "traction-sensitive",
+    "generated_at": "2026-05-09T23:55:00Z",
+    "build_version": "analytics_fixture_v1"
+  },
+  "drivers": [
+    { "code": "GAS", "team": "Alpine" },
+    { "code": "OCO", "team": "Haas F1 Team" }
+  ],
+  "overview": [
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "driver_a_team": "Alpine",
+      "driver_b_team": "Haas F1 Team",
+      "corner_advantage_count_a": 2,
+      "corner_advantage_count_b": 1,
+      "straight_advantage_count_a": 2,
+      "straight_advantage_count_b": 0,
+      "avg_segment_delta_kph": 1.25,
+      "avg_straight_delta_kph": 4.4,
+      "braking_advantage_score": 0.08,
+      "traction_advantage_score": -0.03,
+      "energy_proxy_delta": 0.05,
+      "confidence": 0.78,
+      "weakest_assumption": "Approximate segment IDs from precomputed telemetry features.",
+      "strategy_relevance_note": "Straight-line edge is most relevant on power-sensitive tracks."
+    }
+  ],
+  "track_summary": [
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "track_archetype": "traction-sensitive",
+      "straight_line_weight": 0.64,
+      "braking_weight": 0.58,
+      "traction_weight": 0.82,
+      "degradation_weight": 0.52,
+      "track_position_weight": 0.48,
+      "archetype_confidence": 0.74
+    }
+  ],
+  "segments": [
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "approx_segment_02",
+      "segment_kind": "approximate segment",
+      "segment_confidence": 0.72,
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "entry_speed_delta_kph": 2.4,
+      "apex_speed_delta_kph": 1.1,
+      "exit_speed_delta_kph": 3.2,
+      "min_speed_delta_kph": 0.9,
+      "faster_driver": "GAS",
+      "confidence": 0.74
+    },
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "approx_segment_06",
+      "segment_kind": "approximate segment",
+      "segment_confidence": 0.7,
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "entry_speed_delta_kph": -1.6,
+      "apex_speed_delta_kph": -0.4,
+      "exit_speed_delta_kph": -2.1,
+      "min_speed_delta_kph": -0.8,
+      "faster_driver": "OCO",
+      "confidence": 0.69
+    },
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "approx_segment_12",
+      "segment_kind": "approximate segment",
+      "segment_confidence": 0.65,
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "entry_speed_delta_kph": 0.6,
+      "apex_speed_delta_kph": 0.2,
+      "exit_speed_delta_kph": 0.9,
+      "min_speed_delta_kph": 0.1,
+      "faster_driver": "GAS",
+      "confidence": 0.67
+    }
+  ],
+  "braking": [
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "braking_zone_02",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "braking_start_delta_m": -4.5,
+      "braking_duration_delta_s": -0.04,
+      "braking_distance_delta_m": -3.2,
+      "late_brake_delta": 0.08,
+      "brake_intensity_delta": 0.05,
+      "confidence": 0.73,
+      "favorable_driver": "GAS"
+    },
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "braking_zone_06",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "braking_start_delta_m": 2.1,
+      "braking_duration_delta_s": 0.03,
+      "braking_distance_delta_m": 1.7,
+      "late_brake_delta": -0.04,
+      "brake_intensity_delta": -0.02,
+      "confidence": 0.7,
+      "favorable_driver": "OCO"
+    }
+  ],
+  "throttle": [
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "traction_segment_02",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "throttle_pickup_delta_m": -2.5,
+      "full_throttle_exit_delta_m": -1.4,
+      "traction_exit_delta": 0.06,
+      "confidence": 0.76,
+      "favorable_driver": "GAS"
+    },
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "traction_segment_06",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "throttle_pickup_delta_m": 3.2,
+      "full_throttle_exit_delta_m": 2.3,
+      "traction_exit_delta": -0.05,
+      "confidence": 0.68,
+      "favorable_driver": "OCO"
+    }
+  ],
+  "straights": [
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "straight_01",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "entry_speed_delta_kph": 1.2,
+      "terminal_speed_delta_kph": 4.4,
+      "acceleration_delta": 0.07,
+      "drs_active_delta_pct": 3.5,
+      "clipping_proxy_delta": 0.02,
+      "confidence": 0.77,
+      "favorable_driver": "GAS"
+    },
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "straight_02",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "entry_speed_delta_kph": 0.4,
+      "terminal_speed_delta_kph": 2.1,
+      "acceleration_delta": 0.03,
+      "drs_active_delta_pct": 1.2,
+      "clipping_proxy_delta": 0.01,
+      "confidence": 0.73,
+      "favorable_driver": "GAS"
+    }
+  ],
+  "energy_proxy": [
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "energy_proxy_segment_01",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "deployment_proxy_delta": 0.05,
+      "lift_and_coast_delta": -0.02,
+      "clipping_proxy_delta": 0.01,
+      "recovery_zone_delta": 0.03,
+      "confidence": 0.71,
+      "proxy_note": "Energy deployment proxy from speed-shape evidence; not true ERS or battery state."
+    },
+    {
+      "session_id": "2026_04_R_Miami Grand Prix",
+      "segment_id": "energy_proxy_segment_02",
+      "driver_a": "GAS",
+      "driver_b": "OCO",
+      "deployment_proxy_delta": 0.03,
+      "lift_and_coast_delta": -0.01,
+      "clipping_proxy_delta": 0.02,
+      "recovery_zone_delta": 0.01,
+      "confidence": 0.69,
+      "proxy_note": "Energy deployment proxy from speed-shape evidence; not true ERS or battery state."
+    }
+  ]
+}

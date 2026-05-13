@@ -294,7 +294,18 @@ const ANALYTICS_SESSION_PRIORITY: Record<string, number> = {
 };
 
 const readSessionRows = cache(async () => readCsvFile<SessionIndexRow>("analytics.sessionIndex"));
-const analyticsIndexedDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data", "analytics", "indexed");
+function getAnalyticsIndexedDir() {
+  if (process.env.NODE_ENV === "test" || process.env.npm_lifecycle_event === "test") {
+    const configuredTestRoot = process.env.F1_INSIGHTX_TEST_DATA_ROOT;
+    const testRoot = configuredTestRoot
+      ? path.resolve(/*turbopackIgnore: true*/ process.cwd(), configuredTestRoot)
+      : path.join(/*turbopackIgnore: true*/ process.cwd(), "test-fixtures", "data");
+    return path.join(testRoot, "analytics", "indexed");
+  }
+
+  return path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data", "analytics", "indexed");
+}
+
 const gunzipAsync = promisify(gunzip);
 
 type AnalyticsIndexedManifest = {
@@ -323,7 +334,7 @@ type AnalyticsIndexedSessionPayload = {
 };
 
 const readIndexedManifest = cache(async (): Promise<AnalyticsIndexedManifest> => {
-  const filePath = path.join(analyticsIndexedDir, "analytics_session_manifest.json");
+  const filePath = path.join(getAnalyticsIndexedDir(), "analytics_session_manifest.json");
   const content = await readFile(filePath, "utf-8");
   return JSON.parse(content) as AnalyticsIndexedManifest;
 });
@@ -336,7 +347,7 @@ const readIndexedSessionPayload = cache(async (sessionId: string): Promise<Analy
   }
 
   try {
-    const filePath = path.join(analyticsIndexedDir, "sessions", entry.file);
+    const filePath = path.join(getAnalyticsIndexedDir(), "sessions", entry.file);
     const content = entry.file.endsWith(".gz")
       ? (await gunzipAsync(await readFile(filePath))).toString("utf-8")
       : await readFile(filePath, "utf-8");
