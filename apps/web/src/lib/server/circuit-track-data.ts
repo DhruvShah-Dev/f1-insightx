@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { cache } from "react";
+import { readCsvFile } from "@/lib/server/csv";
 
 export type CircuitTrackData = {
   circuitId: string;
@@ -14,6 +15,11 @@ export type CircuitTrackData = {
 };
 
 type CircuitTrackMap = Record<string, CircuitTrackData>;
+type RaceCircuitRow = {
+  season: string;
+  round: string;
+  circuit_id: string;
+};
 
 const circuitTrackPathsFile = path.join(process.cwd(), "..", "..", "data", "race_week", "circuit_track_paths.json");
 
@@ -29,4 +35,19 @@ const loadCircuitTrackData = cache(async (): Promise<CircuitTrackMap> => {
 export async function getCircuitTrackData(circuitId: string): Promise<CircuitTrackData | null> {
   const trackData = await loadCircuitTrackData();
   return trackData[circuitId] ?? null;
+}
+
+const loadRaceCircuitMap = cache(async (): Promise<Map<string, string>> => {
+  const rows = await readCsvFile<RaceCircuitRow>("curated.races");
+  return new Map(
+    rows
+      .filter((row) => row.season && row.round && row.circuit_id)
+      .map((row) => [`${Number(row.season)}:${Number(row.round)}`, row.circuit_id]),
+  );
+});
+
+export async function getCircuitTrackDataForRace(season: number, round: number): Promise<CircuitTrackData | null> {
+  const raceCircuitMap = await loadRaceCircuitMap();
+  const circuitId = raceCircuitMap.get(`${season}:${round}`);
+  return circuitId ? getCircuitTrackData(circuitId) : null;
 }

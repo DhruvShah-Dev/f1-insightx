@@ -226,6 +226,47 @@ export type AnalyticsEnergyProxyHighlight = {
   proxyNote: string;
 };
 
+export type AnalyticsTelemetryTracePoint = {
+  x: number;
+  speed: number | null;
+  rpm: number | null;
+  gear: number | null;
+  throttle: number | null;
+  brake: number | null;
+  drs: number | null;
+  energyProxy: number | null;
+};
+
+export type AnalyticsTelemetrySpan = {
+  start: number;
+  end: number;
+};
+
+export type AnalyticsDriverTelemetryTrace = {
+  driver: string;
+  lapNumber: number | null;
+  compound: string | null;
+  lapKind: string;
+  quality: number | null;
+  distanceM: number | null;
+  rawPointCount: number | null;
+  spans: {
+    braking: AnalyticsTelemetrySpan[];
+    drs: AnalyticsTelemetrySpan[];
+  };
+  points: AnalyticsTelemetryTracePoint[];
+};
+
+export type AnalyticsTelemetryTraceComparison = {
+  available: boolean;
+  source: "offline_fastf1_telemetry_parquet" | "unavailable";
+  qualityTier: string;
+  pointCount: number;
+  note: string;
+  driverA: AnalyticsDriverTelemetryTrace | null;
+  driverB: AnalyticsDriverTelemetryTrace | null;
+};
+
 export type AnalyticsCompareMode = "overview" | "segments" | "braking" | "throttle" | "straights" | "energy-proxy" | "all";
 
 export type AnalyticsComparisonPayload = {
@@ -243,6 +284,7 @@ export type AnalyticsComparisonPayload = {
   throttleHighlights: AnalyticsThrottleHighlight[];
   straightHighlights: AnalyticsStraightHighlight[];
   energyProxyHighlights: AnalyticsEnergyProxyHighlight[];
+  telemetryTraces: AnalyticsTelemetryTraceComparison;
   proxyNote: string;
   runtime: RuntimeSourceMetadata;
   detailMode: AnalyticsCompareMode;
@@ -333,6 +375,37 @@ type AnalyticsIndexedSessionPayload = {
   energy_proxy: EnergyProxyComparisonRow[];
 };
 
+type AnalyticsTraceManifest = {
+  version: number;
+  buildVersion: string;
+  generatedAt: string;
+  tracePointCount: number;
+  source: "offline_fastf1_telemetry_parquet";
+  sessions: Record<string, {
+    file: string;
+    season: number;
+    round: number;
+    event: string;
+    session: string;
+    drivers: number;
+    tracePointCount: number;
+    quality: number;
+    bytes: number;
+  }>;
+};
+
+type AnalyticsTraceSessionPayload = {
+  version: number;
+  buildVersion: string;
+  generatedAt: string;
+  source: "offline_fastf1_telemetry_parquet";
+  tracePointCount: number;
+  quality: number;
+  qualityTier: string;
+  honestyNote: string;
+  drivers: Record<string, AnalyticsDriverTelemetryTrace>;
+};
+
 const readIndexedManifest = cache(async (): Promise<AnalyticsIndexedManifest> => {
   const filePath = path.join(getAnalyticsIndexedDir(), "analytics_session_manifest.json");
   const content = await readFile(filePath, "utf-8");
@@ -352,6 +425,44 @@ const readIndexedSessionPayload = cache(async (sessionId: string): Promise<Analy
       ? (await gunzipAsync(await readFile(filePath))).toString("utf-8")
       : await readFile(filePath, "utf-8");
     return JSON.parse(content) as AnalyticsIndexedSessionPayload;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return null;
+    }
+    throw error;
+  }
+});
+
+function getAnalyticsTraceDir() {
+  return path.join(getAnalyticsIndexedDir(), "traces");
+}
+
+const readTraceManifest = cache(async (): Promise<AnalyticsTraceManifest | null> => {
+  try {
+    const filePath = path.join(getAnalyticsTraceDir(), "analytics_trace_manifest.json");
+    const content = await readFile(filePath, "utf-8");
+    return JSON.parse(content) as AnalyticsTraceManifest;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return null;
+    }
+    throw error;
+  }
+});
+
+const readTraceSessionPayload = cache(async (sessionId: string): Promise<AnalyticsTraceSessionPayload | null> => {
+  const manifest = await readTraceManifest();
+  const entry = manifest?.sessions?.[sessionId];
+  if (!entry?.file || entry.file.includes("..") || path.isAbsolute(entry.file)) {
+    return null;
+  }
+
+  try {
+    const filePath = path.join(getAnalyticsTraceDir(), entry.file);
+    const content = entry.file.endsWith(".gz")
+      ? (await gunzipAsync(await readFile(filePath))).toString("utf-8")
+      : await readFile(filePath, "utf-8");
+    return JSON.parse(content) as AnalyticsTraceSessionPayload;
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
       return null;
@@ -665,6 +776,34 @@ function loadEnergyProxyHighlights(rows: EnergyProxyComparisonRow[], sessionId: 
   );
 }
 
+async function loadTelemetryTraces(sessionId: string, driverA: string, driverB: string): Promise<AnalyticsTelemetryTraceComparison> {
+  const payload = await readTraceSessionPayload(sessionId);
+  if (!payload) {
+    return {
+      available: false,
+      source: "unavailable",
+      qualityTier: "Representative trace unavailable",
+      pointCount: 0,
+      note: "Representative telemetry trace is unavailable for this session.",
+      driverA: null,
+      driverB: null,
+    };
+  }
+
+  const traceA = payload.drivers[normalizedCode(driverA)] ?? null;
+  const traceB = payload.drivers[normalizedCode(driverB)] ?? null;
+  const available = Boolean(traceA && traceB);
+  return {
+    available,
+    source: "offline_fastf1_telemetry_parquet",
+    qualityTier: available ? payload.qualityTier : "Representative trace incomplete",
+    pointCount: payload.tracePointCount,
+    note: payload.honestyNote || "Precomputed representative telemetry trace. Approximate segment context only.",
+    driverA: traceA,
+    driverB: traceB,
+  };
+}
+
 async function listFromCsv(): Promise<AnalyticsSessionSummary[]> {
   const rows = await readSessionRows();
   return rows
@@ -721,6 +860,7 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
   const throttleHighlights = mode === "throttle" || mode === "all" ? loadThrottleHighlights(payload.throttle, sessionId, requestedA, requestedB) : [];
   const straightHighlights = mode === "straights" || mode === "all" ? loadStraightHighlights(payload.straights, sessionId, requestedA, requestedB) : [];
   const energyProxyHighlights = mode === "energy-proxy" || mode === "all" ? loadEnergyProxyHighlights(payload.energy_proxy, sessionId, requestedA, requestedB) : [];
+  const telemetryTraces = await loadTelemetryTraces(sessionId, requestedA, requestedB);
 
   return {
     session,
@@ -737,6 +877,7 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
     throttleHighlights,
     straightHighlights,
     energyProxyHighlights,
+    telemetryTraces,
     proxyNote: energyProxyHighlights[0]?.proxyNote ?? ANALYTICS_ENERGY_PROXY_NOTE,
     runtime,
     detailMode: mode,

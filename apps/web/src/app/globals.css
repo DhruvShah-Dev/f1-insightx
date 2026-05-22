@@ -6783,7 +6783,7 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 
   .cookie-consent__actions {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.52rem;
     align-items: stretch;
   }
@@ -7643,7 +7643,7 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 
   .cookie-consent__actions {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.52rem;
     align-items: stretch;
   }
@@ -8019,6 +8019,7 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 .analytics-page__lede {
   max-width: 31rem;
   color: rgba(235, 238, 245, 0.74);
+  overflow-wrap: anywhere;
 }
 
 .analytics-page__hero-battle {
@@ -8326,7 +8327,8 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .analytics-page__hero::after {
+  .analytics-page__hero::after,
+  .analytics-real-trace::after {
     animation: none;
   }
 
@@ -8336,6 +8338,8 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   .analytics-page__trust-card,
   .analytics-page__selected-segment-card,
   .analytics-page__segment-pill,
+  .analytics-real-trace__focus-region,
+  .analytics-sync-rhythm__cell,
   .analytics-chart__row,
   .analytics-chart__bar {
     transition: none;
@@ -8364,6 +8368,7 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 
   .analytics-page__lede {
     font-size: 0.92rem;
+    max-width: 100%;
   }
 
   .analytics-page__hero-battle {
@@ -8414,6 +8419,18 @@ html.home-reveal-ready [data-home-reveal].is-visible {
     padding: 0;
     border: 0;
     background: transparent;
+  }
+}
+
+@media (max-width: 420px) {
+  .cookie-consent__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .cookie-consent__actions .hero__cta,
+  .cookie-consent__actions .cookie-consent__manage {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -9132,5 +9149,1526 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 
   .race-analysis-position-chart {
     min-height: 18rem;
+  }
+}
+
+/* Deployment polish: unified motorsport shell, compact telemetry density */
+.app-header__nav-link--active {
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(225, 6, 0, 0.2), rgba(255, 255, 255, 0.055)),
+    rgba(255, 255, 255, 0.04);
+  box-shadow:
+    inset 0 -2px 0 rgba(225, 6, 0, 0.95),
+    0 0 22px rgba(225, 6, 0, 0.12);
+}
+
+.app-header__nav-link--active::after {
+  content: "";
+  width: 0.32rem;
+  height: 0.32rem;
+  margin-left: 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(225, 6, 0, 0.7);
+}
+
+.app-header__nav-link,
+.app-header__action,
+.app-header__account,
+.app-header__actions .account-entry,
+.hero__cta,
+.race-week-hero__cta,
+.analytics-page__tab,
+.race-analysis-season-switcher a,
+.race-analysis-crosslinks a,
+.race-week-close__link,
+.module-link {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-header__nav-link:focus-visible,
+.app-header__action:focus-visible,
+.app-header__account:focus-visible,
+.app-footer__links a:focus-visible,
+.hero__cta:focus-visible,
+.race-week-hero__cta:focus-visible,
+.analytics-page__tab:focus-visible,
+.analytics-page__segment-pill:focus-visible,
+.race-analysis-season-switcher a:focus-visible,
+.race-analysis-crosslinks a:focus-visible,
+.race-week-close__link:focus-visible,
+.module-link:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+.subpage-shell,
+.strategy-lab-page,
+.analytics-page,
+.race-week-page,
+.race-analysis-page {
+  --page-max: 1180px;
+  --panel-radius: 18px;
+  --panel-radius-lg: 24px;
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --panel-bg: rgba(8, 11, 16, 0.76);
+}
+
+.section-copy,
+.race-week-hero__deck,
+.strategy-lab-page__lede,
+.analytics-page__lede,
+.race-analysis-hero p,
+.race-analysis-timeline-card p,
+.race-week-story-card p,
+.race-week-leader-card__content p,
+.race-week-constructor-card p,
+.race-week-strategy__item p,
+.account-card p {
+  max-width: 58ch;
+  line-height: 1.45;
+}
+
+.race-week-story-card p,
+.race-week-leader-card__content p,
+.race-week-constructor-card p,
+.race-week-strategy__item p,
+.race-analysis-timeline-card p,
+.analytics-page__metric-card p,
+.analytics-page__trust-card p,
+.analytics-page__selected-segment-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.workspace-panel,
+.analytics-page__metric-card,
+.analytics-page__trust-card,
+.analytics-page__selected-segment-card,
+.race-analysis-card,
+.race-analysis-timeline-card,
+.race-analysis-pit-card,
+.race-analysis-position-panel,
+.race-analysis-ribbon-board,
+.race-analysis-pressure-grid,
+.race-week-story-card,
+.race-week-constructor-card,
+.race-week-strategy__item,
+.race-week-close__link {
+  border-color: var(--panel-border);
+  border-radius: var(--panel-radius);
+}
+
+.analytics-page__hero,
+.race-analysis-hero,
+.race-analysis-detail-hero,
+.race-week-hero,
+.strategy-lab-page__hero {
+  border-radius: var(--panel-radius-lg);
+}
+
+.product-runtime-note,
+.race-analysis-chip-row span,
+.race-analysis-card__chips span,
+.race-week-hero__signal,
+.strategy-lab-page__hero-card,
+.analytics-page__hero-card,
+.analytics-page__instrument {
+  backdrop-filter: blur(16px);
+}
+
+.app-loading-shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(225, 6, 0, 0.22), transparent 30rem),
+    linear-gradient(180deg, #05070a, #090c11);
+}
+
+.app-loading-panel {
+  width: min(100%, 34rem);
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.2rem, 4vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 3rem),
+    rgba(8, 11, 16, 0.82);
+}
+
+.app-loading-panel h1 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(2.4rem, 8vw, 4.8rem);
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.app-loading-panel__mark {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.app-loading-panel__mark span {
+  width: 2.4rem;
+  height: 0.34rem;
+  transform: skewX(-18deg);
+  background: var(--accent);
+  box-shadow: 0 0 22px rgba(225, 6, 0, 0.34);
+  animation: loadingPulse 960ms ease-in-out infinite alternate;
+}
+
+.app-loading-panel__mark span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.app-loading-panel__mark span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+@keyframes loadingPulse {
+  from {
+    opacity: 0.34;
+    transform: translateX(0) skewX(-18deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0.35rem) skewX(-18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-loading-panel__mark span {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header,
+  .app-header--compact,
+  .subpage-shell > .app-header,
+  .strategy-lab-page > .app-header,
+  .analytics-page > .app-header,
+  .race-week-page > .app-header,
+  .race-analysis-page .app-header {
+    width: min(100% - 1rem, var(--page-max, 1180px));
+    padding-top: 0.75rem;
+  }
+
+  .app-header__nav {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .app-header__nav-link {
+    flex: 0 0 auto;
+    min-height: 2.25rem;
+    padding: 0.58rem 0.5rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.12em;
+  }
+
+  .app-footer,
+  .race-analysis-page .app-footer {
+    width: min(100% - 1rem, var(--page-max, 1180px));
+    margin-top: 2rem;
+  }
+
+  .hero__brand {
+    font-size: clamp(4.1rem, 18vw, 6rem);
+    letter-spacing: -0.065em;
+    white-space: normal;
+  }
+
+  .hero__tagline {
+    white-space: normal;
+  }
+
+  .module-grid,
+  .race-analysis-grid,
+  .race-week-leaders__grid,
+  .race-week-story-band__cards,
+  .race-week-close__links {
+    gap: 0.75rem;
+  }
+
+  .analytics-page__hero,
+  .analytics-page__controls,
+  .analytics-page__results,
+  .race-analysis-hero,
+  .race-analysis-detail-hero,
+  .race-analysis-section,
+  .race-week-hero,
+  .strategy-lab-page__hero {
+    padding: 1rem;
+  }
+
+  .analytics-page__hero-driver,
+  .analytics-page__hero-edge {
+    min-height: 6.4rem;
+  }
+
+  .analytics-page__hero-driver strong,
+  .analytics-page__hero-edge strong {
+    font-size: clamp(2.7rem, 15vw, 4rem);
+  }
+
+  .analytics-page__instrument {
+    min-height: 5.4rem;
+    padding: 0.75rem;
+  }
+
+  .analytics-page__instrument strong {
+    font-size: clamp(1.25rem, 7vw, 2rem);
+  }
+
+  .analytics-page__tabs {
+    gap: 0.35rem;
+  }
+
+  .analytics-page__tab {
+    min-height: 2.3rem;
+    padding: 0.62rem 0.48rem;
+    font-size: 0.64rem;
+  }
+
+  .analytics-page__segment-strip {
+    gap: 0.45rem;
+  }
+
+  .analytics-page__segment-pill {
+    min-height: 3.65rem;
+    padding: 0.65rem;
+  }
+
+  .race-analysis-timeline-card,
+  .race-analysis-pit-card,
+  .race-analysis-pressure-grid,
+  .race-analysis-ribbon-board {
+    padding: 0.75rem;
+  }
+
+  .race-analysis-section__header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+  }
+
+  .race-analysis-section__header h2 {
+    font-size: clamp(1.45rem, 9vw, 2.35rem);
+  }
+
+  .race-analysis-ribbon__track {
+    min-height: 3.2rem;
+  }
+
+  .strategy-lab-section,
+  .workspace-panel {
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .app-header__nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .app-header__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+
+  .app-header__action,
+  .app-header__account,
+  .app-header__actions .account-entry {
+    width: 100%;
+  }
+
+  .analytics-page__metric-grid,
+  .analytics-page__trust-grid,
+  .analytics-page__segment-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .race-analysis-card {
+    min-height: 14.5rem;
+  }
+}
+
+/* Analytics telemetry battle station */
+.analytics-page--battle-station {
+  --team-a: #e10600;
+  --team-a-secondary: #ffb0aa;
+  --team-b: #62a9ff;
+  --team-b-secondary: #dcebff;
+  background:
+    radial-gradient(circle at 14% 6%, color-mix(in srgb, var(--team-a) 28%, transparent), transparent 28rem),
+    radial-gradient(circle at 84% 8%, color-mix(in srgb, var(--team-b) 24%, transparent), transparent 24rem),
+    linear-gradient(180deg, #020305 0%, #06090e 46%, #020305 100%);
+}
+
+.analytics-page--battle-station .analytics-page__hero,
+.analytics-page--battle-station .analytics-page__controls,
+.analytics-page--battle-station .analytics-page__results {
+  width: min(1240px, calc(100% - 2rem));
+}
+
+.analytics-page--battle-station .analytics-page__hero {
+  min-height: clamp(30rem, 58vw, 42rem);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--team-a) 28%, transparent), transparent 24rem),
+    radial-gradient(circle at 82% 20%, color-mix(in srgb, var(--team-b) 24%, transparent), transparent 24rem),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012)),
+    #03060a;
+}
+
+.analytics-page--battle-station .analytics-page__hero::after {
+  background: linear-gradient(90deg, transparent, var(--team-a), rgba(255, 255, 255, 0.85), var(--team-b), transparent);
+}
+
+.analytics-page--battle-station .analytics-page__hero-body {
+  grid-template-columns: minmax(18rem, 0.45fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.analytics-page--battle-station .analytics-page__title {
+  max-width: 9.8ch;
+  font-size: clamp(3.8rem, 5.2vw, 5.8rem);
+}
+
+.analytics-page--battle-station .analytics-page__lede {
+  max-width: 26rem;
+}
+
+.analytics-page--battle-station .analytics-page__hero-battle {
+  grid-column: auto;
+  grid-template-columns: minmax(8rem, 0.9fr) minmax(12rem, 1.15fr) minmax(8rem, 0.9fr);
+  align-self: stretch;
+}
+
+.analytics-page--battle-station .analytics-page__hero-driver,
+.analytics-page--battle-station .analytics-page__hero-edge {
+  min-height: clamp(16rem, 31vw, 25rem);
+  display: grid;
+  align-content: end;
+  border-radius: 0;
+}
+
+.analytics-page--battle-station .analytics-page__hero-driver--a {
+  border-color: color-mix(in srgb, var(--team-a) 52%, rgba(255, 255, 255, 0.12));
+  background:
+    linear-gradient(180deg, transparent 20%, color-mix(in srgb, var(--team-a) 16%, transparent)),
+    rgba(4, 7, 11, 0.82);
+}
+
+.analytics-page--battle-station .analytics-page__hero-driver--b {
+  border-color: color-mix(in srgb, var(--team-b) 52%, rgba(255, 255, 255, 0.12));
+  background:
+    linear-gradient(180deg, transparent 20%, color-mix(in srgb, var(--team-b) 14%, transparent)),
+    rgba(4, 7, 11, 0.82);
+}
+
+.analytics-page--battle-station .analytics-page__hero-driver--a::after {
+  background: linear-gradient(90deg, var(--team-a), var(--team-a-secondary));
+}
+
+.analytics-page--battle-station .analytics-page__hero-driver--b::after,
+.analytics-page--battle-station .analytics-page__hero-driver--right::after {
+  background: linear-gradient(270deg, var(--team-b), var(--team-b-secondary));
+}
+
+.analytics-page--battle-station .analytics-page__hero-edge {
+  border-color: rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(105deg, color-mix(in srgb, var(--team-a) 24%, transparent), transparent 48%, color-mix(in srgb, var(--team-b) 20%, transparent)),
+    rgba(5, 8, 12, 0.94);
+}
+
+.analytics-page--battle-station .analytics-page__hero-edge strong {
+  font-size: clamp(4rem, 9vw, 7.6rem);
+}
+
+.analytics-page--battle-station .analytics-page__hero-edge b {
+  width: fit-content;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.analytics-page--battle-station .analytics-page__hero-rail {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.analytics-page--battle-station .analytics-page__controls {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.24fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: end;
+}
+
+.analytics-page--battle-station .analytics-page__section-header h2 {
+  letter-spacing: 0;
+}
+
+.analytics-page--battle-station .analytics-page__results {
+  display: grid;
+  gap: 1rem;
+}
+
+.analytics-page--battle-station .analytics-page__driver-strip {
+  grid-template-columns: minmax(0, 1fr) 3.25rem minmax(0, 1fr) minmax(14rem, 0.54fr);
+}
+
+.analytics-page--battle-station .analytics-page__driver-card--a::before,
+.analytics-page--battle-station .analytics-page__driver-card--a::after {
+  background: linear-gradient(90deg, var(--team-a), transparent);
+}
+
+.analytics-page--battle-station .analytics-page__driver-card--b::before,
+.analytics-page--battle-station .analytics-page__driver-card--b::after {
+  background: linear-gradient(270deg, var(--team-b), transparent);
+}
+
+.analytics-page--battle-station .analytics-page__dominance-map,
+.analytics-page--battle-station .analytics-page__engineer-insights,
+.analytics-page--battle-station .analytics-page__segment-workbench,
+.analytics-page--battle-station .analytics-page__detail-panel {
+  padding: clamp(1rem, 2.2vw, 1.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 22px;
+  background:
+    linear-gradient(115deg, color-mix(in srgb, var(--team-a) 8%, transparent), transparent 42%, color-mix(in srgb, var(--team-b) 7%, transparent)),
+    rgba(4, 7, 11, 0.74);
+}
+
+.analytics-page__map-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.58fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.analytics-track-map {
+  position: relative;
+  min-height: 20rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.06), transparent 16rem),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 2.5rem),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.026) 0 1px, transparent 1px 2.5rem),
+    rgba(2, 4, 7, 0.68);
+}
+
+.analytics-track-map__svg {
+  width: 100%;
+  min-height: 20rem;
+  display: block;
+}
+
+.analytics-track-map__shadow {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.055);
+  stroke-width: 34;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 26px rgba(255, 255, 255, 0.12));
+}
+
+.analytics-track-map__base,
+.analytics-track-map__line {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.analytics-track-map__base {
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 18;
+}
+
+.analytics-track-map__line {
+  stroke: rgba(244, 248, 255, 0.9);
+  stroke-width: 5;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25));
+}
+
+.analytics-track-map__marker circle {
+  fill: rgba(5, 8, 13, 0.92);
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+.analytics-track-map__marker text {
+  fill: #fff;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.analytics-track-map__marker--a {
+  color: var(--team-a);
+}
+
+.analytics-track-map__marker--a circle {
+  stroke: var(--team-a);
+}
+
+.analytics-track-map__marker--b {
+  color: var(--team-b);
+}
+
+.analytics-track-map__marker--b circle {
+  stroke: var(--team-b);
+}
+
+.analytics-track-map__marker--even {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.analytics-track-map__caption {
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.analytics-track-map__caption strong {
+  color: #fff;
+}
+
+.analytics-track-map__unavailable {
+  min-height: 20rem;
+  display: grid;
+  place-content: center;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.analytics-track-map__unavailable span {
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.analytics-track-map__unavailable strong {
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.analytics-track-map__unavailable p {
+  max-width: 24rem;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.analytics-page__dominance-board {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  grid-auto-rows: max-content;
+}
+
+.analytics-page__dominance-legend,
+.analytics-page__dominance-row {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.analytics-page__dominance-legend {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.analytics-page__dominance-legend span,
+.analytics-page__dominance-row {
+  min-height: 2.5rem;
+  padding: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  background: rgba(255, 255, 255, 0.035);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.analytics-page__dominance-legend i {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.35rem;
+  background: rgba(255, 255, 255, 0.52);
+  vertical-align: -0.08rem;
+}
+
+.analytics-page__dominance-legend .analytics-page__legend-a {
+  background: var(--team-a);
+}
+
+.analytics-page__dominance-legend .analytics-page__legend-b {
+  background: var(--team-b);
+}
+
+.analytics-page__dominance-list {
+  display: grid;
+  gap: 0.45rem;
+  max-height: 13.5rem;
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+.analytics-page__dominance-row {
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  border-left: 2px solid rgba(255, 255, 255, 0.16);
+}
+
+.analytics-page__dominance-row--a {
+  border-left-color: var(--team-a);
+}
+
+.analytics-page__dominance-row--b {
+  border-left-color: var(--team-b);
+}
+
+.analytics-page__dominance-row strong {
+  color: #fff;
+}
+
+.analytics-page__dominance-row em {
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.analytics-page--battle-station .analytics-page__instrument-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.analytics-page--battle-station .analytics-page__instrument {
+  grid-column: span 1;
+  min-height: 8.4rem;
+  border-radius: 16px;
+}
+
+.analytics-page--battle-station .analytics-page__instrument:first-child,
+.analytics-page--battle-station .analytics-page__instrument:last-child {
+  grid-column: span 2;
+}
+
+.analytics-page--battle-station .analytics-page__instrument--speed .analytics-page__instrument-rail i,
+.analytics-page--battle-station .analytics-chart__bar {
+  background: linear-gradient(90deg, var(--team-a), var(--team-a-secondary));
+  box-shadow: 0 0 20px color-mix(in srgb, var(--team-a) 44%, transparent);
+}
+
+.analytics-page--battle-station .analytics-chart__bar--negative {
+  background: linear-gradient(90deg, var(--team-b), var(--team-b-secondary));
+  box-shadow: 0 0 20px color-mix(in srgb, var(--team-b) 38%, transparent);
+}
+
+.analytics-page__engineer-insights {
+  display: grid;
+  gap: 1rem;
+}
+
+.analytics-page__insight-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.analytics-page__insight-chip {
+  min-height: 7.5rem;
+  padding: 0.82rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left: 3px solid rgba(255, 255, 255, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.014)),
+    rgba(3, 6, 10, 0.76);
+}
+
+.analytics-page__insight-chip--strong {
+  border-left-color: var(--team-a);
+}
+
+.analytics-page__insight-chip--proxy {
+  border-left-color: var(--team-b);
+}
+
+.analytics-page__insight-chip span {
+  display: block;
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.analytics-page__insight-chip strong {
+  display: block;
+  margin-top: 0.4rem;
+  color: #fff;
+  font-size: clamp(1.15rem, 2.2vw, 1.75rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.analytics-page__insight-chip p {
+  margin: 0.45rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.3;
+}
+
+.analytics-page--battle-station .analytics-page__metric-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.analytics-page--battle-station .analytics-page__tabs {
+  top: 0.5rem;
+}
+
+.analytics-page--battle-station .analytics-page__segment-pill i {
+  background: linear-gradient(90deg, var(--team-a), var(--team-b));
+}
+
+@media (max-width: 1180px) {
+  .analytics-page--battle-station .analytics-page__hero-body,
+  .analytics-page--battle-station .analytics-page__controls {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page--battle-station .analytics-page__hero-battle {
+    grid-column: 1 / -1;
+  }
+
+  .analytics-page--battle-station .analytics-page__instrument-grid,
+  .analytics-page--battle-station .analytics-page__metric-grid,
+  .analytics-page__insight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-page--battle-station .analytics-page__instrument:first-child,
+  .analytics-page--battle-station .analytics-page__instrument:last-child {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .analytics-page--battle-station .analytics-page__hero,
+  .analytics-page--battle-station .analytics-page__controls,
+  .analytics-page--battle-station .analytics-page__results {
+    width: min(100% - 1rem, 1240px);
+  }
+
+  .analytics-page--battle-station .analytics-page__hero {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .analytics-page--battle-station .analytics-page__title {
+    font-size: clamp(3rem, 15vw, 4.4rem);
+  }
+
+  .analytics-page--battle-station .analytics-page__hero-battle,
+  .analytics-page--battle-station .analytics-page__hero-rail,
+  .analytics-page--battle-station .analytics-page__driver-strip,
+  .analytics-page__map-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page--battle-station .analytics-page__hero-driver,
+  .analytics-page--battle-station .analytics-page__hero-edge {
+    min-height: 7rem;
+    padding: 0.85rem;
+  }
+
+  .analytics-page--battle-station .analytics-page__hero-driver strong,
+  .analytics-page--battle-station .analytics-page__hero-edge strong {
+    font-size: clamp(3rem, 17vw, 4.3rem);
+  }
+
+  .analytics-page--battle-station .analytics-page__hero-edge b {
+    font-size: clamp(1.35rem, 8vw, 2.2rem);
+  }
+
+  .analytics-track-map,
+  .analytics-track-map__svg {
+    min-height: 13rem;
+  }
+
+  .analytics-page__dominance-legend,
+  .analytics-page__dominance-row {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page--battle-station .analytics-page__instrument-grid,
+  .analytics-page--battle-station .analytics-page__metric-grid,
+  .analytics-page__insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page--battle-station .analytics-page__instrument {
+    min-height: 6.4rem;
+  }
+}
+
+/* Analytics mode-based telemetry workspace */
+.analytics-page--battle-station .analytics-page__tabs--command {
+  position: sticky;
+  top: 0.45rem;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.35rem;
+  padding: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--team-a) 10%, transparent), transparent 50%, color-mix(in srgb, var(--team-b) 9%, transparent)),
+    rgba(4, 7, 11, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+.analytics-page--battle-station .analytics-page__tabs--command .analytics-page__tab {
+  min-height: 4.25rem;
+  display: grid;
+  place-content: center;
+  gap: 0.24rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.analytics-page--battle-station .analytics-page__tabs--command .analytics-page__tab span {
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.analytics-page--battle-station .analytics-page__tabs--command .analytics-page__tab strong {
+  color: #fff;
+  font-size: clamp(0.92rem, 1.4vw, 1.25rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.analytics-workspace {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 16% 22%, color-mix(in srgb, var(--team-a) 14%, transparent), transparent 18rem),
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--team-b) 12%, transparent), transparent 18rem),
+    rgba(3, 6, 10, 0.84);
+}
+
+.analytics-workspace--overview .analytics-page__dominance-map {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.analytics-workspace--overview .analytics-track-map {
+  min-height: clamp(20rem, 44vw, 34rem);
+}
+
+.analytics-workspace__mast {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.analytics-workspace__mast span,
+.analytics-mode-graph__header span,
+.analytics-workspace__side-head span {
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.analytics-workspace__mast strong {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.analytics-workspace__mast em {
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
+.analytics-workspace__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(17rem, 0.72fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.analytics-mode-graph {
+  min-height: 26rem;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3rem),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3rem),
+    rgba(1, 4, 8, 0.72);
+}
+
+.analytics-mode-graph--braking {
+  min-height: 34rem;
+}
+
+.analytics-mode-graph--throttle {
+  background:
+    radial-gradient(circle at 70% 24%, rgba(64, 255, 157, 0.11), transparent 18rem),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3rem),
+    rgba(1, 4, 8, 0.72);
+}
+
+.analytics-mode-graph--straights {
+  background:
+    radial-gradient(circle at 78% 18%, color-mix(in srgb, var(--team-b) 18%, transparent), transparent 20rem),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3rem),
+    rgba(1, 4, 8, 0.72);
+}
+
+.analytics-mode-graph--energy-proxy {
+  border-color: rgba(120, 176, 255, 0.18);
+}
+
+.analytics-mode-graph__header {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.analytics-mode-graph__header strong {
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 2.4rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.analytics-mode-graph__header em {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-style: normal;
+}
+
+.analytics-mode-graph__svg {
+  width: 100%;
+  min-height: 17rem;
+}
+
+.analytics-mode-graph--braking .analytics-mode-graph__svg {
+  min-height: 25rem;
+}
+
+.analytics-mode-graph__grid-line {
+  stroke: rgba(255, 255, 255, 0.07);
+  stroke-width: 1;
+}
+
+.analytics-mode-graph__trace-a,
+.analytics-mode-graph__trace-b {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.analytics-mode-graph__trace-a {
+  stroke: var(--team-a);
+  color: var(--team-a);
+}
+
+.analytics-mode-graph__trace-b {
+  stroke: var(--team-b);
+  color: var(--team-b);
+}
+
+.analytics-mode-graph--throttle .analytics-mode-graph__trace-a,
+.analytics-mode-graph--throttle .analytics-mode-graph__trace-b {
+  stroke-dasharray: 7 3;
+}
+
+.analytics-mode-graph--straights .analytics-mode-graph__trace-a,
+.analytics-mode-graph--straights .analytics-mode-graph__trace-b {
+  stroke-width: 3.4;
+}
+
+.analytics-mode-graph--energy-proxy .analytics-mode-graph__trace-a,
+.analytics-mode-graph--energy-proxy .analytics-mode-graph__trace-b {
+  stroke-dasharray: 12 5;
+}
+
+.analytics-mode-graph__trace text {
+  fill: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.1em;
+}
+
+.analytics-mode-graph__trace--selected path {
+  stroke-width: 4.2;
+}
+
+.analytics-mode-graph__node-a {
+  fill: var(--team-a);
+}
+
+.analytics-mode-graph__node-b {
+  fill: var(--team-b);
+}
+
+.analytics-mode-graph__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.analytics-mode-graph__legend i {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.32rem;
+  vertical-align: -0.08rem;
+}
+
+.analytics-real-trace {
+  position: relative;
+  overflow: hidden;
+  min-height: 25rem;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--team-a) 18%, transparent), transparent 34%),
+    radial-gradient(circle at 84% 8%, color-mix(in srgb, var(--team-b) 14%, transparent), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.048), rgba(255, 255, 255, 0.012)),
+    rgba(3, 6, 10, 0.88);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 26px 80px rgba(0, 0, 0, 0.22);
+}
+
+.analytics-real-trace::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transform: translateX(-100%);
+  animation: analyticsTelemetrySweep 6.4s ease-in-out infinite;
+}
+
+.analytics-real-trace__header {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.05rem 0;
+}
+
+.analytics-real-trace__header span,
+.analytics-real-trace__header em,
+.analytics-real-trace__footer {
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.analytics-real-trace__header strong {
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 2.45rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.analytics-real-trace__header em {
+  font-style: normal;
+}
+
+.analytics-real-trace__svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 0.45rem;
+}
+
+.analytics-real-trace__backdrop {
+  fill: rgba(0, 0, 0, 0.1);
+}
+
+.analytics-real-trace__grid {
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1;
+}
+
+.analytics-real-trace__focus-region {
+  fill: transparent;
+  stroke: transparent;
+  cursor: crosshair;
+  outline: none;
+  transition: fill 160ms ease, stroke 160ms ease;
+}
+
+.analytics-real-trace__focus-region:hover,
+.analytics-real-trace__focus-region:focus-visible,
+.analytics-real-trace__focus-region.analytics-sync-active,
+.analytics-real-trace__focus-region--selected {
+  fill: rgba(255, 255, 255, 0.08);
+  stroke: rgba(255, 255, 255, 0.24);
+  stroke-width: 1;
+}
+
+.analytics-real-trace__axis {
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 1;
+}
+
+.analytics-real-trace__brake-zone {
+  fill: rgba(225, 6, 0, 0.11);
+}
+
+.analytics-real-trace__drs-zone {
+  fill: rgba(69, 220, 146, 0.1);
+}
+
+.analytics-real-trace__line-a,
+.analytics-real-trace__line-b {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+  filter: drop-shadow(0 0 7px color-mix(in srgb, currentColor 42%, transparent));
+}
+
+.analytics-real-trace__line-a {
+  color: var(--team-a);
+  stroke: var(--team-a);
+}
+
+.analytics-real-trace__line-b {
+  color: var(--team-b);
+  stroke: var(--team-b);
+}
+
+.analytics-real-trace__label,
+.analytics-real-trace__unit {
+  fill: rgba(235, 238, 245, 0.72);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.analytics-real-trace__unit {
+  fill: rgba(235, 238, 245, 0.48);
+  text-anchor: end;
+}
+
+.analytics-real-trace__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.72rem;
+  align-items: center;
+  padding: 0 1.05rem 1rem;
+  line-height: 1.35;
+}
+
+.analytics-real-trace__footer span {
+  display: inline-flex;
+  gap: 0.38rem;
+  align-items: center;
+}
+
+.analytics-sync-scope {
+  min-width: 0;
+}
+
+.analytics-sync-rhythm {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3.6rem, 1fr));
+  gap: 0.22rem;
+  padding: 0 1.05rem 1rem;
+}
+
+.analytics-sync-rhythm__cell {
+  min-width: 0;
+  padding: 0.5rem 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  text-decoration: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012)),
+    rgba(255, 255, 255, 0.025);
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.analytics-sync-rhythm__cell span,
+.analytics-sync-rhythm__cell strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.analytics-sync-rhythm__cell strong {
+  margin-top: 0.12rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.analytics-sync-rhythm__cell:hover,
+.analytics-sync-rhythm__cell:focus-visible,
+.analytics-sync-rhythm__cell.analytics-sync-active,
+.analytics-sync-rhythm__cell--selected {
+  transform: translateY(-1px);
+  border-color: rgba(225, 6, 0, 0.5);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--team-a) 18%, transparent), color-mix(in srgb, var(--team-b) 14%, transparent)),
+    rgba(255, 255, 255, 0.045);
+  color: #fff;
+}
+
+.analytics-track-map__marker,
+.analytics-page__dominance-row,
+.analytics-chart__row,
+.analytics-page__segment-pill {
+  transition: border-color 160ms ease, box-shadow 160ms ease, opacity 160ms ease, transform 160ms ease;
+}
+
+.analytics-track-map__marker {
+  outline: none;
+}
+
+.analytics-track-map__marker.analytics-sync-active circle,
+.analytics-track-map__marker:focus-visible circle,
+.analytics-track-map__marker:hover circle {
+  stroke: #fff;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.55));
+}
+
+.analytics-page__dominance-row.analytics-sync-active,
+.analytics-page__dominance-row:focus-visible,
+.analytics-page__segment-pill.analytics-sync-active,
+.analytics-chart__row.analytics-sync-active {
+  transform: translateX(2px);
+  border-color: rgba(225, 6, 0, 0.48);
+  box-shadow: inset 0 0 0 1px rgba(225, 6, 0, 0.16), 0 0 26px rgba(225, 6, 0, 0.12);
+}
+
+.analytics-real-trace--braking {
+  border-color: rgba(225, 6, 0, 0.26);
+}
+
+.analytics-real-trace--throttle,
+.analytics-real-trace--segments {
+  border-color: rgba(69, 220, 146, 0.18);
+}
+
+.analytics-real-trace--straights {
+  border-color: rgba(74, 144, 255, 0.22);
+}
+
+.analytics-real-trace--energy-proxy {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.analytics-mode-graph--empty {
+  place-content: center;
+  min-height: 20rem;
+}
+
+.analytics-mode-graph--empty span,
+.analytics-mode-graph--empty p {
+  color: var(--text-muted);
+}
+
+.analytics-mode-graph--empty strong {
+  color: #fff;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  text-transform: uppercase;
+}
+
+.analytics-workspace__side {
+  min-width: 0;
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.analytics-workspace__side-head {
+  display: grid;
+  gap: 0.22rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.analytics-workspace__side-head strong {
+  color: #fff;
+  font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.analytics-page__segment-strip--command {
+  max-height: 27rem;
+  display: grid;
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+.analytics-workspace__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.analytics-workspace > .analytics-chart {
+  border-radius: 18px;
+}
+
+@media (max-width: 980px) {
+  .analytics-page--battle-station .analytics-page__tabs--command {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .analytics-workspace__grid,
+  .analytics-workspace__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-mode-graph,
+  .analytics-mode-graph--braking {
+    min-height: 22rem;
+  }
+
+  .analytics-real-trace {
+    min-height: 20rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .analytics-page--battle-station .analytics-page__tabs--command {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    position: static;
+  }
+
+  .analytics-page--battle-station .analytics-page__tabs--command .analytics-page__tab {
+    min-height: 3.25rem;
+  }
+
+  .analytics-workspace {
+    padding: 0.8rem;
+    border-radius: 18px;
+  }
+
+  .analytics-workspace__mast strong {
+    font-size: clamp(1.85rem, 11vw, 3rem);
+  }
+
+  .analytics-mode-graph,
+  .analytics-mode-graph--braking {
+    min-height: 18rem;
+    padding: 0.72rem;
+  }
+
+  .analytics-mode-graph__svg,
+  .analytics-mode-graph--braking .analytics-mode-graph__svg {
+    min-height: 12rem;
+  }
+
+  .analytics-mode-graph__header em {
+    font-size: 0.76rem;
+  }
+
+  .analytics-real-trace__header {
+    padding: 0.8rem 0.82rem 0;
+  }
+
+  .analytics-real-trace__footer {
+    display: grid;
+    gap: 0.45rem;
+    padding-inline: 0.82rem;
+  }
+
+  .analytics-real-trace__label,
+  .analytics-real-trace__unit {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cookie-consent {
+    max-width: calc(100vw - 1rem);
+  }
+
+  .cookie-consent__actions {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+
+  .cookie-consent__actions .hero__cta,
+  .cookie-consent__actions .cookie-consent__manage {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }

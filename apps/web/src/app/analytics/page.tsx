@@ -1,4 +1,6 @@
 import { AppHeader } from "@/components/ui/app-header";
+import { AnalyticsTrackDominanceMap, type AnalyticsDominanceSegment } from "@/components/analytics/analytics-track-dominance-map";
+import { AnalyticsTelemetrySyncScope } from "@/components/analytics/analytics-telemetry-sync-scope";
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
@@ -16,10 +18,15 @@ import {
   type AnalyticsSegmentHighlight,
   type AnalyticsSessionSummary,
   type AnalyticsStraightHighlight,
+  type AnalyticsTelemetryTraceComparison,
+  type AnalyticsTelemetryTracePoint,
   type AnalyticsThrottleHighlight,
 } from "@/lib/server/analytics-product";
+import { getCircuitTrackDataForRace } from "@/lib/server/circuit-track-data";
 import { formatSeasonRaceLabel, getSeasonState, type SeasonState } from "@/lib/server/season-state";
 import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
+import { getTeamMeta } from "@/lib/ui/team-meta";
+import type { CSSProperties } from "react";
 
 type AnalyticsPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
@@ -65,13 +72,13 @@ type TelemetryInstrument = {
   tone?: "brake" | "throttle" | "speed" | "proxy";
 };
 
-const analyticsTabs: Array<{ id: AnalyticsTab; label: string }> = [
-  { id: "overview", label: "Overview" },
-  { id: "segments", label: "Segments" },
-  { id: "braking", label: "Braking" },
-  { id: "throttle", label: "Throttle" },
-  { id: "straights", label: "Straights" },
-  { id: "energy-proxy", label: "Energy proxy" },
+const analyticsTabs: Array<{ id: AnalyticsTab; label: string; shortLabel: string }> = [
+  { id: "overview", label: "Overview", shortLabel: "Overview" },
+  { id: "segments", label: "Cornering", shortLabel: "Corner" },
+  { id: "braking", label: "Braking", shortLabel: "Brake" },
+  { id: "throttle", label: "Throttle", shortLabel: "Throttle" },
+  { id: "straights", label: "Straights", shortLabel: "Straight" },
+  { id: "energy-proxy", label: "Energy", shortLabel: "Energy" },
 ];
 
 const sessionPriority: Record<string, number> = {
@@ -400,7 +407,12 @@ function ChartRows({ rows, driverA, driverB, selectedSegmentId }: { rows: ChartB
         const magnitude = Math.min(100, Math.abs(value) / maxMagnitude * 100);
         const leader = value > 0 ? driverA : value < 0 ? driverB : "Even";
         return (
-          <div className={`analytics-chart__row${row.segmentId === selectedSegmentId ? " analytics-chart__row--selected" : ""}`} key={row.label}>
+          <div
+            className={`analytics-chart__row${row.segmentId === selectedSegmentId ? " analytics-chart__row--selected" : ""}`}
+            key={row.label}
+            data-sync-id={row.segmentId}
+            tabIndex={0}
+          >
             <div className="analytics-chart__meta">
               <strong>{row.label}</strong>
               <span>{row.segmentId === selectedSegmentId ? "Selected - " : ""}{compactSignalLabel(row.confidence)}</span>
@@ -419,6 +431,354 @@ function ChartRows({ rows, driverA, driverB, selectedSegmentId }: { rows: ChartB
           </div>
         );
       })}
+    </div>
+  );
+}
+
+function modeCopy(activeTab: AnalyticsTab) {
+  if (activeTab === "braking") {
+    return {
+      eyebrow: "Braking telemetry",
+      title: "Brake zone analysis.",
+      focus: "Late-brake signal",
+      note: "Summary traces from braking product views.",
+    };
+  }
+  if (activeTab === "throttle") {
+    return {
+      eyebrow: "Throttle telemetry",
+      title: "Exit traction analysis.",
+      focus: "Pickup and modulation",
+      note: "Throttle pickup and traction-exit summaries.",
+    };
+  }
+  if (activeTab === "straights") {
+    return {
+      eyebrow: "Straight-line telemetry",
+      title: "Acceleration corridor.",
+      focus: "Terminal speed",
+      note: "Straight-speed, DRS, and acceleration summaries.",
+    };
+  }
+  if (activeTab === "energy-proxy") {
+    return {
+      eyebrow: "Energy deployment proxy",
+      title: "Proxy deployment phases.",
+      focus: "Speed-shape proxy",
+      note: "Proxy only; not direct energy data.",
+    };
+  }
+  if (activeTab === "segments") {
+    return {
+      eyebrow: "Cornering telemetry",
+      title: "Approximate segment rhythm.",
+      focus: "Entry, apex, exit",
+      note: "Approximate segment speed summaries.",
+    };
+  }
+  return {
+    eyebrow: "Overview",
+    title: "Track dominance read.",
+    focus: "Driver advantage",
+    note: "Real circuit geometry with approximate markers.",
+  };
+}
+
+function tracePath(index: number, value: number, maxMagnitude: number, polarity: "a" | "b") {
+  const base = 44 + index * 28;
+  const sign = polarity === "a" ? -1 : 1;
+  const amp = Math.min(24, Math.max(5, Math.abs(value) / maxMagnitude * 24));
+  const phase = index % 2 === 0 ? 1 : -1;
+  return [
+    `M 16 ${base}`,
+    `C 58 ${base + sign * amp * 0.3} 88 ${base + phase * amp} 128 ${base + sign * amp}`,
+    `S 218 ${base - phase * amp * 0.55} 278 ${base + sign * amp * 0.45}`,
+    `S 344 ${base + phase * amp * 0.35} 384 ${base}`,
+  ].join(" ");
+}
+
+function traceValue(point: AnalyticsTelemetryTracePoint, channel: "speed" | "rpm" | "gear" | "throttle" | "brake" | "drs" | "energyProxy") {
+  return point[channel];
+}
+
+function channelDomain(
+  traces: AnalyticsTelemetryTraceComparison,
+  channel: "speed" | "rpm" | "gear" | "throttle" | "brake" | "drs" | "energyProxy",
+) {
+  if (channel === "rpm") return { min: 0, max: 13000 };
+  if (channel === "gear") return { min: 0, max: 8 };
+  if (channel === "throttle" || channel === "brake") return { min: 0, max: 100 };
+  if (channel === "drs" || channel === "energyProxy") return { min: 0, max: 1 };
+  const values = [traces.driverA, traces.driverB]
+    .flatMap((trace) => trace?.points.map((point) => traceValue(point, channel)).filter((value): value is number => typeof value === "number") ?? []);
+  const min = Math.min(...values, 80);
+  const max = Math.max(...values, 330);
+  return max - min < 10 ? { min: Math.max(0, min - 20), max: max + 20 } : { min, max };
+}
+
+function channelPath(
+  points: AnalyticsTelemetryTracePoint[],
+  channel: "speed" | "rpm" | "gear" | "throttle" | "brake" | "drs" | "energyProxy",
+  y: number,
+  height: number,
+  domain: { min: number; max: number },
+) {
+  const width = 468;
+  const xOffset = 34;
+  const range = Math.max(0.001, domain.max - domain.min);
+  return points.map((point, index) => {
+    const value = traceValue(point, channel) ?? domain.min;
+    const x = xOffset + point.x * width;
+    const yPoint = y + height - ((value - domain.min) / range) * height;
+    return `${index === 0 ? "M" : "L"} ${x.toFixed(2)} ${Math.max(y, Math.min(y + height, yPoint)).toFixed(2)}`;
+  }).join(" ");
+}
+
+function traceChannels(activeTab: AnalyticsTab): Array<{
+  key: "speed" | "rpm" | "gear" | "throttle" | "brake" | "drs" | "energyProxy";
+  label: string;
+  unit: string;
+}> {
+  if (activeTab === "braking") {
+    return [
+      { key: "speed", label: "Speed", unit: "kph" },
+      { key: "brake", label: "Brake", unit: "%" },
+      { key: "throttle", label: "Throttle", unit: "%" },
+      { key: "gear", label: "Gear", unit: "" },
+    ];
+  }
+  if (activeTab === "throttle" || activeTab === "segments") {
+    return [
+      { key: "speed", label: "Speed", unit: "kph" },
+      { key: "throttle", label: "Throttle", unit: "%" },
+      { key: "brake", label: "Brake", unit: "%" },
+      { key: "gear", label: "Gear", unit: "" },
+    ];
+  }
+  if (activeTab === "straights") {
+    return [
+      { key: "speed", label: "Speed", unit: "kph" },
+      { key: "drs", label: "DRS", unit: "" },
+      { key: "throttle", label: "Throttle", unit: "%" },
+      { key: "gear", label: "Gear", unit: "" },
+    ];
+  }
+  if (activeTab === "energy-proxy") {
+    return [
+      { key: "speed", label: "Speed", unit: "kph" },
+      { key: "energyProxy", label: "Energy proxy", unit: "" },
+      { key: "throttle", label: "Throttle", unit: "%" },
+      { key: "drs", label: "DRS", unit: "" },
+    ];
+  }
+  return [
+    { key: "speed", label: "Speed", unit: "kph" },
+    { key: "throttle", label: "Throttle", unit: "%" },
+    { key: "brake", label: "Brake", unit: "%" },
+  ];
+}
+
+function RealTelemetryTraceStack({
+  traces,
+  activeTab,
+  driverA,
+  driverB,
+  focusRegions,
+  selectedSegmentId,
+}: {
+  traces: AnalyticsTelemetryTraceComparison;
+  activeTab: AnalyticsTab;
+  driverA: string;
+  driverB: string;
+  focusRegions: SegmentOption[];
+  selectedSegmentId: string | null;
+}) {
+  if (!traces.available || !traces.driverA || !traces.driverB) {
+    return null;
+  }
+
+  const mode = modeCopy(activeTab);
+  const channels = traceChannels(activeTab);
+  const laneHeight = 54;
+  const laneGap = 12;
+  const top = 58;
+  const svgHeight = top + channels.length * laneHeight + (channels.length - 1) * laneGap + 34;
+  const brakeSpans = traces.driverA.spans.braking.length > 0 ? traces.driverA.spans.braking : traces.driverB.spans.braking;
+  const drsSpans = traces.driverA.spans.drs.length > 0 ? traces.driverA.spans.drs : traces.driverB.spans.drs;
+  const visibleRegions = focusRegions.slice(0, 10);
+
+  return (
+    <div className={`analytics-real-trace analytics-real-trace--${activeTab}`} aria-label={`${mode.title} representative telemetry traces`}>
+      <div className="analytics-real-trace__header">
+        <span>Representative telemetry</span>
+        <strong>{mode.focus}</strong>
+        <em>{traces.qualityTier}</em>
+      </div>
+      <svg viewBox={`0 0 540 ${svgHeight}`} className="analytics-real-trace__svg" role="img" aria-label={`${driverA} and ${driverB} representative telemetry overlay`}>
+        <rect x="0" y="0" width="540" height={svgHeight} className="analytics-real-trace__backdrop" />
+        {[0, 0.25, 0.5, 0.75, 1].map((x) => (
+          <line key={x} x1={34 + x * 468} x2={34 + x * 468} y1="44" y2={svgHeight - 22} className="analytics-real-trace__grid" />
+        ))}
+        {visibleRegions.map((region, index) => {
+          const start = index / Math.max(1, visibleRegions.length);
+          const end = (index + 1) / Math.max(1, visibleRegions.length);
+          return (
+            <rect
+              key={region.segmentId}
+              x={34 + start * 468}
+              y="44"
+              width={Math.max(4, (end - start) * 468)}
+              height={svgHeight - 66}
+              className={`analytics-real-trace__focus-region${region.segmentId === selectedSegmentId ? " analytics-real-trace__focus-region--selected" : ""}`}
+              data-sync-id={region.segmentId}
+              tabIndex={0}
+              aria-label={`${region.label}, approximate telemetry region`}
+            />
+          );
+        })}
+        {brakeSpans.map((span, index) => (
+          <rect
+            key={`brake-${index}`}
+            x={34 + span.start * 468}
+            y="44"
+            width={Math.max(2, (span.end - span.start) * 468)}
+            height={svgHeight - 66}
+            className="analytics-real-trace__brake-zone"
+          />
+        ))}
+        {activeTab === "straights" || activeTab === "energy-proxy" ? drsSpans.map((span, index) => (
+          <rect
+            key={`drs-${index}`}
+            x={34 + span.start * 468}
+            y="44"
+            width={Math.max(2, (span.end - span.start) * 468)}
+            height={svgHeight - 66}
+            className="analytics-real-trace__drs-zone"
+          />
+        )) : null}
+        {channels.map((channel, index) => {
+          const y = top + index * (laneHeight + laneGap);
+          const domain = channelDomain(traces, channel.key);
+          return (
+            <g key={channel.key}>
+              <line x1="34" x2="502" y1={y + laneHeight} y2={y + laneHeight} className="analytics-real-trace__axis" />
+              <text x="16" y={y + 20} className="analytics-real-trace__label">{channel.label}</text>
+              <text x="524" y={y + 20} className="analytics-real-trace__unit">{channel.unit}</text>
+              <path d={channelPath(traces.driverA!.points, channel.key, y, laneHeight, domain)} className="analytics-real-trace__line-a" />
+              <path d={channelPath(traces.driverB!.points, channel.key, y, laneHeight, domain)} className="analytics-real-trace__line-b" />
+            </g>
+          );
+        })}
+      </svg>
+      <div className="analytics-real-trace__footer">
+        <span><i className="analytics-page__legend-a" />{driverA} lap {traces.driverA.lapNumber ?? "n/a"}</span>
+        <span><i className="analytics-page__legend-b" />{driverB} lap {traces.driverB.lapNumber ?? "n/a"}</span>
+        <span>{traces.note}</span>
+      </div>
+      {visibleRegions.length > 0 ? (
+        <div className="analytics-sync-rhythm" aria-label="Approximate telemetry rhythm rail">
+          {visibleRegions.map((region, index) => (
+            <a
+              key={region.segmentId}
+              href={`#${region.segmentId}`}
+              className={`analytics-sync-rhythm__cell${region.segmentId === selectedSegmentId ? " analytics-sync-rhythm__cell--selected" : ""}`}
+              data-sync-id={region.segmentId}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{region.kind}</strong>
+            </a>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function TelemetryTraceStack({
+  rows,
+  activeTab,
+  driverA,
+  driverB,
+  selectedSegmentId,
+  telemetryTraces,
+  focusRegions,
+}: {
+  rows: ChartBar[];
+  activeTab: AnalyticsTab;
+  driverA: string;
+  driverB: string;
+  selectedSegmentId: string | null;
+  telemetryTraces: AnalyticsTelemetryTraceComparison;
+  focusRegions: SegmentOption[];
+}) {
+  const realTrace = (
+    <RealTelemetryTraceStack
+      traces={telemetryTraces}
+      activeTab={activeTab}
+      driverA={driverA}
+      driverB={driverB}
+      focusRegions={focusRegions}
+      selectedSegmentId={selectedSegmentId}
+    />
+  );
+  if (realTrace.props.traces.available) {
+    return realTrace;
+  }
+
+  if (rows.length === 0) {
+    return (
+      <div className="analytics-mode-graph analytics-mode-graph--empty">
+        <span>No telemetry product rows</span>
+        <strong>{modeCopy(activeTab).title}</strong>
+        <p>Prepared rows are unavailable for this pair.</p>
+      </div>
+    );
+  }
+
+  const visibleRows = rows.slice(0, activeTab === "braking" ? 8 : 7);
+  const maxMagnitude = Math.max(1, ...visibleRows.map((row) => Math.abs(row.value ?? 0)));
+  const mode = modeCopy(activeTab);
+
+  return (
+    <div className={`analytics-mode-graph analytics-mode-graph--${activeTab}`} aria-label={`${mode.title} ${driverA} versus ${driverB}`}>
+      <div className="analytics-mode-graph__header">
+        <span>{mode.eyebrow}</span>
+        <strong>{mode.focus}</strong>
+        <em>{mode.note}</em>
+      </div>
+      <svg viewBox="0 0 400 290" className="analytics-mode-graph__svg" role="img" aria-label={`${mode.focus} summary traces`}>
+        <defs>
+          <linearGradient id={`trace-a-${activeTab}`} x1="0" x2="1">
+            <stop offset="0%" stopColor="var(--team-a)" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="var(--team-a-secondary)" />
+          </linearGradient>
+          <linearGradient id={`trace-b-${activeTab}`} x1="0" x2="1">
+            <stop offset="0%" stopColor="var(--team-b)" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="var(--team-b-secondary)" />
+          </linearGradient>
+        </defs>
+        {Array.from({ length: 8 }).map((_, index) => (
+          <line key={`grid-${index}`} x1={16 + index * 52} x2={16 + index * 52} y1="28" y2="260" className="analytics-mode-graph__grid-line" />
+        ))}
+        {visibleRows.map((row, index) => {
+          const value = row.value ?? 0;
+          const leader = value > 0 ? driverA : value < 0 ? driverB : "EVEN";
+          const selected = row.segmentId === selectedSegmentId;
+          return (
+            <g key={row.segmentId} className={selected ? "analytics-mode-graph__trace analytics-mode-graph__trace--selected" : "analytics-mode-graph__trace"}>
+              <path d={tracePath(index, value || 0.2, maxMagnitude, "b")} className="analytics-mode-graph__trace-b" />
+              <path d={tracePath(index, -value || -0.2, maxMagnitude, "a")} className="analytics-mode-graph__trace-a" />
+              <circle cx={36 + index * 38} cy={44 + index * 28} r={selected ? 5 : 3} className={value >= 0 ? "analytics-mode-graph__node-a" : "analytics-mode-graph__node-b"} />
+              <text x="388" y={48 + index * 28} textAnchor="end">{leader}</text>
+            </g>
+          );
+        })}
+      </svg>
+      <div className="analytics-mode-graph__legend">
+        <span><i className="analytics-page__legend-a" />{driverA}</span>
+        <span><i className="analytics-page__legend-b" />{driverB}</span>
+        <span>Approximate segment summaries</span>
+      </div>
     </div>
   );
 }
@@ -571,6 +931,211 @@ function activeChartRows(comparison: AnalyticsComparisonPayload, activeTab: Anal
   return [];
 }
 
+function buildTeamStyle(comparison: AnalyticsComparisonPayload | null): CSSProperties {
+  const teamA = getTeamMeta(normalizeTeamId(comparison?.overview.driverATeam));
+  const teamB = getTeamMeta(normalizeTeamId(comparison?.overview.driverBTeam));
+  return {
+    "--team-a": teamA.primary,
+    "--team-a-secondary": teamA.secondary,
+    "--team-b": teamB.primary,
+    "--team-b-secondary": teamB.secondary,
+  } as CSSProperties;
+}
+
+function buildDominanceSegments(comparison: AnalyticsComparisonPayload): AnalyticsDominanceSegment[] {
+  const driverA = comparison.overview.driverA;
+  const driverB = comparison.overview.driverB;
+  const segmentRows = comparison.segmentHighlights.map((row) => {
+    const value = row.exitSpeedDeltaKph ?? row.apexSpeedDeltaKph ?? row.entrySpeedDeltaKph ?? 0;
+    return {
+      segmentId: row.segmentId,
+      label: segmentShortLabel(row.segmentId, row.segmentKind),
+      kind: honestSegmentKind(row.segmentKind),
+      leader: value > 0 ? driverA : value < 0 ? driverB : "Even",
+      value,
+      confidence: row.confidence ?? row.segmentConfidence,
+    };
+  });
+
+  if (segmentRows.length > 0) {
+    return segmentRows.slice(0, 14);
+  }
+
+  return comparison.straightHighlights.slice(0, 10).map((row) => {
+    const value = row.terminalSpeedDeltaKph ?? 0;
+    return {
+      segmentId: row.segmentId,
+      label: segmentShortLabel(row.segmentId, "straight"),
+      kind: "straight",
+      leader: value > 0 ? driverA : value < 0 ? driverB : "Even",
+      value,
+      confidence: row.confidence,
+    };
+  });
+}
+
+function buildEngineerInsights(comparison: AnalyticsComparisonPayload, dominantEdge: DominantEdge | null): MetricCard[] {
+  const { overview } = comparison;
+  return [
+    {
+      label: "Strongest area",
+      value: dominantEdge?.label ?? "Even",
+      note: dominantEdge ? `${dominantEdge.driver} ${dominantEdge.value}` : "No single telemetry edge dominates",
+      tone: "strong",
+    },
+    {
+      label: "Overtaking edge",
+      value: edgeLabel(overview.avgStraightDeltaKph, overview.driverA, overview.driverB),
+      note: `${formatCompactSigned(overview.avgStraightDeltaKph, " kph")} straight-line delta`,
+    },
+    {
+      label: "Traction edge",
+      value: edgeLabel(overview.tractionAdvantageScore, overview.driverA, overview.driverB),
+      note: `${formatCompactSigned(overview.tractionAdvantageScore)} exit score`,
+    },
+    {
+      label: "Braking read",
+      value: confidenceTier(overview.confidence, comparison.session.telemetryQualityMean),
+      note: `${edgeLabel(overview.brakingAdvantageScore, overview.driverA, overview.driverB)} leads braking signal`,
+    },
+    {
+      label: "Energy deployment proxy",
+      value: edgeLabel(overview.energyDeploymentProxyDelta, overview.driverA, overview.driverB),
+      note: "Proxy-only speed-shape signal",
+      tone: "proxy",
+    },
+  ];
+}
+
+function ModeWorkspace({
+  activeTab,
+  comparison,
+  selectedSession,
+  selectedDriverA,
+  selectedDriverB,
+  selectedSegment,
+  selectedSegmentCards,
+  chartRows,
+  segmentOptions,
+  dominanceSegments,
+  circuitTrackData,
+  dominantEdge,
+}: {
+  activeTab: AnalyticsTab;
+  comparison: AnalyticsComparisonPayload;
+  selectedSession: AnalyticsSessionSummary;
+  selectedDriverA: string | null;
+  selectedDriverB: string | null;
+  selectedSegment: SegmentOption | null;
+  selectedSegmentCards: MetricCard[];
+  chartRows: ChartBar[];
+  segmentOptions: SegmentOption[];
+  dominanceSegments: AnalyticsDominanceSegment[];
+  circuitTrackData: Awaited<ReturnType<typeof getCircuitTrackDataForRace>>;
+  dominantEdge: DominantEdge | null;
+}) {
+  const mode = modeCopy(activeTab);
+  const driverA = comparison.overview.driverA;
+  const driverB = comparison.overview.driverB;
+
+  if (activeTab === "overview") {
+    return (
+      <AnalyticsTelemetrySyncScope initialFocusId={dominanceSegments[0]?.segmentId ?? null} label="Overview synchronized telemetry focus">
+        <section className="analytics-workspace analytics-workspace--overview" aria-label="Overview telemetry workspace">
+          <div className="analytics-workspace__mast">
+            <span>{mode.eyebrow}</span>
+            <strong>{mode.title}</strong>
+            <em>{dominantEdge ? `${dominantEdge.driver} ${dominantEdge.value}` : "No single edge"}</em>
+          </div>
+          <AnalyticsTrackDominanceMap
+            trackData={circuitTrackData}
+            segments={dominanceSegments}
+            driverA={driverA}
+            driverB={driverB}
+            title={selectedSession.event}
+          />
+        </section>
+      </AnalyticsTelemetrySyncScope>
+    );
+  }
+
+  return (
+    <AnalyticsTelemetrySyncScope initialFocusId={selectedSegment?.segmentId ?? segmentOptions[0]?.segmentId ?? null} label={`${mode.title} synchronized telemetry focus`}>
+      <section className={`analytics-workspace analytics-workspace--${activeTab}`} aria-label={`${mode.title} telemetry workspace`}>
+        <div className="analytics-workspace__mast">
+          <span>{mode.eyebrow}</span>
+          <strong>{mode.title}</strong>
+          <em>{mode.note}</em>
+        </div>
+
+        <div className="analytics-workspace__grid">
+          <TelemetryTraceStack
+            rows={chartRows}
+            activeTab={activeTab}
+            driverA={driverA}
+            driverB={driverB}
+            selectedSegmentId={selectedSegment?.segmentId ?? null}
+            telemetryTraces={comparison.telemetryTraces}
+            focusRegions={segmentOptions}
+          />
+
+          <aside className="analytics-workspace__side" aria-label={`${mode.title} segment controls`}>
+            <div className="analytics-workspace__side-head">
+              <span>Mode control</span>
+              <strong>{selectedSegment?.label ?? "Approximate segment"}</strong>
+            </div>
+            {segmentOptions.length > 0 ? (
+              <div className="analytics-page__segment-strip analytics-page__segment-strip--command" aria-label="Approximate segment selector">
+                {segmentOptions.slice(0, 8).map((segment) => (
+                  <a
+                    key={segment.segmentId}
+                    className={`analytics-page__segment-pill${segment.segmentId === selectedSegment?.segmentId ? " analytics-page__segment-pill--active" : ""}`}
+                    data-sync-id={segment.segmentId}
+                    href={buildHref({
+                      sessionId: selectedSession.id,
+                      driverA: selectedDriverA,
+                      driverB: selectedDriverB,
+                      tab: activeTab,
+                      segmentId: segment.segmentId,
+                    })}
+                  >
+                    <i style={{ width: `${Math.max(12, Math.min(100, (segment.confidence ?? 0.35) * 100))}%` }} aria-hidden="true" />
+                    <strong>{segment.label}</strong>
+                    <span>{segment.kind} - {compactSignalLabel(segment.confidence)}</span>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <div className="analytics-page__empty-chart">
+                <span>No segment selector</span>
+                <p>No prepared rows for this pair.</p>
+              </div>
+            )}
+          </aside>
+        </div>
+
+        {selectedSegmentCards.length > 0 ? (
+          <div className="analytics-workspace__metrics">
+            {selectedSegmentCards.map((card) => (
+              <article key={card.label} className={`analytics-page__selected-segment-card${card.tone ? ` analytics-page__selected-segment-card--${card.tone}` : ""}`}>
+                <span>{card.label}</span>
+                <strong>{card.value}</strong>
+                <p>{card.note}</p>
+              </article>
+            ))}
+          </div>
+        ) : null}
+
+        <ChartRows rows={chartRows} driverA={driverA} driverB={driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
+
+        {activeTab === "energy-proxy" ? (
+          <p className="analytics-page__proxy-note">Energy deployment proxy only. Telemetry-derived, not direct energy data.</p>
+        ) : null}
+      </section>
+    </AnalyticsTelemetrySyncScope>
+  );
+}
+
 export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps) {
   const params = (await searchParams) ?? {};
   const sessionIdParam = firstParam(params.sessionId);
@@ -578,6 +1143,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
   const driverBParam = firstParam(params.driverB);
   const segmentIdParam = firstParam(params.segmentId);
   const activeTab = normalizeTab(params.tab);
+  const comparisonMode: AnalyticsCompareMode = activeTab === "overview" ? "all" : activeTab;
   const [seasonState, sessionResult] = await Promise.all([
     getSeasonState(),
     withServerFallback(
@@ -606,10 +1172,10 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
 
   const comparisonResult = selectedSession && selectedDriverA && selectedDriverB
     ? await withServerFallback(
-      () => getAnalyticsComparisonResult(selectedSession.id, selectedDriverA, selectedDriverB, activeTab),
+      () => getAnalyticsComparisonResult(selectedSession.id, selectedDriverA, selectedDriverB, comparisonMode),
       { mode: "unavailable" as const, data: null, meta: { ...unavailableRuntime, eventId: selectedSession.id } },
       "page:analytics:comparison",
-      { sessionId: selectedSession.id, driverA: selectedDriverA, driverB: selectedDriverB },
+      { sessionId: selectedSession.id, driverA: selectedDriverA, driverB: selectedDriverB, mode: comparisonMode },
     )
     : null;
   const comparison = comparisonResult?.mode === "unavailable" ? null : comparisonResult?.data ?? null;
@@ -619,8 +1185,11 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
   const selectedSegment = segmentOptions.find((segment) => segment.segmentId === segmentIdParam) ?? segmentOptions[0] ?? null;
   const selectedSegmentCards = comparison ? selectedSegmentMetrics(comparison, activeTab, selectedSegment?.segmentId ?? null) : [];
   const chartRows = comparison ? activeChartRows(comparison, activeTab) : [];
-  const selectedTabLabel = analyticsTabs.find((tab) => tab.id === activeTab)?.label ?? "Overview";
   const dominantEdge = comparison ? buildDominantEdge(comparison) : null;
+  const dominanceSegments = comparison ? buildDominanceSegments(comparison) : [];
+  const engineerInsights = comparison ? buildEngineerInsights(comparison, dominantEdge) : [];
+  const teamStyle = buildTeamStyle(comparison);
+  const circuitTrackData = selectedSession ? await getCircuitTrackDataForRace(selectedSession.season, selectedSession.round) : null;
   const confidenceLabel = comparison ? confidenceTier(comparison.overview.confidence, comparison.session.telemetryQualityMean) : "Incomplete session confidence";
   const telemetryLabel = telemetryQualityTier(selectedSession?.telemetryQualityMean);
   const latestTelemetryLabel = formatSeasonRaceLabel(seasonState?.latest_completed_race_with_analytics);
@@ -628,19 +1197,19 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
     && selectedSession?.round === seasonState?.latest_completed_race_with_analytics?.round;
 
   return (
-    <main className="analytics-page">
+    <main className="analytics-page analytics-page--battle-station" style={teamStyle}>
       <AppHeader title="Analytics" actionHref="/lab" actionLabel="Strategy Lab" compact />
       <header className="analytics-page__hero">
         <div className="analytics-page__hero-body">
           <div className="analytics-page__hero-copy">
             <p className="strategy-lab-page__eyebrow">Telemetry workstation</p>
-            <h1 className="analytics-page__title">Telemetry battle.</h1>
+            <h1 className="analytics-page__title">Telemetry battle station.</h1>
             <p className="analytics-page__lede">{selectedSession ? `${selectedSession.event} ${selectedSession.session} - telemetry-derived, approximate segment comparison.` : "Telemetry-derived driver comparison."}</p>
           </div>
 
           {comparison && dominantEdge ? (
             <div className="analytics-page__hero-battle" aria-label="Driver battle summary">
-              <div className="analytics-page__hero-driver">
+              <div className="analytics-page__hero-driver analytics-page__hero-driver--a">
                 <span>{comparison.overview.driverATeam ?? "Driver A"}</span>
                 <strong>{comparison.overview.driverA}</strong>
               </div>
@@ -649,7 +1218,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 <strong>{dominantEdge.driver}</strong>
                 <b>{dominantEdge.value}</b>
               </div>
-              <div className="analytics-page__hero-driver analytics-page__hero-driver--right">
+              <div className="analytics-page__hero-driver analytics-page__hero-driver--b analytics-page__hero-driver--right">
                 <span>{comparison.overview.driverBTeam ?? "Driver B"}</span>
                 <strong>{comparison.overview.driverB}</strong>
               </div>
@@ -752,6 +1321,41 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 </article>
               </div>
 
+              <nav className="analytics-page__tabs analytics-page__tabs--command" aria-label="Analytics telemetry systems">
+                {analyticsTabs.map((tab) => (
+                  <a
+                    key={tab.id}
+                    className={`analytics-page__tab${tab.id === activeTab ? " analytics-page__tab--active" : ""}`}
+                    href={buildHref({
+                      sessionId: selectedSession.id,
+                      driverA: selectedDriverA,
+                      driverB: selectedDriverB,
+                      tab: tab.id,
+                      segmentId: null,
+                    })}
+                    aria-current={tab.id === activeTab ? "page" : undefined}
+                  >
+                    <span>{tab.shortLabel}</span>
+                    <strong>{tab.label}</strong>
+                  </a>
+                ))}
+              </nav>
+
+              <ModeWorkspace
+                activeTab={activeTab}
+                comparison={comparison}
+                selectedSession={selectedSession}
+                selectedDriverA={selectedDriverA}
+                selectedDriverB={selectedDriverB}
+                selectedSegment={selectedSegment}
+                selectedSegmentCards={selectedSegmentCards}
+                chartRows={chartRows}
+                segmentOptions={segmentOptions}
+                dominanceSegments={dominanceSegments}
+                circuitTrackData={circuitTrackData}
+                dominantEdge={dominantEdge}
+              />
+
               {dominantEdge ? (
                 <div className={`analytics-page__edge-hero${dominantEdge.tone ? ` analytics-page__edge-hero--${dominantEdge.tone}` : ""}`}>
                   <div>
@@ -791,6 +1395,22 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 ))}
               </div>
 
+              <section className="analytics-page__engineer-insights" aria-label="Race engineer insights">
+                <div className="analytics-page__section-header">
+                  <span>Race engineer insights</span>
+                  <h2>Battle read.</h2>
+                </div>
+                <div className="analytics-page__insight-grid">
+                  {engineerInsights.map((insight) => (
+                    <article key={insight.label} className={`analytics-page__insight-chip${insight.tone ? ` analytics-page__insight-chip--${insight.tone}` : ""}`}>
+                      <span>{insight.label}</span>
+                      <strong>{insight.value}</strong>
+                      <p>{insight.note}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+
               <div className="analytics-page__trust-grid">
                 <article className="analytics-page__trust-card">
                   <span>Track context</span>
@@ -809,128 +1429,6 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                 </article>
               </div>
 
-              <nav className="analytics-page__tabs" aria-label="Analytics comparison modes">
-                {analyticsTabs.map((tab) => (
-                  <a
-                    key={tab.id}
-                    className={`analytics-page__tab${tab.id === activeTab ? " analytics-page__tab--active" : ""}`}
-                    href={buildHref({
-                      sessionId: selectedSession.id,
-                      driverA: selectedDriverA,
-                      driverB: selectedDriverB,
-                      tab: tab.id,
-                      segmentId: null,
-                    })}
-                    aria-current={tab.id === activeTab ? "page" : undefined}
-                  >
-                    {tab.label}
-                  </a>
-                ))}
-              </nav>
-
-              {activeTab !== "overview" ? (
-                <section className="analytics-page__segment-workbench">
-                  <div className="analytics-page__section-header">
-                    <span>{selectedTabLabel} selector</span>
-                    <h2>Approx segment focus.</h2>
-                  </div>
-                  {segmentOptions.length > 0 ? (
-                    <>
-                      <div className="analytics-page__segment-strip" aria-label="Approximate segment selector">
-                        {segmentOptions.map((segment) => (
-                          <a
-                            key={segment.segmentId}
-                            className={`analytics-page__segment-pill${segment.segmentId === selectedSegment?.segmentId ? " analytics-page__segment-pill--active" : ""}`}
-                            href={buildHref({
-                              sessionId: selectedSession.id,
-                              driverA: selectedDriverA,
-                              driverB: selectedDriverB,
-                              tab: activeTab,
-                              segmentId: segment.segmentId,
-                            })}
-                          >
-                            <i style={{ width: `${Math.max(12, Math.min(100, (segment.confidence ?? 0.35) * 100))}%` }} aria-hidden="true" />
-                            <strong>{segment.label}</strong>
-                            <span>{segment.kind} - {compactSignalLabel(segment.confidence)}</span>
-                          </a>
-                        ))}
-                      </div>
-                      {selectedSegment ? (
-                        <div className="analytics-page__selected-segment">
-                          <article className="analytics-page__selected-segment-card">
-                            <span>Selected segment</span>
-                            <strong>{selectedSegment.label}</strong>
-                            <p>{selectedSegment.kind} - {confidenceTier(selectedSegment.confidence)}.</p>
-                          </article>
-                          {selectedSegmentCards.map((card) => (
-                            <article key={card.label} className={`analytics-page__selected-segment-card${card.tone ? ` analytics-page__selected-segment-card--${card.tone}` : ""}`}>
-                              <span>{card.label}</span>
-                              <strong>{card.value}</strong>
-                              <p>{card.note}</p>
-                            </article>
-                          ))}
-                        </div>
-                      ) : null}
-                    </>
-                  ) : (
-                    <div className="analytics-page__empty-chart">
-                      <span>No segment selector</span>
-                      <p>No prepared rows for this pair.</p>
-                    </div>
-                  )}
-                </section>
-              ) : null}
-
-              {activeTab === "segments" ? (
-                <section className="analytics-page__detail-panel">
-                  <div className="analytics-page__section-header">
-                    <span>Segment speed delta</span>
-                    <h2>Speed delta.</h2>
-                  </div>
-                  <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
-                </section>
-              ) : null}
-
-              {activeTab === "braking" ? (
-                <section className="analytics-page__detail-panel">
-                  <div className="analytics-page__section-header">
-                    <span>Braking delta</span>
-                    <h2>Late-brake signal.</h2>
-                  </div>
-                  <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
-                </section>
-              ) : null}
-
-              {activeTab === "throttle" ? (
-                <section className="analytics-page__detail-panel">
-                  <div className="analytics-page__section-header">
-                    <span>Throttle and traction</span>
-                    <h2>Exit signal.</h2>
-                  </div>
-                  <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
-                </section>
-              ) : null}
-
-              {activeTab === "straights" ? (
-                <section className="analytics-page__detail-panel">
-                  <div className="analytics-page__section-header">
-                    <span>Straight-line delta</span>
-                    <h2>Terminal speed.</h2>
-                  </div>
-                  <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
-                </section>
-              ) : null}
-
-              {activeTab === "energy-proxy" ? (
-                <section className="analytics-page__detail-panel analytics-page__detail-panel--proxy">
-                  <div className="analytics-page__section-header">
-                    <span>Energy deployment proxy</span>
-                    <h2>Proxy signal.</h2>
-                  </div>
-                  <ChartRows rows={chartRows} driverA={comparison.overview.driverA} driverB={comparison.overview.driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
-                  <p className="analytics-page__proxy-note">Energy deployment proxy only. Telemetry-derived, not direct energy data.</p>
-                </section>
-              ) : null}
             </section>
           ) : (
             <StatePanel
