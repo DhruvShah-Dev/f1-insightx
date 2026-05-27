@@ -7,10 +7,10 @@ import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-li
 import { isTrustedOrigin } from "@/lib/security/request";
 
 export async function POST(request: Request) {
-  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.profileRead);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.profileWrite);
   if (!rateLimit.ok) {
     return NextResponse.json(
-      { error: "Too many export requests. Try again shortly." },
+      { error: "Too many export requests. Try again later." },
       { status: 429, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) },
     );
   }

@@ -97,33 +97,41 @@ export default async function Home() {
           <div className="section-shell feature-showcase__header">
             <div className="section-meta">Products</div>
             <h2 className="section-title">Telemetry and strategy.</h2>
-              <p className="section-copy">Flagship analysis, simulation, and race-week tools.</p>
+            <p className="section-copy">Four focused surfaces for race intelligence.</p>
           </div>
 
           <div className="module-grid feature-showcase__grid">
             <ModuleLink
-              href="/lab"
+              href="/analytics"
               index="01"
+              state="Live"
+              title="Analytics"
+              summary="Telemetry comparison"
+              visualTeamId="mercedes"
+            />
+            <ModuleLink
+              href="/race-analysis"
+              index="02"
+              state="Live"
+              title="Race Analysis"
+              summary="Post-race intelligence"
+              visualTeamId="ferrari"
+            />
+            <ModuleLink
+              href="/lab"
+              index="03"
               state="Live"
               title="Strategy Lab"
               summary="Scenario simulator"
               visualTeamId="red_bull"
             />
             <ModuleLink
-              href="/fantasy"
-              index="02"
+              href="/predictions"
+              index="04"
               state="Live"
-              title="Fantasy Builder"
-              summary="Lineup optimizer"
+              title="Race Week"
+              summary="Next-race read"
               visualTeamId="mclaren"
-            />
-            <ModuleLink
-              href="/analytics"
-              index="03"
-              state="Live"
-              title="Analytics"
-              summary="Driver comparison"
-              visualTeamId="mercedes"
             />
           </div>
         </section>

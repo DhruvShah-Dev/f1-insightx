@@ -1,0 +1,45 @@
+name: Supabase Heartbeat
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * 0,3"
+
+permissions:
+  contents: read
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HEARTBEAT_URL: ${{ vars.F1_INSIGHTX_HEARTBEAT_URL }}
+    steps:
+      - name: Resolve heartbeat endpoint
+        id: endpoint
+        shell: bash
+        run: |
+          if [ -z "$HEARTBEAT_URL" ]; then
+            echo "Repository variable F1_INSIGHTX_HEARTBEAT_URL is required."
+            echo "Set it to https://<production-domain>/api/health/supabase."
+            exit 1
+          fi
+
+          case "$HEARTBEAT_URL" in
+            http://*|https://*) ;;
+            *)
+              echo "F1_INSIGHTX_HEARTBEAT_URL must be an absolute http(s) URL."
+              exit 1
+              ;;
+          esac
+
+          echo "url=$HEARTBEAT_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Ping Supabase heartbeat
+        shell: bash
+        env:
+          URL: ${{ steps.endpoint.outputs.url }}
+        run: |
+          echo "Pinging Supabase heartbeat endpoint."
+          response="$(curl --fail --show-error --silent --max-time 15 --retry 1 --retry-delay 5 "$URL")"
+          RESPONSE="$response" node -e "const body = JSON.parse(process.env.RESPONSE || '{}'); if (body.ok !== true || body.source !== 'supabase') { console.error('Heartbeat response was not healthy.'); process.exit(1); } console.log('Supabase heartbeat OK at ' + body.timestamp);"

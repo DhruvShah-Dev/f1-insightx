@@ -28,7 +28,7 @@ export default function TermsPage() {
       <section className="workspace-panel legal-page__section">
         <div className="workspace-panel__eyebrow">Use of Service</div>
         <div className="legal-page__copy">
-          <p>F1 InsightX provides motorsport analytics, strategy simulations, fantasy-support tools, and profile features for informational use.</p>
+          <p>F1 InsightX provides motorsport analytics, strategy simulations, race analysis, and profile features for informational use.</p>
           <p>You agree not to abuse the service, bypass rate limits, interfere with normal operation, or use the app for unlawful activity.</p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function TermsPage() {
         <div className="workspace-panel__eyebrow">Analytics Disclaimer</div>
         <div className="legal-page__copy">
           <p>
-            Strategy, prediction, and fantasy outputs are analytical tools, not guarantees. They should not be presented as professional
+            Strategy, prediction, and race-analysis outputs are analytical tools, not guarantees. They should not be presented as professional
             financial, betting, or sporting advice.
           </p>
         </div>

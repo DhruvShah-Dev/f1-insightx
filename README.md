@@ -1,13 +1,13 @@
 # F1 InsightX
 
-F1 InsightX is a production-minded Formula 1 analytics platform built with Next.js, Supabase, and Python data pipelines. It combines race-week context, deterministic strategy simulation, fantasy inputs, and telemetry-derived analytics without using machine learning in the simulation path.
+F1 InsightX is a production-minded Formula 1 analytics platform built with Next.js, Supabase, and Python data pipelines. It combines race-week context, deterministic strategy simulation, post-race analysis, and telemetry-derived analytics without using machine learning in the simulation path.
 
 ## Product Surfaces
 
 - `Race Week`: upcoming and recent race context, schedule state, and race-specific product views.
 - `Strategy Lab`: deterministic lap/stint strategy simulation using tyre degradation, pit loss, weather, traffic, fuel correction, telemetry-derived strategy signals, track archetypes, and confidence scoring.
 - `Analytics`: driver-vs-driver telemetry feature comparisons using precomputed product views and session-scoped indexed shards.
-- `Fantasy Builder`: fantasy-oriented driver and constructor inputs from curated race-week and prediction views.
+- `Race Analysis`: completed-race story, stint, pit strategy, pace evolution, weather, track-status, and position-movement product views.
 - `Account/Profile`: Supabase-backed authentication, profile surfaces, and legal/privacy/cookie pages.
 
 ## Data Architecture
@@ -20,7 +20,8 @@ The web app reads compact product views. It does not read raw FastF1 telemetry a
 4. `data/telemetry_features`: generated telemetry-derived lap, segment, braking, throttle, straight-line, and energy deployment proxy features.
 5. `data/strategy_lab`: Strategy Lab product views and deterministic simulation inputs.
 6. `data/analytics`: generated Analytics product views and indexed session shards.
-7. Supabase: auth/profile and deployable database-backed surfaces where configured.
+7. `data/race_analysis`: generated Race Analysis product views for completed races.
+8. Supabase: auth/profile and deployable database-backed surfaces where configured.
 
 ## Local Setup
 

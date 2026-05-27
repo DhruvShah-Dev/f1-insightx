@@ -330,11 +330,16 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     return null;
   }
 
-  const circuitIds = [overviewRow.circuit_id];
   const latestCompletedRaceId = overviewRow.latest_completed_race_id ?? null;
 
-  const [circuitsResult, driverBoardResult, constructorBoardResult, strategyResult, storylineResult] = await Promise.all([
-    supabase.from("circuits").select("id, name, country").in("id", circuitIds),
+  const [latestRaceResult, driverBoardResult, constructorBoardResult, strategyResult, storylineResult] = await Promise.all([
+    latestCompletedRaceId
+      ? supabase
+          .from("races")
+          .select("id, season, round, race_name, circuit_id, scheduled_at")
+          .eq("id", latestCompletedRaceId)
+          .single<RaceRow>()
+      : Promise.resolve({ data: null, error: null }),
     supabase.from("race_week_driver_board_view").select("driver_id, driver_name, constructor_id, constructor_name, long_run_pace_s, gap_to_long_run_best_s, one_lap_pace_s, gap_to_one_lap_best_s, degradation_s_per_lap, readiness_score, signal_confidence, projected_finish, summary").eq("race_id", overviewRow.race_id).order("readiness_score", { ascending: false }),
     supabase.from("race_week_constructor_board_view").select("constructor_id, constructor_name, long_run_pace_s, one_lap_pace_s, degradation_index, readiness_score, signal_confidence, summary").eq("race_id", overviewRow.race_id).order("readiness_score", { ascending: false }),
     supabase.from("race_week_strategy_view").select("driver_id, constructor_id, recommended_stop_count, preferred_primary_compound, preferred_secondary_compound, pit_window_start_lap, pit_window_end_lap, degradation_risk, strategy_confidence, rationale").eq("race_id", overviewRow.race_id),
@@ -342,7 +347,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
   ]);
 
   if (
-    circuitsResult.error ||
+    (latestCompletedRaceId && latestRaceResult.error) ||
     driverBoardResult.error ||
     constructorBoardResult.error ||
     strategyResult.error ||
@@ -351,21 +356,25 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     throw new Error("Failed to load Race Week data.");
   }
 
+  const latestRaceRow = latestRaceResult.data;
+  const circuitIds = [overviewRow.circuit_id];
+  if (latestRaceRow?.circuit_id) {
+    circuitIds.push(latestRaceRow.circuit_id);
+  }
+
+  const circuitsResult = await supabase
+    .from("circuits")
+    .select("id, name, country")
+    .in("id", circuitIds);
+
+  if (circuitsResult.error) {
+    throw new Error("Failed to load circuit data.");
+  }
+
   const circuitMap = new Map(((circuitsResult.data ?? []) as CircuitRow[]).map((circuit) => [circuit.id, circuit]));
   let latestCompletedRace: RaceWeekCanonicalRaceRef | null = null;
-  if (latestCompletedRaceId) {
-    const latestCompletedRaceResult = await supabase
-      .from("races")
-      .select("id, season, round, race_name, circuit_id, scheduled_at")
-      .eq("id", latestCompletedRaceId)
-      .single<RaceRow>();
-    if (latestCompletedRaceResult.error) {
-      throw new Error("Failed to load latest completed race context.");
-    }
-    const latestRaceRow = latestCompletedRaceResult.data;
-    if (latestRaceRow) {
-      latestCompletedRace = mapRaceRef(latestRaceRow, circuitMap.get(latestRaceRow.circuit_id) ?? null);
-    }
+  if (latestRaceRow) {
+    latestCompletedRace = mapRaceRef(latestRaceRow, circuitMap.get(latestRaceRow.circuit_id) ?? null);
   }
 
   return attachRaceWeekRuntimeMetadata({

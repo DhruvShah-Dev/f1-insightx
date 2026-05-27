@@ -1,13 +1,13 @@
 import { apiError, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { racesQuerySchema, flattenZodError } from "@/lib/api/validation";
 import { listAvailableSeasonsResult, listRacesResult } from "@/lib/server/reference-data";
 
 const cacheHeaders = createPublicCacheHeaders({ browserMaxAgeSeconds: 120, edgeMaxAgeSeconds: 900, staleWhileRevalidateSeconds: 3600 });
 
 export async function GET(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.publicRead);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.publicRead);
   if (!rateLimit.ok) {
     return apiError({
       status: 429,

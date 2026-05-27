@@ -14,7 +14,6 @@ export function AppFooter() {
         <Link href="/lab">Strategy Lab</Link>
         <Link href="/analytics">Analytics</Link>
         <Link href="/race-analysis">Race Analysis</Link>
-        <Link href="/fantasy">Fantasy</Link>
         <Link href="/privacy">Privacy</Link>
         <Link href="/terms">Terms</Link>
         <Link href="/cookies">Cookies</Link>

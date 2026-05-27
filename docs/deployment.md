@@ -55,6 +55,18 @@ For normal GitHub syncs, keep large generated outputs ignored and publish them t
 - Energy deployment is a proxy, not true battery or ERS telemetry.
 - Segment IDs are approximate until manually refined circuit maps exist.
 
+## Supabase Heartbeat
+
+Free-tier Supabase projects can pause after inactivity. The repo includes a lightweight scheduled heartbeat in `.github/workflows/supabase-heartbeat.yml`.
+
+Configure the GitHub repository variable:
+
+```text
+F1_INSIGHTX_HEARTBEAT_URL=https://<production-domain>/api/health/supabase
+```
+
+The endpoint performs one anon-key read against `public.races` and does not touch heavyweight product routes. See `docs/SUPABASE_HEARTBEAT.md`.
+
 ## Release Checks
 
 ```bash

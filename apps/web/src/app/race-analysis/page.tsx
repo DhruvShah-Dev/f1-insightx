@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { AppFooter } from "@/components/ui/app-footer";
 import { AppHeader } from "@/components/ui/app-header";
 import { getRaceAnalysisConfidenceTier, listRaceAnalysisIndex } from "@/lib/server/race-analysis-product";
@@ -43,7 +43,7 @@ export default async function RaceAnalysisIndexPage({ searchParams }: RaceAnalys
           <div>
             <span className="race-analysis-kicker">Post-race intelligence</span>
             <h1>Relive the race through strategy and telemetry.</h1>
-            <p>Race story, stint shape, pace evolution, position movement, and track-status context.</p>
+            <p>Story, stints, pace, position movement, and track-status context.</p>
           </div>
           {latestRace ? (
             <Link href={`/race-analysis/${latestRace.id}`} className="race-analysis-latest-card">

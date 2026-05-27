@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { SiteHeader } from "@/components/ui/site-header";
@@ -236,8 +236,8 @@ export default async function PredictionsPage() {
               <Link href="/lab" className="race-week-hero__cta race-week-hero__cta--primary">
                 Open Strategy Lab
               </Link>
-              <Link href="/fantasy" className="race-week-hero__cta race-week-hero__cta--secondary">
-                Open Fantasy Builder
+              <Link href="/analytics" className="race-week-hero__cta race-week-hero__cta--secondary">
+                Open Analytics
               </Link>
             </div>
           </div>
@@ -455,7 +455,7 @@ export default async function PredictionsPage() {
         <div className="race-week-close__copy">
           <p className="race-week-section-kicker">Carry the weekend forward</p>
           <h2>Move from the read into action.</h2>
-          <p>Pressure-test strategy or build a lineup from the same weekend board.</p>
+          <p>Pressure-test strategy or compare the telemetry picture.</p>
         </div>
         <div className="race-week-close__links">
           <Link href="/lab" className="race-week-close__link">
@@ -463,10 +463,10 @@ export default async function PredictionsPage() {
             <strong>Open Strategy Lab</strong>
             <p>Stress alternative calls.</p>
           </Link>
-          <Link href="/fantasy" className="race-week-close__link">
+          <Link href="/analytics" className="race-week-close__link">
             <span>02</span>
-            <strong>Open Fantasy Builder</strong>
-            <p>Find value and volatility.</p>
+            <strong>Open Analytics</strong>
+            <p>Compare driver signals.</p>
           </Link>
         </div>
       </section>

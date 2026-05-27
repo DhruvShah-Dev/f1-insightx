@@ -219,7 +219,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
             <div className="account-preview__copy">
               <span>Profile destination</span>
               <strong>One account, one profile</strong>
-              <p>Strategy Lab, Fantasy Builder, and your saved identity all meet in one place.</p>
+              <p>Strategy Lab, Analytics, and your saved identity meet in one place.</p>
             </div>
           </div>
         </div>

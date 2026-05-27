@@ -34,6 +34,11 @@ In Supabase:
 Run the SQL in:
 
 - `data/sql/001_core_schema.sql`
+- `data/sql/002_fastf1_pipeline.sql`
+- `data/sql/003_race_week_schema.sql`
+- `data/sql/004_strategy_lab_schema.sql`
+- `data/sql/005_backend_hardening.sql`
+- `supabase/migrations/202605270001_explicit_data_api_grants.sql`
 
 This:
 
@@ -41,6 +46,7 @@ This:
 - creates `user_profiles`
 - enables RLS on all public tables
 - adds user-specific policies for profile rows
+- explicitly grants Data API access to intended public read-only tables
 
 ## Enable auth providers
 
@@ -55,11 +61,21 @@ This:
 2. Add your Google OAuth client ID and secret
 3. In Google Cloud, add the Supabase callback URL shown in the provider screen
 4. In Supabase, set the site URL to your app URL
+5. Add every production/preview callback URL to Supabase additional redirect URLs
 
 For local development, include:
 
 - `http://localhost:3000`
 - `http://localhost:3000/auth/callback`
+
+For production, verify:
+
+- Supabase `Site URL` is the production app URL
+- Supabase `Additional Redirect URLs` includes `https://<production-domain>/auth/callback`
+- Google Cloud authorized redirect URI matches the Supabase Google callback URL exactly
+- Google OAuth consent screen is published or in a test state that includes the expected users
+- the Google provider is enabled and not suspended
+- email/password remains enabled as the fallback sign-in path
 
 ## Verify the setup
 
@@ -70,14 +86,27 @@ For local development, include:
    - Google sign-in is enabled when auth vars are present
    - sign-up is enabled when service-role-backed profile persistence is configured
 4. Create an account and confirm a `user_profiles` row is created.
+5. Call `/api/health/supabase` and confirm it returns `{ "ok": true, "source": "supabase" }`.
+6. In GitHub repository variables, set `F1_INSIGHTX_HEARTBEAT_URL=https://<production-domain>/api/health/supabase`.
 
 ## Security model
 
-- public data tables have RLS enabled and no broad public read policies by default
+- public F1 reference/product tables have RLS enabled, explicit read-only policies, and explicit `SELECT` grants
+- private profile rows are protected by authenticated-only grants plus RLS ownership checks
 - server-side data access uses the service role key
 - the service role key must never be exposed to browser code
 - `user_profiles` is protected with row-level policies tied to `auth.uid()`
+- `anon` must not have any `user_profiles` privileges
 - `.env.local` must never be committed to git
+
+## Data API grants
+
+Supabase requires explicit table grants for newly created public-schema tables. For new tables:
+
+- public read-only F1/product table: add `GRANT SELECT ... TO anon, authenticated` and a matching SELECT RLS policy
+- authenticated user-owned table: grant only the needed authenticated operations and enforce row ownership with RLS
+- server/admin table: do not grant anon/authenticated access
+- never grant public write access unless there is a reviewed product requirement and matching RLS policy
 
 ## Abuse and cost notes
 

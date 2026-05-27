@@ -1,17 +1,40 @@
 import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
 import { flattenZodError, raceScenarioSchema } from "@/lib/api/validation";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { getStrategyLabRaceProduct } from "@/lib/server/strategy-lab-product";
 import { simulateRaceScenario } from "@/lib/server/strategy-lab-simulator";
+import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 
 export async function POST(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.raceScenarioSimulate);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.raceScenarioSimulate);
   if (!rateLimit.ok) {
     return apiError({
       status: 429,
       code: "rate_limited",
       message: "Too many scenario simulations. Try again shortly.",
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+    });
+  }
+
+  const userClient = await getSupabaseServerClient();
+  if (!userClient) {
+    return apiError({
+      status: 401,
+      code: "unauthorized",
+      message: "Sign in to run race strategy simulations.",
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+    });
+  }
+
+  const {
+    data: { user },
+  } = await userClient.auth.getUser();
+  if (!user) {
+    return apiError({
+      status: 401,
+      code: "unauthorized",
+      message: "Sign in to run race strategy simulations.",
       headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }

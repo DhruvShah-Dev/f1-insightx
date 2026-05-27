@@ -1,12 +1,12 @@
 import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { getUpcomingRacePredictionResult } from "@/lib/server/f1-platform";
 
 const cacheHeaders = createPublicCacheHeaders({ browserMaxAgeSeconds: 60, edgeMaxAgeSeconds: 300, staleWhileRevalidateSeconds: 900 });
 
 export async function GET(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.publicRead);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.publicRead);
   if (!rateLimit.ok) {
     return apiError({
       status: 429,

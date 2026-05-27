@@ -31,7 +31,7 @@ const metadataBase = (() => {
 export const metadata: Metadata = {
   title: "F1 InsightX",
   description:
-    "Scenario-driven Formula 1 race strategy simulations and fantasy lineup recommendations.",
+    "Premium Formula 1 telemetry analysis, race intelligence, and strategy simulation.",
   metadataBase,
 };
 
