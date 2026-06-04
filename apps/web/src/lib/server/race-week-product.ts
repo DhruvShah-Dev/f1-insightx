@@ -21,6 +21,10 @@ export type RaceWeekProductOverview = {
   archetypeLabel: string | null;
   strategyDifficulty: string | null;
   weatherRiskIndex: number | null;
+  rainfallProbability: number | null;
+  trackTempMeanC: number | null;
+  windSpeedMeanMps: number | null;
+  weatherSourceLabel: string | null;
   signalConfidence: number | null;
 };
 
@@ -168,6 +172,15 @@ type StorylineRow = {
   signal_confidence: number | string | null;
 };
 
+type WeatherRiskSummaryRow = {
+  race_id: string;
+  rainfall_probability: number | string | null;
+  track_temp_mean_c: number | string | null;
+  wind_speed_mean_mps: number | string | null;
+  weather_risk_index: number | string | null;
+  source_label?: string | null;
+};
+
 type RaceRefSource = {
   id?: string;
   race_id?: string;
@@ -214,13 +227,25 @@ function attachRaceWeekRuntimeMetadata(
   }) as RaceWeekProductWithRuntime;
 }
 
+function findWeatherSummaryRow(rows: WeatherRiskSummaryRow[], raceId: string, circuitId: string) {
+  const exact = rows.find((row) => row.race_id === raceId);
+  if (exact) {
+    return exact;
+  }
+
+  return [...rows]
+    .filter((row) => row.race_id?.endsWith(`-${circuitId}`))
+    .sort((left, right) => right.race_id.localeCompare(left.race_id))[0] ?? null;
+}
+
 async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
-  const [overviewRows, driverBoardRows, constructorBoardRows, strategyRows, storylineRows, races, circuits] = await Promise.all([
+  const [overviewRows, driverBoardRows, constructorBoardRows, strategyRows, storylineRows, weatherRows, races, circuits] = await Promise.all([
     readCsvFile<RaceWeekOverviewRow>("raceWeek.overview"),
     readCsvFile<DriverBoardRow>("raceWeek.driverBoard"),
     readCsvFile<ConstructorBoardRow>("raceWeek.constructorBoard"),
     readCsvFile<StrategyRow>("raceWeek.strategy"),
     readCsvFile<StorylineRow>("raceWeek.storylines"),
+    readCsvFile<WeatherRiskSummaryRow>("raceWeek.weatherRiskSummary"),
     readCsvFile<RaceRow>("curated.races"),
     readCsvFile<CircuitRow>("curated.circuits"),
   ]);
@@ -238,6 +263,7 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
   const latestCompletedRace = latestCompletedRow
     ? mapRaceRef(latestCompletedRow, circuitMap.get(latestCompletedRow.circuit_id) ?? null)
     : null;
+  const weatherRow = findWeatherSummaryRow(weatherRows, overviewRow.race_id, overviewRow.circuit_id);
 
   return attachRaceWeekRuntimeMetadata({
     overview: {
@@ -247,6 +273,10 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
       archetypeLabel: overviewRow.archetype_label ?? null,
       strategyDifficulty: overviewRow.strategy_difficulty ?? null,
       weatherRiskIndex: parseNumber(overviewRow.weather_risk_index),
+      rainfallProbability: parseNumber(weatherRow?.rainfall_probability),
+      trackTempMeanC: parseNumber(weatherRow?.track_temp_mean_c),
+      windSpeedMeanMps: parseNumber(weatherRow?.wind_speed_mean_mps),
+      weatherSourceLabel: weatherRow?.source_label ?? null,
       signalConfidence: parseNumber(overviewRow.signal_confidence),
     },
     driverBoard: driverBoardRows
@@ -332,7 +362,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
 
   const latestCompletedRaceId = overviewRow.latest_completed_race_id ?? null;
 
-  const [latestRaceResult, driverBoardResult, constructorBoardResult, strategyResult, storylineResult] = await Promise.all([
+  const [latestRaceResult, driverBoardResult, constructorBoardResult, strategyResult, storylineResult, weatherResult] = await Promise.all([
     latestCompletedRaceId
       ? supabase
           .from("races")
@@ -344,6 +374,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     supabase.from("race_week_constructor_board_view").select("constructor_id, constructor_name, long_run_pace_s, one_lap_pace_s, degradation_index, readiness_score, signal_confidence, summary").eq("race_id", overviewRow.race_id).order("readiness_score", { ascending: false }),
     supabase.from("race_week_strategy_view").select("driver_id, constructor_id, recommended_stop_count, preferred_primary_compound, preferred_secondary_compound, pit_window_start_lap, pit_window_end_lap, degradation_risk, strategy_confidence, rationale").eq("race_id", overviewRow.race_id),
     supabase.from("race_week_storylines_view").select("entity_type, entity_id, storyline_type, priority_rank, headline, body, confidence_band, signal_confidence").eq("race_id", overviewRow.race_id).order("priority_rank", { ascending: true }),
+    supabase.from("weather_risk_summary").select("race_id, rainfall_probability, track_temp_mean_c, wind_speed_mean_mps, weather_risk_index, source_label").eq("race_id", overviewRow.race_id).maybeSingle<WeatherRiskSummaryRow>(),
   ]);
 
   if (
@@ -376,6 +407,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
   if (latestRaceRow) {
     latestCompletedRace = mapRaceRef(latestRaceRow, circuitMap.get(latestRaceRow.circuit_id) ?? null);
   }
+  const weatherRow = weatherResult.error ? null : weatherResult.data;
 
   return attachRaceWeekRuntimeMetadata({
     overview: {
@@ -385,6 +417,10 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
       archetypeLabel: overviewRow.archetype_label ?? null,
       strategyDifficulty: overviewRow.strategy_difficulty ?? null,
       weatherRiskIndex: parseNumber(overviewRow.weather_risk_index),
+      rainfallProbability: parseNumber(weatherRow?.rainfall_probability),
+      trackTempMeanC: parseNumber(weatherRow?.track_temp_mean_c),
+      windSpeedMeanMps: parseNumber(weatherRow?.wind_speed_mean_mps),
+      weatherSourceLabel: weatherRow?.source_label ?? null,
       signalConfidence: parseNumber(overviewRow.signal_confidence),
     },
     driverBoard: ((driverBoardResult.data ?? []) as DriverBoardRow[]).map((row) => ({

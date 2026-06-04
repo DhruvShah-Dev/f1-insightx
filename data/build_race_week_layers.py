@@ -531,9 +531,11 @@ def build_processed_race_week_layers(
             fp2_long_run["source_label"] = "race_week_fp2_long_run_v1"
 
     stint_degradation = pd.DataFrame()
-    if not stints.empty:
+    stint_group_columns = ["season", "round", "race_id", "session_code", "driver_id", "constructor_id", "compound"]
+    stint_value_columns = ["lap_count", "degradation_per_lap_s", "end_tyre_life"]
+    if not stints.empty and all(column in stints.columns for column in stint_group_columns + stint_value_columns):
         stint_degradation = (
-            stints.groupby(["season", "round", "race_id", "session_code", "driver_id", "constructor_id", "compound"], dropna=False)
+            stints.groupby(stint_group_columns, dropna=False)
             .agg(
                 avg_lap_count=("lap_count", "mean"),
                 avg_degradation_per_lap_s=("degradation_per_lap_s", "mean"),

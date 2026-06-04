@@ -1,17 +1,40 @@
 import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
 import { fantasyRequestSchema, flattenZodError } from "@/lib/api/validation";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { getFantasyDataset } from "@/lib/server/fantasy-data";
 import { optimizeFantasyLineups } from "@/lib/server/fantasy-optimizer";
+import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 
 export async function POST(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.fantasyRecommend);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.fantasyRecommend);
   if (!rateLimit.ok) {
     return apiError({
       status: 429,
       code: "rate_limited",
       message: "Too many recommendation requests. Try again shortly.",
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+    });
+  }
+
+  const userClient = await getSupabaseServerClient();
+  if (!userClient) {
+    return apiError({
+      status: 401,
+      code: "unauthorized",
+      message: "Sign in to get lineup recommendations.",
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+    });
+  }
+
+  const {
+    data: { user },
+  } = await userClient.auth.getUser();
+  if (!user) {
+    return apiError({
+      status: 401,
+      code: "unauthorized",
+      message: "Sign in to get lineup recommendations.",
       headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }

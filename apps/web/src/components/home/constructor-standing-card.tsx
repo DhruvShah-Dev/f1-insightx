@@ -6,17 +6,19 @@ import type { ConstructorStanding } from "@/lib/server/standings";
 type ConstructorStandingCardProps = {
   standing: ConstructorStanding;
   priority?: boolean;
+  variant?: "leader" | "podium" | "standard";
 };
 
 export function ConstructorStandingCard({
   standing,
   priority = false,
+  variant = "standard",
 }: ConstructorStandingCardProps) {
   const team = getTeamAsset(standing.constructorId);
 
   return (
     <article
-      className="constructor-standing-card"
+      className={`constructor-standing-card constructor-standing-card--${variant}`}
       style={
         {
           "--team-primary": team.primary,
@@ -25,7 +27,16 @@ export function ConstructorStandingCard({
         } as CSSProperties
       }
     >
-      <div className="constructor-standing-card__media">
+      <div
+        className="constructor-standing-card__media"
+        style={
+          {
+            "--team-car-image": team.carImagePath ? `url(${team.carImagePath})` : "none",
+            "--team-car-position": variant === "podium" ? "center center" : team.imagePosition,
+            "--team-car-size": variant === "podium" ? "contain" : (team.imageFit ?? "cover"),
+          } as CSSProperties
+        }
+      >
         <div className="constructor-standing-card__glow" aria-hidden="true" />
         {team.carImagePath ? (
           <AssetImage
@@ -38,8 +49,8 @@ export function ConstructorStandingCard({
             priority={priority}
             sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 18rem"
             style={{
-              objectPosition: team.imagePosition,
-              objectFit: team.imageFit ?? "cover",
+              objectPosition: variant === "podium" ? "center center" : team.imagePosition,
+              objectFit: variant === "podium" ? "contain" : (team.imageFit ?? "cover"),
             }}
           />
         ) : (
@@ -65,6 +76,10 @@ export function ConstructorStandingCard({
           <div>
             <span>Points</span>
             <strong>{standing.points}</strong>
+          </div>
+          <div>
+            <span>Wins</span>
+            <strong>{standing.wins}</strong>
           </div>
         </div>
       </div>

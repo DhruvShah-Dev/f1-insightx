@@ -38,7 +38,7 @@ export default async function RaceLabPage() {
           <div className="strategy-lab-page__hero-copy">
             <p className="strategy-lab-page__eyebrow">Race strategy playground</p>
             <h1 className="strategy-lab-page__title">Scenario the race before the lights go out.</h1>
-            <p className="strategy-lab-page__lede">Build a race shape and read finish bands, pit windows, and key drivers.</p>
+            <p className="strategy-lab-page__lede">Build strategy windows before lights out.</p>
           </div>
 
           <div className="strategy-lab-page__hero-rail" aria-label="Strategy Lab overview">

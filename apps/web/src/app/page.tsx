@@ -8,11 +8,75 @@ import { ModuleLink } from "@/components/home/module-link";
 import { RaceHistoryRail } from "@/components/home/race-history-rail";
 import { AppFooter } from "@/components/ui/app-footer";
 import { AppHeader } from "@/components/ui/app-header";
+import { TrackMap } from "@/components/ui/track-map";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
-import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
+import { getSeasonState, type SeasonRaceRef } from "@/lib/server/season-state";
 import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
+
+const CIRCUIT_DISPLAY_NAMES: Record<string, string> = {
+  monaco: "Circuit de Monaco",
+};
+
+function formatRaceDate(value: string | null | undefined) {
+  if (!value) {
+    return "Schedule pending";
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "Schedule pending";
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short",
+  }).format(date);
+}
+
+function formatCountdown(value: string | null | undefined) {
+  if (!value) {
+    return "Race time pending";
+  }
+
+  const raceTime = new Date(value).getTime();
+  if (Number.isNaN(raceTime)) {
+    return "Race time pending";
+  }
+
+  const diffMs = raceTime - Date.now();
+  if (diffMs <= 0) {
+    return "Race window active";
+  }
+
+  const totalHours = Math.floor(diffMs / (1000 * 60 * 60));
+  const days = Math.floor(totalHours / 24);
+  const hours = totalHours % 24;
+  const minutes = Math.floor((diffMs / (1000 * 60)) % 60);
+
+  if (days > 0) {
+    return `${days}d ${hours}h to lights out`;
+  }
+
+  if (hours > 0) {
+    return `${hours}h ${minutes}m to lights out`;
+  }
+
+  return `${Math.max(minutes, 1)}m to lights out`;
+}
+
+function getCircuitDisplayName(race: SeasonRaceRef | null | undefined) {
+  if (!race?.circuit_id) {
+    return "Circuit pending";
+  }
+
+  return CIRCUIT_DISPLAY_NAMES[race.circuit_id] ?? race.race_name?.replace(/\s+Grand Prix$/i, "") ?? race.circuit_id;
+}
 
 export default async function Home() {
   const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
@@ -41,6 +105,8 @@ export default async function Home() {
     authStatePromise,
   ]);
   const seasonState = await getSeasonState();
+  const nextRace = seasonState?.next_race ?? null;
+  const nextRaceCircuitName = getCircuitDisplayName(nextRace);
 
   return (
     <main className="home-shell">
@@ -82,11 +148,28 @@ export default async function Home() {
                   Open Strategy Lab
                 </Link>
               </div>
-              <div className="hero__season-state" aria-label="Season state">
-                <span>Completed: {formatSeasonRaceLabel(seasonState?.latest_completed_race)}</span>
-                <span>Next: {formatSeasonRaceLabel(seasonState?.next_race)}</span>
-                <span>Telemetry: {formatSeasonRaceLabel(seasonState?.latest_completed_race_with_analytics)}</span>
-              </div>
+              {nextRace ? (
+                <div className="hero__next-race" aria-label="Next race">
+                  <div className="hero__next-race-copy">
+                    <span className="hero__next-race-kicker">Next race</span>
+                    <strong>{nextRace.race_name ?? "Race pending"}</strong>
+                    <span>{nextRaceCircuitName}</span>
+                    <div className="hero__next-race-meta">
+                      <span>{nextRace.round ? `Round ${nextRace.round}` : "Round pending"}</span>
+                      <span>{formatRaceDate(nextRace.scheduled_at)}</span>
+                    </div>
+                    <p>{formatCountdown(nextRace.scheduled_at)}</p>
+                  </div>
+                  {nextRace.circuit_id ? (
+                    <div className="hero__next-race-map">
+                      <TrackMap
+                        circuitId={nextRace.circuit_id}
+                        title={nextRaceCircuitName}
+                      />
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </div>
         </section>

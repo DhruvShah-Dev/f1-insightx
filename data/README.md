@@ -56,7 +56,7 @@ This layer is built for reproducible feature engineering and keeps FastF1 teleme
 - `prediction_snapshots.csv`
 - `fantasy_inputs.csv`
 
-These are the product-facing views used by the homepage, Strategy Lab, Fantasy Builder, race-week predictions, and future forecasting work.
+These are product-facing and legacy curated views used by the homepage, Strategy Lab, race-week predictions, and future forecasting work. Fantasy inputs remain available for a later rebuild but are not part of the visible product.
 
 ### 5. FastF1 features / model inputs / predictions
 

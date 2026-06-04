@@ -1,10 +1,10 @@
 import { apiError, apiOk } from "@/lib/api/errors";
 import { fantasyRequestSchema, flattenZodError } from "@/lib/api/validation";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 
 export async function POST(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.fantasyValidate);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.fantasyValidate);
   if (!rateLimit.ok) {
     return apiError({
       status: 429,

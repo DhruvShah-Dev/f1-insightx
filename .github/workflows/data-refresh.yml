@@ -31,4 +31,11 @@ jobs:
         run: python data/normalize_results.py
 
       - name: Load Supabase/Postgres
+        if: env.DATABASE_URL != ''
         run: python data/load_supabase.py
+
+      - name: Supabase load skipped
+        if: env.DATABASE_URL == ''
+        run: |
+          echo "DATABASE_URL secret is not configured."
+          echo "Skipping Supabase load; fetched/normalized data remains a local workflow artifact only."

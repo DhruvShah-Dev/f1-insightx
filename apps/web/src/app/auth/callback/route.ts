@@ -3,7 +3,7 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { getServerEnv } from "@/lib/env";
 import { ensureProfileFromUserMetadata } from "@/lib/account/profile";
-import { sanitizeInternalRedirectPath } from "@/lib/auth/navigation";
+import { mapProviderCallbackError, sanitizeInternalRedirectPath } from "@/lib/auth/navigation";
 import { logServerError } from "@/lib/errors/logger";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
@@ -30,6 +30,20 @@ export async function GET(request: Request) {
   }
 
   const requestUrl = new URL(request.url);
+  const providerError = mapProviderCallbackError(
+    requestUrl.searchParams.get("error"),
+    requestUrl.searchParams.get("error_description"),
+  );
+  if (providerError) {
+    logServerError("auth:callback:provider-error", new Error("OAuth provider returned an error."), {
+      authErrorCode: providerError,
+      provider: "google",
+    });
+    return NextResponse.redirect(new URL(`/account?auth_error=${providerError}`, request.url), {
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+    });
+  }
+
   const code = requestUrl.searchParams.get("code");
   const next = sanitizeInternalRedirectPath(requestUrl.searchParams.get("next"), "/account");
 

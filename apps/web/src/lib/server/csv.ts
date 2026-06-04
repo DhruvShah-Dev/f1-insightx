@@ -46,6 +46,7 @@ export const csvFileMap = {
   "raceWeek.overview": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_overview.csv"),
   "raceWeek.storylines": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_storylines.csv"),
   "raceWeek.strategy": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_strategy.csv"),
+  "raceWeek.weatherRiskSummary": path.join(process.cwd(), "..", "..", "data", "race_week", "weather_risk_summary.csv"),
   "raceAnalysis.index": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_index.csv"),
   "raceAnalysis.links": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_links.csv"),
   "raceAnalysis.neutralizationPhases": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_neutralization_phases.csv"),

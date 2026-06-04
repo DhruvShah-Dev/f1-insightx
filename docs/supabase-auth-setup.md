@@ -89,6 +89,28 @@ For production, verify:
 5. Call `/api/health/supabase` and confirm it returns `{ "ok": true, "source": "supabase" }`.
 6. In GitHub repository variables, set `F1_INSIGHTX_HEARTBEAT_URL=https://<production-domain>/api/health/supabase`.
 
+## Auth availability troubleshooting
+
+If `/account` shows authentication unavailable, check:
+
+- `NEXT_PUBLIC_SUPABASE_URL` is set in Vercel for the active environment
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` is set in Vercel for the active environment
+- the Supabase project is not paused
+- `/api/health/supabase` returns `{ "ok": true, "source": "supabase" }`
+- the Email provider is enabled so email/password remains the fallback path
+
+If Google sign-in fails but email sign-in remains visible, check:
+
+- Google provider is enabled in Supabase
+- OAuth client ID and secret are current
+- Google OAuth consent screen is active and includes expected users if in test mode
+- Supabase `Site URL` is the deployed app URL
+- Supabase `Additional Redirect URLs` includes `https://<domain>/auth/callback`
+- Google Cloud authorized redirect URI matches the Supabase Google callback URL exactly
+- no provider suspension or billing/project warning is shown in Supabase or Google Cloud
+
+Provider callback errors are intentionally mapped to safe account-page error codes. Do not expose raw OAuth error descriptions to users.
+
 ## Security model
 
 - public F1 reference/product tables have RLS enabled, explicit read-only policies, and explicit `SELECT` grants

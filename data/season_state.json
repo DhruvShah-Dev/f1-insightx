@@ -1,0 +1,184 @@
+{
+  "analytics_available": {
+    "available": true,
+    "latest_race": {
+      "circuit_id": "villeneuve",
+      "id": "2026-05-villeneuve",
+      "race_name": "Canadian Grand Prix",
+      "round": 5,
+      "scheduled_at": "2026-05-24T20:00:00Z",
+      "season": 2026,
+      "status": "data_available"
+    }
+  },
+  "build_version": "season_state_20260602T162842Z",
+  "current_race_week": {
+    "available": true,
+    "product_view_race": {
+      "circuit_id": "monaco",
+      "id": "2026-06-monaco",
+      "race_name": "Monaco Grand Prix",
+      "round": 6,
+      "scheduled_at": "2026-06-07T13:00:00Z",
+      "season": 2026,
+      "status": "race_week_product_available"
+    },
+    "race": {
+      "circuit_id": "monaco",
+      "id": "2026-06-monaco",
+      "race_name": "Monaco Grand Prix",
+      "round": 6,
+      "scheduled_at": "2026-06-07T13:00:00Z",
+      "season": 2026,
+      "status": "upcoming"
+    }
+  },
+  "data_gaps": {
+    "clean_lap_filtering": "inferred/proxy",
+    "drs_gap_context": "partial",
+    "overtakes": "missing",
+    "position_evolution": "partial",
+    "race_control": "missing",
+    "race_results": "available",
+    "telemetry_sessions": "available",
+    "weather": "available"
+  },
+  "freshness": {
+    "analytics": {
+      "build_version": "analytics_views_20260602T161817Z",
+      "generated_at": "2026-06-02T16:18:17Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "analytics_index": {
+      "build_version": "analytics_index_20260602T162413Z",
+      "generated_at": "2026-06-02T16:24:13Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "canonical_fastf1": {
+      "build_version": "canonical_fastf1_20260602T160522Z",
+      "generated_at": "2026-06-02T16:05:22Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "race_analysis": {
+      "build_version": "race-analysis-v1",
+      "generated_at": "2026-06-02T16:26:02Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "race_week": {
+      "build_version": "race_week_20260602T161753Z",
+      "generated_at": "2026-06-02T16:17:53Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "season_state": {
+      "build_version": "season_state_20260528T152823Z",
+      "generated_at": "2026-05-28T15:28:23Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "strategy_lab": {
+      "build_version": "strategy_lab_20260602T161805Z",
+      "generated_at": "2026-06-02T16:18:05Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "telemetry_features": {
+      "build_version": "telemetry_features_20260602T161721Z",
+      "generated_at": "2026-06-02T16:17:21Z",
+      "validation_status": "passed",
+      "warnings": []
+    }
+  },
+  "generated_at": "2026-06-02T16:28:42Z",
+  "latest_completed_race": {
+    "circuit_id": "villeneuve",
+    "id": "2026-05-villeneuve",
+    "race_name": "Canadian Grand Prix",
+    "round": 5,
+    "scheduled_at": "2026-05-24T20:00:00Z",
+    "season": 2026,
+    "status": "completed_by_schedule"
+  },
+  "latest_completed_race_with_analytics": {
+    "circuit_id": "villeneuve",
+    "id": "2026-05-villeneuve",
+    "race_name": "Canadian Grand Prix",
+    "round": 5,
+    "scheduled_at": "2026-05-24T20:00:00Z",
+    "season": 2026,
+    "status": "data_available"
+  },
+  "latest_completed_race_with_results": {
+    "circuit_id": "villeneuve",
+    "id": "2026-05-villeneuve",
+    "race_name": "Canadian Grand Prix",
+    "round": 5,
+    "scheduled_at": "2026-05-24T20:00:00Z",
+    "season": 2026,
+    "status": "results_available"
+  },
+  "latest_completed_race_with_telemetry": {
+    "circuit_id": "villeneuve",
+    "id": "2026-05-villeneuve",
+    "race_name": "Canadian Grand Prix",
+    "round": 5,
+    "scheduled_at": "2026-05-24T20:00:00Z",
+    "season": 2026,
+    "status": "data_available"
+  },
+  "missing_data_flags": [],
+  "next_race": {
+    "circuit_id": "monaco",
+    "id": "2026-06-monaco",
+    "race_name": "Monaco Grand Prix",
+    "round": 6,
+    "scheduled_at": "2026-06-07T13:00:00Z",
+    "season": 2026,
+    "status": "upcoming"
+  },
+  "race_analysis_available": {
+    "available": true,
+    "latest_race": {
+      "circuit_id": "villeneuve",
+      "id": "2026-05-villeneuve",
+      "race_name": "Canadian Grand Prix",
+      "round": 5,
+      "scheduled_at": "2026-05-24T20:00:00Z",
+      "season": 2026,
+      "status": "race_analysis_available"
+    },
+    "reason": null
+  },
+  "schema_version": 1,
+  "season": 2026,
+  "strategy_lab_available": {
+    "available": true,
+    "latest_race": {
+      "circuit_id": "monaco",
+      "id": "2026-06-monaco",
+      "race_name": "Monaco Grand Prix",
+      "round": 6,
+      "scheduled_at": null,
+      "season": 2026,
+      "status": "strategy_lab_available"
+    },
+    "next_race_available": true
+  },
+  "telemetry_available": {
+    "available": true,
+    "latest_race": {
+      "circuit_id": "villeneuve",
+      "id": "2026-05-villeneuve",
+      "race_name": "Canadian Grand Prix",
+      "round": 5,
+      "scheduled_at": "2026-05-24T20:00:00Z",
+      "season": 2026,
+      "status": "data_available"
+    }
+  },
+  "warnings": []
+}

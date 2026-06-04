@@ -31,7 +31,8 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
   const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
   const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
   const params = (await searchParams) ?? {};
-  const initialError = mapAuthErrorCode(decodeURIComponent(readErrorMessage(params.error) || ""));
+  const initialErrorCode = readErrorMessage(params.auth_error) || readErrorMessage(params.error);
+  const initialError = mapAuthErrorCode(decodeURIComponent(initialErrorCode || ""));
   let authenticatedUser: User | null = null;
 
   try {

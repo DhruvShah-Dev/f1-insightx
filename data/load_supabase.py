@@ -583,6 +583,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip running the base schema SQL before loading data.",
     )
+    parser.add_argument(
+        "--allow-destructive-reset",
+        action="store_true",
+        help="Permit TRUNCATE TABLE ... CASCADE before loading.",
+    )
     return parser.parse_args()
 
 
@@ -672,37 +677,56 @@ def copy_csv(
     columns: list[str],
     file_path: Path,
     extra_rows: list[dict[str, str]] | None = None,
+    upsert: bool = False,
 ) -> None:
     if not file_path.exists():
         raise FileNotFoundError(f"Missing curated file: {file_path}")
 
     joined_columns = ", ".join(columns)
-    with file_path.open("r", encoding="utf-8") as handle:
-        reader = csv.DictReader(handle)
-        with cursor.copy(f"COPY {table} ({joined_columns}) FROM STDIN WITH CSV HEADER") as copy:
-            buffer = io.StringIO()
-            writer = csv.DictWriter(buffer, fieldnames=columns, lineterminator="\n")
-            writer.writeheader()
+    dest_table = table
+    if upsert:
+        dest_table = f"staging_{table}"
+        cursor.execute(f"CREATE TEMP TABLE {dest_table} AS SELECT * FROM {table} WITH NO DATA")
 
-            for row in reader:
-                normalized_row = {
-                    column: normalize_cell(table, column, row.get(column, ""))
-                    for column in columns
-                }
-                writer.writerow(normalized_row)
-                copy.write(buffer.getvalue())
-                buffer.seek(0)
-                buffer.truncate(0)
+    try:
+        with file_path.open("r", encoding="utf-8") as handle:
+            reader = csv.DictReader(handle)
+            with cursor.copy(f"COPY {dest_table} ({joined_columns}) FROM STDIN WITH CSV HEADER") as copy:
+                buffer = io.StringIO()
+                writer = csv.DictWriter(buffer, fieldnames=columns, lineterminator="\n")
+                writer.writeheader()
 
-            for row in extra_rows or []:
-                normalized_row = {
-                    column: normalize_cell(table, column, row.get(column, ""))
-                    for column in columns
-                }
-                writer.writerow(normalized_row)
-                copy.write(buffer.getvalue())
-                buffer.seek(0)
-                buffer.truncate(0)
+                for row in reader:
+                    normalized_row = {
+                        column: normalize_cell(table, column, row.get(column, ""))
+                        for column in columns
+                    }
+                    writer.writerow(normalized_row)
+                    copy.write(buffer.getvalue())
+                    buffer.seek(0)
+                    buffer.truncate(0)
+
+                for row in extra_rows or []:
+                    normalized_row = {
+                        column: normalize_cell(table, column, row.get(column, ""))
+                        for column in columns
+                    }
+                    writer.writerow(normalized_row)
+                    copy.write(buffer.getvalue())
+                    buffer.seek(0)
+                    buffer.truncate(0)
+
+        if upsert:
+            set_clause = ", ".join(f"{col} = EXCLUDED.{col}" for col in columns if col != "id")
+            upsert_query = f"""
+                INSERT INTO {table} ({joined_columns})
+                SELECT {joined_columns} FROM {dest_table}
+                ON CONFLICT (id) DO UPDATE SET {set_clause}
+            """
+            cursor.execute(upsert_query)
+    finally:
+        if upsert:
+            cursor.execute(f"DROP TABLE IF EXISTS {dest_table}")
 
 
 def resolve_table_path(settings, file_name: str) -> Path:
@@ -768,8 +792,13 @@ def main() -> None:
             if not args.skip_schema:
                 cursor.execute(schema_sql)
 
-            truncate_tables = ", ".join(table for table, _, _ in reversed(TABLE_LOAD_ORDER))
-            cursor.execute(f"TRUNCATE TABLE {truncate_tables} RESTART IDENTITY CASCADE")
+            upsert_mode = not args.allow_destructive_reset
+            if upsert_mode:
+                print("Running in non-destructive upsert mode.")
+            else:
+                print("WARNING: Running in destructive truncate mode!")
+                truncate_tables = ", ".join(table for table, _, _ in reversed(TABLE_LOAD_ORDER))
+                cursor.execute(f"TRUNCATE TABLE {truncate_tables} RESTART IDENTITY CASCADE")
 
             for table, file_name, columns in TABLE_LOAD_ORDER:
                 extra_rows: list[dict[str, str]] | None = None
@@ -780,7 +809,9 @@ def main() -> None:
                     extra_rows = build_supplemental_rows(table, missing_driver_ids, columns)
                 elif table == "constructors":
                     extra_rows = build_supplemental_rows(table, missing_constructor_ids, columns)
-                copy_csv(cursor, table, columns, file_path, extra_rows=extra_rows)
+
+                print(f"Loading table: {table} ...")
+                copy_csv(cursor, table, columns, file_path, extra_rows=extra_rows, upsert=upsert_mode)
 
         connection.commit()
 

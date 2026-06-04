@@ -12,7 +12,7 @@ from load_supabase import SUPPLEMENTAL_CONSTRUCTORS, SUPPLEMENTAL_DRIVERS
 from normalize_results import build_strategy_profiles, write_csv
 
 
-FASTF1_RAW_DIR = ROOT_DIR / "data_pipeline" / "fastf1" / "raw"
+LEGACY_FASTF1_RAW_DIR = ROOT_DIR / "data_pipeline" / "fastf1" / "raw"
 
 TEAM_ALIASES = {
     "mclaren": "mclaren",
@@ -195,9 +195,11 @@ def build_race_rows(event_dir: Path, race_id: str, references: ReferenceMaps) ->
     laps_by_driver: dict[str, int] = {}
     if laps_path.exists():
         laps = pd.read_csv(laps_path)
-        if not laps.empty:
+        driver_column = "Driver" if "Driver" in laps.columns else "driver" if "driver" in laps.columns else None
+        lap_number_column = "LapNumber" if "LapNumber" in laps.columns else "lap_number" if "lap_number" in laps.columns else None
+        if not laps.empty and driver_column and lap_number_column:
             laps_by_driver = (
-                laps.groupby("Driver")["LapNumber"]
+                laps.groupby(driver_column)[lap_number_column]
                 .max()
                 .dropna()
                 .astype(int)
@@ -250,6 +252,11 @@ def iter_event_dirs(raw_dir: Path, seasons: set[int] | None) -> list[Path]:
 
 def load_event_metadata(event_dir: Path) -> tuple[int, int] | None:
     for session_type in ("R", "Q"):
+        manifest_path = event_dir / session_type / "session_manifest.json"
+        if manifest_path.exists():
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            return int(manifest["season"]), int(manifest["round"])
+
         meta_path = event_dir / session_type / "session_meta.json"
         if meta_path.exists():
             meta = json.loads(meta_path.read_text(encoding="utf-8"))
@@ -264,15 +271,16 @@ def main() -> None:
     settings = load_settings()
     references = ReferenceMaps(settings.curated_dir)
     seasons = set(args.season) if args.season else None
+    raw_dir = settings.raw_fastf1_dir if settings.raw_fastf1_dir.exists() else LEGACY_FASTF1_RAW_DIR
 
-    if not FASTF1_RAW_DIR.exists():
-        raise FileNotFoundError(f"FastF1 raw directory not found: {FASTF1_RAW_DIR}")
+    if not raw_dir.exists():
+        raise FileNotFoundError(f"FastF1 raw directory not found: {raw_dir}")
 
     all_qualifying_rows: list[dict[str, object]] = []
     all_race_rows: list[dict[str, object]] = []
     synced_race_ids: set[str] = set()
 
-    for event_dir in iter_event_dirs(FASTF1_RAW_DIR, seasons):
+    for event_dir in iter_event_dirs(raw_dir, seasons):
         metadata = load_event_metadata(event_dir)
         if metadata is None:
             continue

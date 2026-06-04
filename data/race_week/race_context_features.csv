@@ -1,2 +1,2 @@
 id,season,round,race_id,circuit_id,archetype_label,high_speed_bias,overtake_difficulty,tire_degradation_bias,weather_risk_index,safety_car_probability,strategic_complexity_score,source_label
-2026-04-miami,2026,4,2026-04-miami,miami,Balanced circuit,,,,0.0,100.0,100.0,race_week_context_features_v1
+2026-06-monaco,2026,6,2026-06-monaco,monaco,Balanced circuit,,,,0.0,100.0,100.0,race_week_context_features_v1

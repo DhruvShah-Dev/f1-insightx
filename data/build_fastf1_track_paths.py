@@ -18,6 +18,7 @@ VIEWBOX_HEIGHT = 620
 PADDING_X = 42
 PADDING_Y = 34
 MIN_POINT_DISTANCE = 18.0
+MIN_RAW_POINTS = 80
 
 
 def parse_args() -> argparse.Namespace:
@@ -41,12 +42,15 @@ def parse_args() -> argparse.Namespace:
         default=[],
         help="Optional list of circuit ids to update incrementally.",
     )
+    parser.add_argument(
+        "--local-only",
+        action="store_true",
+        help="Use existing local raw FastF1 position parquet only; do not call FastF1 session loading.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
-    import fastf1
-
     args = parse_args()
     settings = load_settings()
     output_path = settings.race_week_dir / "circuit_track_paths.json"
@@ -68,17 +72,110 @@ def main() -> None:
     if output_path.exists():
         payload = json.loads(output_path.read_text(encoding="utf-8"))
     schedule_cache: dict[int, Any] = {}
+    fastf1 = None
+    if not args.local_only:
+        import fastf1 as fastf1_module
+
+        fastf1 = fastf1_module
+
     for circuit_id, circuit_rows in races.groupby("circuit_id", sort=False):
-        artifact = build_circuit_artifact(
-            fastf1_module=fastf1,
+        artifact = build_local_circuit_artifact(
+            settings=settings,
             circuit_rows=circuit_rows.reset_index(drop=True),
-            schedule_cache=schedule_cache,
         )
+        if artifact is None and fastf1 is not None:
+            artifact = build_circuit_artifact(
+                fastf1_module=fastf1,
+                circuit_rows=circuit_rows.reset_index(drop=True),
+                schedule_cache=schedule_cache,
+            )
         if artifact:
             payload[circuit_id] = artifact
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+
+def build_local_circuit_artifact(
+    *,
+    settings: Any,
+    circuit_rows: pd.DataFrame,
+) -> dict[str, Any] | None:
+    for _, row in circuit_rows.iterrows():
+        season = int(row["season"])
+        round_number = int(row["round"])
+        race_name = str(row.get("race_name") or f"Round {round_number}")
+
+        round_dir = find_raw_round_dir(settings.raw_fastf1_dir, season, round_number)
+        if round_dir is None:
+            continue
+
+        for session_code in SESSION_PRIORITY:
+            position_path = round_dir / session_code / "position.parquet"
+            if not position_path.exists():
+                continue
+
+            try:
+                position = pd.read_parquet(position_path, columns=["driver", "lap_number", "X", "Y"])
+                coordinates = select_representative_position_lap(position)
+                if coordinates is None:
+                    continue
+
+                simplified_points = simplify_points(coordinates, minimum_distance=MIN_POINT_DISTANCE)
+                if len(simplified_points) < 12:
+                    continue
+
+                return {
+                    "circuitId": str(row["circuit_id"]),
+                    "season": season,
+                    "round": round_number,
+                    "raceName": race_name,
+                    "sessionCode": session_code,
+                    "source": "fastf1_position_parquet",
+                    "rotationDegrees": 0.0,
+                    "pathData": fit_points_to_path(simplified_points),
+                }
+            except Exception:
+                continue
+
+    return None
+
+
+def find_raw_round_dir(raw_fastf1_dir: Path, season: int, round_number: int) -> Path | None:
+    season_dir = raw_fastf1_dir / str(season)
+    if not season_dir.exists():
+        return None
+
+    prefix = f"{round_number:02d}_"
+    matches = sorted(path for path in season_dir.iterdir() if path.is_dir() and path.name.startswith(prefix))
+    return matches[0] if matches else None
+
+
+def select_representative_position_lap(position: pd.DataFrame) -> list[tuple[float, float]] | None:
+    required = {"driver", "lap_number", "X", "Y"}
+    if position.empty or not required.issubset(position.columns):
+        return None
+
+    clean = position.dropna(subset=["driver", "lap_number", "X", "Y"]).copy()
+    if clean.empty:
+        return None
+
+    clean["lap_number"] = pd.to_numeric(clean["lap_number"], errors="coerce")
+    clean = clean.dropna(subset=["lap_number"])
+    if clean.empty:
+        return None
+
+    group_sizes = clean.groupby(["driver", "lap_number"], sort=False).size().sort_values(ascending=False)
+    for (driver, lap_number), count in group_sizes.items():
+        if int(count) < MIN_RAW_POINTS:
+            continue
+
+        lap = clean[(clean["driver"] == driver) & (clean["lap_number"] == lap_number)]
+        coordinates = [(float(x), float(y)) for x, y in lap.loc[:, ["X", "Y"]].to_numpy().tolist()]
+        if len(coordinates) >= MIN_RAW_POINTS:
+            return coordinates
+
+    return None
 
 
 def build_circuit_artifact(

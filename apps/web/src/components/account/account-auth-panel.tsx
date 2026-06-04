@@ -255,7 +255,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
 
         {!hasSupabaseAuth ? (
           <div className="status-banner">
-            Authentication is temporarily unavailable right now.
+            Authentication is temporarily unavailable right now. Check the Supabase connection.
           </div>
         ) : null}
         {hasSupabaseAuth && !hasProfilePersistence ? (

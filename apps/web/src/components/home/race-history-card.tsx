@@ -14,7 +14,12 @@ export async function RaceHistoryCard({ race }: RaceHistoryCardProps) {
       </div>
       <div className="race-history-card__body">
         <h3>{race.displayName}</h3>
-        <p>{race.season}</p>
+        <p>
+          {race.season} / Round {race.round}
+        </p>
+        {race.winner ? (
+          <span className="race-history-card__winner">Winner {race.winner.driverName}</span>
+        ) : null}
       </div>
     </Link>
   );

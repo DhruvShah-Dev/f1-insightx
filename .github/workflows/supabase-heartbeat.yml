@@ -20,9 +20,10 @@ jobs:
         shell: bash
         run: |
           if [ -z "$HEARTBEAT_URL" ]; then
-            echo "Repository variable F1_INSIGHTX_HEARTBEAT_URL is required."
-            echo "Set it to https://<production-domain>/api/health/supabase."
-            exit 1
+            echo "Repository variable F1_INSIGHTX_HEARTBEAT_URL is not configured."
+            echo "Skipping heartbeat until a deployed production URL exists."
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
           case "$HEARTBEAT_URL" in
@@ -33,9 +34,11 @@ jobs:
               ;;
           esac
 
+          echo "enabled=true" >> "$GITHUB_OUTPUT"
           echo "url=$HEARTBEAT_URL" >> "$GITHUB_OUTPUT"
 
       - name: Ping Supabase heartbeat
+        if: steps.endpoint.outputs.enabled == 'true'
         shell: bash
         env:
           URL: ${{ steps.endpoint.outputs.url }}

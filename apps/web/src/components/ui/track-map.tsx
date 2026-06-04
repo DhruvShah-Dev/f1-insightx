@@ -9,12 +9,21 @@ type TrackMapProps = {
   variant?: "card" | "hero";
 };
 
+function isUsablePath(pathData: string | null | undefined) {
+  const normalized = pathData?.trim();
+  return Boolean(normalized && normalized.length > 16 && /[MLCQ]/i.test(normalized));
+}
+
 export async function TrackMap({ circuitId, title, variant = "card" }: TrackMapProps) {
   const circuit = getCircuitAsset(circuitId);
   const fastf1Track = await getCircuitTrackData(circuitId);
   const geoFallback = await getCircuitGeoFallback(circuitId, variant);
   const className = `track-map track-map--${variant}`;
-  const preferredPath = fastf1Track?.pathData ?? geoFallback?.pathData ?? null;
+  const preferredPath = isUsablePath(fastf1Track?.pathData)
+    ? fastf1Track?.pathData
+    : isUsablePath(geoFallback?.pathData)
+      ? geoFallback?.pathData
+      : null;
 
   if (preferredPath) {
     return (

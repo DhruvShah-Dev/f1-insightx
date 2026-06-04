@@ -5,8 +5,8 @@ import type { NextConfig } from "next";
 const configDir = fileURLToPath(new URL(".", import.meta.url));
 const workspaceRoot = fileURLToPath(new URL("../..", import.meta.url));
 
+loadEnvConfig(workspaceRoot, true, console, true);
 loadEnvConfig(configDir, true);
-loadEnvConfig(workspaceRoot, true);
 
 const nextConfig: NextConfig = {
   turbopack: {

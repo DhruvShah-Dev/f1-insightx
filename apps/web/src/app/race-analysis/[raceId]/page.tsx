@@ -88,7 +88,7 @@ function RaceStoryTimeline({ race }: { race: RaceAnalysisDetail }) {
   return (
     <section className="race-analysis-section">
       <div className="race-analysis-section__header">
-        <span>01 · Race Story</span>
+        <span>01 / Race Story</span>
         <h2>Timeline</h2>
       </div>
       <div className="race-analysis-timeline">
@@ -122,7 +122,7 @@ function TyreStrategyOverview({ race }: { race: RaceAnalysisDetail }) {
   return (
     <section className="race-analysis-section">
       <div className="race-analysis-section__header">
-        <span>02 · Tyre Strategy</span>
+        <span>02 / Tyre Strategy</span>
         <h2>Stint architecture</h2>
       </div>
       <div className="race-analysis-stint-board">
@@ -159,7 +159,7 @@ function TyreStrategyOverview({ race }: { race: RaceAnalysisDetail }) {
           <div className="race-analysis-pit-card" key={`${stop.driver}-${stop.pitStopNumber}-${stop.pitLap}`}>
             <span>Lap {stop.pitLap}</span>
             <strong>{stop.driver}</strong>
-            <small>{stop.compoundFrom} → {stop.compoundTo} · {signed(stop.netPositionChange)} pos</small>
+            <small>{stop.compoundFrom} to {stop.compoundTo} / {signed(stop.netPositionChange)} pos</small>
           </div>
         ))}
       </div>
@@ -174,7 +174,7 @@ function PositionEvolution({ race }: { race: RaceAnalysisDetail }) {
   return (
     <section className="race-analysis-section race-analysis-section--wide">
       <div className="race-analysis-section__header">
-        <span>03 · Position Evolution</span>
+        <span>03 / Position Evolution</span>
         <h2>Movement map</h2>
       </div>
       <div className="race-analysis-position-panel">
@@ -201,7 +201,7 @@ function PositionEvolution({ race }: { race: RaceAnalysisDetail }) {
             <article key={swing.id}>
               <span>{swing.eventType}</span>
               <strong>{swing.driver} {signed(swing.positionDelta)} pos</strong>
-              <small>Lap {swing.startLap} · {swing.evidenceType} · not pass-by-pass verified</small>
+              <small>Lap {swing.startLap} / {swing.evidenceType} / not pass-by-pass verified</small>
             </article>
           ))}
         </div>
@@ -220,7 +220,7 @@ function PaceEvolution({ race }: { race: RaceAnalysisDetail }) {
   return (
     <section className="race-analysis-section">
       <div className="race-analysis-section__header">
-        <span>04 · Pace Evolution</span>
+        <span>04 / Pace Evolution</span>
         <h2>Pace ribbons</h2>
       </div>
       <div className="race-analysis-ribbon-board">
@@ -249,7 +249,7 @@ function TrafficContext({ race }: { race: RaceAnalysisDetail }) {
   return (
     <section className="race-analysis-section">
       <div className="race-analysis-section__header">
-        <span>05 · Traffic & Status</span>
+        <span>05 / Traffic & Status</span>
         <h2>Pressure field</h2>
       </div>
       <div className="race-analysis-pressure-grid">
@@ -286,7 +286,7 @@ function WeatherStrip({ race }: { race: RaceAnalysisDetail }) {
     <div className="race-analysis-weather-strip" aria-label="Weather context">
       {samples.map((sample) => (
         <span key={`${sample.lapNumber}-${sample.weatherImpactLabel}`}>
-          L{sample.lapNumber} · {sample.weatherState} · {sample.trackTempC?.toFixed(1) ?? "-"}C
+          L{sample.lapNumber} / {sample.weatherState} / {sample.trackTempC?.toFixed(1) ?? "-"}C
         </span>
       ))}
     </div>
@@ -325,7 +325,7 @@ export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDet
       <section className="race-analysis-detail-hero">
         <div className="race-analysis-detail-hero__glow" aria-hidden="true" />
         <div className="race-analysis-detail-hero__copy">
-          <span className="race-analysis-kicker">{race.season} · Round {race.round}</span>
+          <span className="race-analysis-kicker">{race.season} / Round {race.round}</span>
           <h1>{race.raceName}</h1>
           <div className="race-analysis-hero-meta">
             <span>{formatCircuit(race.circuit)}</span>
@@ -341,7 +341,7 @@ export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDet
           </div>
           <div>
             <span>Podium</span>
-            <strong>{race.podium.join(" · ")}</strong>
+            <strong>{race.podium.join(" / ")}</strong>
             <small>{race.summary.winningCompoundPath}</small>
           </div>
           <div>

@@ -29,14 +29,21 @@ export function RaceHistoryRail({ races, hideHeader = false }: RaceHistoryRailPr
         <div className="home-story__lead race-history-header">
           <div className="section-meta">Archive</div>
           <h2 className="section-title">Recent Grands Prix.</h2>
+          <p className="race-history-header__hint">Scroll race cards</p>
         </div>
       )}
 
       <div className="home-story__body">
-        <div className="race-history-rail">
+        <div className="race-history-rail-shell">
+          <div
+            className="race-history-rail"
+            aria-label="Recent Grands Prix, horizontally scrollable"
+            tabIndex={0}
+          >
           {races.map((race) => (
             <RaceHistoryCard key={race.id} race={race} />
           ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,12 +1,12 @@
 import { apiError, apiOk } from "@/lib/api/errors";
 import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
-import { checkRateLimit, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { getFantasyDataset } from "@/lib/server/fantasy-data";
 
 const cacheHeaders = createPublicCacheHeaders({ browserMaxAgeSeconds: 120, edgeMaxAgeSeconds: 600, staleWhileRevalidateSeconds: 1800 });
 
 export async function GET(request: Request) {
-  const rateLimit = checkRateLimit(request, RATE_LIMIT_POLICIES.fantasyDataset);
+  const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.fantasyDataset);
   if (!rateLimit.ok) {
     return apiError({
       status: 429,
