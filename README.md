@@ -1,85 +1,85 @@
 # F1 InsightX
 
-F1 InsightX is a production-minded Formula 1 analytics platform built with Next.js, Supabase, and Python data pipelines. It combines race-week context, deterministic strategy simulation, post-race analysis, and telemetry-derived analytics without using machine learning in the simulation path.
+**Premium F1 telemetry and race intelligence.**
+
+F1 InsightX turns deterministic FastF1 data pipelines into focused race-week, strategy, telemetry, and post-race product experiences. The Next.js application reads compact offline-generated product views; it never parses raw telemetry at runtime.
+
+## Product Preview
+
+### Analytics · Telemetry Workstation
+
+Driver-vs-driver telemetry comparison with real circuit geometry, approximate segment analysis, synchronized product views, and honest energy deployment proxies.
+
+![F1 InsightX Analytics telemetry workstation](docs/assets/screenshots/analytics-workstation.webp)
+
+### Race Analysis · Post-Race Intelligence
+
+A cinematic completed-race report built from observed results and deterministic pace, stint, strategy, weather, track-status, traffic-proxy, and position-movement views.
+
+![F1 InsightX Race Analysis report](docs/assets/screenshots/race-analysis.webp)
+
+### Race Week · Weekend Command Center
+
+Upcoming-race context, schedule state, circuit features, conditions, and generated race-week signals presented without inventing unavailable session data.
+
+![F1 InsightX Race Week command center](docs/assets/screenshots/race-week.webp)
 
 ## Product Surfaces
 
-- `Race Week`: upcoming and recent race context, schedule state, and race-specific product views.
-- `Strategy Lab`: deterministic lap/stint strategy simulation using tyre degradation, pit loss, weather, traffic, fuel correction, telemetry-derived strategy signals, track archetypes, and confidence scoring.
-- `Analytics`: driver-vs-driver telemetry feature comparisons using precomputed product views and session-scoped indexed shards.
-- `Race Analysis`: completed-race story, stint, pit strategy, pace evolution, weather, track-status, and position-movement product views.
-- `Account/Profile`: Supabase-backed authentication, profile surfaces, and legal/privacy/cookie pages.
+- **Analytics**: telemetry-derived driver comparison using indexed, session-scoped product shards.
+- **Race Analysis**: completed-race story, strategy, pace evolution, weather, track-status, traffic-proxy, and position-movement views.
+- **Strategy Lab**: deterministic stint and race-strategy simulation with explicit assumptions and sensitivity drivers.
+- **Race Week**: current weekend context, schedule, conditions, circuit metadata, and pre-session signals.
+- **Account/Profile**: Supabase-backed authentication, profile, privacy, and account-management flows.
 
-## Data Architecture
+## Architecture
 
-The web app reads compact product views. It does not read raw FastF1 telemetry at runtime.
+```text
+FastF1 archive
+  -> staged session extracts
+  -> canonical FastF1 tables
+  -> telemetry and deterministic feature layers
+  -> compact product views and indexes
+  -> Next.js server-first product surfaces
+```
 
-1. `data/raw/fastf1`: generated FastF1 archive, manifests, failed-session logs, cache-adjacent artifacts.
-2. `data/staged/fastf1`: generated per-session CSV extracts.
-3. `data/canonical_fastf1`: generated canonical FastF1 tables with manifest gating and weather propagation.
-4. `data/telemetry_features`: generated telemetry-derived lap, segment, braking, throttle, straight-line, and energy deployment proxy features.
-5. `data/strategy_lab`: Strategy Lab product views and deterministic simulation inputs.
-6. `data/analytics`: generated Analytics product views and indexed session shards.
-7. `data/race_analysis`: generated Race Analysis product views for completed races.
-8. Supabase: auth/profile and deployable database-backed surfaces where configured.
+| Layer | Purpose |
+| --- | --- |
+| `data/raw/fastf1` | Generated FastF1 archive, manifests, and cache-adjacent artifacts |
+| `data/staged/fastf1` | Generated per-session extracts |
+| `data/canonical_fastf1` | Validated canonical laps, results, stints, sessions, and weather |
+| `data/telemetry_features` | Telemetry-derived segment, braking, throttle, straight-line, and energy-proxy features |
+| `data/strategy_lab` | Deterministic Strategy Lab product views |
+| `data/analytics` | Analytics product views and indexed session shards |
+| `data/race_analysis` | Completed-race intelligence views |
+| Supabase | Authentication, profiles, and deployable database-backed surfaces |
 
-## Local Setup
+## Local Development
+
+Requirements: Node.js 20+, npm 10+, Python 3.11+, and the Python packages in `data/requirements.txt`.
 
 ```bash
 npm install
 npm run data:install
+npm run dev
 ```
 
-Create `.env.local` from `.env.example` if you need Supabase-backed auth/profile flows. Never commit real `.env*` files.
+Create `.env.local` from `.env.example` only when testing Supabase-backed auth and profile flows. Never commit real environment files or secrets.
 
-## Development
+## Validation
 
 ```bash
-npm run dev
 npm run test --workspace web
 npm run typecheck
 npm run lint --workspace web
 npm run build --workspace web
-```
-
-## Data Commands
-
-Canonical FastF1:
-
-```bash
-python build_canonical_fastf1.py --start-season 2020 --end-season 2026
-python validate_canonical_fastf1.py
-```
-
-Telemetry features:
-
-```bash
-python build_telemetry_features.py --start-season 2020 --end-season 2026
-python validate_telemetry_features.py
-```
-
-Strategy Lab:
-
-```bash
-python data/build_strategy_lab_layers.py
-```
-
-Analytics product views and session indexes:
-
-```bash
-python data/build_analytics_views.py
-python data/build_analytics_indexes.py
-python validate_analytics_views.py
-```
-
-Product freshness manifest:
-
-```bash
-python build_product_manifest.py
+python check_generated_artifacts.py
 python validate_product_manifest.py
 ```
 
-Full local product refresh order:
+## Data Refresh
+
+Core deterministic refresh order:
 
 ```bash
 python build_canonical_fastf1.py --start-season 2020 --end-season 2026
@@ -95,27 +95,19 @@ python validate_product_manifest.py
 python check_generated_artifacts.py
 ```
 
-Python tests:
+## Product Integrity
 
-```bash
-python -m pytest tests/test_analytics_views.py tests/test_telemetry_features.py
-```
+- Energy deployment is a **proxy**, not true ERS or battery telemetry.
+- Analytics uses **approximate segments** and does not claim unverified named-corner precision.
+- Position movement, traffic, DRS-window, and dirty-air values remain explicitly labelled as proxies where exact evidence is unavailable.
+- Race-control causes and exact overtakes are not invented.
+- Strategy Lab presents deterministic scenario ranges and assumptions, not ML predictions.
 
-## Data Artifact Policy
+## Artifact and Deployment Policy
 
-Commit source scripts, SQL, docs, tests, and intentionally small product fixtures. Do not commit raw FastF1 archives, cache data, parquet telemetry, canonical CSVs, telemetry feature CSVs, or large Analytics product/index outputs unless there is an explicit release reason.
+Commit source, SQL, migrations, tests, documentation, fixtures, and intentionally small runtime product views. Do not commit raw FastF1 archives, cache data, parquet telemetry, canonical CSVs, telemetry feature CSVs, or large generated Analytics and Race Analysis outputs without an explicit release decision.
 
-Generated artifacts are ignored and should be regenerated with the commands above.
-
-## Product Honesty
-
-- Energy deployment is a proxy derived from speed, throttle, RPM, gear, DRS, and segment behavior. It is not true ERS or battery telemetry.
-- Analytics uses approximate segment identifiers. It does not claim exact named-corner precision yet.
-- Strategy Lab returns finish bands, gain/loss ranges, confidence, weakest assumptions, and sensitivity drivers. It should not be presented as exact race prediction.
-
-## Deployment Notes
-
-The web app is intended for Vercel with Next.js App Router. Supabase variables are required for deployed auth/profile flows:
+The web app targets Vercel using Next.js App Router. Supabase-backed auth/profile flows require:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
@@ -123,12 +115,15 @@ The web app is intended for Vercel with Next.js App Router. Supabase variables a
 - `NEXT_PUBLIC_APP_URL`
 - `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL`
 
-If generated CSV product views are required in a deployment, regenerate them before packaging or publish them through an explicit artifact/data release process. Keep raw telemetry and cache artifacts out of the deployment bundle.
+See [Release Checklist](docs/RELEASE_CHECKLIST.md) for the runtime artifact matrix, build order, Supabase checks, deployment flow, and post-deploy QA.
 
-More detail:
+## Documentation
 
 - [Development](docs/DEVELOPMENT.md)
 - [Data Pipeline](docs/DATA_PIPELINE.md)
-- [Strategy Lab](docs/STRATEGY_LAB.md)
+- [Data Sources](docs/data-sources.md)
 - [Analytics](docs/ANALYTICS.md)
+- [Strategy Lab](docs/STRATEGY_LAB.md)
 - [Deployment](docs/deployment.md)
+- [Supabase Auth Setup](docs/supabase-auth-setup.md)
+- [Release Checklist](docs/RELEASE_CHECKLIST.md)

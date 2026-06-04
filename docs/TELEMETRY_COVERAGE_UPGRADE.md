@@ -222,4 +222,3 @@ Implement Tier B as a controlled offline extraction pass:
 2. Build `telemetry_representative_laps.csv` without extracting telemetry.
 3. Validate row counts, clean-lap coverage, and selected lap diversity.
 4. Only then add an extraction command for selected laps.
-

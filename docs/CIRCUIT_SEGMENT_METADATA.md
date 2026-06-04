@@ -155,4 +155,3 @@ Future validator should enforce:
 ## Next Implementation Step
 
 Create a validator and then populate Miami with a small manually reviewed pilot set. Until that pilot is verified, Analytics and Race Analysis should keep approximate segment language.
-
