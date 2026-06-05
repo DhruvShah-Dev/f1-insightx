@@ -6,19 +6,19 @@ F1 InsightX turns deterministic FastF1 data pipelines into focused race-week, st
 
 ## Product Preview
 
-### Analytics · Telemetry Workstation
+### Analytics - Telemetry Workstation
 
-Driver-vs-driver telemetry comparison with real circuit geometry, approximate segment analysis, synchronized product views, and honest energy deployment proxies.
+Canvas-first driver-vs-driver telemetry comparison with real circuit geometry, representative traces, synchronized focus, same-team color disambiguation, approximate segment analysis, and honest energy deployment proxies.
 
 ![F1 InsightX Analytics telemetry workstation](docs/assets/screenshots/analytics-workstation.webp)
 
-### Race Analysis · Post-Race Intelligence
+### Race Analysis - Post-Race Intelligence
 
 A cinematic completed-race report built from observed results and deterministic pace, stint, strategy, weather, track-status, traffic-proxy, and position-movement views.
 
 ![F1 InsightX Race Analysis report](docs/assets/screenshots/race-analysis.webp)
 
-### Race Week · Weekend Command Center
+### Race Week - Weekend Command Center
 
 Upcoming-race context, schedule state, circuit features, conditions, and generated race-week signals presented without inventing unavailable session data.
 
@@ -26,11 +26,13 @@ Upcoming-race context, schedule state, circuit features, conditions, and generat
 
 ## Product Surfaces
 
-- **Analytics**: telemetry-derived driver comparison using indexed, session-scoped product shards.
+- **Analytics**: telemetry-derived driver comparison using indexed, session-scoped product shards, representative trace visuals, real circuit geometry, and same-team comparison colors.
 - **Race Analysis**: completed-race story, strategy, pace evolution, weather, track-status, traffic-proxy, and position-movement views.
-- **Strategy Lab**: deterministic stint and race-strategy simulation with explicit assumptions and sensitivity drivers.
+- **Strategy Lab**: pit-wall strategy console for deterministic stint and race-strategy simulation with explicit assumptions and sensitivity drivers.
 - **Race Week**: current weekend context, schedule, conditions, circuit metadata, and pre-session signals.
 - **Account/Profile**: Supabase-backed authentication, profile, privacy, and account-management flows.
+
+Fantasy is intentionally hidden from the visible product until it is rebuilt as a separate surface.
 
 ## Architecture
 
@@ -50,7 +52,7 @@ FastF1 archive
 | `data/canonical_fastf1` | Validated canonical laps, results, stints, sessions, and weather |
 | `data/telemetry_features` | Telemetry-derived segment, braking, throttle, straight-line, and energy-proxy features |
 | `data/strategy_lab` | Deterministic Strategy Lab product views |
-| `data/analytics` | Analytics product views and indexed session shards |
+| `data/analytics` | Analytics product views, indexed session shards, and representative trace artifacts |
 | `data/race_analysis` | Completed-race intelligence views |
 | Supabase | Authentication, profiles, and deployable database-backed surfaces |
 
@@ -89,7 +91,9 @@ python validate_telemetry_features.py
 python data/build_strategy_lab_layers.py
 python data/build_analytics_views.py
 python data/build_analytics_indexes.py
+python data/build_analytics_telemetry_traces.py
 python validate_analytics_views.py
+python validate_analytics_telemetry_traces.py
 python build_product_manifest.py
 python validate_product_manifest.py
 python check_generated_artifacts.py
@@ -99,6 +103,7 @@ python check_generated_artifacts.py
 
 - Energy deployment is a **proxy**, not true ERS or battery telemetry.
 - Analytics uses **approximate segments** and does not claim unverified named-corner precision.
+- Same-team Analytics colors are comparison aids only; constructor names and telemetry values remain source-derived.
 - Position movement, traffic, DRS-window, and dirty-air values remain explicitly labelled as proxies where exact evidence is unavailable.
 - Race-control causes and exact overtakes are not invented.
 - Strategy Lab presents deterministic scenario ranges and assumptions, not ML predictions.

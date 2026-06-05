@@ -1,70 +1,52 @@
 # Architecture
 
-## Chosen shape
+F1 InsightX is a server-first Next.js product backed by offline FastF1 data builders and Supabase auth/profile storage. The runtime consumes compact product views; raw telemetry, canonical rebuilds, and heavy generated artifacts stay outside request handling.
 
-The v1 architecture is a single deployable web product with one managed database and an offline Python data layer:
+## Product Surfaces
 
-- `apps/web`: Next.js 16 app for UI, API routes, and server-side orchestration
-- `Supabase Postgres`: primary relational database
-- `data/`: Python workspace for ingesting, cleaning, and scoring F1 data
-- `GitHub Actions`: scheduled refresh for static and historical datasets
-- `Vercel Hobby`: hosting for the web app
+- **Race Week**: current event command center with schedule, circuit metadata, conditions, and race-week order.
+- **Analytics**: driver-vs-driver telemetry workstation using indexed session shards, real circuit geometry, representative traces, approximate segments, and proxy-safe energy labels.
+- **Strategy Lab**: deterministic pit-wall strategy console using prebuilt race, stint, pit-window, and sensitivity views.
+- **Race Analysis**: completed-race intelligence reports built from observed results and offline product views.
+- **Account/Profile**: Supabase auth, profile settings, privacy, and account-management routes.
 
-This keeps the runtime surface area small while still showing full-stack breadth.
+Fantasy work is intentionally hidden from the public product until it is rebuilt as a separate surface.
 
-## Why this is the right v1 architecture
+## Runtime Flow
 
-- `0$ friendly`: Vercel Hobby + Supabase Free + GitHub Actions is the lowest-friction free combination with strong DX.
-- `Portfolio value`: combines modern React product engineering, API design, SQL modeling, and Python analytics in one project.
-- `Maintainability`: one primary deploy target and one DB is appropriate for a solo developer.
-- `Extensibility`: prediction logic starts rule-based and can later absorb offline-trained statistical models without reworking the UI or schema.
+1. A user opens a Next.js App Router page.
+2. Server components load small curated/product views from tracked fallback data, generated deployment artifacts, or Supabase-backed tables where configured.
+3. Client components only manage interaction state such as form controls, Strategy Lab scenarios, synchronized telemetry focus, and auth/profile forms.
+4. API routes return bounded product payloads and never parse raw FastF1 telemetry at runtime.
+5. Product surfaces display data quality, proxy wording, and unavailable states instead of inventing missing precision.
 
-## Runtime flow
+## Data Flow
 
-1. A user opens the Next.js app.
-2. The app loads reference data such as drivers, constructors, circuits, races, and fantasy pricing from Supabase.
-3. The user submits either a race simulation scenario or a fantasy lineup request.
-4. Next.js server routes execute the relevant orchestration logic:
-   - race simulation engine for scenario outcomes
-   - lineup optimization engine for fantasy recommendations
-5. Results are returned with explanation objects, confidence bands, and comparison metrics.
-6. Saved scenarios and lineups can be persisted later without changing the core flow.
+```text
+FastF1 archive
+  -> staged session extracts
+  -> canonical laps/results/stints/weather
+  -> telemetry and deterministic feature layers
+  -> Strategy Lab, Analytics, Race Week, and Race Analysis product views
+  -> indexed/sharded runtime artifacts
+  -> Next.js server-first surfaces
+```
 
-## Data flow
+## Module Boundaries
 
-1. Python scripts pull from public F1 data sources.
-2. Raw files are normalized into canonical tables.
-3. Derived features are computed for strategy profiles, fantasy value scores, and race priors.
-4. Curated outputs are loaded into Supabase.
-5. The app reads only the curated layer for speed and consistency.
+- `apps/web`: routes, UI components, server loaders, API routes, auth/profile helpers, and CI fixtures.
+- `data`: offline builders, generated-data schemas, validators, and product-view generation scripts.
+- `supabase`: migrations and explicit Data API grants.
+- `docs`: release policy, data-source notes, architecture, and product integrity documentation.
 
-## Prediction philosophy
+## Integrity Rules
 
-The app must not imply certainty. V1 should present:
+- Analytics uses approximate segments unless named segment metadata is manually verified.
+- Energy deployment remains a proxy, not true ERS or battery state.
+- Race Analysis must not invent exact overtakes, incident causes, or DRS certainty.
+- Strategy Lab returns deterministic scenario bands and assumptions, not calibrated ML predictions.
+- ML work remains postponed until deterministic datasets and leakage controls are explicitly approved.
 
-- scenario-based simulations
-- transparent heuristics
-- confidence labels tied to input stability and data coverage
-- explanation text describing which assumptions pushed the outcome
+## Deployment Shape
 
-## Module boundaries
-
-### Race Prediction Lab
-
-- Input capture and scenario editing in the frontend
-- scenario validation in server routes
-- deterministic and heuristic simulation in backend logic
-- result views with ranking tables, probability cards, and explanation panels
-
-### Fantasy Team Builder
-
-- budget and preference form in the frontend
-- pricing, scoring weights, and constraints from curated tables
-- lineup optimization in backend logic
-- recommendation variants: safe, balanced, aggressive
-
-## Planned technical evolution
-
-- `V1`: deterministic rules + heuristic scoring
-- `V2`: historical calibration and scenario comparison storage
-- `V3`: offline-trained statistical models, richer telemetry features, account-based saved workspaces
+The web app targets Vercel. Supabase provides auth/profile persistence and optional database-backed product/reference reads. Large Analytics, Race Analysis, canonical, telemetry, and ML-generated artifacts are ignored by Git and must be generated or attached through a deliberate deployment artifact process.

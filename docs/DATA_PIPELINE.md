@@ -10,6 +10,7 @@ F1 InsightX uses an offline data pipeline. The application runtime consumes comp
 - `data/telemetry_features`: generated telemetry-derived lap, segment, braking, throttle, straight-line, and energy proxy features.
 - `data/strategy_lab`: Strategy Lab feature and product CSVs.
 - `data/analytics`: Analytics product views and indexed session shards.
+- `data/race_analysis`: completed-race product views for strategy, pace, traffic proxy, position movement, and story context.
 
 ## Canonical FastF1
 
@@ -47,6 +48,17 @@ python validate_analytics_views.py
 
 `data/build_analytics_views.py` creates product CSVs. `data/build_analytics_indexes.py` creates session-scoped compressed shards so the API can avoid loading large global CSVs for detail modes.
 
+Representative telemetry trace artifacts are generated offline and rendered as lightweight SVG traces in Analytics. The web runtime must not rebuild or smooth raw telemetry on request.
+
+## Race Analysis Views
+
+```bash
+python data/build_race_analysis_views.py
+python validate_race_analysis_views.py
+```
+
+Race Analysis views summarize observed race outcomes, pace evolution, stints, weather, track-status phases, traffic proxies, and position movement. They must not invent exact overtakes, race-control causes, DRS certainty, or dirty-air causality.
+
 ## Product Freshness Manifest
 
 ```bash
@@ -68,7 +80,11 @@ python validate_telemetry_features.py
 python data/build_strategy_lab_layers.py
 python data/build_analytics_views.py
 python data/build_analytics_indexes.py
+python data/build_analytics_telemetry_traces.py
 python validate_analytics_views.py
+python validate_analytics_telemetry_traces.py
+python data/build_race_analysis_views.py
+python validate_race_analysis_views.py
 python build_product_manifest.py
 python validate_product_manifest.py
 ```

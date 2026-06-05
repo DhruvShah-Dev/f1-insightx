@@ -24,7 +24,7 @@ them through a deliberate artifact release process.
 
 | Surface / API | Runtime dependency | Current git policy | Missing behavior |
 | --- | --- | --- | --- |
-| Home `/` | curated CSVs, Race Week summary, season state if present | curated small CSVs tracked; `data/season_state.json` currently untracked | falls back/degrades depending on helper |
+| Home `/` | curated CSVs, Race Week summary, season state if present | curated small CSVs tracked; `data/season_state.json` tracked as a small authoritative runtime artifact | falls back/degrades depending on helper |
 | Race Week `/predictions`, `/raceweek`, `/api/platform/race-week` | `data/race_week/race_week_*.csv`, curated races/circuits | currently tracked small product CSVs | required CSVs missing cause product unavailability |
 | Strategy Lab `/lab`, `/api/strategy-lab/races/[raceId]` | `data/strategy_lab/*.csv`, curated races/drivers/constructors/circuits | most product CSVs tracked; telemetry/archetype source signals ignored | required CSVs missing cause product unavailability |
 | Analytics `/analytics`, `/api/analytics/*` | `data/analytics/analytics_session_index.csv`, `data/analytics/indexed/analytics_session_manifest.json`, session shards, optional trace shards | ignored except `.gitkeep`; CI uses tiny fixtures | hard requirement for production Analytics; traces degrade if absent |
@@ -52,7 +52,7 @@ Hard runtime requirements that are currently ignored:
 | `data/curated/*.csv` | Track only if intentionally small/current; otherwise generate | Runtime fallback uses these files. Decide per release. |
 | `data/race_week/*.csv` | Track for lightweight CSV fallback if size stays small | Current product views are small and deployment-friendly. |
 | `data/strategy_lab/*.csv` | Track for lightweight CSV fallback if size stays small | Current product views are small; source telemetry signal CSVs remain ignored. |
-| `data/season_state.json` | Decide before release: track as small runtime manifest or deploy-generate | Runtime helper reads it. Stale or missing state changes product defaults. |
+| `data/season_state.json` | Track as a small authoritative runtime manifest and refresh before release | Runtime helper reads it. Stale state changes product defaults. |
 | `data/analytics/*.csv`, `data/analytics/indexed/**` | Ignore; deploy-generate or artifact-publish | Large generated flagship data. |
 | `data/race_analysis/**` | Ignore; deploy-generate or artifact-publish | Generated post-race product views can grow quickly. |
 | `data/reports/**` | Ignore; deploy-generate | Reports are build evidence, not source. |
@@ -250,6 +250,8 @@ Public-access QA must confirm:
 - no true ERS/battery claims
 - approximate segment wording remains visible
 - Race Week, Home, Analytics, Strategy Lab, and Race Analysis agree on season state
+- Analytics same-team driver comparisons remain visually distinct and label comparison colors as a visual aid
+- Native dropdown options are readable before hover, and scrollable rails expose a thin custom scrollbar
 - Google auth errors degrade cleanly and email fallback is visible
 - cookie preferences do not block core navigation after a user choice
 - generated artifact gaps produce intentional unavailable states

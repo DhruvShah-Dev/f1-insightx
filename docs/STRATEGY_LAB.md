@@ -2,6 +2,8 @@
 
 Strategy Lab is a deterministic, explainable race strategy simulator. It is data-driven, but it is not a machine-learning model and should not be described as a calibrated race prediction engine.
 
+The current product surface is a pit-wall strategy console: one race-specific hero, a sticky desktop control rail, a result-first strategy canvas, stint lanes, pit-window strips, position transition bands, and compact risk/sensitivity modules.
+
 ## Inputs
 
 - Canonical FastF1 laps, results, stints, weather, and session summaries.
@@ -28,6 +30,13 @@ It does not model:
 - exact driver intent
 - full race-control stochastic behavior
 - exact corner-by-corner vehicle dynamics
+
+## UI Runtime Contract
+
+- Keep simulation math, presets, API contracts, and product-view schemas separate from the presentation layer.
+- Controls may be sticky on desktop but must stack before outputs on mobile.
+- Loading and failure states should stay inside the pit-wall workspace, not replace the whole route with a generic page.
+- Dropdowns and scroll rails should use the shared dark/select and custom-scrollbar treatment.
 
 ## Product Output Rules
 

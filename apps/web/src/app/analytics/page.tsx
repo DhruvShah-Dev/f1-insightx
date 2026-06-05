@@ -4,7 +4,6 @@ import { AnalyticsTelemetrySyncScope } from "@/components/analytics/analytics-te
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
-import { TeamBadge } from "@/components/ui/team-badge";
 import { withServerFallback } from "@/lib/errors/logger";
 import {
   getAnalyticsComparisonResult,
@@ -23,10 +22,10 @@ import {
   type AnalyticsThrottleHighlight,
 } from "@/lib/server/analytics-product";
 import { getCircuitTrackDataForRace } from "@/lib/server/circuit-track-data";
-import { formatSeasonRaceLabel, getSeasonState, type SeasonState } from "@/lib/server/season-state";
+import { getSeasonState, type SeasonState } from "@/lib/server/season-state";
 import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
 import { getTeamMeta } from "@/lib/ui/team-meta";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 type AnalyticsPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
@@ -72,6 +71,11 @@ type TelemetryInstrument = {
   tone?: "brake" | "throttle" | "speed" | "proxy";
 };
 
+type SameTeamComparisonPalette = {
+  driverB: string;
+  driverBSecondary: string;
+};
+
 const analyticsTabs: Array<{ id: AnalyticsTab; label: string; shortLabel: string }> = [
   { id: "overview", label: "Overview", shortLabel: "Overview" },
   { id: "segments", label: "Cornering", shortLabel: "Corner" },
@@ -104,12 +108,32 @@ const unavailableRuntime: RuntimeSourceMetadata = {
   round: null,
 };
 
+const sameTeamComparisonPalettes: Record<string, SameTeamComparisonPalette> = {
+  mclaren: { driverB: "#89f0ff", driverBSecondary: "#f5f7fb" },
+  ferrari: { driverB: "#ffda59", driverBSecondary: "#ffffff" },
+  mercedes: { driverB: "#d9dde3", driverBSecondary: "#7ef5e7" },
+  red_bull: { driverB: "#f5c542", driverBSecondary: "#ffffff" },
+};
+
+const analyticsTeamAliases: Record<string, string> = {
+  red_bull_racing: "red_bull",
+  haas_f1_team: "haas",
+  rb: "racing_bulls",
+  alphatauri: "racing_bulls",
+};
+
 function firstParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;
 }
 
 function normalizeTeamId(team: string | null | undefined) {
-  return (team ?? "constructor").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  const normalized = (team ?? "constructor").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  return analyticsTeamAliases[normalized] ?? normalized;
+}
+
+function isSameTeamComparison(comparison: AnalyticsComparisonPayload | null) {
+  if (!comparison?.overview.driverATeam || !comparison.overview.driverBTeam) return false;
+  return normalizeTeamId(comparison.overview.driverATeam) === normalizeTeamId(comparison.overview.driverBTeam);
 }
 
 function normalizeTab(value: string | string[] | undefined): AnalyticsTab {
@@ -143,22 +167,10 @@ function telemetryQualityTier(value: number | null | undefined) {
   return "Incomplete telemetry";
 }
 
-function formatSigned(value: number | null | undefined, unit = "") {
-  if (value === null || value === undefined || !Number.isFinite(value)) return "Even";
-  if (Math.abs(value) < 0.0001) return "Even";
-  return `${value > 0 ? "+" : ""}${value.toFixed(2)}${unit}`;
-}
-
 function formatCompactSigned(value: number | null | undefined, unit = "") {
   if (value === null || value === undefined || !Number.isFinite(value)) return "n/a";
   if (Math.abs(value) < 0.0001) return `0${unit}`;
   return `${value > 0 ? "+" : ""}${value.toFixed(Math.abs(value) >= 10 ? 1 : 2)}${unit}`;
-}
-
-function formatChartValue(value: number | null | undefined, unit = "") {
-  if (value === null || value === undefined || !Number.isFinite(value)) return "n/a";
-  if (Math.abs(value) < 0.0001) return `0${unit}`;
-  return `${value > 0 ? "+" : ""}${value.toFixed(2)}${unit}`;
 }
 
 function edgeLabel(value: number | null | undefined, driverA: string, driverB: string) {
@@ -223,52 +235,6 @@ function buildDominantEdge(comparison: AnalyticsComparisonPayload): DominantEdge
     value: "Even",
     note: "No single area dominates",
   };
-}
-
-function countEdgeLabel(countA: number, countB: number, driverA: string, driverB: string) {
-  if (countA === countB) return "Even";
-  return countA > countB ? driverA : driverB;
-}
-
-function buildMetricCards(comparison: AnalyticsComparisonPayload): MetricCard[] {
-  const { overview } = comparison;
-  const driverA = overview.driverA;
-  const driverB = overview.driverB;
-
-  return [
-    {
-      label: "Approx segments",
-      value: countEdgeLabel(overview.segmentAdvantageCountA, overview.segmentAdvantageCountB, driverA, driverB),
-      note: `${driverA} ${overview.segmentAdvantageCountA} / ${driverB} ${overview.segmentAdvantageCountB}`,
-      tone: "strong",
-    },
-    {
-      label: "Straight-line",
-      value: countEdgeLabel(overview.straightAdvantageCountA, overview.straightAdvantageCountB, driverA, driverB),
-      note: `${formatSigned(overview.avgStraightDeltaKph, " kph")} average delta`,
-    },
-    {
-      label: "Braking",
-      value: edgeLabel(overview.brakingAdvantageScore, driverA, driverB),
-      note: `${formatSigned(overview.brakingAdvantageScore)} score delta`,
-    },
-    {
-      label: "Traction exit",
-      value: edgeLabel(overview.tractionAdvantageScore, driverA, driverB),
-      note: `${formatSigned(overview.tractionAdvantageScore)} score delta`,
-    },
-    {
-      label: "Energy proxy",
-      value: edgeLabel(overview.energyDeploymentProxyDelta, driverA, driverB),
-      note: `${formatSigned(overview.energyDeploymentProxyDelta)} proxy delta`,
-      tone: "proxy",
-    },
-    {
-      label: "Data strength",
-      value: confidenceTier(overview.confidence, comparison.session.telemetryQualityMean),
-      note: "Telemetry quality plus agreement",
-    },
-  ];
 }
 
 function instrumentFill(value: number | null | undefined, scale: number) {
@@ -386,53 +352,6 @@ function buildHref(params: {
   if (params.driverB) search.set("driverB", params.driverB);
   if (params.segmentId) search.set("segmentId", params.segmentId);
   return `/analytics?${search.toString()}`;
-}
-
-function ChartRows({ rows, driverA, driverB, selectedSegmentId }: { rows: ChartBar[]; driverA: string; driverB: string; selectedSegmentId: string | null }) {
-  if (rows.length === 0) {
-    return (
-      <div className="analytics-page__empty-chart">
-        <span>No detail rows</span>
-        <p>This mode has no prepared rows for the selected pair.</p>
-      </div>
-    );
-  }
-
-  const maxMagnitude = Math.max(1, ...rows.map((row) => Math.abs(row.value ?? 0)));
-
-  return (
-    <div className="analytics-chart" aria-label={`${driverA} versus ${driverB} delta chart`}>
-      {rows.map((row) => {
-        const value = row.value ?? 0;
-        const magnitude = Math.min(100, Math.abs(value) / maxMagnitude * 100);
-        const leader = value > 0 ? driverA : value < 0 ? driverB : "Even";
-        return (
-          <div
-            className={`analytics-chart__row${row.segmentId === selectedSegmentId ? " analytics-chart__row--selected" : ""}`}
-            key={row.label}
-            data-sync-id={row.segmentId}
-            tabIndex={0}
-          >
-            <div className="analytics-chart__meta">
-              <strong>{row.label}</strong>
-              <span>{row.segmentId === selectedSegmentId ? "Selected - " : ""}{compactSignalLabel(row.confidence)}</span>
-            </div>
-            <div className="analytics-chart__track">
-              <div className="analytics-chart__midline" />
-              <div
-                className={`analytics-chart__bar${value < 0 ? " analytics-chart__bar--negative" : ""}`}
-                style={{ width: `${magnitude / 2}%` }}
-              />
-            </div>
-            <div className="analytics-chart__value">
-              <strong>{formatChartValue(row.value, row.unit)}</strong>
-              <span>{leader}</span>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
 }
 
 function modeCopy(activeTab: AnalyticsTab) {
@@ -932,13 +851,25 @@ function activeChartRows(comparison: AnalyticsComparisonPayload, activeTab: Anal
 }
 
 function buildTeamStyle(comparison: AnalyticsComparisonPayload | null): CSSProperties {
-  const teamA = getTeamMeta(normalizeTeamId(comparison?.overview.driverATeam));
-  const teamB = getTeamMeta(normalizeTeamId(comparison?.overview.driverBTeam));
+  const teamAId = normalizeTeamId(comparison?.overview.driverATeam);
+  const teamBId = normalizeTeamId(comparison?.overview.driverBTeam);
+  const teamA = getTeamMeta(teamAId);
+  const teamB = getTeamMeta(teamBId);
+  const sameTeam = isSameTeamComparison(comparison);
+  const sameTeamPalette = sameTeamComparisonPalettes[teamAId];
+  const driverBPrimary = sameTeam
+    ? sameTeamPalette?.driverB ?? teamB.secondary ?? teamB.accent ?? "#e10600"
+    : teamB.primary;
+  const driverBSecondary = sameTeam
+    ? sameTeamPalette?.driverBSecondary ?? teamB.accent ?? teamB.secondary ?? "#f5f7fb"
+    : teamB.secondary;
+
   return {
     "--team-a": teamA.primary,
     "--team-a-secondary": teamA.secondary,
-    "--team-b": teamB.primary,
-    "--team-b-secondary": teamB.secondary,
+    "--team-b": driverBPrimary,
+    "--team-b-secondary": driverBSecondary,
+    "--same-team-comparison": sameTeam ? 1 : 0,
   } as CSSProperties;
 }
 
@@ -974,37 +905,199 @@ function buildDominanceSegments(comparison: AnalyticsComparisonPayload): Analyti
   });
 }
 
-function buildEngineerInsights(comparison: AnalyticsComparisonPayload, dominantEdge: DominantEdge | null): MetricCard[] {
-  const { overview } = comparison;
-  return [
-    {
-      label: "Strongest area",
-      value: dominantEdge?.label ?? "Even",
-      note: dominantEdge ? `${dominantEdge.driver} ${dominantEdge.value}` : "No single telemetry edge dominates",
-      tone: "strong",
-    },
-    {
-      label: "Overtaking edge",
-      value: edgeLabel(overview.avgStraightDeltaKph, overview.driverA, overview.driverB),
-      note: `${formatCompactSigned(overview.avgStraightDeltaKph, " kph")} straight-line delta`,
-    },
-    {
-      label: "Traction edge",
-      value: edgeLabel(overview.tractionAdvantageScore, overview.driverA, overview.driverB),
-      note: `${formatCompactSigned(overview.tractionAdvantageScore)} exit score`,
-    },
-    {
-      label: "Braking read",
-      value: confidenceTier(overview.confidence, comparison.session.telemetryQualityMean),
-      note: `${edgeLabel(overview.brakingAdvantageScore, overview.driverA, overview.driverB)} leads braking signal`,
-    },
-    {
-      label: "Energy deployment proxy",
-      value: edgeLabel(overview.energyDeploymentProxyDelta, overview.driverA, overview.driverB),
-      note: "Proxy-only speed-shape signal",
-      tone: "proxy",
-    },
-  ];
+function AnalyticsCommandDeck({
+  selectedSession,
+  sessionGroups,
+  drivers,
+  selectedDriverA,
+  selectedDriverB,
+  activeTab,
+  runtime,
+}: {
+  selectedSession: AnalyticsSessionSummary;
+  sessionGroups: Array<{ label: string; sessions: AnalyticsSessionSummary[] }>;
+  drivers: ReadonlyArray<{ code: string; team: string | null }>;
+  selectedDriverA: string | null;
+  selectedDriverB: string | null;
+  activeTab: AnalyticsTab;
+  runtime: RuntimeSourceMetadata;
+}) {
+  return (
+    <section className="analytics-command-deck" aria-label="Analytics telemetry command deck">
+      <div className="analytics-command-deck__identity">
+        <span>Telemetry workstation</span>
+        <strong>{selectedSession.event}</strong>
+        <em>{selectedSession.session} / Approximate segment comparison</em>
+      </div>
+
+      <form className="analytics-command-deck__form" action="/analytics">
+        <label>
+          <span>Session</span>
+          <select name="sessionId" defaultValue={selectedSession.id}>
+            {sessionGroups.map((group) => (
+              <optgroup key={group.label} label={group.label}>
+                {group.sessions.map((session) => (
+                  <option key={session.id} value={session.id}>{sessionLabel(session)}</option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>Driver A</span>
+          <select name="driverA" defaultValue={selectedDriverA ?? ""}>
+            {drivers.map((driver) => (
+              <option key={driver.code} value={driver.code}>{driver.code}{driver.team ? ` - ${driver.team}` : ""}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>Driver B</span>
+          <select name="driverB" defaultValue={selectedDriverB ?? ""}>
+            {drivers.map((driver) => (
+              <option key={driver.code} value={driver.code}>{driver.code}{driver.team ? ` - ${driver.team}` : ""}</option>
+            ))}
+          </select>
+        </label>
+        <input type="hidden" name="tab" value={activeTab} />
+        <button type="submit">Load comparison</button>
+      </form>
+
+      <nav className="analytics-command-deck__modes" aria-label="Analytics telemetry systems">
+        {analyticsTabs.map((tab) => (
+          <a
+            key={tab.id}
+            className={tab.id === activeTab ? "is-active" : ""}
+            href={buildHref({
+              sessionId: selectedSession.id,
+              driverA: selectedDriverA,
+              driverB: selectedDriverB,
+              tab: tab.id,
+              segmentId: null,
+            })}
+            aria-current={tab.id === activeTab ? "page" : undefined}
+          >
+            <span>{tab.shortLabel}</span>
+            <strong>{tab.label}</strong>
+          </a>
+        ))}
+      </nav>
+
+      <ProductRuntimeNote runtime={runtime} className="analytics-command-deck__runtime" primaryLabel="Analytics data" />
+    </section>
+  );
+}
+
+function modeInstrumentSelection(activeTab: AnalyticsTab, instruments: TelemetryInstrument[]) {
+  const preferred = activeTab === "braking"
+    ? ["Brake", "Speed", "Traction"]
+    : activeTab === "throttle" || activeTab === "segments"
+      ? ["Traction", "Speed", "Brake"]
+      : activeTab === "straights"
+        ? ["Speed", "Energy proxy", "Traction"]
+        : activeTab === "energy-proxy"
+          ? ["Energy proxy", "Speed", "Traction"]
+          : ["Speed", "Brake", "Traction"];
+  return preferred.map((label) => instruments.find((instrument) => instrument.label === label)).filter((instrument): instrument is TelemetryInstrument => Boolean(instrument));
+}
+
+function AnalyticsBattleRail({
+  comparison,
+  dominantEdge,
+  instruments,
+  activeTab,
+  telemetryLabel,
+}: {
+  comparison: AnalyticsComparisonPayload;
+  dominantEdge: DominantEdge;
+  instruments: TelemetryInstrument[];
+  activeTab: AnalyticsTab;
+  telemetryLabel: string;
+}) {
+  const modeInstruments = modeInstrumentSelection(activeTab, instruments);
+  const sameTeam = isSameTeamComparison(comparison);
+  return (
+    <aside className="analytics-battle-rail" aria-label="Driver telemetry battle">
+      <div className="analytics-battle-rail__drivers">
+        <div className="analytics-battle-rail__driver analytics-battle-rail__driver--a">
+          <span>{comparison.overview.driverATeam ?? "Driver A"}</span>
+          <strong>{comparison.overview.driverA}</strong>
+        </div>
+        <div className="analytics-battle-rail__versus">VS</div>
+        <div className="analytics-battle-rail__driver analytics-battle-rail__driver--b">
+          <span>{comparison.overview.driverBTeam ?? "Driver B"}</span>
+          <strong>{comparison.overview.driverB}</strong>
+        </div>
+      </div>
+      {sameTeam ? <div className="analytics-battle-rail__same-team">Same constructor comparison colors</div> : null}
+      <div className="analytics-battle-rail__edge">
+        <span>{dominantEdge.label}</span>
+        <strong>{dominantEdge.driver}</strong>
+        <b>{dominantEdge.value}</b>
+        <p>{dominantEdge.note}</p>
+      </div>
+      <div className="analytics-battle-rail__instruments">
+        {modeInstruments.map((instrument) => (
+          <div key={instrument.label} className={`analytics-battle-rail__instrument analytics-battle-rail__instrument--${instrument.tone ?? "speed"}`}>
+            <span>{instrument.label}</span>
+            <strong>{instrument.value}</strong>
+            <em>{instrument.leader}</em>
+            <i aria-hidden="true"><b style={{ width: `${instrument.fill}%` }} /></i>
+          </div>
+        ))}
+      </div>
+      <div className="analytics-battle-rail__quality">
+        <span>Data quality</span>
+        <strong>{telemetryLabel}</strong>
+      </div>
+    </aside>
+  );
+}
+
+function AnalyticsAdaptiveCanvas({ children, battleRail, activeTab }: { children: ReactNode; battleRail: ReactNode; activeTab: AnalyticsTab }) {
+  return (
+    <section className={`analytics-adaptive-canvas analytics-adaptive-canvas--${activeTab}`}>
+      <div className="analytics-adaptive-canvas__main">{children}</div>
+      {battleRail}
+    </section>
+  );
+}
+
+function AnalyticsEngineeringStrip({
+  comparison,
+  dominantEdge,
+  activeTab,
+  telemetryLabel,
+}: {
+  comparison: AnalyticsComparisonPayload;
+  dominantEdge: DominantEdge;
+  activeTab: AnalyticsTab;
+  telemetryLabel: string;
+}) {
+  return (
+    <section className="analytics-engineering-strip" aria-label="Race engineer telemetry read">
+      <article>
+        <span>Strongest area</span>
+        <strong>{dominantEdge.label}</strong>
+        <p>{dominantEdge.driver} {dominantEdge.value}</p>
+      </article>
+      <article>
+        <span>Weakest assumption</span>
+        <strong>Approximate segment mapping</strong>
+        <p>{comparison.overview.weakestAssumption}</p>
+      </article>
+      <article>
+        <span>Data status</span>
+        <strong>{telemetryLabel}</strong>
+        <p>Representative telemetry and deterministic product views.</p>
+      </article>
+      <article className={activeTab === "energy-proxy" ? "is-proxy-active" : ""}>
+        <span>Energy deployment proxy</span>
+        <strong>Proxy only</strong>
+        <p>Telemetry-derived speed shape, not true ERS or battery state.</p>
+      </article>
+    </section>
+  );
 }
 
 function ModeWorkspace({
@@ -1068,7 +1161,7 @@ function ModeWorkspace({
           <em>{mode.note}</em>
         </div>
 
-        <div className="analytics-workspace__grid">
+        <div className="analytics-workspace__trace-stage">
           <TelemetryTraceStack
             rows={chartRows}
             activeTab={activeTab}
@@ -1078,41 +1171,30 @@ function ModeWorkspace({
             telemetryTraces={comparison.telemetryTraces}
             focusRegions={segmentOptions}
           />
-
-          <aside className="analytics-workspace__side" aria-label={`${mode.title} segment controls`}>
-            <div className="analytics-workspace__side-head">
-              <span>Mode control</span>
-              <strong>{selectedSegment?.label ?? "Approximate segment"}</strong>
-            </div>
-            {segmentOptions.length > 0 ? (
-              <div className="analytics-page__segment-strip analytics-page__segment-strip--command" aria-label="Approximate segment selector">
-                {segmentOptions.slice(0, 8).map((segment) => (
-                  <a
-                    key={segment.segmentId}
-                    className={`analytics-page__segment-pill${segment.segmentId === selectedSegment?.segmentId ? " analytics-page__segment-pill--active" : ""}`}
-                    data-sync-id={segment.segmentId}
-                    href={buildHref({
-                      sessionId: selectedSession.id,
-                      driverA: selectedDriverA,
-                      driverB: selectedDriverB,
-                      tab: activeTab,
-                      segmentId: segment.segmentId,
-                    })}
-                  >
-                    <i style={{ width: `${Math.max(12, Math.min(100, (segment.confidence ?? 0.35) * 100))}%` }} aria-hidden="true" />
-                    <strong>{segment.label}</strong>
-                    <span>{segment.kind} - {compactSignalLabel(segment.confidence)}</span>
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <div className="analytics-page__empty-chart">
-                <span>No segment selector</span>
-                <p>No prepared rows for this pair.</p>
-              </div>
-            )}
-          </aside>
         </div>
+
+        {segmentOptions.length > 0 ? (
+          <nav className="analytics-workspace__segment-rail" aria-label="Approximate segment selector">
+            {segmentOptions.slice(0, 10).map((segment, index) => (
+              <a
+                key={segment.segmentId}
+                className={segment.segmentId === selectedSegment?.segmentId ? "is-active" : ""}
+                data-sync-id={segment.segmentId}
+                href={buildHref({
+                  sessionId: selectedSession.id,
+                  driverA: selectedDriverA,
+                  driverB: selectedDriverB,
+                  tab: activeTab,
+                  segmentId: segment.segmentId,
+                })}
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{segment.kind}</strong>
+                <em>{compactSignalLabel(segment.confidence)}</em>
+              </a>
+            ))}
+          </nav>
+        ) : null}
 
         {selectedSegmentCards.length > 0 ? (
           <div className="analytics-workspace__metrics">
@@ -1124,12 +1206,6 @@ function ModeWorkspace({
               </article>
             ))}
           </div>
-        ) : null}
-
-        <ChartRows rows={chartRows} driverA={driverA} driverB={driverB} selectedSegmentId={selectedSegment?.segmentId ?? null} />
-
-        {activeTab === "energy-proxy" ? (
-          <p className="analytics-page__proxy-note">Energy deployment proxy only. Telemetry-derived, not direct energy data.</p>
         ) : null}
       </section>
     </AnalyticsTelemetrySyncScope>
@@ -1179,7 +1255,6 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
     )
     : null;
   const comparison = comparisonResult?.mode === "unavailable" ? null : comparisonResult?.data ?? null;
-  const metricCards = comparison ? buildMetricCards(comparison) : [];
   const telemetryInstruments = comparison ? buildTelemetryInstruments(comparison) : [];
   const segmentOptions = comparison ? buildSegmentOptions(comparison, activeTab) : [];
   const selectedSegment = segmentOptions.find((segment) => segment.segmentId === segmentIdParam) ?? segmentOptions[0] ?? null;
@@ -1187,248 +1262,62 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
   const chartRows = comparison ? activeChartRows(comparison, activeTab) : [];
   const dominantEdge = comparison ? buildDominantEdge(comparison) : null;
   const dominanceSegments = comparison ? buildDominanceSegments(comparison) : [];
-  const engineerInsights = comparison ? buildEngineerInsights(comparison, dominantEdge) : [];
   const teamStyle = buildTeamStyle(comparison);
   const circuitTrackData = selectedSession ? await getCircuitTrackDataForRace(selectedSession.season, selectedSession.round) : null;
-  const confidenceLabel = comparison ? confidenceTier(comparison.overview.confidence, comparison.session.telemetryQualityMean) : "Incomplete session confidence";
   const telemetryLabel = telemetryQualityTier(selectedSession?.telemetryQualityMean);
-  const latestTelemetryLabel = formatSeasonRaceLabel(seasonState?.latest_completed_race_with_analytics);
-  const selectedSessionIsLatestTelemetry = selectedSession?.season === seasonState?.latest_completed_race_with_analytics?.season
-    && selectedSession?.round === seasonState?.latest_completed_race_with_analytics?.round;
 
   return (
-    <main className="analytics-page analytics-page--battle-station" style={teamStyle}>
+    <main className="analytics-page analytics-page--adaptive-workstation" style={teamStyle}>
       <AppHeader title="Analytics" actionHref="/lab" actionLabel="Strategy Lab" compact />
-      <header className="analytics-page__hero">
-        <div className="analytics-page__hero-body">
-          <div className="analytics-page__hero-copy">
-            <p className="strategy-lab-page__eyebrow">Telemetry workstation</p>
-            <h1 className="analytics-page__title">Telemetry battle station.</h1>
-            <p className="analytics-page__lede">{selectedSession ? `${selectedSession.event} ${selectedSession.session} - telemetry-derived, approximate segment comparison.` : "Telemetry-derived driver comparison."}</p>
-          </div>
-
-          {comparison && dominantEdge ? (
-            <div className="analytics-page__hero-battle" aria-label="Driver battle summary">
-              <div className="analytics-page__hero-driver analytics-page__hero-driver--a">
-                <span>{comparison.overview.driverATeam ?? "Driver A"}</span>
-                <strong>{comparison.overview.driverA}</strong>
-              </div>
-              <div className="analytics-page__hero-edge">
-                <span>{dominantEdge.label}</span>
-                <strong>{dominantEdge.driver}</strong>
-                <b>{dominantEdge.value}</b>
-              </div>
-              <div className="analytics-page__hero-driver analytics-page__hero-driver--b analytics-page__hero-driver--right">
-                <span>{comparison.overview.driverBTeam ?? "Driver B"}</span>
-                <strong>{comparison.overview.driverB}</strong>
-              </div>
-            </div>
-          ) : null}
-
-          <div className="analytics-page__hero-rail">
-            <div className="analytics-page__hero-card">
-              <span>Completed race</span>
-              <strong>{formatSeasonRaceLabel(seasonState?.latest_completed_race)}</strong>
-              <p>{seasonState?.missing_data_flags.includes("latest_completed_results_missing") ? "Results pending" : "Results ready"}</p>
-            </div>
-              <div className="analytics-page__hero-card">
-                <span>Next race</span>
-                <strong>{formatSeasonRaceLabel(seasonState?.next_race)}</strong>
-                <p>{seasonState?.current_race_week.available ? "Race Week ready" : "No telemetry yet"}</p>
-              </div>
-              <div className="analytics-page__hero-card analytics-page__hero-card--strength">
-                <span>Latest telemetry</span>
-                <strong>{latestTelemetryLabel || (selectedSession ? `${selectedSession.event} ${selectedSession.session}` : "Unavailable")}</strong>
-                <p>{selectedSessionIsLatestTelemetry ? telemetryLabel : "Select latest race"}</p>
-              </div>
-          </div>
-          <ProductRuntimeNote runtime={sessionResult.meta} className="analytics-page__runtime" primaryLabel="Analytics data" />
-        </div>
-      </header>
-
       {selectedSession ? (
         <>
-          <section className="analytics-page__controls">
-            <div className="analytics-page__section-header">
-              <span>Setup</span>
-              <h2>{selectedSessionIsLatestTelemetry ? "Latest telemetry loaded." : "Session and pair."}</h2>
-            </div>
-
-            <form className="analytics-page__form" action="/analytics">
-              <label className="analytics-page__field">
-                <span>Session</span>
-                <select name="sessionId" defaultValue={selectedSession.id}>
-                  {sessionGroups.map((group) => (
-                    <optgroup key={group.label} label={group.label}>
-                      {group.sessions.map((session) => (
-                        <option key={session.id} value={session.id}>
-                          {sessionLabel(session)}
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
-              </label>
-
-              <label className="analytics-page__field">
-                <span>Driver A</span>
-                <select name="driverA" defaultValue={selectedDriverA ?? ""}>
-                  {drivers.map((driver) => (
-                    <option key={driver.code} value={driver.code}>
-                      {driver.code}{driver.team ? ` - ${driver.team}` : ""}
-                    </option>
-                  ))}
-                </select>
-              </label>
-
-              <label className="analytics-page__field">
-                <span>Driver B</span>
-                <select name="driverB" defaultValue={selectedDriverB ?? ""}>
-                  {drivers.map((driver) => (
-                    <option key={driver.code} value={driver.code}>
-                      {driver.code}{driver.team ? ` - ${driver.team}` : ""}
-                    </option>
-                  ))}
-                </select>
-              </label>
-
-              <input type="hidden" name="tab" value={activeTab} />
-              <button className="analytics-page__submit" type="submit">Load comparison</button>
-            </form>
-          </section>
+          <AnalyticsCommandDeck
+            selectedSession={selectedSession}
+            sessionGroups={sessionGroups}
+            drivers={drivers}
+            selectedDriverA={selectedDriverA}
+            selectedDriverB={selectedDriverB}
+            activeTab={activeTab}
+            runtime={sessionResult.meta}
+          />
 
           {comparison ? (
-            <section className="analytics-page__results">
-              <div className="analytics-page__driver-strip" aria-label="Selected driver comparison">
-                <article className="analytics-page__driver-card analytics-page__driver-card--a">
-                  <span>Driver A</span>
-                  <strong>{comparison.overview.driverA}</strong>
-                  <TeamBadge teamId={normalizeTeamId(comparison.overview.driverATeam)} label={comparison.overview.driverATeam ?? "Constructor"} compact />
-                </article>
-                <div className="analytics-page__versus">vs</div>
-                <article className="analytics-page__driver-card analytics-page__driver-card--b">
-                  <span>Driver B</span>
-                  <strong>{comparison.overview.driverB}</strong>
-                  <TeamBadge teamId={normalizeTeamId(comparison.overview.driverBTeam)} label={comparison.overview.driverBTeam ?? "Constructor"} compact />
-                </article>
-                <article className="analytics-page__strength-card">
-                  <span>Agreement</span>
-                  <strong>{confidenceLabel}</strong>
-                  <div className="analytics-page__strength-meter" aria-label={confidenceLabel}>
-                    <i style={{ width: `${Math.round(Math.min(comparison.session.telemetryQualityMean ?? 0, comparison.overview.confidence ?? 0) * 100)}%` }} />
-                  </div>
-                  <p>{telemetryLabel}</p>
-                </article>
-              </div>
-
-              <nav className="analytics-page__tabs analytics-page__tabs--command" aria-label="Analytics telemetry systems">
-                {analyticsTabs.map((tab) => (
-                  <a
-                    key={tab.id}
-                    className={`analytics-page__tab${tab.id === activeTab ? " analytics-page__tab--active" : ""}`}
-                    href={buildHref({
-                      sessionId: selectedSession.id,
-                      driverA: selectedDriverA,
-                      driverB: selectedDriverB,
-                      tab: tab.id,
-                      segmentId: null,
-                    })}
-                    aria-current={tab.id === activeTab ? "page" : undefined}
-                  >
-                    <span>{tab.shortLabel}</span>
-                    <strong>{tab.label}</strong>
-                  </a>
-                ))}
-              </nav>
-
-              <ModeWorkspace
+            <section className="analytics-workstation-stage">
+              <AnalyticsAdaptiveCanvas
                 activeTab={activeTab}
-                comparison={comparison}
-                selectedSession={selectedSession}
-                selectedDriverA={selectedDriverA}
-                selectedDriverB={selectedDriverB}
-                selectedSegment={selectedSegment}
-                selectedSegmentCards={selectedSegmentCards}
-                chartRows={chartRows}
-                segmentOptions={segmentOptions}
-                dominanceSegments={dominanceSegments}
-                circuitTrackData={circuitTrackData}
-                dominantEdge={dominantEdge}
-              />
-
+                battleRail={dominantEdge ? (
+                  <AnalyticsBattleRail
+                    comparison={comparison}
+                    dominantEdge={dominantEdge}
+                    instruments={telemetryInstruments}
+                    activeTab={activeTab}
+                    telemetryLabel={telemetryLabel}
+                  />
+                ) : null}
+              >
+                <ModeWorkspace
+                  activeTab={activeTab}
+                  comparison={comparison}
+                  selectedSession={selectedSession}
+                  selectedDriverA={selectedDriverA}
+                  selectedDriverB={selectedDriverB}
+                  selectedSegment={selectedSegment}
+                  selectedSegmentCards={selectedSegmentCards}
+                  chartRows={chartRows}
+                  segmentOptions={segmentOptions}
+                  dominanceSegments={dominanceSegments}
+                  circuitTrackData={circuitTrackData}
+                  dominantEdge={dominantEdge}
+                />
+              </AnalyticsAdaptiveCanvas>
               {dominantEdge ? (
-                <div className={`analytics-page__edge-hero${dominantEdge.tone ? ` analytics-page__edge-hero--${dominantEdge.tone}` : ""}`}>
-                  <div>
-                    <span>Dominant telemetry edge</span>
-                    <strong>{dominantEdge.driver}</strong>
-                  </div>
-                  <div>
-                    <em>{dominantEdge.label}</em>
-                    <b>{dominantEdge.value}</b>
-                    <p>{dominantEdge.note}</p>
-                  </div>
-                </div>
+                <AnalyticsEngineeringStrip
+                  comparison={comparison}
+                  dominantEdge={dominantEdge}
+                  activeTab={activeTab}
+                  telemetryLabel={telemetryLabel}
+                />
               ) : null}
-
-              <div className="analytics-page__instrument-grid" aria-label="Telemetry instruments">
-                {telemetryInstruments.map((instrument) => (
-                  <article key={instrument.label} className={`analytics-page__instrument analytics-page__instrument--${instrument.tone ?? "speed"}`}>
-                    <div>
-                      <span>{instrument.label}</span>
-                      <strong>{instrument.value}</strong>
-                    </div>
-                    <b>{instrument.leader}</b>
-                    <div className="analytics-page__instrument-rail" aria-hidden="true">
-                      <i style={{ width: `${instrument.fill}%` }} />
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              <div className="analytics-page__metric-grid">
-                {metricCards.map((card) => (
-                  <article key={card.label} className={`analytics-page__metric-card${card.tone ? ` analytics-page__metric-card--${card.tone}` : ""}`}>
-                    <span>{card.label}</span>
-                    <strong>{card.value}</strong>
-                    <p>{card.note}</p>
-                  </article>
-                ))}
-              </div>
-
-              <section className="analytics-page__engineer-insights" aria-label="Race engineer insights">
-                <div className="analytics-page__section-header">
-                  <span>Race engineer insights</span>
-                  <h2>Battle read.</h2>
-                </div>
-                <div className="analytics-page__insight-grid">
-                  {engineerInsights.map((insight) => (
-                    <article key={insight.label} className={`analytics-page__insight-chip${insight.tone ? ` analytics-page__insight-chip--${insight.tone}` : ""}`}>
-                      <span>{insight.label}</span>
-                      <strong>{insight.value}</strong>
-                      <p>{insight.note}</p>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <div className="analytics-page__trust-grid">
-                <article className="analytics-page__trust-card">
-                  <span>Track context</span>
-                  <strong>{comparison.trackSummary?.trackArchetype ?? selectedSession.trackArchetype}</strong>
-                  <p>{comparison.trackSummary ? confidenceTier(comparison.trackSummary.archetypeConfidence) : "Track weighting unavailable"}</p>
-                </article>
-                <article className="analytics-page__trust-card">
-                  <span>Weakest assumption</span>
-                  <strong>Approximate segments</strong>
-                  <p>{comparison.overview.weakestAssumption}</p>
-                </article>
-                <article className="analytics-page__trust-card analytics-page__trust-card--proxy">
-                  <span>Energy deployment proxy</span>
-                  <strong>Proxy only</strong>
-                  <p>Telemetry-derived speed shape.</p>
-                </article>
-              </div>
-
             </section>
           ) : (
             <StatePanel
