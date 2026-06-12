@@ -1737,7 +1737,7 @@ select option:disabled {
 }
 
 .feature-showcase__grid {
-  margin-top: 1.1rem;
+  margin-top: 0.55rem;
 }
 
 .module-grid {
@@ -2284,6 +2284,7 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 .race-week-hero,
 .race-week-story-band,
 .race-week-leaders,
+.race-week-q-prediction,
 .race-week-signal-grid,
 .race-week-close,
 .race-week-empty {
@@ -2607,6 +2608,24 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   color: rgba(247, 249, 252, 0.96);
 }
 
+.race-week-story-card__source {
+  align-self: end;
+  width: fit-content;
+  border-bottom: 1px solid color-mix(in srgb, var(--race-accent-soft) 58%, transparent);
+  color: color-mix(in srgb, var(--race-accent-soft) 82%, white);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.race-week-story-card__source:hover,
+.race-week-story-card__source:focus-visible {
+  color: rgba(255, 255, 255, 0.96);
+}
+
 .race-week-story-card p,
 .race-week-leader-card__content p,
 .race-week-constructor-card p,
@@ -2707,6 +2726,274 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   font-size: 0.92rem;
   line-height: 1.18;
   color: rgba(248, 250, 252, 0.94);
+}
+
+.race-week-q-prediction {
+  display: grid;
+  gap: 1rem;
+}
+
+.race-week-prediction-status {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--race-accent) 34%, transparent);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.86);
+  background: color-mix(in srgb, var(--race-accent) 12%, rgba(11, 15, 22, 0.72));
+}
+
+.race-week-prediction-status--pending {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(202, 211, 224, 0.72);
+  background: rgba(11, 15, 22, 0.72);
+}
+
+.race-week-prediction-modes {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.race-week-prediction-modes__link {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(226, 234, 244, 0.8);
+  text-decoration: none;
+  background: rgba(11, 15, 22, 0.66);
+}
+
+.race-week-prediction-modes__link span,
+.race-week-prediction-modes__link em {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.race-week-prediction-modes__link span {
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.race-week-prediction-modes__link em {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(184, 195, 209, 0.62);
+}
+
+.race-week-prediction-modes__link.is-active {
+  border-color: color-mix(in srgb, var(--race-accent) 54%, transparent);
+  color: rgba(248, 250, 252, 0.96);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--race-accent) 18%, transparent), rgba(11, 15, 22, 0.74)),
+    rgba(11, 15, 22, 0.84);
+}
+
+.race-week-prediction-modes__link.is-active em {
+  color: color-mix(in srgb, var(--race-accent-soft) 78%, white);
+}
+
+.race-week-prediction-modes__link.is-pending {
+  color: rgba(202, 211, 224, 0.58);
+}
+
+.race-week-q-prediction__baseline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.race-week-q-prediction__baseline div,
+.race-week-q-card,
+.race-week-q-table,
+.race-week-q-prediction__empty {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
+    rgba(11, 15, 22, 0.84);
+}
+
+.race-week-q-prediction__baseline div {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.race-week-q-prediction__baseline span,
+.race-week-q-card__metrics span,
+.race-week-q-table__row--head span {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(184, 195, 209, 0.66);
+}
+
+.race-week-q-prediction__baseline strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.95);
+}
+
+.race-week-q-prediction__podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.race-week-q-card {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--race-accent) 18%, transparent), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
+    rgba(11, 15, 22, 0.84);
+}
+
+.race-week-q-card__rank,
+.race-week-q-table__rank {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--race-accent-soft) 72%, var(--race-accent));
+}
+
+.race-week-q-card__identity {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.race-week-q-card__identity h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 1.55rem;
+  line-height: 0.98;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.96);
+}
+
+.race-week-q-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.race-week-q-card__metrics div {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.race-week-q-card__metrics strong {
+  overflow-wrap: anywhere;
+  font-size: 0.95rem;
+  line-height: 1.18;
+  color: rgba(248, 250, 252, 0.94);
+}
+
+.race-week-q-table {
+  display: grid;
+  overflow: hidden;
+}
+
+.race-week-q-table__row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(9rem, 1.2fr) minmax(5.5rem, 0.7fr) minmax(5.5rem, 0.7fr) minmax(8rem, 1fr) minmax(12rem, 1.35fr);
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(226, 234, 244, 0.84);
+}
+
+.race-week-q-table__row:first-child {
+  border-top: 0;
+}
+
+.race-week-q-table__row span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.race-week-q-table__driver {
+  display: grid;
+  gap: 0.14rem;
+}
+
+.race-week-q-table__driver strong {
+  font-size: 0.98rem;
+  line-height: 1.08;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.94);
+}
+
+.race-week-q-table__driver em {
+  font-style: normal;
+  color: rgba(191, 204, 219, 0.68);
+}
+
+.race-week-q-prediction__empty {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem;
+}
+
+.race-week-q-prediction__empty strong {
+  color: rgba(248, 250, 252, 0.96);
+}
+
+.race-week-q-prediction__empty span {
+  color: rgba(202, 211, 224, 0.72);
+}
+
+@media (max-width: 959px) {
+  .race-week-prediction-modes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .race-week-q-prediction__baseline,
+  .race-week-q-prediction__podium {
+    grid-template-columns: 1fr;
+  }
+
+  .race-week-q-card__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .race-week-q-table__row,
+  .race-week-q-table__row--head {
+    grid-template-columns: minmax(3.2rem, 0.3fr) minmax(9rem, 1fr) minmax(5.6rem, 0.55fr) minmax(5.4rem, 0.55fr);
+  }
+
+  .race-week-q-table__row span:nth-child(5),
+  .race-week-q-table__row span:nth-child(6) {
+    grid-column: 2 / -1;
+  }
 }
 
 .race-week-signal-grid {
@@ -2877,7 +3164,7 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   }
 
   .race-week-story-band__cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .race-week-driver-row {
@@ -5991,6 +6278,34 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   max-height: 92%;
 }
 
+.track-map--premium .race-week-sector-track {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.track-map--premium .race-week-sector-track__svg {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.track-map--card.track-map--premium .race-week-sector-track__svg {
+  max-width: 96%;
+  max-height: 94%;
+}
+
+.track-map--hero.track-map--premium .race-week-sector-track__svg {
+  max-width: 92%;
+  max-height: 92%;
+}
+
 .track-map__shadow,
 .track-map__accent,
 .track-map__path {
@@ -8158,11 +8473,13 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 }
 
 .feature-showcase {
-  padding-top: clamp(2rem, 4vw, 4rem);
+  padding: clamp(1rem, 2.2vw, 1.75rem) clamp(1rem, 2vw, 1.5rem) 0;
 }
 
 .feature-showcase__header .section-title {
-  max-width: 11ch;
+  max-width: 18ch;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .module-grid {
@@ -8635,13 +8952,13 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 /* Homepage targeted race-state and standings polish */
 .hero {
   min-height: clamp(38rem, 76svh, 51rem);
-  padding-bottom: 1.4rem;
+  padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2.5vw, 1.4rem);
 }
 
 .hero__content {
   align-content: end;
   padding-top: clamp(8.5rem, 14vw, 10.6rem);
-  padding-bottom: clamp(2rem, 5vw, 3.1rem);
+  padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .hero__copy {
@@ -8726,8 +9043,8 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   }
 
   .hero__content {
-    padding-top: clamp(7.4rem, 23vw, 9.4rem);
-    padding-bottom: 2.1rem;
+    padding-top: clamp(3.8rem, 13vw, 5.2rem);
+    padding-bottom: 1.4rem;
   }
 
   .hero__next-race {
@@ -12310,6 +12627,884 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   }
 }
 
+/* Race Analysis premium post-race intelligence report */
+.race-analysis-archive-hero,
+.race-analysis-command-strip,
+.race-analysis-archive-grid,
+.race-analysis-report-hero,
+.race-analysis-report-nav,
+.race-analysis-report-status,
+.race-analysis-report-band,
+.race-analysis-engineer-strip,
+.race-analysis-crosslinks {
+  width: var(--cinematic-wide);
+  margin-inline: auto;
+}
+
+.race-analysis-archive-hero,
+.race-analysis-report-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  min-height: clamp(26rem, 42vw, 40rem);
+  margin-top: clamp(1rem, 2.6vw, 2.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 74% 14%, rgba(225, 6, 0, 0.22), transparent 25rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.018)),
+    rgba(3, 6, 10, 0.9);
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.48);
+}
+
+.race-analysis-archive-hero::before,
+.race-analysis-report-hero::before,
+.race-analysis-report-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 8rem),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 5rem);
+  mask-image: linear-gradient(180deg, #000, transparent 82%);
+}
+
+.race-analysis-archive-hero {
+  grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.58fr);
+  align-items: end;
+  gap: clamp(1.2rem, 3vw, 3rem);
+  padding: clamp(1.1rem, 3vw, 2rem);
+}
+
+.race-analysis-archive-hero__copy,
+.race-analysis-archive-hero__board,
+.race-analysis-report-hero__copy,
+.race-analysis-report-hero__board,
+.race-analysis-report-hero__chips {
+  position: relative;
+  z-index: 1;
+}
+
+.race-analysis-kicker,
+.race-analysis-command-strip span,
+.race-analysis-archive-tile span,
+.race-analysis-archive-tile small,
+.race-analysis-report-hero span,
+.race-analysis-report-hero small,
+.race-analysis-report-status span,
+.race-analysis-report-nav span,
+.race-analysis-engineer-strip span,
+.race-analysis-section__header span {
+  color: rgba(232, 237, 246, 0.58);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.race-analysis-archive-hero h1,
+.race-analysis-report-hero h1 {
+  max-width: 11ch;
+  margin: 0.55rem 0 0;
+  color: #fff;
+  font-size: clamp(4.25rem, 9vw, 9rem);
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+
+.race-analysis-archive-hero p,
+.race-analysis-report-hero p {
+  max-width: 42rem;
+  margin: 0.9rem 0 0;
+  color: rgba(238, 242, 249, 0.72);
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  line-height: 1.35;
+}
+
+.race-analysis-archive-hero__chips,
+.race-analysis-report-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+}
+
+.race-analysis-archive-hero__chips span,
+.race-analysis-report-hero__chips span,
+.race-analysis-archive-tile__chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.62rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.76);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.race-analysis-archive-hero__board {
+  display: grid;
+  gap: 0.9rem;
+  padding: clamp(1rem, 2vw, 1.45rem);
+  color: inherit;
+  text-decoration: none;
+  background:
+    linear-gradient(180deg, rgba(225, 6, 0, 0.17), rgba(255, 255, 255, 0.025)),
+    rgba(5, 8, 13, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+.race-analysis-archive-hero__board strong {
+  color: #fff;
+  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.race-analysis-archive-hero__board div {
+  display: grid;
+  gap: 0.22rem;
+  padding-top: 0.72rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.race-analysis-archive-hero__board em {
+  color: rgba(232, 237, 246, 0.52);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.6rem;
+  font-style: normal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.race-analysis-archive-hero__board b {
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.race-analysis-command-strip {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.35fr) minmax(0, 1fr);
+  margin-top: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(4, 7, 11, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+.race-analysis-command-strip__identity {
+  display: grid;
+  align-content: center;
+  gap: 0.15rem;
+  padding: 0.75rem 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.race-analysis-command-strip__identity strong {
+  color: #fff;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.race-analysis-season-switcher {
+  display: flex;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.race-analysis-season-switcher a {
+  display: grid;
+  min-width: 7.5rem;
+  min-height: 3.7rem;
+  place-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.race-analysis-season-switcher a:hover,
+.race-analysis-season-switcher a:focus-visible,
+.race-analysis-season-switcher a.is-active {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(225, 6, 0, 0.16), rgba(255, 255, 255, 0.025));
+}
+
+.race-analysis-archive-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: clamp(1rem, 2.5vw, 2rem);
+}
+
+.race-analysis-archive-tile {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(15rem, 0.5fr);
+  gap: 0.9rem 1.25rem;
+  min-width: 0;
+  padding: clamp(0.95rem, 1.8vw, 1.35rem);
+  border: 1px solid rgba(255, 255, 255, 0.115);
+  color: inherit;
+  text-decoration: none;
+  background:
+    linear-gradient(90deg, rgba(225, 6, 0, 0.09), transparent 42%),
+    rgba(7, 10, 15, 0.78);
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.race-analysis-archive-tile:hover,
+.race-analysis-archive-tile:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(225, 6, 0, 0.45);
+  background:
+    linear-gradient(90deg, rgba(225, 6, 0, 0.14), transparent 48%),
+    rgba(9, 13, 20, 0.92);
+}
+
+.race-analysis-archive-tile__topline,
+.race-analysis-archive-tile__chips,
+.race-analysis-archive-tile__podium {
+  grid-column: 1 / -1;
+}
+
+.race-analysis-archive-tile__topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.race-analysis-archive-tile__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.35fr);
+  gap: 1rem;
+  align-items: end;
+}
+
+.race-analysis-archive-tile h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.9rem, 4vw, 4.2rem);
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.race-analysis-archive-tile p {
+  margin: 0.45rem 0 0;
+  color: rgba(234, 239, 247, 0.58);
+}
+
+.race-analysis-archive-tile__winner {
+  display: grid;
+  gap: 0.15rem;
+  justify-items: end;
+  text-align: right;
+}
+
+.race-analysis-archive-tile__winner strong {
+  color: #fff;
+  font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.race-analysis-archive-tile__podium {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.race-analysis-archive-tile__podium strong {
+  color: rgba(255, 255, 255, 0.88);
+  text-align: right;
+}
+
+.race-analysis-archive-tile__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.race-analysis-report-hero {
+  grid-template-columns: minmax(0, 1.18fr) minmax(23rem, 0.62fr);
+  align-items: end;
+  gap: clamp(1.2rem, 3vw, 3rem);
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+
+.race-analysis-report-hero__copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.race-analysis-report-hero__factors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 50rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.race-analysis-report-hero__factors div,
+.race-analysis-report-hero__board > div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem;
+  background: rgba(5, 8, 13, 0.82);
+}
+
+.race-analysis-report-hero__factors strong,
+.race-analysis-report-hero__board strong {
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.race-analysis-report-hero__board {
+  display: grid;
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.race-analysis-report-hero__winner strong {
+  font-size: clamp(2.2rem, 4.5vw, 4.6rem);
+  line-height: 0.78;
+}
+
+.race-analysis-report-hero__chips {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.race-analysis-report-nav {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(4, 7, 11, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+.race-analysis-report-nav a {
+  display: grid;
+  gap: 0.15rem;
+  min-height: 3.75rem;
+  place-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.66);
+  text-align: center;
+  text-decoration: none;
+}
+
+.race-analysis-report-nav a:last-child {
+  border-right: 0;
+}
+
+.race-analysis-report-nav a:hover,
+.race-analysis-report-nav a:focus-visible {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(225, 6, 0, 0.17), rgba(255, 255, 255, 0.02));
+}
+
+.race-analysis-report-nav strong {
+  color: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.race-analysis-report-status,
+.race-analysis-engineer-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 0.85rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.race-analysis-engineer-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.race-analysis-report-status article,
+.race-analysis-engineer-strip article {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  min-width: 0;
+  min-height: 5.5rem;
+  padding: 0.9rem 1rem;
+  background: rgba(6, 9, 14, 0.9);
+}
+
+.race-analysis-report-status strong,
+.race-analysis-engineer-strip strong {
+  color: #fff;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.race-analysis-report-band {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(1.75rem, 3.8vw, 3.5rem);
+  padding: clamp(0.9rem, 2vw, 1.35rem);
+  border: 1px solid rgba(255, 255, 255, 0.115);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.014)),
+    rgba(5, 8, 13, 0.84);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.28);
+}
+
+.race-analysis-report-band > * {
+  position: relative;
+  z-index: 1;
+}
+
+.race-analysis-section__header h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 5.4rem);
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.race-analysis-timeline {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.race-analysis-timeline-card {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  background: rgba(255, 255, 255, 0.028);
+}
+
+.race-analysis-timeline-card__rail {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.5rem;
+}
+
+.race-analysis-timeline-card__rail i {
+  width: 0.24rem;
+  background: linear-gradient(180deg, #e10600, rgba(225, 6, 0, 0.08));
+  box-shadow: 0 0 18px rgba(225, 6, 0, 0.45);
+}
+
+.race-analysis-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.race-analysis-chip-row span {
+  padding: 0.34rem 0.48rem;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  color: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.035);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.race-analysis-timeline-card h3 {
+  margin: 0.55rem 0 0;
+  color: #fff;
+  font-size: clamp(1.1rem, 2vw, 1.65rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.race-analysis-timeline-card p {
+  max-width: 78rem;
+  margin: 0.45rem 0 0;
+  color: rgba(234, 239, 247, 0.68);
+}
+
+.race-analysis-timeline-card small {
+  display: block;
+  margin-top: 0.45rem;
+  color: rgba(234, 239, 247, 0.48);
+}
+
+.race-analysis-stint-board,
+.race-analysis-ribbon-board,
+.race-analysis-position-panel,
+.race-analysis-pressure-grid {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.028) 0 1px, transparent 1px 6rem),
+    rgba(1, 4, 8, 0.62);
+}
+
+.race-analysis-stint-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.22fr) minmax(0, 1fr) minmax(5rem, 0.16fr);
+  gap: 0.75rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.race-analysis-stint-row:last-child {
+  border-bottom: 0;
+}
+
+.race-analysis-stint-row__label,
+.race-analysis-stint-row__metric,
+.race-analysis-ribbon > div:first-child {
+  min-width: 0;
+}
+
+.race-analysis-stint-row__label strong,
+.race-analysis-ribbon strong {
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.race-analysis-stint-row__label span,
+.race-analysis-ribbon span,
+.race-analysis-stint-row__metric {
+  color: rgba(234, 239, 247, 0.56);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.race-analysis-stint-track,
+.race-analysis-ribbon__track {
+  position: relative;
+  overflow: hidden;
+  min-height: 2.25rem;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.race-analysis-compound {
+  position: absolute;
+  inset-block: 0.32rem;
+  display: grid;
+  place-items: center;
+  color: #07090d;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.race-analysis-compound--soft {
+  background: #ff3b35;
+}
+
+.race-analysis-compound--medium {
+  background: #ffd338;
+}
+
+.race-analysis-compound--hard {
+  background: #f3f5f8;
+}
+
+.race-analysis-compound--intermediate {
+  background: #48df89;
+}
+
+.race-analysis-compound--wet {
+  background: #4da3ff;
+}
+
+.race-analysis-pit-strip,
+.race-analysis-neutralization-strip {
+  display: grid;
+  grid-auto-columns: minmax(13rem, 1fr);
+  grid-auto-flow: column;
+  gap: 0.55rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.race-analysis-pit-card,
+.race-analysis-neutralization-strip > div,
+.race-analysis-swing-list article {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  background: rgba(255, 255, 255, 0.028);
+}
+
+.race-analysis-pit-card strong,
+.race-analysis-neutralization-strip strong,
+.race-analysis-swing-list strong {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.race-analysis-position-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(17rem, 0.55fr);
+  gap: 1rem;
+  padding: clamp(0.8rem, 1.7vw, 1.2rem);
+}
+
+.race-analysis-position-chart {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(24rem, 38vw, 36rem);
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 8%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 10%),
+    rgba(0, 0, 0, 0.18);
+}
+
+.race-analysis-position-line {
+  position: absolute;
+  inset: 0;
+}
+
+.race-analysis-position-line strong {
+  position: absolute;
+  left: 0.65rem;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+}
+
+.race-analysis-position-line i,
+.race-analysis-ribbon__track i {
+  position: absolute;
+  width: 0.46rem;
+  height: 0.46rem;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px currentColor;
+}
+
+.race-analysis-swing-list {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.race-analysis-ribbon {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.22fr) minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.race-analysis-ribbon:last-child {
+  border-bottom: 0;
+}
+
+.race-analysis-ribbon__track {
+  min-height: 4.25rem;
+}
+
+.race-analysis-ribbon__track i {
+  color: #e10600;
+  background: #fff;
+}
+
+.race-analysis-pressure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.race-analysis-pressure-cell {
+  display: grid;
+  gap: 0.38rem;
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  background: rgba(255, 255, 255, 0.024);
+}
+
+.race-analysis-pressure-cell i {
+  display: block;
+  height: 0.24rem;
+  background: linear-gradient(90deg, #e10600, rgba(255, 255, 255, 0.78));
+  box-shadow: 0 0 14px rgba(225, 6, 0, 0.42);
+}
+
+.race-analysis-weather-strip {
+  display: flex;
+  gap: 0.4rem;
+  width: var(--cinematic-wide);
+  margin: 0.85rem auto 0;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(4, 7, 11, 0.74);
+  scrollbar-width: thin;
+}
+
+.race-analysis-weather-strip span {
+  flex: 0 0 auto;
+  padding: 0.55rem 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.race-analysis-crosslinks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.race-analysis-crosslinks a,
+.race-analysis-crosslinks div {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 6rem;
+  align-content: center;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(6, 9, 14, 0.92);
+}
+
+.race-analysis-crosslinks a:hover,
+.race-analysis-crosslinks a:focus-visible {
+  background:
+    linear-gradient(180deg, rgba(225, 6, 0, 0.15), transparent),
+    rgba(8, 12, 18, 0.98);
+}
+
+.race-analysis-crosslinks strong {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1180px) {
+  .race-analysis-archive-hero,
+  .race-analysis-report-hero,
+  .race-analysis-position-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .race-analysis-archive-tile,
+  .race-analysis-archive-tile__main,
+  .race-analysis-report-status,
+  .race-analysis-engineer-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .race-analysis-pressure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .race-analysis-archive-hero,
+  .race-analysis-report-hero,
+  .race-analysis-command-strip,
+  .race-analysis-report-nav,
+  .race-analysis-weather-strip,
+  .race-analysis-report-band,
+  .race-analysis-engineer-strip,
+  .race-analysis-crosslinks {
+    width: min(100% - 1rem, 110rem);
+  }
+
+  .race-analysis-archive-hero,
+  .race-analysis-report-hero {
+    min-height: 0;
+  }
+
+  .race-analysis-archive-hero h1,
+  .race-analysis-report-hero h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
+
+  .race-analysis-command-strip {
+    position: relative;
+    top: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .race-analysis-command-strip__identity {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .race-analysis-report-nav {
+    grid-auto-columns: minmax(7rem, 1fr);
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .race-analysis-section__header {
+    display: grid;
+    align-items: start;
+  }
+
+  .race-analysis-section__header h2 {
+    font-size: clamp(2rem, 11vw, 3.4rem);
+  }
+
+  .race-analysis-timeline-card,
+  .race-analysis-stint-row,
+  .race-analysis-ribbon,
+  .race-analysis-report-hero__factors,
+  .race-analysis-crosslinks {
+    grid-template-columns: 1fr;
+  }
+
+  .race-analysis-pressure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .race-analysis-stint-row__metric,
+  .race-analysis-archive-tile__winner,
+  .race-analysis-archive-tile__podium strong {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .race-analysis-position-chart {
+    min-height: 19rem;
+  }
+}
+
 /* Phase A/B deployment polish: non-home shell rhythm and Race Week command center. */
 .analytics-page,
 .race-analysis-page,
@@ -12838,6 +14033,61 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   text-transform: uppercase;
 }
 
+.race-week-session-status {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+}
+
+.race-week-session-status__item {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--hud-line-soft);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.014)),
+    rgba(5, 8, 13, 0.78);
+}
+
+.race-week-session-status__item span,
+.race-week-session-status__item em {
+  color: rgba(235, 238, 245, 0.56);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.58rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.race-week-session-status__item strong {
+  color: #fff;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.race-week-session-status__item--complete {
+  border-color: color-mix(in srgb, #38f5a8 46%, rgba(255, 255, 255, 0.12));
+  background:
+    linear-gradient(180deg, rgba(56, 245, 168, 0.12), rgba(255, 255, 255, 0.014)),
+    rgba(5, 8, 13, 0.78);
+}
+
+.race-week-session-status__item--complete strong {
+  color: #9fffd2;
+}
+
+.race-week-session-status__item--unavailable {
+  border-color: color-mix(in srgb, #ff5d57 44%, rgba(255, 255, 255, 0.12));
+}
+
+.race-week-session-status__item--unavailable strong {
+  color: #ffaaa6;
+}
+
 .race-week-environment__grid {
   display: grid;
   gap: 0.55rem;
@@ -13047,6 +14297,10 @@ html.home-reveal-ready [data-home-reveal].is-visible {
 
   .race-week-timetable__slot {
     min-width: 9rem;
+  }
+
+  .race-week-session-status {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -13600,5 +14854,84 @@ html.home-reveal-ready [data-home-reveal].is-visible {
   .constructor-order-row__metric:nth-of-type(4),
   .constructor-order-row__gap {
     display: none;
+  }
+}
+
+.home-shell .driver-standings__row--hero {
+  max-width: min(100%, 78rem);
+  margin-inline: auto;
+  gap: 0.85rem;
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card {
+  min-height: clamp(18rem, 20vw, 20rem);
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__layout {
+  grid-template-columns: 4.45rem minmax(0, 1fr);
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__stat-rail {
+  gap: 0.72rem;
+  padding: 0.95rem 0.7rem 0.95rem 0.78rem;
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__stat-value {
+  font-size: 1.34rem;
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__intro {
+  padding: 0.9rem 1rem 0.35rem 0.9rem;
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__name {
+  font-size: clamp(1.16rem, 1.65vw, 1.34rem);
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__portrait {
+  margin-top: 0.15rem;
+  padding: 0 0.85rem;
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__portrait-frame {
+  min-height: clamp(9.75rem, 12.6vw, 11.85rem);
+}
+
+.home-shell .driver-standings__row--hero .driver-standing-card__body {
+  padding: 0.68rem 0.95rem 0.88rem 0.9rem;
+}
+
+@media (min-width: 960px) {
+  .home-shell .feature-showcase {
+    display: block;
+  }
+
+  .home-shell .feature-showcase__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 959px) {
+  .home-shell .driver-standings__row--hero {
+    grid-template-columns: 1fr;
+    max-width: 32rem;
+  }
+
+  .home-shell .driver-standings__row--hero .driver-standing-card {
+    min-height: 0;
+  }
+
+  .home-shell .driver-standings__row--hero .driver-standing-card__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .home-shell .driver-standings__row--hero .driver-standing-card__stat-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0.82rem 0.95rem 0.72rem;
+  }
+
+  .home-shell .driver-standings__row--hero .driver-standing-card__portrait-frame {
+    min-height: clamp(10.2rem, 54vw, 12.25rem);
   }
 }

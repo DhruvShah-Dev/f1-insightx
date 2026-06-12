@@ -1,4 +1,3 @@
-﻿import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { SiteHeader } from "@/components/ui/site-header";
@@ -8,9 +7,8 @@ import { StatePanel } from "@/components/ui/state-panel";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { RaceWeekSectorTrack } from "@/components/race-week/race-week-sector-track";
 import { RaceWeekTimeToggle } from "@/components/race-week/race-week-time-toggle";
-import { getRaceWeekProductResult } from "@/lib/server/race-week-product";
+import { getRaceWeekProductResult, type RaceWeekPredictionModeId, type RaceWeekProduct } from "@/lib/server/race-week-product";
 import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
-import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
 import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
 
 type RaceTheme = {
@@ -22,6 +20,13 @@ type RaceTheme = {
 };
 
 const raceThemeByCircuit: Record<string, RaceTheme> = {
+  catalunya: {
+    eyebrow: "Barcelona Race Week",
+    deck: "Long loaded corners, tyre stress, and balance through the final sector make race pace hard to fake here.",
+    shell: "#dbe8ef",
+    accent: "#f15a3b",
+    accentSoft: "#f7d64a",
+  },
   miami: {
     eyebrow: "Miami Race Week",
     deck: "Warm night energy, long straights, and enough volatility to punish overconfident reads.",
@@ -60,6 +65,28 @@ const fallbackTheme: RaceTheme = {
   accentSoft: "#ffffff",
 };
 
+const predictionModeIds: RaceWeekPredictionModeId[] = ["baseline", "pre_session", "fp1", "fp2", "fp3"];
+
+type PredictionsPageProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
+
+function getFirstSearchParam(value: string | string[] | undefined) {
+  if (Array.isArray(value)) {
+    return value[0];
+  }
+  return value;
+}
+
+function normalizePredictionMode(value: string | string[] | undefined): RaceWeekPredictionModeId {
+  const mode = getFirstSearchParam(value);
+  return predictionModeIds.includes(mode as RaceWeekPredictionModeId) ? (mode as RaceWeekPredictionModeId) : "baseline";
+}
+
+function predictionModeHref(mode: RaceWeekPredictionModeId) {
+  return mode === "baseline" ? "/predictions" : `/predictions?mode=${mode}`;
+}
+
 function formatRaceDate(iso: string | null | undefined) {
   if (!iso) {
     return "Date pending";
@@ -83,6 +110,22 @@ function formatTime(value: number | null, digits = 3) {
     return "Practice pending";
   }
   return `${value.toFixed(digits)}s`;
+}
+
+function formatQualifyingTime(value: number | null) {
+  if (value === null || Number.isNaN(value)) {
+    return "Pending";
+  }
+  const minutes = Math.floor(value / 60);
+  const seconds = (value % 60).toFixed(3).padStart(6, "0");
+  return `${minutes}:${seconds}`;
+}
+
+function formatMethodLabel(value: string | null) {
+  if (!value) {
+    return "Season delta model";
+  }
+  return value.replace(/_/g, " ");
 }
 
 function formatPercent(value: number | null) {
@@ -133,8 +176,60 @@ function formatForecastUpdated(value: string | null | undefined) {
   });
 }
 
+function formatBriefDate(value: string | null | undefined) {
+  if (!value) {
+    return "Source";
+  }
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "Source";
+  }
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+}
+
 function getDataStatus(value: number | null) {
   return value !== null && value < 0.45 ? "Practice pending" : "Data ready";
+}
+
+function formatPoleGap(value: number | null) {
+  if (value === null || Number.isNaN(value)) {
+    return "Not enough data";
+  }
+  if (Math.abs(value) < 0.0005) {
+    return "Pole";
+  }
+  return formatDelta(value, 3);
+}
+
+function getConfidenceBand(value: number | null, qComplete: boolean) {
+  if (!qComplete) {
+    return "Pre-session";
+  }
+  if (value === null || Number.isNaN(value)) {
+    return "Low";
+  }
+  if (value >= 0.72) {
+    return "High";
+  }
+  if (value >= 0.45) {
+    return "Medium";
+  }
+  return "Low";
+}
+
+function explainPredictionFlags(flags: string[]) {
+  const labels: Record<string, string> = {
+    race_week_delta_neutral: "Live Spain FP/Q pending",
+    same_circuit_driver_gap_missing: "No prior Catalunya driver history",
+    constructor_delta_missing: "Constructor delta fallback",
+    driver_delta_missing: "Driver delta fallback",
+    season_delta_estimated: "Season delta estimated",
+  };
+  const explained = flags.map((flag) => labels[flag] ?? flag.replace(/_/g, " ")).filter(Boolean);
+  return explained.length > 0 ? explained.join(" / ") : "Full model inputs";
 }
 
 function getStrategicTone(value: string | null) {
@@ -188,7 +283,55 @@ function buildWeekendSessions(raceIso: string | null | undefined) {
   ];
 }
 
-export default async function PredictionsPage() {
+function getSessionCode(label: string): "FP1" | "FP2" | "FP3" | "Q" | null {
+  if (label === "FP1" || label === "FP2" || label === "FP3") {
+    return label;
+  }
+  if (label === "Qualifying") {
+    return "Q";
+  }
+  return null;
+}
+
+function getSessionStatusLabel(
+  sessionCode: "FP1" | "FP2" | "FP3" | "Q",
+  sessionIso: string,
+  sessionStatus: RaceWeekProduct["sessionStatus"],
+) {
+  const status = sessionStatus.find((entry) => entry.sessionCode === sessionCode);
+  if (status?.status === "complete") {
+    return "Complete";
+  }
+
+  const sessionStart = new Date(sessionIso).getTime();
+  const unavailableAfter = sessionStart + (60 + 30 + 6 * 60) * 60 * 1000;
+  if (Number.isFinite(sessionStart) && Date.now() > unavailableAfter) {
+    return "Unavailable";
+  }
+
+  return "Pending";
+}
+
+function getSessionStatusDetail(sessionCode: "FP1" | "FP2" | "FP3" | "Q", productStatus: string, rows: number) {
+  if (sessionCode === "Q") {
+    if (productStatus === "Complete") {
+      return "Qualifying read available";
+    }
+    if (productStatus === "Unavailable") {
+      return "No qualifying rows";
+    }
+    return "Qualifying pending";
+  }
+
+  if (rows > 0) {
+    return `${rows} driver rows`;
+  }
+  return productStatus === "Unavailable" ? "No product rows" : "Practice pending";
+}
+
+export default async function PredictionsPage({ searchParams }: PredictionsPageProps) {
+  const params = await searchParams;
+  const selectedPredictionMode = normalizePredictionMode(params?.mode);
   const [raceWeekResult, seasonState] = await Promise.all([getRaceWeekProductResult(), getSeasonState()]);
   const raceWeek = raceWeekResult.mode === "unavailable" ? null : raceWeekResult.data;
 
@@ -223,7 +366,7 @@ export default async function PredictionsPage() {
     );
   }
 
-  const { overview, driverBoard, constructorBoard, strategy, storylines } = raceWeek;
+  const { overview, driverBoard, constructorBoard, strategy, storylines, predictionModes } = raceWeek;
   const nextRace = overview.nextRace;
   if (!nextRace) {
     return null;
@@ -253,13 +396,38 @@ export default async function PredictionsPage() {
       meter: raceWeekResult.meta.generatedAt ? 100 : 0,
     },
   ];
+  const sessionStatusCards = weekendSessions
+    .map((session) => {
+      const sessionCode = getSessionCode(session.label);
+      if (!sessionCode) {
+        return null;
+      }
+      const status = raceWeek.sessionStatus.find((entry) => entry.sessionCode === sessionCode);
+      const productStatus = getSessionStatusLabel(sessionCode, session.iso, raceWeek.sessionStatus);
+      return {
+        ...session,
+        sessionCode,
+        productStatus,
+        rows: status?.rowCount ?? 0,
+      };
+    })
+    .filter((session): session is NonNullable<typeof session> => Boolean(session));
 
-  const leadDrivers = driverBoard.slice(0, 3);
   const fieldDrivers = driverBoard.slice(0, 10);
   const leadConstructors = constructorBoard.slice(0, 5);
-  const mclarenWatch = driverBoard.filter((entry) => entry.constructorId === "mclaren").sort((a, b) => (b.readinessScore ?? 0) - (a.readinessScore ?? 0));
-  const ferrariWatch = driverBoard.filter((entry) => entry.constructorId === "ferrari").sort((a, b) => (b.readinessScore ?? 0) - (a.readinessScore ?? 0));
-  const norris = driverBoard.find((entry) => entry.driverId === "norris");
+  const selectedPredictionModeMeta = predictionModes.find((entry) => entry.id === selectedPredictionMode) ?? predictionModes[0];
+  const selectedQualifyingPrediction = raceWeek.qualifyingPrediction.filter((entry) => entry.predictionMode === selectedPredictionMode);
+  const qualifyingOrder = [...selectedQualifyingPrediction].sort((left, right) => {
+    const leftRank = left.predictedQRank ?? Number.POSITIVE_INFINITY;
+    const rightRank = right.predictedQRank ?? Number.POSITIVE_INFINITY;
+    return leftRank - rightRank || (left.predictedQGapS ?? Number.POSITIVE_INFINITY) - (right.predictedQGapS ?? Number.POSITIVE_INFINITY);
+  });
+  const qualifyingTopThree = qualifyingOrder.slice(0, 3);
+  const qualifyingBaseline = qualifyingOrder[0] ?? null;
+  const qualifyingPoleTime = qualifyingOrder.find((entry) => entry.predictedQTimeS !== null)?.predictedQTimeS ?? null;
+  const qualifyingSessionComplete = raceWeek.sessionStatus.some((entry) => entry.sessionCode === "Q" && entry.status === "complete");
+  const driverNameById = new Map(driverBoard.map((entry) => [entry.driverId, entry.driverName]));
+  const constructorNameById = new Map(constructorBoard.map((entry) => [entry.constructorId, entry.constructorName]));
   const keyedStrategy = strategy.slice(0, 6).map((entry) => {
     const matchingDriver = driverBoard.find((driver) => driver.driverId === entry.driverId);
     return {
@@ -354,6 +522,18 @@ export default async function PredictionsPage() {
             <h2>Track time or your local time.</h2>
           </div>
           <RaceWeekTimeToggle sessions={weekendSessions} trackTimeZone="Europe/Monaco" />
+          <div className="race-week-session-status" aria-label="Weekend data status">
+            {sessionStatusCards.map((session) => (
+              <div
+                className={`race-week-session-status__item race-week-session-status__item--${session.productStatus.toLowerCase()}`}
+                key={session.label}
+              >
+                <span>{session.label}</span>
+                <strong>{session.productStatus}</strong>
+                <em>{getSessionStatusDetail(session.sessionCode, session.productStatus, session.rows)}</em>
+              </div>
+            ))}
+          </div>
         </div>
 
         <aside className="race-week-environment" aria-label="Weather and environment radar">
@@ -373,107 +553,142 @@ export default async function PredictionsPage() {
         </aside>
       </section>
 
-      <section className="race-week-form-watch" aria-label="Upgrade and form watch">
-        <div className="race-week-section-heading race-week-section-heading--tight">
-          <p className="race-week-section-kicker">McLaren upgrade watch</p>
-          <h2>Norris and McLaren are the form watch.</h2>
-        </div>
-        <div className="race-week-form-watch__grid">
-          <article>
-            <span>McLaren read</span>
-            <strong>{norris ? `${norris.driverName} leads the McLaren baseline` : "Norris watch"}</strong>
-            <p>Norris and McLaren are the form watch once practice timing arrives.</p>
-          </article>
-          <article>
-            <span>Generated baseline</span>
-            <strong>
-              McLaren {mclarenWatch[0]?.projectedFinish ? `P${mclarenWatch[0].projectedFinish}` : "pending"} / Ferrari {ferrariWatch[0]?.projectedFinish ? `P${ferrariWatch[0].projectedFinish}` : "pending"}
-            </strong>
-            <p>Generated order remains separate from upgrade narrative.</p>
-          </article>
-        </div>
-      </section>
-
       <section className="race-week-story-band">
         <div className="race-week-story-band__intro">
           <p className="race-week-section-kicker">Weekend brief</p>
           <h2>What matters before the grid forms.</h2>
-          <p>Pace shape, tyre fade, strategy friction, and session readiness.</p>
+          <p>Verified schedule, tyre, practice, and local-driver context.</p>
         </div>
 
         <div className="race-week-story-band__cards">
-          {storylines.slice(0, 3).map((storyline) => (
+          {storylines.slice(0, 4).map((storyline) => (
             <article key={`${storyline.storylineType}-${storyline.priorityRank}`} className="race-week-story-card">
               <div className="race-week-story-card__eyebrow">
                 <span>{storyline.priorityRank.toString().padStart(2, "0")}</span>
-                <span>Watch item</span>
+                <span>{formatBriefDate(storyline.publishedAt)}</span>
               </div>
               <h3>{storyline.headline}</h3>
               <p>{sanitizeRaceWeekText(storyline.body)}</p>
+              {storyline.sourceUrl ? (
+                <a className="race-week-story-card__source" href={storyline.sourceUrl} target="_blank" rel="noreferrer">
+                  {storyline.sourceTitle ?? "Source"}
+                </a>
+              ) : null}
             </article>
           ))}
         </div>
       </section>
 
-      <section className="race-week-leaders">
+      <section className="race-week-q-prediction" aria-label="Spain qualifying prediction">
         <div className="race-week-section-heading">
-          <p className="race-week-section-kicker">Front row watch</p>
-          <h2>Early race-week read.</h2>
+          <p className="race-week-section-kicker">Spain Q Prediction</p>
+          <h2>Season-adjusted qualifying order.</h2>
+          <span className={`race-week-prediction-status race-week-prediction-status--${selectedPredictionModeMeta?.status ?? "pending"}`}>
+            {selectedPredictionModeMeta?.statusLabel ?? "Prediction data pending"}
+          </span>
         </div>
 
-        <div className="race-week-leaders__grid">
-          {leadDrivers.map((entry, index) => {
-            const driver = getCurrentDriverMeta(entry.driverId);
-            const team = getTeamAsset(entry.constructorId);
-            return (
-              <article
-                key={entry.driverId}
-                className={`race-week-leader-card ${index === 0 ? "race-week-leader-card--primary" : ""}`}
-                style={
-                  {
-                    "--leader-primary": team.primary,
-                    "--leader-secondary": team.secondary,
-                    "--leader-accent": team.accent,
-                  } as CSSProperties
-                }
-              >
-                <div className="race-week-leader-card__portrait">
-                  <Image
-                    src={driver.photoPath ?? driver.fallbackPhotoPath}
-                    alt={driver.altText}
-                    fill
-                    sizes="(max-width: 959px) 100vw, 28rem"
-                    className="race-week-leader-card__portrait-image"
-                    style={{ objectFit: driver.photoFit ?? "contain", objectPosition: driver.photoPosition ?? "center bottom" }}
-                    unoptimized
-                  />
-                </div>
-                <div className="race-week-leader-card__content">
-                  <div className="race-week-leader-card__rank">P{index + 1}</div>
-                  <h3>{entry.driverName}</h3>
-                  <div className="race-week-leader-card__team">
-                    <TeamBadge teamId={entry.constructorId} compact />
-                  </div>
-                  <div className="race-week-leader-card__metrics">
-                    <div>
-                      <span>Status</span>
-                      <strong>{getDataStatus(entry.signalConfidence)}</strong>
+        <nav className="race-week-prediction-modes" aria-label="Prediction mode">
+          {predictionModes.map((mode) => (
+            <Link
+              key={mode.id}
+              href={predictionModeHref(mode.id)}
+              className={`race-week-prediction-modes__link${mode.id === selectedPredictionMode ? " is-active" : ""}${mode.status === "pending" ? " is-pending" : ""}`}
+              aria-current={mode.id === selectedPredictionMode ? "page" : undefined}
+            >
+              <span>{mode.label}</span>
+              <em>{mode.status === "pending" ? "Pending" : mode.rowCount > 0 ? `${mode.rowCount} rows` : "Ready"}</em>
+            </Link>
+          ))}
+        </nav>
+
+        {qualifyingBaseline ? (
+          <>
+            <div className="race-week-q-prediction__baseline" aria-label="Qualifying baseline">
+              <div>
+                <span>Pole baseline</span>
+                <strong>{formatQualifyingTime(qualifyingBaseline.basePoleS)}</strong>
+              </div>
+              <div>
+                <span>2026 season delta</span>
+                <strong>{formatDelta(qualifyingBaseline.seasonDelta26Vs25S, 3)}</strong>
+              </div>
+              <div>
+                <span>Baseline method</span>
+                <strong>{formatMethodLabel(qualifyingBaseline.baselineMethod)}</strong>
+              </div>
+            </div>
+
+            <div className="race-week-q-prediction__podium">
+              {qualifyingTopThree.map((entry, index) => {
+                const displayGapToPole = qualifyingPoleTime === null || entry.predictedQTimeS === null ? null : entry.predictedQTimeS - qualifyingPoleTime;
+                return (
+                  <article key={entry.driverId} className="race-week-q-card">
+                    <div className="race-week-q-card__rank">P{entry.predictedQRank ?? index + 1}</div>
+                    <div className="race-week-q-card__identity">
+                      <h3>{driverNameById.get(entry.driverId) ?? entry.driverId.replace(/_/g, " ")}</h3>
+                      <TeamBadge teamId={entry.constructorId} compact />
                     </div>
-                    <div>
-                      <span>One lap</span>
-                      <strong>{formatTime(entry.oneLapPaceS)}</strong>
+                    <div className="race-week-q-card__metrics">
+                      <div>
+                        <span>Predicted time</span>
+                        <strong>{formatQualifyingTime(entry.predictedQTimeS)}</strong>
+                      </div>
+                      <div>
+                        <span>Gap to pole</span>
+                        <strong>{formatPoleGap(displayGapToPole)}</strong>
+                      </div>
+                      <div>
+                        <span>Confidence</span>
+                        <strong>{getConfidenceBand(entry.confidenceScore, qualifyingSessionComplete)}</strong>
+                      </div>
                     </div>
-                    <div>
-                      <span>Tyre fade</span>
-                      <strong>{formatDelta(entry.degradationSPerLap, 3)}</strong>
-                    </div>
-                  </div>
-                  <p>{sanitizeRaceWeekText(entry.summary)}</p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="race-week-q-table" role="table" aria-label="Full Spain qualifying order">
+              <div className="race-week-q-table__row race-week-q-table__row--head" role="row">
+                <span>Order</span>
+                <span>Driver</span>
+                <span>Time</span>
+                <span>Gap</span>
+                <span>Delta trend</span>
+                <span>Flags</span>
+              </div>
+              {qualifyingOrder.map((entry, index) => {
+                const displayGapToPole = qualifyingPoleTime === null || entry.predictedQTimeS === null ? null : entry.predictedQTimeS - qualifyingPoleTime;
+                return (
+                  <article key={entry.driverId} className="race-week-q-table__row" role="row">
+                    <span className="race-week-q-table__rank">P{entry.predictedQRank ?? index + 1}</span>
+                    <span className="race-week-q-table__driver">
+                      <strong>{driverNameById.get(entry.driverId) ?? entry.driverId.replace(/_/g, " ")}</strong>
+                      <em>{constructorNameById.get(entry.constructorId) ?? entry.constructorId.replace(/_/g, " ")}</em>
+                    </span>
+                    <span>{formatQualifyingTime(entry.predictedQTimeS)}</span>
+                    <span>{formatPoleGap(displayGapToPole)}</span>
+                    <span>
+                      D {formatDelta(entry.driverGapDeltaS, 3)}
+                      <br />
+                      C {formatDelta(entry.constructorGapDeltaS, 3)}
+                    </span>
+                    <span>{explainPredictionFlags(entry.missingFlags)}</span>
+                  </article>
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <div className="race-week-q-prediction__empty">
+            <strong>{selectedPredictionModeMeta?.statusLabel ?? "Spain Q model pending"}</strong>
+            <span>
+              {selectedPredictionModeMeta?.status === "pending"
+                ? "This mode will populate when the required practice sessions are available in the active data source."
+                : "Qualifying prediction rows are not available in the active data source."}
+            </span>
+          </div>
+        )}
       </section>
 
       <section className="race-week-signal-grid">

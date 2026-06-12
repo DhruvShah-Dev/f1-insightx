@@ -28,8 +28,53 @@ export type RaceWeekProductOverview = {
   signalConfidence: number | null;
 };
 
+export type RaceWeekQualifyingPrediction = {
+  raceId: string;
+  predictionMode: RaceWeekPredictionModeId;
+  modeLabel: string;
+  includedSessions: string[];
+  modeStatus: RaceWeekPredictionModeStatus;
+  driverId: string;
+  constructorId: string;
+  predictedQRank: number | null;
+  predictedQTimeS: number | null;
+  predictedQGapS: number | null;
+  basePoleS: number | null;
+  seasonDelta26Vs25S: number | null;
+  trackResidualS: number | null;
+  recentQualiGapS: number | null;
+  sameCircuitGapS: number | null;
+  constructorQualiGapS: number | null;
+  raceWeekDeltaGapS: number | null;
+  driverGapDeltaS: number | null;
+  constructorGapDeltaS: number | null;
+  formBiasScore: number | null;
+  confidenceScore: number | null;
+  clampedPrediction: boolean;
+  missingFlags: string[];
+  baselineMethod: string | null;
+  sourceLabel: string | null;
+};
+
+export type RaceWeekPredictionModeId = "baseline" | "pre_session" | "fp1" | "fp2" | "fp3";
+export type RaceWeekPredictionModeStatus = "available" | "pending";
+
+export type RaceWeekPredictionMode = {
+  id: RaceWeekPredictionModeId;
+  label: string;
+  status: RaceWeekPredictionModeStatus;
+  statusLabel: string;
+  includedSessions: string[];
+  rowCount: number;
+};
+
 export type RaceWeekProduct = {
   overview: RaceWeekProductOverview;
+  sessionStatus: Array<{
+    sessionCode: "FP1" | "FP2" | "FP3" | "Q";
+    status: "complete" | "pending";
+    rowCount: number;
+  }>;
   driverBoard: Array<{
     driverId: string;
     driverName: string;
@@ -76,7 +121,12 @@ export type RaceWeekProduct = {
     body: string;
     confidenceBand: string;
     signalConfidence: number | null;
+    sourceTitle: string | null;
+    sourceUrl: string | null;
+    publishedAt: string | null;
   }>;
+  predictionModes: RaceWeekPredictionMode[];
+  qualifyingPrediction: RaceWeekQualifyingPrediction[];
 };
 
 type RaceWeekProductWithRuntime = RaceWeekProduct & {
@@ -170,6 +220,9 @@ type StorylineRow = {
   body: string;
   confidence_band: string;
   signal_confidence: number | string | null;
+  source_title?: string | null;
+  source_url?: string | null;
+  published_at?: string | null;
 };
 
 type WeatherRiskSummaryRow = {
@@ -178,6 +231,40 @@ type WeatherRiskSummaryRow = {
   track_temp_mean_c: number | string | null;
   wind_speed_mean_mps: number | string | null;
   weather_risk_index: number | string | null;
+  source_label?: string | null;
+};
+
+type SessionPaceSummaryRow = {
+  race_id: string;
+  session_code: string;
+  driver_id: string;
+};
+
+type QualifyingPredictionRow = {
+  race_id: string;
+  prediction_mode?: string | null;
+  mode_label?: string | null;
+  included_sessions?: string | null;
+  mode_status?: string | null;
+  driver_id: string;
+  constructor_id: string;
+  predicted_q_rank: number | string | null;
+  predicted_q_time_s: number | string | null;
+  predicted_q_gap_s: number | string | null;
+  base_pole_s: number | string | null;
+  season_delta_26_vs_25_s: number | string | null;
+  track_residual_s: number | string | null;
+  recent_quali_gap_s: number | string | null;
+  same_circuit_gap_s: number | string | null;
+  constructor_quali_gap_s: number | string | null;
+  race_week_delta_gap_s: number | string | null;
+  driver_gap_delta_s: number | string | null;
+  constructor_gap_delta_s: number | string | null;
+  form_bias_score: number | string | null;
+  confidence_score: number | string | null;
+  clamped_prediction: boolean | string | null;
+  missing_flags: string | null;
+  baseline_method: string | null;
   source_label?: string | null;
 };
 
@@ -198,6 +285,26 @@ function parseNumber(value: number | string | null | undefined) {
   }
   const number = Number(value);
   return Number.isNaN(number) ? null : number;
+}
+
+function parseBoolean(value: boolean | string | null | undefined) {
+  if (typeof value === "boolean") {
+    return value;
+  }
+  if (value === null || value === undefined || value === "") {
+    return false;
+  }
+  return ["1", "true", "yes", "y"].includes(value.toLowerCase());
+}
+
+function parseFlagList(value: string | null | undefined) {
+  if (!value) {
+    return [];
+  }
+  return value
+    .split(/[|,;]/)
+    .map((flag) => flag.trim())
+    .filter(Boolean);
 }
 
 function mapRaceRef(row: RaceRefSource, circuit: CircuitRow | null): RaceWeekCanonicalRaceRef {
@@ -238,14 +345,117 @@ function findWeatherSummaryRow(rows: WeatherRiskSummaryRow[], raceId: string, ci
     .sort((left, right) => right.race_id.localeCompare(left.race_id))[0] ?? null;
 }
 
+function buildSessionStatus(rows: SessionPaceSummaryRow[], raceId: string): RaceWeekProduct["sessionStatus"] {
+  return (["FP1", "FP2", "FP3", "Q"] as const).map((sessionCode) => {
+    const rowCount = rows.filter((row) => row.race_id === raceId && row.session_code === sessionCode).length;
+    return {
+      sessionCode,
+      status: rowCount > 0 ? "complete" : "pending",
+      rowCount,
+    };
+  });
+}
+
+const predictionModeOrder: RaceWeekPredictionModeId[] = ["baseline", "pre_session", "fp1", "fp2", "fp3"];
+
+const predictionModeDefaults: Record<RaceWeekPredictionModeId, { label: string; includedSessions: string[]; statusLabel: string }> = {
+  baseline: { label: "Predictions", includedSessions: [], statusLabel: "Using latest available model" },
+  pre_session: { label: "Pre-session pred", includedSessions: [], statusLabel: "Using pre-session model" },
+  fp1: { label: "FP1 pred", includedSessions: ["FP1"], statusLabel: "Using FP1 data" },
+  fp2: { label: "FP2 pred", includedSessions: ["FP1", "FP2"], statusLabel: "Using FP1 + FP2 data" },
+  fp3: { label: "FP3 pred", includedSessions: ["FP1", "FP2", "FP3"], statusLabel: "Using FP1 + FP2 + FP3 data" },
+};
+
+function normalizePredictionMode(value: string | null | undefined): RaceWeekPredictionModeId {
+  return predictionModeOrder.includes(value as RaceWeekPredictionModeId) ? (value as RaceWeekPredictionModeId) : "baseline";
+}
+
+function parseSessionList(value: string | null | undefined) {
+  if (!value) {
+    return [];
+  }
+  return value
+    .split(/[|,;]/)
+    .map((session) => session.trim().toUpperCase())
+    .filter(Boolean);
+}
+
+function normalizePredictionModeStatus(value: string | null | undefined): RaceWeekPredictionModeStatus {
+  return value === "pending" ? "pending" : "available";
+}
+
+function buildPredictionModes(rows: RaceWeekQualifyingPrediction[]): RaceWeekPredictionMode[] {
+  return predictionModeOrder.map((id) => {
+    const modeRows = rows.filter((row) => row.predictionMode === id);
+    const defaultConfig = predictionModeDefaults[id];
+    const rowConfig = modeRows[0] ?? null;
+    const status: RaceWeekPredictionModeStatus = modeRows.length > 0 ? "available" : "pending";
+
+    let statusLabel = defaultConfig.statusLabel;
+    if (status === "pending") {
+      statusLabel = `${defaultConfig.label.replace(" pred", "")} data pending`;
+    }
+
+    return {
+      id,
+      label: rowConfig?.modeLabel ?? defaultConfig.label,
+      status,
+      statusLabel,
+      includedSessions: rowConfig?.includedSessions.length ? rowConfig.includedSessions : defaultConfig.includedSessions,
+      rowCount: modeRows.length,
+    };
+  });
+}
+
+function mapQualifyingPredictionRows(rows: QualifyingPredictionRow[], raceId: string): RaceWeekQualifyingPrediction[] {
+  return rows
+    .filter((row) => row && row.race_id === raceId && row.driver_id)
+    .map((row) => ({
+      raceId: row.race_id,
+      predictionMode: normalizePredictionMode(row.prediction_mode),
+      modeLabel: row.mode_label ?? predictionModeDefaults[normalizePredictionMode(row.prediction_mode)].label,
+      includedSessions: parseSessionList(row.included_sessions),
+      modeStatus: normalizePredictionModeStatus(row.mode_status),
+      driverId: row.driver_id,
+      constructorId: row.constructor_id,
+      predictedQRank: parseNumber(row.predicted_q_rank),
+      predictedQTimeS: parseNumber(row.predicted_q_time_s),
+      predictedQGapS: parseNumber(row.predicted_q_gap_s),
+      basePoleS: parseNumber(row.base_pole_s),
+      seasonDelta26Vs25S: parseNumber(row.season_delta_26_vs_25_s),
+      trackResidualS: parseNumber(row.track_residual_s),
+      recentQualiGapS: parseNumber(row.recent_quali_gap_s),
+      sameCircuitGapS: parseNumber(row.same_circuit_gap_s),
+      constructorQualiGapS: parseNumber(row.constructor_quali_gap_s),
+      raceWeekDeltaGapS: parseNumber(row.race_week_delta_gap_s),
+      driverGapDeltaS: parseNumber(row.driver_gap_delta_s),
+      constructorGapDeltaS: parseNumber(row.constructor_gap_delta_s),
+      formBiasScore: parseNumber(row.form_bias_score),
+      confidenceScore: parseNumber(row.confidence_score),
+      clampedPrediction: parseBoolean(row.clamped_prediction),
+      missingFlags: parseFlagList(row.missing_flags),
+      baselineMethod: row.baseline_method ?? null,
+      sourceLabel: row.source_label ?? null,
+    }))
+    .sort((left, right) => {
+      const leftMode = predictionModeOrder.indexOf(left.predictionMode);
+      const rightMode = predictionModeOrder.indexOf(right.predictionMode);
+      const leftRank = left.predictedQRank ?? Number.POSITIVE_INFINITY;
+      const rightRank = right.predictedQRank ?? Number.POSITIVE_INFINITY;
+      return leftMode - rightMode || leftRank - rightRank || (left.predictedQGapS ?? Number.POSITIVE_INFINITY) - (right.predictedQGapS ?? Number.POSITIVE_INFINITY);
+    });
+}
+
 async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
-  const [overviewRows, driverBoardRows, constructorBoardRows, strategyRows, storylineRows, weatherRows, races, circuits] = await Promise.all([
+  const [overviewRows, driverBoardRows, constructorBoardRows, strategyRows, storylineRows, weatherRows, sessionPaceRows, qualifyingPredictionRows, races, circuits] = await Promise.all([
     readCsvFile<RaceWeekOverviewRow>("raceWeek.overview"),
     readCsvFile<DriverBoardRow>("raceWeek.driverBoard"),
     readCsvFile<ConstructorBoardRow>("raceWeek.constructorBoard"),
     readCsvFile<StrategyRow>("raceWeek.strategy"),
     readCsvFile<StorylineRow>("raceWeek.storylines"),
     readCsvFile<WeatherRiskSummaryRow>("raceWeek.weatherRiskSummary"),
+    readCsvFile<SessionPaceSummaryRow>("raceWeek.sessionPaceSummary"),
+    readCsvFile<QualifyingPredictionRow>("raceWeek.spainQualifyingPrediction"),
     readCsvFile<RaceRow>("curated.races"),
     readCsvFile<CircuitRow>("curated.circuits"),
   ]);
@@ -264,6 +474,8 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
     ? mapRaceRef(latestCompletedRow, circuitMap.get(latestCompletedRow.circuit_id) ?? null)
     : null;
   const weatherRow = findWeatherSummaryRow(weatherRows, overviewRow.race_id, overviewRow.circuit_id);
+  const sessionStatus = buildSessionStatus(sessionPaceRows, overviewRow.race_id);
+  const qualifyingPrediction = mapQualifyingPredictionRows(qualifyingPredictionRows, overviewRow.race_id);
 
   return attachRaceWeekRuntimeMetadata({
     overview: {
@@ -279,6 +491,7 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
       weatherSourceLabel: weatherRow?.source_label ?? null,
       signalConfidence: parseNumber(overviewRow.signal_confidence),
     },
+    sessionStatus,
     driverBoard: driverBoardRows
       .filter((row) => row && row.driver_id)
       .map((row) => ({
@@ -334,7 +547,12 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
         body: row.body,
         confidenceBand: row.confidence_band,
         signalConfidence: parseNumber(row.signal_confidence),
+        sourceTitle: row.source_title ?? null,
+        sourceUrl: row.source_url ?? null,
+        publishedAt: row.published_at ?? null,
       })),
+    predictionModes: buildPredictionModes(qualifyingPrediction),
+    qualifyingPrediction,
   }, overviewRow);
 }
 
@@ -362,7 +580,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
 
   const latestCompletedRaceId = overviewRow.latest_completed_race_id ?? null;
 
-  const [latestRaceResult, driverBoardResult, constructorBoardResult, strategyResult, storylineResult, weatherResult] = await Promise.all([
+  const [latestRaceResult, driverBoardResult, constructorBoardResult, strategyResult, storylineResult, weatherResult, sessionPaceResult, qualifyingPredictionResult] = await Promise.all([
     latestCompletedRaceId
       ? supabase
           .from("races")
@@ -373,8 +591,15 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     supabase.from("race_week_driver_board_view").select("driver_id, driver_name, constructor_id, constructor_name, long_run_pace_s, gap_to_long_run_best_s, one_lap_pace_s, gap_to_one_lap_best_s, degradation_s_per_lap, readiness_score, signal_confidence, projected_finish, summary").eq("race_id", overviewRow.race_id).order("readiness_score", { ascending: false }),
     supabase.from("race_week_constructor_board_view").select("constructor_id, constructor_name, long_run_pace_s, one_lap_pace_s, degradation_index, readiness_score, signal_confidence, summary").eq("race_id", overviewRow.race_id).order("readiness_score", { ascending: false }),
     supabase.from("race_week_strategy_view").select("driver_id, constructor_id, recommended_stop_count, preferred_primary_compound, preferred_secondary_compound, pit_window_start_lap, pit_window_end_lap, degradation_risk, strategy_confidence, rationale").eq("race_id", overviewRow.race_id),
-    supabase.from("race_week_storylines_view").select("entity_type, entity_id, storyline_type, priority_rank, headline, body, confidence_band, signal_confidence").eq("race_id", overviewRow.race_id).order("priority_rank", { ascending: true }),
+    supabase.from("race_week_storylines_view").select("entity_type, entity_id, storyline_type, priority_rank, headline, body, confidence_band, signal_confidence, source_title, source_url, published_at").eq("race_id", overviewRow.race_id).order("priority_rank", { ascending: true }),
     supabase.from("weather_risk_summary").select("race_id, rainfall_probability, track_temp_mean_c, wind_speed_mean_mps, weather_risk_index, source_label").eq("race_id", overviewRow.race_id).maybeSingle<WeatherRiskSummaryRow>(),
+    supabase.from("session_pace_summary").select("race_id, session_code, driver_id").eq("race_id", overviewRow.race_id).in("session_code", ["FP1", "FP2", "FP3", "Q"]).limit(120),
+    supabase
+      .from("spain_qualifying_prediction")
+      .select("race_id, prediction_mode, mode_label, included_sessions, mode_status, driver_id, constructor_id, predicted_q_rank, predicted_q_time_s, predicted_q_gap_s, base_pole_s, season_delta_26_vs_25_s, track_residual_s, recent_quali_gap_s, same_circuit_gap_s, constructor_quali_gap_s, race_week_delta_gap_s, driver_gap_delta_s, constructor_gap_delta_s, form_bias_score, confidence_score, clamped_prediction, missing_flags, baseline_method, source_label")
+      .eq("race_id", overviewRow.race_id)
+      .order("prediction_mode", { ascending: true })
+      .order("predicted_q_rank", { ascending: true }),
   ]);
 
   if (
@@ -408,6 +633,10 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     latestCompletedRace = mapRaceRef(latestRaceRow, circuitMap.get(latestRaceRow.circuit_id) ?? null);
   }
   const weatherRow = weatherResult.error ? null : weatherResult.data;
+  const sessionPaceRows = sessionPaceResult.error ? [] : ((sessionPaceResult.data ?? []) as SessionPaceSummaryRow[]);
+  const qualifyingPredictionRows = qualifyingPredictionResult.error ? [] : ((qualifyingPredictionResult.data ?? []) as QualifyingPredictionRow[]);
+  const sessionStatus = buildSessionStatus(sessionPaceRows, overviewRow.race_id);
+  const qualifyingPrediction = mapQualifyingPredictionRows(qualifyingPredictionRows, overviewRow.race_id);
 
   return attachRaceWeekRuntimeMetadata({
     overview: {
@@ -423,6 +652,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
       weatherSourceLabel: weatherRow?.source_label ?? null,
       signalConfidence: parseNumber(overviewRow.signal_confidence),
     },
+    sessionStatus,
     driverBoard: ((driverBoardResult.data ?? []) as DriverBoardRow[]).map((row) => ({
       driverId: row.driver_id,
       driverName: row.driver_name,
@@ -469,7 +699,12 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
       body: row.body,
       confidenceBand: row.confidence_band,
       signalConfidence: parseNumber(row.signal_confidence),
+      sourceTitle: row.source_title ?? null,
+      sourceUrl: row.source_url ?? null,
+      publishedAt: row.published_at ?? null,
     })),
+    predictionModes: buildPredictionModes(qualifyingPrediction),
+    qualifyingPrediction,
   }, overviewRow);
 }
 

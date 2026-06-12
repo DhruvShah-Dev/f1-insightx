@@ -156,8 +156,13 @@ CREATE TABLE IF NOT EXISTS driver_features (
     track_affinity_score numeric,
     teammate_delta_s numeric,
     reliability_score numeric,
+    avg_quali_yoy_delta_s numeric,
+    form_bias_score numeric,
     source_label text NOT NULL DEFAULT 'race_week_driver_features_v2'
 );
+
+ALTER TABLE driver_features ADD COLUMN IF NOT EXISTS avg_quali_yoy_delta_s numeric;
+ALTER TABLE driver_features ADD COLUMN IF NOT EXISTS form_bias_score numeric;
 
 CREATE INDEX IF NOT EXISTS idx_driver_features_race_driver ON driver_features (race_id, driver_id);
 
@@ -211,11 +216,16 @@ CREATE TABLE IF NOT EXISTS driver_signals (
     racecraft_signal numeric,
     fp2_race_pace_signal numeric,
     quali_signal numeric,
+    quali_delta_signal numeric,
+    form_bias_signal numeric,
     trend_signal numeric,
     track_affinity_signal numeric,
     overall_signal numeric,
     source_label text NOT NULL DEFAULT 'race_week_driver_signals_v1'
 );
+
+ALTER TABLE driver_signals ADD COLUMN IF NOT EXISTS quali_delta_signal numeric;
+ALTER TABLE driver_signals ADD COLUMN IF NOT EXISTS form_bias_signal numeric;
 
 CREATE INDEX IF NOT EXISTS idx_driver_signals_race_driver ON driver_signals (race_id, driver_id);
 
@@ -294,6 +304,93 @@ CREATE TABLE IF NOT EXISTS session_pace_summary (
 );
 
 CREATE INDEX IF NOT EXISTS idx_session_pace_summary_race_session ON session_pace_summary (race_id, session_code, driver_id);
+
+CREATE TABLE IF NOT EXISTS session_year_over_year_deltas (
+    id text PRIMARY KEY,
+    season integer NOT NULL,
+    round integer NOT NULL,
+    race_id text NOT NULL REFERENCES races(id) ON DELETE CASCADE,
+    circuit_id text NOT NULL REFERENCES circuits(id) ON DELETE CASCADE,
+    session_code text NOT NULL,
+    driver_id text NOT NULL REFERENCES drivers(id) ON DELETE CASCADE,
+    constructor_id text REFERENCES constructors(id) ON DELETE CASCADE,
+    comparison_season integer NOT NULL,
+    comparison_race_id text NOT NULL REFERENCES races(id) ON DELETE CASCADE,
+    current_gap_s numeric NOT NULL,
+    prior_gap_s numeric NOT NULL,
+    delta_gap_s numeric NOT NULL,
+    source_label text NOT NULL DEFAULT 'race_week_session_yoy_delta_v1'
+);
+
+CREATE INDEX IF NOT EXISTS idx_session_yoy_deltas_race_session ON session_year_over_year_deltas (race_id, session_code, driver_id);
+CREATE INDEX IF NOT EXISTS idx_session_yoy_deltas_comparison ON session_year_over_year_deltas (comparison_race_id, comparison_season);
+
+CREATE TABLE IF NOT EXISTS qualifying_driver_deltas (
+    id text PRIMARY KEY,
+    season integer NOT NULL,
+    round integer NOT NULL,
+    race_id text NOT NULL REFERENCES races(id) ON DELETE CASCADE,
+    circuit_id text NOT NULL REFERENCES circuits(id) ON DELETE CASCADE,
+    delta_type text NOT NULL,
+    driver_id text NOT NULL REFERENCES drivers(id) ON DELETE CASCADE,
+    comparison_driver_id text REFERENCES drivers(id) ON DELETE CASCADE,
+    constructor_id text REFERENCES constructors(id) ON DELETE CASCADE,
+    comparison_constructor_id text REFERENCES constructors(id) ON DELETE CASCADE,
+    current_quali_gap_s numeric,
+    comparison_quali_gap_s numeric,
+    pairwise_delta_gap_s numeric,
+    avg_quali_yoy_delta_s numeric,
+    source_sample_size integer,
+    source_label text NOT NULL DEFAULT 'race_week_qualifying_driver_delta_v1'
+);
+
+CREATE INDEX IF NOT EXISTS idx_qualifying_driver_deltas_race_type ON qualifying_driver_deltas (race_id, delta_type, driver_id);
+CREATE INDEX IF NOT EXISTS idx_qualifying_driver_deltas_pairwise ON qualifying_driver_deltas (race_id, driver_id, comparison_driver_id);
+
+CREATE TABLE IF NOT EXISTS spain_qualifying_prediction (
+    id text PRIMARY KEY,
+    season integer NOT NULL,
+    round integer NOT NULL,
+    race_id text NOT NULL REFERENCES races(id) ON DELETE CASCADE,
+    prediction_mode text NOT NULL DEFAULT 'baseline',
+    mode_label text NOT NULL DEFAULT 'Predictions',
+    included_sessions text,
+    mode_status text NOT NULL DEFAULT 'available',
+    driver_id text NOT NULL REFERENCES drivers(id) ON DELETE CASCADE,
+    constructor_id text REFERENCES constructors(id) ON DELETE CASCADE,
+    predicted_q_rank integer NOT NULL,
+    predicted_q_time_s numeric NOT NULL,
+    predicted_q_gap_s numeric NOT NULL,
+    base_pole_s numeric NOT NULL,
+    season_delta_26_vs_25_s numeric,
+    track_residual_s numeric,
+    recent_quali_gap_s numeric,
+    same_circuit_gap_s numeric,
+    constructor_quali_gap_s numeric,
+    race_week_delta_gap_s numeric,
+    driver_gap_delta_s numeric,
+    constructor_gap_delta_s numeric,
+    form_bias_score numeric,
+    confidence_score numeric,
+    clamped_prediction boolean NOT NULL DEFAULT false,
+    missing_flags text,
+    baseline_method text,
+    source_label text NOT NULL DEFAULT 'spain_qualifying_prediction_v1'
+);
+
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS season_delta_26_vs_25_s numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS track_residual_s numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS driver_gap_delta_s numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS constructor_gap_delta_s numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS baseline_method text;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS prediction_mode text NOT NULL DEFAULT 'baseline';
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS mode_label text NOT NULL DEFAULT 'Predictions';
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS included_sessions text;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS mode_status text NOT NULL DEFAULT 'available';
+
+CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_race_rank ON spain_qualifying_prediction (race_id, predicted_q_rank);
+CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_race_mode_rank ON spain_qualifying_prediction (race_id, prediction_mode, predicted_q_rank);
+CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_driver ON spain_qualifying_prediction (driver_id);
 
 CREATE TABLE IF NOT EXISTS fp2_long_run_summary (
     id text PRIMARY KEY,
@@ -438,8 +535,16 @@ CREATE TABLE IF NOT EXISTS race_week_storylines (
     body text NOT NULL,
     confidence_band text NOT NULL,
     signal_confidence numeric,
+    source_title text,
+    source_url text,
+    published_at timestamptz,
     source_label text NOT NULL DEFAULT 'race_week_storyline_v1'
 );
+
+ALTER TABLE race_week_storylines
+    ADD COLUMN IF NOT EXISTS source_title text,
+    ADD COLUMN IF NOT EXISTS source_url text,
+    ADD COLUMN IF NOT EXISTS published_at timestamptz;
 
 CREATE INDEX IF NOT EXISTS idx_race_week_storylines_race_priority ON race_week_storylines (race_id, priority_rank);
 

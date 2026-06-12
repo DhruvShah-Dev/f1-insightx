@@ -1,0 +1,1 @@
+id,season,round,race_id,circuit_id,delta_type,driver_id,comparison_driver_id,constructor_id,comparison_constructor_id,current_quali_gap_s,comparison_quali_gap_s,pairwise_delta_gap_s,avg_quali_yoy_delta_s,source_sample_size,source_label

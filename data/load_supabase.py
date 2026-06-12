@@ -296,7 +296,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "driver_features",
         "race_week/driver_features.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "avg_race_pace_s", "fp2_long_run_pace_s", "lap_variance_s", "consistency_score", "quali_pace_s", "race_vs_quali_delta_s", "tyre_degradation_slope", "avg_finish_position_recent", "avg_qualifying_position_recent", "track_affinity_score", "teammate_delta_s", "reliability_score", "source_label"],
+        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "avg_race_pace_s", "fp2_long_run_pace_s", "lap_variance_s", "consistency_score", "quali_pace_s", "race_vs_quali_delta_s", "tyre_degradation_slope", "avg_finish_position_recent", "avg_qualifying_position_recent", "track_affinity_score", "teammate_delta_s", "reliability_score", "avg_quali_yoy_delta_s", "form_bias_score", "source_label"],
     ),
     (
         "constructor_features",
@@ -311,7 +311,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "driver_signals",
         "race_week/driver_signals.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "form_signal", "consistency_signal", "racecraft_signal", "fp2_race_pace_signal", "quali_signal", "trend_signal", "track_affinity_signal", "overall_signal", "source_label"],
+        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "form_signal", "consistency_signal", "racecraft_signal", "fp2_race_pace_signal", "quali_signal", "quali_delta_signal", "form_bias_signal", "trend_signal", "track_affinity_signal", "overall_signal", "source_label"],
     ),
     (
         "constructor_signals",
@@ -332,6 +332,21 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
         "session_pace_summary",
         "race_week/session_pace_summary.csv",
         ["id", "season", "round", "race_id", "session_id", "session_code", "driver_id", "constructor_id", "representative_lap_s", "best_lap_s", "long_run_lap_s", "long_run_degradation_s", "gap_to_session_best_s", "pace_rank", "gap_to_teammate_s", "top_speed_kph", "air_temp_c", "track_temp_c", "rainfall_flag", "source_label"],
+    ),
+    (
+        "session_year_over_year_deltas",
+        "race_week/session_year_over_year_deltas.csv",
+        ["id", "season", "round", "race_id", "circuit_id", "session_code", "driver_id", "constructor_id", "comparison_season", "comparison_race_id", "current_gap_s", "prior_gap_s", "delta_gap_s", "source_label"],
+    ),
+    (
+        "qualifying_driver_deltas",
+        "race_week/qualifying_driver_deltas.csv",
+        ["id", "season", "round", "race_id", "circuit_id", "delta_type", "driver_id", "comparison_driver_id", "constructor_id", "comparison_constructor_id", "current_quali_gap_s", "comparison_quali_gap_s", "pairwise_delta_gap_s", "avg_quali_yoy_delta_s", "source_sample_size", "source_label"],
+    ),
+    (
+        "spain_qualifying_prediction",
+        "race_week/spain_qualifying_prediction.csv",
+        ["id", "season", "round", "race_id", "prediction_mode", "mode_label", "included_sessions", "mode_status", "driver_id", "constructor_id", "predicted_q_rank", "predicted_q_time_s", "predicted_q_gap_s", "base_pole_s", "season_delta_26_vs_25_s", "track_residual_s", "recent_quali_gap_s", "same_circuit_gap_s", "constructor_quali_gap_s", "race_week_delta_gap_s", "driver_gap_delta_s", "constructor_gap_delta_s", "form_bias_score", "confidence_score", "clamped_prediction", "missing_flags", "baseline_method", "source_label"],
     ),
     (
         "fp2_long_run_summary",
@@ -371,7 +386,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "race_week_storylines",
         "race_week/race_week_storylines.csv",
-        ["id", "season", "round", "race_id", "entity_type", "entity_id", "storyline_type", "priority_rank", "headline", "body", "confidence_band", "signal_confidence", "source_label"],
+        ["id", "season", "round", "race_id", "entity_type", "entity_id", "storyline_type", "priority_rank", "headline", "body", "confidence_band", "signal_confidence", "source_title", "source_url", "published_at", "source_label"],
     ),
     (
         "race_week_overview",
@@ -474,6 +489,9 @@ OPTIONAL_TABLES = {
     "session_stints",
     "session_weather",
     "session_pace_summary",
+    "session_year_over_year_deltas",
+    "qualifying_driver_deltas",
+    "spain_qualifying_prediction",
     "fp2_long_run_summary",
     "stint_degradation_summary",
     "weather_risk_summary",
@@ -554,6 +572,9 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     "session_stints": {"stint_number", "lap_count", "start_tyre_life", "end_tyre_life"},
     "session_weather": {"sample_order"},
     "session_pace_summary": {"season", "round", "pace_rank"},
+    "session_year_over_year_deltas": {"season", "round", "comparison_season"},
+    "qualifying_driver_deltas": {"season", "round", "source_sample_size"},
+    "spain_qualifying_prediction": {"season", "round", "predicted_q_rank"},
     "fp2_long_run_summary": {"season", "round", "lap_sample_size"},
     "stint_degradation_summary": {"season", "round"},
     "weather_risk_summary": {"season", "round"},
