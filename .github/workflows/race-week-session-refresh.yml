@@ -1,0 +1,44 @@
+name: Race Week Session Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */2 * * 5,6,0"
+
+jobs:
+  refresh-sessions:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      JOLPICA_BASE_URL: ${{ secrets.JOLPICA_BASE_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install data dependencies
+        run: python -m pip install -r data/requirements.txt
+
+      - name: Refresh completed race-week sessions
+        run: python data/refresh_current_race_week_sessions.py --sessions FP1 FP2 FP3 Q --retry-failed --completion-buffer-minutes 30
+
+      - name: Validate season state
+        run: python validate_season_state.py
+
+      - name: Validate product manifest
+        run: python validate_product_manifest.py
+
+      - name: Load Supabase/Postgres
+        if: env.DATABASE_URL != ''
+        run: python data/load_supabase.py
+
+      - name: Supabase load skipped
+        if: env.DATABASE_URL == ''
+        run: |
+          echo "DATABASE_URL secret is not configured."
+          echo "Race Week session refresh completed locally in the workflow only."

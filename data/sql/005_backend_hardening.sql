@@ -83,6 +83,9 @@ ALTER TABLE constructor_signals ENABLE ROW LEVEL SECURITY;
 ALTER TABLE race_context_signals ENABLE ROW LEVEL SECURITY;
 ALTER TABLE race_week_confidence ENABLE ROW LEVEL SECURITY;
 ALTER TABLE session_pace_summary ENABLE ROW LEVEL SECURITY;
+ALTER TABLE session_year_over_year_deltas ENABLE ROW LEVEL SECURITY;
+ALTER TABLE qualifying_driver_deltas ENABLE ROW LEVEL SECURITY;
+ALTER TABLE spain_qualifying_prediction ENABLE ROW LEVEL SECURITY;
 ALTER TABLE fp2_long_run_summary ENABLE ROW LEVEL SECURITY;
 ALTER TABLE stint_degradation_summary ENABLE ROW LEVEL SECURITY;
 ALTER TABLE weather_risk_summary ENABLE ROW LEVEL SECURITY;
@@ -90,6 +93,13 @@ ALTER TABLE driver_race_week_features ENABLE ROW LEVEL SECURITY;
 ALTER TABLE constructor_race_week_features ENABLE ROW LEVEL SECURITY;
 ALTER TABLE weekend_readiness_summary ENABLE ROW LEVEL SECURITY;
 ALTER TABLE standings_context_snapshot ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Public can read Spain qualifying prediction" ON spain_qualifying_prediction;
+CREATE POLICY "Public can read Spain qualifying prediction"
+ON spain_qualifying_prediction
+FOR SELECT
+TO anon, authenticated
+USING (true);
 
 
 -- 4. Add covering indexes for foreign keys using CREATE INDEX IF NOT EXISTS
@@ -191,6 +201,18 @@ CREATE INDEX IF NOT EXISTS idx_session_pace_summary_race_id ON session_pace_summ
 CREATE INDEX IF NOT EXISTS idx_session_pace_summary_session_id ON session_pace_summary(session_id);
 CREATE INDEX IF NOT EXISTS idx_session_pace_summary_driver_id ON session_pace_summary(driver_id);
 CREATE INDEX IF NOT EXISTS idx_session_pace_summary_constructor_id ON session_pace_summary(constructor_id);
+
+CREATE INDEX IF NOT EXISTS idx_session_year_over_year_deltas_race_id ON session_year_over_year_deltas(race_id);
+CREATE INDEX IF NOT EXISTS idx_session_year_over_year_deltas_driver_id ON session_year_over_year_deltas(driver_id);
+CREATE INDEX IF NOT EXISTS idx_session_year_over_year_deltas_comparison_race_id ON session_year_over_year_deltas(comparison_race_id);
+
+CREATE INDEX IF NOT EXISTS idx_qualifying_driver_deltas_race_id ON qualifying_driver_deltas(race_id);
+CREATE INDEX IF NOT EXISTS idx_qualifying_driver_deltas_driver_id ON qualifying_driver_deltas(driver_id);
+CREATE INDEX IF NOT EXISTS idx_qualifying_driver_deltas_comparison_driver_id ON qualifying_driver_deltas(comparison_driver_id);
+
+CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_race_id ON spain_qualifying_prediction(race_id);
+CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_driver_id ON spain_qualifying_prediction(driver_id);
+CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_constructor_id ON spain_qualifying_prediction(constructor_id);
 
 CREATE INDEX IF NOT EXISTS idx_fp2_long_run_summary_race_id ON fp2_long_run_summary(race_id);
 CREATE INDEX IF NOT EXISTS idx_fp2_long_run_summary_driver_id ON fp2_long_run_summary(driver_id);

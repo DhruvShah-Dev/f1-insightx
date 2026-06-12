@@ -71,7 +71,7 @@ export function ConstructorStandingCard({
       </div>
 
       <div className="constructor-standing-card__body">
-        <h3 className="constructor-standing-card__title">{standing.constructorName}</h3>
+        <h3 className="constructor-standing-card__title">{team.label}</h3>
         <div className="constructor-standing-card__metrics">
           <div>
             <span>Points</span>

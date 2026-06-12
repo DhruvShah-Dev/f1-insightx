@@ -86,7 +86,7 @@ function pointStyle(lapNumber: number | null | undefined, value: number | null |
 
 function RaceStoryTimeline({ race }: { race: RaceAnalysisDetail }) {
   return (
-    <section className="race-analysis-section">
+    <section id="race-story" className="race-analysis-report-band race-analysis-report-band--story">
       <div className="race-analysis-section__header">
         <span>01 / Race Story</span>
         <h2>Timeline</h2>
@@ -120,9 +120,9 @@ function TyreStrategyOverview({ race }: { race: RaceAnalysisDetail }) {
   const grouped = groupByDriver<RaceAnalysisStint>(race.stints).slice(0, 8);
 
   return (
-    <section className="race-analysis-section">
+    <section id="strategy-evolution" className="race-analysis-report-band race-analysis-report-band--strategy">
       <div className="race-analysis-section__header">
-        <span>02 / Tyre Strategy</span>
+        <span>02 / Strategy Evolution</span>
         <h2>Stint architecture</h2>
       </div>
       <div className="race-analysis-stint-board">
@@ -172,10 +172,10 @@ function PositionEvolution({ race }: { race: RaceAnalysisDetail }) {
   const grouped = groupByDriver<RaceAnalysisPositionPoint>(race.positionTimeline).slice(0, 4);
 
   return (
-    <section className="race-analysis-section race-analysis-section--wide">
+    <section id="position-movement" className="race-analysis-report-band race-analysis-report-band--wide race-analysis-report-band--position">
       <div className="race-analysis-section__header">
         <span>03 / Position Evolution</span>
-        <h2>Movement map</h2>
+        <h2>Position movement proxy</h2>
       </div>
       <div className="race-analysis-position-panel">
         <div className="race-analysis-position-chart">
@@ -201,7 +201,7 @@ function PositionEvolution({ race }: { race: RaceAnalysisDetail }) {
             <article key={swing.id}>
               <span>{swing.eventType}</span>
               <strong>{swing.driver} {signed(swing.positionDelta)} pos</strong>
-              <small>Lap {swing.startLap} / {swing.evidenceType} / not pass-by-pass verified</small>
+              <small>Lap {swing.startLap} / {swing.evidenceType} / Position movement proxy</small>
             </article>
           ))}
         </div>
@@ -218,7 +218,7 @@ function PaceEvolution({ race }: { race: RaceAnalysisDetail }) {
   const raceMaxLap = maxLap(race);
 
   return (
-    <section className="race-analysis-section">
+    <section id="pace-evolution" className="race-analysis-report-band race-analysis-report-band--pace">
       <div className="race-analysis-section__header">
         <span>04 / Pace Evolution</span>
         <h2>Pace ribbons</h2>
@@ -247,10 +247,10 @@ function TrafficContext({ race }: { race: RaceAnalysisDetail }) {
   const maxDirtyAir = Math.max(0.1, ...samples.map((item) => item.dirtyAirProxyS ?? 0));
 
   return (
-    <section className="race-analysis-section">
+    <section id="traffic-context" className="race-analysis-report-band race-analysis-report-band--traffic">
       <div className="race-analysis-section__header">
         <span>05 / Traffic & Status</span>
-        <h2>Pressure field</h2>
+        <h2>Traffic proxy field</h2>
       </div>
       <div className="race-analysis-pressure-grid">
         {samples.map((item) => (
@@ -311,6 +311,118 @@ function CrossLinks({ race }: { race: RaceAnalysisDetail }) {
   );
 }
 
+function RaceAnalysisReportHero({ race }: { race: RaceAnalysisDetail }) {
+  return (
+    <section className="race-analysis-report-hero">
+      <div className="race-analysis-report-hero__glow" aria-hidden="true" />
+      <div className="race-analysis-report-hero__copy">
+        <span className="race-analysis-kicker">{race.season} / Round {race.round}</span>
+        <h1>{race.raceName}</h1>
+        <div className="race-analysis-hero-meta">
+          <span>{formatCircuit(race.circuit)}</span>
+          <span>{formatDate(race.raceDate)}</span>
+          <span>{race.raceShape}</span>
+        </div>
+        <div className="race-analysis-report-hero__factors">
+          <div>
+            <span>Key pace factor</span>
+            <strong>{race.summary.keyPaceFactor}</strong>
+          </div>
+          <div>
+            <span>Strategy factor</span>
+            <strong>{race.summary.keyStrategyFactor}</strong>
+          </div>
+        </div>
+      </div>
+      <div className="race-analysis-report-hero__board">
+        <div className="race-analysis-report-hero__winner">
+          <span>Winner</span>
+          <strong>{race.winner}</strong>
+          <small>{race.winnerTeam}</small>
+        </div>
+        <div>
+          <span>Podium</span>
+          <strong>{race.podium.join(" / ") || "Podium data"}</strong>
+          <small>{race.summary.winningCompoundPath}</small>
+        </div>
+        <div>
+          <span>Dominant strategy</span>
+          <strong>{race.dominantStrategy}</strong>
+          <small>{race.summary.keyPositionFactor}</small>
+        </div>
+      </div>
+      <div className="race-analysis-report-hero__chips">
+        <span>{race.weatherSummary}</span>
+        <span>{race.neutralizationPhases.length ? "Track-status context" : "Track-status feed quiet"}</span>
+        <span>Telemetry-derived</span>
+        <span>{pct(race.summary.confidence)}</span>
+      </div>
+    </section>
+  );
+}
+
+function RaceAnalysisReportNav() {
+  const items = [
+    ["Race Story", "#race-story"],
+    ["Strategy", "#strategy-evolution"],
+    ["Position", "#position-movement"],
+    ["Pace", "#pace-evolution"],
+    ["Traffic", "#traffic-context"],
+  ];
+  return (
+    <nav className="race-analysis-report-nav" aria-label="Race analysis report sections">
+      {items.map(([label, href], index) => (
+        <a key={href} href={href}>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <strong>{label}</strong>
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+function RaceAnalysisReportStatus({ race }: { race: RaceAnalysisDetail }) {
+  return (
+    <section className="race-analysis-report-status" aria-label="Race analysis data status">
+      <article>
+        <span>Data quality</span>
+        <strong>{pct(race.summary.confidence)}</strong>
+      </article>
+      <article>
+        <span>Weakest assumption</span>
+        <strong>{race.summary.weakestAssumption}</strong>
+      </article>
+      <article>
+        <span>Race context</span>
+        <strong>{race.raceControlAvailable ? "Track-status context available" : "Track-status feed quiet"}</strong>
+      </article>
+    </section>
+  );
+}
+
+function RaceAnalysisEngineerStrip({ race }: { race: RaceAnalysisDetail }) {
+  return (
+    <section className="race-analysis-engineer-strip" aria-label="Race analysis engineer summary">
+      <article>
+        <span>Primary story</span>
+        <strong>{race.summary.primaryStory}</strong>
+      </article>
+      <article>
+        <span>Strategy read</span>
+        <strong>{race.summary.keyStrategyFactor}</strong>
+      </article>
+      <article>
+        <span>Product honesty</span>
+        <strong>Position movement proxy / Traffic proxy / Cause unavailable where unsourced</strong>
+      </article>
+      <article>
+        <span>Cross-check</span>
+        <strong>Telemetry-derived post-race report</strong>
+      </article>
+    </section>
+  );
+}
+
 export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDetailPageProps) {
   const { raceId } = await params;
   const race = await getRaceAnalysisDetail(raceId);
@@ -322,56 +434,9 @@ export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDet
     <main className="race-analysis-page race-analysis-page--detail">
       <AppHeader title="F1 InsightX" eyebrow="Race Analysis" actionHref="/race-analysis" actionLabel="All races" />
 
-      <section className="race-analysis-detail-hero">
-        <div className="race-analysis-detail-hero__glow" aria-hidden="true" />
-        <div className="race-analysis-detail-hero__copy">
-          <span className="race-analysis-kicker">{race.season} / Round {race.round}</span>
-          <h1>{race.raceName}</h1>
-          <div className="race-analysis-hero-meta">
-            <span>{formatCircuit(race.circuit)}</span>
-            <span>{formatDate(race.raceDate)}</span>
-            <span>{pct(race.summary.confidence)}</span>
-          </div>
-        </div>
-        <div className="race-analysis-hero-board">
-          <div>
-            <span>Winner</span>
-            <strong>{race.winner}</strong>
-            <small>{race.winnerTeam}</small>
-          </div>
-          <div>
-            <span>Podium</span>
-            <strong>{race.podium.join(" / ")}</strong>
-            <small>{race.summary.winningCompoundPath}</small>
-          </div>
-          <div>
-            <span>Dominant strategy</span>
-            <strong>{race.dominantStrategy}</strong>
-            <small>{race.raceShape}</small>
-          </div>
-        </div>
-        <div className="race-analysis-chip-row race-analysis-chip-row--hero">
-          <span>{race.summary.keyPaceFactor}</span>
-          <span>{race.weatherSummary}</span>
-          <span>{race.neutralizationPhases.length ? "Track-status context available" : "Track-status feed quiet"}</span>
-          <span>Telemetry-derived</span>
-        </div>
-      </section>
-
-      <section className="race-analysis-command-grid">
-        <article>
-          <span>Strategy factor</span>
-          <strong>{race.summary.keyStrategyFactor}</strong>
-        </article>
-        <article>
-          <span>Position factor</span>
-          <strong>{race.summary.keyPositionFactor}</strong>
-        </article>
-        <article>
-          <span>Weakest assumption</span>
-          <strong>{race.summary.weakestAssumption}</strong>
-        </article>
-      </section>
+      <RaceAnalysisReportHero race={race} />
+      <RaceAnalysisReportNav />
+      <RaceAnalysisReportStatus race={race} />
 
       <WeatherStrip race={race} />
       <RaceStoryTimeline race={race} />
@@ -379,6 +444,7 @@ export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDet
       <PositionEvolution race={race} />
       <PaceEvolution race={race} />
       <TrafficContext race={race} />
+      <RaceAnalysisEngineerStrip race={race} />
       <CrossLinks race={race} />
 
       <AppFooter />

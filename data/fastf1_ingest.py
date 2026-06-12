@@ -17,6 +17,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--start-season", type=int, default=2020)
     parser.add_argument("--end-season", type=int, default=2026)
+    parser.add_argument("--season", type=int, default=None, help="Optional single season to target.")
+    parser.add_argument("--round", type=int, default=None, dest="round_number", help="Optional single round to target.")
     parser.add_argument(
         "--include-telemetry",
         action="store_true",
@@ -40,6 +42,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--max-retries", type=int, default=3)
     parser.add_argument("--sleep-seconds", type=float, default=1.5)
+    parser.add_argument(
+        "--completion-buffer-minutes",
+        type=int,
+        default=30,
+        help="Only target sessions whose estimated end time is at least this many minutes in the past.",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Plan the run without downloading or writing files.")
     parser.add_argument(
         "--force",
@@ -55,12 +63,15 @@ def main() -> None:
     options = DownloadOptions(
         start_season=args.start_season,
         end_season=args.end_season,
+        season=args.season,
+        round_number=args.round_number,
         sessions=normalize_requested_sessions(args.sessions),
         include_telemetry=bool(args.include_telemetry),
         only_missing=bool(args.only_missing),
         retry_failed=bool(args.retry_failed),
         max_retries=max(1, int(args.max_retries)),
         sleep_seconds=max(0.0, float(args.sleep_seconds)),
+        completion_buffer_minutes=max(0, int(args.completion_buffer_minutes)),
         dry_run=bool(args.dry_run),
         force=bool(args.force),
     )

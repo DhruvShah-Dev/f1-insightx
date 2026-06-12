@@ -4,7 +4,7 @@ import hashlib
 import json
 import time
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +25,15 @@ from f1_insightx_data.settings import PipelineSettings
 
 
 SUPPORTED_SESSION_CODES = ("FP1", "FP2", "FP3", "Q", "SQ", "S", "R")
+SESSION_DURATION_MINUTES = {
+    "FP1": 60,
+    "FP2": 60,
+    "FP3": 60,
+    "Q": 75,
+    "SQ": 60,
+    "S": 60,
+    "R": 150,
+}
 SESSION_NAME_TO_CODE = {
     "Practice 1": "FP1",
     "Practice 2": "FP2",
@@ -79,12 +88,15 @@ class SessionTarget:
 class DownloadOptions:
     start_season: int
     end_season: int
+    season: int | None
+    round_number: int | None
     sessions: tuple[str, ...]
     include_telemetry: bool
     only_missing: bool
     retry_failed: bool
     max_retries: int
     sleep_seconds: float
+    completion_buffer_minutes: int
     dry_run: bool
     force: bool
 
@@ -295,20 +307,51 @@ def event_completed(event: pd.Series, *, cutoff_utc: datetime) -> bool:
     return max(session_datetimes) <= cutoff_utc
 
 
+def parse_session_datetime(event: pd.Series, session_index: int) -> datetime | None:
+    for suffix in ("DateUtc", "Date"):
+        key = f"Session{session_index}{suffix}"
+        if key not in event.index:
+            continue
+        parsed = pd.to_datetime(event.get(key), utc=True, errors="coerce")
+        if pd.isna(parsed):
+            continue
+        return parsed.to_pydatetime()
+    return None
+
+
+def session_completed(
+    event: pd.Series,
+    *,
+    session_index: int,
+    session_code: str,
+    cutoff_utc: datetime,
+    completion_buffer_minutes: int,
+) -> bool:
+    session_start = parse_session_datetime(event, session_index)
+    if session_start is None:
+        return event_completed(event, cutoff_utc=cutoff_utc)
+
+    duration = SESSION_DURATION_MINUTES.get(session_code, 60)
+    session_ready_at = session_start + timedelta(minutes=duration + max(0, completion_buffer_minutes))
+    return session_ready_at <= cutoff_utc
+
+
 def list_session_targets(
     schedule: pd.DataFrame,
     *,
     season: int,
     requested_sessions: tuple[str, ...],
     cutoff_utc: datetime,
+    target_round_number: int | None = None,
+    completion_buffer_minutes: int = 30,
 ) -> list[SessionTarget]:
     targets: list[SessionTarget] = []
     requested = set(requested_sessions)
     for _, event in schedule.iterrows():
-        round_number = int(event.get("RoundNumber", 0) or 0)
-        if round_number <= 0:
+        event_round_number = int(event.get("RoundNumber", 0) or 0)
+        if event_round_number <= 0:
             continue
-        if not event_completed(event, cutoff_utc=cutoff_utc):
+        if target_round_number is not None and target_round_number != event_round_number:
             continue
 
         event_name = str(event.get("EventName", "")).strip()
@@ -316,13 +359,21 @@ def list_session_targets(
             continue
 
         available_sessions: list[tuple[str, str]] = []
-        for index in range(1, 6):
-            raw_session_name = event.get(f"Session{index}")
+        for session_index in range(1, 6):
+            raw_session_name = event.get(f"Session{session_index}")
             if not isinstance(raw_session_name, str) or not raw_session_name.strip():
                 continue
             session_name = raw_session_name.strip()
             session_code = SESSION_NAME_TO_CODE.get(session_name)
             if not session_code or session_code not in requested:
+                continue
+            if not session_completed(
+                event,
+                session_index=session_index,
+                session_code=session_code,
+                cutoff_utc=cutoff_utc,
+                completion_buffer_minutes=completion_buffer_minutes,
+            ):
                 continue
             if any(existing_code == session_code for existing_code, _ in available_sessions):
                 continue
@@ -333,7 +384,7 @@ def list_session_targets(
             targets.append(
                 SessionTarget(
                     season=season,
-                    round_number=round_number,
+                    round_number=event_round_number,
                     event_name=event_name,
                     event_slug=event_slug,
                     session_code=session_code,
@@ -881,7 +932,10 @@ def run_fastf1_download(settings: PipelineSettings, options: DownloadOptions) ->
     }
     stopped_early_reason: str | None = None
 
-    for season in range(options.start_season, options.end_season + 1):
+    season_from = options.season if options.season is not None else options.start_season
+    season_to = options.season if options.season is not None else options.end_season
+
+    for season in range(season_from, season_to + 1):
         try:
             schedule = load_or_fetch_schedule(season=season, settings=settings)
         except FastF1RateLimitStop as error:
@@ -895,6 +949,8 @@ def run_fastf1_download(settings: PipelineSettings, options: DownloadOptions) ->
             season=season,
             requested_sessions=options.sessions,
             cutoff_utc=datetime.now(timezone.utc),
+            target_round_number=options.round_number,
+            completion_buffer_minutes=options.completion_buffer_minutes,
         )
         all_targets.extend(season_targets)
 

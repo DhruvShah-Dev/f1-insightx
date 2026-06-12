@@ -12,6 +12,7 @@ type DriverStandingCardProps = {
 export function DriverStandingCard({ standing, priority = false }: DriverStandingCardProps) {
   const team = getTeamAsset(standing.teamId);
   const driver = getCurrentDriverMeta(standing.driverId);
+  const teamLabel = team.label;
 
   return (
     <article
@@ -40,7 +41,7 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
 
         <div className="driver-standing-card__main">
           <div className="driver-standing-card__intro">
-            <p className="driver-standing-card__team">{standing.teamName}</p>
+            <p className="driver-standing-card__team">{teamLabel}</p>
             <h3 className="driver-standing-card__name">{standing.displayName}</h3>
           </div>
 
@@ -67,7 +68,7 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
           <div className="driver-standing-card__body">
             <div className="driver-standing-card__meta">
               <span>{standing.code ?? standing.driverId.slice(0, 3).toUpperCase()}</span>
-              <span>{standing.teamName}</span>
+              <span>{teamLabel}</span>
               <span>{standing.nationality ?? "Nationality pending"}</span>
               {driver.sourceTag === "fallback" ? <span>Portrait pending</span> : null}
             </div>

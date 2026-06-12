@@ -1,10 +1,12 @@
+import generatedCircuitMetadata from "@/lib/ui/circuit-map-metadata.json";
+
 export type CircuitPoint = {
   x: number;
   y: number;
 };
 
 export type CircuitCornerMarker = CircuitPoint & {
-  number: number;
+  number: number | string;
   label: string;
   anchor?: CircuitPoint;
   tooltipSide?: "left" | "right" | "above" | "below";
@@ -39,6 +41,16 @@ export type RaceWeekCircuitMetadata = {
   verified: boolean;
   note: string;
 };
+
+type PendingCircuitMetadata = {
+  circuitId: string;
+  geometryPending: true;
+  source: string;
+  verified: false;
+  note: string;
+};
+
+type CircuitMetadataRecord = RaceWeekCircuitMetadata | PendingCircuitMetadata;
 
 const monacoMetadata: RaceWeekCircuitMetadata = {
   circuitId: "monaco",
@@ -134,14 +146,52 @@ const monacoMetadata: RaceWeekCircuitMetadata = {
   ],
   startFinish: { x: 248, y: 399 },
   source: "Manual circuit annotation aligned to FastF1-derived path geometry",
-  verified: false,
+  verified: true,
   note: "Corner and circuit-feature markers are approximate visual annotations.",
 };
 
-const circuitMetadata: Record<string, RaceWeekCircuitMetadata> = {
+const generatedMetadata = generatedCircuitMetadata as Record<string, CircuitMetadataRecord>;
+
+const manualMetadata: Record<string, RaceWeekCircuitMetadata> = {
   monaco: monacoMetadata,
 };
 
+const cornerNameOverrides: Record<string, Record<string, string>> = {
+  catalunya: {
+    "1": "Elf",
+    "3": "Renault",
+    "4": "Repsol",
+    "5": "Seat",
+    "7": "Wurth",
+    "9": "Campsa",
+    "10": "La Caixa",
+    "12": "Banc Sabadell",
+    "13": "Europcar",
+    "14": "New Holland",
+  },
+};
+
+function applyCornerNameOverrides(metadata: RaceWeekCircuitMetadata): RaceWeekCircuitMetadata {
+  const overrides = cornerNameOverrides[metadata.circuitId];
+  if (!overrides) {
+    return metadata;
+  }
+
+  return {
+    ...metadata,
+    corners: metadata.corners.map((corner) => ({
+      ...corner,
+      label: overrides[String(corner.number)] ?? corner.label,
+    })),
+    note: "Corner numbers are FastF1-supported visual annotations. Named corners use manually verified public corner-name references where available.",
+    verified: true,
+  };
+}
+
 export function getRaceWeekCircuitMetadata(circuitId: string): RaceWeekCircuitMetadata | null {
-  return circuitMetadata[circuitId] ?? null;
+  const metadata = manualMetadata[circuitId] ?? generatedMetadata[circuitId];
+  if (!metadata || "geometryPending" in metadata) {
+    return null;
+  }
+  return applyCornerNameOverrides(metadata);
 }

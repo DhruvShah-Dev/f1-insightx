@@ -9,6 +9,8 @@ type RaceWeekCircuitVisualizationProps = {
   title: string;
   trackPath: string;
   metadata: RaceWeekCircuitMetadata | null;
+  showLegend?: boolean;
+  showMetadata?: boolean;
 };
 
 function getTooltipPosition(marker: CircuitCornerMarker, width: number) {
@@ -24,6 +26,11 @@ function getTooltipPosition(marker: CircuitCornerMarker, width: number) {
     return { x: marker.x - width / 2, y: marker.y + 15 };
   }
   return { x: marker.x + 15, y: marker.y - 11 };
+}
+
+function closeOpenTrackPath(pathData: string) {
+  const trimmed = pathData.trim();
+  return /z$/i.test(trimmed) ? trimmed : `${trimmed} Z`;
 }
 
 function CircuitCallout({ callout }: { callout: CircuitDataCallout }) {
@@ -57,8 +64,11 @@ export function RaceWeekCircuitVisualization({
   title,
   trackPath,
   metadata,
+  showLegend = true,
+  showMetadata = true,
 }: RaceWeekCircuitVisualizationProps) {
   const viewBox = metadata?.viewBox ?? "0 0 960 620";
+  const renderedTrackPath = closeOpenTrackPath(trackPath);
   const sectors = metadata?.sectors ?? [
     { id: "sector-1" as const, label: "Sector 1", startPercent: 0, endPercent: 33.3, color: "#ff3f76" },
     { id: "sector-2" as const, label: "Sector 2", startPercent: 33.3, endPercent: 66.6, color: "#38bdf8" },
@@ -73,16 +83,16 @@ export function RaceWeekCircuitVisualization({
         role="img"
         aria-label={`${title} circuit with approximate sectors and circuit feature markers`}
       >
-        <path d={trackPath} className="race-week-sector-track__outer-ribbon" />
-        <path d={trackPath} className="race-week-sector-track__shadow" />
-        <path d={trackPath} className="race-week-sector-track__inner-ribbon" />
+        <path d={renderedTrackPath} className="race-week-sector-track__outer-ribbon" />
+        <path d={renderedTrackPath} className="race-week-sector-track__shadow" />
+        <path d={renderedTrackPath} className="race-week-sector-track__inner-ribbon" />
 
         {sectors.map((sector) => {
           const length = sector.endPercent - sector.startPercent;
           return (
             <path
               key={sector.id}
-              d={trackPath}
+              d={renderedTrackPath}
               pathLength={100}
               className="race-week-sector-track__sector"
               style={
@@ -96,7 +106,7 @@ export function RaceWeekCircuitVisualization({
           );
         })}
 
-        {metadata ? (
+        {metadata && showMetadata ? (
           <>
             <g className="race-week-sector-track__start" aria-label="Start finish line">
               <g
@@ -157,16 +167,18 @@ export function RaceWeekCircuitVisualization({
         ) : null}
       </svg>
 
-      <div className="race-week-sector-track__legend">
-        <div className="race-week-sector-track__legend-sectors">
-          {sectors.map((sector) => (
-            <span key={sector.id}>
-              <i style={{ background: sector.color }} />
-              {sector.label}
-            </span>
-          ))}
+      {showLegend ? (
+        <div className="race-week-sector-track__legend">
+          <div className="race-week-sector-track__legend-sectors">
+            {sectors.map((sector) => (
+              <span key={sector.id}>
+                <i style={{ background: sector.color }} />
+                {sector.label}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }

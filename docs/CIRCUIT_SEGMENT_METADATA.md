@@ -24,6 +24,7 @@ Current circuit metadata:
 - `data/curated/circuits.csv` has stable `circuit_id`, name, location, and coordinates.
 - `data/curated/races.csv` links race IDs to `circuit_id`.
 - `data/race_week/circuit_track_paths.json` has FastF1-position-based SVG path data for a small set of circuits, including Miami and Bahrain.
+- `apps/web/src/lib/ui/circuit-map-metadata.json` has lightweight 2026 circuit-map annotations for Monaco-style rendering.
 - `apps/web/src/lib/ui/asset-manifest.ts` contains display/asset metadata for circuits.
 
 Current limitations:
@@ -33,6 +34,33 @@ Current limitations:
 - Segment IDs use event names, not canonical `circuit_id`, so they need a mapping layer.
 - No local verified corner-name table exists.
 - No current UI should show exact named corners from these approximate IDs.
+
+## Monaco-Style Track Map Rollout
+
+The Race Week Monaco renderer is the benchmark for premium circuit maps:
+
+- real FastF1-derived SVG path geometry only
+- colored sector guide overlays
+- start/finish flag
+- numbered turn markers
+- hover/focus labels
+- compact dark HUD styling
+
+For 2026 circuits, `apps/web/src/lib/ui/circuit-map-metadata.json` provides marker placement from FastF1 `circuit_info` aligned to the stored track path artifact. Generated entries are intentionally `verified=false`; they may show numbered `Turn N` labels, but they must not show public named corners until manually reviewed. Monaco remains the manual named reference implementation.
+
+`madring` is explicitly marked `geometryPending=true` because no real FastF1-derived track path exists locally. The app must show an unavailable state for it instead of rendering a fake polygon.
+
+Validation:
+
+```bash
+python validate_circuit_map_metadata.py
+```
+
+Builder:
+
+```bash
+python data/build_circuit_map_metadata.py
+```
 
 ## Priority Circuits
 

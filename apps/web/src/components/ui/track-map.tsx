@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { RaceWeekCircuitVisualization } from "@/components/race-week/race-week-circuit-visualization";
 import { getCircuitGeoFallback } from "@/lib/server/circuit-geojson";
 import { getCircuitTrackData } from "@/lib/server/circuit-track-data";
 import { getCircuitAsset } from "@/lib/ui/asset-manifest";
+import { getRaceWeekCircuitMetadata } from "@/lib/ui/race-week-circuit-metadata";
 
 type TrackMapProps = {
   circuitId: string;
@@ -27,20 +29,16 @@ export async function TrackMap({ circuitId, title, variant = "card" }: TrackMapP
 
   if (preferredPath) {
     return (
-      <div className={className}>
+      <div className={`${className} track-map--premium`}>
         <div className="track-map__grid" aria-hidden="true" />
         <div className="track-map__glow" aria-hidden="true" />
-        <svg
-          viewBox="0 0 960 620"
-          className="track-map__svg"
-          role="img"
-          aria-label={`${title} circuit layout`}
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <path d={preferredPath} className="track-map__shadow" />
-          <path d={preferredPath} className="track-map__accent" />
-          <path d={preferredPath} className="track-map__path" />
-        </svg>
+        <RaceWeekCircuitVisualization
+          title={title}
+          trackPath={preferredPath}
+          metadata={isUsablePath(fastf1Track?.pathData) ? getRaceWeekCircuitMetadata(circuitId) : null}
+          showLegend={variant === "hero"}
+          showMetadata={variant === "hero"}
+        />
       </div>
     );
   }

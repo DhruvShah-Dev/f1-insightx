@@ -25,6 +25,90 @@ function shortWeather(summary: string) {
   return summary.split(",")[0]?.trim() || summary;
 }
 
+function podiumLabel(podium: string[]) {
+  return podium.length ? podium.join(" / ") : "Podium data";
+}
+
+function RaceAnalysisIndexHero({ latestRace }: { latestRace: Awaited<ReturnType<typeof listRaceAnalysisIndex>>[number] | undefined }) {
+  if (!latestRace) {
+    return (
+      <section className="race-analysis-archive-hero race-analysis-archive-hero--empty">
+        <div>
+          <span className="race-analysis-kicker">Race Intelligence Archive</span>
+          <h1>Post-race reports are building.</h1>
+          <p>Race Analysis appears when product views are generated.</p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="race-analysis-archive-hero">
+      <div className="race-analysis-archive-hero__copy">
+        <span className="race-analysis-kicker">Race Intelligence Archive</span>
+        <h1>{latestRace.raceName}</h1>
+        <p>{latestRace.raceShape || "Post-race intelligence report."}</p>
+        <div className="race-analysis-archive-hero__chips">
+          <span>Race Intelligence Available</span>
+          <span>{latestRace.dominantStrategy || "Strategy view"}</span>
+          <span>{shortWeather(latestRace.weatherSummary)}</span>
+          <span>{latestRace.raceControlAvailable ? "Track-status context" : "Track-status feed quiet"}</span>
+        </div>
+      </div>
+      <Link href={`/race-analysis/${latestRace.id}`} className="race-analysis-archive-hero__board">
+        <span>Latest report</span>
+        <strong>{latestRace.winner}</strong>
+        <small>{latestRace.winnerTeam}</small>
+        <div>
+          <em>Podium</em>
+          <b>{podiumLabel(latestRace.podium)}</b>
+        </div>
+        <div>
+          <em>Quality</em>
+          <b>{getRaceAnalysisConfidenceTier(latestRace.analysisQualityScore)}</b>
+        </div>
+      </Link>
+    </section>
+  );
+}
+
+function RaceAnalysisArchiveGrid({ races }: { races: Awaited<ReturnType<typeof listRaceAnalysisIndex>> }) {
+  return (
+    <section className="race-analysis-archive-grid" aria-label="Available race analysis">
+      {races.map((race) => (
+        <Link href={`/race-analysis/${race.id}`} className="race-analysis-archive-tile" key={race.id}>
+          <div className="race-analysis-archive-tile__topline">
+            <span>{race.season} · R{race.round}</span>
+            <span>{race.freshnessStatus === "ready" ? "Race Intelligence Available" : race.freshnessStatus}</span>
+          </div>
+          <div className="race-analysis-archive-tile__main">
+            <div>
+              <h2>{race.raceName}</h2>
+              <p>{formatCircuit(race.circuit)} / {formatDate(race.raceDate)}</p>
+            </div>
+            <div className="race-analysis-archive-tile__winner">
+              <span>Winner</span>
+              <strong>{race.winner}</strong>
+              <small>{race.winnerTeam}</small>
+            </div>
+          </div>
+          <div className="race-analysis-archive-tile__podium">
+            <span>Podium</span>
+            <strong>{podiumLabel(race.podium)}</strong>
+          </div>
+          <div className="race-analysis-archive-tile__chips">
+            <span>{race.dominantStrategy || "Strategy view"}</span>
+            <span>{race.raceShape || "Race shape"}</span>
+            <span>{shortWeather(race.weatherSummary)}</span>
+            <span>{getRaceAnalysisConfidenceTier(race.analysisQualityScore)}</span>
+            <span>{race.raceControlAvailable ? "Track-status context" : "Track-status feed quiet"}</span>
+          </div>
+        </Link>
+      ))}
+    </section>
+  );
+}
+
 export default async function RaceAnalysisIndexPage({ searchParams }: RaceAnalysisIndexPageProps) {
   const params = await searchParams;
   const races = await listRaceAnalysisIndex();
@@ -37,29 +121,11 @@ export default async function RaceAnalysisIndexPage({ searchParams }: RaceAnalys
     <main className="race-analysis-page">
       <AppHeader title="F1 InsightX" eyebrow="Race Analysis" actionHref="/analytics" actionLabel="Open Analytics" />
 
-      <section className="race-analysis-hero race-analysis-hero--index">
-        <div className="race-analysis-hero__scan" aria-hidden="true" />
-        <div className="race-analysis-hero__content">
-          <div>
-            <span className="race-analysis-kicker">Post-race intelligence</span>
-            <h1>Relive the race through strategy and telemetry.</h1>
-            <p>Story, stints, pace, position movement, and track-status context.</p>
-          </div>
-          {latestRace ? (
-            <Link href={`/race-analysis/${latestRace.id}`} className="race-analysis-latest-card">
-              <span>Latest analysis</span>
-              <strong>{latestRace.raceName}</strong>
-              <small>
-                {latestRace.winner} won · {getRaceAnalysisConfidenceTier(latestRace.analysisQualityScore)}
-              </small>
-            </Link>
-          ) : null}
-        </div>
-      </section>
+      <RaceAnalysisIndexHero latestRace={latestRace} />
 
-      <section className="race-analysis-toolbar" aria-label="Race analysis filters">
-        <div>
-          <span>Season</span>
+      <section className="race-analysis-command-strip" aria-label="Race analysis filters">
+        <div className="race-analysis-command-strip__identity">
+          <span>Post-race archive</span>
           <strong>{selectedSeason}</strong>
         </div>
         <div className="race-analysis-season-switcher">
@@ -71,31 +137,7 @@ export default async function RaceAnalysisIndexPage({ searchParams }: RaceAnalys
         </div>
       </section>
 
-      <section className="race-analysis-grid" aria-label="Available race analysis">
-        {visibleRaces.map((race) => (
-          <Link href={`/race-analysis/${race.id}`} className="race-analysis-card" key={race.id}>
-            <div className="race-analysis-card__topline">
-              <span>{race.season} · Round {race.round}</span>
-              <span>{race.freshnessStatus === "ready" ? "Race Intelligence Available" : race.freshnessStatus}</span>
-            </div>
-            <div className="race-analysis-card__body">
-              <h2>{race.raceName}</h2>
-              <p>{formatCircuit(race.circuit)} · {formatDate(race.raceDate)}</p>
-            </div>
-            <div className="race-analysis-card__winner">
-              <span>Winner</span>
-              <strong>{race.winner}</strong>
-              <small>{race.winnerTeam}</small>
-            </div>
-            <div className="race-analysis-card__chips">
-              <span>{race.dominantStrategy || "Strategy view"}</span>
-              <span>{shortWeather(race.weatherSummary)}</span>
-              <span>{race.raceControlAvailable ? "Race-control context" : "Track-status context"}</span>
-              <span>{getRaceAnalysisConfidenceTier(race.analysisQualityScore)}</span>
-            </div>
-          </Link>
-        ))}
-      </section>
+      <RaceAnalysisArchiveGrid races={visibleRaces} />
 
       <AppFooter />
     </main>

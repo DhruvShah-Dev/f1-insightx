@@ -1282,34 +1282,36 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
           />
 
           {comparison ? (
-            <section className="analytics-workstation-stage">
-              <AnalyticsAdaptiveCanvas
-                activeTab={activeTab}
-                battleRail={dominantEdge ? (
-                  <AnalyticsBattleRail
-                    comparison={comparison}
-                    dominantEdge={dominantEdge}
-                    instruments={telemetryInstruments}
-                    activeTab={activeTab}
-                    telemetryLabel={telemetryLabel}
-                  />
-                ) : null}
-              >
-                <ModeWorkspace
+            <>
+              <section className="analytics-workstation-stage">
+                <AnalyticsAdaptiveCanvas
                   activeTab={activeTab}
-                  comparison={comparison}
-                  selectedSession={selectedSession}
-                  selectedDriverA={selectedDriverA}
-                  selectedDriverB={selectedDriverB}
-                  selectedSegment={selectedSegment}
-                  selectedSegmentCards={selectedSegmentCards}
-                  chartRows={chartRows}
-                  segmentOptions={segmentOptions}
-                  dominanceSegments={dominanceSegments}
-                  circuitTrackData={circuitTrackData}
-                  dominantEdge={dominantEdge}
-                />
-              </AnalyticsAdaptiveCanvas>
+                  battleRail={dominantEdge ? (
+                    <AnalyticsBattleRail
+                      comparison={comparison}
+                      dominantEdge={dominantEdge}
+                      instruments={telemetryInstruments}
+                      activeTab={activeTab}
+                      telemetryLabel={telemetryLabel}
+                    />
+                  ) : null}
+                >
+                  <ModeWorkspace
+                    activeTab={activeTab}
+                    comparison={comparison}
+                    selectedSession={selectedSession}
+                    selectedDriverA={selectedDriverA}
+                    selectedDriverB={selectedDriverB}
+                    selectedSegment={selectedSegment}
+                    selectedSegmentCards={selectedSegmentCards}
+                    chartRows={chartRows}
+                    segmentOptions={segmentOptions}
+                    dominanceSegments={dominanceSegments}
+                    circuitTrackData={circuitTrackData}
+                    dominantEdge={dominantEdge}
+                  />
+                </AnalyticsAdaptiveCanvas>
+              </section>
               {dominantEdge ? (
                 <AnalyticsEngineeringStrip
                   comparison={comparison}
@@ -1318,7 +1320,7 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
                   telemetryLabel={telemetryLabel}
                 />
               ) : null}
-            </section>
+            </>
           ) : (
             <StatePanel
               eyebrow="Analytics"

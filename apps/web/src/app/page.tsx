@@ -5,6 +5,7 @@ import { DriverStandingsSection } from "@/components/home/driver-standings-secti
 import { HomeScrollReveal } from "@/components/home/home-scroll-reveal";
 import { MainPageBackground } from "@/components/home/main-page-background";
 import { ModuleLink } from "@/components/home/module-link";
+import { RaceCountdown } from "@/components/home/race-countdown";
 import { RaceHistoryRail } from "@/components/home/race-history-rail";
 import { AppFooter } from "@/components/ui/app-footer";
 import { AppHeader } from "@/components/ui/app-header";
@@ -16,6 +17,7 @@ import { getSeasonState, type SeasonRaceRef } from "@/lib/server/season-state";
 import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
 
 const CIRCUIT_DISPLAY_NAMES: Record<string, string> = {
+  catalunya: "Circuit de Barcelona-Catalunya",
   monaco: "Circuit de Monaco",
 };
 
@@ -158,7 +160,12 @@ export default async function Home() {
                       <span>{nextRace.round ? `Round ${nextRace.round}` : "Round pending"}</span>
                       <span>{formatRaceDate(nextRace.scheduled_at)}</span>
                     </div>
-                    <p>{formatCountdown(nextRace.scheduled_at)}</p>
+                    <p>
+                      <RaceCountdown
+                        scheduledAt={nextRace.scheduled_at}
+                        initialLabel={formatCountdown(nextRace.scheduled_at)}
+                      />
+                    </p>
                   </div>
                   {nextRace.circuit_id ? (
                     <div className="hero__next-race-map">
@@ -174,13 +181,10 @@ export default async function Home() {
           </div>
         </section>
 
-        <ConstructorStandingsSection standings={constructorStandings} />
-
         <section className="feature-showcase" data-home-reveal>
           <div className="section-shell feature-showcase__header">
             <div className="section-meta">Products</div>
             <h2 className="section-title">Telemetry and strategy.</h2>
-            <p className="section-copy">Four focused surfaces for race intelligence.</p>
           </div>
 
           <div className="module-grid feature-showcase__grid">
@@ -218,6 +222,8 @@ export default async function Home() {
             />
           </div>
         </section>
+
+        <ConstructorStandingsSection standings={constructorStandings} />
 
         <RaceHistoryRail races={raceHistory} />
         <DriverStandingsSection standings={driverStandings} />

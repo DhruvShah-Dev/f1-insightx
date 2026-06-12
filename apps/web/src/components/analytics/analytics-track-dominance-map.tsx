@@ -165,7 +165,7 @@ export function AnalyticsTrackDominanceMap({
             </div>
           )}
           <div className="analytics-track-map__caption">
-            <span>{trackData?.source === "fastf1_position_data" ? "FastF1-derived path" : "Track path pending"}</span>
+            <span>{hasTrackGeometry ? "FastF1-derived path" : "Track path pending"}</span>
             <strong>Approximate segment markers</strong>
           </div>
         </div>

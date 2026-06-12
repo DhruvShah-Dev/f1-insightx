@@ -661,6 +661,7 @@ ALTER TABLE race_week_driver_board ENABLE ROW LEVEL SECURITY;
 ALTER TABLE race_week_constructor_board ENABLE ROW LEVEL SECURITY;
 ALTER TABLE race_week_strategy ENABLE ROW LEVEL SECURITY;
 ALTER TABLE race_week_storylines ENABLE ROW LEVEL SECURITY;
+ALTER TABLE spain_qualifying_prediction ENABLE ROW LEVEL SECURITY;
 
 DROP POLICY IF EXISTS "Public can read race week overview" ON race_week_overview;
 CREATE POLICY "Public can read race week overview"
@@ -693,6 +694,13 @@ USING (true);
 DROP POLICY IF EXISTS "Public can read race week storylines" ON race_week_storylines;
 CREATE POLICY "Public can read race week storylines"
 ON race_week_storylines
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read Spain qualifying prediction" ON spain_qualifying_prediction;
+CREATE POLICY "Public can read Spain qualifying prediction"
+ON spain_qualifying_prediction
 FOR SELECT
 TO anon, authenticated
 USING (true);

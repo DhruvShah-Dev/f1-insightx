@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-06-monaco,2026,6,2026-06-monaco,Monaco Grand Prix,monaco,monaco,2026-06-07T13:00:00Z,upcoming,False,2026-05-villeneuve,Balanced circuit,High,0.0,0.24528609090909093,2026-06-02T16:17:53Z,race_week_20260602T161753Z,race_week_overview_v2
+2026-07-catalunya,2026,7,2026-07-catalunya,Barcelona Grand Prix,catalunya,catalunya,2026-06-14T13:00:00Z,upcoming,False,2026-06-monaco,Balanced circuit,High,5.104166666666666,0.2659653181818182,2026-06-12T19:56:51Z,race_week_20260612T195651Z,race_week_overview_v2

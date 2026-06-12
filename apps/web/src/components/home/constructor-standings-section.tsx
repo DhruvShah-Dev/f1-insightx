@@ -39,7 +39,7 @@ function ConstructorOrderRow({ standing, leaderPoints }: ConstructorOrderRowProp
       <span className="constructor-order-row__rank">P{standing.standingPosition}</span>
       <span className="constructor-order-row__team">
         <span className="constructor-order-row__code">{team.shortLabel}</span>
-        <strong>{standing.constructorName}</strong>
+        <strong>{team.label}</strong>
       </span>
       <span className="constructor-order-row__metric">
         <small>Points</small>
