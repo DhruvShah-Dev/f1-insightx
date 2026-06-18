@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT_DIR / "data"
+DEFAULT_JOLPICA_BASE_URL = "https://api.jolpi.ca/ergast/f1"
+DEFAULT_OPENF1_BASE_URL = "https://api.openf1.org/v1"
 
 
 @dataclass(frozen=True)
@@ -31,13 +33,18 @@ class PipelineSettings:
     sql_dir: Path
 
 
+def env_or_default(name: str, default: str) -> str:
+    value = os.getenv(name)
+    return (value.strip() if value and value.strip() else default).rstrip("/")
+
+
 def load_settings() -> PipelineSettings:
     load_dotenv(ROOT_DIR / ".env")
     load_dotenv(ROOT_DIR / ".env.local")
 
     return PipelineSettings(
-        jolpica_base_url=os.getenv("JOLPICA_BASE_URL", "https://api.jolpi.ca/ergast/f1").rstrip("/"),
-        openf1_base_url=os.getenv("OPENF1_BASE_URL", "https://api.openf1.org/v1").rstrip("/"),
+        jolpica_base_url=env_or_default("JOLPICA_BASE_URL", DEFAULT_JOLPICA_BASE_URL),
+        openf1_base_url=env_or_default("OPENF1_BASE_URL", DEFAULT_OPENF1_BASE_URL),
         raw_reference_dir=DATA_DIR / "raw" / "reference",
         raw_fastf1_dir=DATA_DIR / "raw" / "fastf1",
         raw_openf1_dir=DATA_DIR / "raw" / "openf1",
