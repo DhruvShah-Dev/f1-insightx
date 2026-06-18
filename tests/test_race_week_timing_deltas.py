@@ -229,6 +229,40 @@ def test_missing_historical_qualifying_delta_is_neutral_signal() -> None:
     assert rookie["quali_delta_signal"] == 0.5
 
 
+def test_empty_race_week_context_degrades_without_next_race_column() -> None:
+    canonical = {
+        "session_pace_summary": pd.DataFrame(),
+        "session_laps": pd.DataFrame(),
+        "session_weather": pd.DataFrame(),
+    }
+
+    intelligence = builder.build_race_week_intelligence_layers(
+        canonical=canonical,
+        races=race_frame(),
+        circuits=pd.DataFrame(),
+        drivers=pd.DataFrame(),
+        constructors=pd.DataFrame(),
+        qualifying_results=pd.DataFrame(),
+        race_results=pd.DataFrame(),
+        prediction_snapshots=pd.DataFrame(),
+        fastf1_predictions=pd.DataFrame(),
+        strategy_profiles=pd.DataFrame(),
+        race_week_context=pd.DataFrame(),
+        strategy_baselines=pd.DataFrame(),
+    )
+    product_views = builder.build_race_week_product_views_from_intelligence(
+        races=race_frame(),
+        drivers=pd.DataFrame(),
+        constructors=pd.DataFrame(),
+        race_week_context=pd.DataFrame(),
+        strategy_view=pd.DataFrame(),
+        intelligence=intelligence,
+    )
+
+    assert intelligence["driver_signals"].empty
+    assert product_views["race_week_overview"].empty
+
+
 def test_spain_base_pole_uses_2025_catalunya_plus_robust_2026_season_delta() -> None:
     q_gaps = builder.qualifying_gap_frame(spain_qualifying_results_frame(), spain_race_frame())
     base_pole, season_delta, track_residual, method = builder.catalunya_base_pole_seconds(

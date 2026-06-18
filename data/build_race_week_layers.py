@@ -116,6 +116,14 @@ def optional_series(frame: pd.DataFrame, column: str, default: Any = pd.NA) -> p
     return pd.Series(default, index=frame.index)
 
 
+def active_race_context(race_week_context: pd.DataFrame) -> pd.DataFrame:
+    if race_week_context.empty or "is_next_race" not in race_week_context.columns:
+        return pd.DataFrame()
+    return race_week_context[
+        race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])
+    ].copy()
+
+
 def driver_lookup_map(drivers: pd.DataFrame) -> dict[str, str]:
     lookup: dict[str, str] = {}
     if not drivers.empty:
@@ -954,9 +962,7 @@ def build_spain_qualifying_prediction(
     if races.empty or race_week_context.empty or driver_features.empty:
         return pd.DataFrame(columns=columns)
 
-    active_races = race_week_context[
-        race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])
-    ].copy()
+    active_races = active_race_context(race_week_context)
     if active_races.empty:
         return pd.DataFrame(columns=columns)
 
@@ -1412,7 +1418,7 @@ def build_processed_race_week_layers(
 
     driver_features = pd.DataFrame()
     if not race_week_context.empty:
-        active_races = race_week_context[race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])].copy()
+        active_races = active_race_context(race_week_context)
         driver_feature_rows: list[pd.DataFrame] = []
         for _, race_row in active_races.iterrows():
             race_id = str(race_row["race_id"])
@@ -1571,7 +1577,7 @@ def build_processed_race_week_layers(
             driver_features = pd.concat(driver_feature_rows, ignore_index=True)
 
     if driver_features.empty and not current_predictions.empty and not race_week_context.empty:
-        active_races = race_week_context[race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])].copy()
+        active_races = active_race_context(race_week_context)
         fallback_rows: list[dict[str, Any]] = []
         for _, race_row in active_races.iterrows():
             race_id = str(race_row["race_id"])
@@ -1641,7 +1647,7 @@ def build_processed_race_week_layers(
     standings_context = pd.DataFrame()
     if not race_week_context.empty:
         rows: list[dict[str, Any]] = []
-        next_races = race_week_context[race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])]
+        next_races = active_race_context(race_week_context)
         for _, race_row in next_races.iterrows():
             target_race_id = str(race_row["race_id"])
             source_race_id = str(race_row.get("latest_completed_race_id") or "")
@@ -1753,7 +1759,7 @@ def build_processed_race_week_layers(
     if not race_week_context.empty:
         circuit_lookup = circuits.set_index("id") if not circuits.empty else pd.DataFrame()
         rows: list[dict[str, Any]] = []
-        for _, row in race_week_context[race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])].iterrows():
+        for _, row in active_race_context(race_week_context).iterrows():
             race_id = str(row["race_id"])
             circuit_id = row["circuit_id"]
             circuit = circuit_lookup.loc[circuit_id] if not circuit_lookup.empty and circuit_id in circuit_lookup.index else None
@@ -1927,7 +1933,7 @@ def build_race_week_intelligence_layers(
     race_week_context: pd.DataFrame,
     strategy_baselines: pd.DataFrame,
 ) -> dict[str, pd.DataFrame]:
-    active_races = race_week_context[race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])].copy()
+    active_races = active_race_context(race_week_context)
     if active_races.empty:
         empty = pd.DataFrame()
         return {
@@ -2440,7 +2446,7 @@ def build_race_week_product_views_from_intelligence(
     driver_signals = intelligence.get("driver_signals", pd.DataFrame()).copy()
     constructor_signals = intelligence.get("constructor_signals", pd.DataFrame()).copy()
     confidence = intelligence.get("race_week_confidence", pd.DataFrame()).copy()
-    active_races = race_week_context[race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])].copy()
+    active_races = active_race_context(race_week_context)
 
     if not driver_features.empty and not driver_signals.empty:
         driver_board = driver_features.merge(
