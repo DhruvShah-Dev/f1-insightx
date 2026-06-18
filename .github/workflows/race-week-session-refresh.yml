@@ -30,8 +30,27 @@ jobs:
       - name: Validate season state
         run: python validate_season_state.py
 
-      - name: Validate product manifest
-        run: python validate_product_manifest.py
+      - name: Summarize product manifest
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/reports/product_manifest.json")
+          if not path.exists():
+              raise SystemExit("data/reports/product_manifest.json was not generated.")
+
+          manifest = json.loads(path.read_text(encoding="utf-8"))
+          surfaces = manifest.get("surfaces", {})
+          race_week = surfaces.get("race_week", {}) if isinstance(surfaces, dict) else {}
+          season_state = surfaces.get("season_state", {}) if isinstance(surfaces, dict) else {}
+          print(json.dumps({
+              "overall_status": manifest.get("overall_status"),
+              "race_week_status": race_week.get("validation_status"),
+              "season_state_status": season_state.get("validation_status"),
+              "note": "Full product-manifest validation is a release gate; this scheduled workflow only refreshes Race Week session data.",
+          }, indent=2))
+          PY
 
       - name: Load Supabase/Postgres
         if: env.DATABASE_URL != ''
