@@ -10,6 +10,10 @@ This directory contains the F1 InsightX data platform: raw source fetches, norma
 - Snapshotted public API responses from Jolpica
 - Schedule, race results, qualifying, sprint, and metadata provenance
 
+- `data/raw/openf1`
+- Snapshotted historical OpenF1 meetings, sessions, and selected session endpoints
+- Used for source consolidation from 2023 onward, not browser runtime calls
+
 - `data/raw/fastf1`
 - FastF1 schedule snapshots, per-session manifests, and resumable ingestion logs
 - Root artifacts:
@@ -47,6 +51,13 @@ These files are normalized from raw source payloads and form the canonical event
 
 This layer is built for reproducible feature engineering and keeps FastF1 telemetry-heavy data out of the web runtime.
 
+### 3a. Staged OpenF1 source consolidation
+
+- `data/staged/openf1`
+- Per-season meetings and sessions
+- Per-session CSV snapshots for selected endpoints such as `laps`, `weather`, `stints`, `pit`, `race_control`, `session_result`, and `starting_grid`
+- `data/staged/openf1/reports/openf1_race_quality.csv` records OpenF1 coverage and agreement against curated races
+
 ### 4. Product analytics / feature layer
 
 - `driver_standings.csv`
@@ -75,6 +86,9 @@ These outputs are point-in-time safe, era-aware datasets designed to become the 
 
 ```bash
 python data/fetch_reference_data.py --start-season 2025 --end-season 2026
+python data/fetch_openf1_data.py --start-season 2023 --end-season 2026 --session-types Q R --only-missing
+python data/build_openf1_quality_report.py
+python validate_openf1_quality.py
 ```
 
 ### 2. Normalize staged tables

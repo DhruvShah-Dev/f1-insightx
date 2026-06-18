@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppFooter } from "@/components/ui/app-footer";
-import { AppHeader } from "@/components/ui/app-header";
 import {
   getRaceAnalysisConfidenceTier,
   getRaceAnalysisDetail,
@@ -432,8 +431,6 @@ export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDet
 
   return (
     <main className="race-analysis-page race-analysis-page--detail">
-      <AppHeader title="F1 InsightX" eyebrow="Race Analysis" actionHref="/race-analysis" actionLabel="All races" />
-
       <RaceAnalysisReportHero race={race} />
       <RaceAnalysisReportNav />
       <RaceAnalysisReportStatus race={race} />

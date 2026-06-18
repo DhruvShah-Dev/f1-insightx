@@ -956,7 +956,6 @@ def build_spain_qualifying_prediction(
 
     active_races = race_week_context[
         race_week_context["is_next_race"].astype(str).str.lower().isin(["true", "1"])
-        & race_week_context["circuit_id"].astype(str).eq("catalunya")
     ].copy()
     if active_races.empty:
         return pd.DataFrame(columns=columns)
@@ -1257,7 +1256,7 @@ def build_spain_qualifying_prediction(
                         "clamped_prediction": clamped_prediction,
                         "missing_flags": joined_flags(missing_flags),
                         "baseline_method": baseline_method,
-                        "source_label": "spain_qualifying_prediction_v1",
+                        "source_label": "qualifying_prediction_v1",
                     }
                 )
 

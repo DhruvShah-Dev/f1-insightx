@@ -5,13 +5,8 @@ from datetime import UTC, datetime
 import numpy as np
 import pandas as pd
 
+from f1_insightx_data.io import read_csv_or_empty, write_csv
 from f1_insightx_data.settings import load_settings
-
-
-def read_csv(path):
-    if not path.exists():
-        return pd.DataFrame()
-    return pd.read_csv(path)
 
 
 def scale_lower_better(series: pd.Series, default: float = 0.5) -> pd.Series:
@@ -184,15 +179,14 @@ def build_strategy_baselines(stints: pd.DataFrame, prediction_features: pd.DataF
 
 def main() -> None:
     settings = load_settings()
-    prediction_features = read_csv(settings.model_inputs_dir / "prediction_model_inputs.csv")
-    stint_inputs = read_csv(settings.model_inputs_dir / "stint_model_inputs.csv")
+    prediction_features = read_csv_or_empty(settings.model_inputs_dir / "prediction_model_inputs.csv")
+    stint_inputs = read_csv_or_empty(settings.model_inputs_dir / "stint_model_inputs.csv")
 
     prediction_snapshots = build_prediction_snapshots(prediction_features)
     strategy_baselines = build_strategy_baselines(stint_inputs, prediction_features)
 
-    settings.predictions_dir.mkdir(parents=True, exist_ok=True)
-    prediction_snapshots.to_csv(settings.predictions_dir / "fastf1_prediction_snapshots.csv", index=False)
-    strategy_baselines.to_csv(settings.predictions_dir / "strategy_baselines.csv", index=False)
+    write_csv(prediction_snapshots, settings.predictions_dir / "fastf1_prediction_snapshots.csv")
+    write_csv(strategy_baselines, settings.predictions_dir / "strategy_baselines.csv")
 
 
 if __name__ == "__main__":

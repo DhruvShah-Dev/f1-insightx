@@ -474,6 +474,25 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
             "win_probability", "podium_probability", "confidence_score", "source_label",
         ],
     ),
+    (
+        "race_pick_challenges",
+        "predictions/race_pick_challenges.csv",
+        [
+            "race_id",
+            "season",
+            "round",
+            "qualifying_lock_at",
+            "random_position_1",
+            "random_position_2",
+            "random_position_3",
+            "source_label",
+        ],
+    ),
+    (
+        "race_pit_stop_results",
+        "predictions/race_pit_stop_results.csv",
+        ["race_id", "season", "round", "driver_id", "pit_duration_s", "source_label"],
+    ),
 ]
 
 OPTIONAL_TABLES = {
@@ -511,6 +530,8 @@ OPTIONAL_TABLES = {
     "strategy_comparison",
     "pit_window",
     "race_projection",
+    "race_pick_challenges",
+    "race_pit_stop_results",
 }
 
 SUPPLEMENTAL_DRIVERS: dict[str, dict[str, str]] = {
@@ -594,6 +615,8 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     "strategy_comparison": {"season", "round", "pit_stop_count", "estimated_finish_position", "estimated_finish_band_low", "estimated_finish_band_high", "recommendation_rank"},
     "pit_window": {"season", "round", "stop_number", "window_start_lap", "window_end_lap"},
     "race_projection": {"season", "round", "projected_finish", "finish_band_low", "finish_band_high"},
+    "race_pick_challenges": {"season", "round", "random_position_1", "random_position_2", "random_position_3"},
+    "race_pit_stop_results": {"season", "round"},
 }
 
 
@@ -646,8 +669,12 @@ def scan_missing_reference_ids(curated_dir: Path) -> tuple[set[str], set[str]]:
         "driver_standings.csv",
         "model_features.csv",
         "prediction_snapshots.csv",
+        "predictions/race_pit_stop_results.csv",
     ]:
-        with (curated_dir / file_name).open(encoding="utf-8") as handle:
+        path = curated_dir.parent / file_name if "/" in file_name else curated_dir / file_name
+        if not path.exists():
+            continue
+        with path.open(encoding="utf-8") as handle:
             for row in csv.DictReader(handle):
                 driver_id = row.get("driver_id") or ""
                 constructor_id = row.get("constructor_id") or ""

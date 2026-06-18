@@ -4,6 +4,8 @@ F1 InsightX uses an offline data pipeline. The application runtime consumes comp
 
 ## Layers
 
+- `data/raw/openf1`: generated OpenF1 historical JSON snapshots for meetings, sessions, and selected session endpoints.
+- `data/staged/openf1`: generated OpenF1 CSV snapshots and source-quality reports used for cross-checking.
 - `data/raw/fastf1`: generated FastF1 source archive, manifests, failed-session records, and cache-adjacent data.
 - `data/staged/fastf1`: generated session-level extracts such as laps, weather, stints, results, and summaries.
 - `data/canonical_fastf1`: generated manifest-gated canonical tables with weather propagated into lap and session summary outputs.
@@ -20,6 +22,22 @@ python validate_canonical_fastf1.py
 ```
 
 Canonical output should include only complete manifest-gated sessions. Failed or partial sessions may exist in raw/staged folders, but they must not flow into canonical tables.
+
+## OpenF1 Source Consolidation
+
+```bash
+python data/fetch_openf1_data.py --start-season 2023 --end-season 2026 --session-types Q R --only-missing
+python data/build_openf1_quality_report.py
+python validate_openf1_quality.py
+```
+
+OpenF1 is used offline to strengthen source coverage and agreement scoring. The free tier covers historical data from 2023 onward with no authentication, but live-session data requires paid access. Keep refresh jobs under 3 requests per second and 30 requests per minute; the client throttles to those limits by default.
+
+Use `--session-types FP1 FP2 FP3 Q R` for heavier race-week backfills. Add endpoints explicitly when needed, for example:
+
+```bash
+python data/fetch_openf1_data.py --start-season 2025 --end-season 2026 --session-types Q R --endpoints drivers session_result starting_grid weather laps stints pit race_control
+```
 
 ## Telemetry Features
 
@@ -73,6 +91,9 @@ It does not rebuild heavy data. It only inspects existing artifacts and quality 
 ## Full Refresh Order
 
 ```bash
+python data/fetch_openf1_data.py --start-season 2023 --end-season 2026 --session-types Q R --only-missing
+python data/build_openf1_quality_report.py
+python validate_openf1_quality.py
 python build_canonical_fastf1.py --start-season 2020 --end-season 2026
 python validate_canonical_fastf1.py
 python build_telemetry_features.py --start-season 2020 --end-season 2026

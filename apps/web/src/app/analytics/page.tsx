@@ -1,4 +1,3 @@
-import { AppHeader } from "@/components/ui/app-header";
 import { AnalyticsTrackDominanceMap, type AnalyticsDominanceSegment } from "@/components/analytics/analytics-track-dominance-map";
 import { AnalyticsTelemetrySyncScope } from "@/components/analytics/analytics-telemetry-sync-scope";
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
@@ -1268,7 +1267,6 @@ export default async function AnalyticsPage({ searchParams }: AnalyticsPageProps
 
   return (
     <main className="analytics-page analytics-page--adaptive-workstation" style={teamStyle}>
-      <AppHeader title="Analytics" actionHref="/lab" actionLabel="Strategy Lab" compact />
       {selectedSession ? (
         <>
           <AnalyticsCommandDeck

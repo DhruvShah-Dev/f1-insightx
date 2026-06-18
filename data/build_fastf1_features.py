@@ -1,18 +1,12 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 import pandas as pd
 
 from f1_insightx_data.fastf1_pipeline import combined_historical_weight, staged_session_directories, write_frame
+from f1_insightx_data.io import read_csv_or_empty
 from f1_insightx_data.settings import load_settings
-
-
-def read_csv(path: Path) -> pd.DataFrame:
-    if not path.exists():
-        return pd.DataFrame()
-    return pd.read_csv(path)
 
 
 def load_staged_fastf1_frames(settings) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -21,15 +15,15 @@ def load_staged_fastf1_frames(settings) -> tuple[pd.DataFrame, pd.DataFrame, pd.
     result_frames: list[pd.DataFrame] = []
 
     for session_dir in staged_session_directories(settings):
-        summary = read_csv(session_dir / "session_summary.csv")
+        summary = read_csv_or_empty(session_dir / "session_summary.csv")
         if not summary.empty:
             session_summaries.append(summary)
 
-        stints = read_csv(session_dir / "stints.csv")
+        stints = read_csv_or_empty(session_dir / "stints.csv")
         if not stints.empty:
             stint_frames.append(stints)
 
-        results = read_csv(session_dir / "results.csv")
+        results = read_csv_or_empty(session_dir / "results.csv")
         if not results.empty:
             results["session_code"] = session_dir.name.upper()
             result_frames.append(results)

@@ -1,6 +1,5 @@
 import { AccountAuthPanel } from "@/components/account/account-auth-panel";
 import { ProfilePageContent } from "@/components/account/profile-page-content";
-import { AppHeader } from "@/components/ui/app-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
@@ -47,7 +46,6 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
     logServerError("page:account:load-user", error);
     return (
       <main className="subpage-shell account-page">
-        <AppHeader title="Account" compact />
         <StatePanel
           eyebrow="Account"
           title="The account screen could not verify your current session."
@@ -79,7 +77,6 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
 
   return (
     <main className="subpage-shell account-page">
-      <AppHeader title="Account" compact />
       <AccountAuthPanel
         hasSupabaseAuth={hasSupabaseAuth}
         hasProfilePersistence={hasProfilePersistence}

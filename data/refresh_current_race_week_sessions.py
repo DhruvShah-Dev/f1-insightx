@@ -53,7 +53,7 @@ def run_command(command: list[str]) -> dict[str, Any]:
     completed = subprocess.run(
         command,
         cwd=ROOT,
-        check=True,
+        check=False,
         text=True,
         capture_output=True,
     )
@@ -67,6 +67,15 @@ def run_command(command: list[str]) -> dict[str, Any]:
         result["json"] = json.loads(completed.stdout)
     except json.JSONDecodeError:
         pass
+    if completed.returncode != 0:
+        print(f"Command failed with exit code {completed.returncode}: {' '.join(command)}", file=sys.stderr)
+        if result["stdout"]:
+            print("\n--- stdout ---", file=sys.stderr)
+            print(result["stdout"], file=sys.stderr)
+        if result["stderr"]:
+            print("\n--- stderr ---", file=sys.stderr)
+            print(result["stderr"], file=sys.stderr)
+        raise SystemExit(completed.returncode)
     return result
 
 

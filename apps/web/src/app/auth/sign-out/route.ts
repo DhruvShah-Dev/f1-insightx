@@ -1,40 +1,33 @@
-import { NextResponse } from "next/server";
+import { accountError, accountJson } from "@/lib/api/account-responses";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
-import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
 import { isTrustedOrigin } from "@/lib/security/request";
 
 export async function POST(request: Request) {
   const rateLimit = await checkRateLimitAsync(request, RATE_LIMIT_POLICIES.signOut);
   if (!rateLimit.ok) {
-    return NextResponse.json(
-      { error: "Too many sign-out requests. Try again shortly." },
-      { status: 429, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) },
-    );
+    return accountError("Too many sign-out requests. Try again shortly.", { status: 429, rateLimit });
   }
 
   const { appUrl } = getServerEnv();
   if (!isTrustedOrigin(request, appUrl, { allowMissingHeaders: false })) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
+    return accountError("Forbidden", { status: 403, rateLimit });
   }
 
   const supabase = await getSupabaseServerClient();
   if (!supabase) {
-    return NextResponse.json({ error: "Authentication is unavailable right now." }, { status: 503, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
+    return accountError("Authentication is unavailable right now.", { status: 503, rateLimit });
   }
 
   const { error } = await supabase.auth.signOut();
   if (error) {
-    return NextResponse.json({ error: "Unable to sign out right now." }, { status: 400, headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
+    return accountError("Unable to sign out right now.", { status: 400, rateLimit });
   }
 
   const redirectTo = new URL(request.url);
   redirectTo.pathname = "/account";
   redirectTo.search = "";
 
-  return NextResponse.json(
-    { ok: true, redirectTo: redirectTo.toString() },
-    { headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) },
-  );
+  return accountJson({ ok: true, redirectTo: redirectTo.toString() }, { rateLimit });
 }

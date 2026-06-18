@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { SiteFooter } from "@/components/ui/site-footer";
-import { SiteHeader } from "@/components/ui/site-header";
 import { StatePanel } from "@/components/ui/state-panel";
 
 type GlobalErrorProps = {
@@ -19,7 +18,6 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
 
   return (
     <main className="subpage-shell">
-      <SiteHeader title="F1 InsightX" />
       <StatePanel
         eyebrow="Application error"
         title="This screen hit a runtime problem."

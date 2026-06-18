@@ -33,6 +33,23 @@ declare global {
   var __f1InsightxRateLimitLastSweepAt: number | undefined;
 }
 
+const fallbackWarnings = new Set<string>();
+
+function warnRateLimitFallback(reason: "missing-upstash-config" | "upstash-unavailable") {
+  if (process.env.NODE_ENV !== "production" || fallbackWarnings.has(reason)) {
+    return;
+  }
+
+  fallbackWarnings.add(reason);
+  console.warn(
+    `[rate-limit:${reason}] Falling back to in-memory rate limiting. Configure UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN for durable production limits.`,
+  );
+}
+
+export function resetRateLimitFallbackWarningsForTests() {
+  fallbackWarnings.clear();
+}
+
 function getStore() {
   if (!globalThis.__f1InsightxRateLimitStore) {
     globalThis.__f1InsightxRateLimitStore = new Map<string, RateLimitBucket>();
@@ -195,6 +212,7 @@ async function checkRateLimitWithUpstash(
 ): Promise<RateLimitResult> {
   const config = getUpstashConfig();
   if (!config) {
+    warnRateLimitFallback("missing-upstash-config");
     return checkRateLimit(request, policy, subject);
   }
 
@@ -262,6 +280,7 @@ export async function checkRateLimitAsync(
   try {
     return await checkRateLimitWithUpstash(request, policy, subject);
   } catch {
+    warnRateLimitFallback("upstash-unavailable");
     return checkRateLimit(request, policy, subject);
   }
 }

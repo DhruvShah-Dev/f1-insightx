@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { AppHeader } from "@/components/ui/app-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 
 export default function FantasyPage() {
   return (
     <main className="subpage-shell">
-      <AppHeader title="F1 InsightX" eyebrow="Future Surface" actionHref="/analytics" actionLabel="Open Analytics" compact />
       <section className="subpage-header fantasy-hold">
         <div>
           <p className="subpage-eyebrow">Coming Later</p>

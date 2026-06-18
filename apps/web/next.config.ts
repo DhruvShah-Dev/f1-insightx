@@ -12,6 +12,20 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: workspaceRoot,
   },
+  async redirects() {
+    return [
+      {
+        source: "/achievements",
+        destination: "/championship",
+        permanent: false,
+      },
+      {
+        source: "/pit-wall-picks",
+        destination: "/picks",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {

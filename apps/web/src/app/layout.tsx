@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
+import { HomeAccountEntry } from "@/components/account/home-account-entry";
 import { CookieConsent } from "@/components/legal/cookie-consent";
+import { AppHeader } from "@/components/ui/app-header";
+import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
+import { getServerEnv } from "@/lib/env";
 import "./globals.css";
 
 const barlowCondensed = Barlow_Condensed({
@@ -35,11 +39,29 @@ export const metadata: Metadata = {
   metadataBase,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
+  const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
+  let initialAuthState: "authenticated" | "anonymous" = "anonymous";
+
+  if (hasSupabaseAuth) {
+    try {
+      const supabase = await getSupabaseServerClient();
+      if (supabase) {
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+        initialAuthState = session?.user ? "authenticated" : "anonymous";
+      }
+    } catch {
+      initialAuthState = "anonymous";
+    }
+  }
+
   return (
     <html
       lang="en"
@@ -47,6 +69,15 @@ export default function RootLayout({
       className={`${barlowCondensed.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <AppHeader
+          accountSlot={(
+            <HomeAccountEntry
+              hasSupabaseAuth={hasSupabaseAuth}
+              hasProfilePersistence={hasProfilePersistence}
+              initialAuthState={initialAuthState}
+            />
+          )}
+        />
         {children}
         <CookieConsent />
       </body>

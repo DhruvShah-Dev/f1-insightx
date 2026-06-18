@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/ui/site-footer";
-import { SiteHeader } from "@/components/ui/site-header";
 
 export default function NotFound() {
   return (
     <main className="subpage-shell not-found-page">
-      <SiteHeader title="F1 InsightX" />
       <section className="not-found-page__panel">
         <p className="subpage-eyebrow">404</p>
         <h1 className="subpage-title">Page off track.</h1>

@@ -5,7 +5,6 @@ import type { CSSProperties, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { LegalLinks } from "@/components/legal/legal-links";
 import { AppFooter } from "@/components/ui/app-footer";
-import { AppHeader } from "@/components/ui/app-header";
 import { ACCOUNT_API_ROUTES, buildUsernameCheckUrl, buildUsernameSuggestUrl, readAccountApiData } from "@/lib/account/api";
 import type { AccountConstructorOption, AccountDriverOption } from "@/lib/account/options";
 import { getProfileTheme } from "@/lib/account/profile-theme";
@@ -465,15 +464,6 @@ export function ProfilePageShell({
 
   return (
     <main className={`subpage-shell account-page ${activeTheme.className}`} style={activeTheme.style}>
-      <AppHeader
-        title="Profile"
-        compact
-        accountSlot={(
-          <button className="account-signout account-signout--header" type="button" onClick={handleSignOut} disabled={isSigningOut}>
-            {isSigningOut ? "Signing out..." : "Sign out"}
-          </button>
-        )}
-      />
       <header className="account-profile-header">
         <div className="account-profile-hero">
           <div className="account-profile-strip">
@@ -740,6 +730,9 @@ export function ProfilePageShell({
             <div className="account-form__actions">
               <button className="hero__cta hero__cta--secondary" type="button" onClick={handleExport} disabled={isExporting}>
                 {isExporting ? "Preparing export..." : "Download my data"}
+              </button>
+              <button className="account-signout" type="button" onClick={handleSignOut} disabled={isSigningOut}>
+                {isSigningOut ? "Signing out..." : "Sign out"}
               </button>
             </div>
             <p className="account-privacy-panel__note">

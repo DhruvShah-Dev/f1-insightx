@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { CircuitHeroPanel } from "@/components/races/circuit-hero-panel";
 import { StatePanel } from "@/components/ui/state-panel";
-import { SiteHeader } from "@/components/ui/site-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { logServerError } from "@/lib/errors/logger";
@@ -40,8 +39,6 @@ export default async function RaceDetailPage({ params }: Props) {
 
   return (
     <main className="subpage-shell race-detail-layout">
-      <SiteHeader title="Race Archive" />
-
       <CircuitHeroPanel detail={detail} />
 
       <section className="race-detail-hero">

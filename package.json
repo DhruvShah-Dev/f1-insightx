@@ -49,5 +49,8 @@
     "fantasy-sports"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ws": "^8.21.0"
+  }
 }

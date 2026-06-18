@@ -1,5 +1,4 @@
 import { RaceLabWorkspace } from "@/components/lab/race-lab-workspace";
-import { AppHeader } from "@/components/ui/app-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
 import { withServerFallback } from "@/lib/errors/logger";
@@ -33,8 +32,6 @@ export default async function RaceLabPage() {
 
   return (
     <main className="strategy-lab-page">
-      <AppHeader title="Strategy Lab" actionHref="/analytics" actionLabel="Analytics" compact />
-
       {races.length > 0 ? (
         <RaceLabWorkspace
           races={races}

@@ -1,5 +1,4 @@
 import { ProfilePageShell } from "@/components/account/profile-page-shell";
-import { AppHeader } from "@/components/ui/app-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
 import { ACCOUNT_CONSTRUCTOR_OPTIONS, ACCOUNT_DRIVER_OPTIONS } from "@/lib/account/options";
@@ -40,7 +39,6 @@ export async function ProfilePageContent({
       logServerError("page:profile:load-profile", error, { userId: user.id });
       return (
         <main className="subpage-shell account-page">
-          <AppHeader title="Profile" compact />
           <StatePanel
             eyebrow="Profile"
             title="Your account loaded, but the profile record could not be read."

@@ -4,6 +4,12 @@ import path from "node:path";
 import { promisify } from "node:util";
 import { gunzip } from "node:zlib";
 import { parseNumber, readCsvFile } from "@/lib/server/csv";
+import {
+  parseAnalyticsIndexedManifest,
+  parseAnalyticsTraceManifest,
+  type AnalyticsIndexedManifest,
+  type AnalyticsTraceManifest,
+} from "@/lib/server/analytics-manifest";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceMetadata, type RuntimeSourceResult } from "@/lib/server/runtime-source";
 
 type Numeric = number | string | null | undefined;
@@ -350,19 +356,6 @@ function getAnalyticsIndexedDir() {
 
 const gunzipAsync = promisify(gunzip);
 
-type AnalyticsIndexedManifest = {
-  version: number;
-  row_cap: number;
-  sessions: Record<string, {
-    file: string;
-    season: number;
-    round: number;
-    event: string;
-    session: string;
-    counts: Record<string, number>;
-  }>;
-};
-
 type AnalyticsIndexedSessionPayload = {
   session: SessionIndexRow;
   drivers: AnalyticsDriverOption[];
@@ -373,25 +366,6 @@ type AnalyticsIndexedSessionPayload = {
   throttle: ThrottleComparisonRow[];
   straights: StraightComparisonRow[];
   energy_proxy: EnergyProxyComparisonRow[];
-};
-
-type AnalyticsTraceManifest = {
-  version: number;
-  buildVersion: string;
-  generatedAt: string;
-  tracePointCount: number;
-  source: "offline_fastf1_telemetry_parquet";
-  sessions: Record<string, {
-    file: string;
-    season: number;
-    round: number;
-    event: string;
-    session: string;
-    drivers: number;
-    tracePointCount: number;
-    quality: number;
-    bytes: number;
-  }>;
 };
 
 type AnalyticsTraceSessionPayload = {
@@ -409,7 +383,7 @@ type AnalyticsTraceSessionPayload = {
 const readIndexedManifest = cache(async (): Promise<AnalyticsIndexedManifest> => {
   const filePath = path.join(getAnalyticsIndexedDir(), "analytics_session_manifest.json");
   const content = await readFile(filePath, "utf-8");
-  return JSON.parse(content) as AnalyticsIndexedManifest;
+  return parseAnalyticsIndexedManifest(JSON.parse(content));
 });
 
 const readIndexedSessionPayload = cache(async (sessionId: string): Promise<AnalyticsIndexedSessionPayload | null> => {
@@ -441,7 +415,7 @@ const readTraceManifest = cache(async (): Promise<AnalyticsTraceManifest | null>
   try {
     const filePath = path.join(getAnalyticsTraceDir(), "analytics_trace_manifest.json");
     const content = await readFile(filePath, "utf-8");
-    return JSON.parse(content) as AnalyticsTraceManifest;
+    return parseAnalyticsTraceManifest(JSON.parse(content));
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
       return null;

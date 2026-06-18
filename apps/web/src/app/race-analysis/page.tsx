@@ -1,6 +1,5 @@
 ﻿import Link from "next/link";
 import { AppFooter } from "@/components/ui/app-footer";
-import { AppHeader } from "@/components/ui/app-header";
 import { getRaceAnalysisConfidenceTier, listRaceAnalysisIndex } from "@/lib/server/race-analysis-product";
 
 type RaceAnalysisIndexPageProps = {
@@ -119,8 +118,6 @@ export default async function RaceAnalysisIndexPage({ searchParams }: RaceAnalys
 
   return (
     <main className="race-analysis-page">
-      <AppHeader title="F1 InsightX" eyebrow="Race Analysis" actionHref="/analytics" actionLabel="Open Analytics" />
-
       <RaceAnalysisIndexHero latestRace={latestRace} />
 
       <section className="race-analysis-command-strip" aria-label="Race analysis filters">

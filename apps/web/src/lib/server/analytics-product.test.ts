@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { parseAnalyticsIndexedManifest, parseAnalyticsTraceManifest } from "./analytics-manifest";
 import {
   ANALYTICS_ENERGY_PROXY_NOTE,
   ANALYTICS_DETAIL_ROW_CAP,
@@ -161,4 +162,16 @@ test("Analytics product helper does not import raw telemetry runtime paths", asy
 
   assert.doesNotMatch(source, /raw\/fastf1|telemetry_features|fastf1_downloader|fastf1_pipeline/);
   assert.doesNotMatch(source, /analytics\.segmentComparison|analytics\.brakingComparison|analytics\.throttleComparison|analytics\.straightComparison|analytics\.energyProxyComparison/);
+});
+
+test("Analytics manifest parsing rejects malformed runtime index files", () => {
+  assert.throws(
+    () => parseAnalyticsIndexedManifest({ version: 1, row_cap: 10, sessions: { test: { file: "", season: 2026 } } }),
+    /Too small|Invalid input/,
+  );
+
+  assert.throws(
+    () => parseAnalyticsTraceManifest({ version: 1, source: "raw_fastf1", sessions: {} }),
+    /Invalid input/,
+  );
 });

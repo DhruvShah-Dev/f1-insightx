@@ -2,72 +2,79 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 type AppHeaderProps = {
-  title?: string;
-  eyebrow?: string;
-  actionHref?: string;
-  actionLabel?: string;
   accountSlot?: ReactNode;
-  compact?: boolean;
 };
 
 const navItems = [
   { href: "/predictions", label: "Race Week" },
+  { href: "/picks", label: "Picks" },
   { href: "/lab", label: "Strategy Lab" },
   { href: "/analytics", label: "Analytics" },
   { href: "/race-analysis", label: "Race Analysis" },
+  { href: "/championship", label: "Championship" },
 ];
 
-export function AppHeader({
-  title = "F1 InsightX",
-  eyebrow,
-  actionHref,
-  actionLabel,
-  accountSlot,
-  compact = false,
-}: AppHeaderProps) {
+export function AppHeader({ accountSlot }: AppHeaderProps) {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const renderNavLinks = (closeOnNavigate = false) => navItems.map((item) => {
+    const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+    return (
+      <Link
+        key={item.href}
+        href={item.href}
+        className={`app-header__nav-link${isActive ? " app-header__nav-link--active" : ""}`}
+        aria-current={isActive ? "page" : undefined}
+        onClick={closeOnNavigate ? () => setIsMenuOpen(false) : undefined}
+      >
+        {item.label}
+      </Link>
+    );
+  });
 
   return (
-    <header className={`app-header${compact ? " app-header--compact" : ""}`}>
+    <header className="app-header">
       <Link href="/" className="app-header__brand" aria-label="F1 InsightX home">
         <span className="app-header__mark" aria-hidden="true" />
         <span>
-          {eyebrow ? <small>{eyebrow}</small> : null}
-          <strong>{title}</strong>
+          <small>Race Intelligence</small>
+          <strong>F1 InsightX</strong>
         </span>
       </Link>
 
       <nav className="app-header__nav" aria-label="Primary">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`app-header__nav-link${isActive ? " app-header__nav-link--active" : ""}`}
-              aria-current={isActive ? "page" : undefined}
-            >
-              {item.label}
-            </Link>
-          );
-        })}
+        {renderNavLinks()}
       </nav>
 
       <div className="app-header__actions">
-        {actionHref && actionLabel ? (
-          <Link href={actionHref} className="app-header__action">
-            {actionLabel}
-          </Link>
-        ) : null}
         {accountSlot ?? (
           <Link href="/account" className="app-header__account">
             Account
           </Link>
         )}
+        <button
+          type="button"
+          className="app-header__menu-button"
+          aria-controls="app-header-menu"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          Menu
+        </button>
       </div>
+
+      <nav
+        id="app-header-menu"
+        className={`app-header__mobile-nav${isMenuOpen ? " app-header__mobile-nav--open" : ""}`}
+        aria-label="Primary mobile"
+      >
+        {renderNavLinks(true)}
+      </nav>
     </header>
   );
 }

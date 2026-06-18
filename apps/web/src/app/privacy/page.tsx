@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { LegalLinks } from "@/components/legal/legal-links";
 import { SiteFooter } from "@/components/ui/site-footer";
-import { SiteHeader } from "@/components/ui/site-header";
 import { getPrivacyContactEmail, getPrivacyMailtoHref } from "@/lib/public-config";
 import type { Metadata } from "next";
 
@@ -18,7 +17,6 @@ export default function PrivacyPage() {
 
   return (
     <main className="subpage-shell legal-page">
-      <SiteHeader title="Privacy" />
       <header className="legal-page__header">
         <p className="subpage-eyebrow">Privacy Policy</p>
         <h1 className="subpage-title">Privacy and data use.</h1>

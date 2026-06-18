@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { HomeAccountEntry } from "@/components/account/home-account-entry";
 import { ConstructorStandingsSection } from "@/components/home/constructor-standings-section";
 import { DriverStandingsSection } from "@/components/home/driver-standings-section";
 import { HomeScrollReveal } from "@/components/home/home-scroll-reveal";
@@ -8,10 +7,7 @@ import { ModuleLink } from "@/components/home/module-link";
 import { RaceCountdown } from "@/components/home/race-countdown";
 import { RaceHistoryRail } from "@/components/home/race-history-rail";
 import { AppFooter } from "@/components/ui/app-footer";
-import { AppHeader } from "@/components/ui/app-header";
 import { TrackMap } from "@/components/ui/track-map";
-import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
-import { getServerEnv } from "@/lib/env";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
 import { getSeasonState, type SeasonRaceRef } from "@/lib/server/season-state";
 import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
@@ -81,30 +77,10 @@ function getCircuitDisplayName(race: SeasonRaceRef | null | undefined) {
 }
 
 export default async function Home() {
-  const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
-  const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
-  const authStatePromise = (async () => {
-    if (!hasSupabaseAuth) {
-      return "anonymous" as const;
-    }
-
-    const supabase = await getSupabaseServerClient();
-    if (!supabase) {
-      return "anonymous" as const;
-    }
-
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-
-    return session?.user ? ("authenticated" as const) : ("anonymous" as const);
-  })();
-
-  const [constructorStandings, raceHistory, driverStandings, initialAuthState] = await Promise.all([
+  const [constructorStandings, raceHistory, driverStandings] = await Promise.all([
     getCurrentSeasonConstructorStandings(),
     listCompletedRaceHistory(10),
     getCurrentSeasonDriverStandings(),
-    authStatePromise,
   ]);
   const seasonState = await getSeasonState();
   const nextRace = seasonState?.next_race ?? null;
@@ -116,16 +92,6 @@ export default async function Home() {
       <HomeScrollReveal />
 
       <div className="home-shell__content">
-        <AppHeader
-          accountSlot={(
-            <HomeAccountEntry
-              hasSupabaseAuth={hasSupabaseAuth}
-              hasProfilePersistence={hasProfilePersistence}
-              initialAuthState={initialAuthState}
-            />
-          )}
-        />
-
         <section className="hero">
           <div className="hero__backdrop" />
           <div className="hero__content">
@@ -191,7 +157,6 @@ export default async function Home() {
             <ModuleLink
               href="/analytics"
               index="01"
-              state="Live"
               title="Analytics"
               summary="Telemetry comparison"
               visualTeamId="mercedes"
@@ -199,7 +164,6 @@ export default async function Home() {
             <ModuleLink
               href="/race-analysis"
               index="02"
-              state="Live"
               title="Race Analysis"
               summary="Post-race intelligence"
               visualTeamId="ferrari"
@@ -207,7 +171,6 @@ export default async function Home() {
             <ModuleLink
               href="/lab"
               index="03"
-              state="Live"
               title="Strategy Lab"
               summary="Scenario simulator"
               visualTeamId="red_bull"
@@ -215,7 +178,6 @@ export default async function Home() {
             <ModuleLink
               href="/predictions"
               index="04"
-              state="Live"
               title="Race Week"
               summary="Next-race read"
               visualTeamId="mclaren"

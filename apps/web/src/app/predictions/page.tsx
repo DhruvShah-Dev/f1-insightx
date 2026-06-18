@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { SiteHeader } from "@/components/ui/site-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { StatePanel } from "@/components/ui/state-panel";
@@ -41,6 +40,13 @@ const raceThemeByCircuit: Record<string, RaceTheme> = {
     accent: "#fb4f4f",
     accentSoft: "#ffffff",
   },
+  red_bull_ring: {
+    eyebrow: "Austria Race Week",
+    deck: "Short laps, heavy braking, and quick weather swings make traffic, track limits, and tyre warm-up hard to separate.",
+    shell: "#e6edf2",
+    accent: "#d71920",
+    accentSoft: "#ffffff",
+  },
   silverstone: {
     eyebrow: "Silverstone Race Week",
     deck: "High-speed commitment and sustained balance usually decide whether the weekend stays clean or collapses late.",
@@ -63,6 +69,15 @@ const fallbackTheme: RaceTheme = {
   shell: "#d5dce7",
   accent: "#ff5d57",
   accentSoft: "#ffffff",
+};
+
+const raceTimezoneByCircuit: Record<string, string> = {
+  catalunya: "Europe/Madrid",
+  miami: "America/New_York",
+  monaco: "Europe/Monaco",
+  red_bull_ring: "Europe/Vienna",
+  silverstone: "Europe/London",
+  spa: "Europe/Brussels",
 };
 
 const predictionModeIds: RaceWeekPredictionModeId[] = ["baseline", "pre_session", "fp1", "fp2", "fp3"];
@@ -222,8 +237,8 @@ function getConfidenceBand(value: number | null, qComplete: boolean) {
 
 function explainPredictionFlags(flags: string[]) {
   const labels: Record<string, string> = {
-    race_week_delta_neutral: "Live Spain FP/Q pending",
-    same_circuit_driver_gap_missing: "No prior Catalunya driver history",
+    race_week_delta_neutral: "Live FP/Q pending",
+    same_circuit_driver_gap_missing: "No prior same-circuit driver history",
     constructor_delta_missing: "Constructor delta fallback",
     driver_delta_missing: "Driver delta fallback",
     season_delta_estimated: "Season delta estimated",
@@ -338,7 +353,6 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
   if (seasonState && !seasonState.current_race_week.available) {
     return (
       <main className="subpage-shell race-week-page">
-        <SiteHeader title="Race Week" actionHref="/lab" actionLabel="Strategy Lab" />
         <StatePanel
           eyebrow="Race Week"
           title={`${formatSeasonRaceLabel(seasonState.next_race)} build pending.`}
@@ -355,7 +369,6 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
   if (!raceWeek?.overview.nextRace) {
     return (
       <main className="subpage-shell race-week-page">
-        <SiteHeader title="Race Week" />
         <section className="race-week-empty">
           <p className="race-week-empty__eyebrow">Race Week</p>
           <h1 className="race-week-empty__title">No weekend read is ready yet.</h1>
@@ -373,6 +386,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
   }
   const circuit = getCircuitAsset(nextRace.circuitId);
   const raceTheme = raceThemeByCircuit[nextRace.circuitId] ?? fallbackTheme;
+  const trackTimeZone = raceTimezoneByCircuit[nextRace.circuitId] ?? "UTC";
   const weekendSessions = buildWeekendSessions(nextRace.scheduledAt);
   const raceWeekConditions = [
     {
@@ -448,12 +462,6 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
         } as CSSProperties
       }
     >
-      <SiteHeader
-        title="Race Week"
-        actionHref="/lab"
-        actionLabel="Strategy Lab"
-      />
-
       <section className="race-week-hero">
         <div className="race-week-hero__grid">
           <div className="race-week-hero__copy">
@@ -521,7 +529,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
             <p className="race-week-section-kicker">Weekend timeline</p>
             <h2>Track time or your local time.</h2>
           </div>
-          <RaceWeekTimeToggle sessions={weekendSessions} trackTimeZone="Europe/Monaco" />
+          <RaceWeekTimeToggle sessions={weekendSessions} trackTimeZone={trackTimeZone} />
           <div className="race-week-session-status" aria-label="Weekend data status">
             {sessionStatusCards.map((session) => (
               <div
@@ -579,9 +587,9 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
         </div>
       </section>
 
-      <section className="race-week-q-prediction" aria-label="Spain qualifying prediction">
+      <section className="race-week-q-prediction" aria-label="Qualifying prediction">
         <div className="race-week-section-heading">
-          <p className="race-week-section-kicker">Spain Q Prediction</p>
+          <p className="race-week-section-kicker">Qualifying Prediction</p>
           <h2>Season-adjusted qualifying order.</h2>
           <span className={`race-week-prediction-status race-week-prediction-status--${selectedPredictionModeMeta?.status ?? "pending"}`}>
             {selectedPredictionModeMeta?.statusLabel ?? "Prediction data pending"}
@@ -648,7 +656,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
               })}
             </div>
 
-            <div className="race-week-q-table" role="table" aria-label="Full Spain qualifying order">
+            <div className="race-week-q-table" role="table" aria-label="Full qualifying order">
               <div className="race-week-q-table__row race-week-q-table__row--head" role="row">
                 <span>Order</span>
                 <span>Driver</span>
@@ -681,7 +689,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
           </>
         ) : (
           <div className="race-week-q-prediction__empty">
-            <strong>{selectedPredictionModeMeta?.statusLabel ?? "Spain Q model pending"}</strong>
+            <strong>{selectedPredictionModeMeta?.statusLabel ?? "Qualifying model pending"}</strong>
             <span>
               {selectedPredictionModeMeta?.status === "pending"
                 ? "This mode will populate when the required practice sessions are available in the active data source."

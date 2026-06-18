@@ -8,10 +8,7 @@ type SiteHeaderProps = {
   actionLabel?: string;
 };
 
-export function SiteHeader({
-  title,
-  actionHref,
-  actionLabel
-}: SiteHeaderProps) {
-  return <AppHeader title={title} actionHref={actionHref} actionLabel={actionLabel} compact />;
+export function SiteHeader(props: SiteHeaderProps) {
+  void props;
+  return <AppHeader />;
 }
