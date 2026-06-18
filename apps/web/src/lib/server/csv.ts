@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { cache } from "react";
@@ -16,6 +17,13 @@ function getAnalyticsTestFixturePath(csvName: string) {
     ? path.resolve(/*turbopackIgnore: true*/ process.cwd(), configuredTestRoot)
     : path.join(/*turbopackIgnore: true*/ process.cwd(), "test-fixtures", "data");
   return path.join(testRoot, "analytics", csvName);
+}
+
+function getTestFixtureRoot() {
+  const configuredTestRoot = process.env.F1_INSIGHTX_TEST_DATA_ROOT;
+  return configuredTestRoot
+    ? path.resolve(/*turbopackIgnore: true*/ process.cwd(), configuredTestRoot)
+    : path.join(/*turbopackIgnore: true*/ process.cwd(), "test-fixtures", "data");
 }
 
 export const csvFileMap = {
@@ -99,6 +107,15 @@ function getCsvFileUrl(fileKey: string) {
       },
       exposeDetails: process.env.NODE_ENV !== "production",
     });
+  }
+
+  if (isTestRun()) {
+    const repoDataRoot = path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data");
+    const relativeFixturePath = path.relative(repoDataRoot, fileUrl);
+    const fixtureUrl = path.join(getTestFixtureRoot(), relativeFixturePath);
+    if (!relativeFixturePath.startsWith("..") && !path.isAbsolute(relativeFixturePath) && existsSync(fixtureUrl)) {
+      return fixtureUrl;
+    }
   }
 
   return fileUrl;

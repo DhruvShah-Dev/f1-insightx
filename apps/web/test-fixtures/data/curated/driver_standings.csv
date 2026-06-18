@@ -1,0 +1,7 @@
+race_id,season,round,driver_id,constructor_id,standing_position,points,wins
+2024-01-bahrain,2024,1,norris,mclaren,1,25,1
+2024-01-bahrain,2024,1,hamilton,ferrari,2,18,0
+2025-01-australian,2025,1,piastri,mclaren,1,25,1
+2025-01-australian,2025,1,norris,mclaren,2,18,0
+2026-01-bahrain,2026,1,hamilton,ferrari,1,25,1
+2026-01-bahrain,2026,1,norris,mclaren,2,18,0
