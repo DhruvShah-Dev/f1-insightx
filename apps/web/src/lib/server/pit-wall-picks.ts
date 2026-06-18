@@ -6,7 +6,7 @@ import {
   validateNoDuplicateGroups,
   type PitWallPickPayloadInput,
 } from "@/lib/pit-wall-picks/scoring";
-import { readCsvFile, parseNumber } from "@/lib/server/csv";
+import { readOptionalCsvFile, parseNumber } from "@/lib/server/csv";
 import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 import { getSeasonState } from "@/lib/server/season-state";
 import { CURRENT_2026_DRIVER_IDS, getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
@@ -481,7 +481,7 @@ async function getUserScoreAndHistory(supabase: SupabaseClient, userId: string |
 async function getActiveRaceFromCsv(): Promise<PitWallRace | null> {
   const [seasonState, races] = await Promise.all([
     getSeasonState(),
-    readCsvFile<CsvRaceRow>("curated.races"),
+    readOptionalCsvFile<CsvRaceRow>("curated.races"),
   ]);
   const targetRaceId = seasonState?.next_race?.id ?? seasonState?.current_race_week.race?.id;
   const targetRace = targetRaceId ? races.find((race) => race.id === targetRaceId) : null;
@@ -497,15 +497,15 @@ async function getActiveRaceFromCsv(): Promise<PitWallRace | null> {
 }
 
 async function getChallengeFromCsv(raceId: string): Promise<PitWallChallenge | null> {
-  const challenges = await readCsvFile<CsvChallengeRow>("predictions.racePickChallenges");
+  const challenges = await readOptionalCsvFile<CsvChallengeRow>("predictions.racePickChallenges");
   const challenge = challenges.find((row) => row.race_id === raceId);
   return challenge ? mapCsvChallenge(challenge) : null;
 }
 
 async function getDriversFromCsv(raceId: string): Promise<PitWallDriver[]> {
   const [drivers, predictions] = await Promise.all([
-    readCsvFile<CsvDriverRow>("curated.drivers"),
-    readCsvFile<CsvPredictionRow>("curated.predictionSnapshots"),
+    readOptionalCsvFile<CsvDriverRow>("curated.drivers"),
+    readOptionalCsvFile<CsvPredictionRow>("curated.predictionSnapshots"),
   ]);
   const driverRowsById = new Map(drivers.map((driver) => [driver.id, driver]));
   const predictedIds = predictions
