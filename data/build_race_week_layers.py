@@ -912,6 +912,66 @@ def catalunya_base_pole_seconds(
     return baseline_pole_s + season_delta_s + track_residual_s, season_delta_s, track_residual_s, method
 
 
+LIVE_QUALIFYING_BASE_OVERRIDES = {
+    "2026-08-red_bull_ring": {
+        "base_pole_s": 66.014,
+        "season_delta_s": None,
+        "track_residual_s": -7.327,
+        "method": "live_fp2_anchor_formula1_2026_06_26_67014_minus_1000",
+    },
+}
+
+LIVE_SESSION_GAP_OVERRIDES = {
+    "2026-08-red_bull_ring": {
+        "FP2": {
+            "antonelli": 0.0,
+            "piastri": 0.237,
+            "norris": 0.325,
+            "max_verstappen": 0.55,
+            "hamilton": 0.597,
+            "russell": 0.623,
+            "hadjar": 0.744,
+            "leclerc": 0.841,
+            "lawson": 1.221,
+            "bortoleto": 1.286,
+            "gasly": 1.362,
+            "arvid_lindblad": 1.364,
+            "bearman": 1.518,
+            "hulkenberg": 1.545,
+            "ocon": 1.816,
+            "colapinto": 1.817,
+            "albon": 1.824,
+            "sainz": 2.117,
+            "alonso": 3.53,
+            "stroll": 3.684,
+            "bottas": 4.293,
+        },
+    },
+}
+
+
+def race_week_base_pole_seconds(
+    qualifying_gaps: pd.DataFrame,
+    *,
+    race_id: str,
+    target_season: int,
+    target_scheduled_at: pd.Timestamp | None = None,
+) -> tuple[float | None, float | None, float, str]:
+    override = LIVE_QUALIFYING_BASE_OVERRIDES.get(race_id)
+    if override is not None:
+        return (
+            float(override["base_pole_s"]),
+            override["season_delta_s"],
+            float(override["track_residual_s"]),
+            str(override["method"]),
+        )
+    return catalunya_base_pole_seconds(
+        qualifying_gaps,
+        target_season=target_season,
+        target_scheduled_at=target_scheduled_at,
+    )
+
+
 def first_number(*values: Any) -> float | None:
     for value in values:
         number = pd.to_numeric(pd.Series([value]), errors="coerce").iloc[0]
@@ -970,13 +1030,14 @@ def build_spain_qualifying_prediction(
     rows: list[dict[str, Any]] = []
 
     def available_sessions_for_race(race_id: str) -> set[str]:
-        if session_year_over_year_deltas.empty:
-            return set()
-        race_session_rows = session_year_over_year_deltas[
-            session_year_over_year_deltas["race_id"].astype(str).eq(race_id)
-            & session_year_over_year_deltas["delta_gap_s"].notna()
-        ]
-        return set(race_session_rows["session_code"].astype(str).str.upper())
+        sessions = set(LIVE_SESSION_GAP_OVERRIDES.get(race_id, {}).keys())
+        if not session_year_over_year_deltas.empty:
+            race_session_rows = session_year_over_year_deltas[
+                session_year_over_year_deltas["race_id"].astype(str).eq(race_id)
+                & session_year_over_year_deltas["delta_gap_s"].notna()
+            ]
+            sessions.update(race_session_rows["session_code"].astype(str).str.upper())
+        return sessions
 
     def mode_configs(race_id: str) -> list[dict[str, Any]]:
         available_sessions = available_sessions_for_race(race_id)
@@ -984,46 +1045,50 @@ def build_spain_qualifying_prediction(
             baseline_sessions = ["FP1", "FP2", "FP3"]
         elif {"FP1", "FP2"}.issubset(available_sessions):
             baseline_sessions = ["FP1", "FP2"]
+        elif "FP2" in available_sessions:
+            baseline_sessions = ["FP2"]
         elif "FP1" in available_sessions:
             baseline_sessions = ["FP1"]
         else:
             baseline_sessions = []
 
-        configs = [
+        configs: list[dict[str, Any]] = [
             {
                 "prediction_mode": "baseline",
                 "mode_label": "Predictions",
                 "included_sessions": baseline_sessions,
                 "mode_status": "available",
             },
-            {
-                "prediction_mode": "pre_session",
-                "mode_label": "Pre-session pred",
-                "included_sessions": [],
-                "mode_status": "available",
-            },
-            {
-                "prediction_mode": "fp1",
-                "mode_label": "FP1 pred",
-                "included_sessions": ["FP1"],
-                "mode_status": "available" if "FP1" in available_sessions else "pending",
-            },
-            {
-                "prediction_mode": "fp2",
-                "mode_label": "FP2 pred",
-                "included_sessions": ["FP1", "FP2"],
-                "mode_status": "available" if {"FP1", "FP2"}.issubset(available_sessions) else "pending",
-            },
-            {
-                "prediction_mode": "fp3",
-                "mode_label": "FP3 pred",
-                "included_sessions": ["FP1", "FP2", "FP3"],
-                "mode_status": "available" if {"FP1", "FP2", "FP3"}.issubset(available_sessions) else "pending",
-            },
         ]
+        staged_configs = [
+            ("fp1", "FP1 pred", ["FP1"]),
+            ("fp2", "FP2 pred", ["FP1", "FP2"] if "FP1" in available_sessions else ["FP2"]),
+            ("fp3", "FP3 pred", ["FP1", "FP2", "FP3"]),
+        ]
+        for prediction_mode, mode_label, included_sessions in staged_configs:
+            if not set(included_sessions).issubset(available_sessions):
+                continue
+            if included_sessions == baseline_sessions:
+                continue
+            configs.append(
+                {
+                    "prediction_mode": prediction_mode,
+                    "mode_label": mode_label,
+                    "included_sessions": included_sessions,
+                    "mode_status": "available",
+                }
+            )
         return [config for config in configs if config["mode_status"] == "available"]
 
     def race_week_delta_for_mode(race_id: str, driver_id: str, session_codes: list[str], use_qualifying_fallback: bool) -> float | None:
+        override_values = [
+            LIVE_SESSION_GAP_OVERRIDES.get(race_id, {}).get(session_code.upper(), {}).get(driver_id)
+            for session_code in session_codes
+        ]
+        override_values = [float(value) for value in override_values if value is not None]
+        if override_values:
+            return float(sum(override_values) / len(override_values))
+
         if session_codes and not session_year_over_year_deltas.empty:
             mode_yoy = session_year_over_year_deltas[
                 (session_year_over_year_deltas["race_id"].astype(str) == race_id)
@@ -1067,8 +1132,9 @@ def build_spain_qualifying_prediction(
             if not race_row.empty and "scheduled_at" in race_row.columns
             else pd.NaT
         )
-        base_pole_s, season_delta_s, track_residual_s, baseline_method = catalunya_base_pole_seconds(
+        base_pole_s, season_delta_s, track_residual_s, baseline_method = race_week_base_pole_seconds(
             q_gaps,
+            race_id=race_id,
             target_season=season,
             target_scheduled_at=target_scheduled_at,
         )
@@ -1162,13 +1228,12 @@ def build_spain_qualifying_prediction(
                     else None
                 )
                 race_week_delta_gap_s = None
-                if prediction_mode != "pre_session":
-                    race_week_delta_gap_s = race_week_delta_for_mode(
-                        race_id,
-                        driver_id,
-                        included_sessions,
-                        use_qualifying_fallback=prediction_mode == "baseline" and not included_sessions,
-                    )
+                race_week_delta_gap_s = race_week_delta_for_mode(
+                    race_id,
+                    driver_id,
+                    included_sessions,
+                    use_qualifying_fallback=prediction_mode == "baseline" and not included_sessions,
+                )
 
                 teammate_values = [
                     value
@@ -1182,8 +1247,6 @@ def build_spain_qualifying_prediction(
                 teammate_prior_gap_s = float(sum(teammate_values) / len(teammate_values)) if teammate_values else None
                 fallback_gap = first_number(constructor_quali_gap_s, teammate_prior_gap_s, field_median_gap) or field_median_gap
 
-                if prediction_mode == "pre_session":
-                    missing_flags.append("pre_session_model")
                 if recent_quali_gap_s is None:
                     missing_flags.append("recent_quali_gap_missing")
                 if same_circuit_gap_s is None:

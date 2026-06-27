@@ -80,7 +80,7 @@ const raceTimezoneByCircuit: Record<string, string> = {
   spa: "Europe/Brussels",
 };
 
-const predictionModeIds: RaceWeekPredictionModeId[] = ["baseline", "pre_session", "fp1", "fp2", "fp3"];
+const predictionModeIds: RaceWeekPredictionModeId[] = ["baseline", "fp1", "fp2", "fp3"];
 
 type PredictionsPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
@@ -221,7 +221,7 @@ function formatPoleGap(value: number | null) {
 
 function getConfidenceBand(value: number | null, qComplete: boolean) {
   if (!qComplete) {
-    return "Pre-session";
+    return "Prediction";
   }
   if (value === null || Number.isNaN(value)) {
     return "Low";
@@ -358,8 +358,8 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
           title={`${formatSeasonRaceLabel(seasonState.next_race)} build pending.`}
           message={`Current product view targets ${formatSeasonRaceLabel(seasonState.current_race_week.product_view_race)}. Latest completed race is ${formatSeasonRaceLabel(seasonState.latest_completed_race)}.`}
           tone="notice"
-          actionHref="/analytics"
-          actionLabel="Open Analytics"
+          actionHref="/race-analysis"
+          actionLabel="Open Race Analysis"
         />
         <SiteFooter />
       </main>
@@ -492,8 +492,8 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
               <Link href="/lab" className="race-week-hero__cta race-week-hero__cta--primary">
                 Open Strategy Lab
               </Link>
-              <Link href="/analytics" className="race-week-hero__cta race-week-hero__cta--secondary">
-                Open Analytics
+              <Link href="/race-analysis" className="race-week-hero__cta race-week-hero__cta--secondary">
+                Open Race Analysis
               </Link>
             </div>
           </div>
@@ -806,10 +806,10 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
             <strong>Open Strategy Lab</strong>
             <p>Stress alternative calls.</p>
           </Link>
-          <Link href="/analytics" className="race-week-close__link">
+          <Link href="/race-analysis" className="race-week-close__link">
             <span>02</span>
-            <strong>Open Analytics</strong>
-            <p>Compare driver signals.</p>
+            <strong>Open Race Analysis</strong>
+            <p>Review post-race signals.</p>
           </Link>
         </div>
       </section>

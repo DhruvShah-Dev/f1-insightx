@@ -12,8 +12,8 @@ export default function NotFound() {
           <Link href="/" className="hero__cta hero__cta--primary">
             Return home
           </Link>
-          <Link href="/analytics" className="hero__cta hero__cta--secondary">
-            Open Analytics
+          <Link href="/race-analysis" className="hero__cta hero__cta--secondary">
+            Open Race Analysis
           </Link>
         </div>
       </section>

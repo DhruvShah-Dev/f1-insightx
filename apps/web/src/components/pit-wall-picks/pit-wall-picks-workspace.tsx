@@ -2,8 +2,10 @@
 
 import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import type { CSSProperties } from "react";
 import { AssetImage } from "@/components/ui/asset-image";
 import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
+import { getTeamMeta } from "@/lib/ui/team-meta";
 
 type Driver = {
   id: string;
@@ -107,13 +109,22 @@ function DriverSelect(props: {
 }) {
   const selectedDriver = props.drivers.find((driver) => driver.id === props.value);
   const selectedDriverMeta = selectedDriver ? getCurrentDriverMeta(selectedDriver.id) : null;
-  const isSpecial = props.tone === "special";
+  const selectedTeam = selectedDriverMeta ? getTeamMeta(selectedDriverMeta.teamId) : null;
 
   return (
-    <label className={`pit-wall-field pit-wall-field--${props.tone ?? "chip"} ${props.value ? "is-filled" : ""}`}>
-      <span className="pit-wall-field__label">{props.label}</span>
-      {!isSpecial ? (
-        <span className="pit-wall-field__chip" aria-hidden="true">
+    <label
+      className={`pit-wall-field pit-wall-field--${props.tone ?? "chip"} ${props.value ? "is-filled" : ""}`}
+      style={
+        selectedTeam
+          ? ({
+              "--field-team-primary": selectedTeam.primary,
+              "--field-team-secondary": selectedTeam.secondary,
+            } as CSSProperties)
+          : undefined
+      }
+    >
+      <span className="pit-wall-field__preview" aria-hidden="true">
+        <span className="pit-wall-field__portrait-wrap">
           {selectedDriverMeta ? (
             <AssetImage
               src={selectedDriverMeta.photoPath ?? selectedDriverMeta.fallbackPhotoPath}
@@ -121,18 +132,23 @@ function DriverSelect(props: {
               alt=""
               className="pit-wall-field__portrait"
               fill
-              sizes="58px"
+              sizes="76px"
               style={{
-                objectFit: "cover",
-                objectPosition: "center 18%",
-                transform: `scale(${Math.max(1.35, selectedDriverMeta.photoScale ?? 1)})`,
+                objectFit: "contain",
+                objectPosition: selectedDriverMeta.photoPosition ?? "center bottom",
+                transform: `translateX(${selectedDriverMeta.photoTranslateX ?? 0}px) scale(${selectedDriverMeta.photoScale ?? 1})`,
               }}
             />
           ) : (
             chipFallback(props.label)
           )}
         </span>
-      ) : null}
+        <span className="pit-wall-field__identity">
+          <span className="pit-wall-field__label">{props.label}</span>
+          <strong>{selectedDriver?.code ?? selectedDriverMeta?.driverCode ?? "Select"}</strong>
+          <em>{selectedDriver?.name ?? "Choose driver"}</em>
+        </span>
+      </span>
       <select value={props.value} onChange={(event) => props.onChange(event.target.value)} disabled={props.disabled}>
         <option value="">Select driver</option>
         {props.drivers.map((driver) => (
@@ -242,9 +258,11 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
 
   return (
     <div className="pit-wall-workspace">
-      <section className="pit-wall-card pit-wall-card--form">
+      <section className="pit-wall-card pit-wall-card--form" id="race-card">
         <div className="pit-wall-section-heading">
+          <span>{props.isLocked ? "Locked card" : "Open card"}</span>
           <h2>{props.userPick ? "Your picks" : "Race card"}</h2>
+          <p>Complete every slot before lock. Top-three groups cannot repeat a driver.</p>
         </div>
 
         {!props.persistenceAvailable ? (
@@ -328,7 +346,9 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
           <button className="pit-wall-submit" type="button" onClick={save} disabled={!canSubmit}>
             {isPending ? "Locking..." : props.userPick ? "Update picks" : "Lock picks"}
           </button>
-        ) : null}
+        ) : (
+          <div className="pit-wall-feedback pit-wall-feedback--notice">Picks locked</div>
+        )}
       </section>
 
       <ScorePanel score={props.userScore} />

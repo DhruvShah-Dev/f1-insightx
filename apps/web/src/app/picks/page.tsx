@@ -1,16 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { PicksCountdown } from "@/components/pit-wall-picks/picks-countdown";
 import { PitWallPicksWorkspace } from "@/components/pit-wall-picks/pit-wall-picks-workspace";
+import { AssetImage } from "@/components/ui/asset-image";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { getPitWallPicksPayload } from "@/lib/server/pit-wall-picks";
+import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
+import { getTeamAsset } from "@/lib/ui/asset-manifest";
 
 export const metadata: Metadata = {
   title: "Picks | F1 InsightX",
 };
+
+function formatRaceDate(iso: string) {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) {
+    return "Race date pending";
+  }
+  return date.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+}
 
 export default async function PicksPage() {
   const { hasSupabaseAuth } = getServerEnv();
@@ -35,21 +51,92 @@ export default async function PicksPage() {
     );
   }
 
+  const heroDrivers = payload.drivers.slice(0, 3).map((driver) => {
+    const driverMeta = getCurrentDriverMeta(driver.id);
+    const team = getTeamAsset(driverMeta.teamId);
+    return { driver, driverMeta, team };
+  });
+  const primaryTeam = heroDrivers[0]?.team ?? getTeamAsset(null);
+
   return (
-    <main className="subpage-shell pit-wall-page">
+    <main
+      className="subpage-shell pit-wall-page"
+      style={
+        {
+          "--pit-team-primary": primaryTeam.primary,
+          "--pit-team-secondary": primaryTeam.secondary,
+          "--pit-team-accent": primaryTeam.accent,
+        } as CSSProperties
+      }
+    >
       <section className="pit-wall-hero">
-        <div className="pit-wall-hero__copy">
-          <span>{payload.race.raceName}</span>
-          <h1>Picks</h1>
+        <div className="pit-wall-hero__content">
+          <div className="pit-wall-hero__copy">
+            <p className="pit-wall-hero__eyebrow">{payload.race.raceName}</p>
+            <h1>Picks</h1>
+            <p className="pit-wall-hero__deck">
+              Lock the qualifying order, race podium, random-position calls, and specials before the session closes.
+            </p>
+            <div className="pit-wall-hero__actions">
+              <a href={user ? "#race-card" : "#sign-in"} className="pit-wall-hero__cta">
+                {user ? "Build race card" : "Sign in to play"}
+              </a>
+              <span className="pit-wall-hero__status">{payload.lockStatusLabel}</span>
+            </div>
+          </div>
+
+          <div className="pit-wall-hero__race">
+            <span>Race date</span>
+            <strong>{formatRaceDate(payload.race.scheduledAt)}</strong>
+            <em>
+              Round {payload.race.round} / {payload.race.season}
+            </em>
+          </div>
+
+          <PicksCountdown lockAt={payload.challenge.qualifyingLockAt} />
         </div>
-        <PicksCountdown lockAt={payload.challenge.qualifyingLockAt} />
+
+        <div className="pit-wall-hero__visual" aria-hidden="true">
+          <div className="pit-wall-hero__beam" />
+          <div className="pit-wall-hero__driver-stack">
+            {heroDrivers.map(({ driver, driverMeta, team }, index) => (
+              <div
+                className={`pit-wall-hero__driver pit-wall-hero__driver--${index + 1}`}
+                key={driver.id}
+                style={
+                  {
+                    "--driver-team-primary": team.primary,
+                    "--driver-team-secondary": team.secondary,
+                  } as CSSProperties
+                }
+              >
+                <AssetImage
+                  src={driverMeta.photoPath ?? driverMeta.fallbackPhotoPath}
+                  fallbackSrc={driverMeta.fallbackPhotoPath}
+                  alt=""
+                  className="pit-wall-hero__driver-image"
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 760px) 45vw, 24vw"
+                  style={{
+                    objectFit: driverMeta.photoFit ?? "contain",
+                    objectPosition: driverMeta.photoPosition ?? "center bottom",
+                    transform: `translateX(${driverMeta.photoTranslateX ?? 0}px) scale(${driverMeta.photoScale ?? 1})`,
+                  }}
+                />
+                <span>{driver.code ?? driverMeta.driverCode}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {!user ? (
-        <section className="pit-wall-auth-gate">
+        <section className="pit-wall-auth-gate" id="sign-in">
           <div className="pit-wall-auth-gate__copy">
-            <span>Locked table</span>
+            <span>Race card access</span>
             <h2>Sign in to lock picks</h2>
+            <p>Your picks stay private until scoring opens after the race data lands.</p>
           </div>
           <div className="pit-wall-auth-gate__panel">
             <span>Account</span>

@@ -364,7 +364,7 @@ const detailCaps = {
   stints: 42,
   pitStops: 34,
   paceEvolution: 180,
-  positionTimeline: 220,
+  positionTimeline: 520,
   positionSwings: 20,
   trafficProxy: 120,
   neutralizationPhases: 10,
@@ -540,7 +540,6 @@ export const getRaceAnalysisDetail = cache(async (raceId: string): Promise<RaceA
         paceConfidence: num(row.pace_confidence),
       })),
     positionTimeline: byRace(positionRows, raceId)
-      .filter((row) => keyDrivers.has(row.driver))
       .filter((_, index) => index % 2 === 0)
       .slice(0, detailCaps.positionTimeline)
       .map((row) => ({

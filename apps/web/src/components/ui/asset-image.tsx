@@ -11,6 +11,7 @@ type AssetImageProps = {
   className: string;
   sizes?: string;
   priority?: boolean;
+  loading?: "eager" | "lazy";
   style?: CSSProperties;
   unoptimized?: boolean;
 } & (
@@ -36,6 +37,7 @@ export function AssetImage({
   height,
   sizes,
   priority = false,
+  loading,
   style,
   unoptimized,
 }: AssetImageProps) {
@@ -57,6 +59,7 @@ export function AssetImage({
       height={fill ? undefined : height}
       sizes={sizes}
       priority={priority}
+      loading={loading}
       unoptimized={shouldBypassOptimizer}
       style={style}
       onError={() => {

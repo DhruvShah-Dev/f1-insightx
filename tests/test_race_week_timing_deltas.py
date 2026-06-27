@@ -291,7 +291,7 @@ def test_spain_prediction_times_equal_base_plus_gap_and_skip_fake_rookie_history
     assert prediction["predicted_q_gap_s"].ge(0).all()
     assert prediction["confidence_score"].between(0, 1).all()
     assert prediction["confidence_score"].max() <= 0.68
-    assert set(prediction["prediction_mode"]) == {"baseline", "pre_session"}
+    assert set(prediction["prediction_mode"]) == {"baseline"}
     assert prediction["id"].is_unique
     for _, mode_rows in prediction.groupby("prediction_mode"):
         assert mode_rows.sort_values("predicted_q_rank")["predicted_q_gap_s"].is_monotonic_increasing

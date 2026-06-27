@@ -59,7 +59,7 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
                 style={{
                   objectPosition: driver.photoPosition ?? "center top",
                   objectFit: driver.photoFit ?? "cover",
-                  transform: `translateY(0.35rem) scale(${driver.photoScale ?? 1})`,
+                  transform: `translate(${driver.photoTranslateX ?? 0}%, 0.35rem) scale(${driver.photoScale ?? 1})`,
                 }}
               />
             </div>

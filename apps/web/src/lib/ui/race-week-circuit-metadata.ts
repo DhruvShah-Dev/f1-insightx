@@ -23,6 +23,8 @@ export type CircuitSector = {
 export type CircuitDataCallout = {
   id: string;
   label: string;
+  displayLabel?: string;
+  accessibilityLabel?: string;
   kind: "drs-detection" | "drs-activation" | "speed-trap";
   anchor: CircuitPoint;
   labelPosition: CircuitPoint;
@@ -150,10 +152,65 @@ const monacoMetadata: RaceWeekCircuitMetadata = {
   note: "Corner and circuit-feature markers are approximate visual annotations.",
 };
 
+const redBullRingMetadata: RaceWeekCircuitMetadata = {
+  circuitId: "red_bull_ring",
+  viewBox: "0 0 960 620",
+  corners: [
+    { number: 1, x: 405.5, y: 583.6, label: "Niki Lauda Kurve", tooltipSide: "left" },
+    { number: 2, x: 179.0, y: 205.5, label: "Turn 2 kink", tooltipSide: "right" },
+    { number: 3, x: 46.9, y: 49.3, label: "Remus", tooltipSide: "right" },
+    { number: 4, x: 600.4, y: 102.7, label: "Schlossgold", tooltipSide: "below" },
+    { number: 5, x: 516.3, y: 188.5, label: "Turn 5", tooltipSide: "below" },
+    { number: 6, x: 296.2, y: 198.2, label: "Rauch", tooltipSide: "right" },
+    { number: 7, x: 391.0, y: 370.3, label: "Wurth", tooltipSide: "left" },
+    { number: 8, x: 506.1, y: 294.0, label: "Turn 8", tooltipSide: "right" },
+    { number: 9, x: 874.6, y: 300.7, label: "Jochen Rindt", tooltipSide: "left" },
+    { number: 10, x: 911.6, y: 423.8, label: "Red Bull Mobile", tooltipSide: "left" },
+  ],
+  sectors: [
+    { id: "sector-1", label: "Sector 1", startPercent: 0, endPercent: 31.5, color: "#ff3f76" },
+    { id: "sector-2", label: "Sector 2", startPercent: 31.5, endPercent: 65.3, color: "#f6d84a" },
+    { id: "sector-3", label: "Sector 3", startPercent: 65.3, endPercent: 100, color: "#38bdf8" },
+  ],
+  drsZones: [
+    {
+      id: "red-bull-ring-drs-detection-1",
+      label: "Overtake detection",
+      kind: "drs-detection",
+      anchor: { x: 898, y: 353 },
+      labelPosition: { x: 830, y: 306 },
+      width: 116,
+    },
+    {
+      id: "red-bull-ring-drs-activation-1",
+      label: "Overtake activation",
+      kind: "drs-activation",
+      anchor: { x: 844, y: 474 },
+      labelPosition: { x: 720, y: 410 },
+      width: 118,
+    },
+  ],
+  speedTraps: [
+    {
+      id: "red-bull-ring-speed-trap",
+      label: "Speed trap",
+      kind: "speed-trap",
+      anchor: { x: 472, y: 82 },
+      labelPosition: { x: 390, y: 120 },
+      width: 82,
+    },
+  ],
+  startFinish: { x: 678.3, y: 518.6 },
+  source: "Manual Red Bull Ring annotation aligned to FastF1-derived path geometry",
+  verified: true,
+  note: "Corner names, sector guides, and overtake feature markers are approximate visual annotations for the F1 Grand Prix layout.",
+};
+
 const generatedMetadata = generatedCircuitMetadata as Record<string, CircuitMetadataRecord>;
 
 const manualMetadata: Record<string, RaceWeekCircuitMetadata> = {
   monaco: monacoMetadata,
+  red_bull_ring: redBullRingMetadata,
 };
 
 const cornerNameOverrides: Record<string, Record<string, string>> = {

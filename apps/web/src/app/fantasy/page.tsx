@@ -11,8 +11,8 @@ export default function FantasyPage() {
           <p className="section-copy">The current deployment focuses on telemetry, race analysis, strategy, and race-week intelligence.</p>
         </div>
         <div className="not-found-page__actions">
-          <Link href="/analytics" className="hero__cta hero__cta--primary">
-            Open Analytics
+          <Link href="/race-analysis" className="hero__cta hero__cta--primary">
+            Open Race Analysis
           </Link>
           <Link href="/" className="hero__cta hero__cta--secondary">
             Back home

@@ -56,7 +56,7 @@ export type RaceWeekQualifyingPrediction = {
   sourceLabel: string | null;
 };
 
-export type RaceWeekPredictionModeId = "baseline" | "pre_session" | "fp1" | "fp2" | "fp3";
+export type RaceWeekPredictionModeId = "baseline" | "fp1" | "fp2" | "fp3";
 export type RaceWeekPredictionModeStatus = "available" | "pending";
 
 export type RaceWeekPredictionMode = {
@@ -356,11 +356,10 @@ function buildSessionStatus(rows: SessionPaceSummaryRow[], raceId: string): Race
   });
 }
 
-const predictionModeOrder: RaceWeekPredictionModeId[] = ["baseline", "pre_session", "fp1", "fp2", "fp3"];
+const predictionModeOrder: RaceWeekPredictionModeId[] = ["baseline", "fp1", "fp2", "fp3"];
 
 const predictionModeDefaults: Record<RaceWeekPredictionModeId, { label: string; includedSessions: string[]; statusLabel: string }> = {
   baseline: { label: "Predictions", includedSessions: [], statusLabel: "Using latest available model" },
-  pre_session: { label: "Pre-session pred", includedSessions: [], statusLabel: "Using pre-session model" },
   fp1: { label: "FP1 pred", includedSessions: ["FP1"], statusLabel: "Using FP1 data" },
   fp2: { label: "FP2 pred", includedSessions: ["FP1", "FP2"], statusLabel: "Using FP1 + FP2 data" },
   fp3: { label: "FP3 pred", includedSessions: ["FP1", "FP2", "FP3"], statusLabel: "Using FP1 + FP2 + FP3 data" },
@@ -394,6 +393,8 @@ function buildPredictionModes(rows: RaceWeekQualifyingPrediction[]): RaceWeekPre
     let statusLabel = defaultConfig.statusLabel;
     if (status === "pending") {
       statusLabel = `${defaultConfig.label.replace(" pred", "")} data pending`;
+    } else if (rowConfig?.includedSessions.length) {
+      statusLabel = `Using ${rowConfig.includedSessions.join(" + ")} data`;
     }
 
     return {

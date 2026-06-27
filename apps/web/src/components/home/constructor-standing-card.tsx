@@ -15,6 +15,7 @@ export function ConstructorStandingCard({
   variant = "standard",
 }: ConstructorStandingCardProps) {
   const team = getTeamAsset(standing.constructorId);
+  const plate = team.badgePlate ?? "default";
 
   return (
     <article
@@ -24,6 +25,7 @@ export function ConstructorStandingCard({
           "--team-primary": team.primary,
           "--team-secondary": team.secondary,
           "--team-accent": team.accent,
+          "--team-logo-contrast": team.badgeContrastColor ?? team.secondary,
         } as CSSProperties
       }
     >
@@ -67,6 +69,21 @@ export function ConstructorStandingCard({
         )}
         <div className="constructor-standing-card__overlay">
           <span className="constructor-standing-card__rank">P{standing.standingPosition}</span>
+          <span className={`constructor-standing-card__logo-plate constructor-standing-card__logo-plate--${plate}`} aria-hidden="true">
+            {team.badgeAssetPath ? (
+              <AssetImage
+                src={team.badgeAssetPath}
+                fallbackSrc={team.fallbackImagePath}
+                alt=""
+                fill
+                className="constructor-standing-card__logo"
+                sizes={variant === "leader" ? "96px" : "72px"}
+                style={{ objectFit: "contain" }}
+              />
+            ) : (
+              <span className="constructor-standing-card__logo-fallback">{team.shortLabel}</span>
+            )}
+          </span>
         </div>
       </div>
 

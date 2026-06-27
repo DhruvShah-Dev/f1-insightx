@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
         destination: "/picks",
         permanent: false,
       },
+      {
+        source: "/analytics",
+        destination: "/race-analysis",
+        permanent: false,
+      },
     ];
   },
   async headers() {

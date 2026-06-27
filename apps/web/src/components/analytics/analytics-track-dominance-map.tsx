@@ -19,12 +19,21 @@ type TrackMarker = TrackPoint & {
   index: number;
 };
 
+type TrackSlice = {
+  segment: AnalyticsDominanceSegment;
+  pathData: string;
+};
+
 type AnalyticsTrackDominanceMapProps = {
   trackData: CircuitTrackData | null;
   segments: AnalyticsDominanceSegment[];
   driverA: string;
   driverB: string;
   title: string;
+};
+
+type AnalyticsMiniTrackMapProps = AnalyticsTrackDominanceMapProps & {
+  className?: string;
 };
 
 const markerLimit = 10;
@@ -96,7 +105,7 @@ function buildMarkers(points: TrackPoint[], segments: AnalyticsDominanceSegment[
     return [];
   }
 
-  const totalDistance = loop.slice(1).reduce((sum, point, index) => sum + distanceBetween(loop[index], point), 0);
+  const totalDistance = trackDistance(loop);
   const visibleSegments = segments.slice(0, markerLimit);
 
   return visibleSegments.map((segment, index) => ({
@@ -104,6 +113,43 @@ function buildMarkers(points: TrackPoint[], segments: AnalyticsDominanceSegment[
     segment,
     index: index + 1,
   }));
+}
+
+function trackDistance(points: TrackPoint[]) {
+  return points.slice(1).reduce((sum, point, index) => sum + distanceBetween(points[index], point), 0);
+}
+
+function pathFromPoints(points: TrackPoint[]) {
+  if (points.length === 0) {
+    return "";
+  }
+
+  return points.map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(2)} ${point.y.toFixed(2)}`).join(" ");
+}
+
+function buildDominanceSlices(points: TrackPoint[], segments: AnalyticsDominanceSegment[]): TrackSlice[] {
+  const loop = closeLoop(points);
+  if (loop.length < 2 || segments.length === 0) {
+    return [];
+  }
+
+  const visibleSegments = segments.slice(0, markerLimit);
+  const totalDistance = trackDistance(loop);
+  const sampleCount = 14;
+
+  return visibleSegments.map((segment, index) => {
+    const start = totalDistance * (index / visibleSegments.length);
+    const end = totalDistance * ((index + 1) / visibleSegments.length);
+    const samples = Array.from({ length: sampleCount }, (_, sampleIndex) => {
+      const ratio = sampleIndex / (sampleCount - 1);
+      return pointAtDistance(loop, start + (end - start) * ratio);
+    });
+
+    return {
+      segment,
+      pathData: pathFromPoints(samples),
+    };
+  });
 }
 
 function ownerClass(segment: AnalyticsDominanceSegment, driverA: string, driverB: string) {
@@ -122,13 +168,14 @@ export function AnalyticsTrackDominanceMap({
   const points = trackData ? parseTrackPoints(trackData.pathData) : [];
   const viewBox = getTrackViewBox(points);
   const markers = buildMarkers(points, segments);
+  const slices = buildDominanceSlices(points, segments);
   const hasTrackGeometry = Boolean(trackData?.pathData && points.length > 2);
 
   return (
     <section className="analytics-page__dominance-map" aria-label="Track dominance map">
       <div className="analytics-page__section-header">
         <span>Track dominance map</span>
-        <h2>{hasTrackGeometry ? "Real circuit geometry." : "Track geometry unavailable."}</h2>
+        <h2>{hasTrackGeometry ? "Real circuit geometry." : "Circuit map unavailable."}</h2>
       </div>
       <div className="analytics-page__map-grid">
         <div className="analytics-track-map">
@@ -142,6 +189,14 @@ export function AnalyticsTrackDominanceMap({
             >
               <path d={trackData?.pathData} className="analytics-track-map__shadow" />
               <path d={trackData?.pathData} className="analytics-track-map__base" />
+              {slices.map((slice) => (
+                <path
+                  key={`slice-${slice.segment.segmentId}`}
+                  d={slice.pathData}
+                  className={`analytics-track-map__slice ${ownerClass(slice.segment, driverA, driverB)}`}
+                  data-sync-id={slice.segment.segmentId}
+                />
+              ))}
               <path d={trackData?.pathData} className="analytics-track-map__line" />
               {markers.map((marker) => (
                 <g
@@ -159,14 +214,14 @@ export function AnalyticsTrackDominanceMap({
             </svg>
           ) : (
             <div className="analytics-track-map__unavailable">
-              <span>Track geometry unavailable</span>
+              <span>Circuit map unavailable</span>
               <strong>{title}</strong>
-              <p>Approximate segment dominance remains available in the list.</p>
+              <p>Segment dominance remains available in the list.</p>
             </div>
           )}
           <div className="analytics-track-map__caption">
-            <span>{hasTrackGeometry ? "FastF1-derived path" : "Track path pending"}</span>
-            <strong>Approximate segment markers</strong>
+            <span>{hasTrackGeometry ? "FastF1-derived path" : "Circuit map unavailable"}</span>
+            <strong>Segment markers</strong>
           </div>
         </div>
         <div className="analytics-page__dominance-board">
@@ -190,5 +245,46 @@ export function AnalyticsTrackDominanceMap({
         </div>
       </div>
     </section>
+  );
+}
+
+export function AnalyticsMiniTrackMap({
+  trackData,
+  segments,
+  driverA,
+  driverB,
+  title,
+  className,
+}: AnalyticsMiniTrackMapProps) {
+  const points = trackData ? parseTrackPoints(trackData.pathData) : [];
+  const viewBox = getTrackViewBox(points);
+  const slices = buildDominanceSlices(points, segments);
+  const hasTrackGeometry = Boolean(trackData?.pathData && points.length > 2);
+
+  return (
+    <div className={`analytics-mini-track${className ? ` ${className}` : ""}`}>
+      {hasTrackGeometry ? (
+        <svg
+          viewBox={viewBox}
+          className="analytics-mini-track__svg"
+          role="img"
+          aria-label={`${title} compact track dominance map for ${driverA} versus ${driverB}`}
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path d={trackData?.pathData} className="analytics-mini-track__shadow" />
+          <path d={trackData?.pathData} className="analytics-mini-track__base" />
+          {slices.map((slice) => (
+            <path
+              key={`mini-slice-${slice.segment.segmentId}`}
+              d={slice.pathData}
+              className={`analytics-mini-track__slice ${ownerClass(slice.segment, driverA, driverB)}`}
+            />
+          ))}
+          <path d={trackData?.pathData} className="analytics-mini-track__line" />
+        </svg>
+      ) : (
+        <div className="analytics-mini-track__empty">Circuit map unavailable</div>
+      )}
+    </div>
   );
 }

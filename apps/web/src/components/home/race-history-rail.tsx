@@ -1,4 +1,5 @@
 import { RaceHistoryCard } from "@/components/home/race-history-card";
+import { HorizontalScrollRail } from "@/components/home/horizontal-scroll-rail";
 import type { RaceHistorySummary } from "@/lib/server/race-history";
 
 type RaceHistoryRailProps = {
@@ -35,15 +36,9 @@ export function RaceHistoryRail({ races, hideHeader = false }: RaceHistoryRailPr
 
       <div className="home-story__body">
         <div className="race-history-rail-shell">
-          <div
-            className="race-history-rail"
-            aria-label="Recent Grands Prix, horizontally scrollable"
-            tabIndex={0}
-          >
-          {races.map((race) => (
-            <RaceHistoryCard key={race.id} race={race} />
-          ))}
-          </div>
+          <HorizontalScrollRail className="race-history-rail" ariaLabel="Recent Grands Prix, horizontally scrollable">
+            {races.map((race) => <RaceHistoryCard key={race.id} race={race} />)}
+          </HorizontalScrollRail>
         </div>
       </div>
     </section>

@@ -391,7 +391,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
             <div className="strategy-command-rail__head">
               <span className="strategy-kicker">Pit wall controls</span>
               <strong>{scenarioPresets[preset].label}</strong>
-              <p>{scenarioPresets[preset].pitch} · {fmtRisk(weatherScenario, safetyCarProbability)}</p>
+              <p>{scenarioPresets[preset].pitch} / {fmtRisk(weatherScenario, safetyCarProbability)}</p>
             </div>
             <div className="strategy-preset-strip">
               {(Object.keys(scenarioPresets) as Array<keyof typeof scenarioPresets>).map((key) => (
@@ -412,7 +412,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
             <div className="strategy-command-rail__footer">
               <div><span>Focus</span><strong>{targetLabel}</strong></div>
               <div><span>Data quality</span><strong>{fmtConfidence(raceProduct?.overview.confidenceScore)}</strong></div>
-              <button type="button" className="strategy-run-button" onClick={() => void runSimulation()} disabled={loading || simulating || !selectedTargetId}>{simulating ? "Running scenario…" : "Run scenario"}</button>
+              <button type="button" className="strategy-run-button" onClick={() => void runSimulation()} disabled={loading || simulating || !selectedTargetId}>{simulating ? "Running scenario..." : "Run scenario"}</button>
             </div>
           </StrategyControlRail>
 
@@ -425,8 +425,8 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
               </div>
               <div className="strategy-result-stage__band"><span>Projected band</span><strong>{resultBand}</strong><em>{simulation ? fmtDelta(projectedGain, " positions") : `${scenarioPresets[preset].pitStopCount} planned stops`}</em></div>
               <div className="strategy-call-strip">
-                {precomputedScenarios.slice(0, 3).map((scenario, index) => <div key={scenario.code} className={index === 0 ? "is-leading" : ""}><span>{index === 0 ? "Recommended" : `Option ${index + 1}`}</span><strong>{scenario.label}</strong><em>{fmtBand(scenario.low, scenario.high, null)} · {fmtDelta(scenario.delta, "s")}</em></div>)}
-                {simulation ? <div className="is-live"><span>Live scenario</span><strong>{targetLabel}</strong><em>{resultBand} · {fmtDelta(projectedGain, " pos")}</em></div> : null}
+                {precomputedScenarios.slice(0, 3).map((scenario, index) => <div key={scenario.code} className={index === 0 ? "is-leading" : ""}><span>{index === 0 ? "Recommended" : `Option ${index + 1}`}</span><strong>{scenario.label}</strong><em>{fmtBand(scenario.low, scenario.high, null)} / {fmtDelta(scenario.delta, "s")}</em></div>)}
+                {simulation ? <div className="is-live"><span>Live scenario</span><strong>{targetLabel}</strong><em>{resultBand} / {fmtDelta(projectedGain, " pos")}</em></div> : null}
               </div>
               {error && raceProduct ? <p className="lab-error">{error}</p> : null}
             </StrategyResultStage>
@@ -436,7 +436,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
               <div className="strategy-timeline-grid">{baselinePlan.length > 0 ? <StintTimeline label="Baseline race" plan={baselinePlan} totalLaps={totalLaps} /> : null}<StintTimeline label="Active scenario" plan={scenarioPlan} totalLaps={totalLaps} active /></div>
               <div className="strategy-window-strip">
                 {targetPitWindows.flatMap((entrant) => entrant.windows.map((window) => (
-                  <div key={`${entrant.driverId}-${window.scenarioCode}-${window.stopNumber}`}><span>{entrant.fullName} · Stop {window.stopNumber}</span><strong>Laps {window.windowStartLap ?? "--"}–{window.windowEndLap ?? "--"}</strong><em>{window.compoundOut ?? "Current"} → {window.compoundIn ?? "next"}</em></div>
+                  <div key={`${entrant.driverId}-${window.scenarioCode}-${window.stopNumber}`}><span>{entrant.fullName} / Stop {window.stopNumber}</span><strong>Laps {window.windowStartLap ?? "--"}-{window.windowEndLap ?? "--"}</strong><em>{window.compoundOut ?? "Current"} to {window.compoundIn ?? "next"}</em></div>
                 )))}
               </div>
             </StrategyStintLanes>
@@ -445,7 +445,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
               <div className="strategy-console-band__head"><div><span className="strategy-kicker">Position transition</span><h3>{simulation ? "Scenario movement" : "Baseline target range"}</h3></div><strong>{targetLabel}</strong></div>
               <div className="strategy-position-lanes">
                 {simulation && liveTransitionBands.length > 0 ? liveTransitionBands.map((band) => (
-                  <div key={band.driverId} className={`strategy-position-lane strategy-position-lane--${band.transition}`}><span>{band.fullName}</span><div><i /><strong>{band.baselineBand} → {band.projectedBand}</strong></div><em>{band.transition}</em></div>
+                  <div key={band.driverId} className={`strategy-position-lane strategy-position-lane--${band.transition}`}><span>{band.fullName}</span><div><i /><strong>{band.baselineBand} to {band.projectedBand}</strong></div><em>{band.transition}</em></div>
                 )) : targetEntrants.map((entrant) => (
                   <div key={entrant.driverId} className="strategy-position-lane"><span>{entrant.fullName}</span><div><i /><strong>{fmtBand(entrant.finishBandLow, entrant.finishBandHigh, entrant.projectedFinish)}</strong></div><em>baseline</em></div>
                 ))}

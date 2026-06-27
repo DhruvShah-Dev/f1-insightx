@@ -1,4 +1,5 @@
 import { ConstructorStandingCard } from "@/components/home/constructor-standing-card";
+import { AssetImage } from "@/components/ui/asset-image";
 import type { ConstructorStanding } from "@/lib/server/standings";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
 import type { CSSProperties } from "react";
@@ -18,27 +19,41 @@ type ConstructorStandingsSectionProps = {
 
 type ConstructorOrderRowProps = {
   standing: ConstructorStanding;
-  leaderPoints: number;
 };
 
-function ConstructorOrderRow({ standing, leaderPoints }: ConstructorOrderRowProps) {
+function ConstructorOrderRow({ standing }: ConstructorOrderRowProps) {
   const team = getTeamAsset(standing.constructorId);
-  const gap = Math.max(0, leaderPoints - standing.points);
+  const plate = team.badgePlate ?? "default";
 
   return (
     <li
-      className="constructor-order-row"
+      className={`constructor-order-row constructor-order-row--${plate}`}
       style={
         {
           "--team-primary": team.primary,
           "--team-secondary": team.secondary,
           "--team-accent": team.accent,
+          "--team-logo-contrast": team.badgeContrastColor ?? team.secondary,
         } as CSSProperties
       }
     >
       <span className="constructor-order-row__rank">P{standing.standingPosition}</span>
       <span className="constructor-order-row__team">
-        <span className="constructor-order-row__code">{team.shortLabel}</span>
+        <span className={`constructor-order-row__logo-plate constructor-order-row__logo-plate--${plate}`} aria-hidden="true">
+          {team.badgeAssetPath ? (
+            <AssetImage
+              src={team.badgeAssetPath}
+              fallbackSrc={team.fallbackImagePath}
+              alt=""
+              fill
+              className="constructor-order-row__logo"
+              sizes="54px"
+              style={{ objectFit: "contain" }}
+            />
+          ) : (
+            <span className="constructor-order-row__logo-fallback">{team.shortLabel}</span>
+          )}
+        </span>
         <strong>{team.label}</strong>
       </span>
       <span className="constructor-order-row__metric">
@@ -48,10 +63,6 @@ function ConstructorOrderRow({ standing, leaderPoints }: ConstructorOrderRowProp
       <span className="constructor-order-row__metric">
         <small>Wins</small>
         <strong>{standing.wins}</strong>
-      </span>
-      <span className="constructor-order-row__gap">
-        <small>Gap</small>
-        <strong>{gap === 0 ? "Leader" : `-${gap}`}</strong>
       </span>
     </li>
   );
@@ -81,7 +92,6 @@ export function ConstructorStandingsSection({
   );
   const podiumTeams = sortedItems.slice(0, 3);
   const fieldTeams = sortedItems.slice(3);
-  const leaderPoints = podiumTeams[0]?.points ?? 0;
 
   return (
     <section className="constructor-standings">
@@ -120,7 +130,6 @@ export function ConstructorStandingsSection({
                 <ConstructorOrderRow
                   key={standing.constructorId}
                   standing={standing}
-                  leaderPoints={leaderPoints}
                 />
               ))}
             </ol>

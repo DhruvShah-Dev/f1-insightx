@@ -12,7 +12,6 @@ export function AppFooter() {
       <nav className="app-footer__links" aria-label="Footer">
         <Link href="/predictions">Race Week</Link>
         <Link href="/lab">Strategy Lab</Link>
-        <Link href="/analytics">Analytics</Link>
         <Link href="/race-analysis">Race Analysis</Link>
         <Link href="/privacy">Privacy</Link>
         <Link href="/terms">Terms</Link>

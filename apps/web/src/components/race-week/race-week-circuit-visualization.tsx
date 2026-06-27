@@ -35,6 +35,8 @@ function closeOpenTrackPath(pathData: string) {
 
 function CircuitCallout({ callout }: { callout: CircuitDataCallout }) {
   const boxHeight = 22;
+  const visualLabel = callout.displayLabel ?? callout.label;
+  const titleLabel = callout.accessibilityLabel ?? callout.label;
   const lineEndX =
     callout.labelPosition.x > callout.anchor.x
       ? callout.labelPosition.x
@@ -43,7 +45,7 @@ function CircuitCallout({ callout }: { callout: CircuitDataCallout }) {
 
   return (
     <g className={`race-week-circuit-callout race-week-circuit-callout--${callout.kind}`}>
-      <title>{callout.label}</title>
+      <title>{titleLabel}</title>
       <line x1={callout.anchor.x} y1={callout.anchor.y} x2={lineEndX} y2={lineEndY} />
       <circle cx={callout.anchor.x} cy={callout.anchor.y} r="5" />
       <rect
@@ -54,7 +56,7 @@ function CircuitCallout({ callout }: { callout: CircuitDataCallout }) {
         rx="2"
       />
       <text x={callout.labelPosition.x + 8} y={callout.labelPosition.y + 14}>
-        {callout.label}
+        {visualLabel}
       </text>
     </g>
   );

@@ -6,7 +6,8 @@ export type TeamAsset = {
   secondary: string;
   accent: string;
   badgeAssetPath: string | null;
-  badgePlate?: "default" | "light";
+  badgePlate?: "default" | "dark" | "light" | "gold";
+  badgeContrastColor?: string;
   carImagePath: string | null;
   carImageAlt: string;
   fallbackImagePath: string;
@@ -16,6 +17,7 @@ export type TeamAsset = {
 
 export type CircuitAsset = {
   id: string;
+  displayName: string;
   countryCode: string;
   region: string;
   layoutAssetPath: string | null;
@@ -44,6 +46,7 @@ const fallbackTeam: TeamAsset = {
 
 const fallbackCircuit: CircuitAsset = {
   id: "default",
+  displayName: "Circuit pending",
   countryCode: "--",
   region: "Circuit",
   layoutAssetPath: null,
@@ -70,9 +73,26 @@ export const CURRENT_2026_TEAM_IDS = [
 ] as const;
 
 const teamAliases: Record<string, string> = {
+  "aston martin": "aston_martin",
+  "aston_martin": "aston_martin",
+  "red bull": "red_bull",
+  "red bull racing": "red_bull",
+  "red_bull_racing": "red_bull",
+  "mclaren": "mclaren",
+  "mercedes": "mercedes",
+  "ferrari": "ferrari",
+  "haas": "haas",
+  "haas f1 team": "haas",
   rb: "racing_bulls",
   alphatauri: "racing_bulls",
   haas_f1_team: "haas",
+  "racing bulls": "racing_bulls",
+  "racing_bulls": "racing_bulls",
+  "alpine": "alpine",
+  "audi": "audi",
+  "williams": "williams",
+  "williams racing": "williams",
+  "cadillac": "cadillac",
 };
 
 const teamAssetMap: Record<string, TeamAsset> = {
@@ -84,6 +104,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     secondary: "#7ef5e7",
     accent: "#d9dde3",
     badgeAssetPath: "/assets/teams/logos/mercedes.svg",
+    badgePlate: "dark",
+    badgeContrastColor: "#d9dde3",
     carImagePath: "/assets/teams/2026/mercedes.webp",
     carImageAlt: "Mercedes AMG Petronas 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -97,10 +119,12 @@ const teamAssetMap: Record<string, TeamAsset> = {
     secondary: "#ffda59",
     accent: "#ffffff",
     badgeAssetPath: "/assets/teams/logos/ferrari.svg",
+    badgePlate: "gold",
+    badgeContrastColor: "#ffda59",
     carImagePath: "/assets/teams/2026/ferrari.webp",
     carImageAlt: "Scuderia Ferrari 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
-    imagePosition: "center 48%",
+    imagePosition: "center center",
   },
   mclaren: {
     id: "mclaren",
@@ -111,10 +135,11 @@ const teamAssetMap: Record<string, TeamAsset> = {
     accent: "#ffffff",
     badgeAssetPath: "/assets/teams/logos/mclaren.svg",
     badgePlate: "light",
+    badgeContrastColor: "#ff8700",
     carImagePath: "/assets/teams/2026/mclaren.webp",
     carImageAlt: "McLaren 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
-    imagePosition: "center 54%",
+    imagePosition: "center 52%",
   },
   haas: {
     id: "haas",
@@ -124,6 +149,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     secondary: "#ff3b30",
     accent: "#ffffff",
     badgeAssetPath: "/assets/teams/logos/haas.svg",
+    badgePlate: "light",
+    badgeContrastColor: "#ffffff",
     carImagePath: "/assets/teams/2026/haas.webp",
     carImageAlt: "Haas F1 Team 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -137,6 +164,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     secondary: "#f5c542",
     accent: "#dc143c",
     badgeAssetPath: "/assets/teams/logos/red-bull.svg",
+    badgePlate: "dark",
+    badgeContrastColor: "#f5c542",
     carImagePath: "/assets/teams/2026/red-bull.webp",
     carImageAlt: "Oracle Red Bull Racing 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -150,6 +179,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     secondary: "#d7dce4",
     accent: "#ffffff",
     badgeAssetPath: null,
+    badgePlate: "dark",
+    badgeContrastColor: "#d7dce4",
     carImagePath: "/assets/teams/2026/racing-bulls.webp",
     carImageAlt: "Racing Bulls 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -163,6 +194,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     secondary: "#ff4db8",
     accent: "#dfe6ee",
     badgeAssetPath: null,
+    badgePlate: "dark",
+    badgeContrastColor: "#dfe6ee",
     carImagePath: "/assets/teams/2026/alpine.webp",
     carImageAlt: "BWT Alpine 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -177,6 +210,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     accent: "#ffffff",
     badgeAssetPath: "/assets/teams/logos/audi.svg",
     badgePlate: "light",
+    badgeContrastColor: "#eceff4",
     carImagePath: "/assets/teams/2026/audi.webp",
     carImageAlt: "Audi 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -191,6 +225,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     accent: "#ffffff",
     badgeAssetPath: "/assets/teams/logos/williams.svg",
     badgePlate: "light",
+    badgeContrastColor: "#8fbeff",
     carImagePath: "/assets/teams/2026/williams.webp",
     carImageAlt: "Williams Racing 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -205,6 +240,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     accent: "#8cb4ff",
     badgeAssetPath: "/assets/teams/logos/cadillac.svg",
     badgePlate: "light",
+    badgeContrastColor: "#f5f7fb",
     carImagePath: "/assets/teams/2026/cadillac.webp",
     carImageAlt: "Cadillac 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -219,6 +255,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     accent: "#ced4db",
     badgeAssetPath: "/assets/teams/logos/aston-martin.svg",
     badgePlate: "light",
+    badgeContrastColor: "#7ad7c8",
     carImagePath: "/assets/teams/2026/aston-martin.webp",
     carImageAlt: "Aston Martin Aramco 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
@@ -253,6 +290,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
 const circuitAssetMap: Record<string, CircuitAsset> = {
   bahrain: {
     id: "bahrain",
+    displayName: "Bahrain International Circuit",
     countryCode: "BH",
     region: "Sakhir",
     layoutAssetPath: "/assets/circuits/bahrain.svg",
@@ -266,6 +304,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   jeddah: {
     id: "jeddah",
+    displayName: "Jeddah Corniche Circuit",
     countryCode: "SA",
     region: "Jeddah",
     layoutAssetPath: "/assets/circuits/jeddah.svg",
@@ -278,6 +317,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   albert_park: {
     id: "albert_park",
+    displayName: "Albert Park Circuit",
     countryCode: "AU",
     region: "Melbourne",
     layoutAssetPath: "/assets/circuits/albert_park.svg",
@@ -290,6 +330,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   monaco: {
     id: "monaco",
+    displayName: "Circuit de Monaco",
     countryCode: "MC",
     region: "Monte Carlo",
     layoutAssetPath: "/assets/circuits/monaco.svg",
@@ -302,6 +343,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   silverstone: {
     id: "silverstone",
+    displayName: "Silverstone Circuit",
     countryCode: "GB",
     region: "Silverstone",
     layoutAssetPath: "/assets/circuits/silverstone.svg",
@@ -314,6 +356,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   shanghai: {
     id: "shanghai",
+    displayName: "Shanghai International Circuit",
     countryCode: "CN",
     region: "Shanghai",
     layoutAssetPath: null,
@@ -326,6 +369,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   miami: {
     id: "miami",
+    displayName: "Miami International Autodrome",
     countryCode: "US",
     region: "Miami",
     layoutAssetPath: null,
@@ -338,6 +382,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   suzuka: {
     id: "suzuka",
+    displayName: "Suzuka Circuit",
     countryCode: "JP",
     region: "Suzuka",
     layoutAssetPath: null,
@@ -350,6 +395,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   monza: {
     id: "monza",
+    displayName: "Autodromo Nazionale Monza",
     countryCode: "IT",
     region: "Monza",
     layoutAssetPath: null,
@@ -362,6 +408,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   marina_bay: {
     id: "marina_bay",
+    displayName: "Marina Bay Street Circuit",
     countryCode: "SG",
     region: "Singapore",
     layoutAssetPath: null,
@@ -374,6 +421,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   villeneuve: {
     id: "villeneuve",
+    displayName: "Circuit Gilles Villeneuve",
     countryCode: "CA",
     region: "Montreal",
     layoutAssetPath: null,
@@ -386,6 +434,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   zandvoort: {
     id: "zandvoort",
+    displayName: "Circuit Zandvoort",
     countryCode: "NL",
     region: "Zandvoort",
     layoutAssetPath: null,
@@ -398,6 +447,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   catalunya: {
     id: "catalunya",
+    displayName: "Circuit de Barcelona-Catalunya",
     countryCode: "ES",
     region: "Barcelona",
     layoutAssetPath: null,
@@ -410,6 +460,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   hungaroring: {
     id: "hungaroring",
+    displayName: "Hungaroring",
     countryCode: "HU",
     region: "Budapest",
     layoutAssetPath: null,
@@ -422,6 +473,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   spa: {
     id: "spa",
+    displayName: "Circuit de Spa-Francorchamps",
     countryCode: "BE",
     region: "Spa",
     layoutAssetPath: null,
@@ -434,6 +486,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   baku: {
     id: "baku",
+    displayName: "Baku City Circuit",
     countryCode: "AZ",
     region: "Baku",
     layoutAssetPath: null,
@@ -446,6 +499,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   yas_marina: {
     id: "yas_marina",
+    displayName: "Yas Marina Circuit",
     countryCode: "AE",
     region: "Yas Marina",
     layoutAssetPath: null,
@@ -458,6 +512,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   losail: {
     id: "losail",
+    displayName: "Lusail International Circuit",
     countryCode: "QA",
     region: "Lusail",
     layoutAssetPath: null,
@@ -470,6 +525,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   vegas: {
     id: "vegas",
+    displayName: "Las Vegas Strip Circuit",
     countryCode: "US",
     region: "Las Vegas",
     layoutAssetPath: null,
@@ -482,6 +538,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   red_bull_ring: {
     id: "red_bull_ring",
+    displayName: "Red Bull Ring",
     countryCode: "AT",
     region: "Spielberg",
     layoutAssetPath: null,
@@ -494,6 +551,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   imola: {
     id: "imola",
+    displayName: "Autodromo Enzo e Dino Ferrari",
     countryCode: "IT",
     region: "Imola",
     layoutAssetPath: null,
@@ -506,6 +564,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   interlagos: {
     id: "interlagos",
+    displayName: "Autodromo Jose Carlos Pace",
     countryCode: "BR",
     region: "Sao Paulo",
     layoutAssetPath: null,
@@ -518,6 +577,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   americas: {
     id: "americas",
+    displayName: "Circuit of the Americas",
     countryCode: "US",
     region: "Austin",
     layoutAssetPath: null,
@@ -530,6 +590,7 @@ const circuitAssetMap: Record<string, CircuitAsset> = {
   },
   rodriguez: {
     id: "rodriguez",
+    displayName: "Autodromo Hermanos Rodriguez",
     countryCode: "MX",
     region: "Mexico City",
     layoutAssetPath: null,
@@ -547,7 +608,17 @@ export function getTeamAsset(teamId: string | null | undefined): TeamAsset {
     return fallbackTeam;
   }
 
-  const normalizedTeamId = teamAliases[teamId] ?? teamId;
+  const teamKey = String(teamId).trim();
+  const slugTeamId = teamKey
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+  const labelMatch = Object.values(teamAssetMap).find((team) => (
+    team.label.toLowerCase() === teamKey.toLowerCase()
+    || team.shortLabel.toLowerCase() === teamKey.toLowerCase()
+  ));
+  const normalizedTeamId = teamAliases[teamKey] ?? teamAliases[teamKey.toLowerCase()] ?? teamAliases[slugTeamId] ?? labelMatch?.id ?? slugTeamId;
 
   return teamAssetMap[normalizedTeamId] ?? {
     ...fallbackTeam,

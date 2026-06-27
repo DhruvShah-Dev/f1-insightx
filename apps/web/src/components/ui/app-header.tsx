@@ -12,7 +12,6 @@ const navItems = [
   { href: "/predictions", label: "Race Week" },
   { href: "/picks", label: "Picks" },
   { href: "/lab", label: "Strategy Lab" },
-  { href: "/analytics", label: "Analytics" },
   { href: "/race-analysis", label: "Race Analysis" },
   { href: "/championship", label: "Championship" },
 ];
@@ -20,6 +19,7 @@ const navItems = [
 export function AppHeader({ accountSlot }: AppHeaderProps) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isAnalyticsPage = pathname === "/race-analysis" || pathname.startsWith("/race-analysis/");
 
   const renderNavLinks = (closeOnNavigate = false) => navItems.map((item) => {
     const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -38,7 +38,7 @@ export function AppHeader({ accountSlot }: AppHeaderProps) {
   });
 
   return (
-    <header className="app-header">
+    <header className={`app-header${isAnalyticsPage ? " app-header--analytics" : ""}`}>
       <Link href="/" className="app-header__brand" aria-label="F1 InsightX home">
         <span className="app-header__mark" aria-hidden="true" />
         <span>
@@ -62,9 +62,10 @@ export function AppHeader({ accountSlot }: AppHeaderProps) {
           className="app-header__menu-button"
           aria-controls="app-header-menu"
           aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsMenuOpen((current) => !current)}
         >
-          Menu
+          {isMenuOpen ? "Close" : "Menu"}
         </button>
       </div>
 

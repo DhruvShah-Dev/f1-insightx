@@ -15,6 +15,7 @@ export type CurrentDriverMeta = {
   photoPosition?: string;
   photoFit?: "cover" | "contain";
   photoScale?: number;
+  photoTranslateX?: number;
   sourceTag?: string;
 };
 
@@ -68,13 +69,15 @@ const currentDriverMap: Record<string, CurrentDriverMeta> = {
     photoScale: 1.04,
   }),
   antonelli: createDriver("antonelli", "Kimi Antonelli", "Kimi", "Antonelli", "mercedes", "Mercedes", "ANT", "Italian", "mercedes", "andant01", {
-    photoScale: 1.04,
+    photoScale: 1,
+    photoTranslateX: -24,
   }),
   leclerc: createDriver("leclerc", "Charles Leclerc", "Charles", "Leclerc", "ferrari", "Ferrari", "LEC", "Monegasque", "ferrari", "chalec01", {
     photoScale: 1.03,
   }),
   hamilton: createDriver("hamilton", "Lewis Hamilton", "Lewis", "Hamilton", "ferrari", "Ferrari", "HAM", "British", "ferrari", "lewham01", {
-    photoScale: 1.03,
+    photoScale: 1,
+    photoTranslateX: -22,
   }),
   norris: createDriver("norris", "Lando Norris", "Lando", "Norris", "mclaren", "McLaren", "NOR", "British", "mclaren", "lannor01", {
     photoScale: 1.01,
@@ -149,12 +152,30 @@ export function getCurrentDriverMeta(driverId: string | null | undefined): Curre
     return fallbackDriver;
   }
 
-  return currentDriverMap[driverId] ?? {
+  const safeDriverId = String(driverId);
+
+  return currentDriverMap[safeDriverId] ?? {
     ...fallbackDriver,
-    driverId,
-    displayName: driverId.replaceAll("_", " "),
-    lastName: driverId.replaceAll("_", " "),
-    altText: `${driverId.replaceAll("_", " ")} portrait placeholder`,
+    driverId: safeDriverId,
+    displayName: safeDriverId.replaceAll("_", " "),
+    lastName: safeDriverId.replaceAll("_", " "),
+    altText: `${safeDriverId.replaceAll("_", " ")} portrait placeholder`,
+  };
+}
+
+export function getCurrentDriverMetaByCode(code: string | null | undefined): CurrentDriverMeta {
+  if (!code) {
+    return fallbackDriver;
+  }
+
+  const normalizedCode = String(code).trim().toUpperCase();
+  return Object.values(currentDriverMap).find((driver) => driver.driverCode === normalizedCode) ?? {
+    ...fallbackDriver,
+    driverId: normalizedCode.toLowerCase(),
+    displayName: normalizedCode,
+    lastName: normalizedCode,
+    driverCode: normalizedCode || fallbackDriver.driverCode,
+    altText: `${normalizedCode || "Driver"} portrait placeholder`,
   };
 }
 
