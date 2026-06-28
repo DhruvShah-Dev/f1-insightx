@@ -1,15 +1,23 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import subprocess
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+
+try:
+    from .race_week_refresh_gate import active_race_window
+except ImportError:
+    from race_week_refresh_gate import active_race_window
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SEASON_STATE_PATH = ROOT / "data" / "season_state.json"
+RACES_PATH = ROOT / "data" / "curated" / "races.csv"
 DEFAULT_SESSIONS = ("FP1", "FP2", "FP3", "Q")
 SUPPORTED_SESSIONS = ("FP1", "FP2", "FP3", "Q", "SQ", "S", "R")
 
@@ -33,7 +41,22 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def load_active_race_from_calendar(now: datetime | None = None) -> dict[str, Any] | None:
+    if not RACES_PATH.exists():
+        return None
+
+    with RACES_PATH.open("r", encoding="utf-8", newline="") as handle:
+        races = list(csv.DictReader(handle))
+
+    window = active_race_window(races, now or datetime.now(UTC).replace(microsecond=0))
+    return window.race if window else None
+
+
 def load_current_race_week() -> dict[str, Any]:
+    active_race = load_active_race_from_calendar()
+    if active_race is not None:
+        return active_race
+
     if not SEASON_STATE_PATH.exists():
         raise SystemExit("data/season_state.json is missing; build season state before refreshing sessions.")
 

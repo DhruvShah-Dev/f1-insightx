@@ -47,7 +47,7 @@ export function AssetImage({
     setCurrentSrc(src);
   }, [src]);
 
-  const shouldBypassOptimizer = unoptimized ?? currentSrc.startsWith("/assets/");
+  const shouldBypassOptimizer = unoptimized ?? currentSrc.endsWith(".svg");
 
   return (
     <Image

@@ -39,7 +39,7 @@ export function apiError({ status, code, message, details, headers }: ApiErrorOp
   );
 }
 
-export function apiOk<T>(data: T, init?: { headers?: HeadersInit }) {
+export function apiOk<T>(data: T, init?: { headers?: HeadersInit; status?: number }) {
   return NextResponse.json({
     ok: true,
     data,

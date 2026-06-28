@@ -1,3 +1,4 @@
+import { AccountCinematicBackdrop } from "@/components/account/account-cinematic-backdrop";
 import { AccountAuthPanel } from "@/components/account/account-auth-panel";
 import { ProfilePageContent } from "@/components/account/profile-page-content";
 import { SiteFooter } from "@/components/ui/site-footer";
@@ -46,6 +47,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
     logServerError("page:account:load-user", error);
     return (
       <main className="subpage-shell account-page">
+        <AccountCinematicBackdrop />
         <StatePanel
           eyebrow="Account"
           title="The account screen could not verify your current session."
@@ -77,6 +79,7 @@ export default async function AccountPage({ searchParams }: AccountPageProps) {
 
   return (
     <main className="subpage-shell account-page">
+      <AccountCinematicBackdrop />
       <AccountAuthPanel
         hasSupabaseAuth={hasSupabaseAuth}
         hasProfilePersistence={hasProfilePersistence}

@@ -3,83 +3,69 @@ import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { cache } from "react";
 import { parse } from "csv-parse/sync";
+import { getRepoDataPath, getRepoDataRoot, getTestFixturePath, getTestFixtureRoot, isTestRun } from "@/lib/server/data-paths";
 import { createAppError } from "@/lib/errors/app-error";
 
 type CsvRow = Record<string, string>;
 
-function isTestRun() {
-  return process.env.NODE_ENV === "test" || process.env.npm_lifecycle_event === "test";
-}
-
 function getAnalyticsTestFixturePath(csvName: string) {
-  const configuredTestRoot = process.env.F1_INSIGHTX_TEST_DATA_ROOT;
-  const testRoot = configuredTestRoot
-    ? path.resolve(/*turbopackIgnore: true*/ process.cwd(), configuredTestRoot)
-    : path.join(/*turbopackIgnore: true*/ process.cwd(), "test-fixtures", "data");
-  return path.join(testRoot, "analytics", csvName);
-}
-
-function getTestFixtureRoot() {
-  const configuredTestRoot = process.env.F1_INSIGHTX_TEST_DATA_ROOT;
-  return configuredTestRoot
-    ? path.resolve(/*turbopackIgnore: true*/ process.cwd(), configuredTestRoot)
-    : path.join(/*turbopackIgnore: true*/ process.cwd(), "test-fixtures", "data");
+  return getTestFixturePath("analytics", csvName);
 }
 
 export const csvFileMap = {
-  "analytics.driverComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_driver_comparison.csv"),
-  "analytics.brakingComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_braking_comparison.csv"),
-  "analytics.energyProxyComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_energy_proxy_comparison.csv"),
-  "analytics.sessionIndex": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_session_index.csv"),
-  "analytics.segmentComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_segment_comparison.csv"),
-  "analytics.straightComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_straight_comparison.csv"),
-  "analytics.throttleComparison": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_throttle_comparison.csv"),
-  "analytics.trackSummary": path.join(process.cwd(), "..", "..", "data", "analytics", "analytics_track_summary.csv"),
-  "curated.circuits": path.join(process.cwd(), "..", "..", "data", "curated", "circuits.csv"),
-  "curated.constructorStandings": path.join(process.cwd(), "..", "..", "data", "curated", "constructor_standings.csv"),
-  "curated.constructors": path.join(process.cwd(), "..", "..", "data", "curated", "constructors.csv"),
-  "curated.driverStandings": path.join(process.cwd(), "..", "..", "data", "curated", "driver_standings.csv"),
-  "curated.drivers": path.join(process.cwd(), "..", "..", "data", "curated", "drivers.csv"),
-  "curated.fantasyInputs": path.join(process.cwd(), "..", "..", "data", "curated", "fantasy_inputs.csv"),
-  "curated.modelFeatures": path.join(process.cwd(), "..", "..", "data", "curated", "model_features.csv"),
-  "curated.predictionSnapshots": path.join(process.cwd(), "..", "..", "data", "curated", "prediction_snapshots.csv"),
-  "curated.qualifyingResults": path.join(process.cwd(), "..", "..", "data", "curated", "qualifying_results.csv"),
-  "curated.raceResults": path.join(process.cwd(), "..", "..", "data", "curated", "race_results.csv"),
-  "curated.raceWeekContext": path.join(process.cwd(), "..", "..", "data", "curated", "race_week_context.csv"),
-  "curated.races": path.join(process.cwd(), "..", "..", "data", "curated", "races.csv"),
-  "curated.sprintResults": path.join(process.cwd(), "..", "..", "data", "curated", "sprint_results.csv"),
-  "curated.strategyProfiles": path.join(process.cwd(), "..", "..", "data", "curated", "strategy_profiles.csv"),
-  "predictions.racePickChallenges": path.join(process.cwd(), "..", "..", "data", "predictions", "race_pick_challenges.csv"),
-  "predictions.racePitStopResults": path.join(process.cwd(), "..", "..", "data", "predictions", "race_pit_stop_results.csv"),
-  "raceWeek.constructorBoard": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_constructor_board.csv"),
-  "raceWeek.driverBoard": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_driver_board.csv"),
-  "raceWeek.overview": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_overview.csv"),
-  "raceWeek.spainQualifyingPrediction": path.join(process.cwd(), "..", "..", "data", "race_week", "spain_qualifying_prediction.csv"),
-  "raceWeek.storylines": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_storylines.csv"),
-  "raceWeek.strategy": path.join(process.cwd(), "..", "..", "data", "race_week", "race_week_strategy.csv"),
-  "raceWeek.sessionPaceSummary": path.join(process.cwd(), "..", "..", "data", "race_week", "session_pace_summary.csv"),
-  "raceWeek.weatherRiskSummary": path.join(process.cwd(), "..", "..", "data", "race_week", "weather_risk_summary.csv"),
-  "raceAnalysis.index": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_index.csv"),
-  "raceAnalysis.links": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_links.csv"),
-  "raceAnalysis.neutralizationPhases": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_neutralization_phases.csv"),
-  "raceAnalysis.paceEvolution": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_pace_evolution.csv"),
-  "raceAnalysis.pitStrategy": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_pit_strategy.csv"),
-  "raceAnalysis.positionChanges": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_position_changes.csv"),
-  "raceAnalysis.positionSwingEvents": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_position_swing_events.csv"),
-  "raceAnalysis.positionTimeline": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_position_timeline.csv"),
-  "raceAnalysis.stints": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_stints.csv"),
-  "raceAnalysis.storyPoints": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_story_points.csv"),
-  "raceAnalysis.summary": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_summary.csv"),
-  "raceAnalysis.trackStatus": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_track_status.csv"),
-  "raceAnalysis.trafficProxy": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_traffic_proxy.csv"),
-  "raceAnalysis.weatherContext": path.join(process.cwd(), "..", "..", "data", "race_analysis", "race_analysis_weather_context.csv"),
-  "strategyLab.comparison": path.join(process.cwd(), "..", "..", "data", "strategy_lab", "strategy_comparison.csv"),
-  "strategyLab.constructorProfile": path.join(process.cwd(), "..", "..", "data", "strategy_lab", "constructor_strategy_profile.csv"),
-  "strategyLab.driverProfile": path.join(process.cwd(), "..", "..", "data", "strategy_lab", "driver_strategy_profile.csv"),
-  "strategyLab.features": path.join(process.cwd(), "..", "..", "data", "strategy_lab", "strategy_features.csv"),
-  "strategyLab.overview": path.join(process.cwd(), "..", "..", "data", "strategy_lab", "strategy_lab_overview.csv"),
-  "strategyLab.pitWindow": path.join(process.cwd(), "..", "..", "data", "strategy_lab", "pit_window.csv"),
-  "strategyLab.projection": path.join(process.cwd(), "..", "..", "data", "strategy_lab", "race_projection.csv"),
+  "analytics.driverComparison": getRepoDataPath("analytics", "analytics_driver_comparison.csv"),
+  "analytics.brakingComparison": getRepoDataPath("analytics", "analytics_braking_comparison.csv"),
+  "analytics.energyProxyComparison": getRepoDataPath("analytics", "analytics_energy_proxy_comparison.csv"),
+  "analytics.sessionIndex": getRepoDataPath("analytics", "analytics_session_index.csv"),
+  "analytics.segmentComparison": getRepoDataPath("analytics", "analytics_segment_comparison.csv"),
+  "analytics.straightComparison": getRepoDataPath("analytics", "analytics_straight_comparison.csv"),
+  "analytics.throttleComparison": getRepoDataPath("analytics", "analytics_throttle_comparison.csv"),
+  "analytics.trackSummary": getRepoDataPath("analytics", "analytics_track_summary.csv"),
+  "curated.circuits": getRepoDataPath("curated", "circuits.csv"),
+  "curated.constructorStandings": getRepoDataPath("curated", "constructor_standings.csv"),
+  "curated.constructors": getRepoDataPath("curated", "constructors.csv"),
+  "curated.driverStandings": getRepoDataPath("curated", "driver_standings.csv"),
+  "curated.drivers": getRepoDataPath("curated", "drivers.csv"),
+  "curated.fantasyInputs": getRepoDataPath("curated", "fantasy_inputs.csv"),
+  "curated.modelFeatures": getRepoDataPath("curated", "model_features.csv"),
+  "curated.predictionSnapshots": getRepoDataPath("curated", "prediction_snapshots.csv"),
+  "curated.qualifyingResults": getRepoDataPath("curated", "qualifying_results.csv"),
+  "curated.raceResults": getRepoDataPath("curated", "race_results.csv"),
+  "curated.raceWeekContext": getRepoDataPath("curated", "race_week_context.csv"),
+  "curated.races": getRepoDataPath("curated", "races.csv"),
+  "curated.sprintResults": getRepoDataPath("curated", "sprint_results.csv"),
+  "curated.strategyProfiles": getRepoDataPath("curated", "strategy_profiles.csv"),
+  "predictions.racePickChallenges": getRepoDataPath("predictions", "race_pick_challenges.csv"),
+  "predictions.racePitStopResults": getRepoDataPath("predictions", "race_pit_stop_results.csv"),
+  "raceWeek.constructorBoard": getRepoDataPath("race_week", "race_week_constructor_board.csv"),
+  "raceWeek.driverBoard": getRepoDataPath("race_week", "race_week_driver_board.csv"),
+  "raceWeek.overview": getRepoDataPath("race_week", "race_week_overview.csv"),
+  "raceWeek.spainQualifyingPrediction": getRepoDataPath("race_week", "spain_qualifying_prediction.csv"),
+  "raceWeek.storylines": getRepoDataPath("race_week", "race_week_storylines.csv"),
+  "raceWeek.strategy": getRepoDataPath("race_week", "race_week_strategy.csv"),
+  "raceWeek.sessionPaceSummary": getRepoDataPath("race_week", "session_pace_summary.csv"),
+  "raceWeek.weatherRiskSummary": getRepoDataPath("race_week", "weather_risk_summary.csv"),
+  "raceAnalysis.index": getRepoDataPath("race_analysis", "race_analysis_index.csv"),
+  "raceAnalysis.links": getRepoDataPath("race_analysis", "race_analysis_links.csv"),
+  "raceAnalysis.neutralizationPhases": getRepoDataPath("race_analysis", "race_analysis_neutralization_phases.csv"),
+  "raceAnalysis.paceEvolution": getRepoDataPath("race_analysis", "race_analysis_pace_evolution.csv"),
+  "raceAnalysis.pitStrategy": getRepoDataPath("race_analysis", "race_analysis_pit_strategy.csv"),
+  "raceAnalysis.positionChanges": getRepoDataPath("race_analysis", "race_analysis_position_changes.csv"),
+  "raceAnalysis.positionSwingEvents": getRepoDataPath("race_analysis", "race_analysis_position_swing_events.csv"),
+  "raceAnalysis.positionTimeline": getRepoDataPath("race_analysis", "race_analysis_position_timeline.csv"),
+  "raceAnalysis.stints": getRepoDataPath("race_analysis", "race_analysis_stints.csv"),
+  "raceAnalysis.storyPoints": getRepoDataPath("race_analysis", "race_analysis_story_points.csv"),
+  "raceAnalysis.summary": getRepoDataPath("race_analysis", "race_analysis_summary.csv"),
+  "raceAnalysis.trackStatus": getRepoDataPath("race_analysis", "race_analysis_track_status.csv"),
+  "raceAnalysis.trafficProxy": getRepoDataPath("race_analysis", "race_analysis_traffic_proxy.csv"),
+  "raceAnalysis.weatherContext": getRepoDataPath("race_analysis", "race_analysis_weather_context.csv"),
+  "strategyLab.comparison": getRepoDataPath("strategy_lab", "strategy_comparison.csv"),
+  "strategyLab.constructorProfile": getRepoDataPath("strategy_lab", "constructor_strategy_profile.csv"),
+  "strategyLab.driverProfile": getRepoDataPath("strategy_lab", "driver_strategy_profile.csv"),
+  "strategyLab.features": getRepoDataPath("strategy_lab", "strategy_features.csv"),
+  "strategyLab.overview": getRepoDataPath("strategy_lab", "strategy_lab_overview.csv"),
+  "strategyLab.pitWindow": getRepoDataPath("strategy_lab", "pit_window.csv"),
+  "strategyLab.projection": getRepoDataPath("strategy_lab", "race_projection.csv"),
 } as const;
 
 export type CsvFileKey = keyof typeof csvFileMap;
@@ -110,7 +96,7 @@ function getCsvFileUrl(fileKey: string) {
   }
 
   if (isTestRun()) {
-    const repoDataRoot = path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data");
+    const repoDataRoot = getRepoDataRoot();
     const relativeFixturePath = path.relative(repoDataRoot, fileUrl);
     const fixtureUrl = path.join(getTestFixtureRoot(), relativeFixturePath);
     if (!relativeFixturePath.startsWith("..") && !path.isAbsolute(relativeFixturePath) && existsSync(fixtureUrl)) {

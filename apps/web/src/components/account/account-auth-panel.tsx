@@ -3,6 +3,7 @@
 import { startTransition, useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { AssetImage } from "@/components/ui/asset-image";
 import { LegalLinks } from "@/components/legal/legal-links";
 import { getSupabaseBrowserClient } from "@/lib/auth/supabase-browser";
 import { getNetworkErrorMessage } from "@/lib/errors/client";
@@ -201,31 +202,56 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
     }
   };
 
-  const panelClassName = surface === "modal" ? "account-shell account-shell--modal" : "account-shell";
+  const panelClassName = surface === "modal" ? "account-shell account-shell--modal" : "account-shell account-shell--page";
 
   return (
     <section className={panelClassName}>
       {surface === "page" ? (
         <div className="account-shell__intro">
-          <p className="subpage-eyebrow">Profile Access</p>
-          <h1 className="subpage-title">Enter your F1 profile.</h1>
-          <p className="race-detail__lede">
-            Sign in to return to your profile, or create a new account and finish the rest of your identity inside the product.
-          </p>
-          <div className="account-preview account-preview--gateway">
-            <div className="account-entry__mark account-entry__mark--large" aria-hidden="true">
-              <span className="account-entry__glyph" />
+          <div className="account-access-stage">
+            <div className="account-access-stage__brand">
+              <AssetImage
+                src="/assets/logos/wordmark.svg"
+                fallbackSrc="/assets/logos/minimal-light.svg"
+                alt="F1 InsightX"
+                className="account-access-stage__logo"
+                width={180}
+                height={40}
+                priority
+              />
             </div>
-            <div className="account-preview__copy">
-              <span>Profile destination</span>
-              <strong>One account, one profile</strong>
-              <p>Strategy Lab, Analytics, and your saved identity meet in one place.</p>
+            <h1 className="subpage-title">Enter your F1 profile.</h1>
+            <p className="race-detail__lede">
+              Sign in to return to your profile, or create a new account and finish the rest of your race identity inside the product.
+            </p>
+            <div className="account-access-stage__media" style={{ position: "absolute" }}>
+              <AssetImage
+                src="/assets/teams/2026/ferrari.webp"
+                fallbackSrc="/assets/teams/car-placeholder.svg"
+                alt="Formula 1 car under race-night lights"
+                fill
+                sizes="(max-width: 900px) 100vw, 52vw"
+                priority
+                className="account-access-stage__car"
+                style={{ objectFit: "contain", objectPosition: "center bottom" }}
+              />
+              <div className="account-access-stage__halo" />
+            </div>
+            <div className="account-preview account-preview--gateway">
+              <div className="account-entry__mark account-entry__mark--large" aria-hidden="true">
+                <span className="account-entry__glyph" />
+              </div>
+              <div className="account-preview__copy">
+                <span>Race identity</span>
+                <strong>One account, one profile</strong>
+                <p>Strategy Lab, Analytics, and your saved identity meet in one place.</p>
+              </div>
             </div>
           </div>
         </div>
       ) : null}
 
-      <div className={`account-card ${surface === "modal" ? "account-card--modal" : ""}`}>
+      <div className={`account-card ${surface === "modal" ? "account-card--modal" : "account-card--page"}`}>
         {surface === "modal" ? (
           <div className="account-card__modal-header">
             <div className="account-card__modal-copyblock">

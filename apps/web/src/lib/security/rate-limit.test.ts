@@ -50,3 +50,46 @@ test("production rate limiting warns once when durable Upstash config is missing
     }
   }
 });
+
+test("sensitive production policies fail closed when durable Upstash config is missing", async () => {
+  const originalNodeEnv = process.env.NODE_ENV;
+  const originalUrl = process.env.UPSTASH_REDIS_REST_URL;
+  const originalToken = process.env.UPSTASH_REDIS_REST_TOKEN;
+  const originalWarn = console.warn;
+
+  try {
+    mutableEnv.NODE_ENV = "production";
+    delete process.env.UPSTASH_REDIS_REST_URL;
+    delete process.env.UPSTASH_REDIS_REST_TOKEN;
+    resetRateLimitFallbackWarningsForTests();
+    console.warn = () => {};
+
+    const result = await checkRateLimitAsync(
+      new Request("https://f1-insightx.test/api/account/profile"),
+      RATE_LIMIT_POLICIES.profileWrite,
+      "rate-limit-sensitive-test",
+    );
+
+    assert.equal(result.ok, false);
+    assert.equal(result.remaining, 0);
+    assert.equal(result.headers["Retry-After"], "60");
+  } finally {
+    console.warn = originalWarn;
+    resetRateLimitFallbackWarningsForTests();
+    if (originalNodeEnv === undefined) {
+      delete mutableEnv.NODE_ENV;
+    } else {
+      mutableEnv.NODE_ENV = originalNodeEnv;
+    }
+    if (originalUrl === undefined) {
+      delete process.env.UPSTASH_REDIS_REST_URL;
+    } else {
+      process.env.UPSTASH_REDIS_REST_URL = originalUrl;
+    }
+    if (originalToken === undefined) {
+      delete process.env.UPSTASH_REDIS_REST_TOKEN;
+    } else {
+      process.env.UPSTASH_REDIS_REST_TOKEN = originalToken;
+    }
+  }
+});

@@ -1,6 +1,6 @@
 import { cache } from "react";
 import { readFile } from "node:fs/promises";
-import path from "node:path";
+import { getRepoDataPath } from "@/lib/server/data-paths";
 
 export type SeasonRaceRef = {
   id: string | null;
@@ -56,7 +56,7 @@ export type SeasonState = {
   build_version: string;
 };
 
-const seasonStatePath = path.join(process.cwd(), "..", "..", "data", "season_state.json");
+const seasonStatePath = getRepoDataPath("season_state.json");
 
 export const getSeasonState = cache(async (): Promise<SeasonState | null> => {
   try {

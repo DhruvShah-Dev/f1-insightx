@@ -17,12 +17,15 @@
     "lint": "npm run lint --workspace web",
     "test": "npm run test --workspace web",
     "audit": "npm audit",
-    "audit:prod": "npm audit --omit=dev",
+    "audit:prod": "npm audit --omit=dev --audit-level=high",
     "typecheck": "npx tsc --noEmit --project apps/web/tsconfig.json",
     "data:install": "python -m pip install -r data/requirements.txt",
+    "data:refresh": "python build_canonical_fastf1.py --start-season 2020 --end-season 2026 && python build_telemetry_features.py --start-season 2020 --end-season 2026 && python data/build_strategy_lab_layers.py && python data/build_race_week_layers.py && python data/build_analytics_views.py && python data/build_analytics_indexes.py && python data/build_analytics_telemetry_traces.py && python data/build_race_analysis_views.py && python build_product_manifest.py && python build_season_state.py && python build_product_manifest.py",
     "data:manifest": "python build_product_manifest.py",
     "data:validate": "python validate_product_manifest.py",
-    "data:guard": "python check_generated_artifacts.py"
+    "data:guard": "python check_generated_artifacts.py",
+    "data:package": "python -m data.f1_insightx_data.artifact_package",
+    "release:validate": "python validate_canonical_fastf1.py && python validate_telemetry_features.py && python validate_analytics_views.py && python validate_analytics_telemetry_traces.py && python validate_race_analysis_views.py && python validate_product_manifest.py && python validate_season_state.py && python check_generated_artifacts.py && npm run audit:prod && npm run lint --workspace web && npm run test --workspace web && npm run typecheck && npm run build --workspace web"
   },
   "overrides": {
     "eslint": {

@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-08-red_bull_ring,2026,8,2026-08-red_bull_ring,Austrian Grand Prix,red_bull_ring,red_bull_ring,2026-06-28T13:00:00Z,upcoming,False,2026-07-catalunya,Balanced circuit,High,0.0,0.24571640909090908,2026-06-26T21:32:04Z,race_week_20260626T213204Z,race_week_overview_v2
+2026-08-red_bull_ring,2026,8,2026-08-red_bull_ring,Austrian Grand Prix,red_bull_ring,red_bull_ring,2026-06-28T13:00:00Z,upcoming,False,2026-07-catalunya,Balanced circuit,High,0.0,0.24571640909090908,2026-06-28T13:42:47Z,race_week_20260628T134247Z,race_week_overview_v2

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { AccountCinematicBackdrop } from "@/components/account/account-cinematic-backdrop";
 import { LegalLinks } from "@/components/legal/legal-links";
 import { AppFooter } from "@/components/ui/app-footer";
 import { ACCOUNT_API_ROUTES, buildUsernameCheckUrl, buildUsernameSuggestUrl, readAccountApiData } from "@/lib/account/api";
@@ -169,10 +170,11 @@ export function ProfilePageShell({
   const constructorLabel = selectedConstructor?.label ?? "No constructor selected";
   const driverLabel = selectedDriver?.label ?? "No driver selected";
   const usernameInputDisabled = usernameLocked || !isUsernameEditing;
-  const activeTheme = getProfileTheme(savedProfile?.favoriteConstructorId);
+  const activeTheme = getProfileTheme(constructorId || savedProfile?.favoriteConstructorId);
   const constructorFieldLocked = profileLocked;
   const avatarFieldLocked = profileLocked;
   const constructorLogoMedia = constructorAsset.badgeAssetPath;
+  const constructorCarMedia = constructorAsset.carImagePath ?? constructorAsset.fallbackImagePath;
   const driverIdentityMedia = selectedDriver?.photoPath ?? selectedDriver?.fallbackPhotoPath ?? null;
   const constructorStanding = selectedConstructor ? constructorPositions[selectedConstructor.id] ?? null : null;
   const driverStanding = selectedDriver ? driverPositions[selectedDriver.id] ?? null : null;
@@ -221,20 +223,23 @@ export function ProfilePageShell({
           buildUsernameSuggestUrl({ constructorId, driverId }),
           { signal: controller.signal },
         );
-        const payload = (await response.json().catch(() => null)) as { username?: string; error?: string } | null;
-        if (!response.ok || !payload?.username) {
+        const payload = (await response.json().catch(() => null)) as unknown;
+        const data = readAccountApiData<{ username?: string }>(payload) ?? (
+          payload && typeof payload === "object" ? payload as { username?: string } : null
+        );
+        if (!response.ok || !data?.username) {
           setAvailabilityState("error");
           setAvailabilityMessage("Username suggestion is unavailable right now.");
           return;
         }
 
-        setSuggestedUsername(payload.username);
+        setSuggestedUsername(data.username);
         if (!usernameTouched || !savedProfile?.usernameIsCustom) {
-          setUsername(payload.username);
+          setUsername(data.username);
           setAvailabilityState("available");
           setAvailabilityMessage("Default username generated from your selections.");
           lastUsernameCheckRef.current = {
-            username: payload.username,
+            username: data.username,
             state: "available",
             message: "Default username generated from your selections.",
           };
@@ -276,12 +281,18 @@ export function ProfilePageShell({
       setAvailabilityState("checking");
       try {
         const response = await fetch(buildUsernameCheckUrl(username), { signal: controller.signal });
-        const payload = (await response.json().catch(() => null)) as { available?: boolean; error?: string } | null;
+        const payload = (await response.json().catch(() => null)) as unknown;
+        const data = readAccountApiData<{ available?: boolean; error?: string }>(payload) ?? (
+          payload && typeof payload === "object" ? payload as { available?: boolean; error?: string } : null
+        );
         if (!response.ok) {
           const isValidationFailure = response.status === 400;
           const state = isValidationFailure ? "invalid" : "error";
           const message = isValidationFailure
-            ? payload?.error ?? "That username cannot be used."
+            ? readClientErrorMessage(
+                payload && typeof payload === "object" ? payload as { error?: string | { message?: string } } : null,
+                data?.error ?? "That username cannot be used.",
+              )
             : "Username availability could not be checked right now.";
           setAvailabilityState(state);
           setAvailabilityMessage(message);
@@ -289,7 +300,7 @@ export function ProfilePageShell({
           return;
         }
 
-        const available = Boolean(payload?.available);
+        const available = Boolean(data?.available);
         const state = available ? "available" : "taken";
         const message = available
           ? normalizedUsername === suggestedUsername.toLowerCase()
@@ -418,12 +429,16 @@ export function ProfilePageShell({
     setErrorMessage("");
     try {
       const response = await fetch("/auth/sign-out", { method: "POST" });
-      const payload = (await response.json().catch(() => null)) as { redirectTo?: string; error?: string | { message?: string } } | null;
+      const payload = (await response.json().catch(() => null)) as unknown;
       if (!response.ok) {
-        setErrorMessage(readClientErrorMessage(payload, "Unable to sign out right now."));
+        setErrorMessage(readClientErrorMessage(
+          payload && typeof payload === "object" ? payload as { error?: string | { message?: string } } : null,
+          "Unable to sign out right now.",
+        ));
         return;
       }
-      router.push(payload?.redirectTo ?? "/account");
+      const data = readAccountApiData<{ redirectTo?: string }>(payload);
+      router.push(data?.redirectTo ?? "/account");
       router.refresh();
     } catch {
       setErrorMessage(getNetworkErrorMessage("Sign-out"));
@@ -464,8 +479,33 @@ export function ProfilePageShell({
 
   return (
     <main className={`subpage-shell account-page ${activeTheme.className}`} style={activeTheme.style}>
+      <AccountCinematicBackdrop />
       <header className="account-profile-header">
         <div className="account-profile-hero">
+          <div className="account-profile-hero__brand">
+            <AssetImage
+              src="/assets/logos/wordmark.svg"
+              fallbackSrc="/assets/logos/minimal-light.svg"
+              alt="F1 InsightX"
+              className="account-profile-hero__logo"
+              width={180}
+              height={40}
+              priority
+            />
+            <span>Race identity</span>
+          </div>
+          <div className="account-profile-hero__car" style={{ position: "absolute" }} aria-hidden="true">
+            <AssetImage
+              src={constructorCarMedia}
+              fallbackSrc={constructorAsset.fallbackImagePath}
+              alt=""
+              fill
+              className="account-profile-hero__car-image"
+              sizes="(max-width: 900px) 100vw, 76vw"
+              priority
+              style={{ objectFit: "contain", objectPosition: constructorAsset.imagePosition ?? "center center" }}
+            />
+          </div>
           <div className="account-profile-strip">
             <article className="account-profile-hero__snapshot-card account-profile-hero__snapshot-card--constructor">
               <div className="account-profile-hero__snapshot-media account-profile-hero__snapshot-media--team">
@@ -531,7 +571,7 @@ export function ProfilePageShell({
         <section className="workspace-panel account-profile-editor">
           <div className="account-profile-editor__header">
             <div className="account-profile-editor__copy">
-              <strong>Identity settings</strong>
+              <strong>Profile command center</strong>
               <p>Choose the constructor, driver, and identity style tied to your profile.</p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { apiError, apiOk, type ApiErrorCode } from "@/lib/api/errors";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import type { RateLimitResult } from "@/lib/security/rate-limit";
 
@@ -13,12 +13,26 @@ export function accountHeaders(rateLimit?: RateLimitResult, headers?: Record<str
 }
 
 export function accountJson<T>(payload: T, options: AccountJsonOptions = {}) {
-  return NextResponse.json(payload, {
+  return apiOk(payload, {
     status: options.status,
     headers: accountHeaders(options.rateLimit, options.headers),
   });
 }
 
+function accountErrorCode(status?: number): ApiErrorCode {
+  if (status === 400) return "bad_request";
+  if (status === 401) return "unauthorized";
+  if (status === 403) return "forbidden";
+  if (status === 429) return "rate_limited";
+  if (status === 503) return "service_unavailable";
+  return "internal_error";
+}
+
 export function accountError(message: string, options: AccountJsonOptions = {}) {
-  return accountJson({ error: message }, options);
+  return apiError({
+    status: options.status ?? 500,
+    code: accountErrorCode(options.status),
+    message,
+    headers: accountHeaders(options.rateLimit, options.headers),
+  });
 }

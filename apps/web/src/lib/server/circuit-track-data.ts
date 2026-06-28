@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { cache } from "react";
 import { readCsvFile } from "@/lib/server/csv";
+import { getRepoDataPath } from "@/lib/server/data-paths";
 
 export type CircuitTrackData = {
   circuitId: string;
@@ -21,7 +21,7 @@ type RaceCircuitRow = {
   circuit_id: string;
 };
 
-const circuitTrackPathsFile = path.join(process.cwd(), "..", "..", "data", "race_week", "circuit_track_paths.json");
+const circuitTrackPathsFile = getRepoDataPath("race_week", "circuit_track_paths.json");
 
 const loadCircuitTrackData = cache(async (): Promise<CircuitTrackMap> => {
   try {

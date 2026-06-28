@@ -9,7 +9,7 @@ Status: share with caveats.
 
 The current F1 InsightX data estate is internally consistent enough for deterministic product surfaces, analytics exploration, Strategy Lab baselines, and pre-ML feature validation. The existing validator suite passes across OpenF1 quality, canonical FastF1, telemetry features, analytics views, race analysis, ML schema templates, generated ML datasets, product manifest, generated artifact guard, Python tests, and web tests.
 
-The main caveats are freshness and proxy interpretation. `season_state` is stale by the product-manifest threshold, Strategy Lab is available for Barcelona while the Austrian Grand Prix build is pending, and Race Analysis intentionally relies on inferred/proxy signals where exact gaps, overtakes, and race-control causes are unavailable.
+The main caveat is proxy interpretation. Race Analysis intentionally relies on inferred/proxy signals where exact gaps, overtakes, and race-control causes are unavailable. Release-time freshness and active-race coverage checks are tracked in `docs/manual-audit-tasks.md`.
 
 ## Raw Data Audit
 
@@ -53,17 +53,9 @@ Race Analysis warnings are expected and should remain stakeholder-visible:
 - Traffic proxy is built without exact gap data.
 - Race-control messages are unavailable for 52 race analyses.
 
-Freshness and coverage caveats:
-
-- `season_state` is stale by threshold. This is not a data-integrity failure, but it affects "current state" confidence.
-- `season_state_quality_report.json` marks the latest completed and analyzed race as the 2026 Barcelona Grand Prix on 2026-06-14 and the next race as the 2026 Austrian Grand Prix on 2026-06-28.
-- Strategy Lab is available for Barcelona, while Austrian Strategy Lab output is pending. Race-week product output is available for Austria.
-
 Analytical risk assessment:
 
-- Severity: medium for stale season state and pending Strategy Lab next-race coverage.
 - Severity: low to medium for Race Analysis caveats because the caveats are explicitly labeled and do not appear to be presented as exact overtakes, exact traffic gaps, or race-control causes.
-- Recommended fixes: refresh `season_state` before a current-state release; rebuild Strategy Lab for the next race if the product surface should support Austrian scenarios.
 
 ## Heuristics Model Review
 

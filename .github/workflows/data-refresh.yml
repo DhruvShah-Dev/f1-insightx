@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "0 11 * * 2"
 
+permissions:
+  contents: read
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -13,16 +16,21 @@ jobs:
       JOLPICA_BASE_URL: ${{ secrets.JOLPICA_BASE_URL }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.11"
           cache: "pip"
 
       - name: Install data dependencies
-        run: python -m pip install -r data/requirements.txt
+        run: python -m pip install -c data/constraints.txt -r data/requirements.txt
+
+      - name: Audit Python dependencies
+        run: |
+          python -m pip install pip-audit
+          python -m pip_audit --progress-spinner off
 
       - name: Fetch reference data
         run: python data/fetch_reference_data.py --start-season 2024

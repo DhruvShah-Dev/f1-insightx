@@ -4,6 +4,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 import { gunzip } from "node:zlib";
 import { parseNumber, readCsvFile } from "@/lib/server/csv";
+import { getRepoDataPath, getTestFixturePath, isTestRun } from "@/lib/server/data-paths";
 import {
   parseAnalyticsIndexedManifest,
   parseAnalyticsTraceManifest,
@@ -343,15 +344,11 @@ const ANALYTICS_SESSION_PRIORITY: Record<string, number> = {
 
 const readSessionRows = cache(async () => readCsvFile<SessionIndexRow>("analytics.sessionIndex"));
 function getAnalyticsIndexedDir() {
-  if (process.env.NODE_ENV === "test" || process.env.npm_lifecycle_event === "test") {
-    const configuredTestRoot = process.env.F1_INSIGHTX_TEST_DATA_ROOT;
-    const testRoot = configuredTestRoot
-      ? path.resolve(/*turbopackIgnore: true*/ process.cwd(), configuredTestRoot)
-      : path.join(/*turbopackIgnore: true*/ process.cwd(), "test-fixtures", "data");
-    return path.join(testRoot, "analytics", "indexed");
+  if (isTestRun()) {
+    return getTestFixturePath("analytics", "indexed");
   }
 
-  return path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data", "analytics", "indexed");
+  return getRepoDataPath("analytics", "indexed");
 }
 
 const gunzipAsync = promisify(gunzip);

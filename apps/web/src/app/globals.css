@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./analytics-workstation.css";
+@import "./styles/championship.css";
 
 :root {
   --bg-primary: #07090d;
@@ -45,829 +46,6 @@
   --scrollbar-thumb-hover: rgba(255, 93, 87, 0.86);
 }
 
-.achievements-page {
-  min-height: 100vh;
-  color: #f6f7f9;
-  background:
-    radial-gradient(circle at 12% 0%, rgba(255, 54, 87, 0.16), transparent 32rem),
-    linear-gradient(135deg, #08090d 0%, #151820 54%, #090a0e 100%);
-  overflow: hidden;
-}
-
-.achievements-page .app-header,
-.achievements-page .app-footer,
-.achievements-hero,
-.achievements-command-strip,
-.achievements-grid {
-  width: min(1180px, calc(100% - 32px));
-  margin-inline: auto;
-}
-
-.achievements-page .app-header {
-  margin-top: 18px;
-}
-
-.achievements-hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
-  gap: 24px;
-  align-items: stretch;
-  margin-top: 34px;
-  padding: clamp(28px, 5vw, 56px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 28px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
-    rgba(10, 12, 18, 0.84);
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
-}
-
-.achievements-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: linear-gradient(135deg, black, transparent 78%);
-}
-
-.achievements-hero > * {
-  position: relative;
-}
-
-.achievements-hero__copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 760px;
-}
-
-.achievements-hero__copy span,
-.achievements-hero__panel span,
-.achievements-command-strip span,
-.achievements-board__header span,
-.achievements-entry__identity span,
-.achievements-entry__identity em {
-  color: rgba(246, 247, 249, 0.62);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.achievements-hero h1 {
-  margin: 10px 0 0;
-  max-width: 11ch;
-  font-size: clamp(3.2rem, 8vw, 6.8rem);
-  line-height: 0.9;
-  letter-spacing: 0;
-}
-
-.achievements-hero p {
-  max-width: 680px;
-  margin: 22px 0 0;
-  color: rgba(246, 247, 249, 0.72);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  line-height: 1.65;
-}
-
-.achievements-hero__panel {
-  display: flex;
-  min-height: 250px;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.achievements-hero__panel strong {
-  margin-top: 14px;
-  font-size: clamp(4rem, 8vw, 7rem);
-  line-height: 0.9;
-}
-
-.achievements-hero__panel small {
-  margin-top: 16px;
-  color: rgba(246, 247, 249, 0.6);
-  line-height: 1.5;
-}
-
-.achievements-command-strip {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 18px;
-  padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.065);
-}
-
-.achievements-command-strip__identity {
-  display: grid;
-  gap: 4px;
-}
-
-.achievements-command-strip__identity strong {
-  font-size: 1.5rem;
-}
-
-.achievements-season-switcher {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
-.achievements-season-switcher a {
-  display: inline-flex;
-  min-width: 72px;
-  min-height: 42px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  color: rgba(246, 247, 249, 0.72);
-  font-size: 0.9rem;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.achievements-season-switcher a:hover,
-.achievements-season-switcher a:focus-visible,
-.achievements-season-switcher a.is-active {
-  border-color: rgba(255, 54, 87, 0.7);
-  color: #ffffff;
-  background: rgba(255, 54, 87, 0.18);
-}
-
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 18px;
-  margin-bottom: 58px;
-}
-
-.championship-tables {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  width: min(1180px, calc(100% - 32px));
-  margin: 18px auto 0;
-}
-
-.championship-table-card {
-  min-width: 0;
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: 22px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
-    rgba(7, 9, 13, 0.62);
-}
-
-.championship-table-card__header {
-  display: grid;
-  gap: 4px;
-}
-
-.championship-table-card__header span,
-.championship-table-card__leader span,
-.championship-standings-list span,
-.championship-standings-list small,
-.championship-metric-podium__place span,
-.championship-metric-podium__place small,
-.championship-overlay__header span,
-.championship-overlay-list span,
-.championship-overlay-list small,
-.championship-overlay-list em {
-  color: rgba(246, 247, 249, 0.62);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.championship-table-card__header h2 {
-  margin: 0;
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
-  line-height: 1;
-  letter-spacing: 0;
-}
-
-.championship-table-card__leader {
-  display: grid;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255, 54, 87, 0.13);
-}
-
-.championship-table-card__leader strong {
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 0.95;
-}
-
-.championship-table-card__leader em {
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-style: normal;
-  font-weight: 900;
-}
-
-.championship-standings-list {
-  display: grid;
-  gap: 8px;
-  margin: 14px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.championship-standings-list li {
-  display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) minmax(84px, auto);
-  gap: 12px;
-  align-items: center;
-  padding: 10px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.championship-standings-list div {
-  display: grid;
-  min-width: 0;
-  gap: 2px;
-}
-
-.championship-standings-list strong {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.championship-standings-list em {
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 900;
-  text-align: right;
-}
-
-.achievements-board {
-  min-width: 0;
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.achievements-board__header {
-  display: grid;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.achievements-board__header h2 {
-  margin: 4px 0 0;
-  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
-  line-height: 1;
-  letter-spacing: 0;
-}
-
-.achievements-board__header p {
-  margin: 0;
-  color: rgba(246, 247, 249, 0.64);
-  line-height: 1.55;
-}
-
-.achievements-list {
-  display: grid;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.achievements-list--top-three {
-  gap: 8px;
-}
-
-.achievements-list--full {
-  margin-top: 14px;
-}
-
-.achievements-entry {
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1fr) minmax(96px, auto);
-  gap: 12px;
-  align-items: center;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 16px;
-  background: rgba(6, 8, 12, 0.46);
-}
-
-.achievements-entry--compact {
-  grid-template-columns: 40px minmax(0, 1fr);
-}
-
-.achievements-entry--compact .achievements-entry__value {
-  grid-column: 2;
-  text-align: left;
-}
-
-.achievements-entry--compact .achievements-entry__track {
-  display: none;
-}
-
-.achievements-entry__rank {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border-radius: 50%;
-  color: #ffffff;
-  background: rgba(255, 54, 87, 0.22);
-  font-weight: 900;
-}
-
-.achievements-entry__body {
-  min-width: 0;
-}
-
-.achievements-entry__identity {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: space-between;
-  min-width: 0;
-}
-
-.achievements-entry__identity div {
-  display: grid;
-  min-width: 0;
-  gap: 3px;
-}
-
-.achievements-entry__identity strong {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.achievements-entry__identity em {
-  flex: 0 0 auto;
-  font-style: normal;
-}
-
-.achievements-entry__track {
-  height: 7px;
-  margin-top: 10px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-.achievements-entry__track i {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #ff3657, #f4d35e);
-}
-
-.achievements-entry__value {
-  color: #ffffff;
-  font-weight: 900;
-  text-align: right;
-  white-space: nowrap;
-}
-
-.achievements-empty {
-  padding: 18px;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  border-radius: 16px;
-  color: rgba(246, 247, 249, 0.66);
-}
-
-.championship-metric-grid {
-  align-items: start;
-}
-
-.championship-metric-card {
-  display: grid;
-  gap: 16px;
-}
-
-.championship-metric-podium {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  align-items: end;
-}
-
-.championship-metric-podium__place {
-  display: grid;
-  min-height: 150px;
-  gap: 8px;
-  align-content: end;
-  padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: 16px;
-  background: rgba(6, 8, 12, 0.5);
-}
-
-.championship-metric-podium__place--p1 {
-  min-height: 190px;
-  background:
-    linear-gradient(180deg, rgba(244, 211, 94, 0.22), rgba(255, 54, 87, 0.1)),
-    rgba(6, 8, 12, 0.55);
-}
-
-.championship-metric-podium__place strong {
-  font-size: clamp(2rem, 4vw, 3.6rem);
-  line-height: 0.9;
-}
-
-.championship-metric-podium__place em {
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-style: normal;
-  font-weight: 900;
-}
-
-.championship-open-button {
-  display: flex;
-  min-height: 48px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
-  padding: 12px 14px;
-  color: #ffffff;
-  background: rgba(255, 54, 87, 0.16);
-  font: inherit;
-  font-weight: 900;
-}
-
-.championship-open-button:hover,
-.championship-open-button:focus-visible {
-  border-color: rgba(244, 211, 94, 0.58);
-  background: rgba(255, 54, 87, 0.24);
-  outline: none;
-}
-
-.championship-open-button span {
-  color: rgba(246, 247, 249, 0.62);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.championship-overlay {
-  position: fixed;
-  z-index: 80;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-
-.championship-overlay__backdrop {
-  position: absolute;
-  inset: 0;
-  cursor: pointer;
-  border: 0;
-  background: rgba(0, 0, 0, 0.68);
-  backdrop-filter: blur(12px);
-}
-
-.championship-overlay__panel {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 18px;
-  width: min(980px, 100%);
-  max-height: min(86vh, 860px);
-  overflow: auto;
-  padding: clamp(18px, 4vw, 30px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 10% 0%, rgba(255, 54, 87, 0.16), transparent 24rem),
-    #0a0d13;
-  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.55);
-}
-
-.championship-overlay__header {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.championship-overlay__header h2 {
-  margin: 4px 0 0;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 0.92;
-  letter-spacing: 0;
-}
-
-.championship-overlay__header p {
-  max-width: 620px;
-  margin: 12px 0 0;
-  color: rgba(246, 247, 249, 0.66);
-  line-height: 1.55;
-}
-
-.championship-overlay__header button {
-  min-height: 42px;
-  cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  padding: 0 16px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  font: inherit;
-  font-weight: 900;
-}
-
-.championship-overlay-chart {
-  display: grid;
-  gap: 10px;
-  padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.055);
-}
-
-.championship-overlay-chart__row {
-  display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) minmax(88px, auto);
-  gap: 12px;
-  align-items: center;
-}
-
-.championship-overlay-chart__row span,
-.championship-overlay-chart__row strong {
-  color: rgba(246, 247, 249, 0.82);
-  font-size: 0.82rem;
-  font-weight: 900;
-}
-
-.championship-overlay-chart__row div {
-  height: 12px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.09);
-}
-
-.championship-overlay-chart__row i {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #ff3657, #f4d35e);
-}
-
-.championship-overlay-chart__row strong {
-  text-align: right;
-  white-space: nowrap;
-}
-
-.championship-overlay-list {
-  display: grid;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.championship-overlay-list li {
-  display: grid;
-  grid-template-columns: 50px minmax(0, 1fr) 58px minmax(92px, auto);
-  gap: 12px;
-  align-items: center;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.045);
-}
-
-.championship-overlay-list div {
-  display: grid;
-  min-width: 0;
-  gap: 2px;
-}
-
-.championship-overlay-list strong {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.championship-overlay-list b {
-  color: #ffffff;
-  text-align: right;
-}
-
-.achievements-details {
-  margin-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 12px;
-}
-
-.achievements-details summary {
-  display: flex;
-  min-height: 44px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 10px 12px;
-  color: #ffffff;
-  font-weight: 900;
-  list-style: none;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.achievements-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.achievements-details summary::after {
-  content: "+";
-  display: grid;
-  width: 26px;
-  height: 26px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(255, 54, 87, 0.22);
-}
-
-.achievements-details[open] summary::after {
-  content: "-";
-}
-
-.achievements-details summary small {
-  margin-left: auto;
-  color: rgba(246, 247, 249, 0.58);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.achievements-chart {
-  display: grid;
-  gap: 9px;
-  margin-top: 14px;
-  padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  background: rgba(6, 8, 12, 0.38);
-}
-
-.achievements-chart__row {
-  display: grid;
-  grid-template-columns: 42px minmax(0, 1fr) minmax(76px, auto);
-  gap: 10px;
-  align-items: center;
-}
-
-.achievements-chart__row span,
-.achievements-chart__row strong {
-  color: rgba(246, 247, 249, 0.78);
-  font-size: 0.78rem;
-  font-weight: 900;
-}
-
-.achievements-chart__row div {
-  height: 10px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.achievements-chart__row i {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #ff3657, #f4d35e);
-}
-
-.achievements-chart__row strong {
-  text-align: right;
-  white-space: nowrap;
-}
-
-@media (max-width: 900px) {
-  .achievements-hero,
-  .achievements-grid,
-  .championship-tables {
-    grid-template-columns: 1fr;
-  }
-
-  .achievements-command-strip {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .achievements-season-switcher {
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 620px) {
-  .achievements-page .app-header,
-  .achievements-page .app-footer,
-  .achievements-hero,
-  .achievements-command-strip,
-  .achievements-grid,
-  .championship-tables {
-    width: min(100% - 20px, 1180px);
-  }
-
-  .achievements-hero {
-    margin-top: 18px;
-    padding: 22px;
-    border-radius: 20px;
-  }
-
-  .achievements-hero h1 {
-    max-width: 9ch;
-    font-size: clamp(2.6rem, 17vw, 4.4rem);
-  }
-
-  .achievements-hero__panel {
-    min-height: 180px;
-  }
-
-  .achievements-board {
-    padding: 16px;
-    border-radius: 18px;
-  }
-
-  .achievements-entry {
-    grid-template-columns: 38px minmax(0, 1fr);
-  }
-
-  .achievements-entry__rank {
-    width: 34px;
-    height: 34px;
-    font-size: 0.84rem;
-  }
-
-  .achievements-entry__value {
-    grid-column: 2;
-    text-align: left;
-  }
-
-  .achievements-chart__row {
-    grid-template-columns: 38px minmax(0, 1fr);
-  }
-
-  .achievements-chart__row strong {
-    grid-column: 2;
-    text-align: left;
-  }
-
-  .championship-metric-podium {
-    grid-template-columns: 1fr;
-  }
-
-  .championship-metric-podium__place,
-  .championship-metric-podium__place--p1 {
-    min-height: 0;
-  }
-
-  .championship-standings-list li,
-  .championship-overlay-chart__row,
-  .championship-overlay-list li {
-    grid-template-columns: 42px minmax(0, 1fr);
-  }
-
-  .championship-standings-list em,
-  .championship-overlay-chart__row strong,
-  .championship-overlay-list em,
-  .championship-overlay-list b {
-    grid-column: 2;
-    text-align: left;
-  }
-
-  .championship-overlay__header {
-    flex-direction: column;
-  }
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -20546,5 +19724,628 @@ body:has(.race-week-page) .cookie-consent__manage {
   .strategy-window-strip > div:hover,
   .strategy-position-lane:hover {
     transform: none;
+  }
+}
+
+/* Account cinematic paddock redesign. */
+.account-page {
+  --account-red: #e10600;
+  --account-hot: #ff3b35;
+  --account-amber: #f5c542;
+  --account-line: rgba(255, 255, 255, 0.14);
+  --account-line-soft: rgba(255, 255, 255, 0.075);
+  --account-panel: rgba(6, 9, 14, 0.78);
+  --account-panel-strong: rgba(7, 10, 15, 0.94);
+  --account-theme-rgb: var(--profile-theme-primary, 225, 6, 0);
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow-x: clip;
+  padding: clamp(0.75rem, 1.4vw, 1.25rem) 0 clamp(2rem, 4vw, 4rem);
+  background:
+    radial-gradient(circle at 72% 2%, rgba(var(--account-theme-rgb), 0.26), transparent 27rem),
+    radial-gradient(circle at 7% 8%, rgba(255, 255, 255, 0.09), transparent 20rem),
+    linear-gradient(180deg, #03050a 0%, #070b12 42%, #020308 100%);
+}
+
+.account-cinematic-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.account-cinematic-backdrop > span {
+  position: absolute;
+  inset: 0;
+}
+
+.account-cinematic-backdrop__grid {
+  opacity: 0.58;
+  background:
+    linear-gradient(90deg, transparent 0 9%, rgba(255, 255, 255, 0.055) 9.08% 9.15%, transparent 9.22% 100%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.028) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 64px);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 82%);
+}
+
+.account-cinematic-backdrop__beam {
+  height: 0.18rem;
+  opacity: 0.65;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), rgba(var(--account-theme-rgb), 0.86), transparent);
+  filter: blur(0.5px);
+  transform: skewY(-9deg);
+  animation: account-speed-beam 7.5s linear infinite;
+}
+
+.account-cinematic-backdrop__beam--one {
+  top: 30%;
+}
+
+.account-cinematic-backdrop__beam--two {
+  top: 55%;
+  animation-duration: 10s;
+  animation-delay: -3s;
+  opacity: 0.42;
+}
+
+.account-cinematic-backdrop__garage {
+  top: auto;
+  height: 48%;
+  background:
+    linear-gradient(112deg, transparent 0 34%, rgba(255, 255, 255, 0.075) 34.4% 35.2%, transparent 35.6% 100%),
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.58));
+  opacity: 0.72;
+}
+
+.account-cinematic-backdrop__scanline {
+  opacity: 0.38;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  animation: account-scanline 8s ease-in-out infinite;
+}
+
+.account-page > *:not(.account-cinematic-backdrop) {
+  position: relative;
+  z-index: 1;
+}
+
+body:has(.account-page) > .app-header {
+  position: sticky;
+  top: clamp(0.5rem, 1.2vw, 0.9rem);
+  z-index: 60;
+  width: var(--cinematic-width, min(100% - clamp(1.5rem, 4vw, 5rem), 100rem));
+  margin-top: clamp(0.75rem, 1.4vw, 1.2rem);
+  border-color: var(--account-line-soft);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055), transparent 38%),
+    rgba(4, 7, 11, 0.84);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+}
+
+.account-shell--page,
+.account-profile-header,
+.account-profile-layout,
+.account-page > .app-footer,
+.account-page > .site-footer,
+.account-page > .state-panel {
+  width: var(--cinematic-wide, min(100% - clamp(1.25rem, 3.5vw, 4.5rem), 110rem));
+  margin-inline: auto;
+}
+
+.account-shell--page {
+  grid-template-columns: minmax(0, 1.1fr) minmax(25rem, 0.72fr);
+  gap: clamp(1.4rem, 4vw, 5rem);
+  align-items: center;
+  min-height: calc(100svh - 9rem);
+  margin-top: clamp(1rem, 2.8vw, 3rem);
+}
+
+.account-shell--page .account-shell__intro {
+  min-height: clamp(34rem, 65svh, 52rem);
+  align-content: stretch;
+}
+
+.account-access-stage {
+  position: relative;
+  display: grid;
+  min-height: 100%;
+  overflow: hidden;
+  align-content: center;
+  padding: clamp(1.25rem, 3vw, 3rem);
+  border: 1px solid var(--account-line);
+  background:
+    linear-gradient(110deg, rgba(var(--account-theme-rgb), 0.2), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.072), rgba(255, 255, 255, 0.018)),
+    rgba(4, 7, 12, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 30px 105px rgba(0, 0, 0, 0.5);
+}
+
+.account-access-stage::before,
+.account-profile-hero::before,
+.account-card--page::before,
+.account-profile-editor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 18% 82%, rgba(255, 255, 255, 0.045)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.028) 0 1px, transparent 1px 42px);
+  opacity: 0.46;
+  mask-image: linear-gradient(180deg, #000, transparent 80%);
+}
+
+.account-access-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0 38% 0 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(3, 5, 9, 0.88), rgba(3, 5, 9, 0.58), transparent);
+}
+
+.account-access-stage > *,
+.account-profile-hero > *,
+.account-card--page > *,
+.account-profile-editor > * {
+  position: relative;
+  z-index: 1;
+}
+
+.account-access-stage__brand {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.8rem);
+  left: clamp(1rem, 2vw, 1.8rem);
+  width: min(11rem, 40vw);
+  opacity: 0.94;
+}
+
+.account-access-stage__logo,
+.account-profile-hero__logo {
+  width: 100%;
+  height: auto;
+}
+
+.account-access-stage__media {
+  position: absolute;
+  inset: 11% -10% 8% 36%;
+  z-index: 0;
+  opacity: 0.72;
+  filter: drop-shadow(0 28px 60px rgba(0, 0, 0, 0.54));
+}
+
+.account-access-stage__media::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 5% 4%;
+  height: 28%;
+  background: linear-gradient(90deg, rgba(var(--account-theme-rgb), 0.7), transparent 72%);
+  filter: blur(24px);
+}
+
+.account-access-stage__halo {
+  position: absolute;
+  inset: 16% 18% auto auto;
+  width: 34%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transform: skewX(-18deg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent);
+}
+
+.account-shell--page .subpage-title {
+  max-width: 10ch;
+  margin: clamp(4rem, 9vw, 7rem) 0 0;
+  color: #fff;
+  font-size: clamp(4.2rem, 8.4vw, 8.5rem);
+  line-height: 0.78;
+  text-transform: uppercase;
+  text-shadow: 0 0 44px rgba(var(--account-theme-rgb), 0.18);
+}
+
+.account-shell--page .race-detail__lede {
+  max-width: 33rem;
+  margin: clamp(1rem, 2vw, 1.6rem) 0 0;
+  color: rgba(247, 249, 252, 0.74);
+}
+
+.account-shell--page .account-preview--gateway {
+  width: min(100%, 31rem);
+  margin-top: clamp(1.4rem, 3vw, 2.5rem);
+  border-color: rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(90deg, rgba(var(--account-theme-rgb), 0.14), transparent 70%),
+    rgba(4, 7, 12, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.account-card--page {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1rem, 2vw, 1.65rem);
+  border-color: var(--account-line);
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(var(--account-theme-rgb), 0.18), transparent 17rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.084), rgba(255, 255, 255, 0.022)),
+    var(--account-panel-strong);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 28px 95px rgba(0, 0, 0, 0.46);
+  backdrop-filter: blur(18px);
+}
+
+.account-card--page .account-card__tabs {
+  display: grid;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-radius: 0;
+  border-color: var(--account-line-soft);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.account-card--page .account-card__tabs button,
+.account-page .account-signout,
+.account-page .account-username-toggle {
+  border-radius: 0;
+}
+
+.account-card--page .account-card__tabs button.is-active {
+  border-color: rgba(var(--account-theme-rgb), 0.7);
+  background: linear-gradient(90deg, rgba(var(--account-theme-rgb), 0.28), rgba(255, 255, 255, 0.06));
+  box-shadow: inset 3px 0 0 rgb(var(--account-theme-rgb));
+}
+
+.account-page .account-form__heading strong,
+.account-page .account-profile-editor__copy strong,
+.account-page .account-profile-identity__copy strong {
+  color: #fff;
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  line-height: 1;
+}
+
+.account-page .account-field input,
+.account-page .account-field select {
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.018)),
+    rgba(2, 5, 10, 0.74);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.account-page .account-field input:focus-visible,
+.account-page .account-field select:focus-visible,
+.account-page .account-card__tabs button:focus-visible,
+.account-page .account-signout:focus-visible,
+.account-page .account-username-toggle:focus-visible,
+.account-page .hero__cta:focus-visible {
+  outline-color: rgba(var(--account-theme-rgb), 0.72);
+}
+
+.account-page .hero__cta {
+  border-radius: 0;
+}
+
+.account-page .hero__cta--primary {
+  border-color: rgba(255, 255, 255, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 42%),
+    linear-gradient(135deg, rgb(var(--account-theme-rgb)), #8e0507);
+  box-shadow: 0 18px 42px rgba(var(--account-theme-rgb), 0.24), inset 0 -2px 0 rgba(0, 0, 0, 0.32);
+}
+
+.account-page .hero__cta--secondary,
+.account-page .account-signout {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.account-page .account-signout {
+  min-height: 3rem;
+  padding: 0 1rem;
+  color: #fff;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.account-profile-header {
+  margin-top: clamp(1rem, 2.4vw, 2.4rem);
+}
+
+.account-profile-hero {
+  position: relative;
+  display: grid;
+  min-height: clamp(27rem, 48vw, 43rem);
+  overflow: hidden;
+  align-content: end;
+  border: 1px solid var(--account-line);
+  background:
+    linear-gradient(105deg, rgba(var(--account-theme-rgb), 0.24), transparent 44%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.072), rgba(255, 255, 255, 0.018)),
+    rgba(4, 7, 12, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 30px 105px rgba(0, 0, 0, 0.48);
+}
+
+.account-profile-hero__brand {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.8rem);
+  left: clamp(1rem, 2vw, 1.8rem);
+  display: grid;
+  gap: 0.65rem;
+  align-items: start;
+  width: min(12rem, 48vw);
+}
+
+.account-profile-hero__brand span {
+  color: rgba(247, 249, 252, 0.62);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.account-profile-hero__car {
+  position: absolute;
+  inset: 6% -6% 18% 16%;
+  z-index: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.56));
+}
+
+.account-profile-hero__car::after {
+  content: "";
+  position: absolute;
+  inset: auto 8% 5% 8%;
+  height: 22%;
+  background: linear-gradient(90deg, transparent, rgba(var(--account-theme-rgb), 0.72), transparent);
+  filter: blur(20px);
+}
+
+.account-profile-strip {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.58fr) minmax(0, 1fr) minmax(13rem, 0.58fr);
+  gap: clamp(0.85rem, 1.8vw, 1.5rem);
+  align-items: end;
+  width: 100%;
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+
+.account-profile-strip__username {
+  align-self: end;
+  min-height: clamp(10rem, 21vw, 20rem);
+  display: grid;
+  align-content: end;
+  padding: clamp(1rem, 2.3vw, 1.8rem);
+  border-left: 2px solid rgba(var(--account-theme-rgb), 0.78);
+  background: linear-gradient(90deg, rgba(var(--account-theme-rgb), 0.16), transparent 70%);
+}
+
+.account-profile-strip__username .subpage-title {
+  max-width: 9ch;
+  font-size: clamp(4rem, 9vw, 9.5rem);
+  line-height: 0.78;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-shadow: 0 0 38px rgba(var(--account-theme-rgb), 0.2);
+}
+
+.account-profile-hero__snapshot-card {
+  min-height: 13rem;
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.022)),
+    rgba(5, 8, 13, 0.78);
+  backdrop-filter: blur(16px);
+}
+
+.account-profile-hero__snapshot-media {
+  border-radius: 0;
+}
+
+.account-profile-layout {
+  margin-top: clamp(1rem, 2.5vw, 2rem);
+}
+
+.account-profile-editor {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 78rem);
+  justify-self: end;
+  padding: clamp(1rem, 2.4vw, 2rem);
+  border-color: var(--account-line);
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(var(--account-theme-rgb), 0.16), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.074), rgba(255, 255, 255, 0.02)),
+    var(--account-panel);
+  backdrop-filter: blur(18px);
+}
+
+.account-profile-editor__header {
+  border-bottom: 1px solid var(--account-line-soft);
+  padding-bottom: 1rem;
+}
+
+.account-radio-group--identity {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-color: var(--account-line-soft);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.account-radio-group--identity label {
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.11);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.056), rgba(255, 255, 255, 0.016)),
+    rgba(2, 5, 10, 0.46);
+}
+
+.account-radio-group--identity label.is-selected {
+  border-color: rgba(var(--account-theme-rgb), 0.76);
+  box-shadow: inset 3px 0 0 rgb(var(--account-theme-rgb)), 0 0 32px rgba(var(--account-theme-rgb), 0.12);
+}
+
+.account-radio-card__media {
+  border-radius: 0;
+}
+
+.account-privacy-panel--inline {
+  border-radius: 0;
+  border-color: var(--account-line-soft);
+  background:
+    linear-gradient(90deg, rgba(var(--account-theme-rgb), 0.1), transparent 68%),
+    rgba(255, 255, 255, 0.032);
+}
+
+.account-feedback,
+.account-page .status-banner {
+  border-radius: 0;
+}
+
+@keyframes account-speed-beam {
+  0% {
+    transform: translateX(-120%) skewY(-9deg);
+  }
+
+  100% {
+    transform: translateX(120%) skewY(-9deg);
+  }
+}
+
+@keyframes account-scanline {
+  0% {
+    transform: translateY(-65%);
+    opacity: 0;
+  }
+
+  45%,
+  55% {
+    opacity: 0.38;
+  }
+
+  100% {
+    transform: translateY(65%);
+  }
+}
+
+@media (max-width: 72rem) {
+  .account-shell--page {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .account-shell--page .account-shell__intro {
+    min-height: clamp(28rem, 64vw, 39rem);
+  }
+
+  .account-card--page {
+    width: min(100%, 42rem);
+    justify-self: end;
+  }
+
+  .account-profile-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .account-profile-strip__username {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: 12rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .account-page {
+    padding-bottom: 2rem;
+  }
+
+  body:has(.account-page) > .app-header,
+  .account-shell--page,
+  .account-profile-header,
+  .account-profile-layout,
+  .account-page > .app-footer,
+  .account-page > .site-footer,
+  .account-page > .state-panel {
+    width: calc(100vw - 1rem);
+    max-width: calc(100vw - 1rem);
+  }
+
+  .account-shell--page {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .account-access-stage {
+    min-height: 31rem;
+    padding: 1rem;
+  }
+
+  .account-access-stage__media {
+    inset: 18% -28% 24% 22%;
+    opacity: 0.52;
+  }
+
+  .account-shell--page .subpage-title {
+    margin-top: 5rem;
+    font-size: clamp(3.35rem, 17vw, 5.2rem);
+  }
+
+  .account-card--page,
+  .account-profile-editor {
+    padding: 1rem;
+  }
+
+  .account-card--page .account-field-grid,
+  .account-profile-editor .account-field-grid,
+  .account-radio-group--identity {
+    grid-template-columns: 1fr;
+  }
+
+  .account-profile-hero {
+    min-height: 32rem;
+  }
+
+  .account-profile-hero__car {
+    inset: 15% -28% 28% -8%;
+    opacity: 0.62;
+  }
+
+  .account-profile-strip {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .account-profile-strip__username {
+    min-height: 11rem;
+  }
+
+  .account-profile-strip__username .subpage-title {
+    font-size: clamp(3rem, 15vw, 4.8rem);
+  }
+
+  .account-profile-hero__snapshot-card {
+    min-height: 9.5rem;
+  }
+
+  .account-form__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-cinematic-backdrop__beam,
+  .account-cinematic-backdrop__scanline {
+    animation: none;
   }
 }

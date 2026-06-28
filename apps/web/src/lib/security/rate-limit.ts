@@ -12,6 +12,7 @@ export type RateLimitPolicy = {
   name: string;
   limit: number;
   windowMs: number;
+  durableInProduction?: boolean;
 };
 
 export type RateLimitResult = {
@@ -111,18 +112,18 @@ export function getRateLimitIdentifier(request: Request, subject?: string) {
 }
 
 export const RATE_LIMIT_POLICIES = {
-  authCallback: { name: "auth-callback", limit: 24, windowMs: 10 * 60_000 },
-  signOut: { name: "sign-out", limit: 20, windowMs: 5 * 60_000 },
-  usernameCheck: { name: "username-check", limit: 24, windowMs: 60_000 },
-  usernameSuggest: { name: "username-suggest", limit: 12, windowMs: 60_000 },
-  profileRead: { name: "profile-read", limit: 60, windowMs: 60_000 },
-  profileWrite: { name: "profile-write", limit: 10, windowMs: 10 * 60_000 },
-  fantasyRecommend: { name: "fantasy-recommend", limit: 12, windowMs: 5 * 60_000 },
+  authCallback: { name: "auth-callback", limit: 24, windowMs: 10 * 60_000, durableInProduction: true },
+  signOut: { name: "sign-out", limit: 20, windowMs: 5 * 60_000, durableInProduction: true },
+  usernameCheck: { name: "username-check", limit: 24, windowMs: 60_000, durableInProduction: true },
+  usernameSuggest: { name: "username-suggest", limit: 12, windowMs: 60_000, durableInProduction: true },
+  profileRead: { name: "profile-read", limit: 60, windowMs: 60_000, durableInProduction: true },
+  profileWrite: { name: "profile-write", limit: 10, windowMs: 10 * 60_000, durableInProduction: true },
+  fantasyRecommend: { name: "fantasy-recommend", limit: 12, windowMs: 5 * 60_000, durableInProduction: true },
   fantasyDataset: { name: "fantasy-dataset", limit: 60, windowMs: 60_000 },
-  fantasyValidate: { name: "fantasy-validate", limit: 60, windowMs: 60_000 },
-  raceScenarioSimulate: { name: "race-simulate", limit: 12, windowMs: 5 * 60_000 },
-  raceScenarioValidate: { name: "race-validate", limit: 60, windowMs: 60_000 },
-  analyticsCompare: { name: "analytics-compare", limit: 45, windowMs: 60_000 },
+  fantasyValidate: { name: "fantasy-validate", limit: 60, windowMs: 60_000, durableInProduction: true },
+  raceScenarioSimulate: { name: "race-simulate", limit: 12, windowMs: 5 * 60_000, durableInProduction: true },
+  raceScenarioValidate: { name: "race-validate", limit: 60, windowMs: 60_000, durableInProduction: true },
+  analyticsCompare: { name: "analytics-compare", limit: 45, windowMs: 60_000, durableInProduction: true },
   publicRead: { name: "public-read", limit: 120, windowMs: 60_000 },
   health: { name: "health", limit: 30, windowMs: 60_000 },
 } as const satisfies Record<string, RateLimitPolicy>;
@@ -187,6 +188,29 @@ function getUpstashConfig(): UpstashConfig | null {
   return { url, token };
 }
 
+function canUseMemoryFallback(policy: RateLimitPolicy) {
+  return process.env.NODE_ENV !== "production" || !policy.durableInProduction;
+}
+
+function failClosedRateLimit(policy: RateLimitPolicy): RateLimitResult {
+  const retryAfterSeconds = 60;
+  const resetAt = Date.now() + retryAfterSeconds * 1000;
+
+  return {
+    ok: false,
+    limit: policy.limit,
+    remaining: 0,
+    resetAt,
+    retryAfterSeconds,
+    headers: {
+      "X-RateLimit-Limit": String(policy.limit),
+      "X-RateLimit-Remaining": "0",
+      "X-RateLimit-Reset": String(Math.ceil(resetAt / 1000)),
+      "Retry-After": String(retryAfterSeconds),
+    },
+  };
+}
+
 async function callUpstashPipeline(config: UpstashConfig, commands: Array<Array<string | number>>) {
   const response = await fetch(`${config.url}/pipeline`, {
     method: "POST",
@@ -213,6 +237,9 @@ async function checkRateLimitWithUpstash(
   const config = getUpstashConfig();
   if (!config) {
     warnRateLimitFallback("missing-upstash-config");
+    if (!canUseMemoryFallback(policy)) {
+      return failClosedRateLimit(policy);
+    }
     return checkRateLimit(request, policy, subject);
   }
 
@@ -281,6 +308,9 @@ export async function checkRateLimitAsync(
     return await checkRateLimitWithUpstash(request, policy, subject);
   } catch {
     warnRateLimitFallback("upstash-unavailable");
+    if (!canUseMemoryFallback(policy)) {
+      return failClosedRateLimit(policy);
+    }
     return checkRateLimit(request, policy, subject);
   }
 }

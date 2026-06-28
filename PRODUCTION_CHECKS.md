@@ -15,12 +15,12 @@ Production must not be promoted if any P0 gate fails. Known exceptions must be w
 | TypeScript | P0 | `npm run typecheck` exits 0. | Block production. |
 | Web tests | P0 | `npm test --workspace web` exits 0. | Block production. |
 | Production build | P0 | `npm run build --workspace web` exits 0 from a clean checkout. | Block production. |
-| Production dependency audit | P0 for high/critical, P1 for moderate | `npm audit --omit=dev` has no high/critical vulnerabilities. Moderate findings are documented in `SECURITY_ISSUES.md`. | Block high/critical; document accepted moderate risk. |
+| Production dependency audit | P0 for high/critical, P1 for moderate | `npm run audit:prod` has no high/critical vulnerabilities. Moderate findings are documented in `docs/manual-audit-tasks.md` when an upstream-safe fix is unavailable. | Block high/critical; document accepted moderate risk. |
 | Generated artifact guard | P0 | `python check_generated_artifacts.py` passes. | Block production unless deploy intentionally provides artifacts outside Git. |
 | Product manifest | P0 | `python validate_product_manifest.py` passes. | Block production. |
 | Season state | P0 | `python validate_season_state.py` passes and current/next race facts are manually confirmed. | Block production. |
 | Supabase heartbeat | P0 for Supabase-backed release | `/api/health/supabase` returns `ok: true` and `source: "supabase"`. | Block production for Supabase-backed release. |
-| Security exceptions | P0 | Open security exceptions are reviewed in `SECURITY_ISSUES.md`. | Block if unreviewed high/critical risk exists. |
+| Security exceptions | P0 | Open security exceptions are reviewed in `SECURITY_ISSUES.md` and manual production items are reviewed in `docs/manual-audit-tasks.md`. | Block if unreviewed high/critical risk exists. |
 
 ## Issue Taxonomy
 
@@ -48,7 +48,7 @@ Run these from the repository root unless noted.
 | Typecheck | `npm run typecheck` | Exit 0. | Uses `apps/web/tsconfig.json`. |
 | Web tests | `npm test --workspace web` | All TAP tests pass. | Confirms auth, rate limit, CSV, analytics, standings, scoring, and route helpers. |
 | Build | `npm run build --workspace web` | Next.js production build succeeds. | Must be tested without relying on untracked local artifacts. |
-| Production audit | `npm audit --omit=dev` | No high/critical findings. | Current accepted moderate Next/PostCSS advisory must stay documented in `SECURITY_ISSUES.md`. |
+| Production audit | `npm run audit:prod` | No high/critical findings. | Current accepted moderate Next/PostCSS advisory must stay documented in `docs/manual-audit-tasks.md`. |
 | Python deps | `python -m pip install -r data/requirements.txt` | Installs successfully in a clean Python environment. | Prefer CI or virtualenv evidence. |
 | Python tests | `python -m pytest tests` | All tests pass. | Covers analytics views, telemetry features, ML datasets, OpenF1 quality, Pit Wall Picks, Race Analysis, and timing deltas. |
 | Artifact guard | `python check_generated_artifacts.py` | No invalid generated artifacts are staged for Git. | Blocks accidental large/raw artifact commits. |
@@ -117,15 +117,15 @@ Manual assertions:
 
 ## Security Checks
 
-- Dependency audit: run `npm audit --omit=dev`; high/critical findings block production.
-- Known advisory handling: review `SECURITY_ISSUES.md`; the current Next/PostCSS moderate advisory is accepted only while npm suggests an unsafe Next downgrade.
+- Dependency audit: run `npm run audit:prod`; high/critical findings block production.
+- Known advisory handling: review `docs/manual-audit-tasks.md`; the current Next/PostCSS moderate advisory is accepted only while npm suggests an unsafe Next downgrade.
 - Secrets: confirm no `.env.local`, service-role key, database URL, OAuth secret, or Upstash token is tracked or logged.
 - Environment boundaries: `SUPABASE_SERVICE_ROLE_KEY` and `DATABASE_URL` must remain server/workflow-only.
-- Headers: confirm frame, content-type, referrer, permissions, and CSP status. Missing CSP is tracked in `SECURITY_ISSUES.md`.
+- Headers: confirm frame, content-type, referrer, permissions, and CSP report-only status.
 - Auth and same-origin: mutation/account/auth routes must require authentication and same-origin checks where applicable.
 - Rate limiting: sensitive routes must use durable Upstash limits in production or have an explicit documented exception.
 - Supabase RLS: profile/user-owned tables must enforce ownership; public tables must be read-only for anon/authenticated roles.
-- GitHub Actions: workflows should use least-privilege `permissions:` and pinned actions; gaps are tracked in `SECURITY_ISSUES.md`.
+- GitHub Actions: workflows should use least-privilege `permissions:` and pinned actions.
 
 ## Performance Checks
 
@@ -146,4 +146,4 @@ Manual assertions:
 - Block production if private account/profile data can be accessed by anonymous or wrong-user requests.
 - Block production if enabled flagship surfaces require missing artifacts and do not have an intentional unavailable state.
 - Accept P1/P2 issues only when they are documented with severity, owner, target fix date, user impact, and verification evidence.
-- Record security exceptions in `SECURITY_ISSUES.md`; record release-specific operational exceptions in the release notes or deployment ticket.
+- Record local-remediable security exceptions in `SECURITY_ISSUES.md`; record manual production tasks in `docs/manual-audit-tasks.md` or the deployment ticket.
