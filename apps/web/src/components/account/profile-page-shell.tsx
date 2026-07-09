@@ -11,7 +11,7 @@ import type { AccountConstructorOption, AccountDriverOption } from "@/lib/accoun
 import { getProfileTheme } from "@/lib/account/profile-theme";
 import { AssetImage } from "@/components/ui/asset-image";
 import { getNetworkErrorMessage, readClientErrorMessage } from "@/lib/errors/client";
-import { getTeamAsset } from "@/lib/ui/asset-manifest";
+import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 
 type ProfileSnapshot = {
   username: string;
@@ -173,9 +173,9 @@ export function ProfilePageShell({
   const activeTheme = getProfileTheme(constructorId || savedProfile?.favoriteConstructorId);
   const constructorFieldLocked = profileLocked;
   const avatarFieldLocked = profileLocked;
-  const constructorLogoMedia = constructorAsset.badgeAssetPath;
+  const constructorLogoMedia = getTeamLogoPath(constructorAsset, "dark");
   const constructorCarMedia = constructorAsset.carImagePath ?? constructorAsset.fallbackImagePath;
-  const driverIdentityMedia = selectedDriver?.photoPath ?? selectedDriver?.fallbackPhotoPath ?? null;
+  const driverIdentityMedia = selectedDriver?.headshotPath ?? selectedDriver?.photoPath ?? selectedDriver?.bodyImagePath ?? selectedDriver?.fallbackPhotoPath ?? null;
   const constructorStanding = selectedConstructor ? constructorPositions[selectedConstructor.id] ?? null : null;
   const driverStanding = selectedDriver ? driverPositions[selectedDriver.id] ?? null : null;
   const usernameHintMessage = usernameLocked
@@ -547,7 +547,7 @@ export function ProfilePageShell({
                 {driverIdentityMedia ? (
                   <AssetImage
                     src={driverIdentityMedia}
-                    fallbackSrc={selectedDriver?.fallbackPhotoPath ?? "/assets/drivers/driver-placeholder.svg"}
+                    fallbackSrc={selectedDriver?.fallbackPhotoPath ?? "/assets/drivers/2026/fallback/driver-placeholder.svg"}
                     alt={`${driverLabel} portrait`}
                     fill
                     className="account-profile-hero__snapshot-image"
@@ -702,13 +702,13 @@ export function ProfilePageShell({
                 />
                 <div className="account-radio-card__media account-radio-card__media--team">
                   <AssetImage
-                    src={constructorAsset.badgeAssetPath ?? constructorAsset.carImagePath ?? constructorAsset.fallbackImagePath}
+                    src={constructorLogoMedia ?? constructorAsset.carImagePath ?? constructorAsset.fallbackImagePath}
                     fallbackSrc={constructorAsset.fallbackImagePath}
                     alt={`${constructorLabel} identity`}
                     fill
                     className="account-radio-card__image account-radio-card__image--team"
                     sizes="112px"
-                    style={{ objectFit: constructorAsset.badgeAssetPath ? "contain" : "cover", objectPosition: constructorAsset.imagePosition ?? "center center" }}
+                    style={{ objectFit: constructorLogoMedia ? "contain" : "cover", objectPosition: constructorAsset.imagePosition ?? "center center" }}
                   />
                 </div>
                 <div className="account-radio-card__copy">
@@ -736,7 +736,7 @@ export function ProfilePageShell({
                   {driverIdentityMedia ? (
                     <AssetImage
                       src={driverIdentityMedia}
-                      fallbackSrc={selectedDriver?.fallbackPhotoPath ?? "/assets/drivers/driver-placeholder.svg"}
+                      fallbackSrc={selectedDriver?.fallbackPhotoPath ?? "/assets/drivers/2026/fallback/driver-placeholder.svg"}
                       alt={`${driverLabel} portrait`}
                       fill
                       className="account-radio-card__image"

@@ -9,8 +9,10 @@ type RaceWeekCircuitVisualizationProps = {
   title: string;
   trackPath: string;
   metadata: RaceWeekCircuitMetadata | null;
+  presentation?: "detailed" | "hero";
   showLegend?: boolean;
   showMetadata?: boolean;
+  showSpecs?: boolean;
 };
 
 function getTooltipPosition(marker: CircuitCornerMarker, width: number) {
@@ -31,6 +33,14 @@ function getTooltipPosition(marker: CircuitCornerMarker, width: number) {
 function closeOpenTrackPath(pathData: string) {
   const trimmed = pathData.trim();
   return /z$/i.test(trimmed) ? trimmed : `${trimmed} Z`;
+}
+
+function getBroadcastHudLabel(title: string, metadata: RaceWeekCircuitMetadata | null) {
+  if (!metadata) {
+    return title;
+  }
+
+  return metadata.verified ? "Verified circuit trace" : "Approximate circuit trace";
 }
 
 function CircuitCallout({ callout }: { callout: CircuitDataCallout }) {
@@ -66,11 +76,16 @@ export function RaceWeekCircuitVisualization({
   title,
   trackPath,
   metadata,
+  presentation = "detailed",
   showLegend = true,
   showMetadata = true,
+  showSpecs = false,
 }: RaceWeekCircuitVisualizationProps) {
   const viewBox = metadata?.viewBox ?? "0 0 960 620";
   const renderedTrackPath = closeOpenTrackPath(trackPath);
+  const isHero = presentation === "hero";
+  const shouldShowDetailedMetadata = Boolean(metadata && showMetadata);
+  const shouldShowStartMarker = Boolean(metadata && showMetadata);
   const sectors = metadata?.sectors ?? [
     { id: "sector-1" as const, label: "Sector 1", startPercent: 0, endPercent: 33.3, color: "#ff3f76" },
     { id: "sector-2" as const, label: "Sector 2", startPercent: 33.3, endPercent: 66.6, color: "#38bdf8" },
@@ -78,16 +93,41 @@ export function RaceWeekCircuitVisualization({
   ];
 
   return (
-    <div className="race-week-sector-track">
+    <div className={`race-week-sector-track race-week-sector-track--${presentation}`}>
+      <div className="race-week-sector-track__broadcast-shell" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
       <svg
         viewBox={viewBox}
         className="race-week-sector-track__svg"
         role="img"
-        aria-label={`${title} circuit with approximate sectors and circuit feature markers`}
+        aria-label={
+          isHero
+            ? `${title} circuit sectors`
+            : `${title} circuit with approximate sectors and circuit feature markers`
+        }
       >
+        <path d={renderedTrackPath} className="race-week-sector-track__halo" />
+        <path d={renderedTrackPath} className="race-week-sector-track__kerb" />
         <path d={renderedTrackPath} className="race-week-sector-track__outer-ribbon" />
         <path d={renderedTrackPath} className="race-week-sector-track__shadow" />
         <path d={renderedTrackPath} className="race-week-sector-track__inner-ribbon" />
+        <path
+          d={renderedTrackPath}
+          pathLength={100}
+          className="race-week-sector-track__telemetry-sweep"
+          aria-hidden="true"
+        />
+        {isHero ? (
+          <path
+            d={renderedTrackPath}
+            pathLength={100}
+            className="race-week-sector-track__draw"
+            aria-hidden="true"
+          />
+        ) : null}
 
         {sectors.map((sector) => {
           const length = sector.endPercent - sector.startPercent;
@@ -96,7 +136,9 @@ export function RaceWeekCircuitVisualization({
               key={sector.id}
               d={renderedTrackPath}
               pathLength={100}
-              className="race-week-sector-track__sector"
+              className={`race-week-sector-track__sector race-week-sector-track__sector--${sector.id}`}
+              tabIndex={isHero ? 0 : undefined}
+              aria-label={isHero ? `${sector.label} sector` : undefined}
               style={
                 {
                   "--sector-color": sector.color,
@@ -108,21 +150,40 @@ export function RaceWeekCircuitVisualization({
           );
         })}
 
-        {metadata && showMetadata ? (
-          <>
-            <g className="race-week-sector-track__start" aria-label="Start finish line">
-              <g
-                className="race-week-sector-track__start-flag"
-                transform={`translate(${metadata.startFinish.x} ${metadata.startFinish.y}) rotate(-7)`}
-              >
-                <rect x="-10" y="-7" width="20" height="14" />
-                <rect className="race-week-sector-track__flag-dark" x="-10" y="-7" width="5" height="7" />
-                <rect className="race-week-sector-track__flag-dark" x="0" y="-7" width="5" height="7" />
-                <rect className="race-week-sector-track__flag-dark" x="-5" y="0" width="5" height="7" />
-                <rect className="race-week-sector-track__flag-dark" x="5" y="0" width="5" height="7" />
-              </g>
+        {metadata && shouldShowStartMarker ? (
+          <g className="race-week-sector-track__start" aria-label="Start finish line">
+            <line
+              className="race-week-sector-track__start-beam"
+              x1={metadata.startFinish.x - 28}
+              y1={metadata.startFinish.y - 16}
+              x2={metadata.startFinish.x + 28}
+              y2={metadata.startFinish.y + 16}
+            />
+            <g
+              className="race-week-sector-track__start-flag"
+              transform={`translate(${metadata.startFinish.x} ${metadata.startFinish.y}) rotate(-7)`}
+            >
+              <rect x="-10" y="-7" width="20" height="14" />
+              <rect className="race-week-sector-track__flag-dark" x="-10" y="-7" width="5" height="7" />
+              <rect className="race-week-sector-track__flag-dark" x="0" y="-7" width="5" height="7" />
+              <rect className="race-week-sector-track__flag-dark" x="-5" y="0" width="5" height="7" />
+              <rect className="race-week-sector-track__flag-dark" x="5" y="0" width="5" height="7" />
             </g>
+            {isHero ? (
+              <g
+                className="race-week-sector-track__lap-marker"
+                transform={`translate(${metadata.startFinish.x} ${metadata.startFinish.y})`}
+                aria-hidden="true"
+              >
+                <circle r="12" />
+                <circle r="4" />
+              </g>
+            ) : null}
+          </g>
+        ) : null}
 
+        {metadata && shouldShowDetailedMetadata ? (
+          <>
             {metadata.corners.map((marker) => {
               const tooltipWidth = Math.max(72, marker.label.length * 5.7 + 18);
               const tooltip = getTooltipPosition(marker, tooltipWidth);
@@ -171,6 +232,10 @@ export function RaceWeekCircuitVisualization({
 
       {showLegend ? (
         <div className="race-week-sector-track__legend">
+          <div className="race-week-sector-track__broadcast-hud">
+            <span>Track feed</span>
+            <strong>{getBroadcastHudLabel(title, metadata)}</strong>
+          </div>
           <div className="race-week-sector-track__legend-sectors">
             {sectors.map((sector) => (
               <span key={sector.id}>
@@ -179,6 +244,23 @@ export function RaceWeekCircuitVisualization({
               </span>
             ))}
           </div>
+        </div>
+      ) : null}
+
+      {showSpecs && metadata?.specs ? (
+        <div className="race-week-sector-track__specs" aria-label={`${title} circuit specs`}>
+          <span>
+            <strong>{metadata.specs.circuitLengthKm} km</strong>
+            Circuit
+          </span>
+          <span>
+            <strong>{metadata.specs.laps}</strong>
+            Laps
+          </span>
+          <span>
+            <strong>{metadata.specs.raceDistanceKm} km</strong>
+            Race
+          </span>
         </div>
       ) : null}
     </div>

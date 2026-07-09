@@ -7,6 +7,9 @@ export type CurrentDriverMeta = {
   currentTeamName: string;
   driverCode: string;
   nationality: string;
+  headshotPath: string | null;
+  bodyImagePath: string | null;
+  imageBackground: "transparent" | "dark-crop";
   photoPath: string | null;
   fallbackPhotoPath: string;
   altText: string;
@@ -19,7 +22,9 @@ export type CurrentDriverMeta = {
   sourceTag?: string;
 };
 
-const sharedDriverFallback = "/assets/drivers/driver-placeholder.svg";
+export type DriverImageKind = "headshot" | "body" | "portrait";
+
+const sharedDriverFallback = "/assets/drivers/2026/fallback/driver-placeholder.svg";
 
 export const CURRENT_2026_DRIVER_IDS = [
   "russell",
@@ -55,6 +60,9 @@ const fallbackDriver: CurrentDriverMeta = {
   currentTeamName: "Constructor",
   driverCode: "DRV",
   nationality: "Nationality pending",
+  headshotPath: null,
+  bodyImagePath: null,
+  imageBackground: "transparent",
   photoPath: null,
   fallbackPhotoPath: sharedDriverFallback,
   altText: "Formula 1 driver portrait placeholder",
@@ -179,6 +187,18 @@ export function getCurrentDriverMetaByCode(code: string | null | undefined): Cur
   };
 }
 
+export function getDriverImagePath(driver: CurrentDriverMeta, kind: DriverImageKind = "portrait"): string {
+  if (kind === "headshot") {
+    return driver.headshotPath ?? driver.photoPath ?? driver.bodyImagePath ?? driver.fallbackPhotoPath;
+  }
+
+  if (kind === "body") {
+    return driver.bodyImagePath ?? driver.photoPath ?? driver.headshotPath ?? driver.fallbackPhotoPath;
+  }
+
+  return driver.photoPath ?? driver.headshotPath ?? driver.bodyImagePath ?? driver.fallbackPhotoPath;
+}
+
 function createDriver(
   driverId: string,
   displayName: string,
@@ -192,6 +212,8 @@ function createDriver(
   formula1AssetCode: string,
   overrides: Partial<CurrentDriverMeta> = {},
 ): CurrentDriverMeta {
+  const bodyImagePath = `/assets/drivers/2026/body/${driverId}.webp`;
+
   return {
     driverId,
     displayName,
@@ -201,7 +223,10 @@ function createDriver(
     currentTeamName,
     driverCode,
     nationality,
-    photoPath: `/assets/drivers/2026/${driverId}.webp`,
+    headshotPath: null,
+    bodyImagePath,
+    imageBackground: "transparent",
+    photoPath: bodyImagePath,
     fallbackPhotoPath: sharedDriverFallback,
     altText: `${displayName} portrait`,
     formula1TeamSlug,

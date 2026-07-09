@@ -9,6 +9,7 @@ type TrackMapProps = {
   circuitId: string;
   title: string;
   variant?: "card" | "hero";
+  presentation?: "detailed" | "hero";
 };
 
 function isUsablePath(pathData: string | null | undefined) {
@@ -16,7 +17,7 @@ function isUsablePath(pathData: string | null | undefined) {
   return Boolean(normalized && normalized.length > 16 && /[MLCQ]/i.test(normalized));
 }
 
-export async function TrackMap({ circuitId, title, variant = "card" }: TrackMapProps) {
+export async function TrackMap({ circuitId, title, variant = "card", presentation = "detailed" }: TrackMapProps) {
   const circuit = getCircuitAsset(circuitId);
   const fastf1Track = await getCircuitTrackData(circuitId);
   const geoFallback = await getCircuitGeoFallback(circuitId, variant);
@@ -36,6 +37,7 @@ export async function TrackMap({ circuitId, title, variant = "card" }: TrackMapP
           title={title}
           trackPath={preferredPath}
           metadata={isUsablePath(fastf1Track?.pathData) ? getRaceWeekCircuitMetadata(circuitId) : null}
+          presentation={presentation}
           showLegend={variant === "hero"}
           showMetadata={variant === "hero"}
         />

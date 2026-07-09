@@ -172,6 +172,7 @@ type CircuitRow = {
 };
 
 type DriverBoardRow = {
+  race_id?: string;
   driver_id: string;
   driver_name: string;
   constructor_id: string;
@@ -188,6 +189,7 @@ type DriverBoardRow = {
 };
 
 type ConstructorBoardRow = {
+  race_id?: string;
   constructor_id: string;
   constructor_name: string;
   long_run_pace_s: number | string | null;
@@ -199,6 +201,7 @@ type ConstructorBoardRow = {
 };
 
 type StrategyRow = {
+  race_id?: string;
   driver_id: string;
   constructor_id: string;
   recommended_stop_count: number | string | null;
@@ -212,6 +215,7 @@ type StrategyRow = {
 };
 
 type StorylineRow = {
+  race_id?: string;
   entity_type: string;
   entity_id: string | null;
   storyline_type: string;
@@ -494,7 +498,7 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
     },
     sessionStatus,
     driverBoard: driverBoardRows
-      .filter((row) => row && row.driver_id)
+      .filter((row) => row && row.driver_id && "race_id" in row && row.race_id === overviewRow.race_id)
       .map((row) => ({
         driverId: row.driver_id,
         driverName: row.driver_name,
@@ -511,7 +515,7 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
         summary: row.summary ?? "",
       })),
     constructorBoard: constructorBoardRows
-      .filter((row) => row && row.constructor_id)
+      .filter((row) => row && row.constructor_id && "race_id" in row && row.race_id === overviewRow.race_id)
       .map((row) => ({
         constructorId: row.constructor_id,
         constructorName: row.constructor_name,
@@ -523,7 +527,7 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
         summary: row.summary ?? "",
       })),
     strategy: strategyRows
-      .filter((row) => row && row.driver_id)
+      .filter((row) => row && row.driver_id && "race_id" in row && row.race_id === overviewRow.race_id)
       .map((row) => ({
         driverId: row.driver_id,
         constructorId: row.constructor_id,
@@ -537,7 +541,7 @@ async function buildProductFromCsv(): Promise<RaceWeekProduct | null> {
         rationale: row.rationale ?? "",
       })),
     storylines: storylineRows
-      .filter((row) => row && row.storyline_type)
+      .filter((row) => row && row.storyline_type && (!("race_id" in row) || row.race_id === overviewRow.race_id))
       .sort((left, right) => Number(left.priority_rank) - Number(right.priority_rank))
       .map((row) => ({
         entityType: row.entity_type,

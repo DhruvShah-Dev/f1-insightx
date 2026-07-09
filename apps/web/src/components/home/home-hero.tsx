@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { RaceCountdown } from "@/components/home/race-countdown";
-import { AssetImage } from "@/components/ui/asset-image";
 import { TrackMap } from "@/components/ui/track-map";
 import type { SeasonRaceRef } from "@/lib/server/season-state";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
@@ -28,19 +27,6 @@ export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps)
     >
       <div className="home-hero__atmosphere" aria-hidden="true">
         <div className="home-hero__grid" />
-        {visualTeam.carImagePath ? (
-          <AssetImage
-            src={visualTeam.carImagePath}
-            fallbackSrc={visualTeam.fallbackImagePath}
-            alt=""
-            className="home-hero__car"
-            width={1600}
-            height={900}
-            priority
-            sizes="100vw"
-            style={{ objectPosition: visualTeam.imagePosition, objectFit: visualTeam.imageFit ?? "cover" }}
-          />
-        ) : null}
         <div className="home-hero__car-fade" />
       </div>
 
@@ -70,19 +56,26 @@ export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps)
                   initialLabel={formatCountdown(nextRace.scheduled_at)}
                 />
               </p>
+              <span className="home-hero__team-context">{visualTeam.label} visual feed</span>
             </article>
           ) : null}
 
           <div className="home-hero__visual">
             {nextRace?.circuit_id ? (
               <div className="home-hero__track">
-                <TrackMap circuitId={nextRace.circuit_id} title={circuitName} />
+                <TrackMap circuitId={nextRace.circuit_id} title={circuitName} variant="hero" presentation="hero" />
               </div>
             ) : null}
 
             <div className="home-hero__actions">
-              <Link href="/race-analysis" className="hero__cta hero__cta--primary">Explore race analysis</Link>
-              <Link href="/lab" className="hero__cta hero__cta--secondary">Build a strategy</Link>
+              <Link href="/race-analysis" className="hero__cta hero__cta--primary">
+                <span>Explore race analysis</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link href="/lab" className="hero__cta hero__cta--secondary">
+                <span>Build a strategy</span>
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </div>

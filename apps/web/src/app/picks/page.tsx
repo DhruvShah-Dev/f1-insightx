@@ -9,7 +9,7 @@ import { StatePanel } from "@/components/ui/state-panel";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { getPitWallPicksPayload } from "@/lib/server/pit-wall-picks";
-import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
+import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
 
 export const metadata: Metadata = {
@@ -111,7 +111,7 @@ export default async function PicksPage() {
                 }
               >
                 <AssetImage
-                  src={driverMeta.photoPath ?? driverMeta.fallbackPhotoPath}
+                  src={getDriverImagePath(driverMeta, "body")}
                   fallbackSrc={driverMeta.fallbackPhotoPath}
                   alt=""
                   className="pit-wall-hero__driver-image"

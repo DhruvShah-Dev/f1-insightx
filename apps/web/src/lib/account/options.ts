@@ -7,6 +7,9 @@ export type AccountConstructorOption = {
   shortLabel: string;
   primary: string;
   secondary: string;
+  logoDarkPath: string | null;
+  logoLightPath: string | null;
+  logoMonoPath: string | null;
   badgeAssetPath: string | null;
 };
 
@@ -16,6 +19,8 @@ export type AccountDriverOption = {
   code: string;
   teamId: string;
   nationality: string;
+  headshotPath: string | null;
+  bodyImagePath: string | null;
   photoPath: string | null;
   fallbackPhotoPath: string;
 };
@@ -28,6 +33,9 @@ export const ACCOUNT_CONSTRUCTOR_OPTIONS: AccountConstructorOption[] = CURRENT_2
     shortLabel: team.shortLabel,
     primary: team.primary,
     secondary: team.secondary,
+    logoDarkPath: team.logoDarkPath ?? null,
+    logoLightPath: team.logoLightPath ?? null,
+    logoMonoPath: team.logoMonoPath ?? null,
     badgeAssetPath: team.badgeAssetPath,
   };
 });
@@ -40,6 +48,8 @@ export const ACCOUNT_DRIVER_OPTIONS: AccountDriverOption[] = CURRENT_2026_DRIVER
     code: driver.driverCode,
     teamId: driver.teamId,
     nationality: driver.nationality,
+    headshotPath: driver.headshotPath,
+    bodyImagePath: driver.bodyImagePath,
     photoPath: driver.photoPath,
     fallbackPhotoPath: driver.fallbackPhotoPath,
   };

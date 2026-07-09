@@ -5,6 +5,10 @@ export type TeamAsset = {
   primary: string;
   secondary: string;
   accent: string;
+  logoDarkPath?: string | null;
+  logoLightPath?: string | null;
+  logoMonoPath?: string | null;
+  preferredLogoPlate?: "dark" | "light" | "transparent";
   badgeAssetPath: string | null;
   badgePlate?: "default" | "dark" | "light" | "gold";
   badgeContrastColor?: string;
@@ -14,6 +18,8 @@ export type TeamAsset = {
   imageFit?: "cover" | "contain";
   imagePosition?: string;
 };
+
+export type TeamLogoTheme = "dark" | "light" | "mono";
 
 export type CircuitAsset = {
   id: string;
@@ -29,7 +35,7 @@ export type CircuitAsset = {
   lapRecordYear: number | null;
 };
 
-const sharedTeamFallback = "/assets/teams/car-placeholder.svg";
+const sharedTeamFallback = "/assets/teams/2026/fallback/car-placeholder.svg";
 
 const fallbackTeam: TeamAsset = {
   id: "default",
@@ -38,6 +44,10 @@ const fallbackTeam: TeamAsset = {
   primary: "#636b78",
   secondary: "#9da6b2",
   accent: "#e10600",
+  logoDarkPath: null,
+  logoLightPath: null,
+  logoMonoPath: null,
+  preferredLogoPlate: "dark",
   badgeAssetPath: null,
   carImagePath: null,
   carImageAlt: "Formula 1 constructor media placeholder",
@@ -106,7 +116,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/mercedes.svg",
     badgePlate: "dark",
     badgeContrastColor: "#d9dde3",
-    carImagePath: "/assets/teams/2026/mercedes.webp",
+    carImagePath: "/assets/teams/2026/cars/mercedes.webp",
     carImageAlt: "Mercedes AMG Petronas 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 58%",
@@ -121,7 +131,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/ferrari.svg",
     badgePlate: "gold",
     badgeContrastColor: "#ffda59",
-    carImagePath: "/assets/teams/2026/ferrari.webp",
+    carImagePath: "/assets/teams/2026/cars/ferrari.webp",
     carImageAlt: "Scuderia Ferrari 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center center",
@@ -136,7 +146,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/mclaren.svg",
     badgePlate: "light",
     badgeContrastColor: "#ff8700",
-    carImagePath: "/assets/teams/2026/mclaren.webp",
+    carImagePath: "/assets/teams/2026/cars/mclaren.webp",
     carImageAlt: "McLaren 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 52%",
@@ -151,7 +161,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/haas.svg",
     badgePlate: "light",
     badgeContrastColor: "#ffffff",
-    carImagePath: "/assets/teams/2026/haas.webp",
+    carImagePath: "/assets/teams/2026/cars/haas.webp",
     carImageAlt: "Haas F1 Team 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 48%",
@@ -166,7 +176,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/red-bull.svg",
     badgePlate: "dark",
     badgeContrastColor: "#f5c542",
-    carImagePath: "/assets/teams/2026/red-bull.webp",
+    carImagePath: "/assets/teams/2026/cars/red-bull.webp",
     carImageAlt: "Oracle Red Bull Racing 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 52%",
@@ -181,7 +191,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: null,
     badgePlate: "dark",
     badgeContrastColor: "#d7dce4",
-    carImagePath: "/assets/teams/2026/racing-bulls.webp",
+    carImagePath: "/assets/teams/2026/cars/racing-bulls.webp",
     carImageAlt: "Racing Bulls 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 52%",
@@ -196,7 +206,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: null,
     badgePlate: "dark",
     badgeContrastColor: "#dfe6ee",
-    carImagePath: "/assets/teams/2026/alpine.webp",
+    carImagePath: "/assets/teams/2026/cars/alpine.webp",
     carImageAlt: "BWT Alpine 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 52%",
@@ -211,7 +221,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/audi.svg",
     badgePlate: "light",
     badgeContrastColor: "#eceff4",
-    carImagePath: "/assets/teams/2026/audi.webp",
+    carImagePath: "/assets/teams/2026/cars/audi.webp",
     carImageAlt: "Audi 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 54%",
@@ -226,7 +236,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/williams.svg",
     badgePlate: "light",
     badgeContrastColor: "#8fbeff",
-    carImagePath: "/assets/teams/2026/williams.webp",
+    carImagePath: "/assets/teams/2026/cars/williams.webp",
     carImageAlt: "Williams Racing 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 46%",
@@ -241,7 +251,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/cadillac.svg",
     badgePlate: "light",
     badgeContrastColor: "#f5f7fb",
-    carImagePath: "/assets/teams/2026/cadillac.webp",
+    carImagePath: "/assets/teams/2026/cars/cadillac.webp",
     carImageAlt: "Cadillac 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 58%",
@@ -256,7 +266,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     badgeAssetPath: "/assets/teams/logos/aston-martin.svg",
     badgePlate: "light",
     badgeContrastColor: "#7ad7c8",
-    carImagePath: "/assets/teams/2026/aston-martin.webp",
+    carImagePath: "/assets/teams/2026/cars/aston-martin.webp",
     carImageAlt: "Aston Martin Aramco 2026 Formula 1 car",
     fallbackImagePath: sharedTeamFallback,
     imagePosition: "center 48%",
@@ -620,11 +630,75 @@ export function getTeamAsset(teamId: string | null | undefined): TeamAsset {
   ));
   const normalizedTeamId = teamAliases[teamKey] ?? teamAliases[teamKey.toLowerCase()] ?? teamAliases[slugTeamId] ?? labelMatch?.id ?? slugTeamId;
 
-  return teamAssetMap[normalizedTeamId] ?? {
+  return resolveTeamAsset(teamAssetMap[normalizedTeamId] ?? {
     ...fallbackTeam,
     id: normalizedTeamId,
     label: normalizedTeamId.replaceAll("_", " "),
+  });
+}
+
+export function getTeamLogoPath(team: TeamAsset, theme: TeamLogoTheme = "dark"): string | null {
+  if (theme === "light") {
+    return team.logoLightPath ?? team.logoDarkPath ?? team.badgeAssetPath ?? null;
+  }
+
+  if (theme === "mono") {
+    return team.logoMonoPath ?? team.logoDarkPath ?? team.badgeAssetPath ?? null;
+  }
+
+  return team.logoDarkPath ?? team.badgeAssetPath ?? null;
+}
+
+function resolveTeamAsset(team: TeamAsset): TeamAsset {
+  const logoPaths = resolveTeamLogoPaths(team.badgeAssetPath);
+  const carImagePath = resolveTeamCarPath(team.carImagePath);
+
+  return {
+    ...team,
+    logoDarkPath: team.logoDarkPath ?? logoPaths.dark,
+    logoLightPath: team.logoLightPath ?? logoPaths.light,
+    logoMonoPath: team.logoMonoPath ?? logoPaths.mono,
+    preferredLogoPlate: team.preferredLogoPlate ?? logoPlateToPreference(team.badgePlate),
+    badgeAssetPath: team.badgeAssetPath ? (team.logoDarkPath ?? logoPaths.dark ?? team.badgeAssetPath) : null,
+    carImagePath,
   };
+}
+
+function resolveTeamCarPath(carImagePath: string | null): string | null {
+  if (!carImagePath) {
+    return null;
+  }
+
+  if (carImagePath.includes("/assets/teams/2026/cars/")) {
+    return carImagePath;
+  }
+
+  return carImagePath.replace("/assets/teams/2026/", "/assets/teams/2026/cars/");
+}
+
+function resolveTeamLogoPaths(badgeAssetPath: string | null): Record<TeamLogoTheme, string | null> {
+  if (!badgeAssetPath) {
+    return { dark: null, light: null, mono: null };
+  }
+
+  const filename = badgeAssetPath.split("/").at(-1);
+  if (!filename) {
+    return { dark: badgeAssetPath, light: badgeAssetPath, mono: badgeAssetPath };
+  }
+
+  return {
+    dark: `/assets/teams/logos/dark/${filename}`,
+    light: `/assets/teams/logos/light/${filename}`,
+    mono: `/assets/teams/logos/mono/${filename}`,
+  };
+}
+
+function logoPlateToPreference(plate: TeamAsset["badgePlate"]): TeamAsset["preferredLogoPlate"] {
+  if (plate === "light" || plate === "gold") {
+    return "light";
+  }
+
+  return plate === "dark" ? "dark" : "transparent";
 }
 
 export function getCircuitAsset(circuitId: string | null | undefined): CircuitAsset {

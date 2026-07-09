@@ -39,6 +39,11 @@ export type RaceWeekCircuitMetadata = {
   drsZones: CircuitDataCallout[];
   speedTraps: CircuitDataCallout[];
   startFinish: CircuitPoint;
+  specs?: {
+    circuitLengthKm: string;
+    laps: number;
+    raceDistanceKm: string;
+  };
   source: string;
   verified: boolean;
   note: string;
@@ -206,11 +211,54 @@ const redBullRingMetadata: RaceWeekCircuitMetadata = {
   note: "Corner names, sector guides, and overtake feature markers are approximate visual annotations for the F1 Grand Prix layout.",
 };
 
+const spaMetadata: RaceWeekCircuitMetadata = {
+  circuitId: "spa",
+  viewBox: "0 0 960 620",
+  corners: [
+    { number: 1, x: 364.4, y: 35.9, label: "La Source", tooltipSide: "below" },
+    { number: 2, x: 507.5, y: 143.9, label: "Eau Rouge", tooltipSide: "right" },
+    { number: 3, x: 529.7, y: 163.7, label: "Raidillon", tooltipSide: "right" },
+    { number: 4, x: 536.1, y: 189.5, label: "Kemmel", tooltipSide: "right" },
+    { number: 5, x: 651.2, y: 471.6, label: "Les Combes", tooltipSide: "left" },
+    { number: 6, x: 638.5, y: 488.6, label: "Les Combes", tooltipSide: "left" },
+    { number: 7, x: 642.2, y: 531.8, label: "Malmedy", tooltipSide: "left" },
+    { number: 8, x: 556.3, y: 580.5, label: "Bruxelles", tooltipSide: "left" },
+    { number: 9, x: 592.4, y: 533.3, label: "No Name", tooltipSide: "right" },
+    { number: 10, x: 553.1, y: 399.9, label: "Pouhon", tooltipSide: "right" },
+    { number: 11, x: 492.4, y: 401.7, label: "Pouhon", tooltipSide: "left" },
+    { number: 12, x: 446.8, y: 505.1, label: "Fagnes", tooltipSide: "right" },
+    { number: 13, x: 406.7, y: 501.6, label: "Fagnes", tooltipSide: "left" },
+    { number: 14, x: 357.3, y: 561.1, label: "Campus", tooltipSide: "right" },
+    { number: 15, x: 308.2, y: 522.6, label: "Stavelot", tooltipSide: "right" },
+    { number: 16, x: 436.1, y: 385.2, label: "Courbe Paul Frere", tooltipSide: "right" },
+    { number: 17, x: 462.6, y: 316.6, label: "Blanchimont", tooltipSide: "right" },
+    { number: 18, x: 426.7, y: 176.7, label: "Bus Stop", tooltipSide: "left" },
+    { number: 19, x: 440.9, y: 168.1, label: "Chicane", tooltipSide: "right" },
+  ],
+  sectors: [
+    { id: "sector-1", label: "Sector 1", startPercent: 0, endPercent: 33.3, color: "#e10600" },
+    { id: "sector-2", label: "Sector 2", startPercent: 33.3, endPercent: 66.6, color: "#ffffff" },
+    { id: "sector-3", label: "Sector 3", startPercent: 66.6, endPercent: 100, color: "#8b949e" },
+  ],
+  drsZones: [],
+  speedTraps: [],
+  startFinish: { x: 413, y: 120.2 },
+  specs: {
+    circuitLengthKm: "7.004",
+    laps: 44,
+    raceDistanceKm: "308.052",
+  },
+  source: "Manual Spa-Francorchamps 2026 annotation aligned to FastF1-derived path geometry",
+  verified: true,
+  note: "2026 Belgian Grand Prix specs from Formula 1. Corner labels are approximate visual annotations aligned to existing track geometry.",
+};
+
 const generatedMetadata = generatedCircuitMetadata as Record<string, CircuitMetadataRecord>;
 
 const manualMetadata: Record<string, RaceWeekCircuitMetadata> = {
   monaco: monacoMetadata,
   red_bull_ring: redBullRingMetadata,
+  spa: spaMetadata,
 };
 
 const cornerNameOverrides: Record<string, Record<string, string>> = {

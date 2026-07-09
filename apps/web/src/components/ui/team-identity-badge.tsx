@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { getTeamAsset } from "@/lib/ui/asset-manifest";
+import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 
 type TeamIdentityBadgeProps = {
   teamId: string;
@@ -15,6 +15,8 @@ export function TeamIdentityBadge({
 }: TeamIdentityBadgeProps) {
   const team = getTeamAsset(teamId);
   const plate = team.badgePlate ?? "default";
+  const logoTheme = plate === "light" || plate === "gold" ? "light" : "dark";
+  const logoPath = getTeamLogoPath(team, logoTheme);
   const badgeLabel = label ?? team.label;
 
   return (
@@ -30,9 +32,9 @@ export function TeamIdentityBadge({
       }
     >
       <span className="team-badge__mark" aria-hidden="true">
-        {team.badgeAssetPath ? (
+        {logoPath ? (
           <AssetImage
-            src={team.badgeAssetPath}
+            src={logoPath}
             fallbackSrc={team.fallbackImagePath}
             alt=""
             fill

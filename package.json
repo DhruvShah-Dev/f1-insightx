@@ -17,6 +17,7 @@
     "lint": "npm run lint --workspace web",
     "test": "npm run test --workspace web",
     "audit": "npm audit",
+    "assets:audit": "node scripts/audit_assets.js",
     "audit:prod": "npm audit --omit=dev --audit-level=high",
     "typecheck": "npx tsc --noEmit --project apps/web/tsconfig.json",
     "data:install": "python -m pip install -r data/requirements.txt",

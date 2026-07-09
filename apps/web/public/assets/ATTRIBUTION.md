@@ -32,10 +32,13 @@ Stored under `public/assets/teams`.
 - `car-placeholder.svg`
   - Local project placeholder for teams that do not yet have a consistent open-license media set
   - Intended to be replaced by repo-backed, rights-safe team photography later
+- `2026/fallback/car-placeholder.svg`
+  - Same local placeholder, staged in the current-season fallback folder for manifest-driven image resolution
 
 ## 2026 Team Car Assets
 
 Stored under `public/assets/teams/2026`.
+Runtime manifest paths resolve through `public/assets/teams/2026/cars`.
 
 These files are stored locally so runtime cards do not hotlink unstable third-party media URLs.
 
@@ -65,6 +68,8 @@ These files are stored locally so runtime cards do not hotlink unstable third-pa
 ## 2026 Driver Portrait Assets
 
 Stored under `public/assets/drivers/2026`.
+Runtime body/cutout paths resolve through `public/assets/drivers/2026/body`.
+Dedicated headshot crops should be added under `public/assets/drivers/2026/headshots` when available; until then, UI helpers fall back to the body/cutout source.
 
 These files are stored locally so the standings cards do not depend on runtime hotlinks.
 
@@ -75,3 +80,27 @@ These files are stored locally so the standings cards do not depend on runtime h
 
 - `driver-placeholder.svg`
   - Local project fallback portrait used when a driver headshot is missing or intentionally disabled
+- `2026/fallback/driver-placeholder.svg`
+  - Same local placeholder, staged in the current-season fallback folder for manifest-driven image resolution
+
+## Team Logo Variants
+
+Stored under:
+
+- `public/assets/teams/logos/dark`
+- `public/assets/teams/logos/light`
+- `public/assets/teams/logos/mono`
+
+Current variant folders are populated from the existing local SVG logo set so callers can resolve a stable path for dark surfaces, light plates, and compact mono-style slots. Replace individual files with hand-tuned variants when brand-safe source assets are available.
+
+Prefer SVG for team identity. Use PNG only for raster-only source logos or email/social contexts where SVG support is not acceptable.
+
+## Product Logo Variants
+
+Stored under `public/assets/logos/product`.
+
+- `dark/wordmark.svg`
+- `light/minimal.svg`
+- `icon/icon-light.svg`
+
+These mirror existing local F1 InsightX marks in a context-based folder structure for future product surfaces.

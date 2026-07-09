@@ -1,6 +1,6 @@
 import { AssetImage } from "@/components/ui/asset-image";
 import type { CSSProperties } from "react";
-import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
+import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
 import type { DriverStanding } from "@/lib/server/standings";
 
@@ -17,6 +17,7 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
   return (
     <article
       className="driver-standing-card"
+      tabIndex={0}
       style={
         {
           "--team-primary": team.primary,
@@ -25,7 +26,12 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
         } as CSSProperties
       }
     >
+      <div className="driver-standing-card__frame" aria-hidden="true" />
       <div className="driver-standing-card__sheen" aria-hidden="true" />
+      <div className="driver-standing-card__topline">
+        <span>Drivers</span>
+        <strong>{standing.code ?? driver.driverCode}</strong>
+      </div>
       <div className="driver-standing-card__layout">
         <div className="driver-standing-card__stat-rail" aria-label={`Position ${standing.standingPosition}, ${standing.points} points`}>
           <div className="driver-standing-card__stat">
@@ -41,6 +47,7 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
 
         <div className="driver-standing-card__main">
           <div className="driver-standing-card__intro">
+            <span className="driver-standing-card__rank-badge">P{standing.standingPosition}</span>
             <p className="driver-standing-card__team">{teamLabel}</p>
             <h3 className="driver-standing-card__name">{standing.displayName}</h3>
           </div>
@@ -49,7 +56,7 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
             <div className="driver-standing-card__portrait-frame">
               <div className="driver-standing-card__halo" aria-hidden="true" />
               <AssetImage
-                src={driver.photoPath ?? driver.fallbackPhotoPath}
+                src={getDriverImagePath(driver, "body")}
                 fallbackSrc={driver.fallbackPhotoPath}
                 alt={driver.altText}
                 className="driver-standing-card__photo"
@@ -71,6 +78,10 @@ export function DriverStandingCard({ standing, priority = false }: DriverStandin
               <span>{teamLabel}</span>
               <span>{standing.nationality ?? "Nationality pending"}</span>
               {driver.sourceTag === "fallback" ? <span>Portrait pending</span> : null}
+            </div>
+            <div className="driver-standing-card__serial" aria-hidden="true">
+              <span>{standing.driverId.replaceAll("_", "-")}</span>
+              <span>Top 3</span>
             </div>
           </div>
         </div>

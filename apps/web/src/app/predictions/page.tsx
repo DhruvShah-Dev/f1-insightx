@@ -1,17 +1,15 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { SiteFooter } from "@/components/ui/site-footer";
-import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { StatePanel } from "@/components/ui/state-panel";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { RaceWeekSectorTrack } from "@/components/race-week/race-week-sector-track";
 import { RaceWeekTimeToggle } from "@/components/race-week/race-week-time-toggle";
 import { getRaceWeekProductResult, type RaceWeekPredictionModeId, type RaceWeekProduct } from "@/lib/server/race-week-product";
 import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
-import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
+import { getCircuitAsset } from "@/lib/ui/asset-manifest";
 
 type RaceTheme = {
-  eyebrow: string;
   deck: string;
   shell: string;
   accent: string;
@@ -20,54 +18,47 @@ type RaceTheme = {
 
 const raceThemeByCircuit: Record<string, RaceTheme> = {
   catalunya: {
-    eyebrow: "Barcelona Race Week",
     deck: "Long loaded corners, tyre stress, and balance through the final sector make race pace hard to fake here.",
-    shell: "#dbe8ef",
-    accent: "#f15a3b",
-    accentSoft: "#f7d64a",
+    shell: "#10151b",
+    accent: "#e10600",
+    accentSoft: "#f4f6f8",
   },
   miami: {
-    eyebrow: "Miami Race Week",
     deck: "Warm night energy, long straights, and enough volatility to punish overconfident reads.",
-    shell: "#46d9ff",
-    accent: "#ff5ea8",
-    accentSoft: "#ffe58f",
+    shell: "#10151b",
+    accent: "#00a3ad",
+    accentSoft: "#f4f6f8",
   },
   monaco: {
-    eyebrow: "Monaco Race Week",
     deck: "Track position dominates here. One-lap shape and execution quality matter more than brute pace alone.",
-    shell: "#d7cfbf",
-    accent: "#fb4f4f",
+    shell: "#10151b",
+    accent: "#d7cfbf",
     accentSoft: "#ffffff",
   },
   red_bull_ring: {
-    eyebrow: "Austria Race Week",
     deck: "Short laps, heavy braking, and quick weather swings make traffic, track limits, and tyre warm-up hard to separate.",
-    shell: "#e6edf2",
-    accent: "#d71920",
+    shell: "#10151b",
+    accent: "#e10600",
     accentSoft: "#ffffff",
   },
   silverstone: {
-    eyebrow: "Silverstone Race Week",
     deck: "High-speed commitment and sustained balance usually decide whether the weekend stays clean or collapses late.",
-    shell: "#d7ecff",
+    shell: "#10151b",
     accent: "#59a7ff",
     accentSoft: "#f7fbff",
   },
   spa: {
-    eyebrow: "Spa Race Week",
-    deck: "Low-drag pace, weather variance, and strategic timing can reshape the order in a single phase change.",
-    shell: "#a8e6ff",
+    deck: "Spa-Francorchamps. Elevation, weather, and strategy risk.",
+    shell: "#10151b",
     accent: "#74d66f",
     accentSoft: "#ffffff",
   },
 };
 
 const fallbackTheme: RaceTheme = {
-  eyebrow: "Race Week",
   deck: "A focused read on pace, readiness, strategy, and the signals most likely to matter before lights out.",
-  shell: "#d5dce7",
-  accent: "#ff5d57",
+  shell: "#10151b",
+  accent: "#e10600",
   accentSoft: "#ffffff",
 };
 
@@ -143,13 +134,6 @@ function formatMethodLabel(value: string | null) {
   return value.replace(/_/g, " ");
 }
 
-function formatPercent(value: number | null) {
-  if (value === null || Number.isNaN(value)) {
-    return "Building";
-  }
-  return `${Math.round(value * 100)}%`;
-}
-
 function getWeatherTone(value: number | null) {
   if (value === null) {
     return "Forecast pending";
@@ -184,20 +168,6 @@ function formatForecastUpdated(value: string | null | undefined) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) {
     return "Daily refresh pending";
-  }
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-  });
-}
-
-function formatBriefDate(value: string | null | undefined) {
-  if (!value) {
-    return "Source";
-  }
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    return "Source";
   }
   return date.toLocaleDateString("en-US", {
     month: "short",
@@ -245,19 +215,6 @@ function explainPredictionFlags(flags: string[]) {
   };
   const explained = flags.map((flag) => labels[flag] ?? flag.replace(/_/g, " ")).filter(Boolean);
   return explained.length > 0 ? explained.join(" / ") : "Full model inputs";
-}
-
-function getStrategicTone(value: string | null) {
-  if (!value) {
-    return "Strategy picture is still settling.";
-  }
-  if (value === "High") {
-    return "The weekend is tactically sharp. Small calls could move the order quickly.";
-  }
-  if (value === "Medium") {
-    return "Strategy will matter, but outright pace should still do most of the work.";
-  }
-  return "This looks like a cleaner weekend where pace should carry through more directly.";
 }
 
 function concise(value: string | null | undefined, maxLength = 116) {
@@ -330,18 +287,18 @@ function getSessionStatusLabel(
 function getSessionStatusDetail(sessionCode: "FP1" | "FP2" | "FP3" | "Q", productStatus: string, rows: number) {
   if (sessionCode === "Q") {
     if (productStatus === "Complete") {
-      return "Qualifying read available";
+      return "Ready";
     }
     if (productStatus === "Unavailable") {
-      return "No qualifying rows";
+      return "No data";
     }
-    return "Qualifying pending";
+    return "Pending";
   }
 
   if (rows > 0) {
-    return `${rows} driver rows`;
+    return "Ready";
   }
-  return productStatus === "Unavailable" ? "No product rows" : "Practice pending";
+  return productStatus === "Unavailable" ? "No data" : "Pending";
 }
 
 export default async function PredictionsPage({ searchParams }: PredictionsPageProps) {
@@ -379,7 +336,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
     );
   }
 
-  const { overview, driverBoard, constructorBoard, strategy, storylines, predictionModes } = raceWeek;
+  const { overview, driverBoard, strategy, predictionModes } = raceWeek;
   const nextRace = overview.nextRace;
   if (!nextRace) {
     return null;
@@ -428,7 +385,6 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
     .filter((session): session is NonNullable<typeof session> => Boolean(session));
 
   const fieldDrivers = driverBoard.slice(0, 10);
-  const leadConstructors = constructorBoard.slice(0, 5);
   const selectedPredictionModeMeta = predictionModes.find((entry) => entry.id === selectedPredictionMode) ?? predictionModes[0];
   const selectedQualifyingPrediction = raceWeek.qualifyingPrediction.filter((entry) => entry.predictionMode === selectedPredictionMode);
   const qualifyingOrder = [...selectedQualifyingPrediction].sort((left, right) => {
@@ -441,7 +397,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
   const qualifyingPoleTime = qualifyingOrder.find((entry) => entry.predictedQTimeS !== null)?.predictedQTimeS ?? null;
   const qualifyingSessionComplete = raceWeek.sessionStatus.some((entry) => entry.sessionCode === "Q" && entry.status === "complete");
   const driverNameById = new Map(driverBoard.map((entry) => [entry.driverId, entry.driverName]));
-  const constructorNameById = new Map(constructorBoard.map((entry) => [entry.constructorId, entry.constructorName]));
+  const constructorNameById = new Map(driverBoard.map((entry) => [entry.constructorId, entry.constructorName]));
   const keyedStrategy = strategy.slice(0, 6).map((entry) => {
     const matchingDriver = driverBoard.find((driver) => driver.driverId === entry.driverId);
     return {
@@ -450,7 +406,6 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
       constructorName: matchingDriver?.constructorName ?? entry.constructorId,
     };
   });
-
   return (
     <main
       className="subpage-shell race-week-page"
@@ -465,7 +420,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
       <section className="race-week-hero">
         <div className="race-week-hero__grid">
           <div className="race-week-hero__copy">
-            <p className="race-week-hero__eyebrow">{raceTheme.eyebrow}</p>
+            <p className="race-week-hero__eyebrow">{nextRace.raceName} Race Week</p>
             <h1 className="race-week-hero__headline">
               {nextRace.raceName}
               <span>{formatRaceDate(nextRace.scheduledAt)}</span>
@@ -474,33 +429,39 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
 
             <div className="race-week-hero__signals">
               <div className="race-week-hero__signal">
-                <span>Season context</span>
-                <strong>
-                  Round {nextRace.round}
-                  {overview.latestCompletedRace ? ` / after ${overview.latestCompletedRace.raceName}` : ""}
-                </strong>
+                <span>Round</span>
+                <strong>{nextRace.round}</strong>
               </div>
               <div className="race-week-hero__signal">
-                <span>Circuit profile</span>
+                <span>Profile</span>
                 <strong>{overview.archetypeLabel ?? "Street circuit"}</strong>
+              </div>
+              <div className="race-week-hero__signal">
+                <span>Weather</span>
+                <strong>{getWeatherTone(overview.weatherRiskIndex)}</strong>
               </div>
             </div>
 
-            <ProductRuntimeNote runtime={raceWeekResult.meta} className="race-week-hero__runtime" primaryLabel="Race Week data" degradedLabel="Backup data source" />
-
             <div className="race-week-hero__actions">
               <Link href="/lab" className="race-week-hero__cta race-week-hero__cta--primary">
-                Open Strategy Lab
+                Strategy Lab
               </Link>
               <Link href="/race-analysis" className="race-week-hero__cta race-week-hero__cta--secondary">
-                Open Race Analysis
+                Race Analysis
               </Link>
             </div>
           </div>
 
           <div className="race-week-hero__visual">
             <div className="race-week-hero__track">
-              <RaceWeekSectorTrack circuitId={nextRace.circuitId} title={nextRace.raceName} />
+              <RaceWeekSectorTrack
+                circuitId={nextRace.circuitId}
+                title={nextRace.raceName}
+                presentation="hero"
+                showLegend={false}
+                showMetadata
+                showSpecs
+              />
             </div>
             <div className="race-week-hero__meta">
               <div>
@@ -511,12 +472,12 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
                 </strong>
               </div>
               <div>
-                <span>Strategic difficulty</span>
+                <span>Strategy</span>
                 <strong>{overview.strategyDifficulty ?? "Building"}</strong>
               </div>
               <div>
-                <span>Weather read</span>
-                <strong>{getWeatherTone(overview.weatherRiskIndex)}</strong>
+                <span>Data</span>
+                <strong>{raceWeekResult.meta.mode === "primary" ? "Live" : "Backup"}</strong>
               </div>
             </div>
           </div>
@@ -526,8 +487,8 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
       <section className="race-week-command-deck" aria-label="Race weekend command center">
         <div className="race-week-timetable">
           <div className="race-week-section-heading race-week-section-heading--tight">
-            <p className="race-week-section-kicker">Weekend timeline</p>
-            <h2>Track time or your local time.</h2>
+            <p className="race-week-section-kicker">Weekend</p>
+            <h2>Sessions</h2>
           </div>
           <RaceWeekTimeToggle sessions={weekendSessions} trackTimeZone={trackTimeZone} />
           <div className="race-week-session-status" aria-label="Weekend data status">
@@ -561,36 +522,10 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
         </aside>
       </section>
 
-      <section className="race-week-story-band">
-        <div className="race-week-story-band__intro">
-          <p className="race-week-section-kicker">Weekend brief</p>
-          <h2>What matters before the grid forms.</h2>
-          <p>Verified schedule, tyre, practice, and local-driver context.</p>
-        </div>
-
-        <div className="race-week-story-band__cards">
-          {storylines.slice(0, 4).map((storyline) => (
-            <article key={`${storyline.storylineType}-${storyline.priorityRank}`} className="race-week-story-card">
-              <div className="race-week-story-card__eyebrow">
-                <span>{storyline.priorityRank.toString().padStart(2, "0")}</span>
-                <span>{formatBriefDate(storyline.publishedAt)}</span>
-              </div>
-              <h3>{storyline.headline}</h3>
-              <p>{sanitizeRaceWeekText(storyline.body)}</p>
-              {storyline.sourceUrl ? (
-                <a className="race-week-story-card__source" href={storyline.sourceUrl} target="_blank" rel="noreferrer">
-                  {storyline.sourceTitle ?? "Source"}
-                </a>
-              ) : null}
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="race-week-q-prediction" aria-label="Qualifying prediction">
         <div className="race-week-section-heading">
-          <p className="race-week-section-kicker">Qualifying Prediction</p>
-          <h2>Season-adjusted qualifying order.</h2>
+          <p className="race-week-section-kicker">Qualifying</p>
+          <h2>Projected front rows.</h2>
           <span className={`race-week-prediction-status race-week-prediction-status--${selectedPredictionModeMeta?.status ?? "pending"}`}>
             {selectedPredictionModeMeta?.statusLabel ?? "Prediction data pending"}
           </span>
@@ -656,36 +591,33 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
               })}
             </div>
 
-            <div className="race-week-q-table" role="table" aria-label="Full qualifying order">
-              <div className="race-week-q-table__row race-week-q-table__row--head" role="row">
-                <span>Order</span>
-                <span>Driver</span>
-                <span>Time</span>
-                <span>Gap</span>
-                <span>Delta trend</span>
-                <span>Flags</span>
+            <details className="race-week-q-details">
+              <summary>Full order</summary>
+              <div className="race-week-q-table" role="table" aria-label="Full qualifying order">
+                <div className="race-week-q-table__row race-week-q-table__row--head" role="row">
+                  <span>Order</span>
+                  <span>Driver</span>
+                  <span>Time</span>
+                  <span>Gap</span>
+                  <span>Flags</span>
+                </div>
+                {qualifyingOrder.map((entry, index) => {
+                  const displayGapToPole = qualifyingPoleTime === null || entry.predictedQTimeS === null ? null : entry.predictedQTimeS - qualifyingPoleTime;
+                  return (
+                    <article key={entry.driverId} className="race-week-q-table__row" role="row">
+                      <span className="race-week-q-table__rank">P{entry.predictedQRank ?? index + 1}</span>
+                      <span className="race-week-q-table__driver">
+                        <strong>{driverNameById.get(entry.driverId) ?? entry.driverId.replace(/_/g, " ")}</strong>
+                        <em>{constructorNameById.get(entry.constructorId) ?? entry.constructorId.replace(/_/g, " ")}</em>
+                      </span>
+                      <span>{formatQualifyingTime(entry.predictedQTimeS)}</span>
+                      <span>{formatPoleGap(displayGapToPole)}</span>
+                      <span>{explainPredictionFlags(entry.missingFlags)}</span>
+                    </article>
+                  );
+                })}
               </div>
-              {qualifyingOrder.map((entry, index) => {
-                const displayGapToPole = qualifyingPoleTime === null || entry.predictedQTimeS === null ? null : entry.predictedQTimeS - qualifyingPoleTime;
-                return (
-                  <article key={entry.driverId} className="race-week-q-table__row" role="row">
-                    <span className="race-week-q-table__rank">P{entry.predictedQRank ?? index + 1}</span>
-                    <span className="race-week-q-table__driver">
-                      <strong>{driverNameById.get(entry.driverId) ?? entry.driverId.replace(/_/g, " ")}</strong>
-                      <em>{constructorNameById.get(entry.constructorId) ?? entry.constructorId.replace(/_/g, " ")}</em>
-                    </span>
-                    <span>{formatQualifyingTime(entry.predictedQTimeS)}</span>
-                    <span>{formatPoleGap(displayGapToPole)}</span>
-                    <span>
-                      D {formatDelta(entry.driverGapDeltaS, 3)}
-                      <br />
-                      C {formatDelta(entry.constructorGapDeltaS, 3)}
-                    </span>
-                    <span>{explainPredictionFlags(entry.missingFlags)}</span>
-                  </article>
-                );
-              })}
-            </div>
+            </details>
           </>
         ) : (
           <div className="race-week-q-prediction__empty">
@@ -702,8 +634,8 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
       <section className="race-week-signal-grid">
         <div className="race-week-signal-grid__main">
           <div className="race-week-section-heading race-week-section-heading--tight">
-            <p className="race-week-section-kicker">Race-week order</p>
-            <h2>Projected weekend order.</h2>
+            <p className="race-week-section-kicker">Race order</p>
+            <h2>Projected top ten.</h2>
           </div>
 
           <div className="race-week-driver-table">
@@ -732,47 +664,11 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
         </div>
 
         <aside className="race-week-signal-grid__side">
-          <div className="race-week-constructors">
-            <div className="race-week-section-heading race-week-section-heading--tight">
-              <p className="race-week-section-kicker">Constructor outlook</p>
-              <h2>Who has the cleanest team shape.</h2>
-            </div>
-
-            <div className="race-week-constructors__list">
-              {leadConstructors.map((entry) => {
-                const team = getTeamAsset(entry.constructorId);
-                return (
-                  <article
-                    key={entry.constructorId}
-                    className="race-week-constructor-card"
-                    style={
-                      {
-                        "--constructor-primary": team.primary,
-                        "--constructor-secondary": team.secondary,
-                      } as CSSProperties
-                    }
-                  >
-                    <div className="race-week-constructor-card__head">
-                      <strong>{entry.constructorName}</strong>
-                      <span>{formatPercent(entry.readinessScore)}</span>
-                    </div>
-                    <div className="race-week-constructor-card__subhead">
-                      <span>Long run {formatTime(entry.longRunPaceS)}</span>
-                      <span>One lap {formatTime(entry.oneLapPaceS)}</span>
-                    </div>
-                    <p>{sanitizeRaceWeekText(entry.summary, 92)}</p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-
           <div className="race-week-strategy">
             <div className="race-week-section-heading race-week-section-heading--tight">
-              <p className="race-week-section-kicker">Strategic complexion</p>
-              <h2>Where the race can move.</h2>
+              <p className="race-week-section-kicker">Strategy</p>
+              <h2>Pit-window focus.</h2>
             </div>
-            <p className="race-week-strategy__lede">{getStrategicTone(overview.strategyDifficulty)}</p>
             <div className="race-week-strategy__list">
               {keyedStrategy.map((entry) => (
                 <article key={entry.driverId} className="race-week-strategy__item">
@@ -792,26 +688,6 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
             </div>
           </div>
         </aside>
-      </section>
-
-      <section className="race-week-close">
-        <div className="race-week-close__copy">
-          <p className="race-week-section-kicker">Carry the weekend forward</p>
-          <h2>Move from the read into action.</h2>
-          <p>Pressure-test strategy or compare the telemetry picture.</p>
-        </div>
-        <div className="race-week-close__links">
-          <Link href="/lab" className="race-week-close__link">
-            <span>01</span>
-            <strong>Open Strategy Lab</strong>
-            <p>Stress alternative calls.</p>
-          </Link>
-          <Link href="/race-analysis" className="race-week-close__link">
-            <span>02</span>
-            <strong>Open Race Analysis</strong>
-            <p>Review post-race signals.</p>
-          </Link>
-        </div>
       </section>
       <SiteFooter />
     </main>

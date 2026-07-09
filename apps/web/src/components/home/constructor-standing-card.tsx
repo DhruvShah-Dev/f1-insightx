@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { getTeamAsset } from "@/lib/ui/asset-manifest";
+import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import type { ConstructorStanding } from "@/lib/server/standings";
 
 type ConstructorStandingCardProps = {
@@ -16,10 +16,12 @@ export function ConstructorStandingCard({
 }: ConstructorStandingCardProps) {
   const team = getTeamAsset(standing.constructorId);
   const plate = team.badgePlate ?? "default";
+  const logoPath = getTeamLogoPath(team, plate === "light" || plate === "gold" ? "light" : "dark");
 
   return (
     <article
       className={`constructor-standing-card constructor-standing-card--${variant}`}
+      tabIndex={0}
       style={
         {
           "--team-primary": team.primary,
@@ -29,6 +31,11 @@ export function ConstructorStandingCard({
         } as CSSProperties
       }
     >
+      <div className="constructor-standing-card__frame" aria-hidden="true" />
+      <div className="constructor-standing-card__topline">
+        <span>Constructors</span>
+        <strong>{team.shortLabel}</strong>
+      </div>
       <div
         className="constructor-standing-card__media"
         style={
@@ -70,9 +77,9 @@ export function ConstructorStandingCard({
         <div className="constructor-standing-card__overlay">
           <span className="constructor-standing-card__rank">P{standing.standingPosition}</span>
           <span className={`constructor-standing-card__logo-plate constructor-standing-card__logo-plate--${plate}`} aria-hidden="true">
-            {team.badgeAssetPath ? (
+            {logoPath ? (
               <AssetImage
-                src={team.badgeAssetPath}
+                src={logoPath}
                 fallbackSrc={team.fallbackImagePath}
                 alt=""
                 fill
@@ -88,6 +95,7 @@ export function ConstructorStandingCard({
       </div>
 
       <div className="constructor-standing-card__body">
+        <span className="constructor-standing-card__kicker">Championship card</span>
         <h3 className="constructor-standing-card__title">{team.label}</h3>
         <div className="constructor-standing-card__metrics">
           <div>
@@ -98,6 +106,10 @@ export function ConstructorStandingCard({
             <span>Wins</span>
             <strong>{standing.wins}</strong>
           </div>
+        </div>
+        <div className="constructor-standing-card__serial" aria-hidden="true">
+          <span>{standing.constructorId.replaceAll("_", "-")}</span>
+          <span>Top 3</span>
         </div>
       </div>
     </article>

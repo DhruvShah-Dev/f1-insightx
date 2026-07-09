@@ -11,24 +11,24 @@
       "status": "data_available"
     }
   },
-  "build_version": "season_state_20260628T135344Z",
+  "build_version": "season_state_20260709T162227Z",
   "current_race_week": {
-    "available": false,
+    "available": true,
     "product_view_race": {
-      "circuit_id": "red_bull_ring",
-      "id": "2026-08-red_bull_ring",
-      "race_name": "Austrian Grand Prix",
-      "round": 8,
-      "scheduled_at": "2026-06-28T13:00:00Z",
+      "circuit_id": "spa",
+      "id": "2026-10-spa",
+      "race_name": "Belgian Grand Prix",
+      "round": 10,
+      "scheduled_at": "2026-07-19T13:00:00Z",
       "season": 2026,
       "status": "race_week_product_available"
     },
     "race": {
-      "circuit_id": "silverstone",
-      "id": "2026-09-silverstone",
-      "race_name": "British Grand Prix",
-      "round": 9,
-      "scheduled_at": "2026-07-05T14:00:00Z",
+      "circuit_id": "spa",
+      "id": "2026-10-spa",
+      "race_name": "Belgian Grand Prix",
+      "round": 10,
+      "scheduled_at": "2026-07-19T13:00:00Z",
       "season": 2026,
       "status": "upcoming"
     }
@@ -39,50 +39,50 @@
     "overtakes": "missing",
     "position_evolution": "partial",
     "race_control": "missing",
-    "race_results": "partial",
+    "race_results": "available",
     "telemetry_sessions": "partial",
     "weather": "available"
   },
   "freshness": {
     "analytics": {
-      "build_version": "analytics_views_20260628T134257Z",
-      "generated_at": "2026-06-28T13:42:57Z",
+      "build_version": "analytics_views_20260709T161249Z",
+      "generated_at": "2026-07-09T16:12:49Z",
       "validation_status": "passed",
       "warnings": []
     },
     "analytics_index": {
-      "build_version": "analytics_index_20260628T134933Z",
-      "generated_at": "2026-06-28T13:49:33Z",
+      "build_version": "analytics_index_20260709T162204Z",
+      "generated_at": "2026-07-09T16:22:04Z",
       "validation_status": "passed",
       "warnings": []
     },
     "canonical_fastf1": {
-      "build_version": "canonical_fastf1_20260628T132853Z",
-      "generated_at": "2026-06-28T13:28:53Z",
+      "build_version": "canonical_fastf1_20260709T160803Z",
+      "generated_at": "2026-07-09T16:08:03Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_analysis": {
       "build_version": "race-analysis-v1",
-      "generated_at": "2026-06-28T13:50:57Z",
+      "generated_at": "2026-07-09T16:08:07Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_week": {
-      "build_version": "race_week_20260628T134247Z",
-      "generated_at": "2026-06-28T13:42:47Z",
+      "build_version": "race_week_20260709T161240Z",
+      "generated_at": "2026-07-09T16:12:40Z",
       "validation_status": "passed",
       "warnings": []
     },
     "season_state": {
-      "build_version": "season_state_20260618T204630Z",
-      "generated_at": "2026-06-18T20:46:30Z",
+      "build_version": "season_state_20260705T193051Z",
+      "generated_at": "2026-07-05T19:30:51Z",
       "validation_status": "passed",
       "warnings": []
     },
     "strategy_lab": {
-      "build_version": "strategy_lab_20260628T134119Z",
-      "generated_at": "2026-06-28T13:41:19Z",
+      "build_version": "strategy_lab_20260709T161246Z",
+      "generated_at": "2026-07-09T16:12:46Z",
       "validation_status": "passed",
       "warnings": []
     },
@@ -93,13 +93,13 @@
       "warnings": []
     }
   },
-  "generated_at": "2026-06-28T13:53:44Z",
+  "generated_at": "2026-07-09T16:22:27Z",
   "latest_completed_race": {
-    "circuit_id": "red_bull_ring",
-    "id": "2026-08-red_bull_ring",
-    "race_name": "Austrian Grand Prix",
-    "round": 8,
-    "scheduled_at": "2026-06-28T13:00:00Z",
+    "circuit_id": "silverstone",
+    "id": "2026-09-silverstone",
+    "race_name": "British Grand Prix",
+    "round": 9,
+    "scheduled_at": "2026-07-05T14:00:00Z",
     "season": 2026,
     "status": "completed_by_schedule"
   },
@@ -113,11 +113,11 @@
     "status": "data_available"
   },
   "latest_completed_race_with_results": {
-    "circuit_id": "catalunya",
-    "id": "2026-07-catalunya",
-    "race_name": "Barcelona Grand Prix",
-    "round": 7,
-    "scheduled_at": "2026-06-14T13:00:00Z",
+    "circuit_id": "silverstone",
+    "id": "2026-09-silverstone",
+    "race_name": "British Grand Prix",
+    "round": 9,
+    "scheduled_at": "2026-07-05T14:00:00Z",
     "season": 2026,
     "status": "results_available"
   },
@@ -132,28 +132,25 @@
   },
   "missing_data_flags": [
     "analytics_not_current",
-    "latest_completed_results_missing",
-    "race_week_target_stale",
-    "strategy_lab_next_race_unavailable",
     "telemetry_not_current"
   ],
   "next_race": {
-    "circuit_id": "silverstone",
-    "id": "2026-09-silverstone",
-    "race_name": "British Grand Prix",
-    "round": 9,
-    "scheduled_at": "2026-07-05T14:00:00Z",
+    "circuit_id": "spa",
+    "id": "2026-10-spa",
+    "race_name": "Belgian Grand Prix",
+    "round": 10,
+    "scheduled_at": "2026-07-19T13:00:00Z",
     "season": 2026,
     "status": "upcoming"
   },
   "race_analysis_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "catalunya",
-      "id": "2026-07-catalunya",
-      "race_name": "Barcelona Grand Prix",
-      "round": 7,
-      "scheduled_at": "2026-06-14T13:00:00Z",
+      "circuit_id": "silverstone",
+      "id": "2026-09-silverstone",
+      "race_name": "British Grand Prix",
+      "round": 9,
+      "scheduled_at": "2026-07-05T14:00:00Z",
       "season": 2026,
       "status": "race_analysis_available"
     },
@@ -164,15 +161,15 @@
   "strategy_lab_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "red_bull_ring",
-      "id": "2026-08-red_bull_ring",
-      "race_name": "Austrian Grand Prix",
-      "round": 8,
+      "circuit_id": "spa",
+      "id": "2026-10-spa",
+      "race_name": "Belgian Grand Prix",
+      "round": 10,
       "scheduled_at": null,
       "season": 2026,
       "status": "strategy_lab_available"
     },
-    "next_race_available": false
+    "next_race_available": true
   },
   "telemetry_available": {
     "available": true,
@@ -187,10 +184,7 @@
     }
   },
   "warnings": [
-    "Austrian Grand Prix is latest by schedule, but curated race results are missing.",
-    "Analytics available through Barcelona Grand Prix; Austrian Grand Prix telemetry processing pending.",
-    "Telemetry features available through Barcelona Grand Prix; Austrian Grand Prix telemetry processing pending.",
-    "Race Week product targets Austrian Grand Prix; next race is British Grand Prix.",
-    "Strategy Lab available for Austrian Grand Prix; British Grand Prix build is pending."
+    "Analytics available through Barcelona Grand Prix; British Grand Prix telemetry processing pending.",
+    "Telemetry features available through Barcelona Grand Prix; British Grand Prix telemetry processing pending."
   ]
 }

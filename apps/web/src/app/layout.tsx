@@ -6,9 +6,6 @@ import { AppHeader } from "@/components/ui/app-header";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import "./globals.css";
-import "./home-hero.css";
-import "./race-analysis-cinematic.css";
-import "./championship-cinematic.css";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",

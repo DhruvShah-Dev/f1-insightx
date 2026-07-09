@@ -13,8 +13,8 @@ import {
   type ConstructorStanding,
   type DriverStanding,
 } from "@/lib/server/standings";
-import { getTeamAsset } from "@/lib/ui/asset-manifest";
-import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
+import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
+import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
 type ChampionshipPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
@@ -134,14 +134,15 @@ function SectionRail() {
 
 function TeamLogo({ teamId, className }: { teamId: string; className: string }) {
   const team = getTeamAsset(teamId);
+  const logoPath = getTeamLogoPath(team, team.preferredLogoPlate === "light" ? "light" : "dark");
 
-  if (!team.badgeAssetPath) {
+  if (!logoPath) {
     return <span className={`${className} champ-cinema-logo-fallback`}>{team.shortLabel}</span>;
   }
 
   return (
     <AssetImage
-      src={team.badgeAssetPath}
+      src={logoPath}
       fallbackSrc={team.fallbackImagePath}
       alt={`${team.label} logo`}
       className={className}
@@ -205,7 +206,7 @@ function ChampionshipHero({
         <aside className="champ-cinema-leader-panel" aria-label="Drivers championship leader">
           <div className="champ-cinema-leader-panel__portrait">
             <AssetImage
-              src={leaderMeta.photoPath ?? leaderMeta.fallbackPhotoPath}
+              src={getDriverImagePath(leaderMeta, "body")}
               fallbackSrc={leaderMeta.fallbackPhotoPath}
               alt={leaderMeta.altText}
               className="champ-cinema-leader-panel__photo"
@@ -320,7 +321,7 @@ function DriverPodium({ drivers }: { drivers: DriverStanding[] }) {
             </div>
             <div className="champ-cinema-podium__portrait">
               <AssetImage
-                src={meta.photoPath ?? meta.fallbackPhotoPath}
+                src={getDriverImagePath(meta, "body")}
                 fallbackSrc={meta.fallbackPhotoPath}
                 alt={meta.altText}
                 className="champ-cinema-podium__photo"
@@ -370,7 +371,7 @@ function DriversSection({ drivers }: { drivers: DriverStanding[] }) {
               <span className="champ-cinema-rank">P{driver.standingPosition}</span>
               <div className="champ-cinema-driver-table__portrait">
                 <AssetImage
-                  src={meta.photoPath ?? meta.fallbackPhotoPath}
+                  src={getDriverImagePath(meta, "headshot")}
                   fallbackSrc={meta.fallbackPhotoPath}
                   alt=""
                   className="champ-cinema-driver-table__photo"

@@ -1928,9 +1928,11 @@ def build_processed_race_week_layers(
 
     strategy_view = pd.DataFrame()
     if not strategy_baselines.empty:
-        strategy_view = strategy_baselines.copy()
-        strategy_view["source_label"] = strategy_view.get("source_label", "race_week_strategy_v1")
-    elif not driver_features.empty:
+        active_race_ids = set(active_races["race_id"].dropna().astype(str)) if "race_id" in active_races.columns else set()
+        strategy_view = strategy_baselines[strategy_baselines["race_id"].astype(str).isin(active_race_ids)].copy()
+        if not strategy_view.empty:
+            strategy_view["source_label"] = strategy_view.get("source_label", "race_week_strategy_v1")
+    if strategy_view.empty and not driver_features.empty:
         strategy_view = driver_features[
             ["season", "round", "race_id", "driver_id", "constructor_id", "fp2_degradation_s_per_lap", "signal_confidence"]
         ].copy()
@@ -1941,7 +1943,7 @@ def build_processed_race_week_layers(
         strategy_view["pit_window_end_lap"] = 24
         strategy_view["degradation_risk"] = pd.to_numeric(strategy_view["fp2_degradation_s_per_lap"], errors="coerce").fillna(0) * 100
         strategy_view["strategy_confidence"] = strategy_view["signal_confidence"]
-        strategy_view["rationale"] = "Fallback strategy baseline derived from current long-run degradation signal."
+        strategy_view["rationale"] = "Current degradation signal supports a conservative baseline until live practice data lands."
         strategy_view["id"] = strategy_view.apply(lambda row: f"{row['race_id']}|{row['driver_id']}", axis=1)
         strategy_view["source_label"] = "race_week_strategy_v1"
         strategy_view = strategy_view[

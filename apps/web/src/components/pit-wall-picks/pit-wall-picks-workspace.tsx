@@ -4,7 +4,7 @@ import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import type { CSSProperties } from "react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
+import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 import { getTeamMeta } from "@/lib/ui/team-meta";
 
 type Driver = {
@@ -127,7 +127,7 @@ function DriverSelect(props: {
         <span className="pit-wall-field__portrait-wrap">
           {selectedDriverMeta ? (
             <AssetImage
-              src={selectedDriverMeta.photoPath ?? selectedDriverMeta.fallbackPhotoPath}
+              src={getDriverImagePath(selectedDriverMeta, "headshot")}
               fallbackSrc={selectedDriverMeta.fallbackPhotoPath}
               alt=""
               className="pit-wall-field__portrait"

@@ -5,9 +5,20 @@ import { getRaceWeekCircuitMetadata } from "@/lib/ui/race-week-circuit-metadata"
 type RaceWeekSectorTrackProps = {
   circuitId: string;
   title: string;
+  presentation?: "detailed" | "hero";
+  showLegend?: boolean;
+  showMetadata?: boolean;
+  showSpecs?: boolean;
 };
 
-export async function RaceWeekSectorTrack({ circuitId, title }: RaceWeekSectorTrackProps) {
+export async function RaceWeekSectorTrack({
+  circuitId,
+  title,
+  presentation,
+  showLegend,
+  showMetadata,
+  showSpecs,
+}: RaceWeekSectorTrackProps) {
   const trackData = await getCircuitTrackData(circuitId);
 
   if (!trackData?.pathData) {
@@ -24,6 +35,10 @@ export async function RaceWeekSectorTrack({ circuitId, title }: RaceWeekSectorTr
       title={title}
       trackPath={trackData.pathData}
       metadata={getRaceWeekCircuitMetadata(circuitId)}
+      presentation={presentation}
+      showLegend={showLegend}
+      showMetadata={showMetadata}
+      showSpecs={showSpecs}
     />
   );
 }

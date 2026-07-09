@@ -7,6 +7,7 @@ import { AssetImage } from "@/components/ui/asset-image";
 import { LegalLinks } from "@/components/legal/legal-links";
 import { getSupabaseBrowserClient } from "@/lib/auth/supabase-browser";
 import { getNetworkErrorMessage } from "@/lib/errors/client";
+import { getTeamAsset } from "@/lib/ui/asset-manifest";
 
 type AccountAuthPanelProps = {
   hasSupabaseAuth: boolean;
@@ -70,6 +71,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const isModalSurface = surface === "modal";
+  const heroTeam = getTeamAsset("ferrari");
 
   useEffect(() => {
     if (mode === "sign-up" && signUpStep === "credentials") {
@@ -226,8 +228,8 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
             </p>
             <div className="account-access-stage__media" style={{ position: "absolute" }}>
               <AssetImage
-                src="/assets/teams/2026/ferrari.webp"
-                fallbackSrc="/assets/teams/car-placeholder.svg"
+                src={heroTeam.carImagePath ?? heroTeam.fallbackImagePath}
+                fallbackSrc={heroTeam.fallbackImagePath}
                 alt="Formula 1 car under race-night lights"
                 fill
                 sizes="(max-width: 900px) 100vw, 52vw"

@@ -2,8 +2,8 @@
 
 import type { CSSProperties } from "react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { getTeamAsset } from "@/lib/ui/asset-manifest";
-import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
+import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
+import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
 type AccountAvatarProps = {
   constructorId: string;
@@ -20,13 +20,14 @@ export function AccountAvatar({
 }: AccountAvatarProps) {
   const team = getTeamAsset(constructorId);
   const driver = getCurrentDriverMeta(driverId);
+  const teamLogoPath = getTeamLogoPath(team, "dark");
   const avatarClassName = size === "sm" ? "account-avatar account-avatar--sm" : "account-avatar";
 
   if (avatarType === "driver_image" && (driver.photoPath || driver.fallbackPhotoPath)) {
     return (
       <div className={`${avatarClassName} account-avatar--driver`}>
         <AssetImage
-          src={driver.photoPath ?? driver.fallbackPhotoPath}
+          src={getDriverImagePath(driver, "headshot")}
           fallbackSrc={driver.fallbackPhotoPath}
           alt={driver.altText}
           fill
@@ -38,11 +39,11 @@ export function AccountAvatar({
     );
   }
 
-  if (team.badgeAssetPath) {
+  if (teamLogoPath) {
     return (
       <div className={`${avatarClassName} account-avatar--team`}>
         <AssetImage
-          src={team.badgeAssetPath}
+          src={teamLogoPath}
           fallbackSrc={team.fallbackImagePath}
           alt={`${team.label} logo`}
           fill

@@ -55,17 +55,9 @@ export function MainPageBackground() {
 
   return (
     <div ref={backgroundRef} className="main-page-background" aria-hidden="true">
-      <div className="main-page-background__ambient main-page-background__ambient--one" />
-      <div className="main-page-background__ambient main-page-background__ambient--two" />
-      <div className="main-page-background__ambient main-page-background__ambient--three" />
-      <div className="main-page-background__glass main-page-background__glass--left" />
-      <div className="main-page-background__glass main-page-background__glass--right" />
-      <div className="main-page-background__vignette" />
-
       <div className="start-lights-background">
         <div className="start-lights-background__rig">
           <div className="start-lights-background__frame" />
-          <div className="start-lights-background__raster" />
           <div className="start-lights-background__rail">
             {Array.from({ length: STARTING_LIGHT_COUNT }, (_, index) => (
               <span

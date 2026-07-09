@@ -2,8 +2,11 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { AppFooter } from "@/components/ui/app-footer";
 import { AssetImage } from "@/components/ui/asset-image";
+import { RaceWeekSectorTrack } from "@/components/race-week/race-week-sector-track";
 import { getRaceAnalysisConfidenceTier, listRaceAnalysisIndex } from "@/lib/server/race-analysis-product";
-import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
+import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
+import { getCircuitAsset, getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
+import { getCurrentDriverMetaByCode, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
 type RaceAnalysisIndexPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
@@ -22,6 +25,12 @@ function formatDate(value: string | null) {
 
 function podiumLabel(podium: string[]) {
   return podium.length ? podium.join(" / ") : "Podium data";
+}
+
+function formatRaceCardTitle(value: string) {
+  return value
+    .replace(/\s+Grand Prix$/i, " GP")
+    .replace(/^British GP$/i, "Britain GP");
 }
 
 function archiveStyle(race: RaceIndexItem | undefined): CSSProperties {
@@ -47,6 +56,7 @@ function RaceAnalysisIndexHero({ latestRace }: { latestRace: RaceIndexItem | und
   }
 
   const team = getTeamAsset(latestRace.winnerTeam);
+  const winnerLogoPath = getTeamLogoPath(team, team.preferredLogoPlate === "light" ? "light" : "dark");
   const circuit = getCircuitAsset(latestRace.circuit);
 
   return (
@@ -82,9 +92,9 @@ function RaceAnalysisIndexHero({ latestRace }: { latestRace: RaceIndexItem | und
       <Link href={`/race-analysis/${latestRace.id}`} className="race-cinema-latest-panel">
         <span>Latest report</span>
         <div className="race-cinema-latest-panel__winner">
-          {team.badgeAssetPath ? (
+          {winnerLogoPath ? (
             <AssetImage
-              src={team.badgeAssetPath}
+              src={winnerLogoPath}
               fallbackSrc={team.fallbackImagePath}
               alt=""
               className="race-cinema-latest-panel__logo"
@@ -116,68 +126,121 @@ function RaceAnalysisIndexHero({ latestRace }: { latestRace: RaceIndexItem | und
   );
 }
 
-function RaceAnalysisArchiveGrid({ races }: { races: RaceIndexItem[] }) {
+async function RaceAnalysisArchiveCard({ race }: { race: RaceIndexItem }) {
+  const team = getTeamAsset(race.winnerTeam);
+  const logoPath = getTeamLogoPath(team, team.preferredLogoPlate === "light" ? "light" : "dark");
+  const driverMeta = getCurrentDriverMetaByCode(race.winner);
+  const circuit = getCircuitAsset(race.circuit);
+
+  return (
+    <Link
+      href={`/race-analysis/${race.id}`}
+      className="race-cinema-archive-tile"
+      key={race.id}
+      style={archiveStyle(race)}
+    >
+      <div className="race-cinema-archive-tile__map" aria-hidden="true">
+        <RaceWeekSectorTrack
+          circuitId={race.circuit}
+          title={race.raceName}
+          presentation="hero"
+          showLegend={false}
+          showMetadata={false}
+          showSpecs={false}
+        />
+      </div>
+      <div className="race-cinema-archive-tile__copy">
+        <div className="race-cinema-archive-tile__topline">
+          <span>{race.season} / Round {race.round}</span>
+          <span>{getRaceAnalysisConfidenceTier(race.analysisQualityScore)}</span>
+        </div>
+        <h2>{formatRaceCardTitle(race.raceName)}</h2>
+        <p>{circuit.displayName} / {formatDate(race.raceDate)}</p>
+        <dl>
+          <div>
+            <dt>Winner</dt>
+            <dd>{race.winner}</dd>
+          </div>
+          <div>
+            <dt>Strategy</dt>
+            <dd>{race.dominantStrategy || "Strategy view"}</dd>
+          </div>
+        </dl>
+      </div>
+      <div className="race-cinema-archive-tile__driver">
+        <AssetImage
+          src={getDriverImagePath(driverMeta, "body")}
+          fallbackSrc={driverMeta.fallbackPhotoPath}
+          alt=""
+          className="race-cinema-archive-tile__driver-image"
+          fill
+          sizes="(max-width: 760px) 48vw, 18rem"
+          style={{
+            objectFit: driverMeta.photoFit ?? "contain",
+            objectPosition: driverMeta.photoPosition,
+            transform: `translateX(${driverMeta.photoTranslateX ?? 0}px) scale(${driverMeta.photoScale ?? 1})`,
+          }}
+        />
+      </div>
+      <div className="race-cinema-archive-tile__winner">
+        {logoPath ? (
+          <AssetImage
+            src={logoPath}
+            fallbackSrc={team.fallbackImagePath}
+            alt=""
+            className="race-cinema-archive-tile__logo"
+            width={54}
+            height={54}
+          />
+        ) : null}
+        <strong>{driverMeta.displayName}</strong>
+        <small>{team.label}</small>
+      </div>
+      <div className="race-cinema-archive-tile__signals">
+        <span>{podiumLabel(race.podium)}</span>
+        <span>{race.raceControlAvailable ? "Track-status context" : "Track-status feed quiet"}</span>
+      </div>
+    </Link>
+  );
+}
+
+async function RaceAnalysisArchiveGrid({ races }: { races: RaceIndexItem[] }) {
+  const cards = await Promise.all(races.map((race) => RaceAnalysisArchiveCard({ race })));
   return (
     <section className="race-cinema-archive-grid" aria-label="Available race analysis">
-      {races.map((race) => {
-        const team = getTeamAsset(race.winnerTeam);
-        const circuit = getCircuitAsset(race.circuit);
-        return (
-          <Link
-            href={`/race-analysis/${race.id}`}
-            className="race-cinema-archive-tile"
-            key={race.id}
-            style={archiveStyle(race)}
-          >
-            <div className="race-cinema-archive-tile__stripe" />
-            <div className="race-cinema-archive-tile__topline">
-              <span>{race.season} / Round {race.round}</span>
-              <span>{getRaceAnalysisConfidenceTier(race.analysisQualityScore)}</span>
-            </div>
-            <div className="race-cinema-archive-tile__main">
-              <div>
-                <h2>{race.raceName}</h2>
-                <p>{circuit.displayName} / {formatDate(race.raceDate)}</p>
-              </div>
-              {team.badgeAssetPath ? (
-                <AssetImage
-                  src={team.badgeAssetPath}
-                  fallbackSrc={team.fallbackImagePath}
-                  alt=""
-                  className="race-cinema-archive-tile__logo"
-                  width={54}
-                  height={54}
-                />
-              ) : null}
-            </div>
-            <div className="race-cinema-archive-tile__winner">
-              <span>Winner</span>
-              <strong>{race.winner}</strong>
-              <small>{race.winnerTeam}</small>
-            </div>
-            <div className="race-cinema-archive-tile__signals">
-              <span>{podiumLabel(race.podium)}</span>
-              <span>{race.dominantStrategy || "Strategy view"}</span>
-              <span>{race.raceControlAvailable ? "Track-status context" : "Track-status feed quiet"}</span>
-            </div>
-          </Link>
-        );
-      })}
+      {cards}
     </section>
   );
 }
 
 export default async function RaceAnalysisIndexPage({ searchParams }: RaceAnalysisIndexPageProps) {
   const params = await searchParams;
-  const races = await listRaceAnalysisIndex();
+  const [races, seasonState] = await Promise.all([listRaceAnalysisIndex(), getSeasonState()]);
   const seasons = [...new Set(races.map((race) => race.season))].sort((a, b) => b - a);
   const selectedSeason = Number(firstParam(params?.season)) || seasons[0];
   const visibleRaces = races.filter((race) => race.season === selectedSeason);
   const latestRace = races[0];
+  const analysisLatest = seasonState?.race_analysis_available.latest_race ?? null;
+  const latestResults = seasonState?.latest_completed_race_with_results ?? seasonState?.latest_completed_race ?? null;
+  const showFreshnessNote = Boolean(
+    analysisLatest &&
+      latestResults &&
+      analysisLatest.id &&
+      latestResults.id &&
+      analysisLatest.id !== latestResults.id,
+  );
 
   return (
     <main className="race-analysis-page race-cinema-page">
       <RaceAnalysisIndexHero latestRace={latestRace} />
+
+      {showFreshnessNote ? (
+        <section className="race-analysis-freshness-note" aria-label="Race Analysis freshness">
+          <span>Data status</span>
+          <strong>{formatSeasonRaceLabel(latestResults)} race-analysis build pending.</strong>
+          <p>Race Analysis is currently available through {formatSeasonRaceLabel(analysisLatest)}.</p>
+        </section>
+      ) : null}
 
       <section className="race-cinema-command-strip" aria-label="Race analysis filters">
         <div className="race-cinema-command-strip__identity">
@@ -193,7 +256,7 @@ export default async function RaceAnalysisIndexPage({ searchParams }: RaceAnalys
         </div>
       </section>
 
-      <RaceAnalysisArchiveGrid races={visibleRaces} />
+      {await RaceAnalysisArchiveGrid({ races: visibleRaces })}
 
       <AppFooter />
     </main>

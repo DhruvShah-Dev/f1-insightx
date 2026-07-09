@@ -189,6 +189,7 @@ type LinkRow = {
 
 export type RaceAnalysisIndexItem = {
   id: string;
+  sessionId: string;
   season: number;
   round: number;
   raceName: string;
@@ -400,6 +401,7 @@ function safeHref(value: string) {
 function mapIndex(row: IndexRow, summary?: SummaryRow): RaceAnalysisIndexItem {
   return {
     id: row.race_analysis_id,
+    sessionId: row.session_id,
     season: num(row.season) ?? 0,
     round: num(row.round) ?? 0,
     raceName: row.race_name || row.event,

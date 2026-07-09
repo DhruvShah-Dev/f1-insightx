@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import { AppFooter } from "@/components/ui/app-footer";
 import { AssetImage } from "@/components/ui/asset-image";
@@ -16,25 +17,21 @@ import {
   type RaceAnalysisPitStop,
   type RaceAnalysisPositionPoint,
   type RaceAnalysisStint,
-  type RaceAnalysisStoryPoint,
-  type RaceAnalysisTrafficPoint,
 } from "@/lib/server/race-analysis-product";
-import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
-import { getCurrentDriverMetaByCode } from "@/lib/ui/driver-asset-manifest";
+import { getCircuitAsset, getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
+import { getCurrentDriverMetaByCode, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
 type RaceAnalysisDetailPageProps = {
   params: Promise<{ raceId: string }>;
 };
 
-type SectionIconName = "story" | "strategy" | "position" | "pace" | "traffic" | "data";
+type SectionIconName = "versus" | "strategy" | "position" | "pace";
 
 const sectionNav: Array<{ id: string; label: string; icon: SectionIconName }> = [
-  { id: "story", label: "Story", icon: "story" },
+  { id: "versus", label: "Driver vs Driver", icon: "versus" },
   { id: "strategy", label: "Strategy", icon: "strategy" },
   { id: "position", label: "Position", icon: "position" },
   { id: "pace", label: "Pace", icon: "pace" },
-  { id: "traffic", label: "Traffic", icon: "traffic" },
-  { id: "data", label: "Data", icon: "data" },
 ];
 
 export async function generateStaticParams() {
@@ -227,12 +224,10 @@ function compoundClass(compound: string) {
 
 function SectionIcon({ name }: { name: SectionIconName }) {
   const paths: Record<SectionIconName, string[]> = {
-    story: ["M5 5h14v14H5z", "M8 9h8", "M8 13h5"],
+    versus: ["M7 7h4v4H7z", "M13 13h4v4h-4z", "M11 9h5", "M8 15h5"],
     strategy: ["M4 16l4-8 4 5 4-7 4 10", "M4 20h16"],
     position: ["M5 18V9", "M12 18V5", "M19 18v-7", "M4 18h16"],
     pace: ["M12 20a8 8 0 1 0-8-8", "M12 12l4-4", "M8 12h1"],
-    traffic: ["M7 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z", "M17 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z", "M4 21v-4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4"],
-    data: ["M5 7c0-2 14-2 14 0v10c0 2-14 2-14 0z", "M5 12c0 2 14 2 14 0"],
   };
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -259,6 +254,7 @@ function RaceAnalysisRail() {
 
 async function RaceHero({ race }: { race: RaceAnalysisDetail }) {
   const winnerTeam = getTeamAsset(race.winnerTeam);
+  const winnerLogoPath = getTeamLogoPath(winnerTeam, winnerTeam.preferredLogoPlate === "light" ? "light" : "dark");
   const circuit = getCircuitAsset(race.circuit);
   const raceMax = maxLap(race);
   const quality = qualityPct(race.summary.confidence);
@@ -285,6 +281,20 @@ async function RaceHero({ race }: { race: RaceAnalysisDetail }) {
 
       <div className="race-cinema-hero__copy">
         <span>Race Analysis</span>
+        <div className="race-cinema-hero__identity">
+          {winnerLogoPath ? (
+            <AssetImage
+              src={winnerLogoPath}
+              fallbackSrc={winnerTeam.fallbackImagePath}
+              alt={`${winnerTeam.label} logo`}
+              className="race-cinema-hero__logo"
+              width={88}
+              height={88}
+              priority
+            />
+          ) : null}
+          <strong>{winnerTeam.shortLabel}</strong>
+        </div>
         <h1>{race.raceName}</h1>
         <div className="race-cinema-hero__meta">
           <strong>{race.season} / Round {race.round}</strong>
@@ -297,7 +307,7 @@ async function RaceHero({ race }: { race: RaceAnalysisDetail }) {
         <div className="race-cinema-track-panel">
           {trackMap}
           <div className="race-cinema-track-panel__sectors">
-            <span>Story points {race.storyPoints.length}</span>
+            <span>Comparison-ready</span>
             <span>Max lap {raceMax}</span>
             <span>{race.raceShape || "Race shape"}</span>
           </div>
@@ -343,13 +353,14 @@ function RaceContextRail({ race }: { race: RaceAnalysisDetail }) {
         {podium.map((driver, index) => {
           const teamName = driverTeam(race, driver);
           const team = getTeamAsset(teamName);
+          const logoPath = getTeamLogoPath(team, team.badgePlate === "light" ? "light" : "dark");
           const driverMeta = getCurrentDriverMetaByCode(driver);
           return (
             <article key={`${driver}-${index}`} style={driverStyle(teamName)}>
               <span>{index + 1}</span>
               <div className="race-cinema-driver-stack__portrait">
                 <AssetImage
-                  src={driverMeta.photoPath ?? driverMeta.fallbackPhotoPath}
+                  src={getDriverImagePath(driverMeta, "headshot")}
                   fallbackSrc={driverMeta.fallbackPhotoPath}
                   alt=""
                   className="race-cinema-driver-stack__photo"
@@ -367,9 +378,9 @@ function RaceContextRail({ race }: { race: RaceAnalysisDetail }) {
                 <small>{team.label}</small>
               </div>
               <div className={`race-cinema-driver-stack__logo-plate ${team.badgePlate === "light" ? "race-cinema-driver-stack__logo-plate--light" : ""}`}>
-                {team.badgeAssetPath ? (
+                {logoPath ? (
                   <AssetImage
-                    src={team.badgeAssetPath}
+                    src={logoPath}
                     fallbackSrc={team.fallbackImagePath}
                     alt={`${team.label} logo`}
                     className="race-cinema-driver-stack__logo"
@@ -400,58 +411,30 @@ function RaceContextRail({ race }: { race: RaceAnalysisDetail }) {
   );
 }
 
-function RaceStorySection({ race }: { race: RaceAnalysisDetail }) {
-  const raceMax = maxLap(race);
-  const phaseNames = ["Launch", "Build", "Decide"];
-  const laneForPoint = (point: RaceAnalysisStoryPoint) => {
-    const phase = point.phase.toLowerCase();
-    if (phase.includes("early") || phase.includes("opening") || (point.lapNumber ?? 0) < raceMax * 0.34) return 0;
-    if (phase.includes("late") || phase.includes("closing") || (point.lapNumber ?? 0) > raceMax * 0.68) return 2;
-    return 1;
-  };
+function DriverVersusSection({ race }: { race: RaceAnalysisDetail }) {
+  const candidates = [race.winner, ...race.podium.filter((driver) => driver !== race.winner), ...classificationOrder(race)]
+    .filter(Boolean);
+  const uniqueCandidates = [...new Set(candidates)];
+  const driverA = uniqueCandidates[0] ?? race.winner;
+  const driverB = uniqueCandidates.find((driver) => driver !== driverA) ?? uniqueCandidates[1] ?? "";
+  const href = `/versus?sessionId=${encodeURIComponent(race.sessionId)}&driverA=${encodeURIComponent(driverA)}&driverB=${encodeURIComponent(driverB)}`;
+
   return (
-    <section id="story" className="race-cinema-section race-cinema-section--story">
+    <section id="versus" className="race-cinema-section race-cinema-section--versus">
       <div className="race-cinema-section__header">
-        <span>01 / Story</span>
-        <h2>Race timeline</h2>
-        <p>{race.summary.primaryStory}</p>
+        <span>01 / Driver vs Driver</span>
+        <h2>Compare the lap signatures behind this race</h2>
+        <p>Open the telemetry comparison workspace for braking, straight-line speed, traction, and energy proxy reads between two drivers.</p>
       </div>
-      <div className="race-cinema-timeline-scale">
-        <div className="race-cinema-timeline-scale__axis" aria-hidden="true">
-          <span>Lap 1</span>
-          <span>Lap {Math.max(1, Math.round(raceMax / 2))}</span>
-          <span>Lap {raceMax}</span>
+      <div className="race-cinema-versus-cta">
+        <div>
+          <span>Suggested matchup</span>
+          <strong>{driverA || "Driver A"} vs {driverB || "Driver B"}</strong>
+          <p>{race.raceName} / {race.sessionId}</p>
         </div>
-        {phaseNames.map((phase, index) => (
-          <div className="race-cinema-timeline-lane" key={phase} style={{ "--story-lane": index } as CSSProperties}>
-            <span>{phase}</span>
-          </div>
-        ))}
-        {race.storyPoints.map((point) => (
-          <article
-            key={point.id}
-            className="race-cinema-story-marker"
-            style={{
-              left: `${lapPct(point.lapNumber, raceMax)}%`,
-              "--story-impact": `${Math.max(18, (point.impactScore ?? 0.4) * 72)}px`,
-              "--story-lane": laneForPoint(point),
-            } as CSSProperties}
-          >
-            <span>Lap {point.lapNumber ?? "-"}</span>
-            <strong>{point.title}</strong>
-            <small>{point.evidenceType} / {qualityLabel(point.confidence)}</small>
-          </article>
-        ))}
-      </div>
-      <div className="race-cinema-story-list">
-        {race.storyPoints.map((point) => (
-          <article key={point.id}>
-            <span>{point.phase}</span>
-            <h3>{point.title}</h3>
-            <p>{point.summary}</p>
-            {point.dataLimitNote ? <small>{point.dataLimitNote}</small> : null}
-          </article>
-        ))}
+        <Link href={href} className="race-cinema-versus-cta__button">
+          Explore comparison
+        </Link>
       </div>
     </section>
   );
@@ -626,90 +609,6 @@ function PaceSection({ race }: { race: RaceAnalysisDetail }) {
   );
 }
 
-function TrafficSection({ race }: { race: RaceAnalysisDetail }) {
-  const samples = race.trafficProxy.slice(0, 42);
-  const maxDirtyAir = Math.max(0.1, ...samples.map((item) => item.dirtyAirProxyS ?? 0));
-
-  return (
-    <section id="traffic" className="race-cinema-section race-cinema-section--traffic">
-      <div className="race-cinema-section__header">
-        <span>05 / Traffic</span>
-        <h2>Traffic and status field</h2>
-        <p>Traffic proxy and neutralization context stay labelled as source-limited where needed.</p>
-      </div>
-      <div className="race-cinema-pressure-grid">
-        {samples.map((item) => (
-          <TrafficCell key={`${item.driver}-${item.lapNumber}`} item={item} maxDirtyAir={maxDirtyAir} />
-        ))}
-      </div>
-      <div className="race-cinema-neutralization-strip">
-        {race.neutralizationPhases.length ? race.neutralizationPhases.map((phase) => (
-          <article key={phase.id}>
-            <strong>{phase.statusLabel}</strong>
-            <span>Laps {phase.startLap}-{phase.endLap}</span>
-            <small>{phase.causeAvailable ? "Cause sourced" : "Cause unavailable"}</small>
-          </article>
-        )) : (
-          <article>
-            <strong>Green-running context</strong>
-            <span>No neutralization phases in product view</span>
-            <small>Track-status feed only</small>
-          </article>
-        )}
-      </div>
-    </section>
-  );
-}
-
-function TrafficCell({ item, maxDirtyAir }: { item: RaceAnalysisTrafficPoint; maxDirtyAir: number }) {
-  return (
-    <div className="race-cinema-pressure-cell" style={driverStyle(item.team)}>
-      <span>{item.driver} L{item.lapNumber}</span>
-      <i><b style={{ width: `${Math.max(8, Math.min(100, ((item.dirtyAirProxyS ?? 0) / maxDirtyAir) * 100))}%` }} /></i>
-      <small>{item.trafficProxyLabel}</small>
-    </div>
-  );
-}
-
-function DataSection({ race }: { race: RaceAnalysisDetail }) {
-  const quality = qualityPct(race.summary.confidence);
-  return (
-    <section id="data" className="race-cinema-section race-cinema-section--data">
-      <div className="race-cinema-section__header">
-        <span>06 / Data</span>
-        <h2>Source confidence</h2>
-        <p>Product honesty labels are preserved on proxy-derived analysis.</p>
-      </div>
-      <div className="race-cinema-data-grid">
-        <article>
-          <span>Confidence</span>
-          <strong>{qualityLabel(race.summary.confidence)}</strong>
-          <small>{quality !== null ? `${quality}%` : "Data limited"}</small>
-        </article>
-        <article>
-          <span>Weakest assumption</span>
-          <strong>{race.summary.weakestAssumption}</strong>
-        </article>
-        <article>
-          <span>Track status</span>
-          <strong>{race.raceControlAvailable ? "Track-status context available" : "Track-status feed quiet"}</strong>
-        </article>
-        <article>
-          <span>Weather</span>
-          <strong>{race.weatherSummary || "Weather context unavailable"}</strong>
-        </article>
-      </div>
-      <div className="race-cinema-weather-strip" aria-label="Weather context">
-        {race.weatherContext.slice(0, 20).map((sample) => (
-          <span key={`${sample.lapNumber}-${sample.weatherImpactLabel}`}>
-            L{sample.lapNumber} / {sample.weatherState} / {sample.trackTempC?.toFixed(1) ?? "-"}C
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDetailPageProps) {
   const { raceId } = await params;
   const race = await getRaceAnalysisDetail(raceId);
@@ -723,12 +622,10 @@ export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDet
       <div className="race-cinema-workspace">
         <RaceAnalysisRail />
         <div className="race-cinema-workspace__main">
-          <RaceStorySection race={race} />
+          <DriverVersusSection race={race} />
           <StrategySection race={race} />
           <PositionSection race={race} />
           <PaceSection race={race} />
-          <TrafficSection race={race} />
-          <DataSection race={race} />
         </div>
         <RaceContextRail race={race} />
       </div>

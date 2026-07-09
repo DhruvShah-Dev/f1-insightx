@@ -34,33 +34,48 @@ export default async function Home() {
 
         <section className="feature-showcase" data-home-reveal>
           <div className="section-shell feature-showcase__header">
-            <div className="section-meta">Products</div>
-            <h2 className="section-title">Telemetry and strategy.</h2>
+            <h2 className="section-title">Explore</h2>
           </div>
 
           <div className="module-grid feature-showcase__grid">
             <ModuleLink
-              href="/race-analysis"
+              href="/predictions"
               index="01"
-              title="Race Analysis"
-              summary="Cinematic post-race analytics"
-              visualTeamId="mercedes"
+              title="Race Week"
+              summary="Next-race intelligence"
+              icon="forecast"
+              variant="band"
+            />
+            <ModuleLink
+              href="/picks"
+              index="02"
+              title="Picks"
+              summary="Lock race calls"
+              icon="picks"
               variant="band"
             />
             <ModuleLink
               href="/lab"
-              index="02"
+              index="03"
               title="Strategy Lab"
-              summary="Scenario simulator"
-              visualTeamId="ferrari"
+              summary="Simulate scenarios"
+              icon="strategy"
               variant="band"
             />
             <ModuleLink
-              href="/predictions"
-              index="03"
-              title="Race Week"
-              summary="Next-race read"
-              visualTeamId="red_bull"
+              href="/race-analysis"
+              index="04"
+              title="Race Analysis"
+              summary="Post-race telemetry"
+              icon="analysis"
+              variant="band"
+            />
+            <ModuleLink
+              href="/championship"
+              index="05"
+              title="Championship"
+              summary="Season standings"
+              icon="championship"
               variant="band"
             />
           </div>
