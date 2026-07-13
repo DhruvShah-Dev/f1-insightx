@@ -28,6 +28,11 @@ const tireStintSchema = z.object({
   laps: z.coerce.number().int().min(1).max(80),
 });
 
+const tyrePressureSchema = z.object({
+  frontPsi: z.coerce.number().min(18).max(30),
+  rearPsi: z.coerce.number().min(18).max(30),
+});
+
 const qualifyingOverrideSchema = z.object({
   driverId: z.string().min(1),
   position: z.coerce.number().int().min(1).max(20),
@@ -42,6 +47,8 @@ export const raceScenarioSchema = z
     constructorFocus: z.array(z.string().min(1)).max(10).default([]),
     pitStopCount: z.coerce.number().int().min(1).max(4),
     tirePlan: z.array(tireStintSchema).min(1).max(4),
+    pitLaps: z.array(z.coerce.number().int().min(1).max(80)).max(4),
+    tyrePressure: tyrePressureSchema,
     safetyCarProbability: z.coerce.number().min(0).max(1),
     weatherScenario: z.enum(["dry", "mixed", "wet"]),
     aggressionFactor: z.coerce.number().min(0).max(100),
@@ -56,6 +63,84 @@ export const raceScenarioSchema = z
         code: z.ZodIssueCode.custom,
         path: ["pitStopCount"],
         message: "Pit stop count must match the compound sequence length.",
+      });
+    }
+
+    if (value.pitLaps.length !== expectedStops) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["pitLaps"],
+        message: "Pit laps must match the number of planned pit stops.",
+      });
+    }
+
+    const compounds = value.tirePlan.map((stint) => stint.compound);
+    if (new Set(compounds).size < 2) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["tirePlan"],
+        message: "Race strategy must use at least two tyre compounds.",
+      });
+    }
+
+    const dryCompounds = new Set(["soft", "medium", "hard"]);
+    if (value.weatherScenario === "dry" && compounds.some((compound) => !dryCompounds.has(compound))) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["tirePlan"],
+        message: "Dry race scenarios must use dry compounds only.",
+      });
+    }
+
+    const totalLaps = value.tirePlan.reduce((sum, stint) => sum + stint.laps, 0);
+    const uniquePitLaps = new Set(value.pitLaps);
+    if (uniquePitLaps.size !== value.pitLaps.length) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["pitLaps"],
+        message: "Pit laps must be unique.",
+      });
+    }
+
+    for (let index = 0; index < value.pitLaps.length; index += 1) {
+      const pitLap = value.pitLaps[index]!;
+      const previous = value.pitLaps[index - 1];
+      if (previous !== undefined && pitLap <= previous) {
+        context.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["pitLaps", index],
+          message: "Pit laps must be sorted from earliest to latest.",
+        });
+      }
+
+      if (pitLap >= totalLaps) {
+        context.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["pitLaps", index],
+          message: "Pit laps must fall before the final race lap.",
+        });
+      }
+    }
+
+    if (value.pitLaps.length === expectedStops) {
+      const boundaries = [0, ...value.pitLaps, totalLaps];
+      const derivedStints = boundaries.slice(1).map((boundary, index) => boundary - boundaries[index]!);
+      derivedStints.forEach((laps, index) => {
+        if (laps <= 0) {
+          context.addIssue({
+            code: z.ZodIssueCode.custom,
+            path: ["tirePlan", index, "laps"],
+            message: "Every stint must contain at least one racing lap.",
+          });
+        }
+
+        if (value.tirePlan[index] && value.tirePlan[index].laps !== laps) {
+          context.addIssue({
+            code: z.ZodIssueCode.custom,
+            path: ["tirePlan", index, "laps"],
+            message: "Stint lengths must match the submitted pit laps.",
+          });
+        }
       });
     }
   });

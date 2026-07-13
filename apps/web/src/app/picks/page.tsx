@@ -70,16 +70,33 @@ export default async function PicksPage() {
       }
     >
       <section className="pit-wall-hero">
+        <div className="race-cinema-atmosphere pit-wall-hero__atmosphere" aria-hidden="true">
+          {primaryTeam.carImagePath ? (
+            <AssetImage
+              src={primaryTeam.carImagePath}
+              fallbackSrc={primaryTeam.fallbackImagePath}
+              alt=""
+              className="race-cinema-atmosphere__car"
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectPosition: primaryTeam.imagePosition, objectFit: primaryTeam.imageFit ?? "cover" }}
+            />
+          ) : null}
+          <div className="race-cinema-atmosphere__grid" />
+          <div className="race-cinema-atmosphere__speed" />
+        </div>
+
         <div className="pit-wall-hero__content">
           <div className="pit-wall-hero__copy">
-            <p className="pit-wall-hero__eyebrow">{payload.race.raceName}</p>
-            <h1>Picks</h1>
+            <p className="pit-wall-hero__eyebrow">Pit Wall Picks / {payload.race.raceName}</p>
+            <h1>Race picks</h1>
             <p className="pit-wall-hero__deck">
-              Lock the qualifying order, race podium, random-position calls, and specials before the session closes.
+              Set the qualifying order, race podium, and special calls before the session locks.
             </p>
             <div className="pit-wall-hero__actions">
               <a href={user ? "#race-card" : "#sign-in"} className="pit-wall-hero__cta">
-                {user ? "Build race card" : "Sign in to play"}
+                {user ? "Open race card" : "Sign in to play"}
               </a>
               <span className="pit-wall-hero__status">{payload.lockStatusLabel}</span>
             </div>
@@ -98,6 +115,12 @@ export default async function PicksPage() {
 
         <div className="pit-wall-hero__visual" aria-hidden="true">
           <div className="pit-wall-hero__beam" />
+          <div className="pit-wall-hero__chip-rail">
+            <i>Q3</i>
+            <i>P1</i>
+            <i>SC</i>
+            <i>DRS</i>
+          </div>
           <div className="pit-wall-hero__driver-stack">
             {heroDrivers.map(({ driver, driverMeta, team }, index) => (
               <div

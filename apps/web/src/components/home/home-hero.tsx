@@ -72,8 +72,8 @@ export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps)
                 <span>Explore race analysis</span>
                 <span aria-hidden="true">→</span>
               </Link>
-              <Link href="/lab" className="hero__cta hero__cta--secondary">
-                <span>Build a strategy</span>
+              <Link href="/predictions" className="hero__cta hero__cta--secondary">
+                <span>Open race week</span>
                 <span aria-hidden="true">→</span>
               </Link>
             </div>

@@ -55,16 +55,8 @@ export default async function Home() {
               variant="band"
             />
             <ModuleLink
-              href="/lab"
-              index="03"
-              title="Strategy Lab"
-              summary="Simulate scenarios"
-              icon="strategy"
-              variant="band"
-            />
-            <ModuleLink
               href="/race-analysis"
-              index="04"
+              index="03"
               title="Race Analysis"
               summary="Post-race telemetry"
               icon="analysis"
@@ -72,7 +64,7 @@ export default async function Home() {
             />
             <ModuleLink
               href="/championship"
-              index="05"
+              index="04"
               title="Championship"
               summary="Season standings"
               icon="championship"
