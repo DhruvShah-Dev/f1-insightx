@@ -2,6 +2,7 @@ import { apiError, apiErrorFrom, apiOk } from "@/lib/api/errors";
 import { flattenZodError, raceScenarioSchema } from "@/lib/api/validation";
 import { NO_STORE_HEADERS, mergeHeaders } from "@/lib/http/headers";
 import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { authorizeStrategyLabAccess } from "@/lib/server/strategy-lab-access";
 import { getStrategyLabRaceProduct } from "@/lib/server/strategy-lab-product";
 import { simulateRaceScenario } from "@/lib/server/strategy-lab-simulator";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
@@ -17,26 +18,38 @@ export async function POST(request: Request) {
     });
   }
 
-  const userClient = await getSupabaseServerClient();
-  if (!userClient) {
+  const access = await authorizeStrategyLabAccess(request);
+  if (!access.ok) {
     return apiError({
-      status: 401,
-      code: "unauthorized",
-      message: "Sign in to run race strategy simulations.",
+      status: 404,
+      code: "not_found",
+      message: "Strategy Lab data was not found.",
       headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
     });
   }
 
-  const {
-    data: { user },
-  } = await userClient.auth.getUser();
-  if (!user) {
-    return apiError({
-      status: 401,
-      code: "unauthorized",
-      message: "Sign in to run race strategy simulations.",
-      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
-    });
+  if (access.method !== "token") {
+    const userClient = await getSupabaseServerClient();
+    if (!userClient) {
+      return apiError({
+        status: 401,
+        code: "unauthorized",
+        message: "Sign in to run race strategy simulations.",
+        headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+      });
+    }
+
+    const {
+      data: { user },
+    } = await userClient.auth.getUser();
+    if (!user) {
+      return apiError({
+        status: 401,
+        code: "unauthorized",
+        message: "Sign in to run race strategy simulations.",
+        headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+      });
+    }
   }
 
   const payload = await request.json().catch(() => null);

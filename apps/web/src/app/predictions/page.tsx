@@ -443,8 +443,8 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
             </div>
 
             <div className="race-week-hero__actions">
-              <Link href="/lab" className="race-week-hero__cta race-week-hero__cta--primary">
-                Strategy Lab
+              <Link href="/picks" className="race-week-hero__cta race-week-hero__cta--primary">
+                Picks
               </Link>
               <Link href="/race-analysis" className="race-week-hero__cta race-week-hero__cta--secondary">
                 Race Analysis

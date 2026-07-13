@@ -149,6 +149,8 @@ function buildScenarioInput(overrides: Partial<RaceScenarioInput> = {}): RaceSce
       { compound: "hard", laps: 21 },
       { compound: "soft", laps: 18 },
     ],
+    pitLaps: [18, 39],
+    tyrePressure: { frontPsi: 23, rearPsi: 21 },
     safetyCarProbability: 0.24,
     weatherScenario: "dry",
     aggressionFactor: 50,
@@ -157,6 +159,47 @@ function buildScenarioInput(overrides: Partial<RaceScenarioInput> = {}): RaceSce
     ...overrides,
   });
 }
+
+test("raceScenarioSchema accepts explicit pit laps and tyre pressure", () => {
+  const scenario = buildScenarioInput();
+
+  assert.deepEqual(scenario.pitLaps, [18, 39]);
+  assert.equal(scenario.tyrePressure.frontPsi, 23);
+  assert.equal(scenario.tyrePressure.rearPsi, 21);
+});
+
+test("raceScenarioSchema rejects unsorted or duplicate pit laps", () => {
+  assert.throws(() => buildScenarioInput({ pitLaps: [39, 18] }), /Pit laps must be sorted/);
+  assert.throws(() => buildScenarioInput({ pitLaps: [18, 18] }), /Pit laps must be unique/);
+});
+
+test("raceScenarioSchema rejects one-compound dry plans", () => {
+  assert.throws(() => buildScenarioInput({
+    tirePlan: [
+      { compound: "medium", laps: 18 },
+      { compound: "medium", laps: 21 },
+      { compound: "medium", laps: 18 },
+    ],
+  }), /at least two tyre compounds/);
+});
+
+test("raceScenarioSchema accepts wet and intermediate plans outside dry mode", () => {
+  const scenario = buildScenarioInput({
+    weatherScenario: "wet",
+    tirePlan: [
+      { compound: "intermediate", laps: 18 },
+      { compound: "wet", laps: 21 },
+      { compound: "intermediate", laps: 18 },
+    ],
+  });
+
+  assert.equal(scenario.weatherScenario, "wet");
+});
+
+test("raceScenarioSchema rejects pressure outside setup bounds", () => {
+  assert.throws(() => buildScenarioInput({ tyrePressure: { frontPsi: 31, rearPsi: 21 } }), /Too big/);
+  assert.throws(() => buildScenarioInput({ tyrePressure: { frontPsi: 23, rearPsi: 17 } }), /Too small/);
+});
 
 test("simulateRaceScenario applies aggression and reliability controls to the target math", () => {
   const balanced = simulateRaceScenario(buildScenarioInput(), baseProduct);
@@ -197,6 +240,21 @@ test("simulateRaceScenario makes weather mode materially affect pace assumptions
     wetEntrant.explanation.some((line) => line.includes("Wet conditions")),
   );
   assert.equal(wet.modelMeta.simulatorVersion, "strategy_lab_sim_v2");
+});
+
+test("simulateRaceScenario applies tyre pressure to outcome, sensitivity, and confidence framing", () => {
+  const defaultPressure = simulateRaceScenario(buildScenarioInput(), baseProduct);
+  const stressedPressure = simulateRaceScenario(
+    buildScenarioInput({
+      tyrePressure: { frontPsi: 28.5, rearPsi: 19.2 },
+    }),
+    baseProduct,
+  );
+
+  assert.notEqual(stressedPressure.finishingOrder[0]!.totalRaceTimeS, defaultPressure.finishingOrder[0]!.totalRaceTimeS);
+  assert.ok(stressedPressure.sensitivity.some((item) => item.factor === "tyre_pressure" && item.impactS > 0));
+  assert.ok(stressedPressure.confidenceReason.includes("tyre-pressure"));
+  assert.ok(stressedPressure.finishingOrder[0]!.explanation.some((line) => line.includes("Tyre pressure")));
 });
 
 test("fuel correction separates early fuel mass from tyre degradation trend", () => {

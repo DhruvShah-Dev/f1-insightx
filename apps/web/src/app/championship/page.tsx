@@ -31,11 +31,9 @@ const metricOrder: AchievementMetricId[] = [
 ];
 
 const navSections = [
-  { href: "#overview", label: "Overview" },
   { href: "#drivers", label: "Drivers" },
   { href: "#constructors", label: "Constructors" },
   { href: "#performance", label: "Performance" },
-  { href: "#data-notes", label: "Data notes" },
 ];
 
 export const metadata = {
@@ -83,6 +81,16 @@ function formatGap(value: number) {
   }
 
   return `${Number.isInteger(value) ? value : value.toFixed(1)} back`;
+}
+
+function formatSignedGap(value: number) {
+  if (value === 0) {
+    return "0";
+  }
+
+  const absoluteValue = Math.abs(value);
+  const formatted = Number.isInteger(absoluteValue) ? absoluteValue : absoluteValue.toFixed(1);
+  return value > 0 ? `+${formatted}` : `-${formatted}`;
 }
 
 function percentOf(value: number, maxValue: number) {
@@ -192,9 +200,7 @@ function ChampionshipHero({
       <div className="champ-cinema-hero__copy">
         <span>Championship control</span>
         <h1>{championship.season} Championship</h1>
-        <p>
-          Drivers, constructors, and race-derived season records after {championship.latestRaceName}.
-        </p>
+        <p>Standings pressure, team form, and race-analysis records after {championship.latestRaceName}.</p>
         <div className="champ-cinema-hero__meta">
           <strong>{formatRaceDate(championship.latestRaceDate)}</strong>
           <strong>{raceCount} reports counted</strong>
@@ -232,65 +238,6 @@ function ChampionshipHero({
 
       <div className="champ-cinema-hero__season">
         <YearSelector seasons={seasons} selectedSeason={championship.season} />
-      </div>
-    </section>
-  );
-}
-
-function OverviewSection({
-  championship,
-  raceCount,
-  generatedAt,
-}: {
-  championship: NonNullable<Awaited<ReturnType<typeof getChampionshipStandingsSeason>>>;
-  raceCount: number;
-  generatedAt: string | null;
-}) {
-  const driverLeader = championship.drivers[0];
-  const driverSecond = championship.drivers[1];
-  const constructorLeader = championship.constructors[0];
-  const constructorSecond = championship.constructors[1];
-  const driverMargin = driverLeader && driverSecond ? driverLeader.points - driverSecond.points : 0;
-  const constructorMargin = constructorLeader && constructorSecond ? constructorLeader.points - constructorSecond.points : 0;
-
-  return (
-    <section className="champ-cinema-panel champ-cinema-overview" id="overview" aria-labelledby="overview-title">
-      <div className="champ-cinema-section-heading">
-        <span>Overview</span>
-        <h2 id="overview-title">Championship state</h2>
-        <p>Current order, race coverage, and source confidence in one read.</p>
-      </div>
-
-      <div className="champ-cinema-kpi-strip">
-        <article>
-          <span>Driver margin</span>
-          <strong>{formatGap(driverMargin)}</strong>
-          <small>{driverLeader?.displayName ?? "Leader unavailable"} over P2</small>
-        </article>
-        <article>
-          <span>Constructor margin</span>
-          <strong>{formatGap(constructorMargin)}</strong>
-          <small>{constructorLeader?.constructorName ?? "Team unavailable"} over P2</small>
-        </article>
-        <article>
-          <span>Latest race</span>
-          <strong>{championship.latestRaceName}</strong>
-          <small>{formatRaceDate(championship.latestRaceDate)}</small>
-        </article>
-        <article>
-          <span>Race reports</span>
-          <strong>{raceCount}</strong>
-          <small>Performance metrics counted</small>
-        </article>
-      </div>
-
-      <div className="champ-cinema-source-note">
-        <strong>Data posture</strong>
-        <p>
-          Standings use curated championship tables. Performance records use race-analysis outputs, with overtakes and
-          position movement kept as proxy-derived signals.
-        </p>
-        <span>Last generated: {formatGeneratedAt(generatedAt)}</span>
       </div>
     </section>
   );
@@ -350,8 +297,8 @@ function DriversSection({ drivers }: { drivers: DriverStanding[] }) {
     <section className="champ-cinema-panel" id="drivers" aria-labelledby="drivers-title">
       <div className="champ-cinema-section-heading">
         <span>Drivers</span>
-        <h2 id="drivers-title">Drivers championship</h2>
-        <p>Team identity, points share, and gap to the leader for the full field.</p>
+        <h2 id="drivers-title">Driver order</h2>
+        <p>Points share and leader gap across the field.</p>
       </div>
 
       <DriverPodium drivers={drivers.slice(0, 3)} />
@@ -393,7 +340,7 @@ function DriversSection({ drivers }: { drivers: DriverStanding[] }) {
               </div>
               <TeamLogo teamId={driver.teamId} className="champ-cinema-driver-table__logo" />
               <em>{formatPoints(driver.points)}</em>
-              <b>{formatGap(gap)}</b>
+              <b>{formatSignedGap(-gap)}</b>
             </li>
           );
         })}
@@ -409,8 +356,8 @@ function ConstructorsSection({ constructors }: { constructors: ConstructorStandi
     <section className="champ-cinema-panel" id="constructors" aria-labelledby="constructors-title">
       <div className="champ-cinema-section-heading">
         <span>Constructors</span>
-        <h2 id="constructors-title">Team standings</h2>
-        <p>Constructor points density with wins, gap, team color, logo, and car identity.</p>
+        <h2 id="constructors-title">Team order</h2>
+        <p>Car identity, wins, and points density.</p>
       </div>
 
       <ol className="champ-cinema-constructor-grid">
@@ -461,35 +408,6 @@ function ConstructorsSection({ constructors }: { constructors: ConstructorStandi
   );
 }
 
-function DataNotesSection() {
-  return (
-    <section className="champ-cinema-panel champ-cinema-notes" id="data-notes" aria-labelledby="data-notes-title">
-      <div className="champ-cinema-section-heading">
-        <span>Data notes</span>
-        <h2 id="data-notes-title">Source confidence</h2>
-        <p>Keep official standings separate from inferred race-analysis signals.</p>
-      </div>
-      <div className="champ-cinema-notes__grid">
-        <article>
-          <span>Official order</span>
-          <strong>Drivers and constructors</strong>
-          <p>Championship tables come from curated standings snapshots for the selected season.</p>
-        </article>
-        <article>
-          <span>Race-analysis records</span>
-          <strong>Leaderboards</strong>
-          <p>Laps, pit stops, DNFs, and position records are compiled from generated race-analysis artifacts.</p>
-        </article>
-        <article>
-          <span>Proxy signals</span>
-          <strong>Movement and overtakes</strong>
-          <p>Overtakes and position gains are proxy-derived and should be read as analytical estimates.</p>
-        </article>
-      </div>
-    </section>
-  );
-}
-
 export default async function ChampionshipPage({ searchParams }: ChampionshipPageProps) {
   const params = await searchParams;
   const requestedSeason = Number(firstParam(params?.season));
@@ -516,11 +434,6 @@ export default async function ChampionshipPage({ searchParams }: ChampionshipPag
           <div className="champ-cinema-workspace">
             <SectionRail />
             <div className="champ-cinema-workspace__main">
-              <OverviewSection
-                championship={championship}
-                raceCount={achievements.raceCount}
-                generatedAt={achievements.generatedAt}
-              />
               <DriversSection drivers={championship.drivers} />
               <ConstructorsSection constructors={championship.constructors} />
               <section className="champ-cinema-panel" id="performance" aria-labelledby="performance-title">
@@ -531,7 +444,6 @@ export default async function ChampionshipPage({ searchParams }: ChampionshipPag
                 </div>
                 <ChampionshipLeaderboards metrics={metricOrder.map((metricId) => achievements.metrics[metricId])} />
               </section>
-              <DataNotesSection />
             </div>
           </div>
         </>

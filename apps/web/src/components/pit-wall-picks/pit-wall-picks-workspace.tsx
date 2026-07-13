@@ -165,8 +165,9 @@ function ScorePanel({ score }: { score: Score | null }) {
   if (!score) {
     return (
       <div className="pit-wall-panel pit-wall-panel--quiet">
-        <span>No score yet</span>
+        <span>House tally</span>
         <strong>0</strong>
+        <small>Settles after race data lands.</small>
       </div>
     );
   }
@@ -174,7 +175,7 @@ function ScorePanel({ score }: { score: Score | null }) {
   return (
     <div className="pit-wall-score">
       <div className="pit-wall-score__total">
-        <span>{score.pending ? "Live score" : "Final score"}</span>
+        <span>{score.pending ? "Live table" : "Final payout"}</span>
         <strong>{score.totalPoints}</strong>
       </div>
       {[score.qualifying, score.race, score.specials].map((group, groupIndex) => (
@@ -195,6 +196,7 @@ function Leaderboard({ title, entries, overall = false }: { title: string; entri
   return (
     <section className="pit-wall-board">
       <div className="pit-wall-section-heading">
+        <span>{overall ? "Season book" : "Race book"}</span>
         <h2>{title}</h2>
       </div>
       {entries.length > 0 ? (
@@ -260,20 +262,20 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
     <div className="pit-wall-workspace">
       <section className="pit-wall-card pit-wall-card--form" id="race-card">
         <div className="pit-wall-section-heading">
-          <span>{props.isLocked ? "Locked card" : "Open card"}</span>
+          <span>{props.isLocked ? "Locked" : "Open"}</span>
           <h2>{props.userPick ? "Your picks" : "Race card"}</h2>
-          <p>Complete every slot before lock. Top-three groups cannot repeat a driver.</p>
+          <p>Complete every slot before lock. Each top-three group needs three different drivers.</p>
         </div>
 
         {!props.persistenceAvailable ? (
           <div className="pit-wall-feedback pit-wall-feedback--notice">
-            Setup mode
+            Practice mode
           </div>
         ) : null}
 
         <div className="pit-wall-pick-grid">
           <div className="pit-wall-pick-group">
-            <h3>Qualifying Top 3</h3>
+            <h3>Qualifying order</h3>
             {pick.qualifyingTop3.map((value, index) => (
               <DriverSelect
                 key={`q-${index}`}
@@ -288,7 +290,7 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
           </div>
 
           <div className="pit-wall-pick-group">
-            <h3>Race Top 3</h3>
+            <h3>Race podium</h3>
             {pick.raceTop3.map((value, index) => (
               <DriverSelect
                 key={`r-${index}`}
@@ -303,7 +305,7 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
           </div>
 
           <div className="pit-wall-pick-group">
-            <h3>Random Positions</h3>
+            <h3>Random positions</h3>
             {pick.randomDrivers.map((value, index) => (
               <DriverSelect
                 key={`random-${index}`}
@@ -318,7 +320,7 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
           </div>
 
           <div className="pit-wall-pick-group">
-            <h3>Specials</h3>
+            <h3>Side bets</h3>
             <DriverSelect
               label="Fastest pit stop"
               value={pick.fastestPitStopDriverId}
@@ -344,10 +346,10 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
 
         {!props.isLocked ? (
           <button className="pit-wall-submit" type="button" onClick={save} disabled={!canSubmit}>
-            {isPending ? "Locking..." : props.userPick ? "Update picks" : "Lock picks"}
+            {isPending ? "Locking..." : props.userPick ? "Update slip" : "Lock slip"}
           </button>
         ) : (
-          <div className="pit-wall-feedback pit-wall-feedback--notice">Picks locked</div>
+          <div className="pit-wall-feedback pit-wall-feedback--notice">Table closed</div>
         )}
       </section>
 
@@ -358,6 +360,7 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
 
       <section className="pit-wall-board pit-wall-board--history">
         <div className="pit-wall-section-heading">
+          <span>Past tables</span>
           <h2>Race history</h2>
         </div>
         {props.raceHistory.length > 0 ? (

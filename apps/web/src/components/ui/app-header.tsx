@@ -11,7 +11,6 @@ type AppHeaderProps = {
 const navItems = [
   { href: "/predictions", label: "Race Week" },
   { href: "/picks", label: "Picks" },
-  { href: "/lab", label: "Strategy Lab" },
   { href: "/race-analysis", label: "Race Analysis" },
   { href: "/championship", label: "Championship" },
 ];

@@ -27,6 +27,307 @@
   --foreground: var(--text);
 }
 
+.strategy-lab-page .strategy-free-roam {
+  --strategy-line: rgba(244, 246, 248, 0.13);
+  --strategy-panel: rgba(7, 10, 14, 0.84);
+  --strategy-muted: rgba(244, 246, 248, 0.68);
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 78% 0%, color-mix(in srgb, var(--strategy-team-primary, #e10600) 22%, transparent), transparent 28rem),
+    linear-gradient(180deg, #050608 0%, #090c12 48%, #040506 100%);
+}
+
+.strategy-lab-page .strategy-race-hero--free {
+  position: relative;
+  min-height: clamp(34rem, 72svh, 50rem);
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid color-mix(in srgb, var(--strategy-team-primary, #e10600) 42%, transparent);
+  background:
+    linear-gradient(90deg, rgba(5, 6, 8, 0.98), rgba(5, 6, 8, 0.62) 54%, rgba(5, 6, 8, 0.9)),
+    repeating-linear-gradient(90deg, rgba(244, 246, 248, 0.05) 0 1px, transparent 1px 6rem);
+}
+
+.strategy-lab-page .strategy-race-hero--free::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(112deg, transparent 0 38%, color-mix(in srgb, var(--strategy-team-secondary, #f5c542) 26%, transparent) 38.2% 38.55%, transparent 38.8%),
+    linear-gradient(112deg, transparent 0 66%, rgba(255, 255, 255, 0.12) 66.2% 66.45%, transparent 66.8%);
+  animation: strategy-free-speed 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.strategy-lab-page .strategy-race-hero__car {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.3;
+  filter: saturate(1.1) contrast(1.08);
+  transform: scale(1.05) translateX(15%);
+}
+
+.strategy-lab-page .strategy-race-hero--free .strategy-race-hero__copy,
+.strategy-lab-page .strategy-race-hero--free .strategy-race-hero__track {
+  position: relative;
+  z-index: 1;
+}
+
+.strategy-lab-page .strategy-race-hero--free .strategy-race-hero__track {
+  min-height: 22rem;
+  border: 1px solid rgba(244, 246, 248, 0.12);
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--strategy-team-primary, #e10600) 18%, transparent), transparent 20rem),
+    rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.strategy-lab-page .strategy-workbench--free {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.36fr) minmax(0, 1fr);
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+  align-items: start;
+}
+
+.strategy-lab-page .strategy-command-rail--free {
+  border-color: var(--strategy-line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    var(--strategy-panel);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.24);
+}
+
+.strategy-lab-page .strategy-command-rail--free .strategy-command-rail__head {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.strategy-lab-page .strategy-command-rail--free .strategy-command-rail__head strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.strategy-lab-page .strategy-console--free {
+  display: grid;
+  gap: 1rem;
+}
+
+.strategy-lab-page .strategy-command-rail__sections {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.strategy-lab-page .strategy-control-section {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0.9rem;
+  border: 1px solid var(--strategy-line);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.strategy-lab-page .strategy-control-section__head {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+}
+
+.strategy-lab-page .strategy-control-section__number {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid color-mix(in srgb, var(--strategy-team-primary, #e10600) 48%, rgba(244, 246, 248, 0.22));
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.strategy-lab-page .strategy-control-section h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.strategy-lab-page .strategy-control-section p {
+  margin: 0.28rem 0 0;
+  color: var(--strategy-muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.strategy-lab-page .strategy-rule-panel,
+.strategy-lab-page .strategy-stint-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.85rem;
+  border: 1px solid var(--strategy-line);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.strategy-lab-page .strategy-rule-panel--valid {
+  border-color: rgba(88, 214, 141, 0.42);
+}
+
+.strategy-lab-page .strategy-rule-panel--invalid {
+  border-color: rgba(255, 74, 67, 0.55);
+}
+
+.strategy-lab-page .strategy-rule-panel span,
+.strategy-lab-page .strategy-stint-card span,
+.strategy-lab-page .strategy-stint-card em,
+.strategy-lab-page .strategy-stint-card__pit span,
+.strategy-lab-page .strategy-pit-lap-editor span {
+  color: var(--strategy-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.strategy-lab-page .strategy-rule-panel strong,
+.strategy-lab-page .strategy-stint-card strong {
+  color: #fff;
+}
+
+.strategy-lab-page .strategy-rule-panel p {
+  margin: 0;
+  color: var(--strategy-muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.strategy-lab-page .strategy-timeline__track {
+  display: grid;
+}
+
+.strategy-lab-page .strategy-timeline__ruler {
+  display: flex;
+  justify-content: space-between;
+}
+
+.strategy-lab-page .strategy-timeline__segment {
+  min-width: 0;
+}
+
+.strategy-lab-page .strategy-timeline__segment--intermediate {
+  background: #20bf55;
+  color: #06110a;
+}
+
+.strategy-lab-page .strategy-timeline__segment--wet {
+  background: #2f80ed;
+  color: #fff;
+}
+
+.strategy-lab-page .strategy-stint-editor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.7rem;
+}
+
+.strategy-lab-page .strategy-stint-card {
+  border-left: 0.28rem solid rgba(244, 246, 248, 0.4);
+}
+
+.strategy-lab-page .strategy-stint-card > div {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.strategy-lab-page .strategy-stint-card strong {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.strategy-lab-page .strategy-stint-card__pit {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.strategy-lab-page .strategy-stint-card__pit strong {
+  font-size: inherit;
+}
+
+.strategy-lab-page .strategy-stint-card--soft { border-left-color: #ff4a43; }
+.strategy-lab-page .strategy-stint-card--medium { border-left-color: #f5c542; }
+.strategy-lab-page .strategy-stint-card--hard { border-left-color: #f4f6f8; }
+.strategy-lab-page .strategy-stint-card--intermediate { border-left-color: #20bf55; }
+.strategy-lab-page .strategy-stint-card--wet { border-left-color: #2f80ed; }
+
+.strategy-lab-page .strategy-stint-card button,
+.strategy-lab-page .strategy-pit-lap-editor button {
+  min-height: 2.45rem;
+  border: 1px solid rgba(244, 246, 248, 0.16);
+  background: rgba(244, 246, 248, 0.07);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.strategy-lab-page .strategy-stint-card button:disabled,
+.strategy-lab-page .strategy-pit-lap-editor button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.strategy-lab-page .strategy-pit-lap-editor {
+  display: grid;
+  gap: 0.7rem;
+  justify-items: start;
+}
+
+.strategy-lab-page .strategy-pit-lap-editor label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.strategy-lab-page .strategy-pit-lap-editor input {
+  width: 100%;
+}
+
+.strategy-lab-page .strategy-result-stage,
+.strategy-lab-page .strategy-console-band,
+.strategy-lab-page .strategy-risk-strip article {
+  border-color: var(--strategy-line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    var(--strategy-panel);
+}
+
+@keyframes strategy-free-speed {
+  0%, 100% { transform: translateX(0); opacity: 0.65; }
+  50% { transform: translateX(-7rem); opacity: 0.95; }
+}
+
+@media (max-width: 980px) {
+  .strategy-lab-page .strategy-race-hero--free,
+  .strategy-lab-page .strategy-workbench--free {
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-lab-page .strategy-command-rail--free {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .strategy-lab-page .strategy-race-hero--free {
+    min-height: auto;
+  }
+
+  .strategy-lab-page .strategy-result-stage {
+    grid-template-columns: 1fr;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -2933,6 +3234,804 @@ select optgroup {
   grid-template-columns: 3rem minmax(0, 1fr) auto auto;
 }
 
+.pit-wall-page {
+  --pit-wall-gold: #f4c45d;
+  --pit-wall-green: #0f4f3e;
+  --pit-wall-red: #e10600;
+  background:
+    radial-gradient(circle at 76% 8%, color-mix(in srgb, var(--pit-team-primary) 30%, transparent), transparent 28rem),
+    radial-gradient(circle at 14% 22%, rgba(244, 196, 93, 0.13), transparent 24rem),
+    linear-gradient(180deg, #050608 0%, #070908 48%, #030404 100%);
+}
+
+.pit-wall-page .pit-wall-hero {
+  position: relative;
+  width: 100%;
+  min-height: clamp(36rem, calc(100svh - 4.5rem), 52rem);
+  margin: 0;
+  padding: clamp(1.2rem, 3vw, 2.5rem) max(1rem, calc((100vw - 86rem) / 2)) clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(244, 196, 93, 0.22);
+  background:
+    linear-gradient(90deg, rgba(3, 4, 4, 0.94), rgba(3, 4, 4, 0.52) 48%, rgba(3, 4, 4, 0.88)),
+    radial-gradient(circle at 68% 62%, rgba(15, 79, 62, 0.36), transparent 24rem),
+    #050608;
+}
+
+.pit-wall-page .pit-wall-hero::before,
+.pit-wall-page .pit-wall-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pit-wall-page .pit-wall-hero::before {
+  background:
+    linear-gradient(115deg, transparent 0 44%, rgba(244, 196, 93, 0.18) 44.4% 44.75%, transparent 45.1%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 7.5rem);
+  opacity: 0.68;
+}
+
+.pit-wall-page .pit-wall-hero::after {
+  inset: auto 0 0;
+  height: 38%;
+  background:
+    linear-gradient(180deg, transparent, rgba(4, 5, 6, 0.92)),
+    repeating-linear-gradient(112deg, rgba(244, 196, 93, 0.08) 0 1px, transparent 1px 1.1rem);
+}
+
+.pit-wall-page .pit-wall-hero__atmosphere,
+.pit-wall-page .race-cinema-atmosphere {
+  display: block;
+}
+
+.pit-wall-page .pit-wall-hero__atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.74;
+  pointer-events: none;
+}
+
+.pit-wall-page .race-cinema-atmosphere__car {
+  opacity: 0.42;
+  filter: saturate(1.08) contrast(1.08);
+  transform: scale(1.04) translateX(12%);
+}
+
+.pit-wall-page .race-cinema-atmosphere__grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(244, 246, 248, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 246, 248, 0.035) 1px, transparent 1px);
+  background-size: 5.5rem 5.5rem;
+  mask-image: linear-gradient(90deg, black, transparent 76%);
+}
+
+.pit-wall-page .race-cinema-atmosphere__speed {
+  position: absolute;
+  inset: 16% -20%;
+  background:
+    linear-gradient(105deg, transparent 20%, rgba(225, 6, 0, 0.3) 20.2% 20.55%, transparent 20.8%),
+    linear-gradient(105deg, transparent 48%, rgba(244, 196, 93, 0.28) 48.2% 48.55%, transparent 48.8%),
+    linear-gradient(105deg, transparent 72%, rgba(255, 255, 255, 0.16) 72.2% 72.45%, transparent 72.8%);
+  filter: blur(0.2px);
+  animation: pit-wall-speed-sweep 7s ease-in-out infinite;
+}
+
+.pit-wall-page .pit-wall-hero__content {
+  position: relative;
+  z-index: 2;
+  grid-template-columns: minmax(0, 1fr) minmax(13rem, 16rem) minmax(16rem, 20rem);
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+  width: min(100%, 86rem);
+  margin: 0 auto;
+  align-items: end;
+}
+
+.pit-wall-page .pit-wall-hero__copy {
+  display: grid;
+  gap: 0.95rem;
+  max-width: 58rem;
+  animation: pit-wall-rise 620ms ease both;
+}
+
+.pit-wall-page .pit-wall-hero__eyebrow {
+  color: var(--pit-wall-gold);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: clamp(0.68rem, 0.9vw, 0.78rem);
+  letter-spacing: 0.16em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-hero__copy h1 {
+  max-width: 9ch;
+  color: #ffffff;
+  text-shadow: 0 0 1.8rem rgba(244, 196, 93, 0.12), 0 1rem 3rem rgba(0, 0, 0, 0.78);
+}
+
+.pit-wall-page .pit-wall-hero__deck {
+  max-width: 34rem;
+  color: rgba(244, 246, 248, 0.9);
+}
+
+.pit-wall-page .pit-wall-hero__cta,
+.pit-wall-page .pit-wall-submit {
+  border-color: rgba(244, 196, 93, 0.9);
+  background:
+    linear-gradient(180deg, #ffe08b, var(--pit-wall-gold));
+  color: #140b03;
+  font-weight: 800;
+  box-shadow: 0 0 2rem rgba(244, 196, 93, 0.18);
+}
+
+.pit-wall-page .pit-wall-hero__status {
+  color: rgba(244, 246, 248, 0.72);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-hero__race,
+.pit-wall-page .pit-wall-countdown,
+.pit-wall-page .pit-wall-auth-gate__panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(244, 196, 93, 0.26);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    rgba(4, 5, 6, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.pit-wall-page .pit-wall-hero__race::before,
+.pit-wall-page .pit-wall-countdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-left: 0.28rem solid var(--pit-wall-gold);
+  pointer-events: none;
+}
+
+.pit-wall-page .pit-wall-hero__race strong,
+.pit-wall-page .pit-wall-hero__race em {
+  display: block;
+}
+
+.pit-wall-page .pit-wall-hero__race strong {
+  margin-top: 0.4rem;
+  color: var(--white);
+  font-size: clamp(1.45rem, 2.6vw, 2.4rem);
+  font-style: italic;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-hero__race em {
+  margin-top: 0.55rem;
+  color: var(--pit-wall-gold);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.7rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-countdown {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.95rem;
+}
+
+.pit-wall-page .pit-wall-countdown > span,
+.pit-wall-page .pit-wall-countdown small {
+  color: var(--muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-countdown__units {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.pit-wall-page .pit-wall-countdown__unit {
+  display: grid;
+  place-items: center;
+  min-height: 4.5rem;
+  border: 1px solid rgba(244, 196, 93, 0.2);
+  background:
+    radial-gradient(circle at 50% 0, rgba(244, 196, 93, 0.18), transparent 64%),
+    rgba(0, 0, 0, 0.3);
+}
+
+.pit-wall-page .pit-wall-countdown__unit strong,
+.pit-wall-page .pit-wall-countdown__locked {
+  color: var(--white);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-style: italic;
+  line-height: 0.9;
+}
+
+.pit-wall-page .pit-wall-countdown__unit em {
+  color: var(--pit-wall-gold);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.62rem;
+  font-style: normal;
+}
+
+.pit-wall-page .pit-wall-hero__visual {
+  position: absolute;
+  inset: auto max(0rem, calc((100vw - 86rem) / 2)) 0 auto;
+  z-index: 1;
+  display: block;
+  width: min(54vw, 45rem);
+  height: min(64%, 32rem);
+  pointer-events: none;
+}
+
+.pit-wall-page .pit-wall-hero__beam {
+  position: absolute;
+  inset: 24% 2% 0;
+  display: block;
+  border: 1px solid rgba(244, 196, 93, 0.18);
+  border-bottom: 0;
+  background:
+    radial-gradient(ellipse at center bottom, rgba(15, 79, 62, 0.62), transparent 58%),
+    linear-gradient(180deg, transparent, rgba(4, 5, 6, 0.68));
+  transform: perspective(900px) rotateX(64deg);
+  transform-origin: bottom;
+}
+
+.pit-wall-page .pit-wall-hero__chip-rail {
+  position: absolute;
+  right: 3%;
+  bottom: 2.5rem;
+  display: flex;
+  gap: 0.5rem;
+  transform: rotate(-7deg);
+}
+
+.pit-wall-page .pit-wall-hero__chip-rail i {
+  display: grid;
+  place-items: center;
+  width: clamp(3rem, 5vw, 4.4rem);
+  aspect-ratio: 1;
+  border: 0.32rem dashed rgba(255, 255, 255, 0.34);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(5, 6, 8, 0.9) 0 35%, transparent 36%),
+    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.35), transparent 20%),
+    var(--pit-wall-red);
+  color: var(--white);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.74rem;
+  font-style: normal;
+  font-weight: 800;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.45);
+}
+
+.pit-wall-page .pit-wall-hero__chip-rail i:nth-child(2) {
+  background:
+    radial-gradient(circle, rgba(5, 6, 8, 0.9) 0 35%, transparent 36%),
+    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.35), transparent 20%),
+    var(--pit-wall-gold);
+  color: #130b03;
+}
+
+.pit-wall-page .pit-wall-hero__chip-rail i:nth-child(3) {
+  background:
+    radial-gradient(circle, rgba(5, 6, 8, 0.9) 0 35%, transparent 36%),
+    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.35), transparent 20%),
+    var(--pit-wall-green);
+}
+
+.pit-wall-page .pit-wall-hero__driver-stack {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(100%, 34rem);
+}
+
+.pit-wall-page .pit-wall-hero__driver {
+  position: absolute;
+  bottom: 0;
+  width: clamp(10rem, 18vw, 16rem);
+  height: clamp(18rem, 32vw, 28rem);
+  transform: scale(var(--pit-driver-scale, 1));
+  animation: pit-wall-driver-rise 760ms ease both;
+}
+
+.pit-wall-page .pit-wall-hero__driver::before {
+  content: "";
+  position: absolute;
+  inset: 34% 12% 5%;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--driver-team-primary) 38%, transparent);
+  filter: blur(1.6rem);
+}
+
+.pit-wall-page .pit-wall-hero__driver--1 {
+  right: 20%;
+  z-index: 3;
+}
+
+.pit-wall-page .pit-wall-hero__driver--2 {
+  right: 1%;
+  z-index: 2;
+  --pit-driver-scale: 0.88;
+  opacity: 0.78;
+}
+
+.pit-wall-page .pit-wall-hero__driver--3 {
+  right: 40%;
+  z-index: 1;
+  --pit-driver-scale: 0.82;
+  opacity: 0.68;
+}
+
+.pit-wall-page .pit-wall-hero__driver span {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 1rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  aspect-ratio: 1;
+  border: 0.24rem dashed rgba(255, 255, 255, 0.38);
+  border-radius: 50%;
+  background: var(--driver-team-primary);
+  color: var(--white);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.45);
+}
+
+.pit-wall-page .pit-wall-workspace {
+  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.42fr);
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+  align-items: start;
+  margin-top: clamp(1rem, 3vw, 2rem);
+}
+
+.pit-wall-page .pit-wall-card,
+.pit-wall-page .pit-wall-panel,
+.pit-wall-page .pit-wall-score,
+.pit-wall-page .pit-wall-board,
+.pit-wall-page .pit-wall-auth-gate {
+  border-color: rgba(244, 196, 93, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    rgba(4, 5, 6, 0.84);
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.24);
+}
+
+.pit-wall-page .pit-wall-card--form {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 4%, rgba(244, 196, 93, 0.16), transparent 18rem),
+    linear-gradient(135deg, rgba(15, 79, 62, 0.34), transparent 44%),
+    rgba(4, 5, 6, 0.9);
+}
+
+.pit-wall-page .pit-wall-card::before,
+.pit-wall-page .pit-wall-board::before {
+  border-left-color: var(--pit-wall-gold);
+}
+
+.pit-wall-page .pit-wall-section-heading {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.pit-wall-page .pit-wall-section-heading span {
+  color: var(--pit-wall-gold);
+}
+
+.pit-wall-page .pit-wall-section-heading h2 {
+  max-width: 12ch;
+}
+
+.pit-wall-page .pit-wall-section-heading p {
+  max-width: 40rem;
+  margin: 0;
+  color: rgba(244, 246, 248, 0.72);
+}
+
+.pit-wall-page .pit-wall-pick-grid {
+  gap: 0.85rem;
+}
+
+.pit-wall-page .pit-wall-pick-group {
+  position: relative;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(244, 196, 93, 0.14);
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.028) 0 1px, transparent 1px 0.8rem),
+    linear-gradient(180deg, rgba(15, 79, 62, 0.34), rgba(4, 5, 6, 0.5));
+}
+
+.pit-wall-page .pit-wall-pick-group h3 {
+  color: var(--pit-wall-gold);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-style: italic;
+}
+
+.pit-wall-page .pit-wall-field {
+  overflow: hidden;
+  border-color: rgba(244, 246, 248, 0.12);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--field-team-primary, var(--pit-wall-green)) 24%, transparent), transparent 52%),
+    rgba(2, 8, 7, 0.78);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.pit-wall-page .pit-wall-field::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-left: 0.25rem solid var(--field-team-primary, var(--pit-wall-gold));
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.pit-wall-page .pit-wall-field:hover,
+.pit-wall-page .pit-wall-field:focus-within {
+  border-color: rgba(244, 196, 93, 0.54);
+  box-shadow: 0 0 0 1px rgba(244, 196, 93, 0.12), 0 1rem 2rem rgba(0, 0, 0, 0.24);
+  transform: translateY(-1px);
+}
+
+.pit-wall-page .pit-wall-field__preview {
+  grid-template-columns: 4.7rem minmax(0, 1fr);
+  min-height: 5.4rem;
+}
+
+.pit-wall-page .pit-wall-field__portrait-wrap {
+  width: 4.1rem;
+  height: 4.1rem;
+  border: 0.24rem dashed rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(4, 5, 6, 0.94) 0 34%, transparent 35%),
+    var(--field-team-primary, var(--pit-wall-red));
+  color: var(--pit-wall-gold);
+  box-shadow: inset 0 0 0 1px rgba(244, 196, 93, 0.18);
+}
+
+.pit-wall-page .pit-wall-field--pocket .pit-wall-field__portrait-wrap {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(4, 5, 6, 0.94) 0 34%, transparent 35%),
+    var(--pit-wall-green);
+}
+
+.pit-wall-page .pit-wall-field--special .pit-wall-field__portrait-wrap {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(4, 5, 6, 0.94) 0 34%, transparent 35%),
+    var(--pit-wall-gold);
+  color: #130b03;
+}
+
+.pit-wall-page .pit-wall-field__identity {
+  min-width: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.pit-wall-page .pit-wall-field__label,
+.pit-wall-page .pit-wall-field__identity em {
+  overflow: hidden;
+  color: var(--muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pit-wall-page .pit-wall-field__identity strong {
+  color: var(--white);
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  font-style: italic;
+}
+
+.pit-wall-page .pit-wall-score,
+.pit-wall-page .pit-wall-panel--quiet {
+  overflow: hidden;
+  min-height: 14rem;
+}
+
+.pit-wall-page .pit-wall-score__total,
+.pit-wall-page .pit-wall-panel--quiet {
+  border-bottom-color: rgba(244, 196, 93, 0.16);
+  background:
+    radial-gradient(circle at 80% 15%, rgba(244, 196, 93, 0.14), transparent 8rem),
+    rgba(0, 0, 0, 0.18);
+}
+
+.pit-wall-page .pit-wall-panel--quiet {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  padding: 1rem;
+}
+
+.pit-wall-page .pit-wall-score__total span,
+.pit-wall-page .pit-wall-panel--quiet span,
+.pit-wall-page .pit-wall-panel--quiet small {
+  color: var(--muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-score__total strong,
+.pit-wall-page .pit-wall-panel--quiet strong {
+  color: var(--pit-wall-gold);
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-style: italic;
+  text-shadow: 0 0 2rem rgba(244, 196, 93, 0.18);
+}
+
+.pit-wall-page .pit-wall-score__group div,
+.pit-wall-page .pit-wall-leaderboard li,
+.pit-wall-page .pit-wall-history li {
+  display: grid;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 3.25rem;
+  border-bottom: 1px solid rgba(244, 246, 248, 0.08);
+}
+
+.pit-wall-page .pit-wall-score__group div {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.pit-wall-page .pit-wall-leaderboard li,
+.pit-wall-page .pit-wall-history li {
+  grid-template-columns: 3rem minmax(0, 1fr) auto auto;
+}
+
+.pit-wall-page .pit-wall-leaderboard li > span {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(244, 196, 93, 0.12);
+  color: var(--pit-wall-gold);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+}
+
+.pit-wall-page .pit-wall-leaderboard em,
+.pit-wall-page .pit-wall-history em,
+.pit-wall-page .pit-wall-score__group strong {
+  color: var(--pit-wall-gold);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.74rem;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-auth-gate {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.38fr);
+  gap: 1rem;
+  align-items: center;
+  margin-top: clamp(1rem, 2vw, 1.6rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.pit-wall-page .pit-wall-auth-gate__copy {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.pit-wall-page .pit-wall-auth-gate__copy span,
+.pit-wall-page .pit-wall-auth-gate__panel span {
+  color: var(--pit-wall-gold);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-auth-gate__copy h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-style: italic;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-auth-gate__copy p,
+.pit-wall-page .pit-wall-auth-gate__panel p {
+  margin: 0;
+  color: rgba(244, 246, 248, 0.72);
+}
+
+.pit-wall-page .pit-wall-auth-gate__panel {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1rem;
+}
+
+.pit-wall-page .pit-wall-auth-gate__panel strong {
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-style: italic;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-feedback {
+  border-color: rgba(244, 196, 93, 0.3);
+  background: rgba(4, 5, 6, 0.78);
+  color: rgba(244, 246, 248, 0.82);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pit-wall-page .pit-wall-feedback--error {
+  border-color: var(--danger);
+}
+
+.pit-wall-page .pit-wall-submit {
+  width: fit-content;
+  min-width: 12rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.pit-wall-page .pit-wall-submit:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+  opacity: 0.48;
+  transform: none;
+}
+
+@media (max-width: 1080px) {
+  .pit-wall-page .pit-wall-hero__content,
+  .pit-wall-page .pit-wall-workspace,
+  .pit-wall-page .pit-wall-auth-gate {
+    grid-template-columns: 1fr;
+  }
+
+  .pit-wall-page .pit-wall-hero {
+    min-height: auto;
+    padding-bottom: clamp(20rem, 48vw, 27rem);
+  }
+
+  .pit-wall-page .pit-wall-hero__visual {
+    right: 50%;
+    width: min(100%, 42rem);
+    height: clamp(18rem, 48vw, 27rem);
+    transform: translateX(50%);
+  }
+
+  .pit-wall-page .pit-wall-hero__race,
+  .pit-wall-page .pit-wall-countdown {
+    max-width: 34rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .pit-wall-page .pit-wall-hero {
+    padding-inline: 0.5rem;
+    padding-bottom: 18rem;
+  }
+
+  .pit-wall-page .pit-wall-hero__copy h1 {
+    max-width: 8ch;
+    font-size: clamp(3.35rem, 18vw, 5.4rem);
+  }
+
+  .pit-wall-page .pit-wall-hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .pit-wall-page .pit-wall-hero__cta,
+  .pit-wall-page .pit-wall-submit {
+    width: 100%;
+  }
+
+  .pit-wall-page .pit-wall-hero__status {
+    justify-self: start;
+  }
+
+  .pit-wall-page .pit-wall-countdown__units {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pit-wall-page .pit-wall-hero__visual {
+    width: min(100%, 30rem);
+    height: 18rem;
+  }
+
+  .pit-wall-page .pit-wall-hero__driver {
+    width: 9rem;
+    height: 17rem;
+  }
+
+  .pit-wall-page .pit-wall-hero__chip-rail {
+    right: 6%;
+    bottom: 1.15rem;
+  }
+
+  .pit-wall-page .pit-wall-pick-group,
+  .pit-wall-page .pit-wall-card,
+  .pit-wall-page .pit-wall-board {
+    padding: 0.85rem;
+  }
+
+  .pit-wall-page .pit-wall-leaderboard li,
+  .pit-wall-page .pit-wall-history li {
+    grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  }
+
+  .pit-wall-page .pit-wall-leaderboard small,
+  .pit-wall-page .pit-wall-history span {
+    grid-column: 2 / -1;
+  }
+}
+
+@keyframes pit-wall-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pit-wall-driver-rise {
+  from {
+    opacity: 0;
+    transform: scale(var(--pit-driver-scale, 1)) translateY(1.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(var(--pit-driver-scale, 1)) translateY(0);
+  }
+}
+
+@keyframes pit-wall-speed-sweep {
+  0%,
+  100% {
+    transform: translateX(-4%);
+    opacity: 0.44;
+  }
+
+  50% {
+    transform: translateX(4%);
+    opacity: 0.78;
+  }
+}
+
 .strategy-race-hero {
   grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.8fr);
   gap: 1rem;
@@ -5455,4 +6554,857 @@ img {
   .chart-frame__body {
     height: 18rem;
   }
+}
+
+/* Championship cinematic rebuild */
+.champ-cinema-page {
+  --champ-bg: #05070a;
+  --champ-panel: rgba(10, 13, 18, 0.84);
+  --champ-line: rgba(244, 246, 248, 0.14);
+  --champ-muted: rgba(244, 246, 248, 0.62);
+  --champ-red: #e10600;
+  --champ-gold: #f5c542;
+  background:
+    linear-gradient(180deg, rgba(225, 6, 0, 0.11), transparent 18rem),
+    radial-gradient(circle at 82% 12%, rgba(245, 197, 66, 0.1), transparent 25rem),
+    var(--champ-bg);
+  color: #f4f6f8;
+}
+
+.champ-cinema-page .champ-cinema-hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100svh - 4.5rem);
+  margin: 0;
+  padding: clamp(4rem, 8vw, 7rem) max(1rem, calc((100vw - 86rem) / 2)) clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.42fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--champ-line);
+  background: linear-gradient(90deg, #05070a 0%, rgba(5, 7, 10, 0.76) 46%, rgba(5, 7, 10, 0.18) 100%);
+}
+
+.champ-cinema-page .champ-cinema-hero__atmosphere {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.champ-cinema-page .champ-cinema-hero__atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 7, 10, 0.04), #05070a 104%),
+    radial-gradient(circle at 20% 76%, color-mix(in srgb, var(--team-primary) 30%, transparent), transparent 34rem);
+}
+
+.champ-cinema-page .champ-cinema-hero__car {
+  opacity: 0.48;
+  filter: saturate(1.12) contrast(1.08);
+  transform: scale(1.04);
+}
+
+.champ-cinema-page .champ-cinema-hero__grid {
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background:
+    linear-gradient(rgba(244, 246, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 246, 248, 0.08) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+  transform: perspective(32rem) rotateX(58deg) translateY(3rem);
+  transform-origin: center bottom;
+  opacity: 0.36;
+}
+
+.champ-cinema-page .champ-cinema-hero__speed {
+  position: absolute;
+  inset: 16% -10% auto auto;
+  width: min(62rem, 76vw);
+  height: 42%;
+  background: repeating-linear-gradient(-12deg, transparent 0 1.1rem, rgba(244, 246, 248, 0.16) 1.1rem 1.16rem, transparent 1.16rem 2.7rem);
+  opacity: 0.22;
+  animation: champ-speed-scan 6s linear infinite;
+}
+
+.champ-cinema-page .champ-cinema-hero__copy,
+.champ-cinema-page .champ-cinema-leader-panel,
+.champ-cinema-page .champ-cinema-hero__season {
+  position: relative;
+  z-index: 1;
+}
+
+.champ-cinema-page .champ-cinema-hero__copy {
+  display: grid;
+  gap: clamp(0.85rem, 2vw, 1.2rem);
+  max-width: 54rem;
+  animation: champ-rise 700ms ease both;
+}
+
+.champ-cinema-page .champ-cinema-hero__copy > span,
+.champ-cinema-page .champ-cinema-section-heading span,
+.champ-cinema-page .champ-cinema-story-head span {
+  color: var(--champ-red);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-hero__copy h1 {
+  max-width: 8ch;
+  text-shadow: 0 1.4rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.champ-cinema-page .champ-cinema-hero__copy p {
+  max-width: 33rem;
+  color: rgba(244, 246, 248, 0.78);
+}
+
+.champ-cinema-page .champ-cinema-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.champ-cinema-page .champ-cinema-hero__meta strong,
+.champ-cinema-page .champ-cinema-kpi-strip article,
+.champ-cinema-page .champ-cinema-story-grid article {
+  border: 1px solid var(--champ-line);
+  background: rgba(10, 13, 18, 0.66);
+  backdrop-filter: blur(16px);
+}
+
+.champ-cinema-page .champ-cinema-hero__meta strong {
+  padding: 0.75rem 0.9rem;
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-season-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.champ-cinema-page .champ-cinema-season-switcher a {
+  min-height: 2.55rem;
+  border-color: rgba(244, 246, 248, 0.16);
+  background: rgba(244, 246, 248, 0.06);
+}
+
+.champ-cinema-page .champ-cinema-season-switcher a.is-active {
+  border-color: color-mix(in srgb, var(--team-primary) 64%, var(--champ-red));
+  background: var(--champ-red);
+}
+
+.champ-cinema-page .champ-cinema-leader-panel {
+  display: grid;
+  grid-template-rows: minmax(18rem, 1fr) auto;
+  min-height: min(38rem, 72svh);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 246, 248, 0.18);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--team-primary) 34%, #090c11), rgba(8, 10, 14, 0.92) 58%);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.46);
+  animation: champ-rise 760ms 120ms ease both;
+}
+
+.champ-cinema-page .champ-cinema-leader-panel__portrait {
+  height: auto;
+  min-height: 23rem;
+  background: radial-gradient(circle at 52% 88%, color-mix(in srgb, var(--team-primary) 34%, transparent), transparent 16rem);
+}
+
+.champ-cinema-page .champ-cinema-leader-panel__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+}
+
+.champ-cinema-page .champ-cinema-leader-panel__copy h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-style: italic;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-leader-panel__copy p,
+.champ-cinema-page .champ-cinema-leader-panel__copy span,
+.champ-cinema-page .champ-cinema-driver-table small,
+.champ-cinema-page .champ-cinema-constructor-grid small {
+  color: var(--champ-muted);
+}
+
+.champ-cinema-page .champ-cinema-leader-panel__copy strong {
+  color: var(--champ-gold);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.champ-cinema-page .champ-cinema-leader-panel__logo,
+.champ-cinema-page .champ-cinema-driver-table__logo,
+.champ-cinema-page .champ-cinema-constructor-grid__logo,
+.champ-cinema-page .champ-cinema-constructor-pulse__logo {
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.champ-cinema-page .champ-cinema-leader-panel__logo {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0.65rem;
+}
+
+.champ-cinema-page .champ-cinema-workspace {
+  width: min(100% - 2rem, 86rem);
+  margin: clamp(1.5rem, 4vw, 3rem) auto 0;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.champ-cinema-page .champ-cinema-section-rail,
+.champ-cinema-page .champ-cinema-panel,
+.champ-cinema-page .champ-cinema-podium,
+.champ-cinema-page .champ-cinema-constructor-grid li,
+.champ-cinema-page .champ-cinema-notes__grid article {
+  border-color: var(--champ-line);
+  background: var(--champ-panel);
+}
+
+.champ-cinema-page .champ-cinema-section-rail {
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+}
+
+.champ-cinema-page .champ-cinema-section-rail a {
+  border-color: var(--champ-line);
+  color: var(--champ-muted);
+}
+
+.champ-cinema-page .champ-cinema-section-rail a:hover,
+.champ-cinema-page .champ-cinema-section-rail a:focus-visible {
+  color: #fff;
+  background: rgba(225, 6, 0, 0.14);
+}
+
+.champ-cinema-page .champ-cinema-workspace__main {
+  gap: clamp(1rem, 2.4vw, 1.6rem);
+}
+
+.champ-cinema-page .champ-cinema-panel {
+  overflow: hidden;
+  padding: clamp(1rem, 2.4vw, 1.6rem);
+}
+
+.champ-cinema-page .champ-cinema-panel::before {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--champ-red), transparent);
+}
+
+.champ-cinema-page .champ-cinema-section-heading {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: clamp(1rem, 2vw, 1.35rem);
+}
+
+.champ-cinema-page .champ-cinema-section-heading h2 {
+  font-size: clamp(2.2rem, 5vw, 5rem);
+}
+
+.champ-cinema-page .champ-cinema-section-heading p {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--champ-muted);
+  line-height: 1.45;
+}
+
+.champ-cinema-page .champ-cinema-kpi-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.champ-cinema-page .champ-cinema-kpi-strip article {
+  display: grid;
+  gap: 0.2rem;
+  min-height: 8.5rem;
+  padding: 0.95rem;
+}
+
+.champ-cinema-page .champ-cinema-kpi-strip span,
+.champ-cinema-page .champ-cinema-kpi-strip small,
+.champ-cinema-page .champ-cinema-story-grid small {
+  color: var(--champ-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-kpi-strip strong {
+  align-self: center;
+  color: #fff;
+  font-size: clamp(1.55rem, 2.6vw, 2.55rem);
+  font-style: italic;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) minmax(16rem, 0.65fr);
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.champ-cinema-page .champ-cinema-story-grid article {
+  display: grid;
+  gap: 0.9rem;
+  min-height: 15rem;
+  padding: 1rem;
+}
+
+.champ-cinema-page .champ-cinema-story-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.champ-cinema-page .champ-cinema-story-head strong {
+  color: #fff;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  font-style: italic;
+  line-height: 1;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-pressure-map__track,
+.champ-cinema-page .champ-cinema-constructor-pulse {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.champ-cinema-page .champ-cinema-pressure-map__track > div,
+.champ-cinema-page .champ-cinema-constructor-pulse__row {
+  display: grid;
+  grid-template-columns: 2.4rem 4rem minmax(0, 1fr) auto;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.champ-cinema-page .champ-cinema-constructor-pulse__row {
+  grid-template-columns: 3rem 2.2rem 4rem minmax(0, 1fr) auto;
+}
+
+.champ-cinema-page .champ-cinema-pressure-map__track span,
+.champ-cinema-page .champ-cinema-constructor-pulse__row span {
+  color: var(--champ-red);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-weight: 700;
+}
+
+.champ-cinema-page .champ-cinema-pressure-map__track strong,
+.champ-cinema-page .champ-cinema-constructor-pulse__row strong,
+.champ-cinema-page .champ-cinema-pressure-map__track em,
+.champ-cinema-page .champ-cinema-constructor-pulse__row em {
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.76rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-pressure-map__track i,
+.champ-cinema-page .champ-cinema-constructor-pulse__row i,
+.champ-cinema-page .champ-cinema-data-pulse__meter,
+.champ-cinema-page .champ-cinema-points-bar {
+  display: block;
+  height: 0.55rem;
+  overflow: hidden;
+  background: rgba(244, 246, 248, 0.1);
+}
+
+.champ-cinema-page .champ-cinema-pressure-map__track i::before,
+.champ-cinema-page .champ-cinema-constructor-pulse__row i::before,
+.champ-cinema-page .champ-cinema-data-pulse__meter i,
+.champ-cinema-page .champ-cinema-points-bar i {
+  content: "";
+  display: block;
+  width: var(--bar-size);
+  height: 100%;
+  background: linear-gradient(90deg, var(--team-primary), var(--team-secondary));
+  animation: champ-bar 850ms ease both;
+}
+
+.champ-cinema-page .champ-cinema-constructor-pulse__logo {
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0.35rem;
+}
+
+.champ-cinema-page .champ-cinema-data-pulse {
+  align-content: space-between;
+}
+
+.champ-cinema-page .champ-cinema-data-pulse__meter {
+  height: 0.8rem;
+}
+
+.champ-cinema-page .champ-cinema-data-pulse__meter i {
+  background: linear-gradient(90deg, var(--champ-red), var(--champ-gold));
+}
+
+.champ-cinema-page .champ-cinema-data-pulse p {
+  margin: 0;
+  color: rgba(244, 246, 248, 0.78);
+  line-height: 1.45;
+}
+
+.champ-cinema-page .champ-cinema-driver-podium {
+  align-items: end;
+}
+
+.champ-cinema-page .champ-cinema-podium {
+  min-height: 24rem;
+  overflow: hidden;
+  padding: 1rem;
+  background: radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--team-primary) 25%, transparent), transparent 14rem), rgba(16, 20, 27, 0.94);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.champ-cinema-page .champ-cinema-podium:hover,
+.champ-cinema-page .champ-cinema-constructor-grid li:hover {
+  border-color: color-mix(in srgb, var(--team-primary) 65%, #fff);
+  transform: translateY(-3px);
+}
+
+.champ-cinema-page .champ-cinema-podium--p1 {
+  min-height: 28rem;
+}
+
+.champ-cinema-page .champ-cinema-podium__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.champ-cinema-page .champ-cinema-podium__copy h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.7rem);
+  font-style: italic;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-podium__copy p {
+  margin: 0;
+  color: var(--champ-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-podium__copy strong {
+  color: var(--champ-gold);
+  font-size: 1.5rem;
+}
+
+.champ-cinema-page .champ-cinema-podium__portrait {
+  position: absolute;
+  inset: 5rem 0 0;
+  background: transparent;
+}
+
+.champ-cinema-page .champ-cinema-podium i {
+  position: absolute;
+  inset: auto 1rem 1rem;
+  height: 0.55rem;
+  background: rgba(244, 246, 248, 0.1);
+}
+
+.champ-cinema-page .champ-cinema-podium i::before {
+  content: "";
+  display: block;
+  width: var(--bar-size);
+  height: 100%;
+  background: linear-gradient(90deg, var(--team-primary), var(--team-secondary));
+}
+
+.champ-cinema-page .champ-cinema-driver-table {
+  gap: 0.45rem;
+}
+
+.champ-cinema-page .champ-cinema-driver-table li {
+  grid-template-columns: 3.4rem 3.7rem minmax(10rem, 1fr) minmax(9rem, 0.55fr) 3.8rem 6rem 4rem;
+  border-color: rgba(244, 246, 248, 0.1);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--team-primary) 12%, transparent), transparent 38%), rgba(244, 246, 248, 0.045);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.champ-cinema-page .champ-cinema-driver-table li:hover {
+  border-color: color-mix(in srgb, var(--team-primary) 58%, #fff);
+  transform: translateX(0.25rem);
+}
+
+.champ-cinema-page .champ-cinema-driver-table__portrait {
+  width: 3.7rem;
+  height: 3.7rem;
+  background: rgba(244, 246, 248, 0.07);
+}
+
+.champ-cinema-page .champ-cinema-driver-table__logo {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.35rem;
+}
+
+.champ-cinema-page .champ-cinema-driver-table em,
+.champ-cinema-page .champ-cinema-driver-table b {
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.champ-cinema-page .champ-cinema-driver-table b {
+  color: var(--champ-muted);
+  text-align: right;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid li {
+  min-height: 24rem;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--team-primary) 18%, rgba(9, 12, 17, 0.96)), rgba(9, 12, 17, 0.96));
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid__media {
+  height: 14rem;
+  background: transparent;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid__logo {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  padding: 0.55rem;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid__body {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid__body > span {
+  color: var(--champ-red);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-weight: 700;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid__stats strong {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.champ-cinema-page .champ-cinema-constructor-grid__stats small {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid rgba(244, 246, 248, 0.12);
+  background: rgba(244, 246, 248, 0.05);
+}
+
+.champ-cinema-page .champ-cinema-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.champ-cinema-page .champ-cinema-metric-card {
+  display: grid;
+  gap: 0.9rem;
+  min-height: 28rem;
+  padding: 1rem;
+  border: 1px solid var(--champ-line);
+  background: rgba(244, 246, 248, 0.045);
+}
+
+.champ-cinema-page .champ-cinema-metric-card__header {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.champ-cinema-page .champ-cinema-metric-card__header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+  font-style: italic;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-metric-card__header p,
+.champ-cinema-page .champ-cinema-metric-card__header small {
+  margin: 0;
+  color: var(--champ-muted);
+}
+
+.champ-cinema-page .champ-cinema-metric-card__header span,
+.champ-cinema-page .champ-cinema-metric-card__header small,
+.champ-cinema-page .champ-cinema-open-button span {
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-metric-podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 0.55rem;
+}
+
+.champ-cinema-page .champ-cinema-metric-podium__place {
+  position: relative;
+  display: grid;
+  gap: 0.18rem;
+  min-height: 8rem;
+  align-content: end;
+  padding: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(244, 246, 248, 0.11);
+  background: color-mix(in srgb, var(--team-primary) 14%, rgba(244, 246, 248, 0.05));
+}
+
+.champ-cinema-page .champ-cinema-metric-podium__place--p1 {
+  min-height: 10rem;
+}
+
+.champ-cinema-page .champ-cinema-metric-podium__place span,
+.champ-cinema-page .champ-cinema-metric-podium__place small,
+.champ-cinema-page .champ-cinema-metric-bars__row span,
+.champ-cinema-page .champ-cinema-metric-bars__row em {
+  color: var(--champ-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.champ-cinema-page .champ-cinema-metric-podium__place strong {
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.champ-cinema-page .champ-cinema-metric-podium__place em {
+  color: var(--champ-gold);
+  font-style: normal;
+}
+
+.champ-cinema-page .champ-cinema-metric-podium__place i {
+  position: absolute;
+  inset: auto 0 0;
+  width: var(--bar-size);
+  height: 0.28rem;
+  background: linear-gradient(90deg, var(--team-primary), var(--team-secondary));
+}
+
+.champ-cinema-page .champ-cinema-metric-bars {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.champ-cinema-page .champ-cinema-metric-bars__row {
+  display: grid;
+  grid-template-columns: 2rem 3rem minmax(0, 1fr) auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.champ-cinema-page .champ-cinema-metric-bars__row strong {
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+}
+
+.champ-cinema-page .champ-cinema-metric-bars__row div {
+  height: 0.45rem;
+  background: rgba(244, 246, 248, 0.1);
+}
+
+.champ-cinema-page .champ-cinema-metric-bars__row i {
+  display: block;
+  width: var(--bar-size);
+  height: 100%;
+  background: linear-gradient(90deg, var(--team-primary), var(--team-secondary));
+}
+
+.champ-cinema-page .champ-cinema-open-button {
+  min-height: 2.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid rgba(244, 246, 248, 0.16);
+  background: rgba(244, 246, 248, 0.06);
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.champ-cinema-page .champ-cinema-open-button:hover,
+.champ-cinema-page .champ-cinema-open-button:focus-visible {
+  border-color: rgba(244, 246, 248, 0.55);
+  background: var(--champ-red);
+  transform: translateY(-1px);
+}
+
+.champ-cinema-page .champ-cinema-notes__grid article {
+  padding: 1rem;
+}
+
+.champ-cinema-page .champ-cinema-notes__grid article span,
+.champ-cinema-page .champ-cinema-notes__grid article p {
+  color: var(--champ-muted);
+}
+
+.champ-cinema-page .champ-cinema-notes__grid article strong {
+  color: #fff;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+@keyframes champ-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes champ-speed-scan {
+  from { transform: translateX(0); }
+  to { transform: translateX(-8rem); }
+}
+
+@keyframes champ-bar {
+  from { width: 0; }
+  to { width: var(--bar-size); }
+}
+
+@media (max-width: 980px) {
+  .champ-cinema-page .champ-cinema-hero,
+  .champ-cinema-page .champ-cinema-workspace,
+  .champ-cinema-page .champ-cinema-story-grid,
+  .champ-cinema-page .champ-cinema-driver-podium,
+  .champ-cinema-page .champ-cinema-constructor-grid,
+  .champ-cinema-page .champ-cinema-metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .champ-cinema-page .champ-cinema-hero {
+    min-height: auto;
+    padding-inline: 1rem;
+  }
+
+  .champ-cinema-page .champ-cinema-section-rail {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .champ-cinema-page .champ-cinema-section-rail a {
+    flex: 0 0 auto;
+  }
+
+  .champ-cinema-page .champ-cinema-kpi-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .champ-cinema-page .champ-cinema-hero__copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.75rem, 13vw, 3.55rem);
+  }
+
+  .champ-cinema-page .champ-cinema-hero__meta,
+  .champ-cinema-page .champ-cinema-season-switcher,
+  .champ-cinema-page .champ-cinema-kpi-strip,
+  .champ-cinema-page .champ-cinema-pressure-map__track > div,
+  .champ-cinema-page .champ-cinema-constructor-pulse__row,
+  .champ-cinema-page .champ-cinema-driver-table li {
+    grid-template-columns: 1fr;
+  }
+
+  .champ-cinema-page .champ-cinema-driver-table__logo,
+  .champ-cinema-page .champ-cinema-driver-table__portrait,
+  .champ-cinema-page .champ-cinema-constructor-pulse__logo {
+    display: none;
+  }
+
+  .champ-cinema-page .champ-cinema-constructor-grid li,
+  .champ-cinema-page .champ-cinema-metric-card {
+    min-height: auto;
+  }
+
+  .champ-cinema-page .champ-cinema-metric-podium {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strategy-lab-page .strategy-free-roam .strategy-command-rail--free .strategy-command-rail__head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+}
+
+.strategy-lab-page .strategy-free-roam .strategy-command-rail--free .strategy-command-rail__head > * {
+  min-width: 0;
+}
+
+.strategy-lab-page .strategy-free-roam .strategy-command-rail--free .strategy-command-rail__head strong {
+  display: block;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
 }

@@ -1,58 +1,78 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { ProductRuntimeNote } from "@/components/ui/product-runtime-note";
 import { StatePanel } from "@/components/ui/state-panel";
+import { AssetImage } from "@/components/ui/asset-image";
 import { RaceWeekCircuitVisualization } from "@/components/race-week/race-week-circuit-visualization";
 import { getNetworkErrorMessage, readClientErrorMessage } from "@/lib/errors/client";
 import type { StrategyLabRaceProduct, StrategyLabRaceSummary } from "@/lib/server/strategy-lab-product";
 import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
 import type { RaceSimulationResponse } from "@/lib/server/strategy-lab-simulator";
+import { getTeamAsset } from "@/lib/ui/asset-manifest";
 import { getRaceWeekCircuitMetadata } from "@/lib/ui/race-week-circuit-metadata";
 
 type StrategyLabResponse = { ok: boolean; data?: { product: StrategyLabRaceProduct; runtime: RuntimeSourceMetadata }; error?: { message: string } };
 type SimulationResponse = { ok: boolean; data?: RaceSimulationResponse; error?: { message: string } };
+type ValidationResponse = {
+  ok: boolean;
+  data?: { warnings: string[]; message: string };
+  error?: { message: string; details?: { formErrors?: string[]; fieldErrors?: Record<string, string[] | undefined> } };
+};
 type Props = {
   races: StrategyLabRaceSummary[];
   trackPaths: Record<string, string | null>;
   initialProduct: StrategyLabRaceProduct | null;
   initialRuntime: RuntimeSourceMetadata | null;
+  apiAccessToken?: string | null;
 };
 type TargetType = "driver" | "constructor";
-type Stint = { compound: string; laps: number };
+type WeatherMode = "dry" | "mixed" | "wet";
+type Compound = "soft" | "medium" | "hard" | "intermediate" | "wet";
+type Stint = { compound: Compound; laps: number };
 
-const scenarioPresets = {
-  balanced: {
-    label: "Balanced 2-stop",
-    pitch: "Default race shape",
-    pitStopCount: 2,
-    tirePlan: [{ compound: "medium", laps: 18 }, { compound: "hard", laps: 24 }, { compound: "soft", laps: 15 }],
-  },
-  conservative: {
-    label: "Long-run 1-stop",
-    pitch: "Track-position bias",
-    pitStopCount: 1,
-    tirePlan: [{ compound: "hard", laps: 26 }, { compound: "medium", laps: 24 }],
-  },
-  aggressive: {
-    label: "Attack 2-stop",
-    pitch: "Undercut pressure",
-    pitStopCount: 2,
-    tirePlan: [{ compound: "soft", laps: 14 }, { compound: "medium", laps: 18 }, { compound: "soft", laps: 13 }],
-  },
-} as const;
+const compounds: Compound[] = ["soft", "medium", "hard", "intermediate", "wet"];
+const dryCompounds = new Set<Compound>(["soft", "medium", "hard"]);
+const defaultPressure = { frontPsi: 23, rearPsi: 21 };
 
 const fmtBand = (low?: number | null, high?: number | null, fallback?: number | null) =>
   low && high ? (low === high ? `P${low}` : `P${low}-P${high}`) : fallback ? `P${fallback}` : "Open";
 const fmtDelta = (value?: number | null, suffix = "") =>
   value === null || value === undefined ? "Flat" : Math.abs(value) < 0.1 ? `Flat${suffix}` : `${value > 0 ? "+" : ""}${value.toFixed(1)}${suffix}`;
-const fmtConfidence = (score?: number | null) => (score == null ? "Calibrating" : score >= 0.74 ? "High confidence" : score >= 0.48 ? "Medium confidence" : "Low confidence");
-const fmtRisk = (weather: "dry" | "mixed" | "wet", sc: number) => (weather !== "dry" || sc >= 0.58 ? "High variance" : sc >= 0.38 ? "Moderate variance" : "Controlled variance");
+const fmtConfidence = (score?: number | null) => (score == null ? "Calibrating" : score >= 0.74 ? "High" : score >= 0.48 ? "Medium" : "Low");
+const fmtRisk = (weather: WeatherMode, sc: number) => (weather !== "dry" || sc >= 0.58 ? "High variance" : sc >= 0.38 ? "Moderate variance" : "Controlled");
 const fmtSensitivity = (factor: string) => factor.split("_").map((part) => part[0]?.toUpperCase() + part.slice(1)).join(" ");
 const avg = (values: Array<number | null | undefined>) => {
   const cleaned = values.filter((value): value is number => value !== null && value !== undefined);
   return cleaned.length > 0 ? cleaned.reduce((sum, value) => sum + value, 0) / cleaned.length : null;
 };
+
+function timelineFromBaseline(entrant: StrategyLabRaceProduct["entrants"][number] | undefined, totalLaps: number): Stint[] {
+  if (!entrant) {
+    return [{ compound: "medium", laps: Math.floor(totalLaps / 2) }, { compound: "hard", laps: Math.ceil(totalLaps / 2) }];
+  }
+  const scenario = entrant.scenarios.find((item) => item.scenarioCode === entrant.baselineStrategyCode) ?? entrant.scenarios[0];
+  const sequence = (scenario?.compoundSequence ?? "medium / hard").split(" / ").map((item) => {
+    const compound = item.trim().toLowerCase() as Compound;
+    return compounds.includes(compound) ? compound : "medium";
+  });
+  const windows = entrant.pitWindows
+    .filter((item) => item.scenarioCode === (scenario?.scenarioCode ?? entrant.baselineStrategyCode))
+    .sort((a, b) => (a.stopNumber ?? 0) - (b.stopNumber ?? 0));
+  if (windows.length === 0) {
+    return scalePlan(sequence.map((compound) => ({ compound, laps: Math.floor(totalLaps / sequence.length) })), totalLaps);
+  }
+
+  const plan: Stint[] = [];
+  let lastStop = 0;
+  windows.forEach((window, index) => {
+    const stop = Math.max(1, Math.min(totalLaps - 1, Math.round(((window.windowStartLap ?? 1) + (window.windowEndLap ?? 1)) / 2)));
+    plan.push({ compound: sequence[index] ?? "medium", laps: Math.max(1, stop - lastStop) });
+    lastStop = stop;
+  });
+  plan.push({ compound: sequence[sequence.length - 1] ?? "hard", laps: Math.max(1, totalLaps - lastStop) });
+  return scalePlan(plan, totalLaps);
+}
 
 function scalePlan(plan: Stint[], totalLaps: number) {
   const total = plan.reduce((sum, stint) => sum + stint.laps, 0) || totalLaps;
@@ -62,105 +82,69 @@ function scalePlan(plan: Stint[], totalLaps: number) {
   return scaled;
 }
 
-function timelineFromBaseline(entrant: StrategyLabRaceProduct["entrants"][number], totalLaps: number) {
-  const scenario = entrant.scenarios.find((item) => item.scenarioCode === entrant.baselineStrategyCode) ?? entrant.scenarios[0];
-  const compounds = (scenario?.compoundSequence ?? "medium / hard").split(" / ").map((item) => item.trim().toLowerCase());
-  const windows = entrant.pitWindows
-    .filter((item) => item.scenarioCode === (scenario?.scenarioCode ?? entrant.baselineStrategyCode))
-    .sort((a, b) => (a.stopNumber ?? 0) - (b.stopNumber ?? 0));
-  if (windows.length === 0) return scalePlan(compounds.map((compound) => ({ compound, laps: Math.floor(totalLaps / compounds.length) })), totalLaps);
-  const plan: Stint[] = [];
-  let last = 0;
-  windows.forEach((window, index) => {
-    const stop = Math.round(((window.windowStartLap ?? 1) + (window.windowEndLap ?? 1)) / 2);
-    plan.push({ compound: compounds[index] ?? "medium", laps: Math.max(1, stop - last) });
-    last = stop;
+function pitLapsFromPlan(plan: Stint[]) {
+  let elapsed = 0;
+  return plan.slice(0, -1).map((stint) => {
+    elapsed += stint.laps;
+    return elapsed;
   });
-  plan.push({ compound: compounds[compounds.length - 1] ?? "hard", laps: Math.max(1, totalLaps - last) });
-  return plan;
+}
+
+function planStyle(plan: Stint[], totalLaps: number): CSSProperties {
+  const template = plan.map((stint) => `${Math.max(1, (stint.laps / Math.max(1, totalLaps)) * 100)}fr`).join(" ");
+  return { gridTemplateColumns: template };
 }
 
 function StintTimeline({ label, plan, totalLaps, active = false }: { label: string; plan: Stint[]; totalLaps: number; active?: boolean }) {
+  const pitLaps = pitLapsFromPlan(plan);
   return (
     <div className={`strategy-timeline ${active ? "strategy-timeline--active" : ""}`}>
-      <div className="strategy-timeline__label"><span>{label}</span><strong>{plan.length - 1} stop{plan.length - 1 === 1 ? "" : "s"}</strong></div>
-      <div className="strategy-timeline__ruler" aria-hidden="true">
-        {[0, 0.25, 0.5, 0.75, 1].map((position) => <span key={position} style={{ left: `${position * 100}%` }}>L{Math.round(totalLaps * position)}</span>)}
+      <div className="strategy-timeline__label">
+        <span>{label}</span>
+        <strong>{plan.length - 1} stop{plan.length - 1 === 1 ? "" : "s"}</strong>
       </div>
-      <div className="strategy-timeline__track">
-        {plan.map((stint, index) => {
-          const elapsedLaps = plan.slice(0, index + 1).reduce((sum, item) => sum + item.laps, 0);
-          return (
-            <div key={`${label}-${stint.compound}-${index}`} className={`strategy-timeline__segment strategy-timeline__segment--${stint.compound}`} style={{ width: `${(stint.laps / Math.max(totalLaps, 1)) * 100}%` }}>
-              <span>{stint.compound}</span><strong>{stint.laps} laps</strong>
-              {index < plan.length - 1 ? <i className="strategy-timeline__pit" style={{ left: "100%" }} aria-label={`Pit stop near lap ${elapsedLaps}`} /> : null}
-            </div>
-          );
-        })}
+      <div className="strategy-timeline__ruler" aria-hidden="true">
+        {[0, 0.25, 0.5, 0.75, 1].map((position) => <span key={position}>L{Math.round(totalLaps * position)}</span>)}
+      </div>
+      <div className="strategy-timeline__track" style={planStyle(plan, totalLaps)}>
+        {plan.map((stint, index) => (
+          <div key={`${label}-${stint.compound}-${index}`} className={`strategy-timeline__segment strategy-timeline__segment--${stint.compound}`}>
+            <span>{stint.compound}</span>
+            <strong>{stint.laps} laps</strong>
+            {pitLaps[index] ? <i className="strategy-timeline__pit" aria-label={`Pit stop on lap ${pitLaps[index]}`} /> : null}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
-function StrategyControlRail({ children }: { children: ReactNode }) {
-  return <aside className="strategy-command-rail" aria-label="Strategy scenario controls">{children}</aside>;
-}
-
-function StrategyResultStage({ children }: { children: ReactNode }) {
-  return <section className="strategy-result-stage" aria-label="Strategy result">{children}</section>;
-}
-
-function StrategyStintLanes({ children }: { children: ReactNode }) {
-  return <section className="strategy-console-band strategy-console-band--stints">{children}</section>;
-}
-
-function StrategyPositionBand({ children }: { children: ReactNode }) {
-  return <section className="strategy-console-band strategy-console-band--position">{children}</section>;
-}
-
-function StrategyRiskStrip({ children }: { children: ReactNode }) {
-  return <section className="strategy-risk-strip">{children}</section>;
-}
-
-function buildCaveats({
-  raceProduct,
-  weatherScenario,
-  safetyCarProbability,
-  targetType,
-  simulation,
-}: {
-  raceProduct: StrategyLabRaceProduct | null;
-  weatherScenario: "dry" | "mixed" | "wet";
-  safetyCarProbability: number;
-  targetType: TargetType;
-  simulation: RaceSimulationResponse | null;
-}) {
-  const notes = [];
-
-  if (weatherScenario !== "dry") {
-    notes.push("Confidence softens outside dry running because the current priors are calibrated around dry baseline behavior.");
+function buildDataQualityNotes(product: StrategyLabRaceProduct | null) {
+  if (!product) return ["Strategy product is unavailable."];
+  const notes: string[] = [];
+  const entrantIds = product.entrants.map((entrant) => entrant.driverId);
+  if (new Set(entrantIds).size !== entrantIds.length) notes.push("Duplicate driver rows detected in strategy features.");
+  if (product.entrants.some((entrant) => !entrant.strategyFeature.nominalRaceLaps || !entrant.strategyFeature.pitLossS)) {
+    notes.push("Some entrants are missing race-distance or pit-loss inputs.");
   }
-
-  if (safetyCarProbability >= 0.55) {
-    notes.push("A high safety-car assumption can invalidate the precomputed pit-window advantage and flatten timing deltas quickly.");
+  if (product.entrants.some((entrant) => entrant.scenarios.some((scenario) => scenario.compoundSequence.split(" / ").some((compound) => !compounds.includes(compound.trim().toLowerCase() as Compound))))) {
+    notes.push("One or more scenario compound sequences use unknown tyre values.");
   }
-
-  if ((raceProduct?.overview.confidenceScore ?? 0) < 0.5) {
-    notes.push("The weekend read is still building, so the strategy recommendation carries less signal than a fully populated race week.");
+  if (product.entrants.some((entrant) => Object.values(entrant.strategyFeature.compoundProfiles).some((profile) => (profile.degradationSPerLap ?? 0) < 0))) {
+    notes.push("Negative tyre degradation values found in compound profiles.");
   }
-
-  if (targetType === "constructor") {
-    notes.push("Constructor scenarios inherit a two-car assumption, so one weak driver can dilute the headline upside of the strategy call.");
+  if (product.entrants.some((entrant) => entrant.pitWindows.some((window) => {
+    const start = window.windowStartLap ?? 0;
+    const end = window.windowEndLap ?? 0;
+    const total = entrant.strategyFeature.nominalRaceLaps ?? product.overview.nominalRaceLaps ?? 0;
+    return start < 1 || end < start || end >= total;
+  }))) {
+    notes.push("Some pit windows fall outside the race distance.");
   }
-
-  if (simulation?.confidenceReason) {
-    notes.push(simulation.confidenceReason);
-  }
-
-  return notes.slice(0, 3);
+  return notes.length ? notes : ["Strategy grain, joins, compounds, pit windows, and degradation inputs look usable."];
 }
 
-export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRuntime }: Props) {
+export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRuntime, apiAccessToken }: Props) {
   const [selectedRaceId, setSelectedRaceId] = useState(races[0]?.id ?? "");
   const [raceProduct, setRaceProduct] = useState<StrategyLabRaceProduct | null>(initialProduct);
   const [runtimeMeta, setRuntimeMeta] = useState<RuntimeSourceMetadata | null>(initialRuntime);
@@ -171,11 +155,17 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
   const [reloadKey, setReloadKey] = useState(0);
   const [targetType, setTargetType] = useState<TargetType>("driver");
   const [selectedTargetId, setSelectedTargetId] = useState(initialProduct?.entrants[0]?.driverId ?? "");
-  const [preset, setPreset] = useState<keyof typeof scenarioPresets>("balanced");
-  const [weatherScenario, setWeatherScenario] = useState<"dry" | "mixed" | "wet">("dry");
+  const [weatherScenario, setWeatherScenario] = useState<WeatherMode>("dry");
   const [safetyCarProbability, setSafetyCarProbability] = useState(0.35);
   const [aggressionFactor, setAggressionFactor] = useState(62);
   const [reliabilityBias, setReliabilityBias] = useState(0);
+  const [tyrePressure, setTyrePressure] = useState(defaultPressure);
+  const [stints, setStints] = useState<Stint[]>(() => timelineFromBaseline(initialProduct?.entrants[0], initialProduct?.overview.nominalRaceLaps ?? 57));
+  const [validationWarnings, setValidationWarnings] = useState<string[]>([]);
+  const [validationErrors, setValidationErrors] = useState<string[]>([]);
+  const strategyLabHeaders = useMemo(() => (
+    apiAccessToken ? { "x-strategy-lab-access": apiAccessToken } : undefined
+  ), [apiAccessToken]);
 
   useEffect(() => {
     if (!selectedRaceId) return;
@@ -184,7 +174,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
     setError(null);
     setSimulation(null);
     setRuntimeMeta(null);
-    void fetch(`/api/strategy-lab/races/${selectedRaceId}`, { cache: "no-store" })
+    void fetch(`/api/strategy-lab/races/${selectedRaceId}`, { cache: "no-store", headers: strategyLabHeaders })
       .then((res) => res.json() as Promise<StrategyLabResponse>)
       .then((payload) => {
         if (!active) return;
@@ -198,6 +188,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
         setRuntimeMeta(payload.data.runtime);
         setTargetType("driver");
         setSelectedTargetId(payload.data.product.entrants[0]?.driverId ?? "");
+        setStints(timelineFromBaseline(payload.data.product.entrants[0], payload.data.product.overview.nominalRaceLaps ?? 57));
       })
       .catch(() => {
         if (active) {
@@ -208,7 +199,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
       })
       .finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
-  }, [reloadKey, selectedRaceId]);
+  }, [reloadKey, selectedRaceId, strategyLabHeaders]);
 
   const selectedRace = races.find((race) => race.id === selectedRaceId);
   const selectedRaceDateLabel = selectedRace ? new Date(selectedRace.scheduledAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : null;
@@ -232,104 +223,152 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
       ? raceProduct.entrants.filter((entrant) => entrant.driverId === selectedTargetId)
       : raceProduct.entrants.filter((entrant) => entrant.constructorId === selectedTargetId);
   }, [raceProduct, selectedTargetId, targetType]);
-
   const representativeEntrant = targetEntrants[0];
   const totalLaps = raceProduct?.overview.nominalRaceLaps ?? representativeEntrant?.strategyFeature.nominalRaceLaps ?? 57;
-  const baselinePlan = representativeEntrant ? timelineFromBaseline(representativeEntrant, totalLaps) : [];
-  const scenarioPlan = scalePlan(scenarioPresets[preset].tirePlan.map((stint) => ({ ...stint })), totalLaps);
-  const precomputedScenarios = useMemo(() => {
-    const rows = targetEntrants.flatMap((entrant) => entrant.scenarios);
-    const byCode = new Map<string, typeof rows>();
-    rows.forEach((row) => byCode.set(row.scenarioCode, [...(byCode.get(row.scenarioCode) ?? []), row]));
-    return [...byCode.entries()].map(([code, values]) => ({
-      code,
-      label: values[0]?.scenarioLabel ?? code,
-      rank: Math.round((values.reduce((sum, row) => sum + (row.recommendationRank ?? 99), 0) / values.length) || 99),
-      confidence: values.reduce((sum, row) => sum + (row.confidenceScore ?? 0), 0) / values.length,
-      low: Math.min(...values.map((row) => row.estimatedFinishBandLow ?? 99)),
-      high: Math.max(...values.map((row) => row.estimatedFinishBandHigh ?? 99)),
-      delta: values.reduce((sum, row) => sum + (row.deltaVsBaselineS ?? 0), 0) / values.length,
-      rationale: values[0]?.rationale ?? "",
-    })).sort((a, b) => a.rank - b.rank);
-  }, [targetEntrants]);
-  const bestPrecomputedScenario = precomputedScenarios[0] ?? null;
-  const liveTargetEntrants = simulation?.targetSummary?.entrants ?? [];
-  const liveTransitionBands = simulation?.positionTransitionBands.filter((band) => liveTargetEntrants.some((entrant) => entrant.driverId === band.driverId)) ?? [];
-  const liveFinishBand = liveTargetEntrants.length > 0
-    ? {
-        low: Math.min(...liveTargetEntrants.map((entrant) => entrant.projectedFinishBandLow)),
-        high: Math.max(...liveTargetEntrants.map((entrant) => entrant.projectedFinishBandHigh)),
+  const baselinePlan = useMemo(() => timelineFromBaseline(representativeEntrant, totalLaps), [representativeEntrant, totalLaps]);
+  const activePlan = useMemo(() => scalePlan(stints, totalLaps), [stints, totalLaps]);
+  const pitLaps = useMemo(() => pitLapsFromPlan(activePlan), [activePlan]);
+  const targetLabel = targetOptions.find((item) => item.id === selectedTargetId)?.label ?? "Select target";
+  const team = getTeamAsset(representativeEntrant?.constructorId ?? representativeEntrant?.constructorName);
+  const dataQualityNotes = useMemo(() => buildDataQualityNotes(raceProduct), [raceProduct]);
+
+  const scenarioPayload = useMemo(() => ({
+    raceId: selectedRaceId,
+    driverIds: raceProduct?.entrants.map((entrant) => entrant.driverId) ?? [],
+    comparisonTargetType: targetType,
+    comparisonTargetId: selectedTargetId,
+    constructorFocus: targetType === "constructor" ? [selectedTargetId] : [],
+    pitStopCount: Math.max(0, activePlan.length - 1),
+    tirePlan: activePlan,
+    pitLaps,
+    tyrePressure,
+    safetyCarProbability,
+    weatherScenario,
+    aggressionFactor,
+    reliabilityBias,
+    qualifyingOverrides: [],
+  }), [activePlan, aggressionFactor, pitLaps, raceProduct, reliabilityBias, safetyCarProbability, selectedRaceId, selectedTargetId, targetType, tyrePressure, weatherScenario]);
+
+  const localRuleMessages = useMemo(() => {
+    const messages: string[] = [];
+    const distinctCompounds = new Set(activePlan.map((stint) => stint.compound));
+    if (activePlan.length < 2) messages.push("At least one pit stop is required.");
+    if (distinctCompounds.size < 2) messages.push("Use at least two tyre compounds.");
+    if (weatherScenario === "dry" && activePlan.some((stint) => !dryCompounds.has(stint.compound))) messages.push("Dry mode accepts soft, medium, and hard only.");
+    if (activePlan.reduce((sum, stint) => sum + stint.laps, 0) !== totalLaps) messages.push("Stint lengths must equal race distance.");
+    return messages;
+  }, [activePlan, totalLaps, weatherScenario]);
+  const isScenarioValid = localRuleMessages.length === 0 && validationErrors.length === 0 && Boolean(selectedTargetId && raceProduct);
+
+  useEffect(() => {
+    if (!raceProduct || !selectedTargetId) return;
+    const timeout = window.setTimeout(() => {
+      void fetch("/api/race-scenarios/validate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(strategyLabHeaders ?? {}) },
+        body: JSON.stringify(scenarioPayload),
+      })
+        .then((res) => res.json() as Promise<ValidationResponse>)
+        .then((payload) => {
+          if (payload.ok && payload.data) {
+            setValidationWarnings(payload.data.warnings);
+            setValidationErrors([]);
+            return;
+          }
+          const fieldErrors = payload.error?.details?.fieldErrors ?? {};
+          setValidationWarnings([]);
+          setValidationErrors([
+            ...(payload.error?.details?.formErrors ?? []),
+            ...Object.values(fieldErrors).flatMap((items) => items ?? []),
+            payload.error?.message ?? "Scenario contract is invalid.",
+          ]);
+        })
+        .catch(() => {
+          setValidationWarnings([]);
+          setValidationErrors(["Scenario validation is temporarily unavailable."]);
+        });
+    }, 250);
+    return () => window.clearTimeout(timeout);
+  }, [raceProduct, scenarioPayload, selectedTargetId, strategyLabHeaders]);
+
+  function changePitLap(index: number, value: number) {
+    setStints((current) => {
+      const plan = scalePlan(current, totalLaps);
+      const boundaries = [0, ...pitLapsFromPlan(plan), totalLaps];
+      const min = boundaries[index]! + 1;
+      const max = boundaries[index + 2]! - 1;
+      const nextPit = Math.max(min, Math.min(max, value));
+      boundaries[index + 1] = nextPit;
+      return plan.map((stint, stintIndex) => ({ ...stint, laps: boundaries[stintIndex + 1]! - boundaries[stintIndex]! }));
+    });
+    setSimulation(null);
+  }
+
+  function changeCompound(index: number, compound: Compound) {
+    setStints((current) => current.map((stint, stintIndex) => stintIndex === index ? { ...stint, compound } : stint));
+    setSimulation(null);
+  }
+
+  function addStint() {
+    setStints((current) => {
+      if (current.length >= 4) return current;
+      const plan = scalePlan(current, totalLaps);
+      const splitIndex = plan.reduce((best, stint, index) => stint.laps > plan[best]!.laps ? index : best, 0);
+      const split = plan[splitIndex]!;
+      const first = Math.max(1, Math.floor(split.laps / 2));
+      const second = Math.max(1, split.laps - first);
+      const nextCompound = (["medium", "hard", "soft"] as Compound[]).find((compound) => compound !== split.compound) ?? "hard";
+      return [...plan.slice(0, splitIndex), { ...split, laps: first }, { compound: nextCompound, laps: second }, ...plan.slice(splitIndex + 1)];
+    });
+    setSimulation(null);
+  }
+
+  function setStintCount(stintCount: number) {
+    setStints((current) => {
+      const targetCount = Math.max(2, Math.min(4, stintCount));
+      let plan = scalePlan(current, totalLaps);
+      while (plan.length < targetCount) {
+        const splitIndex = plan.reduce((best, stint, index) => stint.laps > plan[best]!.laps ? index : best, 0);
+        const split = plan[splitIndex]!;
+        const first = Math.max(1, Math.floor(split.laps / 2));
+        const second = Math.max(1, split.laps - first);
+        const nextCompound = (["medium", "hard", "soft"] as Compound[]).find((compound) => compound !== split.compound) ?? "hard";
+        plan = [...plan.slice(0, splitIndex), { ...split, laps: first }, { compound: nextCompound, laps: second }, ...plan.slice(splitIndex + 1)];
       }
-    : null;
-  const projectedGain = avg(liveTargetEntrants.map((entrant) => entrant.finishDelta)) ?? simulation?.targetSummary?.averageFinishDelta ?? null;
-  const targetPitWindows = useMemo(
-    () =>
-      targetEntrants.map((entrant) => ({
-        driverId: entrant.driverId,
-        fullName: entrant.fullName,
-        constructorId: entrant.constructorId,
-        constructorName: entrant.constructorName,
-        windows: entrant.pitWindows
-          .filter((window) => window.scenarioCode === (entrant.baselineStrategyCode ?? entrant.scenarios[0]?.scenarioCode))
-          .sort((a, b) => (a.stopNumber ?? 0) - (b.stopNumber ?? 0)),
-      })),
-    [targetEntrants],
-  );
+      while (plan.length > targetCount) {
+        const targetIndex = plan.length - 1;
+        const target = plan[targetIndex]!;
+        const next = plan.slice(0, -1);
+        next[next.length - 1] = { ...next[next.length - 1]!, laps: next[next.length - 1]!.laps + target.laps };
+        plan = next;
+      }
+      return scalePlan(plan, totalLaps);
+    });
+    setSimulation(null);
+  }
 
-  const whyItWorks = useMemo(() => {
-    if (!representativeEntrant) return [];
-    return [
-      { label: "Pace base", value: (representativeEntrant.strategyFeature.baseRacePaceS ?? 99) < 90 ? "Strong underlying race pace" : "Needs clean execution to stay in the lead pack" },
-      { label: "Tyre shape", value: (representativeEntrant.driverProfile.tyreManagementScore ?? 0.5) >= 0.62 ? "Tyre management supports longer stints" : "Shorter stints hide degradation better" },
-      { label: "Pit lane", value: (representativeEntrant.constructorProfile.pitEfficiencyScore ?? 0.5) >= 0.58 ? "Pit crew supports aggressive timing" : "Pit lane time rewards fewer stop losses" },
-      { label: "Racecraft", value: (representativeEntrant.driverProfile.racecraftProxyScore ?? 0.5) >= 0.6 ? "Traffic recovery is a strength" : "Track position matters more than overtaking upside" },
-    ];
-  }, [representativeEntrant]);
-  const caveats = useMemo(
-    () =>
-      buildCaveats({
-        raceProduct,
-        weatherScenario,
-        safetyCarProbability,
-        targetType,
-        simulation,
-      }),
-    [raceProduct, weatherScenario, safetyCarProbability, targetType, simulation],
-  );
-
-  const setupStats = useMemo(() => {
-    const entrants = raceProduct?.entrants ?? [];
-    if (entrants.length === 0) return [];
-    return [
-      { label: "Race difficulty", value: raceProduct?.overview.raceDifficulty ?? "Balanced" },
-      { label: "Baseline call", value: raceProduct?.overview.bestStrategyLabel ?? "Balanced" },
-      { label: "Pit-loss anchor", value: `${(raceProduct?.overview.pitLossEstimateS ?? 22).toFixed(1)}s` },
-      { label: "Race distance", value: `${raceProduct?.overview.nominalRaceLaps ?? totalLaps} laps` },
-    ];
-  }, [raceProduct, totalLaps]);
+  function removeStint(index: number) {
+    setStints((current) => {
+      if (current.length <= 2) return current;
+      const plan = scalePlan(current, totalLaps);
+      const target = plan[index]!;
+      const next = plan.filter((_, stintIndex) => stintIndex !== index);
+      const mergeIndex = Math.max(0, index - 1);
+      next[mergeIndex] = { ...next[mergeIndex]!, laps: next[mergeIndex]!.laps + target.laps };
+      return next;
+    });
+    setSimulation(null);
+  }
 
   async function runSimulation() {
-    if (!raceProduct || !selectedTargetId) return;
+    if (!isScenarioValid) return;
     setSimulating(true);
     setError(null);
     try {
       const response = await fetch("/api/race-scenarios/simulate", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          raceId: selectedRaceId,
-          driverIds: raceProduct.entrants.map((entrant) => entrant.driverId),
-          comparisonTargetType: targetType,
-          comparisonTargetId: selectedTargetId,
-          constructorFocus: targetType === "constructor" ? [selectedTargetId] : [],
-          pitStopCount: scenarioPresets[preset].pitStopCount,
-          tirePlan: scenarioPresets[preset].tirePlan,
-          safetyCarProbability,
-          weatherScenario,
-          aggressionFactor,
-          reliabilityBias,
-          qualifyingOverrides: [],
-        }),
+        headers: { "Content-Type": "application/json", ...(strategyLabHeaders ?? {}) },
+        body: JSON.stringify(scenarioPayload),
       });
       const payload = (await response.json()) as SimulationResponse;
       if (!payload.ok || !payload.data) {
@@ -346,33 +385,50 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
     }
   }
 
-  const targetLabel = targetOptions.find((item) => item.id === selectedTargetId)?.label ?? "Select target";
-  const resultBand = liveFinishBand
-    ? fmtBand(liveFinishBand.low, liveFinishBand.high, liveFinishBand.low)
-    : representativeEntrant
-      ? fmtBand(representativeEntrant.finishBandLow, representativeEntrant.finishBandHigh, representativeEntrant.projectedFinish)
-      : "Open";
+  const liveTargetEntrants = simulation?.targetSummary?.entrants ?? [];
+  const liveTransitionBands = simulation?.positionTransitionBands.filter((band) => liveTargetEntrants.some((entrant) => entrant.driverId === band.driverId)) ?? [];
+  const liveFinishBand = liveTargetEntrants.length > 0
+    ? { low: Math.min(...liveTargetEntrants.map((entrant) => entrant.projectedFinishBandLow)), high: Math.max(...liveTargetEntrants.map((entrant) => entrant.projectedFinishBandHigh)) }
+    : null;
+  const projectedGain = avg(liveTargetEntrants.map((entrant) => entrant.finishDelta)) ?? simulation?.targetSummary?.averageFinishDelta ?? null;
+  const resultBand = liveFinishBand ? fmtBand(liveFinishBand.low, liveFinishBand.high, liveFinishBand.low) : fmtBand(representativeEntrant?.finishBandLow, representativeEntrant?.finishBandHigh, representativeEntrant?.projectedFinish);
+  const heroStyle = {
+    "--strategy-team-primary": team.primary,
+    "--strategy-team-secondary": team.secondary,
+    "--strategy-team-accent": team.accent,
+  } as CSSProperties;
 
   return (
-    <div className="strategy-pitwall">
-      <header className="strategy-race-hero">
+    <div className="strategy-free-roam" style={heroStyle}>
+      <header className="strategy-race-hero strategy-race-hero--free">
+        {team.carImagePath ? (
+          <AssetImage
+            src={team.carImagePath}
+            fallbackSrc={team.fallbackImagePath}
+            alt=""
+            className="strategy-race-hero__car"
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: team.imageFit ?? "cover", objectPosition: team.imagePosition }}
+          />
+        ) : null}
         <div className="strategy-race-hero__copy">
-          <span className="strategy-kicker">{selectedRace?.raceName ?? "Strategy Lab"} strategy lab</span>
+          <span className="strategy-kicker">Strategy Lab</span>
           <h1>{selectedRace?.raceName ?? "Strategy Lab"}</h1>
           <p className="strategy-race-hero__date">{selectedRaceDateLabel} {selectedRace ? `/ Round ${selectedRace.round}` : ""}</p>
-          <p className="strategy-race-hero__insight">{raceProduct?.overview.keyInsight ?? "Compare one race call against the field baseline."}</p>
+          <p className="strategy-race-hero__insight">{raceProduct?.overview.keyInsight ?? "Build a race strategy from pit laps, compound choice, and tyre-pressure setup."}</p>
           <div className="strategy-race-hero__metrics">
-            {setupStats.map((item) => <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}
+            <div><span>Race distance</span><strong>{totalLaps} laps</strong></div>
+            <div><span>Pit-loss anchor</span><strong>{(raceProduct?.overview.pitLossEstimateS ?? 22).toFixed(1)}s</strong></div>
+            <div><span>Confidence</span><strong>{fmtConfidence(raceProduct?.overview.confidenceScore)}</strong></div>
+            <div><span>Mode</span><strong>{fmtRisk(weatherScenario, safetyCarProbability)}</strong></div>
           </div>
           <ProductRuntimeNote runtime={runtimeMeta} className="strategy-race-hero__runtime" primaryLabel="Strategy data" degradedLabel="Backup data source" />
         </div>
         <div className="strategy-race-hero__track">
           {selectedRace && trackPaths[selectedRace.circuitId] ? (
-            <RaceWeekCircuitVisualization
-              title={selectedRace.raceName}
-              trackPath={trackPaths[selectedRace.circuitId]!}
-              metadata={getRaceWeekCircuitMetadata(selectedRace.circuitId)}
-            />
+            <RaceWeekCircuitVisualization title={selectedRace.raceName} trackPath={trackPaths[selectedRace.circuitId]!} metadata={getRaceWeekCircuitMetadata(selectedRace.circuitId)} />
           ) : <div className="strategy-loading-block" />}
         </div>
       </header>
@@ -386,62 +442,107 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
           <div className="strategy-loading-block" /><div className="strategy-loading-block" /><div className="strategy-loading-block strategy-loading-block--wide" />
         </div>
       ) : (
-        <div className="strategy-workbench">
-          <StrategyControlRail>
+        <div className="strategy-workbench strategy-workbench--free">
+          <aside className="strategy-command-rail strategy-command-rail--free" aria-label="Strategy scenario controls">
             <div className="strategy-command-rail__head">
               <span className="strategy-kicker">Pit wall controls</span>
-              <strong>{scenarioPresets[preset].label}</strong>
-              <p>{scenarioPresets[preset].pitch} / {fmtRisk(weatherScenario, safetyCarProbability)}</p>
+              <strong>{targetLabel}</strong>
+              <p>{activePlan.length - 1} stops / {pitLaps.map((lap) => `L${lap}`).join(", ") || "No stops"}</p>
             </div>
-            <div className="strategy-preset-strip">
-              {(Object.keys(scenarioPresets) as Array<keyof typeof scenarioPresets>).map((key) => (
-                <button key={key} type="button" className={preset === key ? "is-active" : ""} onClick={() => setPreset(key)}>
-                  <span>{scenarioPresets[key].pitStopCount} stop</span><strong>{scenarioPresets[key].label}</strong>
-                </button>
-              ))}
-            </div>
-            <div className="strategy-command-rail__controls">
-              <div className="control-block"><label className="control-label">Race</label><select className="control-select" value={selectedRaceId} onChange={(event) => setSelectedRaceId(event.target.value)}>{races.map((race) => <option key={race.id} value={race.id}>{race.season} R{race.round} - {race.raceName}</option>)}</select></div>
-              <div className="control-block"><label className="control-label">Target type</label><div className="segmented-row">{(["driver", "constructor"] as const).map((value) => <button key={value} type="button" className={`segment ${targetType === value ? "segment--active" : ""}`} onClick={() => setTargetType(value)}>{value}</button>)}</div></div>
-              <div className="control-block"><label className="control-label">Target</label><select className="control-select" value={selectedTargetId} onChange={(event) => setSelectedTargetId(event.target.value)} disabled={!raceProduct || targetOptions.length === 0}>{targetOptions.map((option) => <option key={option.id} value={option.id}>{option.label} - {option.meta}</option>)}</select></div>
-              <div className="control-block"><label className="control-label">Weather <span>{weatherScenario}</span></label><div className="segmented-row">{(["dry", "mixed", "wet"] as const).map((value) => <button key={value} type="button" className={`segment ${weatherScenario === value ? "segment--active" : ""}`} onClick={() => setWeatherScenario(value)}>{value}</button>)}</div></div>
-              <div className="control-block"><label className="control-label">Safety car pressure <span>{Math.round(safetyCarProbability * 100)}%</span></label><input className="control-range" type="range" min={0} max={100} value={Math.round(safetyCarProbability * 100)} onChange={(event) => setSafetyCarProbability(Number(event.target.value) / 100)} /></div>
-              <div className="control-block"><label className="control-label">Aggression <span>{aggressionFactor}</span></label><input className="control-range" type="range" min={0} max={100} value={aggressionFactor} onChange={(event) => setAggressionFactor(Number(event.target.value))} /></div>
-              <div className="control-block"><label className="control-label">Reliability bias <span>{reliabilityBias > 0 ? `+${reliabilityBias}` : reliabilityBias}</span></label><input className="control-range" type="range" min={-25} max={25} value={reliabilityBias} onChange={(event) => setReliabilityBias(Number(event.target.value))} /></div>
-            </div>
-            <div className="strategy-command-rail__footer">
-              <div><span>Focus</span><strong>{targetLabel}</strong></div>
-              <div><span>Data quality</span><strong>{fmtConfidence(raceProduct?.overview.confidenceScore)}</strong></div>
-              <button type="button" className="strategy-run-button" onClick={() => void runSimulation()} disabled={loading || simulating || !selectedTargetId}>{simulating ? "Running scenario..." : "Run scenario"}</button>
-            </div>
-          </StrategyControlRail>
 
-          <div className="strategy-console">
-            <StrategyResultStage>
+            <div className="strategy-command-rail__sections">
+              <section className="strategy-control-section" aria-labelledby="strategy-situation-heading">
+                <div className="strategy-control-section__head">
+                  <span className="strategy-control-section__number">1</span>
+                  <div>
+                    <h2 id="strategy-situation-heading">Situation</h2>
+                    <p>Track, weather, target, and safety-car context.</p>
+                  </div>
+                </div>
+                <div className="strategy-command-rail__controls">
+                  <div className="control-block"><label className="control-label">Track</label><select className="control-select" value={selectedRaceId} onChange={(event) => setSelectedRaceId(event.target.value)}>{races.map((race) => <option key={race.id} value={race.id}>{race.season} R{race.round} - {race.raceName}</option>)}</select></div>
+                  <div className="control-block"><label className="control-label">Weather <span>{weatherScenario}</span></label><div className="segmented-row">{(["dry", "mixed", "wet"] as const).map((value) => <button key={value} type="button" className={`segment ${weatherScenario === value ? "segment--active" : ""}`} onClick={() => setWeatherScenario(value)}>{value}</button>)}</div></div>
+                  <div className="control-block"><label className="control-label">Target type</label><div className="segmented-row">{(["driver", "constructor"] as const).map((value) => <button key={value} type="button" className={`segment ${targetType === value ? "segment--active" : ""}`} onClick={() => setTargetType(value)}>{value}</button>)}</div></div>
+                  <div className="control-block"><label className="control-label">Driver / constructor</label><select className="control-select" value={selectedTargetId} onChange={(event) => setSelectedTargetId(event.target.value)} disabled={!raceProduct || targetOptions.length === 0}>{targetOptions.map((option) => <option key={option.id} value={option.id}>{option.label} - {option.meta}</option>)}</select></div>
+                  <div className="control-block"><label className="control-label">Safety car <span>{Math.round(safetyCarProbability * 100)}%</span></label><input className="control-range" type="range" min={0} max={100} value={Math.round(safetyCarProbability * 100)} onChange={(event) => setSafetyCarProbability(Number(event.target.value) / 100)} /></div>
+                </div>
+              </section>
+
+              <section className="strategy-control-section" aria-labelledby="strategy-options-heading">
+                <div className="strategy-control-section__head">
+                  <span className="strategy-control-section__number">2</span>
+                  <div>
+                    <h2 id="strategy-options-heading">Strategy options</h2>
+                    <p>Stints, aggression, reliability, and tyre pressures.</p>
+                  </div>
+                </div>
+                <div className="strategy-command-rail__controls">
+                  <div className="control-block"><label className="control-label">Stints <span>{activePlan.length}</span></label><div className="segmented-row">{[2, 3, 4].map((value) => <button key={value} type="button" className={`segment ${activePlan.length === value ? "segment--active" : ""}`} onClick={() => setStintCount(value)}>{value}</button>)}</div></div>
+                  <div className="control-block"><label className="control-label">Aggression <span>{aggressionFactor}</span></label><input className="control-range" type="range" min={0} max={100} value={aggressionFactor} onChange={(event) => setAggressionFactor(Number(event.target.value))} /></div>
+                  <div className="control-block"><label className="control-label">Reliability <span>{reliabilityBias > 0 ? `+${reliabilityBias}` : reliabilityBias}</span></label><input className="control-range" type="range" min={-25} max={25} value={reliabilityBias} onChange={(event) => setReliabilityBias(Number(event.target.value))} /></div>
+                  <div className="control-block"><label className="control-label">Front pressure <span>{tyrePressure.frontPsi.toFixed(1)} psi</span></label><input className="control-range" type="range" min={18} max={30} step={0.1} value={tyrePressure.frontPsi} onChange={(event) => setTyrePressure((current) => ({ ...current, frontPsi: Number(event.target.value) }))} /></div>
+                  <div className="control-block"><label className="control-label">Rear pressure <span>{tyrePressure.rearPsi.toFixed(1)} psi</span></label><input className="control-range" type="range" min={18} max={30} step={0.1} value={tyrePressure.rearPsi} onChange={(event) => setTyrePressure((current) => ({ ...current, rearPsi: Number(event.target.value) }))} /></div>
+                </div>
+              </section>
+            </div>
+
+            <div className={`strategy-rule-panel ${isScenarioValid ? "strategy-rule-panel--valid" : "strategy-rule-panel--invalid"}`}>
+              <span>Scenario rules</span>
+              <strong>{isScenarioValid ? "Ready to run" : "Needs attention"}</strong>
+              {[...localRuleMessages, ...validationErrors].slice(0, 4).map((message) => <p key={message}>{message}</p>)}
+              {isScenarioValid ? <p>{new Set(activePlan.map((stint) => stint.compound)).size} compounds / {activePlan.reduce((sum, stint) => sum + stint.laps, 0)} laps / {activePlan.length - 1} stops</p> : null}
+              {validationWarnings.slice(0, 3).map((warning) => <p key={warning}>{warning}</p>)}
+            </div>
+
+            <button type="button" className="strategy-run-button" onClick={() => void runSimulation()} disabled={loading || simulating || !isScenarioValid}>
+              {simulating ? "Running scenario..." : "Run scenario"}
+            </button>
+          </aside>
+
+          <div className="strategy-console strategy-console--free">
+            <section className="strategy-result-stage" aria-label="Strategy result">
               <div className="strategy-result-stage__lead">
-                <span className="strategy-kicker">{simulation ? "Active strategy call" : "Baseline strategy call"}</span>
-                <h2>{simulation?.targetSummary?.title ?? raceProduct?.overview.bestStrategyLabel ?? scenarioPresets[preset].label}</h2>
-                <p>{simulation?.targetSummary?.narrative ?? bestPrecomputedScenario?.rationale ?? raceProduct?.overview.keyInsight}</p>
+                <span className="strategy-kicker">{simulation ? "Active strategy call" : "Free-roam setup"}</span>
+                <h2>{simulation?.targetSummary?.title ?? `${targetLabel} race plan`}</h2>
+                <p>{simulation?.targetSummary?.narrative ?? "Adjust compounds, pit laps, and pressure before committing a strategy run."}</p>
               </div>
-              <div className="strategy-result-stage__band"><span>Projected band</span><strong>{resultBand}</strong><em>{simulation ? fmtDelta(projectedGain, " positions") : `${scenarioPresets[preset].pitStopCount} planned stops`}</em></div>
-              <div className="strategy-call-strip">
-                {precomputedScenarios.slice(0, 3).map((scenario, index) => <div key={scenario.code} className={index === 0 ? "is-leading" : ""}><span>{index === 0 ? "Recommended" : `Option ${index + 1}`}</span><strong>{scenario.label}</strong><em>{fmtBand(scenario.low, scenario.high, null)} / {fmtDelta(scenario.delta, "s")}</em></div>)}
-                {simulation ? <div className="is-live"><span>Live scenario</span><strong>{targetLabel}</strong><em>{resultBand} / {fmtDelta(projectedGain, " pos")}</em></div> : null}
-              </div>
+              <div className="strategy-result-stage__band"><span>Projected band</span><strong>{resultBand}</strong><em>{simulation ? fmtDelta(projectedGain, " positions") : `${activePlan.length - 1} planned stops`}</em></div>
               {error && raceProduct ? <p className="lab-error">{error}</p> : null}
-            </StrategyResultStage>
+            </section>
 
-            <StrategyStintLanes>
-              <div className="strategy-console-band__head"><div><span className="strategy-kicker">Race shape</span><h3>Stint plan and pit windows</h3></div><strong>{totalLaps} laps</strong></div>
-              <div className="strategy-timeline-grid">{baselinePlan.length > 0 ? <StintTimeline label="Baseline race" plan={baselinePlan} totalLaps={totalLaps} /> : null}<StintTimeline label="Active scenario" plan={scenarioPlan} totalLaps={totalLaps} active /></div>
-              <div className="strategy-window-strip">
-                {targetPitWindows.flatMap((entrant) => entrant.windows.map((window) => (
-                  <div key={`${entrant.driverId}-${window.scenarioCode}-${window.stopNumber}`}><span>{entrant.fullName} / Stop {window.stopNumber}</span><strong>Laps {window.windowStartLap ?? "--"}-{window.windowEndLap ?? "--"}</strong><em>{window.compoundOut ?? "Current"} to {window.compoundIn ?? "next"}</em></div>
-                )))}
+            <section className="strategy-console-band strategy-console-band--stints">
+              <div className="strategy-console-band__head"><div><span className="strategy-kicker">Race shape</span><h3>Tyre plan and pit laps</h3></div><strong>{totalLaps} laps</strong></div>
+              <div className="strategy-timeline-grid">
+                {baselinePlan.length > 0 ? <StintTimeline label="Baseline race" plan={baselinePlan} totalLaps={totalLaps} /> : null}
+                <StintTimeline label="Active scenario" plan={activePlan} totalLaps={totalLaps} active />
               </div>
-            </StrategyStintLanes>
+              <div className="strategy-stint-editor">
+                {activePlan.map((stint, index) => {
+                  const previousPit = index === 0 ? 0 : pitLaps[index - 1]!;
+                  const nextPit = index >= pitLaps.length ? totalLaps : pitLaps[index]!;
+                  return (
+                    <article className={`strategy-stint-card strategy-stint-card--${stint.compound}`} key={`${index}-${stint.compound}`}>
+                      <div><span>Stint {index + 1}</span><strong>{stint.laps} laps</strong><em>L{previousPit + 1}-L{nextPit}</em></div>
+                      <select className="control-select" value={stint.compound} onChange={(event) => changeCompound(index, event.target.value as Compound)}>
+                        {compounds.map((compound) => <option key={compound} value={compound}>{compound}</option>)}
+                      </select>
+                      {index < pitLaps.length ? (
+                        <label className="strategy-stint-card__pit">
+                          <span>Pit lap <strong>{pitLaps[index]}</strong></span>
+                          <input className="control-range" type="range" min={(pitLaps[index - 1] ?? 0) + 1} max={(pitLaps[index + 1] ?? totalLaps) - 1} value={pitLaps[index]} onChange={(event) => changePitLap(index, Number(event.target.value))} />
+                        </label>
+                      ) : null}
+                      {activePlan.length > 2 ? <button type="button" onClick={() => removeStint(index)}>Remove</button> : null}
+                    </article>
+                  );
+                })}
+              </div>
+              <div className="strategy-pit-lap-editor">
+                <button type="button" onClick={addStint} disabled={activePlan.length >= 4}>Add stint</button>
+              </div>
+            </section>
 
-            <StrategyPositionBand>
+            <section className="strategy-console-band strategy-console-band--position">
               <div className="strategy-console-band__head"><div><span className="strategy-kicker">Position transition</span><h3>{simulation ? "Scenario movement" : "Baseline target range"}</h3></div><strong>{targetLabel}</strong></div>
               <div className="strategy-position-lanes">
                 {simulation && liveTransitionBands.length > 0 ? liveTransitionBands.map((band) => (
@@ -451,14 +552,15 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
                 ))}
               </div>
               {simulation ? <div className="strategy-field-order strategy-field-order--rail">{simulation.finishingOrder.slice(0, 8).map((entrant) => <div key={entrant.driverId} className={`strategy-field-order__item ${entrant.isTarget ? "strategy-field-order__item--target" : ""}`}><span>P{entrant.projectedFinish}</span><strong>{entrant.fullName}</strong><em>{entrant.isTarget ? fmtDelta(entrant.finishDelta, " pos") : entrant.constructorName}</em></div>)}</div> : null}
-            </StrategyPositionBand>
+            </section>
 
-            <StrategyRiskStrip>
-              <article><span>Strategy drivers</span><strong>{targetLabel}</strong>{whyItWorks.slice(0, 3).map((reason) => <p key={reason.label}>{reason.value}</p>)}</article>
-              <article><span>Risks</span><strong>{fmtRisk(weatherScenario, safetyCarProbability)}</strong>{caveats.slice(0, 3).map((caveat) => <p key={caveat}>{caveat}</p>)}</article>
-              <article className="strategy-risk-strip__assumption"><span>Weakest assumption</span><strong>{simulation?.weakestAssumption.title ?? "Race-week conditions"}</strong><p>{simulation?.weakestAssumption.detail ?? "The baseline remains sensitive to weather, neutralization timing, and incomplete practice evidence."}</p></article>
+            <section className="strategy-risk-strip">
+              <article><span>Tyre pressure</span><strong>{tyrePressure.frontPsi.toFixed(1)}F / {tyrePressure.rearPsi.toFixed(1)}R</strong><p>Pressure changes affect warmup, degradation, and rejoin stability.</p></article>
+              <article><span>Risks</span><strong>{fmtRisk(weatherScenario, safetyCarProbability)}</strong><p>{simulation?.confidenceReason ?? "Risk updates after a scenario run."}</p></article>
+              <article className="strategy-risk-strip__assumption"><span>Weakest assumption</span><strong>{simulation?.weakestAssumption.title ?? "Race-week conditions"}</strong><p>{simulation?.weakestAssumption.detail ?? "The setup remains sensitive to weather, neutralization timing, tyre pressure, and incomplete practice evidence."}</p></article>
+              <article><span>Data quality</span><strong>{dataQualityNotes[0]}</strong>{dataQualityNotes.slice(1, 4).map((note) => <p key={note}>{note}</p>)}</article>
               {simulation?.topSensitivityDrivers.length ? <article><span>Sensitivity</span><strong>Top modeled factors</strong>{simulation.topSensitivityDrivers.slice(0, 3).map((driver) => <div className="strategy-sensitivity-rail" key={driver.factor}><span>{fmtSensitivity(driver.factor)}</span><i style={{ width: `${Math.min(100, Math.abs(driver.impactS) * 16)}%` }} /><em>{driver.impactS.toFixed(1)}s</em></div>)}</article> : null}
-            </StrategyRiskStrip>
+            </section>
           </div>
         </div>
       )}

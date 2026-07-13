@@ -1,6 +1,7 @@
 import { apiError, apiOk } from "@/lib/api/errors";
-import { createPublicCacheHeaders, mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
+import { mergeHeaders, NO_STORE_HEADERS } from "@/lib/http/headers";
 import { checkRateLimitAsync, RATE_LIMIT_POLICIES } from "@/lib/security/rate-limit";
+import { authorizeStrategyLabAccess } from "@/lib/server/strategy-lab-access";
 import { getStrategyLabRaceProductResult } from "@/lib/server/strategy-lab-product";
 import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
 import { classifyStrategyLabUnavailable } from "./response";
@@ -10,12 +11,6 @@ type RouteContext = {
     raceId: string;
   }>;
 };
-
-const cacheHeaders = createPublicCacheHeaders({
-  browserMaxAgeSeconds: 60,
-  edgeMaxAgeSeconds: 300,
-  staleWhileRevalidateSeconds: 900,
-});
 
 type StrategyLabRouteResult = {
   mode: "primary" | "degraded";
@@ -44,6 +39,16 @@ export async function handleStrategyLabRaceGet(
     });
   }
 
+  const access = await authorizeStrategyLabAccess(request);
+  if (!access.ok) {
+    return apiError({
+      status: 404,
+      code: "not_found",
+      message: "Strategy Lab data was not found.",
+      headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers),
+    });
+  }
+
   const { raceId } = await context.params;
 
   try {
@@ -59,7 +64,7 @@ export async function handleStrategyLabRaceGet(
       });
     }
 
-    return apiOk({ product: result.data, runtime: result.meta }, { headers: mergeHeaders(cacheHeaders, rateLimit.headers) });
+    return apiOk({ product: result.data, runtime: result.meta }, { headers: mergeHeaders(NO_STORE_HEADERS, rateLimit.headers) });
   } catch {
     return apiError({
       status: 500,

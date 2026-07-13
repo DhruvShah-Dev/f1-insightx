@@ -54,6 +54,7 @@ type TargetOutcomeEntrant = {
 };
 
 type SensitivityDriver = { factor: string; impactS: number; explanation: string };
+type TyrePressureInput = RaceScenarioInput["tyrePressure"];
 
 export type RaceSimulationResponse = {
   raceId: string;
@@ -139,6 +140,7 @@ const POINTS_BY_POSITION: Record<number, number> = {
 const STRATEGY_LAB_SIMULATOR_VERSION = "strategy_lab_sim_v2";
 const STRATEGY_LAB_SCENARIO_TEMPLATE_VERSION = "strategy_templates_v1";
 const DEFAULT_FUEL_CORRECTION_S_PER_LAP = 0.035;
+const DEFAULT_TYRE_PRESSURE: TyrePressureInput = { frontPsi: 23, rearPsi: 21 };
 
 const WEATHER_EFFECTS = {
   dry: {
@@ -170,11 +172,41 @@ export function fuelCorrectionS(globalLap: number, totalLaps: number, coefficien
   return (remainingFuelLaps - midpointFuelLaps) * coefficient;
 }
 
-function tyreWarmupPenalty(compound: string, stintLap: number, trackTempC: number | null, weatherScenario: RaceScenarioInput["weatherScenario"]) {
+function tyrePressureState(tyrePressure: TyrePressureInput = DEFAULT_TYRE_PRESSURE) {
+  const frontDelta = tyrePressure.frontPsi - DEFAULT_TYRE_PRESSURE.frontPsi;
+  const rearDelta = tyrePressure.rearPsi - DEFAULT_TYRE_PRESSURE.rearPsi;
+  const averageDelta = (frontDelta + rearDelta) / 2;
+  const imbalance = Math.abs(frontDelta - rearDelta);
+  const stressScore = clampRange((Math.abs(frontDelta) + Math.abs(rearDelta) + imbalance * 0.55) / 12, 0, 1);
+  return {
+    frontDelta,
+    rearDelta,
+    averageDelta,
+    imbalance,
+    stressScore,
+    paceOffsetS: averageDelta * 0.012 + stressScore * 0.018,
+    warmupAdjustmentS: clampRange(-averageDelta * 0.018 + imbalance * 0.01, -0.09, 0.12),
+    degradationMultiplier: 1 + stressScore * 0.14 + Math.max(0, averageDelta) * 0.012,
+    trafficMultiplier: 1 + stressScore * 0.08,
+    confidencePenalty: stressScore * 0.08,
+  };
+}
+
+function tyreWarmupPenalty(
+  compound: string,
+  stintLap: number,
+  trackTempC: number | null,
+  weatherScenario: RaceScenarioInput["weatherScenario"],
+  pressureWarmupAdjustmentS = 0,
+) {
   const base = compound === "hard" ? 0.32 : compound === "medium" ? 0.18 : 0.1;
   const coldTrack = trackTempC !== null && trackTempC < 28 ? 0.08 : 0;
   const wetPenalty = weatherScenario === "wet" ? 0.18 : weatherScenario === "mixed" ? 0.08 : 0;
-  return stintLap <= 1 ? base + coldTrack + wetPenalty : stintLap === 2 ? (base + wetPenalty) * 0.42 : 0;
+  return stintLap <= 1
+    ? Math.max(0, base + coldTrack + wetPenalty + pressureWarmupAdjustmentS)
+    : stintLap === 2
+      ? Math.max(0, (base + wetPenalty) * 0.42 + pressureWarmupAdjustmentS * 0.35)
+      : 0;
 }
 
 export function nonlinearTyreLossS(
@@ -200,12 +232,14 @@ export function pitLossComponents(params: {
   trafficSensitivityScore: number;
   trackTempC: number | null;
   weatherScenario: RaceScenarioInput["weatherScenario"];
+  tyrePressureStress?: number;
 }) {
   const stationaryLossS = Math.max(2.2, params.basePitLossS * 0.12);
   const pitLaneBaselineS = Math.max(14, params.basePitLossS - stationaryLossS);
   const inLapTyreAgeLossS = Math.max(0, params.tyreAgeLaps - 16) * 0.018;
-  const outLapWarmupLossS = tyreWarmupPenalty(params.outCompound, 1, params.trackTempC, params.weatherScenario);
-  const rejoinTrafficPenaltyS = params.trafficSensitivityScore * 0.35;
+  const pressureStress = params.tyrePressureStress ?? 0;
+  const outLapWarmupLossS = tyreWarmupPenalty(params.outCompound, 1, params.trackTempC, params.weatherScenario, pressureStress * 0.08);
+  const rejoinTrafficPenaltyS = params.trafficSensitivityScore * 0.35 * (1 + pressureStress * 0.1);
   return { pitLaneBaselineS, stationaryLossS, inLapTyreAgeLossS, outLapWarmupLossS, rejoinTrafficPenaltyS };
 }
 
@@ -250,6 +284,8 @@ function sensitivityExplanation(factor: string, entrant: StrategyLabRaceProduct[
       return "Fuel correction separated fuel-burn lap improvement from tyre degradation.";
     case "tyre_degradation":
       return "Non-linear tyre phases produced warmup, plateau, degradation, and cliff-risk losses.";
+    case "tyre_pressure":
+      return "Front and rear tyre pressure changed warmup, degradation load, and rejoin stability as bounded strategy controls.";
     default:
       return "Bounded deterministic modifier from Strategy Lab inputs.";
   }
@@ -259,6 +295,8 @@ function sensitivityLabel(factor: string) {
   switch (factor) {
     case "tyre_degradation":
       return "Tyre degradation";
+    case "tyre_pressure":
+      return "Tyre pressure";
     case "traffic":
       return "Traffic and overtaking";
     case "pit_loss":
@@ -354,7 +392,7 @@ function buildPositionTransitionBands(finishingOrder: RaceSimulationResponse["fi
 }
 
 function buildWeakestAssumption(
-  input: Pick<RaceScenarioInput, "weatherScenario" | "safetyCarProbability" | "aggressionFactor" | "reliabilityBias">,
+  input: Pick<RaceScenarioInput, "weatherScenario" | "safetyCarProbability" | "aggressionFactor" | "reliabilityBias" | "tyrePressure">,
   entrants: StrategyLabRaceProduct["entrants"],
   confidenceScore: number,
 ): RaceSimulationResponse["weakestAssumption"] {
@@ -376,6 +414,15 @@ function buildWeakestAssumption(
       factor: "safety_car",
       title: "Neutralization timing is not simulated",
       detail: "Safety-car pressure changes confidence and pit timing risk, but the model does not simulate exact interruption laps.",
+    };
+  }
+
+  const pressure = tyrePressureState(input.tyrePressure);
+  if (pressure.stressScore >= 0.42) {
+    return {
+      factor: "tyre_pressure",
+      title: "Tyre pressure is a setup stress",
+      detail: "Pressure changes are modeled as bounded warmup, degradation, and rejoin-stability modifiers rather than measured setup telemetry.",
     };
   }
 
@@ -420,14 +467,16 @@ function buildWeakestAssumption(
 
 function buildConfidenceReason(
   label: ConfidenceLabel,
-  input: Pick<RaceScenarioInput, "weatherScenario" | "safetyCarProbability" | "aggressionFactor" | "reliabilityBias">,
+  input: Pick<RaceScenarioInput, "weatherScenario" | "safetyCarProbability" | "aggressionFactor" | "reliabilityBias" | "tyrePressure">,
   weakestAssumption: RaceSimulationResponse["weakestAssumption"],
 ) {
+  const pressure = tyrePressureState(input.tyrePressure);
   const varianceNotes = [
     input.weatherScenario !== "dry" ? "non-dry grip" : null,
     input.safetyCarProbability >= 0.55 ? "high neutralization pressure" : null,
     Math.abs(input.aggressionFactor - 50) >= 28 ? "aggressive driver-mode stress" : null,
     Math.abs(input.reliabilityBias) >= 18 ? "reliability-mode stress" : null,
+    pressure.stressScore >= 0.42 ? "tyre-pressure setup stress" : null,
   ].filter((item): item is string => item !== null);
   const varianceText = varianceNotes.length > 0 ? ` Main variance comes from ${varianceNotes.join(", ")}.` : "";
   return `${label[0].toUpperCase()}${label.slice(1)} scenario confidence means the finish bands are usable for relative strategy comparison, not exact finishing prediction.${varianceText} Weakest assumption: ${weakestAssumption.title.toLowerCase()}.`;
@@ -487,6 +536,22 @@ function normalizeTirePlan(totalLaps: number, tirePlan: RaceScenarioInput["tireP
   return normalized;
 }
 
+function normalizeTirePlanFromPitLaps(
+  totalLaps: number,
+  tirePlan: RaceScenarioInput["tirePlan"],
+  pitLaps: RaceScenarioInput["pitLaps"],
+) {
+  if (pitLaps.length !== tirePlan.length - 1) {
+    return normalizeTirePlan(totalLaps, tirePlan);
+  }
+
+  const boundaries = [0, ...pitLaps, totalLaps];
+  return tirePlan.map((stint, index) => ({
+    compound: stint.compound,
+    laps: Math.max(1, boundaries[index + 1]! - boundaries[index]!),
+  }));
+}
+
 function buildBaselinePlan(entrant: StrategyLabRaceProduct["entrants"][number]) {
   const windows = entrant.pitWindows
     .filter((item) => item.scenarioCode === (entrant.baselineStrategyCode ?? entrant.scenarios[0]?.scenarioCode))
@@ -542,13 +607,14 @@ function compoundProfile(
 function simulateEntrant(
   entrant: StrategyLabRaceProduct["entrants"][number],
   plan: Array<{ compound: string; laps: number }>,
-  input: Pick<RaceScenarioInput, "weatherScenario" | "safetyCarProbability" | "aggressionFactor" | "reliabilityBias">,
+  input: Pick<RaceScenarioInput, "weatherScenario" | "safetyCarProbability" | "aggressionFactor" | "reliabilityBias" | "tyrePressure">,
   targetApplied: boolean,
   qualifyingOverrides: Map<string, number>,
   raceSeason: number,
 ) {
   const totalLaps = entrant.strategyFeature.nominalRaceLaps ?? 57;
   const weather = WEATHER_EFFECTS[input.weatherScenario];
+  const pressure = tyrePressureState(input.tyrePressure);
   const scenarioAggression = clamp01(input.aggressionFactor / 100, 0.5);
   const reliabilityMode = targetApplied ? clampRange(input.reliabilityBias / 25, -1, 1) : 0;
   const driverAggression = clamp01(entrant.driverProfile.aggressiveTendencyScore, 0.5);
@@ -564,7 +630,8 @@ function simulateEntrant(
   const baseRacePaceS =
     (entrant.strategyFeature.baseRacePaceS ?? 90) +
     weather.paceOffsetS +
-    Math.max(0, reliabilityMode) * 0.12;
+    Math.max(0, reliabilityMode) * 0.12 +
+    pressure.paceOffsetS;
   const paceEvolution = entrant.strategyFeature.paceEvolutionSPerLap ?? 0.018;
   const fuelCoefficient = entrant.strategyFeature.fuelCorrectionSPerLap ?? DEFAULT_FUEL_CORRECTION_S_PER_LAP;
   const overtakingAttack = clamp01(entrant.strategyFeature.overtakingAttackScore, 0.5);
@@ -597,6 +664,7 @@ function simulateEntrant(
     weather: 0,
     fuel_correction: 0,
     energy_proxy: 0,
+    tyre_pressure: 0,
     straight_line_strength: 0,
     tyre_stress_proxy: 0,
     track_position_sensitivity: 0,
@@ -611,6 +679,7 @@ function simulateEntrant(
       0.01,
       (profile.degradationSPerLap ?? 0.06) *
         weather.degradationMultiplier *
+        pressure.degradationMultiplier *
         (1.04 + (effectiveAggression - 0.5) * 0.28 - reliabilityMode * 0.12) *
         (1.08 - tyreManagement * 0.18) *
         (0.94 + tyreStress * 0.16),
@@ -621,7 +690,7 @@ function simulateEntrant(
       const fuelOffset = fuelCorrectionS(globalLap, totalLaps, fuelCoefficient);
       const paceDrift = globalLap * paceEvolution * (1 - effectiveAggression * 0.08);
       const attackOffset = targetApplied ? -(effectiveAggression - 0.5) * 0.26 + Math.min(0, reliabilityMode) * 0.14 : 0;
-      const warmupPenalty = tyreWarmupPenalty(stint.compound, lap, trackTempC, input.weatherScenario);
+      const warmupPenalty = tyreWarmupPenalty(stint.compound, lap, trackTempC, input.weatherScenario, pressure.warmupAdjustmentS);
       const tyreLoss = nonlinearTyreLossS(stint.compound, lap, stint.laps, degradation, tyreManagement);
       const energyAdjustment = energyProxyAdjustmentS(raceSeason, energyProxy ?? null, lap / Math.max(stint.laps, 1), telemetryProxyConfidence);
       const weatherGripLoss = input.weatherScenario === "dry" ? 0 : weatherSensitivity * (input.weatherScenario === "wet" ? 0.18 : 0.08);
@@ -629,6 +698,7 @@ function simulateEntrant(
       sensitivity.tyre_degradation += tyreLoss;
       sensitivity.weather += Math.abs(weatherGripLoss + weather.paceOffsetS / totalLaps);
       sensitivity.energy_proxy += Math.abs(energyAdjustment);
+      sensitivity.tyre_pressure += Math.abs(pressure.paceOffsetS + pressure.warmupAdjustmentS / Math.max(stint.laps, 1)) + tyreLoss * pressure.stressScore * 0.08;
       sensitivity.tyre_stress_proxy += tyreStress * degradation * 0.08;
       sensitivity.energy_proxy_confidence += raceSeason >= 2026 ? (1 - telemetryProxyConfidence) * 0.01 : 0;
       totalRaceTimeS += baseRacePaceS + baseDelta + fuelOffset + paceDrift + attackOffset + warmupPenalty + tyreLoss + weatherGripLoss + energyAdjustment;
@@ -642,10 +712,12 @@ function simulateEntrant(
         trafficSensitivityScore: trafficSensitivity * (1.08 - undercutSuitability * 0.12),
         trackTempC,
         weatherScenario: input.weatherScenario,
+        tyrePressureStress: pressure.stressScore,
       });
       const decomposedPitLoss = Object.values(pitParts).reduce((sum, value) => sum + value, 0);
       sensitivity.pit_loss += decomposedPitLoss;
       sensitivity.traffic += pitParts.rejoinTrafficPenaltyS;
+      sensitivity.tyre_pressure += pitParts.rejoinTrafficPenaltyS * pressure.stressScore;
       sensitivity.track_position_sensitivity += pitParts.rejoinTrafficPenaltyS * trackPositionSensitivity;
       totalRaceTimeS += Math.max(16, decomposedPitLoss);
     }
@@ -659,12 +731,14 @@ function simulateEntrant(
       overtakeDifficulty: weather.trafficPenaltyMultiplier,
       paceAdvantageS: Math.max(0, (entrant.strategyFeature.baseRacePaceS ?? 90) - baseRacePaceS + effectiveAggression * 0.2 + overtakingAttack * 0.18),
     }) *
-    (1 - (effectiveAggression - 0.5) * 0.16);
+    (1 - (effectiveAggression - 0.5) * 0.16) *
+    pressure.trafficMultiplier;
   const operationalPenalty =
     Math.max(0, -reliabilityMode) * (2.2 - operationalRobustness * 1.1) +
     Math.max(0, reliabilityMode) * 0.35;
   totalRaceTimeS += gridAdjustment(gridPosition, racecraft) + trafficPenalty + operationalPenalty;
   sensitivity.traffic += trafficPenalty;
+  sensitivity.tyre_pressure += trafficPenalty * pressure.stressScore * 0.18;
   sensitivity.straight_line_strength += Math.max(0, (0.58 - clamp01(entrant.strategyFeature.straightLineStrength, 0.5))) * trafficPenalty;
   sensitivity.track_position_sensitivity += trafficPenalty * trackPositionSensitivity;
   const undercutImpact = roundTo((plan.length - 1) * 1.8 + effectiveAggression * 2.6 + input.safetyCarProbability * 3.1, 1);
@@ -683,6 +757,9 @@ function simulateEntrant(
   );
   explanation.push(
     `Tyre management ${tyreManagement.toFixed(2)}, tyre-stress proxy ${tyreStress.toFixed(2)}, and an average degradation load of ${(degradationAccumulator / Math.max(plan.length, 1)).toFixed(3)}s/lap set the stability of the stint model.`,
+  );
+  explanation.push(
+    `Tyre pressure ${input.tyrePressure.frontPsi.toFixed(1)}F/${input.tyrePressure.rearPsi.toFixed(1)}R psi applies bounded warmup, degradation, and rejoin-stability adjustments.`,
   );
   explanation.push(
     `Track archetype ${entrant.strategyFeature.trackArchetype ?? "mixed"} applies bounded weights for straight-line strength ${clamp01(entrant.strategyFeature.straightLineStrength, 0.5).toFixed(2)}, traffic sensitivity ${trafficSensitivity.toFixed(2)}, and undercut suitability ${undercutSuitability.toFixed(2)}.`,
@@ -793,7 +870,13 @@ export function simulateRaceScenario(
       sim: simulateEntrant(
         entrant,
         buildBaselinePlan(entrant),
-        { weatherScenario: input.weatherScenario, safetyCarProbability: input.safetyCarProbability, aggressionFactor: 50, reliabilityBias: 0 },
+        {
+          weatherScenario: input.weatherScenario,
+          safetyCarProbability: input.safetyCarProbability,
+          aggressionFactor: 50,
+          reliabilityBias: 0,
+          tyrePressure: DEFAULT_TYRE_PRESSURE,
+        },
         false,
         qualifyingOverrides,
         product.race.season,
@@ -801,15 +884,16 @@ export function simulateRaceScenario(
     }))
     .sort((left, right) => left.sim.totalRaceTimeS - right.sim.totalRaceTimeS);
 
-  const comparisonPlan = normalizeTirePlan(
+  const explicitComparisonPlan = normalizeTirePlanFromPitLaps(
     product.overview.nominalRaceLaps ?? product.entrants[0]?.strategyFeature.nominalRaceLaps ?? 57,
     input.tirePlan,
+    input.pitLaps,
   );
 
   const comparisonField = entrants
     .map((entrant) => {
       const isTarget = target?.entrantIds.includes(entrant.driverId) ?? false;
-      const plan = isTarget ? comparisonPlan : buildBaselinePlan(entrant);
+      const plan = isTarget ? explicitComparisonPlan : buildBaselinePlan(entrant);
       return {
         entrant,
         sim: simulateEntrant(
@@ -845,6 +929,7 @@ export function simulateRaceScenario(
       1 -
         Math.abs(input.pitStopCount - 2) * 0.15 -
         (input.weatherScenario === "dry" ? 0 : 0.18) -
+        tyrePressureState(input.tyrePressure).confidencePenalty -
         (Math.abs(input.reliabilityBias) >= 15 ? 0.06 : 0) -
         (Math.abs(input.aggressionFactor - 50) >= 25 ? 0.06 : 0),
       0.25,
@@ -926,6 +1011,7 @@ export function simulateRaceScenario(
         "Deterministic lap-time accumulation with bounded tyre-degradation and pit-loss heuristics",
         "Weather adjusts pace, degradation, pit loss, and dry-compound suitability rather than simulating full wet-race dynamics",
         "Aggression and reliability bias trade pace against degradation and operational robustness only for the selected target",
+        "Tyre pressure is modeled as a bounded setup modifier for warmup, degradation, and rejoin stability",
         "Energy deployment is a 2026-era speed-shape proxy only, not true ERS or battery state",
         "Win and podium fields are rounded odds proxies, not calibrated probabilities",
       ],
