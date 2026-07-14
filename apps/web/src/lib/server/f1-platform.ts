@@ -721,6 +721,10 @@ async function getCurrentDriverStandingsSnapshotFromSupabase() {
   const driverRows = (driversResult.data ?? []) as SupabaseDriverRow[];
   const constructorRows = (constructorsResult.data ?? []) as SupabaseConstructorRow[];
   const standingsRows = (standingsResult.data ?? []) as SupabaseDriverStandingRow[];
+  if (standingsRows.length === 0) {
+    return null;
+  }
+
   const driverMap = new Map(driverRows.map((driver) => [driver.id, driver]));
   const constructorMap = new Map(constructorRows.map((constructor) => [constructor.id, constructor]));
 
@@ -763,6 +767,10 @@ async function getCurrentConstructorStandingsSnapshotFromSupabase() {
 
   const constructorRows = (constructorsResult.data ?? []) as SupabaseConstructorRow[];
   const standingsRows = (standingsResult.data ?? []) as SupabaseConstructorStandingRow[];
+  if (standingsRows.length === 0) {
+    return null;
+  }
+
   const constructorMap = new Map(constructorRows.map((constructor) => [constructor.id, constructor]));
   return {
     season: overview.latestCompletedRace.season,

@@ -1,11 +1,24 @@
 import path from "node:path";
+import { existsSync } from "node:fs";
 
 export function isTestRun() {
   return process.env.NODE_ENV === "test" || process.env.npm_lifecycle_event === "test";
 }
 
 export function getRepoDataRoot() {
-  return path.join(/*turbopackIgnore: true*/ process.cwd(), "..", "..", "data");
+  const configuredRoot = process.env.F1_INSIGHTX_DATA_ROOT;
+  if (configuredRoot) {
+    return path.resolve(/*turbopackIgnore: true*/ configuredRoot);
+  }
+
+  const cwd = process.cwd();
+  const candidates = [
+    path.join(/*turbopackIgnore: true*/ cwd, "data"),
+    path.join(/*turbopackIgnore: true*/ cwd, "..", "..", "data"),
+    path.join(/*turbopackIgnore: true*/ cwd, "..", "data"),
+  ];
+
+  return candidates.find((candidate) => existsSync(candidate)) ?? candidates[1];
 }
 
 export function getRepoDataPath(...segments: string[]) {
