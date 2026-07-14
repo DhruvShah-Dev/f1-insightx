@@ -1,19 +1,26 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { SiteFooter } from "@/components/ui/site-footer";
+import { AssetImage } from "@/components/ui/asset-image";
 import { StatePanel } from "@/components/ui/state-panel";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { RaceWeekSectorTrack } from "@/components/race-week/race-week-sector-track";
 import { RaceWeekTimeToggle } from "@/components/race-week/race-week-time-toggle";
 import { getRaceWeekProductResult, type RaceWeekPredictionModeId, type RaceWeekProduct } from "@/lib/server/race-week-product";
 import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
-import { getCircuitAsset } from "@/lib/ui/asset-manifest";
+import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
 
 type RaceTheme = {
   deck: string;
   shell: string;
   accent: string;
   accentSoft: string;
+};
+
+type CountryTheme = {
+  primary: string;
+  secondary: string;
+  dark: string;
 };
 
 const raceThemeByCircuit: Record<string, RaceTheme> = {
@@ -60,6 +67,45 @@ const fallbackTheme: RaceTheme = {
   shell: "#10151b",
   accent: "#e10600",
   accentSoft: "#ffffff",
+};
+
+const countryThemeByCode: Record<string, CountryTheme> = {
+  BE: {
+    primary: "#fdda24",
+    secondary: "#ef3340",
+    dark: "#050608",
+  },
+  ES: {
+    primary: "#f1bf00",
+    secondary: "#aa151b",
+    dark: "#050608",
+  },
+  MC: {
+    primary: "#ffffff",
+    secondary: "#ce1126",
+    dark: "#050608",
+  },
+  US: {
+    primary: "#ffffff",
+    secondary: "#b31942",
+    dark: "#0a3161",
+  },
+  AT: {
+    primary: "#ffffff",
+    secondary: "#ed2939",
+    dark: "#050608",
+  },
+  GB: {
+    primary: "#ffffff",
+    secondary: "#c8102e",
+    dark: "#012169",
+  },
+};
+
+const fallbackCountryTheme: CountryTheme = {
+  primary: "#ffffff",
+  secondary: "#e10600",
+  dark: "#050608",
 };
 
 const raceTimezoneByCircuit: Record<string, string> = {
@@ -111,13 +157,6 @@ function formatDelta(value: number | null, digits = 2) {
   return `${value > 0 ? "+" : ""}${value.toFixed(digits)}s`;
 }
 
-function formatTime(value: number | null, digits = 3) {
-  if (value === null || Number.isNaN(value)) {
-    return "Practice pending";
-  }
-  return `${value.toFixed(digits)}s`;
-}
-
 function formatQualifyingTime(value: number | null) {
   if (value === null || Number.isNaN(value)) {
     return "Pending";
@@ -127,11 +166,15 @@ function formatQualifyingTime(value: number | null) {
   return `${minutes}:${seconds}`;
 }
 
-function formatMethodLabel(value: string | null) {
+function formatEntityLabel(value: string | null | undefined) {
   if (!value) {
-    return "Season delta model";
+    return "";
   }
-  return value.replace(/_/g, " ");
+  return value
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 function getWeatherTone(value: number | null) {
@@ -175,10 +218,6 @@ function formatForecastUpdated(value: string | null | undefined) {
   });
 }
 
-function getDataStatus(value: number | null) {
-  return value !== null && value < 0.45 ? "Practice pending" : "Data ready";
-}
-
 function formatPoleGap(value: number | null) {
   if (value === null || Number.isNaN(value)) {
     return "Not enough data";
@@ -187,6 +226,14 @@ function formatPoleGap(value: number | null) {
     return "Pole";
   }
   return formatDelta(value, 3);
+}
+
+function formatTimeRange(values: Array<number | null>) {
+  const numericValues = values.filter((value): value is number => value !== null && !Number.isNaN(value));
+  if (numericValues.length === 0) {
+    return "Pending";
+  }
+  return `${formatQualifyingTime(Math.min(...numericValues))} - ${formatQualifyingTime(Math.max(...numericValues))}`;
 }
 
 function getConfidenceBand(value: number | null, qComplete: boolean) {
@@ -215,21 +262,6 @@ function explainPredictionFlags(flags: string[]) {
   };
   const explained = flags.map((flag) => labels[flag] ?? flag.replace(/_/g, " ")).filter(Boolean);
   return explained.length > 0 ? explained.join(" / ") : "Full model inputs";
-}
-
-function concise(value: string | null | undefined, maxLength = 116) {
-  if (!value) {
-    return "";
-  }
-  const normalized = value.replace(/\s+/g, " ").trim();
-  if (normalized.length <= maxLength) {
-    return normalized;
-  }
-  return `${normalized.slice(0, maxLength - 1).trim()}...`;
-}
-
-function sanitizeRaceWeekText(value: string | null | undefined, maxLength = 116) {
-  return concise(value?.replace(/\s*Confidence is (?:low|medium|high)\.?/gi, "") ?? "", maxLength);
 }
 
 function buildIsoAtTrackTime(raceIso: string | null | undefined, offsetDays: number, utcHour: number, utcMinute: number) {
@@ -301,6 +333,51 @@ function getSessionStatusDetail(sessionCode: "FP1" | "FP2" | "FP3" | "Q", produc
   return productStatus === "Unavailable" ? "No data" : "Pending";
 }
 
+function RaceWeekIcon({ name }: { name: "flag" | "gauge" | "radar" | "strategy" | "trophy" | "arrow" }) {
+  const paths = {
+    flag: (
+      <>
+        <path d="M5 20V5" />
+        <path d="M5 5c4-2 7 2 11 0v8c-4 2-7-2-11 0" />
+      </>
+    ),
+    gauge: (
+      <>
+        <path d="M5 17a8 8 0 1 1 14 0" />
+        <path d="m12 14 4-5" />
+        <path d="M8 17h8" />
+      </>
+    ),
+    radar: (
+      <>
+        <circle cx="12" cy="12" r="8" />
+        <path d="M12 12 18 8" />
+        <path d="M12 4v16M4 12h16" />
+      </>
+    ),
+    strategy: (
+      <>
+        <path d="M4 17h4l3-10 3 10h6" />
+        <path d="M4 7h3M17 7h3" />
+      </>
+    ),
+    trophy: (
+      <>
+        <path d="M8 5h8v4a4 4 0 0 1-8 0V5Z" />
+        <path d="M8 7H5a3 3 0 0 0 3 3M16 7h3a3 3 0 0 1-3 3" />
+        <path d="M12 13v4M9 19h6" />
+      </>
+    ),
+    arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
+  };
+
+  return (
+    <svg className="race-week-icon" viewBox="0 0 24 24" aria-hidden="true">
+      {paths[name]}
+    </svg>
+  );
+}
+
 export default async function PredictionsPage({ searchParams }: PredictionsPageProps) {
   const params = await searchParams;
   const selectedPredictionMode = normalizePredictionMode(params?.mode);
@@ -336,13 +413,14 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
     );
   }
 
-  const { overview, driverBoard, strategy, predictionModes } = raceWeek;
+  const { overview, driverBoard, predictionModes } = raceWeek;
   const nextRace = overview.nextRace;
   if (!nextRace) {
     return null;
   }
   const circuit = getCircuitAsset(nextRace.circuitId);
   const raceTheme = raceThemeByCircuit[nextRace.circuitId] ?? fallbackTheme;
+  const countryTheme = countryThemeByCode[circuit.countryCode] ?? fallbackCountryTheme;
   const trackTimeZone = raceTimezoneByCircuit[nextRace.circuitId] ?? "UTC";
   const weekendSessions = buildWeekendSessions(nextRace.scheduledAt);
   const raceWeekConditions = [
@@ -395,58 +473,62 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
   const qualifyingTopThree = qualifyingOrder.slice(0, 3);
   const qualifyingBaseline = qualifyingOrder[0] ?? null;
   const qualifyingPoleTime = qualifyingOrder.find((entry) => entry.predictedQTimeS !== null)?.predictedQTimeS ?? null;
+  const qualifyingProjectedRange = formatTimeRange(qualifyingOrder.map((entry) => entry.predictedQTimeS));
   const qualifyingSessionComplete = raceWeek.sessionStatus.some((entry) => entry.sessionCode === "Q" && entry.status === "complete");
   const driverNameById = new Map(driverBoard.map((entry) => [entry.driverId, entry.driverName]));
   const constructorNameById = new Map(driverBoard.map((entry) => [entry.constructorId, entry.constructorName]));
-  const keyedStrategy = strategy.slice(0, 6).map((entry) => {
-    const matchingDriver = driverBoard.find((driver) => driver.driverId === entry.driverId);
-    return {
-      ...entry,
-      driverName: matchingDriver?.driverName ?? entry.driverId,
-      constructorName: matchingDriver?.constructorName ?? entry.constructorId,
-    };
-  });
+  const heroTeam = getTeamAsset(qualifyingTopThree[0]?.constructorId ?? fieldDrivers[0]?.constructorId);
   return (
     <main
       className="subpage-shell race-week-page"
       style={
         {
           "--race-shell": raceTheme.shell,
-          "--race-accent": raceTheme.accent,
+          "--race-accent": countryTheme.primary,
           "--race-accent-soft": raceTheme.accentSoft,
+          "--race-country-primary": countryTheme.primary,
+          "--race-country-secondary": countryTheme.secondary,
+          "--race-country-dark": countryTheme.dark,
         } as CSSProperties
       }
     >
       <section className="race-week-hero">
+        <div className="race-week-hero__flag" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="race-week-hero__backdrop" aria-hidden="true">
+          <AssetImage
+            src={heroTeam.carImagePath ?? heroTeam.fallbackImagePath}
+            fallbackSrc={heroTeam.fallbackImagePath}
+            alt=""
+            className="race-week-hero__backdrop-car"
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectPosition: heroTeam.imagePosition ?? "center" }}
+          />
+        </div>
         <div className="race-week-hero__grid">
           <div className="race-week-hero__copy">
-            <p className="race-week-hero__eyebrow">{nextRace.raceName} Race Week</p>
+            <p className="race-week-hero__eyebrow">
+              <RaceWeekIcon name="flag" />
+              {nextRace.raceName} Race Week
+            </p>
             <h1 className="race-week-hero__headline">
               {nextRace.raceName}
               <span>{formatRaceDate(nextRace.scheduledAt)}</span>
             </h1>
             <p className="race-week-hero__deck">{raceTheme.deck}</p>
 
-            <div className="race-week-hero__signals">
-              <div className="race-week-hero__signal">
-                <span>Round</span>
-                <strong>{nextRace.round}</strong>
-              </div>
-              <div className="race-week-hero__signal">
-                <span>Profile</span>
-                <strong>{overview.archetypeLabel ?? "Street circuit"}</strong>
-              </div>
-              <div className="race-week-hero__signal">
-                <span>Weather</span>
-                <strong>{getWeatherTone(overview.weatherRiskIndex)}</strong>
-              </div>
-            </div>
-
             <div className="race-week-hero__actions">
               <Link href="/picks" className="race-week-hero__cta race-week-hero__cta--primary">
+                <RaceWeekIcon name="trophy" />
                 Picks
               </Link>
               <Link href="/race-analysis" className="race-week-hero__cta race-week-hero__cta--secondary">
+                <RaceWeekIcon name="arrow" />
                 Race Analysis
               </Link>
             </div>
@@ -463,32 +545,14 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
                 showSpecs
               />
             </div>
-            <div className="race-week-hero__meta">
-              <div>
-                <span>Venue</span>
-                <strong>
-                  {circuit.region}
-                  {nextRace.circuitCountry ? `, ${nextRace.circuitCountry}` : ""}
-                </strong>
-              </div>
-              <div>
-                <span>Strategy</span>
-                <strong>{overview.strategyDifficulty ?? "Building"}</strong>
-              </div>
-              <div>
-                <span>Data</span>
-                <strong>{raceWeekResult.meta.mode === "primary" ? "Live" : "Backup"}</strong>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       <section className="race-week-command-deck" aria-label="Race weekend command center">
         <div className="race-week-timetable">
-          <div className="race-week-section-heading race-week-section-heading--tight">
-            <p className="race-week-section-kicker">Weekend</p>
-            <h2>Sessions</h2>
+          <div className="race-week-section-heading race-week-section-heading--tight race-week-section-heading--center">
+            <h2>Session</h2>
           </div>
           <RaceWeekTimeToggle sessions={weekendSessions} trackTimeZone={trackTimeZone} />
           <div className="race-week-session-status" aria-label="Weekend data status">
@@ -523,12 +587,8 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
       </section>
 
       <section className="race-week-q-prediction" aria-label="Qualifying prediction">
-        <div className="race-week-section-heading">
-          <p className="race-week-section-kicker">Qualifying</p>
+        <div className="race-week-section-heading race-week-section-heading--center race-week-q-prediction__heading">
           <h2>Projected front rows.</h2>
-          <span className={`race-week-prediction-status race-week-prediction-status--${selectedPredictionModeMeta?.status ?? "pending"}`}>
-            {selectedPredictionModeMeta?.statusLabel ?? "Prediction data pending"}
-          </span>
         </div>
 
         <nav className="race-week-prediction-modes" aria-label="Prediction mode">
@@ -547,38 +607,43 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
 
         {qualifyingBaseline ? (
           <>
-            <div className="race-week-q-prediction__baseline" aria-label="Qualifying baseline">
+            <div className="race-week-q-prediction__baseline" aria-label="Corrected qualifying timing context">
               <div>
-                <span>Pole baseline</span>
+                <span>Corrected Spa baseline</span>
                 <strong>{formatQualifyingTime(qualifyingBaseline.basePoleS)}</strong>
               </div>
               <div>
-                <span>2026 season delta</span>
+                <span>2026 vs 2025 delta</span>
                 <strong>{formatDelta(qualifyingBaseline.seasonDelta26Vs25S, 3)}</strong>
               </div>
               <div>
-                <span>Baseline method</span>
-                <strong>{formatMethodLabel(qualifyingBaseline.baselineMethod)}</strong>
+                <span>Trend P1</span>
+                <strong>{formatQualifyingTime(qualifyingPoleTime)}</strong>
+              </div>
+              <div>
+                <span>Projected window</span>
+                <strong>{qualifyingProjectedRange}</strong>
               </div>
             </div>
 
             <div className="race-week-q-prediction__podium">
               {qualifyingTopThree.map((entry, index) => {
                 const displayGapToPole = qualifyingPoleTime === null || entry.predictedQTimeS === null ? null : entry.predictedQTimeS - qualifyingPoleTime;
+                const driverName = formatEntityLabel(driverNameById.get(entry.driverId) ?? entry.driverId);
                 return (
                   <article key={entry.driverId} className="race-week-q-card">
                     <div className="race-week-q-card__rank">P{entry.predictedQRank ?? index + 1}</div>
                     <div className="race-week-q-card__identity">
-                      <h3>{driverNameById.get(entry.driverId) ?? entry.driverId.replace(/_/g, " ")}</h3>
+                      <h3>{driverName}</h3>
                       <TeamBadge teamId={entry.constructorId} compact />
                     </div>
                     <div className="race-week-q-card__metrics">
                       <div>
-                        <span>Predicted time</span>
+                        <span>Lap time</span>
                         <strong>{formatQualifyingTime(entry.predictedQTimeS)}</strong>
                       </div>
                       <div>
-                        <span>Gap to pole</span>
+                        <span>Gap</span>
                         <strong>{formatPoleGap(displayGapToPole)}</strong>
                       </div>
                       <div>
@@ -591,8 +656,8 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
               })}
             </div>
 
-            <details className="race-week-q-details">
-              <summary>Full order</summary>
+            <details className="race-week-q-details" open>
+              <summary>Timing tower</summary>
               <div className="race-week-q-table" role="table" aria-label="Full qualifying order">
                 <div className="race-week-q-table__row race-week-q-table__row--head" role="row">
                   <span>Order</span>
@@ -607,12 +672,12 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
                     <article key={entry.driverId} className="race-week-q-table__row" role="row">
                       <span className="race-week-q-table__rank">P{entry.predictedQRank ?? index + 1}</span>
                       <span className="race-week-q-table__driver">
-                        <strong>{driverNameById.get(entry.driverId) ?? entry.driverId.replace(/_/g, " ")}</strong>
-                        <em>{constructorNameById.get(entry.constructorId) ?? entry.constructorId.replace(/_/g, " ")}</em>
+                        <strong>{formatEntityLabel(driverNameById.get(entry.driverId) ?? entry.driverId)}</strong>
+                        <em>{formatEntityLabel(constructorNameById.get(entry.constructorId) ?? entry.constructorId)}</em>
                       </span>
-                      <span>{formatQualifyingTime(entry.predictedQTimeS)}</span>
-                      <span>{formatPoleGap(displayGapToPole)}</span>
-                      <span>{explainPredictionFlags(entry.missingFlags)}</span>
+                      <span className="race-week-q-table__time">{formatQualifyingTime(entry.predictedQTimeS)}</span>
+                      <span className="race-week-q-table__gap">{formatPoleGap(displayGapToPole)}</span>
+                      <span className="race-week-q-table__flags">{explainPredictionFlags(entry.missingFlags)}</span>
                     </article>
                   );
                 })}
@@ -629,65 +694,6 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
             </span>
           </div>
         )}
-      </section>
-
-      <section className="race-week-signal-grid">
-        <div className="race-week-signal-grid__main">
-          <div className="race-week-section-heading race-week-section-heading--tight">
-            <p className="race-week-section-kicker">Race order</p>
-            <h2>Projected top ten.</h2>
-          </div>
-
-          <div className="race-week-driver-table">
-            {fieldDrivers.map((entry, index) => (
-              <article key={entry.driverId} className="race-week-driver-row">
-                <div className="race-week-driver-row__position">P{entry.projectedFinish ?? index + 1}</div>
-                <div className="race-week-driver-row__identity">
-                  <strong>{entry.driverName}</strong>
-                  <span>{entry.constructorName}</span>
-                </div>
-                <div className="race-week-driver-row__metric">
-                  <span>One lap</span>
-                  <strong>{formatTime(entry.oneLapPaceS)}</strong>
-                </div>
-                <div className="race-week-driver-row__metric">
-                  <span>Tyre fade</span>
-                  <strong>{formatDelta(entry.degradationSPerLap, 3)}</strong>
-                </div>
-                <div className="race-week-driver-row__metric race-week-driver-row__metric--status">
-                  <span>Status</span>
-                  <strong>{getDataStatus(entry.signalConfidence)}</strong>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <aside className="race-week-signal-grid__side">
-          <div className="race-week-strategy">
-            <div className="race-week-section-heading race-week-section-heading--tight">
-              <p className="race-week-section-kicker">Strategy</p>
-              <h2>Pit-window focus.</h2>
-            </div>
-            <div className="race-week-strategy__list">
-              {keyedStrategy.map((entry) => (
-                <article key={entry.driverId} className="race-week-strategy__item">
-                  <div className="race-week-strategy__item-head">
-                    <strong>{entry.driverName}</strong>
-                    <span>{entry.recommendedStopCount ? `${entry.recommendedStopCount}-stop` : "Flexible"}</span>
-                  </div>
-                  <p>{sanitizeRaceWeekText(entry.rationale, 96)}</p>
-                  <div className="race-week-strategy__item-meta">
-                    <span>
-                      Window {entry.pitWindowStartLap ?? "?"}-{entry.pitWindowEndLap ?? "?"}
-                    </span>
-                    <span>{entry.constructorName}</span>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </aside>
       </section>
       <SiteFooter />
     </main>

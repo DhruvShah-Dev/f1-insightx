@@ -7,19 +7,58 @@ type RaceCountdownProps = {
   initialLabel: string;
 };
 
-function getCountdownLabel(value: string | null | undefined) {
+type CountdownState = {
+  label: string;
+  units: Array<{
+    label: string;
+    value: string;
+  }>;
+  isActive: boolean;
+};
+
+const pendingUnits = [
+  { label: "Days", value: "--" },
+  { label: "Hours", value: "--" },
+  { label: "Mins", value: "--" },
+  { label: "Secs", value: "--" },
+];
+
+const activeUnits = [
+  { label: "Days", value: "00" },
+  { label: "Hours", value: "00" },
+  { label: "Mins", value: "00" },
+  { label: "Secs", value: "00" },
+];
+
+function padUnit(value: number) {
+  return value.toString().padStart(2, "0");
+}
+
+function getInitialCountdownState(initialLabel: string): CountdownState {
+  if (initialLabel === "Race window active") {
+    return { label: initialLabel, units: activeUnits, isActive: true };
+  }
+
+  return { label: initialLabel, units: pendingUnits, isActive: false };
+}
+
+function getCountdownState(value: string | null | undefined, fallbackLabel = "Race time pending"): CountdownState {
   if (!value) {
-    return "Race time pending";
+    return { label: fallbackLabel, units: pendingUnits, isActive: false };
   }
 
   const raceTime = new Date(value).getTime();
   if (Number.isNaN(raceTime)) {
-    return "Race time pending";
+    return { label: fallbackLabel, units: pendingUnits, isActive: false };
   }
 
   const diffMs = raceTime - Date.now();
   if (diffMs <= 0) {
-    return "Race window active";
+    return {
+      label: "Race window active",
+      units: activeUnits,
+      isActive: true,
+    };
   }
 
   const totalSeconds = Math.floor(diffMs / 1000);
@@ -27,29 +66,52 @@ function getCountdownLabel(value: string | null | undefined) {
   const hours = Math.floor((totalSeconds % 86400) / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
+  const units = [
+    { label: "Days", value: padUnit(days) },
+    { label: "Hours", value: padUnit(hours) },
+    { label: "Mins", value: padUnit(minutes) },
+    { label: "Secs", value: padUnit(seconds) },
+  ];
 
   if (days > 0) {
-    return `${days}d ${hours}h ${minutes}m ${seconds}s to lights out`;
+    return { label: `${days}d ${hours}h ${minutes}m ${seconds}s to lights out`, units, isActive: false };
   }
 
   if (hours > 0) {
-    return `${hours}h ${minutes}m ${seconds}s to lights out`;
+    return { label: `${hours}h ${minutes}m ${seconds}s to lights out`, units, isActive: false };
   }
 
-  return `${minutes}m ${seconds}s to lights out`;
+  return { label: `${minutes}m ${seconds}s to lights out`, units, isActive: false };
 }
 
 export function RaceCountdown({ scheduledAt, initialLabel }: RaceCountdownProps) {
-  const [label, setLabel] = useState(initialLabel);
+  const [countdown, setCountdown] = useState(() => getInitialCountdownState(initialLabel));
 
   useEffect(() => {
-    const updateLabel = () => setLabel(getCountdownLabel(scheduledAt));
+    const updateLabel = () => setCountdown(getCountdownState(scheduledAt, initialLabel));
 
     updateLabel();
     const interval = window.setInterval(updateLabel, 1000);
 
     return () => window.clearInterval(interval);
-  }, [scheduledAt]);
+  }, [initialLabel, scheduledAt]);
 
-  return <time dateTime={scheduledAt ?? undefined}>{label}</time>;
+  return (
+    <time
+      className={`race-countdown${countdown.isActive ? " race-countdown--active" : ""}`}
+      dateTime={scheduledAt ?? undefined}
+      aria-label={countdown.label}
+    >
+      <span className="race-countdown__status">{countdown.isActive ? "Session live" : "Lights out in"}</span>
+      <span className="race-countdown__units" aria-hidden="true">
+        {countdown.units.map((unit) => (
+          <span className="race-countdown__unit" key={unit.label}>
+            <strong>{unit.value}</strong>
+            <span>{unit.label}</span>
+          </span>
+        ))}
+      </span>
+      <span className="race-countdown__sr">{countdown.label}</span>
+    </time>
+  );
 }

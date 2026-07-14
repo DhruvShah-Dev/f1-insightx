@@ -78,14 +78,14 @@ const currentDriverMap: Record<string, CurrentDriverMeta> = {
   }),
   antonelli: createDriver("antonelli", "Kimi Antonelli", "Kimi", "Antonelli", "mercedes", "Mercedes", "ANT", "Italian", "mercedes", "andant01", {
     photoScale: 1,
-    photoTranslateX: -24,
+    photoTranslateX: 0,
   }),
   leclerc: createDriver("leclerc", "Charles Leclerc", "Charles", "Leclerc", "ferrari", "Ferrari", "LEC", "Monegasque", "ferrari", "chalec01", {
     photoScale: 1.03,
   }),
   hamilton: createDriver("hamilton", "Lewis Hamilton", "Lewis", "Hamilton", "ferrari", "Ferrari", "HAM", "British", "ferrari", "lewham01", {
     photoScale: 1,
-    photoTranslateX: -22,
+    photoTranslateX: 0,
   }),
   norris: createDriver("norris", "Lando Norris", "Lando", "Norris", "mclaren", "McLaren", "NOR", "British", "mclaren", "lannor01", {
     photoScale: 1.01,

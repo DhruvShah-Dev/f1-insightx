@@ -34,7 +34,6 @@ export function DriverStandingsSection({ standings, hideHeader = false }: Driver
         <div className="championship-intro__content">
           <h2 className="section-title">Drivers Championship</h2>
           <span className="championship-intro__season">{standings.season}</span>
-          <p className="championship-intro__description">After {standings.latestRaceName}</p>
         </div>
       </article>
 

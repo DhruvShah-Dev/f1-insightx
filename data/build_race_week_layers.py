@@ -834,6 +834,40 @@ def robust_center(values: pd.Series) -> float | None:
     return float(clean.median())
 
 
+def predicted_qualifying_gap_seconds(
+    *,
+    recent_component: float,
+    same_circuit_component: float,
+    constructor_component: float,
+    driver_delta_component: float,
+    constructor_delta_component: float,
+    form_component: float,
+    completed_current_season_races: int,
+    race_week_delta_gap_s: float | None = None,
+) -> float:
+    if completed_current_season_races >= 5:
+        raw_gap = (
+            recent_component * 0.45
+            + same_circuit_component * 0.10
+            + constructor_component * 0.05
+            + driver_delta_component * 0.15
+            + constructor_delta_component * 0.20
+            + form_component * 0.05
+        )
+    else:
+        raw_gap = (
+            recent_component * 0.30
+            + same_circuit_component * 0.25
+            + constructor_component * 0.20
+            + driver_delta_component * 0.10
+            + constructor_delta_component * 0.10
+            + form_component * 0.05
+        )
+    if race_week_delta_gap_s is not None:
+        raw_gap += race_week_delta_gap_s * 0.18
+    return max(0.0, min(3.2, raw_gap))
+
+
 def same_circuit_season_delta_seconds(
     qualifying_gaps: pd.DataFrame,
     *,
@@ -870,22 +904,24 @@ def same_circuit_season_delta_seconds(
     return value, method
 
 
-def catalunya_base_pole_seconds(
+def circuit_base_pole_seconds(
     qualifying_gaps: pd.DataFrame,
     *,
+    circuit_id: str,
     target_season: int,
     target_scheduled_at: pd.Timestamp | None = None,
 ) -> tuple[float | None, float | None, float, str]:
+    circuit_label = str(circuit_id)
     if qualifying_gaps.empty:
-        return None, None, 0.0, "catalunya_base_unavailable"
-    catalunya = qualifying_gaps[
-        (qualifying_gaps["circuit_id"].astype(str) == "catalunya")
+        return None, None, 0.0, f"{circuit_label}_base_unavailable"
+    circuit_rows = qualifying_gaps[
+        (qualifying_gaps["circuit_id"].astype(str) == circuit_label)
         & (pd.to_numeric(qualifying_gaps["season"], errors="coerce") < target_season)
     ].copy()
-    if catalunya.empty:
-        return None, None, 0.0, "catalunya_base_unavailable"
+    if circuit_rows.empty:
+        return None, None, 0.0, f"{circuit_label}_base_unavailable"
     poles = (
-        catalunya.groupby("season", dropna=False)["best_q_s"]
+        circuit_rows.groupby("season", dropna=False)["best_q_s"]
         .min()
         .dropna()
         .sort_index()
@@ -896,7 +932,7 @@ def catalunya_base_pole_seconds(
     else:
         latest = poles.tail(1)
         if latest.empty:
-            return None, None, 0.0, "catalunya_base_unavailable"
+            return None, None, 0.0, f"{circuit_label}_base_unavailable"
         baseline_season = int(latest.index[-1])
         baseline_pole_s = float(latest.iloc[-1])
     season_delta_s, method = same_circuit_season_delta_seconds(
@@ -907,9 +943,23 @@ def catalunya_base_pole_seconds(
     )
     if season_delta_s is None:
         season_delta_s = 0.0
-        method = f"catalunya_{baseline_season}_pole_no_season_delta"
+        method = f"{circuit_label}_{baseline_season}_pole_no_season_delta"
     track_residual_s = 0.0
     return baseline_pole_s + season_delta_s + track_residual_s, season_delta_s, track_residual_s, method
+
+
+def catalunya_base_pole_seconds(
+    qualifying_gaps: pd.DataFrame,
+    *,
+    target_season: int,
+    target_scheduled_at: pd.Timestamp | None = None,
+) -> tuple[float | None, float | None, float, str]:
+    return circuit_base_pole_seconds(
+        qualifying_gaps,
+        circuit_id="catalunya",
+        target_season=target_season,
+        target_scheduled_at=target_scheduled_at,
+    )
 
 
 LIVE_QUALIFYING_BASE_OVERRIDES = {
@@ -954,6 +1004,7 @@ def race_week_base_pole_seconds(
     qualifying_gaps: pd.DataFrame,
     *,
     race_id: str,
+    circuit_id: str,
     target_season: int,
     target_scheduled_at: pd.Timestamp | None = None,
 ) -> tuple[float | None, float | None, float, str]:
@@ -965,8 +1016,9 @@ def race_week_base_pole_seconds(
             float(override["track_residual_s"]),
             str(override["method"]),
         )
-    return catalunya_base_pole_seconds(
+    return circuit_base_pole_seconds(
         qualifying_gaps,
+        circuit_id=circuit_id,
         target_season=target_season,
         target_scheduled_at=target_scheduled_at,
     )
@@ -1135,6 +1187,7 @@ def build_spain_qualifying_prediction(
         base_pole_s, season_delta_s, track_residual_s, baseline_method = race_week_base_pole_seconds(
             q_gaps,
             race_id=race_id,
+            circuit_id=circuit_id,
             target_season=season,
             target_scheduled_at=target_scheduled_at,
         )
@@ -1154,6 +1207,7 @@ def build_spain_qualifying_prediction(
         ].copy()
         if pd.notna(target_scheduled_at):
             recent_season = recent_season[pd.to_datetime(recent_season["scheduled_at"], utc=True, errors="coerce") < target_scheduled_at]
+        completed_current_season_races = recent_season["race_id"].dropna().astype(str).nunique()
         field_median_gap = first_number(
             same_circuit["gap_to_pole_s"].median() if not same_circuit.empty else None,
             recent_season["gap_to_pole_s"].median() if not recent_season.empty else None,
@@ -1272,18 +1326,17 @@ def build_spain_qualifying_prediction(
                 form_bias_score = first_number(feature.get("form_bias_score"), 0.5) or 0.5
                 form_component = max(0.0, min(3.2, (1 - form_bias_score) * 3.2))
 
-                raw_gap = (
-                    recent_component * 0.30
-                    + same_circuit_component * 0.25
-                    + constructor_component * 0.20
-                    + driver_delta_component * 0.10
-                    + constructor_delta_component * 0.10
-                    + form_component * 0.05
+                predicted_q_gap_s = predicted_qualifying_gap_seconds(
+                    recent_component=recent_component,
+                    same_circuit_component=same_circuit_component,
+                    constructor_component=constructor_component,
+                    driver_delta_component=driver_delta_component,
+                    constructor_delta_component=constructor_delta_component,
+                    form_component=form_component,
+                    completed_current_season_races=completed_current_season_races,
+                    race_week_delta_gap_s=race_week_delta_gap_s,
                 )
-                if race_week_delta_gap_s is not None:
-                    raw_gap += race_week_delta_gap_s * 0.18
-                predicted_q_gap_s = max(0.0, min(3.2, raw_gap))
-                clamped_prediction = abs(predicted_q_gap_s - raw_gap) > 1e-9
+                clamped_prediction = predicted_q_gap_s in {0.0, 3.2}
                 confidence_score = clamp01(
                     0.20
                     + (0.25 if recent_quali_gap_s is not None else 0.0)

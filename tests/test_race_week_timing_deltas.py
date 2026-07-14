@@ -265,8 +265,9 @@ def test_empty_race_week_context_degrades_without_next_race_column() -> None:
 
 def test_spain_base_pole_uses_2025_catalunya_plus_robust_2026_season_delta() -> None:
     q_gaps = builder.qualifying_gap_frame(spain_qualifying_results_frame(), spain_race_frame())
-    base_pole, season_delta, track_residual, method = builder.catalunya_base_pole_seconds(
+    base_pole, season_delta, track_residual, method = builder.circuit_base_pole_seconds(
         q_gaps,
+        circuit_id="catalunya",
         target_season=2026,
         target_scheduled_at=pd.Timestamp("2026-06-14T13:00:00Z", tz="UTC"),
     )
@@ -274,6 +275,77 @@ def test_spain_base_pole_uses_2025_catalunya_plus_robust_2026_season_delta() -> 
     assert round(base_pole, 3) == 73.346
     assert track_residual == 0.0
     assert method.startswith("same_circuit_median_2026_vs_2025")
+
+
+def test_spa_base_pole_uses_spa_history_not_catalunya_history() -> None:
+    races = pd.concat(
+        [
+            spain_race_frame(),
+            pd.DataFrame(
+                [
+                    {"id": "2025-13-spa", "season": 2025, "round": 13, "race_name": "Belgian Grand Prix", "circuit_id": "spa", "scheduled_at": "2025-07-27T13:00:00Z", "sprint_weekend": False},
+                    {"id": "2026-10-spa", "season": 2026, "round": 10, "race_name": "Belgian Grand Prix", "circuit_id": "spa", "scheduled_at": "2026-07-19T13:00:00Z", "sprint_weekend": False},
+                ]
+            ),
+        ],
+        ignore_index=True,
+    )
+    qualifying = pd.concat(
+        [
+            spain_qualifying_results_frame(),
+            pd.DataFrame(
+                [
+                    {
+                        "id": "2025-13-spa|pole",
+                        "race_id": "2025-13-spa",
+                        "driver_id": "pole",
+                        "constructor_id": "ref",
+                        "position": 1,
+                        "q1_time_ms": 100562,
+                        "q2_time_ms": None,
+                        "q3_time_ms": None,
+                        "status": "CLASSIFIED",
+                    },
+                ]
+            ),
+        ],
+        ignore_index=True,
+    )
+    q_gaps = builder.qualifying_gap_frame(qualifying, races)
+    base_pole, season_delta, track_residual, method = builder.circuit_base_pole_seconds(
+        q_gaps,
+        circuit_id="spa",
+        target_season=2026,
+        target_scheduled_at=pd.Timestamp("2026-07-19T13:00:00Z", tz="UTC"),
+    )
+
+    assert round(season_delta, 3) == 1.8
+    assert round(base_pole, 3) == 102.362
+    assert track_residual == 0.0
+    assert method.startswith("same_circuit_median_2026_vs_2025")
+
+
+def test_mature_season_qualifying_gap_prioritizes_current_trend_over_old_track_history() -> None:
+    red_bull_old_spa_gap = builder.predicted_qualifying_gap_seconds(
+        recent_component=0.495,
+        same_circuit_component=0.171,
+        constructor_component=0.408,
+        driver_delta_component=0.496,
+        constructor_delta_component=0.634,
+        form_component=0.899,
+        completed_current_season_races=9,
+    )
+    mercedes_current_trend_gap = builder.predicted_qualifying_gap_seconds(
+        recent_component=0.123,
+        same_circuit_component=0.814,
+        constructor_component=0.970,
+        driver_delta_component=0.123,
+        constructor_delta_component=0.148,
+        form_component=0.910,
+        completed_current_season_races=9,
+    )
+
+    assert mercedes_current_trend_gap < red_bull_old_spa_gap
 
 
 def test_spain_prediction_times_equal_base_plus_gap_and_skip_fake_rookie_history() -> None:

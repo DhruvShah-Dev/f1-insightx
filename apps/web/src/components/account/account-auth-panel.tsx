@@ -222,9 +222,9 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
                 priority
               />
             </div>
-            <h1 className="subpage-title">Enter your F1 profile.</h1>
+            <h1 className="subpage-title">Enter the paddock.</h1>
             <p className="race-detail__lede">
-              Sign in to return to your profile, or create a new account and finish the rest of your race identity inside the product.
+              Sign in to restore your race identity, or create a profile tuned for the garage.
             </p>
             <div className="account-access-stage__media" style={{ position: "absolute" }}>
               <AssetImage
@@ -245,8 +245,8 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
               </div>
               <div className="account-preview__copy">
                 <span>Race identity</span>
-                <strong>One account, one profile</strong>
-                <p>Strategy Lab, Analytics, and your saved identity meet in one place.</p>
+                <strong>Profile, picks, garage</strong>
+                <p>Your constructor, driver, and saved controls live here.</p>
               </div>
             </div>
           </div>

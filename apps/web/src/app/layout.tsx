@@ -3,8 +3,10 @@ import { Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
 import { HomeAccountEntry } from "@/components/account/home-account-entry";
 import { CookieConsent } from "@/components/legal/cookie-consent";
 import { AppHeader } from "@/components/ui/app-header";
+import { getUserProfileByIdWithClient } from "@/lib/account/profile";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
+import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 import "./globals.css";
 
 const barlowCondensed = Barlow_Condensed({
@@ -47,18 +49,35 @@ export default async function RootLayout({
   const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
   const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
   let initialAuthState: "authenticated" | "anonymous" = "anonymous";
+  let initialUsername = "";
 
   if (hasSupabaseAuth) {
     try {
       const supabase = await getSupabaseServerClient();
       if (supabase) {
         const {
-          data: { session },
-        } = await supabase.auth.getSession();
-        initialAuthState = session?.user ? "authenticated" : "anonymous";
+          data: { user },
+        } = await supabase.auth.getUser();
+        initialAuthState = user ? "authenticated" : "anonymous";
+        if (user) {
+          const metadataUsername =
+            typeof user.user_metadata?.username === "string" ? user.user_metadata.username : "";
+          initialUsername = metadataUsername;
+
+          if (hasProfilePersistence) {
+            try {
+              const profileClient = getSupabasePrivilegedClient() ?? supabase;
+              const profile = await getUserProfileByIdWithClient(profileClient, user.id);
+              initialUsername = profile?.username ?? metadataUsername;
+            } catch {
+              initialUsername = metadataUsername;
+            }
+          }
+        }
       }
     } catch {
       initialAuthState = "anonymous";
+      initialUsername = "";
     }
   }
 
@@ -75,6 +94,7 @@ export default async function RootLayout({
               hasSupabaseAuth={hasSupabaseAuth}
               hasProfilePersistence={hasProfilePersistence}
               initialAuthState={initialAuthState}
+              initialUsername={initialUsername}
             />
           )}
         />

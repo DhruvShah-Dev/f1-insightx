@@ -30,7 +30,6 @@ export function RaceHistoryRail({ races, hideHeader = false }: RaceHistoryRailPr
         <div className="home-story__lead race-history-header">
           <div className="section-meta">Archive</div>
           <h2 className="section-title">Recent Grands Prix.</h2>
-          <p className="race-history-header__hint">Scroll race cards</p>
         </div>
       )}
 

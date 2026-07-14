@@ -542,6 +542,13 @@ select optgroup {
   background: var(--surface);
 }
 
+.app-header__actions .account-entry {
+  max-width: min(13rem, 32vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .app-header__menu-button {
   display: none;
   cursor: pointer;
@@ -1092,12 +1099,61 @@ select optgroup {
   align-content: start;
   justify-items: center;
   width: min(100%, 42rem);
+  overflow: hidden;
   border: 0;
-  border-top: 2px solid var(--accent-red);
-  border-bottom: 1px solid rgba(244, 246, 248, 0.14);
-  background: rgba(5, 6, 8, 0.72);
-  padding: clamp(1.15rem, 1.65vw, 1.55rem) clamp(1rem, 2.4vw, 2.2rem);
+  border-top: 2px solid #fdda24;
+  border-bottom: 1px solid rgba(244, 246, 248, 0.22);
+  background:
+    linear-gradient(90deg, rgba(5, 6, 8, 0.9), rgba(5, 6, 8, 0.64) 42%, rgba(5, 6, 8, 0.86)),
+    linear-gradient(90deg, #050608 0 33.33%, #fdda24 33.33% 66.66%, #ef3340 66.66% 100%);
+  box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.34);
+  padding: clamp(1.25rem, 1.85vw, 1.7rem) clamp(1rem, 2.4vw, 2.2rem) clamp(1rem, 1.7vw, 1.35rem);
   text-align: center;
+}
+
+.home-hero__race::before,
+.home-hero__race::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.home-hero__race::before {
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(112deg, transparent 0 23%, rgba(255, 255, 255, 0.13) 23.2% 23.55%, transparent 23.8%),
+    repeating-linear-gradient(90deg, rgba(244, 246, 248, 0.065) 0 1px, transparent 1px 4.2rem);
+  mix-blend-mode: screen;
+  opacity: 0.58;
+  animation: home-belgian-scan 6s ease-in-out infinite;
+}
+
+.home-hero__race::after {
+  inset: auto 0 0;
+  height: 0.32rem;
+  background: linear-gradient(90deg, #050608 0 33.33%, #fdda24 33.33% 66.66%, #ef3340 66.66% 100%);
+}
+
+.home-hero__flag {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 16rem);
+  height: 0.42rem;
+  margin-bottom: clamp(0.75rem, 1.2vw, 0.95rem);
+  box-shadow: 0 0 1.25rem rgba(253, 218, 36, 0.2);
+}
+
+.home-hero__flag span:nth-child(1) {
+  background: #050608;
+}
+
+.home-hero__flag span:nth-child(2) {
+  background: #fdda24;
+}
+
+.home-hero__flag span:nth-child(3) {
+  background: #ef3340;
 }
 
 .home-hero__visual {
@@ -1120,7 +1176,7 @@ select optgroup {
   align-items: center;
   gap: 0.65rem;
   justify-content: center;
-  color: var(--accent-red);
+  color: #fdda24;
 }
 
 .home-hero__race-kicker::before {
@@ -1140,32 +1196,53 @@ select optgroup {
 .home-hero__race h2 {
   max-width: 14ch;
   margin: 0.45rem auto 0.72rem;
-  color: var(--white);
+  color: #ffffff;
   font-size: clamp(2.8rem, 4.55vw, 4.85rem);
   font-style: italic;
   font-weight: 700;
   line-height: 0.82;
+  text-shadow: 0 0.55rem 2rem rgba(0, 0, 0, 0.72);
   text-transform: uppercase;
   text-wrap: balance;
 }
 
 .home-hero__race-meta {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: minmax(5.5rem, auto) minmax(12rem, 1fr);
   justify-content: center;
-  gap: 0.55rem 0.7rem;
-  margin-top: 0.2rem;
+  gap: 0.5rem;
+  width: min(100%, 34rem);
+  margin-top: 0.35rem;
 }
 
 .home-hero__race-meta span,
 .home-hero__race-meta time {
-  display: inline-flex;
-  align-items: center;
+  display: grid;
+  gap: 0.15rem;
+  align-content: center;
   min-height: auto;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
+  justify-content: start;
+  padding: 0.62rem 0.72rem;
+  border: 1px solid rgba(244, 246, 248, 0.18);
+  background: rgba(5, 6, 8, 0.7);
+  text-align: left;
+}
+
+.home-hero__race-meta small {
+  color: rgba(244, 246, 248, 0.62);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+}
+
+.home-hero__race-meta strong {
+  color: var(--white);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: clamp(0.7rem, 0.88vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .home-hero__race-circuit {
@@ -1174,14 +1251,99 @@ select optgroup {
 }
 
 .home-hero__countdown {
-  margin: clamp(0.85rem, 1.45vw, 1.1rem) 0 0;
+  width: min(100%, 34rem);
+  margin: clamp(0.85rem, 1.45vw, 1.15rem) 0 0;
+  color: var(--white);
+}
+
+.race-countdown {
+  display: grid;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.race-countdown__status {
+  justify-self: start;
+  color: #fdda24;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: clamp(0.62rem, 0.86vw, 0.72rem);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.race-countdown__units {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.42rem;
+}
+
+.race-countdown__unit {
+  position: relative;
+  display: grid;
+  gap: 0.14rem;
+  min-width: 0;
+  min-height: 5.15rem;
+  align-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(244, 246, 248, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035)),
+    rgba(5, 6, 8, 0.82);
+}
+
+.race-countdown__unit::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.18rem;
+  background: #ef3340;
+  transform-origin: left;
+  animation: home-countdown-pulse 1s ease-in-out infinite;
+}
+
+.race-countdown__unit:nth-child(1)::before {
+  background: #050608;
+}
+
+.race-countdown__unit:nth-child(2)::before,
+.race-countdown__unit:nth-child(3)::before {
+  background: #fdda24;
+}
+
+.race-countdown__unit strong {
   color: var(--white);
   font-family: var(--font-barlow-condensed), Arial, sans-serif;
-  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
   font-style: italic;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 0.95;
+  line-height: 0.85;
+}
+
+.race-countdown__unit span {
+  color: rgba(244, 246, 248, 0.7);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: clamp(0.58rem, 0.74vw, 0.68rem);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.race-countdown__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.race-countdown--active .race-countdown__unit::before {
+  animation-duration: 420ms;
 }
 
 .home-hero__team-context {
@@ -2632,6 +2794,30 @@ select optgroup {
   }
 }
 
+@keyframes home-belgian-scan {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: translateX(-1.5rem);
+  }
+  50% {
+    opacity: 0.72;
+    transform: translateX(1.5rem);
+  }
+}
+
+@keyframes home-countdown-pulse {
+  0%,
+  100% {
+    opacity: 0.56;
+    transform: scaleX(0.36);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
 .race-week-command-deck {
   grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.7fr);
   align-items: start;
@@ -3125,6 +3311,512 @@ select optgroup {
 .race-week-page .race-week-strategy__item p {
   margin: 0;
   color: var(--text-soft);
+}
+
+.race-week-page {
+  --race-panel: rgba(8, 11, 16, 0.78);
+  --race-panel-raised: rgba(16, 21, 27, 0.88);
+  --race-line: rgba(244, 246, 248, 0.16);
+  --race-muted: rgba(244, 246, 248, 0.66);
+  background:
+    linear-gradient(180deg, rgba(5, 6, 8, 0.08), #050608 42rem),
+    repeating-linear-gradient(90deg, rgba(244, 246, 248, 0.035) 0 1px, transparent 1px 7rem),
+    #050608;
+}
+
+.race-week-icon {
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.race-week-page .race-week-hero {
+  position: relative;
+  width: 100%;
+  min-height: clamp(42rem, 82svh, 58rem);
+  margin: 0;
+  padding: clamp(1rem, 2vw, 1.5rem) max(1rem, calc((100vw - 94rem) / 2));
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  border-bottom: 1px solid rgba(244, 246, 248, 0.14);
+  background:
+    linear-gradient(90deg, rgba(5, 6, 8, 0.98) 0%, rgba(5, 6, 8, 0.78) 42%, rgba(5, 6, 8, 0.36) 64%, rgba(5, 6, 8, 0.92) 100%),
+    radial-gradient(circle at 72% 20%, color-mix(in srgb, var(--race-country-primary) 30%, transparent), transparent 25rem),
+    radial-gradient(circle at 86% 58%, color-mix(in srgb, var(--race-country-secondary) 22%, transparent), transparent 22rem),
+    #050608;
+}
+
+.race-week-page .race-week-hero::before,
+.race-week-page .race-week-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.race-week-page .race-week-hero::before {
+  background:
+    linear-gradient(112deg, transparent 0 33%, color-mix(in srgb, var(--race-country-dark) 82%, transparent) 33.1% 33.55%, transparent 33.75%),
+    linear-gradient(112deg, transparent 0 36%, color-mix(in srgb, var(--race-country-primary) 72%, transparent) 36.1% 36.5%, transparent 36.7%),
+    linear-gradient(112deg, transparent 0 39%, color-mix(in srgb, var(--race-country-secondary) 62%, transparent) 39.1% 39.45%, transparent 39.65%),
+    linear-gradient(112deg, transparent 0 65%, rgba(255, 255, 255, 0.14) 65.08% 65.2%, transparent 65.36%);
+  animation: race-week-speed-scan 8s ease-in-out infinite;
+}
+
+.race-week-page .race-week-hero::after {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(5, 6, 8, 0.18) 52%, #050608 100%),
+    radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.1), transparent 18rem);
+}
+
+.race-week-page .race-week-hero__backdrop {
+  position: absolute;
+  inset: auto -8vw 0 34vw;
+  height: min(60rem, 88%);
+  z-index: -2;
+  opacity: 0.28;
+  filter: saturate(1.16) contrast(1.08);
+  transform: scale(1.12);
+}
+
+.race-week-page .race-week-hero__backdrop-car {
+  object-fit: contain;
+}
+
+.race-week-page .race-week-hero__flag {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: min(26rem, 32vw);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.race-week-page .race-week-hero__flag span:nth-child(1) {
+  background: var(--race-country-dark);
+}
+
+.race-week-page .race-week-hero__flag span:nth-child(2) {
+  background: var(--race-country-primary);
+}
+
+.race-week-page .race-week-hero__flag span:nth-child(3) {
+  background: var(--race-country-secondary);
+}
+
+.race-week-page .race-week-hero__grid {
+  min-height: calc(clamp(42rem, 82svh, 58rem) - clamp(2rem, 4vw, 3rem));
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.55fr) minmax(32rem, 1fr);
+  gap: clamp(1rem, 3vw, 2.6rem);
+  align-items: end;
+}
+
+.race-week-page .race-week-hero__copy {
+  position: relative;
+  z-index: 2;
+  max-width: 41rem;
+  padding-block: clamp(3rem, 8vw, 6rem);
+  align-content: center;
+  animation: race-week-rise 720ms ease both;
+}
+
+.race-week-page .race-week-hero__eyebrow,
+.race-week-page .race-week-section-kicker {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.45rem;
+  color: color-mix(in srgb, var(--race-country-primary) 64%, #fff);
+}
+
+.race-week-page .race-week-hero__headline {
+  max-width: 9ch;
+  text-shadow: 0 1.1rem 4rem rgba(0, 0, 0, 0.45);
+}
+
+.race-week-page .race-week-hero__headline span {
+  display: block;
+  color: rgba(244, 246, 248, 0.78);
+}
+
+.race-week-page .race-week-hero__deck {
+  max-width: 31rem;
+  color: rgba(244, 246, 248, 0.82);
+}
+
+.race-week-page .race-week-hero__signal span,
+.race-week-page .race-week-hero__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.race-week-page .race-week-hero__signal,
+.race-week-page .race-week-hero__meta > div,
+.race-week-page .race-week-q-prediction__baseline > div {
+  border: 1px solid rgba(244, 246, 248, 0.14);
+  background: linear-gradient(180deg, rgba(244, 246, 248, 0.07), rgba(244, 246, 248, 0.025));
+  backdrop-filter: blur(16px);
+}
+
+.race-week-page .race-week-hero__cta {
+  border-color: rgba(244, 246, 248, 0.18);
+  background: rgba(244, 246, 248, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.race-week-page .race-week-hero__cta--primary {
+  border-color: color-mix(in srgb, var(--race-country-primary) 82%, #fff);
+  background: linear-gradient(135deg, var(--race-country-primary), color-mix(in srgb, var(--race-country-secondary) 68%, var(--race-country-primary)));
+  color: #050608;
+}
+
+.race-week-page .race-week-hero__visual {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(26rem, 1fr);
+  align-items: stretch;
+  padding-block: clamp(1rem, 4vw, 3rem);
+  animation: race-week-rise 780ms 80ms ease both;
+}
+
+.race-week-page .race-week-hero__track {
+  min-height: clamp(30rem, 47vw, 45rem);
+  display: grid;
+  place-items: stretch;
+  border: 1px solid rgba(244, 246, 248, 0.14);
+  background:
+    radial-gradient(circle at 52% 45%, color-mix(in srgb, var(--race-country-primary) 18%, transparent), transparent 20rem),
+    radial-gradient(circle at 88% 28%, color-mix(in srgb, #009a44 16%, transparent), transparent 16rem),
+    radial-gradient(circle at 22% 74%, color-mix(in srgb, var(--race-country-secondary) 15%, transparent), transparent 15rem),
+    rgba(5, 6, 8, 0.58);
+  backdrop-filter: blur(12px);
+}
+
+.race-week-page .race-week-hero__track .race-week-sector-track {
+  min-height: inherit;
+  place-items: stretch;
+}
+
+.race-week-page .race-week-hero__track .race-week-sector-track__svg {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  padding: clamp(0.25rem, 1.2vw, 0.75rem);
+}
+
+.race-week-page .race-week-sector-track__broadcast-shell {
+  background: rgba(5, 6, 8, 0.42);
+}
+
+.race-week-page .race-week-sector-track__kerb {
+  stroke: color-mix(in srgb, var(--race-country-secondary) 58%, var(--race-country-primary));
+}
+
+.race-week-page .race-week-sector-track__sector--sector-1 {
+  stroke: #ef3340;
+  filter: drop-shadow(0 0 0.65rem rgba(239, 51, 64, 0.78));
+}
+
+.race-week-page .race-week-sector-track__sector--sector-2 {
+  stroke: #009a44;
+  filter: drop-shadow(0 0 0.65rem rgba(0, 154, 68, 0.78));
+}
+
+.race-week-page .race-week-sector-track__sector--sector-3 {
+  stroke: #fdda24;
+  filter: drop-shadow(0 0 0.65rem rgba(253, 218, 36, 0.78));
+}
+
+.race-week-page .race-week-sector-track__telemetry-sweep {
+  animation-duration: 3.8s;
+}
+
+.race-week-page .race-week-hero__meta {
+  grid-column: 1 / -1;
+}
+
+.race-week-page .race-week-q-prediction__baseline {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.race-week-story-reel {
+  width: min(100% - 2rem, 94rem);
+  margin: clamp(1rem, 2.5vw, 1.7rem) auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid rgba(244, 246, 248, 0.14);
+  background: rgba(244, 246, 248, 0.14);
+}
+
+.race-week-story-reel__act {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem 0.8rem;
+  min-height: 12rem;
+  align-content: start;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--race-accent) 16%, transparent), transparent 42%),
+    rgba(8, 11, 16, 0.9);
+}
+
+.race-week-story-reel__icon {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid color-mix(in srgb, var(--race-accent) 46%, rgba(244, 246, 248, 0.18));
+  color: #fff;
+  background: rgba(244, 246, 248, 0.06);
+}
+
+.race-week-story-reel__act span,
+.race-week-story-reel__act p {
+  color: var(--race-muted);
+}
+
+.race-week-story-reel__act span {
+  align-self: center;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.race-week-story-reel__act strong,
+.race-week-story-reel__act p {
+  grid-column: 1 / -1;
+}
+
+.race-week-story-reel__act strong {
+  color: #fff;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-style: italic;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.race-week-story-reel__act p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.race-week-page .race-week-timetable,
+.race-week-page .race-week-environment,
+.race-week-page .race-week-q-prediction,
+.race-week-page .race-week-strategy {
+  border: 1px solid rgba(244, 246, 248, 0.14);
+  background:
+    linear-gradient(180deg, rgba(244, 246, 248, 0.055), rgba(244, 246, 248, 0.018)),
+    rgba(8, 11, 16, 0.84);
+  backdrop-filter: blur(14px);
+}
+
+.race-week-page .race-week-section-heading h2 {
+  max-width: 18ch;
+}
+
+.race-week-page .race-week-section-heading--center {
+  justify-content: center;
+  text-align: center;
+}
+
+.race-week-page .race-week-section-heading--center h2 {
+  margin-inline: auto;
+}
+
+.race-week-page .race-week-q-prediction__heading {
+  display: grid;
+  justify-items: center;
+  margin-bottom: clamp(0.85rem, 2vw, 1.35rem);
+}
+
+.race-week-page .race-week-q-prediction__heading h2 {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.race-week-page .race-week-q-prediction__podium {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(0.75rem, 1.4vw, 1rem);
+}
+
+.race-week-page .race-week-q-card {
+  display: grid;
+  grid-template-rows: auto minmax(4.8rem, auto) 1fr;
+  gap: clamp(0.8rem, 1.5vw, 1rem);
+  min-height: 18rem;
+  padding: clamp(1rem, 1.7vw, 1.25rem);
+}
+
+.race-week-page .race-week-q-card__identity {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.race-week-page .race-week-q-card__identity h3 {
+  max-width: 10ch;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(1.65rem, 2.8vw, 2.65rem);
+  line-height: 0.9;
+}
+
+.race-week-page .race-week-q-card__metrics {
+  align-self: end;
+  gap: 0;
+  border-top: 1px solid rgba(244, 246, 248, 0.12);
+}
+
+.race-week-page .race-week-q-card__metrics > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-block: 0.6rem;
+  border-bottom: 1px solid rgba(244, 246, 248, 0.09);
+}
+
+.race-week-page .race-week-q-card__metrics > div:last-child {
+  border-bottom: 0;
+}
+
+.race-week-page .race-week-q-card__metrics span {
+  min-width: 0;
+}
+
+.race-week-page .race-week-signal-grid {
+  grid-template-columns: 1fr;
+}
+
+.race-week-page .race-week-race-order__heading {
+  align-items: start;
+  margin-bottom: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.race-week-page .race-week-race-order__heading h2 {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.race-week-page .race-week-driver-table {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.race-week-page .race-week-driver-row {
+  grid-template-columns: 4.6rem minmax(13rem, 1.2fr) repeat(3, minmax(8.5rem, 0.6fr));
+  gap: clamp(0.7rem, 1.4vw, 1rem);
+  align-items: center;
+  min-height: 4.9rem;
+  padding: 0.75rem 0.9rem;
+}
+
+.race-week-page .race-week-driver-row__identity {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.race-week-page .race-week-driver-row__identity strong {
+  overflow-wrap: anywhere;
+  color: #fff;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.race-week-page .race-week-driver-row__metric {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.race-week-page .race-week-driver-row__metric strong {
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.15;
+}
+
+.race-week-page .race-week-session-status__item,
+.race-week-page .race-week-environment__metric,
+.race-week-page .race-week-prediction-modes__link,
+.race-week-page .race-week-strategy__item,
+.race-week-page .race-week-driver-row,
+.race-week-page .race-week-q-table__row {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--race-country-primary) 10%, transparent), transparent 44%),
+    rgba(5, 6, 8, 0.72);
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.race-week-page .race-week-session-status__item:hover,
+.race-week-page .race-week-environment__metric:hover,
+.race-week-page .race-week-prediction-modes__link:hover,
+.race-week-page .race-week-strategy__item:hover,
+.race-week-page .race-week-driver-row:hover,
+.race-week-page .race-week-q-card:hover {
+  border-color: color-mix(in srgb, var(--race-accent) 62%, rgba(244, 246, 248, 0.2));
+  transform: translateY(-2px);
+}
+
+.race-week-page .race-week-q-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 12%, color-mix(in srgb, var(--race-country-primary) 22%, transparent), transparent 10rem),
+    linear-gradient(135deg, color-mix(in srgb, var(--race-country-secondary) 10%, transparent), transparent 48%),
+    rgba(8, 11, 16, 0.9);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.race-week-page .race-week-q-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.2rem;
+  background: linear-gradient(90deg, var(--race-country-dark), var(--race-country-primary), var(--race-country-secondary), transparent);
+}
+
+.race-week-page .race-week-q-card__rank {
+  color: color-mix(in srgb, var(--race-country-primary) 78%, #fff);
+}
+
+@keyframes race-week-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes race-week-speed-scan {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateX(-7rem);
+  }
 }
 
 .pit-wall-hero__content {
@@ -4401,6 +5093,887 @@ select optgroup {
   background: var(--surface-raised);
   color: var(--text-soft);
   padding: 0.85rem;
+}
+
+.account-page {
+  --account-ink: #f7f7f4;
+  --account-soft: #bdc4cc;
+  --account-muted: #747d86;
+  --account-line: rgba(247, 247, 244, 0.15);
+  --account-line-strong: rgba(247, 247, 244, 0.28);
+  --account-panel: rgba(8, 11, 15, 0.78);
+  --account-panel-solid: #090d12;
+  --account-accent: var(--profile-accent, var(--accent-red));
+  min-height: 100svh;
+  background: #050608;
+  color: var(--account-ink);
+}
+
+.account-page .account-cinematic-backdrop {
+  position: fixed;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--account-accent) 24%, transparent), transparent 24rem),
+    linear-gradient(180deg, rgba(5, 6, 8, 0.74), #050608 72%),
+    #050608;
+}
+
+.account-page .account-cinematic-backdrop__grid,
+.account-page .account-cinematic-backdrop__garage,
+.account-page .account-cinematic-backdrop__scanline,
+.account-page .account-cinematic-backdrop__beam {
+  position: absolute;
+  display: block;
+}
+
+.account-page .account-cinematic-backdrop__grid {
+  inset: 0;
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(247, 247, 244, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 247, 244, 0.045) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+  mask-image: linear-gradient(180deg, transparent, #000 18%, #000 74%, transparent);
+}
+
+.account-page .account-cinematic-backdrop__garage {
+  inset: 10% -10% auto;
+  height: 58svh;
+  background:
+    linear-gradient(105deg, transparent 0 22%, rgba(247, 247, 244, 0.08) 22.25% 22.65%, transparent 23% 100%),
+    linear-gradient(74deg, transparent 0 56%, rgba(247, 247, 244, 0.08) 56.2% 56.55%, transparent 57% 100%);
+  opacity: 0.5;
+}
+
+.account-page .account-cinematic-backdrop__beam {
+  width: 46rem;
+  height: 0.08rem;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--account-accent) 74%, white 8%), transparent);
+  filter: blur(0.5px);
+  opacity: 0.78;
+  transform-origin: center;
+  animation: account-speed-line 7s ease-in-out infinite;
+}
+
+.account-page .account-cinematic-backdrop__beam--one {
+  top: 23%;
+  right: -8rem;
+  transform: rotate(-12deg);
+}
+
+.account-page .account-cinematic-backdrop__beam--two {
+  right: 8%;
+  bottom: 24%;
+  animation-delay: -2.8s;
+  transform: rotate(-7deg);
+}
+
+.account-page .account-cinematic-backdrop__scanline {
+  inset: auto 0 0;
+  height: 36svh;
+  opacity: 0.42;
+  background: repeating-linear-gradient(180deg, transparent 0 0.8rem, rgba(247, 247, 244, 0.04) 0.86rem 0.9rem);
+  transform: skewY(-6deg);
+}
+
+.account-profile-header,
+.account-profile-layout {
+  width: min(100% - clamp(1rem, 4vw, 3rem), 94rem);
+}
+
+.account-profile-header {
+  margin-top: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.account-profile-hero {
+  position: relative;
+  width: 100%;
+  min-height: clamp(34rem, 72svh, 50rem);
+  display: grid;
+  align-content: end;
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(1.1rem, 3vw, 2.5rem);
+  border: 1px solid var(--account-line);
+  border-bottom: 0.35rem solid var(--account-accent);
+  background:
+    linear-gradient(90deg, rgba(5, 6, 8, 0.95) 0%, rgba(5, 6, 8, 0.78) 40%, rgba(5, 6, 8, 0.26) 100%),
+    var(--account-panel-solid);
+}
+
+.account-profile-hero::before,
+.account-profile-hero::after,
+.account-profile-hero__trackline {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.account-profile-hero::before {
+  background:
+    radial-gradient(circle at 84% 42%, color-mix(in srgb, var(--account-accent) 24%, transparent), transparent 21rem),
+    linear-gradient(115deg, transparent 0 48%, rgba(247, 247, 244, 0.08) 48.15% 48.45%, transparent 48.6% 100%);
+}
+
+.account-profile-hero::after {
+  inset: auto 0 0;
+  height: 38%;
+  background: linear-gradient(180deg, transparent, rgba(5, 6, 8, 0.94));
+}
+
+.account-profile-hero__trackline {
+  inset: auto -8% 20% 30%;
+  height: 34%;
+  border-top: 1px solid rgba(247, 247, 244, 0.18);
+  border-bottom: 1px solid color-mix(in srgb, var(--account-accent) 58%, transparent);
+  transform: skewY(-8deg);
+  opacity: 0.8;
+}
+
+.account-profile-hero__brand,
+.account-profile-hero__copy,
+.account-profile-strip {
+  position: relative;
+  z-index: 1;
+}
+
+.account-profile-hero__brand {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.7rem);
+  left: clamp(1rem, 2.8vw, 2rem);
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--account-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.account-profile-hero__logo {
+  width: clamp(8.5rem, 12vw, 11.5rem);
+  height: auto;
+}
+
+.account-profile-hero__car {
+  inset: 11% -14% 10% 34%;
+  z-index: -1;
+  opacity: 0.82;
+  filter: saturate(1.12) contrast(1.08);
+}
+
+.account-profile-hero__car::after {
+  content: "";
+  position: absolute;
+  inset: 48% 8% 18%;
+  background: color-mix(in srgb, var(--account-accent) 34%, transparent);
+  filter: blur(3rem);
+  opacity: 0.62;
+}
+
+.account-profile-hero__car-image {
+  filter: drop-shadow(0 2.2rem 2.7rem rgba(0, 0, 0, 0.62));
+}
+
+.account-profile-hero__copy {
+  max-width: min(44rem, 78vw);
+  display: grid;
+  gap: 0.8rem;
+  animation: solid-rise 560ms ease both;
+}
+
+.account-profile-hero__copy > span,
+.account-profile-editor__copy > span {
+  color: var(--account-accent);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.account-profile-hero__copy .subpage-title {
+  max-width: 9ch;
+  overflow-wrap: anywhere;
+  font-size: clamp(3.6rem, 10.4vw, 10.8rem);
+  line-height: 0.78;
+  letter-spacing: 0;
+}
+
+.account-profile-hero__copy p {
+  max-width: 32rem;
+  margin: 0;
+  color: var(--account-soft);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.45;
+}
+
+.account-profile-strip {
+  grid-template-columns: repeat(2, minmax(14rem, 0.5fr));
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  align-items: stretch;
+  max-width: 50rem;
+}
+
+.account-profile-hero__snapshot-card {
+  min-height: 8.5rem;
+  border: 1px solid var(--account-line);
+  background: rgba(9, 13, 18, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.account-profile-hero__snapshot-card {
+  display: grid;
+  grid-template-columns: 5.8rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.85rem;
+}
+
+.account-profile-hero__snapshot-media {
+  position: relative;
+  width: 5.8rem;
+  height: 5.8rem;
+  overflow: hidden;
+  border: 1px solid var(--account-line);
+  background: #f4f6f8;
+}
+
+.account-profile-hero__snapshot-media--driver {
+  background:
+    radial-gradient(circle at 50% 18%, var(--driver-team-accent, var(--account-accent)), transparent 48%),
+    linear-gradient(180deg, var(--driver-team-primary, #171b21), #050608);
+}
+
+.account-profile-hero__snapshot-copy {
+  min-width: 0;
+}
+
+.account-profile-hero__snapshot-copy strong {
+  display: block;
+  color: var(--account-ink);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.account-profile-hero__snapshot-copy p {
+  margin: 0.35rem 0 0;
+  color: var(--account-soft);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.account-profile-layout {
+  margin-top: clamp(1rem, 2.8vw, 2rem);
+}
+
+.account-profile-editor {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.35rem);
+  padding: clamp(1rem, 2.6vw, 2rem);
+  border-color: var(--account-line);
+  background: linear-gradient(180deg, rgba(12, 16, 22, 0.92), rgba(7, 10, 14, 0.96));
+  box-shadow: 0 1.2rem 4rem rgba(0, 0, 0, 0.28);
+}
+
+.account-profile-editor__header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: clamp(0.9rem, 2vw, 1.25rem);
+  border-bottom: 1px solid var(--account-line);
+}
+
+.account-profile-editor__copy {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.account-profile-editor__copy strong,
+.account-profile-identity__copy strong {
+  font-size: clamp(1.85rem, 3.2vw, 3.3rem);
+  letter-spacing: 0;
+}
+
+.account-profile-editor__copy p,
+.account-form__heading p,
+.account-privacy-panel p {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--account-soft);
+  line-height: 1.45;
+}
+
+.account-form {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.account-form__section--profile {
+  display: grid;
+  gap: 0.95rem;
+  padding: clamp(0.95rem, 2vw, 1.25rem) 0 0;
+  border-top: 1px solid var(--account-line);
+}
+
+.account-form__section--profile:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.account-form__heading {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.account-form__heading strong {
+  font-size: clamp(1.25rem, 2vw, 1.85rem);
+}
+
+.account-field-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.account-field-grid--paired {
+  align-items: start;
+}
+
+.account-field {
+  min-width: 0;
+}
+
+.account-field > span,
+.account-radio-group--identity legend {
+  color: var(--account-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.account-field input,
+.account-field select {
+  width: 100%;
+  min-height: 3.25rem;
+  border: 1px solid var(--account-line);
+  background: rgba(5, 6, 8, 0.78);
+  color: var(--account-ink);
+  font: inherit;
+  outline: none;
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.account-field input:focus,
+.account-field select:focus {
+  border-color: var(--account-accent);
+  box-shadow: 0 0 0 0.18rem color-mix(in srgb, var(--account-accent) 20%, transparent);
+}
+
+.account-field input:disabled,
+.account-field select:disabled {
+  color: var(--account-muted);
+  cursor: not-allowed;
+  opacity: 0.76;
+}
+
+.account-field__input-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem;
+}
+
+.account-username-toggle {
+  min-width: 5.3rem;
+  min-height: 3.25rem;
+  border-color: var(--account-line);
+  background: rgba(247, 247, 244, 0.04);
+}
+
+.account-username-toggle.is-active {
+  border-color: var(--account-accent);
+  color: var(--account-ink);
+}
+
+.account-username-toggle.is-locked {
+  min-width: 6.2rem;
+  color: var(--account-muted);
+}
+
+.account-field__hint,
+.account-field-grid__note {
+  color: var(--account-muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.account-field__hint.is-error {
+  color: #ff938c;
+}
+
+.account-field__hint.is-success {
+  color: #85d6a1;
+}
+
+.account-field-grid__note {
+  grid-column: 1 / -1;
+}
+
+.account-radio-group--identity {
+  gap: 0.85rem;
+  padding: clamp(0.95rem, 2vw, 1.25rem) 0 0;
+  border: 0;
+  border-top: 1px solid var(--account-line);
+}
+
+.account-radio-group--identity legend {
+  grid-column: 1 / -1;
+  margin-bottom: 0.2rem;
+}
+
+.account-radio-group--identity label {
+  min-height: 8.8rem;
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.9rem;
+  background: rgba(5, 6, 8, 0.62);
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.account-radio-group--identity label:hover {
+  border-color: var(--account-line-strong);
+  transform: translateY(-1px);
+}
+
+.account-radio-group--identity label.is-selected {
+  border-color: var(--account-accent);
+  background: color-mix(in srgb, var(--account-accent) 10%, rgba(5, 6, 8, 0.72));
+}
+
+.account-radio-group--identity input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.account-radio-card__media {
+  position: relative;
+  width: 5.5rem;
+  height: 5.5rem;
+  overflow: hidden;
+  border: 1px solid var(--account-line);
+  background: #f4f6f8;
+}
+
+.account-radio-card__media--driver {
+  background:
+    radial-gradient(circle at 50% 10%, var(--driver-team-accent, var(--account-accent)), transparent 46%),
+    linear-gradient(180deg, var(--driver-team-primary, #171b21), #050608);
+}
+
+.account-radio-card__copy {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.account-radio-card__copy strong {
+  color: var(--account-ink);
+  line-height: 1.1;
+}
+
+.account-radio-card__copy span,
+.account-radio-card__fallback {
+  color: var(--account-soft);
+}
+
+.account-radio-card__fallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+}
+
+.account-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.account-form__actions .hero__cta,
+.account-signout {
+  min-height: 3.1rem;
+  padding-inline: 1.15rem;
+}
+
+.account-feedback,
+.status-banner {
+  border-color: var(--account-line);
+  background: rgba(247, 247, 244, 0.055);
+  color: var(--account-soft);
+}
+
+.account-feedback--error {
+  border-color: rgba(255, 93, 84, 0.58);
+  color: #ffd5d2;
+}
+
+.account-feedback--notice {
+  border-color: color-mix(in srgb, var(--account-accent) 54%, var(--account-line));
+}
+
+.account-privacy-panel--footer {
+  width: min(100% - clamp(1rem, 4vw, 3rem), 94rem);
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.5fr) minmax(16rem, 0.75fr);
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+  align-items: center;
+  margin: clamp(1rem, 2.8vw, 2rem) auto 0;
+  padding: clamp(1rem, 2.2vw, 1.35rem) 0;
+  border-top: 1px solid var(--account-line);
+  border-bottom: 1px solid var(--account-line);
+}
+
+.account-privacy-panel--footer .account-profile-identity__copy {
+  align-self: start;
+}
+
+.account-privacy-panel--footer .account-profile-identity__copy strong {
+  font-size: clamp(1.35rem, 2.2vw, 2.35rem);
+}
+
+.account-privacy-panel--footer .account-form__actions {
+  justify-content: end;
+}
+
+.account-privacy-panel--footer .account-privacy-panel__note,
+.account-privacy-panel--footer .legal-links {
+  grid-column: 1 / -1;
+}
+
+.account-privacy-panel--footer .account-privacy-panel__note {
+  max-width: none;
+  color: var(--account-muted);
+  font-size: 0.9rem;
+}
+
+.account-privacy-panel__note a {
+  color: var(--account-ink);
+  text-decoration-color: var(--account-accent);
+}
+
+.account-page .site-footer,
+.account-page .app-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.account-page .account-cinematic-backdrop {
+  background:
+    linear-gradient(108deg, rgba(247, 247, 244, 0.07) 0 0.08rem, transparent 0.08rem 32%),
+    linear-gradient(180deg, rgba(5, 6, 8, 0.58), #050608 76%),
+    linear-gradient(90deg, color-mix(in srgb, var(--account-accent) 20%, transparent), transparent 34%),
+    #050608;
+}
+
+.account-page .account-cinematic-backdrop__garage {
+  inset: 6% -8% auto;
+  height: 64svh;
+  background:
+    repeating-linear-gradient(90deg, rgba(247, 247, 244, 0.055) 0 1px, transparent 1px 6rem),
+    linear-gradient(110deg, transparent 0 34%, rgba(247, 247, 244, 0.1) 34.08% 34.28%, transparent 34.5% 100%),
+    linear-gradient(70deg, transparent 0 68%, color-mix(in srgb, var(--account-accent) 32%, transparent) 68.1% 68.4%, transparent 68.7% 100%);
+  opacity: 0.62;
+}
+
+.account-page .account-cinematic-backdrop__scanline {
+  height: 44svh;
+  opacity: 0.34;
+}
+
+.account-shell--page {
+  width: min(100% - clamp(1rem, 4vw, 3rem), 94rem);
+  min-height: calc(100svh - 7rem);
+  grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.46fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: stretch;
+  margin-top: clamp(0.85rem, 2vw, 1.4rem);
+}
+
+.account-access-stage {
+  position: relative;
+  min-height: clamp(35rem, 74svh, 51rem);
+  display: grid;
+  align-content: end;
+  gap: clamp(0.9rem, 1.8vw, 1.2rem);
+  isolation: isolate;
+  padding: clamp(1.1rem, 3vw, 2.5rem);
+  border: 1px solid var(--account-line);
+  border-bottom: 0.35rem solid var(--account-accent);
+  background:
+    linear-gradient(90deg, rgba(5, 6, 8, 0.96) 0%, rgba(5, 6, 8, 0.72) 42%, rgba(5, 6, 8, 0.22) 100%),
+    linear-gradient(115deg, transparent 0 54%, color-mix(in srgb, var(--account-accent) 16%, transparent) 54.12% 54.42%, transparent 54.65%),
+    var(--account-panel-solid);
+}
+
+.account-access-stage::before,
+.account-access-stage::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.account-access-stage::before {
+  inset: auto -8% 10% 24%;
+  height: 34%;
+  z-index: -1;
+  border-top: 1px solid rgba(247, 247, 244, 0.16);
+  border-bottom: 1px solid color-mix(in srgb, var(--account-accent) 56%, transparent);
+  transform: skewY(-8deg);
+}
+
+.account-access-stage::after {
+  inset: auto 0 0;
+  height: 38%;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent, rgba(5, 6, 8, 0.94));
+}
+
+.account-access-stage__brand {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.7rem);
+  left: clamp(1rem, 2.8vw, 2rem);
+  z-index: 2;
+  width: clamp(8.5rem, 13vw, 11.5rem);
+}
+
+.account-access-stage .subpage-title {
+  position: relative;
+  z-index: 1;
+  max-width: 8.5ch;
+  color: var(--account-ink);
+  font-size: clamp(4rem, 9.2vw, 9.5rem);
+  line-height: 0.78;
+  letter-spacing: 0;
+  text-shadow: 0 1.3rem 3.2rem rgba(0, 0, 0, 0.62);
+}
+
+.account-access-stage .race-detail__lede {
+  position: relative;
+  z-index: 1;
+  max-width: 30rem;
+  color: var(--account-soft);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.account-access-stage__media {
+  inset: 12% -18% 8% 30%;
+  z-index: -1;
+  opacity: 0.86;
+  background: transparent;
+  filter: saturate(1.12) contrast(1.08);
+}
+
+.account-access-stage__car {
+  filter: drop-shadow(0 2.4rem 3rem rgba(0, 0, 0, 0.68));
+}
+
+.account-access-stage__halo {
+  position: absolute;
+  inset: 58% 8% 16%;
+  background: color-mix(in srgb, var(--account-accent) 34%, transparent);
+  filter: blur(3rem);
+  opacity: 0.58;
+}
+
+.account-preview--gateway {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 26rem);
+  display: grid;
+  grid-template-columns: 4.9rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.85rem;
+  border: 1px solid var(--account-line);
+  background: rgba(9, 13, 18, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.account-preview__copy {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.account-preview__copy span,
+.account-legal-copy {
+  color: var(--account-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.account-preview__copy strong {
+  color: var(--account-ink);
+  font-size: clamp(1.05rem, 1.4vw, 1.32rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.account-preview__copy p {
+  margin: 0;
+  color: var(--account-soft);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.account-card--page,
+.account-card--modal {
+  display: grid;
+  align-content: start;
+  gap: clamp(0.95rem, 1.8vw, 1.25rem);
+  border: 1px solid var(--account-line);
+  background:
+    linear-gradient(180deg, rgba(16, 21, 28, 0.92), rgba(7, 10, 14, 0.96)),
+    var(--account-panel-solid);
+  box-shadow: 0 1.4rem 4.5rem rgba(0, 0, 0, 0.38);
+}
+
+.account-card--page {
+  align-self: center;
+  padding: clamp(1rem, 2.2vw, 1.45rem);
+  backdrop-filter: blur(18px);
+}
+
+.account-card__tabs {
+  padding: 0.2rem;
+  border: 1px solid var(--account-line);
+  background: rgba(5, 6, 8, 0.62);
+}
+
+.account-card__tabs button {
+  min-height: 2.8rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.account-card__tabs button.is-active {
+  background: var(--account-accent);
+  color: #fff;
+}
+
+.account-card .account-form__section {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.account-form__actions--stacked,
+.account-form__actions--modal {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.account-inline-link {
+  min-height: 2.7rem;
+  border: 0;
+  background: transparent;
+  color: var(--account-soft);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.account-legal-copy {
+  display: grid;
+  gap: 0.55rem;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.account-profile-header {
+  width: 100%;
+  margin-top: 0;
+}
+
+.account-profile-hero {
+  width: 100%;
+  min-height: calc(100svh - 4.5rem);
+  margin: 0;
+  padding: clamp(4.25rem, 7vw, 6.75rem) max(1rem, calc((100vw - 94rem) / 2)) clamp(1.3rem, 3vw, 2.5rem);
+  border-inline: 0;
+  border-top: 0;
+}
+
+.account-profile-layout {
+  width: min(100% - clamp(1rem, 4vw, 3rem), 94rem);
+  margin-top: clamp(1.15rem, 2.6vw, 2rem);
+}
+
+.account-profile-editor {
+  padding: clamp(1rem, 2.4vw, 1.65rem);
+}
+
+.account-profile-editor__header {
+  align-items: start;
+}
+
+.account-profile-editor__copy strong {
+  font-size: clamp(2rem, 4.2vw, 4.6rem);
+}
+
+.account-form__section--profile {
+  gap: clamp(0.85rem, 1.7vw, 1.15rem);
+  padding-top: clamp(1rem, 2vw, 1.35rem);
+}
+
+.account-field input,
+.account-field select {
+  padding-inline: 0.9rem;
+  background: rgba(5, 6, 8, 0.82);
+}
+
+.account-radio-group--identity {
+  display: grid;
+}
+
+.account-radio-group--identity label {
+  border: 1px solid var(--account-line);
+}
+
+.account-radio-group--identity label:focus-within {
+  border-color: var(--account-accent);
+  box-shadow: 0 0 0 0.18rem color-mix(in srgb, var(--account-accent) 20%, transparent);
+}
+
+@keyframes account-speed-line {
+  0%, 100% {
+    opacity: 0.24;
+    translate: 0 0;
+  }
+  50% {
+    opacity: 0.9;
+    translate: -4rem 0;
+  }
 }
 
 .status-banner--error,
@@ -6003,7 +7576,7 @@ img {
   }
 
   .home-hero__race {
-    width: min(100%, 23rem);
+    width: min(100%, 25rem);
     padding: 0.95rem 0.75rem;
   }
 
@@ -6037,9 +7610,14 @@ img {
   .home-hero__race-meta time {
     min-width: 0;
     min-height: 2.25rem;
-    justify-content: center;
-    padding-inline: 0.45rem;
+    justify-content: stretch;
+    padding-inline: 0.55rem;
     border-left: 1px solid var(--line);
+  }
+
+  .home-hero__race-meta strong {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .home-hero__race-circuit {
@@ -6048,8 +7626,19 @@ img {
   }
 
   .home-hero__countdown {
-    font-size: clamp(1.2rem, 6.5vw, 1.55rem);
-    line-height: 1.05;
+    width: 100%;
+  }
+
+  .race-countdown__units {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .race-countdown__unit {
+    min-height: 4.45rem;
+  }
+
+  .race-countdown__unit strong {
+    font-size: clamp(1.85rem, 11vw, 2.55rem);
   }
 
   .home-hero__track {
@@ -7407,4 +8996,415 @@ img {
   display: block;
   overflow-wrap: anywhere;
   text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .race-week-page .race-week-hero {
+    min-height: auto;
+  }
+
+  .race-week-page .race-week-hero__grid,
+  .race-week-page .race-week-hero__visual,
+  .race-week-story-reel {
+    grid-template-columns: 1fr;
+  }
+
+  .race-week-page .race-week-hero__grid {
+    min-height: auto;
+  }
+
+  .race-week-page .race-week-hero__copy {
+    max-width: 38rem;
+    padding-block: clamp(2.25rem, 8vw, 4rem) 0;
+  }
+
+  .race-week-page .race-week-hero__visual {
+    padding-block: 0 clamp(1rem, 4vw, 2rem);
+  }
+
+  .race-week-story-reel {
+    gap: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .race-week-page .race-week-hero {
+    width: 100%;
+    padding: 0.85rem 0.75rem 1rem;
+    background:
+      linear-gradient(180deg, rgba(5, 6, 8, 0.7), #050608 72%),
+      radial-gradient(circle at 95% 12%, color-mix(in srgb, var(--race-accent) 24%, transparent), transparent 14rem),
+      #050608;
+  }
+
+  .race-week-page .race-week-hero::before {
+    opacity: 0.42;
+  }
+
+  .race-week-page .race-week-hero::after {
+    background: linear-gradient(180deg, rgba(5, 6, 8, 0.18), rgba(5, 6, 8, 0.72) 58%, #050608);
+  }
+
+  .race-week-page .race-week-hero__backdrop {
+    inset: auto -28vw 7rem 3rem;
+    height: 24rem;
+    opacity: 0.18;
+  }
+
+  .race-week-page .race-week-hero__copy {
+    gap: 0.8rem;
+    padding-top: 2.3rem;
+  }
+
+  .race-week-page .race-week-hero__headline {
+    max-width: 10ch;
+    color: #fff;
+    font-size: clamp(3.6rem, 18vw, 5.4rem);
+    text-shadow: 0 1rem 2.8rem rgba(0, 0, 0, 0.86);
+  }
+
+  .race-week-page .race-week-hero__headline span,
+  .race-week-page .race-week-hero__deck {
+    color: rgba(244, 246, 248, 0.9);
+  }
+
+  .race-week-page .race-week-hero__signals {
+    grid-template-columns: 1fr;
+  }
+
+  .race-week-page .race-week-hero__signal {
+    min-height: 3.8rem;
+    background: rgba(5, 6, 8, 0.82);
+  }
+
+  .race-week-page .race-week-hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .race-week-page .race-week-hero__track {
+    min-height: 20rem;
+  }
+
+  .race-week-page .race-week-sector-track__svg {
+    min-height: 16.5rem;
+  }
+
+  .race-week-story-reel {
+    width: calc(100% - 1rem);
+  }
+
+  .race-week-story-reel__act {
+    min-height: auto;
+  }
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-prediction__heading h2 {
+  width: max-content;
+  max-width: 100%;
+  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  white-space: nowrap;
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-prediction__heading p {
+  max-width: 46rem;
+  margin: 0.45rem auto 0;
+  color: rgba(244, 246, 248, 0.72);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: clamp(0.72rem, 1vw, 0.84rem);
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.race-week-page .race-week-q-prediction__baseline {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.race-week-page .race-week-q-prediction__baseline > div {
+  min-height: 6.4rem;
+  display: grid;
+  align-content: space-between;
+  border-color: rgba(244, 246, 248, 0.13);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--race-country-primary) 12%, transparent), transparent 58%),
+    rgba(5, 6, 8, 0.72);
+}
+
+.race-week-page .race-week-q-prediction__baseline strong {
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: clamp(1.15rem, 1.9vw, 1.75rem);
+  line-height: 1;
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-prediction__podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.4vw, 1rem);
+  margin-top: clamp(1rem, 2vw, 1.35rem);
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-card {
+  min-height: 18.4rem;
+  padding: clamp(1rem, 1.7vw, 1.3rem);
+  align-content: start;
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-card__rank {
+  font-size: clamp(3.3rem, 5.7vw, 5.4rem);
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-card__identity h3 {
+  max-width: 100%;
+  font-size: clamp(1.5rem, 2.2vw, 2.15rem);
+  overflow-wrap: normal;
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-card__metrics > div {
+  min-height: 2.6rem;
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-card__metrics strong {
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+}
+
+.race-week-page .race-week-q-prediction .race-week-q-card__metrics span,
+.race-week-page .race-week-driver-row span {
+  margin-right: 0.45rem;
+}
+
+.race-week-page .race-week-q-details {
+  margin-top: clamp(1rem, 2vw, 1.35rem);
+  overflow: hidden;
+}
+
+.race-week-page .race-week-q-details summary {
+  border-bottom: 1px solid rgba(244, 246, 248, 0.1);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--race-country-secondary) 16%, transparent), transparent 62%),
+    rgba(5, 6, 8, 0.74);
+}
+
+.race-week-page .race-week-q-table {
+  gap: 0;
+  padding: 0;
+}
+
+.race-week-page .race-week-q-table__row {
+  grid-template-columns: 4.2rem minmax(12rem, 1.15fr) minmax(7.5rem, 0.46fr) minmax(5.5rem, 0.34fr) minmax(12rem, 0.85fr);
+  min-height: 3.85rem;
+  gap: clamp(0.65rem, 1.2vw, 1rem);
+  align-items: center;
+  border-width: 0 0 1px;
+  border-color: rgba(244, 246, 248, 0.08);
+  background: rgba(5, 6, 8, 0.58);
+}
+
+.race-week-page .race-week-q-table__row:nth-child(even) {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--race-country-primary) 7%, transparent), transparent 42%),
+    rgba(8, 11, 16, 0.68);
+}
+
+.race-week-page .race-week-q-table__row--head {
+  min-height: 2.65rem;
+  color: rgba(244, 246, 248, 0.52);
+  background: rgba(244, 246, 248, 0.035);
+}
+
+.race-week-page .race-week-q-table__rank,
+.race-week-page .race-week-q-table__time,
+.race-week-page .race-week-q-table__gap {
+  font-family: var(--font-plex-mono), Consolas, monospace;
+}
+
+.race-week-page .race-week-q-table__time {
+  color: #fff;
+  font-weight: 700;
+}
+
+.race-week-page .race-week-q-table__gap {
+  color: color-mix(in srgb, var(--race-country-primary) 76%, #fff);
+}
+
+.race-week-page .race-week-q-table__flags {
+  color: rgba(244, 246, 248, 0.62);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+@media (max-width: 980px) {
+  .race-week-page .race-week-q-prediction__baseline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .race-week-page .race-week-q-prediction .race-week-q-prediction__podium {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .race-week-page .race-week-q-prediction .race-week-q-prediction__heading h2 {
+    width: auto;
+    white-space: normal;
+  }
+
+  .race-week-page .race-week-driver-row {
+    gap: 0.55rem;
+    padding: 0.8rem;
+  }
+
+  .race-week-page .race-week-q-prediction__baseline,
+  .race-week-page .race-week-q-table__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  .account-shell--page {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  .account-access-stage {
+    min-height: clamp(31rem, 62svh, 42rem);
+    padding-top: clamp(5rem, 12vw, 6.5rem);
+  }
+
+  .account-access-stage__media {
+    inset: 8% -32% 24% 16%;
+    opacity: 0.42;
+  }
+
+  .account-card--page {
+    align-self: stretch;
+  }
+
+  .account-profile-hero {
+    min-height: auto;
+    padding-top: clamp(5rem, 12vw, 6.5rem);
+  }
+
+  .account-profile-hero__copy {
+    max-width: 34rem;
+  }
+
+  .account-profile-hero__car {
+    inset: 7% -30% 30% 18%;
+    opacity: 0.42;
+  }
+
+  .account-profile-strip,
+  .account-privacy-panel--footer {
+    grid-template-columns: 1fr;
+  }
+
+  .account-privacy-panel--footer .account-form__actions {
+    justify-content: start;
+  }
+
+  .account-field-grid,
+  .account-radio-group--identity {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .account-shell--page {
+    width: calc(100% - 1rem);
+  }
+
+  .account-access-stage {
+    gap: 0.8rem;
+    min-height: 32rem;
+    padding: 4.75rem 0.85rem 0.85rem;
+  }
+
+  .account-access-stage__brand {
+    max-width: calc(100% - 1.7rem);
+  }
+
+  .account-access-stage .subpage-title {
+    max-width: 100%;
+    font-size: clamp(3.2rem, 17vw, 5.4rem);
+  }
+
+  .account-access-stage .race-detail__lede {
+    font-size: 1rem;
+  }
+
+  .account-access-stage__media {
+    inset: 9% -44% 34% 8%;
+    opacity: 0.32;
+  }
+
+  .account-preview--gateway {
+    grid-template-columns: 4.25rem minmax(0, 1fr);
+    padding: 0.75rem;
+  }
+
+  .account-card--page {
+    padding: 0.9rem;
+  }
+
+  .account-profile-header,
+  .account-profile-layout,
+  .account-privacy-panel--footer {
+    width: calc(100% - 1rem);
+  }
+
+  .account-profile-hero {
+    gap: 1rem;
+    padding: 4.75rem 0.85rem 0.85rem;
+  }
+
+  .account-profile-hero__brand {
+    max-width: calc(100% - 1.7rem);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .account-profile-hero__copy .subpage-title {
+    max-width: 100%;
+    font-size: clamp(3.1rem, 17vw, 5.4rem);
+  }
+
+  .account-profile-hero__snapshot-card {
+    min-height: auto;
+  }
+
+  .account-profile-hero__snapshot-card,
+  .account-radio-group--identity label {
+    grid-template-columns: 4.75rem minmax(0, 1fr);
+  }
+
+  .account-profile-hero__snapshot-media,
+  .account-radio-card__media {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+
+  .account-profile-editor {
+    padding: 0.9rem;
+  }
+
+  .account-profile-editor__header {
+    align-items: start;
+  }
+
+  .account-field__input-shell,
+  .account-form__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .account-username-toggle,
+  .account-form__actions .hero__cta,
+  .account-signout {
+    width: 100%;
+  }
 }

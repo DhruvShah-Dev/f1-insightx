@@ -43,20 +43,33 @@ export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps)
         <div className="home-hero__stage">
           {nextRace ? (
             <article className="home-hero__race" aria-labelledby="home-next-race-title">
+              <div className="home-hero__flag" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
               <span className="home-hero__race-kicker">Next race</span>
               <h2 id="home-next-race-title">{nextRace.race_name ?? "Race pending"}</h2>
               <div className="home-hero__race-meta">
-                <span>{nextRace.round ? `Round ${nextRace.round}` : "Round pending"}</span>
-                <time dateTime={nextRace.scheduled_at ?? undefined}>{formatRaceDateUtc(nextRace.scheduled_at)}</time>
-                <span className="home-hero__race-circuit">{circuitName}</span>
+                <span>
+                  <small>Round</small>
+                  <strong>{nextRace.round ?? "--"}</strong>
+                </span>
+                <time dateTime={nextRace.scheduled_at ?? undefined}>
+                  <small>Race start</small>
+                  <strong>{formatRaceDateUtc(nextRace.scheduled_at)}</strong>
+                </time>
+                <span className="home-hero__race-circuit">
+                  <small>Circuit</small>
+                  <strong>{circuitName}</strong>
+                </span>
               </div>
-              <p className="home-hero__countdown">
+              <div className="home-hero__countdown">
                 <RaceCountdown
                   scheduledAt={nextRace.scheduled_at}
                   initialLabel={formatCountdown(nextRace.scheduled_at)}
                 />
-              </p>
-              <span className="home-hero__team-context">{visualTeam.label} visual feed</span>
+              </div>
             </article>
           ) : null}
 

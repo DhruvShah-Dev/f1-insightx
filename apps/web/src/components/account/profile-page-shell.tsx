@@ -357,6 +357,9 @@ export function ProfilePageShell({
         setConstructorId(nextProfile.favoriteConstructorId ?? "");
         setDriverId(nextProfile.favoriteDriverId ?? "");
         setAvatarType(nextProfile.avatarType);
+        window.dispatchEvent(new CustomEvent("f1-insightx:profile-updated", {
+          detail: { username: nextProfile.username },
+        }));
       }
 
       setPendingConfirmation(false);
@@ -482,6 +485,7 @@ export function ProfilePageShell({
       <AccountCinematicBackdrop />
       <header className="account-profile-header">
         <div className="account-profile-hero">
+          <div className="account-profile-hero__trackline" aria-hidden="true" />
           <div className="account-profile-hero__brand">
             <AssetImage
               src="/assets/logos/wordmark.svg"
@@ -492,7 +496,7 @@ export function ProfilePageShell({
               height={40}
               priority
             />
-            <span>Race identity</span>
+            <span>Profile garage</span>
           </div>
           <div className="account-profile-hero__car" style={{ position: "absolute" }} aria-hidden="true">
             <AssetImage
@@ -505,6 +509,9 @@ export function ProfilePageShell({
               priority
               style={{ objectFit: "contain", objectPosition: constructorAsset.imagePosition ?? "center center" }}
             />
+          </div>
+          <div className="account-profile-hero__copy">
+            <h1 className="subpage-title">{displayName}</h1>
           </div>
           <div className="account-profile-strip">
             <article className="account-profile-hero__snapshot-card account-profile-hero__snapshot-card--constructor">
@@ -529,10 +536,6 @@ export function ProfilePageShell({
                 <p>{constructorStanding ? `P${constructorStanding} - Constructors Championship` : "Constructors Championship"}</p>
               </div>
             </article>
-
-            <div className="account-profile-strip__username">
-              <h1 className="subpage-title">{displayName}</h1>
-            </div>
 
             <article className="account-profile-hero__snapshot-card account-profile-hero__snapshot-card--driver">
               <div
@@ -569,13 +572,6 @@ export function ProfilePageShell({
 
       <section className="account-profile-layout">
         <section className="workspace-panel account-profile-editor">
-          <div className="account-profile-editor__header">
-            <div className="account-profile-editor__copy">
-              <strong>Profile command center</strong>
-              <p>Choose the constructor, driver, and identity style tied to your profile.</p>
-            </div>
-          </div>
-
           {!hasProfilePersistence ? (
             <div className="status-banner">
               Profile saving is temporarily unavailable.
@@ -604,6 +600,19 @@ export function ProfilePageShell({
           {noticeMessage ? <div className="account-feedback account-feedback--notice">{noticeMessage}</div> : null}
 
           <form className="account-form" onSubmit={handleSave}>
+            <div className="account-profile-editor__header">
+              <div className="account-profile-editor__copy">
+                <span>Profile controls</span>
+                <strong>Set your race identity</strong>
+                <p>Choose the username, constructor, driver, and image style that appear across F1 InsightX.</p>
+              </div>
+            </div>
+
+            <div className="account-form__section account-form__section--profile">
+              <div className="account-form__heading">
+                <strong>Account</strong>
+                <p>Your public username and sign-in email.</p>
+              </div>
             <div className="account-field-grid">
               <label className="account-field">
                 <span>Username</span>
@@ -663,7 +672,13 @@ export function ProfilePageShell({
                 <input type="email" value={email} disabled />
               </label>
             </div>
+            </div>
 
+            <div className="account-form__section account-form__section--profile">
+              <div className="account-form__heading">
+                <strong>Favorites</strong>
+                <p>Pick the team and driver that shape the profile theme.</p>
+              </div>
             <div className="account-field-grid account-field-grid--paired">
               <label className="account-field">
                 <span>Favorite constructor</span>
@@ -688,6 +703,7 @@ export function ProfilePageShell({
                 </select>
               </label>
               {constructorHintMessage ? <small className="account-field-grid__note">{constructorHintMessage}</small> : null}
+            </div>
             </div>
 
             <fieldset className={`account-radio-group account-radio-group--identity ${avatarFieldLocked ? "is-disabled" : ""}`}>
@@ -761,33 +777,31 @@ export function ProfilePageShell({
               </button>
             </div>
           </form>
-
-          <section className="account-privacy-panel account-privacy-panel--inline">
-            <div className="account-profile-identity__copy">
-              <strong>Data controls</strong>
-              <p>Export your profile data or contact us to request deletion.</p>
-            </div>
-            <div className="account-form__actions">
-              <button className="hero__cta hero__cta--secondary" type="button" onClick={handleExport} disabled={isExporting}>
-                {isExporting ? "Preparing export..." : "Download my data"}
-              </button>
-              <button className="account-signout" type="button" onClick={handleSignOut} disabled={isSigningOut}>
-                {isSigningOut ? "Signing out..." : "Sign out"}
-              </button>
-            </div>
-            <p className="account-privacy-panel__note">
-              Deletion requests are handled by email.
-              {privacyContactEmail ? (
-                <>
-                  {" "}Contact <a href={`mailto:${privacyContactEmail}?subject=${encodeURIComponent("F1 InsightX account deletion request")}`}>{privacyContactEmail}</a>.
-                </>
-              ) : (
-                " Add a privacy contact before public launch."
-              )}
-            </p>
-            <LegalLinks className="legal-links legal-links--stacked" />
-          </section>
         </section>
+      </section>
+      <section className="account-privacy-panel account-privacy-panel--footer">
+        <div className="account-profile-identity__copy">
+          <strong>Data controls</strong>
+        </div>
+        <div className="account-form__actions">
+          <button className="hero__cta hero__cta--secondary" type="button" onClick={handleExport} disabled={isExporting}>
+            {isExporting ? "Preparing export..." : "Download my data"}
+          </button>
+          <button className="account-signout" type="button" onClick={handleSignOut} disabled={isSigningOut}>
+            {isSigningOut ? "Signing out..." : "Sign out"}
+          </button>
+        </div>
+        <p className="account-privacy-panel__note">
+          Deletion requests are handled by email.
+          {privacyContactEmail ? (
+            <>
+              {" "}Contact <a href={`mailto:${privacyContactEmail}?subject=${encodeURIComponent("F1 InsightX account deletion request")}`}>{privacyContactEmail}</a>.
+            </>
+          ) : (
+            " Add a privacy contact before public launch."
+          )}
+        </p>
+        <LegalLinks className="legal-links legal-links--stacked" />
       </section>
       <AppFooter />
     </main>
