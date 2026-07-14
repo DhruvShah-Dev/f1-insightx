@@ -27,6 +27,20 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: workspaceRoot,
   },
+  outputFileTracingRoot: workspaceRoot,
+  outputFileTracingIncludes: {
+    "/*": [
+      "../../data/curated/**/*.csv",
+      "../../data/predictions/**/*.csv",
+      "../../data/race_analysis/**/*.csv",
+      "../../data/race_week/**/*.csv",
+      "../../data/strategy_lab/**/*.csv",
+      "../../data/analytics/analytics_session_index.csv",
+      "../../data/analytics/indexed/**/*.json",
+      "../../data/analytics/indexed/**/*.json.gz",
+      "../../data/season_state.json",
+    ],
+  },
   async redirects() {
     return [
       {

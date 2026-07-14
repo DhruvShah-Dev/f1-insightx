@@ -214,10 +214,10 @@ export async function listAvailableSeasons() {
   return getRuntimeData(result) ?? [];
 }
 
-async function loadDriversFromSupabase(filters: ReferenceFilters): Promise<Driver[]> {
+async function loadDriversFromSupabase(filters: ReferenceFilters): Promise<Driver[] | null> {
   const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return [];
+    return null;
   }
 
   let query = supabase
@@ -237,6 +237,10 @@ async function loadDriversFromSupabase(filters: ReferenceFilters): Promise<Drive
   }
 
   const rows = data as SupabaseDriverRow[];
+  if (rows.length === 0) {
+    return null;
+  }
+
   return rows.map((row) => ({
     id: row.id,
     driverCode: row.driver_code,
@@ -249,10 +253,10 @@ async function loadDriversFromSupabase(filters: ReferenceFilters): Promise<Drive
   }));
 }
 
-async function loadConstructorsFromSupabase(filters: ReferenceFilters): Promise<Constructor[]> {
+async function loadConstructorsFromSupabase(filters: ReferenceFilters): Promise<Constructor[] | null> {
   const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return [];
+    return null;
   }
 
   let query = supabase
@@ -271,6 +275,10 @@ async function loadConstructorsFromSupabase(filters: ReferenceFilters): Promise<
   }
 
   const rows = data as SupabaseConstructorRow[];
+  if (rows.length === 0) {
+    return null;
+  }
+
   return rows.map((row) => ({
     id: row.id,
     constructorCode: row.constructor_code,
@@ -279,10 +287,10 @@ async function loadConstructorsFromSupabase(filters: ReferenceFilters): Promise<
   }));
 }
 
-async function loadCircuitsFromSupabase(filters: ReferenceFilters): Promise<Circuit[]> {
+async function loadCircuitsFromSupabase(filters: ReferenceFilters): Promise<Circuit[] | null> {
   const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return [];
+    return null;
   }
 
   let query = supabase
@@ -302,6 +310,10 @@ async function loadCircuitsFromSupabase(filters: ReferenceFilters): Promise<Circ
   }
 
   const rows = data as SupabaseCircuitRow[];
+  if (rows.length === 0) {
+    return null;
+  }
+
   return rows.map((row) => ({
     id: row.id,
     circuitCode: row.circuit_code,
@@ -313,10 +325,10 @@ async function loadCircuitsFromSupabase(filters: ReferenceFilters): Promise<Circ
   }));
 }
 
-async function loadRacesFromSupabase(filters: RacesFilters): Promise<Race[]> {
+async function loadRacesFromSupabase(filters: RacesFilters): Promise<Race[] | null> {
   const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return [];
+    return null;
   }
 
   let query = supabase
@@ -336,6 +348,10 @@ async function loadRacesFromSupabase(filters: RacesFilters): Promise<Race[]> {
   }
 
   const rows = data as SupabaseRaceRow[];
+  if (rows.length === 0) {
+    return null;
+  }
+
   return rows.map((row) => ({
     id: row.id,
     season: row.season,
@@ -356,7 +372,7 @@ async function loadAvailableSeasonsFromCsv() {
 async function loadAvailableSeasonsFromSupabase() {
   const supabase = getSupabasePublicClient();
   if (!supabase) {
-    return [];
+    return null;
   }
 
   const { data, error } = await supabase.from("races").select("season").order("season", { ascending: false });
@@ -364,7 +380,8 @@ async function loadAvailableSeasonsFromSupabase() {
     throw new Error(`Failed to query seasons: ${error.message}`);
   }
 
-  return [...new Set((data as Array<{ season: number }>).map((row) => row.season))];
+  const seasons = [...new Set((data as Array<{ season: number }>).map((row) => row.season))];
+  return seasons.length > 0 ? seasons : null;
 }
 
 function describeReferenceList<T>(items: T[]) {
