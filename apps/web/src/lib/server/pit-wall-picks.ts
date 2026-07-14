@@ -1,5 +1,6 @@
 import "server-only";
 
+import { createHash } from "node:crypto";
 import { cache } from "react";
 import {
   deterministicRandomPositions,
@@ -292,6 +293,10 @@ function usernameFor(row: { user_id: string; username?: string | null }) {
   return row.username || `driver_${row.user_id.slice(0, 8)}`;
 }
 
+function publicLeaderboardKey(userId: string) {
+  return `user_${createHash("sha256").update(userId).digest("hex").slice(0, 16)}`;
+}
+
 function isMissingPitWallTableError(error: unknown) {
   const message = error instanceof Error ? error.message : String(error);
   return (
@@ -427,12 +432,12 @@ async function getLeaderboards(supabase: SupabaseClient, raceId: string) {
 
   return {
     raceLeaderboard: ((raceResult.data ?? []) as Array<{ user_id: string; username: string | null; total_points: number }>).map((row) => ({
-      userId: row.user_id,
+      userId: publicLeaderboardKey(row.user_id),
       username: usernameFor(row),
       points: Number(row.total_points ?? 0),
     })),
     overallLeaderboard: ((overallResult.data ?? []) as OverallScoreRow[]).map((row) => ({
-      userId: row.user_id,
+      userId: publicLeaderboardKey(row.user_id),
       username: usernameFor(row),
       points: Number(row.total_points ?? 0),
       racesEntered: Number(row.races_entered ?? 0),

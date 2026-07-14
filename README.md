@@ -2,13 +2,15 @@
 
 **Premium F1 telemetry and race intelligence.**
 
-F1 InsightX turns deterministic FastF1 data pipelines into focused race-week, strategy, telemetry, championship, and post-race product experiences. The Next.js application reads compact offline-generated product views and indexed shards; it does not parse raw telemetry at runtime.
+F1 InsightX turns deterministic FastF1, OpenF1, and reference-data pipelines into focused race-week, picks, strategy, championship, and post-race product experiences. The Next.js application reads compact offline-generated product views and indexed shards; it does not parse raw telemetry at runtime.
 
 ## Product Preview
 
+Screenshots were refreshed from the local Next.js app on July 14, 2026.
+
 ### Home - Race Intelligence Overview
 
-First-screen race command view with the next race, current circuit geometry, product navigation, and season context for the active Formula 1 weekend.
+First-screen race command view with the next race, product navigation, and season context for the active Formula 1 weekend.
 
 ![F1 InsightX home race intelligence overview](docs/assets/screenshots/home.webp)
 
@@ -20,7 +22,7 @@ Cinematic completed-race reports built from observed results and deterministic p
 
 ### Race Week - Weekend Command Center
 
-Upcoming-race context, schedule state, circuit features, conditions, and generated race-week signals for the Austrian Grand Prix without inventing unavailable session data.
+Upcoming-race context, circuit features, conditions, and generated race-week signals for the Belgian Grand Prix without inventing unavailable session data.
 
 ![F1 InsightX Race Week command center](docs/assets/screenshots/race-week.webp)
 
@@ -35,28 +37,31 @@ Driver, constructor, and race-derived season records with historical year switch
 - **Home**: next-race overview, circuit preview, race history, and standings entry points.
 - **Race Analysis**: completed-race story, strategy, pace evolution, weather, track-status, traffic-proxy, and position-movement views.
 - **Race Week**: current weekend context, schedule, conditions, circuit metadata, and qualifying prediction signals.
-- **Strategy Lab**: deterministic stint and race-strategy simulation with explicit assumptions and sensitivity drivers. Current next-race Austrian Grand Prix output is pending.
+- **Picks**: authenticated Pit Wall Picks entries, lock windows, race scoring, and leaderboards.
+- **Strategy Lab**: deterministic stint and race-strategy simulation with explicit assumptions and sensitivity drivers.
 - **Championship**: driver standings, constructor standings, historical season switching, and achievement-style leaderboards.
 - **Account/Profile**: Supabase-backed authentication, profile, privacy, and account-management flows.
 
 Analytics remains an underlying telemetry product layer and data source. The public `/analytics` route currently redirects to `/race-analysis`, so it is not presented as a primary README screenshot surface.
 
-Fantasy is intentionally hidden from the visible product until it is rebuilt as a separate surface.
+Fantasy remains available as API-backed optimization logic and generated data, but it is not a primary README screenshot surface.
 
 ## Latest Data Snapshot
 
-The latest local product manifest is `product_manifest_20260618T204630Z`, generated at `2026-06-18T20:46:30Z`, with overall status `passed`.
+The latest local season state is `season_state_20260709T162227Z`, generated at `2026-07-09T16:22:27Z`, with validation status `passed` across the current product layers listed below.
 
 | Surface | Current evidence |
 | --- | --- |
-| Canonical FastF1 | 361,422 laps, 13,261 results, 46,958 stints, 13,040 session-summary rows, 76 drivers |
-| Telemetry features | 13,060 lap-summary rows; 91,569 energy/straight rows; 104,289 corner speed, braking, throttle, and driver-corner rows |
-| Analytics layer | 663 sessions, 122,479 driver comparisons, 975,725 segment/braking/throttle rows, 856,389 straight/energy-proxy rows |
-| Race Analysis | 52 race analyses, 58,465 pace rows, 58,392 position timeline rows, 1,787 pit-strategy rows |
-| Race Week | Austrian Grand Prix, round 8, scheduled `2026-06-28T13:00:00Z`; race-week product view available |
-| Strategy Lab | Barcelona Grand Prix strategy product available; Austrian Grand Prix Strategy Lab build pending |
+| Canonical FastF1 | 369,010 laps, 13,569 results, 48,188 stints, 13,368 session-summary rows, 77 drivers |
+| FastF1 archive | 674 completed sessions out of 698 targets; telemetry files present for 663 sessions |
+| Telemetry features | `telemetry_features_20260628T134108Z`; validation passed |
+| Analytics layer | 663 indexed sessions; `analytics_views_20260709T161249Z`; validation passed |
+| Race Analysis | 54 race analyses, 60,841 position timeline rows, 1,879 pit-strategy rows |
+| Race Week | Belgian Grand Prix, round 10, scheduled `2026-07-19T13:00:00Z`; race-week product view available |
+| Strategy Lab | Belgian Grand Prix strategy product available |
+| Picks | Race challenge and pit-stop result inputs generated for the Picks surface |
 
-Freshness caveat: `season_state` currently validates but is stale by the product-manifest threshold. Treat current-state copy as release-candidate data until the season state is refreshed.
+Freshness caveat: Race Analysis and standings are current through the British Grand Prix. Analytics and telemetry are available through the Barcelona Grand Prix, so the app labels those surfaces as not fully current until British Grand Prix telemetry processing is refreshed.
 
 ## Architecture
 
@@ -79,6 +84,7 @@ FastF1 archive
 | `data/analytics` | Telemetry product views, indexed session shards, and representative trace artifacts |
 | `data/race_analysis` | Completed-race intelligence views |
 | `data/race_week` | Current race-week context, predictions, circuit metadata, and weekend readiness views |
+| `data/predictions` | Picks challenges, pit-stop result inputs, and deterministic prediction snapshots |
 | Supabase | Authentication, profiles, and deployable database-backed surfaces |
 
 ## Local Development
@@ -100,6 +106,7 @@ npm run test --workspace web
 npm run typecheck
 npm run lint --workspace web
 npm run build --workspace web
+npm run assets:audit
 python check_generated_artifacts.py
 python validate_product_manifest.py
 ```
@@ -122,6 +129,7 @@ python validate_analytics_telemetry_traces.py
 python data/build_race_analysis_views.py
 python validate_race_analysis_views.py
 python data/build_race_week_layers.py
+python data/build_pit_wall_picks.py
 python build_season_state.py
 python build_product_manifest.py
 python validate_product_manifest.py
@@ -136,6 +144,7 @@ python check_generated_artifacts.py
 - Position movement, traffic, DRS-window, dirty-air, and related values remain explicitly labelled as proxy or derived where exact evidence is unavailable.
 - Race-control causes and exact overtakes are not invented.
 - Strategy Lab presents deterministic scenario ranges and assumptions, not ML predictions.
+- Public leaderboard payloads must not expose raw Supabase user IDs.
 
 ## Artifact and Deployment Policy
 

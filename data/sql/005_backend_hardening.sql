@@ -23,7 +23,11 @@ WITH CHECK ((SELECT auth.uid()) = user_id);
 
 -- 2. Add database trigger validation on user_profiles to prevent lock/cooldown bypass
 CREATE OR REPLACE FUNCTION check_user_profile_mutation()
-RETURNS TRIGGER AS $$
+RETURNS TRIGGER
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
 BEGIN
   -- Prevent resetting or reducing the username lock expiration timestamp if it has not naturally expired
   IF OLD.username_locked_until IS DISTINCT FROM NEW.username_locked_until THEN
@@ -55,7 +59,7 @@ BEGIN
 
   RETURN NEW;
 END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
+$$;
 
 DROP TRIGGER IF EXISTS trig_check_user_profile_mutation ON user_profiles;
 CREATE TRIGGER trig_check_user_profile_mutation

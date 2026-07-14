@@ -1,199 +1,105 @@
 # Data Workspace
 
-This directory contains the F1 InsightX data platform: raw source fetches, normalized canonical tables, FastF1 session intelligence, and product-facing feature views.
+This directory contains the F1 InsightX data platform: source snapshots, staged session extracts, canonical FastF1 tables, deterministic feature layers, product-facing views, and SQL loaders.
+
+Generated datasets are intentionally ignored unless they are small fixtures or schema templates. Keep code, validators, SQL, docs, and `.gitkeep` placeholders in git; rebuild large data products from the pipeline.
+
+## Current Local State
+
+Latest local season state: `season_state_20260709T162227Z`, generated at `2026-07-09T16:22:27Z`.
+
+| Layer | Current evidence |
+| --- | --- |
+| FastF1 archive | 674 completed sessions out of 698 targets; telemetry files present for 663 sessions |
+| Canonical FastF1 | 369,010 laps, 13,569 results, 48,188 stints, 13,368 session-summary rows, 77 drivers |
+| Race Analysis | 54 race analyses, 60,841 position timeline rows, 1,879 pit-strategy rows |
+| Race Week | Belgian Grand Prix, round 10, scheduled `2026-07-19T13:00:00Z` |
+| Strategy Lab | Belgian Grand Prix product view available |
+| Analytics / telemetry caveat | Analytics and telemetry are available through Barcelona Grand Prix; British Grand Prix telemetry processing is pending |
 
 ## Layers
 
-### 1. Raw
+### 1. Raw source snapshots
 
-- `data/raw/reference`
-- Snapshotted public API responses from Jolpica
-- Schedule, race results, qualifying, sprint, and metadata provenance
+- `data/raw/reference`: snapshotted Jolpica/reference API payloads.
+- `data/raw/openf1`: snapshotted OpenF1 meetings, sessions, and selected session endpoints from 2023 onward.
+- `data/raw/fastf1`: FastF1 archive manifests, per-session source tables, optional telemetry parquet, and completion summaries.
 
-- `data/raw/openf1`
-- Snapshotted historical OpenF1 meetings, sessions, and selected session endpoints
-- Used for source consolidation from 2023 onward, not browser runtime calls
+Raw folders are ignored and can be regenerated. They should not be used directly by the web app.
 
-- `data/raw/fastf1`
-- FastF1 schedule snapshots, per-session manifests, and resumable ingestion logs
-- Root artifacts:
-  - `ingestion_manifest.jsonl`
-  - `ingestion_manifest_index.csv`
-  - `failed_sessions.jsonl`
-  - `completion_summary.json`
-- Optional telemetry and position parquet for heavier analysis workflows
+### 2. Staged source consolidation
 
-### 2. Curated
+- `data/staged/fastf1`: per-session extracts for practice, qualifying, sprint, and race sessions.
+- `data/staged/openf1`: per-season meetings, sessions, endpoint snapshots, and quality reports.
 
-- `drivers.csv`
-- `constructors.csv`
-- `circuits.csv`
-- `races.csv`
-- `qualifying_results.csv`
-- `race_results.csv`
-- `sprint_results.csv`
-- `strategy_profiles.csv`
-- `fantasy_pricing.csv`
+Staged outputs are reproducible feature-engineering inputs and stay out of browser runtime code.
 
-These files are normalized from raw source payloads and form the canonical event/session layer.
+### 3. Canonical FastF1
 
-### 3. Staged FastF1 session layer
+- `data/canonical_fastf1`: manifest-gated canonical laps, results, stints, session summaries, sessions, entrants, and weather.
 
-- `data/staged/fastf1`
-- Per-session extracts for FP1, FP2, FP3, Qualifying, Sprint, and Race when available
-- Includes:
-  - `laps.csv`
-  - `stints.csv`
-  - `session_summary.csv`
-  - `best_laps.csv`
-  - optional `results.csv`
-  - optional `weather.csv`
+Canonical outputs are the validated base for telemetry features, race-week layers, race analysis, and strategy products.
 
-This layer is built for reproducible feature engineering and keeps FastF1 telemetry-heavy data out of the web runtime.
+### 4. Product and feature views
 
-### 3a. Staged OpenF1 source consolidation
-
-- `data/staged/openf1`
-- Per-season meetings and sessions
-- Per-session CSV snapshots for selected endpoints such as `laps`, `weather`, `stints`, `pit`, `race_control`, `session_result`, and `starting_grid`
-- `data/staged/openf1/reports/openf1_race_quality.csv` records OpenF1 coverage and agreement against curated races
-
-### 4. Product analytics / feature layer
-
-- `driver_standings.csv`
-- `constructor_standings.csv`
-- `race_week_context.csv`
-- `model_features.csv`
-- `prediction_snapshots.csv`
-- `fantasy_inputs.csv`
-
-These are product-facing and legacy curated views used by the homepage, Strategy Lab, race-week predictions, and future forecasting work. Fantasy inputs remain available for a later rebuild but are not part of the visible product.
-
-### 5. FastF1 features / model inputs / predictions
-
-- `data/features/driver_form_snapshots.csv`
-- `data/features/constructor_form_snapshots.csv`
-- `data/model_inputs/stint_model_inputs.csv`
-- `data/model_inputs/prediction_model_inputs.csv`
-- `data/predictions/strategy_baselines.csv`
-- `data/predictions/fastf1_prediction_snapshots.csv`
-
-These outputs are point-in-time safe, era-aware datasets designed to become the intelligence backbone for Strategy Lab and race-week forecasting.
+- `data/curated`: compact reference/runtime tables such as drivers, constructors, circuits, races, standings, results, prediction snapshots, and fantasy inputs.
+- `data/features`: driver and constructor form snapshots.
+- `data/model_inputs`: leakage-aware model input tables.
+- `data/predictions`: deterministic prediction snapshots, Strategy Lab baselines, Picks challenges, and pit-stop result inputs.
+- `data/telemetry_features`: corner, braking, throttle, straight-line, energy-proxy, and lap-summary features.
+- `data/analytics`: telemetry comparison views, indexed session shards, track summaries, and trace manifests.
+- `data/race_analysis`: completed-race reports and derived post-race intelligence views.
+- `data/race_week`: current weekend context, circuit metadata, readiness views, storylines, weather risk, and strategy signals.
+- `data/strategy_lab`: deterministic race-strategy scenario inputs and outputs.
+- `data/ml`: schema templates for future ML-ready datasets.
 
 ## Pipeline
 
-### 1. Fetch raw data
+Core refresh order from the repo root:
 
 ```bash
 python data/fetch_reference_data.py --start-season 2025 --end-season 2026
 python data/fetch_openf1_data.py --start-season 2023 --end-season 2026 --session-types Q R --only-missing
 python data/build_openf1_quality_report.py
 python validate_openf1_quality.py
-```
-
-### 2. Normalize staged tables
-
-```bash
 python data/normalize_results.py
-```
-
-### 3. Build product views and prediction inputs
-
-```bash
 python data/build_product_views.py
-```
-
-### 4. Load into Supabase / Postgres
-
-```bash
 python data/load_supabase.py
+python build_canonical_fastf1.py --start-season 2020 --end-season 2026
+python validate_canonical_fastf1.py
+python build_telemetry_features.py --start-season 2020 --end-season 2026
+python validate_telemetry_features.py
+python data/build_strategy_lab_layers.py
+python data/build_race_week_layers.py
+python data/build_analytics_views.py
+python data/build_analytics_indexes.py
+python data/build_analytics_telemetry_traces.py
+python data/build_race_analysis_views.py
+python data/build_pit_wall_picks.py
+python build_season_state.py
+python build_product_manifest.py
 ```
 
-### 5. Run the FastF1 intelligence pipeline
+Use `npm run data:refresh` for the bundled deterministic refresh path when the full local data estate is available.
+
+## Validation
 
 ```bash
-python data/fastf1_ingest.py --start-season 2020 --end-season 2026 --only-missing --sleep-seconds 2
-python data/validate_fastf1_archive.py --start-season 2020 --end-season 2026 --sessions FP1 FP2 FP3 Q SQ S R
-python data/run_fastf1_pipeline.py --start-season 2024 --end-season 2026
+python validate_openf1_quality.py
+python validate_canonical_fastf1.py
+python validate_telemetry_features.py
+python validate_analytics_views.py
+python validate_analytics_telemetry_traces.py
+python validate_race_analysis_views.py
+python validate_product_manifest.py
+python validate_season_state.py
+python check_generated_artifacts.py
 ```
 
-## Product outputs
+## Integrity Rules
 
-### Race week context
-
-`race_week_context.csv` identifies:
-
-- latest completed race
-- next scheduled race
-- schedule status per round
-- prior-race context for point-in-time features
-
-### Point-in-time features
-
-`model_features.csv` is leakage-safe for pre-race prediction:
-
-- recent finish / qualifying trends
-- recent points trend
-- teammate delta
-- consistency and DNF rate
-- constructor form
-- standings context
-- strategy-derived overtake / reliability priors
-
-### Prediction snapshots
-
-`prediction_snapshots.csv` stores one prediction snapshot per upcoming race-week field:
-
-- projected finish
-- winner / podium / top-10 probabilities
-- model version
-- generated timestamp
-- compact rationale
-
-### Fantasy inputs
-
-`fantasy_inputs.csv` converts prediction snapshots into reusable fantasy scores and price proxies for both drivers and constructors.
-
-## FastF1 architecture
-
-The FastF1 layer is designed around:
-
-- `raw/fastf1`: schedule and ingestion manifests
-- `raw/fastf1`: raw archive, resumable manifests, failed-session log, optional telemetry parquet
-- `staged/fastf1`: session-level extracted tables
-- `features`: reusable driver and constructor form snapshots
-- `model_inputs`: strategy and prediction modeling inputs
-- `predictions`: production-minded baseline outputs
-
-### 2026-aware modeling
-
-2026 is treated as a regulation reset, not a normal continuation. Historical data is allowed to inform features, but older seasons are down-weighted by era and recency so pre-2026 relationships do not dominate the current rules package.
-
-### Session weighting
-
-- FP1: early setup and acclimatization signal
-- FP2: strongest race-simulation and long-run signal
-- FP3: final setup refinement and track-state update
-- Qualifying: strongest short-run pace anchor
-- Sprint and Race: conversion and execution context when available
-
-## Update workflow through the season
-
-1. Run `fetch_reference_data.py` daily or before race-week refreshes.
-2. Run `normalize_results.py` after new raw data arrives.
-3. Run `build_product_views.py` to regenerate standings, features, and prediction snapshots.
-4. Run `load_supabase.py` to publish tables for the web app.
-5. Run `run_fastf1_pipeline.py` when you want session-rich practice, degradation, and race-week modeling outputs.
-
-### Telemetry note
-
-Telemetry is optional because it is materially heavier than the core session archive. Use it selectively for qualifying and race sessions first if you want:
-
-- speed, braking, throttle, gear, and DRS traces
-- corner delta comparisons
-- track path generation
-- energy deployment proxy analysis
-
-Do not label these outputs as true battery usage unless direct ERS or battery telemetry is available.
-
-This keeps the app current without hardcoding "latest race" content into UI components.
+- Pre-race features must not include same-race outcomes or post-race explanations.
+- Energy fields are proxies and must never be labelled as true ERS or battery state.
+- Position movement, DRS windows, traffic, dirty-air, overtakes, and race-control causes must be labelled as derived/proxy unless exact source evidence exists.
+- Public runtime code should read compact product views or Supabase views, not raw telemetry archives.
+- Do not commit raw FastF1 archives, parquet telemetry, canonical CSVs, telemetry features, indexed analytics shards, or large generated reports without an explicit release decision.
