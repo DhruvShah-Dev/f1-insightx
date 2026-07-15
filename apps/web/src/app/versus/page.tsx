@@ -29,11 +29,17 @@ export default async function VersusPage({ searchParams }: VersusPageProps) {
     : sessions[0]?.id ?? "";
   const drivers = sessionId ? await getAnalyticsDrivers(sessionId) : [];
   const defaultPair = sessionId ? await getAnalyticsDefaultDriverPair(sessionId) : null;
-  const driverA = params.driverA?.trim().toUpperCase() || defaultPair?.driverA || drivers[0]?.code || "";
-  const driverB = params.driverB?.trim().toUpperCase()
-    || defaultPair?.driverB
-    || drivers.find((driver) => driver.code !== driverA)?.code
-    || "";
+  const requestedDriverA = params.driverA?.trim().toUpperCase();
+  const requestedDriverB = params.driverB?.trim().toUpperCase();
+  const driverCodes = new Set(drivers.map((driver) => driver.code));
+  const driverA = requestedDriverA && driverCodes.has(requestedDriverA)
+    ? requestedDriverA
+    : defaultPair?.driverA || drivers[0]?.code || "";
+  const driverB = requestedDriverB && requestedDriverB !== driverA && driverCodes.has(requestedDriverB)
+    ? requestedDriverB
+    : defaultPair?.driverB && defaultPair.driverB !== driverA
+      ? defaultPair.driverB
+      : drivers.find((driver) => driver.code !== driverA)?.code || "";
   const mode: AnalyticsCompareMode = "all";
   const comparison = sessionId && driverA && driverB && driverA !== driverB
     ? await getAnalyticsComparison(sessionId, driverA, driverB, mode)

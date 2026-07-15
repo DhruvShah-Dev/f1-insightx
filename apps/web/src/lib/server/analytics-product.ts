@@ -1,8 +1,10 @@
 import { cache } from "react";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { gunzip } from "node:zlib";
+import { parse } from "csv-parse/sync";
 import { parseNumber, readCsvFile } from "@/lib/server/csv";
 import { getRepoDataPath, getTestFixturePath, isTestRun } from "@/lib/server/data-paths";
 import {
@@ -342,13 +344,35 @@ const ANALYTICS_SESSION_PRIORITY: Record<string, number> = {
   FP1: 1,
 };
 
-const readSessionRows = cache(async () => readCsvFile<SessionIndexRow>("analytics.sessionIndex"));
+async function readFallbackSessionRows() {
+  const content = await readFile(getTestFixturePath("analytics", "analytics_session_index.csv"), "utf-8");
+  return parse(content, {
+    columns: true,
+    skip_empty_lines: true,
+    trim: true,
+  }) as SessionIndexRow[];
+}
+
+const readSessionRows = cache(async () => {
+  try {
+    return await readCsvFile<SessionIndexRow>("analytics.sessionIndex");
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return readFallbackSessionRows();
+    }
+
+    throw error;
+  }
+});
 function getAnalyticsIndexedDir() {
   if (isTestRun()) {
     return getTestFixturePath("analytics", "indexed");
   }
 
-  return getRepoDataPath("analytics", "indexed");
+  const indexedDir = getRepoDataPath("analytics", "indexed");
+  return existsSync(path.join(indexedDir, "analytics_session_manifest.json"))
+    ? indexedDir
+    : getTestFixturePath("analytics", "indexed");
 }
 
 const gunzipAsync = promisify(gunzip);
