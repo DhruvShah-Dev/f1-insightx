@@ -1,5 +1,6 @@
 import { cache } from "react";
-import { parseNumber, readOptionalCsvFile } from "@/lib/server/csv";
+import { parseNumber, readOptionalCsvFile, type CsvFileKey } from "@/lib/server/csv";
+import { isTestRun } from "@/lib/server/data-paths";
 import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
 
 type Numeric = number | string | null | undefined;
@@ -54,6 +55,51 @@ type PitStrategyRow = {
   driver: string;
   team: string;
 };
+
+const achievementTableMap = {
+  analysisIndex: "race_analysis_index",
+  races: "races",
+  raceResults: "race_results",
+  drivers: "drivers",
+  constructors: "constructors",
+  positionTimeline: "race_analysis_position_timeline",
+  positionChanges: "race_analysis_position_changes",
+  pitStrategy: "race_analysis_pit_strategy",
+} as const;
+
+async function readSupabaseRows<T>(table: string) {
+  const supabase = isTestRun()
+    ? null
+    : (await import("@/lib/server/supabase")).getSupabasePublicClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const pageSize = 1000;
+  const rows: unknown[] = [];
+
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase.from(table).select("*").range(from, from + pageSize - 1);
+    if (error) {
+      return null;
+    }
+
+    rows.push(...(data ?? []));
+    if (!data || data.length < pageSize) {
+      break;
+    }
+  }
+
+  if (!rows.length) {
+    return null;
+  }
+
+  return rows as T[];
+}
+
+async function readAchievementRows<T>(tableKey: keyof typeof achievementTableMap, csvKey: CsvFileKey) {
+  return (await readSupabaseRows<T>(achievementTableMap[tableKey])) ?? readOptionalCsvFile<T>(csvKey);
+}
 
 export type AchievementMetricId =
   | "lapsCompleted"
@@ -208,14 +254,14 @@ const loadAchievementRows = cache(async () => {
     positionChanges,
     pitStrategy,
   ] = await Promise.all([
-    readOptionalCsvFile<RaceAnalysisIndexRow>("raceAnalysis.index"),
-    readOptionalCsvFile<RaceRow>("curated.races"),
-    readOptionalCsvFile<RaceResultRow>("curated.raceResults"),
-    readOptionalCsvFile<DriverRow>("curated.drivers"),
-    readOptionalCsvFile<ConstructorRow>("curated.constructors"),
-    readOptionalCsvFile<PositionTimelineRow>("raceAnalysis.positionTimeline"),
-    readOptionalCsvFile<PositionChangeRow>("raceAnalysis.positionChanges"),
-    readOptionalCsvFile<PitStrategyRow>("raceAnalysis.pitStrategy"),
+    readAchievementRows<RaceAnalysisIndexRow>("analysisIndex", "raceAnalysis.index"),
+    readAchievementRows<RaceRow>("races", "curated.races"),
+    readAchievementRows<RaceResultRow>("raceResults", "curated.raceResults"),
+    readAchievementRows<DriverRow>("drivers", "curated.drivers"),
+    readAchievementRows<ConstructorRow>("constructors", "curated.constructors"),
+    readAchievementRows<PositionTimelineRow>("positionTimeline", "raceAnalysis.positionTimeline"),
+    readAchievementRows<PositionChangeRow>("positionChanges", "raceAnalysis.positionChanges"),
+    readAchievementRows<PitStrategyRow>("pitStrategy", "raceAnalysis.pitStrategy"),
   ]);
 
   return {

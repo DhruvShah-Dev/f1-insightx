@@ -1,4 +1,5 @@
 import { parseNumber, readCsvFile } from "@/lib/server/csv";
+import { isTestRun } from "@/lib/server/data-paths";
 import { getCurrentDriverMeta } from "@/lib/ui/driver-asset-manifest";
 
 export type DriverStanding = {
@@ -91,6 +92,43 @@ async function loadChampionshipCsvRows() {
   return { races, drivers, constructors, driverStandings, constructorStandings };
 }
 
+async function loadChampionshipSupabaseRows() {
+  const supabase = isTestRun()
+    ? null
+    : (await import("@/lib/server/supabase")).getSupabasePublicClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const [races, drivers, constructors, driverStandings, constructorStandings] = await Promise.all([
+    supabase.from("races").select("id, season, round, race_name, scheduled_at"),
+    supabase.from("drivers").select("id, full_name, nationality"),
+    supabase.from("constructors").select("id, name"),
+    supabase.from("driver_standings").select("race_id, season, round, driver_id, constructor_id, standing_position, points, wins"),
+    supabase.from("constructor_standings").select("race_id, season, round, constructor_id, standing_position, points, wins"),
+  ]);
+
+  if (races.error || drivers.error || constructors.error || driverStandings.error || constructorStandings.error) {
+    return null;
+  }
+
+  if (!driverStandings.data?.length || !constructorStandings.data?.length) {
+    return null;
+  }
+
+  return {
+    races: races.data as unknown as CsvRace[],
+    drivers: drivers.data as unknown as CsvDriver[],
+    constructors: constructors.data as unknown as CsvConstructor[],
+    driverStandings: driverStandings.data as unknown as CsvDriverStanding[],
+    constructorStandings: constructorStandings.data as unknown as CsvConstructorStanding[],
+  };
+}
+
+async function loadChampionshipRows() {
+  return (await loadChampionshipSupabaseRows()) ?? loadChampionshipCsvRows();
+}
+
 function latestRaceForSeason(rows: Array<{ season: string; round: string; race_id: string }>, season: number) {
   return rows
     .filter((row) => parseNumber(row.season) === season)
@@ -109,7 +147,7 @@ function compareStandingPosition(
 }
 
 export async function listChampionshipSeasons(): Promise<number[]> {
-  const { driverStandings, constructorStandings } = await loadChampionshipCsvRows();
+  const { driverStandings, constructorStandings } = await loadChampionshipRows();
   return [
     ...new Set(
       [...driverStandings, ...constructorStandings]
@@ -120,7 +158,7 @@ export async function listChampionshipSeasons(): Promise<number[]> {
 }
 
 export async function getChampionshipStandingsSeason(season?: number): Promise<ChampionshipStandingsSeason | null> {
-  const { races, drivers, constructors, driverStandings, constructorStandings } = await loadChampionshipCsvRows();
+  const { races, drivers, constructors, driverStandings, constructorStandings } = await loadChampionshipRows();
   const seasons = await listChampionshipSeasons();
   const selectedSeason = season && seasons.includes(season) ? season : seasons[0];
   if (!selectedSeason) {

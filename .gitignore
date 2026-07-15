@@ -85,3 +85,5 @@ data/strategy_lab/track_archetype_weights.csv
 *.parquet
 *.feather
 *.arrow
+
+.vercel

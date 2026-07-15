@@ -1,7 +1,8 @@
 import "server-only";
 
 import { cache } from "react";
-import { parseBoolean, parseNumber, readOptionalCsvFile } from "@/lib/server/csv";
+import { parseBoolean, parseNumber, readOptionalCsvFile, type CsvFileKey } from "@/lib/server/csv";
+import { isTestRun } from "@/lib/server/data-paths";
 
 type Numeric = number | string | null | undefined;
 
@@ -186,6 +187,55 @@ type LinkRow = {
   enabled: string;
   unavailable_reason: string;
 };
+
+const raceAnalysisTableMap = {
+  index: "race_analysis_index",
+  links: "race_analysis_links",
+  neutralizationPhases: "race_analysis_neutralization_phases",
+  paceEvolution: "race_analysis_pace_evolution",
+  pitStrategy: "race_analysis_pit_strategy",
+  positionChanges: "race_analysis_position_changes",
+  positionSwingEvents: "race_analysis_position_swing_events",
+  positionTimeline: "race_analysis_position_timeline",
+  stints: "race_analysis_stints",
+  storyPoints: "race_analysis_story_points",
+  summary: "race_analysis_summary",
+  trafficProxy: "race_analysis_traffic_proxy",
+  weatherContext: "race_analysis_weather_context",
+} as const;
+
+async function readRaceAnalysisRows<T>(key: keyof typeof raceAnalysisTableMap, csvKey: CsvFileKey) {
+  const supabase = isTestRun()
+    ? null
+    : (await import("@/lib/server/supabase")).getSupabasePublicClient();
+  if (supabase) {
+    const pageSize = 1000;
+    const rows: unknown[] = [];
+
+    for (let from = 0; ; from += pageSize) {
+      const { data, error } = await supabase
+        .from(raceAnalysisTableMap[key])
+        .select("*")
+        .range(from, from + pageSize - 1);
+
+      if (error) {
+        rows.length = 0;
+        break;
+      }
+
+      rows.push(...(data ?? []));
+      if (!data || data.length < pageSize) {
+        break;
+      }
+    }
+
+    if (rows.length > 0) {
+      return rows as T[];
+    }
+  }
+
+  return readOptionalCsvFile<T>(csvKey);
+}
 
 export type RaceAnalysisIndexItem = {
   id: string;
@@ -423,8 +473,8 @@ function mapIndex(row: IndexRow, summary?: SummaryRow): RaceAnalysisIndexItem {
 
 const loadBaseRows = cache(async () => {
   const [index, summaries] = await Promise.all([
-    readOptionalCsvFile<IndexRow>("raceAnalysis.index"),
-    readOptionalCsvFile<SummaryRow>("raceAnalysis.summary"),
+    readRaceAnalysisRows<IndexRow>("index", "raceAnalysis.index"),
+    readRaceAnalysisRows<SummaryRow>("summary", "raceAnalysis.summary"),
   ]);
   return { index, summaries };
 });
@@ -446,16 +496,16 @@ export const getRaceAnalysisDetail = cache(async (raceId: string): Promise<RaceA
   }
 
   const [storyRows, stintRows, pitRows, paceRows, positionRows, swingRows, trafficRows, neutralRows, weatherRows, linkRows] = await Promise.all([
-    readOptionalCsvFile<StoryPointRow>("raceAnalysis.storyPoints"),
-    readOptionalCsvFile<StintRow>("raceAnalysis.stints"),
-    readOptionalCsvFile<PitStrategyRow>("raceAnalysis.pitStrategy"),
-    readOptionalCsvFile<PaceEvolutionRow>("raceAnalysis.paceEvolution"),
-    readOptionalCsvFile<PositionTimelineRow>("raceAnalysis.positionTimeline"),
-    readOptionalCsvFile<PositionSwingRow>("raceAnalysis.positionSwingEvents"),
-    readOptionalCsvFile<TrafficProxyRow>("raceAnalysis.trafficProxy"),
-    readOptionalCsvFile<NeutralizationRow>("raceAnalysis.neutralizationPhases"),
-    readOptionalCsvFile<WeatherContextRow>("raceAnalysis.weatherContext"),
-    readOptionalCsvFile<LinkRow>("raceAnalysis.links"),
+    readRaceAnalysisRows<StoryPointRow>("storyPoints", "raceAnalysis.storyPoints"),
+    readRaceAnalysisRows<StintRow>("stints", "raceAnalysis.stints"),
+    readRaceAnalysisRows<PitStrategyRow>("pitStrategy", "raceAnalysis.pitStrategy"),
+    readRaceAnalysisRows<PaceEvolutionRow>("paceEvolution", "raceAnalysis.paceEvolution"),
+    readRaceAnalysisRows<PositionTimelineRow>("positionTimeline", "raceAnalysis.positionTimeline"),
+    readRaceAnalysisRows<PositionSwingRow>("positionSwingEvents", "raceAnalysis.positionSwingEvents"),
+    readRaceAnalysisRows<TrafficProxyRow>("trafficProxy", "raceAnalysis.trafficProxy"),
+    readRaceAnalysisRows<NeutralizationRow>("neutralizationPhases", "raceAnalysis.neutralizationPhases"),
+    readRaceAnalysisRows<WeatherContextRow>("weatherContext", "raceAnalysis.weatherContext"),
+    readRaceAnalysisRows<LinkRow>("links", "raceAnalysis.links"),
   ]);
 
   const base = mapIndex(indexRow, summaryRow);
