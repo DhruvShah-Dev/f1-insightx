@@ -91,7 +91,7 @@ Stored under:
 - `public/assets/teams/logos/light`
 - `public/assets/teams/logos/mono`
 
-Current variant folders are populated from the existing local SVG logo set so callers can resolve a stable path for dark surfaces, light plates, and compact mono-style slots. Replace individual files with hand-tuned variants when brand-safe source assets are available.
+Current variant folders are populated from the existing local SVG logo set so callers can resolve a stable path for dark surfaces, light plates, and compact mono-style slots. The dark-surface variants are exported as transparent PNGs with black/dark fills lifted to high-contrast team colors for black backgrounds. Replace individual files with hand-tuned variants when brand-safe source assets are available.
 
 Prefer SVG for team identity. Use PNG only for raster-only source logos or email/social contexts where SVG support is not acceptable.
 
@@ -100,6 +100,7 @@ Prefer SVG for team identity. Use PNG only for raster-only source logos or email
 Stored under `public/assets/logos/product`.
 
 - `dark/wordmark.svg`
+- `dark/wordmark.png`
 - `light/minimal.svg`
 - `icon/icon-light.svg`
 

@@ -364,6 +364,109 @@ function describeSnapshot(snapshot: DriverStandingsSnapshot | ConstructorStandin
   };
 }
 
+function compareSnapshotRecency(
+  left: DriverStandingsSnapshot | ConstructorStandingsSnapshot,
+  right: DriverStandingsSnapshot | ConstructorStandingsSnapshot,
+) {
+  return left.season - right.season || left.round - right.round;
+}
+
+async function resolveFreshestHomepageSnapshot<T extends DriverStandingsSnapshot | ConstructorStandingsSnapshot>(
+  databaseLoad: () => Promise<T | null>,
+  csvLoad: () => Promise<T | null>,
+): Promise<RuntimeSourceResult<T>> {
+  let databaseReason: string | null = null;
+  let csvReason: string | null = null;
+  let databaseData: T | null = null;
+  let csvData: T | null = null;
+
+  try {
+    databaseData = await databaseLoad();
+    if (!databaseData) {
+      databaseReason = "Primary canonical_tables returned no data.";
+    }
+  } catch (error) {
+    databaseReason = error instanceof Error ? error.message : "Primary canonical_tables failed.";
+  }
+
+  try {
+    csvData = await csvLoad();
+    if (!csvData) {
+      csvReason = "Degraded curated_csv returned no data.";
+    }
+  } catch (error) {
+    csvReason = error instanceof Error ? error.message : "Degraded curated_csv failed.";
+  }
+
+  if (databaseData && csvData && compareSnapshotRecency(csvData, databaseData) > 0) {
+    return {
+      mode: "degraded",
+      data: csvData,
+      meta: {
+        surface: "homepage",
+        mode: "degraded",
+        sourceKind: "csv-canonical",
+        sourceLabel: "curated_csv",
+        reason: `curated_csv is newer than canonical_tables (${csvData.race.id} vs ${databaseData.race.id}).`,
+        generatedAt: null,
+        buildVersion: null,
+        ...describeSnapshot(csvData),
+      },
+    };
+  }
+
+  if (databaseData) {
+    return {
+      mode: "primary",
+      data: databaseData,
+      meta: {
+        surface: "homepage",
+        mode: "primary",
+        sourceKind: "database",
+        sourceLabel: "canonical_tables",
+        reason: null,
+        generatedAt: null,
+        buildVersion: null,
+        ...describeSnapshot(databaseData),
+      },
+    };
+  }
+
+  if (csvData) {
+    return {
+      mode: "degraded",
+      data: csvData,
+      meta: {
+        surface: "homepage",
+        mode: "degraded",
+        sourceKind: "csv-canonical",
+        sourceLabel: "curated_csv",
+        reason: databaseReason,
+        generatedAt: null,
+        buildVersion: null,
+        ...describeSnapshot(csvData),
+      },
+    };
+  }
+
+  return {
+    mode: "unavailable",
+    data: null,
+    meta: {
+      surface: "homepage",
+      mode: "unavailable",
+      sourceKind: null,
+      sourceLabel: null,
+      reason: `Primary failed (${databaseReason ?? "unknown"}); degraded failed (${csvReason ?? "unknown"}).`,
+      generatedAt: null,
+      buildVersion: null,
+      eventId: null,
+      season: null,
+      round: null,
+    },
+  };
+}
+
 function describePrediction(prediction: UpcomingRacePrediction) {
   return {
     eventId: prediction.race.id,
@@ -443,51 +546,29 @@ export const getRaceWeekOverviewResult = cache(async (): Promise<RaceWeekOvervie
 });
 
 export const getCurrentDriverStandingsSnapshotResult = cache(async (): Promise<DriverStandingsSnapshotResult> =>
-  resolveRuntimeSource({
-    surface: "homepage",
-    primary: {
-      sourceKind: "database",
-      sourceLabel: "canonical_tables",
-      load: async () => {
-        const supabase = getSupabasePublicClient();
-        if (!supabase) {
-          return null;
-        }
-        return getCurrentDriverStandingsSnapshotFromSupabase();
-      },
-      describe: describeSnapshot,
+  resolveFreshestHomepageSnapshot(
+    async () => {
+      const supabase = getSupabasePublicClient();
+      if (!supabase) {
+        return null;
+      }
+      return getCurrentDriverStandingsSnapshotFromSupabase();
     },
-    degraded: {
-      sourceKind: "csv-canonical",
-      sourceLabel: "curated_csv",
-      load: getCurrentDriverStandingsSnapshotFromCsv,
-      describe: describeSnapshot,
-    },
-  }),
+    getCurrentDriverStandingsSnapshotFromCsv,
+  ),
 );
 
 export const getCurrentConstructorStandingsSnapshotResult = cache(async (): Promise<ConstructorStandingsSnapshotResult> =>
-  resolveRuntimeSource({
-    surface: "homepage",
-    primary: {
-      sourceKind: "database",
-      sourceLabel: "canonical_tables",
-      load: async () => {
-        const supabase = getSupabasePublicClient();
-        if (!supabase) {
-          return null;
-        }
-        return getCurrentConstructorStandingsSnapshotFromSupabase();
-      },
-      describe: describeSnapshot,
+  resolveFreshestHomepageSnapshot(
+    async () => {
+      const supabase = getSupabasePublicClient();
+      if (!supabase) {
+        return null;
+      }
+      return getCurrentConstructorStandingsSnapshotFromSupabase();
     },
-    degraded: {
-      sourceKind: "csv-canonical",
-      sourceLabel: "curated_csv",
-      load: getCurrentConstructorStandingsSnapshotFromCsv,
-      describe: describeSnapshot,
-    },
-  }),
+    getCurrentConstructorStandingsSnapshotFromCsv,
+  ),
 );
 
 export const getUpcomingRacePredictionResult = cache(async (): Promise<UpcomingRacePredictionResult> =>

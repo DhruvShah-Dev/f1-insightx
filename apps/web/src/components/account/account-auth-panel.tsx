@@ -213,7 +213,7 @@ export function AccountAuthPanel(props: AccountAuthPanelProps) {
           <div className="account-access-stage">
             <div className="account-access-stage__brand">
               <AssetImage
-                src="/assets/logos/wordmark.svg"
+                src="/assets/logos/wordmark.png"
                 fallbackSrc="/assets/logos/minimal-light.svg"
                 alt="F1 InsightX"
                 className="account-access-stage__logo"

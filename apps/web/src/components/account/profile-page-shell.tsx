@@ -488,7 +488,7 @@ export function ProfilePageShell({
           <div className="account-profile-hero__trackline" aria-hidden="true" />
           <div className="account-profile-hero__brand">
             <AssetImage
-              src="/assets/logos/wordmark.svg"
+              src="/assets/logos/wordmark.png"
               fallbackSrc="/assets/logos/minimal-light.svg"
               alt="F1 InsightX"
               className="account-profile-hero__logo"

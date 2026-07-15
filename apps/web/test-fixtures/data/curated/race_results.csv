@@ -1,3 +1,4 @@
-race_id,driver_id,constructor_id,finish_status,laps_completed
-2026-01-bahrain,hamilton,ferrari,Finished,57
-2026-01-bahrain,norris,mclaren,Retired,42
+id,race_id,driver_id,constructor_id,grid_position,finish_position,finish_status,points,laps_completed,fastest_lap_rank
+2026-01-bahrain|hamilton,2026-01-bahrain,hamilton,ferrari,1,1,Finished,25,57,1
+2026-01-bahrain|norris,2026-01-bahrain,norris,mclaren,2,2,Retired,18,42,2
+2026-09-silverstone|antonelli,2026-09-silverstone,antonelli,mercedes,1,1,Finished,0,52,1

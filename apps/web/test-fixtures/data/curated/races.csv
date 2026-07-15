@@ -1,4 +1,5 @@
-id,season,round,race_name,scheduled_at
-2024-01-bahrain,2024,1,Bahrain Grand Prix,2024-03-02T15:00:00+00:00
-2025-01-australian,2025,1,Australian Grand Prix,2025-03-16T04:00:00+00:00
-2026-01-bahrain,2026,1,Bahrain Grand Prix,2026-03-08T15:00:00+00:00
+id,season,round,race_name,official_name,circuit_id,scheduled_at,sprint_weekend
+2024-01-bahrain,2024,1,Bahrain Grand Prix,,bahrain,2024-03-02T15:00:00+00:00,False
+2025-01-australian,2025,1,Australian Grand Prix,,albert_park,2025-03-16T04:00:00+00:00,False
+2026-01-bahrain,2026,1,Bahrain Grand Prix,,bahrain,2026-03-08T15:00:00+00:00,False
+2026-09-silverstone,2026,9,British Grand Prix,,silverstone,2026-07-05T14:00:00+00:00,True

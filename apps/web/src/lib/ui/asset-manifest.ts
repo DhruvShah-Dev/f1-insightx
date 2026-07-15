@@ -687,7 +687,7 @@ function resolveTeamLogoPaths(badgeAssetPath: string | null): Record<TeamLogoThe
   }
 
   return {
-    dark: `/assets/teams/logos/dark/${filename}`,
+    dark: `/assets/teams/logos/dark/${filename.replace(/\.svg$/i, ".png")}`,
     light: `/assets/teams/logos/light/${filename}`,
     mono: `/assets/teams/logos/mono/${filename}`,
   };

@@ -3,5 +3,14 @@ race_id,season,round,constructor_id,standing_position,points,wins
 2024-01-bahrain,2024,1,ferrari,2,18,0
 2025-01-australian,2025,1,mclaren,1,43,1
 2025-01-australian,2025,1,ferrari,2,10,0
-2026-01-bahrain,2026,1,ferrari,1,25,1
-2026-01-bahrain,2026,1,mclaren,2,18,0
+2026-09-silverstone,2026,9,mercedes,1,333,7
+2026-09-silverstone,2026,9,ferrari,2,255,2
+2026-09-silverstone,2026,9,mclaren,3,179,0
+2026-09-silverstone,2026,9,red_bull,4,128,0
+2026-09-silverstone,2026,9,alpine,5,60,0
+2026-09-silverstone,2026,9,rb,6,59,0
+2026-09-silverstone,2026,9,haas,7,21,0
+2026-09-silverstone,2026,9,williams,8,11,0
+2026-09-silverstone,2026,9,audi,9,6,0
+2026-09-silverstone,2026,9,aston_martin,10,1,0
+2026-09-silverstone,2026,9,cadillac,11,0,0

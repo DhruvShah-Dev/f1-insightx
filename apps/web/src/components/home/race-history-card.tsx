@@ -8,7 +8,7 @@ type RaceHistoryCardProps = {
 
 export async function RaceHistoryCard({ race }: RaceHistoryCardProps) {
   return (
-    <Link href={`/races/${race.slug}`} className="race-history-card">
+    <Link href={`/race-analysis/${race.slug}`} className="race-history-card">
       <div className="race-history-card__visual">
         <TrackMap circuitId={race.circuitId} title={race.circuitName} />
       </div>
