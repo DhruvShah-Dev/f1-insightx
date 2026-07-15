@@ -731,24 +731,46 @@ async function getRaceWeekOverviewFromSupabase(): Promise<RaceWeekOverview | nul
   if (!supabase) {
     return null;
   }
+  const client = supabase;
 
-  const [racesResult, raceResultsResult] = await Promise.all([
-    supabase
+  async function readCompletedRaceIds() {
+    const pageSize = 1000;
+    const raceIds: string[] = [];
+
+    for (let from = 0; ; from += pageSize) {
+      const { data, error } = await client
+        .from("race_results")
+        .select("race_id")
+        .range(from, from + pageSize - 1);
+
+      if (error) {
+        throw new Error("Failed to load canonical race week overview.");
+      }
+
+      raceIds.push(...((data ?? []) as Array<{ race_id: string }>).map((row) => String(row.race_id)));
+      if (!data || data.length < pageSize) {
+        break;
+      }
+    }
+
+    return raceIds;
+  }
+
+  const [racesResult, completedRaceIdRows] = await Promise.all([
+    client
       .from("races")
       .select("id, season, round, race_name, circuit_id, scheduled_at")
       .order("season", { ascending: true })
       .order("round", { ascending: true }),
-    supabase.from("race_results").select("race_id"),
+    readCompletedRaceIds(),
   ]);
 
-  if (racesResult.error || raceResultsResult.error) {
+  if (racesResult.error) {
     throw new Error("Failed to load canonical race week overview.");
   }
 
   const raceRows = (racesResult.data ?? []) as SupabaseRaceRow[];
-  const completedRaceIds = new Set(
-    ((raceResultsResult.data ?? []) as Array<{ race_id: string }>).map((row) => String(row.race_id)),
-  );
+  const completedRaceIds = new Set(completedRaceIdRows);
   const { latestCompletedRaceRow, nextRaceRow } = deriveSupabaseRaceRows(raceRows, completedRaceIds);
   const currentSeason = nextRaceRow?.season ?? latestCompletedRaceRow?.season ?? null;
   if (!currentSeason) {
