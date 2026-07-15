@@ -99,29 +99,59 @@ async function loadChampionshipSupabaseRows() {
   if (!supabase) {
     return null;
   }
+  const client = supabase;
+
+  async function readSupabaseRows<T>(table: string, columns: string) {
+    const pageSize = 1000;
+    const rows: unknown[] = [];
+
+    for (let from = 0; ; from += pageSize) {
+      const { data, error } = await client
+        .from(table)
+        .select(columns)
+        .range(from, from + pageSize - 1);
+
+      if (error) {
+        return null;
+      }
+
+      rows.push(...(data ?? []));
+      if (!data || data.length < pageSize) {
+        break;
+      }
+    }
+
+    return rows as T[];
+  }
 
   const [races, drivers, constructors, driverStandings, constructorStandings] = await Promise.all([
-    supabase.from("races").select("id, season, round, race_name, scheduled_at"),
-    supabase.from("drivers").select("id, full_name, nationality"),
-    supabase.from("constructors").select("id, name"),
-    supabase.from("driver_standings").select("race_id, season, round, driver_id, constructor_id, standing_position, points, wins"),
-    supabase.from("constructor_standings").select("race_id, season, round, constructor_id, standing_position, points, wins"),
+    readSupabaseRows<CsvRace>("races", "id, season, round, race_name, scheduled_at"),
+    readSupabaseRows<CsvDriver>("drivers", "id, full_name, nationality"),
+    readSupabaseRows<CsvConstructor>("constructors", "id, name"),
+    readSupabaseRows<CsvDriverStanding>(
+      "driver_standings",
+      "race_id, season, round, driver_id, constructor_id, standing_position, points, wins",
+    ),
+    readSupabaseRows<CsvConstructorStanding>(
+      "constructor_standings",
+      "race_id, season, round, constructor_id, standing_position, points, wins",
+    ),
   ]);
 
-  if (races.error || drivers.error || constructors.error || driverStandings.error || constructorStandings.error) {
+  if (!races || !drivers || !constructors || !driverStandings || !constructorStandings) {
     return null;
   }
 
-  if (!driverStandings.data?.length || !constructorStandings.data?.length) {
+  if (!driverStandings.length || !constructorStandings.length) {
     return null;
   }
 
   return {
-    races: races.data as unknown as CsvRace[],
-    drivers: drivers.data as unknown as CsvDriver[],
-    constructors: constructors.data as unknown as CsvConstructor[],
-    driverStandings: driverStandings.data as unknown as CsvDriverStanding[],
-    constructorStandings: constructorStandings.data as unknown as CsvConstructorStanding[],
+    races,
+    drivers,
+    constructors,
+    driverStandings,
+    constructorStandings,
   };
 }
 
