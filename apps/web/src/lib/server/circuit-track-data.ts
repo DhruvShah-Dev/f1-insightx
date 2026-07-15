@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { cache } from "react";
 import { readCsvFile } from "@/lib/server/csv";
-import { getRepoDataPath } from "@/lib/server/data-paths";
+import { getRepoDataPath, isTestRun } from "@/lib/server/data-paths";
 
 export type CircuitTrackData = {
   circuitId: string;
@@ -21,9 +21,66 @@ type RaceCircuitRow = {
   circuit_id: string;
 };
 
+type SupabaseCircuitTrackRow = {
+  circuit_id: string;
+  season: number | string | null;
+  round: number | string | null;
+  race_name: string | null;
+  session_code: string | null;
+  source: string | null;
+  rotation_degrees: number | string | null;
+  path_data: string | null;
+};
+
 const circuitTrackPathsFile = getRepoDataPath("race_week", "circuit_track_paths.json");
 
+function mapSupabaseCircuitTrackRow(row: SupabaseCircuitTrackRow): CircuitTrackData | null {
+  if (!row.circuit_id || !row.path_data) {
+    return null;
+  }
+
+  return {
+    circuitId: row.circuit_id,
+    season: Number(row.season ?? 0),
+    round: Number(row.round ?? 0),
+    raceName: row.race_name ?? row.circuit_id,
+    sessionCode: row.session_code ?? "",
+    source: row.source ?? "supabase",
+    rotationDegrees: Number(row.rotation_degrees ?? 0),
+    pathData: row.path_data,
+  };
+}
+
+async function loadCircuitTrackDataFromSupabase(): Promise<CircuitTrackMap | null> {
+  const supabase = isTestRun()
+    ? null
+    : (await import("@/lib/server/supabase")).getSupabasePublicClient();
+  if (!supabase) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from("circuit_track_paths")
+    .select("circuit_id, season, round, race_name, session_code, source, rotation_degrees, path_data");
+
+  if (error || !data?.length) {
+    return null;
+  }
+
+  return Object.fromEntries(
+    (data as SupabaseCircuitTrackRow[])
+      .map(mapSupabaseCircuitTrackRow)
+      .filter((row): row is CircuitTrackData => row !== null)
+      .map((row) => [row.circuitId, row]),
+  );
+}
+
 const loadCircuitTrackData = cache(async (): Promise<CircuitTrackMap> => {
+  const supabaseData = await loadCircuitTrackDataFromSupabase();
+  if (supabaseData && Object.keys(supabaseData).length > 0) {
+    return supabaseData;
+  }
+
   try {
     const content = await readFile(circuitTrackPathsFile, "utf-8");
     return JSON.parse(content) as CircuitTrackMap;
