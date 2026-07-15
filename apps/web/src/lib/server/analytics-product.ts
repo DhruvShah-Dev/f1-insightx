@@ -1,10 +1,8 @@
 import { cache } from "react";
-import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import { gunzip } from "node:zlib";
-import { parse } from "csv-parse/sync";
 import { parseNumber, readCsvFile } from "@/lib/server/csv";
 import { getRepoDataPath, getTestFixturePath, isTestRun } from "@/lib/server/data-paths";
 import {
@@ -14,6 +12,8 @@ import {
   type AnalyticsTraceManifest,
 } from "@/lib/server/analytics-manifest";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceMetadata, type RuntimeSourceResult } from "@/lib/server/runtime-source";
+import fallbackIndexedManifest from "../../../test-fixtures/data/analytics/indexed/analytics_session_manifest.json";
+import fallbackIndexedSession from "../../../test-fixtures/data/analytics/indexed/sessions/2026-04-r-miami-grand-prix-fixture.json";
 
 type Numeric = number | string | null | undefined;
 
@@ -345,12 +345,7 @@ const ANALYTICS_SESSION_PRIORITY: Record<string, number> = {
 };
 
 async function readFallbackSessionRows() {
-  const content = await readFile(getTestFixturePath("analytics", "analytics_session_index.csv"), "utf-8");
-  return parse(content, {
-    columns: true,
-    skip_empty_lines: true,
-    trim: true,
-  }) as SessionIndexRow[];
+  return [fallbackIndexedSession.session as SessionIndexRow];
 }
 
 const readSessionRows = cache(async () => {
@@ -369,10 +364,7 @@ function getAnalyticsIndexedDir() {
     return getTestFixturePath("analytics", "indexed");
   }
 
-  const indexedDir = getRepoDataPath("analytics", "indexed");
-  return existsSync(path.join(indexedDir, "analytics_session_manifest.json"))
-    ? indexedDir
-    : getTestFixturePath("analytics", "indexed");
+  return getRepoDataPath("analytics", "indexed");
 }
 
 const gunzipAsync = promisify(gunzip);
@@ -403,8 +395,16 @@ type AnalyticsTraceSessionPayload = {
 
 const readIndexedManifest = cache(async (): Promise<AnalyticsIndexedManifest> => {
   const filePath = path.join(getAnalyticsIndexedDir(), "analytics_session_manifest.json");
-  const content = await readFile(filePath, "utf-8");
-  return parseAnalyticsIndexedManifest(JSON.parse(content));
+  try {
+    const content = await readFile(filePath, "utf-8");
+    return parseAnalyticsIndexedManifest(JSON.parse(content));
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return parseAnalyticsIndexedManifest(fallbackIndexedManifest);
+    }
+
+    throw error;
+  }
 });
 
 const readIndexedSessionPayload = cache(async (sessionId: string): Promise<AnalyticsIndexedSessionPayload | null> => {
@@ -412,6 +412,10 @@ const readIndexedSessionPayload = cache(async (sessionId: string): Promise<Analy
   const entry = manifest.sessions[sessionId];
   if (!entry?.file || entry.file.includes("..") || path.isAbsolute(entry.file)) {
     return null;
+  }
+
+  if (entry.file === fallbackIndexedManifest.sessions["2026_04_R_Miami Grand Prix"]?.file) {
+    return fallbackIndexedSession as AnalyticsIndexedSessionPayload;
   }
 
   try {
