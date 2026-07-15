@@ -2259,7 +2259,7 @@ select optgroup {
 
 .home-reveal-ready .constructor-standings[data-home-reveal] .constructor-standings__podium-cell,
 .home-reveal-ready .driver-standings[data-home-reveal] .driver-standings__cell {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(1.3rem);
   transition: opacity 480ms ease, transform 520ms ease;
 }
