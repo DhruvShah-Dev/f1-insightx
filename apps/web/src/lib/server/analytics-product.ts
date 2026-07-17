@@ -4,6 +4,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 import { gunzip } from "node:zlib";
 import { parseNumber, readCsvFile } from "@/lib/server/csv";
+import { isAppError } from "@/lib/errors/app-error";
 import { getRepoDataPath, getTestFixturePath, isTestRun } from "@/lib/server/data-paths";
 import {
   parseAnalyticsIndexedManifest,
@@ -445,7 +446,11 @@ const readSessionRows = cache(async () => {
   try {
     return await readCsvFile<SessionIndexRow>("analytics.sessionIndex");
   } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+    const message = error instanceof Error ? error.message : "";
+    if (
+      (error as NodeJS.ErrnoException).code === "ENOENT" ||
+      (isAppError(error) && error.status === 503 && message.includes("analytics.sessionIndex is missing"))
+    ) {
       return readFallbackSessionRows();
     }
 
