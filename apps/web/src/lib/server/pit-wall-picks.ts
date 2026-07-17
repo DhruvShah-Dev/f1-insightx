@@ -418,12 +418,12 @@ async function getLeaderboards(supabase: SupabaseClient, raceId: string) {
       .select("user_id, username, total_points")
       .eq("race_id", raceId)
       .order("total_points", { ascending: false })
-      .limit(20),
+      .limit(5),
     supabase
       .from("race_pick_overall_scores")
       .select("user_id, username, races_entered, total_points")
       .order("total_points", { ascending: false })
-      .limit(20),
+      .limit(5),
   ]);
 
   if (raceResult.error || overallResult.error) {

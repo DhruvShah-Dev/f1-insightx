@@ -165,9 +165,9 @@ function ScorePanel({ score }: { score: Score | null }) {
   if (!score) {
     return (
       <div className="pit-wall-panel pit-wall-panel--quiet">
-        <span>House tally</span>
+        <span>Live table</span>
         <strong>0</strong>
-        <small>Settles after race data lands.</small>
+        <small>Your points appear after scoring opens.</small>
       </div>
     );
   }
@@ -193,15 +193,17 @@ function ScorePanel({ score }: { score: Score | null }) {
 }
 
 function Leaderboard({ title, entries, overall = false }: { title: string; entries: LeaderboardEntry[]; overall?: boolean }) {
+  const visibleEntries = entries.slice(0, 5);
+
   return (
     <section className="pit-wall-board">
       <div className="pit-wall-section-heading">
         <span>{overall ? "Season book" : "Race book"}</span>
         <h2>{title}</h2>
       </div>
-      {entries.length > 0 ? (
+      {visibleEntries.length > 0 ? (
         <ol className="pit-wall-leaderboard">
-          {entries.map((entry, index) => (
+          {visibleEntries.map((entry, index) => (
             <li key={entry.userId}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{entry.username}</strong>
@@ -260,125 +262,129 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
 
   return (
     <div className="pit-wall-workspace">
-      <section className="pit-wall-card pit-wall-card--form" id="race-card">
-        <div className="pit-wall-section-heading">
-          <span>{props.isLocked ? "Locked" : "Open"}</span>
-          <h2>{props.userPick ? "Your picks" : "Race card"}</h2>
-          <p>Complete every slot before lock. Each top-three group needs three different drivers.</p>
-        </div>
-
-        {!props.persistenceAvailable ? (
-          <div className="pit-wall-feedback pit-wall-feedback--notice">
-            Practice mode
+      <div className="pit-wall-main">
+        <section className="pit-wall-card pit-wall-card--form" id="race-card">
+          <div className="pit-wall-section-heading">
+            <span>{props.isLocked ? "Locked" : "Open"}</span>
+            <h2>{props.userPick ? "Your picks" : "Race card"}</h2>
+            <p>Complete every slot before lock. Each top-three group needs three different drivers.</p>
           </div>
-        ) : null}
 
-        <div className="pit-wall-pick-grid">
-          <div className="pit-wall-pick-group">
-            <h3>Qualifying order</h3>
-            {pick.qualifyingTop3.map((value, index) => (
+          {!props.persistenceAvailable ? (
+            <div className="pit-wall-feedback pit-wall-feedback--notice">Practice mode</div>
+          ) : null}
+
+          <div className="pit-wall-pick-grid">
+            <div className="pit-wall-pick-group">
+              <h3>Qualifying order</h3>
+              {pick.qualifyingTop3.map((value, index) => (
+                <DriverSelect
+                  key={`q-${index}`}
+                  label={`Q P${index + 1}`}
+                  value={value}
+                  drivers={props.drivers}
+                  disabled={props.isLocked}
+                  tone="chip"
+                  onChange={(nextValue) => updateTriple("qualifyingTop3", index, nextValue)}
+                />
+              ))}
+            </div>
+
+            <div className="pit-wall-pick-group">
+              <h3>Race podium</h3>
+              {pick.raceTop3.map((value, index) => (
+                <DriverSelect
+                  key={`r-${index}`}
+                  label={`Race P${index + 1}`}
+                  value={value}
+                  drivers={props.drivers}
+                  disabled={props.isLocked}
+                  tone="chip"
+                  onChange={(nextValue) => updateTriple("raceTop3", index, nextValue)}
+                />
+              ))}
+            </div>
+
+            <div className="pit-wall-pick-group">
+              <h3>Random positions</h3>
+              {pick.randomDrivers.map((value, index) => (
+                <DriverSelect
+                  key={`random-${index}`}
+                  label={`Race P${props.randomPositions[index]}`}
+                  value={value}
+                  drivers={props.drivers}
+                  disabled={props.isLocked}
+                  tone="pocket"
+                  onChange={(nextValue) => updateTriple("randomDrivers", index, nextValue)}
+                />
+              ))}
+            </div>
+
+            <div className="pit-wall-pick-group">
+              <h3>Side bets</h3>
               <DriverSelect
-                key={`q-${index}`}
-                label={`Q P${index + 1}`}
-                value={value}
+                label="Fastest pit stop"
+                value={pick.fastestPitStopDriverId}
                 drivers={props.drivers}
                 disabled={props.isLocked}
-                tone="chip"
-                onChange={(nextValue) => updateTriple("qualifyingTop3", index, nextValue)}
+                tone="special"
+                onChange={(fastestPitStopDriverId) => setPick((current) => ({ ...current, fastestPitStopDriverId }))}
               />
-            ))}
-          </div>
-
-          <div className="pit-wall-pick-group">
-            <h3>Race podium</h3>
-            {pick.raceTop3.map((value, index) => (
               <DriverSelect
-                key={`r-${index}`}
-                label={`Race P${index + 1}`}
-                value={value}
+                label="Fastest lap"
+                value={pick.fastestLapDriverId}
                 drivers={props.drivers}
                 disabled={props.isLocked}
-                tone="chip"
-                onChange={(nextValue) => updateTriple("raceTop3", index, nextValue)}
+                tone="special"
+                onChange={(fastestLapDriverId) => setPick((current) => ({ ...current, fastestLapDriverId }))}
               />
-            ))}
+            </div>
           </div>
 
-          <div className="pit-wall-pick-group">
-            <h3>Random positions</h3>
-            {pick.randomDrivers.map((value, index) => (
-              <DriverSelect
-                key={`random-${index}`}
-                label={`Race P${props.randomPositions[index]}`}
-                value={value}
-                drivers={props.drivers}
-                disabled={props.isLocked}
-                tone="pocket"
-                onChange={(nextValue) => updateTriple("randomDrivers", index, nextValue)}
-              />
-            ))}
+          {duplicateError ? <div className="pit-wall-feedback pit-wall-feedback--error">{duplicateError}</div> : null}
+          {error ? <div className="pit-wall-feedback pit-wall-feedback--error">{error}</div> : null}
+          {message ? <div className="pit-wall-feedback pit-wall-feedback--notice">{message}</div> : null}
+
+          {!props.isLocked ? (
+            <button className="pit-wall-submit" type="button" onClick={save} disabled={!canSubmit}>
+              {isPending ? "Locking..." : props.userPick ? "Update slip" : "Lock slip"}
+            </button>
+          ) : (
+            <div className="pit-wall-feedback pit-wall-feedback--notice">Table closed</div>
+          )}
+        </section>
+
+        <aside className="pit-wall-live-table" aria-label="Live picks table">
+          <ScorePanel score={props.userScore} />
+        </aside>
+      </div>
+
+      <div className="pit-wall-books">
+        <Leaderboard title="Current Race" entries={props.raceLeaderboard} />
+        <Leaderboard title="Overall Points" entries={props.overallLeaderboard} overall />
+
+        <section className="pit-wall-board pit-wall-board--history">
+          <div className="pit-wall-section-heading">
+            <span>Past tables</span>
+            <h2>Race history</h2>
           </div>
-
-          <div className="pit-wall-pick-group">
-            <h3>Side bets</h3>
-            <DriverSelect
-              label="Fastest pit stop"
-              value={pick.fastestPitStopDriverId}
-              drivers={props.drivers}
-              disabled={props.isLocked}
-              tone="special"
-              onChange={(fastestPitStopDriverId) => setPick((current) => ({ ...current, fastestPitStopDriverId }))}
-            />
-            <DriverSelect
-              label="Fastest lap"
-              value={pick.fastestLapDriverId}
-              drivers={props.drivers}
-              disabled={props.isLocked}
-              tone="special"
-              onChange={(fastestLapDriverId) => setPick((current) => ({ ...current, fastestLapDriverId }))}
-            />
-          </div>
-        </div>
-
-        {duplicateError ? <div className="pit-wall-feedback pit-wall-feedback--error">{duplicateError}</div> : null}
-        {error ? <div className="pit-wall-feedback pit-wall-feedback--error">{error}</div> : null}
-        {message ? <div className="pit-wall-feedback pit-wall-feedback--notice">{message}</div> : null}
-
-        {!props.isLocked ? (
-          <button className="pit-wall-submit" type="button" onClick={save} disabled={!canSubmit}>
-            {isPending ? "Locking..." : props.userPick ? "Update slip" : "Lock slip"}
-          </button>
-        ) : (
-          <div className="pit-wall-feedback pit-wall-feedback--notice">Table closed</div>
-        )}
-      </section>
-
-      <ScorePanel score={props.userScore} />
-
-      <Leaderboard title="Current Race" entries={props.raceLeaderboard} />
-      <Leaderboard title="Overall Points" entries={props.overallLeaderboard} overall />
-
-      <section className="pit-wall-board pit-wall-board--history">
-        <div className="pit-wall-section-heading">
-          <span>Past tables</span>
-          <h2>Race history</h2>
-        </div>
-        {props.raceHistory.length > 0 ? (
-          <ol className="pit-wall-history">
-            {props.raceHistory.map((entry) => (
-              <li key={entry.raceId}>
-                <span>
-                  {entry.season} R{entry.round}
-                </span>
-                <strong>{entry.raceName}</strong>
-                <em>{entry.points} pts</em>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <p className="pit-wall-empty">No history</p>
-        )}
-      </section>
+          {props.raceHistory.length > 0 ? (
+            <ol className="pit-wall-history">
+              {props.raceHistory.map((entry) => (
+                <li key={entry.raceId}>
+                  <span>
+                    {entry.season} R{entry.round}
+                  </span>
+                  <strong>{entry.raceName}</strong>
+                  <em>{entry.points} pts</em>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <p className="pit-wall-empty">No history</p>
+          )}
+        </section>
+      </div>
     </div>
   );
 }

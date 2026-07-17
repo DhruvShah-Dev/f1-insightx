@@ -41,6 +41,7 @@ export const csvFileMap = {
   "raceWeek.driverBoard": getRepoDataPath("race_week", "race_week_driver_board.csv"),
   "raceWeek.overview": getRepoDataPath("race_week", "race_week_overview.csv"),
   "raceWeek.spainQualifyingPrediction": getRepoDataPath("race_week", "spain_qualifying_prediction.csv"),
+  "raceWeek.predictionSignalQuality": getRepoDataPath("race_week", "prediction_signal_quality.csv"),
   "raceWeek.storylines": getRepoDataPath("race_week", "race_week_storylines.csv"),
   "raceWeek.strategy": getRepoDataPath("race_week", "race_week_strategy.csv"),
   "raceWeek.sessionPaceSummary": getRepoDataPath("race_week", "session_pace_summary.csv"),

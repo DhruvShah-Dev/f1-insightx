@@ -371,6 +371,17 @@ CREATE TABLE IF NOT EXISTS spain_qualifying_prediction (
     driver_gap_delta_s numeric,
     constructor_gap_delta_s numeric,
     form_bias_score numeric,
+    track_fit_gap_s numeric,
+    blend_recent_weight numeric,
+    blend_same_circuit_weight numeric,
+    blend_constructor_weight numeric,
+    blend_driver_delta_weight numeric,
+    blend_constructor_delta_weight numeric,
+    blend_race_week_weight numeric,
+    blend_track_fit_weight numeric,
+    source_usefulness_score numeric,
+    source_usefulness_rank integer,
+    quality_note text,
     confidence_score numeric,
     clamped_prediction boolean NOT NULL DEFAULT false,
     missing_flags text,
@@ -387,10 +398,40 @@ ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS prediction_mode
 ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS mode_label text NOT NULL DEFAULT 'Predictions';
 ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS included_sessions text;
 ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS mode_status text NOT NULL DEFAULT 'available';
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS track_fit_gap_s numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS blend_recent_weight numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS blend_same_circuit_weight numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS blend_constructor_weight numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS blend_driver_delta_weight numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS blend_constructor_delta_weight numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS blend_race_week_weight numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS blend_track_fit_weight numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS source_usefulness_score numeric;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS source_usefulness_rank integer;
+ALTER TABLE spain_qualifying_prediction ADD COLUMN IF NOT EXISTS quality_note text;
 
 CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_race_rank ON spain_qualifying_prediction (race_id, predicted_q_rank);
 CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_race_mode_rank ON spain_qualifying_prediction (race_id, prediction_mode, predicted_q_rank);
 CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_driver ON spain_qualifying_prediction (driver_id);
+CREATE INDEX IF NOT EXISTS idx_spain_qualifying_prediction_usefulness ON spain_qualifying_prediction (race_id, prediction_mode, source_usefulness_rank);
+
+CREATE TABLE IF NOT EXISTS prediction_signal_quality (
+    id text PRIMARY KEY,
+    season integer NOT NULL,
+    round integer NOT NULL,
+    race_id text NOT NULL REFERENCES races(id) ON DELETE CASCADE,
+    prediction_mode text NOT NULL DEFAULT 'baseline',
+    signal_key text NOT NULL,
+    usefulness_rank integer NOT NULL,
+    usefulness_score numeric NOT NULL,
+    coverage_rate numeric NOT NULL,
+    evidence_rows integer NOT NULL,
+    quality_band text NOT NULL,
+    recommendation text NOT NULL,
+    source_label text NOT NULL DEFAULT 'prediction_signal_quality_v1'
+);
+
+CREATE INDEX IF NOT EXISTS idx_prediction_signal_quality_race_mode ON prediction_signal_quality (race_id, prediction_mode, usefulness_rank);
 
 CREATE TABLE IF NOT EXISTS fp2_long_run_summary (
     id text PRIMARY KEY,
@@ -662,6 +703,7 @@ ALTER TABLE race_week_constructor_board ENABLE ROW LEVEL SECURITY;
 ALTER TABLE race_week_strategy ENABLE ROW LEVEL SECURITY;
 ALTER TABLE race_week_storylines ENABLE ROW LEVEL SECURITY;
 ALTER TABLE spain_qualifying_prediction ENABLE ROW LEVEL SECURITY;
+ALTER TABLE prediction_signal_quality ENABLE ROW LEVEL SECURITY;
 
 DROP POLICY IF EXISTS "Public can read race week overview" ON race_week_overview;
 CREATE POLICY "Public can read race week overview"
@@ -701,6 +743,13 @@ USING (true);
 DROP POLICY IF EXISTS "Public can read Spain qualifying prediction" ON spain_qualifying_prediction;
 CREATE POLICY "Public can read Spain qualifying prediction"
 ON spain_qualifying_prediction
+FOR SELECT
+TO anon, authenticated
+USING (true);
+
+DROP POLICY IF EXISTS "Public can read prediction signal quality" ON prediction_signal_quality;
+CREATE POLICY "Public can read prediction signal quality"
+ON prediction_signal_quality
 FOR SELECT
 TO anon, authenticated
 USING (true);

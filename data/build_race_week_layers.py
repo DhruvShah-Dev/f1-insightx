@@ -844,27 +844,30 @@ def predicted_qualifying_gap_seconds(
     form_component: float,
     completed_current_season_races: int,
     race_week_delta_gap_s: float | None = None,
+    track_fit_component: float | None = None,
 ) -> float:
     if completed_current_season_races >= 5:
         raw_gap = (
-            recent_component * 0.45
-            + same_circuit_component * 0.10
-            + constructor_component * 0.05
-            + driver_delta_component * 0.15
-            + constructor_delta_component * 0.20
+            recent_component * 0.38
+            + same_circuit_component * 0.12
+            + constructor_component * 0.08
+            + driver_delta_component * 0.14
+            + constructor_delta_component * 0.18
+            + (track_fit_component if track_fit_component is not None else form_component) * 0.05
             + form_component * 0.05
         )
     else:
         raw_gap = (
-            recent_component * 0.30
+            recent_component * 0.28
             + same_circuit_component * 0.25
-            + constructor_component * 0.20
+            + constructor_component * 0.18
             + driver_delta_component * 0.10
             + constructor_delta_component * 0.10
+            + (track_fit_component if track_fit_component is not None else form_component) * 0.04
             + form_component * 0.05
         )
     if race_week_delta_gap_s is not None:
-        raw_gap += race_week_delta_gap_s * 0.18
+        raw_gap += race_week_delta_gap_s * 0.20
     return max(0.0, min(3.2, raw_gap))
 
 
@@ -1065,6 +1068,17 @@ def build_spain_qualifying_prediction(
         "driver_gap_delta_s",
         "constructor_gap_delta_s",
         "form_bias_score",
+        "track_fit_gap_s",
+        "blend_recent_weight",
+        "blend_same_circuit_weight",
+        "blend_constructor_weight",
+        "blend_driver_delta_weight",
+        "blend_constructor_delta_weight",
+        "blend_race_week_weight",
+        "blend_track_fit_weight",
+        "source_usefulness_score",
+        "source_usefulness_rank",
+        "quality_note",
         "confidence_score",
         "clamped_prediction",
         "missing_flags",
@@ -1107,7 +1121,7 @@ def build_spain_qualifying_prediction(
         configs: list[dict[str, Any]] = [
             {
                 "prediction_mode": "baseline",
-                "mode_label": "Predictions",
+                "mode_label": "Pre quali",
                 "included_sessions": baseline_sessions,
                 "mode_status": "available",
             },
@@ -1325,6 +1339,10 @@ def build_spain_qualifying_prediction(
                 constructor_delta_component = max(0.0, constructor_component + constructor_gap_delta_s) if constructor_gap_delta_s is not None else fallback_gap
                 form_bias_score = first_number(feature.get("form_bias_score"), 0.5) or 0.5
                 form_component = max(0.0, min(3.2, (1 - form_bias_score) * 3.2))
+                track_affinity_score = first_number(feature.get("track_affinity_score"), 0.5) or 0.5
+                track_fit_component = max(0.0, min(3.2, (1 - track_affinity_score) * 3.2))
+                if track_affinity_score == 0.5:
+                    missing_flags.append("track_fit_neutral")
 
                 predicted_q_gap_s = predicted_qualifying_gap_seconds(
                     recent_component=recent_component,
@@ -1335,8 +1353,40 @@ def build_spain_qualifying_prediction(
                     form_component=form_component,
                     completed_current_season_races=completed_current_season_races,
                     race_week_delta_gap_s=race_week_delta_gap_s,
+                    track_fit_component=track_fit_component,
                 )
                 clamped_prediction = predicted_q_gap_s in {0.0, 3.2}
+                if completed_current_season_races >= 5:
+                    blend_weights = {
+                        "recent": 0.38,
+                        "same_circuit": 0.12,
+                        "constructor": 0.08,
+                        "driver_delta": 0.14,
+                        "constructor_delta": 0.18,
+                        "race_week": 0.20 if race_week_delta_gap_s is not None else 0.0,
+                        "track_fit": 0.05,
+                    }
+                else:
+                    blend_weights = {
+                        "recent": 0.28,
+                        "same_circuit": 0.25,
+                        "constructor": 0.18,
+                        "driver_delta": 0.10,
+                        "constructor_delta": 0.10,
+                        "race_week": 0.20 if race_week_delta_gap_s is not None else 0.0,
+                        "track_fit": 0.04,
+                    }
+                source_usefulness_score = clamp01(
+                    (0.26 if recent_quali_gap_s is not None else 0.0)
+                    + (0.22 if same_circuit_gap_s is not None else 0.0)
+                    + (0.16 if constructor_quali_gap_s is not None else 0.0)
+                    + (0.18 if race_week_delta_gap_s is not None else 0.0)
+                    + (0.08 if driver_gap_delta_s is not None else 0.0)
+                    + (0.06 if constructor_gap_delta_s is not None else 0.0)
+                    + (0.04 if track_affinity_score != 0.5 else 0.0),
+                    default=0.0,
+                )
+                quality_note = "race-week session data blended" if race_week_delta_gap_s is not None else "pre-session baseline; race-week deltas neutral"
                 confidence_score = clamp01(
                     0.20
                     + (0.25 if recent_quali_gap_s is not None else 0.0)
@@ -1374,6 +1424,17 @@ def build_spain_qualifying_prediction(
                         "driver_gap_delta_s": round(driver_gap_delta_s, 3) if driver_gap_delta_s is not None else None,
                         "constructor_gap_delta_s": round(constructor_gap_delta_s, 3) if constructor_gap_delta_s is not None else None,
                         "form_bias_score": round(form_bias_score, 6),
+                        "track_fit_gap_s": round(track_fit_component, 3),
+                        "blend_recent_weight": blend_weights["recent"],
+                        "blend_same_circuit_weight": blend_weights["same_circuit"],
+                        "blend_constructor_weight": blend_weights["constructor"],
+                        "blend_driver_delta_weight": blend_weights["driver_delta"],
+                        "blend_constructor_delta_weight": blend_weights["constructor_delta"],
+                        "blend_race_week_weight": blend_weights["race_week"],
+                        "blend_track_fit_weight": blend_weights["track_fit"],
+                        "source_usefulness_score": round(source_usefulness_score, 6),
+                        "source_usefulness_rank": None,
+                        "quality_note": quality_note,
                         "confidence_score": round(confidence_score, 6),
                         "clamped_prediction": clamped_prediction,
                         "missing_flags": joined_flags(missing_flags),
@@ -1391,7 +1452,87 @@ def build_spain_qualifying_prediction(
         na_position="last",
     ).reset_index(drop=True)
     prediction["predicted_q_rank"] = prediction.groupby(["race_id", "prediction_mode"]).cumcount() + 1
+    prediction["source_usefulness_rank"] = (
+        prediction.sort_values(["race_id", "prediction_mode", "source_usefulness_score", "confidence_score"], ascending=[True, True, False, False])
+        .groupby(["race_id", "prediction_mode"])
+        .cumcount()
+        + 1
+    )
     return prediction[columns]
+
+
+def build_prediction_signal_quality(spain_qualifying_prediction: pd.DataFrame) -> pd.DataFrame:
+    columns = [
+        "id",
+        "season",
+        "round",
+        "race_id",
+        "prediction_mode",
+        "signal_key",
+        "usefulness_rank",
+        "usefulness_score",
+        "coverage_rate",
+        "evidence_rows",
+        "quality_band",
+        "recommendation",
+        "source_label",
+    ]
+    if spain_qualifying_prediction.empty:
+        return pd.DataFrame(columns=columns)
+
+    signal_specs = [
+        ("recent_quali_gap", "recent_quali_gap_s", 0.98, "Keep as the primary 2026 form anchor."),
+        ("same_circuit_gap", "same_circuit_gap_s", 0.90, "Use for track-specific baseline, especially before practice."),
+        ("constructor_quali_gap", "constructor_quali_gap_s", 0.82, "Use to stabilize drivers with thin same-circuit history."),
+        ("race_week_delta", "race_week_delta_gap_s", 0.78, "Increase weight only after FP1/FP2/FP3 data exists."),
+        ("driver_gap_delta", "driver_gap_delta_s", 0.70, "Useful for current-vs-historical driver movement."),
+        ("constructor_gap_delta", "constructor_gap_delta_s", 0.62, "Useful for team trajectory, but weaker for new constructors."),
+        ("track_fit_gap", "track_fit_gap_s", 0.56, "Use as a style modifier, not the main pace anchor."),
+        ("form_bias", "form_bias_score", 0.48, "Keep as a tiebreaker and confidence stabilizer."),
+    ]
+
+    rows: list[dict[str, Any]] = []
+    frame = spain_qualifying_prediction.copy()
+    for (race_id, prediction_mode), group in frame.groupby(["race_id", "prediction_mode"], dropna=False):
+        season = int(pd.to_numeric(group["season"], errors="coerce").dropna().iloc[0])
+        round_number = int(pd.to_numeric(group["round"], errors="coerce").dropna().iloc[0])
+        scored: list[dict[str, Any]] = []
+        for signal_key, column, base_score, recommendation in signal_specs:
+            values = pd.to_numeric(group[column], errors="coerce") if column in group.columns else pd.Series(dtype=float)
+            evidence_rows = int(values.notna().sum())
+            coverage_rate = float(evidence_rows / len(group)) if len(group) else 0.0
+            usefulness_score = round(base_score * coverage_rate, 6)
+            if usefulness_score >= 0.72:
+                quality_band = "high"
+            elif usefulness_score >= 0.45:
+                quality_band = "medium"
+            elif usefulness_score > 0:
+                quality_band = "low"
+            else:
+                quality_band = "unavailable"
+            scored.append(
+                {
+                    "id": f"{race_id}|{prediction_mode}|{signal_key}",
+                    "season": season,
+                    "round": round_number,
+                    "race_id": race_id,
+                    "prediction_mode": prediction_mode,
+                    "signal_key": signal_key,
+                    "usefulness_rank": None,
+                    "usefulness_score": usefulness_score,
+                    "coverage_rate": round(coverage_rate, 6),
+                    "evidence_rows": evidence_rows,
+                    "quality_band": quality_band,
+                    "recommendation": recommendation,
+                    "source_label": "prediction_signal_quality_v1",
+                }
+            )
+        scored = sorted(scored, key=lambda row: (-float(row["usefulness_score"]), str(row["signal_key"])))
+        for index, row in enumerate(scored, start=1):
+            row["usefulness_rank"] = index
+            rows.append(row)
+
+    return pd.DataFrame(rows, columns=columns)
 
 
 def build_processed_race_week_layers(
@@ -2066,6 +2207,7 @@ def build_race_week_intelligence_layers(
             "session_year_over_year_deltas": empty,
             "qualifying_driver_deltas": empty,
             "spain_qualifying_prediction": empty,
+            "prediction_signal_quality": empty,
         }
 
     session_pace = canonical["session_pace_summary"].copy()
@@ -2526,6 +2668,7 @@ def build_race_week_intelligence_layers(
         session_year_over_year_deltas=session_year_over_year_deltas,
         qualifying_driver_deltas=qualifying_driver_deltas,
     )
+    prediction_signal_quality = build_prediction_signal_quality(spain_qualifying_prediction)
 
     return {
         "session_features": session_features,
@@ -2539,6 +2682,7 @@ def build_race_week_intelligence_layers(
         "session_year_over_year_deltas": session_year_over_year_deltas,
         "qualifying_driver_deltas": qualifying_driver_deltas,
         "spain_qualifying_prediction": spain_qualifying_prediction,
+        "prediction_signal_quality": prediction_signal_quality,
     }
 
 
@@ -2846,7 +2990,8 @@ def main() -> None:
         "session_pace_summary": ["id", "season", "round", "race_id", "session_id", "session_code", "driver_id", "constructor_id", "representative_lap_s", "best_lap_s", "long_run_lap_s", "long_run_degradation_s", "gap_to_session_best_s", "pace_rank", "gap_to_teammate_s", "top_speed_kph", "air_temp_c", "track_temp_c", "rainfall_flag", "source_label"],
         "session_year_over_year_deltas": ["id", "season", "round", "race_id", "circuit_id", "session_code", "driver_id", "constructor_id", "comparison_season", "comparison_race_id", "current_gap_s", "prior_gap_s", "delta_gap_s", "source_label"],
         "qualifying_driver_deltas": ["id", "season", "round", "race_id", "circuit_id", "delta_type", "driver_id", "comparison_driver_id", "constructor_id", "comparison_constructor_id", "current_quali_gap_s", "comparison_quali_gap_s", "pairwise_delta_gap_s", "avg_quali_yoy_delta_s", "source_sample_size", "source_label"],
-        "spain_qualifying_prediction": ["id", "season", "round", "race_id", "prediction_mode", "mode_label", "included_sessions", "mode_status", "driver_id", "constructor_id", "predicted_q_rank", "predicted_q_time_s", "predicted_q_gap_s", "base_pole_s", "season_delta_26_vs_25_s", "track_residual_s", "recent_quali_gap_s", "same_circuit_gap_s", "constructor_quali_gap_s", "race_week_delta_gap_s", "driver_gap_delta_s", "constructor_gap_delta_s", "form_bias_score", "confidence_score", "clamped_prediction", "missing_flags", "baseline_method", "source_label"],
+        "spain_qualifying_prediction": ["id", "season", "round", "race_id", "prediction_mode", "mode_label", "included_sessions", "mode_status", "driver_id", "constructor_id", "predicted_q_rank", "predicted_q_time_s", "predicted_q_gap_s", "base_pole_s", "season_delta_26_vs_25_s", "track_residual_s", "recent_quali_gap_s", "same_circuit_gap_s", "constructor_quali_gap_s", "race_week_delta_gap_s", "driver_gap_delta_s", "constructor_gap_delta_s", "form_bias_score", "track_fit_gap_s", "blend_recent_weight", "blend_same_circuit_weight", "blend_constructor_weight", "blend_driver_delta_weight", "blend_constructor_delta_weight", "blend_race_week_weight", "blend_track_fit_weight", "source_usefulness_score", "source_usefulness_rank", "quality_note", "confidence_score", "clamped_prediction", "missing_flags", "baseline_method", "source_label"],
+        "prediction_signal_quality": ["id", "season", "round", "race_id", "prediction_mode", "signal_key", "usefulness_rank", "usefulness_score", "coverage_rate", "evidence_rows", "quality_band", "recommendation", "source_label"],
         "fp2_long_run_summary": ["id", "season", "round", "race_id", "driver_id", "constructor_id", "representative_long_run_pace_s", "gap_to_best_s", "degradation_per_lap_s", "lap_sample_size", "compound", "signal_confidence", "source_label"],
         "stint_degradation_summary": ["id", "season", "round", "race_id", "session_code", "driver_id", "constructor_id", "compound", "avg_lap_count", "avg_degradation_per_lap_s", "avg_tyre_life", "degradation_risk", "source_label"],
         "weather_risk_summary": ["id", "season", "round", "race_id", "rainfall_probability", "track_temp_mean_c", "track_temp_volatility_c", "wind_speed_mean_mps", "weather_risk_index", "source_label"],

@@ -49,6 +49,19 @@ export type RaceWeekQualifyingPrediction = {
   driverGapDeltaS: number | null;
   constructorGapDeltaS: number | null;
   formBiasScore: number | null;
+  trackFitGapS: number | null;
+  blendWeights: {
+    recent: number | null;
+    sameCircuit: number | null;
+    constructor: number | null;
+    driverDelta: number | null;
+    constructorDelta: number | null;
+    raceWeek: number | null;
+    trackFit: number | null;
+  };
+  sourceUsefulnessScore: number | null;
+  sourceUsefulnessRank: number | null;
+  qualityNote: string | null;
   confidenceScore: number | null;
   clampedPrediction: boolean;
   missingFlags: string[];
@@ -265,6 +278,17 @@ type QualifyingPredictionRow = {
   driver_gap_delta_s: number | string | null;
   constructor_gap_delta_s: number | string | null;
   form_bias_score: number | string | null;
+  track_fit_gap_s?: number | string | null;
+  blend_recent_weight?: number | string | null;
+  blend_same_circuit_weight?: number | string | null;
+  blend_constructor_weight?: number | string | null;
+  blend_driver_delta_weight?: number | string | null;
+  blend_constructor_delta_weight?: number | string | null;
+  blend_race_week_weight?: number | string | null;
+  blend_track_fit_weight?: number | string | null;
+  source_usefulness_score?: number | string | null;
+  source_usefulness_rank?: number | string | null;
+  quality_note?: string | null;
   confidence_score: number | string | null;
   clamped_prediction: boolean | string | null;
   missing_flags: string | null;
@@ -363,7 +387,7 @@ function buildSessionStatus(rows: SessionPaceSummaryRow[], raceId: string): Race
 const predictionModeOrder: RaceWeekPredictionModeId[] = ["baseline", "fp1", "fp2", "fp3"];
 
 const predictionModeDefaults: Record<RaceWeekPredictionModeId, { label: string; includedSessions: string[]; statusLabel: string }> = {
-  baseline: { label: "Predictions", includedSessions: [], statusLabel: "Using latest available model" },
+  baseline: { label: "Pre quali", includedSessions: [], statusLabel: "Using pre-session baseline" },
   fp1: { label: "FP1 pred", includedSessions: ["FP1"], statusLabel: "Using FP1 data" },
   fp2: { label: "FP2 pred", includedSessions: ["FP1", "FP2"], statusLabel: "Using FP1 + FP2 data" },
   fp3: { label: "FP3 pred", includedSessions: ["FP1", "FP2", "FP3"], statusLabel: "Using FP1 + FP2 + FP3 data" },
@@ -436,6 +460,19 @@ function mapQualifyingPredictionRows(rows: QualifyingPredictionRow[], raceId: st
       driverGapDeltaS: parseNumber(row.driver_gap_delta_s),
       constructorGapDeltaS: parseNumber(row.constructor_gap_delta_s),
       formBiasScore: parseNumber(row.form_bias_score),
+      trackFitGapS: parseNumber(row.track_fit_gap_s),
+      blendWeights: {
+        recent: parseNumber(row.blend_recent_weight),
+        sameCircuit: parseNumber(row.blend_same_circuit_weight),
+        constructor: parseNumber(row.blend_constructor_weight),
+        driverDelta: parseNumber(row.blend_driver_delta_weight),
+        constructorDelta: parseNumber(row.blend_constructor_delta_weight),
+        raceWeek: parseNumber(row.blend_race_week_weight),
+        trackFit: parseNumber(row.blend_track_fit_weight),
+      },
+      sourceUsefulnessScore: parseNumber(row.source_usefulness_score),
+      sourceUsefulnessRank: parseNumber(row.source_usefulness_rank),
+      qualityNote: row.quality_note ?? null,
       confidenceScore: parseNumber(row.confidence_score),
       clampedPrediction: parseBoolean(row.clamped_prediction),
       missingFlags: parseFlagList(row.missing_flags),
@@ -601,7 +638,7 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     supabase.from("session_pace_summary").select("race_id, session_code, driver_id").eq("race_id", overviewRow.race_id).in("session_code", ["FP1", "FP2", "FP3", "Q"]).limit(120),
     supabase
       .from("spain_qualifying_prediction")
-      .select("race_id, prediction_mode, mode_label, included_sessions, mode_status, driver_id, constructor_id, predicted_q_rank, predicted_q_time_s, predicted_q_gap_s, base_pole_s, season_delta_26_vs_25_s, track_residual_s, recent_quali_gap_s, same_circuit_gap_s, constructor_quali_gap_s, race_week_delta_gap_s, driver_gap_delta_s, constructor_gap_delta_s, form_bias_score, confidence_score, clamped_prediction, missing_flags, baseline_method, source_label")
+      .select("race_id, prediction_mode, mode_label, included_sessions, mode_status, driver_id, constructor_id, predicted_q_rank, predicted_q_time_s, predicted_q_gap_s, base_pole_s, season_delta_26_vs_25_s, track_residual_s, recent_quali_gap_s, same_circuit_gap_s, constructor_quali_gap_s, race_week_delta_gap_s, driver_gap_delta_s, constructor_gap_delta_s, form_bias_score, track_fit_gap_s, blend_recent_weight, blend_same_circuit_weight, blend_constructor_weight, blend_driver_delta_weight, blend_constructor_delta_weight, blend_race_week_weight, blend_track_fit_weight, source_usefulness_score, source_usefulness_rank, quality_note, confidence_score, clamped_prediction, missing_flags, baseline_method, source_label")
       .eq("race_id", overviewRow.race_id)
       .order("prediction_mode", { ascending: true })
       .order("predicted_q_rank", { ascending: true }),
@@ -642,6 +679,9 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
   const qualifyingPredictionRows = qualifyingPredictionResult.error ? [] : ((qualifyingPredictionResult.data ?? []) as QualifyingPredictionRow[]);
   const sessionStatus = buildSessionStatus(sessionPaceRows, overviewRow.race_id);
   const qualifyingPrediction = mapQualifyingPredictionRows(qualifyingPredictionRows, overviewRow.race_id);
+  if (qualifyingPrediction.length === 0) {
+    return null;
+  }
 
   return attachRaceWeekRuntimeMetadata({
     overview: {

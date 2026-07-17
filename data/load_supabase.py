@@ -346,7 +346,12 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "spain_qualifying_prediction",
         "race_week/spain_qualifying_prediction.csv",
-        ["id", "season", "round", "race_id", "prediction_mode", "mode_label", "included_sessions", "mode_status", "driver_id", "constructor_id", "predicted_q_rank", "predicted_q_time_s", "predicted_q_gap_s", "base_pole_s", "season_delta_26_vs_25_s", "track_residual_s", "recent_quali_gap_s", "same_circuit_gap_s", "constructor_quali_gap_s", "race_week_delta_gap_s", "driver_gap_delta_s", "constructor_gap_delta_s", "form_bias_score", "confidence_score", "clamped_prediction", "missing_flags", "baseline_method", "source_label"],
+        ["id", "season", "round", "race_id", "prediction_mode", "mode_label", "included_sessions", "mode_status", "driver_id", "constructor_id", "predicted_q_rank", "predicted_q_time_s", "predicted_q_gap_s", "base_pole_s", "season_delta_26_vs_25_s", "track_residual_s", "recent_quali_gap_s", "same_circuit_gap_s", "constructor_quali_gap_s", "race_week_delta_gap_s", "driver_gap_delta_s", "constructor_gap_delta_s", "form_bias_score", "track_fit_gap_s", "blend_recent_weight", "blend_same_circuit_weight", "blend_constructor_weight", "blend_driver_delta_weight", "blend_constructor_delta_weight", "blend_race_week_weight", "blend_track_fit_weight", "source_usefulness_score", "source_usefulness_rank", "quality_note", "confidence_score", "clamped_prediction", "missing_flags", "baseline_method", "source_label"],
+    ),
+    (
+        "prediction_signal_quality",
+        "race_week/prediction_signal_quality.csv",
+        ["id", "season", "round", "race_id", "prediction_mode", "signal_key", "usefulness_rank", "usefulness_score", "coverage_rate", "evidence_rows", "quality_band", "recommendation", "source_label"],
     ),
     (
         "fp2_long_run_summary",
@@ -511,6 +516,7 @@ OPTIONAL_TABLES = {
     "session_year_over_year_deltas",
     "qualifying_driver_deltas",
     "spain_qualifying_prediction",
+    "prediction_signal_quality",
     "fp2_long_run_summary",
     "stint_degradation_summary",
     "weather_risk_summary",
@@ -595,7 +601,8 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     "session_pace_summary": {"season", "round", "pace_rank"},
     "session_year_over_year_deltas": {"season", "round", "comparison_season"},
     "qualifying_driver_deltas": {"season", "round", "source_sample_size"},
-    "spain_qualifying_prediction": {"season", "round", "predicted_q_rank"},
+    "spain_qualifying_prediction": {"season", "round", "predicted_q_rank", "source_usefulness_rank"},
+    "prediction_signal_quality": {"season", "round", "usefulness_rank", "evidence_rows"},
     "fp2_long_run_summary": {"season", "round", "lap_sample_size"},
     "stint_degradation_summary": {"season", "round"},
     "weather_risk_summary": {"season", "round"},
