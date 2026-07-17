@@ -175,7 +175,7 @@ function ScorePanel({ score }: { score: Score | null }) {
   return (
     <div className="pit-wall-score">
       <div className="pit-wall-score__total">
-        <span>{score.pending ? "Live table" : "Final payout"}</span>
+        <span>{score.pending ? "Live table" : "Final score"}</span>
         <strong>{score.totalPoints}</strong>
       </div>
       {[score.qualifying, score.race, score.specials].map((group, groupIndex) => (
@@ -198,7 +198,7 @@ function Leaderboard({ title, entries, overall = false }: { title: string; entri
   return (
     <section className="pit-wall-board">
       <div className="pit-wall-section-heading">
-        <span>{overall ? "Season book" : "Race book"}</span>
+        <span>{overall ? "Season leaderboard" : "Race leaderboard"}</span>
         <h2>{title}</h2>
       </div>
       {visibleEntries.length > 0 ? (
@@ -321,7 +321,7 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
             </div>
 
             <div className="pit-wall-pick-group">
-              <h3>Side bets</h3>
+              <h3>Bonus picks</h3>
               <DriverSelect
                 label="Fastest pit stop"
                 value={pick.fastestPitStopDriverId}
@@ -347,7 +347,7 @@ export function PitWallPicksWorkspace(props: PitWallPicksWorkspaceProps) {
 
           {!props.isLocked ? (
             <button className="pit-wall-submit" type="button" onClick={save} disabled={!canSubmit}>
-              {isPending ? "Locking..." : props.userPick ? "Update slip" : "Lock slip"}
+              {isPending ? "Saving..." : props.userPick ? "Update picks" : "Save picks"}
             </button>
           ) : (
             <div className="pit-wall-feedback pit-wall-feedback--notice">Table closed</div>

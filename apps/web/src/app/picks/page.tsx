@@ -92,7 +92,7 @@ export default async function PicksPage() {
             <p className="pit-wall-hero__eyebrow">Pit Wall Picks / {payload.race.raceName}</p>
             <h1>Race picks</h1>
             <p className="pit-wall-hero__deck">
-              Set the qualifying order, race podium, and special calls before the session locks.
+              Set the qualifying order, race podium, and bonus calls before the session locks. Picks are for entertainment only, with no wagers, cash prizes, or monetary value.
             </p>
             <div className="pit-wall-hero__actions">
               <a href={user ? "#race-card" : "#sign-in"} className="pit-wall-hero__cta">
@@ -159,7 +159,7 @@ export default async function PicksPage() {
           <div className="pit-wall-auth-gate__copy">
             <span>Race card access</span>
             <h2>Sign in to lock picks</h2>
-            <p>Your picks stay private until scoring opens after the race data lands.</p>
+            <p>Your picks stay private until scoring opens after the race data lands. No purchase, wager, or prize is involved.</p>
           </div>
           <div className="pit-wall-auth-gate__panel">
             <span>Account</span>

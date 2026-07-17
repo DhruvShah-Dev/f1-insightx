@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Terms of Use for F1 InsightX.",
 };
 
-const UPDATED_AT = "April 6, 2026";
+const UPDATED_AT = "July 17, 2026";
 
 export default function TermsPage() {
   return (
@@ -16,8 +16,8 @@ export default function TermsPage() {
         <p className="subpage-eyebrow">Terms of Use</p>
         <h1 className="subpage-title">Terms for using F1 InsightX.</h1>
         <p className="legal-page__lede">
-          These terms are an engineering-ready launch draft. They should be reviewed and adapted for the jurisdictions
-          and business model you actually launch under.
+          These terms explain the baseline rules for using F1 InsightX, including account features, predictions, race analysis,
+          and entertainment-only Picks.
         </p>
         <p className="legal-page__meta">Last updated {UPDATED_AT}</p>
         <LegalLinks />
@@ -50,6 +50,24 @@ export default function TermsPage() {
       </section>
 
       <section className="workspace-panel legal-page__section">
+        <div className="workspace-panel__eyebrow">Picks Are Not Gambling</div>
+        <div className="legal-page__copy">
+          <p>
+            Pit Wall Picks and related leaderboards are free entertainment features. They do not accept wagers, entry fees,
+            stakes, deposits, or payment for participation.
+          </p>
+          <p>
+            Points, ranks, badges, and leaderboard placement have no cash value and cannot be exchanged for money, prizes,
+            credits, or anything else of monetary value unless separate official rules are published for a future promotion.
+          </p>
+          <p>
+            No purchase is required to participate. Do not use F1 InsightX predictions, simulations, Picks, or scoring outputs
+            for gambling, betting, wagering, or financial decision-making.
+          </p>
+        </div>
+      </section>
+
+      <section className="workspace-panel legal-page__section">
         <div className="workspace-panel__eyebrow">Availability</div>
         <div className="legal-page__copy">
           <p>The service may change, pause, or become unavailable without notice, especially during active development or portfolio use.</p>
@@ -75,8 +93,8 @@ export default function TermsPage() {
         <div className="workspace-panel__eyebrow">Changes and Legal Review</div>
         <div className="legal-page__copy">
           <p>
-            These terms may be updated as the product, infrastructure, and business model change. Material commercial or
-            jurisdiction-specific launches should receive dedicated legal review before relying on this draft.
+            These terms may be updated as the product, infrastructure, and business model change. Material commercial launches,
+            promotions, prizes, paid features, or jurisdiction-specific rollouts should receive dedicated legal review before release.
           </p>
         </div>
       </section>

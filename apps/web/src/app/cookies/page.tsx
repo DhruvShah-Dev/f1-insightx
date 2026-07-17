@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Cookie Notice for F1 InsightX.",
 };
 
-const UPDATED_AT = "April 6, 2026";
+const UPDATED_AT = "July 17, 2026";
 
 export default function CookiesPage() {
   return (
@@ -27,7 +27,11 @@ export default function CookiesPage() {
         <div className="workspace-panel__eyebrow">Current Categories</div>
         <div className="legal-page__copy">
           <p>Strictly necessary: authentication/session cookies set through Supabase to keep signed-in users authenticated.</p>
-          <p>Functional: none beyond account-session behavior at this time.</p>
+          <p>
+            Preference: <code>f1ix_cookie_consent</code> stores whether you accepted or rejected non-essential cookies so
+            the banner does not reappear on every page.
+          </p>
+          <p>Functional: none beyond account-session and cookie-preference behavior at this time.</p>
           <p>Analytics: none currently deployed.</p>
           <p>Advertising/marketing: none currently deployed.</p>
         </div>
@@ -45,11 +49,12 @@ export default function CookiesPage() {
       </section>
 
       <section className="workspace-panel legal-page__section">
-        <div className="workspace-panel__eyebrow">Consent Baseline</div>
+        <div className="workspace-panel__eyebrow">Cookie and Terms Popup</div>
         <div className="legal-page__copy">
           <p>
-            Because the current app only uses necessary account/session cookies, a separate opt-in banner for non-essential
-            tracking is not currently required by the implemented product behavior.
+            F1 InsightX shows a cookie and terms popup so visitors can review the Cookie Notice, Privacy Policy, and Terms
+            of Use. Accepting stores your cookie preference. Rejecting non-essential cookies keeps analytics and marketing
+            cookies off.
           </p>
           <p>
             If analytics or marketing technologies are introduced later, a consent mechanism and preference controls should

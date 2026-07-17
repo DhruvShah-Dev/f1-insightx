@@ -111,19 +111,19 @@ export function CookieConsent() {
         {view === "banner" ? (
           <>
             <div className="cookie-consent__copy">
-              <p className="cookie-consent__eyebrow">Privacy baseline</p>
-              <h2 id="cookie-consent-title" className="cookie-consent__title">Cookie preferences</h2>
+              <p className="cookie-consent__eyebrow">Privacy and terms</p>
+              <h2 id="cookie-consent-title" className="cookie-consent__title">Cookies and Terms</h2>
               <p className="cookie-consent__text">
-                Necessary cookies keep sign-in, security, and core site operation working.
+                Necessary cookies keep sign-in, security, and core site operation working. By using F1 InsightX, you agree to the Terms of Use.
               </p>
               <p className="cookie-consent__meta">
-                Read the <Link href="/cookies">Cookie Notice</Link> and <Link href="/privacy">Privacy Policy</Link>.
+                Read the <Link href="/cookies">Cookie Notice</Link>, <Link href="/privacy">Privacy Policy</Link>, and <Link href="/terms">Terms of Use</Link>.
               </p>
             </div>
 
             <div className="cookie-consent__actions">
               <button className="hero__cta hero__cta--primary" type="button" onClick={() => dismissWithChoice("accepted")}>
-                Accept
+                Accept cookies and terms
               </button>
               <button className="hero__cta hero__cta--secondary" type="button" onClick={() => dismissWithChoice("rejected")}>
                 Reject non-essential
@@ -137,9 +137,9 @@ export function CookieConsent() {
           <>
             <div className="cookie-consent__copy">
               <p className="cookie-consent__eyebrow">Cookie settings</p>
-              <h2 id="cookie-consent-title" ref={titleRef} tabIndex={-1} className="cookie-consent__title">Review your preferences</h2>
+              <h2 id="cookie-consent-title" ref={titleRef} tabIndex={-1} className="cookie-consent__title">Review cookies and terms</h2>
               <p className="cookie-consent__text">
-                Necessary cookies stay on for account and security flows. Analytics and marketing cookies are not active.
+                Necessary cookies stay on for account and security flows. Analytics and marketing cookies are not active. F1 InsightX Picks are entertainment-only and have no cash value.
               </p>
             </div>
 
@@ -158,6 +158,14 @@ export function CookieConsent() {
                   <p>Not currently deployed. If introduced later, this preference should govern whether they run.</p>
                 </div>
                 <span className="cookie-preferences__pill">Off</span>
+              </div>
+
+              <div className="cookie-preferences__row">
+                <div>
+                  <strong>Terms of Use</strong>
+                  <p>Using F1 InsightX is subject to the Terms of Use, including the entertainment-only Picks rules.</p>
+                </div>
+                <Link href="/terms" className="cookie-preferences__pill">Review</Link>
               </div>
             </div>
 

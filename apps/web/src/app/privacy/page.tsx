@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Privacy Policy and data collection notice for F1 InsightX.",
 };
 
-const UPDATED_AT = "April 6, 2026";
+const UPDATED_AT = "July 17, 2026";
 
 export default function PrivacyPage() {
   const contactEmail = getPrivacyContactEmail();
@@ -21,8 +21,8 @@ export default function PrivacyPage() {
         <p className="subpage-eyebrow">Privacy Policy</p>
         <h1 className="subpage-title">Privacy and data use.</h1>
         <p className="legal-page__lede">
-          This is the launch privacy baseline for F1 InsightX. It reflects the current product behavior and should still
-          receive jurisdiction-specific legal review before broad commercial distribution.
+          This policy describes the current F1 InsightX product behavior: account data, profile preferences, Picks entries,
+          cookies, and operational logs used to run and protect the service.
         </p>
         <p className="legal-page__meta">Last updated {UPDATED_AT}</p>
         <LegalLinks />
@@ -55,6 +55,10 @@ export default function PrivacyPage() {
             related timestamps and cooldown fields used to manage profile changes.
           </p>
           <p>
+            Picks data: entertainment-only race picks, timestamps, point totals, and leaderboard display names when you
+            choose to submit Picks while signed in.
+          </p>
+          <p>
             Operational data: limited server logs, rate-limit identifiers derived from hashed client/network information,
             and request metadata used to secure the API and diagnose failures.
           </p>
@@ -65,6 +69,7 @@ export default function PrivacyPage() {
         <div className="workspace-panel__eyebrow">How We Use Data</div>
         <div className="legal-page__copy">
           <p>To authenticate accounts, persist your profile settings, and render your personalized profile experience.</p>
+          <p>To save entertainment-only Picks, calculate points, and show race or season leaderboard positions.</p>
           <p>To secure the app, rate-limit sensitive routes, investigate failures, and prevent abuse of account flows.</p>
           <p>To deliver the core race analytics product surfaces and the profile preferences you choose inside the app.</p>
         </div>
@@ -79,8 +84,8 @@ export default function PrivacyPage() {
             and consent if non-essential tracking is introduced later.
           </p>
           <p>
-            This framing is a practical engineering baseline, not a substitute for jurisdiction-specific legal review
-            before broad consumer launch.
+            Privacy obligations vary by jurisdiction. This policy should be reviewed when the product adds paid features,
+            prizes, advertising, analytics tracking, or broader international distribution.
           </p>
         </div>
       </section>
@@ -90,7 +95,7 @@ export default function PrivacyPage() {
         <div className="legal-page__copy">
           <p>
             The app currently relies on strictly necessary authentication/session cookies provided through Supabase to
-            support sign-in and account persistence.
+            support sign-in and account persistence, plus a first-party preference cookie that stores your cookie banner choice.
           </p>
           <p>
             We do not currently deploy advertising cookies or non-essential analytics cookies in the product experience.
@@ -145,8 +150,7 @@ export default function PrivacyPage() {
         <div className="legal-page__copy">
           <p>
             If you access the service from outside the country where its infrastructure operates, your data may be
-            processed in other jurisdictions, including the United States. This should receive legal review before a broad
-            international launch.
+            processed in other jurisdictions, including the United States.
           </p>
         </div>
       </section>
