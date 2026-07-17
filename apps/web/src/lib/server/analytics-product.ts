@@ -12,8 +12,6 @@ import {
   type AnalyticsTraceManifest,
 } from "@/lib/server/analytics-manifest";
 import { getRuntimeData, resolveRuntimeSource, type RuntimeSourceMetadata, type RuntimeSourceResult } from "@/lib/server/runtime-source";
-import fallbackIndexedManifest from "../../../test-fixtures/data/analytics/indexed/analytics_session_manifest.json";
-import fallbackIndexedSession from "../../../test-fixtures/data/analytics/indexed/sessions/2026-04-r-miami-grand-prix-fixture.json";
 
 type Numeric = number | string | null | undefined;
 
@@ -343,9 +341,104 @@ const ANALYTICS_SESSION_PRIORITY: Record<string, number> = {
   FP2: 2,
   FP1: 1,
 };
+const FALLBACK_ANALYTICS_SESSION_ID = "2026_04_R_Miami Grand Prix";
+const fallbackSessionRow = {
+  session_id: FALLBACK_ANALYTICS_SESSION_ID,
+  season: 2026,
+  round: 4,
+  event: "Miami Grand Prix",
+  session: "R",
+  driver_count: 2,
+  segment_count: 3,
+  straight_count: 2,
+  telemetry_quality_mean: 0.92,
+  track_archetype: "traction-sensitive",
+  generated_at: "2026-05-09T23:55:00Z",
+  build_version: "analytics_fallback_v1",
+} satisfies SessionIndexRow;
+const fallbackIndexedManifestData = {
+  version: 1,
+  row_cap: 10,
+  sessions: {
+    [FALLBACK_ANALYTICS_SESSION_ID]: {
+      file: "bundled-miami-fallback.json",
+      season: 2026,
+      round: 4,
+      event: "Miami Grand Prix",
+      session: "R",
+      counts: {
+        drivers: 2,
+        overview: 1,
+        track_summary: 1,
+        segments: 3,
+        braking: 2,
+        throttle: 2,
+        straights: 2,
+        energy_proxy: 2,
+      },
+    },
+  },
+};
+const fallbackIndexedSessionPayload = {
+  session: fallbackSessionRow,
+  drivers: [
+    { code: "GAS", team: "Alpine" },
+    { code: "OCO", team: "Haas F1 Team" },
+  ],
+  overview: [{
+    session_id: FALLBACK_ANALYTICS_SESSION_ID,
+    driver_a: "GAS",
+    driver_b: "OCO",
+    driver_a_team: "Alpine",
+    driver_b_team: "Haas F1 Team",
+    corner_advantage_count_a: 2,
+    corner_advantage_count_b: 1,
+    straight_advantage_count_a: 2,
+    straight_advantage_count_b: 0,
+    avg_segment_delta_kph: 1.25,
+    avg_straight_delta_kph: 4.4,
+    braking_advantage_score: 0.08,
+    traction_advantage_score: -0.03,
+    energy_proxy_delta: 0.05,
+    confidence: 0.78,
+    weakest_assumption: "Compact fallback built from a prepared product fixture.",
+    strategy_relevance_note: "Straight-line edge is most relevant on power-sensitive tracks.",
+  }],
+  track_summary: [{
+    session_id: FALLBACK_ANALYTICS_SESSION_ID,
+    track_archetype: "traction-sensitive",
+    straight_line_weight: 0.64,
+    braking_weight: 0.58,
+    traction_weight: 0.82,
+    degradation_weight: 0.52,
+    track_position_weight: 0.48,
+    archetype_confidence: 0.74,
+  }],
+  segments: [
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "approx_segment_02", segment_kind: "approximate segment", segment_confidence: 0.72, driver_a: "GAS", driver_b: "OCO", entry_speed_delta_kph: 2.4, apex_speed_delta_kph: 1.1, exit_speed_delta_kph: 3.2, min_speed_delta_kph: 0.9, faster_driver: "GAS", confidence: 0.74 },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "approx_segment_06", segment_kind: "approximate segment", segment_confidence: 0.7, driver_a: "GAS", driver_b: "OCO", entry_speed_delta_kph: -1.6, apex_speed_delta_kph: -0.4, exit_speed_delta_kph: -2.1, min_speed_delta_kph: -0.8, faster_driver: "OCO", confidence: 0.69 },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "approx_segment_11", segment_kind: "approximate segment", segment_confidence: 0.76, driver_a: "GAS", driver_b: "OCO", entry_speed_delta_kph: 1.8, apex_speed_delta_kph: 0.9, exit_speed_delta_kph: 2.4, min_speed_delta_kph: 0.6, faster_driver: "GAS", confidence: 0.77 },
+  ],
+  braking: [
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "brake_zone_01", driver_a: "GAS", driver_b: "OCO", braking_start_delta_m: -4.2, braking_duration_delta_s: -0.08, braking_distance_delta_m: -3.4, late_brake_delta: 0.12, brake_intensity_delta: 0.08, confidence: 0.7, favorable_driver: "GAS" },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "brake_zone_04", driver_a: "GAS", driver_b: "OCO", braking_start_delta_m: 2.1, braking_duration_delta_s: 0.04, braking_distance_delta_m: 1.6, late_brake_delta: -0.04, brake_intensity_delta: -0.03, confidence: 0.66, favorable_driver: "OCO" },
+  ],
+  throttle: [
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "traction_zone_03", driver_a: "GAS", driver_b: "OCO", throttle_pickup_delta_m: -2.3, full_throttle_exit_delta_m: -3.1, traction_exit_delta: 0.06, confidence: 0.71, favorable_driver: "GAS" },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "traction_zone_07", driver_a: "GAS", driver_b: "OCO", throttle_pickup_delta_m: 1.4, full_throttle_exit_delta_m: 2.2, traction_exit_delta: -0.03, confidence: 0.68, favorable_driver: "OCO" },
+  ],
+  straights: [
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "straight_01", driver_a: "GAS", driver_b: "OCO", entry_speed_delta_kph: 1.2, terminal_speed_delta_kph: 5.6, acceleration_delta: 0.08, drs_active_delta_pct: 0, clipping_proxy_delta: 0.02, confidence: 0.8, favorable_driver: "GAS" },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "straight_02", driver_a: "GAS", driver_b: "OCO", entry_speed_delta_kph: 0.6, terminal_speed_delta_kph: 3.1, acceleration_delta: 0.04, drs_active_delta_pct: 0, clipping_proxy_delta: 0.01, confidence: 0.76, favorable_driver: "GAS" },
+  ],
+  energy_proxy: [
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "energy_zone_01", driver_a: "GAS", driver_b: "OCO", deployment_proxy_delta: 0.05, lift_and_coast_delta: -0.02, clipping_proxy_delta: 0.01, recovery_zone_delta: 0.02, confidence: 0.7, proxy_note: ANALYTICS_ENERGY_PROXY_NOTE },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "energy_zone_02", driver_a: "GAS", driver_b: "OCO", deployment_proxy_delta: 0.03, lift_and_coast_delta: -0.01, clipping_proxy_delta: 0.02, recovery_zone_delta: 0.01, confidence: 0.69, proxy_note: ANALYTICS_ENERGY_PROXY_NOTE },
+  ],
+} satisfies AnalyticsIndexedSessionPayload;
 
 async function readFallbackSessionRows() {
-  return [fallbackIndexedSession.session as SessionIndexRow];
+  return [fallbackSessionRow];
 }
 
 const readSessionRows = cache(async () => {
@@ -400,7 +493,7 @@ const readIndexedManifest = cache(async (): Promise<AnalyticsIndexedManifest> =>
     return parseAnalyticsIndexedManifest(JSON.parse(content));
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
-      return parseAnalyticsIndexedManifest(fallbackIndexedManifest);
+      return parseAnalyticsIndexedManifest(fallbackIndexedManifestData);
     }
 
     throw error;
@@ -414,8 +507,8 @@ const readIndexedSessionPayload = cache(async (sessionId: string): Promise<Analy
     return null;
   }
 
-  if (entry.file === fallbackIndexedManifest.sessions["2026_04_R_Miami Grand Prix"]?.file) {
-    return fallbackIndexedSession as AnalyticsIndexedSessionPayload;
+  if (entry.file === fallbackIndexedManifestData.sessions[FALLBACK_ANALYTICS_SESSION_ID].file) {
+    return fallbackIndexedSessionPayload;
   }
 
   try {
