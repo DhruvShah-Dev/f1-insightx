@@ -9,12 +9,17 @@ import { StatePanel } from "@/components/ui/state-panel";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { getPitWallPicksPayload } from "@/lib/server/pit-wall-picks";
+import { makeMetadata } from "@/lib/seo";
 import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
 
-export const metadata: Metadata = {
-  title: "Picks | F1 InsightX",
-};
+export const metadata: Metadata = makeMetadata({
+  title: "Pit Wall Picks",
+  description:
+    "Free Formula 1 race picks for qualifying order, podium calls, and race-week bonus predictions. Entertainment only, no wagers or cash prizes.",
+  path: "/picks",
+  keywords: ["F1 picks", "F1 podium predictions", "Formula 1 picks game"],
+});
 
 function formatRaceDate(iso: string) {
   const date = new Date(iso);

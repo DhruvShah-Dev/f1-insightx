@@ -1,2 +1,2 @@
 id,season,round,race_id,circuit_id,archetype_label,high_speed_bias,overtake_difficulty,tire_degradation_bias,weather_risk_index,safety_car_probability,strategic_complexity_score,source_label
-2026-10-spa,2026,10,2026-10-spa,spa,Balanced circuit,,,,0.0,100.0,100.0,race_week_context_features_v1
+2026-11-hungaroring,2026,11,2026-11-hungaroring,hungaroring,Balanced circuit,,,,0.0,100.0,100.0,race_week_context_features_v1

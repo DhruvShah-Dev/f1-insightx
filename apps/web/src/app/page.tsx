@@ -9,7 +9,14 @@ import { AppFooter } from "@/components/ui/app-footer";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
 import { getSeasonState } from "@/lib/server/season-state";
 import { getCurrentSeasonConstructorStandings, getCurrentSeasonDriverStandings } from "@/lib/server/standings";
+import { makeMetadata } from "@/lib/seo";
 import { getCircuitDisplayName } from "@/lib/ui/home-hero";
+
+export const metadata = makeMetadata({
+  description:
+    "F1 InsightX turns Formula 1 telemetry, standings, race history, and race-week signals into prediction, strategy, and post-race intelligence.",
+  keywords: ["F1 standings", "F1 race intelligence", "F1 race week"],
+});
 
 export default async function Home() {
   const [constructorStandings, raceHistory, driverStandings] = await Promise.all([

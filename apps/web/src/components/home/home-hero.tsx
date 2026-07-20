@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 import { RaceCountdown } from "@/components/home/race-countdown";
 import { TrackMap } from "@/components/ui/track-map";
 import type { SeasonRaceRef } from "@/lib/server/season-state";
-import { getTeamAsset } from "@/lib/ui/asset-manifest";
+import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
 import { formatCountdown, formatRaceDateUtc } from "@/lib/ui/home-hero";
 
 type HomeHeroProps = {
@@ -12,8 +12,37 @@ type HomeHeroProps = {
   visualTeamId: string;
 };
 
+type FlagTheme = {
+  orientation: "horizontal" | "vertical";
+  stripes: [string, string, string];
+  glow: string;
+};
+
+const flagThemeByCountry: Record<string, FlagTheme> = {
+  HU: {
+    orientation: "horizontal",
+    stripes: ["#ce2939", "#ffffff", "#477050"],
+    glow: "rgba(206, 41, 57, 0.24)",
+  },
+  BE: {
+    orientation: "horizontal",
+    stripes: ["#ce2939", "#ffffff", "#477050"],
+    glow: "rgba(206, 41, 57, 0.24)",
+  },
+};
+
+const fallbackFlagTheme: FlagTheme = {
+  orientation: "vertical",
+  stripes: ["#050608", "#f4f6f8", "#e10600"],
+  glow: "rgba(225, 6, 0, 0.2)",
+};
+
 export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps) {
   const visualTeam = getTeamAsset(visualTeamId);
+  const circuit = getCircuitAsset(nextRace?.circuit_id);
+  const flagTheme = flagThemeByCountry[circuit.countryCode] ?? fallbackFlagTheme;
+  const flagGradientDirection = flagTheme.orientation === "horizontal" ? "180deg" : "90deg";
+  const flagGradient = `linear-gradient(${flagGradientDirection}, ${flagTheme.stripes[0]} 0 33.33%, ${flagTheme.stripes[1]} 33.33% 66.66%, ${flagTheme.stripes[2]} 66.66% 100%)`;
 
   return (
     <section
@@ -22,6 +51,11 @@ export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps)
         {
           "--hero-team-primary": visualTeam.primary,
           "--hero-team-secondary": visualTeam.secondary,
+          "--hero-flag-one": flagTheme.stripes[0],
+          "--hero-flag-two": flagTheme.stripes[1],
+          "--hero-flag-three": flagTheme.stripes[2],
+          "--hero-flag-glow": flagTheme.glow,
+          "--hero-flag-gradient": flagGradient,
         } as CSSProperties
       }
     >
@@ -43,7 +77,7 @@ export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps)
         <div className="home-hero__stage">
           {nextRace ? (
             <article className="home-hero__race" aria-labelledby="home-next-race-title">
-              <div className="home-hero__flag" aria-hidden="true">
+              <div className={`home-hero__flag home-hero__flag--${flagTheme.orientation}`} aria-hidden="true">
                 <span />
                 <span />
                 <span />

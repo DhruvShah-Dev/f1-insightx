@@ -204,10 +204,22 @@ const raceAnalysisTableMap = {
   weatherContext: "race_analysis_weather_context",
 } as const;
 
-async function readRaceAnalysisRows<T>(key: keyof typeof raceAnalysisTableMap, csvKey: CsvFileKey) {
+function mergeRaceAnalysisRows<T extends { race_analysis_id?: string }>(primaryRows: T[], csvRows: T[]) {
+  if (primaryRows.length === 0) {
+    return csvRows;
+  }
+
+  const primaryRaceIds = new Set(primaryRows.map((row) => row.race_analysis_id).filter(Boolean));
+  const missingCsvRows = csvRows.filter((row) => row.race_analysis_id && !primaryRaceIds.has(row.race_analysis_id));
+  return missingCsvRows.length > 0 ? [...primaryRows, ...missingCsvRows] : primaryRows;
+}
+
+async function readRaceAnalysisRows<T extends { race_analysis_id?: string }>(key: keyof typeof raceAnalysisTableMap, csvKey: CsvFileKey) {
   const supabase = isTestRun()
     ? null
     : (await import("@/lib/server/supabase")).getSupabasePublicClient();
+  const csvRowsPromise = readOptionalCsvFile<T>(csvKey);
+
   if (supabase) {
     const pageSize = 1000;
     const rows: unknown[] = [];
@@ -230,11 +242,11 @@ async function readRaceAnalysisRows<T>(key: keyof typeof raceAnalysisTableMap, c
     }
 
     if (rows.length > 0) {
-      return rows as T[];
+      return mergeRaceAnalysisRows(rows as T[], await csvRowsPromise);
     }
   }
 
-  return readOptionalCsvFile<T>(csvKey);
+  return csvRowsPromise;
 }
 
 export type RaceAnalysisIndexItem = {

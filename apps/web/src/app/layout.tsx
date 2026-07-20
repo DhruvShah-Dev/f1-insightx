@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
 import { HomeAccountEntry } from "@/components/account/home-account-entry";
 import { CookieConsent } from "@/components/legal/cookie-consent";
+import { RootStructuredData } from "@/components/seo/structured-data";
 import { AppHeader } from "@/components/ui/app-header";
 import { getUserProfileByIdWithClient } from "@/lib/account/profile";
 import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
+import { getSiteUrl, makeMetadata, seo } from "@/lib/seo";
 import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 import "./globals.css";
 
@@ -21,24 +23,25 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-const metadataBase = (() => {
-  const configuredUrl = process.env.NEXT_PUBLIC_APP_URL?.trim();
-  if (!configuredUrl) {
-    return new URL("http://localhost:3000");
-  }
-
-  try {
-    return new URL(configuredUrl);
-  } catch {
-    return new URL("http://localhost:3000");
-  }
-})();
-
 export const metadata: Metadata = {
-  title: "F1 InsightX",
-  description:
-    "Premium Formula 1 telemetry analysis, race intelligence, and strategy simulation.",
-  metadataBase,
+  ...makeMetadata(),
+  metadataBase: getSiteUrl(),
+  title: {
+    default: seo.siteName,
+    template: `%s | ${seo.siteName}`,
+  },
+  category: "sports analytics",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/assets/logos/icon-light.svg", type: "image/svg+xml" },
+    ],
+    apple: "/assets/logos/f1_insightx_logo_icon_dark.png",
+  },
+  manifest: "/manifest.webmanifest",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default async function RootLayout({
@@ -98,6 +101,7 @@ export default async function RootLayout({
             />
           )}
         />
+        <RootStructuredData />
         {children}
         <CookieConsent />
       </body>

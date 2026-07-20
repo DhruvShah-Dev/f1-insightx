@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useMemo, useState, useTransition } from "react";
 import {
   Bar,
@@ -19,6 +20,8 @@ import type {
   AnalyticsDriverOption,
   AnalyticsSessionSummary,
 } from "@/lib/server/analytics-product";
+import { getCurrentDriverMetaByCode } from "@/lib/ui/driver-asset-manifest";
+import { getTeamAsset } from "@/lib/ui/asset-manifest";
 
 type Props = {
   sessions: AnalyticsSessionSummary[];
@@ -32,17 +35,50 @@ type ApiResult<T> = {
   error?: { message?: string };
 };
 
-const metricColor = "#ff5a36";
-const comparisonColor = "#f4c95d";
+type Palette = {
+  a: string;
+  b: string;
+  neutral: string;
+  sameTeam: boolean;
+};
 
-function formatMetric(value: number | null | undefined, digits = 2) {
+type EvidenceTab = "race-pace" | "trace" | "corners" | "straights" | "braking-traction";
+
+const tabs: Array<{ id: EvidenceTab; label: string }> = [
+  { id: "race-pace", label: "Race pace" },
+  { id: "trace", label: "Trace" },
+  { id: "corners", label: "Corners" },
+  { id: "straights", label: "Straights" },
+  { id: "braking-traction", label: "Brake + traction" },
+];
+
+const darkPanel = "#080b10";
+const neutral = "#d7dde8";
+
+function formatNumber(value: number | null | undefined, digits = 2) {
   if (value === null || value === undefined || !Number.isFinite(value)) return "n/a";
   if (Math.abs(value) < 0.005) return "0";
   return `${value > 0 ? "+" : ""}${value.toFixed(digits)}`;
 }
 
+function teamPalette(driverA: AnalyticsDriverOption, driverB: AnalyticsDriverOption): Palette {
+  const metaA = getCurrentDriverMetaByCode(driverA.code);
+  const metaB = getCurrentDriverMetaByCode(driverB.code);
+  const teamA = getTeamAsset(driverA.team ?? metaA.teamId);
+  const teamB = getTeamAsset(driverB.team ?? metaB.teamId);
+  const sameTeam = teamA.id === teamB.id || (driverA.team && driverA.team === driverB.team);
+  const a = teamA.primary && teamA.primary.toLowerCase() !== "#ffffff" ? teamA.primary : teamA.accent || "#e10600";
+  const bBase = sameTeam ? teamB.secondary || teamB.accent || "#f4f6f8" : teamB.primary || teamB.accent || "#f5c542";
+  const b = bBase.toLowerCase() === a.toLowerCase() ? teamB.accent || "#f5c542" : bBase;
+  return { a, b, neutral, sameTeam: Boolean(sameTeam) };
+}
+
 function driverLabel(driver: AnalyticsDriverOption) {
   return driver.team ? `${driver.code} / ${driver.team}` : driver.code;
+}
+
+function fallbackDriver(drivers: AnalyticsDriverOption[], code: string, index: number): AnalyticsDriverOption {
+  return drivers.find((driver) => driver.code === code) ?? drivers[index] ?? { code: code || "DRV", team: null };
 }
 
 async function loadJson<T>(url: string) {
@@ -60,77 +96,89 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
   const [driverA, setDriverA] = useState(initialComparison?.drivers.a.code ?? initialDrivers[0]?.code ?? "");
   const [driverB, setDriverB] = useState(initialComparison?.drivers.b.code ?? initialDrivers.find((driver) => driver.code !== driverA)?.code ?? "");
   const [comparison, setComparison] = useState(initialComparison);
-  const [error, setError] = useState<string | null>(initialComparison ? null : "No comparison is available for the selected drivers.");
+  const [activeTab, setActiveTab] = useState<EvidenceTab>("race-pace");
+  const [error, setError] = useState<string | null>(initialComparison ? null : "No comparison is available for this driver pair.");
   const [isPending, startTransition] = useTransition();
 
-  const currentSession = sessions.find((session) => session.id === sessionId) ?? comparison?.session ?? sessions[0] ?? null;
+  const currentSession = sessions.find((session) => session.id === sessionId) ?? comparison?.session ?? null;
   const validDriverB = driverB && driverB !== driverA ? driverB : drivers.find((driver) => driver.code !== driverA)?.code ?? "";
+  const visualA = comparison?.drivers.a ?? fallbackDriver(drivers, driverA, 0);
+  const visualB = comparison?.drivers.b ?? fallbackDriver(drivers, validDriverB, 1);
+  const palette = teamPalette(visualA, visualB);
 
-  const scoreRows = useMemo(() => {
-    if (!comparison) return [];
-    const overview = comparison.overview;
-    return [
-      { metric: "Corner segments", [overview.driverA]: overview.segmentAdvantageCountA, [overview.driverB]: overview.segmentAdvantageCountB },
-      { metric: "Straights", [overview.driverA]: overview.straightAdvantageCountA, [overview.driverB]: overview.straightAdvantageCountB },
-    ];
+  const lapRows = useMemo(() => {
+    if (!comparison?.lapPace.available) return [];
+    const byLap = new Map<number, Record<string, string | number | null>>();
+    for (const point of [...comparison.lapPace.driverA, ...comparison.lapPace.driverB]) {
+      const row = byLap.get(point.lapNumber) ?? { lap: point.lapNumber, phase: point.racePhase, compound: point.compound };
+      row[point.driver] = point.normalizedPaceDeltaS ?? point.lapTimeS;
+      row[`${point.driver} position`] = point.position;
+      byLap.set(point.lapNumber, row);
+    }
+    return [...byLap.values()].sort((left, right) => Number(left.lap) - Number(right.lap));
   }, [comparison]);
 
-  const deltaRows = useMemo(() => {
-    if (!comparison) return [];
-    return [
-      { metric: "Avg corner kph", value: comparison.overview.avgSegmentDeltaKph },
-      { metric: "Avg straight kph", value: comparison.overview.avgStraightDeltaKph },
-      { metric: "Braking score", value: comparison.overview.brakingAdvantageScore === null ? null : comparison.overview.brakingAdvantageScore * 100 },
-      { metric: "Traction score", value: comparison.overview.tractionAdvantageScore === null ? null : comparison.overview.tractionAdvantageScore * 100 },
-      { metric: "Energy proxy", value: comparison.overview.energyDeploymentProxyDelta },
-    ];
+  const traceRows = useMemo(() => {
+    const traceA = comparison?.telemetryTraces.driverA;
+    const traceB = comparison?.telemetryTraces.driverB;
+    if (!traceA || !traceB) return [];
+    const limit = Math.min(traceA.points.length, traceB.points.length);
+    const step = Math.max(1, Math.floor(limit / 180));
+    const rows: Array<Record<string, number | null>> = [];
+    for (let index = 0; index < limit; index += step) {
+      rows.push({
+        x: Math.round(traceA.points[index].x),
+        speedA: traceA.points[index].speed,
+        speedB: traceB.points[index].speed,
+        throttleA: traceA.points[index].throttle,
+        throttleB: traceB.points[index].throttle,
+        brakeA: traceA.points[index].brake,
+        brakeB: traceB.points[index].brake,
+      });
+    }
+    return rows;
   }, [comparison]);
 
-  const segmentRows = useMemo(() => comparison?.segmentHighlights.map((row) => ({
+  const cornerRows = useMemo(() => comparison?.segmentHighlights.map((row) => ({
     segment: row.segmentId,
     entry: row.entrySpeedDeltaKph,
     apex: row.apexSpeedDeltaKph,
     exit: row.exitSpeedDeltaKph,
   })) ?? [], [comparison]);
 
-  const brakingRows = useMemo(() => comparison?.brakingHighlights.map((row) => ({
-    segment: row.segmentId,
-    late: row.lateBrakeDelta,
-    distance: row.brakingDistanceDeltaM,
-    intensity: row.brakeIntensityDelta,
-  })) ?? [], [comparison]);
-
   const straightRows = useMemo(() => comparison?.straightHighlights.map((row) => ({
     segment: row.segmentId,
     terminal: row.terminalSpeedDeltaKph,
-    acceleration: row.accelerationDelta,
+    accel: row.accelerationDelta === null ? null : row.accelerationDelta * 100,
     drs: row.drsActiveDeltaPct,
   })) ?? [], [comparison]);
 
   const energyRows = useMemo(() => comparison?.energyProxyHighlights.map((row) => ({
     segment: row.segmentId,
-    deployment: row.deploymentProxyDelta,
-    lift: row.liftAndCoastDelta,
-    clipping: row.clippingProxyDelta,
+    deploy: row.deploymentProxyDelta,
+    coast: row.liftAndCoastDelta,
+    clip: row.clippingProxyDelta,
   })) ?? [], [comparison]);
 
-  const traceRows = useMemo(() => {
-    const traceA = comparison?.telemetryTraces.driverA;
-    const traceB = comparison?.telemetryTraces.driverB;
-    if (!traceA || !traceB) return [];
-    const step = Math.max(1, Math.floor(Math.min(traceA.points.length, traceB.points.length) / 180));
-    const rows = [];
-    for (let index = 0; index < Math.min(traceA.points.length, traceB.points.length); index += step) {
-      rows.push({
-        x: Math.round(traceA.points[index].x),
-        speedA: traceA.points[index].speed,
-        speedB: traceB.points[index].speed,
-        energyA: traceA.points[index].energyProxy,
-        energyB: traceB.points[index].energyProxy,
-      });
-    }
-    return rows;
-  }, [comparison]);
+  const brakingRows = useMemo(() => comparison?.brakingHighlights.map((row) => ({
+    segment: row.segmentId,
+    late: row.lateBrakeDelta === null ? null : row.lateBrakeDelta * 100,
+    distance: row.brakingDistanceDeltaM,
+    intensity: row.brakeIntensityDelta === null ? null : row.brakeIntensityDelta * 100,
+  })) ?? [], [comparison]);
+
+  const tractionRows = useMemo(() => comparison?.throttleHighlights.map((row) => ({
+    segment: row.segmentId,
+    pickup: row.throttlePickupDeltaM,
+    full: row.fullThrottleExitDeltaM,
+    traction: row.tractionExitDelta === null ? null : row.tractionExitDelta * 100,
+  })) ?? [], [comparison]);
+
+  const coverageLabel = comparison?.lapPace.available
+    ? `Race pace available: ${comparison.lapPace.pointCount} plotted laps`
+    : comparison?.session.session === "R"
+      ? "Race pace missing for this pair"
+      : "Representative telemetry only";
 
   function refresh(nextSessionId = sessionId, nextDriverA = driverA, nextDriverB = validDriverB) {
     if (!nextSessionId || !nextDriverA || !nextDriverB || nextDriverA === nextDriverB) return;
@@ -169,123 +217,191 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
     });
   }
 
+  function changeDriverA(nextDriverA: string) {
+    setDriverA(nextDriverA);
+    if (nextDriverA === driverB) {
+      setDriverB(drivers.find((driver) => driver.code !== nextDriverA)?.code ?? "");
+    }
+  }
+
   return (
-    <div className="versus-workspace">
-      <section className="versus-hero">
-        <div>
+    <div
+      className="versus-shell"
+      style={{
+        "--driver-a": palette.a,
+        "--driver-b": palette.b,
+      } as CSSProperties}
+    >
+      <aside className="versus-command-rail" aria-label="Session command rail">
+        <div className="versus-command-rail__brand">
           <span>Driver vs Driver</span>
-          <h1>Telemetry comparison workspace</h1>
-          <p>{comparison?.primaryInsight ?? "Choose a session and two drivers to compare prepared telemetry signals."}</p>
+          <strong>Pit-wall telemetry</strong>
         </div>
-        <div className="versus-control-panel">
-          <label>
-            Session
-            <select value={sessionId} onChange={(event) => changeSession(event.target.value)}>
-              {sessions.map((session) => (
-                <option key={session.id} value={session.id}>
-                  {session.season} R{session.round} {session.event} {session.session}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Driver A
-            <select value={driverA} onChange={(event) => setDriverA(event.target.value)}>
-              {drivers.map((driver) => <option key={driver.code} value={driver.code}>{driverLabel(driver)}</option>)}
-            </select>
-          </label>
-          <label>
-            Driver B
-            <select value={validDriverB} onChange={(event) => setDriverB(event.target.value)}>
-              {drivers.filter((driver) => driver.code !== driverA).map((driver) => <option key={driver.code} value={driver.code}>{driverLabel(driver)}</option>)}
-            </select>
-          </label>
-          <button type="button" onClick={() => refresh()} disabled={isPending || !driverA || !validDriverB}>
-            {isPending ? "Loading..." : "Compare"}
-          </button>
+
+        <label>
+          Season / event / session
+          <select value={sessionId} onChange={(event) => changeSession(event.target.value)}>
+            {sessions.map((session) => (
+              <option key={session.id} value={session.id}>
+                {session.season} R{session.round} {session.event} {session.session}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Driver A
+          <select value={driverA} onChange={(event) => changeDriverA(event.target.value)}>
+            {drivers.map((driver) => <option key={driver.code} value={driver.code}>{driverLabel(driver)}</option>)}
+          </select>
+        </label>
+        <label>
+          Driver B
+          <select value={validDriverB} onChange={(event) => setDriverB(event.target.value)}>
+            {drivers.filter((driver) => driver.code !== driverA).map((driver) => <option key={driver.code} value={driver.code}>{driverLabel(driver)}</option>)}
+          </select>
+        </label>
+        <button type="button" onClick={() => refresh()} disabled={isPending || !driverA || !validDriverB}>
+          {isPending ? "Loading..." : "Run compare"}
+        </button>
+
+        <div className="versus-coverage">
+          <span>Coverage</span>
+          <strong>{coverageLabel}</strong>
+          <small>Analytics coverage reaches 2026 Barcelona locally; race analysis extends further, but unavailable races are not selectable here.</small>
         </div>
-      </section>
+        <div className="versus-coverage">
+          <span>What this can prove</span>
+          <strong>{currentSession?.session === "R" ? "Race pace + telemetry signals" : "Representative lap + segment deltas"}</strong>
+          <small>Approximate segment and energy deployment proxy wording is preserved by design.</small>
+        </div>
+      </aside>
 
-      {comparison && currentSession ? (
-        <>
-          <section className="versus-kpi-strip">
-            <article>
-              <span>Data strength</span>
-              <strong>{comparison.dataStrengthLabel}</strong>
-              <small>{Math.round((comparison.overview.confidence ?? 0) * 100)}% pair confidence</small>
-            </article>
-            <article>
-              <span>Track type</span>
-              <strong>{comparison.trackSummary?.trackArchetype ?? currentSession.trackArchetype}</strong>
-              <small>{currentSession.segmentCount} segments / {currentSession.straightCount} straights</small>
-            </article>
-            <article>
-              <span>Driver edge</span>
-              <strong>{comparison.overview.driverA} vs {comparison.overview.driverB}</strong>
-              <small>{comparison.overview.strategyRelevanceNote}</small>
-            </article>
-          </section>
-
-          <section className="versus-chart-grid">
-            <ChartFrame title="Segment wins" subtitle="Count of prepared corner and straight segments led by each driver." dark>
-              <BarChart data={scoreRows} margin={{ left: -10, right: 8, top: 12 }}>
-                <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
-                <XAxis dataKey="metric" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                <YAxis allowDecimals={false} tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                <Tooltip contentStyle={{ background: "var(--bg-elevated)", border: "1px solid var(--border-subtle)" }} />
-                <Bar dataKey={comparison.overview.driverA} fill={metricColor} radius={[3, 3, 0, 0]} />
-                <Bar dataKey={comparison.overview.driverB} fill={comparisonColor} radius={[3, 3, 0, 0]} />
-              </BarChart>
-            </ChartFrame>
-
-            <ChartFrame title="Signed advantage" subtitle={`Positive values favor ${comparison.overview.driverA}; negative values favor ${comparison.overview.driverB}.`}>
-              <BarChart data={deltaRows} margin={{ left: -8, right: 18, top: 12 }}>
-                <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
-                <XAxis dataKey="metric" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                <ReferenceLine y={0} stroke="rgba(255,255,255,0.4)" />
-                <Tooltip formatter={(value) => formatMetric(Number(value))} contentStyle={{ background: "var(--bg-elevated)", border: "1px solid var(--border-subtle)" }} />
-                <Bar dataKey="value" radius={[3, 3, 0, 0]}>
-                  {deltaRows.map((row) => <Cell key={row.metric} fill={(row.value ?? 0) >= 0 ? metricColor : comparisonColor} />)}
-                </Bar>
-              </BarChart>
-            </ChartFrame>
-          </section>
-
-          {traceRows.length ? (
-            <section className="versus-wide-chart">
-              <ChartFrame title="Representative speed trace" subtitle={`${comparison.telemetryTraces.qualityTier}. ${comparison.telemetryTraces.note}`} dark>
-                <LineChart data={traceRows} margin={{ left: -8, right: 16, top: 12 }}>
-                  <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
-                  <XAxis dataKey="x" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                  <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                  <Tooltip contentStyle={{ background: "var(--bg-elevated)", border: "1px solid var(--border-subtle)" }} />
-                  <Line type="monotone" dot={false} strokeWidth={2.4} dataKey="speedA" name={`${comparison.overview.driverA} speed`} stroke={metricColor} />
-                  <Line type="monotone" dot={false} strokeWidth={2.4} dataKey="speedB" name={`${comparison.overview.driverB} speed`} stroke={comparisonColor} />
-                </LineChart>
-              </ChartFrame>
+      <main className="versus-pitwall">
+        {comparison ? (
+          <>
+            <section className="versus-duel-summary">
+              <div>
+                <span>{comparison.session.season} R{comparison.session.round} / {comparison.session.event} / {comparison.session.session}</span>
+                <h1>{comparison.overview.driverA} vs {comparison.overview.driverB}</h1>
+                <p>{comparison.primaryInsight}</p>
+                {palette.sameTeam ? <small>Same-team comparison uses constructor color plus secondary/accent stroke and dashed trace encoding.</small> : null}
+              </div>
+              <div className="versus-driver-ledger" aria-label="Driver ledger">
+                <DriverLedger code={comparison.overview.driverA} team={comparison.drivers.a.team} color={palette.a} />
+                <DriverLedger code={comparison.overview.driverB} team={comparison.drivers.b.team} color={palette.b} dashed={palette.sameTeam} />
+              </div>
             </section>
-          ) : null}
 
-          <section className="versus-chart-grid versus-chart-grid--dense">
-            <DeltaBars title="Corner speed deltas" subtitle="Entry, apex, and exit speed deltas by strongest segment." rows={segmentRows} keys={["entry", "apex", "exit"]} />
-            <DeltaBars title="Braking deltas" subtitle="Late braking, distance, and intensity proxy by segment." rows={brakingRows} keys={["late", "distance", "intensity"]} />
-            <DeltaBars title="Straight-line speed" subtitle="Terminal speed, acceleration, and DRS active delta by straight." rows={straightRows} keys={["terminal", "acceleration", "drs"]} />
-            <DeltaBars title="Energy usage proxy" subtitle={comparison.proxyNote} rows={energyRows} keys={["deployment", "lift", "clipping"]} />
-          </section>
+            <section className="versus-signal-strip" aria-label="Evidence summary">
+              <Signal label="Confidence" value={`${Math.round((comparison.overview.confidence ?? 0) * 100)}%`} detail={comparison.dataStrengthLabel} />
+              <Signal label="Corner delta" value={`${formatNumber(comparison.overview.avgSegmentDeltaKph)} kph`} detail="Average approximate segment apex signal" />
+              <Signal label="Straight delta" value={`${formatNumber(comparison.overview.avgStraightDeltaKph)} kph`} detail="Terminal speed signal" />
+              <Signal label="Energy" value={formatNumber(comparison.overview.energyDeploymentProxyDelta)} detail="Energy deployment proxy" />
+            </section>
 
-          <section className="versus-quality-note">
-            <strong>Quality note</strong>
-            <p>{comparison.overview.weakestAssumption} Energy deployment is proxy evidence, not true ERS or battery state.</p>
-          </section>
-        </>
-      ) : (
-        <section className="versus-quality-note">
-          <strong>Comparison unavailable</strong>
-          <p>{error ?? "Select another driver pair."}</p>
-        </section>
-      )}
+            <section className="versus-evidence-console">
+              <div className="versus-evidence-console__tabs" role="tablist" aria-label="Telemetry evidence">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeTab === tab.id}
+                    className={activeTab === tab.id ? "is-active" : ""}
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              {activeTab === "race-pace" ? (
+                comparison.lapPace.available ? (
+                  <ChartFrame
+                    title="Lap-by-lap normalized race pace"
+                    subtitle={`${comparison.lapPace.qualityNote} Null lap times excluded: ${comparison.lapPace.nullLapTimeCount}.`}
+                    dark
+                  >
+                    <LineChart data={lapRows} margin={{ left: -8, right: 18, top: 12 }}>
+                      <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
+                      <XAxis dataKey="lap" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+                      <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+                      <ReferenceLine y={0} stroke="rgba(244,246,248,0.45)" />
+                      <Tooltip contentStyle={{ background: darkPanel, border: "1px solid var(--versus-line)", color: "#f4f6f8" }} />
+                      <Line type="monotone" dataKey={comparison.overview.driverA} stroke={palette.a} strokeWidth={2.5} dot={false} name={`${comparison.overview.driverA} pace delta`} />
+                      <Line type="monotone" dataKey={comparison.overview.driverB} stroke={palette.b} strokeWidth={2.5} dot={false} strokeDasharray={palette.sameTeam ? "7 5" : undefined} name={`${comparison.overview.driverB} pace delta`} />
+                    </LineChart>
+                  </ChartFrame>
+                ) : (
+                  <UnavailablePanel title="Lap-by-lap race pace unavailable" message={comparison.lapPace.reason ?? "Race lap pace is unavailable for this pair."} />
+                )
+              ) : activeTab === "trace" ? (
+                <ChartFrame title="Representative speed + controls trace" subtitle={comparison.telemetryTraces.note} dark>
+                  <LineChart data={traceRows} margin={{ left: -8, right: 18, top: 12 }}>
+                    <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
+                    <XAxis dataKey="x" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+                    <YAxis yAxisId="speed" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+                    <YAxis yAxisId="control" orientation="right" domain={[0, 100]} hide />
+                    <Tooltip contentStyle={{ background: darkPanel, border: "1px solid var(--versus-line)", color: "#f4f6f8" }} />
+                    <Line yAxisId="speed" type="monotone" dataKey="speedA" stroke={palette.a} strokeWidth={2.5} dot={false} name={`${comparison.overview.driverA} speed`} />
+                    <Line yAxisId="speed" type="monotone" dataKey="speedB" stroke={palette.b} strokeWidth={2.5} dot={false} strokeDasharray={palette.sameTeam ? "7 5" : undefined} name={`${comparison.overview.driverB} speed`} />
+                    <Line yAxisId="control" type="monotone" dataKey="throttleA" stroke={palette.a} strokeWidth={1.2} dot={false} opacity={0.45} name={`${comparison.overview.driverA} throttle`} />
+                    <Line yAxisId="control" type="monotone" dataKey="brakeB" stroke={palette.b} strokeWidth={1.2} dot={false} opacity={0.45} strokeDasharray="3 4" name={`${comparison.overview.driverB} brake`} />
+                  </LineChart>
+                </ChartFrame>
+              ) : activeTab === "corners" ? (
+                <DeltaBars title="Corner speed analysis" subtitle="Entry, apex, and exit deltas across approximate segments." rows={cornerRows} keys={["entry", "apex", "exit"]} palette={palette} />
+              ) : activeTab === "straights" ? (
+                <div className="versus-split-charts">
+                  <DeltaBars title="Straight-line speed" subtitle="Terminal speed, acceleration, and DRS active delta." rows={straightRows} keys={["terminal", "accel", "drs"]} palette={palette} />
+                  <DeltaBars title="Energy deployment proxy" subtitle={comparison.proxyNote} rows={energyRows} keys={["deploy", "coast", "clip"]} palette={palette} />
+                </div>
+              ) : (
+                <div className="versus-split-charts">
+                  <DeltaBars title="Braking story" subtitle="Late-brake score, braking distance, and brake-intensity proxy. Braking start distance is caveated where missing." rows={brakingRows} keys={["late", "distance", "intensity"]} palette={palette} />
+                  <DeltaBars title="Traction story" subtitle="Throttle pickup, full-throttle exit, and traction proxy. Full-throttle exit can be low-confidence when absent." rows={tractionRows} keys={["pickup", "full", "traction"]} palette={palette} />
+                </div>
+              )}
+            </section>
+
+            <section className="versus-quality-note">
+              <strong>Data quality</strong>
+              <p>{comparison.overview.weakestAssumption} Braking start distance has known missingness, full-throttle exit can be absent, and race traffic/dirty-air is proxy evidence rather than exact gap truth.</p>
+            </section>
+          </>
+        ) : (
+          <UnavailablePanel title="Comparison unavailable" message={error ?? "Select another session or driver pair."} />
+        )}
+      </main>
     </div>
+  );
+}
+
+function DriverLedger({ code, team, color, dashed = false }: { code: string; team: string | null; color: string; dashed?: boolean }) {
+  return (
+    <article className="versus-driver-ledger__item" style={{ "--driver-color": color } as CSSProperties}>
+      <span style={{ borderStyle: dashed ? "dashed" : "solid" }} />
+      <strong>{code}</strong>
+      <small>{team ?? "Unknown team"}</small>
+    </article>
+  );
+}
+
+function Signal({ label, value, detail }: { label: string; value: string; detail: string }) {
+  return (
+    <article>
+      <span>{label}</span>
+      <strong>{value}</strong>
+      <small>{detail}</small>
+    </article>
+  );
+}
+
+function UnavailablePanel({ title, message }: { title: string; message: string }) {
+  return (
+    <section className="versus-unavailable">
+      <strong>{title}</strong>
+      <p>{message}</p>
+    </section>
   );
 }
 
@@ -294,22 +410,32 @@ function DeltaBars({
   subtitle,
   rows,
   keys,
+  palette,
 }: {
   title: string;
   subtitle: string;
   rows: Array<Record<string, string | number | null>>;
   keys: string[];
+  palette: Palette;
 }) {
+  if (!rows.length) {
+    return <UnavailablePanel title={title} message="No indexed rows are available for this selected evidence view." />;
+  }
+
   return (
-    <ChartFrame title={title} subtitle={subtitle}>
+    <ChartFrame title={title} subtitle={subtitle} dark>
       <BarChart data={rows} margin={{ left: -8, right: 12, top: 12 }}>
         <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
         <XAxis dataKey="segment" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
         <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-        <ReferenceLine y={0} stroke="rgba(255,255,255,0.34)" />
-        <Tooltip formatter={(value) => formatMetric(Number(value))} contentStyle={{ background: "var(--bg-elevated)", border: "1px solid var(--border-subtle)" }} />
+        <ReferenceLine y={0} stroke="rgba(244,246,248,0.38)" />
+        <Tooltip formatter={(value) => formatNumber(Number(value))} contentStyle={{ background: darkPanel, border: "1px solid var(--versus-line)", color: "#f4f6f8" }} />
         {keys.map((key, index) => (
-          <Bar key={key} dataKey={key} fill={index === 0 ? metricColor : index === 1 ? comparisonColor : "rgba(255,255,255,0.5)"} radius={[3, 3, 0, 0]} />
+          <Bar key={key} dataKey={key} radius={[2, 2, 0, 0]}>
+            {rows.map((row) => (
+              <Cell key={`${key}-${row.segment}`} fill={Number(row[key] ?? 0) >= 0 ? (index === 2 ? palette.neutral : palette.a) : palette.b} />
+            ))}
+          </Bar>
         ))}
       </BarChart>
     </ChartFrame>

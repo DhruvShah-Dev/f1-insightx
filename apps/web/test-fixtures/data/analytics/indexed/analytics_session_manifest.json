@@ -16,7 +16,26 @@
         "braking": 2,
         "throttle": 2,
         "straights": 2,
-        "energy_proxy": 2
+        "energy_proxy": 2,
+        "lap_pace": 4
+      }
+    },
+    "2026_04_FP1_Miami Grand Prix": {
+      "file": "2026-04-fp1-miami-grand-prix-fixture.json",
+      "season": 2026,
+      "round": 4,
+      "event": "Miami Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "drivers": 2,
+        "overview": 1,
+        "track_summary": 1,
+        "segments": 1,
+        "braking": 1,
+        "throttle": 1,
+        "straights": 1,
+        "energy_proxy": 1,
+        "lap_pace": 0
       }
     }
   }

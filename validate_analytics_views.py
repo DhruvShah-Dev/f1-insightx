@@ -19,6 +19,11 @@ REQUIRED = {
     "analytics_throttle_comparison.csv": ["session_id", "segment_id", "driver_a", "driver_b", "favorable_driver", "confidence"],
     "analytics_straight_comparison.csv": ["session_id", "segment_id", "driver_a", "driver_b", "favorable_driver", "confidence"],
     "analytics_energy_proxy_comparison.csv": ["session_id", "segment_id", "driver_a", "driver_b", "deployment_proxy_delta", "confidence", "proxy_note"],
+    "analytics_lap_pace_driver.csv": [
+        "session_id", "driver", "lap_number", "race_phase", "compound", "stint_number", "lap_time_s",
+        "normalized_pace_delta_s", "rolling_pace_delta_s", "position", "traffic_proxy_label",
+        "dirty_air_proxy_s", "drs_window_proxy", "confidence", "traffic_proxy_note",
+    ],
     "analytics_track_summary.csv": ["session_id", "track_archetype", "straight_line_weight", "braking_weight", "traction_weight", "degradation_weight", "track_position_weight", "archetype_confidence"],
 }
 KEYS = {
@@ -28,6 +33,7 @@ KEYS = {
     "analytics_throttle_comparison.csv": ["session_id", "segment_id", "driver_a", "driver_b"],
     "analytics_straight_comparison.csv": ["session_id", "segment_id", "driver_a", "driver_b"],
     "analytics_energy_proxy_comparison.csv": ["session_id", "segment_id", "driver_a", "driver_b"],
+    "analytics_lap_pace_driver.csv": ["session_id", "driver", "lap_number"],
     "analytics_track_summary.csv": ["session_id"],
 }
 
@@ -81,6 +87,22 @@ def main() -> None:
         if "proxy" not in labels or "not true ers" not in labels:
             errors.append("analytics_energy_proxy_comparison proxy_note does not preserve proxy/not true ERS language")
 
+    lap_pace = frames.get("analytics_lap_pace_driver.csv", pd.DataFrame())
+    if not lap_pace.empty:
+        lap_times = pd.to_numeric(lap_pace.get("lap_time_s"), errors="coerce")
+        null_lap_times = int(lap_times.isna().sum())
+        null_lap_rate = float(lap_times.isna().mean())
+        summary["lap_pace_quality"] = {
+            "rows": int(len(lap_pace)),
+            "null_lap_time_rows": null_lap_times,
+            "null_lap_time_rate": round(null_lap_rate, 4),
+        }
+        if null_lap_rate > 0.02:
+            errors.append(f"analytics_lap_pace_driver lap_time_s null rate too high: {null_lap_rate:.2%}")
+        labels = " ".join(lap_pace.get("traffic_proxy_note", pd.Series(dtype=str)).dropna().astype(str).unique()).lower()
+        if "proxy evidence" not in labels or "not exact gap" not in labels:
+            errors.append("analytics_lap_pace_driver traffic_proxy_note does not preserve proxy/not exact gap language")
+
     session_index = frames.get("analytics_session_index.csv", pd.DataFrame())
     telemetry_sessions = read_csv(DATA_DIR / "telemetry_features" / "telemetry_lap_summary.csv")
     if not session_index.empty and not telemetry_sessions.empty:
@@ -89,6 +111,24 @@ def main() -> None:
         summary["session_coverage"] = {"expected_from_telemetry": int(expected), "actual": int(actual)}
         if actual < expected * 0.98:
             errors.append(f"session coverage too low: {actual}/{expected}")
+
+    if not session_index.empty and not lap_pace.empty:
+        lap_sessions = lap_pace[["session_id"]].drop_duplicates().merge(
+            session_index[["session_id", "session"]],
+            on="session_id",
+            how="left",
+        )
+        non_race_count = int((lap_sessions["session"] != "R").sum())
+        missing_index_count = int(lap_sessions["session"].isna().sum())
+        summary["lap_pace_session_coverage"] = {
+            "sessions": int(lap_sessions["session_id"].nunique()),
+            "non_race_sessions": non_race_count,
+            "missing_analytics_index_sessions": missing_index_count,
+        }
+        if non_race_count:
+            errors.append(f"analytics_lap_pace_driver has {non_race_count} non-race sessions")
+        if missing_index_count:
+            errors.append(f"analytics_lap_pace_driver has {missing_index_count} sessions missing from analytics_session_index")
 
     if report_path.exists():
         report = json.loads(report_path.read_text(encoding="utf-8"))

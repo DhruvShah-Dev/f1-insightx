@@ -24,10 +24,12 @@ OUTPUT_FILES = {
     "throttle_comparison": "analytics_throttle_comparison.csv",
     "straight_comparison": "analytics_straight_comparison.csv",
     "energy_proxy_comparison": "analytics_energy_proxy_comparison.csv",
+    "lap_pace_driver": "analytics_lap_pace_driver.csv",
     "track_summary": "analytics_track_summary.csv",
 }
 PROXY_NOTE = "Energy deployment proxy derived from speed/throttle/RPM/gear/DRS features; not true ERS or battery state."
 WEAKEST_ASSUMPTION = "Approximate segment IDs from precomputed telemetry features; not manually named corners."
+TRAFFIC_PROXY_NOTE = "Traffic and dirty-air values are proxy evidence from race analysis, not exact gap or DRS truth."
 
 
 def read_csv(path: Path) -> pd.DataFrame:
@@ -385,6 +387,95 @@ def build_track_summary(session_index: pd.DataFrame, archetypes: dict[str, dict[
     return pd.DataFrame(rows)
 
 
+def build_lap_pace_driver(
+    session_index: pd.DataFrame,
+    race_index: pd.DataFrame,
+    pace: pd.DataFrame,
+    positions: pd.DataFrame,
+    traffic: pd.DataFrame,
+) -> pd.DataFrame:
+    if session_index.empty or race_index.empty or pace.empty:
+        return pd.DataFrame()
+
+    source = pace.copy()
+    index_columns = ["race_analysis_id", "session_id"]
+    if "race_analysis_id" not in race_index.columns or "session_id" not in race_index.columns:
+        return pd.DataFrame()
+    source = source.merge(race_index[index_columns].drop_duplicates(), on="race_analysis_id", how="left")
+    analytics_session_ids = set(session_index.loc[session_index["session"] == "R", "session_id"].astype(str))
+    source = source[source["session_id"].astype(str).isin(analytics_session_ids)].copy()
+    if source.empty:
+        return pd.DataFrame()
+
+    keys = ["race_analysis_id", "driver", "lap_number"]
+    if not positions.empty:
+        position_columns = [column for column in ["position", "track_status_label", "confidence", "evidence_type"] if column in positions.columns]
+        position_subset = positions[keys + position_columns].rename(
+            columns={"confidence": "position_confidence", "evidence_type": "position_evidence_type"}
+        )
+        source = source.merge(position_subset, on=keys, how="left")
+    if not traffic.empty:
+        traffic_columns = [
+            column
+            for column in ["traffic_proxy_label", "dirty_air_proxy_s", "drs_window_proxy", "confidence", "evidence_type"]
+            if column in traffic.columns
+        ]
+        traffic_subset = traffic[keys + traffic_columns].rename(
+            columns={"confidence": "traffic_confidence", "evidence_type": "traffic_evidence_type"}
+        )
+        source = source.merge(traffic_subset, on=keys, how="left")
+
+    source["lap_number"] = pd.to_numeric(source["lap_number"], errors="coerce").astype("Int64")
+    confidence_parts = []
+    for column in ["pace_confidence", "position_confidence", "traffic_confidence"]:
+        if column in source.columns:
+            confidence_parts.append(pd.to_numeric(source[column], errors="coerce"))
+    source["confidence"] = pd.concat(confidence_parts, axis=1).mean(axis=1).map(lambda value: clamp01(value, 0.45)) if confidence_parts else 0.45
+    source["traffic_proxy_note"] = TRAFFIC_PROXY_NOTE
+    source["evidence_type"] = source.get("traffic_evidence_type", "proxy")
+
+    output_columns = [
+        "session_id",
+        "driver",
+        "team",
+        "lap_number",
+        "race_phase",
+        "compound",
+        "stint_number",
+        "lap_time_s",
+        "normalized_pace_delta_s",
+        "rolling_pace_delta_s",
+        "fuel_corrected_delta_s",
+        "field_rank_on_lap",
+        "tyre_age",
+        "position",
+        "track_status_label",
+        "traffic_proxy_label",
+        "dirty_air_proxy_s",
+        "drs_window_proxy",
+        "confidence",
+        "evidence_type",
+        "traffic_proxy_note",
+    ]
+    for column in output_columns:
+        if column not in source.columns:
+            source[column] = None
+    numeric_columns = [
+        "lap_time_s",
+        "normalized_pace_delta_s",
+        "rolling_pace_delta_s",
+        "fuel_corrected_delta_s",
+        "dirty_air_proxy_s",
+        "confidence",
+    ]
+    for column in numeric_columns:
+        source[column] = pd.to_numeric(source[column], errors="coerce").round(4)
+    integer_columns = ["stint_number", "field_rank_on_lap", "tyre_age", "position"]
+    for column in integer_columns:
+        source[column] = pd.to_numeric(source[column], errors="coerce").astype("Int64")
+    return source[output_columns].sort_values(["session_id", "driver", "lap_number"])
+
+
 def null_rates(outputs: dict[str, pd.DataFrame]) -> dict[str, dict[str, float]]:
     rates: dict[str, dict[str, float]] = {}
     for name, frame in outputs.items():
@@ -400,6 +491,7 @@ def main() -> None:
     telemetry_dir = DATA_DIR / "telemetry_features"
     strategy_lab_dir = DATA_DIR / "strategy_lab"
     analytics_dir = DATA_DIR / "analytics"
+    race_analysis_dir = DATA_DIR / "race_analysis"
     reports_dir = DATA_DIR / "reports"
     generated_at, build_version = generated_metadata()
 
@@ -411,6 +503,10 @@ def main() -> None:
     energy = session_id_columns(read_csv(telemetry_dir / "energy_deployment_proxy.csv"))
     archetypes = archetype_lookup(read_csv(strategy_lab_dir / "track_archetype_weights.csv"))
     results = read_csv(settings.canonical_fastf1_dir / "results_canonical.csv")
+    race_index = read_csv(race_analysis_dir / "race_analysis_index.csv")
+    race_pace = read_csv(race_analysis_dir / "race_analysis_pace_evolution.csv")
+    race_positions = read_csv(race_analysis_dir / "race_analysis_position_timeline.csv")
+    race_traffic = read_csv(race_analysis_dir / "race_analysis_traffic_proxy.csv")
 
     session_index = build_session_index(laps, corner, straight, archetypes, generated_at, build_version)
     segment = build_segment_comparison(corner)
@@ -429,6 +525,7 @@ def main() -> None:
         team_lookup(results),
     )
     track_summary = build_track_summary(session_index, archetypes)
+    lap_pace_driver = build_lap_pace_driver(session_index, race_index, race_pace, race_positions, race_traffic)
 
     outputs = {
         "session_index": session_index,
@@ -438,6 +535,7 @@ def main() -> None:
         "throttle_comparison": throttle_comparison,
         "straight_comparison": straight_comparison,
         "energy_proxy_comparison": energy_comparison,
+        "lap_pace_driver": lap_pace_driver,
         "track_summary": track_summary,
     }
     for name, filename in OUTPUT_FILES.items():

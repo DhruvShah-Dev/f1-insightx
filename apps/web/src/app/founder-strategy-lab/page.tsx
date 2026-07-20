@@ -3,6 +3,7 @@ import { RaceLabWorkspace } from "@/components/lab/race-lab-workspace";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { StatePanel } from "@/components/ui/state-panel";
 import { withServerFallback } from "@/lib/errors/logger";
+import { makeMetadata } from "@/lib/seo";
 import { authorizeStrategyLabAccess, isStrategyLabTokenValid } from "@/lib/server/strategy-lab-access";
 import { getCircuitTrackData } from "@/lib/server/circuit-track-data";
 import { getStrategyLabRaceProductResult, listStrategyLabRacesResult } from "@/lib/server/strategy-lab-product";
@@ -10,6 +11,13 @@ import { getStrategyLabRaceProductResult, listStrategyLabRacesResult } from "@/l
 type StrategyLabPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
+
+export const metadata = makeMetadata({
+  title: "Founder Strategy Lab",
+  description: "Private F1 InsightX strategy simulation workspace.",
+  path: "/founder-strategy-lab",
+  index: false,
+});
 
 function firstSearchParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;

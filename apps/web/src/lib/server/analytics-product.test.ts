@@ -102,6 +102,30 @@ test("Analytics comparison detail payload is capped and proxy-safe", async () =>
   assert.doesNotMatch(comparison.proxyNote.toLowerCase(), /battery usage|ers data/);
 });
 
+test("Analytics race comparison includes lap-by-lap race pace with null laps excluded", async () => {
+  const comparison = await getAnalyticsComparison("2026_04_R_Miami Grand Prix", "GAS", "OCO", "all");
+
+  assert.ok(comparison);
+  assert.equal(comparison.session.session, "R");
+  assert.equal(comparison.lapPace.available, true);
+  assert.equal(comparison.lapPace.source, "analytics_lap_pace_driver");
+  assert.ok(comparison.lapPace.driverA.length > 0);
+  assert.ok(comparison.lapPace.driverB.length > 0);
+  assert.equal(comparison.lapPace.nullLapTimeCount, 1);
+  assert.ok(comparison.lapPace.driverA.every((point) => Number.isFinite(point.lapTimeS)));
+  assert.ok(comparison.lapPace.qualityNote.toLowerCase().includes("proxy evidence"));
+});
+
+test("Analytics non-race comparison explains lap pace unavailability", async () => {
+  const comparison = await getAnalyticsComparison("2026_04_FP1_Miami Grand Prix", "GAS", "OCO", "all");
+
+  assert.ok(comparison);
+  assert.equal(comparison.session.session, "FP1");
+  assert.equal(comparison.lapPace.available, false);
+  assert.equal(comparison.lapPace.source, "unavailable");
+  assert.match(comparison.lapPace.reason ?? "", /race sessions/i);
+});
+
 test("Analytics default driver pair is deterministic and usable", async () => {
   const sessions = await listAnalyticsSessions();
   const session = sessions[0];

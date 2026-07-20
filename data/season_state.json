@@ -2,33 +2,33 @@
   "analytics_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "catalunya",
-      "id": "2026-07-catalunya",
-      "race_name": "Barcelona Grand Prix",
-      "round": 7,
-      "scheduled_at": "2026-06-14T13:00:00Z",
+      "circuit_id": "spa",
+      "id": "2026-10-spa",
+      "race_name": "Belgian Grand Prix",
+      "round": 10,
+      "scheduled_at": "2026-07-19T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     }
   },
-  "build_version": "season_state_20260709T162227Z",
+  "build_version": "season_state_20260720T172450Z",
   "current_race_week": {
     "available": true,
     "product_view_race": {
-      "circuit_id": "spa",
-      "id": "2026-10-spa",
-      "race_name": "Belgian Grand Prix",
-      "round": 10,
-      "scheduled_at": "2026-07-19T13:00:00Z",
+      "circuit_id": "hungaroring",
+      "id": "2026-11-hungaroring",
+      "race_name": "Hungarian Grand Prix",
+      "round": 11,
+      "scheduled_at": "2026-07-26T13:00:00Z",
       "season": 2026,
       "status": "race_week_product_available"
     },
     "race": {
-      "circuit_id": "spa",
-      "id": "2026-10-spa",
-      "race_name": "Belgian Grand Prix",
-      "round": 10,
-      "scheduled_at": "2026-07-19T13:00:00Z",
+      "circuit_id": "hungaroring",
+      "id": "2026-11-hungaroring",
+      "race_name": "Hungarian Grand Prix",
+      "round": 11,
+      "scheduled_at": "2026-07-26T13:00:00Z",
       "season": 2026,
       "status": "upcoming"
     }
@@ -40,117 +40,114 @@
     "position_evolution": "partial",
     "race_control": "missing",
     "race_results": "available",
-    "telemetry_sessions": "partial",
+    "telemetry_sessions": "available",
     "weather": "available"
   },
   "freshness": {
     "analytics": {
-      "build_version": "analytics_views_20260709T161249Z",
-      "generated_at": "2026-07-09T16:12:49Z",
+      "build_version": "analytics_views_20260720T171606Z",
+      "generated_at": "2026-07-20T17:16:06Z",
       "validation_status": "passed",
       "warnings": []
     },
     "analytics_index": {
-      "build_version": "analytics_index_20260709T162204Z",
-      "generated_at": "2026-07-09T16:22:04Z",
+      "build_version": "analytics_index_20260720T172056Z",
+      "generated_at": "2026-07-20T17:20:56Z",
       "validation_status": "passed",
       "warnings": []
     },
     "canonical_fastf1": {
-      "build_version": "canonical_fastf1_20260709T160803Z",
-      "generated_at": "2026-07-09T16:08:03Z",
+      "build_version": "canonical_fastf1_20260720T170352Z",
+      "generated_at": "2026-07-20T17:03:52Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_analysis": {
       "build_version": "race-analysis-v1",
-      "generated_at": "2026-07-09T16:08:07Z",
+      "generated_at": "2026-07-20T17:22:15Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_week": {
-      "build_version": "race_week_20260709T161240Z",
-      "generated_at": "2026-07-09T16:12:40Z",
+      "build_version": "race_week_20260720T171601Z",
+      "generated_at": "2026-07-20T17:16:01Z",
       "validation_status": "passed",
       "warnings": []
     },
     "season_state": {
-      "build_version": "season_state_20260705T193051Z",
-      "generated_at": "2026-07-05T19:30:51Z",
+      "build_version": "season_state_20260720T135019Z",
+      "generated_at": "2026-07-20T13:50:19Z",
       "validation_status": "passed",
       "warnings": []
     },
     "strategy_lab": {
-      "build_version": "strategy_lab_20260709T161246Z",
-      "generated_at": "2026-07-09T16:12:46Z",
+      "build_version": "strategy_lab_20260720T171426Z",
+      "generated_at": "2026-07-20T17:14:26Z",
       "validation_status": "passed",
       "warnings": []
     },
     "telemetry_features": {
-      "build_version": "telemetry_features_20260628T134108Z",
-      "generated_at": "2026-06-28T13:41:08Z",
+      "build_version": "telemetry_features_20260720T171423Z",
+      "generated_at": "2026-07-20T17:14:23Z",
       "validation_status": "passed",
       "warnings": []
     }
   },
-  "generated_at": "2026-07-09T16:22:27Z",
+  "generated_at": "2026-07-20T17:24:50Z",
   "latest_completed_race": {
-    "circuit_id": "silverstone",
-    "id": "2026-09-silverstone",
-    "race_name": "British Grand Prix",
-    "round": 9,
-    "scheduled_at": "2026-07-05T14:00:00Z",
-    "season": 2026,
-    "status": "completed_by_schedule"
-  },
-  "latest_completed_race_with_analytics": {
-    "circuit_id": "catalunya",
-    "id": "2026-07-catalunya",
-    "race_name": "Barcelona Grand Prix",
-    "round": 7,
-    "scheduled_at": "2026-06-14T13:00:00Z",
-    "season": 2026,
-    "status": "data_available"
-  },
-  "latest_completed_race_with_results": {
-    "circuit_id": "silverstone",
-    "id": "2026-09-silverstone",
-    "race_name": "British Grand Prix",
-    "round": 9,
-    "scheduled_at": "2026-07-05T14:00:00Z",
-    "season": 2026,
-    "status": "results_available"
-  },
-  "latest_completed_race_with_telemetry": {
-    "circuit_id": "catalunya",
-    "id": "2026-07-catalunya",
-    "race_name": "Barcelona Grand Prix",
-    "round": 7,
-    "scheduled_at": "2026-06-14T13:00:00Z",
-    "season": 2026,
-    "status": "data_available"
-  },
-  "missing_data_flags": [
-    "analytics_not_current",
-    "telemetry_not_current"
-  ],
-  "next_race": {
     "circuit_id": "spa",
     "id": "2026-10-spa",
     "race_name": "Belgian Grand Prix",
     "round": 10,
     "scheduled_at": "2026-07-19T13:00:00Z",
     "season": 2026,
+    "status": "completed_by_schedule"
+  },
+  "latest_completed_race_with_analytics": {
+    "circuit_id": "spa",
+    "id": "2026-10-spa",
+    "race_name": "Belgian Grand Prix",
+    "round": 10,
+    "scheduled_at": "2026-07-19T13:00:00Z",
+    "season": 2026,
+    "status": "data_available"
+  },
+  "latest_completed_race_with_results": {
+    "circuit_id": "spa",
+    "id": "2026-10-spa",
+    "race_name": "Belgian Grand Prix",
+    "round": 10,
+    "scheduled_at": "2026-07-19T13:00:00Z",
+    "season": 2026,
+    "status": "results_available"
+  },
+  "latest_completed_race_with_telemetry": {
+    "circuit_id": "spa",
+    "id": "2026-10-spa",
+    "race_name": "Belgian Grand Prix",
+    "round": 10,
+    "scheduled_at": "2026-07-19T13:00:00Z",
+    "season": 2026,
+    "status": "data_available"
+  },
+  "missing_data_flags": [],
+  "next_race": {
+    "circuit_id": "hungaroring",
+    "id": "2026-11-hungaroring",
+    "race_name": "Hungarian Grand Prix",
+    "round": 11,
+    "scheduled_at": "2026-07-26T13:00:00Z",
+    "season": 2026,
     "status": "upcoming"
   },
   "race_analysis_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "silverstone",
-      "id": "2026-09-silverstone",
-      "race_name": "British Grand Prix",
-      "round": 9,
-      "scheduled_at": "2026-07-05T14:00:00Z",
+      "circuit_id": "spa",
+      "id": "2026-10-spa",
+      "race_name": "Belgian Grand Prix",
+      "round": 10,
+      "scheduled_at": "2026-07-19T13:00:00Z",
       "season": 2026,
       "status": "race_analysis_available"
     },
@@ -161,10 +158,10 @@
   "strategy_lab_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "spa",
-      "id": "2026-10-spa",
-      "race_name": "Belgian Grand Prix",
-      "round": 10,
+      "circuit_id": "hungaroring",
+      "id": "2026-11-hungaroring",
+      "race_name": "Hungarian Grand Prix",
+      "round": 11,
       "scheduled_at": null,
       "season": 2026,
       "status": "strategy_lab_available"
@@ -174,17 +171,14 @@
   "telemetry_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "catalunya",
-      "id": "2026-07-catalunya",
-      "race_name": "Barcelona Grand Prix",
-      "round": 7,
-      "scheduled_at": "2026-06-14T13:00:00Z",
+      "circuit_id": "spa",
+      "id": "2026-10-spa",
+      "race_name": "Belgian Grand Prix",
+      "round": 10,
+      "scheduled_at": "2026-07-19T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     }
   },
-  "warnings": [
-    "Analytics available through Barcelona Grand Prix; British Grand Prix telemetry processing pending.",
-    "Telemetry features available through Barcelona Grand Prix; British Grand Prix telemetry processing pending."
-  ]
+  "warnings": []
 }

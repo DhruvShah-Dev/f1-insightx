@@ -5,12 +5,27 @@ import { SiteFooter } from "@/components/ui/site-footer";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { logServerError } from "@/lib/errors/logger";
 import { getRaceDetail } from "@/lib/server/race-history";
+import { makeMetadata } from "@/lib/seo";
 
 type Props = {
   params: Promise<{
     raceId: string;
   }>;
 };
+
+export async function generateMetadata({ params }: Props) {
+  const { raceId } = await params;
+  const detail = await getRaceDetail(raceId);
+
+  return makeMetadata({
+    title: detail ? `${detail.displayName} Results` : "Race Results",
+    description: detail
+      ? `${detail.displayName} Formula 1 race results, podium, winner, fastest lap, pole position, constructors, and weekend context.`
+      : "Formula 1 race results and weekend context.",
+    path: `/races/${raceId}`,
+    keywords: detail ? [detail.displayName, "F1 race results", "Formula 1 results"] : ["F1 race results"],
+  });
+}
 
 export default async function RaceDetailPage({ params }: Props) {
   const { raceId } = await params;

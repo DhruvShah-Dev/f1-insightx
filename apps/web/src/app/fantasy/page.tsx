@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/ui/site-footer";
+import { makeMetadata } from "@/lib/seo";
+
+export const metadata = makeMetadata({
+  title: "Fantasy",
+  description: "Fantasy is not part of the current F1 InsightX product surface.",
+  path: "/fantasy",
+  index: false,
+});
 
 export default function FantasyPage() {
   return (

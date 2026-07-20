@@ -13,6 +13,7 @@ import {
   type ConstructorStanding,
   type DriverStanding,
 } from "@/lib/server/standings";
+import { makeMetadata } from "@/lib/seo";
 import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
@@ -36,9 +37,13 @@ const navSections = [
   { href: "#performance", label: "Performance" },
 ];
 
-export const metadata = {
-  title: "Championship | F1 InsightX",
-};
+export const metadata = makeMetadata({
+  title: "Championship Standings",
+  description:
+    "Formula 1 driver and constructor championship standings with team form, points gaps, race records, and season performance leaders.",
+  path: "/championship",
+  keywords: ["F1 championship standings", "F1 driver standings", "F1 constructor standings"],
+});
 
 function firstParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;

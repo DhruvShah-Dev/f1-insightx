@@ -7,16 +7,16 @@ import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { mapAuthErrorCode } from "@/lib/auth/navigation";
 import { getServerEnv } from "@/lib/env";
 import { logServerError } from "@/lib/errors/logger";
+import { makeMetadata } from "@/lib/seo";
 import type { User } from "@supabase/supabase-js";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Profile Access | F1 InsightX",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+export const metadata: Metadata = makeMetadata({
+  title: "Profile Access",
+  description: "Sign in to manage your F1 InsightX profile.",
+  path: "/account",
+  index: false,
+});
 
 type AccountPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;

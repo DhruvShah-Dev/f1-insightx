@@ -8,6 +8,7 @@ import { RaceWeekSectorTrack } from "@/components/race-week/race-week-sector-tra
 import { RaceWeekTimeToggle } from "@/components/race-week/race-week-time-toggle";
 import { getRaceWeekProductResult, type RaceWeekPredictionModeId, type RaceWeekProduct } from "@/lib/server/race-week-product";
 import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
+import { makeMetadata } from "@/lib/seo";
 import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
 
 type RaceTheme = {
@@ -60,6 +61,12 @@ const raceThemeByCircuit: Record<string, RaceTheme> = {
     accent: "#74d66f",
     accentSoft: "#ffffff",
   },
+  hungaroring: {
+    deck: "Hungaroring. Tight corners, track position, and tyre temperature discipline.",
+    shell: "#10151b",
+    accent: "#2f855a",
+    accentSoft: "#ffffff",
+  },
 };
 
 const fallbackTheme: RaceTheme = {
@@ -71,9 +78,9 @@ const fallbackTheme: RaceTheme = {
 
 const countryThemeByCode: Record<string, CountryTheme> = {
   BE: {
-    primary: "#fdda24",
-    secondary: "#ef3340",
-    dark: "#050608",
+    primary: "#ffffff",
+    secondary: "#477050",
+    dark: "#ce2939",
   },
   ES: {
     primary: "#f1bf00",
@@ -100,6 +107,11 @@ const countryThemeByCode: Record<string, CountryTheme> = {
     secondary: "#c8102e",
     dark: "#012169",
   },
+  HU: {
+    primary: "#ffffff",
+    secondary: "#477050",
+    dark: "#ce2939",
+  },
 };
 
 const fallbackCountryTheme: CountryTheme = {
@@ -115,6 +127,7 @@ const raceTimezoneByCircuit: Record<string, string> = {
   red_bull_ring: "Europe/Vienna",
   silverstone: "Europe/London",
   spa: "Europe/Brussels",
+  hungaroring: "Europe/Budapest",
 };
 
 const predictionModeIds: RaceWeekPredictionModeId[] = ["baseline", "fp1", "fp2", "fp3"];
@@ -122,6 +135,14 @@ const predictionModeIds: RaceWeekPredictionModeId[] = ["baseline", "fp1", "fp2",
 type PredictionsPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
+
+export const metadata = makeMetadata({
+  title: "Race Week Predictions",
+  description:
+    "Formula 1 race-week predictions with qualifying projections, weather risk, session readiness, circuit context, and live practice signal quality.",
+  path: "/predictions",
+  keywords: ["F1 predictions", "Formula 1 race week", "F1 qualifying predictions"],
+});
 
 function getFirstSearchParam(value: string | string[] | undefined) {
   if (Array.isArray(value)) {
@@ -609,7 +630,7 @@ export default async function PredictionsPage({ searchParams }: PredictionsPageP
           <>
             <div className="race-week-q-prediction__baseline" aria-label="Corrected qualifying timing context">
               <div>
-                <span>Corrected Spa baseline</span>
+                <span>Corrected {circuit.displayName} baseline</span>
                 <strong>{formatQualifyingTime(qualifyingBaseline.basePoleS)}</strong>
               </div>
               <div>

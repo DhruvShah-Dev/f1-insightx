@@ -5,6 +5,7 @@ import { AssetImage } from "@/components/ui/asset-image";
 import { RaceWeekSectorTrack } from "@/components/race-week/race-week-sector-track";
 import { getRaceAnalysisConfidenceTier, listRaceAnalysisIndex } from "@/lib/server/race-analysis-product";
 import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
+import { makeMetadata } from "@/lib/seo";
 import { getCircuitAsset, getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMetaByCode, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
@@ -13,6 +14,14 @@ type RaceAnalysisIndexPageProps = {
 };
 
 type RaceIndexItem = Awaited<ReturnType<typeof listRaceAnalysisIndex>>[number];
+
+export const metadata = makeMetadata({
+  title: "Race Analysis",
+  description:
+    "Browse Formula 1 post-race analysis reports covering winners, podiums, strategy shape, pit impact, position movement, and pace evolution.",
+  path: "/race-analysis",
+  keywords: ["F1 race analysis", "F1 strategy analysis", "F1 race reports"],
+});
 
 function firstParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] : value;

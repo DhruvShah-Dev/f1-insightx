@@ -130,6 +130,30 @@ type EnergyProxyComparisonRow = {
   proxy_note: string;
 };
 
+type LapPaceDriverRow = {
+  session_id: string;
+  driver: string;
+  team: string;
+  lap_number: Numeric;
+  race_phase: string;
+  compound: string;
+  stint_number: Numeric;
+  lap_time_s: Numeric;
+  normalized_pace_delta_s: Numeric;
+  rolling_pace_delta_s: Numeric;
+  fuel_corrected_delta_s: Numeric;
+  field_rank_on_lap: Numeric;
+  tyre_age: Numeric;
+  position: Numeric;
+  track_status_label: string;
+  traffic_proxy_label: string;
+  dirty_air_proxy_s: Numeric;
+  drs_window_proxy: string;
+  confidence: Numeric;
+  evidence_type: string;
+  traffic_proxy_note: string;
+};
+
 export type AnalyticsSessionSummary = {
   id: string;
   season: number;
@@ -234,6 +258,38 @@ export type AnalyticsEnergyProxyHighlight = {
   proxyNote: string;
 };
 
+export type AnalyticsLapPacePoint = {
+  lapNumber: number;
+  driver: string;
+  team: string | null;
+  racePhase: string | null;
+  compound: string | null;
+  stintNumber: number | null;
+  lapTimeS: number;
+  normalizedPaceDeltaS: number | null;
+  rollingPaceDeltaS: number | null;
+  fuelCorrectedDeltaS: number | null;
+  fieldRankOnLap: number | null;
+  tyreAge: number | null;
+  position: number | null;
+  trackStatusLabel: string | null;
+  trafficProxyLabel: string | null;
+  dirtyAirProxyS: number | null;
+  drsWindowProxy: string | null;
+  confidence: number | null;
+};
+
+export type AnalyticsLapPaceComparison = {
+  available: boolean;
+  source: "analytics_lap_pace_driver" | "unavailable";
+  reason: string | null;
+  pointCount: number;
+  nullLapTimeCount: number;
+  qualityNote: string;
+  driverA: AnalyticsLapPacePoint[];
+  driverB: AnalyticsLapPacePoint[];
+};
+
 export type AnalyticsTelemetryTracePoint = {
   x: number;
   speed: number | null;
@@ -292,6 +348,7 @@ export type AnalyticsComparisonPayload = {
   throttleHighlights: AnalyticsThrottleHighlight[];
   straightHighlights: AnalyticsStraightHighlight[];
   energyProxyHighlights: AnalyticsEnergyProxyHighlight[];
+  lapPace: AnalyticsLapPaceComparison;
   telemetryTraces: AnalyticsTelemetryTraceComparison;
   proxyNote: string;
   runtime: RuntimeSourceMetadata;
@@ -376,6 +433,7 @@ const fallbackIndexedManifestData = {
         throttle: 2,
         straights: 2,
         energy_proxy: 2,
+        lap_pace: 10,
       },
     },
   },
@@ -436,6 +494,12 @@ const fallbackIndexedSessionPayload = {
     { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "energy_zone_01", driver_a: "GAS", driver_b: "OCO", deployment_proxy_delta: 0.05, lift_and_coast_delta: -0.02, clipping_proxy_delta: 0.01, recovery_zone_delta: 0.02, confidence: 0.7, proxy_note: ANALYTICS_ENERGY_PROXY_NOTE },
     { session_id: FALLBACK_ANALYTICS_SESSION_ID, segment_id: "energy_zone_02", driver_a: "GAS", driver_b: "OCO", deployment_proxy_delta: 0.03, lift_and_coast_delta: -0.01, clipping_proxy_delta: 0.02, recovery_zone_delta: 0.01, confidence: 0.69, proxy_note: ANALYTICS_ENERGY_PROXY_NOTE },
   ],
+  lap_pace: [
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, driver: "GAS", team: "Alpine", lap_number: 12, race_phase: "middle", compound: "MEDIUM", stint_number: 1, lap_time_s: 91.24, normalized_pace_delta_s: -0.12, rolling_pace_delta_s: -0.08, fuel_corrected_delta_s: -0.1, field_rank_on_lap: 8, tyre_age: 12, position: 9, track_status_label: "green", traffic_proxy_label: "clear-air-proxy", dirty_air_proxy_s: 0.02, drs_window_proxy: "proxy", confidence: 0.68, evidence_type: "proxy", traffic_proxy_note: "Traffic and dirty-air values are proxy evidence from race analysis, not exact gap or DRS truth." },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, driver: "GAS", team: "Alpine", lap_number: 13, race_phase: "middle", compound: "MEDIUM", stint_number: 1, lap_time_s: 91.02, normalized_pace_delta_s: -0.18, rolling_pace_delta_s: -0.12, fuel_corrected_delta_s: -0.16, field_rank_on_lap: 7, tyre_age: 13, position: 9, track_status_label: "green", traffic_proxy_label: "clear-air-proxy", dirty_air_proxy_s: 0.01, drs_window_proxy: "proxy", confidence: 0.68, evidence_type: "proxy", traffic_proxy_note: "Traffic and dirty-air values are proxy evidence from race analysis, not exact gap or DRS truth." },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, driver: "OCO", team: "Haas F1 Team", lap_number: 12, race_phase: "middle", compound: "MEDIUM", stint_number: 1, lap_time_s: 91.48, normalized_pace_delta_s: 0.12, rolling_pace_delta_s: 0.1, fuel_corrected_delta_s: 0.14, field_rank_on_lap: 11, tyre_age: 12, position: 11, track_status_label: "green", traffic_proxy_label: "dirty-air-proxy", dirty_air_proxy_s: 0.16, drs_window_proxy: "proxy", confidence: 0.66, evidence_type: "proxy", traffic_proxy_note: "Traffic and dirty-air values are proxy evidence from race analysis, not exact gap or DRS truth." },
+    { session_id: FALLBACK_ANALYTICS_SESSION_ID, driver: "OCO", team: "Haas F1 Team", lap_number: 13, race_phase: "middle", compound: "MEDIUM", stint_number: 1, lap_time_s: 91.37, normalized_pace_delta_s: 0.09, rolling_pace_delta_s: 0.1, fuel_corrected_delta_s: 0.11, field_rank_on_lap: 10, tyre_age: 13, position: 11, track_status_label: "green", traffic_proxy_label: "dirty-air-proxy", dirty_air_proxy_s: 0.14, drs_window_proxy: "proxy", confidence: 0.66, evidence_type: "proxy", traffic_proxy_note: "Traffic and dirty-air values are proxy evidence from race analysis, not exact gap or DRS truth." },
+  ],
 } satisfies AnalyticsIndexedSessionPayload;
 
 async function readFallbackSessionRows() {
@@ -477,6 +541,7 @@ type AnalyticsIndexedSessionPayload = {
   throttle: ThrottleComparisonRow[];
   straights: StraightComparisonRow[];
   energy_proxy: EnergyProxyComparisonRow[];
+  lap_pace: LapPaceDriverRow[];
 };
 
 type AnalyticsTraceSessionPayload = {
@@ -873,6 +938,75 @@ function loadEnergyProxyHighlights(rows: EnergyProxyComparisonRow[], sessionId: 
   );
 }
 
+function mapLapPacePoint(row: LapPaceDriverRow): AnalyticsLapPacePoint | null {
+  const lapNumber = asCount(row.lap_number);
+  const lapTimeS = asNumber(row.lap_time_s);
+  if (!lapNumber || lapTimeS === null) {
+    return null;
+  }
+
+  return {
+    lapNumber,
+    driver: normalizedCode(row.driver),
+    team: row.team || null,
+    racePhase: row.race_phase || null,
+    compound: row.compound || null,
+    stintNumber: row.stint_number === null || row.stint_number === undefined ? null : asCount(row.stint_number),
+    lapTimeS,
+    normalizedPaceDeltaS: asNumber(row.normalized_pace_delta_s),
+    rollingPaceDeltaS: asNumber(row.rolling_pace_delta_s),
+    fuelCorrectedDeltaS: asNumber(row.fuel_corrected_delta_s),
+    fieldRankOnLap: row.field_rank_on_lap === null || row.field_rank_on_lap === undefined ? null : asCount(row.field_rank_on_lap),
+    tyreAge: row.tyre_age === null || row.tyre_age === undefined ? null : asCount(row.tyre_age),
+    position: row.position === null || row.position === undefined ? null : asCount(row.position),
+    trackStatusLabel: row.track_status_label || null,
+    trafficProxyLabel: row.traffic_proxy_label || null,
+    dirtyAirProxyS: asNumber(row.dirty_air_proxy_s),
+    drsWindowProxy: row.drs_window_proxy || null,
+    confidence: clamp01(asNumber(row.confidence)),
+  };
+}
+
+function loadLapPace(rows: LapPaceDriverRow[] | undefined, session: AnalyticsSessionSummary, driverA: string, driverB: string): AnalyticsLapPaceComparison {
+  const qualityNote = "Race pace uses analytics_lap_pace_driver. Null lap times are excluded from plotted series and counted here; traffic and dirty-air are proxy evidence, not exact gap or DRS truth.";
+  if (session.session !== "R") {
+    return {
+      available: false,
+      source: "unavailable",
+      reason: "Lap-by-lap pace is only available for race sessions; this session should use representative telemetry traces and segment deltas.",
+      pointCount: 0,
+      nullLapTimeCount: 0,
+      qualityNote,
+      driverA: [],
+      driverB: [],
+    };
+  }
+
+  const selectedRows = (rows ?? []).filter((row) => {
+    const driver = normalizedCode(row.driver);
+    return row.session_id === session.id && (driver === driverA || driver === driverB);
+  });
+  const nullLapTimeCount = selectedRows.filter((row) => asNumber(row.lap_time_s) === null).length;
+  const points = selectedRows
+    .map(mapLapPacePoint)
+    .filter((point): point is AnalyticsLapPacePoint => Boolean(point))
+    .sort((left, right) => left.lapNumber - right.lapNumber);
+  const seriesA = points.filter((point) => point.driver === driverA);
+  const seriesB = points.filter((point) => point.driver === driverB);
+  const available = seriesA.length > 0 && seriesB.length > 0;
+
+  return {
+    available,
+    source: available ? "analytics_lap_pace_driver" : "unavailable",
+    reason: available ? null : "Race lap pace rows are not available for both selected drivers in the indexed analytics product.",
+    pointCount: points.length,
+    nullLapTimeCount,
+    qualityNote,
+    driverA: seriesA,
+    driverB: seriesB,
+  };
+}
+
 async function loadTelemetryTraces(sessionId: string, driverA: string, driverB: string): Promise<AnalyticsTelemetryTraceComparison> {
   const payload = await readTraceSessionPayload(sessionId);
   if (!payload) {
@@ -957,6 +1091,7 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
   const throttleHighlights = mode === "throttle" || mode === "all" ? loadThrottleHighlights(payload.throttle, sessionId, requestedA, requestedB) : [];
   const straightHighlights = mode === "straights" || mode === "all" ? loadStraightHighlights(payload.straights, sessionId, requestedA, requestedB) : [];
   const energyProxyHighlights = mode === "energy-proxy" || mode === "all" ? loadEnergyProxyHighlights(payload.energy_proxy, sessionId, requestedA, requestedB) : [];
+  const lapPace = loadLapPace(payload.lap_pace, session, requestedA, requestedB);
   const telemetryTraces = await loadTelemetryTraces(sessionId, requestedA, requestedB);
 
   return {
@@ -974,6 +1109,7 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
     throttleHighlights,
     straightHighlights,
     energyProxyHighlights,
+    lapPace,
     telemetryTraces,
     proxyNote: energyProxyHighlights[0]?.proxyNote ?? ANALYTICS_ENERGY_PROXY_NOTE,
     runtime,

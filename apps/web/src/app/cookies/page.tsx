@@ -1,11 +1,14 @@
 import { LegalLinks } from "@/components/legal/legal-links";
 import { SiteFooter } from "@/components/ui/site-footer";
+import { makeMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Cookie Notice | F1 InsightX",
+export const metadata: Metadata = makeMetadata({
+  title: "Cookie Notice",
   description: "Cookie Notice for F1 InsightX.",
-};
+  path: "/cookies",
+  keywords: ["F1 InsightX cookie notice"],
+});
 
 const UPDATED_AT = "July 17, 2026";
 

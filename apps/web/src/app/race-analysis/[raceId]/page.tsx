@@ -18,6 +18,7 @@ import {
   type RaceAnalysisPositionPoint,
   type RaceAnalysisStint,
 } from "@/lib/server/race-analysis-product";
+import { makeMetadata } from "@/lib/seo";
 import { getCircuitAsset, getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMetaByCode, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
@@ -42,9 +43,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: RaceAnalysisDetailPageProps) {
   const { raceId } = await params;
   const race = await getRaceAnalysisDetail(raceId);
-  return {
-    title: race ? `${race.raceName} Race Analysis | F1 InsightX` : "Race Analysis | F1 InsightX",
-  };
+  return makeMetadata({
+    title: race ? `${race.raceName} Race Analysis` : "Race Analysis",
+    description: race
+      ? `${race.raceName} post-race Formula 1 analysis covering ${race.winner || "the winner"}, podium order, strategy, position movement, and pace signals.`
+      : "Formula 1 post-race analysis report.",
+    path: `/race-analysis/${raceId}`,
+    keywords: race ? [race.raceName, `${race.raceName} analysis`, "F1 race strategy"] : ["F1 race analysis"],
+  });
 }
 
 function formatDate(value: string | null) {

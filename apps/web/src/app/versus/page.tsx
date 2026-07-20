@@ -6,6 +6,7 @@ import {
   listAnalyticsSessions,
   type AnalyticsCompareMode,
 } from "@/lib/server/analytics-product";
+import { makeMetadata } from "@/lib/seo";
 
 type VersusPageProps = {
   searchParams: Promise<{
@@ -15,10 +16,13 @@ type VersusPageProps = {
   }>;
 };
 
-export const metadata = {
-  title: "Driver vs Driver | F1 InsightX",
-  description: "Interactive Formula 1 driver comparison across braking, straight-line speed, traction, and energy proxy signals.",
-};
+export const metadata = makeMetadata({
+  title: "Driver vs Driver",
+  description:
+    "Interactive Formula 1 driver comparison across braking, straight-line speed, traction, and energy proxy telemetry signals.",
+  path: "/versus",
+  keywords: ["F1 driver comparison", "F1 telemetry comparison", "Formula 1 telemetry"],
+});
 
 export default async function VersusPage({ searchParams }: VersusPageProps) {
   const params = await searchParams;

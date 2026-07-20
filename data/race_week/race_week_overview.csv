@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-10-spa,2026,10,2026-10-spa,Belgian Grand Prix,spa,spa,2026-07-19T13:00:00Z,upcoming,False,2026-09-silverstone,Balanced circuit,High,0.0,0.2477781818181818,2026-07-17T18:13:32Z,race_week_20260717T181332Z,race_week_overview_v2
+2026-11-hungaroring,2026,11,2026-11-hungaroring,Hungarian Grand Prix,hungaroring,hungaroring,2026-07-26T13:00:00Z,upcoming,False,2026-10-spa,Balanced circuit,High,0.0,0.2649553181818182,2026-07-20T17:16:01Z,race_week_20260720T171601Z,race_week_overview_v2

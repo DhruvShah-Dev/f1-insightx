@@ -1,11 +1,14 @@
 import { LegalLinks } from "@/components/legal/legal-links";
 import { SiteFooter } from "@/components/ui/site-footer";
+import { makeMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Terms of Use | F1 InsightX",
+export const metadata: Metadata = makeMetadata({
+  title: "Terms of Use",
   description: "Terms of Use for F1 InsightX.",
-};
+  path: "/terms",
+  keywords: ["F1 InsightX terms"],
+});
 
 const UPDATED_AT = "July 17, 2026";
 

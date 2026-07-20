@@ -23,6 +23,7 @@ INPUT_FILES = {
     "throttle_comparison": "analytics_throttle_comparison.csv",
     "straight_comparison": "analytics_straight_comparison.csv",
     "energy_proxy_comparison": "analytics_energy_proxy_comparison.csv",
+    "lap_pace_driver": "analytics_lap_pace_driver.csv",
     "track_summary": "analytics_track_summary.csv",
 }
 
@@ -51,6 +52,21 @@ def records(frame: pd.DataFrame) -> list[dict[str, Any]]:
     ]
 
 
+def group_records_by_session(frame: pd.DataFrame) -> dict[str, list[dict[str, Any]]]:
+    if frame.empty or "session_id" not in frame.columns:
+        return {}
+    return {
+        str(session_id): records(group)
+        for session_id, group in frame.groupby("session_id", sort=False, dropna=False)
+    }
+
+
+def group_frame_by_session(frame: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    if frame.empty or "session_id" not in frame.columns:
+        return {}
+    return {str(session_id): group for session_id, group in frame.groupby("session_id", sort=False, dropna=False)}
+
+
 def session_file_name(session_id: str) -> str:
     digest = hashlib.sha1(session_id.encode("utf-8")).hexdigest()[:12]
     slug = "".join(char.lower() if char.isalnum() else "-" for char in session_id).strip("-")
@@ -72,6 +88,8 @@ def top_by_pair(frame: pd.DataFrame, score_fn: Callable[[pd.DataFrame], pd.Serie
 
 
 def build_driver_rows(driver_comparison: pd.DataFrame, session_id: str) -> list[dict[str, Any]]:
+    if driver_comparison.empty or "session_id" not in driver_comparison.columns:
+        return []
     session_rows = driver_comparison[driver_comparison["session_id"] == session_id]
     drivers: dict[str, str | None] = {}
     for _, row in session_rows.iterrows():
@@ -107,6 +125,15 @@ def main() -> None:
         read_csv("energy_proxy_comparison"),
         lambda frame: frame[["deployment_proxy_delta", "clipping_proxy_delta"]].abs().max(axis=1),
     )
+    lap_pace = read_csv("lap_pace_driver")
+    overview_by_session = group_frame_by_session(driver_comparison)
+    track_by_session = group_records_by_session(track_summary)
+    segment_by_session = group_records_by_session(segment)
+    braking_by_session = group_records_by_session(braking)
+    throttle_by_session = group_records_by_session(throttle)
+    straight_by_session = group_records_by_session(straight)
+    energy_by_session = group_records_by_session(energy)
+    lap_pace_by_session = group_records_by_session(lap_pace)
 
     manifest: dict[str, Any] = {
         "version": 1,
@@ -120,40 +147,45 @@ def main() -> None:
         "throttle": 0,
         "straights": 0,
         "energy_proxy": 0,
+        "lap_pace": 0,
     }
 
     for _, session in session_index.sort_values(["season", "round", "session_id"]).iterrows():
         session_id = str(session["session_id"])
         file_name = session_file_name(session_id)
-        overview_rows = driver_comparison[driver_comparison["session_id"] == session_id]
-        segment_rows = segment[segment["session_id"] == session_id]
-        braking_rows = braking[braking["session_id"] == session_id]
-        throttle_rows = throttle[throttle["session_id"] == session_id]
-        straight_rows = straight[straight["session_id"] == session_id]
-        energy_rows = energy[energy["session_id"] == session_id]
-        track_rows = track_summary[track_summary["session_id"] == session_id]
+        overview_rows = overview_by_session.get(session_id, pd.DataFrame())
+        overview_records = records(overview_rows)
+        segment_records = segment_by_session.get(session_id, [])
+        braking_records = braking_by_session.get(session_id, [])
+        throttle_records = throttle_by_session.get(session_id, [])
+        straight_records = straight_by_session.get(session_id, [])
+        energy_records = energy_by_session.get(session_id, [])
+        lap_pace_records = lap_pace_by_session.get(session_id, [])
+        track_records = track_by_session.get(session_id, [])
 
         payload = {
             "session": {column: clean_value(value) for column, value in session.items()},
-            "drivers": build_driver_rows(driver_comparison, session_id),
-            "overview": records(overview_rows),
-            "track_summary": records(track_rows),
-            "segments": records(segment_rows),
-            "braking": records(braking_rows),
-            "throttle": records(throttle_rows),
-            "straights": records(straight_rows),
-            "energy_proxy": records(energy_rows),
+            "drivers": build_driver_rows(overview_rows, session_id),
+            "overview": overview_records,
+            "track_summary": track_records,
+            "segments": segment_records,
+            "braking": braking_records,
+            "throttle": throttle_records,
+            "straights": straight_records,
+            "energy_proxy": energy_records,
+            "lap_pace": lap_pace_records,
         }
         with gzip.open(SESSION_DIR / file_name, "wt", encoding="utf-8", compresslevel=6) as handle:
             json.dump(payload, handle, separators=(",", ":"))
 
         counts = {
-            "overview": int(len(overview_rows)),
-            "segments": int(len(segment_rows)),
-            "braking": int(len(braking_rows)),
-            "throttle": int(len(throttle_rows)),
-            "straights": int(len(straight_rows)),
-            "energy_proxy": int(len(energy_rows)),
+            "overview": int(len(overview_records)),
+            "segments": int(len(segment_records)),
+            "braking": int(len(braking_records)),
+            "throttle": int(len(throttle_records)),
+            "straights": int(len(straight_records)),
+            "energy_proxy": int(len(energy_records)),
+            "lap_pace": int(len(lap_pace_records)),
         }
         for key, value in counts.items():
             total_rows[key] += value

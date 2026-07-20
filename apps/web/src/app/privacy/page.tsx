@@ -2,12 +2,15 @@ import Link from "next/link";
 import { LegalLinks } from "@/components/legal/legal-links";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { getPrivacyContactEmail, getPrivacyMailtoHref } from "@/lib/public-config";
+import { makeMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | F1 InsightX",
+export const metadata: Metadata = makeMetadata({
+  title: "Privacy Policy",
   description: "Privacy Policy and data collection notice for F1 InsightX.",
-};
+  path: "/privacy",
+  keywords: ["F1 InsightX privacy policy"],
+});
 
 const UPDATED_AT = "July 17, 2026";
 

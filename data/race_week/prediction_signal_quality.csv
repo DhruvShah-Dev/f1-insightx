@@ -1,9 +1,9 @@
 id,season,round,race_id,prediction_mode,signal_key,usefulness_rank,usefulness_score,coverage_rate,evidence_rows,quality_band,recommendation,source_label
-2026-10-spa|baseline|recent_quali_gap,2026,10,2026-10-spa,baseline,recent_quali_gap,1,0.98,1.0,22,high,Keep as the primary 2026 form anchor.,prediction_signal_quality_v1
-2026-10-spa|baseline|same_circuit_gap,2026,10,2026-10-spa,baseline,same_circuit_gap,2,0.859091,0.954545,21,high,"Use for track-specific baseline, especially before practice.",prediction_signal_quality_v1
-2026-10-spa|baseline|constructor_quali_gap,2026,10,2026-10-spa,baseline,constructor_quali_gap,3,0.82,1.0,22,high,Use to stabilize drivers with thin same-circuit history.,prediction_signal_quality_v1
-2026-10-spa|baseline|driver_gap_delta,2026,10,2026-10-spa,baseline,driver_gap_delta,4,0.668182,0.954545,21,medium,Useful for current-vs-historical driver movement.,prediction_signal_quality_v1
-2026-10-spa|baseline|track_fit_gap,2026,10,2026-10-spa,baseline,track_fit_gap,5,0.56,1.0,22,medium,"Use as a style modifier, not the main pace anchor.",prediction_signal_quality_v1
-2026-10-spa|baseline|constructor_gap_delta,2026,10,2026-10-spa,baseline,constructor_gap_delta,6,0.507273,0.818182,18,medium,"Useful for team trajectory, but weaker for new constructors.",prediction_signal_quality_v1
-2026-10-spa|baseline|form_bias,2026,10,2026-10-spa,baseline,form_bias,7,0.48,1.0,22,medium,Keep as a tiebreaker and confidence stabilizer.,prediction_signal_quality_v1
-2026-10-spa|baseline|race_week_delta,2026,10,2026-10-spa,baseline,race_week_delta,8,0.0,0.0,0,unavailable,Increase weight only after FP1/FP2/FP3 data exists.,prediction_signal_quality_v1
+2026-11-hungaroring|baseline|recent_quali_gap,2026,11,2026-11-hungaroring,baseline,recent_quali_gap,1,0.98,1.0,22,high,Keep as the primary 2026 form anchor.,prediction_signal_quality_v1
+2026-11-hungaroring|baseline|same_circuit_gap,2026,11,2026-11-hungaroring,baseline,same_circuit_gap,2,0.859091,0.954545,21,high,"Use for track-specific baseline, especially before practice.",prediction_signal_quality_v1
+2026-11-hungaroring|baseline|constructor_quali_gap,2026,11,2026-11-hungaroring,baseline,constructor_quali_gap,3,0.82,1.0,22,high,Use to stabilize drivers with thin same-circuit history.,prediction_signal_quality_v1
+2026-11-hungaroring|baseline|driver_gap_delta,2026,11,2026-11-hungaroring,baseline,driver_gap_delta,4,0.668182,0.954545,21,medium,Useful for current-vs-historical driver movement.,prediction_signal_quality_v1
+2026-11-hungaroring|baseline|track_fit_gap,2026,11,2026-11-hungaroring,baseline,track_fit_gap,5,0.56,1.0,22,medium,"Use as a style modifier, not the main pace anchor.",prediction_signal_quality_v1
+2026-11-hungaroring|baseline|constructor_gap_delta,2026,11,2026-11-hungaroring,baseline,constructor_gap_delta,6,0.507273,0.818182,18,medium,"Useful for team trajectory, but weaker for new constructors.",prediction_signal_quality_v1
+2026-11-hungaroring|baseline|form_bias,2026,11,2026-11-hungaroring,baseline,form_bias,7,0.48,1.0,22,medium,Keep as a tiebreaker and confidence stabilizer.,prediction_signal_quality_v1
+2026-11-hungaroring|baseline|race_week_delta,2026,11,2026-11-hungaroring,baseline,race_week_delta,8,0.0,0.0,0,unavailable,Increase weight only after FP1/FP2/FP3 data exists.,prediction_signal_quality_v1
