@@ -201,12 +201,16 @@ function isCsvChampionshipRowsNewer(csvRows: ChampionshipRows, supabaseRows: Cha
 
 async function loadChampionshipRows() {
   const [csvRows, supabaseRows] = await Promise.all([
-    loadChampionshipCsvRows(),
+    loadChampionshipCsvRows().catch(() => null),
     loadChampionshipSupabaseRows(),
   ]);
 
   if (!supabaseRows) {
-    return csvRows;
+    return csvRows ?? loadChampionshipCsvRows();
+  }
+
+  if (!csvRows) {
+    return supabaseRows;
   }
 
   return isCsvChampionshipRowsNewer(csvRows, supabaseRows) ? csvRows : supabaseRows;

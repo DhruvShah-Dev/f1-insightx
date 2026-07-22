@@ -1,0 +1,101 @@
+id,constructor_code,name,nationality
+afm,AFM,AFM,German
+ags,AGS,AGS,French
+ats,ATS,ATS,Italian
+adams,ADAMS,Adams,American
+alfa,ALFA,Alfa Romeo,Swiss
+alphatauri,ALPHATAURI,AlphaTauri,Italian
+alpine,ALPINE,Alpine F1 Team,French
+alta,ALTA,Alta,British
+amon,AMON,Amon,New Zealander
+apollon,APOLLON,Apollon,Swiss
+arrows,ARROWS,Arrows,British
+arzani-volpini,ARZANI-VOLPI,Arzani-Volpini,Italian
+butterworth,BUTTERWORTH,Aston Butterworth,British
+aston_martin,ASTON_MARTIN,Aston Martin,British
+audi,AUDI,Audi,German
+bar,BAR,BAR,British
+bmw,BMW,BMW,German
+bmw_sauber,BMW_SAUBER,BMW Sauber,German
+brm,BRM,BRM,British
+brm-ford,BRM-FORD,BRM-Ford,British
+brp,BRP,BRP,British
+behra-porsche,BEHRA-PORSCH,Behra-Porsche,Italian
+bellasi,BELLASI,Bellasi,Swiss
+benetton,BENETTON,Benetton,Italian
+boro,BORO,Boro,Dutch
+brabham,BRABHAM,Brabham,British
+brabham-alfa_romeo,BRABHAM-ALFA,Brabham-Alfa Romeo,British
+brabham-brm,BRABHAM-BRM,Brabham-BRM,British
+brabham-climax,BRABHAM-CLIM,Brabham-Climax,British
+brabham-ford,BRABHAM-FORD,Brabham-Ford,British
+brabham-repco,BRABHAM-REPC,Brabham-Repco,British
+brawn,BRAWN,Brawn,British
+bromme,BROMME,Bromme,American
+bugatti,BUGATTI,Bugatti,French
+cadillac,CADILLAC,Cadillac F1 Team,American
+caterham,CATERHAM,Caterham,Malaysian
+cisitalia,CISITALIA,Cisitalia,Italian
+coloni,COLONI,Coloni,Italian
+connaught,CONNAUGHT,Connaught,British
+connew,CONNEW,Connew,British
+cooper,COOPER,Cooper,British
+cooper-ats,COOPER-ATS,Cooper-ATS,British
+cooper-alfa_romeo,COOPER-ALFA_,Cooper-Alfa Romeo,British
+cooper-brm,COOPER-BRM,Cooper-BRM,British
+cooper-borgward,COOPER-BORGW,Cooper-Borgward,British
+cooper-castellotti,COOPER-CASTE,Cooper-Castellotti,British
+cooper-climax,COOPER-CLIMA,Cooper-Climax,British
+cooper-ferrari,COOPER-FERRA,Cooper-Ferrari,British
+cooper-ford,COOPER-FORD,Cooper-Ford,British
+cooper-maserati,COOPER-MASER,Cooper-Maserati,British
+cooper-osca,COOPER-OSCA,Cooper-OSCA,British
+dallara,DALLARA,Dallara,Italian
+de_tomaso-alfa_romeo,DE_TOMASO-AL,De Tomaso-Alfa Romeo,Italian
+de_tomaso-ferrari,DE_TOMASO-FE,De Tomaso-Ferrari,Italian
+de_tomaso-osca,DE_TOMASO-OS,De Tomaso-Osca,Italian
+deidt,DEIDT,Deidt,American
+del_roy,DEL_ROY,Del Roy,American
+derrington,DERRINGTON,Derrington,British
+dunn,DUNN,Dunn,American
+emw,EMW,EMW,East German
+enb,ENB,ENB,Belgian
+era,ERA,ERA,British
+eagle,EAGLE,Eagle,American
+eagle-climax,EAGLE-CLIMAX,Eagle-Climax,American
+eagle-weslake,EAGLE-WESLAK,Eagle-Weslake,American
+elder,ELDER,Elder,American
+hill,HILL,Embassy Hill,British
+emeryson,EMERYSON,Emeryson,British
+ensign,ENSIGN,Ensign,British
+epperly,EPPERLY,Epperly,American
+eurobrun,EUROBRUN,Euro Brun,Italian
+ewing,EWING,Ewing,American
+ferguson,FERGUSON,Ferguson,British
+ferrari,FERRARI,Ferrari,Italian
+fittipaldi,FITTIPALDI,Fittipaldi,Brazilian
+fondmetal,FONDMETAL,Fondmetal,Italian
+footwork,FOOTWORK,Footwork,British
+force_india,FORCE_INDIA,Force India,Indian
+forti,FORTI,Forti,Italian
+frazer_nash,FRAZER_NASH,Frazer Nash,British
+fry,FRY,Fry,British
+gilby,GILBY,Gilby,British
+gordini,GORDINI,Gordini,French
+hrt,HRT,HRT,Spanish
+hwm,HWM,HWM,British
+haas,HAAS,Haas F1 Team,American
+hall,HALL,Hall,American
+hesketh,HESKETH,Hesketh,British
+honda,HONDA,Honda,Japanese
+iso_marlboro,ISO_MARLBORO,Iso Marlboro,British
+jbw,JBW,JBW,British
+jaguar,JAGUAR,Jaguar,British
+jordan,JORDAN,Jordan,Irish
+kauhsen,KAUHSEN,Kauhsen,German
+klenk,KLENK,Klenk,German
+kojima,KOJIMA,Kojima,Japanese
+kurtis_kraft,KURTIS_KRAFT,Kurtis Kraft,American
+kuzma,KUZMA,Kuzma,American
+lambo,LAMBO,Lambo,Italian
+lago,LAGO,Talbot-Lago,French
