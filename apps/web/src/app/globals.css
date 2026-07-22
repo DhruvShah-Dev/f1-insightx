@@ -1101,11 +1101,11 @@ select optgroup {
   width: min(100%, 42rem);
   overflow: hidden;
   border: 0;
-  border-top: 2px solid #fdda24;
+  border-top: 2px solid var(--hero-flag-one);
   border-bottom: 1px solid rgba(244, 246, 248, 0.22);
   background:
     linear-gradient(90deg, rgba(5, 6, 8, 0.9), rgba(5, 6, 8, 0.64) 42%, rgba(5, 6, 8, 0.86)),
-    linear-gradient(90deg, #050608 0 33.33%, #fdda24 33.33% 66.66%, #ef3340 66.66% 100%);
+    var(--hero-flag-gradient);
   box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.34);
   padding: clamp(1.25rem, 1.85vw, 1.7rem) clamp(1rem, 2.4vw, 2.2rem) clamp(1rem, 1.7vw, 1.35rem);
   text-align: center;
@@ -1126,7 +1126,7 @@ select optgroup {
     repeating-linear-gradient(90deg, rgba(244, 246, 248, 0.065) 0 1px, transparent 1px 4.2rem);
   mix-blend-mode: screen;
   opacity: 0.58;
-  animation: home-belgian-scan 6s ease-in-out infinite;
+  animation: home-flag-scan 6s ease-in-out infinite;
 }
 
 .home-hero__race::after {
@@ -1183,7 +1183,7 @@ select optgroup {
   align-items: center;
   gap: 0.65rem;
   justify-content: center;
-  color: #fdda24;
+  color: var(--hero-flag-one);
 }
 
 .home-hero__race-kicker::before {
@@ -1271,7 +1271,7 @@ select optgroup {
 
 .race-countdown__status {
   justify-self: start;
-  color: #fdda24;
+  color: var(--hero-flag-one);
   font-family: var(--font-plex-mono), Consolas, monospace;
   font-size: clamp(0.62rem, 0.86vw, 0.72rem);
   font-style: normal;
@@ -1306,18 +1306,21 @@ select optgroup {
   position: absolute;
   inset: 0 0 auto;
   height: 0.18rem;
-  background: #ef3340;
+  background: var(--hero-flag-one);
   transform-origin: left;
   animation: home-countdown-pulse 1s ease-in-out infinite;
 }
 
 .race-countdown__unit:nth-child(1)::before {
-  background: #050608;
+  background: var(--hero-flag-one);
 }
 
-.race-countdown__unit:nth-child(2)::before,
+.race-countdown__unit:nth-child(2)::before {
+  background: var(--hero-flag-two);
+}
+
 .race-countdown__unit:nth-child(3)::before {
-  background: #fdda24;
+  background: var(--hero-flag-three);
 }
 
 .race-countdown__unit strong {
@@ -2801,7 +2804,7 @@ select optgroup {
   }
 }
 
-@keyframes home-belgian-scan {
+@keyframes home-flag-scan {
   0%,
   100% {
     opacity: 0.42;
