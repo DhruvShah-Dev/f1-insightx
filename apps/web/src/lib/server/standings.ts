@@ -80,6 +80,14 @@ export type ChampionshipStandingsSeason = {
   constructors: ConstructorStanding[];
 };
 
+type ChampionshipRows = {
+  races: CsvRace[];
+  drivers: CsvDriver[];
+  constructors: CsvConstructor[];
+  driverStandings: CsvDriverStanding[];
+  constructorStandings: CsvConstructorStanding[];
+};
+
 async function loadChampionshipCsvRows() {
   const [races, drivers, constructors, driverStandings, constructorStandings] = await Promise.all([
     readCsvFile<CsvRace>("curated.races"),
@@ -155,8 +163,53 @@ async function loadChampionshipSupabaseRows() {
   };
 }
 
+function latestStandingSnapshot(rows: ChampionshipRows) {
+  const standingRows = [...rows.driverStandings, ...rows.constructorStandings];
+  const latest = standingRows
+    .map((row) => ({
+      raceId: row.race_id,
+      season: parseNumber(row.season) ?? 0,
+      round: parseNumber(row.round) ?? 0,
+    }))
+    .sort((left, right) => right.season - left.season || right.round - left.round)[0];
+
+  if (!latest) {
+    return { season: 0, round: 0, raceId: "", driverPointsTotal: 0 };
+  }
+
+  return {
+    ...latest,
+    driverPointsTotal: rows.driverStandings
+      .filter((row) => row.race_id === latest.raceId)
+      .reduce((total, row) => total + (parseNumber(row.points) ?? 0), 0),
+  };
+}
+
+function isCsvChampionshipRowsNewer(csvRows: ChampionshipRows, supabaseRows: ChampionshipRows) {
+  const csvLatest = latestStandingSnapshot(csvRows);
+  const supabaseLatest = latestStandingSnapshot(supabaseRows);
+  const recencyDelta =
+    csvLatest.season - supabaseLatest.season ||
+    csvLatest.round - supabaseLatest.round;
+
+  if (recencyDelta !== 0) {
+    return recencyDelta > 0;
+  }
+
+  return csvLatest.driverPointsTotal > supabaseLatest.driverPointsTotal;
+}
+
 async function loadChampionshipRows() {
-  return (await loadChampionshipSupabaseRows()) ?? loadChampionshipCsvRows();
+  const [csvRows, supabaseRows] = await Promise.all([
+    loadChampionshipCsvRows(),
+    loadChampionshipSupabaseRows(),
+  ]);
+
+  if (!supabaseRows) {
+    return csvRows;
+  }
+
+  return isCsvChampionshipRowsNewer(csvRows, supabaseRows) ? csvRows : supabaseRows;
 }
 
 function latestRaceForSeason(rows: Array<{ season: string; round: string; race_id: string }>, season: number) {
