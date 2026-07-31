@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-11-hungaroring,2026,11,2026-11-hungaroring,Hungarian Grand Prix,hungaroring,hungaroring,2026-07-26T13:00:00Z,upcoming,False,2026-10-spa,Balanced circuit,High,0.0,0.2649553181818182,2026-07-20T17:16:01Z,race_week_20260720T171601Z,race_week_overview_v2
+2026-12-zandvoort,2026,12,2026-12-zandvoort,Dutch Grand Prix,zandvoort,zandvoort,2026-08-23T13:00:00Z,upcoming,True,2026-11-hungaroring,Balanced circuit,High,0.0,0.25724422727272733,2026-07-31T21:59:54Z,race_week_20260731T215954Z,race_week_overview_v2

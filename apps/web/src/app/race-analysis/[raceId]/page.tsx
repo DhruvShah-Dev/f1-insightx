@@ -37,7 +37,7 @@ const sectionNav: Array<{ id: string; label: string; icon: SectionIconName }> = 
 
 export async function generateStaticParams() {
   const races = await listRaceAnalysisIndex();
-  return races.slice(0, 12).map((race) => ({ raceId: race.id }));
+  return races.slice(0, 3).map((race) => ({ raceId: race.id }));
 }
 
 export async function generateMetadata({ params }: RaceAnalysisDetailPageProps) {
