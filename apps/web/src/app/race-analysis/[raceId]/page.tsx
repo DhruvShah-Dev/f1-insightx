@@ -25,6 +25,8 @@ type RaceAnalysisDetailPageProps = {
   params: Promise<{ raceId: string }>;
 };
 
+export const dynamic = "force-dynamic";
+
 type SectionIconName = "versus" | "strategy" | "position" | "pace";
 
 const sectionNav: Array<{ id: string; label: string; icon: SectionIconName }> = [
@@ -33,10 +35,6 @@ const sectionNav: Array<{ id: string; label: string; icon: SectionIconName }> = 
   { id: "position", label: "Position", icon: "position" },
   { id: "pace", label: "Pace", icon: "pace" },
 ];
-
-export async function generateStaticParams() {
-  return [];
-}
 
 export async function generateMetadata({ params }: RaceAnalysisDetailPageProps) {
   const { raceId } = await params;
