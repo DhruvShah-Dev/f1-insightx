@@ -2,7 +2,7 @@
   "name": "f1-insightx",
   "private": true,
   "version": "0.1.0",
-  "description": "Portfolio-grade Formula 1 race strategy and fantasy analytics platform.",
+  "description": "Formula 1 data analytics platform for race strategy, telemetry-derived insights, and fantasy decision support.",
   "packageManager": "npm@10.8.2",
   "engines": {
     "node": ">=20.0.0",

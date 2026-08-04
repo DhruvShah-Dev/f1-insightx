@@ -11,7 +11,6 @@ import { TrackMap } from "@/components/ui/track-map";
 import {
   getRaceAnalysisConfidenceTier,
   getRaceAnalysisDetail,
-  listRaceAnalysisIndex,
   type RaceAnalysisDetail,
   type RaceAnalysisPacePoint,
   type RaceAnalysisPitStop,
@@ -36,8 +35,7 @@ const sectionNav: Array<{ id: string; label: string; icon: SectionIconName }> = 
 ];
 
 export async function generateStaticParams() {
-  const races = await listRaceAnalysisIndex();
-  return races.slice(0, 3).map((race) => ({ raceId: race.id }));
+  return [];
 }
 
 export async function generateMetadata({ params }: RaceAnalysisDetailPageProps) {
