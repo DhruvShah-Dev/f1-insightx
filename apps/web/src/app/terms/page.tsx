@@ -73,7 +73,7 @@ export default function TermsPage() {
       <section className="workspace-panel legal-page__section">
         <div className="workspace-panel__eyebrow">Availability</div>
         <div className="legal-page__copy">
-          <p>The service may change, pause, or become unavailable without notice, especially during active development or portfolio use.</p>
+          <p>The service may change, pause, or become unavailable without notice, especially during active development, beta operation, or data refresh windows.</p>
           <p>We may suspend or restrict access where needed to protect the service, comply with law, or address abuse.</p>
         </div>
       </section>

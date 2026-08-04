@@ -170,3 +170,4 @@ See [Release Checklist](docs/RELEASE_CHECKLIST.md) for the runtime artifact matr
 - [Deployment](docs/deployment.md)
 - [Supabase Auth Setup](docs/supabase-auth-setup.md)
 - [Release Checklist](docs/RELEASE_CHECKLIST.md)
+- [Maintainability Roadmap](docs/MAINTAINABILITY_ROADMAP.md)

@@ -589,3 +589,14 @@ id,season,round,race_id,constructor_id,standing_position,points,wins,source_labe
 2026-10-spa|audi,2026,10,2026-10-spa,audi,9,10.0,0,derived_results_rollup
 2026-10-spa|aston_martin,2026,10,2026-10-spa,aston_martin,10,1.0,0,derived_results_rollup
 2026-10-spa|cadillac,2026,10,2026-10-spa,cadillac,11,0.0,0,derived_results_rollup
+2026-11-hungaroring|mercedes,2026,11,2026-11-hungaroring,mercedes,1,379.0,8,derived_results_rollup
+2026-11-hungaroring|ferrari,2026,11,2026-11-hungaroring,ferrari,2,307.0,2,derived_results_rollup
+2026-11-hungaroring|mclaren,2026,11,2026-11-hungaroring,mclaren,3,220.0,1,derived_results_rollup
+2026-11-hungaroring|red_bull,2026,11,2026-11-hungaroring,red_bull,4,177.0,0,derived_results_rollup
+2026-11-hungaroring|rb,2026,11,2026-11-hungaroring,rb,5,66.0,0,derived_results_rollup
+2026-11-hungaroring|alpine,2026,11,2026-11-hungaroring,alpine,6,61.0,0,derived_results_rollup
+2026-11-hungaroring|haas,2026,11,2026-11-hungaroring,haas,7,21.0,0,derived_results_rollup
+2026-11-hungaroring|audi,2026,11,2026-11-hungaroring,audi,8,12.0,0,derived_results_rollup
+2026-11-hungaroring|williams,2026,11,2026-11-hungaroring,williams,9,11.0,0,derived_results_rollup
+2026-11-hungaroring|aston_martin,2026,11,2026-11-hungaroring,aston_martin,10,1.0,0,derived_results_rollup
+2026-11-hungaroring|cadillac,2026,11,2026-11-hungaroring,cadillac,11,0.0,0,derived_results_rollup

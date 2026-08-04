@@ -1,10 +1,10 @@
 # F1 InsightX Project Context
 
-Last updated: April 9, 2026
+Last updated: August 3, 2026
 
 ## Overview
 
-F1 InsightX is a production-minded Formula 1 analytics web application built as a polished full-stack portfolio project with real data infrastructure and a clear path toward strategy modeling, race intelligence, and fantasy optimization.
+F1 InsightX is a production-minded Formula 1 data analytics platform with real data infrastructure, premium product surfaces, and a clear path toward strategy modeling, race intelligence, and fantasy optimization.
 
 The project combines:
 
@@ -534,4 +534,3 @@ Useful labels for future assistant sessions:
 - Vercel deployment target
 - production hardening completed in several stages
 - legal/privacy baseline present
-

@@ -2,7 +2,7 @@
 
 ## Supported Scope
 
-This repository is intended for portfolio and production-style application development. Security reports should focus on:
+This repository supports a production-minded Formula 1 data analytics platform. Security reports should focus on:
 
 - authentication and authorization flaws
 - data exposure or privacy issues

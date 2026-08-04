@@ -86,13 +86,13 @@ Deliverables:
 - scheduled GitHub Action refreshes
 - environment documentation
 
-## M8: Resume and portfolio packaging
+## M8: Product launch packaging
 
 Goal:
-- make the project recruiter-ready
+- make the project ready for stakeholder review, public product evaluation, and production operations
 
 Deliverables:
 - polished README
 - architecture diagram
-- resume bullets
-- screenshots and writeup
+- product positioning notes
+- screenshots and launch writeup
