@@ -11,6 +11,7 @@ import { TrackMap } from "@/components/ui/track-map";
 import {
   getRaceAnalysisConfidenceTier,
   getRaceAnalysisDetail,
+  listRaceAnalysisIndex,
   type RaceAnalysisDetail,
   type RaceAnalysisPacePoint,
   type RaceAnalysisPitStop,
@@ -25,8 +26,6 @@ type RaceAnalysisDetailPageProps = {
   params: Promise<{ raceId: string }>;
 };
 
-export const dynamic = "force-dynamic";
-
 type SectionIconName = "versus" | "strategy" | "position" | "pace";
 
 const sectionNav: Array<{ id: string; label: string; icon: SectionIconName }> = [
@@ -35,6 +34,11 @@ const sectionNav: Array<{ id: string; label: string; icon: SectionIconName }> = 
   { id: "position", label: "Position", icon: "position" },
   { id: "pace", label: "Pace", icon: "pace" },
 ];
+
+export async function generateStaticParams() {
+  const races = await listRaceAnalysisIndex();
+  return races.slice(0, 1).map((race) => ({ raceId: race.id }));
+}
 
 export async function generateMetadata({ params }: RaceAnalysisDetailPageProps) {
   const { raceId } = await params;
