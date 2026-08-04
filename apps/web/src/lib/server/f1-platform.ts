@@ -368,7 +368,16 @@ function compareSnapshotRecency(
   left: DriverStandingsSnapshot | ConstructorStandingsSnapshot,
   right: DriverStandingsSnapshot | ConstructorStandingsSnapshot,
 ) {
-  return left.season - right.season || left.round - right.round;
+  return (
+    left.season - right.season ||
+    left.round - right.round ||
+    snapshotPointsTotal(left) - snapshotPointsTotal(right) ||
+    left.items.length - right.items.length
+  );
+}
+
+function snapshotPointsTotal(snapshot: DriverStandingsSnapshot | ConstructorStandingsSnapshot) {
+  return snapshot.items.reduce((total, item) => total + item.points, 0);
 }
 
 async function resolveFreshestHomepageSnapshot<T extends DriverStandingsSnapshot | ConstructorStandingsSnapshot>(
@@ -407,7 +416,7 @@ async function resolveFreshestHomepageSnapshot<T extends DriverStandingsSnapshot
         mode: "degraded",
         sourceKind: "csv-canonical",
         sourceLabel: "curated_csv",
-        reason: `curated_csv is newer than canonical_tables (${csvData.race.id} vs ${databaseData.race.id}).`,
+        reason: `curated_csv is newer or more complete than canonical_tables (${csvData.race.id} vs ${databaseData.race.id}).`,
         generatedAt: null,
         buildVersion: null,
         ...describeSnapshot(csvData),
