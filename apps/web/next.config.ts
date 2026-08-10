@@ -43,6 +43,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Season selection moved from `?season=` to a path segment so the page can
+      // be prerendered and CDN-cached; keep previously shared query links working.
+      {
+        source: "/championship",
+        has: [{ type: "query", key: "season", value: "(?<season>\\d{4})" }],
+        destination: "/championship/:season",
+        permanent: false,
+      },
       {
         source: "/achievements",
         destination: "/championship",

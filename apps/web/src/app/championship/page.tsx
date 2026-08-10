@@ -22,10 +22,6 @@ import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-
 // background instead of rebuilding on every request.
 export const revalidate = 900;
 
-type ChampionshipPageProps = {
-  searchParams?: Promise<Record<string, string | string[] | undefined>>;
-};
-
 const metricOrder: AchievementMetricId[] = [
   "lapsCompleted",
   "lapsLed",
@@ -49,10 +45,6 @@ export const metadata = makeMetadata({
   path: "/championship",
   keywords: ["F1 championship standings", "F1 driver standings", "F1 constructor standings"],
 });
-
-function firstParam(value: string | string[] | undefined) {
-  return Array.isArray(value) ? value[0] : value;
-}
 
 function formatGeneratedAt(value: string | null) {
   if (!value) {
@@ -127,7 +119,7 @@ function YearSelector({ seasons, selectedSeason }: { seasons: number[]; selected
       {seasons.map((season) => (
         <Link
           key={season}
-          href={`/championship?season=${season}`}
+          href={season === seasons[0] ? "/championship" : `/championship/${season}`}
           className={season === selectedSeason ? "is-active" : ""}
           aria-current={season === selectedSeason ? "page" : undefined}
         >
@@ -431,12 +423,16 @@ function ConstructorsSection({ constructors }: { constructors: ConstructorStandi
   );
 }
 
-export default async function ChampionshipPage({ searchParams }: ChampionshipPageProps) {
-  const params = await searchParams;
-  const requestedSeason = Number(firstParam(params?.season));
+// Season selection used to arrive as `?season=`, which forced Next.js to render
+// this page dynamically on every request - and a dynamic render sets its own
+// `private, no-store` Cache-Control that overrides the CDN rules in
+// next.config.ts. The seasons are a small known set, so they are path segments
+// now (`/championship/2025`) and every variant prerenders. This component holds
+// the markup for both `/championship` and `/championship/[season]`.
+export async function ChampionshipView({ season }: { season?: number }) {
   const seasons = await listChampionshipSeasons();
-  const selectedSeason = Number.isFinite(requestedSeason) && seasons.includes(requestedSeason)
-    ? requestedSeason
+  const selectedSeason = season !== undefined && seasons.includes(season)
+    ? season
     : seasons[0];
   const [achievements, championship] = await Promise.all([
     getAchievementsSeason(selectedSeason),
@@ -483,4 +479,8 @@ export default async function ChampionshipPage({ searchParams }: ChampionshipPag
       <AppFooter />
     </main>
   );
+}
+
+export default async function ChampionshipPage() {
+  return <ChampionshipView />;
 }
