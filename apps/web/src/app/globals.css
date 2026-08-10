@@ -701,10 +701,13 @@ select optgroup {
 
 .hero,
 .home-hero {
-  min-height: calc(100svh - 4.5rem);
+  /* Capped for the same reason as the championship hero: an uncapped viewport
+     height meant tall windows rendered a screen-and-a-half of gradient before
+     any content, so nothing below the headline was ever visible on load. */
+  min-height: min(calc(100svh - 4.5rem), 40rem);
   display: grid;
   align-items: center;
-  padding: clamp(3rem, 7vw, 6rem) 0 clamp(2rem, 5vw, 4rem);
+  padding: clamp(2rem, 5vw, 4rem) 0 clamp(2rem, 5vw, 4rem);
 }
 
 .hero__content,
@@ -2301,7 +2304,10 @@ select optgroup {
 .champ-cinema-hero,
 .account-access-stage,
 .account-profile-hero {
-  min-height: clamp(30rem, 62svh, 48rem);
+  /* Was clamp(30rem, 62svh, 48rem). Content is bottom-aligned, so the tall
+     floor produced a large empty band above the headline on desktop without
+     adding any information. */
+  min-height: clamp(26rem, 52svh, 40rem);
   display: grid;
   align-items: end;
   padding: clamp(1.5rem, 4vw, 3rem);
@@ -5618,6 +5624,19 @@ select optgroup {
   transform: skewY(-6deg);
 }
 
+/* Reserve room for the consent overlay while it is on screen (see
+   cookie-consent.tsx) so it never permanently covers the last controls on the
+   page. Removed again the moment a choice is stored. */
+[data-cookie-consent="visible"] body {
+  padding-bottom: clamp(9rem, 20vh, 15rem);
+}
+
+@media (max-width: 720px) {
+  [data-cookie-consent="visible"] body {
+    padding-bottom: clamp(13rem, 42vh, 24rem);
+  }
+}
+
 .cookie-consent {
   position: fixed;
   inset: auto clamp(0.75rem, 2vw, 1.5rem) clamp(0.75rem, 2vw, 1.5rem) auto;
@@ -8907,9 +8926,14 @@ img {
 .champ-cinema-page .champ-cinema-hero {
   position: relative;
   width: 100%;
-  min-height: calc(100svh - 4.5rem);
+  /* The hero used a bare `calc(100svh - 4.5rem)`, so on a tall window it grew
+     without limit - a 1800px-tall viewport produced a 1728px hero and pushed
+     the actual standings entirely below the fold behind a screen of empty
+     gradient. Capping it keeps the cinematic full-bleed look on laptops while
+     guaranteeing the first standings rows are reachable on tall displays. */
+  min-height: min(calc(100svh - 4.5rem), 40rem);
   margin: 0;
-  padding: clamp(4rem, 8vw, 7rem) max(1rem, calc((100vw - 86rem) / 2)) clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.5rem, 5vw, 4.5rem) max(1rem, calc((100vw - 86rem) / 2)) clamp(1.5rem, 4vw, 3rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.42fr);
   gap: clamp(1rem, 3vw, 2rem);
@@ -8985,6 +9009,32 @@ img {
   font-family: var(--font-plex-mono), Consolas, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* The hero eyebrow sits directly on a dark team car photo, where --champ-red
+   fails contrast and the 0.72rem mono was close to unreadable. Slightly larger,
+   brighter, and shadowed so it stays legible over any team backdrop. */
+.champ-cinema-page .champ-cinema-hero__copy > span {
+  color: #ff6b6b;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-shadow: 0 0.15rem 0.6rem rgba(0, 0, 0, 0.85);
+}
+
+/* Labels for the hero freshness stats. */
+.champ-cinema-page .champ-cinema-hero__meta strong {
+  display: grid;
+  gap: 0.3rem;
+  align-content: start;
+}
+
+.champ-cinema-page .champ-cinema-hero__meta strong span {
+  color: var(--muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 

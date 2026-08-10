@@ -50,6 +50,24 @@ export function CookieConsent() {
     }
   }, [view]);
 
+  // The consent panel is fixed to the bottom-right corner and stays there until
+  // a choice is made, so it sat on top of whatever the page renders last -
+  // pagination, year selectors, footer links - with no way to scroll clear of
+  // it. Flagging the visible state on <html> lets the layout reserve matching
+  // bottom space instead of letting the overlay eat real controls.
+  useEffect(() => {
+    const root = document.documentElement;
+    if (!mounted || view === "hidden") {
+      root.removeAttribute("data-cookie-consent");
+      return;
+    }
+
+    root.setAttribute("data-cookie-consent", "visible");
+    return () => {
+      root.removeAttribute("data-cookie-consent");
+    };
+  }, [mounted, view]);
+
   if (!mounted || view === "hidden") {
     return null;
   }

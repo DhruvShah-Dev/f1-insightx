@@ -22,6 +22,11 @@ import { makeMetadata } from "@/lib/seo";
 import { getCircuitAsset, getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMetaByCode, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
+// Public analytics page: the offline pipeline refreshes source data at most a few
+// times per race weekend, so serve a cached render and revalidate in the
+// background instead of rebuilding on every request.
+export const revalidate = 900;
+
 type RaceAnalysisDetailPageProps = {
   params: Promise<{ raceId: string }>;
 };

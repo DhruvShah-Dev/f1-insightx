@@ -4,11 +4,8 @@ import { HomeAccountEntry } from "@/components/account/home-account-entry";
 import { CookieConsent } from "@/components/legal/cookie-consent";
 import { RootStructuredData } from "@/components/seo/structured-data";
 import { AppHeader } from "@/components/ui/app-header";
-import { getUserProfileByIdWithClient } from "@/lib/account/profile";
-import { getSupabaseServerClient } from "@/lib/auth/supabase-server";
 import { getServerEnv } from "@/lib/env";
 import { getSiteUrl, makeMetadata, seo } from "@/lib/seo";
-import { getSupabasePrivilegedClient } from "@/lib/server/supabase";
 import "./globals.css";
 
 const barlowCondensed = Barlow_Condensed({
@@ -44,45 +41,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+// NOTE: This layout is intentionally free of any request-scoped API (cookies(),
+// headers(), Supabase server client). Reading cookies here opted every route in
+// the app out of static rendering, so Next.js served every page with
+// `Cache-Control: private, no-store` and re-rendered it per request.
+// Auth state is resolved in the browser by <HomeAccountEntry />, which already
+// subscribes to onAuthStateChange and fetches the profile, so nothing is lost.
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const { hasSupabaseAdmin, hasSupabaseAuth } = getServerEnv();
   const hasProfilePersistence = hasSupabaseAdmin && hasSupabaseAuth;
-  let initialAuthState: "authenticated" | "anonymous" = "anonymous";
-  let initialUsername = "";
-
-  if (hasSupabaseAuth) {
-    try {
-      const supabase = await getSupabaseServerClient();
-      if (supabase) {
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
-        initialAuthState = user ? "authenticated" : "anonymous";
-        if (user) {
-          const metadataUsername =
-            typeof user.user_metadata?.username === "string" ? user.user_metadata.username : "";
-          initialUsername = metadataUsername;
-
-          if (hasProfilePersistence) {
-            try {
-              const profileClient = getSupabasePrivilegedClient() ?? supabase;
-              const profile = await getUserProfileByIdWithClient(profileClient, user.id);
-              initialUsername = profile?.username ?? metadataUsername;
-            } catch {
-              initialUsername = metadataUsername;
-            }
-          }
-        }
-      }
-    } catch {
-      initialAuthState = "anonymous";
-      initialUsername = "";
-    }
-  }
 
   return (
     <html
@@ -96,8 +67,6 @@ export default async function RootLayout({
             <HomeAccountEntry
               hasSupabaseAuth={hasSupabaseAuth}
               hasProfilePersistence={hasProfilePersistence}
-              initialAuthState={initialAuthState}
-              initialUsername={initialUsername}
             />
           )}
         />

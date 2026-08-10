@@ -2,6 +2,11 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { makeMetadata } from "@/lib/seo";
 
+// Public analytics page: the offline pipeline refreshes source data at most a few
+// times per race weekend, so serve a cached render and revalidate in the
+// background instead of rebuilding on every request.
+export const revalidate = 900;
+
 export const metadata = makeMetadata({
   title: "Fantasy",
   description: "Fantasy is not part of the current F1 InsightX product surface.",

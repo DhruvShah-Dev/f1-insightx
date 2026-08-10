@@ -17,6 +17,11 @@ import { makeMetadata } from "@/lib/seo";
 import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 
+// Public analytics page: the offline pipeline refreshes source data at most a few
+// times per race weekend, so serve a cached render and revalidate in the
+// background instead of rebuilding on every request.
+export const revalidate = 900;
+
 type ChampionshipPageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
@@ -51,7 +56,7 @@ function firstParam(value: string | string[] | undefined) {
 
 function formatGeneratedAt(value: string | null) {
   if (!value) {
-    return "Generated timestamp unavailable";
+    return "Timestamp unavailable";
   }
 
   return new Intl.DateTimeFormat("en-US", {
@@ -207,9 +212,22 @@ function ChampionshipHero({
         <h1>{championship.season} Championship</h1>
         <p>Standings pressure, team form, and race-analysis records after {championship.latestRaceName}.</p>
         <div className="champ-cinema-hero__meta">
-          <strong>{formatRaceDate(championship.latestRaceDate)}</strong>
-          <strong>{raceCount} reports counted</strong>
-          <strong>{formatGeneratedAt(generatedAt)}</strong>
+          {/* Each stat is labelled because they describe different layers of the
+              pipeline. The standings are current to the last completed race,
+              while the generated stamp belongs to the race-analysis records
+              only - an unlabelled date made the whole page look stale. */}
+          <strong>
+            <span>Standings after</span>
+            {formatRaceDate(championship.latestRaceDate)}
+          </strong>
+          <strong>
+            <span>Race reports counted</span>
+            {raceCount}
+          </strong>
+          <strong>
+            <span>Race analysis generated</span>
+            {formatGeneratedAt(generatedAt)}
+          </strong>
         </div>
       </div>
 

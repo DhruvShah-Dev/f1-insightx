@@ -22,7 +22,7 @@ Cinematic completed-race reports built from observed results and deterministic p
 
 ### Race Week - Weekend Command Center
 
-Upcoming-race context, circuit features, conditions, and generated race-week signals for the Belgian Grand Prix without inventing unavailable session data.
+Upcoming-race context, circuit features, conditions, and generated race-week signals for the current race week without inventing unavailable session data.
 
 ![F1 InsightX Race Week command center](docs/assets/screenshots/race-week.webp)
 
@@ -48,20 +48,34 @@ Fantasy remains available as API-backed optimization logic and generated data, b
 
 ## Latest Data Snapshot
 
-The latest local season state is `season_state_20260709T162227Z`, generated at `2026-07-09T16:22:27Z`, with validation status `passed` across the current product layers listed below.
+The latest local season state is `season_state_20260731T220955Z`, generated at `2026-07-31T22:09:55Z`, with validation status `passed` across every product layer listed below and no outstanding missing-data flags.
 
 | Surface | Current evidence |
 | --- | --- |
-| Canonical FastF1 | 369,010 laps, 13,569 results, 48,188 stints, 13,368 session-summary rows, 77 drivers |
-| FastF1 archive | 674 completed sessions out of 698 targets; telemetry files present for 663 sessions |
-| Telemetry features | `telemetry_features_20260628T134108Z`; validation passed |
-| Analytics layer | 663 indexed sessions; `analytics_views_20260709T161249Z`; validation passed |
-| Race Analysis | 54 race analyses, 60,841 position timeline rows, 1,879 pit-strategy rows |
-| Race Week | Belgian Grand Prix, round 10, scheduled `2026-07-19T13:00:00Z`; race-week product view available |
-| Strategy Lab | Belgian Grand Prix strategy product available |
+| Canonical FastF1 | `canonical_fastf1_20260731T214518Z`; validation passed |
+| Telemetry features | `telemetry_features_20260731T215746Z`; validation passed |
+| Analytics layer | `analytics_views_20260731T220004Z` / `analytics_index_20260731T220502Z`; validation passed |
+| Race Analysis | 56 race analyses, 63,142 position-timeline rows, 1,952 pit-strategy rows |
+| Race Week | Dutch Grand Prix, round 12, scheduled `2026-08-23T13:00:00Z`; race-week product view available (`race_week_20260731T215954Z`) |
+| Strategy Lab | Dutch Grand Prix strategy product available (`strategy_lab_20260731T220949Z`) |
 | Picks | Race challenge and pit-stop result inputs generated for the Picks surface |
 
-Freshness caveat: Race Analysis and standings are current through the British Grand Prix. Analytics and telemetry are available through the Barcelona Grand Prix, so the app labels those surfaces as not fully current until British Grand Prix telemetry processing is refreshed.
+Results, standings, analytics, and telemetry are all current through the Hungarian Grand Prix (round 11), so the layers are aligned rather than staggered as in earlier snapshots.
+
+Regenerate this section with `npm run data:refresh` followed by `npm run data:validate`; the figures above are read from `data/season_state.json` and the `data/race_analysis` extracts.
+
+### Keeping Supabase in step with the local snapshot
+
+`data/season_state.json` and the curated CSVs describe the **local** pipeline
+output. The deployed site reads most product surfaces from Supabase, so the two
+drift apart whenever `data/load_supabase.py` has not been run after a refresh.
+When the site shows an older race than this section claims, the fix is to
+re-run the loader, not to edit the pages. Verify with:
+
+```bash
+python data/load_supabase.py           # push the current snapshot
+npm run data:validate                  # confirm local artifacts still pass
+```
 
 ## Architecture
 

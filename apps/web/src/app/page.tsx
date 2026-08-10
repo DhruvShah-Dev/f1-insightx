@@ -16,6 +16,11 @@ import { getCircuitAsset, getTeamAsset } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMetaByCode } from "@/lib/ui/driver-asset-manifest";
 import { getCircuitDisplayName } from "@/lib/ui/home-hero";
 
+// Public analytics page: the offline pipeline refreshes source data at most a few
+// times per race weekend, so serve a cached render and revalidate in the
+// background instead of rebuilding on every request.
+export const revalidate = 900;
+
 export const metadata = makeMetadata({
   description:
     "F1 InsightX turns Formula 1 telemetry, standings, race history, and race-week signals into prediction, strategy, and post-race intelligence.",
