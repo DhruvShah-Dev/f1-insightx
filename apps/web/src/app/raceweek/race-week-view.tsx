@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/ui/site-footer";
 import { AssetImage } from "@/components/ui/asset-image";
 import { StatePanel } from "@/components/ui/state-panel";
 import { TeamBadge } from "@/components/ui/team-badge";
+import { RaceCountdown } from "@/components/home/race-countdown";
 import { RaceWeekSectorTrack } from "@/components/race-week/race-week-sector-track";
 import { RaceWeekTimeToggle } from "@/components/race-week/race-week-time-toggle";
 import { getRaceWeekProductResult, type RaceWeekPredictionModeId, type RaceWeekProduct } from "@/lib/server/race-week-product";
@@ -68,6 +69,18 @@ const raceThemeByCircuit: Record<string, RaceTheme> = {
     accent: "#2f855a",
     accentSoft: "#ffffff",
   },
+  zandvoort: {
+    deck: "Banked corners, a narrow racing line, and coastal wind swings make qualifying position and clean air decisive.",
+    shell: "#10151b",
+    accent: "#e10600",
+    accentSoft: "#ffffff",
+  },
+  monza: {
+    deck: "Minimal downforce, long full-throttle runs, and slipstream games make tow timing as important as raw pace.",
+    shell: "#10151b",
+    accent: "#008c45",
+    accentSoft: "#ffffff",
+  },
 };
 
 const fallbackTheme: RaceTheme = {
@@ -113,6 +126,76 @@ const countryThemeByCode: Record<string, CountryTheme> = {
     secondary: "#477050",
     dark: "#ce2939",
   },
+  NL: {
+    primary: "#ffffff",
+    secondary: "#ae1c28",
+    dark: "#21468b",
+  },
+  IT: {
+    primary: "#ffffff",
+    secondary: "#008c45",
+    dark: "#cd212a",
+  },
+  JP: {
+    primary: "#ffffff",
+    secondary: "#bc002d",
+    dark: "#050608",
+  },
+  SG: {
+    primary: "#ffffff",
+    secondary: "#ef3340",
+    dark: "#050608",
+  },
+  CA: {
+    primary: "#ffffff",
+    secondary: "#d80621",
+    dark: "#050608",
+  },
+  AZ: {
+    primary: "#00b5e2",
+    secondary: "#ef3340",
+    dark: "#509e2f",
+  },
+  AE: {
+    primary: "#ffffff",
+    secondary: "#00732f",
+    dark: "#ce1126",
+  },
+  QA: {
+    primary: "#ffffff",
+    secondary: "#8d1b3d",
+    dark: "#050608",
+  },
+  BH: {
+    primary: "#ffffff",
+    secondary: "#ce1126",
+    dark: "#050608",
+  },
+  SA: {
+    primary: "#ffffff",
+    secondary: "#006c35",
+    dark: "#050608",
+  },
+  AU: {
+    primary: "#ffffff",
+    secondary: "#012169",
+    dark: "#e4002b",
+  },
+  CN: {
+    primary: "#ffde00",
+    secondary: "#de2910",
+    dark: "#050608",
+  },
+  BR: {
+    primary: "#ffdf00",
+    secondary: "#009c3b",
+    dark: "#002776",
+  },
+  MX: {
+    primary: "#ffffff",
+    secondary: "#006847",
+    dark: "#ce1126",
+  },
 };
 
 const fallbackCountryTheme: CountryTheme = {
@@ -121,23 +204,99 @@ const fallbackCountryTheme: CountryTheme = {
   dark: "#050608",
 };
 
+// Every circuit on the calendar needs an entry, otherwise the schedule silently
+// falls back to "UTC track time" - which is what made a Dutch GP weekend read
+// as UTC and, before that, as Monaco time.
 const raceTimezoneByCircuit: Record<string, string> = {
+  albert_park: "Australia/Melbourne",
+  americas: "America/Chicago",
+  bahrain: "Asia/Bahrain",
+  baku: "Asia/Baku",
   catalunya: "Europe/Madrid",
+  hungaroring: "Europe/Budapest",
+  imola: "Europe/Rome",
+  interlagos: "America/Sao_Paulo",
+  jeddah: "Asia/Riyadh",
+  losail: "Asia/Qatar",
+  marina_bay: "Asia/Singapore",
   miami: "America/New_York",
   monaco: "Europe/Monaco",
+  monza: "Europe/Rome",
   red_bull_ring: "Europe/Vienna",
+  rodriguez: "America/Mexico_City",
+  shanghai: "Asia/Shanghai",
   silverstone: "Europe/London",
   spa: "Europe/Brussels",
-  hungaroring: "Europe/Budapest",
+  suzuka: "Asia/Tokyo",
+  vegas: "America/Los_Angeles",
+  villeneuve: "America/Toronto",
+  yas_marina: "Asia/Dubai",
+  zandvoort: "Europe/Amsterdam",
 };
+
+
+// The pipeline's own mode names ("Pre quali", "FP2 pred") are internal jargon;
+// the page speaks in terms of which sessions have actually happened.
+const predictionModeDisplayLabel: Record<RaceWeekPredictionModeId, string> = {
+  baseline: "Pre-practice",
+  fp1: "After FP1",
+  fp2: "After FP2",
+  fp3: "After FP3",
+};
+
+function predictionModeStatusLabel(mode: RaceWeekProduct["predictionModes"][number]) {
+  if (mode.status === "pending") {
+    return "Awaiting session";
+  }
+  return mode.rowCount > 0 ? "Applied" : "Ready";
+}
+
+const constructorDisplayNameOverrides: Record<string, string> = {
+  rb: "Racing Bulls",
+  racing_bulls: "Racing Bulls",
+  alphatauri: "AlphaTauri",
+  red_bull: "Red Bull",
+  aston_martin: "Aston Martin",
+  haas: "Haas",
+  sauber: "Sauber",
+  kick_sauber: "Kick Sauber",
+  alfa: "Alfa Romeo",
+};
+
+function formatConstructorLabel(value: string | null | undefined, fallbackId: string) {
+  const key = (value ?? fallbackId).toLowerCase().replace(/\s+/g, "_");
+  return constructorDisplayNameOverrides[key] ?? formatEntityLabel(value ?? fallbackId);
+}
+
+// The model clamps unresolved laps to the same fallback value, so several cars
+// can share one time. Flagging those as approximate is more honest than showing
+// three drivers with an identical thousandth.
+function findDuplicateTimes(values: Array<number | null>) {
+  const seen = new Map<number, number>();
+  for (const value of values) {
+    if (value === null || Number.isNaN(value)) {
+      continue;
+    }
+    seen.set(value, (seen.get(value) ?? 0) + 1);
+  }
+  return new Set([...seen.entries()].filter(([, count]) => count > 1).map(([value]) => value));
+}
+
+function formatProjectedTime(value: number | null, approximate: boolean) {
+  const formatted = formatQualifyingTime(value);
+  if (formatted === "Pending" || !approximate) {
+    return formatted;
+  }
+  return `~${formatted}`;
+}
 
 const predictionModeIds: RaceWeekPredictionModeId[] = ["baseline", "fp1", "fp2", "fp3"];
 
 function predictionModeHref(mode: RaceWeekPredictionModeId) {
   // Path segments instead of a query string: reading query params on the server
-  // opts the whole route out of static rendering, which is what kept
-  // /predictions on `no-store` and off the CDN.
-  return mode === "baseline" ? "/predictions" : `/predictions/${mode}`;
+  // opts the whole route out of static rendering, which is what kept this route
+  // on `no-store` and off the CDN.
+  return mode === "baseline" ? "/raceweek" : `/raceweek/${mode}`;
 }
 
 function formatRaceDate(iso: string | null | undefined) {
@@ -313,18 +472,18 @@ function getSessionStatusLabel(
 function getSessionStatusDetail(sessionCode: "FP1" | "FP2" | "FP3" | "Q", productStatus: string, rows: number) {
   if (sessionCode === "Q") {
     if (productStatus === "Complete") {
-      return "Ready";
+      return "Timing data in";
     }
     if (productStatus === "Unavailable") {
-      return "No data";
+      return "Not published";
     }
-    return "Pending";
+    return "Not run yet";
   }
 
   if (rows > 0) {
-    return "Ready";
+    return "Timing data in";
   }
-  return productStatus === "Unavailable" ? "No data" : "Pending";
+  return productStatus === "Unavailable" ? "Not published" : "Not run yet";
 }
 
 function RaceWeekIcon({ name }: { name: "flag" | "gauge" | "radar" | "strategy" | "trophy" | "arrow" }) {
@@ -372,7 +531,7 @@ function RaceWeekIcon({ name }: { name: "flag" | "gauge" | "radar" | "strategy" 
   );
 }
 
-export async function PredictionsView({ mode: selectedPredictionMode }: { mode: RaceWeekPredictionModeId }) {
+export async function RaceWeekView({ mode: selectedPredictionMode }: { mode: RaceWeekPredictionModeId }) {
   const [raceWeekResult, seasonState] = await Promise.all([getRaceWeekProductResult(), getSeasonState()]);
   const raceWeek = raceWeekResult.mode === "unavailable" ? null : raceWeekResult.data;
 
@@ -469,6 +628,7 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
   const qualifyingSessionComplete = raceWeek.sessionStatus.some((entry) => entry.sessionCode === "Q" && entry.status === "complete");
   const driverNameById = new Map(driverBoard.map((entry) => [entry.driverId, entry.driverName]));
   const constructorNameById = new Map(driverBoard.map((entry) => [entry.constructorId, entry.constructorName]));
+  const duplicateProjectedTimes = findDuplicateTimes(qualifyingOrder.map((entry) => entry.predictedQTimeS));
   const heroTeam = getTeamAsset(qualifyingTopThree[0]?.constructorId ?? fieldDrivers[0]?.constructorId);
   return (
     <main
@@ -514,6 +674,8 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
             </h1>
             <p className="race-week-hero__deck">{raceTheme.deck}</p>
 
+            <RaceCountdown scheduledAt={nextRace.scheduledAt} initialLabel="Lights out in" />
+
             <div className="race-week-hero__actions">
               <Link href="/picks" className="race-week-hero__cta race-week-hero__cta--primary">
                 <RaceWeekIcon name="trophy" />
@@ -543,8 +705,9 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
 
       <section className="race-week-command-deck" aria-label="Race weekend command center">
         <div className="race-week-timetable">
-          <div className="race-week-section-heading race-week-section-heading--tight race-week-section-heading--center">
-            <h2>Session</h2>
+          <div className="race-week-section-heading race-week-section-heading--tight">
+            <p className="race-week-section-kicker">Weekend schedule</p>
+            <h2>Sessions</h2>
           </div>
           <RaceWeekTimeToggle sessions={weekendSessions} trackTimeZone={trackTimeZone} />
           <div className="race-week-session-status" aria-label="Weekend data status">
@@ -554,8 +717,7 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
                 key={session.label}
               >
                 <span>{session.label}</span>
-                <strong>{session.productStatus}</strong>
-                <em>{getSessionStatusDetail(session.sessionCode, session.productStatus, session.rows)}</em>
+                <strong>{getSessionStatusDetail(session.sessionCode, session.productStatus, session.rows)}</strong>
               </div>
             ))}
           </div>
@@ -579,9 +741,15 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
       </section>
 
       <section className="race-week-q-prediction" aria-label="Qualifying prediction">
-        <div className="race-week-section-heading race-week-section-heading--center race-week-q-prediction__heading">
+        <div className="race-week-section-heading race-week-q-prediction__heading">
+          <p className="race-week-section-kicker">Qualifying projection</p>
           <h2>Projected front rows.</h2>
         </div>
+        <p className="race-week-q-prediction__note">
+          {qualifyingSessionComplete
+            ? `Ranked from set qualifying times. Source: ${selectedPredictionModeMeta?.statusLabel ?? "model baseline"}.`
+            : `Model projection - no qualifying times have been set yet. Source: ${selectedPredictionModeMeta?.statusLabel ?? "model baseline"}.`}
+        </p>
 
         <nav className="race-week-prediction-modes" aria-label="Prediction mode">
           {predictionModes.map((mode) => (
@@ -591,8 +759,8 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
               className={`race-week-prediction-modes__link${mode.id === selectedPredictionMode ? " is-active" : ""}${mode.status === "pending" ? " is-pending" : ""}`}
               aria-current={mode.id === selectedPredictionMode ? "page" : undefined}
             >
-              <span>{mode.label}</span>
-              <em>{mode.status === "pending" ? "Pending" : mode.rowCount > 0 ? `${mode.rowCount} rows` : "Ready"}</em>
+              <span>{predictionModeDisplayLabel[mode.id] ?? mode.label}</span>
+              <em>{predictionModeStatusLabel(mode)}</em>
             </Link>
           ))}
         </nav>
@@ -631,32 +799,42 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
                     </div>
                     <div className="race-week-q-card__metrics">
                       <div>
-                        <span>Lap time</span>
-                        <strong>{formatQualifyingTime(entry.predictedQTimeS)}</strong>
+                        <span>{qualifyingSessionComplete ? "Lap time" : "Projected lap"}</span>
+                        <strong>
+                          {formatProjectedTime(
+                            entry.predictedQTimeS,
+                            entry.predictedQTimeS !== null && duplicateProjectedTimes.has(entry.predictedQTimeS),
+                          )}
+                        </strong>
                       </div>
                       <div>
                         <span>Gap</span>
                         <strong>{formatPoleGap(displayGapToPole)}</strong>
                       </div>
-                      <div>
-                        <span>Confidence</span>
-                        <strong>{getConfidenceBand(entry.confidenceScore, qualifyingSessionComplete)}</strong>
-                      </div>
+                      {qualifyingSessionComplete ? (
+                        <div>
+                          <span>Confidence</span>
+                          <strong>{getConfidenceBand(entry.confidenceScore, qualifyingSessionComplete)}</strong>
+                        </div>
+                      ) : null}
                     </div>
                   </article>
                 );
               })}
             </div>
 
-            <details className="race-week-q-details" open>
-              <summary>Timing tower</summary>
+            <details className="race-week-q-details">
+              <summary>
+                <span>Full projected order</span>
+                <em>{qualifyingOrder.length} cars</em>
+              </summary>
               <div className="race-week-q-table" role="table" aria-label="Full qualifying order">
                 <div className="race-week-q-table__row race-week-q-table__row--head" role="row">
                   <span>Order</span>
                   <span>Driver</span>
-                  <span>Time</span>
+                  <span>{qualifyingSessionComplete ? "Time" : "Projected"}</span>
                   <span>Gap</span>
-                  <span>Flags</span>
+                  <span>Model inputs</span>
                 </div>
                 {qualifyingOrder.map((entry, index) => {
                   const displayGapToPole = qualifyingPoleTime === null || entry.predictedQTimeS === null ? null : entry.predictedQTimeS - qualifyingPoleTime;
@@ -665,15 +843,26 @@ export async function PredictionsView({ mode: selectedPredictionMode }: { mode: 
                       <span className="race-week-q-table__rank">P{entry.predictedQRank ?? index + 1}</span>
                       <span className="race-week-q-table__driver">
                         <strong>{formatEntityLabel(driverNameById.get(entry.driverId) ?? entry.driverId)}</strong>
-                        <em>{formatEntityLabel(constructorNameById.get(entry.constructorId) ?? entry.constructorId)}</em>
+                        <em>{formatConstructorLabel(constructorNameById.get(entry.constructorId), entry.constructorId)}</em>
                       </span>
-                      <span className="race-week-q-table__time">{formatQualifyingTime(entry.predictedQTimeS)}</span>
+                      <span className="race-week-q-table__time">
+                        {formatProjectedTime(
+                          entry.predictedQTimeS,
+                          entry.predictedQTimeS !== null && duplicateProjectedTimes.has(entry.predictedQTimeS),
+                        )}
+                      </span>
                       <span className="race-week-q-table__gap">{formatPoleGap(displayGapToPole)}</span>
                       <span className="race-week-q-table__flags">{explainPredictionFlags(entry.missingFlags)}</span>
                     </article>
                   );
                 })}
               </div>
+              {duplicateProjectedTimes.size > 0 ? (
+                <p className="race-week-q-details__legend">
+                  A tilde marks laps where the model fell back to a shared reference time, so treat those as
+                  approximate and read the order and gaps instead.
+                </p>
+              ) : null}
             </details>
           </>
         ) : (

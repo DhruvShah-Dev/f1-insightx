@@ -112,7 +112,7 @@ export default async function Home() {
 
           <div className="module-grid feature-showcase__grid">
             <ModuleLink
-              href="/predictions"
+              href="/raceweek"
               index="01"
               title="Race Week"
               summary="Next-race intelligence"

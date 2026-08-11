@@ -3554,9 +3554,11 @@ select optgroup {
 }
 
 .race-week-page .race-week-hero__cta--primary {
-  border-color: color-mix(in srgb, var(--race-country-primary) 82%, #fff);
-  background: linear-gradient(135deg, var(--race-country-primary), color-mix(in srgb, var(--race-country-secondary) 68%, var(--race-country-primary)));
-  color: #050608;
+  /* The primary action stays brand red on every circuit: deriving it from the
+     host country flag made the same button orange, white or green week to week. */
+  border-color: var(--accent-red);
+  background: var(--accent-red);
+  color: var(--white);
 }
 
 .race-week-page .race-week-hero__visual {
@@ -3704,6 +3706,18 @@ select optgroup {
 
 .race-week-page .race-week-section-heading h2 {
   max-width: 18ch;
+}
+
+.race-week-page .race-week-environment .race-week-section-heading {
+  /* The aside is too narrow for a side-by-side kicker + headline: the wrapped
+     headline used to overlap the "Conditions" label. */
+  display: grid;
+  justify-items: start;
+  gap: 0.15rem;
+}
+
+.race-week-page .race-week-environment .race-week-section-heading h2 {
+  max-width: 22ch;
 }
 
 .race-week-page .race-week-section-heading--center {
@@ -10561,4 +10575,74 @@ img {
 .not-found-page__actions {
   justify-content: center;
   margin-top: 0.5rem;
+}
+
+/* Race Week: projection framing, collapsible timing tower and denser status
+   grids on small screens. */
+.race-week-page .race-week-q-prediction__note {
+  max-width: 62ch;
+  margin: 0 0 clamp(0.85rem, 2vw, 1.25rem);
+  color: rgba(244, 246, 248, 0.66);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.race-week-page .race-week-q-details summary {
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.race-week-page .race-week-q-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.race-week-page .race-week-q-details summary em {
+  margin-left: auto;
+  color: rgba(244, 246, 248, 0.6);
+  font-style: normal;
+}
+
+.race-week-page .race-week-q-details summary::after {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-0.1rem);
+  transition: transform 160ms ease;
+}
+
+.race-week-page .race-week-q-details[open] summary::after {
+  transform: rotate(-135deg) translateY(-0.1rem);
+}
+
+.race-week-page .race-week-q-details__legend {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-top: 1px solid rgba(244, 246, 248, 0.1);
+  color: rgba(244, 246, 248, 0.6);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.race-week-page .race-week-hero .race-countdown {
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 620px) {
+  /* One card per row turned the status and mode strips into ~8 screens of
+     scrolling before any projection was visible. */
+  .race-week-page .race-week-session-status,
+  .race-week-page .race-week-prediction-modes,
+  .race-week-page .race-week-environment__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .race-week-page .race-week-session-status__item,
+  .race-week-page .race-week-prediction-modes__link {
+    min-height: 0;
+  }
 }

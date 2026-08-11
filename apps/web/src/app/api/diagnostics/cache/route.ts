@@ -13,13 +13,13 @@ export const dynamic = "force-dynamic";
 // headers by hand.
 const PROBED_ROUTES = [
   { path: "/", expect: "cacheable" as const },
-  { path: "/predictions", expect: "cacheable" as const },
+  { path: "/raceweek", expect: "cacheable" as const },
   { path: "/race-analysis", expect: "cacheable" as const },
   { path: "/championship", expect: "cacheable" as const },
   { path: "/versus", expect: "cacheable" as const },
   { path: "/lab", expect: "cacheable" as const },
   { path: "/fantasy", expect: "cacheable" as const },
-  { path: "/predictions/fp2", expect: "cacheable" as const },
+  { path: "/raceweek/fp2", expect: "cacheable" as const },
   // /picks is user-scoped (entries, scores), so it must stay out of the CDN.
   { path: "/picks", expect: "private" as const },
   { path: "/account", expect: "private" as const },

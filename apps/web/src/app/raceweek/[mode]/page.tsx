@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { PredictionsView } from "../predictions-view";
+import { RaceWeekView } from "../race-week-view";
 import type { RaceWeekPredictionModeId } from "@/lib/server/race-week-product";
 import { makeMetadata } from "@/lib/seo";
 
@@ -18,17 +18,17 @@ export async function generateMetadata({ params }: { params: Promise<{ mode: str
   const { mode } = await params;
   const label = modeLabel[mode] ?? mode.toUpperCase();
   return makeMetadata({
-    title: `Race Week Predictions after ${label}`,
-    description: `Formula 1 race-week predictions updated with ${label} practice signals: qualifying projections, weather risk, session readiness, and signal quality.`,
-    path: `/predictions/${mode}`,
-    keywords: ["F1 predictions", "Formula 1 race week", `F1 ${label} analysis`],
+    title: `Race Week after ${label}`,
+    description: `Formula 1 race week read updated with ${label} practice signals: qualifying projections, weather risk, session readiness, and signal quality.`,
+    path: `/raceweek/${mode}`,
+    keywords: ["F1 race week", "Formula 1 practice analysis", `F1 ${label} analysis`],
   });
 }
 
-export default async function PredictionsModePage({ params }: { params: Promise<{ mode: string }> }) {
+export default async function RaceWeekModePage({ params }: { params: Promise<{ mode: string }> }) {
   const { mode } = await params;
   if (!practiceModes.includes(mode as RaceWeekPredictionModeId)) {
     notFound();
   }
-  return <PredictionsView mode={mode as RaceWeekPredictionModeId} />;
+  return <RaceWeekView mode={mode as RaceWeekPredictionModeId} />;
 }

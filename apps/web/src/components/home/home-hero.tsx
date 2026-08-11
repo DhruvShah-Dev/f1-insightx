@@ -119,7 +119,7 @@ export function HomeHero({ nextRace, circuitName, visualTeamId }: HomeHeroProps)
                 <span>Explore race analysis</span>
                 <span aria-hidden="true">→</span>
               </Link>
-              <Link href="/predictions" className="hero__cta hero__cta--secondary">
+              <Link href="/raceweek" className="hero__cta hero__cta--secondary">
                 <span>Open race week</span>
                 <span aria-hidden="true">→</span>
               </Link>

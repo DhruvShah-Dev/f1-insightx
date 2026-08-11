@@ -41,7 +41,7 @@ export default async function PicksPage() {
           title="Picks are being prepared."
           message="Next race soon."
           tone="notice"
-          actionHref="/predictions"
+          actionHref="/raceweek"
           actionLabel="Race Week"
         />
         <SiteFooter />

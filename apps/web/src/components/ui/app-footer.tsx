@@ -12,7 +12,7 @@ export function AppFooter() {
       <div className="app-footer__groups">
         <nav className="app-footer__links" aria-label="Sections">
           <span className="app-footer__group-label">Sections</span>
-          <Link href="/predictions">Race Week</Link>
+          <Link href="/raceweek">Race Week</Link>
           <Link href="/race-analysis">Race Analysis</Link>
           <Link href="/championship">Championship</Link>
         </nav>

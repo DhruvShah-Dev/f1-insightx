@@ -60,10 +60,22 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        source: "/predictions",
+        source: "/raceweek",
         has: [{ type: "query", key: "mode", value: "(?<mode>fp1|fp2|fp3)" }],
-        destination: "/predictions/:mode",
+        destination: "/raceweek/:mode",
         permanent: false,
+      },
+      // The race-week product used to live at /predictions. Race Week is the
+      // name used in the navigation and on the page, so the URL now matches it.
+      {
+        source: "/predictions",
+        destination: "/raceweek",
+        permanent: true,
+      },
+      {
+        source: "/predictions/:mode",
+        destination: "/raceweek/:mode",
+        permanent: true,
       },
       {
         source: "/achievements",

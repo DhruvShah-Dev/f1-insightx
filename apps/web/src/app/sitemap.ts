@@ -6,7 +6,7 @@ import { listChampionshipSeasons } from "@/lib/server/standings";
 
 const staticRoutes = [
   { path: "/", priority: 1 },
-  { path: "/predictions", priority: 0.95 },
+  { path: "/raceweek", priority: 0.95 },
   { path: "/race-analysis", priority: 0.9 },
   { path: "/championship", priority: 0.85 },
   { path: "/lab", priority: 0.7 },

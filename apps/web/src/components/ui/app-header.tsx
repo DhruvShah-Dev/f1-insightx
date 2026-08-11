@@ -9,7 +9,7 @@ type AppHeaderProps = {
 };
 
 const navItems = [
-  { href: "/predictions", label: "Race Week" },
+  { href: "/raceweek", label: "Race Week" },
   { href: "/picks", label: "Picks" },
   { href: "/race-analysis", label: "Race Analysis" },
   { href: "/championship", label: "Championship" },
