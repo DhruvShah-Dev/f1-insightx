@@ -18,6 +18,7 @@ import {
   type RaceAnalysisPositionPoint,
   type RaceAnalysisStint,
 } from "@/lib/server/race-analysis-product";
+import { BreadcrumbStructuredData } from "@/components/seo/structured-data";
 import { makeMetadata } from "@/lib/seo";
 import { getCircuitAsset, getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMetaByCode, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
@@ -629,6 +630,12 @@ export default async function RaceAnalysisDetailPage({ params }: RaceAnalysisDet
 
   return (
     <main className="race-analysis-page race-cinema-page race-cinema-detail" style={raceStyle(race)}>
+      <BreadcrumbStructuredData
+        items={[
+          { name: "Race analysis", path: "/race-analysis" },
+          { name: race.raceName, path: `/race-analysis/${race.id}` },
+        ]}
+      />
       {await RaceHero({ race })}
       <div className="race-cinema-workspace">
         <RaceAnalysisRail />

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { listRaceAnalysisIndex } from "@/lib/server/race-analysis-product";
 import { listCompletedRaceHistory } from "@/lib/server/race-history";
+import { listChampionshipSeasons } from "@/lib/server/standings";
 
 const staticRoutes = [
   { path: "/", priority: 1 },
@@ -15,32 +16,45 @@ const staticRoutes = [
   { path: "/cookies", priority: 0.3 },
 ];
 
-function entry(path: string, priority: number, lastModified = new Date()): MetadataRoute.Sitemap[number] {
+// `lastModified` is only emitted when we have a page-specific timestamp for the
+// content (a race date). Stamping every entry with the build time tells crawlers
+// the whole site changed on every deploy, which makes the signal worthless.
+function entry(path: string, priority: number, lastModified?: Date): MetadataRoute.Sitemap[number] {
   return {
     url: absoluteUrl(path),
-    lastModified,
+    ...(lastModified ? { lastModified } : {}),
     changeFrequency: priority >= 0.9 ? "daily" : priority >= 0.7 ? "weekly" : "monthly",
     priority,
   };
+}
+
+function raceDate(value: string | null | undefined) {
+  if (!value) return undefined;
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? undefined : parsed;
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = staticRoutes.map((route) => entry(route.path, route.priority));
 
   try {
+    // Season variants are prerendered path segments, so they belong in the sitemap.
+    const seasons = await listChampionshipSeasons();
+    routes.push(...seasons.slice(1).map((season) => entry(`/championship/${season}`, 0.6)));
+  } catch {
+    // The current-season page above still covers standings discovery.
+  }
+
+  try {
     const races = await listRaceAnalysisIndex();
-    routes.push(
-      ...races.map((race) => entry(`/race-analysis/${race.id}`, 0.72, race.raceDate ? new Date(race.raceDate) : new Date())),
-    );
+    routes.push(...races.map((race) => entry(`/race-analysis/${race.id}`, 0.72, raceDate(race.raceDate))));
   } catch {
     // Keep the sitemap available even when generated race-analysis data is absent.
   }
 
   try {
     const raceHistory = await listCompletedRaceHistory(50);
-    routes.push(
-      ...raceHistory.map((race) => entry(`/races/${race.id}`, 0.62, race.raceDate ? new Date(race.raceDate) : new Date())),
-    );
+    routes.push(...raceHistory.map((race) => entry(`/races/${race.id}`, 0.62, raceDate(race.raceDate))));
   } catch {
     // Static routes still provide useful discovery.
   }

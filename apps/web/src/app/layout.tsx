@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
 import { HomeAccountEntry } from "@/components/account/home-account-entry";
 import { CookieConsent } from "@/components/legal/cookie-consent";
+import { DataFreshnessBanner } from "@/components/ui/data-freshness-banner";
 import { RootStructuredData } from "@/components/seo/structured-data";
 import { AppHeader } from "@/components/ui/app-header";
 import { getServerEnv } from "@/lib/env";
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
 // `Cache-Control: private, no-store` and re-rendered it per request.
 // Auth state is resolved in the browser by <HomeAccountEntry />, which already
 // subscribes to onAuthStateChange and fetches the profile, so nothing is lost.
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -70,6 +71,7 @@ export default function RootLayout({
             />
           )}
         />
+        <DataFreshnessBanner />
         <RootStructuredData />
         {children}
         <CookieConsent />

@@ -675,7 +675,23 @@ async function buildProductFromSupabase(): Promise<RaceWeekProduct | null> {
     latestCompletedRace = mapRaceRef(latestRaceRow, circuitMap.get(latestRaceRow.circuit_id) ?? null);
   }
   const weatherRow = weatherResult.error ? null : weatherResult.data;
-  const sessionPaceRows = sessionPaceResult.error ? [] : ((sessionPaceResult.data ?? []) as SessionPaceSummaryRow[]);
+  let sessionPaceRows = sessionPaceResult.error ? [] : ((sessionPaceResult.data ?? []) as SessionPaceSummaryRow[]);
+  if (sessionPaceRows.length === 0) {
+    // public.session_pace_summary sits behind a foreign key to public.sessions,
+    // which is loaded from data/canonical_fastf1/sessions.csv - a FastF1 output
+    // that is not committed - so in production the table stays empty and the
+    // session-status strip silently reported no practice or qualifying data at
+    // all. The pace layer itself IS committed, so read the same snapshot the CSV
+    // build path uses rather than dropping the panel.
+    try {
+      const csvSessionPaceRows = await readCsvFile<SessionPaceSummaryRow>("raceWeek.sessionPaceSummary");
+      sessionPaceRows = csvSessionPaceRows.filter(
+        (row) => row.race_id === overviewRow.race_id && ["FP1", "FP2", "FP3", "Q"].includes(row.session_code),
+      );
+    } catch {
+      sessionPaceRows = [];
+    }
+  }
   const qualifyingPredictionRows = qualifyingPredictionResult.error ? [] : ((qualifyingPredictionResult.data ?? []) as QualifyingPredictionRow[]);
   const sessionStatus = buildSessionStatus(sessionPaceRows, overviewRow.race_id);
   const qualifyingPrediction = mapQualifyingPredictionRows(qualifyingPredictionRows, overviewRow.race_id);

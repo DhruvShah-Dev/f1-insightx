@@ -5627,12 +5627,21 @@ select optgroup {
 /* Reserve room for the consent overlay while it is on screen (see
    cookie-consent.tsx) so it never permanently covers the last controls on the
    page. Removed again the moment a choice is stored. */
-[data-cookie-consent="visible"] body {
+[data-cookie-consent="banner"] body {
   padding-bottom: clamp(9rem, 20vh, 15rem);
 }
 
+[data-cookie-consent="collapsed"] body {
+  padding-bottom: 4.5rem;
+}
+
+/* The preferences view is modal, so freeze the page behind it. */
+[data-cookie-consent="preferences"] body {
+  overflow: hidden;
+}
+
 @media (max-width: 720px) {
-  [data-cookie-consent="visible"] body {
+  [data-cookie-consent="banner"] body {
     padding-bottom: clamp(13rem, 42vh, 24rem);
   }
 }
@@ -10201,4 +10210,120 @@ img {
   .account-signout {
     width: 100%;
   }
+}
+
+/* Collapsed consent state: a pair of small pills instead of a full-width panel,
+   so the notice stays reachable without covering page controls. */
+.cookie-consent--collapsed {
+  display: flex;
+  gap: 0.4rem;
+  width: auto;
+}
+
+.cookie-consent__pill {
+  border: 1px solid rgba(247, 247, 244, 0.2);
+  background: rgba(8, 11, 15, 0.94);
+  color: #f7f7f4;
+  cursor: pointer;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.7rem;
+  text-transform: uppercase;
+}
+
+.cookie-consent__pill:hover,
+.cookie-consent__pill:focus-visible {
+  border-color: rgba(247, 247, 244, 0.45);
+}
+
+.cookie-consent__pill--primary {
+  border-color: rgba(225, 6, 0, 0.6);
+  background: rgba(225, 6, 0, 0.9);
+}
+
+.cookie-consent__collapse {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.6rem;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+}
+
+.cookie-consent__collapse:hover,
+.cookie-consent__collapse:focus-visible {
+  color: #f7f7f4;
+}
+
+.cookie-consent--banner .cookie-consent__panel {
+  position: relative;
+}
+
+/* Site-wide data freshness bar (see data-freshness-banner.tsx). */
+.data-freshness {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.9rem;
+  border-bottom: 1px solid rgba(247, 247, 244, 0.12);
+  background: rgba(8, 11, 15, 0.86);
+  color: #f7f7f4;
+  padding: 0.5rem clamp(0.9rem, 3vw, 2rem);
+}
+
+.data-freshness--warning {
+  border-bottom-color: rgba(255, 176, 32, 0.5);
+  background: linear-gradient(90deg, rgba(255, 176, 32, 0.16), rgba(8, 11, 15, 0.9) 45%);
+}
+
+.data-freshness__label {
+  margin: 0;
+  color: var(--accent-red);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.data-freshness__text {
+  margin: 0;
+  flex: 1 1 20rem;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.data-freshness__text strong {
+  color: #f7f7f4;
+}
+
+.data-freshness__note {
+  color: #ffcc66;
+}
+
+.data-freshness__actions {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.data-freshness__link,
+.data-freshness__dismiss {
+  border: 0;
+  background: transparent;
+  color: #f7f7f4;
+  cursor: pointer;
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  text-transform: uppercase;
 }

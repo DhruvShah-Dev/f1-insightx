@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { listChampionshipSeasons } from "@/lib/server/standings";
+import { BreadcrumbStructuredData } from "@/components/seo/structured-data";
 import { makeMetadata } from "@/lib/seo";
 import { ChampionshipView } from "../page";
 
@@ -43,5 +44,15 @@ export default async function ChampionshipSeasonPage({ params }: ChampionshipSea
     notFound();
   }
 
-  return <ChampionshipView season={parsed} />;
+  return (
+    <>
+      <BreadcrumbStructuredData
+        items={[
+          { name: "Championship", path: "/championship" },
+          { name: `${parsed} standings`, path: `/championship/${parsed}` },
+        ]}
+      />
+      <ChampionshipView season={parsed} />
+    </>
+  );
 }

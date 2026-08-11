@@ -6,6 +6,7 @@ import { TeamBadge } from "@/components/ui/team-badge";
 import { logServerError } from "@/lib/errors/logger";
 import { getRaceDetail } from "@/lib/server/race-history";
 import { makeMetadata } from "@/lib/seo";
+import { BreadcrumbStructuredData } from "@/components/seo/structured-data";
 
 // Public analytics page: the offline pipeline refreshes source data at most a few
 // times per race weekend, so serve a cached render and revalidate in the
@@ -59,6 +60,12 @@ export default async function RaceDetailPage({ params }: Props) {
 
   return (
     <main className="subpage-shell race-detail-layout">
+      <BreadcrumbStructuredData
+        items={[
+          { name: "Race analysis", path: "/race-analysis" },
+          { name: detail.displayName, path: `/races/${raceId}` },
+        ]}
+      />
       <CircuitHeroPanel detail={detail} />
 
       <section className="race-detail-hero">

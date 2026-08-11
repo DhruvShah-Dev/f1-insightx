@@ -9,7 +9,9 @@ import {
   writeCookieConsent,
 } from "@/lib/legal/consent";
 
-type ConsentView = "hidden" | "banner" | "preferences";
+type ConsentView = "hidden" | "banner" | "collapsed" | "preferences";
+
+const COLLAPSE_SCROLL_PX = 400;
 
 export function CookieConsent() {
   const [view, setView] = useState<ConsentView>("hidden");
@@ -50,11 +52,29 @@ export function CookieConsent() {
     }
   }, [view]);
 
+  // Reading the page should never require answering the banner first. Once the
+  // visitor scrolls into the content, the full panel folds down to a small
+  // "Cookies" pill that keeps the choice available without covering controls.
+  useEffect(() => {
+    if (view !== "banner") return;
+
+    const handleScroll = () => {
+      if (window.scrollY > COLLAPSE_SCROLL_PX) {
+        setView("collapsed");
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [view]);
+
   // The consent panel is fixed to the bottom-right corner and stays there until
   // a choice is made, so it sat on top of whatever the page renders last -
   // pagination, year selectors, footer links - with no way to scroll clear of
-  // it. Flagging the visible state on <html> lets the layout reserve matching
-  // bottom space instead of letting the overlay eat real controls.
+  // it. Flagging the current state on <html> lets the layout reserve matching
+  // bottom space only while the large panel is up, and lock scrolling while the
+  // preferences dialog is modal.
   useEffect(() => {
     const root = document.documentElement;
     if (!mounted || view === "hidden") {
@@ -62,7 +82,7 @@ export function CookieConsent() {
       return;
     }
 
-    root.setAttribute("data-cookie-consent", "visible");
+    root.setAttribute("data-cookie-consent", view);
     return () => {
       root.removeAttribute("data-cookie-consent");
     };
@@ -84,7 +104,7 @@ export function CookieConsent() {
   };
 
   const returnToBanner = () => {
-    setView(storedChoice ? "hidden" : "banner");
+    setView(storedChoice ? "hidden" : "collapsed");
     window.requestAnimationFrame(() => {
       if (storedChoice) returnFocusRef.current?.focus();
       else manageRef.current?.focus();
@@ -115,6 +135,28 @@ export function CookieConsent() {
     }
   };
 
+  if (view === "collapsed") {
+    return (
+      <div className="cookie-consent cookie-consent--collapsed" role="region" aria-label="Cookies and terms">
+        <button
+          className="cookie-consent__pill"
+          type="button"
+          onClick={() => setView("banner")}
+          aria-expanded={false}
+        >
+          Cookies and terms
+        </button>
+        <button
+          className="cookie-consent__pill cookie-consent__pill--primary"
+          type="button"
+          onClick={() => dismissWithChoice("accepted")}
+        >
+          Accept
+        </button>
+      </div>
+    );
+  }
+
   const isPreferences = view === "preferences";
 
   return (
@@ -128,6 +170,14 @@ export function CookieConsent() {
       <div className="cookie-consent__panel">
         {view === "banner" ? (
           <>
+            <button
+              className="cookie-consent__collapse"
+              type="button"
+              onClick={() => setView("collapsed")}
+              aria-label="Minimise cookie notice"
+            >
+              Minimise
+            </button>
             <div className="cookie-consent__copy">
               <p className="cookie-consent__eyebrow">Privacy and terms</p>
               <h2 id="cookie-consent-title" className="cookie-consent__title">Cookies and Terms</h2>
