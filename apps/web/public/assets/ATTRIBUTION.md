@@ -83,17 +83,18 @@ These files are stored locally so the standings cards do not depend on runtime h
 - `2026/fallback/driver-placeholder.svg`
   - Same local placeholder, staged in the current-season fallback folder for manifest-driven image resolution
 
-## Team Logo Variants
+## Team Logos
 
-Stored under:
+Stored under `public/assets/teams/logos` as a single canonical set:
 
-- `public/assets/teams/logos/dark`
-- `public/assets/teams/logos/light`
-- `public/assets/teams/logos/mono`
+- One file per team: `<team-slug>.png`
+- Transparent background, monochrome white artwork, uniform 512x256 canvas
+- Designed to sit directly on dark surfaces with no plate or backing panel
 
-Current variant folders are populated from the existing local SVG logo set so callers can resolve a stable path for dark surfaces, light plates, and compact mono-style slots. The dark-surface variants are exported as transparent PNGs with black/dark fills lifted to high-contrast team colors for black backgrounds. Replace individual files with hand-tuned variants when brand-safe source assets are available.
-
-Prefer SVG for team identity. Use PNG only for raster-only source logos or email/social contexts where SVG support is not acceptable.
+Every constructor in the manifest has an entry, so no team falls back to a
+text-only badge. Regenerate a logo by replacing the PNG with the same
+dimensions and white-on-transparent treatment; do not reintroduce per-theme
+variant folders or mixed SVG/PNG sources.
 
 ## Product Logo Variants
 

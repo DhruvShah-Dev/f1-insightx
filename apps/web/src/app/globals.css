@@ -1760,19 +1760,19 @@ select optgroup {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  background: var(--surface-raised);
+  width: 4.6rem;
+  height: 2.4rem;
+  background: transparent;
 }
 
 .constructor-standing-card__logo-plate {
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(244, 246, 248, 0.9);
-  box-shadow: 0 0.9rem 2rem rgba(0, 0, 0, 0.3);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .constructor-standing-card__logo {
-  padding: 0.45rem;
+  padding: 0;
 }
 
 .team-badge,
@@ -2121,20 +2121,24 @@ select optgroup {
 }
 
 .constructor-standing-card__logo-plate {
-  width: clamp(4.8rem, 7vw, 6rem);
-  height: clamp(4.8rem, 7vw, 6rem);
-  border-color: color-mix(in srgb, var(--team-secondary) 48%, rgba(255, 255, 255, 0.3));
-  background: rgba(244, 246, 248, 0.94);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.34);
+  width: clamp(5.4rem, 8vw, 7rem);
+  height: clamp(2.9rem, 4.3vw, 3.8rem);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .constructor-standing-card__logo-plate--dark,
-.constructor-standing-card__logo-plate--default {
-  background: #090c12;
+.constructor-standing-card__logo-plate--default,
+.constructor-standing-card__logo-plate--light,
+.constructor-standing-card__logo-plate--gold {
+  background: transparent;
 }
 
-.constructor-standing-card__logo-plate--gold {
-  background: #f5c542;
+/* Team logos are transparent white PNGs, so they sit directly on the dark card
+   with a soft shadow instead of a plate. */
+.constructor-standing-card__logo {
+  filter: drop-shadow(0 0.35rem 0.9rem rgba(0, 0, 0, 0.65));
 }
 
 .constructor-standing-card__body,
@@ -6839,14 +6843,15 @@ img {
 .race-analysis-page .race-cinema-driver-stack__logo-plate {
   display: grid;
   place-items: center;
-  background: #f4f6f8;
+  background: transparent;
   object-fit: contain;
+  filter: drop-shadow(0 0.35rem 0.9rem rgba(0, 0, 0, 0.65));
 }
 
 .race-analysis-page .race-cinema-latest-panel__logo {
-  width: 4.5rem;
-  height: 4.5rem;
-  padding: 0.55rem;
+  width: 6rem;
+  height: 3.2rem;
+  padding: 0;
 }
 
 .race-analysis-page .race-cinema-archive-tile__logo {
@@ -7190,9 +7195,9 @@ img {
 }
 
 .race-analysis-page .race-cinema-hero__logo {
-  width: 5.5rem;
-  height: 5.5rem;
-  padding: 0.8rem;
+  width: 7rem;
+  height: 3.7rem;
+  padding: 0;
 }
 
 .race-analysis-page .race-cinema-hero__meta {
@@ -7784,13 +7789,13 @@ img {
 }
 
 .race-analysis-page .race-cinema-driver-stack__logo-plate {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.45rem;
+  width: 4.6rem;
+  height: 2.4rem;
+  padding: 0;
 }
 
 .race-analysis-page .race-cinema-driver-stack__logo-plate--light {
-  background: #ffffff;
+  background: transparent;
 }
 
 .race-analysis-page .race-cinema-confidence-meter {
@@ -8544,8 +8549,8 @@ img {
   }
 
   .constructor-standing-card__logo-plate {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 5rem;
+    height: 2.7rem;
   }
 
   .constructor-standing-card__body,
@@ -9268,16 +9273,17 @@ img {
 .champ-cinema-page .champ-cinema-constructor-grid__logo,
 .champ-cinema-page .champ-cinema-constructor-pulse__logo {
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.9);
+  background: transparent;
+  filter: drop-shadow(0 0.35rem 0.9rem rgba(0, 0, 0, 0.65));
 }
 
 .champ-cinema-page .champ-cinema-leader-panel__logo {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
-  width: 4.5rem;
-  height: 4.5rem;
-  padding: 0.65rem;
+  width: 6rem;
+  height: 3.2rem;
+  padding: 0;
 }
 
 .champ-cinema-page .champ-cinema-workspace {
@@ -9583,9 +9589,9 @@ img {
 }
 
 .champ-cinema-page .champ-cinema-driver-table__logo {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.35rem;
+  width: 4.6rem;
+  height: 2.4rem;
+  padding: 0;
 }
 
 .champ-cinema-page .champ-cinema-driver-table em,
@@ -9622,9 +9628,9 @@ img {
   position: absolute;
   left: 1rem;
   top: 1rem;
-  width: 4.2rem;
-  height: 4.2rem;
-  padding: 0.55rem;
+  width: 6rem;
+  height: 3.2rem;
+  padding: 0;
 }
 
 .champ-cinema-page .champ-cinema-constructor-grid__body {

@@ -113,7 +113,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#00d2be",
     secondary: "#7ef5e7",
     accent: "#d9dde3",
-    badgeAssetPath: "/assets/teams/logos/mercedes.svg",
+    badgeAssetPath: "/assets/teams/logos/mercedes.png",
     badgePlate: "dark",
     badgeContrastColor: "#d9dde3",
     carImagePath: "/assets/teams/2026/cars/mercedes.webp",
@@ -128,8 +128,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#dc0000",
     secondary: "#ffda59",
     accent: "#ffffff",
-    badgeAssetPath: "/assets/teams/logos/ferrari.svg",
-    badgePlate: "gold",
+    badgeAssetPath: "/assets/teams/logos/ferrari.png",
+    badgePlate: "dark",
     badgeContrastColor: "#ffda59",
     carImagePath: "/assets/teams/2026/cars/ferrari.webp",
     carImageAlt: "Scuderia Ferrari 2026 Formula 1 car",
@@ -143,8 +143,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#ff8700",
     secondary: "#89f0ff",
     accent: "#ffffff",
-    badgeAssetPath: "/assets/teams/logos/mclaren.svg",
-    badgePlate: "light",
+    badgeAssetPath: "/assets/teams/logos/mclaren.png",
+    badgePlate: "dark",
     badgeContrastColor: "#ff8700",
     carImagePath: "/assets/teams/2026/cars/mclaren.webp",
     carImageAlt: "McLaren 2026 Formula 1 car",
@@ -158,8 +158,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#8f97a3",
     secondary: "#ff3b30",
     accent: "#ffffff",
-    badgeAssetPath: "/assets/teams/logos/haas.svg",
-    badgePlate: "light",
+    badgeAssetPath: "/assets/teams/logos/haas.png",
+    badgePlate: "dark",
     badgeContrastColor: "#ffffff",
     carImagePath: "/assets/teams/2026/cars/haas.webp",
     carImageAlt: "Haas F1 Team 2026 Formula 1 car",
@@ -173,7 +173,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#1e41ff",
     secondary: "#f5c542",
     accent: "#dc143c",
-    badgeAssetPath: "/assets/teams/logos/red-bull.svg",
+    badgeAssetPath: "/assets/teams/logos/red-bull.png",
     badgePlate: "dark",
     badgeContrastColor: "#f5c542",
     carImagePath: "/assets/teams/2026/cars/red-bull.webp",
@@ -188,7 +188,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#4d63ff",
     secondary: "#d7dce4",
     accent: "#ffffff",
-    badgeAssetPath: null,
+    badgeAssetPath: "/assets/teams/logos/racing-bulls.png",
     badgePlate: "dark",
     badgeContrastColor: "#d7dce4",
     carImagePath: "/assets/teams/2026/cars/racing-bulls.webp",
@@ -203,7 +203,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#0090ff",
     secondary: "#ff4db8",
     accent: "#dfe6ee",
-    badgeAssetPath: null,
+    badgeAssetPath: "/assets/teams/logos/alpine.png",
     badgePlate: "dark",
     badgeContrastColor: "#dfe6ee",
     carImagePath: "/assets/teams/2026/cars/alpine.webp",
@@ -218,8 +218,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#d10000",
     secondary: "#eceff4",
     accent: "#ffffff",
-    badgeAssetPath: "/assets/teams/logos/audi.svg",
-    badgePlate: "light",
+    badgeAssetPath: "/assets/teams/logos/audi.png",
+    badgePlate: "dark",
     badgeContrastColor: "#eceff4",
     carImagePath: "/assets/teams/2026/cars/audi.webp",
     carImageAlt: "Audi 2026 Formula 1 car",
@@ -233,8 +233,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#005aff",
     secondary: "#8fbeff",
     accent: "#ffffff",
-    badgeAssetPath: "/assets/teams/logos/williams.svg",
-    badgePlate: "light",
+    badgeAssetPath: "/assets/teams/logos/williams.png",
+    badgePlate: "dark",
     badgeContrastColor: "#8fbeff",
     carImagePath: "/assets/teams/2026/cars/williams.webp",
     carImageAlt: "Williams Racing 2026 Formula 1 car",
@@ -248,8 +248,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#f5f7fb",
     secondary: "#131922",
     accent: "#8cb4ff",
-    badgeAssetPath: "/assets/teams/logos/cadillac.svg",
-    badgePlate: "light",
+    badgeAssetPath: "/assets/teams/logos/cadillac.png",
+    badgePlate: "dark",
     badgeContrastColor: "#f5f7fb",
     carImagePath: "/assets/teams/2026/cars/cadillac.webp",
     carImageAlt: "Cadillac 2026 Formula 1 car",
@@ -263,8 +263,8 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#006f62",
     secondary: "#7ad7c8",
     accent: "#ced4db",
-    badgeAssetPath: "/assets/teams/logos/aston-martin.svg",
-    badgePlate: "light",
+    badgeAssetPath: "/assets/teams/logos/aston-martin.png",
+    badgePlate: "dark",
     badgeContrastColor: "#7ad7c8",
     carImagePath: "/assets/teams/2026/cars/aston-martin.webp",
     carImageAlt: "Aston Martin Aramco 2026 Formula 1 car",
@@ -278,7 +278,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#52e252",
     secondary: "#d8ff8c",
     accent: "#101410",
-    badgeAssetPath: null,
+    badgeAssetPath: "/assets/teams/logos/sauber.png",
     carImagePath: null,
     carImageAlt: "Sauber Formula 1 team media placeholder",
     fallbackImagePath: sharedTeamFallback,
@@ -290,7 +290,7 @@ const teamAssetMap: Record<string, TeamAsset> = {
     primary: "#8b0000",
     secondary: "#f0f0f0",
     accent: "#ffffff",
-    badgeAssetPath: null,
+    badgeAssetPath: "/assets/teams/logos/alfa.png",
     carImagePath: null,
     carImageAlt: "Alfa Romeo Formula 1 team media placeholder",
     fallbackImagePath: sharedTeamFallback,
@@ -686,19 +686,16 @@ function resolveTeamLogoPaths(badgeAssetPath: string | null): Record<TeamLogoThe
     return { dark: badgeAssetPath, light: badgeAssetPath, mono: badgeAssetPath };
   }
 
-  return {
-    dark: `/assets/teams/logos/dark/${filename.replace(/\.svg$/i, ".png")}`,
-    light: `/assets/teams/logos/light/${filename}`,
-    mono: `/assets/teams/logos/mono/${filename}`,
-  };
+  // Single canonical asset per team: one transparent white PNG that reads on any
+  // dark surface. Theme variants are kept in the type only for call-site stability.
+  const canonical = `/assets/teams/logos/${filename.replace(/\.svg$/i, ".png")}`;
+
+  return { dark: canonical, light: canonical, mono: canonical };
 }
 
-function logoPlateToPreference(plate: TeamAsset["badgePlate"]): TeamAsset["preferredLogoPlate"] {
-  if (plate === "light" || plate === "gold") {
-    return "light";
-  }
-
-  return plate === "dark" ? "dark" : "transparent";
+function logoPlateToPreference(_plate: TeamAsset["badgePlate"]): TeamAsset["preferredLogoPlate"] {
+  // Logos are transparent white PNGs, so they never need a plate behind them.
+  return "transparent";
 }
 
 export function getCircuitAsset(circuitId: string | null | undefined): CircuitAsset {
