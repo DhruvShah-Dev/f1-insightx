@@ -574,7 +574,8 @@ select optgroup {
 .app-footer {
   width: min(100% - 2rem, 86rem);
   margin: clamp(2rem, 4vw, 4rem) auto 0;
-  padding: 1.4rem 0 2rem;
+  /* Extra bottom room so the floating consent pill never covers footer links. */
+  padding: 1.4rem 0 5rem;
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
@@ -599,11 +600,24 @@ select optgroup {
   color: var(--text-soft);
 }
 
-.app-footer__links {
+.app-footer__groups {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 0.85rem;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.app-footer__links {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+}
+
+.app-footer__group-label {
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .app-footer__links a:hover {
@@ -6698,9 +6712,9 @@ img {
 
 .race-analysis-page .race-cinema-archive-hero {
   width: min(100% - 2rem, 96rem);
-  min-height: clamp(31rem, 68svh, 47rem);
+  min-height: clamp(22rem, 44svh, 31rem);
   margin: 1rem auto 0;
-  padding: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1.1rem, 2.4vw, 1.9rem);
   grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.4fr);
   align-items: end;
   border-bottom: 0.35rem solid var(--race-team-primary);
@@ -6734,13 +6748,13 @@ img {
 
 .race-analysis-page .race-cinema-archive-hero__copy h1,
 .race-analysis-page .race-cinema-hero__copy h1 {
-  max-width: 9ch;
+  max-width: 12ch;
   margin: 0;
   color: var(--race-ink);
-  font-size: clamp(4.2rem, 10vw, 10.2rem);
+  font-size: clamp(3.2rem, 6.6vw, 6.6rem);
   font-style: italic;
   font-weight: 800;
-  line-height: 0.78;
+  line-height: 0.82;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -6752,22 +6766,26 @@ img {
 }
 
 .race-analysis-page .race-cinema-archive-hero__meta {
-  grid-template-columns: repeat(3, minmax(0, max-content));
-  gap: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: none;
+  gap: 0.4rem;
 }
 
 .race-analysis-page .race-cinema-archive-hero__meta strong,
 .race-analysis-page .race-cinema-hero__meta strong {
-  min-height: 2.5rem;
+  min-height: 2rem;
   display: inline-flex;
   align-items: center;
+  padding: 0 0.6rem;
   border-color: var(--race-line-strong);
   background: #0d1218;
   color: var(--race-ink);
   font-family: var(--font-plex-mono), Consolas, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  /* Dates render as "26 Jul 2026" site-wide — do not force caps here. */
+  text-transform: none;
 }
 
 .race-analysis-page .race-cinema-latest-panel,
@@ -6793,6 +6811,26 @@ img {
   grid-template-columns: 4.5rem minmax(0, 1fr);
   gap: 0.9rem;
   align-items: center;
+}
+
+.race-analysis-page .race-cinema-latest-panel__identity {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.race-analysis-page .race-cinema-latest-panel__cta,
+.race-analysis-page .race-cinema-archive-tile__cta {
+  color: var(--race-team-secondary);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.race-analysis-page .race-cinema-latest-panel:hover .race-cinema-latest-panel__cta,
+.race-analysis-page .race-cinema-archive-tile:hover .race-cinema-archive-tile__cta {
+  color: var(--race-ink);
 }
 
 .race-analysis-page .race-cinema-latest-panel__logo,
@@ -6855,6 +6893,12 @@ img {
 .race-analysis-page .race-cinema-command-strip__identity {
   display: grid;
   gap: 0.3rem;
+}
+
+.race-analysis-page .race-cinema-command-strip__legend {
+  margin: 0;
+  color: var(--race-muted);
+  font-size: 0.8rem;
 }
 
 .race-analysis-page .race-cinema-season-switcher {
@@ -7018,6 +7062,8 @@ img {
   min-width: 0;
   padding-top: 0.55rem;
   border-top: 1px solid var(--race-line);
+  /* Keeps Podium/Strategy rows on a shared baseline even when one value wraps. */
+  align-content: start;
 }
 
 .race-analysis-page .race-cinema-archive-tile dt {
@@ -7030,6 +7076,7 @@ img {
 
 .race-analysis-page .race-cinema-archive-tile dd {
   margin: 0.15rem 0 0;
+  min-height: 2.1rem;
   color: var(--race-ink);
   font-family: var(--font-plex-mono), Consolas, monospace;
   font-size: 0.78rem;
@@ -7039,17 +7086,19 @@ img {
 .race-analysis-page .race-cinema-archive-tile__driver {
   position: relative;
   align-self: end;
-  min-height: 15rem;
+  min-height: 12rem;
   margin: 0.5rem 0.25rem 0 0;
+  /* Driver cut-outs must never bleed over the card title or its neighbours. */
+  overflow: hidden;
 }
 
 .race-analysis-page .race-cinema-archive-tile__driver::before {
   content: "";
   position: absolute;
-  inset: auto 10% 0;
-  height: 42%;
-  background: var(--race-team-primary);
-  opacity: 0.22;
+  inset: auto 0 0;
+  height: 55%;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--race-team-primary) 26%, transparent));
+  opacity: 0.9;
 }
 
 .race-analysis-page .race-cinema-archive-tile__driver-image {
@@ -7066,8 +7115,8 @@ img {
 .race-analysis-page .race-cinema-archive-tile__winner {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 3.4rem minmax(0, 1fr);
-  gap: 0.25rem;
+  grid-template-columns: 3.4rem minmax(0, 1fr) auto;
+  gap: 0.7rem;
   align-items: center;
   margin: 0.75rem;
   padding: 0.55rem 0.7rem;
@@ -7075,8 +7124,10 @@ img {
   background: rgba(5, 6, 8, 0.86);
 }
 
-.race-analysis-page .race-cinema-archive-tile__winner .race-cinema-archive-tile__logo {
-  grid-row: span 2;
+.race-analysis-page .race-cinema-archive-tile__identity {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
 }
 
 .race-analysis-page .race-cinema-archive-tile__winner strong,
@@ -7813,7 +7864,20 @@ img {
   }
 
   .race-analysis-page .race-cinema-archive-hero__meta {
+    /* Inline chip row, not three full-width stacked boxes. */
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: none;
+  }
+
+  .race-analysis-page .race-cinema-command-strip {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .race-analysis-page .race-cinema-season-switcher {
+    justify-content: flex-start;
   }
 
   .race-analysis-page .race-cinema-section-rail {
@@ -7846,7 +7910,7 @@ img {
   }
 
   .race-analysis-page .race-cinema-archive-tile__driver {
-    min-height: 14rem;
+    min-height: 9rem;
     margin-inline: 1rem;
   }
 
@@ -8175,8 +8239,9 @@ img {
     flex-direction: column;
   }
 
-  .app-footer__links {
+  .app-footer__groups {
     justify-content: flex-start;
+    gap: 2rem;
   }
 
   .home-hero {
@@ -10289,6 +10354,14 @@ img {
   letter-spacing: 0.04em;
   padding: 0.5rem 0.7rem;
   text-transform: uppercase;
+  /* Recedes while reading, comes forward on intent. */
+  opacity: 0.72;
+  transition: opacity 140ms ease;
+}
+
+.cookie-consent--collapsed:hover .cookie-consent__pill,
+.cookie-consent__pill:focus-visible {
+  opacity: 1;
 }
 
 .cookie-consent__pill:hover,

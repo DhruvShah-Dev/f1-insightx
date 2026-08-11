@@ -21,6 +21,38 @@ function podiumLabel(podium: string[]) {
   return podium.length ? podium.join(" / ") : "Podium data";
 }
 
+const STOP_WORDS: Record<number, string> = {
+  0: "no-stop",
+  1: "one-stop",
+  2: "two-stop",
+  3: "three-stop",
+};
+
+/**
+ * Guard against implausible strategy labels (e.g. "5-stop majority" produced by
+ * a pit-detection artefact). Anything above three stops is reported as
+ * "multi-stop" rather than presented with false precision.
+ */
+function formatStrategyLabel(value: string | null | undefined) {
+  if (!value) return "Strategy view";
+  return value.replace(/\b(\d+)[-\s]?stop\b/i, (match, digits: string) => {
+    const stops = Number.parseInt(digits, 10);
+    if (!Number.isFinite(stops)) return match;
+    return STOP_WORDS[stops] ?? "multi-stop";
+  });
+}
+
+const TOP_CONFIDENCE_TIER = "Strong telemetry agreement";
+
+/** Only surface signals that deviate from the norm — repeating the same badge on every card is noise. */
+function exceptionSignals(race: RaceIndexItem) {
+  const signals: string[] = [];
+  const tier = getRaceAnalysisConfidenceTier(race.analysisQualityScore);
+  if (tier !== TOP_CONFIDENCE_TIER) signals.push(tier);
+  if (race.raceControlAvailable) signals.push("Track-status context");
+  return signals;
+}
+
 function formatRaceCardTitle(value: string) {
   return value
     .replace(/\s+Grand Prix$/i, " GP")
@@ -96,8 +128,8 @@ function RaceAnalysisIndexHero({ latestRace }: { latestRace: RaceIndexItem | und
               height={72}
             />
           ) : null}
-          <div>
-            <strong>{latestRace.winner}</strong>
+          <div className="race-cinema-latest-panel__identity">
+            <strong>{getCurrentDriverMetaByCode(latestRace.winner).displayName}</strong>
             <small>{latestRace.winnerTeam}</small>
           </div>
         </div>
@@ -108,13 +140,14 @@ function RaceAnalysisIndexHero({ latestRace }: { latestRace: RaceIndexItem | und
           </div>
           <div>
             <dt>Strategy</dt>
-            <dd>{latestRace.dominantStrategy || "Strategy view"}</dd>
+            <dd>{formatStrategyLabel(latestRace.dominantStrategy)}</dd>
           </div>
           <div>
             <dt>Quality</dt>
             <dd>{getRaceAnalysisConfidenceTier(latestRace.analysisQualityScore)}</dd>
           </div>
         </dl>
+        <span className="race-cinema-latest-panel__cta">View full report →</span>
       </Link>
     </section>
   );
@@ -125,6 +158,7 @@ async function RaceAnalysisArchiveCard({ race }: { race: RaceIndexItem }) {
   const logoPath = getTeamLogoPath(team, team.preferredLogoPlate === "light" ? "light" : "dark");
   const driverMeta = getCurrentDriverMetaByCode(race.winner);
   const circuit = getCircuitAsset(race.circuit);
+  const signals = exceptionSignals(race);
 
   return (
     <Link
@@ -146,34 +180,29 @@ async function RaceAnalysisArchiveCard({ race }: { race: RaceIndexItem }) {
       <div className="race-cinema-archive-tile__copy">
         <div className="race-cinema-archive-tile__topline">
           <span>{race.season} / Round {race.round}</span>
-          <span>{getRaceAnalysisConfidenceTier(race.analysisQualityScore)}</span>
         </div>
         <h2>{formatRaceCardTitle(race.raceName)}</h2>
         <p>{circuit.displayName} / {formatDate(race.raceDate)}</p>
         <dl>
           <div>
-            <dt>Winner</dt>
-            <dd>{race.winner}</dd>
+            <dt>Podium</dt>
+            <dd>{podiumLabel(race.podium)}</dd>
           </div>
           <div>
             <dt>Strategy</dt>
-            <dd>{race.dominantStrategy || "Strategy view"}</dd>
+            <dd>{formatStrategyLabel(race.dominantStrategy)}</dd>
           </div>
         </dl>
       </div>
-      <div className="race-cinema-archive-tile__driver">
+      <div className="race-cinema-archive-tile__driver" aria-hidden="true">
         <AssetImage
           src={getDriverImagePath(driverMeta, "body")}
           fallbackSrc={driverMeta.fallbackPhotoPath}
           alt=""
           className="race-cinema-archive-tile__driver-image"
           fill
-          sizes="(max-width: 760px) 48vw, 18rem"
-          style={{
-            objectFit: driverMeta.photoFit ?? "contain",
-            objectPosition: driverMeta.photoPosition,
-            transform: `translateX(${driverMeta.photoTranslateX ?? 0}px) scale(${driverMeta.photoScale ?? 1})`,
-          }}
+          sizes="(max-width: 760px) 40vw, 14rem"
+          style={{ objectFit: "contain", objectPosition: "center bottom" }}
         />
       </div>
       <div className="race-cinema-archive-tile__winner">
@@ -187,13 +216,19 @@ async function RaceAnalysisArchiveCard({ race }: { race: RaceIndexItem }) {
             height={54}
           />
         ) : null}
-        <strong>{driverMeta.displayName}</strong>
-        <small>{team.label}</small>
+        <div className="race-cinema-archive-tile__identity">
+          <strong>{driverMeta.displayName}</strong>
+          <small>{team.label}</small>
+        </div>
+        <span className="race-cinema-archive-tile__cta">View report →</span>
       </div>
-      <div className="race-cinema-archive-tile__signals">
-        <span>{podiumLabel(race.podium)}</span>
-        <span>{race.raceControlAvailable ? "Track-status context" : "Track-status feed quiet"}</span>
-      </div>
+      {signals.length ? (
+        <div className="race-cinema-archive-tile__signals">
+          {signals.map((signal) => (
+            <span key={signal}>{signal}</span>
+          ))}
+        </div>
+      ) : null}
     </Link>
   );
 }
@@ -238,11 +273,19 @@ export async function RaceAnalysisIndexView({ season }: { season?: number }) {
       <section className="race-cinema-command-strip" aria-label="Race analysis filters">
         <div className="race-cinema-command-strip__identity">
           <span>Post-race archive</span>
-          <strong>{selectedSeason}</strong>
+          <strong>
+            {visibleRaces.length} {visibleRaces.length === 1 ? "report" : "reports"}
+          </strong>
+          <p className="race-cinema-command-strip__legend">Card accent colour shows the winning team.</p>
         </div>
-        <div className="race-cinema-season-switcher">
+        <div className="race-cinema-season-switcher" role="group" aria-label="Season">
           {seasons.map((season) => (
-            <Link key={season} href={season === seasons[0] ? "/race-analysis" : `/race-analysis/season/${season}`} className={season === selectedSeason ? "is-active" : ""}>
+            <Link
+              key={season}
+              href={season === seasons[0] ? "/race-analysis" : `/race-analysis/season/${season}`}
+              className={season === selectedSeason ? "is-active" : ""}
+              aria-current={season === selectedSeason ? "true" : undefined}
+            >
               {season}
             </Link>
           ))}
