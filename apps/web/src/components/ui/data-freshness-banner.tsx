@@ -1,5 +1,6 @@
 import { formatSeasonRaceLabel, getSeasonState } from "@/lib/server/season-state";
 import { DataFreshnessBar, type DataFreshnessInfo } from "@/components/ui/data-freshness-bar";
+import { formatDateLabel, formatDateTimeLabel } from "@/lib/ui/format-date";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const STALE_AFTER_DAYS = 12;
@@ -8,12 +9,7 @@ function formatTimestamp(value: string | null | undefined) {
   if (!value) return null;
   const parsed = new Date(value);
   if (Number.isNaN(parsed.getTime())) return null;
-  return new Intl.DateTimeFormat("en-GB", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(parsed);
+  return formatDateLabel(parsed);
 }
 
 function describeAge(value: string | null | undefined) {

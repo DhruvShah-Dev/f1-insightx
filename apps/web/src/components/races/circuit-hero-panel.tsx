@@ -2,6 +2,7 @@ import { TrackMap } from "@/components/ui/track-map";
 import { getCircuitGeoFallback } from "@/lib/server/circuit-geojson";
 import type { RaceDetail } from "@/lib/server/race-history";
 import { getCircuitAsset } from "@/lib/ui/asset-manifest";
+import { formatDateLabel } from "@/lib/ui/format-date";
 
 type CircuitHeroPanelProps = {
   detail: RaceDetail;
@@ -30,11 +31,7 @@ export async function CircuitHeroPanel({ detail }: CircuitHeroPanelProps) {
       : detail.fastestLap
         ? `${detail.fastestLap.driverName} (${detail.season})`
         : "Unavailable";
-  const raceDate = new Date(detail.raceDate).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+  const raceDate = formatDateLabel(detail.raceDate);
 
   return (
     <section className="circuit-hero">

@@ -22,6 +22,7 @@ import { BreadcrumbStructuredData } from "@/components/seo/structured-data";
 import { makeMetadata } from "@/lib/seo";
 import { getCircuitAsset, getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMetaByCode, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
+import { formatDateLabel, formatDateTimeLabel } from "@/lib/ui/format-date";
 
 // Public analytics page: the offline pipeline refreshes source data at most a few
 // times per race weekend, so serve a cached render and revalidate in the
@@ -61,7 +62,7 @@ export async function generateMetadata({ params }: RaceAnalysisDetailPageProps) 
 
 function formatDate(value: string | null) {
   if (!value) return "Date unavailable";
-  return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(new Date(value));
+  return formatDateLabel(value);
 }
 
 function signed(value: number | null | undefined, unit = "") {

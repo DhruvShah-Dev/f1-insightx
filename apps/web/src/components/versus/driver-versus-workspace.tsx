@@ -52,6 +52,7 @@ const tabs: Array<{ id: EvidenceTab; label: string }> = [
   { id: "braking-traction", label: "Brake + traction" },
 ];
 
+const AXIS_LABEL = { fill: "var(--chart-axis)", fontSize: 10, letterSpacing: "0.06em" } as const;
 const darkPanel = "#080b10";
 const neutral = "#d7dde8";
 
@@ -323,8 +324,8 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
                   >
                     <LineChart data={lapRows} margin={{ left: -8, right: 18, top: 12 }}>
                       <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
-                      <XAxis dataKey="lap" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                      <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+                      <XAxis dataKey="lap" tickLine={false} axisLine={false} stroke="var(--chart-axis)" label={{ value: "LAP", position: "insideBottomRight", offset: -4, style: AXIS_LABEL }} />
+                      <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" label={{ value: "PACE DELTA (S/LAP)", angle: -90, position: "insideLeft", offset: 14, style: AXIS_LABEL }} />
                       <ReferenceLine y={0} stroke="rgba(244,246,248,0.45)" />
                       <Tooltip contentStyle={{ background: darkPanel, border: "1px solid var(--versus-line)", color: "#f4f6f8" }} />
                       <Line type="monotone" dataKey={comparison.overview.driverA} stroke={palette.a} strokeWidth={2.5} dot={false} name={`${comparison.overview.driverA} pace delta`} />
@@ -338,8 +339,8 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
                 <ChartFrame title="Representative speed + controls trace" subtitle={comparison.telemetryTraces.note} dark>
                   <LineChart data={traceRows} margin={{ left: -8, right: 18, top: 12 }}>
                     <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
-                    <XAxis dataKey="x" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-                    <YAxis yAxisId="speed" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+                    <XAxis dataKey="x" tickLine={false} axisLine={false} stroke="var(--chart-axis)" label={{ value: "DISTANCE SAMPLE", position: "insideBottomRight", offset: -4, style: AXIS_LABEL }} />
+                    <YAxis yAxisId="speed" tickLine={false} axisLine={false} stroke="var(--chart-axis)" label={{ value: "SPEED (KM/H)", angle: -90, position: "insideLeft", offset: 14, style: AXIS_LABEL }} />
                     <YAxis yAxisId="control" orientation="right" domain={[0, 100]} hide />
                     <Tooltip contentStyle={{ background: darkPanel, border: "1px solid var(--versus-line)", color: "#f4f6f8" }} />
                     <Line yAxisId="speed" type="monotone" dataKey="speedA" stroke={palette.a} strokeWidth={2.5} dot={false} name={`${comparison.overview.driverA} speed`} />
@@ -426,8 +427,8 @@ function DeltaBars({
     <ChartFrame title={title} subtitle={subtitle} dark>
       <BarChart data={rows} margin={{ left: -8, right: 12, top: 12 }}>
         <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
-        <XAxis dataKey="segment" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
-        <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+        <XAxis dataKey="segment" tickLine={false} axisLine={false} stroke="var(--chart-axis)" label={{ value: "TRACK SEGMENT", position: "insideBottomRight", offset: -4, style: AXIS_LABEL }} />
+        <YAxis tickLine={false} axisLine={false} stroke="var(--chart-axis)" label={{ value: "DELTA (S)", angle: -90, position: "insideLeft", offset: 14, style: AXIS_LABEL }} />
         <ReferenceLine y={0} stroke="rgba(244,246,248,0.38)" />
         <Tooltip formatter={(value) => formatNumber(Number(value))} contentStyle={{ background: darkPanel, border: "1px solid var(--versus-line)", color: "#f4f6f8" }} />
         {keys.map((key, index) => (

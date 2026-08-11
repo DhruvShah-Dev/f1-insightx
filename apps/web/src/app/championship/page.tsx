@@ -16,6 +16,7 @@ import {
 import { makeMetadata } from "@/lib/seo";
 import { getTeamAsset, getTeamLogoPath } from "@/lib/ui/asset-manifest";
 import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
+import { formatDateLabel, formatDateTimeLabel } from "@/lib/ui/format-date";
 
 // Public analytics page: the offline pipeline refreshes source data at most a few
 // times per race weekend, so serve a cached render and revalidate in the
@@ -51,14 +52,7 @@ function formatGeneratedAt(value: string | null) {
     return "Timestamp unavailable";
   }
 
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    timeZoneName: "short",
-  }).format(new Date(value));
+  return formatDateTimeLabel(value, "Timestamp unavailable");
 }
 
 function formatRaceDate(value: string | null | undefined) {
@@ -66,11 +60,7 @@ function formatRaceDate(value: string | null | undefined) {
     return "Date unavailable";
   }
 
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  }).format(new Date(value));
+  return formatDateLabel(value, "Date unavailable");
 }
 
 function formatPoints(value: number) {

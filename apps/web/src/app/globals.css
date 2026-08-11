@@ -531,8 +531,21 @@ select optgroup {
 }
 
 .app-header__nav-link--active {
+  /* A thin border box was easy to miss. Anchor the active tab with a solid red
+     underline and a brighter label. */
+  position: relative;
+  border-color: transparent;
   border-left-color: var(--accent-red);
   color: var(--white);
+  font-weight: 700;
+}
+
+.app-header__nav-link--active::after {
+  content: "";
+  position: absolute;
+  inset: auto 0.5rem -1px 0.5rem;
+  height: 2px;
+  background: var(--accent-red);
 }
 
 .app-header__account,
@@ -958,7 +971,7 @@ select optgroup {
 .home-hero {
   position: relative;
   width: 100%;
-  min-height: clamp(45rem, calc(100svh - 4.5rem), 59rem);
+  min-height: clamp(32rem, calc(100svh - 4.5rem), 44rem);
   margin: 0;
   padding: clamp(1.6rem, 2.6vw, 2.35rem) 0 clamp(2rem, 3.6vw, 3rem);
   align-items: stretch;
@@ -3354,7 +3367,7 @@ select optgroup {
 .race-week-page .race-week-hero {
   position: relative;
   width: 100%;
-  min-height: clamp(42rem, 82svh, 58rem);
+  min-height: clamp(32rem, 76svh, 46rem);
   margin: 0;
   padding: clamp(1rem, 2vw, 1.5rem) max(1rem, calc((100vw - 94rem) / 2));
   overflow: hidden;
@@ -3430,7 +3443,7 @@ select optgroup {
 }
 
 .race-week-page .race-week-hero__grid {
-  min-height: calc(clamp(42rem, 82svh, 58rem) - clamp(2rem, 4vw, 3rem));
+  min-height: calc(clamp(32rem, 76svh, 46rem) - clamp(2rem, 4vw, 3rem));
   display: grid;
   grid-template-columns: minmax(18rem, 0.55fr) minmax(32rem, 1fr);
   gap: clamp(1rem, 3vw, 2.6rem);
@@ -3963,7 +3976,7 @@ select optgroup {
 .pit-wall-page .pit-wall-hero {
   position: relative;
   width: 100%;
-  min-height: clamp(36rem, calc(100svh - 4.5rem), 52rem);
+  min-height: clamp(30rem, calc(100svh - 4.5rem), 44rem);
   margin: 0;
   padding: clamp(1.2rem, 3vw, 2.5rem) max(1rem, calc((100vw - 86rem) / 2)) clamp(1.5rem, 4vw, 3rem);
   overflow: hidden;
@@ -7066,7 +7079,7 @@ img {
 
 .race-analysis-page .race-cinema-hero {
   width: min(100% - 2rem, 96rem);
-  min-height: clamp(40rem, 82svh, 56rem);
+  min-height: clamp(31rem, 76svh, 45rem);
   display: grid;
   grid-template-columns: minmax(20rem, 0.42fr) minmax(0, 1fr);
   gap: clamp(1rem, 2vw, 1.5rem);
@@ -8632,8 +8645,11 @@ img {
 }
 
 .versus-command-rail button {
-  border-color: var(--driver-a);
-  background: var(--driver-a);
+  /* The primary action used the selected driver's team colour, so it turned
+     blue/yellow depending on the pick and read as a different product. Keep the
+     brand red for actions; team colours stay meaningful in the charts. */
+  border-color: var(--accent-red);
+  background: var(--accent-red);
   color: #05070a;
   font-family: var(--font-plex-mono), Consolas, monospace;
   font-size: 0.74rem;
@@ -8892,6 +8908,13 @@ img {
 
   .versus-command-rail {
     position: static;
+    /* Stacked, the three selects filled the whole first screen and the visitor
+       saw only a form. Lead with the comparison, keep the controls below. */
+    order: 2;
+  }
+
+  .versus-pitwall {
+    order: 1;
   }
 
   .versus-evidence-console__tabs {
@@ -10266,6 +10289,11 @@ img {
 
 /* Site-wide data freshness bar (see data-freshness-banner.tsx). */
 .data-freshness {
+  /* The home page paints a fixed full-viewport backdrop at z-index 0, which
+     covered this statically positioned bar — the bar appeared on every route
+     except "/". Lift it into the same stacking context as page content. */
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -10281,14 +10309,33 @@ img {
   background: linear-gradient(90deg, rgba(255, 176, 32, 0.16), rgba(8, 11, 15, 0.9) 45%);
 }
 
+/* The label used to shout in brand red at the same weight as the logo lockup,
+   so the utility bar competed with the header. Reduce it to a red status dot
+   plus muted text. */
 .data-freshness__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   margin: 0;
-  color: var(--accent-red);
+  color: var(--text-muted);
   font-family: var(--font-plex-mono), monospace;
-  font-size: 0.62rem;
-  font-weight: 700;
+  font-size: 0.58rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.data-freshness__label::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--accent-red);
+}
+
+.data-freshness--warning .data-freshness__label::before {
+  background: #ffb020;
 }
 
 .data-freshness__text {
@@ -10314,6 +10361,24 @@ img {
   align-items: center;
 }
 
+@media (max-width: 640px) {
+  /* Four wrapped lines of metadata pushed the hero below the fold on phones:
+     show the headline fact and keep the rest for wider screens. */
+  .data-freshness {
+    gap: 0.35rem 0.6rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .data-freshness__text {
+    flex: 1 1 100%;
+    font-size: 0.64rem;
+  }
+
+  .data-freshness__text span:not(.data-freshness__note) {
+    display: none;
+  }
+}
+
 .data-freshness__link,
 .data-freshness__dismiss {
   border: 0;
@@ -10326,4 +10391,44 @@ img {
   text-decoration: underline;
   text-underline-offset: 0.2rem;
   text-transform: uppercase;
+}
+
+
+/* 404 -------------------------------------------------------------------- */
+/* The 404 reused `.subpage-title`, whose 9rem display size overflowed the
+   unstyled panel on narrow windows and left the actions floating without a
+   container. Give the page its own centred, bounded panel. */
+.not-found-page {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  min-height: calc(100svh - 4.5rem);
+  padding: clamp(2rem, 6vw, 4rem) 1rem 0;
+}
+
+.not-found-page__panel {
+  display: grid;
+  gap: 0.85rem;
+  justify-items: center;
+  width: min(100% - 1rem, 44rem);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: rgba(5, 6, 8, 0.72);
+}
+
+.not-found-page .subpage-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.not-found-page .section-copy {
+  max-width: 32rem;
+}
+
+.not-found-page__actions {
+  justify-content: center;
+  margin-top: 0.5rem;
 }

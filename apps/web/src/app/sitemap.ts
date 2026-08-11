@@ -9,6 +9,8 @@ const staticRoutes = [
   { path: "/predictions", priority: 0.95 },
   { path: "/race-analysis", priority: 0.9 },
   { path: "/championship", priority: 0.85 },
+  { path: "/lab", priority: 0.7 },
+  { path: "/fantasy", priority: 0.7 },
   { path: "/picks", priority: 0.75 },
   { path: "/versus", priority: 0.7 },
   { path: "/privacy", priority: 0.3 },
@@ -48,6 +50,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const races = await listRaceAnalysisIndex();
     routes.push(...races.map((race) => entry(`/race-analysis/${race.id}`, 0.72, raceDate(race.raceDate))));
+    // Archive season filters are prerendered path segments too.
+    const analysisSeasons = [...new Set(races.map((race) => race.season))].sort((a, b) => b - a);
+    routes.push(...analysisSeasons.slice(1).map((season) => entry(`/race-analysis/season/${season}`, 0.55)));
   } catch {
     // Keep the sitemap available even when generated race-analysis data is absent.
   }

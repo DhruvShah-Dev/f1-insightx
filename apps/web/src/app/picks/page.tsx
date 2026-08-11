@@ -12,6 +12,7 @@ import { getPitWallPicksPayload } from "@/lib/server/pit-wall-picks";
 import { makeMetadata } from "@/lib/seo";
 import { getCurrentDriverMeta, getDriverImagePath } from "@/lib/ui/driver-asset-manifest";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
+import { formatDateLabel } from "@/lib/ui/format-date";
 
 export const metadata: Metadata = makeMetadata({
   title: "Pit Wall Picks",
@@ -22,15 +23,7 @@ export const metadata: Metadata = makeMetadata({
 });
 
 function formatRaceDate(iso: string) {
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) {
-    return "Race date pending";
-  }
-  return date.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
+  return formatDateLabel(iso, "Race date pending");
 }
 
 export default async function PicksPage() {

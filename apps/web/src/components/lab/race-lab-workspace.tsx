@@ -11,6 +11,7 @@ import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
 import type { RaceSimulationResponse } from "@/lib/server/strategy-lab-simulator";
 import { getTeamAsset } from "@/lib/ui/asset-manifest";
 import { getRaceWeekCircuitMetadata } from "@/lib/ui/race-week-circuit-metadata";
+import { formatDateLabel } from "@/lib/ui/format-date";
 
 type StrategyLabResponse = { ok: boolean; data?: { product: StrategyLabRaceProduct; runtime: RuntimeSourceMetadata }; error?: { message: string } };
 type SimulationResponse = { ok: boolean; data?: RaceSimulationResponse; error?: { message: string } };
@@ -202,7 +203,7 @@ export function RaceLabWorkspace({ races, trackPaths, initialProduct, initialRun
   }, [reloadKey, selectedRaceId, strategyLabHeaders]);
 
   const selectedRace = races.find((race) => race.id === selectedRaceId);
-  const selectedRaceDateLabel = selectedRace ? new Date(selectedRace.scheduledAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : null;
+  const selectedRaceDateLabel = selectedRace ? formatDateLabel(selectedRace.scheduledAt) : null;
   const constructors = useMemo(() => [...new Map((raceProduct?.entrants ?? []).map((item) => [item.constructorId, item.constructorName])).entries()].map(([id, name]) => ({ id, name })), [raceProduct]);
   const targetOptions = useMemo(() => {
     if (!raceProduct) return [];

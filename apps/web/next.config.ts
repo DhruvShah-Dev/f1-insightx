@@ -51,6 +51,20 @@ const nextConfig: NextConfig = {
         destination: "/championship/:season",
         permanent: false,
       },
+      // Same reasoning for the race-analysis archive season filter and the
+      // predictions practice-signal mode.
+      {
+        source: "/race-analysis",
+        has: [{ type: "query", key: "season", value: "(?<season>\\d{4})" }],
+        destination: "/race-analysis/season/:season",
+        permanent: false,
+      },
+      {
+        source: "/predictions",
+        has: [{ type: "query", key: "mode", value: "(?<mode>fp1|fp2|fp3)" }],
+        destination: "/predictions/:mode",
+        permanent: false,
+      },
       {
         source: "/achievements",
         destination: "/championship",

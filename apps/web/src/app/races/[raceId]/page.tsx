@@ -4,7 +4,7 @@ import { StatePanel } from "@/components/ui/state-panel";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { TeamBadge } from "@/components/ui/team-badge";
 import { logServerError } from "@/lib/errors/logger";
-import { getRaceDetail } from "@/lib/server/race-history";
+import { getRaceDetail, listCompletedRaceHistory } from "@/lib/server/race-history";
 import { makeMetadata } from "@/lib/seo";
 import { BreadcrumbStructuredData } from "@/components/seo/structured-data";
 
@@ -12,6 +12,18 @@ import { BreadcrumbStructuredData } from "@/components/seo/structured-data";
 // times per race weekend, so serve a cached render and revalidate in the
 // background instead of rebuilding on every request.
 export const revalidate = 900;
+
+// Prerender the recent race pages: without this every race detail URL was
+// rendered on demand, so the first visitor after each deploy paid the full
+// cold-render cost.
+export async function generateStaticParams() {
+  try {
+    const races = await listCompletedRaceHistory(24);
+    return races.map((race) => ({ raceId: race.id }));
+  } catch {
+    return [];
+  }
+}
 
 type Props = {
   params: Promise<{

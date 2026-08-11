@@ -13,6 +13,11 @@ type RaceWeekTimeToggleProps = {
   trackTimeZone: string;
 };
 
+function zoneLabel(timeZone: string) {
+  const city = timeZone.split("/").pop() ?? timeZone;
+  return `${city.replaceAll("_", " ")} track time`;
+}
+
 function formatTime(iso: string, timeZone: string) {
   const date = new Date(iso);
   if (Number.isNaN(date.getTime())) {
@@ -47,7 +52,7 @@ export function RaceWeekTimeToggle({ sessions, trackTimeZone }: RaceWeekTimeTogg
       </div>
 
       <div className="race-week-time-toggle__zone">
-        {mode === "track" ? "Monaco track time" : localTimeZone.replaceAll("_", " ")}
+        {mode === "track" ? zoneLabel(trackTimeZone) : `${localTimeZone.replaceAll("_", " ")} local time`}
       </div>
 
       <div className="race-week-timetable__rail">

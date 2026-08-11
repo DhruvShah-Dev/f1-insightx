@@ -1,4 +1,5 @@
 import type { RuntimeSourceMetadata } from "@/lib/server/runtime-source";
+import { formatDateLabel, formatDateTimeLabel } from "@/lib/ui/format-date";
 
 type ProductRuntimeNoteProps = {
   runtime: RuntimeSourceMetadata | null | undefined;
@@ -17,13 +18,7 @@ function formatRuntimeTimestamp(value: string | null | undefined) {
     return null;
   }
 
-  return new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    timeZoneName: "short",
-  }).format(date);
+  return formatDateTimeLabel(date);
 }
 
 export function ProductRuntimeNote({

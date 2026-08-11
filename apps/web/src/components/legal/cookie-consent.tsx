@@ -28,7 +28,10 @@ export function CookieConsent() {
       const choice = readCookieConsent();
       setStoredChoice(choice);
       if (!choice) {
-        setView("banner");
+        // Open as the small pill: a full panel over the hero hid the primary
+        // calls to action on every first visit. The pill keeps the choice one
+        // click away without covering page controls.
+        setView("collapsed");
       }
     });
 
