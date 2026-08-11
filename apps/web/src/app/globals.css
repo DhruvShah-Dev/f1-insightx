@@ -649,7 +649,7 @@ select optgroup {
   justify-items: center;
   align-items: start;
   padding-top: clamp(4.6rem, 6.2vw, 5.6rem);
-  opacity: 0.72;
+  opacity: 0.5;
 }
 
 .start-lights-background__rig {
@@ -658,6 +658,7 @@ select optgroup {
   height: clamp(3.6rem, 5.8vw, 4.8rem);
   display: grid;
   place-items: center;
+  overflow: hidden;
   border: 1px solid rgba(244, 246, 248, 0.08);
   background: rgba(5, 6, 8, 0.42);
 }
@@ -669,26 +670,34 @@ select optgroup {
   border: 1px solid rgba(244, 246, 248, 0.07);
 }
 
+/* The lamps used to be sized off the rail width (34rem / 5 columns with
+   aspect-ratio: 1), so each "light" grew to ~6.8rem and spilled far outside the
+   rig - on scroll they read as giant red circles pasted over the page content.
+   Size them explicitly instead and clip anything that overflows the rig. */
 .start-lights-background__rail {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, auto));
+  justify-items: center;
+  align-items: center;
   gap: clamp(0.55rem, 1vw, 0.85rem);
-  width: min(34rem, calc(100vw - 4rem));
+  width: auto;
+  max-width: min(22rem, calc(100vw - 6rem));
 }
 
 .start-light {
-  aspect-ratio: 1;
+  width: clamp(0.7rem, 1.1vw, 1rem);
+  height: clamp(0.7rem, 1.1vw, 1rem);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   background: #8e0704;
-  box-shadow: 0 0 0 0.16rem rgba(225, 6, 0, 0.08);
+  box-shadow: 0 0 0 0.12rem rgba(225, 6, 0, 0.08);
   opacity: 0.62;
   transition: background-color 220ms ease, transform 220ms ease, opacity 220ms ease;
 }
 
 .start-light--active {
   background: var(--accent-red);
-  box-shadow: 0 0 0 0.35rem rgba(225, 6, 0, 0.18);
+  box-shadow: 0 0 0 0.22rem rgba(225, 6, 0, 0.18);
   opacity: 0.86;
   transform: scale(1.03);
 }
@@ -971,9 +980,9 @@ select optgroup {
 .home-hero {
   position: relative;
   width: 100%;
-  min-height: clamp(32rem, calc(100svh - 4.5rem), 44rem);
+  min-height: clamp(26rem, calc(100svh - 5rem), 36rem);
   margin: 0;
-  padding: clamp(1.6rem, 2.6vw, 2.35rem) 0 clamp(2rem, 3.6vw, 3rem);
+  padding: clamp(1rem, 1.8vw, 1.6rem) 0 clamp(1.5rem, 2.6vw, 2.25rem);
   align-items: stretch;
   border-bottom: 0;
   overflow: hidden;
@@ -1046,7 +1055,7 @@ select optgroup {
   gap: clamp(0.7rem, 1vw, 0.95rem);
   width: min(100%, 72rem);
   text-align: center;
-  padding-top: clamp(0.75rem, 2.5vw, 1.6rem);
+  padding-top: 0;
   animation: solid-rise 520ms ease both;
 }
 
@@ -1062,7 +1071,7 @@ select optgroup {
 .home-hero__brand {
   margin: 0;
   color: var(--white);
-  font-size: clamp(6.5rem, 10.8vw, 11.5rem);
+  font-size: clamp(4.25rem, 8.6vw, 8.5rem);
   font-style: italic;
   font-weight: 700;
   line-height: 0.76;
@@ -1101,10 +1110,10 @@ select optgroup {
   align-items: center;
   gap: clamp(1rem, 1.6vw, 1.35rem);
   width: min(100%, 72rem);
-  min-height: clamp(25rem, 38vw, 34rem);
+  min-height: clamp(19rem, 28vw, 25rem);
   justify-self: center;
-  margin-top: clamp(0.2rem, 0.8vw, 0.7rem);
-  padding-top: clamp(4.6rem, 7.6vw, 6.2rem);
+  margin-top: 0;
+  padding-top: clamp(1.2rem, 2.4vw, 2rem);
   animation: solid-rise 620ms 120ms ease both;
 }
 
@@ -1119,9 +1128,11 @@ select optgroup {
   border: 0;
   border-top: 2px solid var(--hero-flag-one);
   border-bottom: 1px solid rgba(244, 246, 248, 0.22);
-  background:
-    linear-gradient(90deg, rgba(5, 6, 8, 0.9), rgba(5, 6, 8, 0.64) 42%, rgba(5, 6, 8, 0.86)),
-    var(--hero-flag-gradient);
+  /* The national-flag gradient sat directly behind the card copy, so the white
+     stripe of the current flag showed through as a grey vertical band cutting
+     across the grand prix name, meta rows, and countdown. The flag now lives
+     only in the top border and the bottom accent bar. */
+  background: linear-gradient(180deg, rgba(9, 11, 15, 0.94), rgba(5, 6, 8, 0.97));
   box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.34);
   padding: clamp(1.25rem, 1.85vw, 1.7rem) clamp(1rem, 2.4vw, 2.2rem) clamp(1rem, 1.7vw, 1.35rem);
   text-align: center;
@@ -1137,12 +1148,11 @@ select optgroup {
 .home-hero__race::before {
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(112deg, transparent 0 23%, rgba(255, 255, 255, 0.13) 23.2% 23.55%, transparent 23.8%),
-    repeating-linear-gradient(90deg, rgba(244, 246, 248, 0.065) 0 1px, transparent 1px 4.2rem);
-  mix-blend-mode: screen;
-  opacity: 0.58;
-  animation: home-flag-scan 6s ease-in-out infinite;
+  /* A blended white diagonal band ran down the middle of the card and cut
+     through the grand prix name, meta rows, and countdown - it read as a
+     rendering fault. Keep only the faint vertical rule texture. */
+  background: repeating-linear-gradient(90deg, rgba(244, 246, 248, 0.05) 0 1px, transparent 1px 4.2rem);
+  opacity: 0.32;
 }
 
 .home-hero__race::after {
@@ -1199,7 +1209,9 @@ select optgroup {
   align-items: center;
   gap: 0.65rem;
   justify-content: center;
-  color: var(--hero-flag-one);
+  /* Flag colour one can be near-black for some nations; the kicker was
+     unreadable on the darkened card. */
+  color: rgba(247, 247, 244, 0.8);
 }
 
 .home-hero__race-kicker::before {
@@ -1307,6 +1319,8 @@ select optgroup {
   position: relative;
   display: grid;
   gap: 0.14rem;
+  justify-items: center;
+  text-align: center;
   min-width: 0;
   min-height: 5.15rem;
   align-content: center;
@@ -1327,16 +1341,10 @@ select optgroup {
   animation: home-countdown-pulse 1s ease-in-out infinite;
 }
 
-.race-countdown__unit:nth-child(1)::before {
-  background: var(--hero-flag-one);
-}
-
-.race-countdown__unit:nth-child(2)::before {
-  background: var(--hero-flag-two);
-}
-
-.race-countdown__unit:nth-child(3)::before {
-  background: var(--hero-flag-three);
+/* The tiles previously took one accent colour each from the flag palette, which
+   looked arbitrary (white bar over one box, red over the next). One accent. */
+.race-countdown__unit::before {
+  background: var(--accent-red);
 }
 
 .race-countdown__unit strong {
@@ -1381,10 +1389,10 @@ select optgroup {
 .home-hero__track {
   position: absolute;
   z-index: 1;
-  top: clamp(2.5rem, 4.6vw, 4.25rem);
+  top: clamp(0.5rem, 1.4vw, 1.25rem);
   left: 50%;
-  width: min(68rem, 78vw);
-  min-height: clamp(18rem, 28vw, 26rem);
+  width: min(56rem, 72vw);
+  min-height: clamp(13rem, 21vw, 19rem);
   aspect-ratio: 1.9;
   display: grid;
   place-items: center;
@@ -1392,7 +1400,7 @@ select optgroup {
   overflow: hidden;
   border: 0;
   background: transparent;
-  opacity: 0.48;
+  opacity: 0.34;
   pointer-events: none;
   transform: translateX(-50%);
   animation: arcade-track-drift 12s ease-in-out infinite alternate;
@@ -1563,8 +1571,9 @@ select optgroup {
   align-self: end;
 }
 
+/* min-height left a visible empty band under the last line of each card. */
 .feature-showcase .module-link {
-  min-height: 12.5rem;
+  min-height: 9.5rem;
   grid-template-rows: auto minmax(2.5rem, auto) auto 1fr;
   gap: 0.72rem;
   padding: clamp(0.85rem, 1.5vw, 1.15rem);
@@ -1592,7 +1601,7 @@ select optgroup {
 }
 
 .feature-showcase .module-link__header {
-  min-height: 3.1rem;
+  min-height: 2.6rem;
   align-items: flex-start;
 }
 
@@ -1670,8 +1679,12 @@ select optgroup {
 
 .championship-intro__season,
 .championship-intro__description,
+.home-story__lead .section-meta {
+  color: rgba(247, 247, 244, 0.72);
+}
+
 .race-history-header__hint {
-  color: var(--muted);
+  color: rgba(247, 247, 244, 0.72);
   font-family: var(--font-plex-mono), Consolas, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
@@ -1707,7 +1720,8 @@ select optgroup {
 
 .driver-standing-card,
 .constructor-standing-card {
-  min-height: 18rem;
+  /* A fixed 18rem floor left 100-150px of dead space under the final line on
+     every card; let content set the height. */
   overflow: hidden;
 }
 
@@ -1761,6 +1775,23 @@ select optgroup {
 
 .race-history-rail-shell {
   overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+/* The rail clipped the fourth card mid-way with no hint that it scrolled. */
+.home-story--archive .home-story__body {
+  position: relative;
+}
+
+.home-story--archive .home-story__body::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  width: clamp(1.75rem, 5vw, 4rem);
+  background: linear-gradient(90deg, rgba(5, 6, 8, 0), rgba(5, 6, 8, 0.92));
+  pointer-events: none;
 }
 
 .race-history-rail {
@@ -1772,7 +1803,7 @@ select optgroup {
 
 .race-history-card {
   flex: 0 0 min(24rem, 86vw);
-  min-height: 13rem;
+  scroll-snap-align: start;
 }
 
 .module-link::before,
@@ -10238,9 +10269,14 @@ img {
 /* Collapsed consent state: a pair of small pills instead of a full-width panel,
    so the notice stays reachable without covering page controls. */
 .cookie-consent--collapsed {
+  /* Bottom-right sat on top of the mobile countdown tiles and the desktop
+     standings cards. Anchor the pill to the bottom-left gutter instead. */
+  inset: auto auto clamp(0.75rem, 2vw, 1.25rem) clamp(0.75rem, 2vw, 1.25rem);
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
   width: auto;
+  max-width: calc(100vw - 1.5rem);
 }
 
 .cookie-consent__pill {
@@ -10285,6 +10321,21 @@ img {
 
 .cookie-consent--banner .cookie-consent__panel {
   position: relative;
+}
+
+/* Home brand lockup doubles as the active state for "/". */
+.app-header__brand--active strong {
+  color: var(--white);
+  box-shadow: inset 0 -2px 0 var(--accent-red);
+}
+
+.data-freshness__explainer {
+  flex: 1 1 100%;
+  margin: 0;
+  color: var(--text-muted);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.62rem;
+  line-height: 1.5;
 }
 
 /* Site-wide data freshness bar (see data-freshness-banner.tsx). */

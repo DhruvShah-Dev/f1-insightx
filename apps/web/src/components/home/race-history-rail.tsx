@@ -16,7 +16,7 @@ export function RaceHistoryRail({ races, hideHeader = false }: RaceHistoryRailPr
         ) : (
           <div className="home-story__lead">
             <div className="section-meta">Archive</div>
-            <h2 className="section-title">Recent Grands Prix.</h2>
+            <h2 className="section-title">Recent Grands Prix</h2>
             <p className="section-copy">Race archive unavailable.</p>
           </div>
         )}
@@ -29,7 +29,8 @@ export function RaceHistoryRail({ races, hideHeader = false }: RaceHistoryRailPr
       {hideHeader ? null : (
         <div className="home-story__lead race-history-header">
           <div className="section-meta">Archive</div>
-          <h2 className="section-title">Recent Grands Prix.</h2>
+          <h2 className="section-title">Recent Grands Prix</h2>
+          <p className="race-history-header__hint">Scroll for more →</p>
         </div>
       )}
 

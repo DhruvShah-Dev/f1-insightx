@@ -38,7 +38,12 @@ export function AppHeader({ accountSlot }: AppHeaderProps) {
 
   return (
     <header className={`app-header${isAnalyticsPage ? " app-header--analytics" : ""}`}>
-      <Link href="/" className="app-header__brand" aria-label="F1 InsightX home">
+      <Link
+        href="/"
+        className={`app-header__brand${pathname === "/" ? " app-header__brand--active" : ""}`}
+        aria-current={pathname === "/" ? "page" : undefined}
+        aria-label="F1 InsightX home"
+      >
         <span className="app-header__mark" aria-hidden="true" />
         <span>
           <small>Race Intelligence</small>

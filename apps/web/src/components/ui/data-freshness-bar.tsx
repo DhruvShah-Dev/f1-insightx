@@ -46,11 +46,16 @@ export function DataFreshnessBar({ info }: { info: DataFreshnessInfo }) {
     <aside className={`data-freshness data-freshness--${info.tone}`} aria-label="Data freshness">
       <p className="data-freshness__label">Data freshness</p>
       <p className="data-freshness__text">
-        <strong>Results through {info.resultsThrough}</strong>
-        {info.nextRace ? <span> · Race week: {info.nextRace}</span> : null}
-        {info.generatedLabel ? <span> · Pipeline run {info.generatedLabel}</span> : null}
+        <strong>Standings complete through {info.resultsThrough}</strong>
+        {info.nextRace ? <span> · Race-week pages look ahead to {info.nextRace}</span> : null}
+        {info.generatedLabel ? <span> · Snapshot {info.generatedLabel}</span> : null}
         {info.ageLabel ? <span> ({info.ageLabel})</span> : null}
         {info.note ? <span className="data-freshness__note"> · {info.note}</span> : null}
+      </p>
+      {/* The three dates in this strip legitimately differ; saying why turns an
+          apparent contradiction into context. */}
+      <p className="data-freshness__explainer">
+        Standings and analysis follow completed results; race-week signals run ahead to the next round.
       </p>
       <span className="data-freshness__actions">
         <Link className="data-freshness__link" href="/race-analysis">
