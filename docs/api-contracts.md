@@ -4,7 +4,7 @@
 
 The M2 API layer can run in two modes:
 
-- `supabase`: uses `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY` on the server
+- `supabase`: uses `VITE_SUPABASE_URL`/`VITE_SUPABASE_PUBLISHABLE_KEY` in the TanStack app, still accepts `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY` as compatibility aliases, and uses `SUPABASE_SERVICE_ROLE_KEY` only on trusted server paths
 - `local-curated-csv`: reads from `data/curated/*.csv` when Supabase is not configured
 
 This keeps local development unblocked after M1 while preserving the production path.

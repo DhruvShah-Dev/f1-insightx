@@ -162,6 +162,21 @@ function Picks() {
     data.challenges.find((c) => c.raceId === data.activeRaceId) ??
     data.challenges[data.challenges.length - 1];
 
+  const ledger = useMemo(
+    () =>
+      data.challenges
+        .filter((c) => c.results && store[c.raceId])
+        .map((c) => {
+          const cd = store[c.raceId] ?? {};
+          const ms = marketsFor(c);
+          const pts = ms.reduce((a, m) => a + (scoreMarket(c, m.id, cd[m.id])?.points ?? 0), 0);
+          return { round: c.round, name: c.raceName, points: pts, cards: ms.length };
+        })
+        .sort((a, b) => b.round - a.round),
+    [data.challenges, store],
+  );
+  const bankroll = ledger.reduce((a, x) => a + x.points, 0);
+
   if (!challenge) {
     return (
       <SiteShell>
@@ -186,21 +201,6 @@ function Picks() {
   const scored = markets.map((m) => ({ m, s: scoreMarket(challenge, m.id, card[m.id]) }));
   const total = scored.reduce((a, x) => a + (x.s?.points ?? 0), 0);
   const maxPoints = scored.filter((x) => x.s).length * 3;
-
-  const ledger = useMemo(
-    () =>
-      data.challenges
-        .filter((c) => c.results && store[c.raceId])
-        .map((c) => {
-          const cd = store[c.raceId] ?? {};
-          const ms = marketsFor(c);
-          const pts = ms.reduce((a, m) => a + (scoreMarket(c, m.id, cd[m.id])?.points ?? 0), 0);
-          return { round: c.round, name: c.raceName, points: pts, cards: ms.length };
-        })
-        .sort((a, b) => b.round - a.round),
-    [data.challenges, store],
-  );
-  const bankroll = ledger.reduce((a, x) => a + x.points, 0);
 
   return (
     <SiteShell>

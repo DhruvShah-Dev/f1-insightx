@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { CloudRain, Flag, Gauge, Thermometer, Timer, Trophy, Wind } from "lucide-react";
+import { CloudRain, Flag, Gauge, Thermometer, Timer, Wind } from "lucide-react";
 import { Countdown } from "@/components/countdown";
 import { StartLightRails } from "@/components/race-atmosphere";
-import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
+import { ZandvoortCircuitMap } from "@/components/zandvoort-circuit-map";
 import { countryTheme } from "@/data/country-theme";
 import { team as teamOf } from "@/data/teams";
 import { getRaceReports, getRaceWeek, getSeasonTelemetry } from "@/lib/f1.functions";
-import { fmtDate, fmtDelta, fmtLapS, fmtNum, pct, titleCase } from "@/lib/format";
+import { fmtDate, fmtLapS, fmtNum, titleCase } from "@/lib/format";
 import crowdImg from "@/assets/zandvoort-crowd.jpg";
 
 const seasonQuery = queryOptions({
@@ -74,10 +74,10 @@ export const Route = createFileRoute("/")({
 function RaceControl() {
   const { data } = useSuspenseQuery(seasonQuery);
   const rw = useSuspenseQuery(raceWeekQuery).data;
-  const leader = data.drivers[0]!;
-  const runnerUp = data.drivers[1]!;
-  const teamLeader = data.constructors[0]!;
-  const teamSecond = data.constructors[1]!;
+  const leader = data.drivers[0] ?? null;
+  const runnerUp = data.drivers[1] ?? null;
+  const teamLeader = data.constructors[0] ?? null;
+  const teamSecond = data.constructors[1] ?? null;
   const reports = useSuspenseQuery(reportsQuery).data.reports;
   const latest = reports[0];
 
@@ -86,7 +86,6 @@ function RaceControl() {
   const board = (rw?.drivers ?? [])
     .slice()
     .sort((a, b) => (a.oneLapS ?? 9e9) - (b.oneLapS ?? 9e9));
-  const podium = board.slice(0, 3);
   const gpTitle = (rw?.raceName ?? "Grand Prix").replace(/grand prix/i, "").trim();
 
   return (
@@ -300,99 +299,22 @@ function RaceControl() {
           </div>
         </section>
 
-        {/* Prediction read + championship pulse */}
+        {/* Circuit read + championship pulse */}
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <section>
             <SectionHeading
-              kicker="One-lap pace board"
-              title="The read"
+              kicker="Circuit map"
+              title="Zandvoort sectors"
               action={
                 <Link to="/raceweek" className="text-[11px] font-bold uppercase text-primary">
-                  Full tower →
+                  Race week →
                 </Link>
               }
             />
-            {board.length ? (
-              <>
-                <div className="grid gap-2 sm:grid-cols-3">
-                  {podium.map((d, i) => (
-                    <div
-                      key={d.driverId}
-                      className="relative overflow-hidden rounded-lg border border-border bg-card/60 p-3 backdrop-blur"
-                      style={{ borderLeft: `4px solid ${teamOf(d.team).color}` }}
-                    >
-                      <div className="flex items-start justify-between gap-2">
-                        <div>
-                          <div className="num flex items-center gap-1.5 text-xs font-bold text-muted-foreground">
-                            P{i + 1}
-                            {i === 0 ? <Trophy className="size-3.5 text-caution" /> : null}
-                          </div>
-                          <p className="mt-1 text-sm font-bold uppercase leading-tight">{d.name}</p>
-                          <div className="mt-2">
-                            <TeamBadge teamName={d.team} />
-                          </div>
-                        </div>
-                        <DriverAvatar code={d.code} teamName={d.team} name={d.name} size="lg" />
-                      </div>
-                      <p className="num mt-2 text-lg font-bold">{fmtLapS(d.oneLapS)}</p>
-                      <p className="num text-[11px] text-muted-foreground">
-                        {i === 0 ? "reference" : fmtDelta(d.oneLapGapS)}
-                      </p>
-                      {d.confidence != null ? (
-                        <div className="mt-3">
-                          <div className="h-1 w-full bg-secondary">
-                            <div
-                              className="h-1"
-                              style={{ width: pct(d.confidence), backgroundColor: accent }}
-                            />
-                          </div>
-                          <p className="label-xs mt-1">Signal {pct(d.confidence)}</p>
-                        </div>
-                      ) : null}
-                    </div>
-                  ))}
-                </div>
-
-                <table className="mt-4 w-full text-left">
-                  <thead>
-                    <tr className="border-b border-border">
-                      <th className="label-xs py-2">Pos</th>
-                      <th className="label-xs py-2">Driver</th>
-                      <th className="label-xs py-2 text-right">One lap</th>
-                      <th className="label-xs py-2 text-right">Gap</th>
-                      <th className="label-xs py-2 text-right">Long run</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {board.slice(3, 12).map((d, i) => (
-                      <tr key={d.driverId} className="border-b border-border/60 hover:bg-accent/40">
-                        <td className="num py-2 text-xs text-muted-foreground">{i + 4}</td>
-                        <td className="py-2 text-xs font-bold uppercase">
-                          <span
-                            className="mr-2 inline-block h-3 w-0.5 align-middle"
-                            style={{ backgroundColor: teamOf(d.team).color }}
-                          />
-                          {d.name}
-                        </td>
-                        <td className="num py-2 text-right text-xs">{fmtLapS(d.oneLapS)}</td>
-                        <td className="num py-2 text-right text-xs text-muted-foreground">
-                          {fmtDelta(d.oneLapGapS)}
-                        </td>
-                        <td className="num py-2 text-right text-xs">{fmtLapS(d.longRunS)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </>
-            ) : (
-              <p className="num text-xs text-muted-foreground">
-                No practice pace board stored for this round yet.
-              </p>
-            )}
+            <ZandvoortCircuitMap path={rw?.trackPath ?? null} />
           </section>
 
-
-        <section>
+          <section>
           <SectionHeading
             kicker="Championship pulse"
             title="Standings"
@@ -404,11 +326,21 @@ function RaceControl() {
           />
           <div className="rounded-lg border border-border bg-card/50 p-4">
             <p className="label-xs">Drivers' lead · after R{data.standingsRound}</p>
-            <p className="mt-1 text-sm font-bold uppercase">{leader.driverName}</p>
-            <p className="num text-2xl font-bold">{leader.points}</p>
-            <p className="num text-[11px] text-muted-foreground">
-              +{leader.points - runnerUp.points} over {runnerUp.driverName}
-            </p>
+            {leader ? (
+              <>
+                <p className="mt-1 text-sm font-bold uppercase">{leader.driverName}</p>
+                <p className="num text-2xl font-bold">{leader.points}</p>
+                {runnerUp ? (
+                  <p className="num text-[11px] text-muted-foreground">
+                    +{leader.points - runnerUp.points} over {runnerUp.driverName}
+                  </p>
+                ) : null}
+              </>
+            ) : (
+              <p className="mt-2 text-xs text-muted-foreground">
+                Standings are not available from the current data source.
+              </p>
+            )}
           </div>
           <div className="mt-3 space-y-2">
             {data.constructors.slice(0, 5).map((row) => (
@@ -427,9 +359,11 @@ function RaceControl() {
             ))}
           </div>
 
-          <p className="num mt-3 text-[11px] text-muted-foreground">
-            Constructors' gap: {teamLeader.points - teamSecond.points} pts
-          </p>
+          {teamLeader && teamSecond ? (
+            <p className="num mt-3 text-[11px] text-muted-foreground">
+              Constructors' gap: {teamLeader.points - teamSecond.points} pts
+            </p>
+          ) : null}
         </section>
       </div>
 

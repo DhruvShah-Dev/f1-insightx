@@ -1,11 +1,16 @@
 import { createClient } from "@supabase/supabase-js";
+import { readSupabaseRuntimeEnv } from "./env.server";
+import { safeExternalHref } from "./security";
 
 export const SEASON = 2026;
 
 export function serverClient() {
-  const key =
-    process.env["SUPABASE_PUBLISHABLE_KEY"] ?? process.env["VITE_SUPABASE_PUBLISHABLE_KEY"]!;
-  const url = process.env["SUPABASE_URL"] ?? process.env["VITE_SUPABASE_URL"]!;
+  const { url, publishableKey: key } = readSupabaseRuntimeEnv();
+  if (!url || !key) {
+    throw new Error(
+      "Missing Supabase environment variable(s): SUPABASE_URL/NEXT_PUBLIC_SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY/NEXT_PUBLIC_SUPABASE_ANON_KEY.",
+    );
+  }
   return createClient(url, key, {
     auth: { persistSession: false, autoRefreshToken: false },
     global: {
@@ -333,7 +338,7 @@ export async function fetchRaceWeek() {
       type: str(r["storyline_type"]),
       confidence: str(r["confidence_band"]),
       sourceTitle: str(r["source_title"]),
-      sourceUrl: str(r["source_url"]),
+      sourceUrl: safeExternalHref(str(r["source_url"])),
     })),
     previous,
   };

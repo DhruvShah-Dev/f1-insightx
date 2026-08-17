@@ -2,7 +2,7 @@
 
 This project uses Supabase in two distinct ways:
 
-- browser auth: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- browser auth: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`; the TanStack app also accepts `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` as compatibility aliases
 - server-side profile persistence and username availability: `SUPABASE_SERVICE_ROLE_KEY`
 
 ## Required environment variables
@@ -11,8 +11,8 @@ Put these in the repo-root `.env.local`:
 
 ```env
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_SUPABASE_URL=...
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+VITE_SUPABASE_URL=...
+VITE_SUPABASE_PUBLISHABLE_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
 DATABASE_URL=...
 ```
@@ -24,8 +24,8 @@ In Supabase:
 1. Open your project.
 2. Go to `Project Settings` -> `API`.
 3. Copy:
-   - `Project URL` -> `NEXT_PUBLIC_SUPABASE_URL`
-   - `anon` key -> `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `Project URL` -> `VITE_SUPABASE_URL`
+   - `publishable` or `anon` key -> `VITE_SUPABASE_PUBLISHABLE_KEY`
    - `service_role` key -> `SUPABASE_SERVICE_ROLE_KEY`
 4. Go to `Project Settings` -> `Database` to get `DATABASE_URL`.
 
@@ -93,8 +93,8 @@ For production, verify:
 
 If `/account` shows authentication unavailable, check:
 
-- `NEXT_PUBLIC_SUPABASE_URL` is set in Vercel for the active environment
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` is set in Vercel for the active environment
+- `VITE_SUPABASE_URL` or `NEXT_PUBLIC_SUPABASE_URL` is set in Vercel for the active environment
+- `VITE_SUPABASE_PUBLISHABLE_KEY` or `NEXT_PUBLIC_SUPABASE_ANON_KEY` is set in Vercel for the active environment
 - the Supabase project is not paused
 - `/api/health/supabase` returns `{ "ok": true, "source": "supabase" }`
 - the Email provider is enabled so email/password remains the fallback path

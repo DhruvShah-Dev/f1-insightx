@@ -68,7 +68,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="order-2 ml-auto flex items-center gap-2 rounded border border-positive/25 bg-positive/10 px-2 py-1 md:order-3">
             <span className="size-1.5 rounded-full bg-positive" />
             <span className="num text-[10px] font-bold uppercase tracking-tight text-positive">
-              Data live
+              Data snapshot
             </span>
           </div>
         </div>
