@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { UserRound } from "lucide-react";
 import type { ReactNode } from "react";
 import { seasonState } from "@/data/season";
 import { fmtDate, fmtDateTime } from "@/lib/format";
@@ -65,12 +66,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <div className="order-2 ml-auto flex items-center gap-2 rounded border border-positive/25 bg-positive/10 px-2 py-1 md:order-3">
-            <span className="size-1.5 rounded-full bg-positive" />
-            <span className="num text-[10px] font-bold uppercase tracking-tight text-positive">
-              Data snapshot
-            </span>
-          </div>
+          <Link
+            to="/account"
+            className="order-2 ml-auto inline-flex min-h-8 items-center gap-2 border border-border bg-card/70 px-3 text-[10px] font-black uppercase tracking-widest text-foreground transition-colors hover:border-primary hover:bg-accent md:order-3"
+            activeProps={{ className: "border-primary bg-primary text-primary-foreground" }}
+          >
+            <UserRound className="size-3.5" />
+            Account
+          </Link>
         </div>
       </header>
 

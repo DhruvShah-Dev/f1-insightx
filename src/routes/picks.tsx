@@ -1,9 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import type { Session } from "@supabase/supabase-js";
 import { useEffect, useMemo, useState } from "react";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
 import { team } from "@/data/teams";
+import { supabase } from "@/integrations/supabase/client";
 import { fmtDateTime, fmtNum } from "@/lib/format";
 import { getPicksBoard, type PickChallenge, type PickEntrant } from "@/lib/f1.functions";
 
@@ -51,7 +53,7 @@ type Market = {
   payout: number;
 };
 
-const STORAGE = "f1ix.picks.v1";
+const storageKey = (userId: string) => `f1ix.picks.v1.${userId}`;
 type Card = Record<string, string>;
 type Store = Record<string, Card>;
 
@@ -134,24 +136,50 @@ function neighbourTargets(ch: PickChallenge, marketId: string): string[] {
 
 function Picks() {
   const { data } = useSuspenseQuery(picksQuery);
+  const [session, setSession] = useState<Session | null>(null);
+  const [authReady, setAuthReady] = useState(false);
   const [store, setStore] = useState<Store>({});
   const [raceId, setRaceId] = useState<string>(data.activeRaceId ?? "");
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(STORAGE);
-      if (raw) setStore(JSON.parse(raw) as Store);
+      void supabase.auth.getSession().then(({ data }) => {
+        setSession(data.session);
+        setAuthReady(true);
+      });
+      const { data: auth } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+        setSession(nextSession);
+        setAuthReady(true);
+      });
+      return () => auth.subscription.unsubscribe();
     } catch {
-      /* first visit */
+      setAuthReady(true);
+      return undefined;
     }
-    setHydrated(true);
   }, []);
 
+  useEffect(() => {
+    if (!authReady) return;
+    if (!session?.user) {
+      setStore({});
+      setHydrated(true);
+      return;
+    }
+    try {
+      const raw = localStorage.getItem(storageKey(session.user.id));
+      setStore(raw ? (JSON.parse(raw) as Store) : {});
+    } catch {
+      setStore({});
+    }
+    setHydrated(true);
+  }, [authReady, session?.user]);
+
   const persist = (next: Store) => {
+    if (!session?.user) return;
     setStore(next);
     try {
-      localStorage.setItem(STORAGE, JSON.stringify(next));
+      localStorage.setItem(storageKey(session.user.id), JSON.stringify(next));
     } catch {
       /* storage blocked */
     }
@@ -190,13 +218,18 @@ function Picks() {
   const filled = markets.filter((m) => card[m.id]).length;
   const locked = challenge.lockAtISO ? Date.now() > Date.parse(challenge.lockAtISO) : false;
   const settled = Boolean(challenge.results);
+  const signedIn = Boolean(session?.user);
+  const accountRequired = authReady && !signedIn;
+  const canEdit = signedIn && !locked;
 
   const byId = new Map(data.entrants.map((e) => [e.driverId, e]));
   const set = (marketId: string, driverId: string) =>
-    persist({
-      ...store,
-      [challenge.raceId]: { ...card, [marketId]: driverId },
-    });
+    canEdit
+      ? persist({
+          ...store,
+          [challenge.raceId]: { ...card, [marketId]: driverId },
+        })
+      : undefined;
 
   const scored = markets.map((m) => ({ m, s: scoreMarket(challenge, m.id, card[m.id]) }));
   const total = scored.reduce((a, x) => a + (x.s?.points ?? 0), 0);
@@ -233,8 +266,8 @@ function Picks() {
         </h1>
         <p className="pw-ticker relative mt-2 max-w-2xl text-sm text-muted-foreground [animation-delay:0.12s]">
           Ten markets per round. Odds are derived from the live {data.season} championship form after
-          round {data.standingsRound} — they are a form indicator, not a betting line. Cards stay on
-          this device and score themselves as soon as the official results land.
+          round {data.standingsRound}. Cards are locked to your account and score themselves as soon
+          as the official results land.
         </p>
         <div className="relative mt-5 grid gap-3 sm:grid-cols-4">
           <Stat label="Round" value={`R${challenge.round}`} note={challenge.raceName} />
@@ -276,7 +309,7 @@ function Picks() {
             ))}
           </select>
         </div>
-        {filled ? (
+        {filled && canEdit ? (
           <button
             type="button"
             onClick={() => {
@@ -289,6 +322,14 @@ function Picks() {
             Clear card
           </button>
         ) : null}
+        {accountRequired ? (
+          <Link
+            to="/account"
+            className="num ml-auto rounded-sm border border-primary/40 bg-primary/10 px-3 py-2 text-[11px] font-black uppercase tracking-wider text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+          >
+            Sign in to lock picks
+          </Link>
+        ) : null}
         {settled ? (
           <span className="num ml-auto rounded-sm border border-positive/30 bg-positive/10 px-3 py-2 text-[11px] font-black uppercase tracking-wider text-positive">
             Scored {total} / {maxPoints} pts
@@ -296,8 +337,18 @@ function Picks() {
         ) : null}
       </div>
 
+      {accountRequired ? (
+        <div className="mt-5 border border-primary/30 bg-primary/10 p-4">
+          <p className="text-sm font-black uppercase italic">Account required</p>
+          <p className="mt-1 max-w-2xl text-xs text-muted-foreground">
+            Picks are locked to a signed-in profile. Sign in with Google before selecting drivers so
+            your card belongs to one account.
+          </p>
+        </div>
+      ) : null}
+
       {!hydrated ? (
-        <p className="num mt-10 text-center text-xs text-muted-foreground">Dealing card…</p>
+        <p className="num mt-10 text-center text-xs text-muted-foreground">Checking account...</p>
       ) : (
         <section className="mt-8">
           <SectionHeading
@@ -347,7 +398,7 @@ function Picks() {
                       <select
                         aria-label={m.label}
                         value={pickedId ?? ""}
-                        disabled={locked}
+                        disabled={!canEdit}
                         onChange={(e) => set(m.id, e.target.value)}
                         className="w-full border border-border bg-background px-2 py-2 text-sm font-bold uppercase text-foreground disabled:opacity-60"
                       >
@@ -396,6 +447,10 @@ function Picks() {
                   ) : settled ? (
                     <p className="num mt-2 text-[11px] text-muted-foreground">
                       Result {byId.get(actualFor(challenge, m.id) ?? "")?.code ?? "—"} · no pick made
+                    </p>
+                  ) : accountRequired ? (
+                    <p className="num mt-2 text-[11px] text-muted-foreground">
+                      Sign in to lock this pick to your account
                     </p>
                   ) : locked ? (
                     <p className="num mt-2 text-[11px] text-muted-foreground">
@@ -485,3 +540,4 @@ function Picks() {
     </SiteShell>
   );
 }
+

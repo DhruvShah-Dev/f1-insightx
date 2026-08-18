@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { CloudRain, Flag, Gauge, Thermometer, Timer, Wind } from "lucide-react";
+import { CloudRain, Database, ExternalLink, Flag, Gauge, Newspaper, Thermometer, Timer, Wind, Wrench } from "lucide-react";
 import { Countdown } from "@/components/countdown";
 import { StartLightRails } from "@/components/race-atmosphere";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
@@ -10,6 +10,30 @@ import { team as teamOf } from "@/data/teams";
 import { getRaceReports, getRaceWeek, getSeasonTelemetry } from "@/lib/f1.functions";
 import { fmtDate, fmtLapS, fmtNum, titleCase } from "@/lib/format";
 import crowdImg from "@/assets/zandvoort-crowd.jpg";
+
+const upgradeSources = [
+  {
+    name: "FIA Documents",
+    role: "Official declarations",
+    detail: "Race-week car presentation submissions and scrutineering files.",
+    href: "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14",
+    icon: Database,
+  },
+  {
+    name: "Formula1.com",
+    role: "Official tech explainers",
+    detail: "Readable summaries of team packages, goals and reported part changes.",
+    href: "https://www.formula1.com/en/latest",
+    icon: Newspaper,
+  },
+  {
+    name: "The Race / Autosport",
+    role: "Technical analysis",
+    detail: "Part-by-part context, photos, practice impact and driver feedback.",
+    href: "https://www.the-race.com/formula-1/",
+    icon: Wrench,
+  },
+] as const;
 
 const seasonQuery = queryOptions({
   queryKey: ["season-telemetry"],
@@ -366,6 +390,71 @@ function RaceControl() {
           ) : null}
         </section>
       </div>
+
+      {/* Upgrade watch */}
+      <section className="mt-12 overflow-hidden rounded-xl border border-border bg-card/45">
+        <div className="rule-grid relative p-5 sm:p-6">
+          <span className="pw-sweep pointer-events-none absolute inset-0" aria-hidden />
+          <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1 bg-primary px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-primary-foreground">
+                  <Wrench className="size-3" />
+                  Upgrade watch
+                </span>
+                <span className="label-xs">FIA first · editorial context after</span>
+              </div>
+              <h2 className="mt-3 text-2xl font-black uppercase italic tracking-tight sm:text-3xl">
+                Track new F1 parts from official declarations
+              </h2>
+              <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+                Use FIA car presentation files as the raw feed, then enrich with F1.com,
+                The Race, Autosport and Motorsport reporting for purpose, photos and impact.
+              </p>
+            </div>
+            <div className="num border border-primary/30 bg-primary/10 px-3 py-2 text-[11px] font-black uppercase tracking-widest text-primary">
+              Derivable: team · part · round · impact
+            </div>
+          </div>
+
+          <div className="relative mt-6 grid gap-3 lg:grid-cols-3">
+            {upgradeSources.map((source, index) => {
+              const Icon = source.icon;
+              return (
+                <a
+                  key={source.name}
+                  href={source.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="pw-ticker group border border-border bg-background/70 p-4 transition-colors hover:border-primary hover:bg-accent/40"
+                  style={{ animationDelay: `${index * 0.08}s` }}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="grid size-9 place-items-center border border-border bg-card text-primary">
+                      <Icon className="size-4" />
+                    </span>
+                    <ExternalLink className="size-3.5 text-muted-foreground transition-colors group-hover:text-primary" />
+                  </div>
+                  <p className="mt-4 text-sm font-black uppercase italic">{source.name}</p>
+                  <p className="label-xs mt-1">{source.role}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{source.detail}</p>
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="relative mt-5 grid gap-2 sm:grid-cols-4">
+            {["Upgrade count", "Affected area", "First race used", "Practice delta"].map((item) => (
+              <span
+                key={item}
+                className="border border-border bg-card/50 px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Report rail */}
       <section className="mt-12">
