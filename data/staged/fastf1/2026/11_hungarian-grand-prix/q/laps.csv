@@ -1,0 +1,298 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,1.0,1.0,SOFT,1.0,,,32.807,28.99,254.0,232.0,235.0,,1,True,False,False,False,2026-07-25 14:05:24.823,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,2.0,1.0,SOFT,2.0,93.333,33.451,31.534,28.348,108.0,231.0,272.0,299.0,1,True,True,True,False,2026-07-25 14:07:09.826,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,3.0,1.0,SOFT,3.0,78.277,27.467,28.045,22.765,306.0,261.0,262.0,333.0,1,True,True,True,False,2026-07-25 14:08:43.159,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,4.0,1.0,SOFT,4.0,104.866,36.723,35.793,32.35,202.0,198.0,,224.0,1,True,False,False,False,2026-07-25 14:10:01.436,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,5.0,2.0,SOFT,5.0,,,31.043,30.614,260.0,234.0,271.0,224.0,1,False,False,False,False,2026-07-25 14:11:46.302,,26.6,48.5,23.1,False,2.0,184.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,6.0,2.0,SOFT,6.0,78.566,27.612,27.914,23.04,305.0,256.0,268.0,331.0,12,False,True,True,False,2026-07-25 14:29:28.461,,27.0,47.2,23.0,False,1.4,106.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,7.0,2.0,SOFT,7.0,99.176,34.28,33.846,31.05,211.0,194.0,,231.0,1,False,False,False,False,2026-07-25 14:30:47.027,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,8.0,3.0,SOFT,1.0,,,31.801,33.697,240.0,239.0,271.0,231.0,1,True,False,False,False,2026-07-25 14:32:26.203,,27.0,47.6,22.5,False,1.6,141.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,9.0,3.0,SOFT,2.0,77.456,27.446,27.728,22.282,304.0,258.0,265.0,331.0,1,True,True,True,False,2026-07-25 14:37:50.589,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,10.0,3.0,SOFT,3.0,104.165,36.543,36.479,31.143,191.0,191.0,,220.0,1,True,False,False,False,2026-07-25 14:39:08.045,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,11.0,4.0,SOFT,1.0,,,31.346,25.856,270.0,235.0,274.0,220.0,12,True,False,False,False,2026-07-25 14:40:52.210,,26.8,46.3,23.5,False,4.2,142.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,12.0,4.0,SOFT,2.0,77.32,27.435,27.634,22.251,305.0,256.0,263.0,329.0,1,True,True,True,False,2026-07-25 14:51:06.205,,26.8,46.5,23.9,False,2.0,109.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,13.0,4.0,SOFT,3.0,99.204,34.056,34.083,31.065,196.0,210.0,,227.0,1,True,False,False,False,2026-07-25 14:52:23.525,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,14.0,5.0,SOFT,1.0,,,31.766,25.384,279.0,234.0,271.0,227.0,1,True,False,False,False,2026-07-25 14:54:02.729,,26.8,45.4,23.7,False,2.2,183.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,15.0,5.0,SOFT,2.0,77.207,27.364,27.621,22.222,307.0,260.0,265.0,327.0,12,True,True,True,False,2026-07-25 14:59:26.084,,26.8,43.9,23.1,False,1.0,155.0
+2026,11,Hungarian Grand Prix,Q,NOR,McLaren,16.0,5.0,SOFT,3.0,,41.366,37.779,,199.0,189.0,,183.0,2,True,False,False,False,2026-07-25 15:00:43.291,,26.7,42.1,23.6,False,1.8,103.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,1.0,1.0,MEDIUM,1.0,,,33.197,25.519,263.0,225.0,270.0,,1,True,False,False,False,2026-07-25 14:02:14.852,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,2.0,1.0,MEDIUM,2.0,78.73,27.769,28.438,22.523,295.0,256.0,267.0,328.0,1,True,True,True,False,2026-07-25 14:03:46.746,,26.9,47.8,23.0,False,2.0,129.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,3.0,1.0,MEDIUM,3.0,111.683,42.753,37.023,31.907,185.0,206.0,,157.0,1,True,False,False,False,2026-07-25 14:05:05.476,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,4.0,2.0,SOFT,1.0,,,35.655,25.638,262.0,225.0,270.0,157.0,12,True,False,False,False,2026-07-25 14:06:57.159,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,5.0,2.0,SOFT,2.0,77.931,27.641,27.982,22.308,286.0,257.0,265.0,330.0,1,True,True,True,False,2026-07-25 14:30:45.119,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,6.0,2.0,SOFT,3.0,110.805,38.174,39.252,33.379,196.0,188.0,,252.0,1,True,False,False,False,2026-07-25 14:32:03.050,,27.0,47.6,22.5,False,1.6,141.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,7.0,3.0,SOFT,4.0,,,36.891,25.196,250.0,222.0,269.0,252.0,1,False,False,False,False,2026-07-25 14:33:53.855,,26.8,47.3,23.6,False,2.6,140.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,8.0,3.0,SOFT,5.0,77.803,27.473,27.956,22.374,296.0,253.0,262.0,328.0,1,False,True,True,False,2026-07-25 14:38:45.234,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,9.0,3.0,SOFT,6.0,95.689,33.477,32.502,29.71,209.0,184.0,,290.0,12,False,False,False,False,2026-07-25 14:40:03.037,,26.8,46.5,23.7,False,3.0,133.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,10.0,4.0,SOFT,1.0,,,38.302,25.595,269.0,230.0,270.0,290.0,21,True,False,False,False,2026-07-25 14:41:38.726,,26.9,46.5,23.3,False,2.5,140.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,11.0,4.0,SOFT,2.0,77.219,27.329,27.842,22.048,298.0,257.0,264.0,329.0,1,True,True,True,False,2026-07-25 14:51:44.982,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,12.0,4.0,SOFT,3.0,91.9,33.633,29.838,28.429,233.0,244.0,,224.0,1,True,False,False,False,2026-07-25 14:53:02.201,,26.8,44.1,23.3,False,2.1,82.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,13.0,5.0,SOFT,1.0,,,32.467,24.311,278.0,219.0,270.0,224.0,1,True,False,False,False,2026-07-25 14:54:34.101,,26.9,44.7,23.3,False,1.2,133.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,14.0,5.0,SOFT,2.0,78.906,27.517,28.092,23.297,297.0,255.0,221.0,325.0,1,True,False,True,False,2026-07-25 14:58:19.379,,26.9,42.8,23.2,False,1.6,149.0
+2026,11,Hungarian Grand Prix,Q,HAM,Ferrari,15.0,5.0,SOFT,3.0,,40.54,35.414,,190.0,197.0,,227.0,12,True,False,False,False,2026-07-25 14:59:38.285,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,1.0,1.0,MEDIUM,1.0,,,32.893,24.677,275.0,223.0,271.0,,1,True,False,False,False,2026-07-25 14:02:21.942,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,2.0,1.0,MEDIUM,2.0,78.878,27.853,28.575,22.45,294.0,254.0,267.0,329.0,1,True,False,True,False,2026-07-25 14:03:56.457,,26.9,47.8,23.0,False,2.0,129.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,3.0,1.0,MEDIUM,3.0,105.032,42.706,35.524,26.802,208.0,193.0,268.0,242.0,1,True,True,True,False,2026-07-25 14:05:15.335,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,4.0,1.0,MEDIUM,4.0,79.344,27.971,28.606,22.767,299.0,258.0,264.0,327.0,1,True,True,True,False,2026-07-25 14:07:00.367,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,5.0,1.0,MEDIUM,5.0,103.925,39.359,33.932,30.634,152.0,226.0,,297.0,1,True,False,False,False,2026-07-25 14:08:19.711,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,6.0,2.0,MEDIUM,6.0,,,35.605,24.757,219.0,220.0,267.0,297.0,1,False,False,False,False,2026-07-25 14:10:03.636,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,7.0,2.0,MEDIUM,7.0,78.984,27.817,28.381,22.786,294.0,257.0,265.0,328.0,1,False,True,True,False,2026-07-25 14:15:21.470,,26.5,48.4,23.1,False,0.4,187.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,8.0,2.0,MEDIUM,8.0,97.736,32.98,35.042,29.714,220.0,209.0,,301.0,1,False,False,False,False,2026-07-25 14:16:40.454,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,9.0,3.0,SOFT,1.0,,,35.554,25.294,272.0,157.0,267.0,301.0,1,True,False,False,False,2026-07-25 14:18:18.190,,26.7,49.2,22.3,False,2.5,147.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,10.0,3.0,SOFT,2.0,78.936,27.783,28.145,23.008,295.0,258.0,267.0,329.0,12,True,True,True,False,2026-07-25 14:29:20.547,,27.0,47.2,23.0,False,1.4,106.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,11.0,3.0,SOFT,3.0,101.163,36.556,35.424,29.183,234.0,217.0,,288.0,1,True,False,False,False,2026-07-25 14:30:39.483,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,12.0,4.0,SOFT,1.0,,,34.115,23.866,263.0,230.0,269.0,288.0,1,True,False,False,False,2026-07-25 14:32:20.646,,27.0,47.6,22.5,False,1.6,141.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,13.0,4.0,SOFT,2.0,77.626,27.612,27.834,22.18,295.0,259.0,265.0,330.0,1,True,True,True,False,2026-07-25 14:38:33.501,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,14.0,4.0,SOFT,3.0,103.0,35.34,36.159,31.501,206.0,187.0,,232.0,12,True,False,False,False,2026-07-25 14:39:51.127,,26.8,46.5,23.7,False,3.0,133.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,15.0,5.0,SOFT,1.0,,,35.279,26.958,276.0,237.0,268.0,232.0,21,True,False,False,False,2026-07-25 14:41:34.127,,26.9,46.5,23.3,False,2.5,140.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,16.0,5.0,SOFT,2.0,77.445,27.542,27.775,22.128,297.0,259.0,263.0,327.0,1,True,True,True,False,2026-07-25 14:51:52.915,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,17.0,5.0,SOFT,3.0,100.742,33.482,35.624,31.636,234.0,188.0,,242.0,1,True,False,False,False,2026-07-25 14:53:10.360,,26.8,44.1,23.3,False,2.1,82.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,18.0,6.0,SOFT,1.0,,,33.976,23.699,276.0,222.0,271.0,242.0,1,True,False,False,False,2026-07-25 14:54:51.102,,26.9,44.7,23.3,False,1.2,133.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,19.0,6.0,SOFT,2.0,77.753,27.636,27.945,22.172,296.0,259.0,251.0,326.0,1,True,False,True,False,2026-07-25 14:58:29.939,,26.9,42.8,23.2,False,1.6,149.0
+2026,11,Hungarian Grand Prix,Q,LEC,Ferrari,20.0,6.0,SOFT,3.0,,38.882,38.414,,184.0,176.0,,198.0,12,True,False,False,False,2026-07-25 14:59:47.692,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,1.0,1.0,SOFT,1.0,,,33.032,25.986,272.0,220.0,244.0,,1,True,False,False,False,2026-07-25 14:04:10.108,,26.9,47.8,23.0,False,2.0,129.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,2.0,1.0,SOFT,2.0,91.25,31.954,34.178,25.118,254.0,200.0,271.0,323.0,1,True,True,True,False,2026-07-25 14:05:43.490,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,3.0,1.0,SOFT,3.0,78.726,27.677,28.17,22.879,303.0,253.0,264.0,332.0,1,True,True,True,False,2026-07-25 14:07:14.740,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,4.0,1.0,SOFT,4.0,104.282,38.037,34.711,31.534,124.0,212.0,,286.0,1,True,False,False,False,2026-07-25 14:08:33.466,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,5.0,2.0,SOFT,5.0,,,35.345,24.707,247.0,215.0,271.0,286.0,1,False,False,False,False,2026-07-25 14:10:17.748,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,6.0,2.0,SOFT,6.0,78.554,27.692,28.191,22.671,303.0,256.0,265.0,329.0,1,False,False,True,False,2026-07-25 14:14:46.028,,26.5,48.4,23.1,False,0.4,187.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,7.0,2.0,SOFT,7.0,138.409,40.751,36.711,60.947,129.0,216.0,,250.0,1,False,False,False,False,2026-07-25 14:16:04.582,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,8.0,3.0,SOFT,1.0,,,34.259,26.379,264.0,205.0,242.0,250.0,1,True,False,False,False,2026-07-25 14:18:22.991,,26.7,49.2,22.3,False,2.5,147.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,9.0,3.0,SOFT,2.0,91.865,31.608,35.074,25.183,256.0,200.0,273.0,324.0,12,True,True,True,False,2026-07-25 14:28:40.774,,27.0,47.2,23.0,False,1.4,106.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,10.0,3.0,SOFT,3.0,78.178,27.602,28.002,22.574,307.0,255.0,269.0,333.0,21,True,False,True,False,2026-07-25 14:30:12.639,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,11.0,3.0,SOFT,4.0,105.656,33.868,39.672,32.116,213.0,182.0,,285.0,1,True,False,False,False,2026-07-25 14:31:30.817,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,12.0,4.0,SOFT,5.0,,,34.484,29.86,263.0,210.0,267.0,285.0,1,False,False,False,False,2026-07-25 14:33:16.473,,26.9,47.5,22.6,False,1.7,142.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,13.0,4.0,SOFT,6.0,78.393,27.709,28.207,22.477,304.0,254.0,267.0,330.0,1,False,True,True,False,2026-07-25 14:37:56.675,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,14.0,4.0,SOFT,7.0,98.789,33.514,35.441,29.834,219.0,202.0,,283.0,1,False,False,False,False,2026-07-25 14:39:15.068,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,15.0,5.0,SOFT,1.0,,,33.769,25.607,260.0,218.0,272.0,283.0,12,True,False,False,False,2026-07-25 14:40:53.857,,26.8,46.3,23.5,False,4.2,142.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,16.0,5.0,SOFT,2.0,77.579,27.479,27.792,22.308,304.0,253.0,269.0,332.0,1,True,True,True,False,2026-07-25 14:51:58.340,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,17.0,5.0,SOFT,3.0,96.841,33.289,34.563,28.989,229.0,215.0,,284.0,1,True,False,False,False,2026-07-25 14:53:15.919,,26.8,44.1,23.3,False,2.1,82.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,18.0,6.0,SOFT,1.0,,,32.354,23.923000000000002,272.0,222.0,273.0,284.0,1,True,False,False,False,2026-07-25 14:54:52.760,,26.9,44.7,23.3,False,1.2,133.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,19.0,6.0,SOFT,2.0,77.479,27.426,27.781,22.272,302.0,255.0,271.0,329.0,12,True,True,True,False,2026-07-25 14:58:42.117,,26.8,43.9,23.1,False,1.0,155.0
+2026,11,Hungarian Grand Prix,Q,ANT,Mercedes,20.0,6.0,SOFT,3.0,,41.684,42.052,,160.0,154.0,,241.0,21,True,False,False,False,2026-07-25 14:59:59.596,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,1.0,1.0,SOFT,1.0,,,32.546,26.696,241.0,229.0,226.0,,1,True,False,False,False,2026-07-25 14:05:00.696,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,2.0,1.0,SOFT,2.0,103.751,33.77,42.493,27.488,237.0,149.0,269.0,256.0,1,True,True,True,False,2026-07-25 14:06:33.907,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,3.0,1.0,SOFT,3.0,78.891,27.854,28.296,22.741,304.0,258.0,261.0,330.0,1,True,True,True,False,2026-07-25 14:08:17.658,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,4.0,1.0,SOFT,4.0,104.488,36.303,36.168,32.017,214.0,196.0,,258.0,1,True,False,False,False,2026-07-25 14:09:36.549,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,5.0,2.0,SOFT,5.0,,,32.794,31.74,243.0,114.0,270.0,258.0,1,False,False,False,False,2026-07-25 14:11:21.037,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,6.0,2.0,SOFT,6.0,78.941,27.849,28.066,23.026,308.0,258.0,263.0,329.0,12,False,True,True,False,2026-07-25 14:29:52.432,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,7.0,2.0,SOFT,7.0,99.446,34.207,34.702,30.537,222.0,208.0,,275.0,1,False,False,False,False,2026-07-25 14:31:11.373,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,8.0,3.0,SOFT,1.0,,,32.756,30.129,244.0,222.0,270.0,275.0,1,True,False,False,False,2026-07-25 14:32:50.819,,26.9,47.5,22.6,False,1.7,142.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,9.0,3.0,SOFT,2.0,77.928,27.576999999999998,27.914,22.437,302.0,253.0,267.0,330.0,1,True,True,True,False,2026-07-25 14:37:20.986,,26.7,46.5,23.6,False,1.8,117.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,10.0,3.0,SOFT,3.0,104.19,38.814,35.278,30.098,222.0,204.0,,246.0,1,True,False,False,False,2026-07-25 14:38:38.914,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,11.0,4.0,SOFT,1.0,,,31.413,24.114,241.0,227.0,271.0,246.0,12,True,False,False,False,2026-07-25 14:40:23.104,,26.8,46.5,23.7,False,3.0,133.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,12.0,4.0,SOFT,2.0,77.684,27.572,27.646,22.466,305.0,252.0,266.0,328.0,1,True,True,True,False,2026-07-25 14:50:55.861,,26.8,46.5,23.9,False,2.0,109.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,13.0,4.0,SOFT,3.0,100.026,36.041,34.785,29.2,219.0,197.0,,239.0,1,True,False,False,False,2026-07-25 14:52:13.545,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,14.0,5.0,SOFT,1.0,,,31.24,31.929,243.0,231.0,270.0,239.0,1,True,False,False,False,2026-07-25 14:53:53.571,,26.8,45.4,23.7,False,2.2,183.0
+2026,11,Hungarian Grand Prix,Q,PIA,McLaren,15.0,5.0,SOFT,2.0,,34.552,35.028,,216.0,200.0,,328.0,12,True,False,False,False,2026-07-25 14:59:41.683,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,1.0,1.0,SOFT,1.0,,,31.345,27.403,242.0,235.0,269.0,,1,True,False,False,False,2026-07-25 14:04:32.280,,26.9,47.8,23.0,False,2.0,129.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,2.0,1.0,SOFT,2.0,78.656,27.867,28.216,22.573,297.0,259.0,268.0,329.0,1,True,True,True,False,2026-07-25 14:06:04.592,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,3.0,1.0,SOFT,3.0,135.307,37.175,37.727,60.405,204.0,206.0,,219.0,1,True,False,False,False,2026-07-25 14:07:23.248,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,4.0,2.0,SOFT,4.0,,,32.628,24.021,246.0,233.0,271.0,219.0,1,False,False,False,False,2026-07-25 14:09:38.555,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,5.0,2.0,SOFT,5.0,78.682,27.729,28.213,22.74,300.0,258.0,260.0,328.0,1,False,False,True,False,2026-07-25 14:14:30.942,,26.8,48.9,22.8,False,2.0,176.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,6.0,2.0,SOFT,6.0,98.499,35.305,35.644,27.55,102.0,238.0,,232.0,1,False,False,False,False,2026-07-25 14:15:49.624,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,7.0,3.0,SOFT,1.0,,,31.629,24.159,242.0,231.0,272.0,232.0,1,True,False,False,False,2026-07-25 14:17:28.123,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,8.0,3.0,SOFT,2.0,78.249,27.698,27.975,22.576,301.0,256.0,263.0,330.0,1,True,True,True,False,2026-07-25 14:28:25.806,,27.1,47.6,23.0,False,1.9,144.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,9.0,3.0,SOFT,3.0,107.956,42.345,34.235,31.376,108.0,181.0,,157.0,12,True,False,False,False,2026-07-25 14:29:44.055,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,10.0,4.0,SOFT,4.0,,,32.319,24.012,249.0,230.0,268.0,157.0,1,False,False,False,False,2026-07-25 14:31:32.011,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,11.0,4.0,SOFT,5.0,78.429,27.703,28.221,22.505,300.0,257.0,262.0,327.0,1,False,False,True,False,2026-07-25 14:36:52.803,,26.7,46.5,23.6,False,1.8,117.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,12.0,4.0,SOFT,6.0,98.883,34.949,33.059,30.875,114.0,234.0,,209.0,1,False,False,False,False,2026-07-25 14:38:11.232,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,13.0,5.0,SOFT,1.0,,,32.105,23.688,238.0,235.0,272.0,209.0,12,True,False,False,False,2026-07-25 14:39:50.115,,26.8,46.5,23.7,False,3.0,133.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,14.0,5.0,SOFT,2.0,77.725,27.593,27.654,22.478,296.0,252.0,265.0,325.0,1,True,True,True,False,2026-07-25 14:50:47.460,,26.8,46.5,23.9,False,2.0,109.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,15.0,5.0,SOFT,3.0,93.986,34.498,31.531,27.957,237.0,232.0,,135.0,1,True,False,False,False,2026-07-25 14:52:05.185,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,16.0,6.0,SOFT,1.0,,,31.4,24.558,242.0,232.0,272.0,135.0,1,True,False,False,False,2026-07-25 14:53:39.171,,26.8,45.4,23.7,False,2.2,183.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,17.0,6.0,SOFT,2.0,92.68,27.643,27.83,37.207,298.0,257.0,171.0,326.0,12,True,False,True,False,2026-07-25 14:58:36.897,,26.8,43.9,23.1,False,1.0,155.0
+2026,11,Hungarian Grand Prix,Q,VER,Red Bull Racing,18.0,6.0,SOFT,3.0,,48.874,34.886,,211.0,218.0,,92.0,12,True,False,False,False,2026-07-25 15:00:09.577,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,1.0,1.0,SOFT,1.0,,,34.807,25.477,257.0,230.0,255.0,,1,True,False,False,False,2026-07-25 14:04:15.655,,26.9,47.8,23.0,False,2.0,129.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,2.0,1.0,SOFT,2.0,102.573,31.485,45.26,25.828,249.0,164.0,271.0,308.0,1,True,True,True,False,2026-07-25 14:05:57.636,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,3.0,1.0,SOFT,3.0,78.922,27.812,28.4,22.71,301.0,255.0,262.0,330.0,1,True,True,True,False,2026-07-25 14:07:40.209,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,4.0,1.0,SOFT,4.0,114.766,40.076,42.526,32.164,229.0,192.0,,188.0,1,True,False,False,False,2026-07-25 14:08:59.131,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,5.0,2.0,SOFT,5.0,,,37.188,25.076,259.0,208.0,271.0,188.0,1,False,False,False,False,2026-07-25 14:10:53.897,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,6.0,2.0,SOFT,6.0,78.856,27.734,28.209,22.913,298.0,252.0,268.0,330.0,1,False,True,True,False,2026-07-25 14:14:55.806,,26.5,48.4,23.1,False,0.4,187.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,7.0,2.0,SOFT,7.0,107.073,40.704,36.17,30.199,219.0,226.0,,297.0,1,False,False,False,False,2026-07-25 14:16:14.662,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,8.0,3.0,SOFT,1.0,,,33.403,26.388,270.0,224.0,251.0,297.0,1,True,False,False,False,2026-07-25 14:18:01.735,,26.7,49.2,22.3,False,2.5,147.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,9.0,3.0,SOFT,2.0,102.565,33.462,42.288,26.815,283.0,190.0,271.0,311.0,12,True,True,True,False,2026-07-25 14:28:48.050,,27.0,47.2,23.0,False,1.4,106.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,10.0,3.0,SOFT,3.0,78.645,27.666,28.109,22.87,304.0,254.0,266.0,331.0,1,True,True,True,False,2026-07-25 14:30:30.615,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,11.0,3.0,SOFT,4.0,144.637,40.816,38.844,64.977,215.0,202.0,,206.0,1,True,False,False,False,2026-07-25 14:31:49.260,,27.0,47.6,22.5,False,1.6,141.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,12.0,4.0,SOFT,5.0,,,34.59,25.107,219.0,218.0,271.0,206.0,1,False,False,False,False,2026-07-25 14:34:13.897,,26.8,47.3,23.6,False,2.6,140.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,13.0,4.0,SOFT,6.0,78.445,27.674,28.04,22.731,302.0,256.0,268.0,330.0,1,False,True,True,False,2026-07-25 14:37:11.670,,26.7,46.5,23.6,False,1.8,117.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,14.0,4.0,SOFT,7.0,104.975,37.442,37.003,30.53,249.0,214.0,,200.0,1,False,False,False,False,2026-07-25 14:38:30.115,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,15.0,5.0,SOFT,1.0,,,32.886,28.277,281.0,228.0,275.0,200.0,12,True,False,False,False,2026-07-25 14:40:15.090,,26.8,46.5,23.7,False,3.0,133.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,16.0,5.0,SOFT,2.0,77.76,27.44,27.849,22.471,301.0,254.0,268.0,331.0,1,True,True,True,False,2026-07-25 14:52:07.407,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,17.0,5.0,SOFT,3.0,95.215,34.161,32.973,28.081,251.0,233.0,,218.0,1,True,False,False,False,2026-07-25 14:53:25.167,,26.8,44.1,23.3,False,2.1,82.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,18.0,6.0,SOFT,1.0,,,30.895,23.897,276.0,228.0,274.0,218.0,1,True,False,False,False,2026-07-25 14:55:00.382,,26.9,44.7,23.3,False,1.2,133.0
+2026,11,Hungarian Grand Prix,Q,RUS,Mercedes,19.0,6.0,SOFT,2.0,79.586,27.557,27.875,24.154,303.0,254.0,194.0,330.0,12,True,False,True,False,2026-07-25 14:58:50.671,,26.8,43.9,23.1,False,1.0,155.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,1.0,1.0,SOFT,1.0,,,31.959,24.719,248.0,227.0,269.0,,1,True,False,False,False,2026-07-25 14:04:35.562,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,2.0,1.0,SOFT,2.0,78.754,27.817,28.261,22.676,296.0,254.0,265.0,329.0,1,True,True,True,False,2026-07-25 14:06:11.802,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,3.0,1.0,SOFT,3.0,103.729,38.262,34.853,30.614,238.0,209.0,,208.0,1,True,False,False,False,2026-07-25 14:07:30.556,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,4.0,2.0,SOFT,1.0,,,31.966,25.854,245.0,227.0,269.0,208.0,1,True,False,False,False,2026-07-25 14:09:14.285,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,5.0,2.0,SOFT,2.0,104.675,27.892,28.102,48.681,302.0,257.0,,331.0,12,True,False,False,False,2026-07-25 14:29:03.321,,27.0,47.2,23.0,False,1.4,106.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,6.0,3.0,SOFT,1.0,,,31.624,23.962,244.0,230.0,271.0,331.0,1,False,False,False,False,2026-07-25 14:30:47.996,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,7.0,3.0,SOFT,2.0,77.872,27.643,27.868,22.361,306.0,256.0,265.0,330.0,1,False,True,True,False,2026-07-25 14:35:43.924,,26.8,46.2,23.2,False,2.3,97.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,8.0,3.0,SOFT,3.0,134.007,38.274,38.168,57.565,149.0,198.0,,207.0,1,False,False,False,False,2026-07-25 14:37:01.796,,26.7,46.5,23.6,False,1.8,117.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,9.0,4.0,SOFT,4.0,,,31.354,23.982,251.0,230.0,272.0,207.0,12,False,False,False,False,2026-07-25 14:39:15.803,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,10.0,4.0,SOFT,5.0,77.856,27.588,27.974,22.294,303.0,256.0,267.0,330.0,1,False,True,True,False,2026-07-25 14:51:13.647,,26.8,46.5,23.9,False,2.0,109.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,11.0,4.0,SOFT,6.0,94.525,32.288,33.923,28.314,241.0,220.0,,249.0,1,False,False,False,False,2026-07-25 14:52:31.503,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,12.0,5.0,SOFT,1.0,,,33.813,24.672,244.0,179.0,271.0,249.0,1,True,False,False,False,2026-07-25 14:54:06.028,,26.8,45.4,23.7,False,2.2,183.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,13.0,5.0,SOFT,2.0,78.384,28.013,28.009,22.362,301.0,259.0,256.0,327.0,12,True,False,True,False,2026-07-25 14:59:13.483,,26.8,43.9,23.1,False,1.0,155.0
+2026,11,Hungarian Grand Prix,Q,HAD,Red Bull Racing,14.0,5.0,SOFT,3.0,,42.266,36.243,,191.0,200.0,,197.0,2,True,False,False,False,2026-07-25 15:00:31.867,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,1.0,1.0,SOFT,1.0,,,37.96,25.152,217.0,230.0,269.0,,1,True,False,False,False,2026-07-25 14:06:37.068,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,2.0,1.0,SOFT,2.0,79.393,28.054,28.524,22.815,301.0,257.0,258.0,331.0,1,True,True,True,False,2026-07-25 14:08:23.841,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,3.0,1.0,SOFT,3.0,105.235,35.059,38.171,32.005,225.0,163.0,,232.0,1,True,False,False,False,2026-07-25 14:09:43.234,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,4.0,2.0,SOFT,4.0,,,34.229,24.503,227.0,228.0,269.0,232.0,1,False,False,False,False,2026-07-25 14:11:28.469,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,5.0,2.0,SOFT,5.0,79.233,27.866,28.373,22.994,294.0,254.0,267.0,330.0,1,False,True,True,False,2026-07-25 14:15:47.187,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,6.0,2.0,SOFT,6.0,101.586,36.948,34.101,30.537,163.0,214.0,,247.0,1,False,False,False,False,2026-07-25 14:17:06.420,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,7.0,3.0,SOFT,1.0,,,34.675,27.483,234.0,222.0,271.0,247.0,1,True,False,False,False,2026-07-25 14:18:48.006,,26.8,48.1,22.2,False,0.9,95.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,8.0,3.0,SOFT,2.0,78.825,27.85,28.02,22.955,295.0,254.0,270.0,330.0,12,True,True,True,False,2026-07-25 14:29:45.265,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,9.0,3.0,SOFT,3.0,99.483,33.723,36.053,29.707,231.0,202.0,,256.0,1,True,False,False,False,2026-07-25 14:31:04.090,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,10.0,4.0,SOFT,1.0,,,33.601,26.247,227.0,233.0,271.0,256.0,1,True,False,False,False,2026-07-25 14:32:43.573,,26.9,47.5,22.6,False,1.7,142.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,11.0,4.0,SOFT,2.0,78.36,27.851,27.904,22.605,298.0,255.0,267.0,329.0,1,True,True,True,False,2026-07-25 14:38:01.875,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,12.0,4.0,SOFT,3.0,101.739,35.394,36.362,29.983,209.0,209.0,,249.0,1,True,False,False,False,2026-07-25 14:39:20.235,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,13.0,5.0,SOFT,1.0,,,34.228,24.418,234.0,231.0,271.0,249.0,12,True,False,False,False,2026-07-25 14:41:01.974,,26.8,46.3,23.5,False,4.2,142.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,14.0,5.0,SOFT,2.0,78.281,27.811,28.022,22.448,301.0,256.0,263.0,327.0,1,True,True,True,False,2026-07-25 14:51:25.779,,26.8,46.5,23.9,False,2.0,109.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,15.0,5.0,SOFT,3.0,95.469,33.351,33.846,28.272,234.0,220.0,,256.0,1,True,False,False,False,2026-07-25 14:52:44.060,,26.8,44.1,23.3,False,2.1,82.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,16.0,6.0,SOFT,1.0,,,33.343,24.269,240.0,230.0,271.0,256.0,1,True,False,False,False,2026-07-25 14:54:19.529,,26.8,45.4,23.7,False,2.2,183.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,17.0,6.0,SOFT,2.0,78.388,27.837,27.964,22.587,296.0,255.0,271.0,325.0,12,True,False,True,False,2026-07-25 14:59:06.059,,26.8,43.9,23.1,False,1.0,155.0
+2026,11,Hungarian Grand Prix,Q,LIN,Racing Bulls,18.0,6.0,SOFT,3.0,,40.981,36.826,,243.0,216.0,,247.0,12,True,False,False,False,2026-07-25 15:00:24.447,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,1.0,1.0,SOFT,1.0,,,35.959,25.448,247.0,218.0,271.0,,1,True,False,False,False,2026-07-25 14:06:17.978,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,2.0,1.0,SOFT,2.0,79.47,28.022,28.559,22.889,301.0,257.0,261.0,329.0,1,True,True,True,False,2026-07-25 14:07:51.475,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,3.0,1.0,SOFT,3.0,105.429,35.689,37.111,32.629,252.0,190.0,,270.0,1,True,False,False,False,2026-07-25 14:09:10.945,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,4.0,2.0,SOFT,1.0,,,36.7,26.584,139.0,225.0,272.0,270.0,1,True,False,False,False,2026-07-25 14:10:56.374,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,5.0,2.0,SOFT,2.0,78.796,27.743,28.319,22.734,299.0,254.0,262.0,331.0,1,True,True,True,False,2026-07-25 14:16:02.386,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,6.0,2.0,SOFT,3.0,107.259,35.966,39.024,32.269,202.0,183.0,,278.0,1,True,False,False,False,2026-07-25 14:17:21.182,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,7.0,3.0,SOFT,1.0,,,34.512,26.043,250.0,228.0,269.0,278.0,1,True,False,False,False,2026-07-25 14:19:08.441,,26.8,48.1,22.2,False,0.9,95.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,8.0,3.0,SOFT,2.0,80.225,28.719,28.636,22.87,304.0,253.0,262.0,329.0,12,True,True,True,False,2026-07-25 14:28:56.345,,27.0,47.2,23.0,False,1.4,106.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,9.0,3.0,SOFT,3.0,130.795,33.151,33.475,64.169,144.0,232.0,,299.0,21,True,False,False,False,2026-07-25 14:30:16.570,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,10.0,4.0,SOFT,1.0,,,36.268,29.144,243.0,204.0,272.0,299.0,1,True,False,False,False,2026-07-25 14:32:27.365,,27.0,47.6,22.5,False,1.6,141.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,11.0,4.0,SOFT,2.0,78.639,27.818,28.154,22.667,298.0,253.0,262.0,329.0,1,True,True,True,False,2026-07-25 14:37:36.901,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,12.0,4.0,SOFT,3.0,105.822,36.657,37.778,31.387,210.0,192.0,,274.0,1,True,False,False,False,2026-07-25 14:38:55.540,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,13.0,5.0,SOFT,4.0,,,35.922,25.343,243.0,220.0,269.0,274.0,12,False,False,False,False,2026-07-25 14:40:41.362,,26.8,46.3,23.5,False,4.2,142.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,14.0,5.0,SOFT,5.0,78.707,27.823,28.241,22.643,300.0,254.0,263.0,327.0,1,False,True,True,False,2026-07-25 14:51:37.779,,26.8,45.6,23.3,False,1.9,161.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,15.0,5.0,SOFT,6.0,96.169,32.904,34.526,28.739,235.0,214.0,,294.0,1,False,False,False,False,2026-07-25 14:52:56.486,,26.8,44.1,23.3,False,2.1,82.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,16.0,6.0,SOFT,1.0,,,37.724,30.584,243.0,195.0,271.0,294.0,1,True,False,False,False,2026-07-25 14:54:32.655,,26.8,45.4,23.7,False,2.2,183.0
+2026,11,Hungarian Grand Prix,Q,HUL,Audi,17.0,6.0,SOFT,2.0,78.686,27.867,28.188,22.631,296.0,248.0,261.0,327.0,12,True,True,True,False,2026-07-25 14:59:33.539,,26.8,42.9,23.4,False,2.6,135.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,1.0,1.0,SOFT,1.0,,,40.473,25.041,240.0,214.0,268.0,,1,True,False,False,False,2026-07-25 14:06:43.912,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,2.0,1.0,SOFT,2.0,79.174,27.991,28.518,22.665,305.0,258.0,259.0,329.0,1,True,True,True,False,2026-07-25 14:08:30.453,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,3.0,1.0,SOFT,3.0,104.68,39.524,34.928,30.228,205.0,211.0,,217.0,1,True,False,False,False,2026-07-25 14:09:49.627,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,4.0,2.0,SOFT,4.0,,,38.186,25.318,244.0,209.0,267.0,217.0,1,False,False,False,False,2026-07-25 14:11:34.307,,26.6,48.5,23.1,False,2.0,184.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,5.0,2.0,SOFT,5.0,79.161,27.985,28.352,22.824,297.0,259.0,260.0,328.0,1,False,True,True,False,2026-07-25 14:15:57.082,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,6.0,2.0,SOFT,6.0,105.973,34.128,38.059,33.786,234.0,154.0,,216.0,1,False,False,False,False,2026-07-25 14:17:16.243,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,7.0,3.0,SOFT,1.0,,,34.985,25.275,232.0,220.0,268.0,216.0,1,True,False,False,False,2026-07-25 14:19:02.216,,26.8,48.1,22.2,False,0.9,95.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,8.0,3.0,SOFT,2.0,79.413,28.197,28.289,22.927,301.0,244.0,261.0,328.0,12,True,True,True,False,2026-07-25 14:29:35.622,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,9.0,3.0,SOFT,3.0,97.16,35.213,33.43,28.517,246.0,215.0,,212.0,1,True,False,False,False,2026-07-25 14:30:55.035,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,10.0,4.0,SOFT,1.0,,,34.642,29.801,246.0,211.0,268.0,212.0,1,True,False,False,False,2026-07-25 14:32:32.195,,27.0,47.6,22.5,False,1.6,141.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,11.0,4.0,SOFT,2.0,78.765,28.013,28.216,22.536,300.0,257.0,257.0,327.0,1,True,True,True,False,2026-07-25 14:37:42.078,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,LAW,Racing Bulls,12.0,4.0,SOFT,3.0,104.255,33.783,36.676,33.796,218.0,163.0,,224.0,1,True,False,False,False,2026-07-25 14:39:00.843,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,1.0,1.0,SOFT,1.0,,,32.567,24.811,261.0,221.0,268.0,,1,True,False,False,False,2026-07-25 14:05:14.196,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,2.0,1.0,SOFT,2.0,80.529,28.107,29.056,23.366,303.0,252.0,257.0,333.0,1,True,True,True,False,2026-07-25 14:06:47.867,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,3.0,1.0,SOFT,3.0,110.027,37.851,38.652,33.524,205.0,160.0,,291.0,1,True,False,False,False,2026-07-25 14:08:08.396,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,4.0,2.0,SOFT,1.0,,,31.573,24.326,284.0,226.0,272.0,291.0,1,True,False,False,False,2026-07-25 14:09:58.423,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,5.0,2.0,SOFT,2.0,79.741,27.812,28.803,23.126,298.0,257.0,256.0,335.0,1,True,True,True,False,2026-07-25 14:17:03.227,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,6.0,2.0,SOFT,3.0,109.363,37.787,38.328,33.248,202.0,205.0,,281.0,1,True,False,False,False,2026-07-25 14:18:22.968,,26.7,49.2,22.3,False,2.5,147.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,7.0,3.0,SOFT,4.0,,,33.94,26.182,270.0,185.0,270.0,281.0,1,False,False,False,False,2026-07-25 14:20:12.331,,26.9,48.3,22.3,False,2.2,130.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,8.0,3.0,SOFT,5.0,80.252,27.9,29.196,23.156,304.0,247.0,258.0,335.0,12,False,True,True,False,2026-07-25 14:30:06.183,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,9.0,3.0,SOFT,6.0,106.441,37.217,36.291,32.933,235.0,198.0,,291.0,1,False,False,False,False,2026-07-25 14:31:26.435,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,10.0,4.0,SOFT,1.0,,,36.471,24.891,273.0,207.0,272.0,291.0,1,True,False,False,False,2026-07-25 14:33:12.876,,26.9,47.5,22.6,False,1.7,142.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,11.0,4.0,SOFT,2.0,78.844,27.641,28.462,22.741,300.0,250.0,259.0,335.0,1,True,True,True,False,2026-07-25 14:38:18.579,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,GAS,Alpine,12.0,4.0,SOFT,3.0,,35.722,38.934,,203.0,181.0,,290.0,1,True,False,False,False,2026-07-25 14:39:37.423,,26.8,46.5,23.7,False,3.0,133.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,1.0,1.0,SOFT,1.0,,,38.362,27.232,260.0,195.0,272.0,,1,True,False,False,False,2026-07-25 14:05:16.184,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,2.0,1.0,SOFT,2.0,80.261,28.106,28.996,23.159,303.0,254.0,257.0,335.0,1,True,True,True,False,2026-07-25 14:07:06.225,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,3.0,1.0,SOFT,3.0,143.229,39.165,38.939,65.125,182.0,190.0,,235.0,1,True,False,False,False,2026-07-25 14:08:26.486,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,4.0,2.0,SOFT,1.0,,,34.021,24.794,183.0,221.0,271.0,235.0,1,True,False,False,False,2026-07-25 14:10:49.715,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,5.0,2.0,SOFT,2.0,79.771,27.859,28.853,23.059,304.0,255.0,258.0,332.0,1,True,True,True,False,2026-07-25 14:17:14.584,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,6.0,2.0,SOFT,3.0,108.108,38.84,38.406,30.862,177.0,177.0,,239.0,1,True,False,False,False,2026-07-25 14:18:34.355,,26.8,48.1,22.2,False,0.9,95.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,7.0,3.0,SOFT,4.0,,,41.106,25.499,233.0,212.0,271.0,239.0,12,False,False,False,False,2026-07-25 14:20:22.463,,26.9,48.3,22.3,False,2.2,130.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,8.0,3.0,SOFT,5.0,80.266,28.213,28.976,23.077,301.0,255.0,256.0,336.0,21,False,True,True,False,2026-07-25 14:30:21.495,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,9.0,3.0,SOFT,6.0,110.801,37.192,39.551,34.058,174.0,169.0,,234.0,1,False,False,False,False,2026-07-25 14:31:41.761,,27.0,47.6,22.5,False,1.6,141.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,10.0,4.0,SOFT,1.0,,,33.91,24.779,263.0,222.0,273.0,234.0,1,True,False,False,False,2026-07-25 14:33:32.562,,26.9,47.5,22.6,False,1.7,142.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,11.0,4.0,SOFT,2.0,79.027,27.9,28.415,22.712,292.0,257.0,266.0,335.0,1,True,True,True,False,2026-07-25 14:38:26.065,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,COL,Alpine,12.0,4.0,SOFT,3.0,106.498,37.023,36.575,32.9,189.0,186.0,,247.0,1,True,False,False,False,2026-07-25 14:39:45.092,,26.8,46.5,23.7,False,3.0,133.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,1.0,1.0,SOFT,1.0,,,33.6,27.586,251.0,196.0,271.0,,1,True,False,False,False,2026-07-25 14:06:29.568,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,2.0,1.0,SOFT,2.0,79.476,27.938,28.733,22.805,303.0,256.0,261.0,333.0,1,True,True,True,False,2026-07-25 14:08:10.093,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,3.0,1.0,SOFT,3.0,97.207,33.515,33.359,30.333,219.0,217.0,,286.0,1,True,False,False,False,2026-07-25 14:09:29.569,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,4.0,2.0,SOFT,1.0,,,37.5,26.583,245.0,169.0,271.0,286.0,1,True,False,False,False,2026-07-25 14:11:06.776,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,5.0,2.0,SOFT,2.0,79.069,27.755,28.469,22.845,304.0,252.0,262.0,331.0,1,True,True,True,False,2026-07-25 14:15:27.699,,26.5,48.4,23.1,False,0.4,187.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,6.0,2.0,SOFT,3.0,106.792,36.137,40.202,30.453,218.0,201.0,,291.0,1,True,False,False,False,2026-07-25 14:16:46.768,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,7.0,3.0,SOFT,1.0,,,34.815,25.484,248.0,212.0,271.0,291.0,1,True,False,False,False,2026-07-25 14:18:33.560,,26.8,48.1,22.2,False,0.9,95.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,8.0,3.0,SOFT,2.0,120.609,27.886,28.589,64.134,299.0,252.0,,330.0,12,True,False,False,False,2026-07-25 14:29:11.845,,27.0,47.2,23.0,False,1.4,106.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,9.0,4.0,SOFT,1.0,,,34.806,30.161,249.0,207.0,271.0,330.0,1,True,False,False,False,2026-07-25 14:31:12.454,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,10.0,4.0,SOFT,2.0,79.105,27.843,28.46,22.802,301.0,253.0,263.0,329.0,1,True,True,True,False,2026-07-25 14:37:28.232,,26.7,46.5,23.6,False,1.8,117.0
+2026,11,Hungarian Grand Prix,Q,BOR,Audi,11.0,4.0,SOFT,3.0,103.837,35.377,36.86,31.6,215.0,200.0,,287.0,1,True,False,False,False,2026-07-25 14:38:47.337,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,1.0,1.0,SOFT,1.0,,,34.503,26.711,249.0,220.0,267.0,,1,True,False,False,False,2026-07-25 14:06:20.084,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,2.0,1.0,SOFT,2.0,80.405,28.159,29.06,23.186,301.0,253.0,260.0,329.0,1,True,True,True,False,2026-07-25 14:07:57.487,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,3.0,1.0,SOFT,3.0,103.747,36.167,35.452,32.128,225.0,200.0,,295.0,1,True,False,False,False,2026-07-25 14:09:17.892,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,4.0,2.0,SOFT,1.0,,,35.157,26.234,264.0,223.0,268.0,295.0,1,True,False,False,False,2026-07-25 14:11:01.639,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,5.0,2.0,SOFT,2.0,80.01,28.107,28.785,23.118,302.0,252.0,260.0,331.0,1,True,True,True,False,2026-07-25 14:15:33.478,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,6.0,2.0,SOFT,3.0,108.372,34.106,38.891,35.375,211.0,164.0,,291.0,1,True,False,False,False,2026-07-25 14:16:53.488,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,7.0,3.0,SOFT,4.0,,,34.738,25.512,259.0,215.0,268.0,291.0,1,False,False,False,False,2026-07-25 14:18:41.860,,26.8,48.1,22.2,False,0.9,95.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,8.0,3.0,SOFT,5.0,80.315,28.228,28.946,23.141,305.0,252.0,261.0,330.0,12,False,True,True,False,2026-07-25 14:29:58.509,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,9.0,3.0,SOFT,6.0,99.01,33.113,34.864,31.033,225.0,202.0,,292.0,1,False,False,False,False,2026-07-25 14:31:18.824,,27.0,47.7,22.5,False,1.4,169.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,10.0,4.0,SOFT,1.0,,,35.324,25.179,251.0,220.0,268.0,292.0,1,True,False,False,False,2026-07-25 14:32:57.834,,26.9,47.5,22.6,False,1.7,142.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,11.0,4.0,SOFT,2.0,79.734,28.154,28.739,22.841,298.0,253.0,260.0,329.0,1,True,True,True,False,2026-07-25 14:38:09.184,,26.7,47.0,24.0,False,2.4,121.0
+2026,11,Hungarian Grand Prix,Q,OCO,Haas F1 Team,12.0,4.0,SOFT,3.0,102.665,33.77,36.688,32.207,227.0,196.0,,290.0,1,True,False,False,False,2026-07-25 14:39:28.918,,26.8,45.8,23.6,False,2.0,122.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,1.0,1.0,SOFT,1.0,,,31.605,26.137,273.0,230.0,266.0,,1,True,False,False,False,2026-07-25 14:00:43.943,,26.6,49.5,22.8,False,2.4,133.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,2.0,1.0,SOFT,2.0,80.665,28.601,29.027,23.037,281.0,252.0,254.0,318.0,1,True,True,True,False,2026-07-25 14:02:12.177,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,3.0,1.0,SOFT,3.0,96.384,32.919,32.39,31.075,240.0,221.0,,247.0,1,True,False,False,False,2026-07-25 14:03:32.842,,26.9,47.8,23.0,False,2.0,129.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,4.0,2.0,SOFT,1.0,,,33.822,25.503,265.0,236.0,261.0,247.0,1,True,False,False,False,2026-07-25 14:05:09.226,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,5.0,2.0,SOFT,2.0,80.245,28.445,28.799,23.001,281.0,253.0,254.0,318.0,1,True,True,True,False,2026-07-25 14:09:15.431,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,6.0,2.0,SOFT,3.0,129.941,32.433,33.941,63.567,234.0,188.0,,265.0,1,True,False,False,False,2026-07-25 14:10:35.676,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,7.0,3.0,SOFT,1.0,,,34.153,27.532,259.0,235.0,265.0,265.0,1,True,False,False,False,2026-07-25 14:12:45.617,,26.7,49.1,23.3,False,1.8,139.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,8.0,3.0,SOFT,2.0,80.126,28.243,28.73,23.153,280.0,251.0,255.0,322.0,1,True,True,True,False,2026-07-25 14:16:23.067,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,9.0,3.0,SOFT,3.0,103.496,35.655,35.96,31.881,203.0,214.0,,230.0,1,True,False,False,False,2026-07-25 14:17:43.193,,26.7,49.2,22.3,False,2.5,147.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,10.0,4.0,SOFT,4.0,,,31.719,26.133,258.0,227.0,264.0,230.0,1,False,False,False,False,2026-07-25 14:19:26.689,,26.8,48.1,22.2,False,0.9,95.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,11.0,4.0,SOFT,5.0,80.696,28.672,28.973,23.051,282.0,251.0,258.0,319.0,1,False,True,True,False,2026-07-25 14:26:51.572,,27.1,48.0,22.7,False,3.0,132.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,12.0,4.0,SOFT,6.0,93.007,31.328,32.297,29.382,226.0,221.0,,279.0,1,False,False,False,False,2026-07-25 14:28:12.268,,27.1,47.6,23.0,False,1.9,144.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,13.0,5.0,SOFT,1.0,,,30.656,25.833,258.0,229.0,266.0,279.0,12,True,False,False,False,2026-07-25 14:29:45.275,,27.0,48.0,23.4,False,1.2,164.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,14.0,5.0,SOFT,2.0,79.808,28.248,28.56,23.0,281.0,250.0,255.0,320.0,1,True,True,True,False,2026-07-25 14:34:11.420,,26.8,47.3,23.6,False,2.6,140.0
+2026,11,Hungarian Grand Prix,Q,ALO,Aston Martin,15.0,5.0,SOFT,3.0,108.801,35.349,39.846,33.606,203.0,184.0,,234.0,1,True,False,False,False,2026-07-25 14:35:31.228,,26.8,46.6,23.1,False,0.0,0.0
+2026,11,Hungarian Grand Prix,Q,BEA,Haas F1 Team,1.0,1.0,SOFT,1.0,,,34.696,24.922,232.0,218.0,266.0,,1,True,False,False,False,2026-07-25 14:06:23.271,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,BEA,Haas F1 Team,2.0,1.0,SOFT,2.0,80.762,28.393,29.311,23.058,301.0,254.0,263.0,328.0,1,True,True,True,False,2026-07-25 14:08:03.034,,26.8,47.7,22.8,False,1.2,98.0
+2026,11,Hungarian Grand Prix,Q,BEA,Haas F1 Team,3.0,1.0,SOFT,3.0,131.46,35.86,36.059,59.541,207.0,225.0,,229.0,1,True,False,False,False,2026-07-25 14:09:23.796,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,BEA,Haas F1 Team,4.0,2.0,SOFT,1.0,,,33.731,24.906,243.0,225.0,267.0,229.0,1,True,False,False,False,2026-07-25 14:11:35.256,,26.6,48.5,23.1,False,2.0,184.0
+2026,11,Hungarian Grand Prix,Q,BEA,Haas F1 Team,5.0,2.0,SOFT,2.0,80.233,28.229,28.862,23.142,303.0,253.0,263.0,332.0,1,True,True,True,False,2026-07-25 14:15:37.308,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,BEA,Haas F1 Team,6.0,2.0,SOFT,3.0,107.765,38.488,34.616,34.661,242.0,204.0,,223.0,1,True,False,False,False,2026-07-25 14:16:57.541,,26.6,49.0,22.5,False,2.1,144.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,1.0,1.0,SOFT,1.0,,,34.972,25.471,248.0,217.0,269.0,,1,True,False,False,False,2026-07-25 14:00:09.771,,26.5,50.5,22.9,False,1.8,143.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,2.0,1.0,SOFT,2.0,83.576,28.618,31.19,23.768,304.0,249.0,253.0,330.0,1,True,True,True,False,2026-07-25 14:01:46.708,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,3.0,1.0,SOFT,3.0,102.931,40.259,33.425,29.247,234.0,220.0,,213.0,1,True,False,False,False,2026-07-25 14:03:10.284,,26.8,50.0,23.5,False,1.6,130.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,4.0,2.0,SOFT,1.0,147.837,83.01,40.273,24.554,280.0,213.0,269.0,213.0,1,True,False,False,False,2026-07-25 14:04:53.215,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,5.0,2.0,SOFT,2.0,81.302,28.351,29.493,23.458,304.0,248.0,255.0,331.0,1,True,True,True,False,2026-07-25 14:07:21.052,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,6.0,2.0,SOFT,3.0,103.299,37.695,34.781,30.823,220.0,205.0,,211.0,1,True,False,False,False,2026-07-25 14:08:42.354,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,7.0,3.0,SOFT,1.0,,,35.711,25.696,269.0,215.0,267.0,211.0,1,True,False,False,False,2026-07-25 14:10:25.653,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,8.0,3.0,SOFT,2.0,80.621,28.262,28.934,23.425,303.0,251.0,257.0,330.0,1,True,True,True,False,2026-07-25 14:15:04.689,,26.5,48.4,23.1,False,0.4,187.0
+2026,11,Hungarian Grand Prix,Q,SAI,Williams,9.0,3.0,SOFT,3.0,104.0,37.242,35.466,31.292,210.0,200.0,,232.0,1,True,False,False,False,2026-07-25 14:16:25.310,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,1.0,1.0,SOFT,1.0,,,35.122,25.758,263.0,218.0,268.0,,1,True,False,False,False,2026-07-25 14:00:17.626,,26.5,50.5,22.9,False,1.8,143.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,2.0,1.0,SOFT,2.0,81.596,28.726,29.267,23.603,302.0,246.0,259.0,330.0,1,True,True,True,False,2026-07-25 14:01:55.514,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,3.0,1.0,SOFT,3.0,104.463,37.979,35.577,30.907,235.0,203.0,,260.0,1,True,False,False,False,2026-07-25 14:03:17.110,,26.8,50.0,23.5,False,1.6,130.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,4.0,2.0,SOFT,1.0,147.244,82.534,39.258,25.452,282.0,214.0,269.0,260.0,1,True,False,False,False,2026-07-25 14:05:01.573,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,5.0,2.0,SOFT,2.0,80.783,28.242,29.213,23.328,302.0,249.0,258.0,332.0,1,True,True,True,False,2026-07-25 14:07:28.817,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,6.0,2.0,SOFT,3.0,99.31,34.877,35.819,28.614,194.0,208.0,,280.0,1,True,False,False,False,2026-07-25 14:08:49.600,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,7.0,3.0,SOFT,1.0,,,36.676,26.817,279.0,223.0,271.0,280.0,1,True,False,False,False,2026-07-25 14:10:28.910,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,8.0,3.0,SOFT,2.0,80.658,28.266,28.965,23.427,300.0,252.0,257.0,332.0,1,True,True,True,False,2026-07-25 14:15:11.840,,26.5,48.4,23.1,False,0.4,187.0
+2026,11,Hungarian Grand Prix,Q,ALB,Williams,9.0,3.0,SOFT,3.0,106.817,43.464,33.092,30.261,236.0,221.0,,137.0,1,True,False,False,False,2026-07-25 14:16:32.498,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,1.0,1.0,SOFT,1.0,,,32.734,25.129,252.0,226.0,261.0,,1,True,False,False,False,2026-07-25 14:00:31.571,,26.5,50.5,22.9,False,1.8,143.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,2.0,1.0,SOFT,2.0,80.847,28.675,29.132,23.04,284.0,250.0,258.0,316.0,1,True,True,True,False,2026-07-25 14:02:01.245,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,3.0,1.0,SOFT,3.0,135.262,33.766,35.459,66.037,197.0,211.0,,280.0,1,True,False,False,False,2026-07-25 14:03:22.092,,26.8,50.0,23.5,False,1.6,130.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,4.0,2.0,SOFT,1.0,,,33.223,24.388,264.0,233.0,263.0,280.0,1,True,False,False,False,2026-07-25 14:05:37.354,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,5.0,2.0,SOFT,2.0,80.659,28.402,29.019,23.238,284.0,251.0,252.0,320.0,1,True,True,True,False,2026-07-25 14:09:22.008,,26.6,49.5,23.2,False,3.7,158.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,6.0,2.0,SOFT,3.0,96.401,32.492,33.145,30.764,233.0,222.0,,275.0,1,True,False,False,False,2026-07-25 14:10:42.667,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,7.0,3.0,SOFT,1.0,,,34.498,30.354,262.0,205.0,262.0,275.0,1,True,False,False,False,2026-07-25 14:12:19.068,,26.6,48.5,23.1,False,2.0,184.0
+2026,11,Hungarian Grand Prix,Q,STR,Aston Martin,8.0,3.0,SOFT,2.0,89.909,28.615,28.623,32.671,281.0,254.0,,321.0,1,True,False,False,False,2026-07-25 14:16:08.402,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,1.0,1.0,SOFT,1.0,,,32.803,24.711,264.0,221.0,266.0,,1,True,False,False,False,2026-07-25 14:00:02.489,,26.5,50.5,22.9,False,1.8,143.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,2.0,1.0,SOFT,2.0,93.571,29.014,38.166,26.391,251.0,207.0,266.0,326.0,1,True,True,True,False,2026-07-25 14:01:32.813,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,3.0,1.0,SOFT,3.0,81.723,28.704,29.701,23.318,296.0,251.0,259.0,325.0,1,True,True,True,False,2026-07-25 14:03:06.384,,26.8,50.0,23.5,False,1.6,130.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,4.0,1.0,SOFT,4.0,136.925,31.982,36.131,68.812,237.0,214.0,,290.0,1,True,False,False,False,2026-07-25 14:04:28.107,,26.9,47.8,23.0,False,2.0,129.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,5.0,2.0,SOFT,1.0,,,33.641,30.008,129.0,186.0,267.0,290.0,1,True,False,False,False,2026-07-25 14:06:45.032,,26.9,49.7,23.3,False,1.1,134.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,6.0,2.0,SOFT,2.0,81.304,28.405,29.584,23.315,298.0,248.0,263.0,327.0,1,True,True,True,False,2026-07-25 14:09:55.779,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,7.0,2.0,SOFT,3.0,95.903,31.286,33.875,30.742,246.0,226.0,,295.0,1,True,False,False,False,2026-07-25 14:11:17.083,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,8.0,3.0,SOFT,1.0,,,36.549,27.485,278.0,222.0,269.0,295.0,1,True,False,False,False,2026-07-25 14:12:52.986,,26.7,49.1,23.3,False,1.8,139.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,9.0,3.0,SOFT,2.0,80.886,28.271,29.277,23.338,297.0,252.0,261.0,330.0,1,True,True,True,False,2026-07-25 14:16:12.588,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,BOT,Cadillac,10.0,3.0,SOFT,3.0,106.663,36.076,37.962,32.625,200.0,187.0,,254.0,1,True,False,False,False,2026-07-25 14:17:33.474,,26.7,49.2,22.3,False,2.5,147.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,1.0,1.0,SOFT,1.0,,,34.849,25.587,254.0,168.0,265.0,,1,True,False,False,False,2026-07-25 14:01:41.511,,26.8,48.7,22.9,False,1.3,207.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,2.0,1.0,SOFT,2.0,81.855,28.747,29.802,23.306,294.0,250.0,259.0,327.0,1,True,True,True,False,2026-07-25 14:03:18.753,,26.8,50.0,23.5,False,1.6,130.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,3.0,1.0,SOFT,3.0,98.559,35.494,33.872,29.193,247.0,228.0,,288.0,1,True,False,False,False,2026-07-25 14:04:40.608,,26.9,48.6,22.8,False,2.0,175.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,4.0,2.0,SOFT,1.0,,,33.179,26.253,255.0,224.0,265.0,288.0,1,True,False,False,False,2026-07-25 14:06:19.167,,26.9,49.5,23.4,False,2.8,104.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,5.0,2.0,SOFT,2.0,81.667,28.508,29.789,23.37,288.0,245.0,262.0,327.0,1,True,True,True,False,2026-07-25 14:09:59.615,,26.6,49.3,23.4,False,1.2,137.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,6.0,2.0,SOFT,3.0,97.387,32.867,34.416,30.104,207.0,227.0,,300.0,1,True,False,False,False,2026-07-25 14:11:21.282,,26.6,47.9,23.0,False,2.5,135.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,7.0,3.0,SOFT,1.0,,,35.931,28.686,276.0,218.0,266.0,300.0,1,True,False,False,False,2026-07-25 14:12:58.669,,26.7,49.1,23.3,False,1.8,139.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,8.0,3.0,SOFT,2.0,81.322,28.355,29.665,23.302,293.0,249.0,261.0,331.0,1,True,True,True,False,2026-07-25 14:16:16.317,,26.6,49.0,23.0,False,1.8,141.0
+2026,11,Hungarian Grand Prix,Q,PER,Cadillac,9.0,3.0,SOFT,3.0,150.319,34.617,38.113,77.589,221.0,173.0,,274.0,1,True,False,False,False,2026-07-25 14:17:37.639,,26.7,49.2,22.3,False,2.5,147.0

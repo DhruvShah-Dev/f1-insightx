@@ -160,7 +160,11 @@ def build_session_index(laps: pd.DataFrame, corner: pd.DataFrame, straight: pd.D
 
 
 def build_segment_comparison(corner: pd.DataFrame) -> pd.DataFrame:
-    merged = pairwise_segment(corner, ["entry_speed_kph", "apex_speed_kph", "exit_speed_kph", "min_speed_kph"], segment_kind="approximate_segment")
+    value_columns = ["entry_speed_kph", "apex_speed_kph", "exit_speed_kph", "min_speed_kph"]
+    for column in ["entry_gear", "apex_gear", "exit_gear"]:
+        if column in corner.columns:
+            value_columns.append(column)
+    merged = pairwise_segment(corner, value_columns, segment_kind="approximate_segment")
     if merged.empty:
         return pd.DataFrame()
     output = pd.DataFrame(
@@ -175,6 +179,12 @@ def build_segment_comparison(corner: pd.DataFrame) -> pd.DataFrame:
             "apex_speed_delta_kph": (merged["apex_speed_kph_a"] - merged["apex_speed_kph_b"]).round(3),
             "exit_speed_delta_kph": (merged["exit_speed_kph_a"] - merged["exit_speed_kph_b"]).round(3),
             "min_speed_delta_kph": (merged["min_speed_kph_a"] - merged["min_speed_kph_b"]).round(3),
+            "entry_gear_a": merged.get("entry_gear_a"),
+            "entry_gear_b": merged.get("entry_gear_b"),
+            "apex_gear_a": merged.get("apex_gear_a"),
+            "apex_gear_b": merged.get("apex_gear_b"),
+            "exit_gear_a": merged.get("exit_gear_a"),
+            "exit_gear_b": merged.get("exit_gear_b"),
         }
     )
     output["faster_driver"] = output.apply(lambda row: row["driver_a"] if row["apex_speed_delta_kph"] >= 0 else row["driver_b"], axis=1)

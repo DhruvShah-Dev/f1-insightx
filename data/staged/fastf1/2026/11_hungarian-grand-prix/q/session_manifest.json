@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 11,
+  "event_name": "Hungarian Grand Prix",
+  "event_format": "conventional",
+  "session_code": "Q",
+  "session_name": "Qualifying",
+  "status": "complete",
+  "started_at": "2026-08-19T01:05:45Z",
+  "completed_at": "2026-08-19T01:06:09Z",
+  "source": "fastf1_staged_session_v2"
+}

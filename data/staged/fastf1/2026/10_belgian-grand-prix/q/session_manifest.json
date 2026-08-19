@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 10,
+  "event_name": "Belgian Grand Prix",
+  "event_format": "conventional",
+  "session_code": "Q",
+  "session_name": "Qualifying",
+  "status": "complete",
+  "started_at": "2026-08-19T01:03:52Z",
+  "completed_at": "2026-08-19T01:04:19Z",
+  "source": "fastf1_staged_session_v2"
+}

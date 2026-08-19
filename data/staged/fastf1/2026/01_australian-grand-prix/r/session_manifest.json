@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 1,
+  "event_name": "Australian Grand Prix",
+  "event_format": "conventional",
+  "session_code": "R",
+  "session_name": "Race",
+  "status": "complete",
+  "started_at": "2026-08-19T00:51:32Z",
+  "completed_at": "2026-08-19T00:52:06Z",
+  "source": "fastf1_staged_session_v2"
+}

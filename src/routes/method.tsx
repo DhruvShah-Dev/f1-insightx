@@ -10,12 +10,12 @@ export const Route = createFileRoute("/method")({
       {
         name: "description",
         content:
-          "How F1 InsightX builds its numbers: timing and telemetry sources, the offline pipeline, how confidence bands are produced, and the limits you should read them with.",
+          "How F1 InsightX builds its numbers: timing and telemetry sources, the offline pipeline, model spreads, and the limits you should read them with.",
       },
       { property: "og:title", content: "Method — sources, model and limits" },
       {
         property: "og:description",
-        content: "Data sources, the offline pipeline, confidence bands and known model limits.",
+        content: "Data sources, the offline pipeline, model spreads and known model limits.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,8 +33,8 @@ const sources = [
 
 const limits = [
   "Projections are pace-based. Strategy calls, safety cars and incidents are not predicted.",
-  "Confidence is a spread of historical outcomes for similar circuits, not a probability of the exact position.",
-  "New circuits and regulation changes reduce the similarity weighting, and confidence drops accordingly.",
+  "Model spread comes from historical outcomes for similar circuits, not a probability of the exact position.",
+  "New circuits and regulation changes reduce the similarity weighting and widen the output range.",
   "Everything is computed offline and versioned. Nothing here updates live during a session.",
 ];
 

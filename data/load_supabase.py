@@ -498,6 +498,26 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
         "predictions/race_pit_stop_results.csv",
         ["race_id", "season", "round", "driver_id", "pit_duration_s", "source_label"],
     ),
+    (
+        "analytics_session_index",
+        "analytics/analytics_session_index.csv",
+        ["session_id", "season", "round", "event", "session", "driver_count", "segment_count", "straight_count", "telemetry_quality_mean", "track_archetype", "generated_at", "build_version"],
+    ),
+    (
+        "analytics_segment_comparison",
+        "analytics/analytics_segment_comparison.csv",
+        ["session_id", "segment_id", "segment_kind", "segment_confidence", "driver_a", "driver_b", "entry_speed_delta_kph", "apex_speed_delta_kph", "exit_speed_delta_kph", "min_speed_delta_kph", "entry_gear_a", "entry_gear_b", "apex_gear_a", "apex_gear_b", "exit_gear_a", "exit_gear_b", "faster_driver", "confidence"],
+    ),
+    (
+        "analytics_braking_comparison",
+        "analytics/analytics_braking_comparison.csv",
+        ["session_id", "segment_id", "driver_a", "driver_b", "braking_start_delta_m", "braking_duration_delta_s", "braking_distance_delta_m", "late_brake_delta", "brake_intensity_delta", "confidence", "favorable_driver"],
+    ),
+    (
+        "analytics_throttle_comparison",
+        "analytics/analytics_throttle_comparison.csv",
+        ["session_id", "segment_id", "driver_a", "driver_b", "throttle_pickup_delta_m", "full_throttle_exit_delta_m", "traction_exit_delta", "confidence", "favorable_driver"],
+    ),
 ]
 
 OPTIONAL_TABLES = {
@@ -538,6 +558,10 @@ OPTIONAL_TABLES = {
     "race_projection",
     "race_pick_challenges",
     "race_pit_stop_results",
+    "analytics_session_index",
+    "analytics_segment_comparison",
+    "analytics_braking_comparison",
+    "analytics_throttle_comparison",
 }
 
 SUPPLEMENTAL_DRIVERS: dict[str, dict[str, str]] = {
@@ -624,6 +648,7 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     "race_projection": {"season", "round", "projected_finish", "finish_band_low", "finish_band_high"},
     "race_pick_challenges": {"season", "round", "random_position_1", "random_position_2", "random_position_3"},
     "race_pit_stop_results": {"season", "round"},
+    "analytics_session_index": {"season", "round", "driver_count", "segment_count", "straight_count"},
 }
 
 

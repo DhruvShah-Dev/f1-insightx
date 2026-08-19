@@ -126,6 +126,31 @@ export type RaceWeekStrategyRow = {
   rationale: string | null;
 };
 
+export type RaceWeekQualifyingPrediction = {
+  driverId: string;
+  code: string;
+  name: string;
+  team: string;
+  rank: number | null;
+  timeS: number | null;
+  gapS: number | null;
+  recentGapS: number | null;
+  sameCircuitGapS: number | null;
+  constructorGapS: number | null;
+  raceWeekDeltaGapS: number | null;
+  driverDeltaS: number | null;
+  constructorDeltaS: number | null;
+  formBiasScore: number | null;
+  trackFitGapS: number | null;
+  sourceUsefulnessScore: number | null;
+  sourceUsefulnessRank: number | null;
+  qualityNote: string | null;
+  missingFlags: string | null;
+  mode: string | null;
+  modeLabel: string | null;
+  sourceLabel: string | null;
+};
+
 export async function fetchRaceWeek() {
   const sb = serverClient();
   const nowISO = new Date().toISOString();
@@ -149,7 +174,7 @@ export async function fetchRaceWeek() {
   const raceId = String(race["id"]);
   const circuitId = String(race["circuit_id"]);
 
-  const [board, cons, strat, stories, weather, overview, projection, ctx, path, history, standings] =
+  const [board, cons, strat, stories, weather, overview, projection, quali, ctx, path, history, standings] =
     await Promise.all([
       sb.from("race_week_driver_board").select("*").eq("season", SEASON).eq("round", round),
       sb.from("race_week_constructor_board").select("*").eq("season", SEASON).eq("round", round),
@@ -163,6 +188,13 @@ export async function fetchRaceWeek() {
       sb.from("weather_risk_summary").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
       sb.from("race_week_overview").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
       sb.from("race_projection").select("*").eq("season", SEASON).eq("round", round),
+      sb
+        .from("spain_qualifying_prediction")
+        .select("*")
+        .eq("season", SEASON)
+        .eq("round", round)
+        .eq("prediction_mode", "baseline")
+        .order("predicted_q_rank", { ascending: true }),
       sb.from("race_week_context").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
       fetchTrackPath(sb, circuitId),
       sb
@@ -246,6 +278,37 @@ export async function fetchRaceWeek() {
       };
     })
     .sort((a, b) => (a.projected ?? 99) - (b.projected ?? 99));
+
+  const qualifyingPredictions: RaceWeekQualifyingPrediction[] = ((quali.data ?? []) as Row[])
+    .filter((r) => str(r["mode_status"]) !== "unavailable")
+    .map((r) => {
+      const who = ident(String(r["driver_id"]));
+      return {
+        driverId: who.id,
+        code: who.code,
+        name: who.name,
+        team: String(r["constructor_id"] ?? ""),
+        rank: num(r["predicted_q_rank"]),
+        timeS: num(r["predicted_q_time_s"]),
+        gapS: num(r["predicted_q_gap_s"]),
+        recentGapS: num(r["recent_quali_gap_s"]),
+        sameCircuitGapS: num(r["same_circuit_gap_s"]),
+        constructorGapS: num(r["constructor_quali_gap_s"]),
+        raceWeekDeltaGapS: num(r["race_week_delta_gap_s"]),
+        driverDeltaS: num(r["driver_gap_delta_s"]),
+        constructorDeltaS: num(r["constructor_gap_delta_s"]),
+        formBiasScore: num(r["form_bias_score"]),
+        trackFitGapS: num(r["track_fit_gap_s"]),
+        sourceUsefulnessScore: num(r["source_usefulness_score"]),
+        sourceUsefulnessRank: num(r["source_usefulness_rank"]),
+        qualityNote: str(r["quality_note"]),
+        missingFlags: str(r["missing_flags"]),
+        mode: str(r["prediction_mode"]),
+        modeLabel: str(r["mode_label"]),
+        sourceLabel: str(r["source_label"]),
+      };
+    })
+    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
   const latestRound = Math.max(
     0,
@@ -331,6 +394,7 @@ export async function fetchRaceWeek() {
     })),
     strategy,
     projections,
+    qualifyingPredictions,
     championship,
     storylines: ((stories.data ?? []) as Row[]).map((r) => ({
       headline: String(r["headline"] ?? ""),
@@ -1168,6 +1232,31 @@ export type SwingEvent = {
   note: string | null;
 };
 
+export type CornerComparison = {
+  sessionId: string;
+  segmentId: string;
+  label: string;
+  kind: string;
+  driverA: string;
+  driverB: string;
+  faster: string | null;
+  entryDeltaKph: number | null;
+  apexDeltaKph: number | null;
+  exitDeltaKph: number | null;
+  minDeltaKph: number | null;
+  entryGearA: number | null;
+  entryGearB: number | null;
+  apexGearA: number | null;
+  apexGearB: number | null;
+  exitGearA: number | null;
+  exitGearB: number | null;
+  brakingStartDeltaM: number | null;
+  brakingDurationDeltaS: number | null;
+  throttlePickupDeltaM: number | null;
+  tractionDelta: number | null;
+  confidence: number | null;
+};
+
 /** Raw position-swing events for the two compared drivers. */
 async function fetchSwings(sb: SB, slug: string, codes: string[]): Promise<SwingEvent[]> {
   const per = await Promise.all(
@@ -1194,6 +1283,107 @@ async function fetchSwings(sb: SB, slug: string, codes: string[]): Promise<Swing
     .sort((a, b) => (a.startLap ?? 0) - (b.startLap ?? 0));
 }
 
+async function fetchCornerComparisons(
+  sb: SB,
+  season: number,
+  round: number,
+  codeA: string,
+  codeB: string,
+): Promise<CornerComparison[]> {
+  try {
+    const { data: sessions, error: sessionError } = await sb
+      .from("analytics_session_index")
+      .select("session_id")
+      .eq("season", season)
+      .eq("round", round)
+      .eq("session", "R")
+      .limit(5);
+    if (sessionError) return [];
+
+    const sessionIds = ((sessions ?? []) as Row[])
+      .map((r) => String(r["session_id"] ?? ""))
+      .filter(Boolean);
+    if (!sessionIds.length) return [];
+
+    const left = codeA < codeB ? codeA : codeB;
+    const right = codeA < codeB ? codeB : codeA;
+    const invert = left !== codeA;
+
+    const [segments, braking, throttle] = await Promise.all([
+      sb
+        .from("analytics_segment_comparison")
+        .select("*")
+        .in("session_id", sessionIds)
+        .eq("driver_a", left)
+        .eq("driver_b", right)
+        .order("segment_id", { ascending: true })
+        .limit(80),
+      sb
+        .from("analytics_braking_comparison")
+        .select("*")
+        .in("session_id", sessionIds)
+        .eq("driver_a", left)
+        .eq("driver_b", right)
+        .limit(80),
+      sb
+        .from("analytics_throttle_comparison")
+        .select("*")
+        .in("session_id", sessionIds)
+        .eq("driver_a", left)
+        .eq("driver_b", right)
+        .limit(80),
+    ]);
+    if (segments.error) return [];
+
+    const keyOf = (r: Row) => `${String(r["session_id"])}|${String(r["segment_id"])}`;
+    const brakingByKey = new Map(((braking.data ?? []) as Row[]).map((r) => [keyOf(r), r]));
+    const throttleByKey = new Map(((throttle.data ?? []) as Row[]).map((r) => [keyOf(r), r]));
+    const signed = (value: unknown) => {
+      const n = num(value);
+      return n == null ? null : invert ? -n : n;
+    };
+    const gear = (row: Row, side: "a" | "b", key: string) =>
+      num(row[`${key}_${invert ? (side === "a" ? "b" : "a") : side}`]);
+    const labelFromSegment = (segmentId: string) => {
+      const tail = segmentId.match(/(\d+)$/)?.[1];
+      return tail ? `Segment ${Number(tail)}` : segmentId.replaceAll("_", " ");
+    };
+
+    return ((segments.data ?? []) as Row[]).map((r) => {
+      const key = keyOf(r);
+      const bRow = brakingByKey.get(key);
+      const tRow = throttleByKey.get(key);
+      const faster = String(r["faster_driver"] ?? "");
+      return {
+        sessionId: String(r["session_id"] ?? ""),
+        segmentId: String(r["segment_id"] ?? ""),
+        label: labelFromSegment(String(r["segment_id"] ?? "")),
+        kind: String(r["segment_kind"] ?? "corner"),
+        driverA: codeA,
+        driverB: codeB,
+        faster: faster ? (faster === left ? left : right) : null,
+        entryDeltaKph: signed(r["entry_speed_delta_kph"]),
+        apexDeltaKph: signed(r["apex_speed_delta_kph"]),
+        exitDeltaKph: signed(r["exit_speed_delta_kph"]),
+        minDeltaKph: signed(r["min_speed_delta_kph"]),
+        entryGearA: gear(r, "a", "entry_gear"),
+        entryGearB: gear(r, "b", "entry_gear"),
+        apexGearA: gear(r, "a", "apex_gear"),
+        apexGearB: gear(r, "b", "apex_gear"),
+        exitGearA: gear(r, "a", "exit_gear"),
+        exitGearB: gear(r, "b", "exit_gear"),
+        brakingStartDeltaM: bRow ? signed(bRow["braking_start_delta_m"]) : null,
+        brakingDurationDeltaS: bRow ? signed(bRow["braking_duration_delta_s"]) : null,
+        throttlePickupDeltaM: tRow ? signed(tRow["throttle_pickup_delta_m"]) : null,
+        tractionDelta: tRow ? signed(tRow["traction_exit_delta"]) : null,
+        confidence: num(r["confidence"]),
+      };
+    });
+  } catch {
+    return [];
+  }
+}
+
 
 export async function fetchHeadToHead(slug: string, codeA: string, codeB: string) {
   const weekend = await fetchWeekend(slug);
@@ -1204,13 +1394,14 @@ export async function fetchHeadToHead(slug: string, codeA: string, codeB: string
     rows.filter((r) => r.code === code);
 
   const sb = serverClient();
-  const [traffic, trafficLapsA, trafficLapsB, posLapsA, posLapsB, swings] = await Promise.all([
+  const [traffic, trafficLapsA, trafficLapsB, posLapsA, posLapsB, swings, cornerComparisons] = await Promise.all([
     fetchTrafficSplit(sb, slug, [a, b]),
     fetchTrafficLaps(sb, slug, a),
     fetchTrafficLaps(sb, slug, b),
     fetchPositionLaps(sb, slug, a),
     fetchPositionLaps(sb, slug, b),
     fetchSwings(sb, slug, [a, b]),
+    fetchCornerComparisons(sb, weekend.season, weekend.round, a, b),
   ]);
 
   return {
@@ -1235,6 +1426,7 @@ export async function fetchHeadToHead(slug: string, codeA: string, codeB: string
     trafficLaps: [trafficLapsA, trafficLapsB] as [TrafficLap[], TrafficLap[]],
     positionLaps: [posLapsA, posLapsB] as [PositionLap[], PositionLap[]],
     swings,
+    cornerComparisons,
     statusPhases: weekend.statusPhases,
     entrants: weekend.classification.map((r) => ({ code: r.code, name: r.name, team: r.team })),
   };

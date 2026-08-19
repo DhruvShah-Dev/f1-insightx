@@ -1,0 +1,20 @@
+session_id,track_archetype,straight_line_weight,braking_weight,traction_weight,degradation_weight,track_position_weight,archetype_confidence
+2026_01_R_Australian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_02_R_Chinese Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_03_R_Japanese Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_04_R_Miami Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_05_R_Canadian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_06_R_Monaco Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_07_R_Barcelona Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_08_R_Austrian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_09_R_British Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_10_FP1_Belgian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_10_FP2_Belgian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_10_FP3_Belgian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_10_Q_Belgian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_10_R_Belgian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_11_FP1_Hungarian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_11_FP2_Hungarian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_11_FP3_Hungarian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_11_Q_Hungarian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25
+2026_11_R_Hungarian Grand Prix,mixed,0.5,0.5,0.5,0.5,0.5,0.25

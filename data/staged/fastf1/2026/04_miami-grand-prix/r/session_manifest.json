@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 4,
+  "event_name": "Miami Grand Prix",
+  "event_format": "sprint_qualifying",
+  "session_code": "R",
+  "session_name": "Race",
+  "status": "complete",
+  "started_at": "2026-08-19T00:53:11Z",
+  "completed_at": "2026-08-19T00:53:43Z",
+  "source": "fastf1_staged_session_v2"
+}

@@ -6,6 +6,7 @@ import {
   raceReports as staticRaceReports,
   seasonState,
 } from "@/data/season";
+import { fallbackQualifyingPredictions } from "@/data/race-week-qualifying";
 import { team } from "@/data/teams";
 
 const codeToDriverId = (code: string) =>
@@ -136,6 +137,33 @@ export function fallbackRaceWeek() {
       podiumProb: d.pos <= 3 ? 0.7 : Math.max(0.02, 0.4 - d.pos * 0.03),
       confidence: d.conf,
     })),
+    qualifyingPredictions: fallbackQualifyingPredictions
+      .slice()
+      .sort((a, b) => a.rank - b.rank)
+      .map((d) => ({
+        driverId: d.driverId,
+        code: d.code,
+        name: d.name,
+        team: d.constructorId,
+        rank: d.rank,
+        timeS: d.timeS,
+        gapS: d.gapS,
+        recentGapS: d.recentGapS,
+        sameCircuitGapS: d.sameCircuitGapS,
+        constructorGapS: d.constructorGapS,
+        raceWeekDeltaGapS: d.raceWeekDeltaGapS,
+        driverDeltaS: d.driverDeltaS,
+        constructorDeltaS: d.constructorDeltaS,
+        formBiasScore: d.formBiasScore,
+        trackFitGapS: d.trackFitGapS,
+        sourceUsefulnessScore: d.sourceUsefulnessScore,
+        sourceUsefulnessRank: d.sourceUsefulnessRank,
+        qualityNote: d.qualityNote,
+        missingFlags: d.missingFlags,
+        mode: d.mode,
+        modeLabel: d.modeLabel,
+        sourceLabel: d.sourceLabel,
+      })),
     championship: driverStandings.slice(0, 6).map((d) => ({
       code: d.code,
       name: d.name,
@@ -400,6 +428,7 @@ export function fallbackHeadToHead(slug: string, a: string, b: string) {
     trafficLaps: [[], []],
     positionLaps: [[], []],
     swings: [],
+    cornerComparisons: [],
     statusPhases: [],
     entrants,
   };

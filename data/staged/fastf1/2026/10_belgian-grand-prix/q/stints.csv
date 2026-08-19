@@ -1,0 +1,90 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026,10,Belgian Grand Prix,Q,ALB,Williams,1.0,SOFT,1,107.701,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,ALB,Williams,2.0,SOFT,2,126.444,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,ALO,Aston Martin,1.0,SOFT,2,123.34,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,ALO,Aston Martin,2.0,SOFT,2,126.46799999999999,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,ANT,Mercedes,1.0,SOFT,2,122.127,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,ANT,Mercedes,2.0,SOFT,2,116.8195,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,ANT,Mercedes,3.0,SOFT,2,140.654,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,ANT,Mercedes,4.0,SOFT,2,115.14,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,ANT,Mercedes,5.0,SOFT,2,126.57400000000001,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,BEA,Haas F1 Team,1.0,SOFT,2,120.0275,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,BEA,Haas F1 Team,2.0,SOFT,2,127.7085,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,BEA,Haas F1 Team,3.0,SOFT,2,118.2035,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,BEA,Haas F1 Team,4.0,SOFT,2,123.467,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,BOR,Audi,1.0,SOFT,2,125.5925,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,BOR,Audi,2.0,SOFT,2,121.2975,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,BOR,Audi,3.0,SOFT,2,121.8145,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,BOR,Audi,4.0,SOFT,2,128.021,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,BOR,Audi,5.0,SOFT,2,120.95599999999999,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,BOR,Audi,6.0,SOFT,1,105.628,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,BOT,Cadillac,1.0,SOFT,4,123.2575,3.3333333333333335,0.0,2,5
+2026,10,Belgian Grand Prix,Q,BOT,Cadillac,2.0,SOFT,2,122.25,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,COL,Alpine,1.0,SOFT,2,128.1615,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,COL,Alpine,2.0,SOFT,2,128.2425,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,COL,Alpine,3.0,SOFT,2,127.8475,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,COL,Alpine,4.0,SOFT,2,126.0925,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,GAS,Alpine,1.0,SOFT,1,107.539,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,GAS,Alpine,2.0,SOFT,2,128.9595,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,GAS,Alpine,3.0,SOFT,2,126.8845,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,GAS,Alpine,4.0,SOFT,2,125.4985,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HAD,Red Bull Racing,1.0,SOFT,2,123.733,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HAD,Red Bull Racing,2.0,SOFT,2,118.8895,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HAD,Red Bull Racing,3.0,SOFT,2,121.05099999999999,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HAD,Red Bull Racing,4.0,SOFT,1,123.555,0.0,0.0,5,5
+2026,10,Belgian Grand Prix,Q,HAM,Ferrari,1.0,SOFT,1,106.502,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,HAM,Ferrari,2.0,SOFT,2,123.079,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,HAM,Ferrari,3.0,SOFT,2,123.3815,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HAM,Ferrari,4.0,SOFT,2,117.18199999999999,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HAM,Ferrari,5.0,SOFT,1,104.895,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,HUL,Audi,1.0,SOFT,2,121.7265,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HUL,Audi,2.0,SOFT,2,125.2355,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,HUL,Audi,3.0,SOFT,2,114.706,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,HUL,Audi,4.0,SOFT,1,106.671,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,LAW,Racing Bulls,1.0,SOFT,2,120.9485,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LAW,Racing Bulls,2.0,SOFT,2,122.793,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,LAW,Racing Bulls,3.0,SOFT,2,118.8595,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LAW,Racing Bulls,4.0,SOFT,1,106.12,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,LEC,Ferrari,1.0,SOFT,2,121.266,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LEC,Ferrari,2.0,SOFT,2,126.28450000000001,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,LEC,Ferrari,3.0,SOFT,2,125.02850000000001,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LEC,Ferrari,4.0,SOFT,2,124.239,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,LEC,Ferrari,5.0,SOFT,2,120.4735,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LEC,Ferrari,6.0,SOFT,1,104.921,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,LIN,Racing Bulls,1.0,SOFT,2,123.63550000000001,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LIN,Racing Bulls,2.0,SOFT,2,122.98750000000001,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,LIN,Racing Bulls,3.0,SOFT,2,121.2885,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LIN,Racing Bulls,4.0,SOFT,2,123.749,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,LIN,Racing Bulls,5.0,SOFT,2,118.6005,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,LIN,Racing Bulls,6.0,SOFT,1,105.143,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,NOR,McLaren,1.0,SOFT,2,125.27949999999998,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,NOR,McLaren,2.0,SOFT,2,124.1165,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,NOR,McLaren,3.0,SOFT,1,104.801,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,NOR,McLaren,4.0,SOFT,1,122.629,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,OCO,Haas F1 Team,1.0,SOFT,2,121.01899999999999,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,OCO,Haas F1 Team,2.0,SOFT,2,144.4545,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,PER,Cadillac,1.0,SOFT,4,123.46550000000002,3.3333333333333335,0.0,2,5
+2026,10,Belgian Grand Prix,Q,PER,Cadillac,2.0,SOFT,2,122.325,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,PIA,McLaren,1.0,SOFT,2,125.775,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,PIA,McLaren,2.0,SOFT,2,119.8825,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,PIA,McLaren,3.0,SOFT,1,105.671,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,PIA,McLaren,4.0,SOFT,1,139.835,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,PIA,McLaren,5.0,SOFT,2,119.4625,10.0,0.0,4,5
+2026,10,Belgian Grand Prix,Q,PIA,McLaren,6.0,SOFT,1,105.016,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,RUS,Mercedes,1.0,SOFT,2,126.36349999999999,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,RUS,Mercedes,2.0,SOFT,2,121.786,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,RUS,Mercedes,3.0,SOFT,2,124.9525,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,RUS,Mercedes,4.0,SOFT,2,123.49000000000001,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,RUS,Mercedes,5.0,SOFT,2,119.732,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,RUS,Mercedes,6.0,SOFT,1,104.869,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,SAI,Williams,1.0,SOFT,2,123.179,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,SAI,Williams,2.0,SOFT,2,124.55349999999999,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,SAI,Williams,3.0,SOFT,2,119.61250000000001,10.0,0.0,5,6
+2026,10,Belgian Grand Prix,Q,SAI,Williams,4.0,SOFT,2,125.03450000000001,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,STR,Aston Martin,1.0,SOFT,1,136.858,0.0,0.0,6,6
+2026,10,Belgian Grand Prix,Q,STR,Aston Martin,2.0,SOFT,1,111.121,0.0,0.0,2,2
+2026,10,Belgian Grand Prix,Q,STR,Aston Martin,3.0,SOFT,2,129.9055,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,VER,Red Bull Racing,1.0,SOFT,2,125.589,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,VER,Red Bull Racing,2.0,SOFT,2,118.934,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,VER,Red Bull Racing,3.0,SOFT,2,115.7465,10.0,0.0,2,3
+2026,10,Belgian Grand Prix,Q,VER,Red Bull Racing,4.0,SOFT,2,126.53,10.0,0.0,2,3

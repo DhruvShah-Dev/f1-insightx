@@ -28,12 +28,14 @@ import { hasSupabaseRuntimeEnv } from "./env.server";
 
 export type {
   ConstructorStanding,
+  CornerComparison,
   DriverTelemetry,
   LapPoint,
   PositionLap,
   RaceOption,
   RaceReportRow,
   RaceWeekDriver,
+  RaceWeekQualifyingPrediction,
   RaceWeekStrategyRow,
   StintRow,
   SwingEvent,

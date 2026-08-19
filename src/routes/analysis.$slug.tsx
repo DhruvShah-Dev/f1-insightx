@@ -194,12 +194,6 @@ function StintBars({
   );
 }
 
-function confidenceLabel(value: string | null | undefined) {
-  if (!value) return "—";
-  const n = Number(value);
-  return Number.isFinite(n) ? `${Math.round(n * 100)}%` : titleCase(value);
-}
-
 function WeekendPage() {
   const { slug } = Route.useParams();
   const { data } = useSuspenseQuery(weekendQuery(slug));
@@ -317,11 +311,6 @@ function WeekendPage() {
                 label="Strategy"
                 value={titleCase(w.summary?.strategy)}
                 note={w.summary?.compoundPath ?? undefined}
-              />
-              <Stat
-                label="Confidence"
-                value={confidenceLabel(w.summary?.confidence)}
-                note={w.quality == null ? undefined : `quality ${fmtNum(w.quality, 2)}`}
               />
             </div>
           </div>

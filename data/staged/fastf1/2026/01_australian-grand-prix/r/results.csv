@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points
+1.0,1,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,1.0,,,,0 days 01:23:06.801000,Finished,25.0
+2.0,2,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,2.0,,,,0 days 00:00:02.974000,Finished,18.0
+3.0,3,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,4.0,,,,0 days 00:00:15.519000,Finished,15.0
+4.0,4,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,7.0,,,,0 days 00:00:16.144000,Finished,12.0
+5.0,5,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,6.0,,,,0 days 00:00:51.741000,Finished,10.0
+6.0,6,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,20.0,,,,0 days 00:00:54.617000,Finished,8.0
+7.0,7,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,12.0,,,,0 days 00:00:04.593000,Lapped,6.0
+8.0,8,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,9.0,,,,0 days 00:00:11.816000,Lapped,4.0
+9.0,9,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,10.0,,,,0 days 00:00:12.775000,Lapped,2.0
+10.0,10,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,14.0,,,,0 days 00:00:29.027000,Lapped,1.0
+11.0,11,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,13.0,,,,0 days 00:00:29.850000,Lapped,0.0
+12.0,12,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,15.0,,,,0 days 00:00:56.075000,Lapped,0.0
+13.0,13,30,L LAWSON,LAW,Liam Lawson,Racing Bulls,6C98FF,8.0,,,,0 days 00:00:57.173000,Lapped,0.0
+14.0,14,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,16.0,,,,0 days 00:00:08.487000,Lapped,0.0
+15.0,15,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,21.0,,,,0 days 00:00:36.886000,Lapped,0.0
+16.0,16,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,18.0,,,,0 days 00:00:07.850000,Lapped,0.0
+17.0,R,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,22.0,,,,,Lapped,0.0
+18.0,R,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,17.0,,,,,Retired,0.0
+19.0,R,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,19.0,,,,,Retired,0.0
+20.0,R,6,I HADJAR,HAD,Isack Hadjar,Red Bull Racing,4781D7,3.0,,,,,Retired,0.0
+21.0,W,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,5.0,,,,,Did not start,0.0
+22.0,W,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,11.0,,,,,Did not start,0.0

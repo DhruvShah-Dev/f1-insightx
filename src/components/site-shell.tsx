@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { UserRound } from "lucide-react";
 import type { ReactNode } from "react";
+import { StartLightRails } from "@/components/race-atmosphere";
 import { seasonState } from "@/data/season";
-import { fmtDate, fmtDateTime } from "@/lib/format";
+import { fmtDate } from "@/lib/format";
 
 const nav = [
   { to: "/", label: "Race Control" },
@@ -41,6 +42,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           }}
         />
       </div>
+      <StartLightRails />
 
       <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
@@ -76,24 +78,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </Link>
         </div>
       </header>
-
-      <div className="relative z-10 border-b border-border bg-card/40">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2 text-[11px] text-muted-foreground">
-          <span className="label-xs">Results through</span>
-          <span className="num text-foreground">
-            R{seasonState.resultsThrough.round} {seasonState.resultsThrough.name}
-          </span>
-          <span className="text-border">/</span>
-          <span className="label-xs">Race week</span>
-          <span className="num text-foreground">R{seasonState.raceWeekRound}</span>
-          <span className="text-border">/</span>
-          <span className="label-xs">Updated</span>
-          <span className="num text-foreground">{fmtDateTime(seasonState.pipelineRunISO)}</span>
-          <Link to="/method" className="ml-auto text-primary underline underline-offset-2">
-            How this is built
-          </Link>
-        </div>
-      </div>
 
       <main className="relative z-10 mx-auto max-w-6xl px-4 py-8">{children}</main>
 

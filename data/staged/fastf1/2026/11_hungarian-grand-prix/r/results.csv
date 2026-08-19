@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points
+1.0,1,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,1.0,,,,0 days 01:39:56.180000,Finished,25.0
+2.0,2,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,4.0,,,,0 days 00:00:15.080000,Finished,18.0
+3.0,3,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,7.0,,,,0 days 00:00:18.728000,Finished,15.0
+4.0,4,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,2.0,,,,0 days 00:00:23.840000,Finished,12.0
+5.0,5,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,5.0,,,,0 days 00:00:24.540000,Finished,10.0
+6.0,6,6,I HADJAR,HAD,Isack Hadjar,Red Bull Racing,4781D7,8.0,,,,0 days 00:00:55.488000,Finished,8.0
+7.0,7,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,6.0,,,,0 days 00:00:57.503000,Finished,6.0
+8.0,8,30,L LAWSON,LAW,Liam Lawson,Racing Bulls,6C98FF,11.0,,,,0 days 00:00:28.033000,Lapped,4.0
+9.0,9,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,10.0,,,,0 days 00:00:30.382000,Lapped,2.0
+10.0,10,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,9.0,,,,0 days 00:00:51.050000,Lapped,1.0
+11.0,11,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,14.0,,,,0 days 00:00:52.028000,Lapped,0.0
+12.0,12,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,12.0,,,,0 days 00:00:53.429000,Lapped,0.0
+13.0,13,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,20.0,,,,0 days 00:01:03.828000,Lapped,0.0
+14.0,14,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,16.0,,,,0 days 00:01:06.052000,Lapped,0.0
+15.0,15,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,13.0,,,,0 days 00:00:03.876000,Lapped,0.0
+16.0,16,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,15.0,,,,0 days 00:00:12.859000,Lapped,0.0
+17.0,17,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,19.0,,,,0 days 00:00:52.729000,Lapped,0.0
+18.0,18,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,18.0,,,,0 days 00:00:52.973000,Lapped,0.0
+19.0,19,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,17.0,,,,0 days 00:00:57.198000,Lapped,0.0
+20.0,R,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,3.0,,,,,Retired,0.0
+21.0,R,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,22.0,,,,,Retired,0.0
+22.0,R,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,21.0,,,,,Retired,0.0

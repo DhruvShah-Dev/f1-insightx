@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { CloudRain, Database, ExternalLink, Flag, Gauge, Newspaper, Thermometer, Timer, Wind, Wrench } from "lucide-react";
 import { Countdown } from "@/components/countdown";
-import { StartLightRails } from "@/components/race-atmosphere";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
 import { ZandvoortCircuitMap } from "@/components/zandvoort-circuit-map";
 import { countryTheme } from "@/data/country-theme";
@@ -68,13 +67,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Race Control: next-session countdown, qualifying projection with confidence, live championship standings and post-race telemetry reports for the 2026 Formula 1 season.",
+          "Race Control: next-session countdown, qualifying projection, live championship standings and post-race telemetry reports for the 2026 Formula 1 season.",
       },
       { property: "og:title", content: "F1 InsightX — Race Control" },
       {
         property: "og:description",
         content:
-          "Next-session countdown, qualifying projection with confidence, championship pulse and race reports.",
+          "Next-session countdown, qualifying projection, championship pulse and race reports.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -114,8 +113,6 @@ function RaceControl() {
 
   return (
     <SiteShell>
-      <StartLightRails />
-
       <div className="relative z-10">
         {/* Masthead */}
         <section className="relative overflow-hidden rounded-xl border border-border">

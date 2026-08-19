@@ -144,19 +144,26 @@ def segment_profiles(telemetry: pd.DataFrame) -> dict[str, pd.DataFrame]:
         speeds = pd.to_numeric(segment["Speed"], errors="coerce")
         distance = pd.to_numeric(segment["Distance"], errors="coerce")
         throttle = pd.to_numeric(segment["Throttle"], errors="coerce")
+        gear = pd.to_numeric(segment["nGear"], errors="coerce") if "nGear" in segment.columns else pd.Series(dtype=float)
         brake = segment["Brake"].astype(bool) if "Brake" in segment.columns else pd.Series(False, index=segment.index)
         drs = pd.to_numeric(segment["DRS"], errors="coerce") if "DRS" in segment.columns else pd.Series(dtype=float)
         if len(segment) < 3 or speeds.notna().sum() < 3:
             continue
         common = {**metadata, "segment_id": segment_id, "corner_id": segment_id, "segmentation_confidence": float(segment["segmentation_confidence"].iloc[0])}
         if kind == "corner":
+            entry_slice = slice(None, max(1, len(speeds) // 5))
+            exit_slice = slice(-max(1, len(speeds) // 5), None)
+            apex_pos = int(speeds.reset_index(drop=True).idxmin()) if speeds.notna().any() else 0
             speed_rows.append(
                 {
                     **common,
-                    "entry_speed_kph": round(float(speeds.iloc[: max(1, len(speeds) // 5)].mean()), 3),
+                    "entry_speed_kph": round(float(speeds.iloc[entry_slice].mean()), 3),
                     "apex_speed_kph": round(float(speeds.min()), 3),
-                    "exit_speed_kph": round(float(speeds.iloc[-max(1, len(speeds) // 5) :].mean()), 3),
+                    "exit_speed_kph": round(float(speeds.iloc[exit_slice].mean()), 3),
                     "min_speed_kph": round(float(speeds.min()), 3),
+                    "entry_gear": round(float(gear.iloc[entry_slice].median()), 0) if gear.notna().any() else None,
+                    "apex_gear": round(float(gear.iloc[apex_pos]), 0) if gear.notna().any() and speeds.notna().any() else None,
+                    "exit_gear": round(float(gear.iloc[exit_slice].median()), 0) if gear.notna().any() else None,
                 }
             )
             braking = segment[brake]

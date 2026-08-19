@@ -70,6 +70,7 @@ type RaceView =
   | "tyres"
   | "pits"
   | "traffic"
+  | "cornerData"
   | "circuit";
 type H2H = NonNullable<Awaited<ReturnType<typeof getHeadToHead>>>;
 
@@ -508,6 +509,7 @@ function Vs() {
       : []),
     ...(d?.pits[0]?.length || d?.pits[1]?.length ? [{ k: "pits" as const, l: "Pit stops" }] : []),
     ...(d?.traffic?.[0] ? [{ k: "traffic" as const, l: "Traffic" }] : []),
+    ...(d ? [{ k: "cornerData" as const, l: "Corner data" }] : []),
     ...(d?.trackPath ? [{ k: "circuit" as const, l: "Corners" }] : []),
   ];
   const activeView = raceViews.some((v) => v.k === view) ? view : "duel";
@@ -797,6 +799,16 @@ function Vs() {
             />
           ) : null}
 
+          {active === "race" && activeView === "cornerData" ? (
+            <CornerTelemetryBlock
+              codeA={codeA}
+              codeB={codeB}
+              colorA={colorA}
+              colorB={colorB}
+              rows={d.cornerComparisons ?? []}
+            />
+          ) : null}
+
 
           {active === "race" && activeView === "circuit" ? (
             <CornerBlock path={d.trackPath} circuit={d.circuit} />
@@ -883,6 +895,157 @@ function StintTable({
 function avg(values: (number | null)[]) {
   const nums = values.filter((v): v is number => v != null);
   return nums.length ? nums.reduce((a, b) => a + b, 0) / nums.length : null;
+}
+
+function fmtGear(value: number | null) {
+  return value == null ? "-" : `G${Math.round(value)}`;
+}
+
+function fmtSignedKph(value: number | null) {
+  return value == null ? "-" : `${value >= 0 ? "+" : ""}${fmtNum(value, 1)}`;
+}
+
+function deltaWinner(value: number | null, codeA: string, codeB: string) {
+  if (value == null || value === 0) return null;
+  return value > 0 ? codeA : codeB;
+}
+
+function CornerTelemetryBlock({
+  codeA,
+  codeB,
+  colorA,
+  colorB,
+  rows,
+}: {
+  codeA: string;
+  codeB: string;
+  colorA: string;
+  colorB: string;
+  rows: H2H["cornerComparisons"];
+}) {
+  const sorted = rows.slice().sort((a, b) => a.segmentId.localeCompare(b.segmentId));
+  const aWins = sorted.filter((row) => row.faster === codeA).length;
+  const bWins = sorted.filter((row) => row.faster === codeB).length;
+
+  return (
+    <Panel className="mt-5">
+      <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="label-xs">Race telemetry</p>
+          <h2 className="text-lg font-black uppercase italic">Corner comparison</h2>
+        </div>
+        <div className="num flex gap-2 text-[10px] font-black uppercase">
+          <span style={{ color: colorA }}>{codeA} {aWins}</span>
+          <span className="text-muted-foreground">/</span>
+          <span style={{ color: colorB }}>{codeB} {bWins}</span>
+        </div>
+      </div>
+
+      {!sorted.length ? (
+        <div className="rounded-lg border border-border bg-background/40 p-4">
+          <p className="text-sm font-black uppercase italic">Telemetry corner data not loaded yet</p>
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            The Vs page is wired for entry speed, apex speed, exit speed, gear, braking and throttle
+            comparison, but this weekend does not have generated analytics rows in Supabase yet.
+            Run the FastF1 telemetry pipeline, build analytics CSVs, then load the optional analytics
+            tables to populate this view.
+          </p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            {["Entry / apex / exit speed", "Entry / apex / exit gear", "Brake / throttle deltas"].map((label) => (
+              <div key={label} className="border border-border/70 bg-card/40 p-3">
+                <p className="label-xs">{label}</p>
+                <p className="num mt-1 text-[11px] text-muted-foreground">Waiting for telemetry analytics</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+      <div className="overflow-x-auto rounded-lg border border-border">
+        <table className="w-full min-w-[860px] text-left">
+          <thead className="bg-card/60">
+            <tr>
+              <th className="label-xs px-3 py-2">Segment</th>
+              <th className="label-xs px-3 py-2">Faster</th>
+              <th className="label-xs px-3 py-2 text-right">Entry</th>
+              <th className="label-xs px-3 py-2 text-right">Apex</th>
+              <th className="label-xs px-3 py-2 text-right">Exit</th>
+              <th className="label-xs px-3 py-2 text-right">Gear</th>
+              <th className="label-xs px-3 py-2 text-right">Brake</th>
+              <th className="label-xs px-3 py-2 text-right">Throttle</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((row) => {
+              const fasterColor = row.faster === codeA ? colorA : row.faster === codeB ? colorB : undefined;
+              return (
+                <tr key={`${row.sessionId}-${row.segmentId}`} className="border-t border-border/60 hover:bg-accent/30">
+                  <td className="px-3 py-2">
+                    <p className="num text-xs font-black uppercase">{row.label}</p>
+                    <p className="num text-[10px] text-muted-foreground">{row.segmentId}</p>
+                  </td>
+                  <td className="num px-3 py-2 text-xs font-black" style={{ color: fasterColor }}>
+                    {row.faster ?? "-"}
+                  </td>
+                  <td className="num px-3 py-2 text-right text-xs">
+                    <DeltaCell value={row.entryDeltaKph} codeA={codeA} codeB={codeB} colorA={colorA} colorB={colorB} />
+                  </td>
+                  <td className="num px-3 py-2 text-right text-xs">
+                    <DeltaCell value={row.apexDeltaKph} codeA={codeA} codeB={codeB} colorA={colorA} colorB={colorB} />
+                  </td>
+                  <td className="num px-3 py-2 text-right text-xs">
+                    <DeltaCell value={row.exitDeltaKph} codeA={codeA} codeB={codeB} colorA={colorA} colorB={colorB} />
+                  </td>
+                  <td className="num px-3 py-2 text-right text-[11px] text-muted-foreground">
+                    <span style={{ color: colorA }}>{fmtGear(row.entryGearA)}/{fmtGear(row.apexGearA)}/{fmtGear(row.exitGearA)}</span>
+                    <span className="mx-1">vs</span>
+                    <span style={{ color: colorB }}>{fmtGear(row.entryGearB)}/{fmtGear(row.apexGearB)}/{fmtGear(row.exitGearB)}</span>
+                  </td>
+                  <td className="num px-3 py-2 text-right text-[11px] text-muted-foreground">
+                    {row.brakingStartDeltaM == null ? "-" : `${row.brakingStartDeltaM >= 0 ? "+" : ""}${fmtNum(row.brakingStartDeltaM, 1)} m`}
+                    <span className="block">
+                      {row.brakingDurationDeltaS == null ? "" : `${row.brakingDurationDeltaS >= 0 ? "+" : ""}${fmtNum(row.brakingDurationDeltaS, 2)} s`}
+                    </span>
+                  </td>
+                  <td className="num px-3 py-2 text-right text-[11px] text-muted-foreground">
+                    {row.throttlePickupDeltaM == null ? "-" : `${row.throttlePickupDeltaM >= 0 ? "+" : ""}${fmtNum(row.throttlePickupDeltaM, 1)} m`}
+                    <span className="block">
+                      {row.tractionDelta == null ? "" : `Traction ${row.tractionDelta >= 0 ? "+" : ""}${fmtNum(row.tractionDelta, 2)}`}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      )}
+      <p className="mt-3 text-xs text-muted-foreground">
+        Speed deltas are from {codeA}'s perspective. Positive means {codeA} is faster at that point; negative means {codeB} is faster.
+        Gear order is entry/apex/exit. Segments are approximate telemetry-derived corner zones until official corner distance mapping is loaded.
+      </p>
+    </Panel>
+  );
+}
+
+function DeltaCell({
+  value,
+  codeA,
+  codeB,
+  colorA,
+  colorB,
+}: {
+  value: number | null;
+  codeA: string;
+  codeB: string;
+  colorA: string;
+  colorB: string;
+}) {
+  const winner = deltaWinner(value, codeA, codeB);
+  return (
+    <span style={{ color: winner === codeA ? colorA : winner === codeB ? colorB : undefined }}>
+      {fmtSignedKph(value)}
+    </span>
+  );
 }
 
 /* ------------------------------------------------------------------ */

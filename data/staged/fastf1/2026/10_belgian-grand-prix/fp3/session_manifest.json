@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 10,
+  "event_name": "Belgian Grand Prix",
+  "event_format": "conventional",
+  "session_code": "FP3",
+  "session_name": "Practice 3",
+  "status": "complete",
+  "started_at": "2026-08-19T01:03:26Z",
+  "completed_at": "2026-08-19T01:03:51Z",
+  "source": "fastf1_staged_session_v2"
+}
