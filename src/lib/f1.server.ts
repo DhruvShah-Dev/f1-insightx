@@ -1770,6 +1770,8 @@ export type PickEntrant = {
 export type PickResults = {
   raceId: string;
   qualifying: (string | null)[]; // p1, p2, p3 driver ids
+  sprintQualifyingP1: string | null;
+  sprintRaceP1: string | null;
   race: (string | null)[];
   randomPositions: { position: number; driverId: string | null }[];
   fastestLapDriverId: string | null;
@@ -1784,6 +1786,7 @@ export type PickChallenge = {
   raceName: string;
   circuit: string;
   circuitId: string;
+  hasSprint: boolean;
   lockAtISO: string | null;
   scheduledAtISO: string | null;
   randomPositions: number[];
@@ -1804,7 +1807,7 @@ export async function fetchPicksBoard(season: number) {
       .order("round", { ascending: true }),
     sb
       .from("races")
-      .select("id, round, race_name, circuit_id, scheduled_at")
+      .select("id, round, race_name, circuit_id, scheduled_at, sprint_weekend")
       .eq("season", season)
       .order("round", { ascending: true }),
     sb
@@ -1846,7 +1849,7 @@ export async function fetchPicksBoard(season: number) {
   const raceById = new Map<string, Row>();
   for (const r of (races ?? []) as Row[]) raceById.set(String(r["id"]), r);
 
-  const [{ data: qr }, { data: rr }, { data: pit }] = await Promise.all([
+  const [{ data: qr }, { data: rr }, { data: sr }, { data: pit }] = await Promise.all([
     sb
       .from("qualifying_results")
       .select("race_id, driver_id, position")
@@ -1858,6 +1861,11 @@ export async function fetchPicksBoard(season: number) {
       .select("race_id, driver_id, finish_position, fastest_lap_rank")
       .like("race_id", `${season}-%`)
       .limit(1000),
+    sb
+      .from("sprint_results")
+      .select("race_id, driver_id, grid_position, finish_position")
+      .like("race_id", `${season}-%`)
+      .limit(500),
     sb
       .from("race_pit_stop_results")
       .select("race_id, driver_id, pit_duration_s")
@@ -1872,6 +1880,7 @@ export async function fetchPicksBoard(season: number) {
       .filter((x): x is number => x != null);
     const qRows = ((qr ?? []) as Row[]).filter((r) => String(r["race_id"]) === raceId);
     const rRows = ((rr ?? []) as Row[]).filter((r) => String(r["race_id"]) === raceId);
+    const sRows = ((sr ?? []) as Row[]).filter((r) => String(r["race_id"]) === raceId);
     const pRows = ((pit ?? []) as Row[]).filter((r) => String(r["race_id"]) === raceId);
     const bestPit = pRows
       .map((r) => ({ id: String(r["driver_id"]), s: num(r["pit_duration_s"]) }))
@@ -1885,6 +1894,16 @@ export async function fetchPicksBoard(season: number) {
             const row = posOf(qRows, p);
             return row ? String(row["driver_id"]) : null;
           }),
+          sprintQualifyingP1:
+            (() => {
+              const row = sRows.find((r) => Number(r["grid_position"] ?? 0) === 1);
+              return row ? String(row["driver_id"]) : null;
+            })(),
+          sprintRaceP1:
+            (() => {
+              const row = posOf(sRows, 1);
+              return row ? String(row["driver_id"]) : null;
+            })(),
           race: [1, 2, 3].map((p) => {
             const row = posOf(rRows, p);
             return row ? String(row["driver_id"]) : null;
@@ -1911,6 +1930,7 @@ export async function fetchPicksBoard(season: number) {
       raceName: race ? String(race["race_name"] ?? raceId) : raceId,
       circuitId,
       circuit: prettyCircuit(circuitId),
+      hasSprint: race ? Boolean(race["sprint_weekend"]) || sRows.length > 0 : sRows.length > 0,
       lockAtISO: str(c["qualifying_lock_at"]),
       scheduledAtISO: race ? str(race["scheduled_at"]) : null,
       randomPositions: randoms,

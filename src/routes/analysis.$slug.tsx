@@ -3,8 +3,7 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { SiteShell, Stat } from "@/components/site-shell";
 import { CompoundLegend, LapTraceChart } from "@/components/telemetry";
-import { CornerMap, CornerMapLegend } from "@/components/corner-profile";
-import { SectorLegend, TrackMap } from "@/components/track-map";
+import { buildCornerModel, CornerMap, CornerMapLegend } from "@/components/corner-profile";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
 import {
   DriverChips,
@@ -211,6 +210,7 @@ function WeekendPage() {
   );
   const [view, setView] = useState<RaceView>("result");
   const [resultMode, setResultMode] = useState<"table" | "ribbon">("ribbon");
+  const [hoverCorner, setHoverCorner] = useState<number | null>(null);
 
   const lapDrivers = useMemo(() => {
     const codes = [...new Set(w.laps.map((l) => l.code))];
@@ -249,6 +249,26 @@ function WeekendPage() {
   const winnerTeam = team(w.winner.team);
   const raceLaps = Math.max(1, ...w.laps.map((l) => l.lap), ...w.pits.map((p) => p.lap ?? 0));
   const label: Record<Session, string> = { quali: "Qualifying", sprint: "Sprint", race: "Race" };
+  const cornerModel = useMemo(() => buildCornerModel(w.trackPath), [w.trackPath]);
+  const cornerCounts = useMemo(() => {
+    const counts = { Slow: 0, Medium: 0, Fast: 0 };
+    for (const c of cornerModel?.corners ?? []) counts[c.type] += 1;
+    return counts;
+  }, [cornerModel]);
+  const weatherSummary = useMemo(() => {
+    if (!w.weather.length) return null;
+    const avg = (values: (number | null)[]) => {
+      const xs = values.filter((x): x is number => x != null);
+      return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
+    };
+    return {
+      airC: avg(w.weather.map((x) => x.airC)),
+      trackC: avg(w.weather.map((x) => x.trackC)),
+      humidity: avg(w.weather.map((x) => x.humidity)),
+      rainLaps: w.weather.filter((x) => x.rain).length,
+      state: w.summary?.weather ?? w.weather.find((x) => x.state)?.state ?? null,
+    };
+  }, [w.weather, w.summary?.weather]);
 
   const raceViews: { k: RaceView; l: string }[] = [
     { k: "result", l: "Result" },
@@ -312,14 +332,23 @@ function WeekendPage() {
                 value={titleCase(w.summary?.strategy)}
                 note={w.summary?.compoundPath ?? undefined}
               />
+              <Stat
+                label="Corners"
+                value={`${cornerCounts.Slow}/${cornerCounts.Medium}/${cornerCounts.Fast}`}
+                note="slow / medium / fast"
+              />
             </div>
           </div>
 
           <div className="rounded-lg border border-border bg-background/40 p-3">
             <p className="label-xs">Circuit</p>
-            <TrackMap path={w.trackPath} className="mx-auto mt-2 h-44 w-full" />
+            <CornerMap
+              path={w.trackPath}
+              className="mx-auto mt-2 h-44 w-full"
+              highlightCorner={hoverCorner}
+            />
             <div className="mt-2">
-              <SectorLegend />
+              <CornerMapLegend />
             </div>
           </div>
         </div>
@@ -644,9 +673,99 @@ function WeekendPage() {
                 <p className="label-xs">Geometry · sectors, corners, speed trap</p>
                 <h2 className="text-lg font-black uppercase italic">{w.circuit}</h2>
               </div>
-              <CornerMap path={w.trackPath} className="mx-auto h-[380px] w-full max-w-2xl" />
+              <CornerMap
+                path={w.trackPath}
+                className="mx-auto h-[380px] w-full max-w-2xl"
+                highlightCorner={hoverCorner}
+              />
               <div className="mt-3">
                 <CornerMapLegend />
+              </div>
+              <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_0.9fr]">
+                <div>
+                  <p className="label-xs">Corner mix</p>
+                  <div className="mt-3 grid grid-cols-3 gap-2">
+                    {[
+                      { label: "Slow", value: cornerCounts.Slow },
+                      { label: "Medium", value: cornerCounts.Medium },
+                      { label: "Fast", value: cornerCounts.Fast },
+                    ].map((x) => (
+                      <div key={x.label} className="rounded border border-border bg-background/40 p-2">
+                        <p className="label-xs">{x.label}</p>
+                        <p className="num text-xl font-black">{x.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 max-h-56 space-y-1 overflow-auto pr-1">
+                    {cornerModel?.corners.map((c) => (
+                      <button
+                        key={c.number}
+                        type="button"
+                        onMouseEnter={() => setHoverCorner(c.number)}
+                        onFocus={() => setHoverCorner(c.number)}
+                        onMouseLeave={() => setHoverCorner(null)}
+                        onBlur={() => setHoverCorner(null)}
+                        className="flex w-full items-center justify-between rounded border border-border bg-background/30 px-2 py-1.5 text-left transition-colors hover:border-primary hover:bg-accent/40"
+                      >
+                        <span className="flex items-center gap-2">
+                          <span className="num flex size-6 items-center justify-center rounded-full border border-border text-[10px] font-black">
+                            {c.number}
+                          </span>
+                          <span className="text-xs font-bold uppercase">Sector {c.sector}</span>
+                        </span>
+                        <span className="num text-[10px] uppercase text-muted-foreground">
+                          {c.type} · {c.direction}
+                        </span>
+                      </button>
+                    )) ?? (
+                      <p className="num text-[11px] text-muted-foreground">
+                        No corner model available for this circuit.
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {weatherSummary ? (
+                  <div>
+                    <p className="label-xs">Race conditions</p>
+                    {weatherSummary.state ? (
+                      <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
+                        {weatherSummary.state}
+                      </p>
+                    ) : null}
+                    <div className="mt-3 grid grid-cols-2 gap-2">
+                      {[
+                        {
+                          k: "Air",
+                          v:
+                            weatherSummary.airC != null
+                              ? `${fmtNum(weatherSummary.airC, 1)} C`
+                              : "N/A",
+                        },
+                        {
+                          k: "Track",
+                          v:
+                            weatherSummary.trackC != null
+                              ? `${fmtNum(weatherSummary.trackC, 1)} C`
+                              : "N/A",
+                        },
+                        {
+                          k: "Humidity",
+                          v:
+                            weatherSummary.humidity != null
+                              ? `${fmtNum(weatherSummary.humidity, 0)}%`
+                              : "N/A",
+                        },
+                        { k: "Rain laps", v: String(weatherSummary.rainLaps) },
+                      ].map((x) => (
+                        <div key={x.k} className="rounded border border-border bg-background/40 p-2">
+                          <p className="label-xs">{x.k}</p>
+                          <p className="num text-sm font-bold">{x.v}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
               </div>
             </Panel>
           ) : null}

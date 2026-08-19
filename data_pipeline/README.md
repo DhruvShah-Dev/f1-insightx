@@ -1,6 +1,16 @@
 # FastF1 Data Pipeline
 
-This directory contains the raw FastF1 ingestion foundation for F1 InsightX. It stores cache-backed session downloads, raw extracts, and logs that feed the canonical product pipeline under `data/`.
+This directory contains the raw FastF1 ingestion foundation for F1 InsightX. Treat it as production data infrastructure: it feeds user-facing predictions, telemetry comparisons, race analysis, and strategy views.
+
+The pipeline stores cache-backed session downloads, raw extracts, and logs that feed the canonical product pipeline under `data/`.
+
+## Product Contract
+
+- Raw files are source evidence, not browser payloads.
+- Every generated product claim must be reproducible from stored source data or a documented derivation.
+- Partial sessions, missing telemetry, API throttling, and proxy fields must be surfaced in validation reports.
+- Ingestion should be restartable and safe to run repeatedly.
+- Large generated archives stay out of git unless there is an explicit release decision.
 
 ## Install
 
@@ -103,10 +113,14 @@ python data_pipeline/scripts/run_fastf1_ingestion.py session --year 2026 --race 
 
 ## Validation
 
-After ingestion, run the downstream archive and product checks from the repo root:
+After ingestion, run the downstream archive and product checks from the repo root before publishing derived outputs:
 
 ```bash
 python data/validate_fastf1_archive.py --start-season 2020 --end-season 2026 --sessions FP1 FP2 FP3 Q SQ S R
 python validate_canonical_fastf1.py
 python check_generated_artifacts.py
 ```
+
+## Startup Operating Standard
+
+When data is missing, do not hide the gap with confident UI. Either regenerate the missing layer, mark the product view as partial, or remove the unsupported claim from the app.

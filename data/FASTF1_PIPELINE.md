@@ -9,7 +9,15 @@ This pipeline extends the existing Jolpica -> curated -> product-view flow with 
 - future fantasy modeling
 - deeper driver, team, and tyre analysis
 
-It is designed to be reproducible, low-cost, cache-aware, and era-aware.
+It is designed to be reproducible, low-cost, cache-aware, and era-aware. Operate it as a startup data product dependency, not an experimental notebook dump.
+
+## Product Commitments
+
+- Ship only explainable prediction and strategy outputs until model evaluation is strong enough for ML-driven claims.
+- Keep raw telemetry out of frontend bundles.
+- Preserve provenance from source session to staged table to product view.
+- Mark estimates and proxies clearly, especially energy deployment, dirty-air, race-control cause, and stint strategy signals.
+- Prefer no claim over a weak claim when source evidence is missing.
 
 ## Layers
 
@@ -134,3 +142,4 @@ python data/validate_fastf1_archive.py --start-season 2020 --end-season 2026 --s
 - store staged summaries and model inputs as CSV snapshots locally
 - publish only processed outputs to Supabase when needed
 - keep the web app reading compact snapshots, not session telemetry
+- re-run validation before product copy or UI uses a newly derived metric

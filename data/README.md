@@ -1,8 +1,19 @@
-# Data Workspace
+# Data Platform
 
 This directory contains the F1 InsightX data platform: source snapshots, staged session extracts, canonical FastF1 tables, deterministic feature layers, product-facing views, and SQL loaders.
 
+Treat this as the operating backbone of a real race-intelligence startup. The app should earn user trust by showing only data that is current enough, validated enough, and explainable enough for the product surface using it.
+
 Generated datasets are intentionally ignored unless they are small fixtures or schema templates. Keep code, validators, SQL, docs, and `.gitkeep` placeholders in git; rebuild large data products from the pipeline.
+
+## Product Data Principles
+
+- Raw data is evidence; product views are the contract.
+- Every prediction, comparison, and race report should trace back to deterministic source tables or a documented proxy.
+- Do not let post-race outcomes leak into pre-race prediction features.
+- Do not present estimates as official timing, race-control, ERS, battery, or FIA data.
+- Prefer compact Supabase/product views for runtime reads.
+- Keep freshness visible when a feature depends on partial or delayed data.
 
 ## Current Local State
 
@@ -103,3 +114,13 @@ python check_generated_artifacts.py
 - Position movement, DRS windows, traffic, dirty-air, overtakes, and race-control causes must be labelled as derived/proxy unless exact source evidence exists.
 - Public runtime code should read compact product views or Supabase views, not raw telemetry archives.
 - Do not commit raw FastF1 archives, parquet telemetry, canonical CSVs, telemetry features, indexed analytics shards, or large generated reports without an explicit release decision.
+
+## Release Gate
+
+Before data reaches the app or Supabase:
+
+- run the relevant validators listed above
+- inspect row counts against the previous release
+- confirm sprint sessions, qualifying, race, and weather coverage for affected rounds
+- document missing fields or caveats in the product surface
+- keep generated large data out of git unless explicitly approved

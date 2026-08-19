@@ -456,6 +456,7 @@ export function fallbackPicksBoard(season = seasonState.season) {
         raceName: nextRace.name,
         circuit: nextRace.circuit,
         circuitId: "zandvoort",
+        hasSprint: false,
         lockAtISO: nextRace.sessions.find((s) => s.code === "Q")?.startISO ?? null,
         scheduledAtISO: nextRace.raceStartISO,
         randomPositions: [7, 12],
