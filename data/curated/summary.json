@@ -1,0 +1,10 @@
+{
+  "drivers": 100,
+  "constructors": 100,
+  "circuits": 78,
+  "races": 23,
+  "qualifying_results": 261,
+  "race_results": 264,
+  "sprint_results": 110,
+  "strategy_profiles": 264
+}

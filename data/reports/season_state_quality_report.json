@@ -1,0 +1,102 @@
+{
+  "audit": {
+    "latest_analytics_race": {
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
+      "season": 2026,
+      "status": "data_available"
+    },
+    "latest_canonical_race": {
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
+      "season": 2026,
+      "status": "data_available"
+    },
+    "latest_completed_by_schedule": {
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
+      "season": 2026,
+      "status": "completed_by_schedule"
+    },
+    "latest_race_analysis_race": {
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
+      "season": 2026,
+      "status": "race_analysis_available"
+    },
+    "latest_results_race": {
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
+      "season": 2026,
+      "status": "results_available"
+    },
+    "latest_telemetry_race": {
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
+      "season": 2026,
+      "status": "data_available"
+    },
+    "next_race": {
+      "circuit_id": "monza",
+      "id": "2026-13-monza",
+      "race_name": "Italian Grand Prix",
+      "round": 13,
+      "scheduled_at": "2026-09-06T13:00:00Z",
+      "season": 2026,
+      "status": "upcoming"
+    },
+    "race_week_product_race": {
+      "circuit_id": "monza",
+      "id": "2026-13-monza",
+      "race_name": "Italian Grand Prix",
+      "round": 13,
+      "scheduled_at": "2026-09-06T13:00:00Z",
+      "season": 2026,
+      "status": "race_week_product_available"
+    },
+    "strategy_lab_product_race": {
+      "circuit_id": "monza",
+      "id": "2026-13-monza",
+      "race_name": "Italian Grand Prix",
+      "round": 13,
+      "scheduled_at": null,
+      "season": 2026,
+      "status": "strategy_lab_available"
+    }
+  },
+  "build_version": "season_state_20260824T185154Z",
+  "data_gaps": {
+    "clean_lap_filtering": "inferred/proxy",
+    "drs_gap_context": "partial",
+    "overtakes": "missing",
+    "position_evolution": "partial",
+    "race_control": "missing",
+    "race_results": "available",
+    "telemetry_sessions": "available",
+    "weather": "available"
+  },
+  "errors": [],
+  "generated_at": "2026-08-24T18:51:54Z",
+  "missing_data_flags": [],
+  "schema_version": 1,
+  "status": "passed",
+  "warnings": []
+}

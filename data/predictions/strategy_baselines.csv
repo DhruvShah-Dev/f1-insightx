@@ -1,0 +1,44 @@
+id,season,round,race_id,driver_id,constructor_id,recommended_stop_count,preferred_primary_compound,preferred_secondary_compound,pit_window_start_lap,pit_window_end_lap,tyre_life_index,degradation_risk,strategy_confidence,rationale,source_label
+2026-10|ALB,2026,10,2026-10,ALB,Williams,2,MEDIUM,MEDIUM,6,14,6.0,-13.5,0.82,"FP2 MEDIUM stint showed 2 laps with -0.450s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|ALO,2026,10,2026-10,ALO,Aston Martin,2,MEDIUM,SOFT,6,14,6.0,-23.43,0.82,"FP2 MEDIUM stint showed 2 laps with -0.781s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|ANT,2026,10,2026-10,ANT,Mercedes,2,MEDIUM,MEDIUM,27,35,6.0,4.2,0.82,"FP2 MEDIUM stint showed 2 laps with 0.140s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|BEA,2026,10,2026-10,BEA,Haas F1 Team,2,MEDIUM,SOFT,16,24,6.0,-4.29,0.82,"FP2 MEDIUM stint showed 2 laps with -0.143s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|BOR,2026,10,2026-10,BOR,Audi,2,SOFT,SOFT,44,52,6.0,90.0,0.82,"FP2 SOFT stint showed 2 laps with 6.929s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|BOT,2026,10,2026-10,BOT,Cadillac,2,MEDIUM,SOFT,14,22,6.0,-5.34,0.82,"FP2 MEDIUM stint showed 2 laps with -0.178s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|COL,2026,10,2026-10,COL,Alpine,2,MEDIUM,SOFT,22,30,8.0,0.0,0.82,"FP2 MEDIUM stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|GAS,2026,10,2026-10,GAS,Alpine,2,MEDIUM,MEDIUM,44,52,13.0,90.0,0.82,"FP2 MEDIUM stint showed 3 laps with 5.027s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|HAD,2026,10,2026-10,HAD,Red Bull Racing,2,SOFT,MEDIUM,22,30,3.0,0.0,0.82,"FP2 SOFT stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|HAM,2026,10,2026-10,HAM,Ferrari,2,MEDIUM,SOFT,6,14,6.0,-30.0,0.82,"FP2 MEDIUM stint showed 2 laps with -1.145s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|HUL,2026,10,2026-10,HUL,Audi,2,SOFT,SOFT,44,52,6.0,90.0,0.82,"FP2 SOFT stint showed 2 laps with 7.348s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|LAW,2026,10,2026-10,LAW,Racing Bulls,2,SOFT,SOFT,44,52,8.0,90.0,0.82,"FP2 SOFT stint showed 3 laps with 5.363s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|LEC,2026,10,2026-10,LEC,Ferrari,2,SOFT,MEDIUM,22,30,3.0,0.0,0.82,"FP2 SOFT stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|LIN,2026,10,2026-10,LIN,Racing Bulls,2,MEDIUM,SOFT,6,14,6.0,-22.35,0.82,"FP2 MEDIUM stint showed 2 laps with -0.745s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|NOR,2026,10,2026-10,NOR,McLaren,2,MEDIUM,MEDIUM,22,30,4.0,0.0,0.82,"FP2 MEDIUM stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|OCO,2026,10,2026-10,OCO,Haas F1 Team,2,MEDIUM,SOFT,27,35,6.0,3.75,0.82,"FP2 MEDIUM stint showed 2 laps with 0.125s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|PER,2026,10,2026-10,PER,Cadillac,2,MEDIUM,MEDIUM,19,27,6.0,-1.56,0.82,"FP2 MEDIUM stint showed 2 laps with -0.052s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|PIA,2026,10,2026-10,PIA,McLaren,2,SOFT,SOFT,44,52,5.0,90.0,0.82,"FP2 SOFT stint showed 2 laps with 10.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|RUS,2026,10,2026-10,RUS,Mercedes,2,MEDIUM,MEDIUM,23,31,6.0,1.32,0.82,"FP2 MEDIUM stint showed 2 laps with 0.044s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|SAI,2026,10,2026-10,SAI,Williams,2,MEDIUM,MEDIUM,12,20,6.0,-6.78,0.82,"FP2 MEDIUM stint showed 2 laps with -0.226s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|STR,2026,10,2026-10,STR,Aston Martin,2,MEDIUM,SOFT,22,30,8.0,0.0,0.82,"FP2 MEDIUM stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-10|VER,2026,10,2026-10,VER,Red Bull Racing,2,MEDIUM,MEDIUM,23,31,6.0,1.32,0.82,"FP2 MEDIUM stint showed 2 laps with 0.044s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|ALB,2026,11,2026-11,ALB,Williams,2,SOFT,HARD,22,30,3.0,0.0,0.82,"FP2 SOFT stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|ALO,2026,11,2026-11,ALO,Aston Martin,2,SOFT,SOFT,20,28,12.0,0.0,0.82,"FP2 SOFT stint showed 5 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|ANT,2026,11,2026-11,ANT,Mercedes,2,MEDIUM,SOFT,44,52,16.0,56.97,0.82,"FP2 MEDIUM stint showed 2 laps with 1.899s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|BEA,2026,11,2026-11,BEA,Haas F1 Team,2,MEDIUM,MEDIUM,24,32,33.0,4.227,0.82,"FP2 MEDIUM stint showed 10 laps with 0.141s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|BOR,2026,11,2026-11,BOR,Audi,2,HARD,HARD,44,52,28.0,73.161,0.82,"FP2 HARD stint showed 8 laps with 2.439s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|BOT,2026,11,2026-11,BOT,Cadillac,2,MEDIUM,MEDIUM,26,34,34.0,5.777,0.82,"FP2 MEDIUM stint showed 10 laps with 0.193s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|COL,2026,11,2026-11,COL,Alpine,2,MEDIUM,MEDIUM,6,14,17.0,-30.0,0.82,"FP2 MEDIUM stint showed 8 laps with -1.429s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|GAS,2026,11,2026-11,GAS,Alpine,2,MEDIUM,MEDIUM,44,52,27.0,39.206,0.82,"FP2 MEDIUM stint showed 9 laps with 1.307s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|HAD,2026,11,2026-11,HAD,Red Bull Racing,2,MEDIUM,MEDIUM,44,52,19.0,22.554,0.82,"FP2 MEDIUM stint showed 6 laps with 0.752s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|HAM,2026,11,2026-11,HAM,Ferrari,2,SOFT,MEDIUM,6,14,11.0,-21.73,0.82,"FP2 SOFT stint showed 4 laps with -0.724s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|HUL,2026,11,2026-11,HUL,Audi,2,SOFT,SOFT,44,52,9.0,90.0,0.82,"FP2 SOFT stint showed 2 laps with 7.793s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|LAW,2026,11,2026-11,LAW,Racing Bulls,2,SOFT,HARD,44,52,8.0,90.0,0.82,"FP2 SOFT stint showed 2 laps with 10.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|LEC,2026,11,2026-11,LEC,Ferrari,2,SOFT,SOFT,21,29,9.0,0.0,0.82,"FP2 SOFT stint showed 3 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|LIN,2026,11,2026-11,LIN,Racing Bulls,2,SOFT,HARD,22,30,3.0,0.0,0.82,"FP2 SOFT stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|NOR,2026,11,2026-11,NOR,McLaren,2,MEDIUM,MEDIUM,42,50,31.0,18.455,0.82,"FP2 MEDIUM stint showed 12 laps with 0.615s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|OCO,2026,11,2026-11,OCO,Haas F1 Team,2,SOFT,MEDIUM,44,52,5.0,90.0,0.82,"FP2 SOFT stint showed 2 laps with 10.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|PER,2026,11,2026-11,PER,Cadillac,2,SOFT,MEDIUM,22,30,3.0,0.0,0.82,"FP2 SOFT stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|PIA,2026,11,2026-11,PIA,McLaren,2,MEDIUM,MEDIUM,44,52,32.0,69.323,0.82,"FP2 MEDIUM stint showed 10 laps with 2.311s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|RUS,2026,11,2026-11,RUS,Mercedes,2,SOFT,MEDIUM,22,30,3.0,0.0,0.82,"FP2 SOFT stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|SAI,2026,11,2026-11,SAI,Williams,2,SOFT,HARD,22,30,3.0,0.0,0.82,"FP2 SOFT stint showed 1 laps with 0.000s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1
+2026-11|VER,2026,11,2026-11,VER,Red Bull Racing,2,MEDIUM,SOFT,42,50,22.0,16.877,0.82,"FP2 MEDIUM stint showed 8 laps with 0.563s/lap degradation, supporting a 2-stop baseline.",fastf1_strategy_baseline_v1

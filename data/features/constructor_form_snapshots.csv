@@ -1,0 +1,132 @@
+id,season,round,race_id,constructor_id,regulation_era,two_car_long_run_pace_s,two_car_quali_pace_s,recent_pace_rank,reliability_index,weather_risk_index,source_label
+2026-01|Alpine,2026,1,2026-01,Alpine,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Aston Martin,2026,1,2026-01,Aston Martin,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Audi,2026,1,2026-01,Audi,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Cadillac,2026,1,2026-01,Cadillac,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Ferrari,2026,1,2026-01,Ferrari,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Haas F1 Team,2026,1,2026-01,Haas F1 Team,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|McLaren,2026,1,2026-01,McLaren,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Mercedes,2026,1,2026-01,Mercedes,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Racing Bulls,2026,1,2026-01,Racing Bulls,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Red Bull Racing,2026,1,2026-01,Red Bull Racing,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-01|Williams,2026,1,2026-01,Williams,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Alpine,2026,2,2026-02,Alpine,regulations_2026_reset,,,10.5,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Aston Martin,2026,2,2026-02,Aston Martin,regulations_2026_reset,,,18.0,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Audi,2026,2,2026-02,Audi,regulations_2026_reset,,,,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Cadillac,2026,2,2026-02,Cadillac,regulations_2026_reset,,,19.0,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Ferrari,2026,2,2026-02,Ferrari,regulations_2026_reset,,,4.0,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Haas F1 Team,2026,2,2026-02,Haas F1 Team,regulations_2026_reset,,,12.5,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Mercedes,2026,2,2026-02,Mercedes,regulations_2026_reset,,,4.0,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Racing Bulls,2026,2,2026-02,Racing Bulls,regulations_2026_reset,,,11.0,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Red Bull Racing,2026,2,2026-02,Red Bull Racing,regulations_2026_reset,,,8.5,80.0,0.0,fastf1_constructor_form_v1
+2026-02|Williams,2026,2,2026-02,Williams,regulations_2026_reset,,,9.0,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Alpine,2026,3,2026-03,Alpine,regulations_2026_reset,,,9.463750000000001,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Aston Martin,2026,3,2026-03,Aston Martin,regulations_2026_reset,,,17.7409,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Audi,2026,3,2026-03,Audi,regulations_2026_reset,,,7.5,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Cadillac,2026,3,2026-03,Cadillac,regulations_2026_reset,,,17.186549999999997,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Ferrari,2026,3,2026-03,Ferrari,regulations_2026_reset,,,3.7409,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Haas F1 Team,2026,3,2026-03,Haas F1 Team,regulations_2026_reset,,,9.9093,80.0,0.0,fastf1_constructor_form_v1
+2026-03|McLaren,2026,3,2026-03,McLaren,regulations_2026_reset,,,4.0,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Mercedes,2026,3,2026-03,Mercedes,regulations_2026_reset,,,2.70465,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Racing Bulls,2026,3,2026-03,Racing Bulls,regulations_2026_reset,,,9.7047,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Red Bull Racing,2026,3,2026-03,Red Bull Racing,regulations_2026_reset,,,10.31345,80.0,0.0,fastf1_constructor_form_v1
+2026-03|Williams,2026,3,2026-03,Williams,regulations_2026_reset,,,13.29535,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Alpine,2026,4,2026-04,Alpine,regulations_2026_reset,,,10.1923,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Aston Martin,2026,4,2026-04,Aston Martin,regulations_2026_reset,,,18.907,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Audi,2026,4,2026-04,Audi,regulations_2026_reset,,,9.3677,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Cadillac,2026,4,2026-04,Cadillac,regulations_2026_reset,,,18.0143,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Ferrari,2026,4,2026-04,Ferrari,regulations_2026_reset,,,3.8335999999999997,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Haas F1 Team,2026,4,2026-04,Haas F1 Team,regulations_2026_reset,,,11.730699999999999,80.0,0.0,fastf1_constructor_form_v1
+2026-04|McLaren,2026,4,2026-04,McLaren,regulations_2026_reset,,,4.5362,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Mercedes,2026,4,2026-04,Mercedes,regulations_2026_reset,,,2.27365,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Racing Bulls,2026,4,2026-04,Racing Bulls,regulations_2026_reset,,,10.883700000000001,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Red Bull Racing,2026,4,2026-04,Red Bull Racing,regulations_2026_reset,,,9.66465,80.0,0.0,fastf1_constructor_form_v1
+2026-04|Williams,2026,4,2026-04,Williams,regulations_2026_reset,,,14.620349999999998,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Alpine,2026,5,2026-05,Alpine,regulations_2026_reset,,,10.9724,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Aston Martin,2026,5,2026-05,Aston Martin,regulations_2026_reset,,,17.96045,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Audi,2026,5,2026-05,Audi,regulations_2026_reset,,,11.73985,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Cadillac,2026,5,2026-05,Cadillac,regulations_2026_reset,,,17.8714,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Ferrari,2026,5,2026-05,Ferrari,regulations_2026_reset,,,4.1577,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Haas F1 Team,2026,5,2026-05,Haas F1 Team,regulations_2026_reset,,,11.80555,80.0,0.0,fastf1_constructor_form_v1
+2026-05|McLaren,2026,5,2026-05,McLaren,regulations_2026_reset,,,3.5324999999999998,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Mercedes,2026,5,2026-05,Mercedes,regulations_2026_reset,,,2.61435,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Racing Bulls,2026,5,2026-05,Racing Bulls,regulations_2026_reset,,,14.0535,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Red Bull Racing,2026,5,2026-05,Red Bull Racing,regulations_2026_reset,,,10.86915,80.0,0.0,fastf1_constructor_form_v1
+2026-05|Williams,2026,5,2026-05,Williams,regulations_2026_reset,,,13.29665,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Alpine,2026,6,2026-06,Alpine,regulations_2026_reset,,,10.40365,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Aston Martin,2026,6,2026-06,Aston Martin,regulations_2026_reset,,,18.5446,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Audi,2026,6,2026-06,Audi,regulations_2026_reset,,,12.51525,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Cadillac,2026,6,2026-06,Cadillac,regulations_2026_reset,,,17.78595,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Ferrari,2026,6,2026-06,Ferrari,regulations_2026_reset,,,4.0064,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Haas F1 Team,2026,6,2026-06,Haas F1 Team,regulations_2026_reset,,,12.42535,80.0,0.0,fastf1_constructor_form_v1
+2026-06|McLaren,2026,6,2026-06,McLaren,regulations_2026_reset,,,5.5286,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Mercedes,2026,6,2026-06,Mercedes,regulations_2026_reset,,,2.8181000000000003,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Racing Bulls,2026,6,2026-06,Racing Bulls,regulations_2026_reset,,,12.140699999999999,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Red Bull Racing,2026,6,2026-06,Red Bull Racing,regulations_2026_reset,,,12.3466,80.0,0.0,fastf1_constructor_form_v1
+2026-06|Williams,2026,6,2026-06,Williams,regulations_2026_reset,,,13.803799999999999,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Alpine,2026,7,2026-07,Alpine,regulations_2026_reset,,,9.927050000000001,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Aston Martin,2026,7,2026-07,Aston Martin,regulations_2026_reset,,,18.43665,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Audi,2026,7,2026-07,Audi,regulations_2026_reset,,,12.2856,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Cadillac,2026,7,2026-07,Cadillac,regulations_2026_reset,,,17.828400000000002,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Ferrari,2026,7,2026-07,Ferrari,regulations_2026_reset,,,4.00515,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Haas F1 Team,2026,7,2026-07,Haas F1 Team,regulations_2026_reset,,,13.1342,80.0,0.0,fastf1_constructor_form_v1
+2026-07|McLaren,2026,7,2026-07,McLaren,regulations_2026_reset,,,6.8003,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Mercedes,2026,7,2026-07,Mercedes,regulations_2026_reset,,,2.65585,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Racing Bulls,2026,7,2026-07,Racing Bulls,regulations_2026_reset,,,11.48675,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Red Bull Racing,2026,7,2026-07,Red Bull Racing,regulations_2026_reset,,,8.64395,80.0,0.0,fastf1_constructor_form_v1
+2026-07|Williams,2026,7,2026-07,Williams,regulations_2026_reset,,,13.85845,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Alpine,2026,8,2026-08,Alpine,regulations_2026_reset,,,10.291350000000001,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Aston Martin,2026,8,2026-08,Aston Martin,regulations_2026_reset,,,18.8871,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Audi,2026,8,2026-08,Audi,regulations_2026_reset,,,12.62275,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Cadillac,2026,8,2026-08,Cadillac,regulations_2026_reset,,,18.1222,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Ferrari,2026,8,2026-08,Ferrari,regulations_2026_reset,,,3.65275,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Haas F1 Team,2026,8,2026-08,Haas F1 Team,regulations_2026_reset,,,13.37425,80.0,0.0,fastf1_constructor_form_v1
+2026-08|McLaren,2026,8,2026-08,McLaren,regulations_2026_reset,,,6.6688,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Mercedes,2026,8,2026-08,Mercedes,regulations_2026_reset,,,3.06785,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Racing Bulls,2026,8,2026-08,Racing Bulls,regulations_2026_reset,,,11.7519,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Red Bull Racing,2026,8,2026-08,Red Bull Racing,regulations_2026_reset,,,7.9348,80.0,0.0,fastf1_constructor_form_v1
+2026-08|Williams,2026,8,2026-08,Williams,regulations_2026_reset,,,13.9993,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Alpine,2026,9,2026-09,Alpine,regulations_2026_reset,,,10.483450000000001,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Aston Martin,2026,9,2026-09,Aston Martin,regulations_2026_reset,,,18.905050000000003,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Audi,2026,9,2026-09,Audi,regulations_2026_reset,,,12.6024,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Cadillac,2026,9,2026-09,Cadillac,regulations_2026_reset,,,18.65905,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Ferrari,2026,9,2026-09,Ferrari,regulations_2026_reset,,,3.8668500000000003,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Haas F1 Team,2026,9,2026-09,Haas F1 Team,regulations_2026_reset,,,13.7121,80.0,0.0,fastf1_constructor_form_v1
+2026-09|McLaren,2026,9,2026-09,McLaren,regulations_2026_reset,,,6.378299999999999,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Mercedes,2026,9,2026-09,Mercedes,regulations_2026_reset,,,3.05705,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Racing Bulls,2026,9,2026-09,Racing Bulls,regulations_2026_reset,,,11.552399999999999,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Red Bull Racing,2026,9,2026-09,Red Bull Racing,regulations_2026_reset,,,7.42835,80.0,0.0,fastf1_constructor_form_v1
+2026-09|Williams,2026,9,2026-09,Williams,regulations_2026_reset,,,14.651900000000001,80.0,0.0,fastf1_constructor_form_v1
+2026-10|Alpine,2026,10,2026-10,Alpine,regulations_2026_reset,123.0316,106.3615,10.92375,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Aston Martin,2026,10,2026-10,Aston Martin,regulations_2026_reset,127.98758333333333,110.0895,19.2838,93.33333333333333,0.0,fastf1_constructor_form_v1
+2026-10|Audi,2026,10,2026-10,Audi,regulations_2026_reset,125.61437500000001,106.1495,12.585799999999999,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Cadillac,2026,10,2026-10,Cadillac,regulations_2026_reset,124.33137142857143,107.89699999999999,18.7818,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Ferrari,2026,10,2026-10,Ferrari,regulations_2026_reset,126.114375,104.894,4.1782,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Haas F1 Team,2026,10,2026-10,Haas F1 Team,regulations_2026_reset,122.93708333333333,107.28999999999999,14.192,100.0,0.0,fastf1_constructor_form_v1
+2026-10|McLaren,2026,10,2026-10,McLaren,regulations_2026_reset,114.9765,104.9085,6.4966,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Mercedes,2026,10,2026-10,Mercedes,regulations_2026_reset,121.43790000000001,104.61500000000001,2.97575,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Racing Bulls,2026,10,2026-10,Racing Bulls,regulations_2026_reset,126.36270833333334,105.6315,11.2436,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Red Bull Racing,2026,10,2026-10,Red Bull Racing,regulations_2026_reset,114.44985416666665,105.25049999999999,6.674250000000001,100.0,0.0,fastf1_constructor_form_v1
+2026-10|Williams,2026,10,2026-10,Williams,regulations_2026_reset,121.99349999999998,106.9485,14.68515,100.0,0.0,fastf1_constructor_form_v1
+2026-11|Alpine,2026,11,2026-11,Alpine,regulations_2026_reset,99.59511538461538,78.93549999999999,11.4567,93.33333333333333,0.0,fastf1_constructor_form_v1
+2026-11|Aston Martin,2026,11,2026-11,Aston Martin,regulations_2026_reset,97.89586666666668,80.2335,19.3019,100.0,0.0,fastf1_constructor_form_v1
+2026-11|Audi,2026,11,2026-11,Audi,regulations_2026_reset,97.07714264705882,78.854,11.8082,100.0,0.0,fastf1_constructor_form_v1
+2026-11|Cadillac,2026,11,2026-11,Cadillac,regulations_2026_reset,97.38806746031746,81.104,17.944,93.33333333333333,0.0,fastf1_constructor_form_v1
+2026-11|Ferrari,2026,11,2026-11,Ferrari,regulations_2026_reset,91.58646428571429,77.332,4.88405,100.0,0.0,fastf1_constructor_form_v1
+2026-11|Haas F1 Team,2026,11,2026-11,Haas F1 Team,regulations_2026_reset,96.33366503267973,79.98349999999999,14.3533,93.33333333333333,0.0,fastf1_constructor_form_v1
+2026-11|McLaren,2026,11,2026-11,McLaren,regulations_2026_reset,93.58599603174602,77.4455,7.37805,93.33333333333333,0.0,fastf1_constructor_form_v1
+2026-11|Mercedes,2026,11,2026-11,Mercedes,regulations_2026_reset,97.02038095238095,77.6195,4.44975,93.33333333333333,0.0,fastf1_constructor_form_v1
+2026-11|Racing Bulls,2026,11,2026-11,Racing Bulls,regulations_2026_reset,93.96573815789475,78.523,9.9024,100.0,0.0,fastf1_constructor_form_v1
+2026-11|Red Bull Racing,2026,11,2026-11,Red Bull Racing,regulations_2026_reset,96.98311111111111,77.7905,7.17135,100.0,0.0,fastf1_constructor_form_v1
+2026-11|Williams,2026,11,2026-11,Williams,regulations_2026_reset,94.22198863636365,80.6395,14.073350000000001,100.0,0.0,fastf1_constructor_form_v1
+2026-12|Alpine,2026,12,2026-12,Alpine,regulations_2026_reset,,72.708,11.9548,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Aston Martin,2026,12,2026-12,Aston Martin,regulations_2026_reset,,73.73400000000001,17.64665,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Audi,2026,12,2026-12,Audi,regulations_2026_reset,,72.43799999999999,11.01885,100.0,90.0,fastf1_constructor_form_v1
+2026-12|Cadillac,2026,12,2026-12,Cadillac,regulations_2026_reset,,74.4855,18.2151,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Ferrari,2026,12,2026-12,Ferrari,regulations_2026_reset,,71.52600000000001,4.352550000000001,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Haas F1 Team,2026,12,2026-12,Haas F1 Team,regulations_2026_reset,,73.4815,14.82415,100.0,90.0,fastf1_constructor_form_v1
+2026-12|McLaren,2026,12,2026-12,McLaren,regulations_2026_reset,,71.23400000000001,7.522,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Mercedes,2026,12,2026-12,Mercedes,regulations_2026_reset,,71.2805,4.59105,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Racing Bulls,2026,12,2026-12,Racing Bulls,regulations_2026_reset,,72.406,9.538,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Red Bull Racing,2026,12,2026-12,Red Bull Racing,regulations_2026_reset,,71.6755,8.5107,100.0,100.0,fastf1_constructor_form_v1
+2026-12|Williams,2026,12,2026-12,Williams,regulations_2026_reset,,73.378,15.26015,100.0,100.0,fastf1_constructor_form_v1

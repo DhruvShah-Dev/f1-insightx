@@ -3,10 +3,10 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Countdown } from "@/components/countdown";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
-import { ZandvoortCircuitMap } from "@/components/zandvoort-circuit-map";
+import { CircuitMap } from "@/components/circuit-map";
 import { countryTheme } from "@/data/country-theme";
 import { team } from "@/data/teams";
-import { ZANDVOORT_CORNERS } from "@/data/zandvoort-circuit";
+import { cornerProfileForCircuit, cornerSummaryForCircuit, cornersForCircuit } from "@/data/circuit-corners";
 import { fmtDate, fmtDateTime, fmtDelta, fmtLapS, fmtNum, pct } from "@/lib/format";
 import { getRaceWeek, type RaceWeekDriver, type RaceWeekQualifyingPrediction } from "@/lib/f1.functions";
 
@@ -15,12 +15,6 @@ const raceWeekQuery = queryOptions({
   queryFn: () => getRaceWeek(),
   staleTime: 5 * 60_000,
 });
-
-const CORNER_GROUPS = [
-  { label: "Slow", value: "3", detail: "Tarzan, Hugenholtz, Hans Ernst" },
-  { label: "Fast", value: "4", detail: "Hunserug, Slotemaker, Scheivlak, Arie Luyendyk" },
-  { label: "Medium", value: "5", detail: "Gerlach, Masters, T9, T10, T13" },
-] as const;
 
 type RacePrediction = {
   code: string;
@@ -82,6 +76,10 @@ function RaceWeek() {
 
   const theme = countryTheme(data.circuit.country);
   const w = data.weather;
+  const cornerGroups = cornerProfileForCircuit(data.circuit.id);
+  const corners = cornersForCircuit(data.circuit.id);
+  const mediumCornerCount = cornerGroups.find((group) => group.label === "Medium")?.value;
+  const circuitCode = data.circuit.id.toUpperCase().slice(0, 3);
   const qualiPredictions: RaceWeekQualifyingPrediction[] =
     data.qualifyingPredictions.length > 0
       ? data.qualifyingPredictions
@@ -138,8 +136,8 @@ function RaceWeek() {
             <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
               <Stat
                 label="Corners"
-                value="3 slow / 4 fast"
-                note="5 medium complexes"
+                value={cornerSummaryForCircuit(data.circuit.id)}
+                note={mediumCornerCount ? `${mediumCornerCount} medium complexes` : undefined}
               />
               <Stat
                 label="Rain risk"
@@ -157,7 +155,12 @@ function RaceWeek() {
             </div>
           </div>
 
-          <ZandvoortCircuitMap path={data.trackPath} className="min-h-[420px]" />
+          <CircuitMap
+            path={data.trackPath}
+            circuitId={data.circuit.id}
+            circuitName={data.circuit.name}
+            className="min-h-[420px]"
+          />
         </div>
       </section>
 
@@ -175,7 +178,7 @@ function RaceWeek() {
         <SectionHeading kicker="Circuit" title="Corner profile" />
         <div className="grid gap-3 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-            {CORNER_GROUPS.map((group) => (
+            {cornerGroups.map((group) => (
               <div key={group.label} className="border border-border bg-card/50 p-4">
                 <p className="label-xs">{group.label} corners</p>
                 <p className="num mt-1 text-3xl font-black">{group.value}</p>
@@ -186,7 +189,7 @@ function RaceWeek() {
           <div className="border border-border bg-card/40 p-4">
             <p className="label-xs">Named turns</p>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
-              {ZANDVOORT_CORNERS.map((corner) => (
+              {corners.length ? corners.map((corner) => (
                 <div key={corner.number} className="flex items-center gap-2 border-b border-border/60 pb-2 text-xs">
                   <span className="num grid size-6 place-items-center bg-primary text-[10px] font-black text-primary-foreground">
                     {corner.number}
@@ -194,7 +197,9 @@ function RaceWeek() {
                   <span className="font-bold uppercase">{corner.name}</span>
                   <span className="label-xs ml-auto">S{corner.sector}</span>
                 </div>
-              ))}
+              )) : (
+                <p className="text-xs text-muted-foreground">Corner labels are not available for this circuit yet.</p>
+              )}
             </div>
           </div>
         </div>
@@ -210,6 +215,7 @@ function RaceWeek() {
             disabled={!data.sprintWeekend}
             onToggle={() => setShowSprintQAll((value) => !value)}
             total={qualiPredictions.length}
+            circuitCode={circuitCode}
           />
           <QualiPredictionPanel
             title="Qualifying"
@@ -217,6 +223,7 @@ function RaceWeek() {
             expanded={showQualiAll}
             onToggle={() => setShowQualiAll((value) => !value)}
             total={qualiPredictions.length}
+            circuitCode={circuitCode}
           />
         </div>
       </section>
@@ -363,6 +370,7 @@ function QualiPredictionPanel({
   disabled,
   onToggle,
   total,
+  circuitCode,
 }: {
   title: string;
   rows: RaceWeekQualifyingPrediction[];
@@ -370,6 +378,7 @@ function QualiPredictionPanel({
   disabled?: boolean;
   onToggle: () => void;
   total: number;
+  circuitCode: string;
 }) {
   return (
     <div className="border border-border bg-card/50 p-4">
@@ -394,7 +403,7 @@ function QualiPredictionPanel({
           metric: row.sourceUsefulnessRank == null ? "Raw blend" : `Source #${row.sourceUsefulnessRank}`,
           note: [
             row.recentGapS == null ? null : `Recent ${fmtDelta(row.recentGapS)}`,
-            row.sameCircuitGapS == null ? null : `ZAN ${fmtDelta(row.sameCircuitGapS)}`,
+            row.sameCircuitGapS == null ? null : `${circuitCode} ${fmtDelta(row.sameCircuitGapS)}`,
             row.trackFitGapS == null ? null : `Fit ${fmtDelta(row.trackFitGapS)}`,
           ]
             .filter(Boolean)

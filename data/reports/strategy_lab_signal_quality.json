@@ -1,0 +1,33 @@
+{
+  "model_version": "strategy_lab_model_v2",
+  "telemetry_signal_coverage": {
+    "rows": 22,
+    "drivers_with_signals": 22,
+    "missing_signal_count": 0
+  },
+  "track_archetype_coverage": {
+    "rows": 12,
+    "archetypes": [
+      "braking-heavy",
+      "high-degradation",
+      "power-sensitive"
+    ]
+  },
+  "proxy_confidence_distribution": {
+    "min": 0.0,
+    "median": 0.55,
+    "max": 0.55
+  },
+  "formula_notes": {
+    "corner_speed_strength": "1 - mean speed_delta_vs_session_best normalized to a 0-35 kph practical range",
+    "braking_strength": "mean late_brake_score and brake_intensity_proxy blend",
+    "throttle_pickup_strength": "inverse normalized throttle_pickup_distance_m with traction_exit_score support",
+    "traction_exit_strength": "mean traction_exit_score",
+    "straight_line_strength": "terminal speed rank blended with straight acceleration_score",
+    "energy_deployment_proxy_strength": "mean deployment_proxy_score; proxy only, not ERS/battery state",
+    "lift_and_coast_tendency": "mean high-speed low-throttle non-brake proxy",
+    "clipping_risk_proxy": "mean speed plateau proxy on straights"
+  },
+  "proxy_note": "Energy deployment fields are proxy-derived from precomputed telemetry features only; no true ERS or battery state is available.",
+  "validation_errors": []
+}

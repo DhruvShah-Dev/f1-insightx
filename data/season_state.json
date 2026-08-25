@@ -2,33 +2,33 @@
   "analytics_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "hungaroring",
-      "id": "2026-11-hungaroring",
-      "race_name": "Hungarian Grand Prix",
-      "round": 11,
-      "scheduled_at": "2026-07-26T13:00:00Z",
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     }
   },
-  "build_version": "season_state_20260731T220955Z",
+  "build_version": "season_state_20260824T185154Z",
   "current_race_week": {
     "available": true,
     "product_view_race": {
-      "circuit_id": "zandvoort",
-      "id": "2026-12-zandvoort",
-      "race_name": "Dutch Grand Prix",
-      "round": 12,
-      "scheduled_at": "2026-08-23T13:00:00Z",
+      "circuit_id": "monza",
+      "id": "2026-13-monza",
+      "race_name": "Italian Grand Prix",
+      "round": 13,
+      "scheduled_at": "2026-09-06T13:00:00Z",
       "season": 2026,
       "status": "race_week_product_available"
     },
     "race": {
-      "circuit_id": "zandvoort",
-      "id": "2026-12-zandvoort",
-      "race_name": "Dutch Grand Prix",
-      "round": 12,
-      "scheduled_at": "2026-08-23T13:00:00Z",
+      "circuit_id": "monza",
+      "id": "2026-13-monza",
+      "race_name": "Italian Grand Prix",
+      "round": 13,
+      "scheduled_at": "2026-09-06T13:00:00Z",
       "season": 2026,
       "status": "upcoming"
     }
@@ -45,109 +45,109 @@
   },
   "freshness": {
     "analytics": {
-      "build_version": "analytics_views_20260731T220004Z",
-      "generated_at": "2026-07-31T22:00:04Z",
+      "build_version": "analytics_views_20260824T185032Z",
+      "generated_at": "2026-08-24T18:50:32Z",
       "validation_status": "passed",
       "warnings": []
     },
     "analytics_index": {
-      "build_version": "analytics_index_20260731T220502Z",
-      "generated_at": "2026-07-31T22:05:02Z",
+      "build_version": "analytics_index_20260824T185051Z",
+      "generated_at": "2026-08-24T18:50:51Z",
       "validation_status": "passed",
       "warnings": []
     },
     "canonical_fastf1": {
-      "build_version": "canonical_fastf1_20260731T214518Z",
-      "generated_at": "2026-07-31T21:45:18Z",
+      "build_version": "canonical_fastf1_20260824T184918Z",
+      "generated_at": "2026-08-24T18:49:18Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_analysis": {
       "build_version": "race-analysis-v1",
-      "generated_at": "2026-07-31T22:06:37Z",
+      "generated_at": "2026-08-24T18:51:07Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_week": {
-      "build_version": "race_week_20260731T215954Z",
-      "generated_at": "2026-07-31T21:59:54Z",
+      "build_version": "race_week_20260824T185028Z",
+      "generated_at": "2026-08-24T18:50:28Z",
       "validation_status": "passed",
       "warnings": []
     },
     "season_state": {
-      "build_version": "season_state_20260731T220934Z",
-      "generated_at": "2026-07-31T22:09:34Z",
-      "validation_status": "passed",
+      "build_version": "season_state_20260804T010153Z",
+      "generated_at": "2026-08-04T01:01:53Z",
+      "validation_status": "failed",
       "warnings": []
     },
     "strategy_lab": {
-      "build_version": "strategy_lab_20260731T220949Z",
-      "generated_at": "2026-07-31T22:09:49Z",
+      "build_version": "strategy_lab_20260824T185030Z",
+      "generated_at": "2026-08-24T18:50:30Z",
       "validation_status": "passed",
       "warnings": []
     },
     "telemetry_features": {
-      "build_version": "telemetry_features_20260731T215746Z",
-      "generated_at": "2026-07-31T21:57:46Z",
+      "build_version": "telemetry_features_20260824T185011Z",
+      "generated_at": "2026-08-24T18:50:11Z",
       "validation_status": "passed",
       "warnings": []
     }
   },
-  "generated_at": "2026-07-31T22:09:55Z",
+  "generated_at": "2026-08-24T18:51:54Z",
   "latest_completed_race": {
-    "circuit_id": "hungaroring",
-    "id": "2026-11-hungaroring",
-    "race_name": "Hungarian Grand Prix",
-    "round": 11,
-    "scheduled_at": "2026-07-26T13:00:00Z",
-    "season": 2026,
-    "status": "completed_by_schedule"
-  },
-  "latest_completed_race_with_analytics": {
-    "circuit_id": "hungaroring",
-    "id": "2026-11-hungaroring",
-    "race_name": "Hungarian Grand Prix",
-    "round": 11,
-    "scheduled_at": "2026-07-26T13:00:00Z",
-    "season": 2026,
-    "status": "data_available"
-  },
-  "latest_completed_race_with_results": {
-    "circuit_id": "hungaroring",
-    "id": "2026-11-hungaroring",
-    "race_name": "Hungarian Grand Prix",
-    "round": 11,
-    "scheduled_at": "2026-07-26T13:00:00Z",
-    "season": 2026,
-    "status": "results_available"
-  },
-  "latest_completed_race_with_telemetry": {
-    "circuit_id": "hungaroring",
-    "id": "2026-11-hungaroring",
-    "race_name": "Hungarian Grand Prix",
-    "round": 11,
-    "scheduled_at": "2026-07-26T13:00:00Z",
-    "season": 2026,
-    "status": "data_available"
-  },
-  "missing_data_flags": [],
-  "next_race": {
     "circuit_id": "zandvoort",
     "id": "2026-12-zandvoort",
     "race_name": "Dutch Grand Prix",
     "round": 12,
     "scheduled_at": "2026-08-23T13:00:00Z",
     "season": 2026,
+    "status": "completed_by_schedule"
+  },
+  "latest_completed_race_with_analytics": {
+    "circuit_id": "zandvoort",
+    "id": "2026-12-zandvoort",
+    "race_name": "Dutch Grand Prix",
+    "round": 12,
+    "scheduled_at": "2026-08-23T13:00:00Z",
+    "season": 2026,
+    "status": "data_available"
+  },
+  "latest_completed_race_with_results": {
+    "circuit_id": "zandvoort",
+    "id": "2026-12-zandvoort",
+    "race_name": "Dutch Grand Prix",
+    "round": 12,
+    "scheduled_at": "2026-08-23T13:00:00Z",
+    "season": 2026,
+    "status": "results_available"
+  },
+  "latest_completed_race_with_telemetry": {
+    "circuit_id": "zandvoort",
+    "id": "2026-12-zandvoort",
+    "race_name": "Dutch Grand Prix",
+    "round": 12,
+    "scheduled_at": "2026-08-23T13:00:00Z",
+    "season": 2026,
+    "status": "data_available"
+  },
+  "missing_data_flags": [],
+  "next_race": {
+    "circuit_id": "monza",
+    "id": "2026-13-monza",
+    "race_name": "Italian Grand Prix",
+    "round": 13,
+    "scheduled_at": "2026-09-06T13:00:00Z",
+    "season": 2026,
     "status": "upcoming"
   },
   "race_analysis_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "hungaroring",
-      "id": "2026-11-hungaroring",
-      "race_name": "Hungarian Grand Prix",
-      "round": 11,
-      "scheduled_at": "2026-07-26T13:00:00Z",
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
       "season": 2026,
       "status": "race_analysis_available"
     },
@@ -158,10 +158,10 @@
   "strategy_lab_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "zandvoort",
-      "id": "2026-12-zandvoort",
-      "race_name": "Dutch Grand Prix",
-      "round": 12,
+      "circuit_id": "monza",
+      "id": "2026-13-monza",
+      "race_name": "Italian Grand Prix",
+      "round": 13,
       "scheduled_at": null,
       "season": 2026,
       "status": "strategy_lab_available"
@@ -171,11 +171,11 @@
   "telemetry_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "hungaroring",
-      "id": "2026-11-hungaroring",
-      "race_name": "Hungarian Grand Prix",
-      "round": 11,
-      "scheduled_at": "2026-07-26T13:00:00Z",
+      "circuit_id": "zandvoort",
+      "id": "2026-12-zandvoort",
+      "race_name": "Dutch Grand Prix",
+      "round": 12,
+      "scheduled_at": "2026-08-23T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     }

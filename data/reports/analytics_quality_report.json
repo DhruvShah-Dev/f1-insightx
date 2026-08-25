@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-08-19T01:07:02Z",
-  "build_version": "analytics_views_20260819T010702Z",
+  "generated_at": "2026-08-24T18:50:32Z",
+  "build_version": "analytics_views_20260824T185032Z",
   "rows": {
-    "session_index": 19,
-    "driver_comparison": 4144,
-    "segment_comparison": 33075,
-    "braking_comparison": 33075,
-    "throttle_comparison": 33075,
-    "straight_comparison": 28006,
-    "energy_proxy_comparison": 28006,
+    "session_index": 24,
+    "driver_comparison": 5258,
+    "segment_comparison": 42071,
+    "braking_comparison": 42071,
+    "throttle_comparison": 42071,
+    "straight_comparison": 35657,
+    "energy_proxy_comparison": 35657,
     "lap_pace_driver": 12733,
-    "track_summary": 19
+    "track_summary": 24
   },
-  "session_coverage": 19,
-  "driver_comparison_coverage": 4144,
-  "segment_coverage": 153,
+  "session_coverage": 24,
+  "driver_comparison_coverage": 5258,
+  "segment_coverage": 194,
   "null_rates": {
     "session_index": {
       "session_id": 0.0,
@@ -34,17 +34,17 @@
       "session_id": 0.0,
       "driver_a": 0.0,
       "driver_b": 0.0,
-      "driver_a_team": 1.0,
-      "driver_b_team": 1.0,
+      "driver_a_team": 0.0,
+      "driver_b_team": 0.0,
       "corner_advantage_count_a": 0.0,
       "corner_advantage_count_b": 0.0,
       "straight_advantage_count_a": 0.0,
       "straight_advantage_count_b": 0.0,
       "avg_segment_delta_kph": 0.0,
-      "avg_straight_delta_kph": 0.0,
+      "avg_straight_delta_kph": 0.004,
       "braking_advantage_score": 0.0,
       "traction_advantage_score": 0.0,
-      "energy_proxy_delta": 0.0,
+      "energy_proxy_delta": 0.004,
       "confidence": 0.0,
       "weakest_assumption": 0.0,
       "strategy_relevance_note": 0.0
@@ -74,7 +74,7 @@
       "segment_id": 0.0,
       "driver_a": 0.0,
       "driver_b": 0.0,
-      "braking_start_delta_m": 0.2256,
+      "braking_start_delta_m": 0.2101,
       "braking_duration_delta_s": 0.0,
       "braking_distance_delta_m": 0.0,
       "late_brake_delta": 0.0,
@@ -87,8 +87,8 @@
       "segment_id": 0.0,
       "driver_a": 0.0,
       "driver_b": 0.0,
-      "throttle_pickup_delta_m": 0.0042,
-      "full_throttle_exit_delta_m": 0.1684,
+      "throttle_pickup_delta_m": 0.0038,
+      "full_throttle_exit_delta_m": 0.2027,
       "traction_exit_delta": 0.0,
       "confidence": 0.0,
       "favorable_driver": 0.0
@@ -155,7 +155,7 @@
   "confidence_distribution": {
     "min": 0.365,
     "median": 0.55,
-    "max": 0.725
+    "max": 0.8317
   },
   "proxy_note": "Energy deployment proxy derived from speed/throttle/RPM/gear/DRS features; not true ERS or battery state.",
   "validation_errors": []

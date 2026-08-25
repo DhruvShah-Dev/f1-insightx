@@ -1,139 +1,4 @@
 race_analysis_id,surface,label,href,relevance_note,enabled,unavailable_reason
-2024-01-bahrain,race_archive,Race archive,/races/2024-01-bahrain,Classification and event facts.,True,
-2024-01-bahrain,analytics,Telemetry comparison,/analytics?sessionId=2024_01_R_Bahrain Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-01-bahrain,strategy_lab,Strategy Lab,/lab?raceId=2024-01-bahrain,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-02-jeddah,race_archive,Race archive,/races/2024-02-jeddah,Classification and event facts.,True,
-2024-02-jeddah,analytics,Telemetry comparison,/analytics?sessionId=2024_02_R_Saudi Arabian Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-02-jeddah,strategy_lab,Strategy Lab,/lab?raceId=2024-02-jeddah,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-03-albert_park,race_archive,Race archive,/races/2024-03-albert_park,Classification and event facts.,True,
-2024-03-albert_park,analytics,Telemetry comparison,/analytics?sessionId=2024_03_R_Australian Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-03-albert_park,strategy_lab,Strategy Lab,/lab?raceId=2024-03-albert_park,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-04-suzuka,race_archive,Race archive,/races/2024-04-suzuka,Classification and event facts.,True,
-2024-04-suzuka,analytics,Telemetry comparison,/analytics?sessionId=2024_04_R_Japanese Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-04-suzuka,strategy_lab,Strategy Lab,/lab?raceId=2024-04-suzuka,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-05-shanghai,race_archive,Race archive,/races/2024-05-shanghai,Classification and event facts.,True,
-2024-05-shanghai,analytics,Telemetry comparison,/analytics?sessionId=2024_05_R_Chinese Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-05-shanghai,strategy_lab,Strategy Lab,/lab?raceId=2024-05-shanghai,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-06-miami,race_archive,Race archive,/races/2024-06-miami,Classification and event facts.,True,
-2024-06-miami,analytics,Telemetry comparison,/analytics?sessionId=2024_06_R_Miami Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-06-miami,strategy_lab,Strategy Lab,/lab?raceId=2024-06-miami,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-07-imola,race_archive,Race archive,/races/2024-07-imola,Classification and event facts.,True,
-2024-07-imola,analytics,Telemetry comparison,/analytics?sessionId=2024_07_R_Emilia Romagna Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-07-imola,strategy_lab,Strategy Lab,/lab?raceId=2024-07-imola,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-08-monaco,race_archive,Race archive,/races/2024-08-monaco,Classification and event facts.,True,
-2024-08-monaco,analytics,Telemetry comparison,/analytics?sessionId=2024_08_R_Monaco Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-08-monaco,strategy_lab,Strategy Lab,/lab?raceId=2024-08-monaco,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-09-villeneuve,race_archive,Race archive,/races/2024-09-villeneuve,Classification and event facts.,True,
-2024-09-villeneuve,analytics,Telemetry comparison,/analytics?sessionId=2024_09_R_Canadian Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-09-villeneuve,strategy_lab,Strategy Lab,/lab?raceId=2024-09-villeneuve,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-10-catalunya,race_archive,Race archive,/races/2024-10-catalunya,Classification and event facts.,True,
-2024-10-catalunya,analytics,Telemetry comparison,/analytics?sessionId=2024_10_R_Spanish Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-10-catalunya,strategy_lab,Strategy Lab,/lab?raceId=2024-10-catalunya,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-11-red_bull_ring,race_archive,Race archive,/races/2024-11-red_bull_ring,Classification and event facts.,True,
-2024-11-red_bull_ring,analytics,Telemetry comparison,/analytics?sessionId=2024_11_R_Austrian Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-11-red_bull_ring,strategy_lab,Strategy Lab,/lab?raceId=2024-11-red_bull_ring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-12-silverstone,race_archive,Race archive,/races/2024-12-silverstone,Classification and event facts.,True,
-2024-12-silverstone,analytics,Telemetry comparison,/analytics?sessionId=2024_12_R_British Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-12-silverstone,strategy_lab,Strategy Lab,/lab?raceId=2024-12-silverstone,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-13-hungaroring,race_archive,Race archive,/races/2024-13-hungaroring,Classification and event facts.,True,
-2024-13-hungaroring,analytics,Telemetry comparison,/analytics?sessionId=2024_13_R_Hungarian Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-13-hungaroring,strategy_lab,Strategy Lab,/lab?raceId=2024-13-hungaroring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-14-spa,race_archive,Race archive,/races/2024-14-spa,Classification and event facts.,True,
-2024-14-spa,analytics,Telemetry comparison,/analytics?sessionId=2024_14_R_Belgian Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-14-spa,strategy_lab,Strategy Lab,/lab?raceId=2024-14-spa,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-15-zandvoort,race_archive,Race archive,/races/2024-15-zandvoort,Classification and event facts.,True,
-2024-15-zandvoort,analytics,Telemetry comparison,/analytics?sessionId=2024_15_R_Dutch Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-15-zandvoort,strategy_lab,Strategy Lab,/lab?raceId=2024-15-zandvoort,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-16-monza,race_archive,Race archive,/races/2024-16-monza,Classification and event facts.,True,
-2024-16-monza,analytics,Telemetry comparison,/analytics?sessionId=2024_16_R_Italian Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-16-monza,strategy_lab,Strategy Lab,/lab?raceId=2024-16-monza,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-17-baku,race_archive,Race archive,/races/2024-17-baku,Classification and event facts.,True,
-2024-17-baku,analytics,Telemetry comparison,/analytics?sessionId=2024_17_R_Azerbaijan Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-17-baku,strategy_lab,Strategy Lab,/lab?raceId=2024-17-baku,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-18-marina_bay,race_archive,Race archive,/races/2024-18-marina_bay,Classification and event facts.,True,
-2024-18-marina_bay,analytics,Telemetry comparison,/analytics?sessionId=2024_18_R_Singapore Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-18-marina_bay,strategy_lab,Strategy Lab,/lab?raceId=2024-18-marina_bay,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-19-americas,race_archive,Race archive,/races/2024-19-americas,Classification and event facts.,True,
-2024-19-americas,analytics,Telemetry comparison,/analytics?sessionId=2024_19_R_United States Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-19-americas,strategy_lab,Strategy Lab,/lab?raceId=2024-19-americas,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-20-rodriguez,race_archive,Race archive,/races/2024-20-rodriguez,Classification and event facts.,True,
-2024-20-rodriguez,analytics,Telemetry comparison,/analytics?sessionId=2024_20_R_Mexico City Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-20-rodriguez,strategy_lab,Strategy Lab,/lab?raceId=2024-20-rodriguez,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-21-interlagos,race_archive,Race archive,/races/2024-21-interlagos,Classification and event facts.,True,
-2024-21-interlagos,analytics,Telemetry comparison,/analytics?sessionId=2024_21_R_São Paulo Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-21-interlagos,strategy_lab,Strategy Lab,/lab?raceId=2024-21-interlagos,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-22-vegas,race_archive,Race archive,/races/2024-22-vegas,Classification and event facts.,True,
-2024-22-vegas,analytics,Telemetry comparison,/analytics?sessionId=2024_22_R_Las Vegas Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-22-vegas,strategy_lab,Strategy Lab,/lab?raceId=2024-22-vegas,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-23-losail,race_archive,Race archive,/races/2024-23-losail,Classification and event facts.,True,
-2024-23-losail,analytics,Telemetry comparison,/analytics?sessionId=2024_23_R_Qatar Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-23-losail,strategy_lab,Strategy Lab,/lab?raceId=2024-23-losail,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2024-24-yas_marina,race_archive,Race archive,/races/2024-24-yas_marina,Classification and event facts.,True,
-2024-24-yas_marina,analytics,Telemetry comparison,/analytics?sessionId=2024_24_R_Abu Dhabi Grand Prix,Driver-vs-driver segment analysis.,True,
-2024-24-yas_marina,strategy_lab,Strategy Lab,/lab?raceId=2024-24-yas_marina,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-02-shanghai,race_archive,Race archive,/races/2025-02-shanghai,Classification and event facts.,True,
-2025-02-shanghai,analytics,Telemetry comparison,/analytics?sessionId=2025_02_R_Chinese Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-02-shanghai,strategy_lab,Strategy Lab,/lab?raceId=2025-02-shanghai,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-03-suzuka,race_archive,Race archive,/races/2025-03-suzuka,Classification and event facts.,True,
-2025-03-suzuka,analytics,Telemetry comparison,/analytics?sessionId=2025_03_R_Japanese Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-03-suzuka,strategy_lab,Strategy Lab,/lab?raceId=2025-03-suzuka,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-04-bahrain,race_archive,Race archive,/races/2025-04-bahrain,Classification and event facts.,True,
-2025-04-bahrain,analytics,Telemetry comparison,/analytics?sessionId=2025_04_R_Bahrain Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-04-bahrain,strategy_lab,Strategy Lab,/lab?raceId=2025-04-bahrain,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-05-jeddah,race_archive,Race archive,/races/2025-05-jeddah,Classification and event facts.,True,
-2025-05-jeddah,analytics,Telemetry comparison,/analytics?sessionId=2025_05_R_Saudi Arabian Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-05-jeddah,strategy_lab,Strategy Lab,/lab?raceId=2025-05-jeddah,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-07-imola,race_archive,Race archive,/races/2025-07-imola,Classification and event facts.,True,
-2025-07-imola,analytics,Telemetry comparison,/analytics?sessionId=2025_07_R_Emilia Romagna Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-07-imola,strategy_lab,Strategy Lab,/lab?raceId=2025-07-imola,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-08-monaco,race_archive,Race archive,/races/2025-08-monaco,Classification and event facts.,True,
-2025-08-monaco,analytics,Telemetry comparison,/analytics?sessionId=2025_08_R_Monaco Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-08-monaco,strategy_lab,Strategy Lab,/lab?raceId=2025-08-monaco,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-09-catalunya,race_archive,Race archive,/races/2025-09-catalunya,Classification and event facts.,True,
-2025-09-catalunya,analytics,Telemetry comparison,/analytics?sessionId=2025_09_R_Spanish Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-09-catalunya,strategy_lab,Strategy Lab,/lab?raceId=2025-09-catalunya,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-10-villeneuve,race_archive,Race archive,/races/2025-10-villeneuve,Classification and event facts.,True,
-2025-10-villeneuve,analytics,Telemetry comparison,/analytics?sessionId=2025_10_R_Canadian Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-10-villeneuve,strategy_lab,Strategy Lab,/lab?raceId=2025-10-villeneuve,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-11-red_bull_ring,race_archive,Race archive,/races/2025-11-red_bull_ring,Classification and event facts.,True,
-2025-11-red_bull_ring,analytics,Telemetry comparison,/analytics?sessionId=2025_11_R_Austrian Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-11-red_bull_ring,strategy_lab,Strategy Lab,/lab?raceId=2025-11-red_bull_ring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-12-silverstone,race_archive,Race archive,/races/2025-12-silverstone,Classification and event facts.,True,
-2025-12-silverstone,analytics,Telemetry comparison,/analytics?sessionId=2025_12_R_British Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-12-silverstone,strategy_lab,Strategy Lab,/lab?raceId=2025-12-silverstone,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-14-hungaroring,race_archive,Race archive,/races/2025-14-hungaroring,Classification and event facts.,True,
-2025-14-hungaroring,analytics,Telemetry comparison,/analytics?sessionId=2025_14_R_Hungarian Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-14-hungaroring,strategy_lab,Strategy Lab,/lab?raceId=2025-14-hungaroring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-15-zandvoort,race_archive,Race archive,/races/2025-15-zandvoort,Classification and event facts.,True,
-2025-15-zandvoort,analytics,Telemetry comparison,/analytics?sessionId=2025_15_R_Dutch Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-15-zandvoort,strategy_lab,Strategy Lab,/lab?raceId=2025-15-zandvoort,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-16-monza,race_archive,Race archive,/races/2025-16-monza,Classification and event facts.,True,
-2025-16-monza,analytics,Telemetry comparison,/analytics?sessionId=2025_16_R_Italian Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-16-monza,strategy_lab,Strategy Lab,/lab?raceId=2025-16-monza,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-17-baku,race_archive,Race archive,/races/2025-17-baku,Classification and event facts.,True,
-2025-17-baku,analytics,Telemetry comparison,/analytics?sessionId=2025_17_R_Azerbaijan Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-17-baku,strategy_lab,Strategy Lab,/lab?raceId=2025-17-baku,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-18-marina_bay,race_archive,Race archive,/races/2025-18-marina_bay,Classification and event facts.,True,
-2025-18-marina_bay,analytics,Telemetry comparison,/analytics?sessionId=2025_18_R_Singapore Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-18-marina_bay,strategy_lab,Strategy Lab,/lab?raceId=2025-18-marina_bay,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-19-americas,race_archive,Race archive,/races/2025-19-americas,Classification and event facts.,True,
-2025-19-americas,analytics,Telemetry comparison,/analytics?sessionId=2025_19_R_United States Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-19-americas,strategy_lab,Strategy Lab,/lab?raceId=2025-19-americas,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-20-rodriguez,race_archive,Race archive,/races/2025-20-rodriguez,Classification and event facts.,True,
-2025-20-rodriguez,analytics,Telemetry comparison,/analytics?sessionId=2025_20_R_Mexico City Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-20-rodriguez,strategy_lab,Strategy Lab,/lab?raceId=2025-20-rodriguez,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-21-interlagos,race_archive,Race archive,/races/2025-21-interlagos,Classification and event facts.,True,
-2025-21-interlagos,analytics,Telemetry comparison,/analytics?sessionId=2025_21_R_São Paulo Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-21-interlagos,strategy_lab,Strategy Lab,/lab?raceId=2025-21-interlagos,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-22-vegas,race_archive,Race archive,/races/2025-22-vegas,Classification and event facts.,True,
-2025-22-vegas,analytics,Telemetry comparison,/analytics?sessionId=2025_22_R_Las Vegas Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-22-vegas,strategy_lab,Strategy Lab,/lab?raceId=2025-22-vegas,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-23-losail,race_archive,Race archive,/races/2025-23-losail,Classification and event facts.,True,
-2025-23-losail,analytics,Telemetry comparison,/analytics?sessionId=2025_23_R_Qatar Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-23-losail,strategy_lab,Strategy Lab,/lab?raceId=2025-23-losail,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2025-24-yas_marina,race_archive,Race archive,/races/2025-24-yas_marina,Classification and event facts.,True,
-2025-24-yas_marina,analytics,Telemetry comparison,/analytics?sessionId=2025_24_R_Abu Dhabi Grand Prix,Driver-vs-driver segment analysis.,True,
-2025-24-yas_marina,strategy_lab,Strategy Lab,/lab?raceId=2025-24-yas_marina,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
 2026-01-albert_park,race_archive,Race archive,/races/2026-01-albert_park,Classification and event facts.,True,
 2026-01-albert_park,analytics,Telemetry comparison,/analytics?sessionId=2026_01_R_Australian Grand Prix,Driver-vs-driver segment analysis.,True,
 2026-01-albert_park,strategy_lab,Strategy Lab,/lab?raceId=2026-01-albert_park,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
@@ -156,10 +21,10 @@ race_analysis_id,surface,label,href,relevance_note,enabled,unavailable_reason
 2026-07-catalunya,analytics,Telemetry comparison,/analytics?sessionId=2026_07_R_Barcelona Grand Prix,Driver-vs-driver segment analysis.,True,
 2026-07-catalunya,strategy_lab,Strategy Lab,/lab?raceId=2026-07-catalunya,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
 2026-08-red_bull_ring,race_archive,Race archive,/races/2026-08-red_bull_ring,Classification and event facts.,True,
-2026-08-red_bull_ring,analytics,Telemetry comparison,/analytics?sessionId=2026_08_R_Austrian Grand Prix,Driver-vs-driver segment analysis.,False,Telemetry product views unavailable for this race.
+2026-08-red_bull_ring,analytics,Telemetry comparison,/analytics?sessionId=2026_08_R_Austrian Grand Prix,Driver-vs-driver segment analysis.,True,
 2026-08-red_bull_ring,strategy_lab,Strategy Lab,/lab?raceId=2026-08-red_bull_ring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
 2026-09-silverstone,race_archive,Race archive,/races/2026-09-silverstone,Classification and event facts.,True,
-2026-09-silverstone,analytics,Telemetry comparison,/analytics?sessionId=2026_09_R_British Grand Prix,Driver-vs-driver segment analysis.,False,Telemetry product views unavailable for this race.
+2026-09-silverstone,analytics,Telemetry comparison,/analytics?sessionId=2026_09_R_British Grand Prix,Driver-vs-driver segment analysis.,True,
 2026-09-silverstone,strategy_lab,Strategy Lab,/lab?raceId=2026-09-silverstone,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
 2026-10-spa,race_archive,Race archive,/races/2026-10-spa,Classification and event facts.,True,
 2026-10-spa,analytics,Telemetry comparison,/analytics?sessionId=2026_10_R_Belgian Grand Prix,Driver-vs-driver segment analysis.,True,
@@ -167,3 +32,6 @@ race_analysis_id,surface,label,href,relevance_note,enabled,unavailable_reason
 2026-11-hungaroring,race_archive,Race archive,/races/2026-11-hungaroring,Classification and event facts.,True,
 2026-11-hungaroring,analytics,Telemetry comparison,/analytics?sessionId=2026_11_R_Hungarian Grand Prix,Driver-vs-driver segment analysis.,True,
 2026-11-hungaroring,strategy_lab,Strategy Lab,/lab?raceId=2026-11-hungaroring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
+2026-12-zandvoort,race_archive,Race archive,/races/2026-12-zandvoort,Classification and event facts.,True,
+2026-12-zandvoort,analytics,Telemetry comparison,/analytics?sessionId=2026_12_R_Dutch Grand Prix,Driver-vs-driver segment analysis.,True,
+2026-12-zandvoort,strategy_lab,Strategy Lab,/lab?raceId=2026-12-zandvoort,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.

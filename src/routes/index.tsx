@@ -2,13 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { CloudRain, Database, ExternalLink, Flag, Gauge, Newspaper, Thermometer, Timer, Wind, Wrench } from "lucide-react";
 import { Countdown } from "@/components/countdown";
-import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
-import { ZandvoortCircuitMap } from "@/components/zandvoort-circuit-map";
+import { SectionHeading, SiteShell } from "@/components/site-shell";
+import { CircuitMap } from "@/components/circuit-map";
 import { countryTheme } from "@/data/country-theme";
 import { team as teamOf } from "@/data/teams";
 import { getRaceReports, getRaceWeek, getSeasonTelemetry } from "@/lib/f1.functions";
-import { fmtDate, fmtLapS, fmtNum, titleCase } from "@/lib/format";
-import crowdImg from "@/assets/zandvoort-crowd.jpg";
+import { fmtDate, fmtNum, titleCase } from "@/lib/format";
 
 const upgradeSources = [
   {
@@ -105,59 +104,50 @@ function RaceControl() {
   const latest = reports[0];
 
   const theme = countryTheme(rw?.circuit.country);
-  const accent = theme.accent;
-  const board = (rw?.drivers ?? [])
-    .slice()
-    .sort((a, b) => (a.oneLapS ?? 9e9) - (b.oneLapS ?? 9e9));
   const gpTitle = (rw?.raceName ?? "Grand Prix").replace(/grand prix/i, "").trim();
 
   return (
     <SiteShell>
       <div className="relative z-10">
         {/* Masthead */}
-        <section className="relative overflow-hidden rounded-xl border border-border">
-          <img
-            src={crowdImg}
-            alt="Floodlit grandstand and banked asphalt at a Formula 1 circuit"
-            width={1920}
-            height={912}
-            className="absolute inset-0 h-full w-full object-cover opacity-40"
-          />
+        <section className="relative overflow-hidden rounded-xl border border-white/15 bg-[#07110c] text-white shadow-[0_18px_80px_rgba(0,0,0,0.28)]">
+          <div aria-hidden className="absolute inset-0 grid grid-cols-3 opacity-35">
+            <span style={{ backgroundColor: "#008c45" }} />
+            <span style={{ backgroundColor: "#f4f4f4" }} />
+            <span style={{ backgroundColor: "#cd212a" }} />
+          </div>
           <div
             aria-hidden
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(105deg, color-mix(in oklab, var(--background) 94%, transparent) 0%, color-mix(in oklab, var(--background) 78%, transparent) 55%, color-mix(in oklab, ${accent} 14%, transparent) 100%)`,
-            }}
+            className="absolute inset-0 bg-[linear-gradient(105deg,rgba(7,17,12,0.96)_0%,rgba(7,17,12,0.84)_47%,rgba(7,17,12,0.68)_100%)]"
           />
+          <div aria-hidden className="absolute inset-x-0 top-0 z-10 flex h-2">
+            {theme.flag.map((col) => (
+              <span key={col} className="flex-1" style={{ backgroundColor: col }} />
+            ))}
+          </div>
           <div
             aria-hidden
-            className="absolute inset-y-0 left-0 w-1.5"
-            style={{
-              background: `linear-gradient(180deg, ${theme.flag
-                .map((c, i) => `${c} ${(i * 100) / theme.flag.length}%, ${c} ${((i + 1) * 100) / theme.flag.length}%`)
-                .join(", ")})`,
-            }}
+            className="absolute bottom-0 right-0 h-32 w-full bg-[linear-gradient(90deg,rgba(0,140,69,0.32),rgba(255,255,255,0.16),rgba(205,33,42,0.34))]"
           />
 
-          <div className="rule-grid relative p-5 pl-7">
+          <div className="rule-grid relative p-5 pt-7 sm:p-7">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1 bg-primary px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-primary-foreground">
+              <span className="inline-flex items-center gap-1 bg-white px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-[#07110c]">
                 <Flag className="size-3" /> Next GP
               </span>
               <span
-                className="num rounded-sm px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest"
+                className="num rounded-sm border border-white/25 px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest"
                 style={{
-                  color: accent,
-                  backgroundColor: `color-mix(in oklab, ${accent} 15%, transparent)`,
+                  color: "#ffffff",
+                  backgroundColor: "#008c45",
                 }}
               >
                 {theme.label}
               </span>
-              <span className="num text-[11px] text-muted-foreground">
+              <span className="num text-[11px] text-white/75">
                 R{rw?.round ?? "—"} · {rw?.season ?? ""}
               </span>
-              <span className="num text-[11px] text-muted-foreground">
+              <span className="num text-[11px] text-white/75">
                 {rw?.circuit.name}
                 {rw?.circuit.country ? ` · ${rw.circuit.country}` : ""}
               </span>
@@ -167,7 +157,7 @@ function RaceControl() {
               <div>
                 <h1 className="text-4xl font-black uppercase italic leading-[0.95] tracking-tighter sm:text-6xl">
                   {gpTitle}{" "}
-                  <span style={{ color: accent }}>Grand Prix</span>
+                  <span style={{ color: "#ff4d58" }}>Grand Prix</span>
                 </h1>
                 <div
                   aria-hidden
@@ -177,20 +167,20 @@ function RaceControl() {
                     <span key={col} className="flex-1" style={{ backgroundColor: col }} />
                   ))}
                 </div>
-                <p className="num mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+                <p className="num mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-white/78">
                   <span className="inline-flex items-center gap-1">
-                    <Timer className="size-3.5 text-primary" />
+                    <Timer className="size-3.5 text-white" />
                     Lights out {rw?.scheduledAt ? fmtDate(rw.scheduledAt) : "TBC"}
                   </span>
                   {rw?.circuit.lengthKm != null ? (
                     <span className="inline-flex items-center gap-1">
-                      <Gauge className="size-3.5 text-primary" />
+                      <Gauge className="size-3.5 text-white" />
                       {rw.circuit.lengthKm.toFixed(3)} km lap
                     </span>
                   ) : null}
                   {rw?.archetype ? (
                     <span className="inline-flex items-center gap-1">
-                      <Flag className="size-3.5 text-primary" />
+                      <Flag className="size-3.5 text-white" />
                       {titleCase(rw.archetype)}
                     </span>
                   ) : null}
@@ -219,7 +209,7 @@ function RaceControl() {
                   ? {
                       label: "Track temp",
                       value: fmtNum(rw.weather.trackTempC, 1),
-                      unit: "°C",
+                      unit: "C",
                       icon: <Thermometer className="size-3.5" />,
                     }
                   : null,
@@ -253,31 +243,6 @@ function RaceControl() {
                       icon: <Thermometer className="size-3.5" />,
                     }
                   : null,
-                rw?.strategyDifficulty
-                  ? {
-                      label: "Strategy",
-                      value: titleCase(rw.strategyDifficulty),
-                      note: "Difficulty read",
-                      icon: <Timer className="size-3.5" />,
-                    }
-                  : null,
-                board.length
-                  ? {
-                      label: "Reference lap",
-                      value: fmtLapS(board[0]!.oneLapS),
-                      note: `${board[0]!.code} quickest`,
-                      icon: <Gauge className="size-3.5" />,
-                    }
-                  : null,
-                board.length > 1 && board[board.length - 1]!.oneLapGapS != null
-                  ? {
-                      label: "Field spread",
-                      value: fmtNum(board[board.length - 1]!.oneLapGapS, 3),
-                      unit: "s",
-                      note: `${board.length} cars`,
-                      icon: <Flag className="size-3.5" />,
-                    }
-                  : null,
                 rw?.circuit.lengthKm != null
                   ? {
                       label: "Lap length",
@@ -291,14 +256,20 @@ function RaceControl() {
                 .filter((s): s is NonNullable<typeof s> => s != null)
                 .slice(0, 5)
                 .map((s) => (
-                  <Stat
+                  <div
                     key={s.label}
-                    label={s.label}
-                    value={s.value}
-                    {...(s.unit ? { unit: s.unit } : {})}
-                    {...(s.note ? { note: s.note } : {})}
-                    icon={s.icon}
-                  />
+                    className="flex min-h-[92px] flex-col justify-between rounded-lg border border-white/18 bg-black/24 p-3 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur transition-colors hover:bg-black/34"
+                  >
+                    <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-white/76">
+                      <span className="text-white">{s.icon}</span>
+                      {s.label}
+                    </span>
+                    <span className="mt-2 flex items-baseline gap-1">
+                      <span className="num text-xl font-bold text-white">{s.value}</span>
+                      {s.unit ? <span className="text-xs font-bold text-white/70">{s.unit}</span> : null}
+                    </span>
+                    {s.note ? <span className="mt-1 text-[11px] text-white/68">{s.note}</span> : null}
+                  </div>
                 ))}
             </div>
 
@@ -306,13 +277,13 @@ function RaceControl() {
             <div className="mt-5 flex flex-wrap gap-2">
               <Link
                 to="/raceweek"
-                className="bg-primary px-4 py-2 text-xs font-black uppercase italic tracking-wide text-primary-foreground"
+                className="bg-white px-4 py-2 text-xs font-black uppercase italic tracking-wide text-[#07110c] transition-colors hover:bg-[#e8f5ee]"
               >
                 Open race week
               </Link>
               <Link
                 to="/analysis"
-                className="border border-border bg-background/60 px-4 py-2 text-xs font-black uppercase italic tracking-wide backdrop-blur hover:bg-accent"
+                className="border border-white/25 bg-white/10 px-4 py-2 text-xs font-black uppercase italic tracking-wide text-white backdrop-blur transition-colors hover:bg-white/18"
               >
                 Latest report
               </Link>
@@ -325,14 +296,18 @@ function RaceControl() {
           <section>
             <SectionHeading
               kicker="Circuit map"
-              title="Zandvoort sectors"
+              title={`${rw?.circuit.name ?? "Circuit"} sectors`}
               action={
                 <Link to="/raceweek" className="text-[11px] font-bold uppercase text-primary">
                   Race week →
                 </Link>
               }
             />
-            <ZandvoortCircuitMap path={rw?.trackPath ?? null} />
+            <CircuitMap
+              path={rw?.trackPath ?? null}
+              circuitId={rw?.circuit.id}
+              circuitName={rw?.circuit.name}
+            />
           </section>
 
           <section>

@@ -1,0 +1,17 @@
+{
+  "fetched_at": "2026-08-24T18:48:12.308280+00:00",
+  "start_season": 2026,
+  "end_season": 2026,
+  "driver_count": 100,
+  "constructor_count": 100,
+  "circuit_count": 78,
+  "seasons": [
+    {
+      "season": 2026,
+      "scheduled_races": 23,
+      "results_fetched": 12,
+      "qualifying_fetched": 12,
+      "sprint_fetched": 5
+    }
+  ]
+}

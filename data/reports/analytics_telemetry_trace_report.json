@@ -1,0 +1,15 @@
+{
+  "average_session_bytes": 36402.2,
+  "build_version": "analytics_telemetry_traces_20260824T185052Z",
+  "drivers_with_traces": 513,
+  "generated_at": "2026-08-24T18:50:52Z",
+  "sessions_available": 24,
+  "sessions_expected": 24,
+  "total_trace_bytes": 873654,
+  "trace_point_count": 96,
+  "validation_errors": [],
+  "warning_count": 1,
+  "warnings": [
+    "2026_12_FP1_Dutch Grand Prix RUS: no usable representative lap"
+  ]
+}

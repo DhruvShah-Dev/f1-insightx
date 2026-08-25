@@ -1,0 +1,390 @@
+{
+  "version": 1,
+  "row_cap": 10,
+  "sessions": {
+    "2026_01_R_Australian Grand Prix": {
+      "file": "2026-01-r-australian-grand-prix-d7555cbf5ec1.json.gz",
+      "season": 2026,
+      "round": 1,
+      "event": "Australian Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 190,
+        "segments": 1520,
+        "braking": 1520,
+        "throttle": 1520,
+        "straights": 1330,
+        "energy_proxy": 1330,
+        "lap_pace": 1007
+      }
+    },
+    "2026_02_R_Chinese Grand Prix": {
+      "file": "2026-02-r-chinese-grand-prix-d79454442727.json.gz",
+      "season": 2026,
+      "round": 2,
+      "event": "Chinese Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 153,
+        "segments": 1224,
+        "braking": 1224,
+        "throttle": 1224,
+        "straights": 984,
+        "energy_proxy": 984,
+        "lap_pace": 924
+      }
+    },
+    "2026_03_R_Japanese Grand Prix": {
+      "file": "2026-03-r-japanese-grand-prix-7f34daf7e18d.json.gz",
+      "season": 2026,
+      "round": 3,
+      "event": "Japanese Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1539,
+        "energy_proxy": 1539,
+        "lap_pace": 1107
+      }
+    },
+    "2026_04_R_Miami Grand Prix": {
+      "file": "2026-04-r-miami-grand-prix-d159378c1a8e.json.gz",
+      "season": 2026,
+      "round": 4,
+      "event": "Miami Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 1040
+      }
+    },
+    "2026_05_R_Canadian Grand Prix": {
+      "file": "2026-05-r-canadian-grand-prix-b38ac67b4f7e.json.gz",
+      "season": 2026,
+      "round": 5,
+      "event": "Canadian Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 1212
+      }
+    },
+    "2026_06_R_Monaco Grand Prix": {
+      "file": "2026-06-r-monaco-grand-prix-b1708efb1f78.json.gz",
+      "season": 2026,
+      "round": 6,
+      "event": "Monaco Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 1452
+      }
+    },
+    "2026_07_R_Barcelona Grand Prix": {
+      "file": "2026-07-r-barcelona-grand-prix-deb350088984.json.gz",
+      "season": 2026,
+      "round": 7,
+      "event": "Barcelona Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 1236
+      }
+    },
+    "2026_08_R_Austrian Grand Prix": {
+      "file": "2026-08-r-austrian-grand-prix-0b6cc23fa058.json.gz",
+      "season": 2026,
+      "round": 8,
+      "event": "Austrian Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 1339
+      }
+    },
+    "2026_09_R_British Grand Prix": {
+      "file": "2026-09-r-british-grand-prix-9ffb33de4060.json.gz",
+      "season": 2026,
+      "round": 9,
+      "event": "British Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 1113
+      }
+    },
+    "2026_10_FP1_Belgian Grand Prix": {
+      "file": "2026-10-fp1-belgian-grand-prix-af688854b170.json.gz",
+      "season": 2026,
+      "round": 10,
+      "event": "Belgian Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_10_FP2_Belgian Grand Prix": {
+      "file": "2026-10-fp2-belgian-grand-prix-02ca3e6d081d.json.gz",
+      "season": 2026,
+      "round": 10,
+      "event": "Belgian Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 231,
+        "segments": 1684,
+        "braking": 1684,
+        "throttle": 1684,
+        "straights": 1494,
+        "energy_proxy": 1494,
+        "lap_pace": 0
+      }
+    },
+    "2026_10_FP3_Belgian Grand Prix": {
+      "file": "2026-10-fp3-belgian-grand-prix-7e3a59d638ed.json.gz",
+      "season": 2026,
+      "round": 10,
+      "event": "Belgian Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 231,
+        "segments": 2079,
+        "braking": 2079,
+        "throttle": 2079,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_10_Q_Belgian Grand Prix": {
+      "file": "2026-10-q-belgian-grand-prix-7252eeb20962.json.gz",
+      "season": 2026,
+      "round": 10,
+      "event": "Belgian Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_10_R_Belgian Grand Prix": {
+      "file": "2026-10-r-belgian-grand-prix-a20a19e39cb1.json.gz",
+      "season": 2026,
+      "round": 10,
+      "event": "Belgian Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 872
+      }
+    },
+    "2026_11_FP1_Hungarian Grand Prix": {
+      "file": "2026-11-fp1-hungarian-grand-prix-c50a16a87958.json.gz",
+      "season": 2026,
+      "round": 11,
+      "event": "Hungarian Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_11_FP2_Hungarian Grand Prix": {
+      "file": "2026-11-fp2-hungarian-grand-prix-2bb4dde1680e.json.gz",
+      "season": 2026,
+      "round": 11,
+      "event": "Hungarian Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_11_FP3_Hungarian Grand Prix": {
+      "file": "2026-11-fp3-hungarian-grand-prix-19d38cd98616.json.gz",
+      "season": 2026,
+      "round": 11,
+      "event": "Hungarian Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_11_Q_Hungarian Grand Prix": {
+      "file": "2026-11-q-hungarian-grand-prix-1942e431a658.json.gz",
+      "season": 2026,
+      "round": 11,
+      "event": "Hungarian Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_11_R_Hungarian Grand Prix": {
+      "file": "2026-11-r-hungarian-grand-prix-3ca5defef9f8.json.gz",
+      "season": 2026,
+      "round": 11,
+      "event": "Hungarian Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1704,
+        "braking": 1704,
+        "throttle": 1704,
+        "straights": 903,
+        "energy_proxy": 903,
+        "lap_pace": 1431
+      }
+    },
+    "2026_12_FP1_Dutch Grand Prix": {
+      "file": "2026-12-fp1-dutch-grand-prix-2cdedf5dbf15.json.gz",
+      "season": 2026,
+      "round": 12,
+      "event": "Dutch Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1701,
+        "braking": 1701,
+        "throttle": 1701,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_12_Q_Dutch Grand Prix": {
+      "file": "2026-12-q-dutch-grand-prix-c86ff2be4715.json.gz",
+      "season": 2026,
+      "round": 12,
+      "event": "Dutch Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 2079,
+        "braking": 2079,
+        "throttle": 2079,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_12_R_Dutch Grand Prix": {
+      "file": "2026-12-r-dutch-grand-prix-d1236f7da530.json.gz",
+      "season": 2026,
+      "round": 12,
+      "event": "Dutch Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 190,
+        "segments": 1520,
+        "braking": 1520,
+        "throttle": 1520,
+        "straights": 1330,
+        "energy_proxy": 1330,
+        "lap_pace": 0
+      }
+    },
+    "2026_12_SQ_Dutch Grand Prix": {
+      "file": "2026-12-sq-dutch-grand-prix-8b69d299a775.json.gz",
+      "season": 2026,
+      "round": 12,
+      "event": "Dutch Grand Prix",
+      "session": "SQ",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_12_S_Dutch Grand Prix": {
+      "file": "2026-12-s-dutch-grand-prix-b1c795797de8.json.gz",
+      "season": 2026,
+      "round": 12,
+      "event": "Dutch Grand Prix",
+      "session": "S",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    }
+  }
+}

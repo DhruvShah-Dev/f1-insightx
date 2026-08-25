@@ -1,0 +1,276 @@
+{
+  "build_version": "product_manifest_20260824T185207Z",
+  "generated_at": "2026-08-24T18:52:07Z",
+  "overall_status": "passed",
+  "schema_version": 1,
+  "surfaces": {
+    "analytics": {
+      "artifact_paths": [
+        "data/analytics/analytics_session_index.csv",
+        "data/analytics/analytics_driver_comparison.csv",
+        "data/analytics/analytics_segment_comparison.csv",
+        "data/analytics/analytics_braking_comparison.csv",
+        "data/analytics/analytics_throttle_comparison.csv",
+        "data/analytics/analytics_straight_comparison.csv",
+        "data/analytics/analytics_energy_proxy_comparison.csv",
+        "data/analytics/analytics_track_summary.csv"
+      ],
+      "build_version": "analytics_views_20260824T185032Z",
+      "errors": [],
+      "generated_at": "2026-08-24T18:50:32Z",
+      "last_validation_command": "python validate_analytics_views.py",
+      "last_validation_result": "passed",
+      "quality_report": "data/reports/analytics_quality_report.json",
+      "row_counts": {
+        "analytics_braking_comparison": 42071,
+        "analytics_driver_comparison": 5258,
+        "analytics_energy_proxy_comparison": 35657,
+        "analytics_segment_comparison": 42071,
+        "analytics_session_index": 24,
+        "analytics_straight_comparison": 35657,
+        "analytics_throttle_comparison": 42071,
+        "analytics_track_summary": 24
+      },
+      "source_files": [
+        "data/telemetry_features",
+        "data/strategy_lab/track_archetype_weights.csv"
+      ],
+      "stale_after_hours": 720,
+      "surface": "analytics",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "analytics_index": {
+      "artifact_paths": [
+        "data/analytics/indexed/analytics_session_manifest.json",
+        "data/analytics/indexed/sessions"
+      ],
+      "build_version": "analytics_index_20260824T185051Z",
+      "errors": [],
+      "generated_at": "2026-08-24T18:50:51Z",
+      "last_validation_command": "python data/build_analytics_indexes.py && python validate_analytics_views.py",
+      "last_validation_result": "passed",
+      "quality_report": "data/reports/analytics_index_report.json",
+      "row_counts": {
+        "analytics_session_manifest": 1,
+        "sessions": 24
+      },
+      "source_files": [
+        "data/analytics/*.csv"
+      ],
+      "stale_after_hours": 720,
+      "surface": "analytics_index",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "canonical_fastf1": {
+      "artifact_paths": [
+        "data/canonical_fastf1/laps_canonical.csv",
+        "data/canonical_fastf1/results_canonical.csv",
+        "data/canonical_fastf1/stints_canonical.csv",
+        "data/canonical_fastf1/session_summary_canonical.csv",
+        "data/canonical_fastf1/drivers_canonical.csv"
+      ],
+      "build_version": "canonical_fastf1_20260824T184918Z",
+      "errors": [],
+      "generated_at": "2026-08-24T18:49:18Z",
+      "last_validation_command": "python validate_canonical_fastf1.py",
+      "last_validation_result": "passed",
+      "quality_report": "data/reports/fastf1_data_quality.json",
+      "row_counts": {
+        "drivers_canonical": 29,
+        "laps_canonical": 19303,
+        "results_canonical": 528,
+        "session_summary_canonical": 516,
+        "stints_canonical": 1712
+      },
+      "source_files": [
+        "data/raw/fastf1",
+        "data/staged/fastf1"
+      ],
+      "stale_after_hours": 2160,
+      "surface": "canonical_fastf1",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "race_analysis": {
+      "artifact_paths": [
+        "data/race_analysis/race_analysis_index.csv",
+        "data/race_analysis/race_analysis_summary.csv",
+        "data/race_analysis/race_analysis_story_points.csv",
+        "data/race_analysis/race_analysis_stints.csv",
+        "data/race_analysis/race_analysis_pit_strategy.csv",
+        "data/race_analysis/race_analysis_pace_evolution.csv",
+        "data/race_analysis/race_analysis_position_changes.csv",
+        "data/race_analysis/race_analysis_weather_context.csv",
+        "data/race_analysis/race_analysis_links.csv",
+        "data/race_analysis/race_analysis_track_status.csv",
+        "data/race_analysis/race_analysis_neutralization_phases.csv",
+        "data/race_analysis/race_analysis_position_timeline.csv",
+        "data/race_analysis/race_analysis_position_swing_events.csv",
+        "data/race_analysis/race_analysis_traffic_proxy.csv"
+      ],
+      "build_version": "race-analysis-v1",
+      "errors": [],
+      "generated_at": "2026-08-24T18:51:07Z",
+      "last_validation_command": "python data/build_race_analysis_views.py && python validate_race_analysis_views.py",
+      "last_validation_result": "passed",
+      "quality_report": "data/reports/race_analysis_quality_report.json",
+      "row_counts": {
+        "race_analysis_index": 12,
+        "race_analysis_links": 36,
+        "race_analysis_neutralization_phases": 64,
+        "race_analysis_pace_evolution": 14101,
+        "race_analysis_pit_strategy": 499,
+        "race_analysis_position_changes": 264,
+        "race_analysis_position_swing_events": 2350,
+        "race_analysis_position_timeline": 14073,
+        "race_analysis_stints": 762,
+        "race_analysis_story_points": 49,
+        "race_analysis_summary": 12,
+        "race_analysis_track_status": 745,
+        "race_analysis_traffic_proxy": 14101,
+        "race_analysis_weather_context": 745
+      },
+      "source_files": [
+        "data/canonical_fastf1",
+        "data/curated",
+        "data/analytics",
+        "data/strategy_lab"
+      ],
+      "stale_after_hours": 720,
+      "surface": "race_analysis",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "race_week": {
+      "artifact_paths": [
+        "data/race_week/race_week_overview.csv",
+        "data/race_week/race_week_driver_board.csv",
+        "data/race_week/race_week_constructor_board.csv",
+        "data/race_week/race_week_strategy.csv",
+        "data/race_week/race_week_storylines.csv",
+        "data/race_week/race_week_confidence.csv"
+      ],
+      "build_version": "race_week_20260824T185028Z",
+      "errors": [],
+      "generated_at": "2026-08-24T18:50:28Z",
+      "last_validation_command": "python build_product_manifest.py && python validate_product_manifest.py",
+      "last_validation_result": "passed",
+      "quality_report": null,
+      "row_counts": {
+        "race_week_confidence": 34,
+        "race_week_constructor_board": 11,
+        "race_week_driver_board": 22,
+        "race_week_overview": 1,
+        "race_week_storylines": 2,
+        "race_week_strategy": 22
+      },
+      "source_files": [
+        "data/curated",
+        "data/race_week"
+      ],
+      "stale_after_hours": 720,
+      "surface": "race_week",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "season_state": {
+      "artifact_paths": [
+        "data/season_state.json",
+        "data/reports/season_state_quality_report.json"
+      ],
+      "build_version": "season_state_20260824T185154Z",
+      "errors": [],
+      "generated_at": "2026-08-24T18:51:54Z",
+      "last_validation_command": "python build_season_state.py && python validate_season_state.py",
+      "last_validation_result": "passed",
+      "quality_report": "data/reports/season_state_quality_report.json",
+      "row_counts": {
+        "season_state": 1,
+        "season_state_quality_report": 1
+      },
+      "source_files": [
+        "data/curated",
+        "data/canonical_fastf1",
+        "data/telemetry_features",
+        "data/analytics",
+        "data/strategy_lab",
+        "data/race_week"
+      ],
+      "stale_after_hours": 168,
+      "surface": "season_state",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "strategy_lab": {
+      "artifact_paths": [
+        "data/strategy_lab/strategy_lab_overview.csv",
+        "data/strategy_lab/strategy_features.csv",
+        "data/strategy_lab/strategy_comparison.csv",
+        "data/strategy_lab/pit_window.csv",
+        "data/strategy_lab/race_projection.csv",
+        "data/strategy_lab/driver_strategy_profile.csv",
+        "data/strategy_lab/constructor_strategy_profile.csv"
+      ],
+      "build_version": "strategy_lab_20260824T185030Z",
+      "errors": [],
+      "generated_at": "2026-08-24T18:50:30Z",
+      "last_validation_command": "python data/build_strategy_lab_layers.py",
+      "last_validation_result": "passed",
+      "quality_report": "data/reports/strategy_lab_signal_quality.json",
+      "row_counts": {
+        "constructor_strategy_profile": 11,
+        "driver_strategy_profile": 22,
+        "pit_window": 132,
+        "race_projection": 22,
+        "strategy_comparison": 88,
+        "strategy_features": 22,
+        "strategy_lab_overview": 1
+      },
+      "source_files": [
+        "data/canonical_fastf1",
+        "data/telemetry_features",
+        "data/strategy_lab"
+      ],
+      "stale_after_hours": 720,
+      "surface": "strategy_lab",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "telemetry_features": {
+      "artifact_paths": [
+        "data/telemetry_features/telemetry_lap_summary.csv",
+        "data/telemetry_features/corner_speed_profile.csv",
+        "data/telemetry_features/corner_braking_profile.csv",
+        "data/telemetry_features/corner_throttle_profile.csv",
+        "data/telemetry_features/straight_speed_profile.csv",
+        "data/telemetry_features/energy_deployment_proxy.csv",
+        "data/telemetry_features/driver_corner_delta.csv"
+      ],
+      "build_version": "telemetry_features_20260824T185011Z",
+      "errors": [],
+      "generated_at": "2026-08-24T18:50:11Z",
+      "last_validation_command": "python validate_telemetry_features.py",
+      "last_validation_result": "passed",
+      "quality_report": "data/reports/telemetry_feature_quality.json",
+      "row_counts": {
+        "corner_braking_profile": 4134,
+        "corner_speed_profile": 4134,
+        "corner_throttle_profile": 4134,
+        "driver_corner_delta": 4134,
+        "energy_deployment_proxy": 3525,
+        "straight_speed_profile": 3525,
+        "telemetry_lap_summary": 514
+      },
+      "source_files": [
+        "data/canonical_fastf1",
+        "data/raw/fastf1 telemetry parquet"
+      ],
+      "stale_after_hours": 2160,
+      "surface": "telemetry_features",
+      "validation_status": "passed",
+      "warnings": []
+    }
+  }
+}

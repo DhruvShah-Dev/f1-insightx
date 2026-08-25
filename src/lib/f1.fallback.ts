@@ -9,13 +9,41 @@ import {
 import { fallbackQualifyingPredictions } from "@/data/race-week-qualifying";
 import { team } from "@/data/teams";
 
-const codeToDriverId = (code: string) =>
-  code.toLowerCase() === "ver" ? "max_verstappen" : code.toLowerCase();
+const DRIVER_ID_BY_CODE: Record<string, string> = {
+  ALB: "albon",
+  ALO: "alonso",
+  ANT: "antonelli",
+  BEA: "bearman",
+  BOR: "bortoleto",
+  BOT: "bottas",
+  COL: "colapinto",
+  GAS: "gasly",
+  HAD: "hadjar",
+  HAM: "hamilton",
+  HUL: "hulkenberg",
+  LAW: "lawson",
+  LEC: "leclerc",
+  LIN: "arvid_lindblad",
+  NOR: "norris",
+  OCO: "ocon",
+  PER: "perez",
+  PIA: "piastri",
+  RUS: "russell",
+  SAI: "sainz",
+  STR: "stroll",
+  TSU: "tsunoda",
+  VER: "max_verstappen",
+};
+
+const codeToDriverId = (code: string) => DRIVER_ID_BY_CODE[code.toUpperCase()] ?? code.toLowerCase();
 
 const driverName = (code: string) =>
   driverStandings.find((d) => d.code === code)?.name ?? code;
 
 const constructorName = (key: string) => team(key).name;
+const fallbackCircuitId = "monza";
+const fallbackCircuitLocation = "Monza";
+const fallbackRaceId = `2026-${String(nextRace.round).padStart(2, "0")}-${fallbackCircuitId}`;
 
 export function fallbackSeasonTelemetry() {
   return {
@@ -61,15 +89,15 @@ export function fallbackRaceWeek() {
   return {
     season: seasonState.season,
     round: nextRace.round,
-    raceId: `2026-${String(nextRace.round).padStart(2, "0")}-zandvoort`,
+    raceId: fallbackRaceId,
     raceName: nextRace.name,
     officialName: null,
     scheduledAt: nextRace.raceStartISO,
     sprintWeekend: false,
     circuit: {
-      id: "zandvoort",
+      id: fallbackCircuitId,
       name: nextRace.circuit,
-      location: "Zandvoort",
+      location: fallbackCircuitLocation,
       country: nextRace.country,
       lengthKm: nextRace.lapKm,
       highSpeedBias: null,
@@ -450,12 +478,12 @@ export function fallbackPicksBoard(season = seasonState.season) {
     standingsRound: seasonState.resultsThrough.round,
     challenges: [
       {
-        raceId: `2026-${String(nextRace.round).padStart(2, "0")}-zandvoort`,
+        raceId: fallbackRaceId,
         season,
         round: nextRace.round,
         raceName: nextRace.name,
         circuit: nextRace.circuit,
-        circuitId: "zandvoort",
+        circuitId: fallbackCircuitId,
         hasSprint: false,
         lockAtISO: nextRace.sessions.find((s) => s.code === "Q")?.startISO ?? null,
         scheduledAtISO: nextRace.raceStartISO,
@@ -463,6 +491,6 @@ export function fallbackPicksBoard(season = seasonState.season) {
         results: null,
       },
     ],
-    activeRaceId: `2026-${String(nextRace.round).padStart(2, "0")}-zandvoort`,
+    activeRaceId: fallbackRaceId,
   };
 }

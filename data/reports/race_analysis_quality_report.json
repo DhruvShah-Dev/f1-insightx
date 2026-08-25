@@ -1,0 +1,43 @@
+{
+  "build_version": "race-analysis-v1",
+  "confidence_distribution": {
+    "max": 1.0,
+    "mean": 0.794,
+    "min": 0.35,
+    "tier": "strong"
+  },
+  "generated_at": "2026-08-24T18:51:07Z",
+  "latest_race": "Dutch Grand Prix",
+  "missing_data_flags": {
+    "drs_window": "proxy_only_no_exact_gap_feed",
+    "dynamic_gap_feed": "missing",
+    "exact_pass_attribution": "missing",
+    "neutralization_context": "track_status_only",
+    "position_changes": "proxy",
+    "race_control": "missing",
+    "track_status": "partial",
+    "traffic_proxy": "proxy_no_exact_gap_feed"
+  },
+  "races_generated": 12,
+  "rows": {
+    "index": 12,
+    "links": 36,
+    "neutralization_phases": 64,
+    "pace_evolution": 14101,
+    "pit_strategy": 499,
+    "position_changes": 264,
+    "position_swing_events": 2350,
+    "position_timeline": 14073,
+    "stints": 762,
+    "story_points": 49,
+    "summary": 12,
+    "track_status": 745,
+    "traffic_proxy": 14101,
+    "weather_context": 745
+  },
+  "season_coverage": [
+    2026
+  ],
+  "validation_errors": [],
+  "warnings": []
+}

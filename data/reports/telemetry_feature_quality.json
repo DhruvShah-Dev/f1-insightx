@@ -1,0 +1,34 @@
+{
+  "season_range": {
+    "start": 2020,
+    "end": 2026
+  },
+  "sessions_considered": 24,
+  "sessions_processed": 24,
+  "sessions_skipped_non_complete": 0,
+  "sessions_missing_telemetry": 0,
+  "sessions_missing_position": 1,
+  "sessions_failed": [],
+  "row_counts": {
+    "telemetry_lap_summary": 514,
+    "corner_speed_profile": 4134,
+    "corner_braking_profile": 4134,
+    "corner_throttle_profile": 4134,
+    "straight_speed_profile": 3525,
+    "energy_deployment_proxy": 3525,
+    "driver_corner_delta": 4134
+  },
+  "quality_score_distribution": {
+    "min": 0.9,
+    "median": 1.0,
+    "p10": 1.0
+  },
+  "corner_segmentation": {
+    "method": "distance-binned low-speed/high-speed fallback",
+    "precision": "approximate",
+    "corner_rows": 4134,
+    "straight_rows": 3525
+  },
+  "energy_proxy_note": "energy_deployment_proxy is derived from speed/throttle/RPM/gear/DRS shape only; it is not true ERS or battery state.",
+  "validation_errors": []
+}

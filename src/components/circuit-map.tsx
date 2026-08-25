@@ -1,10 +1,11 @@
 import { useMemo, useState } from "react";
-import { ZANDVOORT_CORNERS, type ZandvoortCorner } from "@/data/zandvoort-circuit";
+import { cornersForCircuit, type CircuitCorner } from "@/data/circuit-corners";
 import type { TrackPath } from "@/lib/f1.functions";
 
 type Pt = { x: number; y: number };
 
-const SECTOR_COLORS = ["#ff3f76", "#38bdf8", "#f6d84a"] as const;
+const DEFAULT_SECTOR_COLORS = ["#ff3f76", "#38bdf8", "#f6d84a"] as const;
+const ITALY_SECTOR_COLORS = ["#009246", "#ffffff", "#ce2b37"] as const;
 
 function parsePath(pathData: string): Pt[] {
   const nums = pathData.match(/-?\d+(\.\d+)?/g);
@@ -22,6 +23,15 @@ const toPath = (pts: Pt[]) =>
 function buildSectors(pathData: string) {
   const pts = parsePath(pathData);
   if (pts.length < 8) return null;
+  const xs = pts.map((point) => point.x);
+  const ys = pts.map((point) => point.y);
+  const bounds = {
+    minX: Math.min(...xs),
+    maxX: Math.max(...xs),
+    minY: Math.min(...ys),
+    maxY: Math.max(...ys),
+  };
+  const pad = 44;
 
   const cum: number[] = [0];
   for (let i = 1; i < pts.length; i++) {
@@ -39,10 +49,12 @@ function buildSectors(pathData: string) {
     full: toPath(pts),
     sectors: [pts.slice(0, c1 + 1), pts.slice(c1, c2 + 1), pts.slice(c2)].map(toPath),
     start: pts[0]!,
+    bounds,
+    viewBox: `${bounds.minX - pad} ${bounds.minY - pad} ${bounds.maxX - bounds.minX + pad * 2} ${bounds.maxY - bounds.minY + pad * 2}`,
   };
 }
 
-function tooltipPosition(corner: ZandvoortCorner) {
+function tooltipPosition(corner: CircuitCorner) {
   switch (corner.tooltipSide) {
     case "left":
       return { x: corner.x - 12, y: corner.y - 20, anchor: "end" as const };
@@ -55,35 +67,47 @@ function tooltipPosition(corner: ZandvoortCorner) {
   }
 }
 
-export function ZandvoortCircuitMap({
+export function CircuitMap({
   path,
+  circuitId,
+  circuitName,
   className,
 }: {
   path: TrackPath | null;
+  circuitId?: string | null;
+  circuitName?: string | null;
   className?: string;
 }) {
-  const [active, setActive] = useState<ZandvoortCorner | null>(null);
+  const [active, setActive] = useState<CircuitCorner | null>(null);
   const model = useMemo(() => (path?.pathData ? buildSectors(path.pathData) : null), [path]);
+  const corners = useMemo(
+    () => cornersForCircuit(circuitId ?? path?.circuitId ?? null),
+    [circuitId, path?.circuitId],
+  );
+  const sectorColors = (circuitId ?? path?.circuitId) === "monza" ? ITALY_SECTOR_COLORS : DEFAULT_SECTOR_COLORS;
+  const name = circuitName ?? path?.raceName?.replace(/ Grand Prix$/i, "") ?? "Circuit";
 
   if (!model) {
     return (
       <div className={`flex min-h-[360px] items-center justify-center border border-border bg-card/40 ${className ?? ""}`}>
-        <p className="num text-xs text-muted-foreground">No Zandvoort geometry stored.</p>
+        <p className="num text-xs text-muted-foreground">No circuit geometry stored.</p>
       </div>
     );
   }
 
-  const activeCorner = active ?? ZANDVOORT_CORNERS[0]!;
+  const activeCorner = active ?? corners[0] ?? null;
 
   return (
     <div className={`relative overflow-hidden border border-border bg-background/70 ${className ?? ""}`}>
       <div className="absolute inset-x-0 top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background/80 px-4 py-3 backdrop-blur">
         <div>
-          <p className="label-xs">Zandvoort circuit</p>
-          <p className="text-sm font-black uppercase italic">14 turns - 3 sectors</p>
+          <p className="label-xs">{name} circuit</p>
+          <p className="text-sm font-black uppercase italic">
+            {corners.length ? `${corners.length} turns - ` : ""}3 sectors
+          </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          {SECTOR_COLORS.map((color, index) => (
+          {sectorColors.map((color, index) => (
             <span key={color} className="flex items-center gap-1.5">
               <span className="h-[3px] w-5" style={{ backgroundColor: color }} />
               <span className="label-xs">S{index + 1}</span>
@@ -93,10 +117,10 @@ export function ZandvoortCircuitMap({
       </div>
 
       <svg
-        viewBox="0 0 960 620"
+        viewBox={model.viewBox}
         className="h-[390px] w-full pt-8 sm:h-[460px]"
         role="img"
-        aria-label="Interactive Zandvoort circuit map with corner numbers and sectors"
+        aria-label={`Interactive ${name} circuit map with corner numbers and sectors`}
       >
         <path
           d={model.full}
@@ -112,7 +136,7 @@ export function ZandvoortCircuitMap({
             key={sector}
             d={sector}
             fill="none"
-            stroke={SECTOR_COLORS[index]}
+            stroke={sectorColors[index]}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={13}
@@ -128,8 +152,8 @@ export function ZandvoortCircuitMap({
           strokeWidth={5}
         />
 
-        {ZANDVOORT_CORNERS.map((corner) => {
-          const isActive = activeCorner.number === corner.number;
+        {corners.map((corner) => {
+          const isActive = activeCorner?.number === corner.number;
           return (
             <g
               key={corner.number}
@@ -148,7 +172,7 @@ export function ZandvoortCircuitMap({
                 cy={corner.y}
                 r={isActive ? 16 : 13}
                 fill={isActive ? "#ffffff" : "var(--background)"}
-                stroke={SECTOR_COLORS[corner.sector - 1]}
+                stroke={sectorColors[corner.sector - 1]}
                 strokeWidth={4}
               />
               <text
@@ -171,7 +195,7 @@ export function ZandvoortCircuitMap({
               const width = Math.max(96, active.name.length * 9 + 46);
               const rawX =
                 pos.anchor === "end" ? pos.x - width : pos.anchor === "middle" ? pos.x - width / 2 : pos.x;
-              const x = Math.max(8, Math.min(952 - width, rawX));
+              const x = Math.max(model.bounds.minX - 36, Math.min(model.bounds.maxX + 36 - width, rawX));
               return (
                 <>
                   <line
@@ -190,7 +214,7 @@ export function ZandvoortCircuitMap({
                     height={39}
                     rx={6}
                     fill="var(--background)"
-                    stroke={SECTOR_COLORS[active.sector - 1]}
+                    stroke={sectorColors[active.sector - 1]}
                     strokeWidth={2}
                   />
                   <text
@@ -213,9 +237,13 @@ export function ZandvoortCircuitMap({
 
       <div className="border-t border-border bg-card/40 px-4 py-3">
         <p className="label-xs">Hover or focus a number</p>
-        <p className="mt-1 text-sm font-bold uppercase">
-          T{activeCorner.number} - {activeCorner.name}
-        </p>
+        {activeCorner ? (
+          <p className="mt-1 text-sm font-bold uppercase">
+            T{activeCorner.number} - {activeCorner.name}
+          </p>
+        ) : (
+          <p className="mt-1 text-sm font-bold uppercase">Corner labels unavailable</p>
+        )}
       </div>
     </div>
   );

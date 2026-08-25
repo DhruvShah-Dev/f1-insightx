@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 12,
+  "event_name": "Dutch Grand Prix",
+  "event_format": "sprint_qualifying",
+  "session_code": "SQ",
+  "session_name": "Sprint Qualifying",
+  "status": "complete",
+  "started_at": "2026-08-24T18:45:37Z",
+  "completed_at": "2026-08-24T18:45:54Z",
+  "source": "fastf1_staged_session_v2"
+}

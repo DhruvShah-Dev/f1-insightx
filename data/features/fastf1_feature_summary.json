@@ -1,0 +1,7 @@
+{
+  "driver_form_rows": 262,
+  "constructor_form_rows": 131,
+  "stint_model_input_rows": 1360,
+  "prediction_model_input_rows": 262,
+  "feature_version": "fastf1_feature_stack_v1"
+}

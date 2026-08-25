@@ -1,0 +1,25 @@
+id,race_id,season,round,session_code,session_name,event_name,scheduled_at,source_label
+2026-01-albert_park|R,2026-01-albert_park,2026,1,R,R,Australian Grand Prix,,fastf1_canonical_v1
+2026-02-shanghai|R,2026-02-shanghai,2026,2,R,R,Chinese Grand Prix,,fastf1_canonical_v1
+2026-03-suzuka|R,2026-03-suzuka,2026,3,R,R,Japanese Grand Prix,,fastf1_canonical_v1
+2026-04-miami|R,2026-04-miami,2026,4,R,R,Miami Grand Prix,,fastf1_canonical_v1
+2026-05-villeneuve|R,2026-05-villeneuve,2026,5,R,R,Canadian Grand Prix,,fastf1_canonical_v1
+2026-06-monaco|R,2026-06-monaco,2026,6,R,R,Monaco Grand Prix,,fastf1_canonical_v1
+2026-07-catalunya|R,2026-07-catalunya,2026,7,R,R,Barcelona Grand Prix,,fastf1_canonical_v1
+2026-08-red_bull_ring|R,2026-08-red_bull_ring,2026,8,R,R,Austrian Grand Prix,,fastf1_canonical_v1
+2026-09-silverstone|R,2026-09-silverstone,2026,9,R,R,British Grand Prix,,fastf1_canonical_v1
+2026-10-spa|FP1,2026-10-spa,2026,10,FP1,FP1,Belgian Grand Prix,,fastf1_canonical_v1
+2026-10-spa|FP2,2026-10-spa,2026,10,FP2,FP2,Belgian Grand Prix,,fastf1_canonical_v1
+2026-10-spa|FP3,2026-10-spa,2026,10,FP3,FP3,Belgian Grand Prix,,fastf1_canonical_v1
+2026-10-spa|Q,2026-10-spa,2026,10,Q,Q,Belgian Grand Prix,,fastf1_canonical_v1
+2026-10-spa|R,2026-10-spa,2026,10,R,R,Belgian Grand Prix,,fastf1_canonical_v1
+2026-11-hungaroring|FP1,2026-11-hungaroring,2026,11,FP1,FP1,Hungarian Grand Prix,,fastf1_canonical_v1
+2026-11-hungaroring|FP2,2026-11-hungaroring,2026,11,FP2,FP2,Hungarian Grand Prix,,fastf1_canonical_v1
+2026-11-hungaroring|FP3,2026-11-hungaroring,2026,11,FP3,FP3,Hungarian Grand Prix,,fastf1_canonical_v1
+2026-11-hungaroring|Q,2026-11-hungaroring,2026,11,Q,Q,Hungarian Grand Prix,,fastf1_canonical_v1
+2026-11-hungaroring|R,2026-11-hungaroring,2026,11,R,R,Hungarian Grand Prix,,fastf1_canonical_v1
+2026-12-zandvoort|FP1,2026-12-zandvoort,2026,12,FP1,FP1,Dutch Grand Prix,,fastf1_canonical_v1
+2026-12-zandvoort|Q,2026-12-zandvoort,2026,12,Q,Q,Dutch Grand Prix,,fastf1_canonical_v1
+2026-12-zandvoort|R,2026-12-zandvoort,2026,12,R,R,Dutch Grand Prix,,fastf1_canonical_v1
+2026-12-zandvoort|S,2026-12-zandvoort,2026,12,S,S,Dutch Grand Prix,,fastf1_canonical_v1
+2026-12-zandvoort|SQ,2026-12-zandvoort,2026,12,SQ,SQ,Dutch Grand Prix,,fastf1_canonical_v1

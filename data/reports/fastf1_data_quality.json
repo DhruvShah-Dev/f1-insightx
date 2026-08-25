@@ -1,0 +1,44 @@
+{
+  "season_range": {
+    "start": 2020,
+    "end": 2026
+  },
+  "sessions_processed": 24,
+  "sessions_skipped": 0,
+  "skipped_sessions": [],
+  "canonical_row_counts": {
+    "laps": 19303,
+    "results": 528,
+    "stints": 1712,
+    "session_summary": 516,
+    "drivers": 29
+  },
+  "weather_coverage_pct": {
+    "air_temp_c": 99.9,
+    "track_temp_c": 99.9,
+    "humidity_pct": 99.9,
+    "wind_speed_mps": 99.9,
+    "wind_direction_deg": 99.9
+  },
+  "telemetry_availability_pct": 100.0,
+  "position_availability_pct": 95.83,
+  "null_rates": {
+    "laps": {
+      "lap_time_s": 0.0821,
+      "lap_number": 0.0,
+      "air_temp_c": 0.001,
+      "track_temp_c": 0.001,
+      "humidity_pct": 0.001,
+      "rainfall": 0.0,
+      "wind_speed_mps": 0.001,
+      "wind_direction_deg": 0.001
+    },
+    "session_summary": {
+      "representative_lap_s": 0.0,
+      "air_temp_c": 0.0,
+      "track_temp_c": 0.0,
+      "humidity_pct": 0.0
+    }
+  },
+  "validation_errors": []
+}
