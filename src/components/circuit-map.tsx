@@ -59,6 +59,8 @@ function buildSectors(pathData: string, sourceRotation = 0) {
   const orientedWidth = quarterTurn ? height : width;
   const orientedHeight = quarterTurn ? width : height;
   if (orientedHeight > orientedWidth) rotation += 90;
+  // Present the circuit in the conventional left-to-right race direction.
+  rotation += 180;
   const center = { x: (bounds.minX + bounds.maxX) / 2, y: (bounds.minY + bounds.maxY) / 2 };
   const radians = (rotation * Math.PI) / 180;
   const rotated = pts.map((point) => ({

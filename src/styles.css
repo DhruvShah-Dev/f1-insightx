@@ -233,6 +233,14 @@
   50% { opacity: 0.9; }
   100% { opacity: 0.45; }
 }
+@keyframes race-page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes race-mark {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 0%, transparent); }
+  50% { box-shadow: 0 0 0 5px color-mix(in oklab, var(--primary) 0%, transparent), 0 0 18px color-mix(in oklab, var(--primary) 50%, transparent); }
+}
 @keyframes casino-wheel {
   0% { transform: rotate(0deg) scale(1); }
   50% { transform: rotate(180deg) scale(1.03); }
@@ -250,6 +258,12 @@
 
 @utility pw-shimmer {
   animation: pw-shimmer 1.4s ease-in-out infinite;
+}
+@utility race-page-enter {
+  animation: race-page-enter 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@utility race-mark {
+  animation: race-mark 2.8s ease-in-out infinite;
 }
 @utility casino-wheel {
   animation: casino-wheel 18s linear infinite;
@@ -302,6 +316,11 @@
   .casino-wheel,
   .casino-deal,
   .casino-neon {
+    animation: none !important;
+  }
+
+  .race-page-enter,
+  .race-mark {
     animation: none !important;
   }
 }

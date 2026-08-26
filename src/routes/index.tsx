@@ -111,6 +111,7 @@ function RaceControl() {
       <div className="relative z-10">
         {/* Masthead */}
         <section className="relative overflow-hidden rounded-xl border border-white/15 bg-[#07110c] text-white shadow-[0_18px_80px_rgba(0,0,0,0.28)]">
+          <img src="/images/race-control-hero.png" alt="Floodlit circuit at night" className="absolute inset-0 h-full w-full object-cover object-right opacity-70" />
           <div aria-hidden className="absolute inset-0 grid grid-cols-3 opacity-35">
             <span style={{ backgroundColor: "#008c45" }} />
             <span style={{ backgroundColor: "#f4f4f4" }} />
@@ -118,7 +119,7 @@ function RaceControl() {
           </div>
           <div
             aria-hidden
-            className="absolute inset-0 bg-[linear-gradient(105deg,rgba(7,17,12,0.96)_0%,rgba(7,17,12,0.84)_47%,rgba(7,17,12,0.68)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(105deg,rgba(7,17,12,0.98)_0%,rgba(7,17,12,0.88)_45%,rgba(7,17,12,0.42)_100%)]"
           />
           <div aria-hidden className="absolute inset-x-0 top-0 z-10 flex h-2">
             {theme.flag.map((col) => (
