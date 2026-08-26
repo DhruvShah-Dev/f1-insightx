@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points
+1.0,1,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,1.0,,,,0 days 00:33:38.998000,Finished,8.0
+2.0,2,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,6.0,,,,0 days 00:00:00.674000,Finished,7.0
+3.0,3,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,4.0,,,,0 days 00:00:02.554000,Finished,6.0
+4.0,4,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,3.0,,,,0 days 00:00:04.433000,Finished,5.0
+5.0,5,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,2.0,,,,0 days 00:00:05.688000,Finished,4.0
+6.0,6,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,5.0,,,,0 days 00:00:06.809000,Finished,3.0
+7.0,7,30,L LAWSON,LAW,Liam Lawson,Racing Bulls,6C98FF,13.0,,,,0 days 00:00:10.900000,Finished,2.0
+8.0,8,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,9.0,,,,0 days 00:00:11.271000,Finished,1.0
+9.0,9,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,8.0,,,,0 days 00:00:11.619000,Finished,0.0
+10.0,10,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,12.0,,,,0 days 00:00:13.887000,Finished,0.0
+11.0,11,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,7.0,,,,0 days 00:00:14.780000,Finished,0.0
+12.0,12,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,17.0,,,,0 days 00:00:15.753000,Finished,0.0
+13.0,13,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,14.0,,,,0 days 00:00:15.858000,Finished,0.0
+14.0,14,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,16.0,,,,0 days 00:00:16.393000,Finished,0.0
+15.0,15,6,I HADJAR,HAD,Isack Hadjar,Red Bull Racing,4781D7,10.0,,,,0 days 00:00:16.430000,Finished,0.0
+16.0,16,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,22.0,,,,0 days 00:00:20.014000,Finished,0.0
+17.0,17,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,18.0,,,,0 days 00:00:21.599000,Finished,0.0
+18.0,18,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,19.0,,,,0 days 00:00:21.971000,Finished,0.0
+19.0,19,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,21.0,,,,0 days 00:00:28.241000,Finished,0.0
+20.0,R,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,11.0,,,,,Retired,0.0
+21.0,R,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,20.0,,,,,Retired,0.0
+22.0,R,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,15.0,,,,,Retired,0.0

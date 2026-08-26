@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 9,
+  "event_name": "British Grand Prix",
+  "event_format": "sprint_qualifying",
+  "session_code": "SQ",
+  "session_name": "Sprint Qualifying",
+  "status": "complete",
+  "started_at": "2026-08-25T17:21:23Z",
+  "completed_at": "2026-08-25T17:21:53Z",
+  "source": "fastf1_staged_session_v2"
+}

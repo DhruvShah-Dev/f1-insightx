@@ -71,7 +71,9 @@ type RaceView =
   | "pits"
   | "traffic"
   | "cornerData"
+  | "sprintQualiCornerData"
   | "circuit";
+type CornerSession = "Q" | "SQ" | "S" | "R";
 type H2H = NonNullable<Awaited<ReturnType<typeof getHeadToHead>>>;
 
 /* ------------------------------------------------------------------ */
@@ -315,6 +317,21 @@ function Vs() {
   if (d?.race.some(Boolean)) available.push("race");
   const active = available.includes(session) ? session : (available[0] ?? "race");
   const label: Record<Session, string> = { quali: "Qualifying", sprint: "Sprint", race: "Race" };
+  const cornerRowsBySession = useMemo(() => {
+    const rows = d?.cornerComparisons ?? [];
+    const bySession: Record<CornerSession, H2H["cornerComparisons"]> = {
+      Q: [],
+      SQ: [],
+      S: [],
+      R: [],
+    };
+    rows.forEach((row) => {
+      if (row.session === "Q" || row.session === "SQ" || row.session === "S" || row.session === "R") {
+        bySession[row.session].push(row);
+      }
+    });
+    return bySession;
+  }, [d?.cornerComparisons]);
 
   /* ---- metrics per session ---- */
   const { metrics, extras } = useMemo(() => {
@@ -509,10 +526,43 @@ function Vs() {
       : []),
     ...(d?.pits[0]?.length || d?.pits[1]?.length ? [{ k: "pits" as const, l: "Pit stops" }] : []),
     ...(d?.traffic?.[0] ? [{ k: "traffic" as const, l: "Traffic" }] : []),
-    ...(d ? [{ k: "cornerData" as const, l: "Corner data" }] : []),
+    ...(cornerRowsBySession.R.length ? [{ k: "cornerData" as const, l: "Corner data" }] : []),
     ...(d?.trackPath ? [{ k: "circuit" as const, l: "Corners" }] : []),
   ];
-  const activeView = raceViews.some((v) => v.k === view) ? view : "duel";
+  const detailViews: { k: RaceView; l: string }[] =
+    active === "race"
+      ? raceViews
+      : active === "quali"
+        ? [
+            { k: "duel", l: "Duel" },
+            ...(cornerRowsBySession.Q.length ? [{ k: "cornerData" as const, l: "Corner data" }] : []),
+          ]
+        : [
+            { k: "duel", l: "Duel" },
+            ...(cornerRowsBySession.SQ.length
+              ? [{ k: "sprintQualiCornerData" as const, l: "Sprint quali corners" }]
+              : []),
+            ...(cornerRowsBySession.S.length
+              ? [{ k: "cornerData" as const, l: "Sprint race corners" }]
+              : []),
+          ];
+  const activeView = detailViews.some((v) => v.k === view) ? view : "duel";
+  const activeCornerRows =
+    active === "quali"
+      ? cornerRowsBySession.Q
+      : active === "sprint" && activeView === "sprintQualiCornerData"
+        ? cornerRowsBySession.SQ
+        : active === "sprint"
+          ? cornerRowsBySession.S
+          : cornerRowsBySession.R;
+  const activeCornerLabel =
+    active === "quali"
+      ? "Qualifying telemetry"
+      : active === "sprint" && activeView === "sprintQualiCornerData"
+        ? "Sprint qualifying telemetry"
+        : active === "sprint"
+          ? "Sprint race telemetry"
+          : "Race telemetry";
 
   const pending = h2h.isPending || resolved.isPending;
 
@@ -661,10 +711,10 @@ function Vs() {
                 value={active}
                 onChange={setSession}
               />
-              {active === "race" && raceViews.length > 1 ? (
+              {detailViews.length > 1 ? (
                 <>
                   <span className="hidden h-4 w-px bg-border sm:block" />
-                  <Segmented options={raceViews} value={activeView} onChange={setView} />
+                  <Segmented options={detailViews} value={activeView} onChange={setView} />
                 </>
               ) : null}
             </div>
@@ -680,7 +730,7 @@ function Vs() {
 
 
           {/* ---------------- duel board ---------------- */}
-          {active !== "race" || activeView === "duel" ? (
+          {activeView === "duel" ? (
             <Panel className="mt-5">
               <div className="mb-3 flex items-end justify-between gap-3">
                 <div>
@@ -799,13 +849,14 @@ function Vs() {
             />
           ) : null}
 
-          {active === "race" && activeView === "cornerData" ? (
+          {activeView === "cornerData" || activeView === "sprintQualiCornerData" ? (
             <CornerTelemetryBlock
               codeA={codeA}
               codeB={codeB}
               colorA={colorA}
               colorB={colorB}
-              rows={d.cornerComparisons ?? []}
+              sessionLabel={activeCornerLabel}
+              rows={activeCornerRows}
             />
           ) : null}
 
@@ -905,33 +956,91 @@ function fmtSignedKph(value: number | null) {
   return value == null ? "-" : `${value >= 0 ? "+" : ""}${fmtNum(value, 1)}`;
 }
 
+function fmtSpeed(value: number | null) {
+  return value == null ? "-" : fmtNum(value, 1);
+}
+
 function deltaWinner(value: number | null, codeA: string, codeB: string) {
   if (value == null || value === 0) return null;
   return value > 0 ? codeA : codeB;
 }
+
+type CornerMetricMode = "delta" | "absolute" | "gear";
+
+const cornerMetricOptions: { k: CornerMetricMode; l: string }[] = [
+  { k: "delta", l: "Speed delta" },
+  { k: "absolute", l: "Absolute speed" },
+  { k: "gear", l: "Gear" },
+];
 
 function CornerTelemetryBlock({
   codeA,
   codeB,
   colorA,
   colorB,
+  sessionLabel,
   rows,
 }: {
   codeA: string;
   codeB: string;
   colorA: string;
   colorB: string;
+  sessionLabel: string;
   rows: H2H["cornerComparisons"];
 }) {
-  const sorted = rows.slice().sort((a, b) => a.segmentId.localeCompare(b.segmentId));
+  const [selectedId, setSelectedId] = useState<string | null>(rows[0]?.segmentId ?? null);
+  const [metricMode, setMetricMode] = useState<CornerMetricMode>("delta");
+  const sorted = rows
+    .slice()
+    .sort((a, b) => (a.cornerNumber ?? 999) - (b.cornerNumber ?? 999) || a.segmentId.localeCompare(b.segmentId));
+  const selected = sorted.find((row) => row.segmentId === selectedId) ?? sorted[0] ?? null;
   const aWins = sorted.filter((row) => row.faster === codeA).length;
   const bWins = sorted.filter((row) => row.faster === codeB).length;
+  const phases = selected
+    ? [
+        {
+          label: "Entry",
+          delta: selected.entryDeltaKph,
+          aSpeed: selected.entrySpeedA,
+          bSpeed: selected.entrySpeedB,
+          aGear: selected.entryGearA,
+          bGear: selected.entryGearB,
+        },
+        {
+          label: "Apex",
+          delta: selected.apexDeltaKph,
+          aSpeed: selected.apexSpeedA,
+          bSpeed: selected.apexSpeedB,
+          aGear: selected.apexGearA,
+          bGear: selected.apexGearB,
+        },
+        {
+          label: "Exit",
+          delta: selected.exitDeltaKph,
+          aSpeed: selected.exitSpeedA,
+          bSpeed: selected.exitSpeedB,
+          aGear: selected.exitGearA,
+          bGear: selected.exitGearB,
+        },
+        {
+          label: "Min",
+          delta: selected.minDeltaKph,
+          aSpeed: selected.minSpeedA,
+          bSpeed: selected.minSpeedB,
+          aGear: null,
+          bGear: null,
+        },
+      ]
+    : [];
+  const hasAbsoluteSpeed = phases.some((phase) => phase.aSpeed != null || phase.bSpeed != null);
+  const hasGear = phases.some((phase) => phase.aGear != null || phase.bGear != null);
+  const metricUnavailable = (metricMode === "absolute" && !hasAbsoluteSpeed) || (metricMode === "gear" && !hasGear);
 
   return (
     <Panel className="mt-5">
       <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="label-xs">Race telemetry</p>
+          <p className="label-xs">{sessionLabel}</p>
           <h2 className="text-lg font-black uppercase italic">Corner comparison</h2>
         </div>
         <div className="num flex gap-2 text-[10px] font-black uppercase">
@@ -941,7 +1050,7 @@ function CornerTelemetryBlock({
         </div>
       </div>
 
-      {!sorted.length ? (
+      {!sorted.length || !selected ? (
         <div className="rounded-lg border border-border bg-background/40 p-4">
           <p className="text-sm font-black uppercase italic">Telemetry corner data not loaded yet</p>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
@@ -960,91 +1069,213 @@ function CornerTelemetryBlock({
           </div>
         </div>
       ) : (
-      <div className="overflow-x-auto rounded-lg border border-border">
-        <table className="w-full min-w-[860px] text-left">
-          <thead className="bg-card/60">
-            <tr>
-              <th className="label-xs px-3 py-2">Segment</th>
-              <th className="label-xs px-3 py-2">Faster</th>
-              <th className="label-xs px-3 py-2 text-right">Entry</th>
-              <th className="label-xs px-3 py-2 text-right">Apex</th>
-              <th className="label-xs px-3 py-2 text-right">Exit</th>
-              <th className="label-xs px-3 py-2 text-right">Gear</th>
-              <th className="label-xs px-3 py-2 text-right">Brake</th>
-              <th className="label-xs px-3 py-2 text-right">Throttle</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div className="grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)]">
+          <div className="flex gap-2 overflow-x-auto pb-1 lg:max-h-[520px] lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:pr-1">
             {sorted.map((row) => {
-              const fasterColor = row.faster === codeA ? colorA : row.faster === codeB ? colorB : undefined;
+              const fasterColor = row.faster === codeA ? colorA : row.faster === codeB ? colorB : "var(--muted-foreground)";
               return (
-                <tr key={`${row.sessionId}-${row.segmentId}`} className="border-t border-border/60 hover:bg-accent/30">
-                  <td className="px-3 py-2">
-                    <p className="num text-xs font-black uppercase">{row.label}</p>
-                    <p className="num text-[10px] text-muted-foreground">{row.segmentId}</p>
-                  </td>
-                  <td className="num px-3 py-2 text-xs font-black" style={{ color: fasterColor }}>
-                    {row.faster ?? "-"}
-                  </td>
-                  <td className="num px-3 py-2 text-right text-xs">
-                    <DeltaCell value={row.entryDeltaKph} codeA={codeA} codeB={codeB} colorA={colorA} colorB={colorB} />
-                  </td>
-                  <td className="num px-3 py-2 text-right text-xs">
-                    <DeltaCell value={row.apexDeltaKph} codeA={codeA} codeB={codeB} colorA={colorA} colorB={colorB} />
-                  </td>
-                  <td className="num px-3 py-2 text-right text-xs">
-                    <DeltaCell value={row.exitDeltaKph} codeA={codeA} codeB={codeB} colorA={colorA} colorB={colorB} />
-                  </td>
-                  <td className="num px-3 py-2 text-right text-[11px] text-muted-foreground">
-                    <span style={{ color: colorA }}>{fmtGear(row.entryGearA)}/{fmtGear(row.apexGearA)}/{fmtGear(row.exitGearA)}</span>
-                    <span className="mx-1">vs</span>
-                    <span style={{ color: colorB }}>{fmtGear(row.entryGearB)}/{fmtGear(row.apexGearB)}/{fmtGear(row.exitGearB)}</span>
-                  </td>
-                  <td className="num px-3 py-2 text-right text-[11px] text-muted-foreground">
-                    {row.brakingStartDeltaM == null ? "-" : `${row.brakingStartDeltaM >= 0 ? "+" : ""}${fmtNum(row.brakingStartDeltaM, 1)} m`}
-                    <span className="block">
-                      {row.brakingDurationDeltaS == null ? "" : `${row.brakingDurationDeltaS >= 0 ? "+" : ""}${fmtNum(row.brakingDurationDeltaS, 2)} s`}
-                    </span>
-                  </td>
-                  <td className="num px-3 py-2 text-right text-[11px] text-muted-foreground">
-                    {row.throttlePickupDeltaM == null ? "-" : `${row.throttlePickupDeltaM >= 0 ? "+" : ""}${fmtNum(row.throttlePickupDeltaM, 1)} m`}
-                    <span className="block">
-                      {row.tractionDelta == null ? "" : `Traction ${row.tractionDelta >= 0 ? "+" : ""}${fmtNum(row.tractionDelta, 2)}`}
-                    </span>
-                  </td>
-                </tr>
+                <button
+                  key={`${row.sessionId}-${row.segmentId}`}
+                  type="button"
+                  onClick={() => setSelectedId(row.segmentId)}
+                  aria-pressed={selected.segmentId === row.segmentId}
+                  title={`${row.label} apex ${fmtSignedKph(row.apexDeltaKph)} kph`}
+                  className={`min-w-[7.5rem] rounded-lg border bg-background/40 p-2 text-left transition-colors hover:bg-accent/30 lg:min-w-0 ${
+                    selected.segmentId === row.segmentId ? "border-primary" : "border-border"
+                  }`}
+                  style={{ borderLeft: `4px solid ${fasterColor}` }}
+                >
+                  <span className="block text-lg font-black italic leading-none">{row.label}</span>
+                  <span className="num mt-1 block text-[10px] text-muted-foreground">
+                    apex {fmtSignedKph(row.apexDeltaKph)}
+                  </span>
+                </button>
               );
             })}
-          </tbody>
-        </table>
-      </div>
+          </div>
+
+          <div className="min-w-0 space-y-4">
+            <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_260px]">
+              <div className="rounded-xl border border-border bg-background/40 p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="label-xs">Selected corner</p>
+                    <h3 className="text-4xl font-black uppercase italic leading-none">{selected.label}</h3>
+                    <p className="num mt-1 text-[10px] text-muted-foreground">{selected.segmentId}</p>
+                  </div>
+                  <Segmented options={cornerMetricOptions} value={metricMode} onChange={setMetricMode} />
+                </div>
+
+                {metricUnavailable ? (
+                  <div className="mt-4 rounded-lg border border-border bg-card/40 p-4">
+                    <p className="text-sm font-black uppercase italic">
+                      {metricMode === "absolute" ? "Absolute speed unavailable" : "Gear trace unavailable"}
+                    </p>
+                    <p className="mt-2 text-xs text-muted-foreground">
+                      This analytics table has not been reloaded with those fields yet. The same view
+                      will populate automatically after loading regenerated telemetry analytics.
+                    </p>
+                  </div>
+                ) : (
+                  <CornerMetricChart
+                    phases={phases}
+                    mode={metricMode}
+                    codeA={codeA}
+                    codeB={codeB}
+                    colorA={colorA}
+                    colorB={colorB}
+                  />
+                )}
+              </div>
+
+              <div className="grid gap-3">
+                <div className="rounded-xl border border-border bg-background/40 p-3">
+                  <p className="label-xs">Faster at apex</p>
+                  <p
+                    className="num mt-1 text-3xl font-black uppercase italic"
+                    style={{ color: selected.faster === codeB ? colorB : colorA }}
+                  >
+                    {selected.faster ?? "-"}
+                  </p>
+                  <p className="num mt-1 text-[10px] text-muted-foreground">
+                    confidence {selected.confidence == null ? "-" : `${fmtNum(selected.confidence * 100, 0)}%`}
+                  </p>
+                </div>
+                {phases.slice(0, 3).map((phase) => (
+                  <div key={phase.label} className="rounded-xl border border-border bg-card/40 p-3">
+                    <p className="label-xs">{phase.label}</p>
+                    <p className="num mt-1 text-lg font-black">{fmtSignedKph(phase.delta)} kph</p>
+                    <p className="num text-[10px] text-muted-foreground">
+                      {codeA} {fmtGear(phase.aGear)} / {codeB} {fmtGear(phase.bGear)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-2">
+              <DuelRow
+                m={{
+                  k: "Brake point",
+                  hint: "delta metres",
+                  a: selected.brakingStartDeltaM,
+                  b: selected.brakingStartDeltaM == null ? null : -selected.brakingStartDeltaM,
+                  fmt: (v) => (v == null ? "-" : `${v >= 0 ? "+" : ""}${fmtNum(v, 1)} m`),
+                  lowerIsBetter: true,
+                }}
+                colorA={colorA}
+                colorB={colorB}
+                index={0}
+              />
+              <DuelRow
+                m={{
+                  k: "Throttle pickup",
+                  hint: "delta metres",
+                  a: selected.throttlePickupDeltaM,
+                  b: selected.throttlePickupDeltaM == null ? null : -selected.throttlePickupDeltaM,
+                  fmt: (v) => (v == null ? "-" : `${v >= 0 ? "+" : ""}${fmtNum(v, 1)} m`),
+                  lowerIsBetter: true,
+                }}
+                colorA={colorA}
+                colorB={colorB}
+                index={1}
+              />
+            </div>
+          </div>
+        </div>
       )}
       <p className="mt-3 text-xs text-muted-foreground">
         Speed deltas are from {codeA}'s perspective. Positive means {codeA} is faster at that point; negative means {codeB} is faster.
-        Gear order is entry/apex/exit. Segments are approximate telemetry-derived corner zones until official corner distance mapping is loaded.
+        Corners are approximate telemetry-derived zones until official corner distance mapping is loaded.
       </p>
     </Panel>
   );
 }
 
-function DeltaCell({
-  value,
+function CornerMetricChart({
+  phases,
+  mode,
   codeA,
   codeB,
   colorA,
   colorB,
 }: {
-  value: number | null;
+  phases: {
+    label: string;
+    delta: number | null;
+    aSpeed: number | null;
+    bSpeed: number | null;
+    aGear: number | null;
+    bGear: number | null;
+  }[];
+  mode: CornerMetricMode;
   codeA: string;
   codeB: string;
   colorA: string;
   colorB: string;
 }) {
-  const winner = deltaWinner(value, codeA, codeB);
+  const values = phases.flatMap((phase) =>
+    mode === "delta" ? [Math.abs(phase.delta ?? 0)] : mode === "absolute" ? [phase.aSpeed ?? 0, phase.bSpeed ?? 0] : [phase.aGear ?? 0, phase.bGear ?? 0],
+  );
+  const max = Math.max(1, ...values);
   return (
-    <span style={{ color: winner === codeA ? colorA : winner === codeB ? colorB : undefined }}>
-      {fmtSignedKph(value)}
-    </span>
+    <div className="mt-4 space-y-3">
+      {phases.map((phase) => {
+        const winner = deltaWinner(phase.delta, codeA, codeB);
+        const deltaWidth = `${Math.max(3, (Math.abs(phase.delta ?? 0) / max) * 100)}%`;
+        const aValue = mode === "gear" ? phase.aGear : phase.aSpeed;
+        const bValue = mode === "gear" ? phase.bGear : phase.bSpeed;
+        return (
+          <div key={phase.label} className="rounded-lg border border-border bg-card/40 p-3">
+            <div className="mb-2 flex items-center justify-between gap-3">
+              <p className="label-xs">{phase.label}</p>
+              <p className="num text-[10px] font-black uppercase text-muted-foreground">
+                {mode === "delta"
+                  ? `${winner ?? "even"} ${fmtSignedKph(phase.delta)} kph`
+                  : mode === "absolute"
+                    ? `${codeA} ${fmtSpeed(phase.aSpeed)} / ${codeB} ${fmtSpeed(phase.bSpeed)} kph`
+                    : `${codeA} ${fmtGear(phase.aGear)} / ${codeB} ${fmtGear(phase.bGear)}`}
+              </p>
+            </div>
+            {mode === "delta" ? (
+              <div className="grid grid-cols-[1fr_1px_1fr] items-center gap-1">
+                <span className="h-5 rounded-sm bg-secondary/50">
+                  {phase.delta != null && phase.delta > 0 ? (
+                    <span className="ml-auto block h-full rounded-sm" style={{ width: deltaWidth, backgroundColor: colorA }} />
+                  ) : null}
+                </span>
+                <span className="h-7 bg-border" />
+                <span className="h-5 rounded-sm bg-secondary/50">
+                  {phase.delta != null && phase.delta < 0 ? (
+                    <span className="block h-full rounded-sm" style={{ width: deltaWidth, backgroundColor: colorB }} />
+                  ) : null}
+                </span>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {[
+                  { code: codeA, color: colorA, value: aValue },
+                  { code: codeB, color: colorB, value: bValue },
+                ].map((item) => (
+                  <div key={item.code} className="grid grid-cols-[3rem_minmax(0,1fr)_3.5rem] items-center gap-2">
+                    <span className="num text-[10px] font-black" style={{ color: item.color }}>{item.code}</span>
+                    <span className="h-3 overflow-hidden rounded-sm bg-secondary/50">
+                      <span
+                        className="block h-full rounded-sm"
+                        style={{ width: `${Math.max(3, ((item.value ?? 0) / max) * 100)}%`, backgroundColor: item.color }}
+                      />
+                    </span>
+                    <span className="num text-right text-[10px] text-muted-foreground">
+                      {mode === "gear" ? fmtGear(item.value) : fmtSpeed(item.value)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 }
 

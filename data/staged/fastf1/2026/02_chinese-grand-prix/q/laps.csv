@@ -1,0 +1,326 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,1.0,1.0,SOFT,1.0,,,31.796,52.366,223.0,262.0,276.0,227.0,1,True,False,False,False,2026-03-14 07:06:20.855,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,2.0,1.0,SOFT,2.0,93.305,24.288,28.048,40.969,283.0,276.0,260.0,311.0,1,True,True,True,False,2026-03-14 07:08:11.716,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,3.0,1.0,SOFT,3.0,122.47,35.87,33.268,53.332,168.0,243.0,,202.0,1,True,False,False,False,2026-03-14 07:09:45.021,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,4.0,2.0,SOFT,4.0,,,30.815,45.794,241.0,260.0,278.0,243.0,1,False,False,False,False,2026-03-14 07:11:47.491,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,5.0,2.0,SOFT,5.0,92.95,24.156,27.861,40.933,285.0,272.0,251.0,311.0,1,False,True,True,False,2026-03-14 07:26:47.706,,17.8,32.3,33.4,False,1.7,72.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,6.0,2.0,SOFT,6.0,145.284,29.606,56.034,59.644,118.0,240.0,,101.0,1,False,False,False,False,2026-03-14 07:28:20.656,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,7.0,3.0,SOFT,1.0,,,36.839,45.507,253.0,261.0,280.0,249.0,1,True,False,False,False,2026-03-14 07:30:45.940,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,8.0,3.0,SOFT,2.0,92.443,24.141,27.726,40.576,286.0,279.0,256.0,314.0,1,True,True,True,False,2026-03-14 07:37:17.637,,18.3,32.2,32.4,False,2.4,74.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,9.0,3.0,SOFT,3.0,121.273,30.445,37.844,52.984,228.0,255.0,,293.0,12,True,False,False,False,2026-03-14 07:38:50.080,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,10.0,4.0,SOFT,1.0,,,30.145,45.507,243.0,263.0,278.0,240.0,12,True,False,False,False,2026-03-14 07:40:51.353,,17.8,30.4,35.3,False,1.4,49.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,11.0,4.0,SOFT,2.0,92.322,24.003,27.714,40.605,285.0,273.0,251.0,310.0,1,True,True,True,False,2026-03-14 07:48:45.445,,17.8,29.4,34.4,False,5.3,40.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,12.0,4.0,SOFT,3.0,108.256,27.758,31.08,49.418,244.0,249.0,,290.0,1,True,False,False,False,2026-03-14 07:50:17.767,,17.8,29.6,34.5,False,2.8,30.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,13.0,5.0,SOFT,1.0,,,30.303,44.716,223.0,255.0,279.0,250.0,1,True,False,False,False,2026-03-14 07:52:06.023,,17.7,29.8,35.3,False,3.9,50.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,14.0,5.0,SOFT,2.0,92.064,24.013,27.664,40.387,286.0,276.0,253.0,308.0,1,True,True,True,False,2026-03-14 07:57:40.635,,17.6,29.3,34.6,False,3.6,47.0
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,15.0,5.0,SOFT,3.0,118.062,28.716,31.585,57.761,229.0,233.0,,278.0,1,True,False,False,False,2026-03-14 07:59:12.699,,17.7,30.0,35.0,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,1.0,1.0,SOFT,1.0,,,31.251,50.605,253.0,261.0,279.0,249.0,1,True,False,False,False,2026-03-14 07:06:37.580,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,2.0,1.0,SOFT,2.0,93.262,24.208,28.109,40.945,289.0,278.0,256.0,311.0,1,True,True,True,False,2026-03-14 07:08:26.413,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,3.0,1.0,SOFT,3.0,131.474,38.378,37.882,55.214,180.0,263.0,,293.0,1,True,False,False,False,2026-03-14 07:09:59.675,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,4.0,2.0,SOFT,4.0,,,30.505,46.921,256.0,263.0,279.0,253.0,1,False,False,False,False,2026-03-14 07:12:11.149,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,5.0,2.0,SOFT,5.0,92.523,24.085,27.868,40.57,285.0,270.0,258.0,317.0,1,False,True,True,False,2026-03-14 07:26:56.983,,17.8,32.3,33.4,False,1.7,72.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,6.0,2.0,SOFT,6.0,116.245,29.371,34.46,52.414,190.0,266.0,,296.0,1,False,False,False,False,2026-03-14 07:28:29.506,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,7.0,3.0,SOFT,1.0,,,30.502,49.316,222.0,253.0,280.0,252.0,1,True,False,False,False,2026-03-14 07:30:25.751,,18.0,32.2,33.5,False,2.6,52.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,8.0,3.0,SOFT,2.0,117.937,26.726,41.01,50.201,202.0,203.0,256.0,281.0,12,True,False,True,False,2026-03-14 07:37:25.579,,18.3,32.2,32.4,False,2.4,74.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,9.0,3.0,SOFT,3.0,105.617,24.539,29.898,51.18,285.0,273.0,,292.0,21,True,False,False,False,2026-03-14 07:39:23.516,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,10.0,4.0,SOFT,1.0,,,58.848,94.919,98.0,102.0,,100.0,12,True,False,False,False,2026-03-14 07:41:09.133,,17.8,30.4,35.3,False,1.4,49.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,11.0,5.0,SOFT,1.0,,,29.114,47.818,258.0,264.0,281.0,236.0,1,True,False,False,False,2026-03-14 07:51:05.980,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,12.0,5.0,SOFT,2.0,92.286,24.012,27.783,40.491,282.0,272.0,256.0,309.0,1,True,True,True,False,2026-03-14 07:59:37.897,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,13.0,5.0,SOFT,3.0,132.756,35.643,35.242,61.871,195.0,215.0,,219.0,1,True,False,False,False,2026-03-14 08:01:10.183,,17.6,29.9,34.7,False,3.5,58.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,1.0,1.0,MEDIUM,6.0,,,30.734,53.902,269.0,230.0,270.0,200.0,1,False,False,False,False,2026-03-14 07:01:40.857,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,2.0,1.0,MEDIUM,7.0,95.892,24.728,29.555,41.609,276.0,259.0,258.0,307.0,1,False,True,True,False,2026-03-14 07:03:34.462,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,3.0,1.0,MEDIUM,8.0,118.798,29.407,31.384,58.007,270.0,263.0,,259.0,1,False,False,False,False,2026-03-14 07:05:10.354,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,4.0,2.0,SOFT,1.0,,84.688,32.719,48.64,274.0,268.0,276.0,252.0,1,True,False,False,False,2026-03-14 07:07:09.152,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,5.0,2.0,SOFT,2.0,93.522,24.336,28.133,41.053,271.0,275.0,252.0,308.0,1,True,True,True,False,2026-03-14 07:09:55.208,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,6.0,2.0,SOFT,3.0,131.966,35.543,37.622,58.801,190.0,229.0,,250.0,1,True,False,False,False,2026-03-14 07:11:28.730,,17.7,32.2,35.1,False,1.9,67.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,7.0,3.0,SOFT,4.0,,,31.127,51.44,263.0,174.0,276.0,246.0,1,False,False,False,False,2026-03-14 07:13:40.696,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,8.0,3.0,SOFT,5.0,92.834,24.21,27.771,40.853,270.0,272.0,255.0,307.0,1,False,True,True,False,2026-03-14 07:27:19.759,,17.8,32.3,33.4,False,1.7,72.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,9.0,3.0,SOFT,6.0,115.967,30.675,33.993,51.299,231.0,251.0,,259.0,1,False,False,False,False,2026-03-14 07:28:52.593,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,10.0,4.0,SOFT,1.0,,,30.359,49.481,269.0,266.0,277.0,220.0,1,True,False,False,False,2026-03-14 07:30:48.560,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,11.0,4.0,SOFT,2.0,92.567,24.156,27.807,40.604,270.0,273.0,255.0,306.0,1,True,True,True,False,2026-03-14 07:35:23.887,,18.1,32.0,32.4,False,1.1,125.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,12.0,4.0,SOFT,3.0,126.863,30.666,36.637,59.56,228.0,205.0,276.0,253.0,1,True,False,True,False,2026-03-14 07:36:56.454,,18.3,32.2,32.4,False,2.4,74.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,13.0,4.0,SOFT,4.0,106.805,24.28,27.826999999999998,54.698,269.0,271.0,,310.0,12,True,False,False,False,2026-03-14 07:39:03.317,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,14.0,5.0,SOFT,1.0,,,32.91,46.685,267.0,252.0,277.0,244.0,12,True,False,False,False,2026-03-14 07:40:50.122,,17.8,30.4,35.3,False,1.4,49.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,15.0,5.0,SOFT,2.0,93.02,24.08,28.236,40.704,269.0,264.0,255.0,312.0,1,True,True,True,False,2026-03-14 07:49:11.991,,17.8,29.4,34.4,False,5.3,40.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,16.0,5.0,SOFT,3.0,116.241,31.267,30.753,54.221,243.0,238.0,,286.0,1,True,False,False,False,2026-03-14 07:50:45.011,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,17.0,6.0,SOFT,1.0,,,31.158,50.488,271.0,263.0,276.0,190.0,1,True,False,False,False,2026-03-14 07:52:41.252,,17.8,30.1,35.5,False,4.1,38.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,18.0,6.0,SOFT,2.0,92.415,24.184,27.696,40.535,269.0,274.0,257.0,303.0,1,True,True,True,False,2026-03-14 07:58:12.810,,17.6,29.3,34.6,False,3.6,47.0
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,19.0,6.0,SOFT,3.0,130.702,30.786,33.478,66.438,209.0,205.0,,209.0,1,True,False,False,False,2026-03-14 07:59:45.225,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,1.0,1.0,SOFT,10.0,,,31.771,56.876,276.0,256.0,272.0,240.0,1,False,False,False,False,2026-03-14 07:01:30.551,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,2.0,1.0,SOFT,11.0,94.507,24.723,28.384,41.4,274.0,266.0,262.0,304.0,1,False,True,True,False,2026-03-14 07:03:28.845,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,3.0,1.0,SOFT,12.0,114.827,28.027,33.764,53.036,204.0,190.0,275.0,178.0,1,False,False,True,False,2026-03-14 07:05:03.352,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,4.0,1.0,SOFT,13.0,104.077,24.649,28.29,51.138,272.0,271.0,,302.0,1,False,False,False,False,2026-03-14 07:06:58.179,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,5.0,2.0,SOFT,1.0,,88.706,31.072,50.762,264.0,214.0,277.0,134.0,1,True,False,False,False,2026-03-14 07:08:42.256,,17.7,31.7,34.9,False,4.9,49.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,6.0,2.0,SOFT,2.0,93.175,24.376,28.073,40.726,273.0,267.0,259.0,310.0,1,True,True,True,False,2026-03-14 07:11:32.739,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,7.0,2.0,SOFT,3.0,118.354,30.91,32.421,55.023,277.0,255.0,,267.0,1,True,False,False,False,2026-03-14 07:13:05.914,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,8.0,3.0,SOFT,4.0,,,36.638,47.334,279.0,274.0,278.0,245.0,1,False,False,False,False,2026-03-14 07:15:04.268,,17.8,31.8,34.9,False,3.6,36.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,9.0,3.0,SOFT,5.0,92.902,24.208,27.849,40.845,273.0,261.0,259.0,304.0,1,False,True,True,False,2026-03-14 07:27:10.835,,17.8,32.3,33.4,False,1.7,72.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,10.0,3.0,SOFT,6.0,112.202,28.413,32.511,51.278,280.0,274.0,,281.0,1,False,False,False,False,2026-03-14 07:28:43.737,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,11.0,4.0,SOFT,1.0,,,33.159,47.485,270.0,263.0,278.0,243.0,1,True,False,False,False,2026-03-14 07:30:35.939,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,12.0,4.0,SOFT,2.0,92.486,24.022,27.729,40.735,273.0,266.0,260.0,304.0,1,True,True,True,False,2026-03-14 07:35:16.478,,18.1,32.0,32.4,False,1.1,125.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,13.0,4.0,SOFT,3.0,122.599,30.177,40.409,52.013,198.0,153.0,282.0,206.0,1,True,False,True,False,2026-03-14 07:36:48.964,,18.3,32.2,32.4,False,2.4,74.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,14.0,4.0,SOFT,4.0,107.894,24.403,28.407,55.084,281.0,241.0,,282.0,12,True,False,False,False,2026-03-14 07:38:51.563,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,15.0,5.0,SOFT,1.0,,,31.269,47.81,267.0,262.0,278.0,242.0,12,True,False,False,False,2026-03-14 07:40:39.457,,17.8,30.4,35.3,False,1.4,49.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,16.0,5.0,SOFT,2.0,92.623,24.063,27.894,40.666,274.0,262.0,261.0,304.0,1,True,True,True,False,2026-03-14 07:49:01.870,,17.8,29.4,34.4,False,5.3,40.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,17.0,5.0,SOFT,3.0,116.257,27.233,36.19,52.834,147.0,122.0,,283.0,1,True,False,False,False,2026-03-14 07:50:34.493,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,18.0,6.0,SOFT,1.0,,,30.17,51.351,271.0,265.0,279.0,241.0,1,True,False,False,False,2026-03-14 07:52:30.750,,17.7,29.8,35.3,False,3.9,50.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,19.0,6.0,SOFT,2.0,92.428,24.118,27.66,40.65,271.0,267.0,256.0,304.0,1,True,True,True,False,2026-03-14 07:58:03.484,,17.6,29.3,34.6,False,3.6,47.0
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,20.0,6.0,SOFT,3.0,127.785,29.733,32.349,65.703,207.0,201.0,,161.0,1,True,False,False,False,2026-03-14 07:59:35.912,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,1.0,1.0,SOFT,9.0,,,31.377,57.32,254.0,250.0,274.0,250.0,1,False,False,False,False,2026-03-14 07:02:23.060,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,2.0,1.0,SOFT,10.0,93.99,24.536,28.205,41.249,286.0,275.0,257.0,306.0,1,False,True,True,False,2026-03-14 07:04:22.939,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,3.0,1.0,SOFT,11.0,121.531,29.43,33.964,58.137,231.0,117.0,,231.0,1,False,False,False,False,2026-03-14 07:05:56.929,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,4.0,2.0,SOFT,1.0,,,35.955,46.838,231.0,252.0,275.0,260.0,1,True,False,False,False,2026-03-14 07:07:58.460,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,5.0,2.0,SOFT,2.0,93.59,24.378,28.224,40.988,284.0,275.0,259.0,310.0,1,True,True,True,False,2026-03-14 07:11:57.104,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,6.0,2.0,SOFT,3.0,124.552,30.951,34.901,58.7,228.0,208.0,,224.0,1,True,False,False,False,2026-03-14 07:13:30.694,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,7.0,3.0,SOFT,4.0,,,30.762,53.9,236.0,252.0,274.0,256.0,1,False,False,False,False,2026-03-14 07:15:35.246,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,8.0,3.0,SOFT,5.0,93.364,24.429,27.978,40.957,280.0,275.0,258.0,309.0,1,False,True,True,False,2026-03-14 07:27:52.143,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,9.0,3.0,SOFT,6.0,118.249,30.71,32.719,54.82,229.0,235.0,,233.0,1,False,False,False,False,2026-03-14 07:29:25.507,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,10.0,4.0,SOFT,1.0,,,31.059,46.794,259.0,253.0,274.0,252.0,1,True,False,False,False,2026-03-14 07:31:23.756,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,11.0,4.0,SOFT,2.0,93.13,24.23,27.873,41.027,284.0,276.0,258.0,304.0,1,True,True,True,False,2026-03-14 07:35:07.316,,18.1,32.0,32.4,False,1.1,125.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,12.0,4.0,SOFT,3.0,126.391,32.552,37.638,56.201,197.0,195.0,273.0,290.0,1,True,False,True,False,2026-03-14 07:36:40.446,,18.3,32.2,32.4,False,2.4,74.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,13.0,4.0,SOFT,4.0,93.254,24.222,28.024,41.008,282.0,275.0,257.0,307.0,12,True,False,True,False,2026-03-14 07:38:46.837,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,14.0,4.0,SOFT,5.0,122.007,30.639,33.35,58.018,216.0,220.0,,228.0,1,True,False,False,False,2026-03-14 07:40:20.091,,17.9,30.9,34.7,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,15.0,5.0,SOFT,1.0,,,35.35,50.419,240.0,250.0,274.0,252.0,12,True,False,False,False,2026-03-14 07:42:22.098,,17.8,30.5,35.2,False,2.3,79.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,16.0,5.0,SOFT,2.0,92.55,24.12,27.729,40.701,284.0,278.0,257.0,308.0,1,True,True,True,False,2026-03-14 07:50:57.439,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,17.0,5.0,SOFT,3.0,116.801,29.522,32.57,54.709,233.0,220.0,,241.0,1,True,False,False,False,2026-03-14 07:52:29.989,,17.7,29.8,35.3,False,3.9,50.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,18.0,6.0,SOFT,1.0,,,30.511,50.776,246.0,253.0,276.0,253.0,1,True,False,False,False,2026-03-14 07:54:26.790,,17.7,29.9,34.3,False,2.8,65.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,19.0,6.0,SOFT,2.0,92.568,24.274,27.801,40.493,282.0,276.0,258.0,307.0,1,True,False,True,False,2026-03-14 07:58:36.399,,17.7,30.0,35.0,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,20.0,6.0,SOFT,3.0,132.631,31.226,35.523,65.882,206.0,209.0,,213.0,1,True,False,False,False,2026-03-14 08:00:08.967,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,1.0,1.0,SOFT,10.0,,,32.354,60.156,251.0,232.0,273.0,224.0,1,False,False,False,False,2026-03-14 07:02:10.466,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,2.0,1.0,SOFT,11.0,94.401,24.644,28.436,41.321,280.0,276.0,257.0,310.0,1,False,True,True,False,2026-03-14 07:04:15.377,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,3.0,1.0,SOFT,12.0,114.046,28.93,32.674,52.442,200.0,242.0,,266.0,1,False,False,False,False,2026-03-14 07:05:49.778,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,4.0,2.0,SOFT,1.0,,,30.422,50.552,276.0,267.0,275.0,292.0,1,True,False,False,False,2026-03-14 07:07:43.824,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,5.0,2.0,SOFT,2.0,93.535,24.314,28.156,41.065,282.0,274.0,255.0,309.0,1,True,True,True,False,2026-03-14 07:11:23.037,,17.7,32.2,35.1,False,1.9,67.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,6.0,2.0,SOFT,3.0,118.89,30.523,33.315,55.052,209.0,222.0,,293.0,1,True,False,False,False,2026-03-14 07:12:56.572,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,7.0,3.0,SOFT,4.0,,,32.154,51.323,227.0,227.0,276.0,270.0,1,False,False,False,False,2026-03-14 07:14:55.462,,17.8,31.8,34.9,False,3.6,36.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,8.0,3.0,SOFT,5.0,93.271,24.327,28.005,40.939,280.0,275.0,257.0,307.0,1,False,True,True,False,2026-03-14 07:27:43.882,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,9.0,3.0,SOFT,6.0,116.401,31.187,32.726,52.488,218.0,245.0,,274.0,1,False,False,False,False,2026-03-14 07:29:17.153,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,10.0,4.0,SOFT,1.0,,,31.334,50.217,257.0,249.0,276.0,289.0,1,True,False,False,False,2026-03-14 07:31:13.554,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,11.0,4.0,SOFT,2.0,93.024,24.308,27.9,40.816,282.0,275.0,257.0,305.0,1,True,True,True,False,2026-03-14 07:35:37.127,,18.1,32.0,32.4,False,1.1,125.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,12.0,4.0,SOFT,3.0,124.799,32.499,34.906,57.394,198.0,196.0,278.0,298.0,1,True,False,True,False,2026-03-14 07:37:10.151,,18.3,32.2,32.4,False,2.4,74.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,13.0,4.0,SOFT,4.0,92.91,24.209,27.912,40.789,282.0,276.0,257.0,308.0,12,True,True,True,False,2026-03-14 07:39:14.950,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,14.0,4.0,SOFT,5.0,113.615,28.653,32.649,52.313,219.0,253.0,,287.0,1,True,False,False,False,2026-03-14 07:40:47.860,,17.8,30.4,35.3,False,1.4,49.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,15.0,5.0,SOFT,1.0,,,33.368,50.289,218.0,257.0,277.0,131.0,12,True,False,False,False,2026-03-14 07:42:41.475,,17.7,30.6,35.0,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,16.0,5.0,SOFT,2.0,92.608,24.078,27.782,40.748,282.0,277.0,258.0,305.0,1,True,True,True,False,2026-03-14 07:50:47.442,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,17.0,5.0,SOFT,3.0,113.305,28.485,32.978,51.842,249.0,207.0,,294.0,1,True,False,False,False,2026-03-14 07:52:20.050,,17.7,29.8,35.3,False,3.9,50.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,18.0,6.0,SOFT,1.0,,,30.405,49.086,252.0,252.0,278.0,285.0,1,True,False,False,False,2026-03-14 07:54:13.355,,17.7,29.9,34.3,False,2.8,65.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,19.0,6.0,SOFT,2.0,92.631,23.995,27.747,40.889,280.0,277.0,256.0,302.0,1,True,False,True,False,2026-03-14 07:57:53.577,,17.6,29.3,34.6,False,3.6,47.0
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,20.0,6.0,SOFT,3.0,122.239,30.061,34.793,57.385,187.0,219.0,,256.0,1,True,False,False,False,2026-03-14 07:59:26.208,,17.7,30.0,35.0,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,1.0,1.0,SOFT,4.0,,,32.085,51.459,224.0,255.0,278.0,259.0,1,False,False,False,False,2026-03-14 07:01:46.560,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,2.0,1.0,SOFT,5.0,94.503,24.556,28.437,41.51,287.0,276.0,254.0,319.0,1,False,True,True,False,2026-03-14 07:03:45.477,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,3.0,1.0,SOFT,6.0,117.628,29.935,33.995,53.698,243.0,251.0,,288.0,1,False,False,False,False,2026-03-14 07:05:19.980,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,4.0,2.0,SOFT,1.0,,,32.077,47.455,235.0,252.0,277.0,265.0,1,True,False,False,False,2026-03-14 07:07:17.608,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,5.0,2.0,SOFT,2.0,93.904,24.416,28.209,41.279,284.0,275.0,252.0,315.0,1,True,True,True,False,2026-03-14 07:11:02.906,,17.7,32.2,35.1,False,1.9,67.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,6.0,2.0,SOFT,3.0,120.834,33.282,36.632,50.92,229.0,250.0,253.0,297.0,1,True,False,True,False,2026-03-14 07:12:36.810,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,7.0,2.0,SOFT,4.0,116.611,28.483,33.973,54.155,261.0,245.0,277.0,271.0,1,True,False,True,False,2026-03-14 07:14:37.644,,17.8,31.8,34.9,False,3.6,36.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,8.0,2.0,SOFT,5.0,93.788,24.532,28.214,41.042,288.0,275.0,255.0,317.0,1,True,True,True,False,2026-03-14 07:16:34.255,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,9.0,2.0,SOFT,6.0,123.973,30.36,35.877,57.736,237.0,240.0,,290.0,1,True,False,False,False,2026-03-14 07:18:08.043,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,10.0,3.0,SOFT,1.0,,,31.494,47.226,228.0,250.0,279.0,258.0,1,False,False,False,False,2026-03-14 07:20:12.016,,17.8,32.3,34.5,False,2.6,64.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,11.0,3.0,SOFT,2.0,93.28,24.164,27.809,41.307,285.0,278.0,251.0,311.0,1,False,True,True,False,2026-03-14 07:29:57.632,,18.0,32.2,33.5,False,2.6,52.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,12.0,3.0,SOFT,3.0,121.1,30.579,35.399,55.122,238.0,243.0,,271.0,1,False,False,False,False,2026-03-14 07:31:30.912,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,13.0,4.0,SOFT,1.0,,,31.435,48.556,260.0,258.0,279.0,256.0,1,True,False,False,False,2026-03-14 07:33:32.012,,18.0,32.2,33.8,False,1.5,87.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,14.0,4.0,SOFT,2.0,93.003,24.099,27.831,41.073,284.0,276.0,251.0,314.0,12,True,True,True,False,2026-03-14 07:38:40.686,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,15.0,4.0,SOFT,3.0,125.25,31.557,37.894,55.799,213.0,252.0,,294.0,1,True,False,False,False,2026-03-14 07:40:13.689,,17.9,30.9,34.7,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,16.0,5.0,SOFT,4.0,,,31.764,51.831,231.0,256.0,277.0,226.0,12,False,False,False,False,2026-03-14 07:42:18.939,,17.8,30.5,35.2,False,2.3,79.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,17.0,5.0,SOFT,5.0,94.052,24.595,28.181,41.276,285.0,276.0,247.0,313.0,1,False,True,True,False,2026-03-14 07:50:39.608,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,18.0,5.0,SOFT,6.0,116.735,29.388,34.22,53.127,242.0,253.0,,295.0,1,False,False,False,False,2026-03-14 07:52:13.660,,17.7,29.8,35.3,False,3.9,50.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,19.0,6.0,SOFT,1.0,,,31.791,48.649,258.0,253.0,279.0,246.0,1,True,False,False,False,2026-03-14 07:54:10.395,,17.7,29.9,34.3,False,2.8,65.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,20.0,6.0,SOFT,2.0,92.873,24.185,27.788,40.9,284.0,278.0,252.0,312.0,1,True,True,True,False,2026-03-14 07:58:21.492,,17.6,29.3,34.6,False,3.6,47.0
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,21.0,6.0,SOFT,3.0,132.084,30.504,35.16,66.42,240.0,226.0,,179.0,1,True,False,False,False,2026-03-14 07:59:54.365,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,1.0,1.0,MEDIUM,1.0,,,30.738,53.09,248.0,241.0,275.0,230.0,1,True,False,False,False,2026-03-14 07:01:24.807,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,2.0,1.0,MEDIUM,2.0,94.49,24.826,28.407,41.257,283.0,278.0,265.0,311.0,1,True,True,True,False,2026-03-14 07:03:17.805,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,3.0,1.0,MEDIUM,3.0,134.212,37.785,38.381,58.046,134.0,241.0,276.0,156.0,1,True,False,True,False,2026-03-14 07:04:52.295,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,4.0,1.0,MEDIUM,4.0,94.454,24.785,28.445,41.224,283.0,275.0,263.0,309.0,1,True,True,True,False,2026-03-14 07:07:06.507,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,5.0,1.0,MEDIUM,5.0,111.277,27.194,31.986,52.097,200.0,248.0,,244.0,1,True,False,False,False,2026-03-14 07:08:40.961,,17.7,31.7,34.9,False,4.9,49.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,6.0,2.0,SOFT,1.0,,,31.925,54.863,248.0,263.0,277.0,217.0,1,True,False,False,False,2026-03-14 07:10:32.238,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,7.0,2.0,SOFT,2.0,93.417,24.413,28.391,40.613,285.0,277.0,261.0,313.0,1,True,True,True,False,2026-03-14 07:16:11.438,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,8.0,2.0,SOFT,3.0,123.322,29.852,34.34,59.13,193.0,217.0,,209.0,1,True,False,False,False,2026-03-14 07:17:44.855,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,9.0,3.0,SOFT,1.0,,,30.642,53.915,257.0,245.0,278.0,248.0,1,True,False,False,False,2026-03-14 07:19:48.177,,17.8,32.3,34.5,False,2.6,64.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,10.0,3.0,SOFT,2.0,93.179,24.325,28.095,40.759,281.0,274.0,263.0,312.0,1,True,True,True,False,2026-03-14 07:27:59.425,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,11.0,3.0,SOFT,3.0,114.13,28.324,32.743,53.063,221.0,221.0,,251.0,1,True,False,False,False,2026-03-14 07:29:32.604,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,12.0,4.0,SOFT,1.0,,,31.001,48.777,255.0,246.0,280.0,246.0,1,True,False,False,False,2026-03-14 07:31:26.734,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,13.0,4.0,SOFT,2.0,93.098,24.28,28.065,40.753,283.0,279.0,262.0,312.0,1,True,True,True,False,2026-03-14 07:37:40.005,,18.1,31.5,33.4,False,2.3,61.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,14.0,4.0,SOFT,3.0,121.98,30.522,38.216,53.242,208.0,239.0,,261.0,12,True,False,False,False,2026-03-14 07:39:13.103,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,15.0,5.0,SOFT,4.0,,,34.994,51.297,255.0,248.0,277.0,238.0,12,False,False,False,False,2026-03-14 07:41:15.083,,17.8,30.4,35.3,False,1.4,49.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,16.0,5.0,SOFT,5.0,93.334,24.497,28.137,40.7,285.0,272.0,262.0,317.0,1,False,True,True,False,2026-03-14 07:51:12.433,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,17.0,5.0,SOFT,6.0,108.941,27.698,30.716,50.527,252.0,247.0,,289.0,1,False,False,False,False,2026-03-14 07:52:45.767,,17.8,30.1,35.5,False,4.1,38.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,18.0,6.0,SOFT,1.0,,,30.632,48.988,256.0,247.0,276.0,237.0,1,True,False,False,False,2026-03-14 07:54:34.708,,17.6,29.9,34.4,False,3.0,59.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,19.0,6.0,SOFT,2.0,93.002,24.359,27.975,40.668,283.0,278.0,262.0,310.0,1,True,True,True,False,2026-03-14 07:58:50.883,,17.7,30.0,35.0,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,20.0,6.0,SOFT,3.0,124.717,32.694,32.637,59.386,188.0,225.0,,284.0,1,True,False,False,False,2026-03-14 08:00:23.885,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,1.0,1.0,MEDIUM,1.0,,,31.598,53.087,257.0,254.0,276.0,202.0,1,True,False,False,False,2026-03-14 07:01:17.549,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,2.0,1.0,MEDIUM,2.0,94.519,24.816,28.593,41.11,287.0,283.0,268.0,315.0,1,True,True,True,False,2026-03-14 07:03:10.831,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,3.0,1.0,MEDIUM,3.0,125.814,35.827,37.439,52.548,181.0,218.0,274.0,177.0,1,True,False,True,False,2026-03-14 07:04:45.350,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,4.0,1.0,MEDIUM,4.0,94.396,24.83,28.45,41.116,285.0,284.0,264.0,314.0,1,True,True,True,False,2026-03-14 07:06:51.164,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,5.0,1.0,MEDIUM,5.0,117.136,29.156,32.164,55.816,241.0,264.0,,282.0,1,True,False,False,False,2026-03-14 07:08:25.560,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,6.0,2.0,SOFT,1.0,,,31.554,55.185,251.0,250.0,277.0,232.0,1,True,False,False,False,2026-03-14 07:10:22.696,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,7.0,2.0,SOFT,2.0,93.632,24.465,28.324,40.843,283.0,276.0,263.0,316.0,1,True,True,True,False,2026-03-14 07:16:05.862,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,8.0,2.0,SOFT,3.0,127.074,29.918,37.164,59.992,209.0,205.0,,234.0,1,True,False,False,False,2026-03-14 07:17:39.494,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,9.0,3.0,SOFT,1.0,,,31.961,49.958,247.0,259.0,279.0,214.0,1,True,False,False,False,2026-03-14 07:19:46.568,,17.8,32.3,34.5,False,2.6,64.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,10.0,3.0,SOFT,2.0,93.352,24.487,28.136,40.729,282.0,275.0,265.0,315.0,1,True,True,True,False,2026-03-14 07:27:34.296,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,11.0,3.0,SOFT,3.0,117.892,29.202,33.438,55.252,237.0,265.0,,265.0,1,True,False,False,False,2026-03-14 07:29:07.648,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,12.0,4.0,SOFT,1.0,,,31.372,49.429,256.0,258.0,280.0,236.0,1,True,False,False,False,2026-03-14 07:31:05.540,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,13.0,4.0,SOFT,2.0,93.497,24.474,28.023,41.0,284.0,282.0,275.0,309.0,1,True,False,True,False,2026-03-14 07:37:34.677,,18.1,31.5,33.4,False,2.3,61.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,14.0,4.0,SOFT,3.0,115.226,27.914,33.404,53.908,244.0,256.0,,290.0,12,True,False,False,False,2026-03-14 07:39:08.174,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,15.0,5.0,SOFT,4.0,,,31.63,54.302,254.0,259.0,278.0,250.0,12,False,False,False,False,2026-03-14 07:41:03.400,,17.8,30.4,35.3,False,1.4,49.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,16.0,5.0,SOFT,5.0,93.354,24.488,28.196,40.67,284.0,276.0,260.0,316.0,1,False,True,True,False,2026-03-14 07:51:07.074,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,17.0,5.0,SOFT,6.0,113.303,27.972,32.103,53.228,245.0,247.0,,289.0,1,False,False,False,False,2026-03-14 07:52:40.428,,17.8,30.1,35.5,False,4.1,38.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,18.0,6.0,SOFT,1.0,,,31.235,49.67,251.0,252.0,271.0,233.0,1,True,False,False,False,2026-03-14 07:54:33.731,,17.6,29.9,34.4,False,3.0,59.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,19.0,6.0,SOFT,2.0,93.121,24.529,27.933,40.659,284.0,275.0,260.0,311.0,1,True,True,True,False,2026-03-14 07:58:44.243,,17.7,30.0,35.0,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,20.0,6.0,SOFT,3.0,129.033,30.267,35.703,63.063,191.0,217.0,,285.0,1,True,False,False,False,2026-03-14 08:00:17.364,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,1.0,1.0,SOFT,11.0,,,31.897,52.393,280.0,262.0,274.0,244.0,1,False,False,False,False,2026-03-14 07:01:56.779,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,2.0,1.0,SOFT,12.0,94.804,24.937,28.623,41.244,290.0,273.0,260.0,314.0,1,False,True,True,False,2026-03-14 07:03:55.753,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,3.0,1.0,SOFT,13.0,110.796,26.798000000000002,30.634,53.364,287.0,280.0,,244.0,1,False,False,False,False,2026-03-14 07:05:30.557,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,4.0,2.0,SOFT,1.0,,,32.307,49.472,278.0,271.0,276.0,259.0,1,True,False,False,False,2026-03-14 07:07:21.353,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,5.0,2.0,SOFT,2.0,93.756,24.696,28.104,40.956,290.0,269.0,260.0,309.0,1,True,True,True,False,2026-03-14 07:12:37.255,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,6.0,2.0,SOFT,3.0,135.892,42.481,36.085,57.326,211.0,215.0,274.0,278.0,1,True,False,True,False,2026-03-14 07:14:11.011,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,7.0,2.0,SOFT,4.0,93.687,24.538,28.209,40.94,291.0,273.0,262.0,311.0,1,True,True,True,False,2026-03-14 07:16:26.903,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,8.0,2.0,SOFT,5.0,121.073,29.635,32.565,58.873,230.0,216.0,,213.0,1,True,False,False,False,2026-03-14 07:18:00.590,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,9.0,3.0,SOFT,1.0,,,35.01,51.794,274.0,262.0,276.0,269.0,1,True,False,False,False,2026-03-14 07:20:01.663,,17.8,32.3,34.5,False,2.6,64.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,10.0,3.0,SOFT,2.0,93.197,24.348,27.847,41.002,290.0,265.0,265.0,308.0,1,True,True,True,False,2026-03-14 07:28:35.713,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,11.0,3.0,SOFT,3.0,119.193,28.359,32.585,58.249,284.0,237.0,,199.0,1,True,False,False,False,2026-03-14 07:30:08.910,,18.0,32.2,33.5,False,2.6,52.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,12.0,4.0,SOFT,1.0,,,33.295,47.547,275.0,270.0,276.0,263.0,1,True,False,False,False,2026-03-14 07:32:08.103,,18.0,32.1,33.8,False,1.1,69.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,13.0,4.0,SOFT,2.0,105.574,24.234,27.843,53.497,289.0,270.0,,306.0,12,True,False,False,False,2026-03-14 07:38:21.862,,18.1,31.5,33.4,False,2.3,61.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,14.0,5.0,SOFT,1.0,,,32.381,46.997,274.0,269.0,275.0,263.0,12,True,False,False,False,2026-03-14 07:40:07.436,,17.9,30.9,34.7,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,15.0,5.0,SOFT,2.0,93.956,24.415,28.61,40.931,288.0,265.0,264.0,306.0,1,True,True,True,False,2026-03-14 07:49:26.783,,17.8,29.4,34.4,False,5.3,40.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,16.0,5.0,SOFT,3.0,121.123,27.426,39.119,54.578,238.0,277.0,,282.0,1,True,False,False,False,2026-03-14 07:51:00.739,,17.8,29.5,34.7,False,4.5,42.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,17.0,6.0,SOFT,1.0,,,32.502,48.166,278.0,267.0,276.0,261.0,1,True,False,False,False,2026-03-14 07:53:01.862,,17.8,30.1,35.5,False,4.1,38.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,18.0,6.0,SOFT,2.0,93.292,24.361,27.891,41.04,288.0,269.0,257.0,301.0,1,True,True,True,False,2026-03-14 07:58:28.260,,17.6,29.3,34.6,False,3.6,47.0
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,19.0,6.0,SOFT,3.0,137.192,31.026,34.974,71.192,185.0,198.0,,192.0,1,True,False,False,False,2026-03-14 08:00:01.552,,17.7,29.9,34.9,False,1.2,18.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,1.0,1.0,MEDIUM,9.0,,,32.376,53.141,258.0,269.0,,283.0,1,False,False,False,False,2026-03-14 07:00:26.684,,17.6,32.3,36.5,False,3.9,65.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,2.0,2.0,SOFT,1.0,133.272,49.5,30.64,53.132,274.0,257.0,277.0,161.0,1,True,False,False,False,2026-03-14 07:02:21.131,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,3.0,2.0,SOFT,2.0,94.116,24.876,28.201,41.039,287.0,284.0,266.0,315.0,1,True,True,True,False,2026-03-14 07:04:34.403,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,4.0,2.0,SOFT,3.0,130.677,33.73,40.93,56.017,168.0,219.0,274.0,279.0,1,True,False,True,False,2026-03-14 07:06:08.519,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,5.0,2.0,SOFT,4.0,94.158,24.86,28.365,40.933,286.0,285.0,269.0,313.0,1,True,False,True,False,2026-03-14 07:08:19.196,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,6.0,2.0,SOFT,5.0,115.361,30.532,33.407,51.422,269.0,258.0,,280.0,1,True,False,False,False,2026-03-14 07:09:53.354,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,7.0,3.0,SOFT,1.0,,,30.204,45.786,272.0,256.0,276.0,253.0,1,True,False,False,False,2026-03-14 07:11:48.715,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,8.0,3.0,SOFT,2.0,93.368,24.558,28.067,40.743,285.0,281.0,271.0,313.0,1,True,True,True,False,2026-03-14 07:28:11.188,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,9.0,3.0,SOFT,3.0,114.547,28.759,32.776,53.012,252.0,266.0,,282.0,1,True,False,False,False,2026-03-14 07:29:44.556,,18.0,32.2,33.5,False,2.6,52.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,10.0,4.0,SOFT,1.0,,,34.087,45.999,243.0,257.0,277.0,260.0,1,True,False,False,False,2026-03-14 07:31:39.103,,18.0,32.1,33.8,False,1.1,69.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,11.0,4.0,SOFT,2.0,93.354,24.592,27.937,40.825,286.0,283.0,271.0,310.0,1,True,True,True,False,2026-03-14 07:37:06.091,,18.3,32.2,32.4,False,2.4,74.0
+2026,2,Chinese Grand Prix,Q,HUL,Audi,12.0,4.0,SOFT,3.0,121.602,32.607,36.031,52.964,220.0,251.0,,289.0,12,True,False,False,False,2026-03-14 07:38:39.445,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,1.0,1.0,SOFT,1.0,,,32.772,50.409,224.0,240.0,273.0,242.0,1,True,False,False,False,2026-03-14 07:00:04.038,,17.6,32.3,36.5,False,3.9,65.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,2.0,1.0,SOFT,2.0,95.973,25.029,29.014,41.93,285.0,275.0,251.0,313.0,1,True,True,True,False,2026-03-14 07:02:02.840,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,3.0,1.0,SOFT,3.0,111.54,28.513,33.878,49.149,251.0,272.0,,289.0,1,True,False,False,False,2026-03-14 07:03:38.813,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,4.0,2.0,SOFT,1.0,139.384,57.664,33.697,48.023,239.0,227.0,279.0,247.0,1,True,False,False,False,2026-03-14 07:05:30.353,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,5.0,2.0,SOFT,2.0,94.388,24.576999999999998,28.278,41.533,285.0,274.0,249.0,309.0,1,True,True,True,False,2026-03-14 07:07:49.737,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,6.0,2.0,SOFT,3.0,111.194,28.271,32.191,50.732,253.0,262.0,,286.0,1,True,False,False,False,2026-03-14 07:09:24.125,,17.7,31.7,34.9,False,4.9,49.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,7.0,3.0,SOFT,1.0,,,31.001,60.802,218.0,253.0,276.0,96.0,1,True,False,False,False,2026-03-14 07:11:15.319,,17.7,32.2,35.1,False,1.9,67.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,8.0,3.0,SOFT,2.0,93.634,24.439,28.248,40.947,288.0,276.0,251.0,320.0,1,True,True,True,False,2026-03-14 07:16:58.178,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,9.0,3.0,SOFT,3.0,117.17,29.565,32.663,54.942,251.0,268.0,,227.0,1,True,False,False,False,2026-03-14 07:18:31.812,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,10.0,4.0,SOFT,1.0,,,31.754,48.156,224.0,252.0,279.0,246.0,1,True,False,False,False,2026-03-14 07:20:28.982,,17.8,32.3,34.5,False,2.6,64.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,11.0,4.0,SOFT,2.0,93.616,24.413,28.127,41.076,285.0,276.0,253.0,314.0,1,True,True,True,False,2026-03-14 07:30:05.357,,18.0,32.2,33.5,False,2.6,52.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,12.0,4.0,SOFT,3.0,115.501,27.803,34.073,53.625,244.0,257.0,,234.0,1,True,False,False,False,2026-03-14 07:31:38.973,,18.0,32.1,33.8,False,1.1,69.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,13.0,5.0,SOFT,1.0,,,33.039,49.317,117.0,256.0,280.0,263.0,1,True,False,False,False,2026-03-14 07:33:34.474,,18.1,31.9,33.3,False,1.0,66.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,14.0,5.0,SOFT,2.0,93.357,24.254,28.078,41.025,286.0,275.0,250.0,317.0,12,True,True,True,False,2026-03-14 07:38:51.174,,18.0,31.2,34.1,False,3.8,58.0
+2026,2,Chinese Grand Prix,Q,COL,Alpine,15.0,5.0,SOFT,3.0,115.348,29.194,31.579,54.575,220.0,263.0,,242.0,1,True,False,False,False,2026-03-14 07:40:24.531,,17.9,30.9,34.7,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,1.0,1.0,SOFT,8.0,,,33.461,51.853,209.0,275.0,275.0,251.0,1,False,False,False,False,2026-03-14 07:01:52.498,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,2.0,1.0,SOFT,9.0,94.904,24.622,28.94,41.342,297.0,278.0,266.0,310.0,1,False,True,True,False,2026-03-14 07:03:51.899,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,3.0,1.0,SOFT,10.0,114.005,27.99,32.608,53.407,239.0,276.0,,278.0,1,False,False,False,False,2026-03-14 07:05:26.803,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,4.0,2.0,SOFT,1.0,,,32.443,48.403,271.0,273.0,275.0,254.0,1,True,False,False,False,2026-03-14 07:07:20.808,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,5.0,2.0,SOFT,2.0,94.068,24.522,28.275,41.271,288.0,271.0,258.0,307.0,1,True,True,True,False,2026-03-14 07:12:31.778,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,6.0,2.0,SOFT,3.0,130.55,32.414,37.761,60.375,212.0,182.0,274.0,275.0,1,True,False,True,False,2026-03-14 07:14:05.846,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,7.0,2.0,SOFT,4.0,93.974,24.615,28.331,41.028,290.0,272.0,263.0,309.0,1,True,True,True,False,2026-03-14 07:16:16.396,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,8.0,2.0,SOFT,5.0,124.343,28.533,34.942,60.868,218.0,199.0,,204.0,1,True,False,False,False,2026-03-14 07:17:50.370,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,9.0,3.0,SOFT,1.0,,,37.182,50.717,276.0,112.0,277.0,259.0,1,True,False,False,False,2026-03-14 07:19:54.713,,17.8,32.3,34.5,False,2.6,64.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,10.0,3.0,SOFT,2.0,93.538,24.344,28.064,41.13,286.0,266.0,258.0,308.0,1,True,True,True,False,2026-03-14 07:28:30.809,,17.9,32.3,33.4,False,2.1,88.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,11.0,3.0,SOFT,3.0,122.282,29.746,34.486,58.05,230.0,215.0,,220.0,1,True,False,False,False,2026-03-14 07:30:04.347,,18.0,32.2,33.5,False,2.6,52.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,12.0,4.0,SOFT,1.0,,,33.246,49.73,281.0,228.0,277.0,251.0,1,True,False,False,False,2026-03-14 07:32:06.629,,18.0,32.1,33.8,False,1.1,69.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,13.0,4.0,SOFT,2.0,97.148,24.335,28.041,44.772,287.0,272.0,134.0,306.0,12,True,False,True,False,2026-03-14 07:38:12.799,,18.1,31.5,33.4,False,2.3,61.0
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,14.0,4.0,SOFT,3.0,128.063,32.949,35.403,59.711,211.0,192.0,,223.0,1,True,False,False,False,2026-03-14 07:39:49.947,,17.9,30.9,34.7,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,1.0,1.0,SOFT,1.0,,,32.219,49.617,239.0,250.0,266.0,250.0,1,True,False,False,False,2026-03-14 07:01:06.340,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,2.0,1.0,SOFT,2.0,94.731,24.857,28.518,41.356,292.0,287.0,267.0,316.0,1,True,True,True,False,2026-03-14 07:03:01.742,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,3.0,1.0,SOFT,3.0,116.952,28.69,32.581,55.681,233.0,235.0,,261.0,1,True,False,False,False,2026-03-14 07:04:36.473,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,4.0,2.0,SOFT,1.0,,,32.118,47.482,248.0,254.0,278.0,254.0,1,True,False,False,False,2026-03-14 07:06:33.425,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,5.0,2.0,SOFT,2.0,94.209,24.644,28.495,41.07,291.0,289.0,260.0,319.0,1,True,True,True,False,2026-03-14 07:10:40.513,,17.7,32.2,35.1,False,1.9,67.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,6.0,2.0,SOFT,3.0,112.876,27.885,33.806,51.185,238.0,244.0,241.0,259.0,1,True,False,True,False,2026-03-14 07:12:14.722,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,7.0,2.0,SOFT,4.0,111.381,29.079,33.118,49.184,235.0,251.0,278.0,259.0,1,True,False,True,False,2026-03-14 07:14:07.598,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,8.0,2.0,SOFT,5.0,94.139,24.588,28.64,40.911,291.0,288.0,262.0,313.0,1,True,True,True,False,2026-03-14 07:15:58.979,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,9.0,2.0,SOFT,6.0,117.479,28.286,33.077,56.116,228.0,237.0,,243.0,1,True,False,False,False,2026-03-14 07:17:33.118,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,10.0,3.0,SOFT,4.0,,,33.417,48.024,259.0,251.0,276.0,267.0,1,False,False,False,False,2026-03-14 07:19:30.597,,17.8,32.3,34.3,False,1.8,61.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,11.0,3.0,SOFT,5.0,93.765,24.634,28.157,40.974,291.0,290.0,262.0,311.0,1,False,True,True,False,2026-03-14 07:30:26.573,,18.0,32.2,33.5,False,2.6,52.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,12.0,3.0,SOFT,6.0,114.48,28.221,32.698,53.561,240.0,236.0,,259.0,1,False,False,False,False,2026-03-14 07:32:00.338,,18.0,32.1,33.8,False,1.1,69.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,13.0,4.0,SOFT,1.0,,,33.907,49.42,250.0,254.0,277.0,257.0,1,True,False,False,False,2026-03-14 07:33:54.818,,18.1,31.9,33.3,False,1.0,66.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,14.0,4.0,SOFT,2.0,96.237,24.339,28.117,43.781,291.0,290.0,202.0,311.0,12,True,False,True,False,2026-03-14 07:38:05.828,,18.1,31.5,33.4,False,2.3,61.0
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,15.0,4.0,SOFT,3.0,129.557,31.77,33.93,63.857,191.0,241.0,,154.0,21,True,False,False,False,2026-03-14 07:39:42.065,,17.9,30.9,34.7,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,1.0,1.0,SOFT,1.0,,,33.332,48.161,236.0,241.0,274.0,246.0,1,True,False,False,False,2026-03-14 07:00:41.780,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,2.0,1.0,SOFT,2.0,114.185,25.115,39.885,49.185,288.0,252.0,276.0,274.0,1,True,True,True,False,2026-03-14 07:02:34.907,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,3.0,1.0,SOFT,3.0,95.035,24.862,28.739,41.434,289.0,285.0,263.0,317.0,1,True,True,True,False,2026-03-14 07:04:29.092,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,4.0,1.0,SOFT,4.0,120.01,35.054,35.808,49.148,237.0,251.0,278.0,283.0,1,True,False,True,False,2026-03-14 07:06:04.127,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,5.0,1.0,SOFT,5.0,95.961,24.732,28.689,42.54,289.0,288.0,259.0,309.0,1,True,False,True,False,2026-03-14 07:08:04.137,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,6.0,1.0,SOFT,6.0,120.046,30.584,34.117,55.345,239.0,236.0,,243.0,1,True,False,False,False,2026-03-14 07:09:40.098,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,7.0,2.0,SOFT,1.0,,,33.847,59.125,247.0,258.0,278.0,243.0,1,True,False,False,False,2026-03-14 07:11:40.144,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,8.0,2.0,SOFT,2.0,93.906,24.542,28.461,40.903,291.0,288.0,258.0,316.0,1,True,True,True,False,2026-03-14 07:16:40.882,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,9.0,2.0,SOFT,3.0,120.621,31.481,33.688,55.452,240.0,251.0,,253.0,1,True,False,False,False,2026-03-14 07:18:14.788,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,10.0,3.0,SOFT,1.0,,,37.596,49.405,232.0,253.0,278.0,252.0,1,True,False,False,False,2026-03-14 07:20:15.409,,17.8,32.3,34.5,False,2.6,64.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,11.0,3.0,SOFT,2.0,93.784,24.492,28.254,41.038,290.0,287.0,261.0,312.0,1,True,True,True,False,2026-03-14 07:29:19.386,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,12.0,3.0,SOFT,3.0,115.688,29.225,33.041,53.422,243.0,247.0,,280.0,1,True,False,False,False,2026-03-14 07:30:53.170,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,13.0,4.0,SOFT,1.0,,,34.038,47.693,250.0,253.0,279.0,252.0,1,True,False,False,False,2026-03-14 07:32:48.858,,18.0,32.2,33.8,False,1.5,87.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,14.0,4.0,SOFT,2.0,98.588,24.319,28.181,46.088,291.0,284.0,140.0,312.0,12,True,False,True,False,2026-03-14 07:37:57.569,,18.1,31.5,33.4,False,2.3,61.0
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,15.0,4.0,SOFT,3.0,126.293,35.905,34.356,56.032,201.0,251.0,,260.0,21,True,False,False,False,2026-03-14 07:39:36.157,,17.9,30.9,34.7,False,3.8,41.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,1.0,1.0,SOFT,7.0,,,32.529,58.035,250.0,261.0,,272.0,1,False,False,False,False,2026-03-14 07:00:34.033,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,2.0,2.0,SOFT,1.0,137.426,58.282,32.117,47.027,267.0,197.0,275.0,250.0,1,True,False,False,False,2026-03-14 07:02:33.455,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,3.0,2.0,SOFT,2.0,94.349,24.682,28.367,41.3,282.0,286.0,260.0,315.0,1,True,True,True,False,2026-03-14 07:04:50.881,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,4.0,2.0,SOFT,3.0,131.917,35.106,35.703,61.108,167.0,230.0,266.0,248.0,1,True,False,True,False,2026-03-14 07:06:25.230,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,5.0,2.0,SOFT,4.0,94.484,24.759,28.231,41.494,281.0,286.0,260.0,317.0,1,True,False,True,False,2026-03-14 07:08:37.147,,17.7,31.7,34.9,False,4.9,49.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,6.0,2.0,SOFT,5.0,123.416,29.724,35.948,57.744,256.0,220.0,,287.0,1,True,False,False,False,2026-03-14 07:10:11.631,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,7.0,3.0,SOFT,1.0,,,31.159,60.22,273.0,257.0,276.0,107.0,1,True,False,False,False,2026-03-14 07:12:15.047,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,8.0,3.0,SOFT,2.0,93.549,24.539,28.214,40.796,282.0,284.0,260.0,316.0,1,True,True,True,False,2026-03-14 07:17:03.890,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,9.0,3.0,SOFT,3.0,126.409,31.805,36.784,57.82,198.0,222.0,,214.0,1,True,False,False,False,2026-03-14 07:18:37.439,,17.8,32.3,34.3,False,1.8,61.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,10.0,4.0,SOFT,1.0,,,35.107,46.815,261.0,247.0,276.0,250.0,1,True,False,False,False,2026-03-14 07:20:43.848,,17.8,31.8,33.9,False,5.2,59.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,11.0,4.0,SOFT,2.0,93.965,24.607,28.272,41.086,282.0,286.0,264.0,316.0,1,True,True,True,False,2026-03-14 07:29:01.893,,18.0,32.2,33.0,False,1.6,64.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,12.0,4.0,SOFT,3.0,115.875,29.579,33.307,52.989,259.0,241.0,,275.0,1,True,False,False,False,2026-03-14 07:30:35.858,,18.0,32.3,34.1,False,1.9,57.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,13.0,5.0,SOFT,1.0,,,30.807,50.774,275.0,258.0,277.0,215.0,1,True,False,False,False,2026-03-14 07:32:31.733,,18.0,32.1,33.8,False,1.1,69.0
+2026,2,Chinese Grand Prix,Q,BOR,Audi,14.0,5.0,SOFT,2.0,126.878,24.582,28.145,74.151,283.0,285.0,,322.0,12,True,False,False,False,2026-03-14 07:37:47.128,,18.1,31.5,33.4,False,2.3,61.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,1.0,1.0,SOFT,1.0,,,32.365,47.829,239.0,241.0,272.0,264.0,1,True,False,False,False,2026-03-14 07:00:15.250,,17.6,32.3,36.5,False,3.9,65.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,2.0,1.0,SOFT,2.0,114.19,25.867,33.929,54.394,280.0,265.0,275.0,272.0,1,True,True,True,False,2026-03-14 07:02:14.343,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,3.0,1.0,SOFT,3.0,95.352,24.757,28.96,41.635,283.0,273.0,256.0,318.0,1,True,True,True,False,2026-03-14 07:04:08.533,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,4.0,1.0,SOFT,4.0,116.538,31.67,32.718,52.15,232.0,260.0,,286.0,1,True,False,False,False,2026-03-14 07:05:43.885,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,5.0,2.0,SOFT,1.0,147.817,61.851,33.356,52.61,222.0,262.0,277.0,261.0,1,True,False,False,False,2026-03-14 07:07:40.423,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,6.0,2.0,SOFT,2.0,96.698,26.548000000000002,28.814,41.336,282.0,272.0,255.0,321.0,1,True,False,True,False,2026-03-14 07:10:08.240,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,7.0,2.0,SOFT,3.0,118.57,29.831,35.41,53.329,244.0,216.0,,291.0,1,True,False,False,False,2026-03-14 07:11:44.938,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,8.0,3.0,SOFT,1.0,,71.958,31.752,55.471,250.0,262.0,278.0,253.0,1,True,False,False,False,2026-03-14 07:13:43.508,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,9.0,3.0,SOFT,2.0,94.317,24.465,28.669,41.183,284.0,273.0,253.0,318.0,1,True,True,True,False,2026-03-14 07:16:22.636,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,SAI,Williams,10.0,3.0,SOFT,3.0,123.505,30.741,33.668,59.096,229.0,227.0,,241.0,1,True,False,False,False,2026-03-14 07:17:56.953,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,1.0,1.0,SOFT,1.0,,,32.565,47.176,249.0,255.0,275.0,255.0,1,True,False,False,False,2026-03-14 07:00:10.679,,17.6,32.3,36.5,False,3.9,65.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,2.0,1.0,SOFT,2.0,113.906,26.828,31.088,55.99,270.0,259.0,276.0,247.0,1,True,True,True,False,2026-03-14 07:02:07.602,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,3.0,1.0,SOFT,3.0,95.501,24.906,29.066,41.529,285.0,272.0,254.0,318.0,1,True,True,True,False,2026-03-14 07:04:01.508,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,4.0,1.0,SOFT,4.0,109.587,28.004,31.193,50.39,252.0,241.0,,287.0,1,True,False,False,False,2026-03-14 07:05:37.009,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,5.0,2.0,SOFT,1.0,136.601,57.806,30.458,48.337,250.0,258.0,278.0,266.0,1,True,False,False,False,2026-03-14 07:07:26.596,,17.7,32.2,34.6,False,2.7,31.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,6.0,2.0,SOFT,2.0,95.145,24.726,28.694,41.725,284.0,273.0,254.0,313.0,1,True,True,True,False,2026-03-14 07:09:43.197,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,7.0,2.0,SOFT,3.0,114.571,29.989,32.443,52.139,210.0,258.0,,195.0,1,True,False,False,False,2026-03-14 07:11:18.342,,17.7,32.2,35.1,False,1.9,67.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,8.0,3.0,SOFT,1.0,143.939,66.724,30.876,46.339,255.0,250.0,278.0,258.0,1,True,False,False,False,2026-03-14 07:13:12.913,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,9.0,3.0,SOFT,2.0,94.772,24.526,28.876,41.37,285.0,271.0,253.0,314.0,1,True,True,True,False,2026-03-14 07:15:36.852,,17.7,32.0,35.0,False,3.5,52.0
+2026,2,Chinese Grand Prix,Q,ALB,Williams,10.0,3.0,SOFT,3.0,120.841,30.267,32.729,57.845,243.0,226.0,,190.0,1,True,False,False,False,2026-03-14 07:17:11.624,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,1.0,1.0,SOFT,1.0,,,32.106,51.665,232.0,225.0,267.0,207.0,1,True,False,False,False,2026-03-14 07:00:58.085,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,2.0,1.0,SOFT,2.0,96.338,25.257,29.036,42.045,277.0,271.0,257.0,300.0,1,True,True,True,False,2026-03-14 07:02:54.413,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,3.0,1.0,SOFT,3.0,117.571,30.266,32.527,54.778,245.0,241.0,,254.0,1,True,False,False,False,2026-03-14 07:04:30.751,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,4.0,2.0,SOFT,1.0,141.906,57.456,35.691,48.759,242.0,168.0,273.0,256.0,1,True,False,False,False,2026-03-14 07:06:28.322,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,5.0,2.0,SOFT,2.0,95.446,24.868,28.787,41.791,278.0,274.0,256.0,307.0,1,True,True,True,False,2026-03-14 07:08:50.228,,17.7,31.7,34.9,False,4.9,49.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,6.0,2.0,SOFT,3.0,118.604,28.51,32.12,57.974,205.0,216.0,,258.0,1,True,False,False,False,2026-03-14 07:10:25.674,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,7.0,3.0,SOFT,1.0,,,31.58,62.813,247.0,228.0,271.0,240.0,1,True,False,False,False,2026-03-14 07:12:24.278,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,8.0,3.0,SOFT,2.0,95.203,24.782,28.723,41.698,280.0,273.0,249.0,301.0,1,True,True,True,False,2026-03-14 07:16:51.732,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,9.0,3.0,SOFT,3.0,118.64,31.027,33.778,53.835,201.0,217.0,,227.0,1,True,False,False,False,2026-03-14 07:18:26.935,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,1.0,1.0,SOFT,1.0,,,32.06,49.592,275.0,262.0,273.0,234.0,1,True,False,False,False,2026-03-14 07:00:02.679,,17.6,32.3,36.5,False,3.9,65.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,2.0,1.0,SOFT,2.0,96.968,25.381,29.189,42.398,273.0,266.0,265.0,306.0,1,True,True,True,False,2026-03-14 07:01:53.738,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,3.0,1.0,SOFT,3.0,115.084,27.893,32.831,54.36,247.0,275.0,,281.0,1,True,False,False,False,2026-03-14 07:03:30.706,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,4.0,2.0,SOFT,1.0,,,32.901,51.275,174.0,261.0,277.0,199.0,1,True,False,False,False,2026-03-14 07:05:25.790,,17.7,32.5,35.0,False,2.8,46.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,5.0,2.0,SOFT,2.0,95.928,25.146,28.989,41.793,280.0,275.0,262.0,312.0,1,True,True,True,False,2026-03-14 07:10:14.072,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,6.0,2.0,SOFT,3.0,118.816,27.918,35.681,55.217,256.0,261.0,,281.0,1,True,False,False,False,2026-03-14 07:11:50.000,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,7.0,3.0,SOFT,1.0,,,32.021,47.81,279.0,261.0,275.0,251.0,1,True,False,False,False,2026-03-14 07:13:48.816,,17.8,32.0,34.3,False,3.1,59.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,8.0,3.0,SOFT,2.0,95.436,24.949,28.972,41.515,278.0,258.0,260.0,310.0,1,True,True,True,False,2026-03-14 07:17:27.991,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,9.0,3.0,SOFT,3.0,125.483,30.873,34.59,60.02,201.0,255.0,,225.0,1,True,False,False,False,2026-03-14 07:19:03.427,,17.8,32.3,34.3,False,1.8,61.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,1.0,1.0,SOFT,1.0,,,32.05,49.268,243.0,233.0,266.0,255.0,1,True,False,False,False,2026-03-14 07:00:44.615,,17.6,32.4,36.2,False,3.8,68.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,2.0,1.0,SOFT,2.0,97.069,25.598,29.144,42.327,278.0,271.0,253.0,293.0,1,True,True,True,False,2026-03-14 07:02:42.201,,17.6,32.3,36.0,False,2.7,68.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,3.0,1.0,SOFT,3.0,123.648,32.849,35.302,55.497,238.0,150.0,,264.0,1,True,False,False,False,2026-03-14 07:04:19.270,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,4.0,2.0,SOFT,1.0,140.364,48.517,35.999,55.848,247.0,226.0,266.0,241.0,1,True,False,False,False,2026-03-14 07:06:22.918,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,5.0,2.0,SOFT,2.0,96.412,25.088,29.226,42.098,278.0,273.0,252.0,301.0,1,True,True,True,False,2026-03-14 07:08:43.282,,17.7,31.7,34.9,False,4.9,49.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,6.0,2.0,SOFT,3.0,120.023,30.527,32.189,57.307,240.0,239.0,,236.0,1,True,False,False,False,2026-03-14 07:10:19.694,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,7.0,3.0,SOFT,1.0,,,32.761,61.697,238.0,228.0,271.0,226.0,1,True,False,False,False,2026-03-14 07:12:19.717,,17.6,32.3,34.6,False,1.3,60.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,8.0,3.0,SOFT,2.0,95.995,24.953,29.204,41.838,279.0,266.0,251.0,303.0,1,True,True,True,False,2026-03-14 07:16:46.033,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,9.0,3.0,SOFT,3.0,130.224,31.138,36.983,62.103,178.0,235.0,,203.0,1,True,False,False,False,2026-03-14 07:18:22.028,,17.7,32.1,34.7,False,2.6,65.0
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,1.0,1.0,SOFT,1.0,,,32.88,47.505,249.0,270.0,276.0,267.0,1,True,False,False,False,2026-03-14 07:04:18.568,,17.7,32.5,35.5,False,3.2,30.0
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,2.0,1.0,SOFT,2.0,97.524,25.703,29.256,42.565,269.0,261.0,263.0,305.0,1,True,True,True,False,2026-03-14 07:06:06.547,,17.7,32.4,34.5,False,4.0,60.0
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,3.0,1.0,SOFT,3.0,114.254,26.92,34.345,52.989,276.0,263.0,,279.0,1,True,False,False,False,2026-03-14 07:07:44.071,,17.7,31.8,34.6,False,5.3,43.0
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,4.0,2.0,SOFT,1.0,,,30.863,60.233,263.0,245.0,241.0,114.0,1,True,False,False,False,2026-03-14 07:09:38.325,,17.6,32.0,35.7,False,3.1,58.0
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,5.0,2.0,SOFT,2.0,96.906,26.049,29.246,41.611,277.0,263.0,263.0,313.0,1,True,True,True,False,2026-03-14 07:17:08.605,,17.7,31.7,35.1,False,2.8,71.0
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,6.0,2.0,SOFT,3.0,124.362,31.463,37.216,55.683,198.0,229.0,,245.0,1,True,False,False,False,2026-03-14 07:18:45.511,,17.8,32.3,34.3,False,1.8,61.0

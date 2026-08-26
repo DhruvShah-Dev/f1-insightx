@@ -1,0 +1,99 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026,2,Chinese Grand Prix,Q,ALB,Williams,1.0,SOFT,3,106.33133333333335,0.0,-0.5,2,4
+2026,2,Chinese Grand Prix,Q,ALB,Williams,2.0,SOFT,3,115.43900000000001,0.0,-0.5,1,3
+2026,2,Chinese Grand Prix,Q,ALB,Williams,3.0,SOFT,3,119.85066666666667,0.0,-0.5,1,3
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,1.0,SOFT,2,106.9545,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,2.0,SOFT,3,118.652,0.0,-0.5,1,3
+2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,3.0,SOFT,2,106.92150000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,1.0,SOFT,2,107.8875,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,2.0,SOFT,2,119.11699999999999,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,3.0,SOFT,2,106.858,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,4.0,SOFT,2,100.289,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,ANT,Mercedes,5.0,SOFT,2,105.06299999999999,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,1.0,SOFT,2,102.80000000000001,10.0,0.0,12,13
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,2.0,SOFT,4,111.10199999999999,3.3333333333333335,0.0,2,5
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,3.0,SOFT,2,106.195,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,4.0,SOFT,1,105.574,0.0,0.0,2,2
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,5.0,SOFT,2,107.5395,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,6.0,SOFT,2,115.242,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BOR,Audi,2.0,SOFT,5,116.3184,0.0,-0.3,1,5
+2026,2,Chinese Grand Prix,Q,BOR,Audi,3.0,SOFT,2,109.97900000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BOR,Audi,4.0,SOFT,2,104.92,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BOR,Audi,5.0,SOFT,1,126.878,0.0,0.0,2,2
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,1.0,SOFT,2,106.02600000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,2.0,SOFT,2,107.372,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,BOT,Cadillac,3.0,SOFT,2,110.4595,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,COL,Alpine,1.0,SOFT,2,103.7565,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,COL,Alpine,2.0,SOFT,3,114.98866666666667,0.0,-0.5,1,3
+2026,2,Chinese Grand Prix,Q,COL,Alpine,3.0,SOFT,2,105.402,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,COL,Alpine,4.0,SOFT,2,104.55850000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,COL,Alpine,5.0,SOFT,2,104.35249999999999,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,1.0,SOFT,2,106.0655,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,2.0,SOFT,5,109.822,1.4442500000000003,0.3,2,6
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,3.0,SOFT,2,107.19,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,4.0,SOFT,2,109.1265,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,5.0,SOFT,2,105.3935,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,GAS,Alpine,6.0,SOFT,2,112.4785,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,1.0,MEDIUM,4,107.96625,3.3333333333333335,0.0,2,5
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,2.0,SOFT,2,110.35300000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,3.0,SOFT,2,105.622,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,4.0,SOFT,2,104.3615,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,5.0,SOFT,2,103.32849999999999,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,6.0,SOFT,2,111.077,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,1.0,MEDIUM,2,107.345,10.0,0.0,7,8
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,2.0,SOFT,2,112.744,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,3.0,SOFT,2,104.4005,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,4.0,SOFT,3,108.745,0.0,0.5,2,4
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,5.0,SOFT,2,104.6305,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HAM,Ferrari,6.0,SOFT,2,111.55850000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HUL,Audi,2.0,SOFT,5,113.51679999999999,0.0,-0.3,1,5
+2026,2,Chinese Grand Prix,Q,HUL,Audi,3.0,SOFT,2,103.9575,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,HUL,Audi,4.0,SOFT,2,107.47800000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,1.0,SOFT,2,105.8415,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,2.0,SOFT,5,106.01680000000002,2.126249999999999,0.3,2,6
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,3.0,SOFT,2,104.1225,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,4.0,SOFT,2,112.89699999999999,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,1.0,SOFT,3,104.47033333333333,0.0,0.5,11,13
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,2.0,SOFT,2,105.7645,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,3.0,SOFT,2,102.55199999999999,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,4.0,SOFT,3,107.65966666666668,0.0,0.5,2,4
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,5.0,SOFT,2,104.44,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LEC,Ferrari,6.0,SOFT,2,110.1065,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,1.0,SOFT,5,109.04740000000001,0.0,0.49999999999999994,2,6
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,2.0,SOFT,2,107.2635,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,3.0,SOFT,2,104.736,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,4.0,SOFT,2,112.4405,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,1.0,SOFT,2,104.2235,10.0,0.0,11,12
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,2.0,SOFT,2,106.2125,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,3.0,SOFT,2,104.836,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,4.0,SOFT,4,106.087,3.3333333333333335,0.0,2,5
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,5.0,SOFT,2,102.9565,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,NOR,McLaren,6.0,SOFT,2,107.435,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,1.0,SOFT,2,104.4545,10.0,0.0,9,10
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,2.0,SOFT,4,110.73375,3.3333333333333335,0.0,2,5
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,3.0,SOFT,2,107.91,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,4.0,SOFT,2,112.60549999999999,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,1.0,SOFT,2,105.88900000000001,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,PER,Cadillac,2.0,SOFT,2,110.634,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,1.0,SOFT,2,107.76050000000001,10.0,0.0,10,11
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,2.0,SOFT,2,109.071,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,3.0,SOFT,2,105.8065,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,4.0,SOFT,4,108.69550000000001,3.3333333333333335,0.39999999999999997,2,5
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,5.0,SOFT,2,104.6755,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,PIA,McLaren,6.0,SOFT,2,112.5995,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,1.0,SOFT,2,112.368,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,2.0,SOFT,2,104.384,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,3.0,SOFT,2,111.777,-10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,RUS,Mercedes,5.0,SOFT,2,112.521,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,SAI,Williams,1.0,SOFT,3,108.69333333333333,0.0,0.5,2,4
+2026,2,Chinese Grand Prix,Q,SAI,Williams,2.0,SOFT,3,121.02833333333332,0.0,-0.5,1,3
+2026,2,Chinese Grand Prix,Q,SAI,Williams,3.0,SOFT,2,108.911,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,1.0,SOFT,2,110.35849999999999,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,2.0,SOFT,3,118.93299999999999,0.0,-0.5,1,3
+2026,2,Chinese Grand Prix,Q,STR,Aston Martin,3.0,SOFT,2,113.1095,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,1.0,MEDIUM,4,108.60825,3.3333333333333335,0.0,2,5
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,2.0,SOFT,2,108.3695,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,3.0,SOFT,2,103.6545,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,4.0,SOFT,2,107.539,10.0,0.0,2,3
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,5.0,SOFT,2,101.1375,10.0,0.0,5,6
+2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,6.0,SOFT,2,108.8595,10.0,0.0,2,3

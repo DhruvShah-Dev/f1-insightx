@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points
+1.0,1,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,2.0,,,,0 days 00:26:12.129000,Finished,8.0
+2.0,2,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,1.0,,,,0 days 00:00:02.745000,Finished,7.0
+3.0,3,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,6.0,,,,0 days 00:00:09.783000,Finished,6.0
+4.0,4,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,5.0,,,,0 days 00:00:10.639000,Finished,5.0
+5.0,5,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,4.0,,,,0 days 00:00:12.620000,Finished,4.0
+6.0,6,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,3.0,,,,0 days 00:00:16.550000,Finished,3.0
+7.0,7,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,7.0,,,,0 days 00:00:17.551000,Finished,2.0
+8.0,8,30,L LAWSON,LAW,Liam Lawson,Racing Bulls,6C98FF,9.0,,,,0 days 00:00:30.233000,Finished,1.0
+9.0,9,6,I HADJAR,HAD,Isack Hadjar,Red Bull Racing,4781D7,8.0,,,,0 days 00:00:30.953000,Finished,0.0
+10.0,10,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,10.0,,,,0 days 00:00:35.110000,Finished,0.0
+11.0,11,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,11.0,,,,0 days 00:00:40.273000,Finished,0.0
+12.0,12,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,14.0,,,,0 days 00:00:41.026000,Finished,0.0
+13.0,13,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,12.0,,,,0 days 00:00:42.499000,Finished,0.0
+14.0,14,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,16.0,,,,0 days 00:00:45.784000,Finished,0.0
+15.0,15,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,13.0,,,,0 days 00:00:46.680000,Finished,0.0
+16.0,16,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,17.0,,,,0 days 00:00:49.810000,Finished,0.0
+17.0,17,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,15.0,,,,0 days 00:00:50.379000,Finished,0.0
+18.0,18,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,22.0,,,,0 days 00:00:50.757000,Finished,0.0
+19.0,19,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,19.0,,,,0 days 00:01:15.117000,Finished,0.0
+20.0,20,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,20.0,,,,0 days 00:01:31.872000,Finished,0.0
+21.0,21,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,21.0,,,,0 days 00:00:22.277000,Lapped,0.0
+22.0,22,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,18.0,,,,0 days 00:00:33.566000,Lapped,0.0

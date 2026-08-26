@@ -13,6 +13,7 @@
         "overview": 1,
         "track_summary": 1,
         "segments": 3,
+        "corner_segments": 12,
         "braking": 2,
         "throttle": 2,
         "straights": 2,

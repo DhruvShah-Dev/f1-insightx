@@ -506,7 +506,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "analytics_segment_comparison",
         "analytics/analytics_segment_comparison.csv",
-        ["session_id", "segment_id", "segment_kind", "segment_confidence", "driver_a", "driver_b", "entry_speed_delta_kph", "apex_speed_delta_kph", "exit_speed_delta_kph", "min_speed_delta_kph", "entry_gear_a", "entry_gear_b", "apex_gear_a", "apex_gear_b", "exit_gear_a", "exit_gear_b", "faster_driver", "confidence"],
+        ["session_id", "segment_id", "segment_kind", "segment_confidence", "driver_a", "driver_b", "entry_speed_delta_kph", "apex_speed_delta_kph", "exit_speed_delta_kph", "min_speed_delta_kph", "entry_speed_kph_a", "entry_speed_kph_b", "apex_speed_kph_a", "apex_speed_kph_b", "exit_speed_kph_a", "exit_speed_kph_b", "min_speed_kph_a", "min_speed_kph_b", "entry_gear_a", "entry_gear_b", "apex_gear_a", "apex_gear_b", "exit_gear_a", "exit_gear_b", "faster_driver", "confidence"],
     ),
     (
         "analytics_braking_comparison",

@@ -25,6 +25,14 @@ CREATE TABLE IF NOT EXISTS analytics_segment_comparison (
   apex_speed_delta_kph DOUBLE PRECISION,
   exit_speed_delta_kph DOUBLE PRECISION,
   min_speed_delta_kph DOUBLE PRECISION,
+  entry_speed_kph_a DOUBLE PRECISION,
+  entry_speed_kph_b DOUBLE PRECISION,
+  apex_speed_kph_a DOUBLE PRECISION,
+  apex_speed_kph_b DOUBLE PRECISION,
+  exit_speed_kph_a DOUBLE PRECISION,
+  exit_speed_kph_b DOUBLE PRECISION,
+  min_speed_kph_a DOUBLE PRECISION,
+  min_speed_kph_b DOUBLE PRECISION,
   entry_gear_a DOUBLE PRECISION,
   entry_gear_b DOUBLE PRECISION,
   apex_gear_a DOUBLE PRECISION,
@@ -34,6 +42,16 @@ CREATE TABLE IF NOT EXISTS analytics_segment_comparison (
   faster_driver TEXT,
   confidence DOUBLE PRECISION
 );
+
+ALTER TABLE analytics_segment_comparison
+  ADD COLUMN IF NOT EXISTS entry_speed_kph_a DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS entry_speed_kph_b DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS apex_speed_kph_a DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS apex_speed_kph_b DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS exit_speed_kph_a DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS exit_speed_kph_b DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS min_speed_kph_a DOUBLE PRECISION,
+  ADD COLUMN IF NOT EXISTS min_speed_kph_b DOUBLE PRECISION;
 
 CREATE TABLE IF NOT EXISTS analytics_braking_comparison (
   id TEXT GENERATED ALWAYS AS (session_id || '|' || segment_id || '|' || driver_a || '|' || driver_b) STORED PRIMARY KEY,

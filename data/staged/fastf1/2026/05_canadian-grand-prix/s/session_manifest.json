@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 5,
+  "event_name": "Canadian Grand Prix",
+  "event_format": "sprint_qualifying",
+  "session_code": "S",
+  "session_name": "Sprint",
+  "status": "complete",
+  "started_at": "2026-08-25T17:18:31Z",
+  "completed_at": "2026-08-25T17:19:05Z",
+  "source": "fastf1_staged_session_v2"
+}

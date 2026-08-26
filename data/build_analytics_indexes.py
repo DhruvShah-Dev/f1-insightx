@@ -105,8 +105,9 @@ def main() -> None:
     session_index = read_csv("session_index")
     driver_comparison = read_csv("driver_comparison")
     track_summary = read_csv("track_summary")
+    full_segment = read_csv("segment_comparison")
     segment = top_by_pair(
-        read_csv("segment_comparison"),
+        full_segment,
         lambda frame: frame[["entry_speed_delta_kph", "apex_speed_delta_kph", "exit_speed_delta_kph"]].abs().max(axis=1),
     )
     braking = top_by_pair(
@@ -129,6 +130,7 @@ def main() -> None:
     overview_by_session = group_frame_by_session(driver_comparison)
     track_by_session = group_records_by_session(track_summary)
     segment_by_session = group_records_by_session(segment)
+    corner_by_session = group_records_by_session(full_segment)
     braking_by_session = group_records_by_session(braking)
     throttle_by_session = group_records_by_session(throttle)
     straight_by_session = group_records_by_session(straight)
@@ -143,6 +145,7 @@ def main() -> None:
     total_rows = {
         "overview": 0,
         "segments": 0,
+        "corner_segments": 0,
         "braking": 0,
         "throttle": 0,
         "straights": 0,
@@ -156,6 +159,7 @@ def main() -> None:
         overview_rows = overview_by_session.get(session_id, pd.DataFrame())
         overview_records = records(overview_rows)
         segment_records = segment_by_session.get(session_id, [])
+        corner_records = corner_by_session.get(session_id, [])
         braking_records = braking_by_session.get(session_id, [])
         throttle_records = throttle_by_session.get(session_id, [])
         straight_records = straight_by_session.get(session_id, [])
@@ -169,6 +173,7 @@ def main() -> None:
             "overview": overview_records,
             "track_summary": track_records,
             "segments": segment_records,
+            "corner_segments": corner_records,
             "braking": braking_records,
             "throttle": throttle_records,
             "straights": straight_records,
@@ -181,6 +186,7 @@ def main() -> None:
         counts = {
             "overview": int(len(overview_records)),
             "segments": int(len(segment_records)),
+            "corner_segments": int(len(corner_records)),
             "braking": int(len(braking_records)),
             "throttle": int(len(throttle_records)),
             "straights": int(len(straight_records)),

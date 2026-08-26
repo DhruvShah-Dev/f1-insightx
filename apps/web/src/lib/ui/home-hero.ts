@@ -1,5 +1,18 @@
 import { getCircuitAsset } from "@/lib/ui/asset-manifest";
-import { formatDateLabel, formatDateTimeLabel } from "@/lib/ui/format-date";
+
+const RACE_DATE_FORMAT = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const RACE_TIME_FORMAT = new Intl.DateTimeFormat("en-GB", {
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+  timeZone: "UTC",
+});
 
 export function formatRaceDateUtc(value: string | null | undefined) {
   if (!value) {
@@ -11,7 +24,7 @@ export function formatRaceDateUtc(value: string | null | undefined) {
     return "Schedule pending";
   }
 
-  return formatDateTimeLabel(date, "Schedule pending");
+  return `${RACE_DATE_FORMAT.format(date)} - ${RACE_TIME_FORMAT.format(date)} UTC`;
 }
 
 export function formatCountdown(value: string | null | undefined, now = Date.now()) {

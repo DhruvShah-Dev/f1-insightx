@@ -175,6 +175,40 @@ test("Analytics comparison detail modes expose capped selectable segment rows", 
   assert.ok(straights.straightHighlights.every((row) => row.segmentId));
 });
 
+test("Analytics comparison exposes full ordered corner telemetry with gears", async () => {
+  const comparison = await getAnalyticsComparison("2026_04_R_Miami Grand Prix", "GAS", "OCO", "all");
+
+  assert.ok(comparison);
+  assert.equal(comparison.segmentHighlights.length, 3);
+  assert.equal(comparison.cornerTelemetry.length, 12);
+  assert.ok(comparison.cornerTelemetry.length > ANALYTICS_DETAIL_ROW_CAP);
+  assert.deepEqual(comparison.cornerTelemetry.map((corner) => corner.cornerNumber), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+
+  const firstCorner = comparison.cornerTelemetry[0];
+  assert.equal(firstCorner.label, "T1");
+  assert.equal(firstCorner.driverA.code, "GAS");
+  assert.equal(firstCorner.driverB.code, "OCO");
+  assert.equal(firstCorner.entrySpeedDeltaKph, 2.4);
+  assert.equal(firstCorner.driverA.entrySpeedKph, 232.4);
+  assert.equal(firstCorner.driverB.entrySpeedKph, 230);
+  assert.equal(firstCorner.driverA.apexGear, 3);
+  assert.equal(firstCorner.driverB.exitGear, 4);
+});
+
+test("Analytics corner telemetry flips deltas and driver fields for reversed order", async () => {
+  const comparison = await getAnalyticsComparison("2026_04_R_Miami Grand Prix", "OCO", "GAS", "all");
+
+  assert.ok(comparison);
+  const firstCorner = comparison.cornerTelemetry[0];
+  assert.equal(firstCorner.driverA.code, "OCO");
+  assert.equal(firstCorner.driverB.code, "GAS");
+  assert.equal(firstCorner.entrySpeedDeltaKph, -2.4);
+  assert.equal(firstCorner.driverA.entrySpeedKph, 230);
+  assert.equal(firstCorner.driverB.entrySpeedKph, 232.4);
+  assert.equal(firstCorner.driverA.entryGear, 6);
+  assert.equal(firstCorner.fasterDriver, "GAS");
+});
+
 test("Analytics comparison returns unavailable for missing indexed session", async () => {
   const comparison = await getAnalyticsComparison("missing-session", "AAA", "BBB", "segments");
 

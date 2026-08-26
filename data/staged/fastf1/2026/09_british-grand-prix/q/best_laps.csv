@@ -1,0 +1,23 @@
+Driver,LapNumber,LapTime,Compound,TyreLife,Team
+ALB,7.0,0 days 00:01:30.638000,SOFT,2.0,Williams
+ALO,5.0,0 days 00:01:33.025000,SOFT,3.0,Aston Martin
+ANT,18.0,0 days 00:01:28.111000,SOFT,2.0,Mercedes
+BEA,14.0,0 days 00:01:30.501000,SOFT,2.0,Haas F1 Team
+BOR,9.0,0 days 00:01:29.461000,SOFT,2.0,Audi
+BOT,7.0,0 days 00:01:31.227000,SOFT,2.0,Cadillac
+COL,2.0,0 days 00:01:31.321000,SOFT,2.0,Alpine
+GAS,11.0,0 days 00:01:30.063000,SOFT,2.0,Alpine
+HAD,17.0,0 days 00:01:28.746000,SOFT,2.0,Red Bull Racing
+HAM,16.0,0 days 00:01:28.458000,SOFT,2.0,Ferrari
+HUL,8.0,0 days 00:01:29.539000,SOFT,2.0,Audi
+LAW,8.0,0 days 00:01:29.300000,SOFT,2.0,Racing Bulls
+LEC,17.0,0 days 00:01:28.286000,SOFT,2.0,Ferrari
+LIN,16.0,0 days 00:01:29.305000,SOFT,2.0,Racing Bulls
+NOR,16.0,0 days 00:01:28.877000,SOFT,2.0,McLaren
+OCO,8.0,0 days 00:01:30.680000,SOFT,2.0,Haas F1 Team
+PER,8.0,0 days 00:01:31.451000,SOFT,2.0,Cadillac
+PIA,17.0,0 days 00:01:29.032000,SOFT,2.0,McLaren
+RUS,13.0,0 days 00:01:28.481000,SOFT,2.0,Mercedes
+SAI,8.0,0 days 00:01:30.562000,SOFT,2.0,Williams
+STR,8.0,0 days 00:01:32.863000,SOFT,2.0,Aston Martin
+VER,17.0,0 days 00:01:28.893000,SOFT,2.0,Red Bull Racing

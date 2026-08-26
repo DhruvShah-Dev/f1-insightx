@@ -1,0 +1,82 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026,7,Barcelona Grand Prix,Q,ALB,Williams,1.0,SOFT,2,93.3555,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,ALB,Williams,2.0,SOFT,2,86.7295,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,ALB,Williams,3.0,SOFT,1,77.424,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,ALO,Aston Martin,1.0,SOFT,2,94.40950000000001,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,ALO,Aston Martin,2.0,SOFT,1,92.041,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,ALO,Aston Martin,3.0,SOFT,2,88.62049999999999,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,1.0,SOFT,2,112.2955,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,2.0,SOFT,2,86.47800000000001,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,4.0,SOFT,2,84.6285,10.0,0.0,4,5
+2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,5.0,SOFT,3,107.31566666666667,0.0,-0.5,1,3
+2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,1.0,MEDIUM,2,93.616,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,2.0,SOFT,2,91.257,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,3.0,SOFT,2,93.4575,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,4.0,SOFT,2,98.473,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,5.0,SOFT,2,93.96000000000001,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BOR,Audi,1.0,SOFT,2,92.8235,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BOR,Audi,2.0,SOFT,2,90.6775,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BOR,Audi,3.0,SOFT,1,76.001,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,BOT,Cadillac,1.0,SOFT,2,87.775,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BOT,Cadillac,2.0,SOFT,2,88.82499999999999,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,BOT,Cadillac,3.0,SOFT,2,93.7285,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,COL,Alpine,1.0,SOFT,2,93.6385,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,COL,Alpine,2.0,SOFT,2,93.999,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,COL,Alpine,3.0,SOFT,2,96.67150000000001,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,COL,Alpine,4.0,SOFT,2,93.2935,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,GAS,Alpine,1.0,SOFT,2,93.3985,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,GAS,Alpine,2.0,SOFT,2,92.533,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,GAS,Alpine,3.0,SOFT,2,113.388,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,GAS,Alpine,4.0,SOFT,2,91.9385,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,1.0,SOFT,2,89.1995,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,2.0,SOFT,2,112.4325,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,4.0,SOFT,2,82.8615,10.0,0.0,4,5
+2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,5.0,SOFT,1,75.077,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,1.0,SOFT,2,94.281,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,2.0,SOFT,2,86.73,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,4.0,SOFT,2,82.5695,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,5.0,SOFT,2,92.61449999999999,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HUL,Audi,1.0,SOFT,2,107.90899999999999,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HUL,Audi,2.0,SOFT,2,91.3435,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HUL,Audi,3.0,SOFT,2,87.1115,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,HUL,Audi,4.0,SOFT,2,88.8775,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,HUL,Audi,6.0,SOFT,1,76.657,0.0,0.0,5,5
+2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,1.0,SOFT,2,87.34100000000001,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,2.0,SOFT,2,87.571,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,3.0,SOFT,2,87.768,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,5.0,SOFT,1,76.542,0.0,0.0,5,5
+2026,7,Barcelona Grand Prix,Q,LEC,Ferrari,1.0,SOFT,2,91.836,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,LEC,Ferrari,2.0,SOFT,2,87.44200000000001,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,LIN,Racing Bulls,1.0,SOFT,2,87.256,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,LIN,Racing Bulls,2.0,SOFT,2,90.0075,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,LIN,Racing Bulls,3.0,SOFT,1,138.746,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,NOR,McLaren,1.0,SOFT,2,90.1825,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,NOR,McLaren,2.0,SOFT,2,85.536,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,NOR,McLaren,3.0,SOFT,2,88.5545,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,NOR,McLaren,5.0,SOFT,1,75.001,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,OCO,Haas F1 Team,1.0,MEDIUM,2,111.21799999999999,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,OCO,Haas F1 Team,2.0,SOFT,2,88.793,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,OCO,Haas F1 Team,3.0,SOFT,2,92.287,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,PER,Cadillac,1.0,SOFT,2,91.449,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,PER,Cadillac,2.0,SOFT,2,91.96350000000001,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,PIA,McLaren,1.0,SOFT,2,91.0265,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,PIA,McLaren,2.0,SOFT,2,84.902,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,PIA,McLaren,3.0,SOFT,2,89.9675,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,PIA,McLaren,4.0,SOFT,1,75.176,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,PIA,McLaren,5.0,SOFT,1,75.09,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,1.0,SOFT,2,95.291,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,2.0,SOFT,2,91.523,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,4.0,SOFT,2,88.36349999999999,10.0,0.0,3,4
+2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,5.0,SOFT,3,104.82333333333334,0.0,-0.5,1,3
+2026,7,Barcelona Grand Prix,Q,SAI,Williams,1.0,SOFT,2,92.6305,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,SAI,Williams,2.0,SOFT,2,105.52250000000001,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,SAI,Williams,3.0,SOFT,2,90.2635,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,SAI,Williams,4.0,SOFT,2,94.479,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,SAI,Williams,5.0,SOFT,2,93.321,10.0,0.0,5,6
+2026,7,Barcelona Grand Prix,Q,STR,Aston Martin,1.0,SOFT,2,88.0655,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,STR,Aston Martin,2.0,SOFT,1,100.342,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,STR,Aston Martin,3.0,SOFT,2,88.845,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,1.0,SOFT,2,94.1685,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,2.0,SOFT,2,92.887,10.0,0.0,2,3
+2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,3.0,SOFT,1,75.328,0.0,0.0,2,2
+2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,4.0,SOFT,1,75.021,0.0,0.0,2,2

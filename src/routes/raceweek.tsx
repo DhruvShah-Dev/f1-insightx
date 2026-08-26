@@ -6,9 +6,17 @@ import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
 import { CircuitMap } from "@/components/circuit-map";
 import { countryTheme } from "@/data/country-theme";
 import { team } from "@/data/teams";
-import { cornerProfileForCircuit, cornerSummaryForCircuit, cornersForCircuit } from "@/data/circuit-corners";
+import {
+  cornerProfileForCircuit,
+  cornerSummaryForCircuit,
+  cornersForCircuit,
+} from "@/data/circuit-corners";
 import { fmtDate, fmtDateTime, fmtDelta, fmtLapS, fmtNum, pct } from "@/lib/format";
-import { getRaceWeek, type RaceWeekDriver, type RaceWeekQualifyingPrediction } from "@/lib/f1.functions";
+import {
+  getRaceWeek,
+  type RaceWeekDriver,
+  type RaceWeekQualifyingPrediction,
+} from "@/lib/f1.functions";
 
 const raceWeekQuery = queryOptions({
   queryKey: ["race-week"],
@@ -59,7 +67,6 @@ export const Route = createFileRoute("/raceweek")({
 
 function RaceWeek() {
   const { data } = useSuspenseQuery(raceWeekQuery);
-  const [showSprintQAll, setShowSprintQAll] = useState(false);
   const [showQualiAll, setShowQualiAll] = useState(false);
   const [showRaceAll, setShowRaceAll] = useState(false);
 
@@ -82,14 +89,11 @@ function RaceWeek() {
   const circuitCode = data.circuit.id.toUpperCase().slice(0, 3);
   const qualiPredictions: RaceWeekQualifyingPrediction[] =
     data.qualifyingPredictions.length > 0
-      ? data.qualifyingPredictions
-          .slice()
-          .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
+      ? data.qualifyingPredictions.slice().sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
       : heuristicQualifyingPredictions(data.drivers);
   const racePredictions: RacePrediction[] = data.projections
     .slice()
     .sort((a, b) => (a.projected ?? 99) - (b.projected ?? 99));
-  const sprintRows = showSprintQAll ? qualiPredictions : qualiPredictions.slice(0, 5);
   const qualiRows = showQualiAll ? qualiPredictions : qualiPredictions.slice(0, 5);
   const raceRows = showRaceAll ? racePredictions : racePredictions.slice(0, 5);
 
@@ -117,7 +121,6 @@ function RaceWeek() {
               {data.circuit.name}
               {data.circuit.location ? ` - ${data.circuit.location}` : ""}
               {data.circuit.country ? `, ${data.circuit.country}` : ""}
-              {data.sprintWeekend ? " - Sprint weekend" : ""}
             </p>
             {data.officialName ? (
               <p className="mt-2 max-w-xl text-sm text-muted-foreground">{data.officialName}</p>
@@ -146,8 +149,8 @@ function RaceWeek() {
               />
               <Stat
                 label="Sessions"
-                value={data.sprintWeekend ? "Sprint" : "Standard"}
-                note={data.sprintWeekend ? "Sprint Q + sprint + Q" : "Practice + Q + race"}
+                value="Standard"
+                note="Practice + Q + race"
               />
               {data.circuit.lengthKm != null ? (
                 <Stat label="Lap" value={fmtNum(data.circuit.lengthKm, 3)} unit="km" />
@@ -167,10 +170,30 @@ function RaceWeek() {
       <section className="mt-12">
         <SectionHeading kicker="Forecast" title="Weather forecast" />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <ForecastTile label="Rain" value={w?.rainProb == null ? "TBC" : `${Math.round(w.rainProb * 100)}%`} note="Race window" />
-          <ForecastTile label="Track temp" value={w?.trackTempC == null ? "TBC" : `${fmtNum(w.trackTempC, 1)} C`} note={w?.trackTempVolatility == null ? "Mean estimate" : `+/-${fmtNum(w.trackTempVolatility, 1)} swing`} />
-          <ForecastTile label="Wind" value={w?.windMps == null ? "TBC" : `${fmtNum(w.windMps, 1)} m/s`} note="Average speed" />
-          <ForecastTile label="Weather risk" value={w?.riskIndex == null ? "TBC" : fmtNum(w.riskIndex, 2)} note="Model index" />
+          <ForecastTile
+            label="Rain"
+            value={w?.rainProb == null ? "TBC" : `${Math.round(w.rainProb * 100)}%`}
+            note="Race window"
+          />
+          <ForecastTile
+            label="Track temp"
+            value={w?.trackTempC == null ? "TBC" : `${fmtNum(w.trackTempC, 1)} C`}
+            note={
+              w?.trackTempVolatility == null
+                ? "Mean estimate"
+                : `+/-${fmtNum(w.trackTempVolatility, 1)} swing`
+            }
+          />
+          <ForecastTile
+            label="Wind"
+            value={w?.windMps == null ? "TBC" : `${fmtNum(w.windMps, 1)} m/s`}
+            note="Average speed"
+          />
+          <ForecastTile
+            label="Weather risk"
+            value={w?.riskIndex == null ? "TBC" : fmtNum(w.riskIndex, 2)}
+            note="Model index"
+          />
         </div>
       </section>
 
@@ -189,16 +212,23 @@ function RaceWeek() {
           <div className="border border-border bg-card/40 p-4">
             <p className="label-xs">Named turns</p>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
-              {corners.length ? corners.map((corner) => (
-                <div key={corner.number} className="flex items-center gap-2 border-b border-border/60 pb-2 text-xs">
-                  <span className="num grid size-6 place-items-center bg-primary text-[10px] font-black text-primary-foreground">
-                    {corner.number}
-                  </span>
-                  <span className="font-bold uppercase">{corner.name}</span>
-                  <span className="label-xs ml-auto">S{corner.sector}</span>
-                </div>
-              )) : (
-                <p className="text-xs text-muted-foreground">Corner labels are not available for this circuit yet.</p>
+              {corners.length ? (
+                corners.map((corner) => (
+                  <div
+                    key={corner.number}
+                    className="flex items-center gap-2 border-b border-border/60 pb-2 text-xs"
+                  >
+                    <span className="num grid size-6 place-items-center bg-primary text-[10px] font-black text-primary-foreground">
+                      {corner.number}
+                    </span>
+                    <span className="font-bold uppercase">{corner.name}</span>
+                    <span className="label-xs ml-auto">S{corner.sector}</span>
+                  </div>
+                ))
+              ) : (
+                <p className="text-xs text-muted-foreground">
+                  Corner labels are not available for this circuit yet.
+                </p>
               )}
             </div>
           </div>
@@ -206,17 +236,8 @@ function RaceWeek() {
       </section>
 
       <section className="mt-12">
-        <SectionHeading kicker="Predictions" title="Sprint Q and Q" />
-        <div className="grid gap-4 lg:grid-cols-2">
-          <QualiPredictionPanel
-            title="Sprint Q"
-            rows={sprintRows}
-            expanded={showSprintQAll}
-            disabled={!data.sprintWeekend}
-            onToggle={() => setShowSprintQAll((value) => !value)}
-            total={qualiPredictions.length}
-            circuitCode={circuitCode}
-          />
+        <SectionHeading kicker="Predictions" title="Qualifying" />
+        <div className="grid gap-4">
           <QualiPredictionPanel
             title="Qualifying"
             rows={qualiRows}
@@ -387,9 +408,7 @@ function QualiPredictionPanel({
           <p className="label-xs">{title}</p>
           <h3 className="text-lg font-black uppercase italic">Top order</h3>
         </div>
-        {disabled ? (
-          <span className="label-xs">Not scheduled</span>
-        ) : null}
+        {disabled ? <span className="label-xs">Not scheduled</span> : null}
       </div>
       <PredictionTable
         rows={rows.map((row) => ({
@@ -400,7 +419,8 @@ function QualiPredictionPanel({
           position: row.rank,
           detail: row.timeS == null ? "Time TBC" : fmtLapS(row.timeS),
           secondary: row.gapS == null ? "Gap TBC" : fmtDelta(row.gapS),
-          metric: row.sourceUsefulnessRank == null ? "Raw blend" : `Source #${row.sourceUsefulnessRank}`,
+          metric:
+            row.sourceUsefulnessRank == null ? "Raw blend" : `Source #${row.sourceUsefulnessRank}`,
           note: [
             row.recentGapS == null ? null : `Recent ${fmtDelta(row.recentGapS)}`,
             row.sameCircuitGapS == null ? null : `${circuitCode} ${fmtDelta(row.sameCircuitGapS)}`,
@@ -533,9 +553,7 @@ function PredictionTable({
             const t = team(row.teamName);
             return (
               <tr key={row.key} className="pw-ticker border-b border-border/60 hover:bg-accent/30">
-                <td className="num px-2 py-2 text-xs font-black">
-                  P{row.position ?? index + 1}
-                </td>
+                <td className="num px-2 py-2 text-xs font-black">P{row.position ?? index + 1}</td>
                 <td className="px-2 py-2 text-xs font-bold uppercase">
                   <span
                     className="mr-2 inline-block h-3 w-0.5 align-middle"

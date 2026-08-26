@@ -1234,7 +1234,9 @@ export type SwingEvent = {
 
 export type CornerComparison = {
   sessionId: string;
+  session: string;
   segmentId: string;
+  cornerNumber: number | null;
   label: string;
   kind: string;
   driverA: string;
@@ -1244,6 +1246,14 @@ export type CornerComparison = {
   apexDeltaKph: number | null;
   exitDeltaKph: number | null;
   minDeltaKph: number | null;
+  entrySpeedA: number | null;
+  entrySpeedB: number | null;
+  apexSpeedA: number | null;
+  apexSpeedB: number | null;
+  exitSpeedA: number | null;
+  exitSpeedB: number | null;
+  minSpeedA: number | null;
+  minSpeedB: number | null;
   entryGearA: number | null;
   entryGearB: number | null;
   apexGearA: number | null;
@@ -1293,17 +1303,22 @@ async function fetchCornerComparisons(
   try {
     const { data: sessions, error: sessionError } = await sb
       .from("analytics_session_index")
-      .select("session_id")
+      .select("session_id, session")
       .eq("season", season)
       .eq("round", round)
-      .eq("session", "R")
-      .limit(5);
+      .in("session", ["Q", "SQ", "S", "R"])
+      .limit(12);
     if (sessionError) return [];
 
     const sessionIds = ((sessions ?? []) as Row[])
       .map((r) => String(r["session_id"] ?? ""))
       .filter(Boolean);
     if (!sessionIds.length) return [];
+    const sessionById = new Map(
+      ((sessions ?? []) as Row[])
+        .map((r) => [String(r["session_id"] ?? ""), String(r["session"] ?? "")])
+        .filter(([sessionId, sessionName]) => sessionId && sessionName),
+    );
 
     const left = codeA < codeB ? codeA : codeB;
     const right = codeA < codeB ? codeB : codeA;
@@ -1317,21 +1332,21 @@ async function fetchCornerComparisons(
         .eq("driver_a", left)
         .eq("driver_b", right)
         .order("segment_id", { ascending: true })
-        .limit(80),
+        .limit(240),
       sb
         .from("analytics_braking_comparison")
         .select("*")
         .in("session_id", sessionIds)
         .eq("driver_a", left)
         .eq("driver_b", right)
-        .limit(80),
+        .limit(240),
       sb
         .from("analytics_throttle_comparison")
         .select("*")
         .in("session_id", sessionIds)
         .eq("driver_a", left)
         .eq("driver_b", right)
-        .limit(80),
+        .limit(240),
     ]);
     if (segments.error) return [];
 
@@ -1344,9 +1359,15 @@ async function fetchCornerComparisons(
     };
     const gear = (row: Row, side: "a" | "b", key: string) =>
       num(row[`${key}_${invert ? (side === "a" ? "b" : "a") : side}`]);
+    const absolute = (row: Row, side: "a" | "b", key: string) =>
+      num(row[`${key}_${invert ? (side === "a" ? "b" : "a") : side}`]);
+    const cornerNumberFromSegment = (segmentId: string) => {
+      const match = segmentId.match(/(?:corner|segment|turn)[_-]?(\d+)/i) ?? segmentId.match(/(\d+)(?!.*\d)/);
+      return match ? Number.parseInt(match[1], 10) : null;
+    };
     const labelFromSegment = (segmentId: string) => {
-      const tail = segmentId.match(/(\d+)$/)?.[1];
-      return tail ? `Segment ${Number(tail)}` : segmentId.replaceAll("_", " ");
+      const cornerNumber = cornerNumberFromSegment(segmentId);
+      return cornerNumber == null ? segmentId.replaceAll("_", " ") : `T${cornerNumber}`;
     };
 
     return ((segments.data ?? []) as Row[]).map((r) => {
@@ -1354,10 +1375,14 @@ async function fetchCornerComparisons(
       const bRow = brakingByKey.get(key);
       const tRow = throttleByKey.get(key);
       const faster = String(r["faster_driver"] ?? "");
+      const segmentId = String(r["segment_id"] ?? "");
+      const sessionId = String(r["session_id"] ?? "");
       return {
-        sessionId: String(r["session_id"] ?? ""),
-        segmentId: String(r["segment_id"] ?? ""),
-        label: labelFromSegment(String(r["segment_id"] ?? "")),
+        sessionId,
+        session: sessionById.get(sessionId) ?? "",
+        segmentId,
+        cornerNumber: cornerNumberFromSegment(segmentId),
+        label: labelFromSegment(segmentId),
         kind: String(r["segment_kind"] ?? "corner"),
         driverA: codeA,
         driverB: codeB,
@@ -1366,6 +1391,14 @@ async function fetchCornerComparisons(
         apexDeltaKph: signed(r["apex_speed_delta_kph"]),
         exitDeltaKph: signed(r["exit_speed_delta_kph"]),
         minDeltaKph: signed(r["min_speed_delta_kph"]),
+        entrySpeedA: absolute(r, "a", "entry_speed_kph"),
+        entrySpeedB: absolute(r, "b", "entry_speed_kph"),
+        apexSpeedA: absolute(r, "a", "apex_speed_kph"),
+        apexSpeedB: absolute(r, "b", "apex_speed_kph"),
+        exitSpeedA: absolute(r, "a", "exit_speed_kph"),
+        exitSpeedB: absolute(r, "b", "exit_speed_kph"),
+        minSpeedA: absolute(r, "a", "min_speed_kph"),
+        minSpeedB: absolute(r, "b", "min_speed_kph"),
         entryGearA: gear(r, "a", "entry_gear"),
         entryGearB: gear(r, "b", "entry_gear"),
         apexGearA: gear(r, "a", "apex_gear"),

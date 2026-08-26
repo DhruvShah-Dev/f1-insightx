@@ -28,3 +28,14 @@ test("Analytics compare endpoint rejects invalid modes before loading data", asy
   assert.equal(payload.ok, false);
   assert.equal(payload.error.code, "validation_error");
 });
+
+test("Analytics compare endpoint includes full corner telemetry for all mode", async () => {
+  const response = await GET(new Request("https://f1-insightx.test/api/analytics/compare?sessionId=2026_04_R_Miami%20Grand%20Prix&driverA=GAS&driverB=OCO&mode=all"));
+  const payload = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(payload.ok, true);
+  assert.equal(payload.data.comparison.cornerTelemetry.length, 12);
+  assert.equal(payload.data.comparison.cornerTelemetry[0].cornerNumber, 1);
+  assert.equal(payload.data.comparison.cornerTelemetry[0].driverA.apexGear, 3);
+});

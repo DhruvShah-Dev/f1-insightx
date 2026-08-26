@@ -1,0 +1,310 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,9,British Grand Prix,Q,ANT,Mercedes,1.0,1.0,SOFT,4.0,,,43.746,33.463,202.0,214.0,242.0,192.0,1,False,False,False,False,2026-07-04 15:04:33.467,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,2.0,1.0,SOFT,5.0,89.719,28.836,36.103,24.78,297.0,264.0,236.0,300.0,12,False,True,True,False,2026-07-04 15:06:29.149,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,3.0,1.0,SOFT,6.0,114.232,37.174,48.537,28.521,255.0,232.0,,284.0,1,False,False,False,False,2026-07-04 15:07:58.868,,25.2,42.2,48.1,False,3.6,244.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,4.0,2.0,SOFT,8.0,,,41.007,27.035,254.0,242.0,246.0,285.0,1,False,False,False,False,2026-07-04 15:09:53.100,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,5.0,2.0,SOFT,9.0,90.261,28.857,36.484,24.92,296.0,263.0,230.0,299.0,1,False,False,True,False,2026-07-04 15:14:19.697,,25.1,39.1,49.0,False,2.8,264.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,6.0,2.0,SOFT,10.0,109.689,35.142,44.525,30.022,255.0,233.0,,260.0,12,False,False,False,False,2026-07-04 15:15:49.958,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,7.0,3.0,SOFT,1.0,,,41.831,35.344,210.0,239.0,242.0,257.0,12,True,False,False,False,2026-07-04 15:17:39.647,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,8.0,3.0,SOFT,2.0,116.749,37.484,51.124,28.141,112.0,217.0,245.0,280.0,1,True,True,True,False,2026-07-04 15:37:22.556,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,9.0,3.0,SOFT,3.0,89.043,28.692,35.864,24.487,296.0,266.0,245.0,300.0,1,True,True,True,False,2026-07-04 15:39:19.305,,25.2,42.6,47.4,False,0.3,43.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,10.0,3.0,SOFT,4.0,101.46,32.843,41.288,27.329,266.0,225.0,,280.0,1,True,False,False,False,2026-07-04 15:40:48.348,,25.2,42.5,48.0,False,1.6,295.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,11.0,4.0,SOFT,1.0,,,43.13,32.118,250.0,183.0,250.0,232.0,1,True,False,False,False,2026-07-04 15:42:29.808,,25.2,42.5,48.1,False,3.3,270.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,12.0,4.0,SOFT,2.0,88.493,28.292,35.731,24.47,297.0,267.0,248.0,299.0,1,True,True,True,False,2026-07-04 15:46:44.979,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,13.0,4.0,SOFT,3.0,110.888,36.525,43.221,31.142,247.0,219.0,,270.0,1,True,False,False,False,2026-07-04 15:48:13.472,,25.2,41.3,47.5,False,2.5,10.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,14.0,5.0,SOFT,1.0,,,41.673,27.195,241.0,234.0,249.0,269.0,1,True,False,False,False,2026-07-04 15:50:04.360,,25.2,41.6,47.4,False,1.0,31.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,15.0,5.0,SOFT,2.0,88.385,28.398,35.547,24.44,297.0,267.0,249.0,300.0,1,True,True,True,False,2026-07-04 15:59:06.989,,25.3,41.9,46.8,False,1.9,111.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,16.0,5.0,SOFT,3.0,100.988,33.679,40.495,26.814,271.0,243.0,,286.0,1,True,False,False,False,2026-07-04 16:00:35.374,,25.3,41.2,47.6,False,4.7,239.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,17.0,6.0,SOFT,1.0,,,42.198,27.12,246.0,235.0,253.0,255.0,1,True,False,False,False,2026-07-04 16:02:16.362,,25.2,41.6,47.5,False,1.9,106.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,18.0,6.0,SOFT,2.0,88.111,28.348,35.521,24.242,295.0,268.0,251.0,302.0,1,True,True,True,False,2026-07-04 16:06:28.761,,25.2,40.5,47.9,False,1.0,194.0
+2026,9,British Grand Prix,Q,ANT,Mercedes,19.0,6.0,SOFT,3.0,,36.846,49.336,,217.0,177.0,,174.0,1,True,False,False,False,2026-07-04 16:07:56.872,,25.1,39.2,48.3,False,3.4,274.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,1.0,1.0,SOFT,4.0,,,45.469,28.494,249.0,216.0,240.0,277.0,1,False,False,False,False,2026-07-04 15:01:22.327,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,2.0,1.0,SOFT,5.0,89.534,28.818,36.169,24.547,294.0,267.0,235.0,307.0,1,False,True,True,False,2026-07-04 15:03:24.003,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,3.0,1.0,SOFT,6.0,122.816,39.827,48.753,34.236,186.0,207.0,205.0,115.0,1,False,False,True,False,2026-07-04 15:04:53.537,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,4.0,1.0,SOFT,7.0,114.377,35.689,47.593,31.095,221.0,212.0,240.0,212.0,12,False,False,True,False,2026-07-04 15:06:56.353,,25.2,43.9,47.4,False,1.4,230.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,5.0,1.0,SOFT,8.0,89.673,28.843,36.187,24.643,295.0,263.0,237.0,306.0,1,False,False,True,False,2026-07-04 15:08:50.730,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,6.0,1.0,SOFT,9.0,103.602,32.868,42.824,27.91,248.0,237.0,,271.0,1,False,False,False,False,2026-07-04 15:10:20.403,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,7.0,2.0,SOFT,1.0,,,44.674,33.654,288.0,223.0,243.0,141.0,12,True,False,False,False,2026-07-04 15:12:04.005,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,8.0,2.0,SOFT,2.0,89.069,28.64,35.969,24.46,293.0,264.0,238.0,305.0,1,True,True,True,False,2026-07-04 15:36:27.610,,25.1,42.1,48.5,False,1.1,247.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,9.0,2.0,SOFT,3.0,108.183,35.923,43.09,29.17,260.0,234.0,,250.0,1,True,False,False,False,2026-07-04 15:37:56.679,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,10.0,3.0,SOFT,1.0,,,44.631,28.892,299.0,238.0,245.0,281.0,1,True,False,False,False,2026-07-04 15:39:44.862,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,11.0,3.0,SOFT,2.0,88.626,28.452,35.685,24.489,291.0,267.0,237.0,302.0,1,True,True,True,False,2026-07-04 15:45:49.503,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,12.0,3.0,SOFT,3.0,111.215,34.125,44.492,32.598,216.0,228.0,,221.0,1,True,False,False,False,2026-07-04 15:47:18.129,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,13.0,4.0,SOFT,1.0,,,42.94,29.822,292.0,198.0,245.0,280.0,1,True,False,False,False,2026-07-04 15:49:09.344,,25.1,40.4,47.2,False,1.5,284.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,14.0,4.0,SOFT,2.0,88.62,28.325,35.828,24.467,295.0,263.0,244.0,299.0,1,True,True,True,False,2026-07-04 15:58:42.599,,25.3,41.9,46.8,False,1.9,111.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,15.0,4.0,SOFT,3.0,105.982,33.843,43.258,28.881,252.0,234.0,,238.0,1,True,False,False,False,2026-07-04 16:00:11.219,,25.3,41.7,47.6,False,4.9,243.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,16.0,5.0,SOFT,1.0,,,42.425,28.815,288.0,225.0,245.0,223.0,1,True,False,False,False,2026-07-04 16:01:57.201,,25.2,41.6,47.5,False,1.9,106.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,17.0,5.0,SOFT,2.0,88.286,28.292,35.614,24.38,288.0,264.0,240.0,300.0,1,True,True,True,False,2026-07-04 16:07:29.471,,25.1,39.7,48.3,False,1.6,87.0
+2026,9,British Grand Prix,Q,LEC,Ferrari,18.0,5.0,SOFT,3.0,,37.592,46.233,,219.0,211.0,,188.0,1,True,False,False,False,2026-07-04 16:08:57.757,,25.0,39.4,48.7,False,0.9,276.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,1.0,1.0,SOFT,4.0,,,46.987,30.318,281.0,233.0,239.0,274.0,1,False,False,False,False,2026-07-04 15:01:31.014,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,2.0,1.0,SOFT,5.0,89.644,28.666,36.171,24.807,293.0,261.0,237.0,300.0,1,False,True,True,False,2026-07-04 15:03:38.867,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,3.0,1.0,SOFT,6.0,124.566,42.858,49.403,32.305,206.0,145.0,131.0,273.0,1,False,False,True,False,2026-07-04 15:05:08.511,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,4.0,1.0,SOFT,7.0,126.03,43.918,51.722,30.39,251.0,230.0,241.0,274.0,12,False,False,True,False,2026-07-04 15:07:13.077,,25.2,43.9,47.4,False,1.4,230.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,5.0,1.0,SOFT,8.0,93.18,28.85,36.559,27.771,289.0,266.0,,275.0,1,False,False,False,False,2026-07-04 15:09:19.107,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,6.0,2.0,SOFT,1.0,,,46.17,28.031,273.0,231.0,242.0,278.0,12,True,False,False,False,2026-07-04 15:10:52.287,,25.3,40.5,47.7,False,3.1,262.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,7.0,2.0,SOFT,2.0,88.864,28.576999999999998,35.851,24.436,303.0,267.0,239.0,306.0,1,True,True,True,False,2026-07-04 15:36:33.045,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,8.0,2.0,SOFT,3.0,117.475,40.86,48.338,28.277,222.0,229.0,,280.0,1,True,False,False,False,2026-07-04 15:38:01.909,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,9.0,3.0,SOFT,1.0,,,43.955,27.476,258.0,234.0,242.0,280.0,1,True,False,False,False,2026-07-04 15:39:59.384,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,10.0,3.0,SOFT,2.0,88.864,28.463,36.2,24.201,298.0,271.0,238.0,317.0,1,True,False,True,False,2026-07-04 15:45:55.152,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,11.0,3.0,SOFT,3.0,108.605,34.866,42.972,30.767,269.0,239.0,,266.0,1,True,False,False,False,2026-07-04 15:47:24.016,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,12.0,4.0,SOFT,1.0,,,44.223,27.793,293.0,234.0,242.0,276.0,1,True,False,False,False,2026-07-04 15:49:12.621,,25.1,40.4,47.2,False,1.5,284.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,13.0,4.0,SOFT,2.0,88.591,28.545,35.738,24.308,294.0,265.0,240.0,301.0,1,True,True,True,False,2026-07-04 15:58:49.866,,25.3,41.9,46.8,False,1.9,111.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,14.0,4.0,SOFT,3.0,103.52,33.004,42.657,27.859,272.0,235.0,,278.0,1,True,False,False,False,2026-07-04 16:00:18.457,,25.3,41.7,47.6,False,4.9,243.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,15.0,5.0,SOFT,1.0,,,42.815,28.361,282.0,236.0,243.0,278.0,1,True,False,False,False,2026-07-04 16:02:01.977,,25.2,41.6,47.5,False,1.9,106.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,16.0,5.0,SOFT,2.0,88.458,28.345,35.749,24.364,290.0,266.0,238.0,303.0,1,True,True,True,False,2026-07-04 16:07:35.658,,25.1,39.2,48.3,False,3.4,274.0
+2026,9,British Grand Prix,Q,HAM,Ferrari,17.0,5.0,SOFT,3.0,,37.223,46.141,,218.0,219.0,,219.0,1,True,False,False,False,2026-07-04 16:09:04.116,,25.0,39.4,48.7,False,0.9,276.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,1.0,1.0,SOFT,4.0,,,44.573,32.3,245.0,80.0,246.0,234.0,1,False,False,False,False,2026-07-04 15:04:42.186,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,2.0,1.0,SOFT,5.0,,28.781,98.675,34.774,292.0,147.0,,191.0,12,False,False,False,False,2026-07-04 15:06:36.289,,25.2,43.9,47.4,False,1.4,230.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,3.0,2.0,SOFT,1.0,,,41.865,27.855,236.0,238.0,247.0,258.0,1,True,False,False,False,2026-07-04 15:09:18.463,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,4.0,2.0,SOFT,2.0,89.985,29.082,36.137,24.766,291.0,263.0,233.0,299.0,1,True,True,True,False,2026-07-04 15:13:25.175,,25.1,39.1,48.2,False,3.7,267.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,5.0,2.0,SOFT,3.0,120.421,39.004,49.672,31.745,241.0,223.0,,263.0,12,True,False,False,False,2026-07-04 15:14:55.160,,25.0,39.2,49.6,False,2.8,265.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,6.0,3.0,SOFT,1.0,,,42.764,34.014,230.0,232.0,244.0,235.0,21,True,False,False,False,2026-07-04 15:16:55.581,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,7.0,3.0,SOFT,2.0,88.92,28.486,35.756,24.678,297.0,265.0,243.0,298.0,1,True,True,True,False,2026-07-04 15:37:27.133,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,8.0,3.0,SOFT,3.0,108.242,34.348,44.792,29.102,259.0,236.0,,279.0,1,True,False,False,False,2026-07-04 15:38:56.053,,25.2,42.6,47.4,False,0.3,43.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,9.0,4.0,SOFT,4.0,,,45.66,27.753,175.0,237.0,247.0,256.0,1,False,False,False,False,2026-07-04 15:40:44.295,,25.2,42.5,48.0,False,1.6,295.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,10.0,4.0,SOFT,5.0,89.567,28.622,36.073,24.872,296.0,264.0,238.0,296.0,1,False,False,True,False,2026-07-04 15:47:16.291,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,11.0,4.0,SOFT,6.0,,35.885,41.679,,260.0,240.0,,280.0,1,False,False,False,False,2026-07-04 15:48:45.858,,25.1,40.4,47.2,False,1.5,284.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,12.0,5.0,SOFT,1.0,,,41.357,27.654,243.0,237.0,248.0,254.0,1,True,False,False,False,2026-07-04 15:57:33.498,,25.3,41.6,47.4,False,4.1,106.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,13.0,5.0,SOFT,2.0,88.481,28.303,35.629,24.549,296.0,265.0,245.0,299.0,1,True,True,True,False,2026-07-04 15:59:13.646,,25.3,41.9,46.8,False,1.9,111.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,14.0,5.0,SOFT,3.0,103.762,33.804,41.781,28.177,258.0,240.0,,278.0,1,True,False,False,False,2026-07-04 16:00:42.127,,25.3,41.2,47.6,False,4.7,239.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,15.0,6.0,SOFT,1.0,,,45.701,28.073,253.0,214.0,248.0,253.0,1,True,False,False,False,2026-07-04 16:02:25.889,,25.2,41.6,47.5,False,1.9,106.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,16.0,6.0,SOFT,2.0,88.686,28.511,35.651,24.524,296.0,266.0,241.0,298.0,1,True,False,True,False,2026-07-04 16:07:15.433,,25.1,39.7,48.3,False,1.6,87.0
+2026,9,British Grand Prix,Q,RUS,Mercedes,17.0,6.0,SOFT,3.0,,41.085,48.416,,216.0,216.0,,219.0,1,True,False,False,False,2026-07-04 16:08:44.119,,25.0,39.4,48.7,False,0.9,276.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,1.0,1.0,SOFT,4.0,,,42.758,29.729,244.0,196.0,243.0,240.0,1,False,False,False,False,2026-07-04 15:03:53.636,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,2.0,1.0,SOFT,5.0,90.427,28.897,36.492,25.038,303.0,261.0,231.0,305.0,12,False,True,True,False,2026-07-04 15:05:45.043,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,3.0,1.0,SOFT,6.0,114.548,38.094,47.468,28.986,221.0,220.0,,281.0,21,False,False,False,False,2026-07-04 15:07:15.470,,25.2,43.9,47.4,False,1.4,230.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,4.0,2.0,SOFT,1.0,,,43.167,28.033,264.0,183.0,246.0,270.0,1,True,False,False,False,2026-07-04 15:09:10.018,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,5.0,2.0,SOFT,2.0,89.276,28.561,36.067,24.648,303.0,266.0,240.0,305.0,1,True,True,True,False,2026-07-04 15:14:45.196,,25.0,39.2,49.6,False,2.8,265.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,6.0,2.0,SOFT,3.0,128.895,38.717,57.611,32.567,273.0,188.0,,265.0,12,True,False,False,False,2026-07-04 15:16:14.472,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,7.0,3.0,SOFT,4.0,,,41.917,28.699,250.0,239.0,246.0,253.0,12,False,False,False,False,2026-07-04 15:18:23.367,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,8.0,3.0,SOFT,5.0,89.183,28.664,35.941,24.578,302.0,265.0,236.0,305.0,1,False,True,True,False,2026-07-04 15:34:55.259,,25.1,41.1,49.5,False,2.8,102.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,9.0,3.0,SOFT,6.0,116.14,37.321,49.969,28.85,264.0,208.0,,268.0,1,False,False,False,False,2026-07-04 15:36:24.442,,25.1,42.1,48.5,False,1.1,247.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,10.0,4.0,SOFT,1.0,,,41.779,27.426,257.0,235.0,248.0,283.0,1,True,False,False,False,2026-07-04 15:38:20.582,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,11.0,4.0,SOFT,2.0,89.069,28.633,35.906,24.53,299.0,268.0,238.0,305.0,1,True,True,True,False,2026-07-04 15:43:05.277,,25.3,42.2,48.0,False,1.3,257.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,12.0,4.0,SOFT,3.0,110.328,36.013,45.539,28.776,252.0,209.0,,287.0,1,True,False,False,False,2026-07-04 15:44:34.346,,25.3,41.4,46.9,False,2.4,264.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,13.0,5.0,SOFT,1.0,,,42.037,27.528,249.0,231.0,248.0,273.0,1,True,False,False,False,2026-07-04 15:46:24.674,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,14.0,5.0,SOFT,2.0,88.757,28.417,35.963,24.377,300.0,265.0,241.0,305.0,1,True,True,True,False,2026-07-04 15:58:59.016,,25.3,41.9,46.8,False,1.9,111.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,15.0,5.0,SOFT,3.0,103.631,34.112,42.507,27.012,277.0,233.0,,287.0,1,True,False,False,False,2026-07-04 16:00:27.773,,25.3,41.7,47.6,False,4.9,243.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,16.0,6.0,SOFT,1.0,,,41.477,27.689,241.0,229.0,248.0,262.0,1,True,False,False,False,2026-07-04 16:02:11.404,,25.2,41.6,47.5,False,1.9,106.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,17.0,6.0,SOFT,2.0,88.746,28.442,35.831,24.473,299.0,266.0,236.0,305.0,1,True,True,True,False,2026-07-04 16:07:43.171,,25.1,39.2,48.3,False,3.4,274.0
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,18.0,6.0,SOFT,3.0,,39.021,46.307,,219.0,210.0,,272.0,1,True,False,False,False,2026-07-04 16:09:11.917,,25.0,39.4,48.7,False,0.9,276.0
+2026,9,British Grand Prix,Q,NOR,McLaren,1.0,1.0,SOFT,4.0,,,40.229,27.298,254.0,243.0,243.0,259.0,1,False,False,False,False,2026-07-04 15:03:41.293,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,NOR,McLaren,2.0,1.0,SOFT,5.0,90.186,28.951999999999998,36.417,24.817,294.0,265.0,236.0,300.0,1,False,True,True,False,2026-07-04 15:05:21.688,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,NOR,McLaren,3.0,1.0,SOFT,6.0,113.948,35.498,49.319,29.131,212.0,229.0,,258.0,12,False,False,False,False,2026-07-04 15:06:51.874,,25.2,43.9,47.4,False,1.4,230.0
+2026,9,British Grand Prix,Q,NOR,McLaren,4.0,2.0,SOFT,1.0,,,43.533,32.413,118.0,245.0,243.0,205.0,1,True,False,False,False,2026-07-04 15:08:45.822,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,NOR,McLaren,5.0,2.0,SOFT,2.0,106.246,28.471,46.445,31.33,293.0,203.0,,251.0,12,True,False,False,False,2026-07-04 15:16:29.272,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,NOR,McLaren,6.0,3.0,SOFT,3.0,,,40.571,34.716,249.0,175.0,245.0,244.0,12,False,False,False,False,2026-07-04 15:18:15.518,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,NOR,McLaren,7.0,3.0,SOFT,4.0,89.857,28.823,36.307,24.727,295.0,267.0,235.0,301.0,1,False,True,True,False,2026-07-04 15:37:42.206,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,NOR,McLaren,8.0,3.0,SOFT,5.0,103.981,33.551,42.82,27.61,244.0,246.0,,262.0,1,False,False,False,False,2026-07-04 15:39:12.063,,25.2,42.6,47.4,False,0.3,43.0
+2026,9,British Grand Prix,Q,NOR,McLaren,9.0,4.0,SOFT,1.0,,,40.975,28.004,268.0,244.0,245.0,243.0,1,True,False,False,False,2026-07-04 15:40:56.044,,25.2,42.5,48.0,False,1.6,295.0
+2026,9,British Grand Prix,Q,NOR,McLaren,10.0,4.0,SOFT,2.0,89.383,28.534,36.142,24.707,295.0,267.0,235.0,302.0,1,True,True,True,False,2026-07-04 15:45:20.478,,25.3,41.4,46.9,False,2.4,264.0
+2026,9,British Grand Prix,Q,NOR,McLaren,11.0,4.0,SOFT,3.0,114.124,40.805,44.005,29.314,225.0,224.0,,214.0,1,True,False,False,False,2026-07-04 15:46:49.861,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,NOR,McLaren,12.0,5.0,SOFT,1.0,,,41.751,29.829,255.0,191.0,244.0,253.0,1,True,False,False,False,2026-07-04 15:48:43.985,,25.1,40.4,47.2,False,1.5,284.0
+2026,9,British Grand Prix,Q,NOR,McLaren,13.0,5.0,SOFT,2.0,89.315,28.539,36.216,24.56,297.0,266.0,236.0,301.0,1,True,True,True,False,2026-07-04 15:58:25.952,,25.3,41.6,47.4,False,4.1,106.0
+2026,9,British Grand Prix,Q,NOR,McLaren,14.0,5.0,SOFT,3.0,104.524,33.824,42.322,28.378,234.0,231.0,,252.0,1,True,False,False,False,2026-07-04 15:59:55.267,,25.3,41.7,47.6,False,4.9,243.0
+2026,9,British Grand Prix,Q,NOR,McLaren,15.0,6.0,SOFT,1.0,,,40.048,29.876,241.0,197.0,245.0,251.0,1,True,False,False,False,2026-07-04 16:01:39.791,,25.2,41.6,47.5,False,1.9,106.0
+2026,9,British Grand Prix,Q,NOR,McLaren,16.0,6.0,SOFT,2.0,88.877,28.458,35.976,24.443,296.0,267.0,237.0,304.0,1,True,True,True,False,2026-07-04 16:06:37.480,,25.1,39.7,48.3,False,1.6,87.0
+2026,9,British Grand Prix,Q,NOR,McLaren,17.0,6.0,SOFT,3.0,,37.973,51.522,,197.0,226.0,,259.0,1,True,False,False,False,2026-07-04 16:08:06.357,,25.1,39.2,48.3,False,3.4,274.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,1.0,1.0,SOFT,4.0,,,43.127,28.978,271.0,230.0,246.0,257.0,1,False,False,False,False,2026-07-04 15:03:46.683,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,2.0,1.0,SOFT,5.0,90.219,28.739,36.3,25.18,301.0,252.0,238.0,301.0,1,False,True,True,False,2026-07-04 15:05:35.465,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,3.0,1.0,SOFT,6.0,116.515,39.626,49.163,27.726,228.0,219.0,,282.0,12,False,False,False,False,2026-07-04 15:07:05.684,,25.2,43.9,47.4,False,1.4,230.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,4.0,2.0,SOFT,1.0,,,43.962,27.502,252.0,233.0,248.0,281.0,1,True,False,False,False,2026-07-04 15:09:02.199,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,5.0,2.0,SOFT,2.0,89.549,28.556,36.179,24.814,300.0,264.0,241.0,303.0,1,True,True,True,False,2026-07-04 15:14:37.191,,25.0,39.2,49.6,False,2.8,265.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,6.0,2.0,SOFT,3.0,114.696,37.156,47.555,29.985,252.0,230.0,,233.0,12,True,False,False,False,2026-07-04 15:16:06.740,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,7.0,3.0,SOFT,4.0,,,41.647,27.889,268.0,237.0,249.0,258.0,12,False,False,False,False,2026-07-04 15:18:01.436,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,8.0,3.0,SOFT,5.0,89.308,28.557,36.097,24.654,299.0,263.0,239.0,304.0,1,False,True,True,False,2026-07-04 15:34:45.700,,25.1,41.1,49.5,False,2.8,102.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,9.0,3.0,SOFT,6.0,111.804,39.801,44.553,27.45,130.0,241.0,,286.0,1,False,False,False,False,2026-07-04 15:36:15.008,,25.1,42.1,48.5,False,1.1,247.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,10.0,4.0,SOFT,1.0,,,43.879,28.175,259.0,233.0,248.0,284.0,1,True,False,False,False,2026-07-04 15:38:06.812,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,11.0,4.0,SOFT,2.0,89.113,28.483,35.866,24.764,302.0,264.0,239.0,300.0,1,True,True,True,False,2026-07-04 15:42:57.188,,25.3,42.2,48.0,False,1.3,257.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,12.0,4.0,SOFT,3.0,109.699,36.283,44.175,29.241,239.0,234.0,,259.0,1,True,False,False,False,2026-07-04 15:44:26.301,,25.3,42.5,47.6,False,1.5,225.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,13.0,5.0,SOFT,1.0,,,43.584,28.254,253.0,235.0,249.0,251.0,1,True,False,False,False,2026-07-04 15:46:16.000,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,14.0,5.0,SOFT,2.0,89.151,28.505,36.038,24.608,297.0,264.0,240.0,302.0,1,True,True,True,False,2026-07-04 15:58:34.169,,25.3,41.9,46.8,False,1.9,111.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,15.0,5.0,SOFT,3.0,101.722,33.571,40.501,27.65,264.0,242.0,,272.0,1,True,False,False,False,2026-07-04 16:00:03.320,,25.3,41.7,47.6,False,4.9,243.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,16.0,6.0,SOFT,1.0,,,43.487,29.349,254.0,182.0,250.0,250.0,1,True,False,False,False,2026-07-04 16:01:45.042,,25.2,41.6,47.5,False,1.9,106.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,17.0,6.0,SOFT,2.0,88.893,28.462,35.789,24.642,296.0,263.0,240.0,302.0,1,True,True,True,False,2026-07-04 16:07:22.298,,25.1,39.7,48.3,False,1.6,87.0
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,18.0,6.0,SOFT,3.0,,39.21,45.876,,232.0,237.0,,247.0,1,True,False,False,False,2026-07-04 16:08:51.191,,25.0,39.4,48.7,False,0.9,276.0
+2026,9,British Grand Prix,Q,PIA,McLaren,1.0,1.0,SOFT,4.0,,,44.25,33.039,253.0,125.0,240.0,212.0,1,False,False,False,False,2026-07-04 15:04:09.577,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,PIA,McLaren,2.0,1.0,SOFT,5.0,90.558,28.974,36.662,24.922,292.0,263.0,235.0,301.0,12,False,True,True,False,2026-07-04 15:06:09.984,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,PIA,McLaren,3.0,1.0,SOFT,6.0,109.95,36.236,44.424,29.29,267.0,223.0,,276.0,21,False,False,False,False,2026-07-04 15:07:40.542,,25.2,42.2,48.1,False,3.6,244.0
+2026,9,British Grand Prix,Q,PIA,McLaren,4.0,2.0,SOFT,1.0,,,41.443,28.173,253.0,242.0,243.0,259.0,1,True,False,False,False,2026-07-04 15:09:30.492,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,PIA,McLaren,5.0,2.0,SOFT,2.0,89.971,28.699,36.525,24.747,294.0,265.0,239.0,303.0,1,True,True,True,False,2026-07-04 15:13:41.111,,25.1,39.1,49.0,False,2.8,264.0
+2026,9,British Grand Prix,Q,PIA,McLaren,6.0,2.0,SOFT,3.0,115.484,38.106,47.176,30.202,217.0,202.0,,285.0,12,True,False,False,False,2026-07-04 15:15:11.082,,25.0,39.2,49.6,False,2.8,265.0
+2026,9,British Grand Prix,Q,PIA,McLaren,7.0,3.0,SOFT,4.0,,,40.626,36.912,246.0,240.0,242.0,147.0,12,False,False,False,False,2026-07-04 15:17:06.566,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,PIA,McLaren,8.0,3.0,SOFT,5.0,89.965,28.773,36.431,24.761,295.0,265.0,238.0,302.0,1,False,True,True,False,2026-07-04 15:36:58.392,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,PIA,McLaren,9.0,3.0,SOFT,6.0,105.124,35.585,41.28,28.259,281.0,244.0,,283.0,1,False,False,False,False,2026-07-04 15:38:28.357,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,PIA,McLaren,10.0,4.0,SOFT,1.0,,,40.808,28.283,252.0,243.0,245.0,259.0,1,True,False,False,False,2026-07-04 15:40:13.481,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,PIA,McLaren,11.0,4.0,SOFT,2.0,89.218,28.547,36.181,24.49,297.0,269.0,239.0,304.0,1,True,True,True,False,2026-07-04 15:45:12.300,,25.3,41.4,46.9,False,2.4,264.0
+2026,9,British Grand Prix,Q,PIA,McLaren,12.0,4.0,SOFT,3.0,118.171,42.46,46.18,29.531,102.0,220.0,,244.0,1,True,False,False,False,2026-07-04 15:46:41.518,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,PIA,McLaren,13.0,5.0,SOFT,1.0,,,41.303,28.214,255.0,243.0,243.0,260.0,1,True,False,False,False,2026-07-04 15:48:39.689,,25.1,40.4,47.2,False,1.5,284.0
+2026,9,British Grand Prix,Q,PIA,McLaren,14.0,5.0,SOFT,2.0,89.231,28.473,36.309,24.449,295.0,268.0,237.0,304.0,1,True,True,True,False,2026-07-04 15:58:03.989,,25.3,41.6,47.4,False,4.1,106.0
+2026,9,British Grand Prix,Q,PIA,McLaren,15.0,5.0,SOFT,3.0,108.072,35.078,44.238,28.756,233.0,221.0,,253.0,1,True,False,False,False,2026-07-04 15:59:33.220,,25.3,41.7,47.6,False,4.9,243.0
+2026,9,British Grand Prix,Q,PIA,McLaren,16.0,6.0,SOFT,1.0,,,40.866,33.456,252.0,242.0,244.0,225.0,1,True,False,False,False,2026-07-04 16:01:21.292,,25.3,41.2,47.6,False,4.7,239.0
+2026,9,British Grand Prix,Q,PIA,McLaren,17.0,6.0,SOFT,2.0,89.032,28.442,36.194,24.396,294.0,267.0,238.0,308.0,1,True,True,True,False,2026-07-04 16:07:01.394,,25.1,39.7,48.3,False,1.6,87.0
+2026,9,British Grand Prix,Q,PIA,McLaren,18.0,6.0,SOFT,3.0,,36.948,45.431,,228.0,213.0,,239.0,1,True,False,False,False,2026-07-04 16:08:30.426,,25.1,39.2,48.3,False,3.4,274.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,1.0,1.0,SOFT,4.0,,,42.259,28.27,255.0,228.0,246.0,239.0,1,False,False,False,False,2026-07-04 15:00:56.164,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,2.0,1.0,SOFT,5.0,92.375,29.134,36.841,26.4,305.0,267.0,,303.0,1,False,False,False,False,2026-07-04 15:02:48.516,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,3.0,2.0,SOFT,1.0,,,47.288,28.555,242.0,243.0,246.0,262.0,12,True,False,False,False,2026-07-04 15:04:20.891,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,4.0,2.0,SOFT,2.0,89.892,28.549,36.423,24.92,304.0,266.0,240.0,303.0,1,True,True,True,False,2026-07-04 15:08:41.597,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,5.0,2.0,SOFT,3.0,114.215,36.3,49.648,28.267,252.0,239.0,,290.0,1,True,False,False,False,2026-07-04 15:10:11.489,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,6.0,3.0,SOFT,1.0,,,43.086,28.305,251.0,241.0,247.0,261.0,12,True,False,False,False,2026-07-04 15:12:05.704,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,7.0,3.0,SOFT,2.0,89.661,28.466,36.331,24.864,302.0,267.0,242.0,302.0,21,True,True,True,False,2026-07-04 15:16:48.020,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,8.0,3.0,SOFT,3.0,111.658,35.217,45.877,30.564,244.0,212.0,,258.0,1,True,False,False,False,2026-07-04 15:18:17.681,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,9.0,4.0,SOFT,1.0,,,44.662,28.109,235.0,211.0,247.0,267.0,12,True,False,False,False,2026-07-04 15:20:09.339,,25.0,38.5,49.8,False,2.6,285.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,10.0,4.0,SOFT,2.0,89.324,28.424,36.125,24.775,306.0,268.0,239.0,305.0,1,True,True,True,False,2026-07-04 15:36:42.108,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,11.0,4.0,SOFT,3.0,112.99,35.413,48.401,29.176,236.0,205.0,,276.0,1,True,False,False,False,2026-07-04 15:38:11.432,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,12.0,5.0,SOFT,1.0,,,44.004,27.695,241.0,224.0,249.0,270.0,1,True,False,False,False,2026-07-04 15:40:04.422,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,13.0,5.0,SOFT,2.0,89.337,28.449,36.167,24.721,305.0,268.0,240.0,303.0,1,True,False,True,False,2026-07-04 15:45:33.855,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,14.0,5.0,SOFT,3.0,115.642,36.796,49.734,29.112,232.0,220.0,,278.0,1,True,False,False,False,2026-07-04 15:47:03.192,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,15.0,6.0,SOFT,1.0,,,44.391,27.505,250.0,233.0,247.0,268.0,1,True,False,False,False,2026-07-04 15:48:58.834,,25.1,40.4,47.2,False,1.5,284.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,16.0,6.0,SOFT,2.0,89.305,28.47,36.186,24.649,304.0,269.0,242.0,306.0,1,True,True,True,False,2026-07-04 16:06:51.094,,25.1,39.7,48.3,False,1.6,87.0
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,17.0,6.0,SOFT,3.0,,38.231,46.646,,232.0,232.0,,253.0,1,True,False,False,False,2026-07-04 16:08:20.399,,25.1,39.2,48.3,False,3.4,274.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,1.0,1.0,SOFT,4.0,,,42.334,28.979,243.0,238.0,244.0,250.0,1,False,False,False,False,2026-07-04 15:01:02.683,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,2.0,1.0,SOFT,5.0,92.836,28.775,36.369,27.692,304.0,267.0,212.0,302.0,1,False,True,True,False,2026-07-04 15:02:59.830,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,3.0,1.0,SOFT,6.0,97.999,31.576999999999998,39.518,26.904,277.0,243.0,,286.0,1,False,False,False,False,2026-07-04 15:04:32.666,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,4.0,2.0,SOFT,1.0,,,45.121,27.502,247.0,245.0,246.0,264.0,12,True,False,False,False,2026-07-04 15:06:10.665,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,5.0,2.0,SOFT,2.0,90.0,28.639,36.515,24.846,302.0,267.0,241.0,306.0,1,True,True,True,False,2026-07-04 15:10:18.096,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,6.0,2.0,SOFT,3.0,99.305,32.013,40.274,27.018,271.0,243.0,,287.0,1,True,False,False,False,2026-07-04 15:11:48.096,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,7.0,3.0,SOFT,1.0,,,44.355,30.811,244.0,213.0,246.0,172.0,12,True,False,False,False,2026-07-04 15:13:27.401,,25.1,39.1,48.2,False,3.7,267.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,8.0,3.0,SOFT,2.0,89.3,28.464,36.16,24.676,300.0,269.0,238.0,303.0,21,True,True,True,False,2026-07-04 15:16:59.519,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,9.0,3.0,SOFT,3.0,115.639,32.659,47.894,35.086,231.0,218.0,,184.0,1,True,False,False,False,2026-07-04 15:18:28.819,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,10.0,4.0,SOFT,1.0,,,43.55,31.027,242.0,234.0,246.0,246.0,12,True,False,False,False,2026-07-04 15:20:24.458,,25.0,38.5,49.8,False,2.6,285.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,11.0,4.0,SOFT,2.0,89.703,28.573,36.251,24.879,304.0,266.0,242.0,303.0,1,True,True,True,False,2026-07-04 15:36:48.793,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,12.0,4.0,SOFT,3.0,109.936,33.094,45.77,31.072,236.0,208.0,,272.0,1,True,False,False,False,2026-07-04 15:38:18.496,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,13.0,5.0,SOFT,1.0,,,44.365,27.815,249.0,222.0,248.0,266.0,1,True,False,False,False,2026-07-04 15:40:08.432,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,14.0,5.0,SOFT,2.0,89.429,28.465,36.225,24.739,303.0,269.0,238.0,303.0,1,True,True,True,False,2026-07-04 15:45:41.698,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,15.0,5.0,SOFT,3.0,117.494,37.111,46.541,33.842,252.0,200.0,,179.0,1,True,False,False,False,2026-07-04 15:47:11.127,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,16.0,6.0,SOFT,4.0,,,44.103,27.763,247.0,241.0,247.0,262.0,1,False,False,False,False,2026-07-04 15:49:08.621,,25.1,40.4,47.2,False,1.5,284.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,17.0,6.0,SOFT,5.0,92.923,28.745,36.666,27.512,303.0,266.0,,305.0,1,False,False,False,False,2026-07-04 15:58:18.448,,25.3,41.6,47.4,False,4.1,106.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,18.0,7.0,SOFT,1.0,,,43.284,27.84,248.0,221.0,247.0,266.0,1,True,False,False,False,2026-07-04 15:59:51.371,,25.3,41.7,47.6,False,4.9,243.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,19.0,7.0,SOFT,2.0,89.716,28.595,36.32,24.801,300.0,264.0,239.0,304.0,1,True,True,True,False,2026-07-04 16:07:07.869,,25.1,39.7,48.3,False,1.6,87.0
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,20.0,7.0,SOFT,3.0,,37.652,48.434,,218.0,185.0,,187.0,1,True,False,False,False,2026-07-04 16:08:37.585,,25.0,39.4,48.7,False,0.9,276.0
+2026,9,British Grand Prix,Q,BOR,Audi,1.0,1.0,MEDIUM,9.0,,,44.964,31.12,232.0,232.0,,228.0,1,False,False,False,False,2026-07-04 15:00:37.092,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,BOR,Audi,2.0,2.0,SOFT,1.0,,,44.386,31.96,248.0,230.0,233.0,258.0,12,True,False,False,False,2026-07-04 15:02:38.468,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,BOR,Audi,3.0,2.0,SOFT,2.0,90.269,28.754,36.403,25.112,294.0,263.0,235.0,298.0,1,True,True,True,False,2026-07-04 15:17:19.919,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,BOR,Audi,4.0,2.0,SOFT,3.0,116.892,42.441,43.655,30.796,230.0,214.0,,248.0,1,True,False,False,False,2026-07-04 15:18:50.188,,25.1,39.2,49.4,False,1.6,231.0
+2026,9,British Grand Prix,Q,BOR,Audi,5.0,3.0,SOFT,1.0,,,41.961,36.353,250.0,211.0,234.0,158.0,12,True,False,False,False,2026-07-04 15:20:47.080,,25.0,38.4,49.6,False,3.1,259.0
+2026,9,British Grand Prix,Q,BOR,Audi,6.0,3.0,SOFT,2.0,89.916,28.717,36.157,25.042,298.0,263.0,237.0,297.0,1,True,True,True,False,2026-07-04 15:37:15.099,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,BOR,Audi,7.0,3.0,SOFT,3.0,108.193,36.862,42.262,29.069,250.0,231.0,,259.0,1,True,False,False,False,2026-07-04 15:38:45.015,,25.2,42.6,47.4,False,0.3,43.0
+2026,9,British Grand Prix,Q,BOR,Audi,8.0,4.0,SOFT,1.0,,,43.539,30.5,250.0,208.0,235.0,229.0,1,True,False,False,False,2026-07-04 15:40:33.208,,25.2,42.5,48.0,False,1.6,295.0
+2026,9,British Grand Prix,Q,BOR,Audi,9.0,4.0,SOFT,2.0,89.461,28.468,36.312,24.681,296.0,266.0,239.0,298.0,1,True,True,True,False,2026-07-04 15:46:19.325,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,BOR,Audi,10.0,4.0,SOFT,3.0,116.884,43.565,43.068,30.251,191.0,240.0,,260.0,1,True,False,False,False,2026-07-04 15:47:48.786,,25.2,41.3,47.5,False,2.5,10.0
+2026,9,British Grand Prix,Q,GAS,Alpine,1.0,1.0,SOFT,1.0,,,47.087,31.251,268.0,172.0,251.0,234.0,1,True,False,False,False,2026-07-04 15:04:16.327,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,GAS,Alpine,2.0,1.0,SOFT,2.0,91.086,29.044,37.013,25.029,296.0,262.0,243.0,302.0,12,True,True,True,False,2026-07-04 15:06:23.814,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,GAS,Alpine,3.0,1.0,SOFT,3.0,114.014,35.388,47.733,30.893,247.0,188.0,,241.0,21,True,False,False,False,2026-07-04 15:07:54.900,,25.2,42.2,48.1,False,3.6,244.0
+2026,9,British Grand Prix,Q,GAS,Alpine,4.0,2.0,SOFT,1.0,,,45.469,29.0,251.0,215.0,252.0,257.0,1,True,False,False,False,2026-07-04 15:09:48.914,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,GAS,Alpine,5.0,2.0,SOFT,2.0,90.345,28.71,36.472,25.163,295.0,263.0,241.0,299.0,12,True,True,True,False,2026-07-04 15:15:40.387,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,GAS,Alpine,6.0,2.0,SOFT,3.0,117.566,38.287,49.577,29.701999999999998,197.0,173.0,,262.0,1,True,False,False,False,2026-07-04 15:17:10.732,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,GAS,Alpine,7.0,3.0,SOFT,1.0,,,47.341,31.356,232.0,231.0,253.0,260.0,12,True,False,False,False,2026-07-04 15:19:08.298,,25.1,39.2,49.4,False,1.6,231.0
+2026,9,British Grand Prix,Q,GAS,Alpine,8.0,3.0,SOFT,2.0,90.113,28.595,36.623,24.895,296.0,263.0,238.0,307.0,1,True,True,True,False,2026-07-04 15:37:58.300,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,GAS,Alpine,9.0,3.0,SOFT,3.0,117.632,37.033,49.306,31.293,210.0,186.0,,242.0,1,True,False,False,False,2026-07-04 15:39:28.413,,25.2,42.6,47.4,False,0.3,43.0
+2026,9,British Grand Prix,Q,GAS,Alpine,10.0,4.0,SOFT,1.0,,,45.624,28.839,235.0,232.0,251.0,261.0,1,True,False,False,False,2026-07-04 15:41:26.045,,25.2,42.5,48.0,False,1.6,295.0
+2026,9,British Grand Prix,Q,GAS,Alpine,11.0,4.0,SOFT,2.0,90.063,28.53,36.404,25.129,296.0,258.0,239.0,295.0,1,True,True,True,False,2026-07-04 15:46:56.037,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,GAS,Alpine,12.0,4.0,SOFT,3.0,116.616,37.763,48.097,30.756,217.0,172.0,,242.0,1,True,False,False,False,2026-07-04 15:48:26.100,,25.2,41.3,47.5,False,2.5,10.0
+2026,9,British Grand Prix,Q,HUL,Audi,1.0,1.0,MEDIUM,7.0,,,42.294,31.044,245.0,232.0,234.0,245.0,1,False,False,False,False,2026-07-04 15:01:12.639,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,HUL,Audi,2.0,1.0,MEDIUM,8.0,91.508,29.278,37.002,25.228,295.0,261.0,232.0,297.0,1,False,True,True,False,2026-07-04 15:03:07.709,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,HUL,Audi,3.0,1.0,MEDIUM,9.0,100.558,32.941,40.195,27.422,271.0,243.0,,280.0,1,False,False,False,False,2026-07-04 15:04:39.217,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,HUL,Audi,4.0,2.0,SOFT,1.0,,74.739,47.095,37.461,241.0,232.0,235.0,167.0,12,True,False,False,False,2026-07-04 15:06:19.775,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,HUL,Audi,5.0,2.0,SOFT,2.0,90.079,28.853,36.279,24.947,292.0,262.0,233.0,297.0,1,True,True,True,False,2026-07-04 15:08:59.106,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,HUL,Audi,6.0,2.0,SOFT,3.0,109.862,34.664,46.112,29.086,223.0,218.0,,242.0,1,True,False,False,False,2026-07-04 15:10:29.185,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,HUL,Audi,7.0,3.0,SOFT,1.0,,,43.428,32.527,237.0,233.0,236.0,270.0,12,True,False,False,False,2026-07-04 15:12:19.047,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,HUL,Audi,8.0,3.0,SOFT,2.0,89.539,28.585,36.096,24.858,294.0,264.0,235.0,297.0,1,True,True,True,False,2026-07-04 15:17:07.077,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,HUL,Audi,9.0,3.0,SOFT,3.0,109.398,34.33,45.315,29.753,248.0,211.0,,278.0,1,True,False,False,False,2026-07-04 15:18:36.616,,25.1,39.2,49.4,False,1.6,231.0
+2026,9,British Grand Prix,Q,HUL,Audi,10.0,4.0,SOFT,1.0,,,44.555,33.157,220.0,220.0,237.0,209.0,12,True,False,False,False,2026-07-04 15:20:26.014,,25.0,38.5,49.8,False,2.6,285.0
+2026,9,British Grand Prix,Q,HUL,Audi,11.0,4.0,SOFT,2.0,89.945,28.645,36.272,25.028,297.0,260.0,234.0,300.0,1,True,False,True,False,2026-07-04 15:37:07.691,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,HUL,Audi,12.0,4.0,SOFT,3.0,100.529,32.305,40.842,27.382,267.0,241.0,,278.0,1,True,False,False,False,2026-07-04 15:38:37.636,,25.2,42.6,47.4,False,0.3,43.0
+2026,9,British Grand Prix,Q,HUL,Audi,13.0,5.0,SOFT,1.0,,,43.952,31.201,244.0,214.0,238.0,242.0,1,True,False,False,False,2026-07-04 15:40:18.165,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,HUL,Audi,14.0,5.0,SOFT,2.0,90.076,28.734,36.445,24.897,296.0,263.0,237.0,297.0,1,True,True,True,False,2026-07-04 15:46:38.112,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,HUL,Audi,15.0,5.0,SOFT,3.0,114.467,38.915,45.151,30.401,226.0,220.0,,240.0,1,True,False,False,False,2026-07-04 15:48:08.188,,25.2,41.3,47.5,False,2.5,10.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,1.0,1.0,SOFT,1.0,,,41.581,29.558,268.0,243.0,232.0,228.0,1,True,False,False,False,2026-07-04 15:00:26.530,,25.3,43.7,45.4,False,1.1,278.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,2.0,1.0,SOFT,2.0,91.315,29.279,36.8,25.236,293.0,264.0,236.0,300.0,1,True,True,True,False,2026-07-04 15:02:16.790,,25.5,44.0,46.4,False,3.4,259.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,3.0,1.0,SOFT,3.0,102.933,33.615,40.89,28.428,261.0,242.0,,283.0,1,True,False,False,False,2026-07-04 15:03:48.105,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,4.0,2.0,SOFT,1.0,,,47.207,29.172,268.0,243.0,234.0,236.0,12,True,False,False,False,2026-07-04 15:05:31.038,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,5.0,2.0,SOFT,2.0,90.758,29.048,36.587,25.123,293.0,253.0,237.0,299.0,1,True,True,True,False,2026-07-04 15:08:33.580,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,6.0,2.0,SOFT,3.0,103.916,34.218,41.419,28.279,256.0,240.0,,277.0,1,True,False,False,False,2026-07-04 15:10:04.338,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,7.0,3.0,SOFT,1.0,,,44.611,28.976,132.0,235.0,235.0,247.0,1,True,False,False,False,2026-07-04 15:11:48.254,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,8.0,3.0,SOFT,2.0,90.57,28.946,36.627,24.997,294.0,264.0,239.0,302.0,12,True,True,True,False,2026-07-04 15:16:01.623,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,9.0,3.0,SOFT,3.0,117.27,35.823,49.031,32.416,241.0,194.0,,232.0,1,True,False,False,False,2026-07-04 15:17:32.193,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,10.0,4.0,SOFT,1.0,,,43.026,30.097,256.0,237.0,235.0,239.0,12,True,False,False,False,2026-07-04 15:19:29.463,,25.1,39.2,49.4,False,1.6,231.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,11.0,4.0,SOFT,2.0,90.588,28.998,36.524,25.066,294.0,262.0,230.0,297.0,1,True,True,True,False,2026-07-04 15:37:31.384,,25.2,42.3,48.2,False,1.9,240.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,12.0,4.0,SOFT,3.0,111.608,33.964,44.309,33.335,273.0,220.0,,199.0,1,True,False,False,False,2026-07-04 15:39:01.972,,25.2,42.6,47.4,False,0.3,43.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,13.0,5.0,SOFT,1.0,,,43.022,28.988,240.0,236.0,235.0,241.0,1,True,False,False,False,2026-07-04 15:40:53.580,,25.2,42.5,48.0,False,1.6,295.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,14.0,5.0,SOFT,2.0,90.501,29.056,36.45,24.995,294.0,264.0,231.0,298.0,1,True,True,True,False,2026-07-04 15:46:02.017,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,15.0,5.0,SOFT,3.0,124.328,40.3,46.389,37.639,218.0,237.0,,266.0,1,True,False,False,False,2026-07-04 15:47:32.518,,25.3,42.1,46.7,False,0.3,202.0
+2026,9,British Grand Prix,Q,SAI,Williams,1.0,1.0,SOFT,7.0,,,41.649,28.48,233.0,240.0,246.0,250.0,1,False,False,False,False,2026-07-04 15:00:14.389,,25.3,43.7,45.4,False,1.1,278.0
+2026,9,British Grand Prix,Q,SAI,Williams,2.0,1.0,SOFT,8.0,93.46,30.914,37.438,25.108,285.0,265.0,239.0,315.0,1,False,True,True,False,2026-07-04 15:02:02.759,,25.5,44.0,46.4,False,3.4,259.0
+2026,9,British Grand Prix,Q,SAI,Williams,3.0,1.0,SOFT,9.0,102.159,34.588,41.132,26.439,262.0,233.0,,281.0,1,False,False,False,False,2026-07-04 15:03:36.219,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,SAI,Williams,4.0,2.0,SOFT,1.0,,,42.322,33.298,267.0,237.0,248.0,278.0,12,True,False,False,False,2026-07-04 15:05:18.378,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,SAI,Williams,5.0,2.0,SOFT,2.0,91.052,28.916,36.89,25.246,296.0,259.0,241.0,297.0,1,True,True,True,False,2026-07-04 15:09:08.052,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,SAI,Williams,6.0,2.0,SOFT,3.0,105.034,36.529,41.71,26.795,258.0,238.0,,284.0,1,True,False,False,False,2026-07-04 15:10:39.104,,25.3,40.5,47.7,False,3.1,262.0
+2026,9,British Grand Prix,Q,SAI,Williams,7.0,3.0,SOFT,1.0,,,44.308,28.64,207.0,235.0,252.0,253.0,1,True,False,False,False,2026-07-04 15:12:24.138,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,SAI,Williams,8.0,3.0,SOFT,2.0,90.562,28.696,36.618,25.248,292.0,265.0,239.0,301.0,12,True,True,True,False,2026-07-04 15:16:41.612,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,SAI,Williams,9.0,3.0,SOFT,3.0,114.856,38.991,45.719,30.146,204.0,214.0,,236.0,1,True,False,False,False,2026-07-04 15:18:12.174,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,SAI,Williams,10.0,4.0,SOFT,1.0,,,43.043,28.55,226.0,229.0,251.0,260.0,12,True,False,False,False,2026-07-04 15:20:07.030,,25.0,38.5,49.8,False,2.6,285.0
+2026,9,British Grand Prix,Q,SAI,Williams,11.0,4.0,SOFT,2.0,90.825,28.905,36.778,25.142,292.0,261.0,242.0,298.0,1,True,True,True,False,2026-07-04 15:36:05.240,,25.1,42.1,48.5,False,1.1,247.0
+2026,9,British Grand Prix,Q,SAI,Williams,12.0,4.0,SOFT,3.0,117.484,39.85,45.786,31.848,230.0,131.0,,266.0,1,True,False,False,False,2026-07-04 15:37:36.065,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,SAI,Williams,13.0,5.0,SOFT,1.0,,,43.479,27.844,281.0,234.0,251.0,263.0,1,True,False,False,False,2026-07-04 15:39:33.549,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,SAI,Williams,14.0,5.0,SOFT,2.0,90.623,28.7,36.665,25.258,294.0,262.0,240.0,298.0,1,True,True,True,False,2026-07-04 15:46:09.137,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,SAI,Williams,15.0,5.0,SOFT,3.0,119.642,39.77,46.663,33.209,221.0,214.0,,236.0,1,True,False,False,False,2026-07-04 15:47:39.760,,25.2,41.3,47.5,False,2.5,10.0
+2026,9,British Grand Prix,Q,ALB,Williams,1.0,1.0,SOFT,1.0,,,41.297,28.51,259.0,232.0,249.0,255.0,1,True,False,False,False,2026-07-04 15:01:17.608,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,ALB,Williams,2.0,1.0,SOFT,2.0,92.94,28.836,36.989,27.115,297.0,244.0,,285.0,1,True,False,False,False,2026-07-04 15:03:14.902,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,ALB,Williams,3.0,2.0,SOFT,1.0,,,49.568,28.213,251.0,234.0,248.0,258.0,12,True,False,False,False,2026-07-04 15:04:47.842,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,ALB,Williams,4.0,2.0,SOFT,2.0,90.666,28.778,36.587,25.301,291.0,258.0,240.0,293.0,1,True,True,True,False,2026-07-04 15:08:29.361,,25.2,42.2,48.1,False,3.6,244.0
+2026,9,British Grand Prix,Q,ALB,Williams,5.0,2.0,SOFT,3.0,102.941,34.806,40.423,27.712,270.0,244.0,,284.0,1,True,False,False,False,2026-07-04 15:10:00.027,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,ALB,Williams,6.0,3.0,SOFT,1.0,,,44.925,28.788,240.0,237.0,251.0,256.0,1,True,False,False,False,2026-07-04 15:11:42.968,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,ALB,Williams,7.0,3.0,SOFT,2.0,90.638,28.685,36.748,25.205,290.0,261.0,242.0,294.0,12,True,True,True,False,2026-07-04 15:16:35.874,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,ALB,Williams,8.0,3.0,SOFT,3.0,115.541,39.664,44.05,31.826999999999998,278.0,236.0,,231.0,1,True,False,False,False,2026-07-04 15:18:06.512,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,ALB,Williams,9.0,4.0,SOFT,1.0,,,41.484,35.44,224.0,232.0,249.0,131.0,12,True,False,False,False,2026-07-04 15:20:02.053,,25.0,38.5,49.8,False,2.6,285.0
+2026,9,British Grand Prix,Q,ALB,Williams,10.0,4.0,SOFT,2.0,91.341,28.994,37.084,25.263,298.0,250.0,241.0,296.0,1,True,True,True,False,2026-07-04 15:36:18.536,,25.1,42.1,48.5,False,1.1,247.0
+2026,9,British Grand Prix,Q,ALB,Williams,11.0,4.0,SOFT,3.0,113.828,37.286,41.784,34.758,209.0,220.0,,160.0,1,True,False,False,False,2026-07-04 15:37:49.877,,25.1,42.2,48.2,False,2.7,248.0
+2026,9,British Grand Prix,Q,ALB,Williams,12.0,5.0,SOFT,1.0,,,40.802,28.428,206.0,233.0,252.0,260.0,1,True,False,False,False,2026-07-04 15:39:43.705,,25.1,42.5,47.9,False,1.9,176.0
+2026,9,British Grand Prix,Q,ALB,Williams,13.0,5.0,SOFT,2.0,90.743,28.654,36.792,25.297,294.0,259.0,241.0,294.0,1,True,False,True,False,2026-07-04 15:46:25.668,,25.3,40.9,47.0,False,2.5,87.0
+2026,9,British Grand Prix,Q,ALB,Williams,14.0,5.0,SOFT,3.0,117.857,39.767,45.952,32.138,211.0,212.0,,269.0,1,True,False,False,False,2026-07-04 15:47:56.411,,25.2,41.3,47.5,False,2.5,10.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,1.0,1.0,SOFT,1.0,,,43.689,28.959,265.0,237.0,231.0,249.0,1,True,False,False,False,2026-07-04 15:00:20.108,,25.3,43.7,45.4,False,1.1,278.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,2.0,1.0,SOFT,2.0,91.648,29.263,36.963,25.422,295.0,264.0,235.0,297.0,1,True,True,True,False,2026-07-04 15:02:12.207,,25.5,44.0,46.4,False,3.4,259.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,3.0,1.0,SOFT,3.0,105.844,34.666,42.552,28.626,231.0,242.0,,278.0,1,True,False,False,False,2026-07-04 15:03:43.855,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,4.0,2.0,SOFT,1.0,,,45.021,35.564,221.0,237.0,233.0,139.0,12,True,False,False,False,2026-07-04 15:05:29.699,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,5.0,2.0,SOFT,2.0,90.702,28.964,36.614,25.124,294.0,263.0,237.0,298.0,1,True,True,True,False,2026-07-04 15:09:03.368,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,6.0,2.0,SOFT,3.0,103.96,32.42,43.813,27.727,248.0,239.0,,282.0,1,True,False,False,False,2026-07-04 15:10:34.070,,25.3,40.5,47.7,False,3.1,262.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,7.0,3.0,SOFT,1.0,,,42.568,32.079,276.0,239.0,234.0,177.0,1,True,False,False,False,2026-07-04 15:12:18.030,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,8.0,3.0,SOFT,2.0,90.68,28.888,36.691,25.101,294.0,262.0,237.0,298.0,12,True,True,True,False,2026-07-04 15:15:54.864,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,9.0,3.0,SOFT,3.0,120.773,40.629,47.02,33.124,200.0,205.0,,221.0,1,True,False,False,False,2026-07-04 15:17:25.544,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,1.0,1.0,SOFT,1.0,,,41.947,28.706,268.0,235.0,234.0,254.0,1,True,False,False,False,2026-07-04 15:00:02.686,,25.3,43.7,45.4,False,1.1,278.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,2.0,1.0,SOFT,2.0,107.013,32.747,43.457,30.809,292.0,233.0,,277.0,1,True,False,False,False,2026-07-04 15:01:47.651,,25.5,44.0,46.4,False,3.4,259.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,3.0,2.0,SOFT,1.0,,,46.915,32.067,157.0,192.0,235.0,269.0,12,True,False,False,False,2026-07-04 15:03:34.664,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,4.0,2.0,SOFT,2.0,92.105,29.165,37.267,25.673000000000002,290.0,260.0,235.0,297.0,1,True,True,True,False,2026-07-04 15:08:16.229,,25.2,42.2,48.1,False,3.6,244.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,5.0,2.0,SOFT,3.0,107.142,33.578,43.279,30.285,234.0,234.0,,273.0,1,True,False,False,False,2026-07-04 15:09:48.334,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,6.0,3.0,SOFT,1.0,,,44.589,28.965,284.0,235.0,236.0,264.0,1,True,False,False,False,2026-07-04 15:11:35.476,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,7.0,3.0,SOFT,2.0,91.227,28.934,37.003,25.29,293.0,263.0,235.0,304.0,12,True,True,True,False,2026-07-04 15:16:05.462,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,BOT,Cadillac,8.0,3.0,SOFT,3.0,119.267,37.599,50.706,30.962,220.0,157.0,,270.0,1,True,False,False,False,2026-07-04 15:17:36.689,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,COL,Alpine,1.0,1.0,SOFT,1.0,,,45.382,29.245,209.0,193.0,251.0,252.0,1,True,False,False,False,2026-07-04 15:04:06.688,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,COL,Alpine,2.0,1.0,SOFT,2.0,91.321,28.987,36.92,25.414,308.0,255.0,241.0,300.0,12,True,True,True,False,2026-07-04 15:06:02.055,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,COL,Alpine,3.0,1.0,SOFT,3.0,120.683,39.642,48.111,32.93,193.0,190.0,,228.0,21,True,False,False,False,2026-07-04 15:07:33.376,,25.2,42.2,48.1,False,3.6,244.0
+2026,9,British Grand Prix,Q,COL,Alpine,4.0,2.0,SOFT,1.0,,,43.838,29.304,243.0,209.0,253.0,246.0,1,True,False,False,False,2026-07-04 15:09:34.059,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,COL,Alpine,5.0,2.0,SOFT,2.0,131.992,28.667,53.265,50.06,310.0,55.0,,106.0,12,True,False,False,False,2026-07-04 15:15:46.601,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,PER,Cadillac,1.0,1.0,SOFT,1.0,,,40.844,28.627,254.0,236.0,235.0,251.0,1,True,False,False,False,2026-07-04 15:00:08.048,,25.3,43.7,45.4,False,1.1,278.0
+2026,9,British Grand Prix,Q,PER,Cadillac,2.0,1.0,SOFT,2.0,92.199,29.271,37.471,25.457,303.0,261.0,238.0,303.0,1,True,True,True,False,2026-07-04 15:01:54.020,,25.5,44.0,46.4,False,3.4,259.0
+2026,9,British Grand Prix,Q,PER,Cadillac,3.0,1.0,SOFT,3.0,102.511,32.78,40.797,28.934,256.0,236.0,,272.0,1,True,False,False,False,2026-07-04 15:03:26.219,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,PER,Cadillac,4.0,2.0,SOFT,1.0,,,43.262,38.364,225.0,248.0,232.0,245.0,12,True,False,False,False,2026-07-04 15:05:08.730,,25.2,41.2,46.6,False,1.6,330.0
+2026,9,British Grand Prix,Q,PER,Cadillac,5.0,2.0,SOFT,2.0,91.94,29.081,37.214,25.645,298.0,255.0,236.0,294.0,1,True,True,True,False,2026-07-04 15:09:14.299,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,PER,Cadillac,6.0,2.0,SOFT,3.0,104.655,34.065,40.685,29.905,254.0,231.0,,261.0,1,True,False,False,False,2026-07-04 15:10:46.239,,25.3,40.5,47.7,False,3.1,262.0
+2026,9,British Grand Prix,Q,PER,Cadillac,7.0,3.0,SOFT,1.0,,,39.749,37.633,288.0,245.0,237.0,156.0,12,True,False,False,False,2026-07-04 15:12:30.894,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,PER,Cadillac,8.0,3.0,SOFT,2.0,91.451,29.038,37.121,25.292,294.0,262.0,235.0,300.0,1,True,True,True,False,2026-07-04 15:17:27.792,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,PER,Cadillac,9.0,3.0,SOFT,3.0,,37.103,42.938,,189.0,238.0,,264.0,1,True,False,False,False,2026-07-04 15:18:59.243,,25.1,39.2,49.4,False,1.6,231.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,1.0,1.0,SOFT,1.0,,,42.253,30.308,239.0,234.0,233.0,244.0,1,True,False,False,False,2026-07-04 15:00:31.499,,25.3,43.7,45.4,False,1.1,278.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,2.0,1.0,SOFT,2.0,93.835,29.667,38.045,26.123,287.0,258.0,230.0,291.0,1,True,True,True,False,2026-07-04 15:02:25.833,,25.5,44.0,46.4,False,3.4,259.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,3.0,1.0,SOFT,3.0,109.114,34.822,45.35,28.942,203.0,223.0,,250.0,1,True,False,False,False,2026-07-04 15:03:59.668,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,4.0,2.0,SOFT,1.0,143.976,66.393,46.995,30.588,263.0,233.0,235.0,246.0,12,True,False,False,False,2026-07-04 15:05:48.782,,25.1,43.2,47.5,False,1.9,281.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,5.0,2.0,SOFT,2.0,93.577,29.683,37.869,26.025,282.0,259.0,230.0,292.0,1,True,True,True,False,2026-07-04 15:08:12.758,,25.2,42.2,48.1,False,3.6,244.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,6.0,2.0,SOFT,3.0,113.43,37.957,44.238,31.235,251.0,222.0,,226.0,1,True,False,False,False,2026-07-04 15:09:46.335,,25.3,41.5,47.5,False,1.3,179.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,7.0,3.0,SOFT,1.0,,,45.868,32.844,222.0,236.0,236.0,182.0,1,True,False,False,False,2026-07-04 15:11:39.765,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,8.0,3.0,SOFT,2.0,92.863,29.38,37.793,25.69,285.0,257.0,233.0,292.0,12,True,True,True,False,2026-07-04 15:16:19.153,,25.1,39.7,49.3,False,0.5,219.0
+2026,9,British Grand Prix,Q,STR,Aston Martin,9.0,3.0,SOFT,3.0,118.49,35.775,48.861,33.854,193.0,221.0,,201.0,1,True,False,False,False,2026-07-04 15:17:52.016,,25.1,39.9,49.8,False,2.3,200.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,1.0,1.0,SOFT,1.0,,,44.337,30.546,247.0,230.0,235.0,242.0,1,True,False,False,False,2026-07-04 15:00:47.249,,25.4,43.7,46.1,False,3.4,253.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,2.0,1.0,SOFT,2.0,101.031,29.753,40.02,31.258,283.0,223.0,,196.0,1,True,False,False,False,2026-07-04 15:02:42.239,,25.5,44.4,46.9,False,2.0,262.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,3.0,2.0,SOFT,1.0,,79.897,47.841,36.833,242.0,223.0,235.0,225.0,1,True,False,False,False,2026-07-04 15:04:23.270,,25.4,41.1,46.3,False,2.2,261.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,4.0,2.0,SOFT,2.0,123.715,30.611,56.046,37.058,189.0,197.0,230.0,227.0,12,True,True,True,False,2026-07-04 15:07:07.830,,25.2,43.9,47.4,False,1.4,230.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,5.0,2.0,SOFT,3.0,93.025,29.718,37.675,25.632,284.0,257.0,223.0,292.0,1,True,True,True,False,2026-07-04 15:09:11.545,,25.2,43.7,46.9,False,2.6,256.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,6.0,2.0,SOFT,4.0,104.387,34.027,41.265,29.095,222.0,229.0,,258.0,1,True,False,False,False,2026-07-04 15:10:44.570,,25.3,40.5,47.7,False,3.1,262.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,7.0,3.0,SOFT,1.0,,,43.579,32.414,262.0,227.0,237.0,249.0,12,True,False,False,False,2026-07-04 15:12:28.957,,25.1,40.2,47.7,False,2.8,239.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,8.0,3.0,SOFT,2.0,92.888,29.496,37.573,25.819,281.0,258.0,227.0,290.0,1,True,False,True,False,2026-07-04 15:17:12.115,,25.1,40.9,49.5,False,2.1,265.0
+2026,9,British Grand Prix,Q,ALO,Aston Martin,9.0,3.0,SOFT,3.0,106.929,36.441,41.625,28.863,229.0,226.0,,253.0,1,True,False,False,False,2026-07-04 15:18:45.003,,25.1,39.2,49.4,False,1.6,231.0

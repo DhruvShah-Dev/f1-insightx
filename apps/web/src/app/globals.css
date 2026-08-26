@@ -8951,6 +8951,173 @@ img {
   gap: 1rem;
 }
 
+.corner-telemetry-console {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.corner-telemetry-console__header {
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.corner-telemetry-console__header p,
+.corner-telemetry-console__winner span,
+.corner-telemetry-console__readout article span {
+  margin: 0;
+  color: var(--versus-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.corner-telemetry-console__header strong {
+  display: block;
+  margin-top: 0.2rem;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-style: italic;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.corner-telemetry-console__header small {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--versus-muted);
+  font-size: 0.78rem;
+}
+
+.corner-telemetry-console__modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: flex-end;
+}
+
+.corner-telemetry-console__modes button {
+  min-height: 2.25rem;
+  border: 1px solid var(--versus-line);
+  background: #070a0f;
+  color: rgba(244, 246, 248, 0.72);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.corner-telemetry-console__modes button:hover,
+.corner-telemetry-console__modes button:focus-visible,
+.corner-telemetry-console__modes button.is-active {
+  border-color: var(--driver-a);
+  background: var(--driver-a);
+  color: #05070a;
+}
+
+.corner-telemetry-console__grid {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.22fr) minmax(12rem, 0.22fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.corner-telemetry-console__selector {
+  display: grid;
+  grid-auto-rows: minmax(3.2rem, auto);
+  gap: 0.45rem;
+  max-height: 30rem;
+  overflow: auto;
+  padding-right: 0.25rem;
+}
+
+.corner-telemetry-console__selector button {
+  display: grid;
+  grid-template-columns: minmax(2.7rem, 0.4fr) minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 0;
+  border: 1px solid var(--versus-line);
+  border-left: 0.24rem solid var(--driver-a);
+  background: #070a0f;
+  color: #f4f6f8;
+  text-align: left;
+  cursor: pointer;
+}
+
+.corner-telemetry-console__selector button[data-owner="b"] {
+  border-left-color: var(--driver-b);
+}
+
+.corner-telemetry-console__selector button:hover,
+.corner-telemetry-console__selector button:focus-visible,
+.corner-telemetry-console__selector button.is-active {
+  border-color: var(--versus-line-strong);
+  background: #10151d;
+}
+
+.corner-telemetry-console__selector button span {
+  color: #fff;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.corner-telemetry-console__selector button small {
+  color: var(--versus-muted);
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 0.68rem;
+}
+
+.corner-telemetry-console__readout {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.corner-telemetry-console__winner,
+.corner-telemetry-console__readout article {
+  min-width: 0;
+  border: 1px solid var(--versus-line);
+  background: #070a0f;
+  padding: 0.85rem;
+}
+
+.corner-telemetry-console__winner strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 2.2rem;
+  font-style: italic;
+  line-height: 0.9;
+}
+
+.corner-telemetry-console__readout article strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: #fff;
+  font-family: var(--font-plex-mono), Consolas, monospace;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.corner-telemetry-console__readout article small {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--versus-muted);
+  font-size: 0.78rem;
+}
+
+.corner-telemetry-console__chart {
+  min-width: 0;
+}
+
 .versus-unavailable {
   padding: 1.1rem;
   border-left: 0.24rem solid var(--driver-b);
@@ -9017,6 +9184,7 @@ img {
   .versus-duel-summary,
   .versus-signal-strip,
   .versus-split-charts,
+  .corner-telemetry-console__grid,
   .race-analysis-page .race-cinema-versus-cta {
     grid-template-columns: 1fr;
   }
@@ -9034,6 +9202,26 @@ img {
 
   .versus-evidence-console__tabs {
     justify-content: flex-start;
+  }
+
+  .corner-telemetry-console__header {
+    display: grid;
+    align-items: start;
+  }
+
+  .corner-telemetry-console__modes {
+    justify-content: flex-start;
+  }
+
+  .corner-telemetry-console__selector {
+    display: flex;
+    max-height: none;
+    overflow-x: auto;
+    padding: 0 0 0.35rem;
+  }
+
+  .corner-telemetry-console__selector button {
+    min-width: 7.2rem;
   }
 }
 

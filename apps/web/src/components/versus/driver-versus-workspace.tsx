@@ -17,6 +17,7 @@ import {
 import { ChartFrame } from "@/components/charts/chart-frame";
 import type {
   AnalyticsComparisonPayload,
+  AnalyticsCornerTelemetry,
   AnalyticsDriverOption,
   AnalyticsSessionSummary,
 } from "@/lib/server/analytics-product";
@@ -43,6 +44,7 @@ type Palette = {
 };
 
 type EvidenceTab = "race-pace" | "trace" | "corners" | "straights" | "braking-traction";
+type CornerMetricMode = "delta" | "absolute" | "gear";
 
 const tabs: Array<{ id: EvidenceTab; label: string }> = [
   { id: "race-pace", label: "Race pace" },
@@ -55,11 +57,21 @@ const tabs: Array<{ id: EvidenceTab; label: string }> = [
 const AXIS_LABEL = { fill: "var(--chart-axis)", fontSize: 10, letterSpacing: "0.06em" } as const;
 const darkPanel = "#080b10";
 const neutral = "#d7dde8";
+const cornerMetricModes: Array<{ id: CornerMetricMode; label: string }> = [
+  { id: "delta", label: "Speed delta" },
+  { id: "absolute", label: "Absolute speed" },
+  { id: "gear", label: "Gear" },
+];
 
 function formatNumber(value: number | null | undefined, digits = 2) {
   if (value === null || value === undefined || !Number.isFinite(value)) return "n/a";
   if (Math.abs(value) < 0.005) return "0";
   return `${value > 0 ? "+" : ""}${value.toFixed(digits)}`;
+}
+
+function formatUnsigned(value: number | null | undefined, digits = 1) {
+  if (value === null || value === undefined || !Number.isFinite(value)) return "n/a";
+  return value.toFixed(digits);
 }
 
 function teamPalette(driverA: AnalyticsDriverOption, driverB: AnalyticsDriverOption): Palette {
@@ -98,6 +110,8 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
   const [driverB, setDriverB] = useState(initialComparison?.drivers.b.code ?? initialDrivers.find((driver) => driver.code !== driverA)?.code ?? "");
   const [comparison, setComparison] = useState(initialComparison);
   const [activeTab, setActiveTab] = useState<EvidenceTab>("race-pace");
+  const [selectedCornerId, setSelectedCornerId] = useState<string | null>(initialComparison?.cornerTelemetry[0]?.segmentId ?? null);
+  const [cornerMetricMode, setCornerMetricMode] = useState<CornerMetricMode>("delta");
   const [error, setError] = useState<string | null>(initialComparison ? null : "No comparison is available for this driver pair.");
   const [isPending, startTransition] = useTransition();
 
@@ -139,13 +153,6 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
     }
     return rows;
   }, [comparison]);
-
-  const cornerRows = useMemo(() => comparison?.segmentHighlights.map((row) => ({
-    segment: row.segmentId,
-    entry: row.entrySpeedDeltaKph,
-    apex: row.apexSpeedDeltaKph,
-    exit: row.exitSpeedDeltaKph,
-  })) ?? [], [comparison]);
 
   const straightRows = useMemo(() => comparison?.straightHighlights.map((row) => ({
     segment: row.segmentId,
@@ -190,6 +197,7 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
           `/api/analytics/compare?sessionId=${encodeURIComponent(nextSessionId)}&driverA=${encodeURIComponent(nextDriverA)}&driverB=${encodeURIComponent(nextDriverB)}&mode=all`,
         );
         setComparison(data.comparison);
+        setSelectedCornerId(data.comparison.cornerTelemetry[0]?.segmentId ?? null);
         setDriverA(data.comparison.drivers.a.code);
         setDriverB(data.comparison.drivers.b.code);
       } catch (loadError) {
@@ -350,7 +358,17 @@ export function DriverVersusWorkspace({ sessions, initialDrivers, initialCompari
                   </LineChart>
                 </ChartFrame>
               ) : activeTab === "corners" ? (
-                <DeltaBars title="Corner speed analysis" subtitle="Entry, apex, and exit deltas across approximate segments." rows={cornerRows} keys={["entry", "apex", "exit"]} palette={palette} />
+                <CornerTelemetryConsole
+                  corners={comparison.cornerTelemetry}
+                  selectedCornerId={selectedCornerId}
+                  onSelectCorner={setSelectedCornerId}
+                  metricMode={cornerMetricMode}
+                  onMetricModeChange={setCornerMetricMode}
+                  driverA={comparison.overview.driverA}
+                  driverB={comparison.overview.driverB}
+                  palette={palette}
+                  sameTeam={palette.sameTeam}
+                />
               ) : activeTab === "straights" ? (
                 <div className="versus-split-charts">
                   <DeltaBars title="Straight-line speed" subtitle="Terminal speed, acceleration, and DRS active delta." rows={straightRows} keys={["terminal", "accel", "drs"]} palette={palette} />
@@ -403,6 +421,204 @@ function UnavailablePanel({ title, message }: { title: string; message: string }
       <strong>{title}</strong>
       <p>{message}</p>
     </section>
+  );
+}
+
+function CornerTelemetryConsole({
+  corners,
+  selectedCornerId,
+  onSelectCorner,
+  metricMode,
+  onMetricModeChange,
+  driverA,
+  driverB,
+  palette,
+  sameTeam,
+}: {
+  corners: AnalyticsCornerTelemetry[];
+  selectedCornerId: string | null;
+  onSelectCorner: (segmentId: string) => void;
+  metricMode: CornerMetricMode;
+  onMetricModeChange: (mode: CornerMetricMode) => void;
+  driverA: string;
+  driverB: string;
+  palette: Palette;
+  sameTeam: boolean;
+}) {
+  const selectedCorner = corners.find((corner) => corner.segmentId === selectedCornerId) ?? corners[0] ?? null;
+
+  const chartRows = useMemo(() => {
+    if (!selectedCorner) return [];
+    return [
+      {
+        phase: "Entry",
+        delta: selectedCorner.entrySpeedDeltaKph,
+        driverA: selectedCorner.driverA.entrySpeedKph,
+        driverB: selectedCorner.driverB.entrySpeedKph,
+        gearA: selectedCorner.driverA.entryGear,
+        gearB: selectedCorner.driverB.entryGear,
+      },
+      {
+        phase: "Apex",
+        delta: selectedCorner.apexSpeedDeltaKph,
+        driverA: selectedCorner.driverA.apexSpeedKph,
+        driverB: selectedCorner.driverB.apexSpeedKph,
+        gearA: selectedCorner.driverA.apexGear,
+        gearB: selectedCorner.driverB.apexGear,
+      },
+      {
+        phase: "Exit",
+        delta: selectedCorner.exitSpeedDeltaKph,
+        driverA: selectedCorner.driverA.exitSpeedKph,
+        driverB: selectedCorner.driverB.exitSpeedKph,
+        gearA: selectedCorner.driverA.exitGear,
+        gearB: selectedCorner.driverB.exitGear,
+      },
+      {
+        phase: "Min",
+        delta: selectedCorner.minSpeedDeltaKph,
+        driverA: selectedCorner.driverA.minSpeedKph,
+        driverB: selectedCorner.driverB.minSpeedKph,
+        gearA: null,
+        gearB: null,
+      },
+    ];
+  }, [selectedCorner]);
+
+  if (!selectedCorner) {
+    return <UnavailablePanel title="Corner telemetry unavailable" message="No corner rows are available for this selected driver pair." />;
+  }
+
+  const hasAbsoluteSpeed = chartRows.some((row) => row.driverA !== null || row.driverB !== null);
+  const hasGear = chartRows.some((row) => row.gearA !== null || row.gearB !== null);
+  const selectedLeader = selectedCorner.fasterDriver === driverB ? driverB : driverA;
+  const chartTitle = metricMode === "delta"
+    ? "Selected-corner speed delta"
+    : metricMode === "absolute"
+      ? "Selected-corner absolute speed"
+      : "Selected-corner gear trace";
+  const chartSubtitle = `${selectedCorner.label} / ${selectedCorner.segmentKind}. Confidence ${formatUnsigned((selectedCorner.confidence ?? 0) * 100, 0)}%.`;
+  const metricUnavailable = (metricMode === "absolute" && !hasAbsoluteSpeed) || (metricMode === "gear" && !hasGear);
+
+  return (
+    <section className="corner-telemetry-console">
+      <div className="corner-telemetry-console__header">
+        <div>
+          <p>Corner telemetry</p>
+          <strong>{selectedCorner.label}</strong>
+          <small>{selectedCorner.segmentId.replaceAll("_", " ")}</small>
+        </div>
+        <div className="corner-telemetry-console__modes" role="tablist" aria-label="Corner metric">
+          {cornerMetricModes.map((mode) => (
+            <button
+              key={mode.id}
+              type="button"
+              role="tab"
+              aria-selected={metricMode === mode.id}
+              className={metricMode === mode.id ? "is-active" : ""}
+              onClick={() => onMetricModeChange(mode.id)}
+            >
+              {mode.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="corner-telemetry-console__grid">
+        <div className="corner-telemetry-console__selector" aria-label="Available corners">
+          {corners.map((corner) => {
+            const owner = corner.fasterDriver === driverB ? "b" : "a";
+            return (
+              <button
+                key={corner.segmentId}
+                type="button"
+                className={corner.segmentId === selectedCorner.segmentId ? "is-active" : ""}
+                data-owner={owner}
+                onClick={() => onSelectCorner(corner.segmentId)}
+                title={`${corner.label}: ${formatNumber(corner.apexSpeedDeltaKph, 1)} kph apex delta`}
+              >
+                <span>{corner.label}</span>
+                <small>{formatNumber(corner.apexSpeedDeltaKph, 1)}</small>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="corner-telemetry-console__readout">
+          <div className="corner-telemetry-console__winner">
+            <span>Faster at apex</span>
+            <strong style={{ color: selectedLeader === driverA ? palette.a : palette.b }}>{selectedLeader}</strong>
+          </div>
+          <PhaseStat label="Entry" delta={selectedCorner.entrySpeedDeltaKph} gearA={selectedCorner.driverA.entryGear} gearB={selectedCorner.driverB.entryGear} />
+          <PhaseStat label="Apex" delta={selectedCorner.apexSpeedDeltaKph} gearA={selectedCorner.driverA.apexGear} gearB={selectedCorner.driverB.apexGear} />
+          <PhaseStat label="Exit" delta={selectedCorner.exitSpeedDeltaKph} gearA={selectedCorner.driverA.exitGear} gearB={selectedCorner.driverB.exitGear} />
+        </div>
+
+        <div className="corner-telemetry-console__chart">
+          {metricUnavailable ? (
+            <UnavailablePanel
+              title={metricMode === "absolute" ? "Absolute speed unavailable" : "Gear trace unavailable"}
+              message="This selected analytics payload does not include those fields yet. Regenerated corner product data will populate this view."
+            />
+          ) : (
+            <ChartFrame title={chartTitle} subtitle={chartSubtitle} dark>
+              <BarChart data={chartRows} margin={{ left: -8, right: 14, top: 12 }}>
+                <CartesianGrid stroke="var(--chart-grid)" vertical={false} />
+                <XAxis dataKey="phase" tickLine={false} axisLine={false} stroke="var(--chart-axis)" />
+                <YAxis
+                  tickLine={false}
+                  axisLine={false}
+                  stroke="var(--chart-axis)"
+                  domain={metricMode === "gear" ? [0, 8] : undefined}
+                  label={{
+                    value: metricMode === "delta" ? "KPH DELTA" : metricMode === "absolute" ? "SPEED (KM/H)" : "GEAR",
+                    angle: -90,
+                    position: "insideLeft",
+                    offset: 14,
+                    style: AXIS_LABEL,
+                  }}
+                />
+                {metricMode === "delta" ? <ReferenceLine y={0} stroke="rgba(244,246,248,0.38)" /> : null}
+                <Tooltip
+                  formatter={(value, name) => [
+                    metricMode === "gear" ? formatUnsigned(Number(value), 0) : formatUnsigned(Number(value), 1),
+                    String(name),
+                  ]}
+                  contentStyle={{ background: darkPanel, border: "1px solid var(--versus-line)", color: "#f4f6f8" }}
+                />
+                {metricMode === "delta" ? (
+                  <Bar dataKey="delta" name={`${driverA} minus ${driverB}`} radius={[2, 2, 0, 0]}>
+                    {chartRows.map((row) => (
+                      <Cell key={row.phase} fill={Number(row.delta ?? 0) >= 0 ? palette.a : palette.b} />
+                    ))}
+                  </Bar>
+                ) : metricMode === "absolute" ? (
+                  <>
+                    <Bar dataKey="driverA" name={`${driverA} speed`} fill={palette.a} radius={[2, 2, 0, 0]} />
+                    <Bar dataKey="driverB" name={`${driverB} speed`} fill={palette.b} radius={[2, 2, 0, 0]} opacity={sameTeam ? 0.72 : 1} />
+                  </>
+                ) : (
+                  <>
+                    <Bar dataKey="gearA" name={`${driverA} gear`} fill={palette.a} radius={[2, 2, 0, 0]} />
+                    <Bar dataKey="gearB" name={`${driverB} gear`} fill={palette.b} radius={[2, 2, 0, 0]} opacity={sameTeam ? 0.72 : 1} />
+                  </>
+                )}
+              </BarChart>
+            </ChartFrame>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PhaseStat({ label, delta, gearA, gearB }: { label: string; delta: number | null; gearA: number | null; gearB: number | null }) {
+  return (
+    <article>
+      <span>{label}</span>
+      <strong>{formatNumber(delta, 1)} kph</strong>
+      <small>Gear {formatUnsigned(gearA, 0)} / {formatUnsigned(gearB, 0)}</small>
+    </article>
   );
 }
 

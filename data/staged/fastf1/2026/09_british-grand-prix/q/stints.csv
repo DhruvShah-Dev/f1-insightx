@@ -1,0 +1,103 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026,9,British Grand Prix,Q,ALB,Williams,1.0,SOFT,1,92.94,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,ALB,Williams,2.0,SOFT,2,96.8035,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,ALB,Williams,3.0,SOFT,2,103.0895,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,ALB,Williams,4.0,SOFT,2,102.58449999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,ALB,Williams,5.0,SOFT,2,104.3,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,ALO,Aston Martin,1.0,SOFT,1,101.031,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,ALO,Aston Martin,2.0,SOFT,3,107.04233333333333,0.0,-0.5,2,4
+2026,9,British Grand Prix,Q,ALO,Aston Martin,3.0,SOFT,2,99.9085,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,ANT,Mercedes,1.0,SOFT,2,101.9755,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,ANT,Mercedes,2.0,SOFT,2,99.975,10.0,0.0,9,10
+2026,9,British Grand Prix,Q,ANT,Mercedes,3.0,SOFT,3,102.41733333333333,0.0,-0.5,2,4
+2026,9,British Grand Prix,Q,ANT,Mercedes,4.0,SOFT,2,99.6905,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,ANT,Mercedes,5.0,SOFT,2,94.6865,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,ANT,Mercedes,6.0,SOFT,1,88.111,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,1.0,SOFT,2,97.124,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,2.0,SOFT,2,97.33699999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,3.0,SOFT,2,103.91999999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,4.0,SOFT,2,101.098,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BEA,Haas F1 Team,5.0,SOFT,2,107.4145,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BOR,Audi,2.0,SOFT,2,103.5805,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BOR,Audi,3.0,SOFT,2,99.05449999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BOR,Audi,4.0,SOFT,2,103.1725,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BOT,Cadillac,1.0,SOFT,1,107.013,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,BOT,Cadillac,2.0,SOFT,2,99.6235,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,BOT,Cadillac,3.0,SOFT,2,105.247,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,COL,Alpine,1.0,SOFT,2,106.00200000000001,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,COL,Alpine,2.0,SOFT,1,131.992,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,GAS,Alpine,1.0,SOFT,2,102.55,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,GAS,Alpine,2.0,SOFT,2,103.9555,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,GAS,Alpine,3.0,SOFT,2,103.8725,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,GAS,Alpine,4.0,SOFT,2,103.3395,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,1.0,SOFT,2,102.48750000000001,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,2.0,SOFT,2,109.0855,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,3.0,SOFT,2,102.6615,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,4.0,SOFT,2,99.6985,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,5.0,SOFT,2,96.194,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HAD,Red Bull Racing,6.0,SOFT,1,88.746,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,HAM,Ferrari,1.0,SOFT,4,108.355,0.48799999999999955,0.39999999999999997,5,8
+2026,9,British Grand Prix,Q,HAM,Ferrari,2.0,SOFT,2,103.1695,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HAM,Ferrari,3.0,SOFT,2,98.7345,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HAM,Ferrari,4.0,SOFT,2,96.0555,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HAM,Ferrari,5.0,SOFT,1,88.458,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,HUL,Audi,1.0,MEDIUM,2,96.033,9.050000000000011,0.0,8,9
+2026,9,British Grand Prix,Q,HUL,Audi,2.0,SOFT,2,99.97049999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HUL,Audi,3.0,SOFT,2,99.4685,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HUL,Audi,4.0,SOFT,2,95.237,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,HUL,Audi,5.0,SOFT,2,102.2715,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,1.0,SOFT,2,95.41749999999999,5.162999999999997,0.0,5,6
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,2.0,SOFT,2,94.6525,9.305000000000007,0.0,2,3
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,3.0,SOFT,2,102.4695,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,4.0,SOFT,2,99.8195,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,5.0,SOFT,2,103.4615,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,6.0,SOFT,1,92.923,0.0,0.0,5,5
+2026,9,British Grand Prix,Q,LAW,Racing Bulls,7.0,SOFT,1,89.716,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,LEC,Ferrari,1.0,SOFT,5,104.00040000000001,0.3902499999999982,0.09999999999999999,5,9
+2026,9,British Grand Prix,Q,LEC,Ferrari,2.0,SOFT,2,98.626,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LEC,Ferrari,3.0,SOFT,2,99.9205,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LEC,Ferrari,4.0,SOFT,2,97.301,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LEC,Ferrari,5.0,SOFT,1,88.286,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,1.0,SOFT,1,92.375,0.0,0.0,5,5
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,2.0,SOFT,2,102.0535,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,3.0,SOFT,2,100.65950000000001,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,4.0,SOFT,2,101.157,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,5.0,SOFT,2,102.48949999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,LIN,Racing Bulls,6.0,SOFT,1,89.305,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,NOR,McLaren,1.0,SOFT,2,102.06700000000001,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,NOR,McLaren,2.0,SOFT,1,106.246,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,NOR,McLaren,3.0,SOFT,2,96.919,10.0,0.0,4,5
+2026,9,British Grand Prix,Q,NOR,McLaren,4.0,SOFT,2,101.7535,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,NOR,McLaren,5.0,SOFT,2,96.9195,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,NOR,McLaren,6.0,SOFT,1,88.877,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,1.0,SOFT,2,98.746,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,2.0,SOFT,2,97.33099999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,OCO,Haas F1 Team,3.0,SOFT,2,105.7265,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,PER,Cadillac,1.0,SOFT,2,97.35499999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,PER,Cadillac,2.0,SOFT,2,98.2975,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,PER,Cadillac,3.0,SOFT,1,91.451,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,PIA,McLaren,1.0,SOFT,2,100.254,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,PIA,McLaren,2.0,SOFT,2,102.72749999999999,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,PIA,McLaren,3.0,SOFT,2,97.5445,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,PIA,McLaren,4.0,SOFT,2,103.6945,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,PIA,McLaren,5.0,SOFT,2,98.6515,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,PIA,McLaren,6.0,SOFT,1,89.032,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,RUS,Mercedes,2.0,SOFT,2,105.203,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,RUS,Mercedes,3.0,SOFT,2,98.581,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,RUS,Mercedes,4.0,SOFT,1,89.567,0.0,0.0,5,5
+2026,9,British Grand Prix,Q,RUS,Mercedes,5.0,SOFT,2,96.1215,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,RUS,Mercedes,6.0,SOFT,1,88.686,0.0,0.0,2,2
+2026,9,British Grand Prix,Q,SAI,Williams,1.0,SOFT,2,97.8095,8.699000000000012,0.0,8,9
+2026,9,British Grand Prix,Q,SAI,Williams,2.0,SOFT,2,98.043,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,SAI,Williams,3.0,SOFT,2,102.709,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,SAI,Williams,4.0,SOFT,2,104.1545,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,SAI,Williams,5.0,SOFT,2,105.1325,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,STR,Aston Martin,1.0,SOFT,2,101.4745,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,STR,Aston Martin,2.0,SOFT,3,116.99433333333333,0.0,-0.5,1,3
+2026,9,British Grand Prix,Q,STR,Aston Martin,3.0,SOFT,2,105.6765,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,1.0,SOFT,2,103.36699999999999,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,2.0,SOFT,2,102.1225,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,3.0,SOFT,2,100.55600000000001,10.0,0.0,5,6
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,4.0,SOFT,2,99.406,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,5.0,SOFT,2,95.4365,10.0,0.0,2,3
+2026,9,British Grand Prix,Q,VER,Red Bull Racing,6.0,SOFT,1,88.893,0.0,0.0,2,2

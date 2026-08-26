@@ -1,0 +1,99 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026,8,Austrian Grand Prix,Q,ALB,Williams,1.0,SOFT,2,78.804,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ALB,Williams,2.0,SOFT,2,78.8115,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ALB,Williams,3.0,SOFT,2,98.5525,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ALO,Aston Martin,1.0,SOFT,2,80.2145,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ALO,Aston Martin,2.0,SOFT,2,82.346,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ALO,Aston Martin,3.0,SOFT,2,82.172,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ANT,Mercedes,1.0,SOFT,2,97.6585,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ANT,Mercedes,2.0,SOFT,1,76.35,0.0,0.0,5,5
+2026,8,Austrian Grand Prix,Q,ANT,Mercedes,3.0,SOFT,2,80.483,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ANT,Mercedes,4.0,SOFT,1,66.965,0.0,0.0,5,5
+2026,8,Austrian Grand Prix,Q,ANT,Mercedes,5.0,SOFT,2,77.914,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,ANT,Mercedes,6.0,SOFT,1,68.215,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,1.0,SOFT,2,79.11500000000001,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,2.0,SOFT,2,84.3045,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,3.0,SOFT,2,78.0955,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,4.0,SOFT,2,81.626,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BOR,Audi,1.0,SOFT,2,81.1505,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BOR,Audi,2.0,SOFT,2,81.16499999999999,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BOR,Audi,3.0,SOFT,2,77.85499999999999,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,BOR,Audi,4.0,SOFT,2,82.116,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BOT,Cadillac,1.0,SOFT,2,78.03299999999999,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BOT,Cadillac,2.0,SOFT,2,80.0245,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,BOT,Cadillac,3.0,SOFT,1,69.188,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,COL,Alpine,1.0,SOFT,2,82.15350000000001,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,COL,Alpine,2.0,SOFT,2,84.6685,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,COL,Alpine,3.0,SOFT,2,100.2225,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,COL,Alpine,4.0,SOFT,1,91.909,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,GAS,Alpine,1.0,SOFT,2,103.202,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,GAS,Alpine,2.0,SOFT,2,81.7375,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,GAS,Alpine,3.0,SOFT,2,81.27,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,GAS,Alpine,4.0,SOFT,2,81.069,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,1.0,SOFT,2,82.906,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,2.0,SOFT,2,79.709,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,3.0,SOFT,2,98.929,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,4.0,SOFT,2,78.15950000000001,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,5.0,SOFT,2,75.395,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,6.0,SOFT,1,66.632,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,HAM,Ferrari,1.0,SOFT,2,82.2825,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HAM,Ferrari,2.0,SOFT,2,81.519,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HAM,Ferrari,3.0,SOFT,2,75.4365,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,HAM,Ferrari,4.0,SOFT,1,84.692,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,HAM,Ferrari,5.0,SOFT,1,66.408,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,HUL,Audi,1.0,SOFT,2,81.87100000000001,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HUL,Audi,2.0,SOFT,2,91.7475,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,HUL,Audi,3.0,SOFT,2,81.1995,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,HUL,Audi,4.0,SOFT,2,75.975,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,HUL,Audi,5.0,SOFT,1,67.611,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,1.0,SOFT,2,80.364,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,2.0,SOFT,2,79.909,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,3.0,SOFT,2,79.25800000000001,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,4.0,SOFT,2,79.5205,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,5.0,SOFT,2,76.6115,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,6.0,SOFT,1,66.955,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,LEC,Ferrari,1.0,SOFT,2,82.7235,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LEC,Ferrari,2.0,SOFT,2,79.39750000000001,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LEC,Ferrari,3.0,SOFT,2,76.77250000000001,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,LEC,Ferrari,4.0,SOFT,2,77.5085,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LEC,Ferrari,5.0,SOFT,1,66.349,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,1.0,SOFT,2,78.8095,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,2.0,SOFT,2,80.3155,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,3.0,SOFT,2,75.004,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,4.0,SOFT,2,78.013,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,5.0,SOFT,2,74.3395,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,6.0,SOFT,1,67.007,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,NOR,McLaren,1.0,SOFT,2,81.259,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,NOR,McLaren,2.0,SOFT,2,77.322,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,NOR,McLaren,3.0,SOFT,2,77.147,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,NOR,McLaren,4.0,SOFT,2,77.565,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,NOR,McLaren,5.0,SOFT,1,66.502,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,1.0,SOFT,2,102.8335,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,2.0,SOFT,2,79.5315,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,3.0,SOFT,2,83.574,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,4.0,SOFT,2,80.45949999999999,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,5.0,SOFT,2,80.553,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,PER,Cadillac,1.0,SOFT,2,80.96950000000001,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,PER,Cadillac,2.0,SOFT,2,80.23349999999999,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,PER,Cadillac,3.0,SOFT,2,81.08500000000001,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,PIA,McLaren,1.0,SOFT,2,83.005,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,PIA,McLaren,2.0,SOFT,1,116.248,0.0,0.0,5,5
+2026,8,Austrian Grand Prix,Q,PIA,McLaren,3.0,SOFT,2,79.2205,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,PIA,McLaren,4.0,SOFT,2,76.8655,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,PIA,McLaren,5.0,SOFT,1,66.511,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,RUS,Mercedes,1.0,SOFT,2,87.4955,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,RUS,Mercedes,2.0,SOFT,2,100.20499999999998,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,RUS,Mercedes,3.0,SOFT,2,78.5685,10.0,0.0,8,9
+2026,8,Austrian Grand Prix,Q,RUS,Mercedes,4.0,SOFT,1,83.25,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,RUS,Mercedes,5.0,SOFT,2,78.49000000000001,10.0,0.0,4,5
+2026,8,Austrian Grand Prix,Q,RUS,Mercedes,6.0,SOFT,2,76.591,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,RUS,Mercedes,7.0,SOFT,1,66.113,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,SAI,Williams,1.0,SOFT,2,82.3215,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,SAI,Williams,2.0,SOFT,2,80.40899999999999,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,SAI,Williams,3.0,SOFT,2,83.846,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,STR,Aston Martin,1.0,SOFT,2,99.37899999999999,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,STR,Aston Martin,2.0,SOFT,2,79.6,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,STR,Aston Martin,3.0,SOFT,1,93.507,0.0,0.0,2,2
+2026,8,Austrian Grand Prix,Q,VER,Red Bull Racing,1.0,SOFT,2,98.2295,10.0,0.0,2,3
+2026,8,Austrian Grand Prix,Q,VER,Red Bull Racing,2.0,SOFT,2,79.01,10.0,0.0,5,6
+2026,8,Austrian Grand Prix,Q,VER,Red Bull Racing,3.0,SOFT,2,73.3415,10.0,0.0,2,3

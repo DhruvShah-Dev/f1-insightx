@@ -73,6 +73,20 @@ type SegmentComparisonRow = {
   apex_speed_delta_kph: Numeric;
   exit_speed_delta_kph: Numeric;
   min_speed_delta_kph: Numeric;
+  entry_speed_kph_a?: Numeric;
+  entry_speed_kph_b?: Numeric;
+  apex_speed_kph_a?: Numeric;
+  apex_speed_kph_b?: Numeric;
+  exit_speed_kph_a?: Numeric;
+  exit_speed_kph_b?: Numeric;
+  min_speed_kph_a?: Numeric;
+  min_speed_kph_b?: Numeric;
+  entry_gear_a?: Numeric;
+  entry_gear_b?: Numeric;
+  apex_gear_a?: Numeric;
+  apex_gear_b?: Numeric;
+  exit_gear_a?: Numeric;
+  exit_gear_b?: Numeric;
   faster_driver: string;
   confidence: Numeric;
 };
@@ -279,6 +293,40 @@ export type AnalyticsLapPacePoint = {
   confidence: number | null;
 };
 
+export type AnalyticsCornerTelemetry = {
+  segmentId: string;
+  cornerNumber: number | null;
+  label: string;
+  segmentKind: string;
+  segmentConfidence: number | null;
+  entrySpeedDeltaKph: number | null;
+  apexSpeedDeltaKph: number | null;
+  exitSpeedDeltaKph: number | null;
+  minSpeedDeltaKph: number | null;
+  driverA: {
+    code: string;
+    entrySpeedKph: number | null;
+    apexSpeedKph: number | null;
+    exitSpeedKph: number | null;
+    minSpeedKph: number | null;
+    entryGear: number | null;
+    apexGear: number | null;
+    exitGear: number | null;
+  };
+  driverB: {
+    code: string;
+    entrySpeedKph: number | null;
+    apexSpeedKph: number | null;
+    exitSpeedKph: number | null;
+    minSpeedKph: number | null;
+    entryGear: number | null;
+    apexGear: number | null;
+    exitGear: number | null;
+  };
+  fasterDriver: string | null;
+  confidence: number | null;
+};
+
 export type AnalyticsLapPaceComparison = {
   available: boolean;
   source: "analytics_lap_pace_driver" | "unavailable";
@@ -344,6 +392,7 @@ export type AnalyticsComparisonPayload = {
   dataStrengthLabel: string;
   trackSummary: AnalyticsTrackSummary | null;
   segmentHighlights: AnalyticsSegmentHighlight[];
+  cornerTelemetry: AnalyticsCornerTelemetry[];
   brakingHighlights: AnalyticsBrakingHighlight[];
   throttleHighlights: AnalyticsThrottleHighlight[];
   straightHighlights: AnalyticsStraightHighlight[];
@@ -537,6 +586,7 @@ type AnalyticsIndexedSessionPayload = {
   overview: DriverComparisonRow[];
   track_summary: TrackSummaryRow[];
   segments: SegmentComparisonRow[];
+  corner_segments?: SegmentComparisonRow[];
   braking: BrakingComparisonRow[];
   throttle: ThrottleComparisonRow[];
   straights: StraightComparisonRow[];
@@ -712,6 +762,59 @@ function orientSegment(row: SegmentComparisonRow, driverA: string, driverB: stri
     exitSpeedDeltaKph: flip(row.exit_speed_delta_kph),
     minSpeedDeltaKph: flip(row.min_speed_delta_kph),
     fasterDriver: row.faster_driver || null,
+    confidence: clamp01(asNumber(row.confidence)),
+  };
+}
+
+function cornerNumberFromSegmentId(segmentId: string) {
+  const match = segmentId.match(/(?:corner|segment|turn)[_-]?(\d+)/i) ?? segmentId.match(/(\d+)(?!.*\d)/);
+  return match ? Number.parseInt(match[1], 10) : null;
+}
+
+function cornerLabel(segmentId: string, cornerNumber: number | null) {
+  return cornerNumber === null ? segmentId.replaceAll("_", " ") : `T${cornerNumber}`;
+}
+
+function orientCorner(row: SegmentComparisonRow, driverA: string, driverB: string): AnalyticsCornerTelemetry {
+  const sameOrder = isRequestedOrder(row, driverA, driverB);
+  const flip = (value: Numeric) => sameOrder ? asNumber(value) : invertNumber(asNumber(value));
+  const first = sameOrder ? "a" : "b";
+  const second = sameOrder ? "b" : "a";
+  const read = (field: "entry_speed_kph" | "apex_speed_kph" | "exit_speed_kph" | "min_speed_kph" | "entry_gear" | "apex_gear" | "exit_gear", side: "a" | "b") =>
+    asNumber(row[`${field}_${side}` as keyof SegmentComparisonRow]);
+  const cornerNumber = cornerNumberFromSegmentId(row.segment_id);
+
+  return {
+    segmentId: row.segment_id,
+    cornerNumber,
+    label: cornerLabel(row.segment_id, cornerNumber),
+    segmentKind: row.segment_kind || "approximate segment",
+    segmentConfidence: clamp01(asNumber(row.segment_confidence)),
+    entrySpeedDeltaKph: flip(row.entry_speed_delta_kph),
+    apexSpeedDeltaKph: flip(row.apex_speed_delta_kph),
+    exitSpeedDeltaKph: flip(row.exit_speed_delta_kph),
+    minSpeedDeltaKph: flip(row.min_speed_delta_kph),
+    driverA: {
+      code: normalizedCode(driverA),
+      entrySpeedKph: read("entry_speed_kph", first),
+      apexSpeedKph: read("apex_speed_kph", first),
+      exitSpeedKph: read("exit_speed_kph", first),
+      minSpeedKph: read("min_speed_kph", first),
+      entryGear: read("entry_gear", first),
+      apexGear: read("apex_gear", first),
+      exitGear: read("exit_gear", first),
+    },
+    driverB: {
+      code: normalizedCode(driverB),
+      entrySpeedKph: read("entry_speed_kph", second),
+      apexSpeedKph: read("apex_speed_kph", second),
+      exitSpeedKph: read("exit_speed_kph", second),
+      minSpeedKph: read("min_speed_kph", second),
+      entryGear: read("entry_gear", second),
+      apexGear: read("apex_gear", second),
+      exitGear: read("exit_gear", second),
+    },
+    fasterDriver: row.faster_driver ? normalizedCode(row.faster_driver) : null,
     confidence: clamp01(asNumber(row.confidence)),
   };
 }
@@ -910,6 +1013,17 @@ function loadSegmentHighlights(rows: SegmentComparisonRow[], sessionId: string, 
   );
 }
 
+function loadCornerTelemetry(rows: SegmentComparisonRow[], sessionId: string, driverA: string, driverB: string) {
+  return rows
+    .filter(matchPair(sessionId, driverA, driverB))
+    .map((row) => orientCorner(row, driverA, driverB))
+    .sort((left, right) => {
+      const leftNumber = left.cornerNumber ?? Number.MAX_SAFE_INTEGER;
+      const rightNumber = right.cornerNumber ?? Number.MAX_SAFE_INTEGER;
+      return (leftNumber - rightNumber) || left.segmentId.localeCompare(right.segmentId);
+    });
+}
+
 function loadBrakingHighlights(rows: BrakingComparisonRow[], sessionId: string, driverA: string, driverB: string) {
   return topByMagnitude(
     rows.filter(matchPair(sessionId, driverA, driverB)).map((row) => orientBraking(row, driverA, driverB)),
@@ -1087,6 +1201,9 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
     round: session.round,
   };
   const segmentHighlights = mode === "segments" || mode === "all" ? loadSegmentHighlights(payload.segments, sessionId, requestedA, requestedB) : [];
+  const cornerTelemetry = mode === "segments" || mode === "all"
+    ? loadCornerTelemetry(payload.corner_segments ?? payload.segments, sessionId, requestedA, requestedB)
+    : [];
   const brakingHighlights = mode === "braking" || mode === "all" ? loadBrakingHighlights(payload.braking, sessionId, requestedA, requestedB) : [];
   const throttleHighlights = mode === "throttle" || mode === "all" ? loadThrottleHighlights(payload.throttle, sessionId, requestedA, requestedB) : [];
   const straightHighlights = mode === "straights" || mode === "all" ? loadStraightHighlights(payload.straights, sessionId, requestedA, requestedB) : [];
@@ -1105,6 +1222,7 @@ async function comparisonFromCsv(sessionId: string, driverA: string, driverB: st
     dataStrengthLabel: dataStrengthLabel(overview.confidence, session.telemetryQualityMean),
     trackSummary: mappedTrackSummary,
     segmentHighlights,
+    cornerTelemetry,
     brakingHighlights,
     throttleHighlights,
     straightHighlights,

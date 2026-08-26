@@ -1,0 +1,325 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,1.0,1.0,SOFT,1.0,,,44.711,20.281,259.0,262.0,259.0,250.0,1,True,False,False,False,2026-03-28 06:05:43.841,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,2.0,1.0,SOFT,2.0,90.035,32.388,39.93,17.717,280.0,326.0,265.0,280.0,1,True,True,True,False,2026-03-28 06:07:24.077,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,3.0,1.0,SOFT,3.0,116.306,42.15,48.389,25.767,148.0,284.0,,222.0,1,True,False,False,False,2026-03-28 06:08:54.112,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,4.0,2.0,SOFT,4.0,,,43.804,20.719,258.0,250.0,258.0,251.0,1,False,False,False,False,2026-03-28 06:10:50.418,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,5.0,2.0,SOFT,5.0,89.774,32.351,39.788,17.635,279.0,325.0,263.0,281.0,1,False,True,True,False,2026-03-28 06:26:42.810,,16.5,30.1,50.1,False,2.6,125.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,6.0,2.0,SOFT,6.0,107.772,42.576,43.487,21.709,268.0,282.0,,269.0,1,False,False,False,False,2026-03-28 06:28:12.584,,16.5,30.2,50.2,False,2.2,137.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,7.0,3.0,SOFT,1.0,,,48.662,23.169,259.0,273.0,248.0,265.0,1,True,False,False,False,2026-03-28 06:30:00.356,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,8.0,3.0,SOFT,2.0,89.048,32.178,39.398,17.472,280.0,328.0,265.0,282.0,1,True,True,True,False,2026-03-28 06:38:55.062,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,9.0,3.0,SOFT,3.0,112.223,40.596,45.482,26.145,255.0,285.0,,215.0,1,True,False,False,False,2026-03-28 06:40:24.110,,16.4,29.4,48.7,False,0.6,135.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,10.0,4.0,SOFT,1.0,,,43.372,20.478,257.0,266.0,256.0,257.0,1,True,False,False,False,2026-03-28 06:42:16.333,,16.7,29.3,46.6,False,2.3,137.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,11.0,4.0,SOFT,2.0,88.778,31.855,39.439,17.484,280.0,328.0,267.0,282.0,1,True,True,True,False,2026-03-28 06:49:00.960,,16.6,28.9,46.5,False,2.2,129.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,12.0,4.0,SOFT,3.0,105.679,39.973,43.525,22.181,264.0,284.0,,269.0,1,True,False,False,False,2026-03-28 06:50:29.738,,16.7,28.9,46.1,False,1.5,146.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,13.0,5.0,SOFT,1.0,,,43.496,20.153,259.0,263.0,261.0,252.0,1,True,False,False,False,2026-03-28 06:52:15.417,,16.8,28.5,47.8,False,0.4,31.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,14.0,5.0,SOFT,2.0,88.839,31.826999999999998,39.548,17.464,280.0,328.0,265.0,282.0,1,True,False,True,False,2026-03-28 06:57:57.996,,16.5,27.9,52.8,False,1.8,114.0
+2026,3,Japanese Grand Prix,Q,ANT,Mercedes,15.0,5.0,SOFT,3.0,116.462,40.038,45.332,31.092,261.0,227.0,,184.0,1,True,False,False,False,2026-03-28 06:59:26.835,,16.5,27.9,52.4,False,2.1,127.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,1.0,1.0,SOFT,1.0,,,45.084,20.846,259.0,252.0,249.0,251.0,1,True,False,False,False,2026-03-28 06:05:59.725,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,2.0,1.0,SOFT,2.0,90.631,32.723,40.067,17.841,277.0,327.0,256.0,282.0,1,True,True,True,False,2026-03-28 06:07:43.649,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,3.0,1.0,SOFT,3.0,120.217,44.557,51.323,24.337,260.0,274.0,,261.0,1,True,False,False,False,2026-03-28 06:09:14.280,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,4.0,2.0,SOFT,4.0,,,44.377,21.248,251.0,249.0,247.0,249.0,1,False,False,False,False,2026-03-28 06:11:14.497,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,5.0,2.0,SOFT,5.0,89.967,32.443,39.791,17.733,279.0,326.0,256.0,281.0,1,False,True,True,False,2026-03-28 06:14:52.275,,16.4,31.4,55.8,False,1.8,115.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,6.0,2.0,SOFT,6.0,119.68,46.872,47.528,25.28,132.0,278.0,,229.0,1,False,False,False,False,2026-03-28 06:16:22.242,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,7.0,3.0,SOFT,7.0,,,44.004,20.165,251.0,249.0,245.0,250.0,1,False,False,False,False,2026-03-28 06:18:21.922,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,8.0,3.0,SOFT,8.0,90.117,32.446,39.859,17.812,279.0,327.0,255.0,282.0,1,False,True,True,False,2026-03-28 06:26:50.508,,16.5,30.1,50.1,False,2.6,125.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,9.0,3.0,SOFT,9.0,112.666,41.997,47.108,23.561,165.0,278.0,,265.0,1,False,False,False,False,2026-03-28 06:28:20.625,,16.5,30.2,50.2,False,2.2,137.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,10.0,4.0,SOFT,1.0,,,44.259,20.204,254.0,249.0,249.0,250.0,1,True,False,False,False,2026-03-28 06:30:13.291,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,11.0,4.0,SOFT,2.0,89.767,32.165,39.769,17.833,281.0,325.0,255.0,280.0,1,True,True,True,False,2026-03-28 06:33:37.939,,16.5,29.7,47.2,False,1.9,144.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,12.0,4.0,SOFT,3.0,124.89,47.78,52.771,24.339,259.0,287.0,106.0,229.0,1,True,False,True,False,2026-03-28 06:35:07.706,,16.4,29.7,48.6,False,1.4,157.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,13.0,4.0,SOFT,4.0,121.576,49.785,52.237,19.554,262.0,275.0,250.0,267.0,1,True,False,True,False,2026-03-28 06:37:12.596,,16.4,29.6,47.9,False,1.4,149.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,14.0,4.0,SOFT,5.0,89.686,32.264,39.715,17.707,278.0,329.0,257.0,281.0,1,True,True,True,False,2026-03-28 06:39:14.172,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,15.0,4.0,SOFT,6.0,105.164,37.646,44.568,22.95,264.0,279.0,,265.0,1,True,False,False,False,2026-03-28 06:40:43.858,,16.6,29.5,47.9,False,1.2,164.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,16.0,5.0,SOFT,1.0,,,43.881,20.005,250.0,252.0,250.0,251.0,1,True,False,False,False,2026-03-28 06:42:29.022,,16.7,29.3,46.6,False,2.3,137.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,17.0,5.0,SOFT,2.0,89.076,31.853,39.607,17.616,278.0,328.0,260.0,282.0,1,True,True,True,False,2026-03-28 06:49:07.050,,16.6,28.9,46.5,False,2.2,129.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,18.0,5.0,SOFT,3.0,108.956,40.876,44.895,23.185,266.0,280.0,,266.0,1,True,False,False,False,2026-03-28 06:50:36.126,,16.7,28.6,47.9,False,0.6,357.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,19.0,6.0,SOFT,1.0,,,43.456,20.458,251.0,251.0,252.0,250.0,1,True,False,False,False,2026-03-28 06:52:25.082,,16.8,28.5,47.8,False,0.4,31.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,20.0,6.0,SOFT,2.0,89.195,31.782,39.643,17.77,278.0,324.0,259.0,281.0,1,True,False,True,False,2026-03-28 06:58:04.684,,16.5,27.9,52.8,False,1.8,114.0
+2026,3,Japanese Grand Prix,Q,RUS,Mercedes,21.0,6.0,SOFT,3.0,127.357,47.089,51.41,28.858,218.0,241.0,,208.0,1,True,False,False,False,2026-03-28 06:59:33.879,,16.5,27.7,49.8,False,2.1,128.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,1.0,1.0,SOFT,1.0,,,45.516,20.191,260.0,252.0,261.0,254.0,1,True,False,False,False,2026-03-28 06:03:10.072,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,2.0,1.0,SOFT,2.0,90.438,32.546,40.03,17.862,276.0,323.0,260.0,281.0,1,True,True,True,False,2026-03-28 06:04:53.472,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,3.0,1.0,SOFT,3.0,122.498,49.063,52.799,20.636,219.0,242.0,264.0,236.0,1,True,False,True,False,2026-03-28 06:06:23.910,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,4.0,1.0,SOFT,4.0,90.324,32.578,39.943,17.803,276.0,325.0,258.0,282.0,1,True,True,True,False,2026-03-28 06:08:26.408,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,5.0,1.0,SOFT,5.0,117.95,41.696,49.286,26.968,235.0,233.0,,205.0,1,True,False,False,False,2026-03-28 06:09:56.732,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,6.0,2.0,SOFT,6.0,,,48.513,24.692,161.0,249.0,264.0,252.0,1,False,False,False,False,2026-03-28 06:11:54.682,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,7.0,2.0,SOFT,7.0,90.2,32.604,39.788,17.808,277.0,325.0,257.0,283.0,1,False,True,True,False,2026-03-28 06:17:48.843,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,8.0,2.0,SOFT,8.0,113.098,39.822,48.063,25.213,237.0,255.0,,225.0,1,False,False,False,False,2026-03-28 06:19:19.043,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,9.0,3.0,SOFT,1.0,,,48.375,21.501,260.0,239.0,263.0,239.0,1,True,False,False,False,2026-03-28 06:21:12.141,,16.6,31.5,53.3,False,0.9,125.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,10.0,3.0,SOFT,2.0,89.451,32.131,39.743,17.576999999999998,275.0,324.0,266.0,283.0,1,True,True,True,False,2026-03-28 06:29:19.419,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,11.0,3.0,SOFT,3.0,115.399,42.173,48.365,24.861,235.0,227.0,,216.0,1,True,False,False,False,2026-03-28 06:30:48.870,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,12.0,4.0,SOFT,4.0,,,44.867,23.814,257.0,197.0,266.0,156.0,1,False,False,False,False,2026-03-28 06:32:44.269,,16.6,29.6,47.2,False,2.0,159.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,13.0,4.0,SOFT,5.0,89.829,32.439,39.772,17.618,276.0,327.0,259.0,285.0,1,False,False,True,False,2026-03-28 06:37:33.780,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,14.0,4.0,SOFT,6.0,114.579,39.359,50.368,24.852,266.0,251.0,,217.0,1,False,False,False,False,2026-03-28 06:39:03.609,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,15.0,5.0,SOFT,1.0,,,44.342,19.942,258.0,256.0,264.0,256.0,1,True,False,False,False,2026-03-28 06:40:58.188,,16.6,29.5,47.9,False,1.2,164.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,16.0,5.0,SOFT,2.0,89.132,31.963,39.557,17.612,275.0,321.0,267.0,283.0,1,True,True,True,False,2026-03-28 06:49:58.439,,16.7,28.9,46.1,False,1.5,146.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,17.0,5.0,SOFT,3.0,112.345,40.022,48.187,24.136,242.0,240.0,,227.0,1,True,False,False,False,2026-03-28 06:51:27.571,,16.7,28.6,47.9,False,0.6,357.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,18.0,6.0,SOFT,1.0,,,44.694,19.837,261.0,254.0,266.0,256.0,1,True,False,False,False,2026-03-28 06:53:19.916,,16.9,28.1,45.8,False,2.9,162.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,19.0,6.0,SOFT,2.0,89.198,31.954,39.657,17.587,275.0,322.0,266.0,283.0,1,True,False,True,False,2026-03-28 06:58:22.876,,16.5,27.9,52.8,False,1.8,114.0
+2026,3,Japanese Grand Prix,Q,PIA,McLaren,20.0,6.0,SOFT,3.0,118.545,41.77,48.504,28.271,218.0,258.0,,218.0,1,True,False,False,False,2026-03-28 06:59:52.074,,16.5,27.7,49.8,False,2.1,128.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,1.0,1.0,SOFT,1.0,,,46.142,24.209,270.0,272.0,265.0,257.0,1,True,False,False,False,2026-03-28 06:03:46.993,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,2.0,1.0,SOFT,2.0,90.078,32.378,40.032,17.668,281.0,331.0,250.0,285.0,1,True,True,True,False,2026-03-28 06:05:39.771,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,3.0,1.0,SOFT,3.0,121.896,47.048,52.474,22.374,189.0,195.0,217.0,241.0,1,True,False,True,False,2026-03-28 06:07:09.849,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,4.0,1.0,SOFT,4.0,111.805,45.024,46.745,20.036,270.0,252.0,264.0,252.0,1,True,False,True,False,2026-03-28 06:09:11.745,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,5.0,1.0,SOFT,5.0,89.915,32.269,39.857,17.789,282.0,327.0,251.0,283.0,1,True,True,True,False,2026-03-28 06:11:03.550,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,6.0,1.0,SOFT,6.0,115.344,41.191,49.067,25.086,218.0,255.0,,208.0,1,True,False,False,False,2026-03-28 06:12:33.465,,16.4,31.5,60.1,False,2.3,130.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,7.0,2.0,SOFT,7.0,,,43.935,20.858,270.0,262.0,261.0,253.0,1,False,False,False,False,2026-03-28 06:14:28.809,,16.4,31.3,57.8,False,3.8,125.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,8.0,2.0,SOFT,8.0,89.785,32.223,39.875,17.687,281.0,326.0,264.0,283.0,1,False,True,True,False,2026-03-28 06:27:12.559,,16.5,30.1,50.1,False,2.6,125.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,9.0,2.0,SOFT,9.0,111.384,39.361,49.795,22.228,265.0,279.0,,267.0,1,False,False,False,False,2026-03-28 06:28:42.344,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,10.0,3.0,SOFT,1.0,,,43.778,22.851,272.0,265.0,262.0,257.0,1,True,False,False,False,2026-03-28 06:30:33.728,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,11.0,3.0,SOFT,2.0,89.303,31.778,39.855,17.67,284.0,326.0,263.0,283.0,1,True,True,True,False,2026-03-28 06:35:28.308,,16.4,29.7,48.6,False,1.4,157.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,12.0,3.0,SOFT,3.0,117.955,39.745,53.328,24.882,121.0,277.0,,266.0,1,True,False,False,False,2026-03-28 06:36:57.611,,16.4,29.6,47.9,False,1.4,149.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,13.0,4.0,SOFT,1.0,,,44.168,20.263,272.0,270.0,263.0,258.0,1,True,False,False,False,2026-03-28 06:38:55.566,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,14.0,4.0,SOFT,2.0,89.434,31.798000000000002,39.883,17.753,281.0,321.0,264.0,280.0,1,True,True,True,False,2026-03-28 06:50:18.474,,16.7,28.9,46.1,False,1.5,146.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,15.0,4.0,SOFT,3.0,108.378,40.393,44.821,23.164,240.0,277.0,,265.0,1,True,False,False,False,2026-03-28 06:51:47.908,,16.8,28.5,47.8,False,0.4,31.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,16.0,5.0,SOFT,1.0,,,45.58,21.613,273.0,268.0,264.0,256.0,1,True,False,False,False,2026-03-28 06:53:36.286,,16.9,28.1,44.5,False,2.5,147.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,17.0,5.0,SOFT,2.0,89.405,31.655,39.947,17.803,283.0,315.0,267.0,279.0,1,True,True,True,False,2026-03-28 06:59:19.482,,16.5,27.9,52.4,False,2.1,127.0
+2026,3,Japanese Grand Prix,Q,LEC,Ferrari,18.0,5.0,SOFT,3.0,,43.821,53.573,,181.0,209.0,,209.0,1,True,False,False,False,2026-03-28 07:00:48.887,,16.4,27.5,50.8,False,1.3,107.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,1.0,1.0,SOFT,1.0,,,43.479,24.755,258.0,275.0,258.0,147.0,1,True,False,False,False,2026-03-28 06:03:14.796,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,2.0,1.0,SOFT,2.0,90.676,32.606,40.207,17.863,271.0,324.0,259.0,279.0,1,True,True,True,False,2026-03-28 06:05:03.826,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,3.0,1.0,SOFT,3.0,120.425,47.403,52.262,20.76,236.0,259.0,258.0,238.0,1,True,False,True,False,2026-03-28 06:06:34.502,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,4.0,1.0,SOFT,4.0,90.401,32.556,40.033,17.812,272.0,323.0,260.0,279.0,1,True,True,True,False,2026-03-28 06:08:34.927,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,5.0,1.0,SOFT,5.0,114.852,41.087,49.398,24.367,217.0,272.0,,238.0,1,True,False,False,False,2026-03-28 06:10:05.328,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,6.0,2.0,SOFT,6.0,,,50.152,22.918,259.0,211.0,256.0,181.0,1,False,False,False,False,2026-03-28 06:12:00.180,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,7.0,2.0,SOFT,7.0,90.534,32.632,40.174,17.728,274.0,322.0,259.0,280.0,1,False,False,True,False,2026-03-28 06:17:21.077,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,8.0,2.0,SOFT,8.0,116.497,40.025,50.431,26.041,216.0,251.0,,218.0,1,False,False,False,False,2026-03-28 06:18:51.611,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,9.0,3.0,SOFT,1.0,,,44.974,19.969,259.0,256.0,259.0,258.0,1,True,False,False,False,2026-03-28 06:20:48.108,,16.6,31.5,53.3,False,0.9,125.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,10.0,3.0,SOFT,2.0,89.795,32.208,39.892,17.695,273.0,318.0,267.0,279.0,1,True,True,True,False,2026-03-28 06:29:32.222,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,11.0,3.0,SOFT,3.0,113.456,40.019,47.337,26.1,233.0,283.0,,223.0,1,True,False,False,False,2026-03-28 06:31:02.017,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,12.0,4.0,SOFT,4.0,,,45.209,23.397,262.0,249.0,252.0,147.0,1,False,False,False,False,2026-03-28 06:32:55.473,,16.6,29.6,47.2,False,2.0,159.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,13.0,4.0,SOFT,5.0,90.101,32.477,39.897,17.727,274.0,326.0,260.0,283.0,1,False,False,True,False,2026-03-28 06:37:26.532,,16.4,29.6,47.9,False,1.4,149.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,14.0,4.0,SOFT,6.0,117.191,44.098,48.386,24.707,232.0,274.0,,229.0,1,False,False,False,False,2026-03-28 06:38:56.633,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,15.0,5.0,SOFT,1.0,,,44.76,21.548000000000002,255.0,251.0,266.0,200.0,1,True,False,False,False,2026-03-28 06:40:53.824,,16.6,29.5,47.9,False,1.2,164.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,16.0,5.0,SOFT,2.0,89.409,32.049,39.716,17.644,272.0,320.0,266.0,281.0,1,True,True,True,False,2026-03-28 06:49:50.080,,16.7,28.9,46.1,False,1.5,146.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,17.0,5.0,SOFT,3.0,109.25,39.014,45.963,24.273,252.0,290.0,,218.0,1,True,False,False,False,2026-03-28 06:51:19.489,,16.7,28.6,47.9,False,0.6,357.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,18.0,6.0,SOFT,1.0,,,44.825,21.703,260.0,253.0,264.0,190.0,1,True,False,False,False,2026-03-28 06:53:08.739,,16.9,28.1,45.8,False,2.9,162.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,19.0,6.0,SOFT,2.0,89.757,32.238,39.892,17.627,272.0,319.0,269.0,279.0,1,True,False,True,False,2026-03-28 06:58:14.925,,16.5,27.9,52.8,False,1.8,114.0
+2026,3,Japanese Grand Prix,Q,NOR,McLaren,20.0,6.0,SOFT,3.0,118.844,40.706,49.839,28.299,232.0,238.0,,199.0,1,True,False,False,False,2026-03-28 06:59:44.682,,16.5,27.7,49.8,False,2.1,128.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,1.0,1.0,SOFT,1.0,,,45.414,21.987,261.0,263.0,264.0,245.0,1,True,False,False,False,2026-03-28 06:03:29.210,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,2.0,1.0,SOFT,2.0,90.628,32.542,40.206,17.88,280.0,328.0,257.0,282.0,1,True,True,True,False,2026-03-28 06:05:23.137,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,3.0,1.0,SOFT,3.0,125.792,46.58,56.602,22.61,207.0,231.0,196.0,246.0,1,True,False,True,False,2026-03-28 06:06:53.765,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,4.0,1.0,SOFT,4.0,113.774,45.355,47.777,20.642,261.0,253.0,266.0,253.0,1,True,False,True,False,2026-03-28 06:08:59.557,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,5.0,1.0,SOFT,5.0,90.309,32.313,40.305,17.691,281.0,330.0,257.0,284.0,1,True,True,True,False,2026-03-28 06:10:53.331,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,6.0,1.0,SOFT,6.0,112.338,41.992,47.836,22.51,208.0,262.0,,259.0,1,True,False,False,False,2026-03-28 06:12:23.640,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,7.0,2.0,SOFT,7.0,,,44.912,21.346,267.0,265.0,264.0,234.0,1,False,False,False,False,2026-03-28 06:14:15.978,,16.4,31.3,57.8,False,3.8,125.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,8.0,2.0,SOFT,8.0,90.118,32.144,40.203,17.771,281.0,328.0,253.0,282.0,1,False,True,True,False,2026-03-28 06:27:03.792,,16.5,30.1,50.1,False,2.6,125.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,9.0,2.0,SOFT,9.0,112.847,43.573,45.018,24.256,142.0,274.0,,264.0,1,False,False,False,False,2026-03-28 06:28:33.910,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,10.0,3.0,SOFT,1.0,,,44.818,21.045,270.0,271.0,267.0,240.0,1,True,False,False,False,2026-03-28 06:30:26.757,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,11.0,3.0,SOFT,2.0,89.945,32.157,40.058,17.73,281.0,323.0,254.0,280.0,1,True,True,True,False,2026-03-28 06:35:19.765,,16.4,29.7,48.6,False,1.4,157.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,12.0,3.0,SOFT,3.0,131.496,44.201,59.618,27.677,205.0,164.0,261.0,112.0,1,True,False,True,False,2026-03-28 06:36:49.710,,16.4,29.6,47.9,False,1.4,149.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,13.0,3.0,SOFT,4.0,89.589,32.031,39.933,17.625,281.0,325.0,262.0,280.0,1,True,True,True,False,2026-03-28 06:39:01.206,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,14.0,3.0,SOFT,5.0,108.018,39.001,46.162,22.855,245.0,256.0,,256.0,1,True,False,False,False,2026-03-28 06:40:30.795,,16.4,29.4,48.7,False,0.6,135.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,15.0,4.0,SOFT,1.0,,,45.192,20.987,267.0,263.0,266.0,250.0,1,True,False,False,False,2026-03-28 06:42:18.813,,16.7,29.3,46.6,False,2.3,137.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,16.0,4.0,SOFT,2.0,89.567,31.762,39.934,17.871,281.0,315.0,263.0,276.0,1,True,True,True,False,2026-03-28 06:50:11.999,,16.7,28.9,46.1,False,1.5,146.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,17.0,4.0,SOFT,3.0,107.554,40.282,44.48,22.792,236.0,251.0,,250.0,1,True,False,False,False,2026-03-28 06:51:41.566,,16.8,28.5,47.8,False,0.4,31.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,18.0,5.0,SOFT,1.0,,,44.384,21.283,262.0,264.0,265.0,240.0,1,True,False,False,False,2026-03-28 06:53:29.120,,16.9,28.1,45.8,False,2.9,162.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,19.0,5.0,SOFT,2.0,89.66,31.859,40.164,17.637,282.0,322.0,264.0,279.0,1,True,False,True,False,2026-03-28 06:58:42.032,,16.5,27.9,52.4,False,2.1,127.0
+2026,3,Japanese Grand Prix,Q,HAM,Ferrari,20.0,5.0,SOFT,3.0,127.915,44.848,54.116,28.951,207.0,209.0,,209.0,1,True,False,False,False,2026-03-28 07:00:11.692,,16.5,27.7,49.8,False,2.1,128.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,1.0,1.0,SOFT,1.0,,,45.544,21.614,260.0,271.0,271.0,265.0,1,True,False,False,False,2026-03-28 06:04:34.906,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,2.0,1.0,SOFT,2.0,90.765,32.724,40.327,17.714,274.0,328.0,270.0,281.0,1,True,True,True,False,2026-03-28 06:06:18.973,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,3.0,1.0,SOFT,3.0,122.647,45.993,50.484,26.17,257.0,212.0,,221.0,1,True,False,False,False,2026-03-28 06:07:49.738,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,4.0,2.0,SOFT,1.0,,,45.793,24.621,270.0,266.0,270.0,258.0,1,True,False,False,False,2026-03-28 06:09:52.385,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,5.0,2.0,SOFT,2.0,90.584,32.528,40.347,17.709,274.0,333.0,267.0,285.0,1,True,True,True,False,2026-03-28 06:17:27.726,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,6.0,2.0,SOFT,3.0,121.556,42.838,49.88,28.838,241.0,249.0,,196.0,1,True,False,False,False,2026-03-28 06:18:58.310,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,7.0,3.0,SOFT,1.0,,,44.947,23.544,247.0,262.0,263.0,256.0,1,True,False,False,False,2026-03-28 06:20:59.866,,16.6,31.5,53.3,False,0.9,125.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,8.0,3.0,SOFT,2.0,90.122,32.41,40.114,17.598,275.0,331.0,269.0,283.0,1,True,True,True,False,2026-03-28 06:29:05.691,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,9.0,3.0,SOFT,3.0,120.549,43.622,48.854,28.073,244.0,249.0,,215.0,1,True,False,False,False,2026-03-28 06:30:35.813,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,10.0,4.0,SOFT,1.0,,,45.08,22.314,267.0,265.0,270.0,262.0,1,True,False,False,False,2026-03-28 06:32:36.362,,16.6,29.6,47.2,False,2.0,159.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,11.0,4.0,SOFT,2.0,89.874,32.224,40.119,17.531,273.0,332.0,269.0,285.0,1,True,True,True,False,2026-03-28 06:37:47.947,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,12.0,4.0,SOFT,3.0,122.368,42.521,51.724,28.123,231.0,257.0,,220.0,1,True,False,False,False,2026-03-28 06:39:17.821,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,13.0,5.0,SOFT,4.0,,,44.512,20.987,268.0,255.0,267.0,253.0,1,False,False,False,False,2026-03-28 06:41:20.189,,16.6,29.5,47.9,False,1.2,164.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,14.0,5.0,SOFT,5.0,90.294,32.52,40.18,17.594,275.0,333.0,270.0,284.0,1,False,True,True,False,2026-03-28 06:49:27.707,,16.6,28.9,46.5,False,2.2,129.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,15.0,5.0,SOFT,6.0,115.744,40.712,47.087,27.945,250.0,245.0,,204.0,1,False,False,False,False,2026-03-28 06:50:58.001,,16.7,28.6,47.9,False,0.6,357.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,16.0,6.0,SOFT,1.0,,,44.768,22.751,264.0,257.0,265.0,258.0,1,True,False,False,False,2026-03-28 06:52:53.745,,16.9,28.1,45.8,False,2.9,162.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,17.0,6.0,SOFT,2.0,89.691,32.143,40.029,17.519,274.0,333.0,270.0,285.0,1,True,True,True,False,2026-03-28 06:59:12.332,,16.5,27.9,52.4,False,2.1,127.0
+2026,3,Japanese Grand Prix,Q,GAS,Alpine,18.0,6.0,SOFT,3.0,126.348,43.846,51.231,31.271,212.0,235.0,,204.0,1,True,False,False,False,2026-03-28 07:00:42.023,,16.4,27.5,50.8,False,1.3,107.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,1.0,1.0,SOFT,1.0,,,45.907,24.258,251.0,135.0,267.0,244.0,1,True,False,False,False,2026-03-28 06:04:24.956,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,2.0,1.0,SOFT,2.0,90.662,32.744,40.252,17.666,278.0,338.0,259.0,289.0,1,True,True,True,False,2026-03-28 06:06:11.268,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,3.0,1.0,SOFT,3.0,112.79,40.424,49.341,23.025,247.0,259.0,,265.0,1,True,False,False,False,2026-03-28 06:07:41.930,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,4.0,2.0,SOFT,4.0,,,45.979,21.212,254.0,251.0,270.0,228.0,1,False,False,False,False,2026-03-28 06:09:34.720,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,5.0,2.0,SOFT,5.0,90.822,32.686,40.44,17.696,275.0,332.0,258.0,286.0,1,False,False,True,False,2026-03-28 06:14:45.497,,16.4,31.4,55.8,False,1.8,115.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,6.0,2.0,SOFT,6.0,109.553,39.214,46.49,23.849,245.0,289.0,,265.0,1,False,False,False,False,2026-03-28 06:16:16.319,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,7.0,3.0,SOFT,1.0,,,46.135,20.768,243.0,187.0,270.0,242.0,1,True,False,False,False,2026-03-28 06:18:05.872,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,8.0,3.0,SOFT,2.0,90.339,32.336,40.314,17.689,276.0,332.0,263.0,287.0,1,True,True,True,False,2026-03-28 06:27:32.532,,16.5,30.1,50.1,False,2.6,125.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,9.0,3.0,SOFT,3.0,113.488,44.077,46.749,22.662,246.0,289.0,,271.0,1,True,False,False,False,2026-03-28 06:29:02.871,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,10.0,4.0,SOFT,1.0,,,45.211,22.398,260.0,162.0,270.0,228.0,1,True,False,False,False,2026-03-28 06:30:56.359,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,11.0,4.0,SOFT,2.0,90.104,32.402,40.094,17.608,275.0,336.0,257.0,290.0,1,True,True,True,False,2026-03-28 06:37:14.187,,16.4,29.6,47.9,False,1.4,149.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,12.0,4.0,SOFT,3.0,115.17,39.359,52.678,23.133,246.0,283.0,,270.0,1,True,False,False,False,2026-03-28 06:38:44.291,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,13.0,5.0,SOFT,1.0,,,46.957,21.402,247.0,140.0,270.0,239.0,1,True,False,False,False,2026-03-28 06:40:39.461,,16.6,29.5,47.9,False,1.2,164.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,14.0,5.0,SOFT,2.0,89.978,32.164,40.137,17.677,280.0,330.0,263.0,285.0,1,True,True,True,False,2026-03-28 06:50:33.340,,16.7,28.9,46.1,False,1.5,146.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,15.0,5.0,SOFT,3.0,104.345,36.502,45.414,22.429,248.0,281.0,,269.0,1,True,False,False,False,2026-03-28 06:52:03.318,,16.8,28.5,47.8,False,0.4,31.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,16.0,6.0,SOFT,1.0,,,44.868,21.299,253.0,230.0,273.0,236.0,1,True,False,False,False,2026-03-28 06:53:47.663,,16.9,28.1,44.5,False,2.5,147.0
+2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,17.0,6.0,SOFT,2.0,116.688,32.18,53.319,31.189,275.0,156.0,,204.0,1,True,False,False,False,2026-03-28 06:58:34.109,,16.5,27.9,52.4,False,2.1,127.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,1.0,1.0,SOFT,1.0,,,46.074,24.069,259.0,218.0,261.0,204.0,1,True,False,False,False,2026-03-28 06:03:36.459,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,2.0,1.0,SOFT,2.0,90.752,32.684,40.346,17.722,278.0,327.0,271.0,283.0,1,True,True,True,False,2026-03-28 06:05:30.888,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,3.0,1.0,SOFT,3.0,124.942,45.022,58.107,21.813,197.0,230.0,261.0,255.0,1,True,False,True,False,2026-03-28 06:07:01.640,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,4.0,1.0,SOFT,4.0,90.966,32.662,40.718,17.586,276.0,334.0,266.0,288.0,1,True,False,True,False,2026-03-28 06:09:06.582,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,5.0,1.0,SOFT,5.0,112.622,38.222,48.796,25.604,261.0,216.0,,238.0,1,True,False,False,False,2026-03-28 06:10:37.548,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,6.0,2.0,SOFT,1.0,,,50.536,24.605,259.0,258.0,260.0,150.0,1,True,False,False,False,2026-03-28 06:12:30.170,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,7.0,2.0,SOFT,2.0,90.359,32.44,40.26,17.659,278.0,324.0,271.0,281.0,1,True,True,True,False,2026-03-28 06:17:13.528,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,8.0,2.0,SOFT,3.0,123.449,42.995,54.036,26.418,190.0,239.0,,218.0,1,True,False,False,False,2026-03-28 06:18:43.887,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,9.0,3.0,SOFT,1.0,,,48.776,27.155,173.0,107.0,264.0,206.0,1,True,False,False,False,2026-03-28 06:20:47.336,,16.6,31.5,53.3,False,0.9,125.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,10.0,3.0,SOFT,2.0,90.093,32.288,40.213,17.592,275.0,326.0,271.0,282.0,1,True,True,True,False,2026-03-28 06:28:38.024,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,11.0,3.0,SOFT,3.0,115.103,40.204,49.285,25.614,184.0,266.0,,208.0,1,True,False,False,False,2026-03-28 06:30:08.117,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,12.0,4.0,SOFT,1.0,,,47.447,23.513,262.0,255.0,262.0,224.0,1,True,False,False,False,2026-03-28 06:32:03.220,,16.6,29.8,47.5,False,0.9,85.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,13.0,4.0,SOFT,2.0,89.99,32.349,40.149,17.492,273.0,328.0,268.0,285.0,1,True,True,True,False,2026-03-28 06:38:10.910,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,14.0,4.0,SOFT,3.0,122.242,39.943,51.522,30.777,254.0,204.0,,166.0,1,True,False,False,False,2026-03-28 06:39:40.900,,16.4,29.4,48.7,False,0.6,135.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,15.0,5.0,SOFT,4.0,,,45.147,21.776,266.0,257.0,262.0,212.0,1,False,False,False,False,2026-03-28 06:41:43.142,,16.7,29.3,46.6,False,2.3,137.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,16.0,5.0,SOFT,5.0,90.648,32.61,40.374,17.664,278.0,328.0,262.0,283.0,1,False,True,True,False,2026-03-28 06:49:19.504,,16.6,28.9,46.5,False,2.2,129.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,17.0,5.0,SOFT,6.0,113.859,40.949,48.047,24.863,222.0,259.0,,217.0,1,False,False,False,False,2026-03-28 06:50:50.152,,16.7,28.6,47.9,False,0.6,357.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,18.0,6.0,SOFT,1.0,,,44.948,21.707,265.0,255.0,261.0,213.0,1,True,False,False,False,2026-03-28 06:52:44.011,,16.9,28.1,45.8,False,2.9,162.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,19.0,6.0,SOFT,2.0,90.274,32.292,40.213,17.769,271.0,324.0,270.0,280.0,1,True,True,True,False,2026-03-28 06:58:51.406,,16.5,27.9,52.4,False,2.1,127.0
+2026,3,Japanese Grand Prix,Q,BOR,Audi,20.0,6.0,SOFT,3.0,130.539,42.753,53.079,34.707,244.0,200.0,,163.0,1,True,False,False,False,2026-03-28 07:00:21.680,,16.5,27.7,49.8,False,2.1,128.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,1.0,1.0,SOFT,1.0,,,47.273,20.573,260.0,266.0,267.0,249.0,1,True,False,False,False,2026-03-28 06:00:09.339,,16.7,32.4,57.2,False,2.9,126.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,2.0,1.0,SOFT,2.0,91.634,33.2,40.763,17.671,268.0,335.0,261.0,287.0,1,True,True,True,False,2026-03-28 06:02:03.786,,16.6,32.2,56.4,False,2.4,117.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,3.0,1.0,SOFT,3.0,116.452,42.9,50.259,23.293,209.0,259.0,249.0,225.0,1,True,False,True,False,2026-03-28 06:03:35.420,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,4.0,1.0,SOFT,4.0,124.221,44.994,51.701,27.526,164.0,132.0,269.0,164.0,1,True,False,True,False,2026-03-28 06:05:31.872,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,5.0,1.0,SOFT,5.0,91.0,33.024,40.248,17.728,267.0,338.0,267.0,288.0,1,True,True,True,False,2026-03-28 06:07:36.093,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,6.0,1.0,SOFT,6.0,110.123,38.926,49.258,21.939,242.0,285.0,,270.0,1,True,False,False,False,2026-03-28 06:09:07.093,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,7.0,2.0,SOFT,1.0,,,47.917,20.164,171.0,257.0,271.0,260.0,1,True,False,False,False,2026-03-28 06:10:57.216,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,8.0,2.0,SOFT,2.0,90.781,32.819,40.268,17.694,267.0,334.0,261.0,287.0,1,True,True,True,False,2026-03-28 06:16:26.560,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,9.0,2.0,SOFT,3.0,115.691,42.934,47.73,25.027,243.0,266.0,,236.0,1,True,False,False,False,2026-03-28 06:17:57.341,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,10.0,3.0,SOFT,1.0,,,46.439,19.905,250.0,256.0,273.0,258.0,1,True,False,False,False,2026-03-28 06:19:53.032,,16.5,31.5,53.3,False,0.8,117.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,11.0,3.0,SOFT,2.0,90.694,32.651,40.327,17.716,268.0,331.0,258.0,285.0,1,True,True,True,False,2026-03-28 06:28:07.318,,16.5,30.2,50.2,False,2.2,137.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,12.0,3.0,SOFT,3.0,109.975,39.025,46.384,24.566,245.0,261.0,,261.0,1,True,False,False,False,2026-03-28 06:29:38.012,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,13.0,4.0,SOFT,1.0,,,46.231,20.054,258.0,255.0,271.0,259.0,1,True,False,False,False,2026-03-28 06:31:27.987,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,14.0,4.0,SOFT,2.0,90.109,32.565,40.043,17.501,267.0,334.0,263.0,287.0,1,True,True,True,False,2026-03-28 06:38:19.819,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,15.0,4.0,SOFT,3.0,114.558,39.961,47.225,27.372,241.0,258.0,,244.0,1,True,False,False,False,2026-03-28 06:39:49.928,,16.4,29.4,48.7,False,0.6,135.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,16.0,5.0,SOFT,4.0,,,45.777,20.054,258.0,254.0,270.0,257.0,1,False,False,False,False,2026-03-28 06:41:44.486,,16.7,29.3,46.6,False,2.3,137.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,17.0,5.0,SOFT,5.0,91.537,32.752,41.066,17.719,270.0,336.0,252.0,288.0,1,False,True,True,False,2026-03-28 06:49:38.821,,16.7,28.9,46.1,False,1.5,146.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,18.0,5.0,SOFT,6.0,106.227,37.724,45.574,22.929,245.0,283.0,,270.0,1,False,False,False,False,2026-03-28 06:51:10.358,,16.7,28.6,47.9,False,0.6,357.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,19.0,6.0,SOFT,1.0,,,45.881,20.031,258.0,255.0,270.0,257.0,1,True,False,False,False,2026-03-28 06:52:56.585,,16.9,28.1,45.8,False,2.9,162.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,20.0,6.0,SOFT,2.0,90.319,32.548,40.155,17.616,268.0,331.0,260.0,286.0,1,True,True,True,False,2026-03-28 06:59:04.417,,16.5,27.9,52.4,False,2.1,127.0
+2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,21.0,6.0,SOFT,3.0,122.799,41.654,47.643,33.502,226.0,274.0,,193.0,1,True,False,False,False,2026-03-28 07:00:34.736,,16.4,27.5,50.8,False,1.3,107.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,1.0,1.0,SOFT,1.0,,,45.386,24.826,245.0,255.0,269.0,195.0,1,True,False,False,False,2026-03-28 06:04:17.156,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,2.0,1.0,SOFT,2.0,90.726,32.713,40.448,17.565,276.0,336.0,260.0,286.0,1,True,True,True,False,2026-03-28 06:06:01.892,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,3.0,1.0,SOFT,3.0,111.528,39.987,47.702,23.839,246.0,285.0,,255.0,1,True,False,False,False,2026-03-28 06:07:32.618,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,4.0,2.0,SOFT,4.0,,,45.754,20.137,255.0,258.0,271.0,256.0,1,False,False,False,False,2026-03-28 06:09:24.146,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,5.0,2.0,SOFT,5.0,90.519,32.588,40.319,17.612,276.0,332.0,258.0,285.0,1,False,True,True,False,2026-03-28 06:14:35.562,,16.4,31.4,55.8,False,1.8,115.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,6.0,2.0,SOFT,6.0,108.449,38.982,45.038,24.429,248.0,282.0,,206.0,1,False,False,False,False,2026-03-28 06:16:06.081,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,7.0,3.0,SOFT,1.0,,,45.077,19.71,253.0,265.0,271.0,260.0,1,True,False,False,False,2026-03-28 06:17:54.530,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,8.0,3.0,SOFT,2.0,90.363,32.423,40.253,17.687,273.0,336.0,257.0,286.0,1,True,True,True,False,2026-03-28 06:27:21.005,,16.5,30.1,50.1,False,2.6,125.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,9.0,3.0,SOFT,3.0,110.239,39.853,48.645,21.741,248.0,263.0,,265.0,1,True,False,False,False,2026-03-28 06:28:51.368,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,10.0,4.0,SOFT,1.0,,,48.144,20.042,155.0,265.0,270.0,262.0,1,True,False,False,False,2026-03-28 06:30:41.607,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,11.0,4.0,SOFT,2.0,90.262,32.369,40.196,17.697,273.0,326.0,263.0,283.0,1,True,True,True,False,2026-03-28 06:37:05.848,,16.4,29.6,47.9,False,1.4,149.0
+2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,12.0,4.0,SOFT,3.0,114.536,42.613,46.828,25.095,245.0,204.0,,227.0,1,True,False,False,False,2026-03-28 06:38:36.110,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,1.0,1.0,SOFT,1.0,,,45.385,23.916,272.0,273.0,262.0,262.0,1,True,False,False,False,2026-03-28 06:00:31.376,,16.7,32.4,57.2,False,2.9,126.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,2.0,1.0,SOFT,2.0,91.466,33.124,40.473,17.869,280.0,327.0,257.0,282.0,1,True,True,True,False,2026-03-28 06:02:24.313,,16.6,32.2,56.4,False,2.4,117.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,3.0,1.0,SOFT,3.0,120.726,44.176,53.499,23.051,202.0,233.0,172.0,217.0,1,True,False,True,False,2026-03-28 06:03:55.779,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,4.0,1.0,SOFT,4.0,120.288,51.435,48.786,20.067,225.0,276.0,265.0,263.0,1,True,False,True,False,2026-03-28 06:05:56.505,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,5.0,1.0,SOFT,5.0,91.196,32.989,40.305,17.902,280.0,329.0,253.0,282.0,1,True,True,True,False,2026-03-28 06:07:56.793,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,6.0,1.0,SOFT,6.0,110.464,38.248,46.839,25.377,262.0,249.0,,230.0,1,True,False,False,False,2026-03-28 06:09:27.989,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,7.0,2.0,SOFT,1.0,,,45.45,23.023,274.0,271.0,264.0,197.0,1,True,False,False,False,2026-03-28 06:11:18.453,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,8.0,2.0,SOFT,2.0,90.915,32.767,40.213,17.935,282.0,322.0,251.0,280.0,1,True,True,True,False,2026-03-28 06:15:54.370,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,9.0,2.0,SOFT,3.0,119.851,43.318,47.675,28.858,173.0,152.0,,238.0,1,True,False,False,False,2026-03-28 06:17:25.285,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,10.0,3.0,SOFT,1.0,,,49.777,22.329,261.0,274.0,267.0,264.0,1,True,False,False,False,2026-03-28 06:19:25.136,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,11.0,3.0,SOFT,2.0,90.466,32.481,40.177,17.808,282.0,321.0,264.0,281.0,1,True,True,True,False,2026-03-28 06:29:12.156,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,12.0,3.0,SOFT,3.0,115.519,39.537,49.409,26.573,227.0,233.0,,221.0,1,True,False,False,False,2026-03-28 06:30:42.622,,16.5,29.7,48.7,False,1.5,133.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,13.0,4.0,SOFT,1.0,,,45.773,21.973,273.0,273.0,263.0,228.0,1,True,False,False,False,2026-03-28 06:32:38.141,,16.6,29.6,47.2,False,2.0,159.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,14.0,4.0,SOFT,2.0,90.309,32.561,40.048,17.7,282.0,320.0,263.0,281.0,1,True,True,True,False,2026-03-28 06:37:40.811,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,15.0,4.0,SOFT,3.0,120.234,43.157,49.886,27.191,236.0,224.0,,209.0,1,True,False,False,False,2026-03-28 06:39:11.120,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,1.0,1.0,SOFT,1.0,,,45.258,22.985,267.0,260.0,267.0,214.0,1,True,False,False,False,2026-03-28 06:03:17.966,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,2.0,1.0,SOFT,2.0,90.843,32.825,40.374,17.644,278.0,329.0,268.0,285.0,1,True,True,True,False,2026-03-28 06:05:12.074,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,3.0,1.0,SOFT,3.0,120.871,47.422,51.209,22.24,185.0,275.0,262.0,261.0,1,True,False,True,False,2026-03-28 06:06:42.917,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,4.0,1.0,SOFT,4.0,90.542,32.607,40.371,17.564,272.0,332.0,269.0,287.0,1,True,True,True,False,2026-03-28 06:08:43.788,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,5.0,1.0,SOFT,5.0,110.347,38.89,47.263,24.194,239.0,276.0,,226.0,1,True,False,False,False,2026-03-28 06:10:14.330,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,6.0,2.0,SOFT,1.0,,,48.575,22.578,263.0,260.0,259.0,216.0,1,True,False,False,False,2026-03-28 06:12:04.677,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,7.0,2.0,SOFT,2.0,90.358,32.486,40.231,17.641,275.0,322.0,273.0,282.0,1,True,True,True,False,2026-03-28 06:17:06.326,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,8.0,2.0,SOFT,3.0,116.882,42.543,50.075,24.264,227.0,238.0,,244.0,1,True,False,False,False,2026-03-28 06:18:36.684,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,9.0,3.0,SOFT,1.0,,,49.362,20.401,270.0,277.0,266.0,227.0,1,True,False,False,False,2026-03-28 06:20:33.566,,16.6,31.5,53.3,False,0.9,125.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,10.0,3.0,SOFT,2.0,90.412,32.556,40.285,17.571,270.0,321.0,271.0,282.0,1,True,True,True,False,2026-03-28 06:28:18.457,,16.5,30.2,50.2,False,2.2,137.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,11.0,3.0,SOFT,3.0,105.58,37.189,45.005,23.386,257.0,279.0,,225.0,1,True,False,False,False,2026-03-28 06:29:48.869,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,12.0,4.0,SOFT,1.0,,,45.505,21.309,274.0,261.0,269.0,217.0,1,True,False,False,False,2026-03-28 06:31:34.449,,16.6,29.8,47.5,False,0.9,85.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,13.0,4.0,SOFT,2.0,90.387,32.4,40.181,17.806,270.0,324.0,271.0,285.0,1,True,True,True,False,2026-03-28 06:37:56.079,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,HUL,Audi,14.0,4.0,SOFT,3.0,109.294,40.371,44.979,23.944,265.0,293.0,,231.0,1,True,False,False,False,2026-03-28 06:39:26.466,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,1.0,1.0,SOFT,1.0,,33.257,40.697,21.143,275.0,330.0,260.0,258.0,1,True,False,False,False,2026-03-28 06:00:03.411,,16.7,32.4,57.2,False,2.9,126.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,2.0,1.0,SOFT,2.0,91.785,,,17.831,275.0,330.0,258.0,282.0,1,True,True,False,False,2026-03-28 06:01:56.653,,16.6,32.2,56.4,False,2.4,117.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,3.0,1.0,SOFT,3.0,119.924,42.098,52.314,25.512,217.0,254.0,204.0,191.0,1,True,False,True,False,2026-03-28 06:03:28.438,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,4.0,1.0,SOFT,4.0,122.71,45.516,52.214,24.98,221.0,203.0,260.0,209.0,1,True,False,True,False,2026-03-28 06:05:28.362,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,5.0,1.0,SOFT,5.0,91.048,33.041,40.279,17.728,274.0,335.0,262.0,286.0,1,True,True,True,False,2026-03-28 06:07:31.072,,16.5,32.3,56.7,False,2.2,122.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,6.0,1.0,SOFT,6.0,118.745,43.538,50.125,25.082,241.0,280.0,,226.0,1,True,False,False,False,2026-03-28 06:09:02.120,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,7.0,2.0,SOFT,1.0,,,48.211,22.836,256.0,257.0,264.0,256.0,1,True,False,False,False,2026-03-28 06:11:00.865,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,8.0,2.0,SOFT,2.0,90.657,32.797,40.233,17.627,275.0,336.0,261.0,290.0,1,True,True,True,False,2026-03-28 06:16:46.048,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,9.0,2.0,SOFT,3.0,114.454,39.306,47.275,27.873,241.0,254.0,,208.0,1,True,False,False,False,2026-03-28 06:18:16.705,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,10.0,3.0,SOFT,1.0,,,48.272,20.662,255.0,261.0,265.0,260.0,1,True,False,False,False,2026-03-28 06:20:11.159,,16.5,31.5,53.3,False,0.8,117.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,11.0,3.0,SOFT,2.0,91.004,32.91,40.508,17.586,275.0,336.0,263.0,291.0,1,True,True,True,False,2026-03-28 06:28:29.531,,16.5,30.2,50.2,False,2.2,137.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,12.0,3.0,SOFT,3.0,107.939,38.748,46.273,22.918,244.0,260.0,,258.0,1,True,False,False,False,2026-03-28 06:30:00.535,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,13.0,4.0,SOFT,1.0,,,50.482,20.956,269.0,257.0,266.0,261.0,1,True,False,False,False,2026-03-28 06:31:48.474,,16.6,29.8,47.5,False,0.9,85.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,14.0,4.0,SOFT,2.0,90.495,32.791,40.175,17.529,275.0,333.0,263.0,285.0,1,True,True,True,False,2026-03-28 06:38:41.196,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,15.0,4.0,SOFT,3.0,114.804,40.038,46.174,28.592,239.0,219.0,,191.0,1,True,False,False,False,2026-03-28 06:40:11.691,,16.4,29.4,48.7,False,0.6,135.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,1.0,1.0,SOFT,1.0,,,48.308,20.973,266.0,255.0,262.0,248.0,1,True,False,False,False,2026-03-28 06:04:42.251,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,2.0,1.0,SOFT,2.0,91.458,33.027,40.574,17.857,274.0,325.0,268.0,281.0,1,True,True,True,False,2026-03-28 06:06:30.014,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,3.0,1.0,SOFT,3.0,113.216,43.43,46.132,23.654,124.0,283.0,,268.0,1,True,False,False,False,2026-03-28 06:08:01.472,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,4.0,2.0,SOFT,1.0,,,44.347,22.341,263.0,256.0,263.0,246.0,1,True,False,False,False,2026-03-28 06:09:54.688,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,5.0,2.0,SOFT,2.0,90.931,32.672,40.447,17.812,274.0,329.0,268.0,283.0,1,True,True,True,False,2026-03-28 06:17:35.465,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,6.0,2.0,SOFT,3.0,114.878,42.292,48.211,24.375,215.0,259.0,,257.0,1,True,False,False,False,2026-03-28 06:19:06.396,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,7.0,3.0,SOFT,1.0,,,50.719,20.701999999999998,115.0,256.0,262.0,249.0,1,True,False,False,False,2026-03-28 06:21:01.274,,16.6,31.5,53.3,False,0.9,125.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,8.0,3.0,SOFT,2.0,90.877,32.463,40.597,17.817,275.0,321.0,269.0,280.0,1,True,True,True,False,2026-03-28 06:28:54.925,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,9.0,3.0,SOFT,3.0,107.09,39.242,45.24,22.608,266.0,261.0,,256.0,1,True,False,False,False,2026-03-28 06:30:25.802,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,10.0,4.0,SOFT,1.0,,,47.643,21.607,266.0,260.0,264.0,248.0,1,True,False,False,False,2026-03-28 06:32:12.892,,16.6,29.8,47.5,False,0.9,85.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,11.0,4.0,SOFT,2.0,90.627,32.584,40.433,17.61,275.0,329.0,270.0,282.0,1,True,True,True,False,2026-03-28 06:38:02.463,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,COL,Alpine,12.0,4.0,SOFT,3.0,110.782,38.35,46.992,25.44,220.0,285.0,,267.0,1,True,False,False,False,2026-03-28 06:39:33.090,,16.4,29.7,49.5,False,1.9,148.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,1.0,1.0,SOFT,1.0,,,52.509,20.262,263.0,253.0,267.0,252.0,1,True,False,False,False,2026-03-28 06:00:48.263,,16.6,32.2,55.3,False,1.9,114.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,2.0,1.0,SOFT,2.0,91.855,33.258,40.771,17.826,278.0,333.0,259.0,286.0,1,True,True,True,False,2026-03-28 06:02:46.386,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,3.0,1.0,SOFT,3.0,110.289,39.815,46.751,23.723,261.0,282.0,,270.0,1,True,False,False,False,2026-03-28 06:04:18.241,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,4.0,2.0,SOFT,1.0,148.017,80.545,47.038,20.434,271.0,266.0,265.0,266.0,1,True,False,False,False,2026-03-28 06:06:08.530,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,5.0,2.0,SOFT,2.0,91.676,33.249,40.774,17.653,277.0,338.0,264.0,291.0,1,True,True,True,False,2026-03-28 06:08:36.547,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,6.0,2.0,SOFT,3.0,114.424,44.145,45.769,24.51,253.0,282.0,,271.0,1,True,False,False,False,2026-03-28 06:10:08.223,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,7.0,3.0,SOFT,1.0,,,55.184,19.134,259.0,279.0,267.0,268.0,1,True,False,False,False,2026-03-28 06:12:02.647,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,8.0,3.0,SOFT,2.0,90.927,32.917,40.434,17.576,275.0,336.0,266.0,291.0,1,True,True,True,False,2026-03-28 06:16:18.859,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,9.0,3.0,SOFT,3.0,117.782,45.195,48.08,24.507,235.0,272.0,,250.0,1,True,False,False,False,2026-03-28 06:17:49.786,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,10.0,4.0,SOFT,4.0,,,54.226,19.379,251.0,274.0,267.0,267.0,1,False,False,False,False,2026-03-28 06:19:47.568,,16.5,31.5,53.3,False,0.8,117.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,11.0,4.0,SOFT,5.0,91.408,33.114,40.491,17.803,278.0,334.0,266.0,288.0,1,False,True,True,False,2026-03-28 06:28:44.665,,16.6,30.1,46.9,False,1.0,166.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,12.0,4.0,SOFT,6.0,108.433,39.824,45.266,23.343,250.0,282.0,,269.0,1,False,False,False,False,2026-03-28 06:30:16.073,,16.5,29.9,47.4,False,2.8,114.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,13.0,5.0,SOFT,1.0,,,50.952,19.975,260.0,259.0,270.0,255.0,1,True,False,False,False,2026-03-28 06:32:04.506,,16.6,29.8,47.5,False,0.9,85.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,14.0,5.0,SOFT,2.0,91.033,32.844,40.524,17.665,274.0,333.0,266.0,286.0,1,True,True,True,False,2026-03-28 06:38:30.825,,16.4,29.5,48.1,False,0.9,126.0
+2026,3,Japanese Grand Prix,Q,SAI,Williams,15.0,5.0,SOFT,3.0,121.633,45.418,50.109,26.106,216.0,248.0,,216.0,1,True,False,False,False,2026-03-28 06:40:01.858,,16.4,29.4,48.7,False,0.6,135.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,1.0,1.0,SOFT,1.0,,,57.623,20.759,265.0,250.0,265.0,248.0,1,True,False,False,False,2026-03-28 06:00:58.652,,16.6,32.2,55.3,False,1.9,114.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,2.0,1.0,SOFT,2.0,91.776,33.201,40.724,17.851,277.0,329.0,263.0,285.0,1,True,True,True,False,2026-03-28 06:03:02.770,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,3.0,1.0,SOFT,3.0,108.46,37.821,45.337,25.302,266.0,247.0,,226.0,1,True,False,False,False,2026-03-28 06:04:34.546,,16.5,32.6,56.4,False,2.2,121.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,4.0,2.0,SOFT,1.0,147.199,78.447,46.023,22.729,272.0,270.0,262.0,260.0,1,True,False,False,False,2026-03-28 06:06:23.006,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,5.0,2.0,SOFT,2.0,91.51,33.239,40.502,17.769,276.0,333.0,262.0,287.0,1,True,True,True,False,2026-03-28 06:08:50.205,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,6.0,2.0,SOFT,3.0,109.15,39.644,46.329,23.177,255.0,272.0,,266.0,1,True,False,False,False,2026-03-28 06:10:21.715,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,7.0,3.0,SOFT,1.0,,,54.134,20.056,258.0,254.0,270.0,253.0,1,True,False,False,False,2026-03-28 06:12:10.865,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,8.0,3.0,SOFT,2.0,91.088,32.858,40.489,17.741,277.0,327.0,265.0,283.0,1,True,True,True,False,2026-03-28 06:16:36.645,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,ALB,Williams,9.0,3.0,SOFT,3.0,121.366,40.789,54.409,26.168,232.0,241.0,,237.0,1,True,False,False,False,2026-03-28 06:18:07.733,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,1.0,1.0,SOFT,1.0,,,46.318,20.977,263.0,252.0,261.0,249.0,1,True,False,False,False,2026-03-28 06:00:37.712,,16.6,32.2,55.3,False,1.9,114.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,2.0,1.0,SOFT,2.0,92.016,33.232,40.898,17.886,275.0,326.0,266.0,278.0,1,True,True,True,False,2026-03-28 06:02:29.769,,16.6,32.2,56.4,False,2.4,117.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,3.0,1.0,SOFT,3.0,125.17,50.25,49.667,25.253,197.0,262.0,160.0,200.0,1,True,False,True,False,2026-03-28 06:04:01.785,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,4.0,1.0,SOFT,4.0,125.275,55.178,49.618,20.479,119.0,265.0,261.0,252.0,1,True,False,True,False,2026-03-28 06:06:06.955,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,5.0,1.0,SOFT,5.0,91.421,33.043,40.452,17.926,275.0,325.0,266.0,277.0,1,True,True,True,False,2026-03-28 06:08:12.230,,16.5,32.4,56.9,False,2.7,151.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,6.0,1.0,SOFT,6.0,110.777,38.499,45.909,26.369,245.0,245.0,,220.0,1,True,False,False,False,2026-03-28 06:09:43.651,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,7.0,2.0,SOFT,1.0,,,47.355,22.077,254.0,266.0,266.0,234.0,1,True,False,False,False,2026-03-28 06:11:34.428,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,8.0,2.0,SOFT,2.0,91.09,32.824,40.421,17.845,280.0,319.0,263.0,277.0,1,True,True,True,False,2026-03-28 06:16:02.331,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,9.0,2.0,SOFT,3.0,124.88,48.2,50.393,26.287,194.0,268.0,,216.0,1,True,False,False,False,2026-03-28 06:17:33.421,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,PER,Cadillac,1.0,1.0,SOFT,1.0,,,44.652,21.104,262.0,265.0,266.0,254.0,1,True,False,False,False,2026-03-28 06:01:09.997,,16.6,32.2,55.3,False,1.9,114.0
+2026,3,Japanese Grand Prix,Q,PER,Cadillac,2.0,1.0,SOFT,2.0,92.788,33.641,40.983,18.164,277.0,324.0,256.0,277.0,1,True,True,True,False,2026-03-28 06:02:55.628,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,PER,Cadillac,3.0,1.0,SOFT,3.0,110.838,41.581,45.705,23.552,253.0,277.0,,263.0,1,True,False,False,False,2026-03-28 06:04:28.416,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,PER,Cadillac,4.0,2.0,SOFT,1.0,,,46.818,25.676,269.0,214.0,262.0,240.0,1,True,False,False,False,2026-03-28 06:06:19.254,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,PER,Cadillac,5.0,2.0,SOFT,2.0,92.206,33.512,40.667,18.027,279.0,328.0,250.0,283.0,1,True,True,True,False,2026-03-28 06:16:08.580,,16.4,31.0,56.4,False,1.3,150.0
+2026,3,Japanese Grand Prix,Q,PER,Cadillac,6.0,2.0,SOFT,3.0,122.333,46.504,47.406,28.423,254.0,276.0,,186.0,1,True,False,False,False,2026-03-28 06:17:40.786,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,1.0,1.0,SOFT,1.0,,,46.423,22.689,261.0,258.0,268.0,183.0,1,True,False,False,False,2026-03-28 06:00:43.891,,16.6,32.2,55.3,False,1.9,114.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,2.0,1.0,SOFT,2.0,93.028,33.835,41.216,17.977,278.0,330.0,270.0,286.0,1,True,True,True,False,2026-03-28 06:02:34.564,,16.5,32.0,57.1,False,1.7,122.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,3.0,1.0,SOFT,3.0,117.839,44.749,49.356,23.734,195.0,279.0,,243.0,1,True,False,False,False,2026-03-28 06:04:07.592,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,4.0,2.0,SOFT,1.0,,,47.626,26.72,271.0,255.0,263.0,177.0,1,True,False,False,False,2026-03-28 06:06:05.431,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,5.0,2.0,SOFT,2.0,92.598,33.655,40.961,17.982,282.0,331.0,260.0,284.0,1,True,True,True,False,2026-03-28 06:09:54.214,,16.4,32.1,59.2,False,2.3,151.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,6.0,2.0,SOFT,3.0,105.593,36.615,44.656,24.322,257.0,277.0,,266.0,1,True,False,False,False,2026-03-28 06:11:26.812,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,7.0,3.0,SOFT,1.0,,,47.755,24.237,272.0,278.0,270.0,265.0,1,True,False,False,False,2026-03-28 06:13:12.405,,16.4,31.5,60.1,False,2.3,130.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,8.0,3.0,SOFT,2.0,92.33,33.362,41.021,17.947,281.0,328.0,260.0,285.0,1,True,True,True,False,2026-03-28 06:17:42.980,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,BOT,Cadillac,9.0,3.0,SOFT,3.0,114.42,41.43,46.816,26.174,252.0,272.0,,233.0,1,True,False,False,False,2026-03-28 06:19:15.310,,16.5,31.3,54.7,False,2.2,158.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,1.0,1.0,SOFT,1.0,,,48.408,22.201,252.0,257.0,256.0,234.0,1,True,False,False,False,2026-03-28 06:00:24.444,,16.7,32.4,57.2,False,2.9,126.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,2.0,1.0,SOFT,2.0,93.846,34.058,41.685,18.103,267.0,329.0,249.0,282.0,1,True,True,True,False,2026-03-28 06:02:16.941,,16.6,32.2,56.4,False,2.4,117.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,3.0,1.0,SOFT,3.0,106.995,36.952,46.235,23.808,239.0,265.0,,251.0,1,True,False,False,False,2026-03-28 06:03:50.787,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,4.0,2.0,SOFT,1.0,,,46.727,24.25,252.0,266.0,263.0,254.0,1,True,False,False,False,2026-03-28 06:05:37.782,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,5.0,2.0,SOFT,2.0,93.392,33.759,41.491,18.142,268.0,329.0,250.0,281.0,1,True,True,True,False,2026-03-28 06:09:01.885,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,6.0,2.0,SOFT,3.0,111.784,37.342,47.839,26.603,231.0,258.0,,236.0,1,True,False,False,False,2026-03-28 06:10:35.277,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,7.0,3.0,SOFT,1.0,,,47.88,23.46,250.0,244.0,255.0,243.0,1,True,False,False,False,2026-03-28 06:12:27.061,,16.4,31.6,58.5,False,2.3,120.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,8.0,3.0,SOFT,2.0,92.646,33.536,41.206,17.904,270.0,328.0,254.0,280.0,1,True,True,True,False,2026-03-28 06:16:58.483,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,9.0,3.0,SOFT,3.0,119.031,41.49,48.215,29.326,223.0,243.0,,211.0,1,True,False,False,False,2026-03-28 06:18:31.129,,16.5,31.4,54.4,False,1.2,94.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,1.0,1.0,SOFT,1.0,,,49.505,21.937,249.0,246.0,258.0,244.0,1,True,False,False,False,2026-03-28 06:00:16.742,,16.7,32.4,57.2,False,2.9,126.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,2.0,1.0,SOFT,2.0,94.408,34.2,41.99,18.218,267.0,323.0,259.0,275.0,1,True,True,True,False,2026-03-28 06:02:11.327,,16.6,32.2,56.4,False,2.4,117.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,3.0,1.0,SOFT,3.0,110.368,38.472,46.845,25.051,239.0,259.0,,241.0,1,True,False,False,False,2026-03-28 06:03:45.735,,16.5,32.3,55.4,False,1.7,132.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,4.0,2.0,SOFT,1.0,,,50.466,26.475,250.0,248.0,259.0,86.0,1,True,False,False,False,2026-03-28 06:05:36.103,,16.5,32.7,57.0,False,2.0,144.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,5.0,2.0,SOFT,2.0,92.92,33.631,41.341,17.948,266.0,327.0,259.0,277.0,1,True,True,True,False,2026-03-28 06:09:18.010,,16.5,32.0,57.0,False,3.3,164.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,6.0,2.0,SOFT,3.0,114.517,39.835,51.548,23.134,238.0,261.0,,253.0,1,True,False,False,False,2026-03-28 06:10:50.930,,16.4,31.9,59.9,False,3.5,152.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,7.0,3.0,SOFT,1.0,,,48.967,25.053,248.0,239.0,258.0,245.0,1,True,False,False,False,2026-03-28 06:12:45.447,,16.4,31.5,60.1,False,2.3,130.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,8.0,3.0,SOFT,2.0,93.333,33.595,41.546,18.192,264.0,316.0,260.0,272.0,1,True,False,True,False,2026-03-28 06:16:52.911,,16.5,31.4,55.9,False,1.0,113.0
+2026,3,Japanese Grand Prix,Q,STR,Aston Martin,9.0,3.0,SOFT,3.0,115.153,40.136,48.268,26.749,236.0,207.0,,208.0,1,True,False,False,False,2026-03-28 06:18:26.244,,16.5,31.4,54.4,False,1.2,94.0
