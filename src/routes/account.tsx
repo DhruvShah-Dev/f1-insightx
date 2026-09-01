@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { FormEvent, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
+import { RaceFlagHero } from "@/components/race-flag-hero";
 import { nextRace } from "@/data/season";
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
@@ -250,7 +251,7 @@ function Account() {
 
   if (authState === "loading") {
     return (
-      <SiteShell>
+      <SiteShell fullWidth>
         <AccountFrame title="Account" kicker="Session" subtitle="Checking account state..." />
       </SiteShell>
     );
@@ -258,7 +259,7 @@ function Account() {
 
   if (!user) {
     return (
-      <SiteShell>
+      <SiteShell fullWidth>
         <AccountFrame
           title="Account"
           kicker="Sign in"
@@ -291,7 +292,7 @@ function Account() {
   }
 
   return (
-    <SiteShell>
+    <SiteShell fullWidth>
       <AccountFrame
         title="Profile"
         kicker="Signed in"
@@ -299,8 +300,6 @@ function Account() {
       >
         <section className="mt-8 grid gap-5 xl:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)]">
           <div className="pw-flip-in relative overflow-hidden border border-border bg-card/50 p-5 sm:p-6">
-            <span className="pw-drift pointer-events-none absolute inset-0 opacity-[0.08]" aria-hidden />
-            <span className="pw-sweep pointer-events-none absolute inset-0" aria-hidden />
             <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <div className="flex flex-wrap items-center gap-2">
@@ -459,24 +458,16 @@ function AccountFrame({
 }) {
   return (
     <>
-      <section className="relative overflow-hidden border border-border bg-card/40">
-        <div aria-hidden className="absolute inset-y-0 left-0 w-1.5 bg-primary" />
-        <div aria-hidden className="absolute inset-0 rule-grid opacity-30" />
-        <div className="relative p-5 pl-7 sm:p-7 sm:pl-9">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 bg-primary px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-primary-foreground">
-              {title === "Profile" ? <Check className="size-3" /> : <Lock className="size-3" />}
-              {kicker}
-            </span>
-            <span className="label-xs">F1 InsightX</span>
-          </div>
-          <h1 className="mt-4 text-4xl font-black uppercase italic leading-none tracking-tighter sm:text-6xl">
-            {title}
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">{subtitle}</p>
-          <div className="mt-5 h-1.5 max-w-44 bg-primary" />
-        </div>
-      </section>
+      <RaceFlagHero
+        kicker={
+          <span className="inline-flex items-center gap-1">
+            {title === "Profile" ? <Check className="size-3" /> : <Lock className="size-3" />}
+            {kicker}
+          </span>
+        }
+        title={title}
+        meta={subtitle}
+      />
       {children}
     </>
   );

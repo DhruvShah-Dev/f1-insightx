@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { SiteShell, Stat } from "@/components/site-shell";
+import { RaceFlagHero } from "@/components/race-flag-hero";
 import { CompoundLegend, LapTraceChart } from "@/components/telemetry";
 import { buildCornerModel, CornerMap, CornerMapLegend } from "@/components/corner-profile";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
@@ -52,14 +53,14 @@ export const Route = createFileRoute("/analysis/$slug")({
     };
   },
   errorComponent: ({ error }) => (
-    <SiteShell>
+    <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
         Weekend unavailable: {error.message}
       </p>
     </SiteShell>
   ),
   notFoundComponent: () => (
-    <SiteShell>
+    <SiteShell fullWidth>
       <h1 className="text-2xl font-black uppercase italic">Weekend not found</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         No stored analysis matches this weekend.{" "}
@@ -282,7 +283,7 @@ function WeekendPage() {
   ];
 
   return (
-    <SiteShell>
+    <SiteShell fullWidth>
       <nav className="text-[11px] text-muted-foreground">
         <Link to="/analysis" className="text-primary underline underline-offset-2">
           Analysis
@@ -290,69 +291,37 @@ function WeekendPage() {
         <span className="mx-1">/</span>
         <span className="num">R{w.round}</span>
       </nav>
-
-      <section
-        className="relative mt-3 overflow-hidden rounded-xl border border-border bg-card/50"
-        style={{ borderTop: `3px solid ${winnerTeam.color}` }}
+      <RaceFlagHero
+        kicker={`Round ${w.round} / ${w.season}`}
+        title={w.name}
+        meta={`${w.circuit}${w.resultsOnly ? " / results only - lap telemetry not ingested" : ` / ${w.lapsAnalysed} analysed laps`}`}
+        stats={[
+          { label: "Race shape", value: titleCase(w.summary?.raceShape) },
+          { label: "Strategy", value: titleCase(w.summary?.strategy), note: w.summary?.compoundPath ?? undefined },
+          { label: "Corners", value: `${cornerCounts.Slow}/${cornerCounts.Medium}/${cornerCounts.Fast}`, note: "slow / medium / fast" },
+          { label: "Winner", value: w.winner.code || "-", note: w.winner.team },
+        ]}
       >
-        <span className="pw-drift pointer-events-none absolute inset-0 opacity-30" aria-hidden />
-        <span className="pw-sweep pointer-events-none absolute inset-0" aria-hidden />
-        <div className="relative grid gap-5 p-5 lg:grid-cols-[1.5fr_1fr]">
-          <div>
-            <p className="label-xs">
-              Round {w.round} · {w.season} · {w.dateISO ? fmtDate(w.dateISO) : ""}
-              {w.sprintWeekend ? " · Sprint" : ""}
-            </p>
-            <h1 className="mt-1 text-3xl font-black uppercase italic tracking-tighter sm:text-4xl">
-              {w.name}
-            </h1>
-            <p className="num mt-1 text-xs text-muted-foreground">
-              {w.circuit}
-              {w.resultsOnly
-                ? " · results only — lap telemetry not ingested"
-                : ` · ${w.lapsAnalysed} analysed laps`}
-            </p>
-
-
-            <div className="mt-4 flex items-center gap-3 rounded-lg border border-border bg-background/40 p-3">
-              <DriverAvatar code={w.winner.code || "—"} teamName={w.winner.team} size="lg" />
-              <div className="min-w-0">
-                <p className="label-xs">Winner</p>
-                <p className="truncate text-sm font-black uppercase italic">
-                  {w.winner.name || w.winner.code || "—"}
-                </p>
-                <TeamBadge teamName={w.winner.team} showName />
-              </div>
-            </div>
-
-            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              <Stat label="Race shape" value={titleCase(w.summary?.raceShape)} />
-              <Stat
-                label="Strategy"
-                value={titleCase(w.summary?.strategy)}
-                note={w.summary?.compoundPath ?? undefined}
-              />
-              <Stat
-                label="Corners"
-                value={`${cornerCounts.Slow}/${cornerCounts.Medium}/${cornerCounts.Fast}`}
-                note="slow / medium / fast"
-              />
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="flex items-center gap-3 rounded-lg border border-white/18 bg-[#07110c]/88 p-3">
+            <DriverAvatar code={w.winner.code || "-"} teamName={w.winner.team} size="lg" />
+            <div className="min-w-0">
+              <p className="label-xs text-white/65">Winner</p>
+              <p className="truncate text-sm font-black uppercase italic text-white">
+                {w.winner.name || w.winner.code || "-"}
+              </p>
+              <TeamBadge teamName={w.winner.team} showName />
             </div>
           </div>
-
-          <div className="rounded-lg border border-border bg-background/40 p-3">
+          <div className="rounded-lg border border-white/18 bg-white p-3 text-[#07110c]">
             <p className="label-xs">Circuit</p>
-            <CornerMap
-              path={w.trackPath}
-              className="mx-auto mt-2 h-44 w-full"
-              highlightCorner={hoverCorner}
-            />
+            <CornerMap path={w.trackPath} className="mx-auto mt-2 h-44 w-full" highlightCorner={hoverCorner} />
             <div className="mt-2">
               <CornerMapLegend />
             </div>
           </div>
         </div>
-      </section>
+      </RaceFlagHero>
 
       <div className="sticky top-0 z-10 mt-8 -mx-1 flex flex-wrap items-center gap-2 border-b border-border bg-background/90 px-1 py-2 backdrop-blur">
         <Segmented

@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { BarChart3, BookOpen, Crosshair, Flag, Home, ShieldCheck, Swords, Trophy, UserRound } from "lucide-react";
 import type { ReactNode } from "react";
-import { StartLightRails } from "@/components/race-atmosphere";
 import { seasonState } from "@/data/season";
 import { fmtDate } from "@/lib/format";
 
@@ -15,44 +14,14 @@ const nav = [
   { to: "/method", label: "Method", icon: BookOpen },
 ];
 
-export function SiteShell({ children }: { children: ReactNode }) {
+export function SiteShell({ children, fullWidth = false }: { children: ReactNode; fullWidth?: boolean }) {
   return (
     <div className="relative min-h-screen bg-background text-foreground">
-      {/* Ambient background: drifting hatch + soft corner glows (decorative) */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div
-          className="pw-drift absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(115deg, var(--foreground) 0 1px, transparent 1px 14px)",
-          }}
-        />
-        <div
-          className="pw-glow absolute -left-40 top-[-10rem] size-[34rem] rounded-full blur-3xl"
-          style={{
-            background: "radial-gradient(closest-side, var(--primary), transparent 70%)",
-            opacity: 0.14,
-          }}
-        />
-        <div
-          className="pw-glow absolute -right-40 top-[40vh] size-[30rem] rounded-full blur-3xl"
-          style={{
-            background: "radial-gradient(closest-side, var(--dutch-orange), transparent 70%)",
-            opacity: 0.1,
-          }}
-        />
-      </div>
-      <StartLightRails />
-
-      <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3">
-          <Link to="/" className="group flex items-center gap-2.5">
-            <span className="race-mark grid size-8 place-items-center rounded-sm border border-primary/70 bg-primary text-[11px] font-black italic text-primary-foreground shadow-[0_0_22px_color-mix(in_oklab,var(--primary)_50%,transparent)]">IX</span>
-            <span className="flex items-baseline gap-2">
-              <span className="font-display text-lg font-black uppercase italic leading-none tracking-tight">
-                F1 Insight<span className="text-primary">X</span>
-              </span>
-              <span className="label-xs hidden sm:inline">Race intelligence</span>
+      <header className="sticky top-0 z-40 border-b border-border bg-background">
+        <div className="mx-auto flex w-full flex-wrap items-center gap-x-6 gap-y-2 px-5 py-3">
+          <Link to="/" className="group flex items-center">
+            <span className="font-display text-xl font-black uppercase italic leading-none tracking-tight">
+              F1 Insight<span className="text-primary">X</span>
             </span>
           </Link>
           <nav
@@ -84,14 +53,16 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </div>
       </header>
 
-      <main className="race-page-enter relative z-10 mx-auto max-w-6xl px-4 py-8">{children}</main>
+      <main className={`race-page-enter relative z-10 mx-auto px-5 py-8 ${fullWidth ? "max-w-none" : "max-w-6xl"}`}>
+        {children}
+      </main>
 
       <footer className="relative z-10 mt-16 border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-xs text-muted-foreground">
+        <div className="mx-auto flex w-full flex-col gap-4 px-5 py-8 text-xs text-muted-foreground">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <p className="flex items-center gap-2">
               <ShieldCheck className="size-3.5 text-primary" />
-              F1 InsightX — {seasonState.season} season. Standings complete through{" "}
+              F1 InsightX - {seasonState.season} season. Standings complete through{" "}
               {fmtDate(seasonState.resultsThrough.date)}.
             </p>
             <nav aria-label="Footer" className="flex flex-wrap gap-4 sm:ml-auto">
@@ -108,7 +79,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             Independent, unofficial project for analysis and entertainment. Not associated with,
             endorsed by, or affiliated with Formula 1, the FIA, or any team. F1, FORMULA 1, GRAND
             PRIX and related marks are trademarks of Formula One Licensing BV. Projections and picks
-            are informational only — not betting advice, and no money is staked or handled.
+            are informational only - not betting advice, and no money is staked or handled.
           </p>
         </div>
       </footer>
@@ -138,7 +109,7 @@ export function SectionHeading({
 
   return (
     <div className="mb-4 flex items-end justify-between gap-4 border-b border-border pb-2">
-      <div className="flex items-end gap-2.5">
+      <div className="flex min-w-0 items-end gap-2.5">
         <span className="mb-0.5 grid size-7 place-items-center border border-border bg-card/70 text-primary">
           <Icon className="size-3.5" />
         </span>
@@ -147,7 +118,7 @@ export function SectionHeading({
         <h2 className="text-xl font-black uppercase italic tracking-tight">{title}</h2>
         </div>
       </div>
-      {action}
+      {action ? <div className="shrink-0 text-right">{action}</div> : null}
     </div>
   );
 }

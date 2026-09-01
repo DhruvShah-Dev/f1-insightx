@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
+import { RaceFlagHero } from "@/components/race-flag-hero";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
 import { team } from "@/data/teams";
 import { fmtDate } from "@/lib/format";
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/analysis/")({
     ],
   }),
   errorComponent: ({ error }) => (
-    <SiteShell>
+    <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
         Analysis index unavailable: {error.message}
       </p>
@@ -84,35 +85,18 @@ function AnalysisIndex() {
   const maxWins = Math.max(1, ...wins.map((w) => w.n));
 
   return (
-    <SiteShell>
-      <section className="relative overflow-hidden rounded-xl border border-border bg-card/40 p-5">
-        <span className="pw-drift pointer-events-none absolute inset-0 opacity-[0.35]" aria-hidden />
-        <span
-          className="pw-glow pointer-events-none absolute -right-16 -top-20 size-56 rounded-full bg-primary/25 blur-3xl"
-          aria-hidden
-        />
-        <span className="pw-sweep pointer-events-none absolute inset-0" aria-hidden />
-        <div className="relative">
-          <p className="label-xs">{data.season} season · session data</p>
-          <h1 className="mt-1 text-3xl font-black uppercase italic tracking-tighter sm:text-4xl">
-            Weekend analysis
-          </h1>
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <Stat label="Reports" value={String(analysed.length)} note="race weekends analysed" />
-            <Stat
-              label="Sprints"
-              value={String(all.filter((w) => w.hasSprint).length)}
-              note="sprint formats stored"
-            />
-            <Stat label="Winners" value={String(new Set(analysed.map((w) => w.winnerCode)).size)} />
-            <Stat
-              label="Remaining"
-              value={String(all.length - analysed.length)}
-              note="rounds not yet analysed"
-            />
-          </div>
-        </div>
-      </section>
+    <SiteShell fullWidth>
+      <RaceFlagHero
+        kicker={`${data.season} season`}
+        title="Weekend analysis"
+        meta="Stored qualifying, sprint and race reports by round."
+        stats={[
+          { label: "Reports", value: String(analysed.length), note: "race weekends analysed" },
+          { label: "Sprints", value: String(all.filter((w) => w.hasSprint).length), note: "sprint formats stored" },
+          { label: "Winners", value: String(new Set(analysed.map((w) => w.winnerCode)).size) },
+          { label: "Remaining", value: String(all.length - analysed.length), note: "rounds not yet analysed" },
+        ]}
+      />
 
       <section className="mt-8">
         <SectionHeading

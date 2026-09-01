@@ -4,6 +4,7 @@ import type { Session } from "@supabase/supabase-js";
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
 import { SectionHeading, SiteShell } from "@/components/site-shell";
+import { RaceFlagHero } from "@/components/race-flag-hero";
 import { team } from "@/data/teams";
 import { supabase } from "@/integrations/supabase/client";
 import { fmtDateTime } from "@/lib/format";
@@ -35,7 +36,7 @@ export const Route = createFileRoute("/picks")({
     ],
   }),
   errorComponent: ({ error }) => (
-    <SiteShell>
+    <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
         Picks table closed: {error.message}
       </p>
@@ -445,52 +446,34 @@ function Picks() {
   };
 
   return (
-    <SiteShell>
+    <SiteShell fullWidth>
       <div
         style={
           {
             "--casino-red": CASINO_RED,
             "--casino-white": CASINO_WHITE,
             "--casino-blue": CASINO_BLUE,
-            backgroundColor: "#050506",
           } as CSSProperties
         }
-        className="-mx-4 px-4 py-1 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+        className="py-1"
       >
-        <FeltPanel className="rounded-2xl p-5 sm:p-7">
-          <div className="relative mt-1 flex items-center gap-3">
-            <CasinoMark />
-            <div>
-              <p className="label-xs pw-ticker">F1-X casino card</p>
-              <h1 className="pw-flip-in text-4xl font-black uppercase italic tracking-tighter sm:text-6xl">
-                Pit Wall Picks
-              </h1>
-            </div>
-          </div>
-          <p className="pw-ticker relative mt-2 max-w-2xl text-sm text-muted-foreground [animation-delay:0.12s]">
-            {markets.length} markets this round. Sprint lanes appear only on sprint weekends. Cards lock to your account
-            and score when official results land.
-          </p>
-          <div className="relative mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <ChipStat label="Round" value={`R${challenge.round}`} note={challenge.raceName} />
-            <ChipStat
-              label="Status"
-              value={settled ? "Settled" : locked ? "Locked" : "Open"}
-              note={
-                challenge.lockAtISO
-                  ? `${settled ? "Results in" : "Locks"} ${fmtDateTime(challenge.lockAtISO)}`
-                  : "No lock time stored"
-              }
-              tone="blue"
-            />
-            <ChipStat label="Filled" value={`${filled}/${markets.length}`} tone="white" />
-            <ChipStat
-              label="Score bank"
-              value={String(scoreBank)}
-              note={`${ledger.length} settled card${ledger.length === 1 ? "" : "s"}`}
-            />
-          </div>
-        </FeltPanel>
+        <RaceFlagHero
+          kicker="F1-X picks"
+          title="Pit Wall Picks"
+          meta={`${markets.length} markets this round. Cards lock to your account and score when official results land.`}
+          stats={[
+            { label: "Round", value: `R${challenge.round}`, note: challenge.raceName },
+            {
+              label: "Status",
+              value: settled ? "Settled" : locked ? "Locked" : "Open",
+              note: challenge.lockAtISO
+                ? `${settled ? "Results in" : "Locks"} ${fmtDateTime(challenge.lockAtISO)}`
+                : "No lock time stored",
+            },
+            { label: "Filled", value: `${filled}/${markets.length}` },
+            { label: "Score bank", value: String(scoreBank), note: `${ledger.length} settled card${ledger.length === 1 ? "" : "s"}` },
+          ]}
+        />
 
         <FeltPanel className="mt-6 rounded-xl p-4">
           <div className="flex flex-wrap items-end gap-3">

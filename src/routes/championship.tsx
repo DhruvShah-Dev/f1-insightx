@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
+import { RaceFlagHero } from "@/components/race-flag-hero";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
 import { team } from "@/data/teams";
 import { fmtDelta, fmtNum } from "@/lib/format";
@@ -45,7 +46,7 @@ export const Route = createFileRoute("/championship")({
     ],
   }),
   errorComponent: ({ error }) => (
-    <SiteShell>
+    <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
         Standings unavailable: {error.message}
       </p>
@@ -251,45 +252,26 @@ function Championship() {
   ];
 
   return (
-    <SiteShell>
-      <section className="relative overflow-hidden rounded-xl border border-border bg-card/40 p-5">
-        <span className="pw-drift pointer-events-none absolute inset-0 opacity-[0.35]" aria-hidden />
-        <span
-          className="pw-glow pointer-events-none absolute -right-16 -top-20 size-56 rounded-full bg-primary/25 blur-3xl"
-          aria-hidden
-        />
-        <span className="pw-sweep pointer-events-none absolute inset-0" aria-hidden />
-        <div className="relative">
-          <p className="label-xs">
-            {data.season} season · complete through round {data.round}
-          </p>
-          <h1 className="mt-1 text-3xl font-black uppercase italic tracking-tighter sm:text-4xl">
-            Championship
-          </h1>
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <Stat
-              label="Leader"
-              value={leader?.code ?? "—"}
-              note={leader ? `${leader.points} pts` : undefined}
-            />
-            <Stat
-              label="Margin"
-              value={
-                data.drivers[1] ? String(Math.abs(data.drivers[1].gapToLeader)) : "—"
-              }
-              note="points to P2"
-            />
-            <Stat label="Top team" value={team(teamLeader?.name).short} note={`${teamLeader?.points ?? 0} pts`} />
-            <Stat
-              label="Winners"
-              value={String(
-                new Set(data.winnersByRound.map((r) => r.winnerCode).filter(Boolean)).size,
-              )}
-              note="different race winners"
-            />
-          </div>
-        </div>
-      </section>
+    <SiteShell fullWidth>
+      <RaceFlagHero
+        kicker={`${data.season} season`}
+        title="Championship"
+        meta={`Complete through round ${data.round}`}
+        stats={[
+          { label: "Leader", value: leader?.code ?? "-", note: leader ? `${leader.points} pts` : undefined },
+          {
+            label: "Margin",
+            value: data.drivers[1] ? String(Math.abs(data.drivers[1].gapToLeader)) : "-",
+            note: "points to P2",
+          },
+          { label: "Top team", value: team(teamLeader?.name).short, note: `${teamLeader?.points ?? 0} pts` },
+          {
+            label: "Winners",
+            value: String(new Set(data.winnersByRound.map((r) => r.winnerCode).filter(Boolean)).size),
+            note: "different race winners",
+          },
+        ]}
+      />
 
       <div className="sticky top-0 z-20 -mx-4 mt-6 border-b border-border bg-background/90 px-4 py-2 backdrop-blur">
         <div className="flex flex-wrap items-center gap-1.5">

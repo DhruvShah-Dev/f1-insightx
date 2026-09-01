@@ -133,23 +133,31 @@ function RaceWeek() {
   };
 
   return (
-    <SiteShell>
+    <SiteShell fullWidth>
       <div className="raceweek-page" style={{ "--race-accent": theme.accent } as CSSProperties}>
-      <section className="relative overflow-hidden border border-border bg-[#111111] shadow-[0_24px_56px_rgba(0,0,0,0.28)]" style={{ borderTopColor: theme.accent, borderTopWidth: 5 }}>
+      <section className="relative overflow-hidden rounded-lg border border-white/18 text-white shadow-[0_18px_80px_rgba(0,0,0,0.22)]" style={{ backgroundColor: theme.flag[0] ?? theme.accent }}>
+        <div aria-hidden className="absolute inset-0 hidden md:grid md:grid-cols-3">
+          {theme.flag.map((c, i) => (
+            <span key={i} style={{ backgroundColor: c }} />
+          ))}
+        </div>
         <div className="flex h-3 w-full">
           {theme.flag.map((c, i) => (
             <span key={i} className="h-full flex-1" style={{ backgroundColor: c }} />
           ))}
         </div>
         <div className="relative grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="p-6 sm:p-8" style={{ backgroundColor: theme.flag[0] }}>
+          <div className="p-6 sm:p-8">
             <div className="inline-flex items-center gap-2 border border-white/30 bg-black/25 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-white">
               <Flag className="size-3.5" /> Round {data.round} · {data.season}
             </div>
             <p className="mt-5 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white/70">
               <MapPinned className="size-3.5" /> {theme.label}
             </p>
-            <h1 className="mt-2 text-4xl font-black uppercase italic leading-[0.9] tracking-tighter text-white sm:text-5xl">
+            <h1
+              className="mt-2 text-4xl font-black uppercase italic leading-[0.9] tracking-tighter [text-shadow:0_2px_0_rgba(255,255,255,0.72),0_10px_22px_rgba(0,0,0,0.24)] sm:text-5xl"
+              style={{ color: theme.flag.at(-1) ?? theme.accent, WebkitTextStroke: "0.4px rgba(255,255,255,0.75)" }}
+            >
               {data.raceName}
             </h1>
             <p className="num mt-4 text-xs text-white/75">
@@ -171,7 +179,7 @@ function RaceWeek() {
                 <button
                   type="button"
                   onClick={setRaceReminder}
-                  className="inline-flex min-h-11 items-center gap-2 border border-white/45 bg-black/20 px-4 text-[11px] font-black uppercase tracking-[0.1em] text-white transition-colors hover:bg-white hover:text-black"
+                  className="inline-flex min-h-11 items-center gap-2 border border-white/45 bg-[#07110c] px-4 text-[11px] font-black uppercase tracking-[0.1em] text-white transition-colors hover:bg-white hover:text-black"
                 >
                   {reminderSet ? <Check className="size-4" /> : <Bell className="size-4" />}
                   {reminderSet ? "Race saved" : "Save race"}
@@ -204,12 +212,12 @@ function RaceWeek() {
             </div>
           </div>
 
-          <div className="bg-[#0b0b0b] p-3 sm:p-5">
+          <div className="p-3 sm:p-5">
             <CircuitMap
               path={data.trackPath}
               circuitId={data.circuit.id}
               circuitName={data.circuit.name}
-              className="min-h-[420px] border-white/15"
+              className="min-h-[420px] rounded-lg border-white/20 bg-white text-[#07110c]"
             />
           </div>
         </div>

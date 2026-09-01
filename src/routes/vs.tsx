@@ -3,6 +3,7 @@ import { queryOptions, useQuery, useSuspenseQuery } from "@tanstack/react-query"
 import { useMemo, useState } from "react";
 import { z } from "zod";
 import { SiteShell } from "@/components/site-shell";
+import { RaceFlagHero } from "@/components/race-flag-hero";
 import { CompoundLegend, DeltaChart, LapTraceChart, StintStrip } from "@/components/telemetry";
 import { buildCornerModel, CornerMap, CornerMapLegend } from "@/components/corner-profile";
 import { CornerProfileChart, DirtyAirChart, PositionBattleChart } from "@/components/duel-charts";
@@ -52,7 +53,7 @@ export const Route = createFileRoute("/vs")({
     ],
   }),
   errorComponent: ({ error }) => (
-    <SiteShell>
+    <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
         Head to head unavailable: {error.message}
       </p>
@@ -567,63 +568,52 @@ function Vs() {
   const pending = h2h.isPending || resolved.isPending;
 
   return (
-    <SiteShell>
+    <SiteShell fullWidth>
       {/* ---------------- hero ---------------- */}
-      <section
-        className="relative overflow-hidden rounded-xl border border-border bg-card/50"
-        style={{ borderTop: `3px solid ${colorA}`, borderBottom: `3px solid ${colorB}` }}
+      <RaceFlagHero
+        kicker="Head to head"
+        title="Driver vs driver"
+        meta={d ? `R${d.round} ${d.name} / ${d.circuit}` : "Pick a weekend below"}
       >
-        <span className="pw-drift pointer-events-none absolute inset-0 opacity-30" aria-hidden />
-        <span className="pw-sweep pointer-events-none absolute inset-0" aria-hidden />
-        <div className="relative p-5">
-          <p className="label-xs">Head to head</p>
-          <h1 className="text-3xl font-black uppercase italic tracking-tighter sm:text-4xl">
-            Driver vs driver
-          </h1>
-          <p className="num mt-1 text-[11px] text-muted-foreground">
-            {d ? `R${d.round} ${d.name} · ${d.circuit}` : "Pick a weekend below"}
-          </p>
-
-          <div className="mt-5 grid items-center gap-3 sm:grid-cols-[1fr_auto_1fr]">
-            <DriverCard
-              code={codeA}
-              name={entrantA?.name ?? codeA}
-              teamName={entrantA?.team ?? d?.race[0]?.team ?? null}
-              color={colorA}
-              score={score.a}
-              align="left"
-            />
-            <div className="flex flex-col items-center gap-2">
-              <span className="pw-glow num rounded-full border border-border bg-background/70 px-3 py-1 text-[11px] font-black uppercase tracking-widest">
-                vs
+        <div className="grid items-center gap-3 sm:grid-cols-[1fr_auto_1fr]">
+          <DriverCard
+            code={codeA}
+            name={entrantA?.name ?? codeA}
+            teamName={entrantA?.team ?? d?.race[0]?.team ?? null}
+            color={colorA}
+            score={score.a}
+            align="left"
+          />
+          <div className="flex flex-col items-center gap-2">
+            <span className="num rounded-full border border-white/25 bg-[#07110c]/88 px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
+              vs
+            </span>
+            <button
+              type="button"
+              onClick={swap}
+              className="num rounded-sm border border-white/35 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#07110c]"
+            >
+              swap
+            </button>
+            <span className="num text-[10px] text-white/80">
+              {label[active]} / {score.a}-{score.b}
+            </span>
+            {duel.sameTeam ? (
+              <span className="num rounded-sm border border-white/30 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-white/80">
+                teammates / shaded
               </span>
-              <button
-                type="button"
-                onClick={swap}
-                className="num rounded-sm border border-border px-2 py-1 text-[10px] font-black uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
-              >
-                swap
-              </button>
-              <span className="num text-[10px] text-muted-foreground">
-                {label[active]} · {score.a}–{score.b}
-              </span>
-              {duel.sameTeam ? (
-                <span className="num rounded-sm border border-border px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-muted-foreground">
-                  teammates · shaded
-                </span>
-              ) : null}
-            </div>
-            <DriverCard
-              code={codeB}
-              name={entrantB?.name ?? codeB}
-              teamName={entrantB?.team ?? d?.race[1]?.team ?? null}
-              color={colorB}
-              score={score.b}
-              align="right"
-            />
+            ) : null}
           </div>
+          <DriverCard
+            code={codeB}
+            name={entrantB?.name ?? codeB}
+            teamName={entrantB?.team ?? d?.race[1]?.team ?? null}
+            color={colorB}
+            score={score.b}
+            align="right"
+          />
         </div>
-      </section>
+      </RaceFlagHero>
 
       {/* ---------------- weekend rail ---------------- */}
       <div className="mt-5">

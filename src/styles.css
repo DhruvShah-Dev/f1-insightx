@@ -237,6 +237,10 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes home-section-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @keyframes race-mark {
   0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 0%, transparent); }
   50% { box-shadow: 0 0 0 5px color-mix(in oklab, var(--primary) 0%, transparent), 0 0 18px color-mix(in oklab, var(--primary) 50%, transparent); }
@@ -261,6 +265,9 @@
 }
 @utility race-page-enter {
   animation: race-page-enter 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@utility home-section-enter {
+  animation: home-section-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @utility race-mark {
   animation: race-mark 2.8s ease-in-out infinite;
@@ -305,6 +312,19 @@
   box-shadow: 0 14px 30px -18px color-mix(in oklab, var(--primary) 60%, transparent);
 }
 
+@utility race-country-panel {
+  border-color: color-mix(in oklab, var(--race-country-primary, var(--primary)) 42%, var(--border));
+  background-color: color-mix(in oklab, var(--race-country-primary, var(--card)) 12%, var(--card));
+}
+
+@utility race-country-accent {
+  color: var(--race-country-tertiary, var(--primary));
+}
+
+@utility race-country-border {
+  border-color: var(--race-country-accent, var(--primary));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pw-sweep,
   .pw-drift,
@@ -320,6 +340,7 @@
   }
 
   .race-page-enter,
+  .home-section-enter,
   .race-mark {
     animation: none !important;
   }

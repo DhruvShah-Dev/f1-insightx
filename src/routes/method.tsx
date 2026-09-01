@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionHeading, SiteShell } from "@/components/site-shell";
+import { RaceFlagHero } from "@/components/race-flag-hero";
 import { seasonState } from "@/data/season";
 import { fmtDateTime } from "@/lib/format";
 
@@ -40,12 +41,12 @@ const limits = [
 
 function Method() {
   return (
-    <SiteShell>
-      <h1 className="text-3xl font-black uppercase italic tracking-tighter sm:text-4xl">Method</h1>
-      <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-        Every number on this site comes from one deterministic pipeline. Same inputs, same outputs,
-        every time — and each page states what it was built from.
-      </p>
+    <SiteShell fullWidth>
+      <RaceFlagHero
+        kicker="Method"
+        title="Data pipeline"
+        meta="Every number on this site comes from one deterministic pipeline. Same inputs, same outputs, every time."
+      />
 
       <section className="mt-10">
         <SectionHeading kicker="Inputs" title="Data sources" />

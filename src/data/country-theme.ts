@@ -10,7 +10,7 @@ const THEMES: Record<string, CountryTheme> = {
   uk: { flag: ["#012169", "#ffffff", "#c8102e"], accent: "#c8102e", label: "United Kingdom" },
   "united kingdom": { flag: ["#012169", "#ffffff", "#c8102e"], accent: "#c8102e", label: "United Kingdom" },
   hungary: { flag: ["#ce2939", "#ffffff", "#477050"], accent: "#ce2939", label: "Magyarország" },
-  austria: { flag: ["#ed2939", "#ffffff", "#ed2939"], accent: "#ed2939", label: "Österreich" },
+  austria: { flag: ["#ed2939", "#ffffff", "#ed2939"], accent: "#ed2939", label: "Osterreich" },
   japan: { flag: ["#ffffff", "#bc002d", "#ffffff"], accent: "#bc002d", label: "日本" },
   usa: { flag: ["#3c3b6e", "#ffffff", "#b22234"], accent: "#b22234", label: "United States" },
   "united states": { flag: ["#3c3b6e", "#ffffff", "#b22234"], accent: "#b22234", label: "United States" },

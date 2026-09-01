@@ -91,16 +91,30 @@ function buildSectors(pathData: string, sourceRotation = 0) {
   };
 }
 
-function tooltipPosition(corner: CircuitCorner) {
+function rotatePoint(point: Pt, center: Pt, rotation: number): Pt {
+  const radians = (rotation * Math.PI) / 180;
+  return {
+    x:
+      center.x +
+      (point.x - center.x) * Math.cos(radians) -
+      (point.y - center.y) * Math.sin(radians),
+    y:
+      center.y +
+      (point.x - center.x) * Math.sin(radians) +
+      (point.y - center.y) * Math.cos(radians),
+  };
+}
+
+function tooltipPosition(corner: CircuitCorner, point: Pt = corner) {
   switch (corner.tooltipSide) {
     case "left":
-      return { x: corner.x - 12, y: corner.y - 20, anchor: "end" as const };
+      return { x: point.x - 12, y: point.y - 20, anchor: "end" as const };
     case "above":
-      return { x: corner.x, y: corner.y - 32, anchor: "middle" as const };
+      return { x: point.x, y: point.y - 32, anchor: "middle" as const };
     case "below":
-      return { x: corner.x, y: corner.y + 42, anchor: "middle" as const };
+      return { x: point.x, y: point.y + 42, anchor: "middle" as const };
     default:
-      return { x: corner.x + 12, y: corner.y - 20, anchor: "start" as const };
+      return { x: point.x + 12, y: point.y - 20, anchor: "start" as const };
   }
 }
 
@@ -109,11 +123,13 @@ export function CircuitMap({
   circuitId,
   circuitName,
   className,
+  compact = false,
 }: {
   path: TrackPath | null;
   circuitId?: string | null;
   circuitName?: string | null;
   className?: string;
+  compact?: boolean;
 }) {
   const [active, setActive] = useState<CircuitCorner | null>(null);
   const model = useMemo(
@@ -139,15 +155,18 @@ export function CircuitMap({
   }
 
   const activeCorner = active ?? corners[0] ?? null;
+  const rotatedCorners = corners.map((corner) => ({
+    corner,
+    point: rotatePoint(corner, model.center, model.rotation),
+  }));
 
   return (
-    <div
-      className={`relative overflow-hidden border border-border bg-background/70 ${className ?? ""}`}
-    >
-      <div className="absolute inset-x-0 top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background/80 px-4 py-3 backdrop-blur">
+    <div className={`overflow-hidden border border-border bg-background ${className ?? ""}`}>
+      <div className={compact ? "relative min-h-[330px]" : "relative min-h-[460px]"}>
+      <div className={`absolute inset-x-0 top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background ${compact ? "px-3 py-2" : "px-4 py-3"}`}>
         <div>
           <p className="label-xs">{name} circuit</p>
-          <p className="text-sm font-black uppercase italic">
+          <p className={compact ? "text-xs font-black uppercase italic" : "text-sm font-black uppercase italic"}>
             {corners.length ? `${corners.length} turns - ` : ""}3 sectors
           </p>
         </div>
@@ -163,7 +182,7 @@ export function CircuitMap({
 
       <svg
         viewBox={model.viewBox}
-        className="h-[390px] w-full pt-8 sm:h-[460px]"
+        className={compact ? "h-[330px] w-full pt-7" : "h-[390px] w-full pt-8 sm:h-[460px]"}
         role="img"
         aria-label={`Interactive ${name} circuit map with corner numbers and sectors`}
       >
@@ -197,8 +216,9 @@ export function CircuitMap({
             strokeLinecap="round"
             strokeWidth={5}
           />
+        </g>
 
-          {corners.map((corner) => {
+          {rotatedCorners.map(({ corner, point }) => {
             const isActive = activeCorner?.number === corner.number;
             return (
               <g
@@ -214,16 +234,16 @@ export function CircuitMap({
               >
                 <title>{`Turn ${corner.number}: ${corner.name}`}</title>
                 <circle
-                  cx={corner.x}
-                  cy={corner.y}
+                  cx={point.x}
+                  cy={point.y}
                   r={isActive ? 16 : 13}
                   fill={isActive ? "#ffffff" : "var(--background)"}
                   stroke={sectorColors[corner.sector - 1]}
                   strokeWidth={4}
                 />
                 <text
-                  x={corner.x}
-                  y={corner.y + 5}
+                  x={point.x}
+                  y={point.y + 5}
                   textAnchor="middle"
                   fontSize="18"
                   className={
@@ -241,7 +261,8 @@ export function CircuitMap({
           {active ? (
             <g pointerEvents="none">
               {(() => {
-                const pos = tooltipPosition(active);
+                const activePoint = rotatePoint(active, model.center, model.rotation);
+                const pos = tooltipPosition(active, activePoint);
                 const width = Math.max(96, active.name.length * 9 + 46);
                 const rawX =
                   pos.anchor === "end"
@@ -256,8 +277,8 @@ export function CircuitMap({
                 return (
                   <>
                     <line
-                      x1={active.x}
-                      y1={active.y}
+                      x1={activePoint.x}
+                      y1={activePoint.y}
                       x2={pos.x}
                       y2={pos.y + 11}
                       stroke="#ffffff"
@@ -295,7 +316,6 @@ export function CircuitMap({
               })()}
             </g>
           ) : null}
-        </g>
       </svg>
 
       <div className="border-t border-border bg-card/40 px-4 py-3">
@@ -307,6 +327,7 @@ export function CircuitMap({
         ) : (
           <p className="mt-1 text-sm font-bold uppercase">Corner labels unavailable</p>
         )}
+      </div>
       </div>
     </div>
   );
