@@ -1,12 +1,12 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import type { Session } from "@supabase/supabase-js";
 import {
-  Award,
   CalendarDays,
-  CheckCircle2,
+  Check,
+  ChevronRight,
   CircleDot,
-  ClipboardList,
+  ClipboardCheck,
   Flag,
   Gauge,
   Lock,
@@ -14,6 +14,7 @@ import {
   MousePointer2,
   RotateCcw,
   ShieldCheck,
+  Sparkles,
   Timer,
   Trophy,
   UserRound,
@@ -22,8 +23,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
-import { SectionHeading, SiteShell } from "@/components/site-shell";
-import { RaceFlagHero } from "@/components/race-flag-hero";
+import { SiteShell } from "@/components/site-shell";
 import { countryForRace, countryTheme } from "@/data/country-theme";
 import { team } from "@/data/teams";
 import { supabase } from "@/integrations/supabase/client";
@@ -40,17 +40,16 @@ export const Route = createFileRoute("/picks")({
   loader: ({ context }) => context.queryClient.ensureQueryData(picksQuery),
   head: () => ({
     meta: [
-      { title: "Pit Wall Picks - F1 prediction card & scoring" },
+      { title: "Picks - F1 InsightX" },
       {
         name: "description",
         content:
-          "Place your card for the next 2026 F1 round: sprint picks when available, qualifying top three, podium, drawn positions, fastest lap and fastest pit stop. Scored against stored results.",
+          "Choose your race picks, save a card, and review scores when official results are stored.",
       },
-      { property: "og:title", content: "Pit Wall Picks - F1 prediction card" },
+      { property: "og:title", content: "Picks - F1 InsightX" },
       {
         property: "og:description",
-        content:
-          "Sprint, qualifying and race picks, locked to your account and scored automatically once results land.",
+        content: "Build a race pick card with driver selections for the selected Grand Prix.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -59,153 +58,165 @@ export const Route = createFileRoute("/picks")({
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
-        Picks table closed: {error.message}
+        Picks unavailable: {error.message}
       </p>
     </SiteShell>
   ),
   component: Picks,
 });
 
-type MarketGroup = "Sprint" | "Qualifying" | "Race" | "Drawn" | "Specials";
+type PickGroup = "Race" | "Qualifying" | "Sprint" | "Positions" | "Speed";
 
-type Market = {
+type PickSlot = {
   id: string;
-  group: MarketGroup;
-  label: string;
-  hint: string;
-  payout: number;
+  group: PickGroup;
+  title: string;
+  shortTitle: string;
+  helper: string;
 };
 
-type Card = Record<string, string>;
-type Store = Record<string, Card>;
-type MarketScore = { points: number; actual: string | null } | null;
+type PickCard = Record<string, string>;
+type SavedCards = Record<string, PickCard>;
+type SlotScore = { points: number; actual: string | null } | null;
 
-const MARKET_GROUPS: MarketGroup[] = ["Race", "Qualifying", "Sprint", "Drawn", "Specials"];
-
+const GROUPS: PickGroup[] = ["Race", "Qualifying", "Sprint", "Positions", "Speed"];
 const storageKey = (userId: string) => `f1ix.picks.v1.${userId}`;
 
-function marketIcon(group: MarketGroup): LucideIcon {
+function groupIcon(group: PickGroup): LucideIcon {
   if (group === "Race") return Trophy;
   if (group === "Qualifying") return Gauge;
   if (group === "Sprint") return Zap;
-  if (group === "Drawn") return CircleDot;
+  if (group === "Positions") return CircleDot;
   return Timer;
 }
 
-function groupTone(group: MarketGroup) {
+function groupColor(group: PickGroup) {
   if (group === "Race") return "var(--flag-a)";
   if (group === "Qualifying") return "var(--flag-b)";
   if (group === "Sprint") return "var(--flag-c)";
-  if (group === "Drawn") return "var(--page-ink)";
-  return "var(--race-country-accent)";
+  if (group === "Positions") return "var(--ink)";
+  return "var(--accent)";
 }
 
-function marketsFor(challenge: PickChallenge): Market[] {
-  const drawn: Market[] = challenge.randomPositions.map((position) => ({
-    id: `random-${position}`,
-    group: "Drawn",
-    label: `P${position} finisher`,
-    hint: "drawn finishing position",
-    payout: 6,
-  }));
-
+function pickSlotsFor(challenge: PickChallenge): PickSlot[] {
   return [
-    { id: "r1", group: "Race", label: "Race winner", hint: "race P1", payout: 3 },
-    { id: "r2", group: "Race", label: "Runner up", hint: "race P2", payout: 4 },
-    { id: "r3", group: "Race", label: "Third place", hint: "race P3", payout: 5 },
-    { id: "q1", group: "Qualifying", label: "Pole", hint: "qualifying P1", payout: 3 },
-    { id: "q2", group: "Qualifying", label: "Front row #2", hint: "qualifying P2", payout: 4 },
-    { id: "q3", group: "Qualifying", label: "Qualifying P3", hint: "qualifying P3", payout: 5 },
+    { id: "r1", group: "Race", title: "Race winner", shortTitle: "Winner", helper: "Race P1" },
+    { id: "r2", group: "Race", title: "Second place", shortTitle: "P2", helper: "Race P2" },
+    { id: "r3", group: "Race", title: "Third place", shortTitle: "P3", helper: "Race P3" },
+    {
+      id: "q1",
+      group: "Qualifying",
+      title: "Pole position",
+      shortTitle: "Pole",
+      helper: "Qualifying P1",
+    },
+    {
+      id: "q2",
+      group: "Qualifying",
+      title: "Qualifying second",
+      shortTitle: "Q2",
+      helper: "Qualifying P2",
+    },
+    {
+      id: "q3",
+      group: "Qualifying",
+      title: "Qualifying third",
+      shortTitle: "Q3",
+      helper: "Qualifying P3",
+    },
     ...(challenge.hasSprint
       ? [
           {
             id: "sq1",
             group: "Sprint" as const,
-            label: "Sprint Q P1",
-            hint: "sprint qualifying pole",
-            payout: 3,
+            title: "Sprint pole",
+            shortTitle: "Sprint pole",
+            helper: "Sprint qualifying P1",
           },
           {
             id: "s1",
             group: "Sprint" as const,
-            label: "Sprint Race P1",
-            hint: "sprint winner",
-            payout: 3,
+            title: "Sprint winner",
+            shortTitle: "Sprint win",
+            helper: "Sprint race P1",
           },
         ]
       : []),
-    ...drawn,
+    ...challenge.randomPositions.map((position) => ({
+      id: `random-${position}`,
+      group: "Positions" as const,
+      title: `P${position} finisher`,
+      shortTitle: `P${position}`,
+      helper: "Final race result",
+    })),
     {
       id: "fastest-lap",
-      group: "Specials",
-      label: "Fastest lap",
-      hint: "quickest race lap",
-      payout: 5,
+      group: "Speed",
+      title: "Fastest lap",
+      shortTitle: "Fastest lap",
+      helper: "Race lap",
     },
     {
       id: "fastest-pit",
-      group: "Specials",
-      label: "Fastest pit stop",
-      hint: "shortest stationary stop",
-      payout: 8,
+      group: "Speed",
+      title: "Fastest pit stop",
+      shortTitle: "Pit stop",
+      helper: "Shortest stop",
     },
   ];
 }
 
-function actualFor(challenge: PickChallenge, marketId: string): string | null {
+function actualFor(challenge: PickChallenge, slotId: string): string | null {
   const result = challenge.results;
   if (!result) return null;
-  if (marketId === "sq1") return result.sprintQualifyingP1;
-  if (marketId === "s1") return result.sprintRaceP1;
-  if (marketId === "q1") return result.qualifying[0] ?? null;
-  if (marketId === "q2") return result.qualifying[1] ?? null;
-  if (marketId === "q3") return result.qualifying[2] ?? null;
-  if (marketId === "r1") return result.race[0] ?? null;
-  if (marketId === "r2") return result.race[1] ?? null;
-  if (marketId === "r3") return result.race[2] ?? null;
-  if (marketId === "fastest-lap") return result.fastestLapDriverId;
-  if (marketId === "fastest-pit") return result.fastestPitDriverId;
-  if (marketId.startsWith("random-")) {
-    const position = Number(marketId.split("-")[1]);
+  if (slotId === "sq1") return result.sprintQualifyingP1;
+  if (slotId === "s1") return result.sprintRaceP1;
+  if (slotId === "q1") return result.qualifying[0] ?? null;
+  if (slotId === "q2") return result.qualifying[1] ?? null;
+  if (slotId === "q3") return result.qualifying[2] ?? null;
+  if (slotId === "r1") return result.race[0] ?? null;
+  if (slotId === "r2") return result.race[1] ?? null;
+  if (slotId === "r3") return result.race[2] ?? null;
+  if (slotId === "fastest-lap") return result.fastestLapDriverId;
+  if (slotId === "fastest-pit") return result.fastestPitDriverId;
+  if (slotId.startsWith("random-")) {
+    const position = Number(slotId.split("-")[1]);
     return result.randomPositions.find((entry) => entry.position === position)?.driverId ?? null;
   }
   return null;
 }
 
-function scoreMarket(
-  challenge: PickChallenge,
-  marketId: string,
-  picked: string | undefined,
-): MarketScore {
-  if (!challenge.results || !picked) return null;
-  const actual = actualFor(challenge, marketId);
-  if (!actual) return null;
-  if (actual === picked) return { points: 3, actual };
-  if (["fastest-lap", "fastest-pit", "sq1", "s1"].includes(marketId)) {
-    return { points: 0, actual };
-  }
-  const target = neighbourTargets(challenge, marketId);
-  return { points: target.includes(picked) ? 1 : 0, actual };
-}
-
-function neighbourTargets(challenge: PickChallenge, marketId: string): string[] {
+function neighbourTargets(challenge: PickChallenge, slotId: string): string[] {
   const result = challenge.results;
-  if (!result) return [];
-  const list = marketId.startsWith("q") ? result.qualifying : result.race;
-  const index = marketId.startsWith("random-") ? -1 : Number(marketId.slice(1)) - 1;
-  if (index < 0) return [];
+  if (!result || slotId.startsWith("random-")) return [];
+  const list = slotId.startsWith("q") ? result.qualifying : result.race;
+  const index = Number(slotId.slice(1)) - 1;
+  if (!Number.isFinite(index) || index < 0) return [];
   return [list[index - 1], list[index + 1]].filter((value): value is string => Boolean(value));
 }
 
-function scoreLabel(score: MarketScore, settled: boolean) {
-  if (!settled) return "open";
-  if (!score) return "missed";
-  if (score.points === 3) return "exact";
-  if (score.points === 1) return "near";
-  return "zero";
+function scorePick(
+  challenge: PickChallenge,
+  slotId: string,
+  picked: string | undefined,
+): SlotScore {
+  if (!challenge.results || !picked) return null;
+  const actual = actualFor(challenge, slotId);
+  if (!actual) return null;
+  if (actual === picked) return { points: 3, actual };
+  if (["fastest-lap", "fastest-pit", "sq1", "s1"].includes(slotId)) {
+    return { points: 0, actual };
+  }
+  return { points: neighbourTargets(challenge, slotId).includes(picked) ? 1 : 0, actual };
 }
 
-function RoundRail({
+function scoreText(score: SlotScore, hasResult: boolean) {
+  if (!hasResult) return "Open";
+  if (!score) return "0 pts";
+  return `${score.points} pts`;
+}
+
+function RaceChooser({
   challenges,
   activeRaceId,
   onChange,
@@ -215,8 +226,8 @@ function RoundRail({
   onChange: (raceId: string) => void;
 }) {
   return (
-    <div className="flex gap-2 overflow-x-auto pb-2">
-      {challenges.map((challenge) => {
+    <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4">
+      {challenges.map((challenge, index) => {
         const active = challenge.raceId === activeRaceId;
         const theme = countryTheme(
           countryForRace({
@@ -225,43 +236,39 @@ function RoundRail({
             raceName: challenge.raceName,
           }),
         );
+        const color = theme.flag[0] ?? theme.accent;
         return (
           <button
             key={challenge.raceId}
             type="button"
             onClick={() => onChange(challenge.raceId)}
             aria-pressed={active}
-            className={`pw-card group min-w-48 shrink-0 overflow-hidden rounded-lg border text-left ${
+            className={`pw-ticker pw-card group overflow-hidden rounded-lg border text-left ${
               active ? "border-white text-white" : "border-border bg-card hover:border-primary"
             }`}
-            style={active ? { backgroundColor: theme.flag[0] ?? theme.accent } : undefined}
+            style={{
+              animationDelay: `${index * 24}ms`,
+              backgroundColor: active ? color : undefined,
+            }}
           >
             <span aria-hidden className="flex h-2">
-              {theme.flag.map((color, index) => (
+              {theme.flag.map((flagColor, flagIndex) => (
                 <span
-                  key={`${challenge.raceId}-${color}-${index}`}
+                  key={`${challenge.raceId}-${flagColor}-${flagIndex}`}
                   className="flex-1"
-                  style={{ backgroundColor: color }}
+                  style={{ backgroundColor: flagColor }}
                 />
               ))}
             </span>
-            <span className="block p-3">
-              <span
-                className={`num block text-[10px] uppercase ${
-                  active ? "text-white/78" : "text-muted-foreground"
-                }`}
-              >
-                Round {challenge.round}
+            <span className="grid grid-cols-[1fr_auto] gap-3 p-3">
+              <span className="min-w-0">
+                <span className="num block text-[10px] uppercase">Round {challenge.round}</span>
+                <span className="mt-1 block truncate text-sm font-black uppercase italic">
+                  {challenge.raceName}
+                </span>
               </span>
-              <span className="mt-1 block truncate text-xs font-black uppercase italic">
-                {challenge.raceName}
-              </span>
-              <span
-                className={`num mt-1 block text-[10px] uppercase ${
-                  active ? "text-white/78" : "text-muted-foreground"
-                }`}
-              >
-                {challenge.results ? "settled" : "open card"}
+              <span className="grid size-8 place-items-center rounded-sm bg-background text-foreground">
+                {challenge.results ? <Check className="size-4" /> : <Flag className="size-4" />}
               </span>
             </span>
           </button>
@@ -271,71 +278,64 @@ function RoundRail({
   );
 }
 
-function MarketDeck({
-  markets,
+function SlotRail({
+  slots,
   card,
   challenge,
-  activeMarketId,
+  activeSlotId,
   onSelect,
 }: {
-  markets: Market[];
-  card: Card;
+  slots: PickSlot[];
+  card: PickCard;
   challenge: PickChallenge;
-  activeMarketId: string;
-  onSelect: (marketId: string) => void;
+  activeSlotId: string;
+  onSelect: (slotId: string) => void;
 }) {
   return (
     <div className="grid gap-2">
-      {markets.map((market, index) => {
-        const Icon = marketIcon(market.group);
-        const active = market.id === activeMarketId;
-        const picked = Boolean(card[market.id]);
-        const score = scoreMarket(challenge, market.id, card[market.id]);
-        const tone = groupTone(market.group);
+      {slots.map((slot, index) => {
+        const active = slot.id === activeSlotId;
+        const picked = Boolean(card[slot.id]);
+        const score = scorePick(challenge, slot.id, card[slot.id]);
+        const Icon = groupIcon(slot.group);
+        const color = groupColor(slot.group);
         return (
           <button
-            key={market.id}
+            key={slot.id}
             type="button"
-            onClick={() => onSelect(market.id)}
+            onClick={() => onSelect(slot.id)}
             aria-pressed={active}
-            className={`pw-ticker pw-card grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-lg border p-3 text-left ${
+            className={`pw-ticker pw-card grid min-h-16 grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 rounded-lg border p-3 text-left ${
               active
                 ? "border-white bg-white text-[#07110c]"
                 : "border-border bg-card hover:border-primary"
             }`}
             style={{
-              animationDelay: `${index * 24}ms`,
-              borderLeft: `5px solid ${tone}`,
+              animationDelay: `${index * 18}ms`,
+              borderLeft: `6px solid ${color}`,
             }}
           >
             <span
-              className={`grid size-9 place-items-center rounded-md border ${
-                active ? "border-[#07110c]" : "border-border"
-              }`}
-              style={{ color: active ? "#07110c" : tone }}
+              className="grid size-9 place-items-center rounded-sm"
+              style={{
+                backgroundColor: color,
+                color: slot.group === "Qualifying" ? "#07110c" : "#ffffff",
+              }}
             >
               <Icon className="size-4" />
             </span>
             <span className="min-w-0">
-              <span className="block truncate text-xs font-black uppercase italic">
-                {market.label}
+              <span className="block truncate text-sm font-black uppercase italic">
+                {slot.title}
               </span>
-              <span
-                className={`num mt-1 block text-[10px] uppercase ${
-                  active ? "text-[#07110c]/70" : "text-muted-foreground"
-                }`}
-              >
-                {market.group} / {market.hint}
+              <span className="num mt-1 block text-[10px] uppercase text-muted-foreground">
+                {picked ? "Picked" : slot.helper}
               </span>
             </span>
             <span className="flex items-center gap-2">
-              {picked ? (
-                <CheckCircle2 className="size-4" />
-              ) : (
-                <MousePointer2 className="size-4 opacity-45" />
-              )}
+              {picked ? <Check className="size-4" /> : <ChevronRight className="size-4" />}
               <span className="num text-[10px] font-black uppercase">
-                {scoreLabel(score, Boolean(challenge.results))}
+                {scoreText(score, Boolean(challenge.results))}
               </span>
             </span>
           </button>
@@ -345,38 +345,83 @@ function MarketDeck({
   );
 }
 
-function DriverPool({
+function PickProgress({ slots, card }: { slots: PickSlot[]; card: PickCard }) {
+  const filled = slots.filter((slot) => card[slot.id]).length;
+  return (
+    <div>
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <p className="label-xs text-white">Progress</p>
+          <p className="num mt-1 text-4xl font-black text-white">
+            {filled}/{slots.length}
+          </p>
+        </div>
+        <p className="max-w-40 text-right text-xs font-bold uppercase text-white">
+          {filled === slots.length ? "Card complete" : "Make every pick before lock"}
+        </p>
+      </div>
+      <div className="mt-4 grid grid-cols-5 gap-1">
+        {GROUPS.map((group) => {
+          const groupSlots = slots.filter((slot) => slot.group === group);
+          if (!groupSlots.length) return null;
+          const done = groupSlots.filter((slot) => card[slot.id]).length;
+          const Icon = groupIcon(group);
+          return (
+            <div key={group} className="rounded-sm bg-white p-2 text-[#07110c]">
+              <Icon className="size-4" />
+              <p className="mt-2 truncate text-[10px] font-black uppercase">{group}</p>
+              <p className="num text-[10px] uppercase">
+                {done}/{groupSlots.length}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="mt-3 flex h-3 overflow-hidden rounded-sm bg-white">
+        {slots.map((slot) => (
+          <span
+            key={slot.id}
+            className="h-full flex-1 border-r border-[#07110c] last:border-r-0"
+            style={{ backgroundColor: card[slot.id] ? groupColor(slot.group) : "var(--border)" }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DriverGrid({
   entrants,
-  activeMarket,
+  activeSlot,
   pickedId,
   canEdit,
   onPick,
 }: {
   entrants: PickEntrant[];
-  activeMarket: Market;
+  activeSlot: PickSlot;
   pickedId: string | undefined;
   canEdit: boolean;
   onPick: (driverId: string) => void;
 }) {
   return (
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-2 gap-2 md:grid-cols-3 2xl:grid-cols-5">
       {entrants.map((entrant, index) => {
         const constructor = team(entrant.team);
-        const picked = entrant.driverId === pickedId;
+        const picked = pickedId === entrant.driverId;
         return (
           <button
             key={entrant.driverId}
             type="button"
             disabled={!canEdit}
             onClick={() => onPick(entrant.driverId)}
-            className={`pw-ticker pw-card min-h-28 rounded-lg border p-3 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-55 ${
+            className={`pw-ticker pw-card min-h-32 rounded-lg border p-3 text-left transition-colors disabled:cursor-not-allowed disabled:border-muted disabled:text-muted-foreground ${
               picked
                 ? "border-white bg-white text-[#07110c]"
                 : "border-border bg-background hover:border-primary"
             }`}
             style={{
-              animationDelay: `${Math.min(index, 18) * 18}ms`,
-              borderTop: `4px solid ${constructor.color}`,
+              animationDelay: `${Math.min(index, 19) * 16}ms`,
+              borderTop: `5px solid ${constructor.color}`,
             }}
           >
             <span className="flex items-start justify-between gap-2">
@@ -387,25 +432,24 @@ function DriverPool({
                 size="lg"
               />
               <span className="num text-right text-[10px] font-black uppercase">
-                P{entrant.standingPosition}
-                <span className={`block ${picked ? "text-[#07110c]/62" : "text-muted-foreground"}`}>
-                  {entrant.points} pts
-                </span>
+                #{entrant.standingPosition}
+                <span className="block text-muted-foreground">{entrant.points} pts</span>
               </span>
             </span>
             <span className="mt-3 block truncate text-sm font-black uppercase italic">
               {entrant.name}
             </span>
-            <span className="mt-1 block">
+            <span className="mt-2 flex items-center justify-between gap-2">
               <TeamBadge teamName={entrant.team} showName />
+              {picked ? <Check className="size-4" /> : <MousePointer2 className="size-4" />}
             </span>
           </button>
         );
       })}
       {!canEdit ? (
         <div className="col-span-full rounded-lg border border-border bg-card p-4">
-          <p className="num text-[11px] uppercase text-muted-foreground">
-            {activeMarket.label} cannot be edited until the card is open and you are signed in.
+          <p className="text-sm font-bold text-foreground">
+            {activeSlot.title} can be picked when you are signed in and the card is open.
           </p>
         </div>
       ) : null}
@@ -413,56 +457,62 @@ function DriverPool({
   );
 }
 
-function PickSlip({
-  markets,
+function ReviewCard({
+  slots,
   card,
   challenge,
   byId,
-  activeMarketId,
+  activeSlotId,
   onSelect,
 }: {
-  markets: Market[];
-  card: Card;
+  slots: PickSlot[];
+  card: PickCard;
   challenge: PickChallenge;
   byId: Map<string, PickEntrant>;
-  activeMarketId: string;
-  onSelect: (marketId: string) => void;
+  activeSlotId: string;
+  onSelect: (slotId: string) => void;
 }) {
-  const settled = Boolean(challenge.results);
+  const hasResult = Boolean(challenge.results);
   return (
-    <div className="overflow-hidden rounded-lg border border-border bg-card">
-      <div className="flex items-center justify-between border-b border-border px-4 py-3">
+    <div className="rounded-lg border border-border bg-card">
+      <div className="flex items-center justify-between gap-3 border-b border-border p-4">
         <div>
-          <p className="label-xs">Pick slip</p>
-          <h2 className="text-sm font-black uppercase italic">Current card</h2>
+          <p className="label-xs">Your card</p>
+          <h2 className="text-lg font-black uppercase italic">Saved picks</h2>
         </div>
-        <ClipboardList className="size-4 text-primary" />
+        <ClipboardCheck className="size-5 text-primary" />
       </div>
       <div className="divide-y divide-border">
-        {markets.map((market) => {
-          const picked = card[market.id] ? byId.get(card[market.id]!) : undefined;
-          const actualId = actualFor(challenge, market.id);
+        {slots.map((slot) => {
+          const picked = card[slot.id] ? byId.get(card[slot.id]!) : undefined;
+          const actualId = actualFor(challenge, slot.id);
           const actual = actualId ? byId.get(actualId) : undefined;
-          const score = scoreMarket(challenge, market.id, card[market.id]);
-          const active = activeMarketId === market.id;
+          const score = scorePick(challenge, slot.id, card[slot.id]);
+          const active = slot.id === activeSlotId;
           return (
             <button
-              key={market.id}
+              key={slot.id}
               type="button"
-              onClick={() => onSelect(market.id)}
-              className={`grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 text-left transition-colors ${
+              onClick={() => onSelect(slot.id)}
+              className={`grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 p-3 text-left transition-colors ${
                 active ? "bg-primary text-primary-foreground" : "hover:bg-accent"
               }`}
             >
               <span className="min-w-0">
-                <span className="block text-xs font-black uppercase">{market.label}</span>
-                <span className="num mt-1 flex items-center gap-2 text-[10px] uppercase text-muted-foreground">
-                  <span>{picked ? picked.code : "empty"}</span>
-                  {settled ? <span>actual {actual?.code ?? "-"}</span> : null}
+                <span className="block truncate text-xs font-black uppercase">
+                  {slot.shortTitle}
+                </span>
+                <span
+                  className={`num mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[10px] uppercase ${
+                    active ? "text-primary-foreground" : "text-muted-foreground"
+                  }`}
+                >
+                  <span>{picked ? picked.code : "Empty"}</span>
+                  {hasResult ? <span>Result {actual?.code ?? "-"}</span> : null}
                 </span>
               </span>
               <span className="num rounded-sm border border-border px-2 py-1 text-[10px] font-black uppercase">
-                {settled ? `${score?.points ?? 0} pts` : picked ? "set" : "pick"}
+                {hasResult ? scoreText(score, true) : picked ? "Set" : "Pick"}
               </span>
             </button>
           );
@@ -472,22 +522,47 @@ function PickSlip({
   );
 }
 
-function ProgressStrip({ filled, total }: { filled: number; total: number }) {
-  return (
-    <div className="mt-5">
-      <div className="flex items-center justify-between">
-        <p className="label-xs text-white/62">Card completion</p>
-        <p className="num text-[11px] font-black text-white">
-          {filled}/{total}
+function ResultLedger({
+  ledger,
+}: {
+  ledger: { round: number; name: string; points: number; slots: number }[];
+}) {
+  if (!ledger.length) {
+    return (
+      <div className="rounded-lg border border-border bg-card p-4">
+        <div className="flex items-center gap-2">
+          <CalendarDays className="size-4 text-primary" />
+          <p className="text-xs font-black uppercase">No scored cards yet</p>
+        </div>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Scores appear here after official results are stored.
         </p>
       </div>
-      <div className="mt-2 flex h-3 overflow-hidden rounded-sm bg-white">
-        {Array.from({ length: total }).map((_, index) => (
-          <span
-            key={index}
-            className="h-full flex-1 border-r border-[#07110c] last:border-r-0"
-            style={{ backgroundColor: index < filled ? "var(--primary)" : "var(--border)" }}
-          />
+    );
+  }
+
+  return (
+    <div className="rounded-lg border border-border bg-card">
+      <div className="flex items-center justify-between gap-3 border-b border-border p-4">
+        <div>
+          <p className="label-xs">Results</p>
+          <h2 className="text-lg font-black uppercase italic">Scored cards</h2>
+        </div>
+        <Medal className="size-5 text-primary" />
+      </div>
+      <div className="divide-y divide-border">
+        {ledger.map((entry, index) => (
+          <div
+            key={entry.round}
+            className="pw-ticker grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 p-3"
+            style={{ animationDelay: `${index * 24}ms` }}
+          >
+            <span className="num text-[10px] font-black uppercase text-muted-foreground">
+              R{entry.round}
+            </span>
+            <span className="min-w-0 truncate text-xs font-black uppercase">{entry.name}</span>
+            <span className="num text-xs font-black text-primary">{entry.points} pts</span>
+          </div>
         ))}
       </div>
     </div>
@@ -498,9 +573,9 @@ function Picks() {
   const { data } = useSuspenseQuery(picksQuery);
   const [session, setSession] = useState<Session | null>(null);
   const [authReady, setAuthReady] = useState(false);
-  const [store, setStore] = useState<Store>({});
+  const [savedCards, setSavedCards] = useState<SavedCards>({});
   const [raceId, setRaceId] = useState<string>(data.activeRaceId ?? "");
-  const [activeMarketId, setActiveMarketId] = useState<string>("r1");
+  const [activeSlotId, setActiveSlotId] = useState<string>("r1");
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -523,22 +598,22 @@ function Picks() {
   useEffect(() => {
     if (!authReady) return;
     if (!session?.user) {
-      setStore({});
+      setSavedCards({});
       setHydrated(true);
       return;
     }
     try {
       const raw = localStorage.getItem(storageKey(session.user.id));
-      setStore(raw ? (JSON.parse(raw) as Store) : {});
+      setSavedCards(raw ? (JSON.parse(raw) as SavedCards) : {});
     } catch {
-      setStore({});
+      setSavedCards({});
     }
     setHydrated(true);
   }, [authReady, session?.user]);
 
-  const persist = (next: Store) => {
+  const persist = (next: SavedCards) => {
     if (!session?.user) return;
-    setStore(next);
+    setSavedCards(next);
     try {
       localStorage.setItem(storageKey(session.user.id), JSON.stringify(next));
     } catch {
@@ -554,226 +629,206 @@ function Picks() {
   const ledger = useMemo(
     () =>
       data.challenges
-        .filter((entry) => entry.results && store[entry.raceId])
+        .filter((entry) => entry.results && savedCards[entry.raceId])
         .map((entry) => {
-          const savedCard = store[entry.raceId] ?? {};
-          const marketList = marketsFor(entry);
-          const points = marketList.reduce(
-            (acc, market) =>
-              acc + (scoreMarket(entry, market.id, savedCard[market.id])?.points ?? 0),
+          const card = savedCards[entry.raceId] ?? {};
+          const slots = pickSlotsFor(entry);
+          const points = slots.reduce(
+            (acc, slot) => acc + (scorePick(entry, slot.id, card[slot.id])?.points ?? 0),
             0,
           );
-          return { round: entry.round, name: entry.raceName, points, cards: marketList.length };
+          return { round: entry.round, name: entry.raceName, points, slots: slots.length };
         })
         .sort((a, b) => b.round - a.round),
-    [data.challenges, store],
+    [data.challenges, savedCards],
   );
 
   if (!challenge) {
     return (
       <SiteShell>
-        <p className="text-sm text-muted-foreground">No pick challenges stored for this season.</p>
+        <p className="text-sm text-muted-foreground">No pick rounds are available.</p>
       </SiteShell>
     );
   }
 
-  const challengeTheme = countryTheme(
+  const theme = countryTheme(
     countryForRace({
       circuitId: challenge.circuitId,
       circuit: challenge.circuit,
       raceName: challenge.raceName,
     }),
   );
-  const flagStart = challengeTheme.flag[0] ?? challengeTheme.accent;
-  const flagMiddle = challengeTheme.flag[1] ?? "#ffffff";
-  const flagEnd = challengeTheme.flag.at(-1) ?? challengeTheme.accent;
-  const markets = marketsFor(challenge);
-  const activeMarket = markets.find((market) => market.id === activeMarketId) ?? markets[0]!;
-  const card = store[challenge.raceId] ?? {};
-  const filled = markets.filter((market) => card[market.id]).length;
+  const flagA = theme.flag[0] ?? theme.accent;
+  const flagB = theme.flag[1] ?? "#ffffff";
+  const flagC = theme.flag.at(-1) ?? theme.accent;
+  const slots = pickSlotsFor(challenge);
+  const activeSlot = slots.find((slot) => slot.id === activeSlotId) ?? slots[0]!;
+  const card = savedCards[challenge.raceId] ?? {};
+  const filled = slots.filter((slot) => card[slot.id]).length;
   const locked = challenge.lockAtISO ? Date.now() > Date.parse(challenge.lockAtISO) : false;
-  const settled = Boolean(challenge.results);
+  const scored = Boolean(challenge.results);
   const signedIn = Boolean(session?.user);
-  const accountRequired = authReady && !signedIn;
-  const canEdit = signedIn && !locked && !settled;
+  const canEdit = signedIn && !locked && !scored;
   const byId = new Map(data.entrants.map((entrant) => [entrant.driverId, entrant]));
-  const scored = markets.map((market) => ({
-    market,
-    score: scoreMarket(challenge, market.id, card[market.id]),
-  }));
-  const total = scored.reduce((acc, entry) => acc + (entry.score?.points ?? 0), 0);
-  const maxPoints = scored.filter((entry) => entry.score).length * 3;
-  const scoreBank = ledger.reduce((acc, entry) => acc + entry.points, 0);
+  const activeDriver = card[activeSlot.id] ? byId.get(card[activeSlot.id]!) : undefined;
+  const totalScore = slots.reduce(
+    (acc, slot) => acc + (scorePick(challenge, slot.id, card[slot.id])?.points ?? 0),
+    0,
+  );
 
-  const groupedCounts = MARKET_GROUPS.map((group) => ({
-    group,
-    count: markets.filter((market) => market.group === group).length,
-    filled: markets.filter((market) => market.group === group && card[market.id]).length,
-  })).filter((group) => group.count);
-
-  const set = (marketId: string, driverId: string) => {
+  const setPick = (slotId: string, driverId: string) => {
     if (!canEdit) return;
-    persist({
-      ...store,
-      [challenge.raceId]: { ...card, [marketId]: driverId },
-    });
+    const nextCard = { ...card, [slotId]: driverId };
+    persist({ ...savedCards, [challenge.raceId]: nextCard });
+    const nextEmpty = slots.find((slot) => !nextCard[slot.id] && slot.id !== slotId);
+    if (nextEmpty) setActiveSlotId(nextEmpty.id);
   };
 
   const clearCard = () => {
-    const next = { ...store };
+    const next = { ...savedCards };
     delete next[challenge.raceId];
     persist(next);
+    setActiveSlotId(slots[0]?.id ?? "r1");
   };
-
-  const heroStats = [
-    { label: "Round", value: `R${challenge.round}`, note: challenge.raceName },
-    {
-      label: "Status",
-      value: settled ? "Settled" : locked ? "Locked" : "Open",
-      note: challenge.lockAtISO
-        ? `${settled ? "Results in" : "Locks"} ${fmtDateTime(challenge.lockAtISO)}`
-        : "No lock time stored",
-    },
-    { label: "Filled", value: `${filled}/${markets.length}`, note: activeMarket.label },
-    {
-      label: "Score bank",
-      value: String(scoreBank),
-      note: `${ledger.length} settled card${ledger.length === 1 ? "" : "s"}`,
-    },
-  ];
 
   return (
     <SiteShell fullWidth>
       <div
-        className="py-1"
+        className="race-page-enter"
         style={
           {
-            "--primary": challengeTheme.accent,
-            "--ring": challengeTheme.accent,
-            "--race-country-accent": challengeTheme.accent,
-            "--race-country-primary": flagStart,
-            "--race-country-secondary": flagMiddle,
-            "--race-country-tertiary": flagEnd,
-            "--flag-a": flagStart,
-            "--flag-b": flagMiddle,
-            "--flag-c": flagEnd,
-            "--page-ink": "#07110c",
+            "--primary": theme.accent,
+            "--ring": theme.accent,
+            "--accent": theme.accent,
+            "--flag-a": flagA,
+            "--flag-b": flagB,
+            "--flag-c": flagC,
+            "--ink": "#07110c",
           } as CSSProperties
         }
       >
-        <RaceFlagHero
-          kicker={
-            <span className="inline-flex items-center gap-1">
-              <Flag className="size-3" />
-              Pit Wall Picks
-            </span>
-          }
-          title="Build The Card"
-          meta={`${challenge.raceName} / choose a market, then assign the driver.`}
-          flag={challengeTheme.flag}
-          stats={heroStats}
-        >
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
-            <div className="overflow-hidden rounded-lg border border-white/18 bg-white text-[#07110c]">
+        <section className="relative min-h-[520px] overflow-hidden rounded-lg border border-border bg-card">
+          <div aria-hidden className="absolute inset-0 grid grid-cols-1 md:grid-cols-3">
+            <span style={{ backgroundColor: flagA }} />
+            <span style={{ backgroundColor: flagB }} />
+            <span style={{ backgroundColor: flagC }} />
+          </div>
+          <div className="relative grid min-h-[520px] gap-6 p-5 sm:p-8 xl:grid-cols-[minmax(0,1fr)_25rem]">
+            <div className="flex max-w-4xl flex-col justify-between gap-8">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-white px-3 py-2 text-[10px] font-black uppercase tracking-widest text-[#07110c]">
+                  <Flag className="size-3.5" />
+                  {theme.label}
+                </div>
+                <h1 className="mt-6 max-w-3xl text-5xl font-black uppercase italic leading-none text-[#07110c] sm:text-7xl">
+                  Make Your Picks
+                </h1>
+                <p className="mt-4 max-w-xl text-base font-bold text-[#07110c] sm:text-lg">
+                  Pick drivers for {challenge.raceName}. Your card locks before race weekend.
+                </p>
+              </div>
+
+              <div className="grid max-w-3xl gap-3 sm:grid-cols-3">
+                <div className="rounded-lg bg-white p-4 text-[#07110c]">
+                  <p className="label-xs text-[#07110c]">Race</p>
+                  <p className="mt-2 text-lg font-black uppercase italic">{challenge.raceName}</p>
+                </div>
+                <div className="rounded-lg bg-white p-4 text-[#07110c]">
+                  <p className="label-xs text-[#07110c]">Status</p>
+                  <p className="mt-2 text-lg font-black uppercase italic">
+                    {scored ? "Scored" : locked ? "Locked" : "Open"}
+                  </p>
+                </div>
+                <div className="rounded-lg bg-white p-4 text-[#07110c]">
+                  <p className="label-xs text-[#07110c]">Card</p>
+                  <p className="num mt-2 text-3xl font-black">
+                    {filled}/{slots.length}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="home-section-enter self-end overflow-hidden rounded-lg border border-white bg-[#07110c] text-white">
               <img
                 src="/images/raceweek-pitlane-italy.png"
                 alt=""
-                className="h-44 w-full object-cover"
+                className="h-48 w-full object-cover"
               />
-              <div className="grid grid-cols-3 divide-x divide-[#07110c]/15">
-                {groupedCounts.slice(0, 3).map((group) => {
-                  const Icon = marketIcon(group.group);
-                  return (
-                    <button
-                      key={group.group}
-                      type="button"
-                      onClick={() => {
-                        const first = markets.find((market) => market.group === group.group);
-                        if (first) setActiveMarketId(first.id);
-                      }}
-                      className="px-3 py-3 text-left transition-colors hover:bg-[#07110c] hover:text-white"
-                    >
-                      <Icon className="size-4" />
-                      <span className="mt-2 block text-xs font-black uppercase italic">
-                        {group.group}
-                      </span>
-                      <span className="num text-[10px] uppercase">
-                        {group.filled}/{group.count}
-                      </span>
-                    </button>
-                  );
-                })}
+              <div className="p-4">
+                <PickProgress slots={slots} card={card} />
               </div>
-            </div>
-            <div className="rounded-lg border border-white bg-[#07110c] p-4 text-white">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="label-xs text-white/62">Active market</p>
-                  <h2 className="mt-1 text-2xl font-black uppercase italic leading-none">
-                    {activeMarket.label}
-                  </h2>
-                  <p className="num mt-2 text-[11px] uppercase text-white/68">
-                    {activeMarket.group} / {activeMarket.hint}
-                  </p>
-                </div>
-                {(() => {
-                  const Icon = marketIcon(activeMarket.group);
-                  return <Icon className="size-8 text-white" />;
-                })()}
-              </div>
-              <ProgressStrip filled={filled} total={markets.length} />
             </div>
           </div>
-        </RaceFlagHero>
+        </section>
 
         <section className="mt-6">
-          <SectionHeading
-            kicker="Race selector"
-            title="Choose the round"
-            action={
-              <span className="num text-[10px] uppercase text-muted-foreground">
-                active race controls the page colors
-              </span>
-            }
-          />
-          <RoundRail
+          <div className="mb-3 flex items-end justify-between gap-4">
+            <div>
+              <p className="label-xs">Race</p>
+              <h2 className="text-2xl font-black uppercase italic">Choose a round</h2>
+            </div>
+            {challenge.lockAtISO ? (
+              <p className="num text-right text-[11px] uppercase text-muted-foreground">
+                Locks {fmtDateTime(challenge.lockAtISO)}
+              </p>
+            ) : null}
+          </div>
+          <RaceChooser
             challenges={data.challenges}
             activeRaceId={challenge.raceId}
-            onChange={setRaceId}
+            onChange={(nextRaceId) => {
+              setRaceId(nextRaceId);
+              setActiveSlotId("r1");
+            }}
           />
         </section>
 
-        <section className="mt-8 grid gap-5 xl:grid-cols-[22rem_minmax(0,1fr)_24rem]">
+        <section className="mt-8 grid gap-5 xl:grid-cols-[24rem_minmax(0,1fr)_24rem]">
           <aside className="space-y-4">
             <div className="rounded-lg border border-border bg-card p-4">
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <p className="label-xs">Markets</p>
-                  <h2 className="text-lg font-black uppercase italic">Command deck</h2>
+                  <p className="label-xs">Pick</p>
+                  <h2 className="text-xl font-black uppercase italic">Choose a slot</h2>
                 </div>
-                <Medal className="size-5 text-primary" />
+                <Sparkles className="size-5 text-primary" />
               </div>
               <div className="mt-4">
-                <MarketDeck
-                  markets={markets}
+                <SlotRail
+                  slots={slots}
                   card={card}
                   challenge={challenge}
-                  activeMarketId={activeMarket.id}
-                  onSelect={setActiveMarketId}
+                  activeSlotId={activeSlot.id}
+                  onSelect={setActiveSlotId}
                 />
               </div>
             </div>
 
             <div className="rounded-lg border border-border bg-card p-4">
-              <p className="label-xs">Card controls</p>
+              <div className="flex items-center gap-2">
+                {canEdit ? (
+                  <ShieldCheck className="size-4 text-primary" />
+                ) : (
+                  <Lock className="size-4 text-primary" />
+                )}
+                <p className="text-xs font-black uppercase">
+                  {scored
+                    ? `Score: ${totalScore} pts`
+                    : locked
+                      ? "Card locked"
+                      : canEdit
+                        ? "Ready to pick"
+                        : "Sign in to save"}
+                </p>
+              </div>
               <div className="mt-3 grid gap-2">
-                {accountRequired ? (
+                {!signedIn && authReady ? (
                   <Link
                     to="/account"
                     className="inline-flex items-center justify-center gap-2 rounded-sm bg-primary px-3 py-2 text-xs font-black uppercase italic text-primary-foreground"
                   >
                     <UserRound className="size-4" />
-                    Sign in to pick
+                    Sign in
                   </Link>
                 ) : null}
                 {filled && canEdit ? (
@@ -786,110 +841,43 @@ function Picks() {
                     Clear card
                   </button>
                 ) : null}
-                <div className="rounded-sm border border-border bg-background p-3">
-                  <div className="flex items-center gap-2">
-                    {locked || settled ? (
-                      <Lock className="size-4 text-primary" />
-                    ) : (
-                      <ShieldCheck className="size-4 text-primary" />
-                    )}
-                    <p className="text-xs font-black uppercase">
-                      {settled
-                        ? "Results scored"
-                        : locked
-                          ? "Card locked"
-                          : canEdit
-                            ? "Ready for picks"
-                            : "Account required"}
-                    </p>
-                  </div>
-                  <p className="num mt-2 text-[10px] uppercase text-muted-foreground">
-                    {settled
-                      ? `This card scored ${total}/${maxPoints || markets.length * 3}.`
-                      : challenge.lockAtISO
-                        ? `Lock time ${fmtDateTime(challenge.lockAtISO)}`
-                        : "No lock time stored"}
-                  </p>
-                </div>
               </div>
             </div>
           </aside>
 
           <main className="rounded-lg border border-border bg-card p-4">
-            <div className="flex flex-wrap items-end justify-between gap-3 border-b border-border pb-4">
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-3 border-b border-border pb-4">
               <div>
-                <p className="label-xs">Driver pool</p>
-                <h2 className="text-2xl font-black uppercase italic tracking-tight">
-                  Assign {activeMarket.label}
-                </h2>
-                <p className="num mt-1 text-[11px] uppercase text-muted-foreground">
-                  Click a driver to fill the active market.
+                <p className="label-xs">Driver</p>
+                <h2 className="text-3xl font-black uppercase italic">Pick {activeSlot.title}</h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {activeDriver ? `${activeDriver.name} is selected.` : "Choose one driver."}
                 </p>
               </div>
-              <span className="inline-flex items-center gap-2 rounded-sm border border-primary px-3 py-2 text-xs font-black uppercase text-primary">
+              <span className="inline-flex items-center gap-2 rounded-sm bg-primary px-3 py-2 text-xs font-black uppercase text-primary-foreground">
                 <MousePointer2 className="size-4" />
-                {card[activeMarket.id] ? byId.get(card[activeMarket.id]!)?.code : "empty"}
+                {activeDriver?.code ?? "Empty"}
               </span>
             </div>
-            <div className="mt-4">
-              <DriverPool
-                entrants={data.entrants}
-                activeMarket={activeMarket}
-                pickedId={card[activeMarket.id]}
-                canEdit={canEdit}
-                onPick={(driverId) => set(activeMarket.id, driverId)}
-              />
-            </div>
+            <DriverGrid
+              entrants={data.entrants}
+              activeSlot={activeSlot}
+              pickedId={card[activeSlot.id]}
+              canEdit={canEdit}
+              onPick={(driverId) => setPick(activeSlot.id, driverId)}
+            />
           </main>
 
           <aside className="space-y-4">
-            <PickSlip
-              markets={markets}
+            <ReviewCard
+              slots={slots}
               card={card}
               challenge={challenge}
               byId={byId}
-              activeMarketId={activeMarket.id}
-              onSelect={setActiveMarketId}
+              activeSlotId={activeSlot.id}
+              onSelect={setActiveSlotId}
             />
-
-            {ledger.length ? (
-              <div className="rounded-lg border border-border bg-card">
-                <div className="flex items-center justify-between border-b border-border px-4 py-3">
-                  <div>
-                    <p className="label-xs">Ledger</p>
-                    <h2 className="text-sm font-black uppercase italic">Settled cards</h2>
-                  </div>
-                  <Award className="size-4 text-primary" />
-                </div>
-                <ul className="divide-y divide-border">
-                  {ledger.map((entry, index) => (
-                    <li
-                      key={entry.round}
-                      className="pw-ticker flex items-center gap-3 px-4 py-3"
-                      style={{ animationDelay: `${index * 34}ms` }}
-                    >
-                      <span className="num text-[11px] text-muted-foreground">R{entry.round}</span>
-                      <span className="min-w-0 flex-1 truncate text-xs font-bold uppercase">
-                        {entry.name}
-                      </span>
-                      <span className="num text-xs font-black text-primary">
-                        {entry.points} pts
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <div className="rounded-lg border border-border bg-card p-4">
-                <div className="flex items-center gap-2">
-                  <CalendarDays className="size-4 text-primary" />
-                  <p className="text-xs font-black uppercase">No settled cards yet</p>
-                </div>
-                <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
-                  Your ledger appears after a saved card has official stored results.
-                </p>
-              </div>
-            )}
+            <ResultLedger ledger={ledger} />
           </aside>
         </section>
 

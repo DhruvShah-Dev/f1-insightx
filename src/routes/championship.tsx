@@ -1,18 +1,29 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
-import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
-import { RaceFlagHero } from "@/components/race-flag-hero";
+import { createFileRoute } from "@tanstack/react-router";
+import { useMemo, useState, type CSSProperties } from "react";
+import {
+  ArrowDown,
+  ArrowUp,
+  BarChart3,
+  Car,
+  CircleOff,
+  Crown,
+  Eye,
+  Flag,
+  Gauge,
+  Medal,
+  Route as RouteIcon,
+  Timer,
+  Trophy,
+  Users,
+  X,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
+import { SiteShell } from "@/components/site-shell";
 import { team } from "@/data/teams";
-import { fmtDelta, fmtNum } from "@/lib/format";
-import { getChampionship, getSeasonTelemetry } from "@/lib/f1.functions";
-
-const seasonQuery = queryOptions({
-  queryKey: ["season-telemetry"],
-  queryFn: () => getSeasonTelemetry(),
-  staleTime: 5 * 60_000,
-});
+import { getChampionship } from "@/lib/f1.functions";
 
 const champQuery = queryOptions({
   queryKey: ["championship"],
@@ -22,24 +33,20 @@ const champQuery = queryOptions({
 
 export const Route = createFileRoute("/championship")({
   loader: async ({ context }) => {
-    await Promise.all([
-      context.queryClient.ensureQueryData(seasonQuery),
-      context.queryClient.ensureQueryData(champQuery),
-    ]);
+    await context.queryClient.ensureQueryData(champQuery);
   },
   head: () => ({
     meta: [
-      { title: "Championship 2026 — driver and constructor standings with pace" },
+      { title: "Championship 2026 - standings and season battles" },
       {
         name: "description",
         content:
-          "2026 Formula 1 driver and constructor standings with points gaps, wins, podiums, average grid and finish, sprint points, round-by-round progression and measured race pace.",
+          "Formula 1 driver and constructor standings with top-five championship battles for points, wins, podiums, laps, positions gained and DNFs.",
       },
-      { property: "og:title", content: "Championship 2026 — standings, form and pace" },
+      { property: "og:title", content: "Championship 2026 - F1 InsightX" },
       {
         property: "og:description",
-        content:
-          "Standings, points progression, per-driver race records and measured race pace for 2026.",
+        content: "Driver and constructor standings plus the key season battle boards.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,477 +54,561 @@ export const Route = createFileRoute("/championship")({
   }),
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>
-      <p role="alert" className="text-sm text-destructive">
-        Standings unavailable: {error.message}
-      </p>
+      <div className="-mx-5 -my-8 min-h-screen bg-[#f5f1e8] p-5 text-[#111111]">
+        <p
+          role="alert"
+          className="border border-[#ba1f33] bg-[#fff8f1] p-4 text-sm font-bold text-[#ba1f33]"
+        >
+          Standings unavailable: {error.message}
+        </p>
+      </div>
     </SiteShell>
   ),
   component: Championship,
 });
 
-/* ------------------------------------------------------------------ */
-/* Interactive progression chart                                       */
-/* ------------------------------------------------------------------ */
+type ChampionshipData = NonNullable<Awaited<ReturnType<typeof getChampionship>>>;
+type Driver = ChampionshipData["drivers"][number];
+type Constructor = ChampionshipData["constructors"][number];
 
-type Line = { key: string; label: string; color: string; points: (number | null)[] };
+type BattleRow = {
+  id: string;
+  label: string;
+  code?: string;
+  teamName: string;
+  value: number;
+  display: string;
+  color: string;
+  note?: string;
+};
 
-function Progression({ rounds, lines }: { rounds: number[]; lines: Line[] }) {
-  const [hover, setHover] = useState<string | null>(null);
-  const [cursor, setCursor] = useState<number | null>(null);
-  const W = 760;
-  const H = 260;
-  const padL = 40;
-  const padB = 24;
-  const maxPts = Math.max(1, ...lines.flatMap((l) => l.points.map((p) => p ?? 0)));
-  const x = (i: number) => padL + (i / Math.max(1, rounds.length - 1)) * (W - padL - 14);
-  const y = (p: number) => H - padB - (p / maxPts) * (H - padB - 16);
+type Battle = {
+  id: string;
+  title: string;
+  label: string;
+  icon: LucideIcon;
+  rows: BattleRow[];
+  unavailable?: string;
+};
 
-  if (!rounds.length)
-    return <p className="num py-8 text-center text-xs text-muted-foreground">No rounds stored.</p>;
+const numberFormatter = new Intl.NumberFormat("en-US");
+
+function whole(value: number | null | undefined) {
+  return value == null ? "Not tracked" : numberFormatter.format(Math.round(value));
+}
+
+function valueOf(driver: Driver, key: keyof Driver) {
+  const value = driver[key];
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function driverRows(
+  drivers: Driver[],
+  key: keyof Driver,
+  display: (value: number) => string = whole,
+  note?: (driver: Driver) => string,
+) {
+  return drivers
+    .map((driver) => {
+      const value = valueOf(driver, key);
+      if (value == null) return null;
+      const t = team(driver.team);
+      return {
+        id: driver.driverId,
+        label: driver.name,
+        code: driver.code,
+        teamName: driver.team,
+        value,
+        display: display(value),
+        color: t.color,
+        note: note?.(driver),
+      } satisfies BattleRow;
+    })
+    .filter((row): row is BattleRow => row != null)
+    .sort((a, b) => b.value - a.value);
+}
+
+function constructorRows(
+  constructors: Constructor[],
+  key: keyof Constructor,
+  display: (value: number) => string = whole,
+) {
+  return constructors
+    .map((constructor) => {
+      const value = constructor[key];
+      if (typeof value !== "number" || !Number.isFinite(value)) return null;
+      const t = team(constructor.name);
+      return {
+        id: constructor.id,
+        label: t.name,
+        teamName: constructor.name,
+        value,
+        display: display(value),
+        color: t.color,
+      } satisfies BattleRow;
+    })
+    .filter((row): row is BattleRow => row != null)
+    .sort((a, b) => b.value - a.value);
+}
+
+function buildBattles(data: ChampionshipData): Battle[] {
+  return [
+    {
+      id: "driver-points",
+      title: "Drivers",
+      label: "Points",
+      icon: Trophy,
+      rows: driverRows(data.drivers, "points"),
+    },
+    {
+      id: "constructor-points",
+      title: "Constructors",
+      label: "Points",
+      icon: Users,
+      rows: constructorRows(data.constructors, "points"),
+    },
+    {
+      id: "wins",
+      title: "Race Wins",
+      label: "Wins",
+      icon: Crown,
+      rows: driverRows(data.drivers, "wins"),
+    },
+    {
+      id: "constructor-wins",
+      title: "Team Wins",
+      label: "Wins",
+      icon: Car,
+      rows: constructorRows(data.constructors, "wins"),
+    },
+    {
+      id: "podiums",
+      title: "Podiums",
+      label: "Podiums",
+      icon: Medal,
+      rows: driverRows(data.drivers, "podiums"),
+    },
+    {
+      id: "top10",
+      title: "Points Finishes",
+      label: "Top 10s",
+      icon: Flag,
+      rows: driverRows(data.drivers, "top10"),
+    },
+    {
+      id: "sprint-points",
+      title: "Sprint Score",
+      label: "Points",
+      icon: Zap,
+      rows: driverRows(data.drivers, "sprintPoints"),
+    },
+    {
+      id: "most-laps",
+      title: "Most Laps",
+      label: "Completed",
+      icon: RouteIcon,
+      rows: driverRows(data.drivers, "lapsCompleted"),
+    },
+    {
+      id: "positions-gained",
+      title: "Positions Gained",
+      label: "Places",
+      icon: ArrowUp,
+      rows: driverRows(data.drivers, "positionsGained", whole, (driver) =>
+        driver.netPositions > 0
+          ? `Net +${whole(driver.netPositions)}`
+          : `Net ${whole(driver.netPositions)}`,
+      ),
+    },
+    {
+      id: "starts",
+      title: "Race Starts",
+      label: "Starts",
+      icon: Timer,
+      rows: driverRows(data.drivers, "starts"),
+    },
+    {
+      id: "dnfs",
+      title: "DNFs",
+      label: "DNFs",
+      icon: CircleOff,
+      rows: driverRows(data.drivers, "dnf"),
+    },
+    {
+      id: "positions-lost",
+      title: "Positions Lost",
+      label: "Places",
+      icon: ArrowDown,
+      rows: driverRows(data.drivers, "positionsLost"),
+    },
+    {
+      id: "laps-led",
+      title: "Laps Led",
+      label: "Not tracked",
+      icon: Gauge,
+      rows: [],
+      unavailable: "Not tracked in the current race dataset.",
+    },
+    {
+      id: "overtakes",
+      title: "Overtakes",
+      label: "Not tracked",
+      icon: BarChart3,
+      rows: [],
+      unavailable: "Exact overtake counts are not in the current race dataset.",
+    },
+  ];
+}
+
+function Championship() {
+  const { data } = useSuspenseQuery(champQuery);
+  const [activeBattle, setActiveBattle] = useState<Battle | null>(null);
+
+  const battles = useMemo(() => buildBattles(data), [data]);
+  const driverLeader = data.drivers[0];
+  const constructorLeader = data.constructors[0];
+  const trackedBattles = battles.filter((battle) => battle.rows.length > 0).length;
 
   return (
-    <div className="relative">
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        className="w-full"
-        role="img"
-        aria-label="Points progression"
-        onMouseLeave={() => setCursor(null)}
-        onMouseMove={(e) => {
-          const box = e.currentTarget.getBoundingClientRect();
-          const rel = ((e.clientX - box.left) / box.width) * W;
-          const i = Math.round(
-            ((rel - padL) / (W - padL - 14)) * Math.max(1, rounds.length - 1),
-          );
-          setCursor(Math.min(rounds.length - 1, Math.max(0, i)));
-        }}
-      >
-        {[0, 0.25, 0.5, 0.75, 1].map((f) => (
-          <g key={f}>
-            <line
-              x1={padL}
-              x2={W - 14}
-              y1={y(maxPts * f)}
-              y2={y(maxPts * f)}
-              stroke="var(--border)"
-              strokeWidth={1}
+    <SiteShell fullWidth>
+      <div className="-mx-5 -my-8 min-h-screen bg-[#f5f1e8] text-[#111111]">
+        <div className="mx-auto flex w-full max-w-[1600px] flex-col gap-8 px-5 py-8 lg:px-8">
+          <section className="grid min-h-[430px] overflow-hidden border border-[#161616] bg-[#fffdf7] lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="flex flex-col justify-between gap-8 p-5 sm:p-8 lg:p-10">
+              <div className="space-y-5">
+                <div className="inline-flex items-center gap-2 border border-[#111111] bg-[#111111] px-3 py-2 text-[10px] font-black uppercase tracking-widest text-[#ffffff]">
+                  <Trophy className="size-3.5 text-[#e8002d]" />
+                  {data.season} Season
+                </div>
+                <div className="max-w-4xl">
+                  <p className="text-xs font-black uppercase tracking-widest text-[#ba1f33]">
+                    Complete through round {data.round}
+                  </p>
+                  <h1 className="mt-3 text-4xl font-black uppercase italic leading-none min-[430px]:text-5xl sm:text-7xl lg:text-8xl">
+                    Championship Battles
+                  </h1>
+                  <p className="mt-5 max-w-2xl text-base font-semibold leading-7 text-[#36312b] sm:text-lg">
+                    The season table rebuilt as live leaderboards: points, wins, podiums, laps,
+                    places gained and reliability.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3">
+                <HeroStat
+                  icon={Crown}
+                  label="Driver leader"
+                  value={driverLeader?.code ?? "TBD"}
+                  note={`${whole(driverLeader?.points)} pts`}
+                />
+                <HeroStat
+                  icon={Users}
+                  label="Team leader"
+                  value={constructorLeader ? team(constructorLeader.name).short : "TBD"}
+                  note={`${whole(constructorLeader?.points)} pts`}
+                />
+                <HeroStat icon={Eye} label="Battle boards" value={whole(trackedBattles)} note="Top 5 shown" />
+              </div>
+            </div>
+
+            <div className="relative min-h-[320px] border-t border-[#161616] bg-[#111111] lg:border-l lg:border-t-0">
+              <img
+                src="/images/race-control-hero.png"
+                alt="Race control desk"
+                className="h-full min-h-[320px] w-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 grid grid-cols-3 border-t border-[#111111] bg-[#fffdf7] text-[#111111]">
+                <TrackSignal label="Mode" value="Top 5" />
+                <TrackSignal label="Lists" value="Tap cards" />
+                <TrackSignal label="Surface" value="Solid" />
+              </div>
+            </div>
+          </section>
+
+          <section className="grid gap-4 lg:grid-cols-2">
+            <StandingsStrip
+              title="Driver Standings"
+              icon={Trophy}
+              rows={data.drivers.slice(0, 5).map((driver) => ({
+                key: driver.driverId,
+                rank: driver.position,
+                label: driver.name,
+                code: driver.code,
+                teamName: driver.team,
+                value: `${whole(driver.points)} pts`,
+                color: team(driver.team).color,
+              }))}
             />
-            <text x={6} y={y(maxPts * f) + 3} fill="currentColor" opacity={0.45} fontSize={9}>
-              {Math.round(maxPts * f)}
-            </text>
-          </g>
+            <StandingsStrip
+              title="Constructor Standings"
+              icon={Users}
+              rows={data.constructors.slice(0, 5).map((constructor) => {
+                const t = team(constructor.name);
+                return {
+                  key: constructor.id,
+                  rank: constructor.position,
+                  label: t.name,
+                  teamName: constructor.name,
+                  value: `${whole(constructor.points)} pts`,
+                  color: t.color,
+                };
+              })}
+            />
+          </section>
+
+          <section className="space-y-4">
+            <div className="flex flex-col gap-2 border-b border-[#161616] pb-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-widest text-[#ba1f33]">
+                  Season boards
+                </p>
+                <h2 className="text-3xl font-black uppercase italic leading-none sm:text-4xl">
+                  Every Fight That Matters
+                </h2>
+              </div>
+              <p className="max-w-md text-sm font-semibold text-[#51483f]">
+                Each board shows the top five. Open a board for the complete ranked list.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+              {battles.map((battle, index) => (
+                <BattleCard
+                  key={battle.id}
+                  battle={battle}
+                  delay={index * 35}
+                  onOpen={() => (battle.rows.length ? setActiveBattle(battle) : undefined)}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+
+      {activeBattle ? <BattleDialog battle={activeBattle} onClose={() => setActiveBattle(null)} /> : null}
+    </SiteShell>
+  );
+}
+
+function HeroStat({
+  icon: Icon,
+  label,
+  value,
+  note,
+}: {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+  note: string;
+}) {
+  return (
+    <div className="border border-[#161616] bg-[#f5f1e8] p-4">
+      <span className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#51483f]">
+        <Icon className="size-4 text-[#e8002d]" />
+        {label}
+      </span>
+      <span className="num mt-3 block text-2xl font-black uppercase text-[#111111]">{value}</span>
+      <span className="num mt-1 block text-xs font-bold uppercase text-[#ba1f33]">{note}</span>
+    </div>
+  );
+}
+
+function TrackSignal({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="border-r border-[#161616] p-3 last:border-r-0">
+      <span className="block text-[9px] font-black uppercase tracking-widest text-[#6b6258]">{label}</span>
+      <span className="num mt-1 block text-sm font-black uppercase">{value}</span>
+    </div>
+  );
+}
+
+function StandingsStrip({
+  title,
+  icon: Icon,
+  rows,
+}: {
+  title: string;
+  icon: LucideIcon;
+  rows: Array<{
+    key: string;
+    rank: number;
+    label: string;
+    code?: string;
+    teamName: string;
+    value: string;
+    color: string;
+  }>;
+}) {
+  return (
+    <div className="home-section-enter border border-[#161616] bg-[#fffdf7] p-4 sm:p-5">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <h2 className="flex items-center gap-2 text-xl font-black uppercase italic">
+          <Icon className="size-5 text-[#e8002d]" />
+          {title}
+        </h2>
+        <span className="border border-[#161616] px-2 py-1 text-[10px] font-black uppercase tracking-widest">
+          Top 5
+        </span>
+      </div>
+      <div className="space-y-2">
+        {rows.map((row) => (
+          <div
+            key={row.key}
+            className="grid grid-cols-[2.25rem_1fr_auto] items-center gap-3 border border-[#d0c7b9] bg-[#f5f1e8] p-2"
+          >
+            <span className="num grid size-8 place-items-center bg-[#111111] text-xs font-black text-[#ffffff]">
+              {row.rank}
+            </span>
+            <div className="flex min-w-0 items-center gap-3">
+              {row.code ? (
+                <DriverAvatar code={row.code} teamName={row.teamName} name={row.label} size="sm" showCode={false} />
+              ) : (
+                <TeamBadge teamName={row.teamName} />
+              )}
+              <div className="min-w-0">
+                <p className="truncate text-sm font-black uppercase">{row.label}</p>
+                <p className="num text-[10px] font-bold uppercase" style={{ color: row.color }}>
+                  {team(row.teamName).short}
+                </p>
+              </div>
+            </div>
+            <span className="num text-sm font-black uppercase">{row.value}</span>
+          </div>
         ))}
-
-        {cursor != null ? (
-          <line
-            x1={x(cursor)}
-            x2={x(cursor)}
-            y1={10}
-            y2={H - padB}
-            stroke="var(--primary)"
-            strokeWidth={1}
-            opacity={0.6}
-          />
-        ) : null}
-
-        {lines.map((l) => {
-          const on = hover === l.key;
-          const dim = hover != null && !on;
-          return (
-            <g key={l.key} opacity={dim ? 0.16 : 1}>
-              <polyline
-                fill="none"
-                stroke={l.color}
-                strokeWidth={on ? 3.5 : 2}
-                points={l.points
-                  .map((p, i) => (p == null ? null : `${x(i)},${y(p)}`))
-                  .filter(Boolean)
-                  .join(" ")}
-              />
-              {cursor != null && l.points[cursor] != null ? (
-                <circle cx={x(cursor)} cy={y(l.points[cursor]!)} r={on ? 5 : 3.5} fill={l.color} />
-              ) : null}
-            </g>
-          );
-        })}
-
-        {rounds.map((r, i) =>
-          i % 2 === 0 || rounds.length < 8 ? (
-            <text
-              key={r}
-              x={x(i)}
-              y={H - 6}
-              fill="currentColor"
-              opacity={cursor === i ? 0.9 : 0.45}
-              fontSize={9}
-              textAnchor="middle"
-            >
-              R{r}
-            </text>
-          ) : null,
-        )}
-      </svg>
-
-      <div className="mt-2 flex flex-wrap gap-1.5">
-        {lines.map((l) => {
-          const val = cursor != null ? l.points[cursor] : l.points[l.points.length - 1];
-          const on = hover === l.key;
-          return (
-            <button
-              key={l.key}
-              type="button"
-              onMouseEnter={() => setHover(l.key)}
-              onMouseLeave={() => setHover(null)}
-              onFocus={() => setHover(l.key)}
-              onBlur={() => setHover(null)}
-              className={`num flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-black uppercase tracking-wider transition-all ${
-                on ? "border-transparent text-background" : "border-border text-muted-foreground"
-              }`}
-              style={on ? { backgroundColor: l.color } : undefined}
-            >
-              <span
-                className="size-1.5 rounded-full"
-                style={{ backgroundColor: on ? "rgba(0,0,0,.55)" : l.color }}
-              />
-              {l.label}
-              <span className="opacity-70">{val ?? "—"}</span>
-            </button>
-          );
-        })}
       </div>
     </div>
   );
 }
 
-/* ------------------------------------------------------------------ */
-
-type View = "drivers" | "constructors" | "progression" | "winners";
-
-function Championship() {
-  const { data: tele } = useSuspenseQuery(seasonQuery);
-  const { data } = useSuspenseQuery(champQuery);
-  const [view, setView] = useState<View>("drivers");
-  const [teamKey, setTeamKey] = useState<string | null>(null);
-  const [open, setOpen] = useState<string | null>(null);
-
-  const paceByCode = useMemo(
-    () => new Map(tele.drivers.map((d) => [d.driverCode, d])),
-    [tele.drivers],
-  );
-  const leader = data.drivers[0];
-  const teamLeader = data.constructors[0];
-
-  const drivers = useMemo(
-    () => data.drivers.filter((d) => !teamKey || team(d.team).key === teamKey),
-    [data.drivers, teamKey],
-  );
-
-  const driverLines: Line[] = useMemo(
-    () =>
-      data.drivers.slice(0, 6).map((d) => ({
-        key: d.code,
-        label: d.code,
-        color: team(d.team).color,
-        points: data.progression.map(
-          (p) => p.entries.find((e) => e.code === d.code)?.points ?? null,
-        ),
-      })),
-    [data.drivers, data.progression],
-  );
-
-  const consLines: Line[] = useMemo(
-    () =>
-      data.constructors.slice(0, 6).map((c) => ({
-        key: c.id,
-        label: team(c.name).short,
-        color: team(c.name).color,
-        points: data.constructorProgression.map(
-          (p) => p.entries.find((e) => e.id === c.id)?.points ?? null,
-        ),
-      })),
-    [data.constructors, data.constructorProgression],
-  );
-
-  const maxConsPts = Math.max(1, ...data.constructors.map((c) => c.points));
-  const paceValues = data.drivers
-    .map((d) => paceByCode.get(d.code)?.racePaceDeltaS)
-    .filter((v): v is number => v != null);
-  const paceMax = Math.max(0.001, ...paceValues.map((v) => Math.abs(v)));
-
-  const views: { k: View; l: string }[] = [
-    { k: "drivers", l: "Drivers" },
-    { k: "constructors", l: "Constructors" },
-    { k: "progression", l: "Progression" },
-    { k: "winners", l: "Winners" },
-  ];
+function BattleCard({ battle, delay, onOpen }: { battle: Battle; delay: number; onOpen: () => void }) {
+  const Icon = battle.icon;
+  const topRows = battle.rows.slice(0, 5);
+  const max = Math.max(1, ...topRows.map((row) => row.value));
+  const canOpen = battle.rows.length > 0;
 
   return (
-    <SiteShell fullWidth>
-      <RaceFlagHero
-        kicker={`${data.season} season`}
-        title="Championship"
-        meta={`Complete through round ${data.round}`}
-        stats={[
-          { label: "Leader", value: leader?.code ?? "-", note: leader ? `${leader.points} pts` : undefined },
-          {
-            label: "Margin",
-            value: data.drivers[1] ? String(Math.abs(data.drivers[1].gapToLeader)) : "-",
-            note: "points to P2",
-          },
-          { label: "Top team", value: team(teamLeader?.name).short, note: `${teamLeader?.points ?? 0} pts` },
-          {
-            label: "Winners",
-            value: String(new Set(data.winnersByRound.map((r) => r.winnerCode).filter(Boolean)).size),
-            note: "different race winners",
-          },
-        ]}
-      />
-
-      <div className="sticky top-0 z-20 -mx-4 mt-6 border-b border-border bg-background/90 px-4 py-2 backdrop-blur">
-        <div className="flex flex-wrap items-center gap-1.5">
-          {views.map((v) => (
-            <button
-              key={v.k}
-              type="button"
-              onClick={() => setView(v.k)}
-              aria-pressed={view === v.k}
-              className={`num rounded-sm border px-2.5 py-1 text-[10px] font-black uppercase tracking-wider transition-colors ${
-                view === v.k
-                  ? "border-primary bg-primary/15 text-foreground"
-                  : "border-border text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {v.l}
-            </button>
-          ))}
-          {teamKey ? (
-            <button
-              type="button"
-              onClick={() => setTeamKey(null)}
-              className="num rounded-sm border border-primary/60 px-2.5 py-1 text-[10px] font-black uppercase text-primary"
-            >
-              {team(teamKey).short} only ×
-            </button>
-          ) : null}
+    <button
+      type="button"
+      onClick={onOpen}
+      disabled={!canOpen}
+      className="home-section-enter group min-h-[340px] w-full border border-[#161616] bg-[#fffdf7] p-4 text-left transition-transform duration-200 enabled:hover:-translate-y-1 disabled:cursor-not-allowed"
+      style={{ animationDelay: `${delay}ms` } as CSSProperties}
+    >
+      <div className="mb-4 flex items-start justify-between gap-3">
+        <div>
+          <div className="mb-3 grid size-10 place-items-center bg-[#111111] text-[#ffffff]">
+            <Icon className="size-5 text-[#e8002d]" />
+          </div>
+          <h3 className="text-xl font-black uppercase italic leading-none">{battle.title}</h3>
+          <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-[#6b6258]">
+            {battle.label}
+          </p>
         </div>
+        <span className="inline-flex items-center gap-1 border border-[#161616] px-2 py-1 text-[10px] font-black uppercase tracking-widest">
+          <Eye className="size-3" />
+          Full list
+        </span>
       </div>
 
-      {view === "drivers" ? (
-        <section className="mt-5">
-          <SectionHeading kicker="Tap a row" title="Standings and record" />
-          <div className="space-y-1.5">
-            {drivers.map((d, i) => {
-              const t = team(d.team);
-              const pace = paceByCode.get(d.code);
-              const delta = pace?.racePaceDeltaS ?? null;
-              const isOpen = open === d.code;
-              return (
-                <div
-                  key={d.code}
-                  className="pw-ticker overflow-hidden rounded-lg border border-border bg-card/40"
-                  style={{
-                    animationDelay: `${Math.min(i, 14) * 25}ms`,
-                    borderLeft: `4px solid ${t.color}`,
-                  }}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpen(isOpen ? null : d.code)}
-                    aria-expanded={isOpen}
-                    className="flex w-full items-center gap-3 px-3 py-2 text-left transition-colors hover:bg-accent/30"
-                  >
-                    <span className="num w-6 text-xs font-black text-muted-foreground">
-                      {d.position}
-                    </span>
-                    <DriverAvatar code={d.code} teamName={d.team} name={d.name} />
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate text-xs font-black uppercase">{d.name}</span>
-                      <TeamBadge teamName={d.team} />
-                    </span>
-                    <span className="hidden w-28 shrink-0 sm:block">
-                      <span className="relative flex h-3 items-center">
-                        <span className="absolute inset-x-0 h-[2px] bg-secondary/60" />
-                        <span
-                          className="absolute h-3 w-[2px] bg-muted-foreground/50"
-                          style={{ left: "50%" }}
-                        />
-                        {delta != null ? (
-                          <span
-                            className="absolute h-2.5 rounded-sm"
-                            style={{
-                              backgroundColor: t.color,
-                              width: `${(Math.abs(delta) / paceMax) * 48}%`,
-                              left: delta < 0 ? `${50 - (Math.abs(delta) / paceMax) * 48}%` : "50%",
-                            }}
-                          />
-                        ) : null}
-                      </span>
-                      <span className="num mt-0.5 block text-right text-[9px] text-muted-foreground">
-                        {delta == null ? "no pace" : `${fmtDelta(delta, 2)}s`}
-                      </span>
-                    </span>
-                    <span className="text-right">
-                      <span className="num block text-sm font-black">{d.points}</span>
-                      <span className="num block text-[10px] text-muted-foreground">
-                        {d.position === 1 ? "leader" : d.gapToLeader}
-                      </span>
-                    </span>
-                  </button>
-
-                  {isOpen ? (
-                    <div className="grid grid-cols-2 gap-2 border-t border-border/60 bg-background/40 px-3 py-3 sm:grid-cols-4 lg:grid-cols-8">
-                      {[
-                        { l: "Wins", v: d.wins },
-                        { l: "Podiums", v: d.podiums },
-                        { l: "Top 10", v: d.top10 },
-                        { l: "Sprint", v: d.sprintPoints },
-                        { l: "Starts", v: d.starts },
-                        { l: "Avg grid", v: fmtNum(d.avgGrid, 1) },
-                        { l: "Avg fin", v: fmtNum(d.avgFinish, 1) },
-                        {
-                          l: "Quali gap",
-                          v: pace?.qualiGapS == null ? "—" : `${fmtNum(pace.qualiGapS, 3)}s`,
-                        },
-                      ].map((c) => (
-                        <div key={c.l}>
-                          <p className="label-xs">{c.l}</p>
-                          <p className="num text-sm font-bold">{c.v}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
+      {battle.unavailable ? (
+        <div className="grid min-h-[210px] place-items-center border border-[#d0c7b9] bg-[#f5f1e8] p-5 text-center">
+          <div>
+            <p className="text-sm font-black uppercase text-[#ba1f33]">Not tracked yet</p>
+            <p className="mt-2 text-sm font-semibold leading-6 text-[#51483f]">{battle.unavailable}</p>
           </div>
-          <p className="num mt-2 text-[10px] text-muted-foreground">
-            Pace bar = median fuel-corrected lap delta to the field reference. Left of centre is
-            faster. Averages count classified finishes only.
-          </p>
-        </section>
-      ) : null}
-
-      {view === "constructors" ? (
-        <section className="mt-5">
-          <SectionHeading kicker="Tap to filter drivers" title="Constructor standings" />
-          <div className="space-y-1.5">
-            {data.constructors.map((row, i) => {
-              const t = team(row.name);
-              const on = teamKey === t.key;
-              const line = data.drivers
-                .filter((d) => team(d.team).key === t.key)
-                .map((d) => d.code)
-                .join(" / ");
-              return (
-                <button
-                  key={row.id}
-                  type="button"
-                  onClick={() => {
-                    setTeamKey(on ? null : t.key);
-                    if (!on) setView("drivers");
-                  }}
-                  aria-pressed={on}
-                  className={`pw-ticker flex w-full items-center gap-3 rounded-lg border border-border p-3 text-left transition-colors ${
-                    on ? "bg-accent/50" : "bg-card/40 hover:bg-accent/30"
-                  }`}
-                  style={{
-                    animationDelay: `${Math.min(i, 12) * 30}ms`,
-                    borderLeft: `4px solid ${t.color}`,
-                  }}
-                >
-                  <span className="num w-5 text-xs text-muted-foreground">{row.position}</span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-xs font-black uppercase">{t.name}</span>
-                    <span className="num text-[10px] text-muted-foreground">
-                      {row.wins} wins · {line || "—"}
-                    </span>
-                    <span className="relative mt-1.5 block h-2.5 overflow-hidden rounded-sm bg-secondary/50">
-                      <span
-                        className="absolute inset-y-0 left-0 rounded-sm transition-[width] duration-500"
-                        style={{
-                          width: `${(row.points / maxConsPts) * 100}%`,
-                          backgroundColor: t.color,
-                        }}
-                      />
-                    </span>
-                  </span>
-                  <span className="text-right">
-                    <span className="num block text-sm font-black">{row.points}</span>
-                    <span className="num block text-[10px] text-muted-foreground">
-                      {row.position === 1
-                        ? "leader"
-                        : `-${(teamLeader?.points ?? 0) - row.points}`}
-                    </span>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
-
-      {view === "progression" ? (
-        <div className="mt-5 grid gap-8 xl:grid-cols-2">
-          <section>
-            <SectionHeading kicker="Hover a chip or the chart" title="Drivers · points progression" />
-            <div className="rounded-lg border border-border bg-card/40 p-3 text-foreground">
-              <Progression rounds={data.progression.map((p) => p.round)} lines={driverLines} />
-            </div>
-          </section>
-          <section>
-            <SectionHeading kicker="Top six" title="Constructors · points progression" />
-            <div className="rounded-lg border border-border bg-card/40 p-3 text-foreground">
-              <Progression
-                rounds={data.constructorProgression.map((p) => p.round)}
-                lines={consLines}
-              />
-            </div>
-          </section>
         </div>
-      ) : null}
+      ) : (
+        <div className="space-y-3">
+          {topRows.map((row, index) => (
+            <RankRow key={row.id} row={row} rank={index + 1} max={max} compact />
+          ))}
+        </div>
+      )}
+    </button>
+  );
+}
 
-      {view === "winners" ? (
-        <section className="mt-5">
-          <SectionHeading kicker="Round by round" title="Race winners" />
-          <div className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
-            {data.winnersByRound.map((r, i) => {
-              const t = team(r.winnerTeam);
-              return (
-                <div
-                  key={r.round}
-                  className={`pw-ticker flex items-center gap-3 rounded-lg border border-border p-3 ${
-                    r.winnerCode ? "bg-card/40" : "bg-card/20 opacity-60"
-                  }`}
-                  style={{
-                    animationDelay: `${Math.min(i, 14) * 25}ms`,
-                    borderLeft: `4px solid ${r.winnerCode ? t.color : "transparent"}`,
-                  }}
-                >
-                  <span className="num w-8 text-[10px] uppercase text-muted-foreground">
-                    R{r.round}
-                  </span>
-                  {r.winnerCode ? (
-                    <DriverAvatar code={r.winnerCode} teamName={r.winnerTeam} size="sm" />
-                  ) : null}
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-[11px] font-black uppercase">{r.name}</span>
-                    <span className="num text-[10px] text-muted-foreground">
-                      {r.winnerCode ? t.name : "not yet run"}
-                    </span>
-                  </span>
-                </div>
-              );
-            })}
+function RankRow({
+  row,
+  rank,
+  max,
+  compact = false,
+}: {
+  row: BattleRow;
+  rank: number;
+  max: number;
+  compact?: boolean;
+}) {
+  const width = Math.max(4, Math.round((row.value / max) * 100));
+
+  return (
+    <div className="space-y-2">
+      <div className="grid grid-cols-[2rem_1fr_auto] items-center gap-2">
+        <span className="num grid size-7 place-items-center bg-[#111111] text-[11px] font-black text-[#ffffff]">
+          {rank}
+        </span>
+        <div className="flex min-w-0 items-center gap-2">
+          {row.code ? (
+            <DriverAvatar code={row.code} teamName={row.teamName} name={row.label} size="sm" showCode={false} />
+          ) : (
+            <TeamBadge teamName={row.teamName} />
+          )}
+          <div className="min-w-0">
+            <p className="truncate text-sm font-black uppercase">{row.code ?? row.label}</p>
+            {!compact ? <p className="truncate text-xs font-semibold text-[#51483f]">{row.label}</p> : null}
           </div>
-        </section>
-      ) : null}
+        </div>
+        <div className="text-right">
+          <span className="num block text-sm font-black">{row.display}</span>
+          {row.note ? <span className="num block text-[10px] font-bold text-[#6b6258]">{row.note}</span> : null}
+        </div>
+      </div>
+      <div className="h-2 border border-[#d0c7b9] bg-[#f5f1e8]">
+        <div className="h-full transition-all duration-500" style={{ width: `${width}%`, backgroundColor: row.color }} />
+      </div>
+    </div>
+  );
+}
 
-      <Link
-        to="/method"
-        className="num mt-8 inline-block text-[11px] font-bold uppercase text-primary"
+function BattleDialog({ battle, onClose }: { battle: Battle; onClose: () => void }) {
+  const Icon = battle.icon;
+  const max = Math.max(1, ...battle.rows.map((row) => row.value));
+
+  return (
+    <div className="fixed inset-0 z-50 bg-[#111111] p-4 text-[#111111] sm:p-8">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${battle.title} full list`}
+        className="mx-auto flex max-h-[calc(100vh-2rem)] w-full max-w-5xl flex-col border border-[#161616] bg-[#fffdf7] sm:max-h-[calc(100vh-4rem)]"
       >
-        How these numbers are derived →
-      </Link>
-    </SiteShell>
+        <div className="flex items-start justify-between gap-4 border-b border-[#161616] p-4 sm:p-5">
+          <div className="flex items-center gap-3">
+            <span className="grid size-11 place-items-center bg-[#111111] text-[#ffffff]">
+              <Icon className="size-5 text-[#e8002d]" />
+            </span>
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-[#ba1f33]">Complete list</p>
+              <h2 className="text-2xl font-black uppercase italic leading-none">{battle.title}</h2>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="grid size-10 place-items-center border border-[#161616] bg-[#f5f1e8] text-[#111111] transition-colors hover:bg-[#e8002d] hover:text-[#ffffff]"
+            aria-label="Close full list"
+          >
+            <X className="size-5" />
+          </button>
+        </div>
+        <div className="overflow-y-auto p-4 sm:p-5">
+          <div className="space-y-4">
+            {battle.rows.map((row, index) => (
+              <RankRow key={row.id} row={row} rank={index + 1} max={max} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

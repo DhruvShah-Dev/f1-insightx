@@ -984,13 +984,13 @@ export async function fetchChampionship(season: number) {
     sb
       .from("race_results")
       .select(
-        "race_id, driver_id, constructor_id, grid_position, finish_position, points, finish_status",
+        "race_id, driver_id, constructor_id, grid_position, finish_position, points, finish_status, laps_completed",
       )
       .like("race_id", `${season}-%`)
       .limit(1000),
     sb
       .from("sprint_results")
-      .select("race_id, driver_id, finish_position, points")
+      .select("race_id, driver_id, grid_position, finish_position, points, laps_completed")
       .like("race_id", `${season}-%`)
       .limit(1000),
     sb.from("constructors").select("id, name").limit(200),
@@ -1023,6 +1023,10 @@ export async function fetchChampionship(season: number) {
     finishSum: number;
     counted: number;
     sprintPoints: number;
+    raceLapsCompleted: number;
+    sprintLapsCompleted: number;
+    positionsGained: number;
+    positionsLost: number;
   };
   const agg = new Map<string, Agg>();
   const blank = (): Agg => ({
@@ -1036,13 +1040,19 @@ export async function fetchChampionship(season: number) {
     finishSum: 0,
     counted: 0,
     sprintPoints: 0,
+    raceLapsCompleted: 0,
+    sprintLapsCompleted: 0,
+    positionsGained: 0,
+    positionsLost: 0,
   });
   for (const r of (rr ?? []) as Row[]) {
     const id = String(r["driver_id"]);
     const a = agg.get(id) ?? blank();
     const fin = num(r["finish_position"]);
     const grid = num(r["grid_position"]);
+    const laps = num(r["laps_completed"]);
     a.starts += 1;
+    if (laps != null) a.raceLapsCompleted += laps;
     if (fin != null) {
       if (fin === 1) a.wins += 1;
       if (fin <= 3) a.podiums += 1;
@@ -1052,6 +1062,9 @@ export async function fetchChampionship(season: number) {
       if (grid != null) {
         a.gridSum += grid;
         a.counted += 1;
+        const net = grid - fin;
+        if (net > 0) a.positionsGained += net;
+        if (net < 0) a.positionsLost += Math.abs(net);
       }
     }
     if (String(r["finish_status"] ?? "").toLowerCase() !== "finished" && fin == null) a.dnf += 1;
@@ -1060,7 +1073,16 @@ export async function fetchChampionship(season: number) {
   for (const r of (sr ?? []) as Row[]) {
     const id = String(r["driver_id"]);
     const a = agg.get(id) ?? blank();
+    const fin = num(r["finish_position"]);
+    const grid = num(r["grid_position"]);
+    const laps = num(r["laps_completed"]);
     a.sprintPoints += Number(r["points"] ?? 0);
+    if (laps != null) a.sprintLapsCompleted += laps;
+    if (grid != null && fin != null) {
+      const net = grid - fin;
+      if (net > 0) a.positionsGained += net;
+      if (net < 0) a.positionsLost += Math.abs(net);
+    }
     agg.set(id, a);
   }
 
@@ -1088,6 +1110,14 @@ export async function fetchChampionship(season: number) {
         avgGrid: a.counted ? a.gridSum / a.counted : null,
         avgFinish: a.counted ? a.finishSum / a.counted : null,
         sprintPoints: a.sprintPoints,
+        raceLapsCompleted: a.raceLapsCompleted,
+        sprintLapsCompleted: a.sprintLapsCompleted,
+        lapsCompleted: a.raceLapsCompleted + a.sprintLapsCompleted,
+        positionsGained: a.positionsGained,
+        positionsLost: a.positionsLost,
+        netPositions: a.positionsGained - a.positionsLost,
+        lapsLed: null,
+        overtakes: null,
       };
     })
     .sort((a, b) => a.position - b.position);
