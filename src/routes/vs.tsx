@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { queryOptions, useQuery, useSuspenseQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { z } from "zod";
 import { SiteShell } from "@/components/site-shell";
 import { RaceFlagHero } from "@/components/race-flag-hero";
@@ -16,6 +16,7 @@ import {
 } from "@/components/dominance";
 import { SkeletonPanel } from "@/components/skeleton-block";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
+import { countryForRace, countryTheme } from "@/data/country-theme";
 import { duelColors, team } from "@/data/teams";
 import { fmtDelta, fmtLapMs, fmtLapS, fmtNum, titleCase } from "@/lib/format";
 import { getHeadToHead, getWeekendIndex } from "@/lib/f1.functions";
@@ -249,18 +250,17 @@ function Vs() {
 
   // Rounds without stored lap telemetry still carry full classifications, so keep
   // them selectable — the deep race views simply hide themselves.
-  const weekends = index.weekends
-    .filter((w) => w.hasRace)
-    .sort((a, b) => b.round - a.round);
+  const weekends = index.weekends.filter((w) => w.hasRace).sort((a, b) => b.round - a.round);
 
   const slug = search.slug ?? weekends[0]?.slug ?? "";
+  const selectedWeekend =
+    weekends.find((w) => w.slug === slug || w.raceId === slug) ?? weekends[0] ?? null;
   const [session, setSession] = useState<Session>("race");
   const [view, setView] = useState<RaceView>("duel");
 
   const h2h = useQuery({
     queryKey: ["h2h", slug, search.a ?? "", search.b ?? ""],
-    queryFn: () =>
-      getHeadToHead({ data: { slug, a: search.a ?? "AUTO", b: search.b ?? "AUTO" } }),
+    queryFn: () => getHeadToHead({ data: { slug, a: search.a ?? "AUTO", b: search.b ?? "AUTO" } }),
     enabled: Boolean(slug),
     staleTime: 5 * 60_000,
   });
@@ -282,12 +282,21 @@ function Vs() {
   const teamA = team(d?.race[0]?.team ?? entrantA?.team);
   const teamB = team(d?.race[1]?.team ?? entrantB?.team);
   // Teammates share one livery colour, so split it into two readable variants.
-  const duel = duelColors(
-    d?.race[0]?.team ?? entrantA?.team,
-    d?.race[1]?.team ?? entrantB?.team,
-  );
+  const duel = duelColors(d?.race[0]?.team ?? entrantA?.team, d?.race[1]?.team ?? entrantB?.team);
   const colorA = duel.colorA;
   const colorB = duel.colorB;
+  const raceTheme = countryTheme(
+    countryForRace({
+      circuitId: selectedWeekend?.circuitId,
+      circuit: d?.circuit ?? selectedWeekend?.circuit,
+      raceName: d?.name ?? selectedWeekend?.name,
+    }),
+  );
+  const vsThemeStyle = {
+    "--primary": raceTheme.accent,
+    "--ring": raceTheme.accent,
+    "--race-country-accent": raceTheme.accent,
+  } as CSSProperties;
 
   const setSearch = (patch: {
     slug?: string | undefined;
@@ -327,7 +336,12 @@ function Vs() {
       R: [],
     };
     rows.forEach((row) => {
-      if (row.session === "Q" || row.session === "SQ" || row.session === "S" || row.session === "R") {
+      if (
+        row.session === "Q" ||
+        row.session === "SQ" ||
+        row.session === "S" ||
+        row.session === "R"
+      ) {
         bySession[row.session].push(row);
       }
     });
@@ -426,9 +440,7 @@ function Vs() {
             neutral: true,
           },
         ] as Metric[],
-        extras: [
-          { k: "Status", a: titleCase(sa?.status) || "—", b: titleCase(sb?.status) || "—" },
-        ],
+        extras: [{ k: "Status", a: titleCase(sa?.status) || "—", b: titleCase(sb?.status) || "—" }],
       };
     }
     const [ra, rb] = d?.race ?? [];
@@ -515,7 +527,9 @@ function Vs() {
 
   const raceViews: { k: RaceView; l: string }[] = [
     { k: "duel", l: "Duel" },
-    ...(seriesA.laps.length && seriesB.laps.length ? [{ k: "dominance" as const, l: "Dominance" }] : []),
+    ...(seriesA.laps.length && seriesB.laps.length
+      ? [{ k: "dominance" as const, l: "Dominance" }]
+      : []),
     ...(seriesA.laps.length || seriesB.laps.length
       ? [
           { k: "trace" as const, l: "Lap trace" },
@@ -536,7 +550,9 @@ function Vs() {
       : active === "quali"
         ? [
             { k: "duel", l: "Duel" },
-            ...(cornerRowsBySession.Q.length ? [{ k: "cornerData" as const, l: "Corner data" }] : []),
+            ...(cornerRowsBySession.Q.length
+              ? [{ k: "cornerData" as const, l: "Corner data" }]
+              : []),
           ]
         : [
             { k: "duel", l: "Duel" },
@@ -569,293 +585,311 @@ function Vs() {
 
   return (
     <SiteShell fullWidth>
-      {/* ---------------- hero ---------------- */}
-      <RaceFlagHero
-        kicker="Head to head"
-        title="Driver vs driver"
-        meta={d ? `R${d.round} ${d.name} / ${d.circuit}` : "Pick a weekend below"}
-      >
-        <div className="grid items-center gap-3 sm:grid-cols-[1fr_auto_1fr]">
-          <DriverCard
-            code={codeA}
-            name={entrantA?.name ?? codeA}
-            teamName={entrantA?.team ?? d?.race[0]?.team ?? null}
-            color={colorA}
-            score={score.a}
-            align="left"
-          />
-          <div className="flex flex-col items-center gap-2">
-            <span className="num rounded-full border border-white/25 bg-[#07110c]/88 px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
-              vs
-            </span>
-            <button
-              type="button"
-              onClick={swap}
-              className="num rounded-sm border border-white/35 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#07110c]"
-            >
-              swap
-            </button>
-            <span className="num text-[10px] text-white/80">
-              {label[active]} / {score.a}-{score.b}
-            </span>
-            {duel.sameTeam ? (
-              <span className="num rounded-sm border border-white/30 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-white/80">
-                teammates / shaded
+      <div style={vsThemeStyle}>
+        {/* ---------------- hero ---------------- */}
+        <RaceFlagHero
+          kicker="Head to head"
+          title="Driver vs driver"
+          meta={d ? `R${d.round} ${d.name} / ${d.circuit}` : "Pick a weekend below"}
+          flag={raceTheme.flag}
+        >
+          <div className="grid items-center gap-3 sm:grid-cols-[1fr_auto_1fr]">
+            <DriverCard
+              code={codeA}
+              name={entrantA?.name ?? codeA}
+              teamName={entrantA?.team ?? d?.race[0]?.team ?? null}
+              color={colorA}
+              score={score.a}
+              align="left"
+            />
+            <div className="flex flex-col items-center gap-2">
+              <span className="num rounded-full border border-white/25 bg-[#07110c]/88 px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
+                vs
               </span>
-            ) : null}
-          </div>
-          <DriverCard
-            code={codeB}
-            name={entrantB?.name ?? codeB}
-            teamName={entrantB?.team ?? d?.race[1]?.team ?? null}
-            color={colorB}
-            score={score.b}
-            align="right"
-          />
-        </div>
-      </RaceFlagHero>
-
-      {/* ---------------- weekend rail ---------------- */}
-      <div className="mt-5">
-        <p className="label-xs">Weekend</p>
-        <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1">
-          {weekends.map((w) => {
-            const on = w.slug === slug;
-            return (
               <button
-                key={w.slug!}
                 type="button"
-                onClick={() => setSearch({ slug: w.slug!, a: undefined, b: undefined })}
-                aria-pressed={on}
-                className={`num shrink-0 rounded-sm border px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider transition-colors ${
-                  on
-                    ? "border-primary bg-primary/15 text-foreground"
-                    : "border-border text-muted-foreground hover:text-foreground"
-                }`}
+                onClick={swap}
+                className="num rounded-sm border border-white/35 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#07110c]"
               >
-                R{w.round} · {w.name}
-                {w.resultsOnly ? (
-                  <span className="ml-1.5 text-[9px] font-bold text-primary/80">results</span>
-                ) : null}
+                swap
               </button>
-
-            );
-          })}
-        </div>
-      </div>
-
-      {/* ---------------- driver pickers ---------------- */}
-      {entrants.length ? (
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {[
-            { side: "Driver A", value: codeA, other: codeB, key: "a" as const, color: colorA },
-            { side: "Driver B", value: codeB, other: codeA, key: "b" as const, color: colorB },
-          ].map((sel) => (
-            <div
-              key={sel.key}
-              className="rounded-xl border border-border bg-card/40 p-3"
-              style={{ borderLeft: `4px solid ${sel.color}` }}
-            >
-              <p className="label-xs">{sel.side}</p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {entrants.map((e) => {
-                  const t = team(e.team);
-                  const on = e.code === sel.value;
-                  const disabled = e.code === sel.other;
-                  return (
-                    <button
-                      key={e.code}
-                      type="button"
-                      disabled={disabled}
-                      onClick={() => setSearch({ [sel.key]: e.code })}
-                      aria-pressed={on}
-                      title={`${e.name} · ${t.name}`}
-                      className={`num rounded-full border px-2 py-1 text-[10px] font-black uppercase tracking-wider transition-all disabled:opacity-25 ${
-                        on
-                          ? "border-transparent text-background"
-                          : "border-border text-muted-foreground hover:text-foreground"
-                      }`}
-                      style={on ? { backgroundColor: sel.color } : undefined}
-                    >
-                      {e.code}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : null}
-
-      {pending ? (
-        <SkeletonPanel rows={7} label="Loading session data" />
-      ) : !d ? (
-        <p className="mt-10 text-sm text-muted-foreground">No stored data for this weekend.</p>
-      ) : (
-        <>
-          {/* ---------------- sticky switcher ---------------- */}
-          <div className="sticky top-0 z-20 mt-6 -mx-4 border-y border-border bg-background/90 px-4 py-2 backdrop-blur">
-            <div className="flex flex-wrap items-center gap-3">
-              <Segmented
-                options={available.map((s) => ({ k: s, l: label[s] }))}
-                value={active}
-                onChange={setSession}
-              />
-              {detailViews.length > 1 ? (
-                <>
-                  <span className="hidden h-4 w-px bg-border sm:block" />
-                  <Segmented options={detailViews} value={activeView} onChange={setView} />
-                </>
-              ) : null}
-            </div>
-          </div>
-
-          {d.resultsOnly ? (
-            <p className="num mt-4 rounded-sm border border-primary/30 bg-primary/10 px-3 py-2 text-[11px] text-muted-foreground">
-              Classification only for this round — qualifying and race results are stored, lap
-              telemetry has not been ingested yet, so trace, tyre and dominance views are hidden.
-            </p>
-          ) : null}
-
-
-
-          {/* ---------------- duel board ---------------- */}
-          {activeView === "duel" ? (
-            <Panel className="mt-5">
-              <div className="mb-3 flex items-end justify-between gap-3">
-                <div>
-                  <p className="label-xs">{label[active]}</p>
-                  <h2 className="text-lg font-black uppercase italic">Metric duel</h2>
-                </div>
-                <span className="num text-[10px] text-muted-foreground">
-                  bars scale to the larger value · winner highlighted
+              <span className="num text-[10px] text-white/80">
+                {label[active]} / {score.a}-{score.b}
+              </span>
+              {duel.sameTeam ? (
+                <span className="num rounded-sm border border-white/30 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-white/80">
+                  teammates / shaded
                 </span>
-              </div>
-              <DuelBoard metrics={metrics} colorA={colorA} colorB={colorB} />
-              {extras.length ? (
-                <div className="mt-3 border-t border-border/60 pt-2">
-                  {extras.map((e) => (
-                    <TextRow key={e.k} k={e.k} a={e.a} b={e.b} />
-                  ))}
-                </div>
               ) : null}
-            </Panel>
-          ) : null}
-
-          {/* ---------------- race views ---------------- */}
-          {active === "race" && activeView === "dominance" ? (
-            <DominanceBlock
-              codeA={codeA}
-              codeB={codeB}
-              colorA={colorA}
-              colorB={colorB}
-              lapsA={d.laps[0] ?? []}
-              lapsB={d.laps[1] ?? []}
-              pitsA={d.pits[0] ?? []}
-              pitsB={d.pits[1] ?? []}
-              trafficLapsA={d.trafficLaps?.[0] ?? []}
-              trafficLapsB={d.trafficLaps?.[1] ?? []}
-              statusPhases={d.statusPhases ?? []}
-              trackPath={d.trackPath}
-              circuit={d.circuit}
+            </div>
+            <DriverCard
+              code={codeB}
+              name={entrantB?.name ?? codeB}
+              teamName={entrantB?.team ?? d?.race[1]?.team ?? null}
+              color={colorB}
+              score={score.b}
+              align="right"
             />
-          ) : null}
+          </div>
+        </RaceFlagHero>
 
-          {active === "race" && activeView === "trace" ? (
-            <Panel className="mt-5">
-              <div className="mb-3">
-                <p className="label-xs">Race trace</p>
-                <h2 className="text-lg font-black uppercase italic">Lap by lap</h2>
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <p className="label-xs">Lap time (s, slow laps clipped)</p>
-                  <LapTraceChart series={[seriesA, seriesB]} />
-                </div>
-                <div>
-                  <p className="label-xs">Cumulative gap</p>
-                  <DeltaChart series={[seriesA, seriesB]} />
-                </div>
-              </div>
-            </Panel>
-          ) : null}
+        {/* ---------------- weekend rail ---------------- */}
+        <div className="mt-5">
+          <p className="label-xs">Weekend</p>
+          <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1">
+            {weekends.map((w) => {
+              const on = w.slug === slug;
+              const buttonTheme = countryTheme(
+                countryForRace({ circuitId: w.circuitId, circuit: w.circuit, raceName: w.name }),
+              );
+              return (
+                <button
+                  key={w.slug!}
+                  type="button"
+                  onClick={() => setSearch({ slug: w.slug!, a: undefined, b: undefined })}
+                  aria-pressed={on}
+                  className={`num relative shrink-0 overflow-hidden rounded-sm border px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider transition-colors ${
+                    on
+                      ? "border-white/30 text-white"
+                      : "border-border text-muted-foreground hover:text-foreground"
+                  }`}
+                  style={
+                    on ? { backgroundColor: buttonTheme.flag[0] ?? buttonTheme.accent } : undefined
+                  }
+                >
+                  R{w.round} · {w.name}
+                  {on ? (
+                    <span
+                      aria-hidden
+                      className="ml-2 inline-flex h-2.5 w-8 overflow-hidden rounded-sm align-middle"
+                    >
+                      {buttonTheme.flag.map((color, index) => (
+                        <span
+                          key={`${w.slug}-${color}-${index}`}
+                          className="flex-1"
+                          style={{ backgroundColor: color }}
+                        />
+                      ))}
+                    </span>
+                  ) : null}
+                  {w.resultsOnly ? (
+                    <span className="ml-1.5 text-[9px] font-bold text-primary/80">results</span>
+                  ) : null}
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-          {active === "race" && activeView === "tyres" ? (
-            <Panel className="mt-5">
-              <div className="mb-3">
-                <p className="label-xs">Tyres</p>
-                <h2 className="text-lg font-black uppercase italic">Stints & degradation</h2>
+        {/* ---------------- driver pickers ---------------- */}
+        {entrants.length ? (
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {[
+              { side: "Driver A", value: codeA, other: codeB, key: "a" as const, color: colorA },
+              { side: "Driver B", value: codeB, other: codeA, key: "b" as const, color: colorB },
+            ].map((sel) => (
+              <div
+                key={sel.key}
+                className="rounded-xl border border-border bg-card/40 p-3"
+                style={{ borderLeft: `4px solid ${sel.color}` }}
+              >
+                <p className="label-xs">{sel.side}</p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {entrants.map((e) => {
+                    const t = team(e.team);
+                    const on = e.code === sel.value;
+                    const disabled = e.code === sel.other;
+                    return (
+                      <button
+                        key={e.code}
+                        type="button"
+                        disabled={disabled}
+                        onClick={() => setSearch({ [sel.key]: e.code })}
+                        aria-pressed={on}
+                        title={`${e.name} · ${t.name}`}
+                        className={`num rounded-full border px-2 py-1 text-[10px] font-black uppercase tracking-wider transition-all disabled:opacity-25 ${
+                          on
+                            ? "border-transparent text-background"
+                            : "border-border text-muted-foreground hover:text-foreground"
+                        }`}
+                        style={on ? { backgroundColor: sel.color } : undefined}
+                      >
+                        {e.code}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <StintStrip {...seriesA} />
-                <StintStrip {...seriesB} />
+            ))}
+          </div>
+        ) : null}
+
+        {pending ? (
+          <SkeletonPanel rows={7} label="Loading session data" />
+        ) : !d ? (
+          <p className="mt-10 text-sm text-muted-foreground">No stored data for this weekend.</p>
+        ) : (
+          <>
+            {/* ---------------- sticky switcher ---------------- */}
+            <div className="sticky top-0 z-20 mt-6 -mx-4 border-y border-border bg-background/90 px-4 py-2 backdrop-blur">
+              <div className="flex flex-wrap items-center gap-3">
+                <Segmented
+                  options={available.map((s) => ({ k: s, l: label[s] }))}
+                  value={active}
+                  onChange={setSession}
+                />
+                {detailViews.length > 1 ? (
+                  <>
+                    <span className="hidden h-4 w-px bg-border sm:block" />
+                    <Segmented options={detailViews} value={activeView} onChange={setView} />
+                  </>
+                ) : null}
               </div>
-              <div className="mt-3">
-                <CompoundLegend />
-              </div>
-              <StintTable
-                sides={[
-                  { code: codeA, color: colorA, stints: d.stints[0] ?? [] },
-                  { code: codeB, color: colorB, stints: d.stints[1] ?? [] },
-                ]}
+            </div>
+
+            {d.resultsOnly ? (
+              <p className="num mt-4 rounded-sm border border-primary/30 bg-primary/10 px-3 py-2 text-[11px] text-muted-foreground">
+                Classification only for this round — qualifying and race results are stored, lap
+                telemetry has not been ingested yet, so trace, tyre and dominance views are hidden.
+              </p>
+            ) : null}
+
+            {/* ---------------- duel board ---------------- */}
+            {activeView === "duel" ? (
+              <Panel className="mt-5">
+                <div className="mb-3 flex items-end justify-between gap-3">
+                  <div>
+                    <p className="label-xs">{label[active]}</p>
+                    <h2 className="text-lg font-black uppercase italic">Metric duel</h2>
+                  </div>
+                  <span className="num text-[10px] text-muted-foreground">
+                    bars scale to the larger value · winner highlighted
+                  </span>
+                </div>
+                <DuelBoard metrics={metrics} colorA={colorA} colorB={colorB} />
+                {extras.length ? (
+                  <div className="mt-3 border-t border-border/60 pt-2">
+                    {extras.map((e) => (
+                      <TextRow key={e.k} k={e.k} a={e.a} b={e.b} />
+                    ))}
+                  </div>
+                ) : null}
+              </Panel>
+            ) : null}
+
+            {/* ---------------- race views ---------------- */}
+            {active === "race" && activeView === "dominance" ? (
+              <DominanceBlock
+                codeA={codeA}
+                codeB={codeB}
+                colorA={colorA}
+                colorB={colorB}
+                lapsA={d.laps[0] ?? []}
+                lapsB={d.laps[1] ?? []}
+                pitsA={d.pits[0] ?? []}
+                pitsB={d.pits[1] ?? []}
+                trafficLapsA={d.trafficLaps?.[0] ?? []}
+                trafficLapsB={d.trafficLaps?.[1] ?? []}
+                statusPhases={d.statusPhases ?? []}
+                trackPath={d.trackPath}
+                circuit={d.circuit}
               />
-            </Panel>
-          ) : null}
+            ) : null}
 
-          {active === "race" && activeView === "pits" ? (
-            <PitLossBlock
-              codeA={codeA}
-              codeB={codeB}
-              colorA={colorA}
-              colorB={colorB}
-              pitsA={d.pits[0] ?? []}
-              pitsB={d.pits[1] ?? []}
-            />
-          ) : null}
+            {active === "race" && activeView === "trace" ? (
+              <Panel className="mt-5">
+                <div className="mb-3">
+                  <p className="label-xs">Race trace</p>
+                  <h2 className="text-lg font-black uppercase italic">Lap by lap</h2>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <p className="label-xs">Lap time (s, slow laps clipped)</p>
+                    <LapTraceChart series={[seriesA, seriesB]} />
+                  </div>
+                  <div>
+                    <p className="label-xs">Cumulative gap</p>
+                    <DeltaChart series={[seriesA, seriesB]} />
+                  </div>
+                </div>
+              </Panel>
+            ) : null}
 
-          {active === "race" && activeView === "traffic" ? (
-            <TrafficBlock
-              codeA={codeA}
-              codeB={codeB}
-              colorA={colorA}
-              colorB={colorB}
-              traffic={d.traffic}
-              trafficLapsA={d.trafficLaps?.[0] ?? []}
-              trafficLapsB={d.trafficLaps?.[1] ?? []}
-            />
+            {active === "race" && activeView === "tyres" ? (
+              <Panel className="mt-5">
+                <div className="mb-3">
+                  <p className="label-xs">Tyres</p>
+                  <h2 className="text-lg font-black uppercase italic">Stints & degradation</h2>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <StintStrip {...seriesA} />
+                  <StintStrip {...seriesB} />
+                </div>
+                <div className="mt-3">
+                  <CompoundLegend />
+                </div>
+                <StintTable
+                  sides={[
+                    { code: codeA, color: colorA, stints: d.stints[0] ?? [] },
+                    { code: codeB, color: colorB, stints: d.stints[1] ?? [] },
+                  ]}
+                />
+              </Panel>
+            ) : null}
 
-          ) : null}
+            {active === "race" && activeView === "pits" ? (
+              <PitLossBlock
+                codeA={codeA}
+                codeB={codeB}
+                colorA={colorA}
+                colorB={colorB}
+                pitsA={d.pits[0] ?? []}
+                pitsB={d.pits[1] ?? []}
+              />
+            ) : null}
 
-          {active === "race" && activeView === "battle" ? (
-            <BattleBlock
-              codeA={codeA}
-              codeB={codeB}
-              colorA={colorA}
-              colorB={colorB}
-              lapsA={d.positionLaps?.[0] ?? []}
-              lapsB={d.positionLaps?.[1] ?? []}
-              statusPhases={d.statusPhases ?? []}
-              swings={d.swings ?? []}
-            />
-          ) : null}
+            {active === "race" && activeView === "traffic" ? (
+              <TrafficBlock
+                codeA={codeA}
+                codeB={codeB}
+                colorA={colorA}
+                colorB={colorB}
+                traffic={d.traffic}
+                trafficLapsA={d.trafficLaps?.[0] ?? []}
+                trafficLapsB={d.trafficLaps?.[1] ?? []}
+              />
+            ) : null}
 
-          {activeView === "cornerData" || activeView === "sprintQualiCornerData" ? (
-            <CornerTelemetryBlock
-              codeA={codeA}
-              codeB={codeB}
-              colorA={colorA}
-              colorB={colorB}
-              sessionLabel={activeCornerLabel}
-              rows={activeCornerRows}
-            />
-          ) : null}
+            {active === "race" && activeView === "battle" ? (
+              <BattleBlock
+                codeA={codeA}
+                codeB={codeB}
+                colorA={colorA}
+                colorB={colorB}
+                lapsA={d.positionLaps?.[0] ?? []}
+                lapsB={d.positionLaps?.[1] ?? []}
+                statusPhases={d.statusPhases ?? []}
+                swings={d.swings ?? []}
+              />
+            ) : null}
 
+            {activeView === "cornerData" || activeView === "sprintQualiCornerData" ? (
+              <CornerTelemetryBlock
+                codeA={codeA}
+                codeB={codeB}
+                colorA={colorA}
+                colorB={colorB}
+                sessionLabel={activeCornerLabel}
+                rows={activeCornerRows}
+              />
+            ) : null}
 
-          {active === "race" && activeView === "circuit" ? (
-            <CornerBlock path={d.trackPath} circuit={d.circuit} />
-          ) : null}
-        </>
-      )}
+            {active === "race" && activeView === "circuit" ? (
+              <CornerBlock path={d.trackPath} circuit={d.circuit} />
+            ) : null}
+          </>
+        )}
+      </div>
     </SiteShell>
   );
 }
@@ -889,10 +923,7 @@ function DriverCard({
           <TeamBadge teamName={teamName} />
         </div>
       </div>
-      <span
-        className="num pw-chip-pop ml-auto text-2xl font-black tabular-nums"
-        style={{ color }}
-      >
+      <span className="num pw-chip-pop ml-auto text-2xl font-black tabular-nums" style={{ color }}>
         {score}
       </span>
     </div>
@@ -982,7 +1013,10 @@ function CornerTelemetryBlock({
   const [metricMode, setMetricMode] = useState<CornerMetricMode>("delta");
   const sorted = rows
     .slice()
-    .sort((a, b) => (a.cornerNumber ?? 999) - (b.cornerNumber ?? 999) || a.segmentId.localeCompare(b.segmentId));
+    .sort(
+      (a, b) =>
+        (a.cornerNumber ?? 999) - (b.cornerNumber ?? 999) || a.segmentId.localeCompare(b.segmentId),
+    );
   const selected = sorted.find((row) => row.segmentId === selectedId) ?? sorted[0] ?? null;
   const aWins = sorted.filter((row) => row.faster === codeA).length;
   const bWins = sorted.filter((row) => row.faster === codeB).length;
@@ -1024,7 +1058,8 @@ function CornerTelemetryBlock({
     : [];
   const hasAbsoluteSpeed = phases.some((phase) => phase.aSpeed != null || phase.bSpeed != null);
   const hasGear = phases.some((phase) => phase.aGear != null || phase.bGear != null);
-  const metricUnavailable = (metricMode === "absolute" && !hasAbsoluteSpeed) || (metricMode === "gear" && !hasGear);
+  const metricUnavailable =
+    (metricMode === "absolute" && !hasAbsoluteSpeed) || (metricMode === "gear" && !hasGear);
 
   return (
     <Panel className="mt-5">
@@ -1034,26 +1069,38 @@ function CornerTelemetryBlock({
           <h2 className="text-lg font-black uppercase italic">Corner comparison</h2>
         </div>
         <div className="num flex gap-2 text-[10px] font-black uppercase">
-          <span style={{ color: colorA }}>{codeA} {aWins}</span>
+          <span style={{ color: colorA }}>
+            {codeA} {aWins}
+          </span>
           <span className="text-muted-foreground">/</span>
-          <span style={{ color: colorB }}>{codeB} {bWins}</span>
+          <span style={{ color: colorB }}>
+            {codeB} {bWins}
+          </span>
         </div>
       </div>
 
       {!sorted.length || !selected ? (
         <div className="rounded-lg border border-border bg-background/40 p-4">
-          <p className="text-sm font-black uppercase italic">Telemetry corner data not loaded yet</p>
+          <p className="text-sm font-black uppercase italic">
+            Telemetry corner data not loaded yet
+          </p>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
             The Vs page is wired for entry speed, apex speed, exit speed, gear, braking and throttle
-            comparison, but this weekend does not have generated analytics rows in Supabase yet.
-            Run the FastF1 telemetry pipeline, build analytics CSVs, then load the optional analytics
+            comparison, but this weekend does not have generated analytics rows in Supabase yet. Run
+            the FastF1 telemetry pipeline, build analytics CSVs, then load the optional analytics
             tables to populate this view.
           </p>
           <div className="mt-3 grid gap-2 sm:grid-cols-3">
-            {["Entry / apex / exit speed", "Entry / apex / exit gear", "Brake / throttle deltas"].map((label) => (
+            {[
+              "Entry / apex / exit speed",
+              "Entry / apex / exit gear",
+              "Brake / throttle deltas",
+            ].map((label) => (
               <div key={label} className="border border-border/70 bg-card/40 p-3">
                 <p className="label-xs">{label}</p>
-                <p className="num mt-1 text-[11px] text-muted-foreground">Waiting for telemetry analytics</p>
+                <p className="num mt-1 text-[11px] text-muted-foreground">
+                  Waiting for telemetry analytics
+                </p>
               </div>
             ))}
           </div>
@@ -1062,7 +1109,12 @@ function CornerTelemetryBlock({
         <div className="grid gap-4 lg:grid-cols-[170px_minmax(0,1fr)]">
           <div className="flex gap-2 overflow-x-auto pb-1 lg:max-h-[520px] lg:flex-col lg:overflow-y-auto lg:overflow-x-hidden lg:pr-1">
             {sorted.map((row) => {
-              const fasterColor = row.faster === codeA ? colorA : row.faster === codeB ? colorB : "var(--muted-foreground)";
+              const fasterColor =
+                row.faster === codeA
+                  ? colorA
+                  : row.faster === codeB
+                    ? colorB
+                    : "var(--muted-foreground)";
               return (
                 <button
                   key={`${row.sessionId}-${row.segmentId}`}
@@ -1090,20 +1142,31 @@ function CornerTelemetryBlock({
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="label-xs">Selected corner</p>
-                    <h3 className="text-4xl font-black uppercase italic leading-none">{selected.label}</h3>
-                    <p className="num mt-1 text-[10px] text-muted-foreground">{selected.segmentId}</p>
+                    <h3 className="text-4xl font-black uppercase italic leading-none">
+                      {selected.label}
+                    </h3>
+                    <p className="num mt-1 text-[10px] text-muted-foreground">
+                      {selected.segmentId}
+                    </p>
                   </div>
-                  <Segmented options={cornerMetricOptions} value={metricMode} onChange={setMetricMode} />
+                  <Segmented
+                    options={cornerMetricOptions}
+                    value={metricMode}
+                    onChange={setMetricMode}
+                  />
                 </div>
 
                 {metricUnavailable ? (
                   <div className="mt-4 rounded-lg border border-border bg-card/40 p-4">
                     <p className="text-sm font-black uppercase italic">
-                      {metricMode === "absolute" ? "Absolute speed unavailable" : "Gear trace unavailable"}
+                      {metricMode === "absolute"
+                        ? "Absolute speed unavailable"
+                        : "Gear trace unavailable"}
                     </p>
                     <p className="mt-2 text-xs text-muted-foreground">
-                      This analytics table has not been reloaded with those fields yet. The same view
-                      will populate automatically after loading regenerated telemetry analytics.
+                      This analytics table has not been reloaded with those fields yet. The same
+                      view will populate automatically after loading regenerated telemetry
+                      analytics.
                     </p>
                   </div>
                 ) : (
@@ -1128,7 +1191,8 @@ function CornerTelemetryBlock({
                     {selected.faster ?? "-"}
                   </p>
                   <p className="num mt-1 text-[10px] text-muted-foreground">
-                    confidence {selected.confidence == null ? "-" : `${fmtNum(selected.confidence * 100, 0)}%`}
+                    confidence{" "}
+                    {selected.confidence == null ? "-" : `${fmtNum(selected.confidence * 100, 0)}%`}
                   </p>
                 </div>
                 {phases.slice(0, 3).map((phase) => (
@@ -1175,8 +1239,9 @@ function CornerTelemetryBlock({
         </div>
       )}
       <p className="mt-3 text-xs text-muted-foreground">
-        Speed deltas are from {codeA}'s perspective. Positive means {codeA} is faster at that point; negative means {codeB} is faster.
-        Corners are approximate telemetry-derived zones until official corner distance mapping is loaded.
+        Speed deltas are from {codeA}'s perspective. Positive means {codeA} is faster at that point;
+        negative means {codeB} is faster. Corners are approximate telemetry-derived zones until
+        official corner distance mapping is loaded.
       </p>
     </Panel>
   );
@@ -1205,7 +1270,11 @@ function CornerMetricChart({
   colorB: string;
 }) {
   const values = phases.flatMap((phase) =>
-    mode === "delta" ? [Math.abs(phase.delta ?? 0)] : mode === "absolute" ? [phase.aSpeed ?? 0, phase.bSpeed ?? 0] : [phase.aGear ?? 0, phase.bGear ?? 0],
+    mode === "delta"
+      ? [Math.abs(phase.delta ?? 0)]
+      : mode === "absolute"
+        ? [phase.aSpeed ?? 0, phase.bSpeed ?? 0]
+        : [phase.aGear ?? 0, phase.bGear ?? 0],
   );
   const max = Math.max(1, ...values);
   return (
@@ -1231,13 +1300,19 @@ function CornerMetricChart({
               <div className="grid grid-cols-[1fr_1px_1fr] items-center gap-1">
                 <span className="h-5 rounded-sm bg-secondary/50">
                   {phase.delta != null && phase.delta > 0 ? (
-                    <span className="ml-auto block h-full rounded-sm" style={{ width: deltaWidth, backgroundColor: colorA }} />
+                    <span
+                      className="ml-auto block h-full rounded-sm"
+                      style={{ width: deltaWidth, backgroundColor: colorA }}
+                    />
                   ) : null}
                 </span>
                 <span className="h-7 bg-border" />
                 <span className="h-5 rounded-sm bg-secondary/50">
                   {phase.delta != null && phase.delta < 0 ? (
-                    <span className="block h-full rounded-sm" style={{ width: deltaWidth, backgroundColor: colorB }} />
+                    <span
+                      className="block h-full rounded-sm"
+                      style={{ width: deltaWidth, backgroundColor: colorB }}
+                    />
                   ) : null}
                 </span>
               </div>
@@ -1247,12 +1322,20 @@ function CornerMetricChart({
                   { code: codeA, color: colorA, value: aValue },
                   { code: codeB, color: colorB, value: bValue },
                 ].map((item) => (
-                  <div key={item.code} className="grid grid-cols-[3rem_minmax(0,1fr)_3.5rem] items-center gap-2">
-                    <span className="num text-[10px] font-black" style={{ color: item.color }}>{item.code}</span>
+                  <div
+                    key={item.code}
+                    className="grid grid-cols-[3rem_minmax(0,1fr)_3.5rem] items-center gap-2"
+                  >
+                    <span className="num text-[10px] font-black" style={{ color: item.color }}>
+                      {item.code}
+                    </span>
                     <span className="h-3 overflow-hidden rounded-sm bg-secondary/50">
                       <span
                         className="block h-full rounded-sm"
-                        style={{ width: `${Math.max(3, ((item.value ?? 0) / max) * 100)}%`, backgroundColor: item.color }}
+                        style={{
+                          width: `${Math.max(3, ((item.value ?? 0) / max) * 100)}%`,
+                          backgroundColor: item.color,
+                        }}
                       />
                     </span>
                     <span className="num text-right text-[10px] text-muted-foreground">
@@ -1399,7 +1482,6 @@ function BattleBlock({
   );
 }
 
-
 /* ------------------------------------------------------------------ */
 /* Circuit                                                             */
 /* ------------------------------------------------------------------ */
@@ -1470,13 +1552,7 @@ function DominanceBlock({
             faster lap time wins the lap
           </span>
         </div>
-        <DominanceSummary
-          laps={laps}
-          codeA={codeA}
-          codeB={codeB}
-          colorA={colorA}
-          colorB={colorB}
-        />
+        <DominanceSummary laps={laps} codeA={codeA} codeB={codeB} colorA={colorA} colorB={colorB} />
         <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
           <div>
             <p className="label-xs">Lap delta strip</p>
@@ -1565,7 +1641,6 @@ function CornerBlock({ path, circuit }: { path: H2H["trackPath"]; circuit: strin
           </div>
         </div>
 
-
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
@@ -1603,7 +1678,9 @@ function CornerBlock({ path, circuit }: { path: H2H["trackPath"]; circuit: strin
                   >
                     <td className="num px-3 py-1.5 text-xs font-bold">C{c.number}</td>
                     <td className="px-3 py-1.5 text-xs font-bold uppercase">{c.type}</td>
-                    <td className="num px-3 py-1.5 text-xs">{c.direction === "left" ? "L" : "R"}</td>
+                    <td className="num px-3 py-1.5 text-xs">
+                      {c.direction === "left" ? "L" : "R"}
+                    </td>
                     <td className="num px-3 py-1.5 text-right text-xs">{c.turnDeg}°</td>
                     <td className="num px-3 py-1.5 text-right text-xs">S{c.sector}</td>
                     <td className="num px-3 py-1.5 text-right text-xs text-muted-foreground">
@@ -1878,7 +1955,6 @@ function PitLossBlock({
     },
   ];
 
-
   return (
     <Panel className="mt-5">
       <div className="mb-3">
@@ -1984,7 +2060,6 @@ function PitLossBlock({
           </p>
         </div>
       )}
-
     </Panel>
   );
 }

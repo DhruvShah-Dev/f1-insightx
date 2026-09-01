@@ -126,8 +126,8 @@ export function CircuitMap({
   compact = false,
 }: {
   path: TrackPath | null;
-  circuitId?: string | null;
-  circuitName?: string | null;
+  circuitId?: string | null | undefined;
+  circuitName?: string | null | undefined;
   className?: string;
   compact?: boolean;
 }) {
@@ -142,7 +142,7 @@ export function CircuitMap({
   );
   const sectorColors =
     (circuitId ?? path?.circuitId) === "monza" ? ITALY_SECTOR_COLORS : DEFAULT_SECTOR_COLORS;
-  const name = circuitName ?? path?.raceName?.replace(/ Grand Prix$/i, "") ?? "Circuit";
+  const name = circuitName ?? "Circuit";
 
   if (!model) {
     return (
@@ -163,60 +163,68 @@ export function CircuitMap({
   return (
     <div className={`overflow-hidden border border-border bg-background ${className ?? ""}`}>
       <div className={compact ? "relative min-h-[330px]" : "relative min-h-[460px]"}>
-      <div className={`absolute inset-x-0 top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background ${compact ? "px-3 py-2" : "px-4 py-3"}`}>
-        <div>
-          <p className="label-xs">{name} circuit</p>
-          <p className={compact ? "text-xs font-black uppercase italic" : "text-sm font-black uppercase italic"}>
-            {corners.length ? `${corners.length} turns - ` : ""}3 sectors
-          </p>
+        <div
+          className={`absolute inset-x-0 top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background ${compact ? "px-3 py-2" : "px-4 py-3"}`}
+        >
+          <div>
+            <p className="label-xs">{name} circuit</p>
+            <p
+              className={
+                compact
+                  ? "text-xs font-black uppercase italic"
+                  : "text-sm font-black uppercase italic"
+              }
+            >
+              {corners.length ? `${corners.length} turns - ` : ""}3 sectors
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            {sectorColors.map((color, index) => (
+              <span key={color} className="flex items-center gap-1.5">
+                <span className="h-[3px] w-5" style={{ backgroundColor: color }} />
+                <span className="label-xs">S{index + 1}</span>
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-3">
-          {sectorColors.map((color, index) => (
-            <span key={color} className="flex items-center gap-1.5">
-              <span className="h-[3px] w-5" style={{ backgroundColor: color }} />
-              <span className="label-xs">S{index + 1}</span>
-            </span>
-          ))}
-        </div>
-      </div>
 
-      <svg
-        viewBox={model.viewBox}
-        className={compact ? "h-[330px] w-full pt-7" : "h-[390px] w-full pt-8 sm:h-[460px]"}
-        role="img"
-        aria-label={`Interactive ${name} circuit map with corner numbers and sectors`}
-      >
-        <g transform={`rotate(${model.rotation} ${model.center.x} ${model.center.y})`}>
-          <path
-            d={model.full}
-            fill="none"
-            stroke="var(--border)"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={22}
-            opacity={0.6}
-          />
-          {model.sectors.map((sector, index) => (
+        <svg
+          viewBox={model.viewBox}
+          className={compact ? "h-[330px] w-full pt-7" : "h-[390px] w-full pt-8 sm:h-[460px]"}
+          role="img"
+          aria-label={`Interactive ${name} circuit map with corner numbers and sectors`}
+        >
+          <g transform={`rotate(${model.rotation} ${model.center.x} ${model.center.y})`}>
             <path
-              key={sector}
-              d={sector}
+              d={model.full}
               fill="none"
-              stroke={sectorColors[index]}
+              stroke="var(--border)"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={13}
+              strokeWidth={22}
+              opacity={0.6}
             />
-          ))}
-          <line
-            x1={model.start.x - 16}
-            y1={model.start.y - 4}
-            x2={model.start.x + 16}
-            y2={model.start.y + 4}
-            stroke="#ffffff"
-            strokeLinecap="round"
-            strokeWidth={5}
-          />
-        </g>
+            {model.sectors.map((sector, index) => (
+              <path
+                key={sector}
+                d={sector}
+                fill="none"
+                stroke={sectorColors[index]}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={13}
+              />
+            ))}
+            <line
+              x1={model.start.x - 16}
+              y1={model.start.y - 4}
+              x2={model.start.x + 16}
+              y2={model.start.y + 4}
+              stroke="#ffffff"
+              strokeLinecap="round"
+              strokeWidth={5}
+            />
+          </g>
 
           {rotatedCorners.map(({ corner, point }) => {
             const isActive = activeCorner?.number === corner.number;
@@ -316,18 +324,18 @@ export function CircuitMap({
               })()}
             </g>
           ) : null}
-      </svg>
+        </svg>
 
-      <div className="border-t border-border bg-card/40 px-4 py-3">
-        <p className="label-xs">Hover or focus a number</p>
-        {activeCorner ? (
-          <p className="mt-1 text-sm font-bold uppercase">
-            T{activeCorner.number} - {activeCorner.name}
-          </p>
-        ) : (
-          <p className="mt-1 text-sm font-bold uppercase">Corner labels unavailable</p>
-        )}
-      </div>
+        <div className="border-t border-border bg-card/40 px-4 py-3">
+          <p className="label-xs">Hover or focus a number</p>
+          {activeCorner ? (
+            <p className="mt-1 text-sm font-bold uppercase">
+              T{activeCorner.number} - {activeCorner.name}
+            </p>
+          ) : (
+            <p className="mt-1 text-sm font-bold uppercase">Corner labels unavailable</p>
+          )}
+        </div>
       </div>
     </div>
   );

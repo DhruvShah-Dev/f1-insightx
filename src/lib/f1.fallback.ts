@@ -35,10 +35,10 @@ const DRIVER_ID_BY_CODE: Record<string, string> = {
   VER: "max_verstappen",
 };
 
-const codeToDriverId = (code: string) => DRIVER_ID_BY_CODE[code.toUpperCase()] ?? code.toLowerCase();
+const codeToDriverId = (code: string) =>
+  DRIVER_ID_BY_CODE[code.toUpperCase()] ?? code.toLowerCase();
 
-const driverName = (code: string) =>
-  driverStandings.find((d) => d.code === code)?.name ?? code;
+const driverName = (code: string) => driverStandings.find((d) => d.code === code)?.name ?? code;
 
 const constructorName = (key: string) => team(key).name;
 const fallbackCircuitId = "monza";
@@ -242,7 +242,8 @@ export function fallbackRaceReports() {
       strategyFactor: r.strategy,
       positionFactor: null,
       confidence: "fallback",
-      weakestAssumption: "Committed static fallback; regenerate or connect Supabase for source-backed reports.",
+      weakestAssumption:
+        "Committed static fallback; regenerate or connect Supabase for source-backed reports.",
     })),
   };
 }
@@ -277,8 +278,9 @@ export function fallbackWeekendIndex(season = seasonState.season) {
 export function fallbackRaceReport(slug: string) {
   const row = staticRaceReports.find((r) => r.slug === slug) ?? staticRaceReports[0];
   if (!row) return { report: null, stints: [], positions: [] };
+  const report = fallbackRaceReports().reports.find((r) => r.slug === row.slug)!;
   return {
-    report: fallbackRaceReports().reports.find((r) => r.slug === row.slug) ?? null,
+    report,
     stints: row.stints.map((s, index) => ({
       driver: s.code,
       team: constructorName(s.team),
@@ -306,10 +308,13 @@ export function fallbackWeekend(slug: string) {
   return {
     slug: report.slug,
     resultsOnly: true,
+    raceId: report.slug,
     name: report.name,
     season: seasonState.season,
     round: report.round,
+    circuitId: report.circuit.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
     dateISO: report.dateISO,
+    scheduledAt: report.dateISO,
     circuit: report.circuit,
     sprintWeekend: false,
     quality: null,
@@ -321,10 +326,14 @@ export function fallbackWeekend(slug: string) {
       team: report.winnerTeam,
     },
     summary: {
+      podium: report.podium,
       raceShape: report.raceShape,
+      story: report.story,
+      weather: report.weather,
       strategy: report.strategy,
       compoundPath: report.compoundPath,
       confidence: report.confidence,
+      weakestAssumption: report.weakestAssumption,
       paceFactor: report.paceFactor,
       strategyFactor: report.strategyFactor,
       positionFactor: report.positionFactor,
@@ -340,15 +349,23 @@ export function fallbackWeekend(slug: string) {
       status: "classified",
       laps: null,
       points: index === 0 ? 25 : index === 1 ? 18 : 15,
+      fastestLapRank: null,
     })),
     positions: [],
     pace: [],
     stints: fallbackRaceReport(slug).stints.map((s) => ({
       code: s.driver,
+      name: driverName(s.driver),
       team: s.team,
+      stint: s.stint,
       compound: s.compound,
       startLap: s.startLap,
       endLap: s.endLap,
+      length: s.length,
+      medianS: s.medianLapS,
+      bestS: null,
+      degS: s.degS,
+      quality: null,
     })),
     pits: [],
     stories: [
@@ -357,6 +374,10 @@ export function fallbackWeekend(slug: string) {
         phase: "result",
         title: "Local snapshot report",
         summary: report.story,
+        drivers: null,
+        metric: null,
+        impact: null,
+        confidence: report.confidence,
       },
     ],
     statusPhases: [],
@@ -443,6 +464,7 @@ export function fallbackHeadToHead(slug: string, a: string, b: string) {
       status: "fallback",
       laps: null,
       points: null,
+      fastestLapRank: null,
     })),
     positions: [null, null],
     pace: [null, null],
@@ -450,11 +472,50 @@ export function fallbackHeadToHead(slug: string, a: string, b: string) {
     pits: [[], []],
     laps: [[], []],
     traffic: [
-      { code: a.toUpperCase(), cleanAirLaps: 0, trafficLaps: 0, uncertainLaps: 0, cleanAirPaceS: null, trafficPaceS: null, dirtyAirCostS: null, worstDirtyAirS: null },
-      { code: b.toUpperCase(), cleanAirLaps: 0, trafficLaps: 0, uncertainLaps: 0, cleanAirPaceS: null, trafficPaceS: null, dirtyAirCostS: null, worstDirtyAirS: null },
+      {
+        code: a.toUpperCase(),
+        cleanAirLaps: 0,
+        trafficLaps: 0,
+        uncertainLaps: 0,
+        cleanAirPaceS: null,
+        trafficPaceS: null,
+        dirtyAirCostS: null,
+        worstDirtyAirS: null,
+      },
+      {
+        code: b.toUpperCase(),
+        cleanAirLaps: 0,
+        trafficLaps: 0,
+        uncertainLaps: 0,
+        cleanAirPaceS: null,
+        trafficPaceS: null,
+        dirtyAirCostS: null,
+        worstDirtyAirS: null,
+      },
+    ] as [
+      {
+        code: string;
+        cleanAirLaps: number;
+        trafficLaps: number;
+        uncertainLaps: number;
+        cleanAirPaceS: null;
+        trafficPaceS: null;
+        dirtyAirCostS: null;
+        worstDirtyAirS: null;
+      },
+      {
+        code: string;
+        cleanAirLaps: number;
+        trafficLaps: number;
+        uncertainLaps: number;
+        cleanAirPaceS: null;
+        trafficPaceS: null;
+        dirtyAirCostS: null;
+        worstDirtyAirS: null;
+      },
     ],
-    trafficLaps: [[], []],
-    positionLaps: [[], []],
+    trafficLaps: [[], []] as [[], []],
+    positionLaps: [[], []] as [[], []],
     swings: [],
     cornerComparisons: [],
     statusPhases: [],

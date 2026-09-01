@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
 import { RaceFlagHero } from "@/components/race-flag-hero";
 import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
+import { countryForRace, countryTheme } from "@/data/country-theme";
 import { team } from "@/data/teams";
 import { fmtDate } from "@/lib/format";
 import { getWeekendIndex } from "@/lib/f1.functions";
@@ -79,239 +80,283 @@ function AnalysisIndex() {
   const [activeRound, setActiveRound] = useState<number | null>(
     analysed.length ? analysed[analysed.length - 1]!.round : null,
   );
-  const active = rail.find((w) => w.round === activeRound) ?? rail.find((w) => w.hasRace) ?? rail[0];
+  const active =
+    rail.find((w) => w.round === activeRound) ?? rail.find((w) => w.hasRace) ?? rail[0];
   const activeTeam = team(active?.winnerTeam);
+  const activeTheme = countryTheme(
+    countryForRace({
+      circuitId: active?.circuitId,
+      circuit: active?.circuit,
+      raceName: active?.name,
+    }),
+  );
+  const activeThemeStyle = {
+    "--primary": activeTheme.accent,
+    "--ring": activeTheme.accent,
+    "--race-country-accent": activeTheme.accent,
+  } as CSSProperties;
 
   const maxWins = Math.max(1, ...wins.map((w) => w.n));
 
   return (
     <SiteShell fullWidth>
-      <RaceFlagHero
-        kicker={`${data.season} season`}
-        title="Weekend analysis"
-        meta="Stored qualifying, sprint and race reports by round."
-        stats={[
-          { label: "Reports", value: String(analysed.length), note: "race weekends analysed" },
-          { label: "Sprints", value: String(all.filter((w) => w.hasSprint).length), note: "sprint formats stored" },
-          { label: "Winners", value: String(new Set(analysed.map((w) => w.winnerCode)).size) },
-          { label: "Remaining", value: String(all.length - analysed.length), note: "rounds not yet analysed" },
-        ]}
-      />
-
-      <section className="mt-8">
-        <SectionHeading
-          kicker="Pick a round"
-          title="Season rail"
-          action={
-            <input
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="Search GP / circuit"
-              aria-label="Search weekends"
-              className="num w-40 rounded border border-border bg-background/60 px-2 py-1 text-[11px] outline-none focus:border-primary sm:w-52"
-            />
+      <div style={activeThemeStyle}>
+        <RaceFlagHero
+          kicker={`${data.season} season`}
+          title={active?.name ?? "Weekend analysis"}
+          meta={
+            active
+              ? `${active.circuit} / stored qualifying, sprint and race report`
+              : "Stored qualifying, sprint and race reports by round."
           }
+          flag={activeTheme.flag}
+          stats={[
+            { label: "Reports", value: String(analysed.length), note: "race weekends analysed" },
+            {
+              label: "Sprints",
+              value: String(all.filter((w) => w.hasSprint).length),
+              note: "sprint formats stored",
+            },
+            { label: "Winners", value: String(new Set(analysed.map((w) => w.winnerCode)).size) },
+            {
+              label: "Remaining",
+              value: String(all.length - analysed.length),
+              note: "rounds not yet analysed",
+            },
+          ]}
         />
-        <div className="flex flex-wrap items-center gap-1.5">
-          {(
-            [
-              { k: "all", l: "All rounds" },
-              { k: "sprint", l: "Sprint" },
-              { k: "pending", l: "Not analysed" },
-            ] as { k: Filter; l: string }[]
-          ).map((f) => (
-            <button
-              key={f.k}
-              type="button"
-              onClick={() => setFilter(f.k)}
-              aria-pressed={filter === f.k}
-              className={`num rounded-sm border px-2.5 py-1 text-[10px] font-black uppercase tracking-wider transition-colors ${
-                filter === f.k
-                  ? "border-primary bg-primary/15 text-foreground"
-                  : "border-border text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {f.l}
-            </button>
-          ))}
-          {teamKey ? (
-            <button
-              type="button"
-              onClick={() => setTeamKey(null)}
-              className="num rounded-sm border border-primary/60 px-2.5 py-1 text-[10px] font-black uppercase text-primary"
-            >
-              Clear team ×
-            </button>
-          ) : null}
-        </div>
 
-        <div className="mt-3 flex gap-1.5 overflow-x-auto pb-2">
-          {rail.map((w) => {
-            const t = team(w.winnerTeam);
-            const on = active?.round === w.round;
-            return (
+        <section className="mt-8">
+          <SectionHeading
+            kicker="Pick a round"
+            title="Season rail"
+            action={
+              <input
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Search GP / circuit"
+                aria-label="Search weekends"
+                className="num w-40 rounded border border-border bg-background/60 px-2 py-1 text-[11px] outline-none focus:border-primary sm:w-52"
+              />
+            }
+          />
+          <div className="flex flex-wrap items-center gap-1.5">
+            {(
+              [
+                { k: "all", l: "All rounds" },
+                { k: "sprint", l: "Sprint" },
+                { k: "pending", l: "Not analysed" },
+              ] as { k: Filter; l: string }[]
+            ).map((f) => (
               <button
-                key={w.raceId}
+                key={f.k}
                 type="button"
-                onClick={() => setActiveRound(w.round)}
-                aria-pressed={on}
-                title={w.name}
-                className={`num shrink-0 rounded-md border px-3 py-2 text-left transition-all ${
-                  on ? "border-primary bg-primary/10" : "border-border hover:border-primary/50"
-                } ${w.hasRace ? "" : "opacity-50"}`}
-                style={{ borderBottom: `3px solid ${w.hasRace ? t.color : "transparent"}` }}
+                onClick={() => setFilter(f.k)}
+                aria-pressed={filter === f.k}
+                className={`num rounded-sm border px-2.5 py-1 text-[10px] font-black uppercase tracking-wider transition-colors ${
+                  filter === f.k
+                    ? "border-primary bg-primary/15 text-foreground"
+                    : "border-border text-muted-foreground hover:text-foreground"
+                }`}
               >
-                <span className="block text-[9px] uppercase text-muted-foreground">R{w.round}</span>
-                <span className="block text-[11px] font-black uppercase">
-                  {w.circuit.split(" ")[0]}
-                </span>
+                {f.l}
               </button>
-            );
-          })}
-          {rail.length === 0 ? (
-            <p className="num py-4 text-xs text-muted-foreground">No round matches those filters.</p>
-          ) : null}
-        </div>
-      </section>
-
-      {active ? (
-        <section
-          key={active.raceId}
-          className="pw-flip-in mt-4 overflow-hidden rounded-xl border border-border bg-card/50"
-          style={{ borderTop: `3px solid ${activeTeam.color}` }}
-        >
-          <div className="grid gap-5 p-5 lg:grid-cols-[1.5fr_1fr]">
-            <div>
-              <p className="label-xs">
-                Round {active.round} · {active.scheduledAt ? fmtDate(active.scheduledAt) : "TBC"}
-              </p>
-              <h2 className="mt-1 text-2xl font-black uppercase italic tracking-tighter sm:text-3xl">
-                {active.name}
-              </h2>
-              <p className="num mt-1 text-[11px] text-muted-foreground">{active.circuit}</p>
-
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {[
-                  { k: "Quali", on: active.hasQuali },
-                  { k: "Sprint", on: active.hasSprint },
-                  { k: "Race", on: active.hasRace },
-                ].map((x) => (
-                  <span
-                    key={x.k}
-                    className={`num rounded border px-1.5 py-0.5 text-[10px] uppercase ${
-                      x.on
-                        ? "border-primary/50 bg-primary/10 text-foreground"
-                        : "border-border text-muted-foreground line-through"
-                    }`}
-                  >
-                    {x.k}
-                  </span>
-                ))}
-                {active.resultsOnly ? (
-                  <span className="num rounded border border-border bg-card/60 px-1.5 py-0.5 text-[10px] uppercase text-muted-foreground">
-                    Results only · no telemetry
-                  </span>
-                ) : null}
-              </div>
-
-
-              {active.story ? (
-                <p className="mt-4 line-clamp-3 max-w-xl text-xs leading-relaxed text-muted-foreground">
-                  {active.story}
-                </p>
-              ) : null}
-
-              {active.hasRace && active.slug ? (
-                <Link
-                  to="/analysis/$slug"
-                  params={{ slug: active.slug }}
-                  className="num mt-4 inline-flex items-center gap-2 rounded-sm bg-primary px-3 py-2 text-[11px] font-black uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.03]"
-                >
-                  Open full report →
-                </Link>
-              ) : (
-                <p className="num mt-4 text-[11px] text-muted-foreground">
-                  Not analysed yet — no stored session data.
-                </p>
-              )}
-            </div>
-
-            <div className="rounded-lg border border-border bg-background/40 p-4">
-              {active.hasRace ? (
-                <>
-                  <p className="label-xs">Winner</p>
-                  <div className="mt-2 flex items-center gap-3">
-                    <DriverAvatar
-                      code={active.winnerCode ?? "—"}
-                      teamName={active.winnerTeam}
-                      size="lg"
-                    />
-                    <div>
-                      <p className="text-sm font-black uppercase italic">
-                        {active.winnerName ?? active.winnerCode ?? "—"}
-                      </p>
-                      <TeamBadge teamName={active.winnerTeam} />
-                    </div>
-                  </div>
-                  {active.podium.length ? (
-                    <div className="mt-4 space-y-1">
-                      <p className="label-xs">Podium</p>
-                      {active.podium.map((p, i) => (
-                        <div key={p} className="flex items-center gap-2">
-                          <span className="num w-4 text-[10px] text-muted-foreground">P{i + 1}</span>
-                          <span
-                            className="h-2.5 rounded-sm bg-primary"
-                            style={{ width: `${[64, 44, 28][i] ?? 20}%`, opacity: 1 - i * 0.25 }}
-                          />
-                          <span className="num text-[11px] font-black uppercase">{p}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ) : null}
-                </>
-              ) : (
-                <p className="num text-[11px] text-muted-foreground">
-                  Awaiting session data for this round.
-                </p>
-              )}
-            </div>
+            ))}
+            {teamKey ? (
+              <button
+                type="button"
+                onClick={() => setTeamKey(null)}
+                className="num rounded-sm border border-primary/60 px-2.5 py-1 text-[10px] font-black uppercase text-primary"
+              >
+                Clear team ×
+              </button>
+            ) : null}
           </div>
-        </section>
-      ) : null}
 
-      {wins.length ? (
-        <section className="mt-10">
-          <SectionHeading kicker="Tap to filter the rail" title="Wins by team" />
-          <div className="space-y-1.5">
-            {wins.map((t, i) => {
-              const on = teamKey === t.key;
+          <div className="mt-3 flex gap-1.5 overflow-x-auto pb-2">
+            {rail.map((w) => {
+              const t = team(w.winnerTeam);
+              const on = active?.round === w.round;
               return (
                 <button
-                  key={t.key}
+                  key={w.raceId}
                   type="button"
-                  onClick={() => setTeamKey(on ? null : t.key)}
+                  onClick={() => setActiveRound(w.round)}
                   aria-pressed={on}
-                  className={`pw-ticker flex w-full items-center gap-2 rounded px-1.5 py-1 text-left transition-colors ${
-                    on ? "bg-accent/50" : "hover:bg-accent/30"
-                  }`}
-                  style={{ animationDelay: `${Math.min(i, 12) * 30}ms` }}
+                  title={w.name}
+                  className={`num shrink-0 rounded-md border px-3 py-2 text-left transition-all ${
+                    on ? "border-white/30 text-white" : "border-border hover:border-primary/50"
+                  } ${w.hasRace ? "" : "opacity-50"}`}
+                  style={{
+                    backgroundColor: on
+                      ? countryTheme(
+                          countryForRace({
+                            circuitId: w.circuitId,
+                            circuit: w.circuit,
+                            raceName: w.name,
+                          }),
+                        ).flag[0]
+                      : undefined,
+                    borderBottom: `3px solid ${w.hasRace ? t.color : "transparent"}`,
+                  }}
                 >
-                  <span className="num w-24 shrink-0 text-[11px] font-black uppercase">
-                    {t.name}
+                  <span className="block text-[9px] uppercase text-muted-foreground">
+                    R{w.round}
                   </span>
-                  <span className="relative h-4 flex-1 overflow-hidden rounded-sm bg-secondary/50">
-                    <span
-                      className="absolute inset-y-0 left-0 rounded-sm transition-[width] duration-500"
-                      style={{ width: `${(t.n / maxWins) * 100}%`, backgroundColor: t.color }}
-                    />
+                  <span className="block text-[11px] font-black uppercase">
+                    {w.circuit.split(" ")[0]}
                   </span>
-                  <span className="num w-6 text-right text-[11px] font-bold">{t.n}</span>
                 </button>
               );
             })}
+            {rail.length === 0 ? (
+              <p className="num py-4 text-xs text-muted-foreground">
+                No round matches those filters.
+              </p>
+            ) : null}
           </div>
         </section>
-      ) : null}
+
+        {active ? (
+          <section
+            key={active.raceId}
+            className="pw-flip-in mt-4 overflow-hidden rounded-xl border border-border bg-card/50"
+            style={{ borderTop: `3px solid ${activeTeam.color}` }}
+          >
+            <div className="grid gap-5 p-5 lg:grid-cols-[1.5fr_1fr]">
+              <div>
+                <p className="label-xs">
+                  Round {active.round} · {active.scheduledAt ? fmtDate(active.scheduledAt) : "TBC"}
+                </p>
+                <h2 className="mt-1 text-2xl font-black uppercase italic tracking-tighter sm:text-3xl">
+                  {active.name}
+                </h2>
+                <p className="num mt-1 text-[11px] text-muted-foreground">{active.circuit}</p>
+
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {[
+                    { k: "Quali", on: active.hasQuali },
+                    { k: "Sprint", on: active.hasSprint },
+                    { k: "Race", on: active.hasRace },
+                  ].map((x) => (
+                    <span
+                      key={x.k}
+                      className={`num rounded border px-1.5 py-0.5 text-[10px] uppercase ${
+                        x.on
+                          ? "border-primary/50 bg-primary/10 text-foreground"
+                          : "border-border text-muted-foreground line-through"
+                      }`}
+                    >
+                      {x.k}
+                    </span>
+                  ))}
+                  {active.resultsOnly ? (
+                    <span className="num rounded border border-border bg-card/60 px-1.5 py-0.5 text-[10px] uppercase text-muted-foreground">
+                      Results only · no telemetry
+                    </span>
+                  ) : null}
+                </div>
+
+                {active.story ? (
+                  <p className="mt-4 line-clamp-3 max-w-xl text-xs leading-relaxed text-muted-foreground">
+                    {active.story}
+                  </p>
+                ) : null}
+
+                {active.hasRace && active.slug ? (
+                  <Link
+                    to="/analysis/$slug"
+                    params={{ slug: active.slug }}
+                    className="num mt-4 inline-flex items-center gap-2 rounded-sm bg-primary px-3 py-2 text-[11px] font-black uppercase tracking-wider text-primary-foreground transition-transform hover:scale-[1.03]"
+                  >
+                    Open full report →
+                  </Link>
+                ) : (
+                  <p className="num mt-4 text-[11px] text-muted-foreground">
+                    Not analysed yet — no stored session data.
+                  </p>
+                )}
+              </div>
+
+              <div className="rounded-lg border border-border bg-background/40 p-4">
+                {active.hasRace ? (
+                  <>
+                    <p className="label-xs">Winner</p>
+                    <div className="mt-2 flex items-center gap-3">
+                      <DriverAvatar
+                        code={active.winnerCode ?? "—"}
+                        teamName={active.winnerTeam}
+                        size="lg"
+                      />
+                      <div>
+                        <p className="text-sm font-black uppercase italic">
+                          {active.winnerName ?? active.winnerCode ?? "—"}
+                        </p>
+                        <TeamBadge teamName={active.winnerTeam} />
+                      </div>
+                    </div>
+                    {active.podium.length ? (
+                      <div className="mt-4 space-y-1">
+                        <p className="label-xs">Podium</p>
+                        {active.podium.map((p, i) => (
+                          <div key={p} className="flex items-center gap-2">
+                            <span className="num w-4 text-[10px] text-muted-foreground">
+                              P{i + 1}
+                            </span>
+                            <span
+                              className="h-2.5 rounded-sm bg-primary"
+                              style={{ width: `${[64, 44, 28][i] ?? 20}%`, opacity: 1 - i * 0.25 }}
+                            />
+                            <span className="num text-[11px] font-black uppercase">{p}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+                  </>
+                ) : (
+                  <p className="num text-[11px] text-muted-foreground">
+                    Awaiting session data for this round.
+                  </p>
+                )}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {wins.length ? (
+          <section className="mt-10">
+            <SectionHeading kicker="Tap to filter the rail" title="Wins by team" />
+            <div className="space-y-1.5">
+              {wins.map((t, i) => {
+                const on = teamKey === t.key;
+                return (
+                  <button
+                    key={t.key}
+                    type="button"
+                    onClick={() => setTeamKey(on ? null : t.key)}
+                    aria-pressed={on}
+                    className={`pw-ticker flex w-full items-center gap-2 rounded px-1.5 py-1 text-left transition-colors ${
+                      on ? "bg-accent/50" : "hover:bg-accent/30"
+                    }`}
+                    style={{ animationDelay: `${Math.min(i, 12) * 30}ms` }}
+                  >
+                    <span className="num w-24 shrink-0 text-[11px] font-black uppercase">
+                      {t.name}
+                    </span>
+                    <span className="relative h-4 flex-1 overflow-hidden rounded-sm bg-secondary/50">
+                      <span
+                        className="absolute inset-y-0 left-0 rounded-sm transition-[width] duration-500"
+                        style={{ width: `${(t.n / maxWins) * 100}%`, backgroundColor: t.color }}
+                      />
+                    </span>
+                    <span className="num w-6 text-right text-[11px] font-bold">{t.n}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        ) : null}
+      </div>
     </SiteShell>
   );
 }

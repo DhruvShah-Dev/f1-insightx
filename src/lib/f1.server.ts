@@ -158,10 +158,17 @@ export async function fetchRaceWeek() {
   const [{ data: raceRows }, { data: circuitRows }, idx] = await Promise.all([
     sb
       .from("races")
-      .select("id, season, round, race_name, official_name, circuit_id, scheduled_at, sprint_weekend")
+      .select(
+        "id, season, round, race_name, official_name, circuit_id, scheduled_at, sprint_weekend",
+      )
       .eq("season", SEASON)
       .order("round", { ascending: true }),
-    sb.from("circuits").select("id, name, location, country, track_length_km, high_speed_bias, overtake_difficulty, tire_degradation_bias").limit(200),
+    sb
+      .from("circuits")
+      .select(
+        "id, name, location, country, track_length_km, high_speed_bias, overtake_difficulty, tire_degradation_bias",
+      )
+      .limit(200),
     driverIndex(sb),
   ]);
 
@@ -174,44 +181,62 @@ export async function fetchRaceWeek() {
   const raceId = String(race["id"]);
   const circuitId = String(race["circuit_id"]);
 
-  const [board, cons, strat, stories, weather, overview, projection, quali, ctx, path, history, standings] =
-    await Promise.all([
-      sb.from("race_week_driver_board").select("*").eq("season", SEASON).eq("round", round),
-      sb.from("race_week_constructor_board").select("*").eq("season", SEASON).eq("round", round),
-      sb.from("race_week_strategy").select("*").eq("season", SEASON).eq("round", round),
-      sb
-        .from("race_week_storylines")
-        .select("*")
-        .eq("season", SEASON)
-        .eq("round", round)
-        .order("priority_rank", { ascending: true }),
-      sb.from("weather_risk_summary").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
-      sb.from("race_week_overview").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
-      sb.from("race_projection").select("*").eq("season", SEASON).eq("round", round),
-      sb
-        .from("spain_qualifying_prediction")
-        .select("*")
-        .eq("season", SEASON)
-        .eq("round", round)
-        .eq("prediction_mode", "baseline")
-        .order("predicted_q_rank", { ascending: true }),
-      sb.from("race_week_context").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
-      fetchTrackPath(sb, circuitId),
-      sb
-        .from("race_analysis_index")
-        .select("race_analysis_id, season, round, race_name, circuit, winner, winner_team, race_date")
-        .eq("circuit", circuitId)
-        .limit(20),
-      sb
-        .from("driver_standings")
-        .select("driver_id, constructor_id, standing_position, points, wins, round")
-        .eq("season", SEASON)
-        .order("round", { ascending: false })
-        .limit(200),
-    ]);
+  const [
+    board,
+    cons,
+    strat,
+    stories,
+    weather,
+    overview,
+    projection,
+    quali,
+    ctx,
+    path,
+    history,
+    standings,
+  ] = await Promise.all([
+    sb.from("race_week_driver_board").select("*").eq("season", SEASON).eq("round", round),
+    sb.from("race_week_constructor_board").select("*").eq("season", SEASON).eq("round", round),
+    sb.from("race_week_strategy").select("*").eq("season", SEASON).eq("round", round),
+    sb
+      .from("race_week_storylines")
+      .select("*")
+      .eq("season", SEASON)
+      .eq("round", round)
+      .order("priority_rank", { ascending: true }),
+    sb
+      .from("weather_risk_summary")
+      .select("*")
+      .eq("season", SEASON)
+      .eq("round", round)
+      .maybeSingle(),
+    sb.from("race_week_overview").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
+    sb.from("race_projection").select("*").eq("season", SEASON).eq("round", round),
+    sb
+      .from("spain_qualifying_prediction")
+      .select("*")
+      .eq("season", SEASON)
+      .eq("round", round)
+      .eq("prediction_mode", "baseline")
+      .order("predicted_q_rank", { ascending: true }),
+    sb.from("race_week_context").select("*").eq("season", SEASON).eq("round", round).maybeSingle(),
+    fetchTrackPath(sb, circuitId),
+    sb
+      .from("race_analysis_index")
+      .select("race_analysis_id, season, round, race_name, circuit, winner, winner_team, race_date")
+      .eq("circuit", circuitId)
+      .limit(20),
+    sb
+      .from("driver_standings")
+      .select("driver_id, constructor_id, standing_position, points, wins, round")
+      .eq("season", SEASON)
+      .order("round", { ascending: false })
+      .limit(200),
+  ]);
 
   const { byId } = idx;
-  const ident = (id: string) => byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
+  const ident = (id: string) =>
+    byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
 
   const bestOf = (rows: Row[], key: string) => {
     const vals = (rows ?? []).map((r) => num(r[key])).filter((v): v is number => v != null);
@@ -414,28 +439,38 @@ export async function fetchRaceWeek() {
 
 export async function fetchWeekendIndex(season: number) {
   const sb = serverClient();
-  const [{ data: races }, { data: idx }, { data: sums }, { data: sprints }, { data: quali }, { data: podiums }] =
-    await Promise.all([
-      sb
-        .from("races")
-        .select("id, season, round, race_name, circuit_id, scheduled_at, sprint_weekend")
-        .eq("season", season)
-        .order("round", { ascending: true }),
-      sb
-        .from("race_analysis_index")
-        .select("race_analysis_id, season, round, race_name, circuit, race_date, winner, winner_team, analysis_quality_score")
-        .eq("season", String(season)),
-      sb.from("race_analysis_summary").select("race_analysis_id, podium, dominant_strategy, race_shape, primary_story"),
-      sb.from("sprint_results").select("race_id").limit(1000),
-      sb.from("qualifying_results").select("race_id").limit(1000),
-      sb
-        .from("race_results")
-        .select("race_id, driver_id, constructor_id, finish_position")
-        .like("race_id", `${season}-%`)
-        .lte("finish_position", 3)
-        .order("finish_position", { ascending: true })
-        .limit(1000),
-    ]);
+  const [
+    { data: races },
+    { data: idx },
+    { data: sums },
+    { data: sprints },
+    { data: quali },
+    { data: podiums },
+  ] = await Promise.all([
+    sb
+      .from("races")
+      .select("id, season, round, race_name, circuit_id, scheduled_at, sprint_weekend")
+      .eq("season", season)
+      .order("round", { ascending: true }),
+    sb
+      .from("race_analysis_index")
+      .select(
+        "race_analysis_id, season, round, race_name, circuit, race_date, winner, winner_team, analysis_quality_score",
+      )
+      .eq("season", String(season)),
+    sb
+      .from("race_analysis_summary")
+      .select("race_analysis_id, podium, dominant_strategy, race_shape, primary_story"),
+    sb.from("sprint_results").select("race_id").limit(1000),
+    sb.from("qualifying_results").select("race_id").limit(1000),
+    sb
+      .from("race_results")
+      .select("race_id, driver_id, constructor_id, finish_position")
+      .like("race_id", `${season}-%`)
+      .lte("finish_position", 3)
+      .order("finish_position", { ascending: true })
+      .limit(1000),
+  ]);
 
   const { byId, byCode } = await driverIndex(sb);
   const byRound = new Map<number, Row>();
@@ -484,7 +519,10 @@ export async function fetchWeekendIndex(season: number) {
         winnerName: winner ? (ident(winner)?.name ?? winner) : null,
         winnerTeam: a ? str(a["winner_team"]) : (podiumRows[0]?.team ?? null),
         podium: s
-          ? String(s["podium"] ?? "").split(",").map((x) => x.trim()).filter(Boolean)
+          ? String(s["podium"] ?? "")
+              .split(",")
+              .map((x) => x.trim())
+              .filter(Boolean)
           : podiumRows.map((p) => p.code),
         strategy: s ? str(s["dominant_strategy"]) : null,
         raceShape: s ? str(s["race_shape"]) : null,
@@ -495,13 +533,11 @@ export async function fetchWeekendIndex(season: number) {
       };
     }),
   };
-
 }
 
 /* ------------------------------------------------------------------ */
 /* Weekend detail                                                      */
 /* ------------------------------------------------------------------ */
-
 
 /** race_analysis_pace_evolution can exceed the 1000-row API cap, so page through it. */
 async function fetchAllPaceRows(sb: SB, slug: string) {
@@ -570,7 +606,6 @@ export async function fetchWeekend(slug: string) {
   const raceId = `${season}-${String(round).padStart(2, "0")}-${String(head["circuit"])}`;
   const circuitId = String(head["circuit"]);
 
-
   const [
     idx,
     { data: raceRow },
@@ -596,12 +631,16 @@ export async function fetchWeekend(slug: string) {
       .order("position", { ascending: true }),
     sb
       .from("sprint_results")
-      .select("driver_id, constructor_id, grid_position, finish_position, points, laps_completed, finish_status")
+      .select(
+        "driver_id, constructor_id, grid_position, finish_position, points, laps_completed, finish_status",
+      )
       .eq("race_id", raceId)
       .order("finish_position", { ascending: true }),
     sb
       .from("race_results")
-      .select("driver_id, constructor_id, grid_position, finish_position, points, laps_completed, finish_status, fastest_lap_rank")
+      .select(
+        "driver_id, constructor_id, grid_position, finish_position, points, laps_completed, finish_status, fastest_lap_rank",
+      )
       .eq("race_id", raceId)
       .order("finish_position", { ascending: true }),
     sb.from("race_analysis_summary").select("*").eq("race_analysis_id", slug).maybeSingle(),
@@ -616,7 +655,9 @@ export async function fetchWeekend(slug: string) {
     sb.from("race_analysis_position_changes").select("*").eq("race_analysis_id", slug).limit(40),
     sb
       .from("race_analysis_weather_context")
-      .select("lap_number, air_temp_c, track_temp_c, humidity_pct, rainfall, weather_state, weather_impact_label")
+      .select(
+        "lap_number, air_temp_c, track_temp_c, humidity_pct, rainfall, weather_state, weather_impact_label",
+      )
       .eq("race_analysis_id", slug)
       .order("lap_number", { ascending: true })
       .limit(120),
@@ -631,7 +672,8 @@ export async function fetchWeekend(slug: string) {
   ]);
 
   const { byId, byCode } = idx;
-  const ident = (id: string) => byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
+  const ident = (id: string) =>
+    byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
   const fromCode = (code: string) =>
     byCode.get(code.toUpperCase()) ?? { id: code, code: code.toUpperCase(), name: code };
 
@@ -873,11 +915,18 @@ export async function fetchWeekend(slug: string) {
     scheduledAt: raceRow ? String(raceRow["scheduled_at"] ?? "") : null,
     lapsAnalysed: laps.length,
     trackPath: path,
-    winner: { code: winnerCode, name: fromCode(winnerCode).name, team: String(head["winner_team"] ?? "") },
+    winner: {
+      code: winnerCode,
+      name: fromCode(winnerCode).name,
+      team: String(head["winner_team"] ?? ""),
+    },
     quality: num(head["analysis_quality_score"]),
     summary: s
       ? {
-          podium: String(s["podium"] ?? "").split(",").map((x) => x.trim()).filter(Boolean),
+          podium: String(s["podium"] ?? "")
+            .split(",")
+            .map((x) => x.trim())
+            .filter(Boolean),
           strategy: str(s["dominant_strategy"]),
           compoundPath: str(s["winning_compound_path"]),
           raceShape: str(s["race_shape"]),
@@ -910,37 +959,57 @@ export async function fetchWeekend(slug: string) {
 
 export async function fetchChampionship(season: number) {
   const sb = serverClient();
-  const [idx, { data: ds }, { data: cs }, { data: rr }, { data: sr }, { data: cons }, { data: races }] =
-    await Promise.all([
-      driverIndex(sb),
-      sb
-        .from("driver_standings")
-        .select("driver_id, constructor_id, standing_position, points, wins, round")
-        .eq("season", season)
-        .order("round", { ascending: true })
-        .limit(1000),
-      sb
-        .from("constructor_standings")
-        .select("constructor_id, standing_position, points, wins, round")
-        .eq("season", season)
-        .order("round", { ascending: true })
-        .limit(1000),
-      sb
-        .from("race_results")
-        .select("race_id, driver_id, constructor_id, grid_position, finish_position, points, finish_status")
-        .like("race_id", `${season}-%`)
-        .limit(1000),
-      sb.from("sprint_results").select("race_id, driver_id, finish_position, points").like("race_id", `${season}-%`).limit(1000),
-      sb.from("constructors").select("id, name").limit(200),
-      sb.from("races").select("id, round, race_name, circuit_id").eq("season", season).order("round", { ascending: true }),
-    ]);
+  const [
+    idx,
+    { data: ds },
+    { data: cs },
+    { data: rr },
+    { data: sr },
+    { data: cons },
+    { data: races },
+  ] = await Promise.all([
+    driverIndex(sb),
+    sb
+      .from("driver_standings")
+      .select("driver_id, constructor_id, standing_position, points, wins, round")
+      .eq("season", season)
+      .order("round", { ascending: true })
+      .limit(1000),
+    sb
+      .from("constructor_standings")
+      .select("constructor_id, standing_position, points, wins, round")
+      .eq("season", season)
+      .order("round", { ascending: true })
+      .limit(1000),
+    sb
+      .from("race_results")
+      .select(
+        "race_id, driver_id, constructor_id, grid_position, finish_position, points, finish_status",
+      )
+      .like("race_id", `${season}-%`)
+      .limit(1000),
+    sb
+      .from("sprint_results")
+      .select("race_id, driver_id, finish_position, points")
+      .like("race_id", `${season}-%`)
+      .limit(1000),
+    sb.from("constructors").select("id, name").limit(200),
+    sb
+      .from("races")
+      .select("id, round, race_name, circuit_id")
+      .eq("season", season)
+      .order("round", { ascending: true }),
+  ]);
 
   const { byId } = idx;
-  const ident = (id: string) => byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
+  const ident = (id: string) =>
+    byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
   const consName = new Map<string, string>();
   for (const c of (cons ?? []) as Row[]) consName.set(String(c["id"]), String(c["name"]));
 
-  const rounds = [...new Set(((ds ?? []) as Row[]).map((r) => Number(r["round"])))].sort((a, b) => a - b);
+  const rounds = [...new Set(((ds ?? []) as Row[]).map((r) => Number(r["round"])))].sort(
+    (a, b) => a - b,
+  );
   const latest = rounds[rounds.length - 1] ?? 0;
 
   type Agg = {
@@ -1034,7 +1103,9 @@ export async function fetchChampionship(season: number) {
       })),
   }));
 
-  const consRounds = [...new Set(((cs ?? []) as Row[]).map((r) => Number(r["round"])))].sort((a, b) => a - b);
+  const consRounds = [...new Set(((cs ?? []) as Row[]).map((r) => Number(r["round"])))].sort(
+    (a, b) => a - b,
+  );
   const consLatest = consRounds[consRounds.length - 1] ?? 0;
   const constructors = ((cs ?? []) as Row[])
     .filter((r) => Number(r["round"]) === consLatest)
@@ -1105,7 +1176,9 @@ async function fetchTrafficSplit(sb: SB, slug: string, codes: string[]): Promise
     codes.map((code) =>
       sb
         .from("race_analysis_traffic_proxy")
-        .select("driver, lap_number, normalized_pace_delta_s, dirty_air_proxy_s, traffic_proxy_label")
+        .select(
+          "driver, lap_number, normalized_pace_delta_s, dirty_air_proxy_s, traffic_proxy_label",
+        )
         .eq("race_analysis_id", slug)
         .eq("driver", code)
         .limit(1000),
@@ -1166,7 +1239,9 @@ export type TrafficLap = {
 async function fetchTrafficLaps(sb: SB, slug: string, code: string): Promise<TrafficLap[]> {
   const { data } = await sb
     .from("race_analysis_traffic_proxy")
-    .select("lap_number, position, lap_time_s, normalized_pace_delta_s, dirty_air_proxy_s, traffic_proxy_label, phase")
+    .select(
+      "lap_number, position, lap_time_s, normalized_pace_delta_s, dirty_air_proxy_s, traffic_proxy_label, phase",
+    )
     .eq("race_analysis_id", slug)
     .eq("driver", code)
     .limit(1000);
@@ -1314,11 +1389,10 @@ async function fetchCornerComparisons(
       .map((r) => String(r["session_id"] ?? ""))
       .filter(Boolean);
     if (!sessionIds.length) return [];
-    const sessionById = new Map(
-      ((sessions ?? []) as Row[])
-        .map((r) => [String(r["session_id"] ?? ""), String(r["session"] ?? "")])
-        .filter(([sessionId, sessionName]) => sessionId && sessionName),
-    );
+    const sessionEntries: Array<readonly [string, string]> = ((sessions ?? []) as Row[])
+      .map((r) => [String(r["session_id"] ?? ""), String(r["session"] ?? "")] as const)
+      .filter(([sessionId, sessionName]) => Boolean(sessionId && sessionName));
+    const sessionById = new Map<string, string>(sessionEntries);
 
     const left = codeA < codeB ? codeA : codeB;
     const right = codeA < codeB ? codeB : codeA;
@@ -1362,8 +1436,9 @@ async function fetchCornerComparisons(
     const absolute = (row: Row, side: "a" | "b", key: string) =>
       num(row[`${key}_${invert ? (side === "a" ? "b" : "a") : side}`]);
     const cornerNumberFromSegment = (segmentId: string) => {
-      const match = segmentId.match(/(?:corner|segment|turn)[_-]?(\d+)/i) ?? segmentId.match(/(\d+)(?!.*\d)/);
-      return match ? Number.parseInt(match[1], 10) : null;
+      const match =
+        segmentId.match(/(?:corner|segment|turn)[_-]?(\d+)/i) ?? segmentId.match(/(\d+)(?!.*\d)/);
+      return match?.[1] ? Number.parseInt(match[1], 10) : null;
     };
     const labelFromSegment = (segmentId: string) => {
       const cornerNumber = cornerNumberFromSegment(segmentId);
@@ -1417,7 +1492,6 @@ async function fetchCornerComparisons(
   }
 }
 
-
 export async function fetchHeadToHead(slug: string, codeA: string, codeB: string) {
   const weekend = await fetchWeekend(slug);
   if (!weekend) return null;
@@ -1427,15 +1501,16 @@ export async function fetchHeadToHead(slug: string, codeA: string, codeB: string
     rows.filter((r) => r.code === code);
 
   const sb = serverClient();
-  const [traffic, trafficLapsA, trafficLapsB, posLapsA, posLapsB, swings, cornerComparisons] = await Promise.all([
-    fetchTrafficSplit(sb, slug, [a, b]),
-    fetchTrafficLaps(sb, slug, a),
-    fetchTrafficLaps(sb, slug, b),
-    fetchPositionLaps(sb, slug, a),
-    fetchPositionLaps(sb, slug, b),
-    fetchSwings(sb, slug, [a, b]),
-    fetchCornerComparisons(sb, weekend.season, weekend.round, a, b),
-  ]);
+  const [traffic, trafficLapsA, trafficLapsB, posLapsA, posLapsB, swings, cornerComparisons] =
+    await Promise.all([
+      fetchTrafficSplit(sb, slug, [a, b]),
+      fetchTrafficLaps(sb, slug, a),
+      fetchTrafficLaps(sb, slug, b),
+      fetchPositionLaps(sb, slug, a),
+      fetchPositionLaps(sb, slug, b),
+      fetchSwings(sb, slug, [a, b]),
+      fetchCornerComparisons(sb, weekend.season, weekend.round, a, b),
+    ]);
 
   return {
     slug: weekend.slug,
@@ -1464,7 +1539,6 @@ export async function fetchHeadToHead(slug: string, codeA: string, codeB: string
     entrants: weekend.classification.map((r) => ({ code: r.code, name: r.name, team: r.team })),
   };
 }
-
 
 /* ------------------------------------------------------------------ */
 /* Season telemetry + legacy report helpers                            */
@@ -1550,7 +1624,10 @@ export async function fetchSeasonTelemetry() {
     lapSamples: num(r["lap_samples"]),
   }));
 
-  const latestRound = Math.max(0, ...((cons.data ?? []) as Row[]).map((r) => Number(r["round"] ?? 0)));
+  const latestRound = Math.max(
+    0,
+    ...((cons.data ?? []) as Row[]).map((r) => Number(r["round"] ?? 0)),
+  );
   const constructors: ConstructorStanding[] = ((cons.data ?? []) as Row[])
     .filter((r) => Number(r["round"] ?? 0) === latestRound)
     .map((r) => ({
@@ -1680,7 +1757,9 @@ export async function fetchRaceReports() {
   const rows = ((idx.data ?? []) as Row[]).sort((a, b) => Number(b["round"]) - Number(a["round"]));
   const byId = new Map<string, Row>();
   for (const s of (sum.data ?? []) as Row[]) byId.set(String(s["race_analysis_id"]), s);
-  const reports = rows.map((r) => mapReport(r, byId.get(String(r["race_analysis_id"])), ids.byCode));
+  const reports = rows.map((r) =>
+    mapReport(r, byId.get(String(r["race_analysis_id"])), ids.byCode),
+  );
 
   // Rounds that are raced but not yet telemetry-analysed still have a stored
   // classification — surface them from race_results so the list stays current.
@@ -1728,7 +1807,6 @@ export async function fetchRaceReports() {
   }
   reports.sort((a, b) => b.round - a.round);
   return { reports };
-
 }
 
 export async function fetchRaceReport(slug: string) {
@@ -1831,29 +1909,31 @@ const posOf = (rows: Row[], position: number) =>
 
 export async function fetchPicksBoard(season: number) {
   const sb = serverClient();
-  const [idx, { data: ch }, { data: races }, { data: standings }, { data: cons }] = await Promise.all([
-    driverIndex(sb),
-    sb
-      .from("race_pick_challenges")
-      .select("*")
-      .eq("season", season)
-      .order("round", { ascending: true }),
-    sb
-      .from("races")
-      .select("id, round, race_name, circuit_id, scheduled_at, sprint_weekend")
-      .eq("season", season)
-      .order("round", { ascending: true }),
-    sb
-      .from("driver_standings")
-      .select("driver_id, constructor_id, standing_position, points, wins, round")
-      .eq("season", season)
-      .order("round", { ascending: false })
-      .limit(400),
-    sb.from("constructors").select("id, name").limit(200),
-  ]);
+  const [idx, { data: ch }, { data: races }, { data: standings }, { data: cons }] =
+    await Promise.all([
+      driverIndex(sb),
+      sb
+        .from("race_pick_challenges")
+        .select("*")
+        .eq("season", season)
+        .order("round", { ascending: true }),
+      sb
+        .from("races")
+        .select("id, round, race_name, circuit_id, scheduled_at, sprint_weekend")
+        .eq("season", season)
+        .order("round", { ascending: true }),
+      sb
+        .from("driver_standings")
+        .select("driver_id, constructor_id, standing_position, points, wins, round")
+        .eq("season", season)
+        .order("round", { ascending: false })
+        .limit(400),
+      sb.from("constructors").select("id, name").limit(200),
+    ]);
 
   const { byId } = idx;
-  const ident = (id: string) => byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
+  const ident = (id: string) =>
+    byId.get(id) ?? { id, code: id.slice(0, 3).toUpperCase(), name: id };
   const consName = new Map<string, string>();
   for (const c of (cons ?? []) as Row[]) consName.set(String(c["id"]), String(c["name"]));
 
@@ -1909,8 +1989,9 @@ export async function fetchPicksBoard(season: number) {
   const challenges: PickChallenge[] = ((ch ?? []) as Row[]).map((c) => {
     const raceId = String(c["race_id"]);
     const race = raceById.get(raceId);
-    const randoms = [num(c["random_position_1"]), num(c["random_position_2"])]
-      .filter((x): x is number => x != null);
+    const randoms = [num(c["random_position_1"]), num(c["random_position_2"])].filter(
+      (x): x is number => x != null,
+    );
     const qRows = ((qr ?? []) as Row[]).filter((r) => String(r["race_id"]) === raceId);
     const rRows = ((rr ?? []) as Row[]).filter((r) => String(r["race_id"]) === raceId);
     const sRows = ((sr ?? []) as Row[]).filter((r) => String(r["race_id"]) === raceId);
@@ -1927,16 +2008,14 @@ export async function fetchPicksBoard(season: number) {
             const row = posOf(qRows, p);
             return row ? String(row["driver_id"]) : null;
           }),
-          sprintQualifyingP1:
-            (() => {
-              const row = sRows.find((r) => Number(r["grid_position"] ?? 0) === 1);
-              return row ? String(row["driver_id"]) : null;
-            })(),
-          sprintRaceP1:
-            (() => {
-              const row = posOf(sRows, 1);
-              return row ? String(row["driver_id"]) : null;
-            })(),
+          sprintQualifyingP1: (() => {
+            const row = sRows.find((r) => Number(r["grid_position"] ?? 0) === 1);
+            return row ? String(row["driver_id"]) : null;
+          })(),
+          sprintRaceP1: (() => {
+            const row = posOf(sRows, 1);
+            return row ? String(row["driver_id"]) : null;
+          })(),
           race: [1, 2, 3].map((p) => {
             const row = posOf(rRows, p);
             return row ? String(row["driver_id"]) : null;
@@ -1945,11 +2024,10 @@ export async function fetchPicksBoard(season: number) {
             const row = posOf(rRows, p);
             return { position: p, driverId: row ? String(row["driver_id"]) : null };
           }),
-          fastestLapDriverId:
-            (() => {
-              const row = rRows.find((r) => Number(r["fastest_lap_rank"] ?? 0) === 1);
-              return row ? String(row["driver_id"]) : null;
-            })(),
+          fastestLapDriverId: (() => {
+            const row = rRows.find((r) => Number(r["fastest_lap_rank"] ?? 0) === 1);
+            return row ? String(row["driver_id"]) : null;
+          })(),
           fastestPitDriverId: bestPit ? bestPit.id : null,
           fastestPitS: bestPit?.s ?? null,
         }
