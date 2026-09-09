@@ -66,6 +66,8 @@ function resample(pts: Pt[], step: number) {
 const toPath = (slice: Pt[]) =>
   slice.map((p, i) => `${i === 0 ? "M" : "L"}${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(" ");
 
+const svgCoord = (value: number) => Number(value.toFixed(3));
+
 /**
  * Derives numbered corners, corner type and straight segments from the stored
  * circuit geometry in `circuit_track_paths`. Nothing is invented: corner count,
@@ -236,7 +238,7 @@ export function CornerMap({
       role="img"
       aria-label="Circuit corner map with numbered corners and sectors"
     >
-      <g transform={`rotate(${model.rotation} 50 50)`}>
+      <g transform={`rotate(${svgCoord(model.rotation)} 50 50)`}>
         <path
           d={model.full}
           fill="none"
@@ -258,19 +260,24 @@ export function CornerMap({
           />
         ))}
         <line
-          x1={model.startTick.x1}
-          y1={model.startTick.y1}
-          x2={model.startTick.x2}
-          y2={model.startTick.y2}
+          x1={svgCoord(model.startTick.x1)}
+          y1={svgCoord(model.startTick.y1)}
+          x2={svgCoord(model.startTick.x2)}
+          y2={svgCoord(model.startTick.y2)}
           stroke="#ffffff"
           strokeWidth={1.6}
         />
         {model.speedTrap ? (
           <g>
-            <circle cx={model.speedTrap.x} cy={model.speedTrap.y} r={2.2} fill="#ff2ea6" />
             <circle
-              cx={model.speedTrap.x}
-              cy={model.speedTrap.y}
+              cx={svgCoord(model.speedTrap.x)}
+              cy={svgCoord(model.speedTrap.y)}
+              r={2.2}
+              fill="#ff2ea6"
+            />
+            <circle
+              cx={svgCoord(model.speedTrap.x)}
+              cy={svgCoord(model.speedTrap.y)}
               r={3.6}
               fill="none"
               stroke="#ff2ea6"
@@ -283,16 +290,16 @@ export function CornerMap({
           return (
             <g key={c.number}>
               <circle
-                cx={c.label.x}
-                cy={c.label.y}
+                cx={svgCoord(c.label.x)}
+                cy={svgCoord(c.label.y)}
                 r={2.9}
                 fill={on ? "#ffffff" : "var(--card)"}
                 stroke={on ? "#ffffff" : "var(--border)"}
                 strokeWidth={0.5}
               />
               <text
-                x={c.label.x}
-                y={c.label.y + 1.15}
+                x={svgCoord(c.label.x)}
+                y={svgCoord(c.label.y + 1.15)}
                 textAnchor="middle"
                 fontSize="3"
                 className={on ? "fill-background font-mono" : "fill-foreground font-mono"}

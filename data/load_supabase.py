@@ -518,6 +518,101 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
         "analytics/analytics_throttle_comparison.csv",
         ["session_id", "segment_id", "driver_a", "driver_b", "throttle_pickup_delta_m", "full_throttle_exit_delta_m", "traction_exit_delta", "confidence", "favorable_driver"],
     ),
+    (
+        "analytics_driver_comparison",
+        "analytics/analytics_driver_comparison.csv",
+        ["session_id", "driver_a", "driver_b", "driver_a_team", "driver_b_team", "corner_advantage_count_a", "corner_advantage_count_b", "straight_advantage_count_a", "straight_advantage_count_b", "avg_segment_delta_kph", "avg_straight_delta_kph", "braking_advantage_score", "traction_advantage_score", "energy_proxy_delta", "confidence", "weakest_assumption", "strategy_relevance_note"],
+    ),
+    (
+        "analytics_straight_comparison",
+        "analytics/analytics_straight_comparison.csv",
+        ["session_id", "segment_id", "driver_a", "driver_b", "entry_speed_delta_kph", "terminal_speed_delta_kph", "acceleration_delta", "drs_active_delta_pct", "clipping_proxy_delta", "confidence", "favorable_driver"],
+    ),
+    (
+        "analytics_energy_proxy_comparison",
+        "analytics/analytics_energy_proxy_comparison.csv",
+        ["session_id", "segment_id", "driver_a", "driver_b", "deployment_proxy_delta", "lift_and_coast_delta", "clipping_proxy_delta", "recovery_zone_delta", "confidence", "proxy_note"],
+    ),
+    (
+        "analytics_lap_pace_driver",
+        "analytics/analytics_lap_pace_driver.csv",
+        ["session_id", "driver", "team", "lap_number", "race_phase", "compound", "stint_number", "lap_time_s", "normalized_pace_delta_s", "rolling_pace_delta_s", "fuel_corrected_delta_s", "field_rank_on_lap", "tyre_age", "position", "track_status_label", "traffic_proxy_label", "dirty_air_proxy_s", "drs_window_proxy", "confidence", "evidence_type", "traffic_proxy_note"],
+    ),
+    (
+        "analytics_track_summary",
+        "analytics/analytics_track_summary.csv",
+        ["session_id", "track_archetype", "straight_line_weight", "braking_weight", "traction_weight", "degradation_weight", "track_position_weight", "archetype_confidence"],
+    ),
+    (
+        "race_analysis_index",
+        "race_analysis/race_analysis_index.csv",
+        ["race_analysis_id", "season", "round", "event", "race_name", "session_id", "circuit", "race_date", "winner", "winner_team", "driver_count", "classified_driver_count", "stint_count", "pit_stop_count", "weather_available", "race_control_available", "analysis_quality_score", "generated_at", "build_version", "freshness_status"],
+    ),
+    (
+        "race_analysis_summary",
+        "race_analysis/race_analysis_summary.csv",
+        ["race_analysis_id", "winner", "winner_team", "podium", "dominant_strategy", "winning_compound_path", "race_shape", "primary_story", "key_strategy_factor", "key_pace_factor", "key_position_factor", "weather_summary", "confidence", "weakest_assumption"],
+    ),
+    (
+        "race_analysis_story_points",
+        "race_analysis/race_analysis_story_points.csv",
+        ["race_analysis_id", "story_point_id", "lap_number", "phase", "title", "summary", "evidence_type", "drivers_involved", "teams_involved", "related_metric", "impact_score", "confidence", "data_limit_note"],
+    ),
+    (
+        "race_analysis_stints",
+        "race_analysis/race_analysis_stints.csv",
+        ["race_analysis_id", "driver", "team", "stint_number", "compound", "start_lap", "end_lap", "stint_length", "avg_lap_time_s", "median_lap_time_s", "best_lap_time_s", "degradation_s_per_lap", "degradation_confidence", "pace_rank_in_stint", "compound_phase", "traffic_adjusted_flag", "stint_quality_score", "note"],
+    ),
+    (
+        "race_analysis_pit_strategy",
+        "race_analysis/race_analysis_pit_strategy.csv",
+        ["race_analysis_id", "driver", "team", "pit_stop_number", "pit_lap", "compound_from", "compound_to", "stint_length_before", "position_before_pit", "position_after_cycle", "net_position_change", "estimated_pit_loss_s", "undercut_overcut_label", "rejoin_risk", "traffic_penalty_proxy_s", "strategy_effect", "confidence", "weakest_assumption"],
+    ),
+    (
+        "race_analysis_pace_evolution",
+        "race_analysis/race_analysis_pace_evolution.csv",
+        ["race_analysis_id", "driver", "team", "lap_number", "race_phase", "compound", "stint_number", "lap_time_s", "normalized_pace_delta_s", "field_rank_on_lap", "rolling_pace_delta_s", "tyre_age", "fuel_corrected_delta_s", "weather_adjusted_flag", "pace_confidence"],
+    ),
+    (
+        "race_analysis_position_changes",
+        "race_analysis/race_analysis_position_changes.csv",
+        ["race_analysis_id", "driver", "team", "start_position", "finish_position", "net_position_change", "positions_gained_on_track_proxy", "positions_gained_in_pit_cycles_proxy", "largest_gain_phase", "largest_loss_phase", "position_volatility_score", "confidence", "note"],
+    ),
+    (
+        "race_analysis_weather_context",
+        "race_analysis/race_analysis_weather_context.csv",
+        ["race_analysis_id", "lap_number", "race_phase", "air_temp_c", "track_temp_c", "humidity_pct", "rainfall", "wind_speed_mps", "weather_state", "track_temp_delta_from_start_c", "weather_impact_label", "confidence"],
+    ),
+    (
+        "race_analysis_links",
+        "race_analysis/race_analysis_links.csv",
+        ["race_analysis_id", "surface", "label", "href", "relevance_note", "enabled", "unavailable_reason"],
+    ),
+    (
+        "race_analysis_track_status",
+        "race_analysis/race_analysis_track_status.csv",
+        ["race_analysis_id", "lap_number", "phase", "track_status_raw", "track_status_label", "confidence", "source", "note"],
+    ),
+    (
+        "race_analysis_neutralization_phases",
+        "race_analysis/race_analysis_neutralization_phases.csv",
+        ["race_analysis_id", "phase_id", "start_lap", "end_lap", "status_label", "affected_laps", "confidence", "evidence_type", "cause_available", "cause_note"],
+    ),
+    (
+        "race_analysis_position_timeline",
+        "race_analysis/race_analysis_position_timeline.csv",
+        ["race_analysis_id", "driver", "team", "lap_number", "position", "position_delta_from_start", "position_delta_from_previous_lap", "phase", "track_status_label", "confidence", "evidence_type"],
+    ),
+    (
+        "race_analysis_position_swing_events",
+        "race_analysis/race_analysis_position_swing_events.csv",
+        ["race_analysis_id", "event_id", "driver", "team", "start_lap", "end_lap", "position_delta", "phase", "event_type", "evidence_type", "confidence", "note"],
+    ),
+    (
+        "race_analysis_traffic_proxy",
+        "race_analysis/race_analysis_traffic_proxy.csv",
+        ["race_analysis_id", "driver", "team", "lap_number", "phase", "position", "lap_time_s", "normalized_pace_delta_s", "traffic_proxy_label", "dirty_air_proxy_s", "drs_window_proxy", "confidence", "evidence_type", "note"],
+    ),
 ]
 
 OPTIONAL_TABLES = {
@@ -562,6 +657,48 @@ OPTIONAL_TABLES = {
     "analytics_segment_comparison",
     "analytics_braking_comparison",
     "analytics_throttle_comparison",
+    "analytics_driver_comparison",
+    "analytics_straight_comparison",
+    "analytics_energy_proxy_comparison",
+    "analytics_lap_pace_driver",
+    "analytics_track_summary",
+    "race_analysis_index",
+    "race_analysis_summary",
+    "race_analysis_story_points",
+    "race_analysis_stints",
+    "race_analysis_pit_strategy",
+    "race_analysis_pace_evolution",
+    "race_analysis_position_changes",
+    "race_analysis_weather_context",
+    "race_analysis_links",
+    "race_analysis_track_status",
+    "race_analysis_neutralization_phases",
+    "race_analysis_position_timeline",
+    "race_analysis_position_swing_events",
+    "race_analysis_traffic_proxy",
+}
+
+REPLACE_LOAD_TABLES = {
+    "race_pick_challenges",
+    "race_pit_stop_results",
+    "race_analysis_index",
+    "race_analysis_summary",
+    "race_analysis_story_points",
+    "race_analysis_stints",
+    "race_analysis_pit_strategy",
+    "race_analysis_pace_evolution",
+    "race_analysis_position_changes",
+    "race_analysis_weather_context",
+    "race_analysis_links",
+    "race_analysis_track_status",
+    "race_analysis_neutralization_phases",
+    "race_analysis_position_timeline",
+    "race_analysis_position_swing_events",
+    "race_analysis_traffic_proxy",
+}
+
+UPSERT_CONFLICT_COLUMNS = {
+    "analytics_session_index": ["session_id"],
 }
 
 SUPPLEMENTAL_DRIVERS: dict[str, dict[str, str]] = {
@@ -649,6 +786,20 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     "race_pick_challenges": {"season", "round", "random_position_1", "random_position_2", "random_position_3"},
     "race_pit_stop_results": {"season", "round"},
     "analytics_session_index": {"season", "round", "driver_count", "segment_count", "straight_count"},
+    "analytics_driver_comparison": {"corner_advantage_count_a", "corner_advantage_count_b", "straight_advantage_count_a", "straight_advantage_count_b"},
+    "analytics_lap_pace_driver": {"lap_number", "stint_number", "field_rank_on_lap", "tyre_age", "position"},
+    "race_analysis_index": {"season", "round", "driver_count", "classified_driver_count", "stint_count", "pit_stop_count"},
+    "race_analysis_story_points": {"lap_number"},
+    "race_analysis_stints": {"stint_number", "start_lap", "end_lap", "stint_length", "pace_rank_in_stint"},
+    "race_analysis_pit_strategy": {"pit_stop_number", "pit_lap", "stint_length_before", "position_before_pit", "position_after_cycle", "net_position_change"},
+    "race_analysis_pace_evolution": {"lap_number", "stint_number", "field_rank_on_lap", "tyre_age"},
+    "race_analysis_position_changes": {"start_position", "finish_position", "net_position_change", "positions_gained_on_track_proxy", "positions_gained_in_pit_cycles_proxy"},
+    "race_analysis_weather_context": {"lap_number"},
+    "race_analysis_track_status": {"lap_number"},
+    "race_analysis_neutralization_phases": {"start_lap", "end_lap", "affected_laps"},
+    "race_analysis_position_timeline": {"lap_number", "position", "position_delta_from_start", "position_delta_from_previous_lap"},
+    "race_analysis_position_swing_events": {"start_lap", "end_lap", "position_delta"},
+    "race_analysis_traffic_proxy": {"lap_number", "position"},
 }
 
 
@@ -797,11 +948,15 @@ def copy_csv(
                     buffer.truncate(0)
 
         if upsert:
-            set_clause = ", ".join(f"{col} = EXCLUDED.{col}" for col in columns if col != "id")
+            conflict_columns = UPSERT_CONFLICT_COLUMNS.get(table, ["id"])
+            conflict_target = ", ".join(conflict_columns)
+            set_clause = ", ".join(
+                f"{col} = EXCLUDED.{col}" for col in columns if col not in conflict_columns
+            )
             upsert_query = f"""
                 INSERT INTO {table} ({joined_columns})
                 SELECT {joined_columns} FROM {dest_table}
-                ON CONFLICT (id) DO UPDATE SET {set_clause}
+                ON CONFLICT ({conflict_target}) DO UPDATE SET {set_clause}
             """
             cursor.execute(upsert_query)
     finally:
@@ -891,7 +1046,17 @@ def main() -> None:
                     extra_rows = build_supplemental_rows(table, missing_constructor_ids, columns)
 
                 print(f"Loading table: {table} ...")
-                copy_csv(cursor, table, columns, file_path, extra_rows=extra_rows, upsert=upsert_mode)
+                replace_mode = upsert_mode and table in REPLACE_LOAD_TABLES
+                if replace_mode:
+                    cursor.execute(f"DELETE FROM {table}")
+                copy_csv(
+                    cursor,
+                    table,
+                    columns,
+                    file_path,
+                    extra_rows=extra_rows,
+                    upsert=upsert_mode and not replace_mode,
+                )
 
         connection.commit()
 
