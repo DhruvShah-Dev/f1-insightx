@@ -761,3 +761,55 @@ race_analysis_id,driver,team,stint_number,compound,start_lap,end_lap,stint_lengt
 2026-12-zandvoort,TSU,Racing Bulls,3,HARD,19,44,26,79.393,78.199,77.723,-0.1031,0.9,9.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
 2026-12-zandvoort,TSU,Racing Bulls,4,SOFT,45,71,27,80.969,77.385,76.639,-0.1344,0.9,13.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
 2026-12-zandvoort,VER,Red Bull Racing,1,SOFT,1,1,1,,,,,0.35,,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ALB,Williams,1,MEDIUM,1,3,3,93.888,93.888,90.395,,0.35,6.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ALB,Williams,2,HARD,4,46,43,89.171,87.13,86.742,-0.1503,0.9,13.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ALB,Williams,3,SOFT,47,52,6,90.402,85.974,85.341,-3.7943,0.55,8.0,short,False,0.685,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ALO,Aston Martin,1,HARD,1,3,3,94.758,94.758,91.15,,0.35,7.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ALO,Aston Martin,2,SOFT,4,23,20,91.005,88.625,87.961,-0.5238,0.9,17.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ANT,Mercedes,1,HARD,1,3,3,109.489,95.414,87.011,,0.35,21.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ANT,Mercedes,2,MEDIUM,4,28,25,89.226,85.828,85.203,-0.3653,0.9,14.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,ANT,Mercedes,3,MEDIUM,29,53,25,85.595,84.572,83.504,-0.232,0.9,1.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,BEA,Haas F1 Team,1,SOFT,1,3,3,107.703,92.659,87.733,,0.35,18.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,BEA,Haas F1 Team,2,HARD,4,53,50,87.862,87.224,86.356,-0.0095,0.9,9.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,BOR,Audi,1,SOFT,1,3,3,109.072,93.432,88.416,,0.35,20.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,BOR,Audi,2,MEDIUM,4,53,50,88.755,86.793,86.188,-0.1809,0.9,12.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,BOT,Cadillac,1,SOFT,1,3,3,94.81,94.81,91.895,,0.35,8.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,BOT,Cadillac,2,MEDIUM,4,27,24,91.542,88.583,88.37,-0.2983,0.9,19.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,BOT,Cadillac,3,SOFT,28,51,24,90.64,88.061,87.325,-0.2823,0.9,9.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,COL,Alpine,1,MEDIUM,1,3,3,101.546,90.606,87.137,,0.35,13.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,COL,Alpine,2,HARD,4,53,50,87.118,86.326,84.933,-0.0615,0.9,7.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,GAS,Alpine,1,MEDIUM,1,3,3,99.913,88.47,87.795,,0.35,11.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,GAS,Alpine,2,HARD,4,53,50,86.854,86.022,84.927,-0.0439,0.9,5.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,HAM,Ferrari,1,SOFT,1,3,3,106.168,93.234,87.244,,0.35,17.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,HAM,Ferrari,2,MEDIUM,4,53,50,86.754,86.047,85.3,-0.0191,0.9,4.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,HUL,Audi,1,MEDIUM,1,3,3,110.167,95.032,87.941,,0.35,22.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,HUL,Audi,2,HARD,4,27,24,90.189,87.238,86.345,-0.6019,0.9,16.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,HUL,Audi,3,MEDIUM,28,53,26,87.425,86.004,84.364,-0.3727,0.9,3.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,LAW,Red Bull Racing,1,MEDIUM,1,3,3,93.166,93.166,88.836,,0.35,4.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,LAW,Red Bull Racing,2,HARD,4,12,9,95.332,88.26,86.838,-4.3868,0.583,21.0,medium,False,0.708,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,LAW,Red Bull Racing,3,MEDIUM,13,53,41,87.618,86.138,85.578,-0.1499,0.9,5.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,LEC,Ferrari,1,SOFT,1,2,2,89.371,89.371,89.371,,0.35,1.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,LIN,Racing Bulls,1,MEDIUM,1,3,3,105.402,92.262,87.165,,0.35,16.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,LIN,Racing Bulls,2,HARD,4,53,50,87.163,86.522,86.028,-0.025,0.9,8.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,NOR,McLaren,1,MEDIUM,1,3,3,104.774,91.58,86.915,,0.35,15.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,NOR,McLaren,2,HARD,4,53,50,86.607,86.106,84.864,-0.0394,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,OCO,Haas F1 Team,1,SOFT,1,3,3,108.531,93.92,87.558,,0.35,19.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,OCO,Haas F1 Team,2,HARD,4,27,24,87.923,87.507,86.758,0.0724,0.9,10.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,OCO,Haas F1 Team,3,MEDIUM,28,52,25,88.375,86.831,85.711,-0.3221,0.9,6.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,PER,Cadillac,1,SOFT,1,3,3,93.345,93.345,90.033,,0.35,5.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,PER,Cadillac,2,SOFT,4,27,24,91.603,88.778,88.087,-0.3082,0.9,20.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,PER,Cadillac,3,MEDIUM,28,52,25,89.348,87.85,86.914,-0.3558,0.9,7.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,PIA,McLaren,1,MEDIUM,1,3,3,103.743,90.028,87.486,,0.35,14.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,PIA,McLaren,2,HARD,4,53,50,86.64,86.083,85.125,-0.0255,0.9,3.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,RUS,Mercedes,1,MEDIUM,1,3,3,98.191,88.774,86.651,,0.35,10.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,RUS,Mercedes,2,HARD,4,53,50,86.378,85.569,84.39,-0.0314,0.9,1.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,SAI,Williams,1,SOFT,1,3,3,92.951,92.951,89.305,,0.35,3.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,SAI,Williams,2,HARD,4,27,24,89.958,87.431,86.895,-0.498,0.9,15.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,SAI,Williams,3,MEDIUM,28,53,26,87.56,86.118,85.683,-0.3347,0.9,4.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,STR,Aston Martin,1,SOFT,1,3,3,95.016,95.016,92.315,,0.35,9.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,STR,Aston Martin,2,HARD,4,27,24,91.274,89.347,88.415,-0.4726,0.9,18.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,TSU,Racing Bulls,1,HARD,1,3,3,92.494,92.494,88.814,,0.35,2.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,TSU,Racing Bulls,2,MEDIUM,4,53,50,88.424,86.753,86.32,-0.1389,0.9,11.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,VER,Red Bull Racing,1,SOFT,1,3,3,100.946,89.682,87.174,,0.35,12.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,VER,Red Bull Racing,2,MEDIUM,4,28,25,87.109,86.125,85.377,0.2477,0.9,6.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-13-monza,VER,Red Bull Racing,3,HARD,29,53,25,86.105,85.13,84.242,-0.2006,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.

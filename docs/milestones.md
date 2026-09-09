@@ -3,9 +3,11 @@
 ## M0: Planning and setup
 
 Goal:
+
 - establish the repo, tooling, environment contracts, and architecture documents
 
 Done when:
+
 - the monorepo structure exists
 - the web app runs locally
 - the data workspace dependencies are defined
@@ -14,9 +16,11 @@ Done when:
 ## M1: Data foundation
 
 Goal:
+
 - ingest reference F1 data and load the first normalized schema into Supabase
 
 Deliverables:
+
 - ingestion scripts
 - seed or migration SQL
 - first curated tables for drivers, constructors, circuits, races, and results
@@ -24,9 +28,11 @@ Deliverables:
 ## M2: Backend core APIs
 
 Goal:
+
 - expose typed routes for reference data and user scenario inputs
 
 Deliverables:
+
 - drivers/constructors/circuits/races endpoints
 - validation layer
 - simulation request contracts
@@ -34,9 +40,11 @@ Deliverables:
 ## M3: Frontend UI shell
 
 Goal:
+
 - build the premium app shell, landing experience, and navigation
 
 Deliverables:
+
 - branded layout
 - responsive navigation
 - homepage sections
@@ -45,9 +53,11 @@ Deliverables:
 ## M4: Race Prediction Lab
 
 Goal:
+
 - ship the first useful race simulation workflow
 
 Deliverables:
+
 - scenario form
 - deterministic + heuristic race engine
 - finishing-order and podium outputs
@@ -56,9 +66,11 @@ Deliverables:
 ## M5: Fantasy Team Builder
 
 Goal:
+
 - ship fantasy lineup recommendations users can actually compare
 
 Deliverables:
+
 - lineup constraints form
 - optimization engine
 - safe, balanced, aggressive outputs
@@ -67,9 +79,11 @@ Deliverables:
 ## M6: Charts and polish
 
 Goal:
+
 - make the product feel premium and analytics-heavy
 
 Deliverables:
+
 - charts
 - comparison views
 - loading and error states
@@ -78,9 +92,11 @@ Deliverables:
 ## M7: Deployment
 
 Goal:
+
 - deploy the full stack on free hosting
 
 Deliverables:
+
 - Vercel deployment
 - Supabase production config
 - scheduled GitHub Action refreshes
@@ -89,9 +105,11 @@ Deliverables:
 ## M8: Product launch packaging
 
 Goal:
+
 - make the project ready for stakeholder review, public product evaluation, and production operations
 
 Deliverables:
+
 - polished README
 - architecture diagram
 - product positioning notes

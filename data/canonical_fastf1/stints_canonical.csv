@@ -1,4 +1,96 @@
 session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ALB,Williams,1,SOFT,3,92.97633333333334,0.0,0.5,2,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ALB,Williams,3,SOFT,4,97.12925,-3.333333333333333,-0.7999999999999999,2,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ALB,Williams,4,SOFT,3,106.03266666666669,0.0,0.5,6,8
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ALB,Williams,5,SOFT,2,89.98349999999999,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ALB,Williams,6,SOFT,1,103.318,0.0,0.0,1,1
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ALO,Aston Martin,1,SOFT,4,100.7645,-3.333333333333333,-0.7999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ALO,Aston Martin,2,SOFT,4,95.26225,-3.333333333333333,-0.7999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ANT,Mercedes,1,SOFT,4,97.2205,-3.333333333333333,-0.3999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ANT,Mercedes,2,SOFT,2,100.8295,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ANT,Mercedes,3,SOFT,2,90.821,-10.0,0.0,4,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ANT,Mercedes,4,SOFT,1,102.729,0.0,0.0,1,1
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,ANT,Mercedes,6,SOFT,2,87.861,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,3,91.628,0.0,-0.5,2,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,4,96.58075,-3.333333333333333,-0.3999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,3,96.68933333333332,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,3,93.96699999999998,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BOR,Audi,1,SOFT,5,97.9204,-5.0,-0.4999999999999999,1,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BOR,Audi,2,SOFT,3,99.417,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BOR,Audi,3,SOFT,4,94.85475,-1.599999999999999,-0.7999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BOT,Cadillac,1,SOFT,2,106.8175,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BOT,Cadillac,2,SOFT,1,101.323,0.0,0.0,1,1
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,BOT,Cadillac,3,SOFT,2,93.775,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,COL,Alpine,1,SOFT,5,101.505,-3.220749999999999,-0.7,1,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,COL,Alpine,2,SOFT,3,99.85166666666667,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,COL,Alpine,3,SOFT,3,104.11733333333332,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,COL,Alpine,4,SOFT,3,98.58466666666668,-7.033000000000001,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,GAS,Alpine,1,SOFT,5,101.0852,-3.401499999999998,-0.7,1,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,GAS,Alpine,2,SOFT,3,96.88966666666666,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,GAS,Alpine,3,SOFT,3,102.329,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,GAS,Alpine,4,SOFT,3,98.442,-5.063999999999993,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,2,94.622,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,2,100.3945,-10.0,0.0,4,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,2,93.9845,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,94.835,-10.0,0.0,4,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,1,79.625,0.0,0.0,2,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAD,Red Bull Racing,7,SOFT,2,94.0915,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAM,Ferrari,1,MEDIUM,5,94.25979999999998,-5.0,-0.7,1,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAM,Ferrari,2,MEDIUM,2,99.639,-10.0,0.0,7,8
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAM,Ferrari,3,SOFT,3,116.551,-1.1400000000000006,-0.5,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAM,Ferrari,4,SOFT,3,95.22566666666668,0.0,0.5,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAM,Ferrari,5,SOFT,1,117.488,0.0,0.0,1,1
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAM,Ferrari,6,SOFT,2,98.6035,-10.0,0.0,3,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HAM,Ferrari,7,SOFT,2,100.0695,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HUL,Audi,1,SOFT,4,92.593,-3.333333333333333,-0.3999999999999999,2,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HUL,Audi,2,SOFT,3,100.82233333333336,0.0,0.5,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HUL,Audi,3,SOFT,2,106.383,-10.0,0.0,5,6
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,HUL,Audi,4,SOFT,4,97.17275,-3.333333333333333,0.0,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LAW,Racing Bulls,1,SOFT,4,106.90475,-0.0026666666666699,-0.3999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LAW,Racing Bulls,2,SOFT,3,89.53133333333334,0.0,-0.5,2,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LAW,Racing Bulls,3,SOFT,3,101.646,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LAW,Racing Bulls,4,SOFT,3,99.83466666666668,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LAW,Racing Bulls,6,SOFT,3,93.35066666666668,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LEC,Ferrari,1,MEDIUM,4,95.084,-3.333333333333333,-0.7999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LEC,Ferrari,2,MEDIUM,1,113.382,0.0,0.0,6,6
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LEC,Ferrari,3,SOFT,4,90.87325,-3.333333333333333,0.1999999999999999,2,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LEC,Ferrari,4,SOFT,2,87.44550000000001,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LEC,Ferrari,5,SOFT,1,117.877,0.0,0.0,1,1
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LEC,Ferrari,6,SOFT,2,98.6905,-10.0,0.0,3,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LEC,Ferrari,7,SOFT,2,88.8895,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LIN,Racing Bulls,1,SOFT,5,101.1914,-2.65025,-0.7,1,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LIN,Racing Bulls,2,SOFT,3,88.11500000000001,0.0,-0.5,2,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LIN,Racing Bulls,3,SOFT,3,100.637,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LIN,Racing Bulls,4,SOFT,3,103.16833333333334,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,LIN,Racing Bulls,6,SOFT,3,92.16433333333332,-9.651000000000003,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,NOR,McLaren,1,SOFT,5,99.0292,-5.0,-0.7,1,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,NOR,McLaren,2,SOFT,3,89.28866666666666,-6.125999999999998,-1.0,8,10
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,NOR,McLaren,3,SOFT,3,98.73233333333332,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,NOR,McLaren,4,SOFT,2,95.4625,-10.0,0.0,5,6
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,NOR,McLaren,5,SOFT,1,96.255,0.0,0.0,1,1
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,NOR,McLaren,6,SOFT,2,97.056,-10.0,0.0,3,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,NOR,McLaren,7,SOFT,2,98.039,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,3,91.68466666666666,0.0,-0.5,2,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,4,97.25475,-3.333333333333333,-0.3999999999999999,1,4
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,86.535,-10.0,0.0,2,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,OCO,Haas F1 Team,4,SOFT,3,94.272,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PER,Cadillac,1,SOFT,2,108.011,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PER,Cadillac,3,SOFT,2,94.346,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PIA,McLaren,1,SOFT,5,99.699,-3.8812500000000014,-0.7,1,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PIA,McLaren,2,SOFT,2,84.319,-9.310000000000002,0.0,8,9
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PIA,McLaren,3,SOFT,3,100.28333333333336,-10.0,-1.0,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PIA,McLaren,4,SOFT,2,93.096,-10.0,0.0,5,6
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PIA,McLaren,5,SOFT,1,90.057,0.0,0.0,2,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PIA,McLaren,6,SOFT,1,80.322,0.0,0.0,2,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,PIA,McLaren,7,SOFT,2,87.31700000000001,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,RUS,Mercedes,1,SOFT,3,104.42833333333334,0.0,0.5,1,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,RUS,Mercedes,3,SOFT,3,94.35533333333336,-10.0,-1.0,5,7
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,RUS,Mercedes,4,SOFT,2,109.091,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,RUS,Mercedes,5,SOFT,2,93.8205,-10.0,0.0,4,5
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,RUS,Mercedes,6,SOFT,1,108.083,0.0,0.0,1,1
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,RUS,Mercedes,7,SOFT,1,79.084,0.0,0.0,3,3
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,RUS,Mercedes,8,SOFT,2,90.573,-10.0,0.0,1,2
+2026_01_Q_Australian Grand Prix,2026,1,Australian Grand Prix,Q,VER,Red Bull Racing,1,SOFT,1,102.025,0.0,0.0,1,1
 2026_01_R_Australian Grand Prix,2026,1,Australian Grand Prix,R,ALB,Williams,1,MEDIUM,12,91.56275,0.5636363636363639,-0.1398601398601399,1,12
 2026_01_R_Australian Grand Prix,2026,1,Australian Grand Prix,R,ALB,Williams,2,HARD,21,90.29438095238096,0.35745,0.1805194805194805,1,21
 2026_01_R_Australian Grand Prix,2026,1,Australian Grand Prix,R,ALB,Williams,3,SOFT,24,85.330875,-0.2021739130434785,0.0343552954414184,1,24
@@ -51,6 +143,104 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_01_R_Australian Grand Prix,2026,1,Australian Grand Prix,R,VER,Red Bull Racing,1,HARD,18,91.1228888888889,0.2044117647058828,-0.1578947368421052,1,18
 2026_01_R_Australian Grand Prix,2026,1,Australian Grand Prix,R,VER,Red Bull Racing,2,MEDIUM,23,86.40760869565217,0.018318181818182,0.4703557312252964,1,23
 2026_01_R_Australian Grand Prix,2026,1,Australian Grand Prix,R,VER,Red Bull Racing,3,HARD,17,83.1665294117647,-0.2786249999999999,0.5628449862329835,1,17
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ALB,Williams,1,SOFT,3,106.33133333333336,0.0,-0.5,2,4
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ALB,Williams,2,SOFT,3,115.439,0.0,-0.5,1,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ALB,Williams,3,SOFT,3,119.85066666666668,0.0,-0.5,1,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,1,SOFT,2,106.9545,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,2,SOFT,3,118.652,0.0,-0.5,1,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ALO,Aston Martin,3,SOFT,2,106.9215,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ANT,Mercedes,1,SOFT,2,107.8875,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ANT,Mercedes,2,SOFT,2,119.117,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ANT,Mercedes,3,SOFT,2,106.858,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ANT,Mercedes,4,SOFT,2,100.289,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,ANT,Mercedes,5,SOFT,2,105.063,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,2,102.8,10.0,0.0,12,13
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,4,111.102,3.333333333333333,0.0,2,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,106.195,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,1,105.574,0.0,0.0,2,2
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,5,SOFT,2,107.5395,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BEA,Haas F1 Team,6,SOFT,2,115.242,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BOR,Audi,2,SOFT,5,116.3184,0.0,-0.3,1,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BOR,Audi,3,SOFT,2,109.979,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BOR,Audi,4,SOFT,2,104.92,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BOR,Audi,5,SOFT,1,126.878,0.0,0.0,2,2
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BOT,Cadillac,1,SOFT,2,106.026,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BOT,Cadillac,2,SOFT,2,107.372,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,BOT,Cadillac,3,SOFT,2,110.4595,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,COL,Alpine,1,SOFT,2,103.7565,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,COL,Alpine,2,SOFT,3,114.98866666666667,0.0,-0.5,1,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,COL,Alpine,3,SOFT,2,105.402,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,COL,Alpine,4,SOFT,2,104.5585,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,COL,Alpine,5,SOFT,2,104.3525,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,GAS,Alpine,1,SOFT,2,106.0655,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,GAS,Alpine,2,SOFT,5,109.822,1.4442500000000005,0.3,2,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,GAS,Alpine,3,SOFT,2,107.19,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,GAS,Alpine,4,SOFT,2,109.1265,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,GAS,Alpine,5,SOFT,2,105.3935,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,GAS,Alpine,6,SOFT,2,112.4785,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,1,MEDIUM,4,107.96625,3.333333333333333,0.0,2,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,2,110.353,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,2,105.622,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,104.3615,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,2,103.3285,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,2,111.077,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAM,Ferrari,1,MEDIUM,2,107.345,10.0,0.0,7,8
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAM,Ferrari,2,SOFT,2,112.744,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAM,Ferrari,3,SOFT,2,104.4005,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAM,Ferrari,4,SOFT,3,108.745,0.0,0.5,2,4
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAM,Ferrari,5,SOFT,2,104.6305,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HAM,Ferrari,6,SOFT,2,111.5585,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HUL,Audi,2,SOFT,5,113.5168,0.0,-0.3,1,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HUL,Audi,3,SOFT,2,103.9575,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,HUL,Audi,4,SOFT,2,107.478,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,1,SOFT,2,105.8415,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,2,SOFT,5,106.01680000000002,2.126249999999999,0.3,2,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,3,SOFT,2,104.1225,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LAW,Racing Bulls,4,SOFT,2,112.897,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LEC,Ferrari,1,SOFT,3,104.47033333333331,0.0,0.5,11,13
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LEC,Ferrari,2,SOFT,2,105.7645,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LEC,Ferrari,3,SOFT,2,102.552,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LEC,Ferrari,4,SOFT,3,107.65966666666668,0.0,0.5,2,4
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LEC,Ferrari,5,SOFT,2,104.44,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LEC,Ferrari,6,SOFT,2,110.1065,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,1,SOFT,5,109.0474,0.0,0.4999999999999999,2,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,2,SOFT,2,107.2635,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,3,SOFT,2,104.736,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,LIN,Racing Bulls,4,SOFT,2,112.4405,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,NOR,McLaren,1,SOFT,2,104.2235,10.0,0.0,11,12
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,NOR,McLaren,2,SOFT,2,106.2125,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,NOR,McLaren,3,SOFT,2,104.836,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,NOR,McLaren,4,SOFT,4,106.087,3.333333333333333,0.0,2,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,NOR,McLaren,5,SOFT,2,102.9565,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,NOR,McLaren,6,SOFT,2,107.435,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,2,104.4545,10.0,0.0,9,10
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,4,110.73375,3.333333333333333,0.0,2,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,107.91,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,OCO,Haas F1 Team,4,SOFT,2,112.6055,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PER,Cadillac,1,SOFT,2,105.889,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PER,Cadillac,2,SOFT,2,110.634,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PIA,McLaren,1,SOFT,2,107.7605,10.0,0.0,10,11
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PIA,McLaren,2,SOFT,2,109.071,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PIA,McLaren,3,SOFT,2,105.8065,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PIA,McLaren,4,SOFT,4,108.6955,3.333333333333333,0.3999999999999999,2,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PIA,McLaren,5,SOFT,2,104.6755,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,PIA,McLaren,6,SOFT,2,112.5995,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,RUS,Mercedes,1,SOFT,2,112.368,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,RUS,Mercedes,2,SOFT,2,104.384,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,RUS,Mercedes,3,SOFT,2,111.777,-10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,RUS,Mercedes,5,SOFT,2,112.521,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,SAI,Williams,1,SOFT,3,108.69333333333331,0.0,0.5,2,4
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,SAI,Williams,2,SOFT,3,121.02833333333332,0.0,-0.5,1,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,SAI,Williams,3,SOFT,2,108.911,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,STR,Aston Martin,1,SOFT,2,110.3585,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,STR,Aston Martin,2,SOFT,3,118.933,0.0,-0.5,1,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,STR,Aston Martin,3,SOFT,2,113.1095,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,1,MEDIUM,4,108.60825,3.333333333333333,0.0,2,5
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,108.3695,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,3,SOFT,2,103.6545,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,107.539,10.0,0.0,2,3
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,5,SOFT,2,101.1375,10.0,0.0,5,6
+2026_02_Q_Chinese Grand Prix,2026,2,Chinese Grand Prix,Q,VER,Red Bull Racing,6,SOFT,2,108.8595,10.0,0.0,2,3
 2026_02_R_Chinese Grand Prix,2026,2,Chinese Grand Prix,R,ALO,Aston Martin,1,HARD,31,105.5505806451613,0.5224333333333334,-0.642741935483871,1,31
 2026_02_R_Chinese Grand Prix,2026,2,Chinese Grand Prix,R,ALO,Aston Martin,2,MEDIUM,1,127.515,0.0,0.0,1,1
 2026_02_R_Chinese Grand Prix,2026,2,Chinese Grand Prix,R,ANT,Mercedes,1,MEDIUM,10,98.73170000000002,0.7260000000000006,-0.3212121212121211,1,10
@@ -88,6 +278,185 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_02_R_Chinese Grand Prix,2026,2,Chinese Grand Prix,R,STR,Aston Martin,1,HARD,9,102.21433333333334,-1.073500000000001,-0.8499999999999999,1,9
 2026_02_R_Chinese Grand Prix,2026,2,Chinese Grand Prix,R,VER,Red Bull Racing,1,SOFT,9,101.0841111111111,-0.2981249999999988,-0.0666666666666666,4,12
 2026_02_R_Chinese Grand Prix,2026,2,Chinese Grand Prix,R,VER,Red Bull Racing,2,HARD,35,102.33351428571429,-0.469529411764705,-0.8756302521008403,1,35
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,ALB,Williams,1,MEDIUM,12,101.25691666666668,1.01,0.2937062937062937,2,13
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,ALB,Williams,2,SOFT,5,112.022,-2.2150000000000034,-0.8999999999999998,11,15
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,ALO,Aston Martin,1,HARD,18,107.15088888888889,0.4321764705882366,0.2549019607843137,2,19
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,ANT,Mercedes,1,MEDIUM,12,98.33691666666668,0.8553636363636369,-0.0909090909090909,5,16
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,ANT,Mercedes,2,SOFT,5,114.9288,-5.0395,-0.8999999999999998,7,11
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,BEA,Haas F1 Team,1,MEDIUM,18,106.98711111111112,0.6119411764705885,0.1661506707946336,8,25
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,BOR,Audi,1,MEDIUM,18,107.0162777777778,0.7392352941176467,0.2218782249742001,8,25
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,BOT,Cadillac,1,MEDIUM,11,104.16027272727273,1.8253,0.2727272727272727,2,12
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,COL,Alpine,1,MEDIUM,12,101.46775,0.9786363636363636,0.5524475524475525,8,19
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,COL,Alpine,2,SOFT,5,111.667,-1.7012500000000017,-0.6,7,11
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,GAS,Alpine,1,MEDIUM,18,107.20738888888889,0.4178235294117627,-0.0815273477812177,8,25
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,HAD,Red Bull Racing,1,SOFT,12,101.51841666666668,1.0492727272727274,0.7272727272727274,5,16
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,HAD,Red Bull Racing,2,SOFT,5,110.5332,-1.535,-0.6,9,13
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,HAM,Ferrari,1,MEDIUM,12,98.79583333333332,0.9219090909090912,0.4685314685314686,7,18
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,HAM,Ferrari,2,SOFT,5,114.8542,-4.085250000000002,-0.8999999999999998,7,11
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,HUL,Audi,1,MEDIUM,11,99.38118181818182,0.1798000000000001,0.5818181818181819,8,18
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,LAW,Racing Bulls,1,HARD,18,106.87477777777778,0.5655882352941191,-0.1826625386996904,2,19
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,LEC,Ferrari,1,MEDIUM,12,98.67008333333332,0.9239090909090906,0.1748251748251748,6,17
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,LEC,Ferrari,2,SOFT,5,115.5784,-3.9827499999999993,-0.8999999999999998,7,11
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,LIN,Racing Bulls,1,MEDIUM,10,101.3595,0.889888888888889,0.1757575757575757,8,17
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,NOR,McLaren,1,MEDIUM,12,98.81066666666663,0.9077272727272728,0.1678321678321678,6,17
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,NOR,McLaren,2,SOFT,5,115.7986,-4.1512500000000045,-1.0,5,9
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,OCO,Haas F1 Team,1,MEDIUM,18,107.01505555555556,0.6412941176470597,0.0856553147574819,9,26
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,PER,Cadillac,1,MEDIUM,12,102.75491666666666,0.8506363636363635,0.5244755244755246,2,13
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,PER,Cadillac,2,SOFT,5,109.1546,0.0172500000000006,-0.6,2,6
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,PIA,McLaren,1,MEDIUM,12,99.34308333333333,0.9690909090909088,0.3706293706293707,6,17
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,PIA,McLaren,2,SOFT,5,114.8988,-5.083749999999998,-0.8999999999999998,5,9
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,RUS,Mercedes,1,MEDIUM,12,97.97241666666667,0.6947272727272736,0.2237762237762237,5,16
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,RUS,Mercedes,2,SOFT,5,115.7102,-3.553499999999996,-0.8999999999999998,2,6
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,SAI,Williams,1,HARD,18,106.98827777777778,0.5668823529411765,0.0980392156862745,2,19
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,STR,Aston Martin,1,MEDIUM,12,102.29325,0.8862727272727269,0.2797202797202798,2,13
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,STR,Aston Martin,2,MEDIUM,5,109.9798,-0.0169999999999994,-0.7999999999999999,9,13
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,VER,Red Bull Racing,1,MEDIUM,12,101.00266666666668,0.954181818181819,0.8671328671328673,7,18
+2026_02_S_Chinese Grand Prix,2026,2,Chinese Grand Prix,S,VER,Red Bull Racing,2,SOFT,5,111.3208,-2.4222499999999982,-0.7999999999999999,10,14
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,ALB,Williams,1,MEDIUM,5,108.9622,-2.695249999999998,-0.1999999999999999,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,ALO,Aston Martin,1,MEDIUM,4,107.56425,3.333333333333333,0.3999999999999999,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,ANT,Mercedes,1,MEDIUM,2,111.6965,10.0,0.0,2,3
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,ANT,Mercedes,2,MEDIUM,4,107.32625,3.333333333333333,0.0,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,ANT,Mercedes,3,SOFT,4,105.97225,3.333333333333333,0.0,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,BEA,Haas F1 Team,1,MEDIUM,6,109.85166666666667,-2.0,0.3142857142857143,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,BEA,Haas F1 Team,2,MEDIUM,5,110.838,0.6055000000000028,0.0,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,BEA,Haas F1 Team,3,SOFT,2,109.939,10.0,0.0,9,10
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,BOR,Audi,1,MEDIUM,7,108.61657142857143,0.0,0.2142857142857143,2,8
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,BOR,Audi,2,MEDIUM,5,112.799,0.0,0.4999999999999999,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,BOT,Cadillac,1,MEDIUM,7,109.94371428571428,0.0798333333333332,0.2142857142857143,2,8
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,COL,Alpine,1,MEDIUM,5,111.2012,1.0549999999999995,-0.1999999999999999,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,COL,Alpine,2,MEDIUM,5,111.8548,0.495750000000001,0.0,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,GAS,Alpine,1,MEDIUM,5,112.15479999999998,1.7255000000000005,0.3,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,GAS,Alpine,2,MEDIUM,5,112.7898,2.440999999999999,0.3,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,GAS,Alpine,3,SOFT,2,111.2915,10.0,0.0,2,3
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HAD,Red Bull Racing,1,MEDIUM,6,109.10116666666666,2.0,0.1428571428571428,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HAD,Red Bull Racing,2,MEDIUM,4,108.57725,3.333333333333333,0.3999999999999999,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HAD,Red Bull Racing,3,SOFT,1,93.723,0.0,0.0,2,2
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HAM,Ferrari,1,MEDIUM,4,113.2625,3.333333333333333,0.0,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HAM,Ferrari,2,MEDIUM,4,110.58575,3.333333333333333,0.0,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HAM,Ferrari,3,SOFT,4,111.4535,3.333333333333333,0.7999999999999999,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HUL,Audi,1,MEDIUM,7,107.44028571428574,0.099499999999999,0.1428571428571428,2,8
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,HUL,Audi,2,MEDIUM,5,108.1142,0.0,0.3,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,LAW,Racing Bulls,1,MEDIUM,6,108.26383333333332,2.0,0.1428571428571428,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,LAW,Racing Bulls,2,MEDIUM,5,107.9694,3.271000000000001,0.3999999999999999,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,LEC,Ferrari,1,MEDIUM,6,108.02049999999998,2.0,-0.0857142857142857,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,LEC,Ferrari,2,MEDIUM,2,105.4985,10.0,0.0,2,3
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,LEC,Ferrari,4,SOFT,4,109.36075,3.333333333333333,0.3999999999999999,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,LIN,Racing Bulls,1,MEDIUM,6,107.77366666666668,2.0,0.1428571428571428,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,LIN,Racing Bulls,2,MEDIUM,5,108.483,0.5625,0.3,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,NOR,McLaren,1,MEDIUM,3,109.77466666666668,0.0,0.5,2,4
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,NOR,McLaren,2,MEDIUM,5,108.7766,0.0,0.0999999999999999,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,NOR,McLaren,3,SOFT,2,107.832,10.0,0.0,2,3
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,OCO,Haas F1 Team,1,MEDIUM,6,110.5765,-1.0831999999999993,0.1428571428571428,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,OCO,Haas F1 Team,2,MEDIUM,5,110.4744,1.0425000000000004,0.6,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,PIA,McLaren,1,MEDIUM,3,111.19,0.0,0.5,2,4
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,PIA,McLaren,2,MEDIUM,5,109.805,0.0,0.0999999999999999,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,PIA,McLaren,3,SOFT,2,110.496,10.0,0.0,2,3
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,RUS,Mercedes,1,MEDIUM,2,109.283,10.0,0.0,2,3
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,RUS,Mercedes,2,MEDIUM,4,109.92575,3.333333333333333,0.3999999999999999,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,RUS,Mercedes,3,SOFT,4,109.55775,3.333333333333333,0.7999999999999999,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,SAI,Williams,1,MEDIUM,5,110.99419999999998,0.0,0.0999999999999999,2,6
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,STR,Aston Martin,1,MEDIUM,6,113.35949999999998,2.0,-0.0857142857142857,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,VER,Red Bull Racing,1,MEDIUM,6,108.93966666666664,2.0,-0.2,2,7
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,VER,Red Bull Racing,2,MEDIUM,4,110.45775,3.333333333333333,0.3999999999999999,2,5
+2026_02_SQ_Chinese Grand Prix,2026,2,Chinese Grand Prix,SQ,VER,Red Bull Racing,3,SOFT,4,108.2785,3.333333333333333,0.7999999999999999,2,5
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ALB,Williams,1,SOFT,2,100.118,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ALB,Williams,2,SOFT,3,115.95300000000002,0.0,-0.5,1,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ALB,Williams,3,SOFT,2,106.227,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,1,SOFT,2,100.4205,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,2,SOFT,2,102.588,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ALO,Aston Martin,3,SOFT,2,105.8385,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ANT,Mercedes,1,SOFT,2,103.1705,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ANT,Mercedes,2,SOFT,2,98.773,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ANT,Mercedes,3,SOFT,2,100.6355,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ANT,Mercedes,4,SOFT,2,97.2285,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,ANT,Mercedes,5,SOFT,2,102.6505,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,5,108.9318,2.526250000000001,-0.0999999999999999,2,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,107.985,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOR,Audi,1,SOFT,4,104.8205,3.333333333333333,0.3999999999999999,2,5
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOR,Audi,2,SOFT,2,106.904,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOR,Audi,3,SOFT,2,102.598,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOR,Audi,4,SOFT,2,106.116,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOR,Audi,5,SOFT,2,102.2535,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOR,Audi,6,SOFT,2,110.4065,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOT,Cadillac,1,SOFT,2,105.4335,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOT,Cadillac,2,SOFT,2,99.0955,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,BOT,Cadillac,3,SOFT,2,103.375,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,COL,Alpine,1,SOFT,2,102.337,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,COL,Alpine,2,SOFT,2,102.9045,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,COL,Alpine,3,SOFT,2,98.9835,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,COL,Alpine,4,SOFT,2,100.7045,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,GAS,Alpine,1,SOFT,2,106.706,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,GAS,Alpine,2,SOFT,2,106.07,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,GAS,Alpine,3,SOFT,2,105.3355,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,GAS,Alpine,4,SOFT,2,106.121,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,GAS,Alpine,5,SOFT,2,103.019,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,GAS,Alpine,6,SOFT,2,108.0195,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,2,101.726,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,2,100.1875,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,2,101.9135,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,102.637,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,2,97.1615,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,1,116.688,0.0,0.0,2,2
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAM,Ferrari,1,SOFT,5,106.5682,0.0,-0.1999999999999999,2,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAM,Ferrari,2,SOFT,2,101.4825,10.0,0.0,8,9
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAM,Ferrari,3,SOFT,4,104.762,3.333333333333333,0.0,2,5
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAM,Ferrari,4,SOFT,2,98.5605,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HAM,Ferrari,5,SOFT,2,108.7875,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HUL,Audi,1,SOFT,4,103.15075,3.333333333333333,0.0,2,5
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HUL,Audi,2,SOFT,2,103.62,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HUL,Audi,3,SOFT,2,97.996,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,HUL,Audi,4,SOFT,2,99.8405,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,1,SOFT,5,108.8424,3.196499999999997,-0.0999999999999999,2,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,2,SOFT,2,102.5555,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,3,SOFT,2,99.4715,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LAW,Racing Bulls,4,SOFT,2,102.6495,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LEC,Ferrari,1,SOFT,5,105.8076,0.0,0.0,2,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LEC,Ferrari,2,SOFT,2,100.5845,10.0,0.0,8,9
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LEC,Ferrari,3,SOFT,2,103.629,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LEC,Ferrari,4,SOFT,2,98.906,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LEC,Ferrari,5,SOFT,1,89.405,0.0,0.0,2,2
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,1,SOFT,5,106.686,4.442250000000001,-0.0999999999999999,2,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,2,SOFT,2,103.236,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,3,SOFT,2,100.3345,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,4,SOFT,2,102.3335,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,5,SOFT,2,98.882,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,LIN,Racing Bulls,6,SOFT,2,106.559,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,NOR,McLaren,1,SOFT,4,104.0885,3.333333333333333,0.0,2,5
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,NOR,McLaren,2,SOFT,2,103.5155,10.0,0.0,7,8
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,NOR,McLaren,3,SOFT,2,101.6255,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,NOR,McLaren,4,SOFT,2,103.646,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,NOR,McLaren,5,SOFT,2,99.3295,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,NOR,McLaren,6,SOFT,2,104.3005,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,5,106.82800000000002,2.3904999999999994,-0.1999999999999999,2,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,2,105.383,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,102.9925,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,OCO,Haas F1 Team,4,SOFT,2,105.2715,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PER,Cadillac,1,SOFT,2,101.813,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PER,Cadillac,2,SOFT,2,107.2695,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PIA,McLaren,1,SOFT,4,105.3025,3.333333333333333,0.0,2,5
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PIA,McLaren,2,SOFT,2,101.649,10.0,0.0,7,8
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PIA,McLaren,3,SOFT,2,102.425,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PIA,McLaren,4,SOFT,2,102.204,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PIA,McLaren,5,SOFT,2,100.7385,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,PIA,McLaren,6,SOFT,2,103.8715,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,RUS,Mercedes,1,SOFT,2,105.424,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,RUS,Mercedes,2,SOFT,2,104.8235,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,RUS,Mercedes,3,SOFT,2,101.3915,10.0,0.0,8,9
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,RUS,Mercedes,4,SOFT,5,106.2166,1.6714999999999982,-0.1999999999999999,2,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,RUS,Mercedes,5,SOFT,2,99.016,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,RUS,Mercedes,6,SOFT,2,108.276,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,SAI,Williams,1,SOFT,2,101.072,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,SAI,Williams,2,SOFT,3,118.039,0.0,-0.5,1,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,SAI,Williams,3,SOFT,2,104.3545,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,SAI,Williams,4,SOFT,2,99.9205,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,SAI,Williams,5,SOFT,2,106.333,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,STR,Aston Martin,1,SOFT,2,102.388,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,STR,Aston Martin,2,SOFT,2,103.7185,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,STR,Aston Martin,3,SOFT,2,104.243,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,1,SOFT,2,101.127,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,99.484,10.0,0.0,5,6
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,3,SOFT,2,100.301,10.0,0.0,2,3
+2026_03_Q_Japanese Grand Prix,2026,3,Japanese Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,102.399,10.0,0.0,2,3
 2026_03_R_Japanese Grand Prix,2026,3,Japanese Grand Prix,R,ALB,Williams,1,MEDIUM,22,99.03395454545452,0.0567619047619051,-0.5731225296442689,1,22
 2026_03_R_Japanese Grand Prix,2026,3,Japanese Grand Prix,R,ALB,Williams,2,HARD,23,105.07204347826084,-0.9154999999999996,-0.7381422924901185,1,23
 2026_03_R_Japanese Grand Prix,2026,3,Japanese Grand Prix,R,ALB,Williams,3,SOFT,1,116.651,0.0,0.0,1,1
@@ -139,6 +508,108 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_03_R_Japanese Grand Prix,2026,3,Japanese Grand Prix,R,STR,Aston Martin,3,MEDIUM,6,120.11083333333332,-3.050800000000001,-0.7714285714285715,1,6
 2026_03_R_Japanese Grand Prix,2026,3,Japanese Grand Prix,R,VER,Red Bull Racing,1,MEDIUM,22,97.30763636363636,0.2309999999999999,-0.5038125024399501,1,22
 2026_03_R_Japanese Grand Prix,2026,3,Japanese Grand Prix,R,VER,Red Bull Racing,2,HARD,30,100.84223333333334,-0.6324827586206901,-0.525250278086763,1,31
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALB,Williams,1,SOFT,2,104.4265,3.975000000000009,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALB,Williams,2,SOFT,3,111.186,0.0,-0.5,1,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALB,Williams,3,SOFT,2,102.9545,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALB,Williams,4,SOFT,2,102.6475,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALB,Williams,5,SOFT,1,89.946,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALO,Aston Martin,1,SOFT,2,103.2145,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALO,Aston Martin,2,SOFT,2,101.7795,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ALO,Aston Martin,3,SOFT,1,98.137,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ANT,Mercedes,1,SOFT,2,106.915,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ANT,Mercedes,2,SOFT,2,103.0295,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ANT,Mercedes,3,SOFT,2,99.11,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ANT,Mercedes,4,SOFT,2,122.1305,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,ANT,Mercedes,5,SOFT,2,98.3845,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,2,102.8535,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,103.2635,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,104.918,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,2,106.2415,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BOR,Audi,1,SOFT,1,93.737,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BOT,Cadillac,1,SOFT,1,92.698,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BOT,Cadillac,2,SOFT,2,102.3805,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,BOT,Cadillac,3,SOFT,2,109.6395,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,COL,Alpine,1,SOFT,1,97.067,0.0,0.0,10,10
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,COL,Alpine,2,SOFT,5,112.7056,4.2152499999999975,-0.0999999999999999,2,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,COL,Alpine,3,SOFT,2,104.2455,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,COL,Alpine,4,SOFT,2,106.2255,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,COL,Alpine,5,SOFT,2,100.4155,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,GAS,Alpine,1,SOFT,1,103.256,0.0,0.0,11,11
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,GAS,Alpine,2,SOFT,5,113.0056,4.25,0.1999999999999999,2,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,GAS,Alpine,3,SOFT,2,107.789,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,GAS,Alpine,4,SOFT,2,109.261,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,GAS,Alpine,5,SOFT,2,105.998,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,GAS,Alpine,6,SOFT,1,88.81,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,2,102.001,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,5,106.1096,2.337500000000002,-0.1999999999999999,2,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,1,88.941,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,103.084,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,2,100.579,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,1,89.302,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAM,Ferrari,1,SOFT,2,104.5585,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAM,Ferrari,2,SOFT,5,113.25320000000002,5.0,0.1999999999999999,8,12
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAM,Ferrari,3,SOFT,2,117.5735,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAM,Ferrari,4,SOFT,2,105.497,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAM,Ferrari,5,SOFT,2,104.4675,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HAM,Ferrari,6,SOFT,1,88.319,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HUL,Audi,1,MEDIUM,2,115.8755,10.0,0.0,8,9
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HUL,Audi,2,SOFT,2,102.4035,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HUL,Audi,3,SOFT,1,104.841,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HUL,Audi,4,SOFT,2,103.0745,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,HUL,Audi,5,SOFT,2,106.4445,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LAW,Racing Bulls,1,SOFT,1,96.044,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LAW,Racing Bulls,2,SOFT,2,102.445,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LAW,Racing Bulls,3,SOFT,2,102.848,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LAW,Racing Bulls,4,SOFT,1,89.583,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LAW,Racing Bulls,5,SOFT,2,108.7595,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LEC,Ferrari,1,SOFT,2,102.915,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LEC,Ferrari,2,SOFT,5,113.11979999999998,1.890749999999997,-0.1999999999999999,8,12
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LEC,Ferrari,3,SOFT,2,103.206,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LEC,Ferrari,4,SOFT,2,107.6525,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LEC,Ferrari,5,SOFT,2,103.6155,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LEC,Ferrari,6,SOFT,1,88.203,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LIN,Racing Bulls,1,SOFT,2,99.6775,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LIN,Racing Bulls,2,SOFT,3,124.30933333333331,0.0,0.5,1,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,LIN,Racing Bulls,3,SOFT,2,106.7205,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,NOR,McLaren,1,SOFT,2,119.2255,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,NOR,McLaren,2,SOFT,2,117.717,10.0,0.0,8,9
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,NOR,McLaren,3,SOFT,1,100.95,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,NOR,McLaren,4,SOFT,5,109.4806,3.309000000000001,-0.0999999999999999,2,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,NOR,McLaren,5,SOFT,2,103.111,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,NOR,McLaren,6,SOFT,1,88.527,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,2,102.077,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,1,90.293,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,105.3235,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,OCO,Haas F1 Team,4,SOFT,2,106.44,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,OCO,Haas F1 Team,5,SOFT,2,106.9315,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PER,Cadillac,1,SOFT,2,104.1695,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PER,Cadillac,2,SOFT,2,106.304,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PER,Cadillac,3,SOFT,2,111.4875,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PIA,McLaren,1,SOFT,1,90.04,0.0,0.0,5,5
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PIA,McLaren,2,SOFT,3,104.36433333333332,0.0,-0.5,8,10
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PIA,McLaren,3,SOFT,1,88.902,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PIA,McLaren,4,SOFT,1,88.332,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PIA,McLaren,5,SOFT,2,111.78549999999998,-10.0,0.0,1,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,PIA,McLaren,6,SOFT,2,116.0625,-10.0,0.0,1,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,RUS,Mercedes,1,SOFT,2,105.8295,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,RUS,Mercedes,2,SOFT,2,117.9655,10.0,0.0,8,9
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,RUS,Mercedes,3,SOFT,2,101.4495,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,RUS,Mercedes,4,SOFT,2,101.658,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,RUS,Mercedes,5,SOFT,2,97.462,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,RUS,Mercedes,6,SOFT,1,88.367,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,SAI,Williams,1,SOFT,2,105.175,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,SAI,Williams,2,SOFT,3,117.424,0.0,-0.5,1,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,SAI,Williams,3,SOFT,2,103.1225,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,SAI,Williams,4,SOFT,2,104.14,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,SAI,Williams,5,SOFT,2,104.887,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,STR,Aston Martin,1,SOFT,2,102.12,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,STR,Aston Martin,2,SOFT,2,104.109,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,STR,Aston Martin,3,SOFT,1,91.389,0.0,0.0,2,2
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,VER,Red Bull Racing,1,SOFT,2,98.775,10.0,0.0,5,6
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,100.781,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,VER,Red Bull Racing,3,SOFT,2,97.967,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,98.0905,10.0,0.0,2,3
+2026_04_Q_Miami Grand Prix,2026,4,Miami Grand Prix,Q,VER,Red Bull Racing,5,SOFT,1,87.964,0.0,0.0,2,2
 2026_04_R_Miami Grand Prix,2026,4,Miami Grand Prix,R,ALB,Williams,1,MEDIUM,27,105.52296296296298,-0.0537692307692317,-0.2954822954822955,1,27
 2026_04_R_Miami Grand Prix,2026,4,Miami Grand Prix,R,ALB,Williams,2,HARD,30,94.70416666666668,-0.3302413793103447,0.0335928809788654,1,30
 2026_04_R_Miami Grand Prix,2026,4,Miami Grand Prix,R,ALO,Aston Martin,1,MEDIUM,41,103.11392682926828,-0.0321999999999999,-0.3926829268292683,1,41
@@ -183,6 +654,177 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_04_R_Miami Grand Prix,2026,4,Miami Grand Prix,R,STR,Aston Martin,3,SOFT,19,95.97105263157894,-0.5775555555555556,-0.5,1,19
 2026_04_R_Miami Grand Prix,2026,4,Miami Grand Prix,R,VER,Red Bull Racing,1,MEDIUM,6,103.36466666666666,0.1252000000000009,0.3714285714285715,1,6
 2026_04_R_Miami Grand Prix,2026,4,Miami Grand Prix,R,VER,Red Bull Racing,2,HARD,51,98.490862745098,-0.2876199999999997,-0.0243438914027149,1,51
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,ALB,Williams,1,MEDIUM,12,95.32208333333334,0.4085454545454545,-0.0629370629370629,8,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,ALB,Williams,2,MEDIUM,6,99.1365,-1.9813999999999996,-0.3714285714285715,7,12
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,ALO,Aston Martin,1,SOFT,18,95.8295,-0.0552941176470586,-0.3065015479876161,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,ANT,Mercedes,1,MEDIUM,18,92.6296111111111,-0.060764705882353,-0.5686274509803922,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,BEA,Haas F1 Team,1,MEDIUM,18,95.03438888888888,-0.0197058823529408,0.3869969040247678,5,22
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,BOR,Audi,1,MEDIUM,18,94.58538888888889,0.0013529411764711,-0.0030959752321981,8,25
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,BOT,Cadillac,1,HARD,18,96.65455555555556,0.0156470588235297,0.2156862745098038,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,COL,Alpine,1,MEDIUM,18,94.00277777777778,0.025705882352941,0.3188854489164086,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,GAS,Alpine,1,MEDIUM,18,93.67533333333334,0.0139999999999999,0.3828689370485036,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,HAD,Red Bull Racing,1,MEDIUM,18,93.8235,-0.0488823529411766,-0.0608875128998968,8,25
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,HAM,Ferrari,1,MEDIUM,18,93.24711111111112,0.0825882352941174,0.6202270381836945,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,LAW,Racing Bulls,1,MEDIUM,18,95.07072222222222,-0.1237058823529408,-0.5286526259482237,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,LEC,Ferrari,1,MEDIUM,18,92.52116666666667,0.0284117647058825,0.0340557275541795,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,NOR,McLaren,1,MEDIUM,18,92.28266666666669,0.0200000000000002,-0.1331269349845201,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,OCO,Haas F1 Team,1,MEDIUM,18,94.96538888888888,-0.0062352941176467,0.4357254065432625,5,22
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,PER,Cadillac,1,HARD,18,96.00677777777776,-0.0207647058823526,0.391124871001032,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,PIA,McLaren,1,MEDIUM,18,92.43566666666666,-0.0242941176470586,-0.3581011351909184,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,RUS,Mercedes,1,MEDIUM,18,92.8192222222222,-0.0365294117647064,-0.1599587203302373,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,SAI,Williams,1,MEDIUM,18,94.9765,-0.0457058823529404,0.4220846233230134,8,25
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,STR,Aston Martin,1,SOFT,18,95.94866666666664,-0.0940588235294119,-0.1269349845201238,2,19
+2026_04_S_Miami Grand Prix,2026,4,Miami Grand Prix,S,VER,Red Bull Racing,1,MEDIUM,18,92.80061111111112,-0.0602352941176471,-0.6986584107327141,5,22
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ALB,Williams,1,MEDIUM,5,113.0268,1.355249999999998,-0.1999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ALB,Williams,2,MEDIUM,5,111.4902,3.307000000000002,0.1999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ALO,Aston Martin,1,MEDIUM,5,111.4286,0.0,0.3,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ANT,Mercedes,1,MEDIUM,2,110.2755,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ANT,Mercedes,2,MEDIUM,1,116.298,0.0,0.0,4,4
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ANT,Mercedes,3,MEDIUM,2,110.708,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ANT,Mercedes,4,MEDIUM,2,102.004,10.0,0.0,5,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,ANT,Mercedes,5,SOFT,1,88.091,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BEA,Haas F1 Team,1,MEDIUM,2,114.4125,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BEA,Haas F1 Team,2,MEDIUM,2,107.6035,10.0,0.0,4,5
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BEA,Haas F1 Team,3,MEDIUM,2,108.4185,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BOR,Audi,1,MEDIUM,5,113.8286,5.0,-0.0999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BOR,Audi,2,MEDIUM,2,108.781,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BOR,Audi,3,MEDIUM,2,110.3005,10.0,0.0,5,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BOT,Cadillac,1,MEDIUM,1,92.317,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,BOT,Cadillac,2,MEDIUM,1,91.826,0.0,0.0,5,5
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,COL,Alpine,1,MEDIUM,5,113.6748,1.2375000000000007,0.0,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,COL,Alpine,2,MEDIUM,5,110.0916,2.238750000000003,0.0999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,COL,Alpine,3,SOFT,1,89.32,0.0,0.0,7,7
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,GAS,Alpine,1,MEDIUM,5,112.0828,4.443999999999999,0.1999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,GAS,Alpine,2,MEDIUM,5,110.0372,2.2250000000000014,0.0999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,GAS,Alpine,3,SOFT,1,89.474,0.0,0.0,8,8
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HAD,Red Bull Racing,1,MEDIUM,5,108.8986,0.7714999999999996,0.0,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HAD,Red Bull Racing,2,MEDIUM,5,107.3556,0.3627499999999983,0.3,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HAD,Red Bull Racing,3,SOFT,1,89.422,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HAM,Ferrari,1,MEDIUM,5,108.5674,2.7870000000000026,-0.0999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HAM,Ferrari,2,MEDIUM,5,109.5782,3.3782500000000013,0.1999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HAM,Ferrari,3,SOFT,1,88.618,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HUL,Audi,1,MEDIUM,5,107.0206,3.25075,-0.0999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HUL,Audi,2,MEDIUM,2,109.224,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,HUL,Audi,3,MEDIUM,2,123.974,10.0,0.0,5,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LAW,Racing Bulls,1,MEDIUM,1,115.838,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LAW,Racing Bulls,2,MEDIUM,2,105.246,10.0,0.0,3,4
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LEC,Ferrari,1,MEDIUM,5,107.729,3.163250000000001,-0.0999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LEC,Ferrari,2,MEDIUM,5,110.30259999999998,3.146750000000001,0.3999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LEC,Ferrari,3,SOFT,1,88.239,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LIN,Racing Bulls,1,MEDIUM,2,108.6405,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LIN,Racing Bulls,2,MEDIUM,2,103.43,10.0,0.0,5,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,LIN,Racing Bulls,3,MEDIUM,2,125.7805,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,NOR,McLaren,1,MEDIUM,6,109.13816666666666,2.0,0.2571428571428572,2,7
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,NOR,McLaren,2,MEDIUM,4,112.05625,3.1850000000000023,0.3999999999999999,2,5
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,NOR,McLaren,3,SOFT,1,87.869,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,OCO,Haas F1 Team,1,MEDIUM,2,109.3225,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,OCO,Haas F1 Team,2,MEDIUM,2,107.362,10.0,0.0,5,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,PER,Cadillac,1,MEDIUM,2,122.4475,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,PIA,McLaren,1,MEDIUM,4,119.0285,3.333333333333333,0.3999999999999999,2,5
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,PIA,McLaren,2,MEDIUM,1,88.506,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,PIA,McLaren,3,SOFT,2,108.5785,-10.0,0.0,1,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,RUS,Mercedes,1,MEDIUM,2,111.833,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,RUS,Mercedes,2,MEDIUM,3,116.30966666666669,0.0,-0.5,4,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,RUS,Mercedes,3,MEDIUM,1,88.903,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,RUS,Mercedes,4,MEDIUM,2,104.6575,10.0,0.0,5,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,RUS,Mercedes,5,SOFT,1,88.493,0.0,0.0,2,2
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,SAI,Williams,1,MEDIUM,5,111.4724,4.405000000000001,0.1999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,SAI,Williams,2,MEDIUM,5,110.8828,2.8967499999999973,0.1999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,STR,Aston Martin,1,MEDIUM,2,125.395,-7.373999999999995,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,VER,Red Bull Racing,1,MEDIUM,2,108.079,10.0,0.0,2,3
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,VER,Red Bull Racing,2,MEDIUM,5,107.5274,3.577500000000001,0.1999999999999999,2,6
+2026_04_SQ_Miami Grand Prix,2026,4,Miami Grand Prix,SQ,VER,Red Bull Racing,3,SOFT,1,88.461,0.0,0.0,2,2
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ALB,Williams,1,SOFT,5,91.8982,0.0,0.3,2,6
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ALB,Williams,2,SOFT,6,86.72166666666668,-3.366200000000004,-0.2,1,6
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ALO,Aston Martin,1,SOFT,4,91.1795,-3.333333333333333,-0.7999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ALO,Aston Martin,2,SOFT,5,87.707,-2.3187500000000014,-0.3,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ANT,Mercedes,1,SOFT,5,89.0306,-5.0,-0.7,6,10
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ANT,Mercedes,2,SOFT,3,88.41033333333333,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ANT,Mercedes,3,SOFT,5,85.71520000000001,-3.600999999999999,-0.3999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ANT,Mercedes,4,SOFT,3,87.03000000000002,-1.9840000000000015,-0.5,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,ANT,Mercedes,5,SOFT,4,90.591,-1.6716666666666669,0.1999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,4,85.40925,-3.333333333333333,-0.3999999999999999,2,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,5,87.85480000000001,-5.0,-0.3999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,4,93.1185,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,4,86.8795,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BOR,Audi,1,SOFT,5,94.0156,-5.0,-0.4999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BOR,Audi,2,SOFT,5,88.44300000000001,0.0,-0.4999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BOR,Audi,3,SOFT,4,103.14525,-3.333333333333333,0.1999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BOR,Audi,4,SOFT,5,86.3614,-3.67175,-0.3999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BOT,Cadillac,1,SOFT,5,90.8956,-5.0,-0.7,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,BOT,Cadillac,2,SOFT,3,92.99433333333332,0.0,0.5,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,COL,Alpine,1,SOFT,3,90.55333333333331,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,COL,Alpine,2,SOFT,5,87.0772,-2.371000000000002,-0.3,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,COL,Alpine,3,SOFT,2,80.013,-10.0,0.0,2,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,COL,Alpine,4,SOFT,4,93.96675,-2.0663333333333327,0.1999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,COL,Alpine,5,SOFT,3,87.61399999999999,-9.411499999999997,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,COL,Alpine,6,SOFT,3,86.46733333333333,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,GAS,Alpine,1,SOFT,4,94.173,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,GAS,Alpine,2,SOFT,4,91.05075,-1.843333333333329,0.1999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,GAS,Alpine,3,SOFT,2,82.10499999999999,-10.0,0.0,2,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,GAS,Alpine,4,SOFT,5,90.17159999999998,-4.890750000000001,-0.3999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,4,87.48925,-3.333333333333333,-0.7999999999999999,6,9
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,4,87.293,-3.333333333333333,-0.7999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,3,86.277,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,3,101.20166666666668,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,3,85.48,-9.6265,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAM,Ferrari,1,SOFT,10,87.27850000000001,-3.28711111111111,-0.4424242424242424,6,15
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAM,Ferrari,2,SOFT,4,91.95325,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAM,Ferrari,3,SOFT,3,81.97,-6.229500000000002,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAM,Ferrari,4,SOFT,3,86.59066666666666,-7.890999999999998,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HAM,Ferrari,5,SOFT,2,97.1445,-10.0,0.0,1,2
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HUL,Audi,1,SOFT,4,91.59475,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HUL,Audi,2,SOFT,5,84.91120000000001,-2.042749999999998,-0.3,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HUL,Audi,3,SOFT,4,89.58125,-0.0073333333333304,0.1999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,HUL,Audi,4,SOFT,5,83.7664,-2.8367499999999986,-0.3999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LAW,Racing Bulls,1,SOFT,4,84.962,-3.333333333333333,-0.3999999999999999,2,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LAW,Racing Bulls,2,SOFT,5,85.2144,-3.56775,-0.1999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LAW,Racing Bulls,3,SOFT,3,92.56933333333332,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LAW,Racing Bulls,4,SOFT,5,84.582,-4.39575,-0.7,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LEC,Ferrari,1,SOFT,10,86.0069,-2.5167777777777776,-0.3333333333333332,6,15
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LEC,Ferrari,2,SOFT,5,89.66499999999999,-5.0,-0.8999999999999998,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LEC,Ferrari,3,SOFT,3,86.483,-2.592500000000001,-0.5,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LEC,Ferrari,4,SOFT,3,88.81266666666666,-8.537500000000001,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LEC,Ferrari,5,SOFT,3,88.15966666666667,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LIN,Racing Bulls,1,SOFT,4,96.04975,-3.333333333333333,0.1999999999999999,7,10
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LIN,Racing Bulls,2,SOFT,7,85.02642857142857,-2.0573333333333323,-0.0714285714285714,1,7
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LIN,Racing Bulls,3,SOFT,3,89.75433333333335,-9.956500000000004,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LIN,Racing Bulls,4,SOFT,3,92.98933333333332,-7.821000000000005,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LIN,Racing Bulls,5,SOFT,3,87.358,-4.567999999999998,-0.5,5,7
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,LIN,Racing Bulls,6,SOFT,3,82.79533333333333,-8.534999999999997,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,NOR,McLaren,1,SOFT,3,88.05766666666666,-10.0,-1.0,6,8
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,NOR,McLaren,2,SOFT,5,84.2366,-1.5067500000000005,-0.3,10,14
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,NOR,McLaren,3,SOFT,4,82.65575,-3.333333333333333,-0.3999999999999999,2,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,NOR,McLaren,4,SOFT,3,86.74933333333335,-4.9315,-0.5,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,NOR,McLaren,5,SOFT,3,86.283,-8.048000000000002,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,NOR,McLaren,6,SOFT,4,91.04775,-0.3840000000000003,0.1999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,5,91.0702,-4.08175,-0.7,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,5,86.76320000000001,-5.0,-0.7,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PER,Cadillac,1,SOFT,5,91.5234,-5.0,-0.7,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PER,Cadillac,2,SOFT,4,88.5795,-2.003,0.1999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PIA,McLaren,1,SOFT,4,88.82625,-3.333333333333333,-0.7999999999999999,6,9
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PIA,McLaren,2,SOFT,5,86.4992,-4.63475,-0.1999999999999999,11,15
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PIA,McLaren,3,SOFT,4,91.991,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PIA,McLaren,4,UNKNOWN,4,86.28875,-3.606333333333334,-0.7999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PIA,McLaren,5,SOFT,3,101.673,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,PIA,McLaren,6,SOFT,3,85.57366666666667,-8.138000000000005,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,RUS,Mercedes,1,SOFT,5,87.3904,-5.0,-0.8999999999999998,7,11
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,RUS,Mercedes,2,SOFT,3,90.13466666666666,-10.0,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,RUS,Mercedes,3,SOFT,4,83.9975,-2.078000000000003,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,RUS,Mercedes,4,SOFT,2,92.664,10.0,0.0,1,2
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,RUS,Mercedes,5,SOFT,5,81.5768,-2.1739999999999995,-0.3,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,SAI,Williams,1,SOFT,5,88.758,-5.0,-0.7,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,SAI,Williams,2,SOFT,5,91.6768,-5.0,-0.1999999999999999,1,5
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,SAI,Williams,3,SOFT,1,117.684,0.0,0.0,7,7
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,SAI,Williams,4,SOFT,3,83.214,-8.6725,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,SAI,Williams,5,SOFT,3,89.21866666666666,-9.883499999999998,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,STR,Aston Martin,1,SOFT,4,91.20525,-3.333333333333333,-0.7999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,STR,Aston Martin,2,SOFT,4,93.097,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,VER,Red Bull Racing,1,SOFT,4,87.99825,-3.333333333333333,-0.7999999999999999,5,8
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,VER,Red Bull Racing,2,SOFT,4,88.48075,-5.677999999999997,-0.7999999999999999,1,4
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,VER,Red Bull Racing,3,SOFT,3,84.42433333333334,-7.805,-1.0,1,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,79.67150000000001,-10.0,0.0,2,3
+2026_05_Q_Canadian Grand Prix,2026,5,Canadian Grand Prix,Q,VER,Red Bull Racing,5,SOFT,4,83.05675,-3.333333333333333,-0.3999999999999999,1,4
 2026_05_R_Canadian Grand Prix,2026,5,Canadian Grand Prix,R,ALB,Williams,1,SOFT,11,81.51390909090908,-1.8292999999999997,-0.9545454545454546,1,11
 2026_05_R_Canadian Grand Prix,2026,5,Canadian Grand Prix,R,ALO,Aston Martin,1,SOFT,20,82.27349999999998,-0.0902105263157894,-0.156390977443609,1,20
 2026_05_R_Canadian Grand Prix,2026,5,Canadian Grand Prix,R,ALO,Aston Martin,2,SOFT,3,81.83666666666667,-1.6779999999999973,-0.5,1,3
@@ -238,6 +880,179 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_05_R_Canadian Grand Prix,2026,5,Canadian Grand Prix,R,STR,Aston Martin,3,MEDIUM,15,82.17033333333333,-0.3851428571428568,-0.4035714285714285,1,15
 2026_05_R_Canadian Grand Prix,2026,5,Canadian Grand Prix,R,VER,Red Bull Racing,1,SOFT,31,78.49448387096776,-0.1304666666666667,-0.5561044488388228,6,36
 2026_05_R_Canadian Grand Prix,2026,5,Canadian Grand Prix,R,VER,Red Bull Racing,2,MEDIUM,37,77.66770270270268,-0.4742777777777781,-0.6453677920174584,1,37
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,ALB,Williams,1,MEDIUM,13,78.89369230769232,0.7515833333333338,-0.3241758241758241,2,14
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,ALB,Williams,2,SOFT,8,82.59724999999999,-1.4131428571428566,-0.1428571428571428,1,8
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,ALO,Aston Martin,1,MEDIUM,14,79.6505,0.7921538461538463,0.1956043956043956,6,19
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,ANT,Mercedes,1,MEDIUM,22,75.0799090909091,0.0399047619047616,-0.2937853576215936,8,29
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,BEA,Haas F1 Team,1,MEDIUM,17,79.31764705882354,0.5355624999999993,-0.5000000000000001,11,27
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,BEA,Haas F1 Team,2,MEDIUM,4,78.05199999999999,-2.13766666666667,-1.0,9,12
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,BOR,Audi,1,MEDIUM,22,77.3125909090909,-0.1281428571428572,0.0287972896668548,9,30
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,BOT,Cadillac,1,SOFT,21,78.66442857142857,-0.0866500000000002,-0.2571428571428571,2,22
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,COL,Alpine,1,MEDIUM,22,76.11995454545455,-0.080190476190476,-0.1180124223602484,10,31
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,GAS,Alpine,1,MEDIUM,18,80.57005555555556,0.5320588235294119,-0.4035087719298245,2,19
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,GAS,Alpine,2,SOFT,3,84.56666666666666,1.1649999999999991,0.5,9,11
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,HAD,Red Bull Racing,1,MEDIUM,5,83.2638,0.7682500000000019,0.4999999999999999,2,6
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,HAD,Red Bull Racing,2,MEDIUM,2,86.8055,10.0,0.0,8,9
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,HAD,Red Bull Racing,3,SOFT,11,75.81790909090911,-0.5007000000000005,0.0727272727272727,6,16
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,HAM,Ferrari,1,MEDIUM,22,75.39231818181817,0.022619047619048,0.1259175607001694,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,HUL,Audi,1,MEDIUM,22,77.34672727272726,-0.0690952380952377,0.0547713156408808,8,29
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,LAW,Racing Bulls,1,MEDIUM,22,77.2895,-0.0533333333333335,0.2298136645962733,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,LEC,Ferrari,1,MEDIUM,22,75.31136363636364,-0.0104285714285711,0.1134952004517222,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,LIN,Racing Bulls,1,HARD,22,76.1393181818182,-0.0414761904761902,0.3167701863354037,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,NOR,McLaren,1,MEDIUM,22,75.0005909090909,-0.0149523809523812,-0.3325804630152457,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,OCO,Haas F1 Team,1,MEDIUM,22,77.49681818181818,0.0100476190476189,0.3483907396950875,9,30
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,PER,Cadillac,1,SOFT,22,77.30586363636363,-0.0204285714285715,0.3178994918125353,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,PIA,McLaren,1,MEDIUM,22,75.32854545454546,0.0031904761904758,0.075098814229249,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,RUS,Mercedes,1,MEDIUM,22,75.02059090909088,-0.0072380952380952,-0.3675889328063242,8,29
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,SAI,Williams,1,MEDIUM,22,76.42495454545454,-0.0651904761904761,-0.6487859966120837,2,23
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,STR,Aston Martin,1,SOFT,21,78.18152380952382,-0.03915,-0.2142857142857142,2,22
+2026_05_S_Canadian Grand Prix,2026,5,Canadian Grand Prix,S,VER,Red Bull Racing,1,MEDIUM,22,75.55754545454545,-0.0203333333333336,-0.0124258688942588,2,23
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,ALO,Aston Martin,1,MEDIUM,6,91.07149999999996,-1.552600000000001,-0.2571428571428572,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,ANT,Mercedes,1,MEDIUM,5,89.6972,-2.052249999999997,-0.0999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,ANT,Mercedes,2,MEDIUM,3,87.347,0.0,0.5,2,4
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,ANT,Mercedes,3,SOFT,4,86.9955,-3.333333333333333,-0.3999999999999999,1,4
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,BEA,Haas F1 Team,1,MEDIUM,6,91.17066666666668,-1.5605999999999995,0.0285714285714285,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,BEA,Haas F1 Team,2,MEDIUM,1,96.033,0.0,0.0,8,8
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,BEA,Haas F1 Team,3,MEDIUM,6,86.18816666666667,-2.9450000000000016,-0.1428571428571428,2,7
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,BOR,Audi,1,MEDIUM,5,91.9356,-2.4989999999999988,-0.7999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,BOR,Audi,3,MEDIUM,6,86.81499999999998,-2.0,-0.3714285714285715,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,BOT,Cadillac,1,MEDIUM,6,88.95800000000001,-1.1806000000000012,-0.2571428571428572,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,COL,Alpine,1,MEDIUM,5,87.672,-3.0950000000000024,-0.3999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,COL,Alpine,2,MEDIUM,1,99.012,0.0,0.0,7,7
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,COL,Alpine,3,MEDIUM,6,83.9595,-2.0,-0.2571428571428572,2,7
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,GAS,Alpine,1,MEDIUM,5,86.96619999999999,-3.83925,-0.1999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,GAS,Alpine,2,MEDIUM,1,88.913,0.0,0.0,7,7
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HAD,Red Bull Racing,1,MEDIUM,5,91.783,0.0,-0.3,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HAD,Red Bull Racing,2,MEDIUM,4,87.26750000000001,-3.333333333333333,-0.7999999999999999,1,4
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HAD,Red Bull Racing,3,SOFT,5,85.0518,-4.6647500000000015,-0.1999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HAM,Ferrari,1,MEDIUM,6,83.9205,-2.0,-0.4285714285714286,2,7
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HAM,Ferrari,2,MEDIUM,2,87.9325,-10.0,0.0,9,10
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HAM,Ferrari,3,MEDIUM,5,86.8268,-4.0425,-0.7,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HAM,Ferrari,4,SOFT,5,84.48859999999999,-1.927500000000002,-0.3,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HUL,Audi,1,MEDIUM,5,86.26939999999999,-4.231749999999998,-0.3999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,HUL,Audi,3,MEDIUM,6,87.60183333333333,-2.7976,-0.6,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,LEC,Ferrari,1,MEDIUM,6,91.11033333333334,-2.6228000000000007,-0.0857142857142857,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,LEC,Ferrari,2,MEDIUM,5,87.11000000000001,-3.2742499999999986,-0.8999999999999998,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,LEC,Ferrari,3,SOFT,5,85.7116,-3.4567499999999995,-0.3999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,LIN,Racing Bulls,1,MEDIUM,6,92.31,-2.0,-0.3714285714285715,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,LIN,Racing Bulls,2,MEDIUM,6,85.97933333333333,-2.0,-0.0285714285714285,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,LIN,Racing Bulls,3,SOFT,4,88.35249999999999,-3.333333333333333,-0.7999999999999999,1,4
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,NOR,McLaren,1,MEDIUM,6,91.11733333333332,-1.8598000000000008,-0.3714285714285715,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,NOR,McLaren,2,MEDIUM,2,87.0865,-10.0,0.0,1,2
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,NOR,McLaren,3,SOFT,4,87.68549999999999,-3.333333333333333,-0.7999999999999999,1,4
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,OCO,Haas F1 Team,1,MEDIUM,6,91.58283333333333,-1.4740000000000009,-0.3714285714285715,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,OCO,Haas F1 Team,2,MEDIUM,1,97.546,0.0,0.0,8,8
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,OCO,Haas F1 Team,3,MEDIUM,7,85.17614285714285,-2.766666666666668,-0.6785714285714287,1,7
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,PER,Cadillac,1,MEDIUM,6,84.74399999999999,-2.8841999999999985,-0.3714285714285715,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,PIA,McLaren,1,MEDIUM,5,90.7894,-3.1052500000000016,-0.8999999999999998,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,PIA,McLaren,2,MEDIUM,3,91.714,-10.0,-1.0,1,3
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,PIA,McLaren,3,SOFT,4,90.9335,-3.333333333333333,-0.7999999999999999,1,4
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,RUS,Mercedes,1,MEDIUM,5,89.92840000000001,0.0,-0.0999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,RUS,Mercedes,2,MEDIUM,5,84.32379999999999,-3.57725,-0.1999999999999999,2,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,RUS,Mercedes,3,SOFT,6,88.79616666666665,2.0,0.2571428571428572,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,SAI,Williams,1,MEDIUM,6,88.55149999999999,-2.0,-0.7142857142857143,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,SAI,Williams,2,MEDIUM,1,77.365,0.0,0.0,9,9
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,SAI,Williams,3,MEDIUM,7,88.96042857142858,-3.3195,-0.5357142857142858,1,7
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,SAI,Williams,4,SOFT,5,87.64620000000001,-4.726499999999998,-0.3999999999999999,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,STR,Aston Martin,1,MEDIUM,6,91.682,-0.2990000000000009,-0.6,1,6
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,VER,Red Bull Racing,1,MEDIUM,5,89.662,0.0,-0.3,1,5
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,VER,Red Bull Racing,2,MEDIUM,3,82.00333333333334,-5.556999999999995,-1.0,1,3
+2026_05_SQ_Canadian Grand Prix,2026,5,Canadian Grand Prix,SQ,VER,Red Bull Racing,3,SOFT,4,84.0305,-3.333333333333333,-0.3999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALB,Williams,1,SOFT,7,89.19114285714286,-1.3548333333333318,0.0714285714285714,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALB,Williams,2,SOFT,3,84.15566666666668,-8.029000000000003,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALB,Williams,3,SOFT,2,86.41999999999999,-10.0,0.0,5,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALB,Williams,4,SOFT,5,84.55819999999999,-4.969249999999999,-0.3999999999999999,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALB,Williams,5,SOFT,3,81.90599999999999,-7.396499999999996,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALO,Aston Martin,1,SOFT,6,89.39566666666666,-0.0114000000000004,-0.0857142857142857,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALO,Aston Martin,2,SOFT,4,87.10725000000001,-2.6913333333333327,0.1999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ALO,Aston Martin,3,SOFT,1,95.002,0.0,0.0,6,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ANT,Mercedes,1,SOFT,9,87.8941111111111,-1.9770000000000003,-0.1999999999999999,1,9
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ANT,Mercedes,2,SOFT,6,88.40133333333334,-1.1994,0.0285714285714285,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ANT,Mercedes,3,SOFT,3,79.18333333333334,-6.520499999999998,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ANT,Mercedes,4,SOFT,3,82.20733333333334,-9.521499999999996,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,ANT,Mercedes,5,SOFT,3,81.84766666666667,-7.560000000000002,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,8,86.83862500000001,-1.0531428571428572,-0.0238095238095238,1,8
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,87.293,-10.0,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,84.46799999999999,-10.0,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BOR,Audi,1,SOFT,7,89.90357142857142,-1.5015,0.1785714285714286,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BOR,Audi,2,SOFT,2,94.33,1.4780000000000086,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BOT,Cadillac,1,SOFT,6,86.42033333333335,-0.9162000000000006,-0.2571428571428572,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BOT,Cadillac,2,SOFT,2,86.852,-10.0,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,BOT,Cadillac,3,SOFT,2,82.4075,-10.0,0.0,4,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,COL,Alpine,1,SOFT,4,84.16375,-5.907666666666667,-1.0,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,COL,Alpine,2,SOFT,5,84.3912,-3.696999999999999,-0.3999999999999999,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,COL,Alpine,3,SOFT,1,102.348,0.0,0.0,7,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,COL,Alpine,4,SOFT,4,82.5485,-6.376333333333335,-1.0,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,COL,Alpine,5,SOFT,5,82.8208,-3.913999999999998,-0.1999999999999999,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,GAS,Alpine,1,SOFT,5,90.049,-2.1567500000000024,0.0,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,GAS,Alpine,2,SOFT,5,86.02600000000001,-4.44275,-0.7,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,GAS,Alpine,3,SOFT,1,95.466,0.0,0.0,7,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,GAS,Alpine,4,SOFT,4,83.098,-4.299000000000002,-0.7999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,GAS,Alpine,5,SOFT,5,85.1168,-3.784749999999999,-0.1999999999999999,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,GAS,Alpine,6,SOFT,3,83.411,-7.526499999999999,-1.0,6,8
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,GAS,Alpine,7,SOFT,3,79.87833333333333,-5.975000000000001,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,7,87.72085714285716,-2.0176666666666683,-0.4285714285714286,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,3,81.62066666666666,-7.583000000000005,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,3,82.17833333333333,-9.162000000000006,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,3,81.39933333333333,-7.9069999999999965,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,3,80.497,-7.820500000000003,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAM,Ferrari,1,SOFT,9,88.84577777777778,-2.604375000000001,-0.2333333333333333,1,9
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAM,Ferrari,2,SOFT,4,97.67925,-2.048000000000002,0.1999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAM,Ferrari,3,SOFT,2,106.2835,10.0,0.0,5,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAM,Ferrari,4,SOFT,3,84.578,-9.457500000000003,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAM,Ferrari,5,SOFT,3,83.665,-8.779499999999999,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HAM,Ferrari,6,SOFT,3,83.49633333333334,-7.923000000000002,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HUL,Audi,1,SOFT,7,89.76557142857142,-1.4668333333333337,0.1785714285714286,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HUL,Audi,2,SOFT,3,81.76,-8.216499999999996,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HUL,Audi,3,SOFT,6,93.48066666666666,-1.5572000000000004,0.2,4,9
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,HUL,Audi,4,SOFT,3,81.575,-4.634999999999998,-0.5,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LAW,Racing Bulls,1,SOFT,6,90.11433333333332,-1.2794000000000012,0.1428571428571428,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LAW,Racing Bulls,2,SOFT,4,87.9495,-1.8423333333333336,0.1999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LAW,Racing Bulls,3,SOFT,6,89.89249999999998,-1.432600000000002,0.0285714285714285,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LAW,Racing Bulls,4,SOFT,3,81.26033333333334,-8.016999999999996,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LAW,Racing Bulls,5,SOFT,3,83.568,-7.965999999999994,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LAW,Racing Bulls,6,SOFT,3,82.56866666666666,-9.084999999999994,-1.0,6,8
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LEC,Ferrari,1,SOFT,9,86.63444444444445,-1.188749999999997,0.0,1,9
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LEC,Ferrari,2,SOFT,7,88.72514285714286,-2.648333333333333,0.1428571428571428,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LEC,Ferrari,3,SOFT,3,87.52300000000001,-10.0,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LEC,Ferrari,4,SOFT,2,84.6265,-10.0,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LEC,Ferrari,5,SOFT,4,82.53475,0.0026666666666651,0.1999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LIN,Racing Bulls,1,SOFT,6,88.06083333333333,-1.801399999999998,-0.2571428571428572,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LIN,Racing Bulls,2,SOFT,4,87.4325,-2.3800000000000003,-0.3999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LIN,Racing Bulls,4,SOFT,6,90.68283333333332,-1.5810000000000002,0.1428571428571428,2,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,LIN,Racing Bulls,5,SOFT,4,86.48475,-6.297333333333332,-0.7999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,NOR,McLaren,1,SOFT,10,83.916,-1.5706666666666662,-0.2121212121212121,1,10
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,NOR,McLaren,2,SOFT,6,85.4415,-1.570400000000001,0.1428571428571428,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,NOR,McLaren,3,SOFT,3,79.49766666666666,-6.192499999999996,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,NOR,McLaren,4,SOFT,3,79.44366666666666,-7.225499999999997,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,NOR,McLaren,5,SOFT,2,85.2515,3.228999999999999,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,7,87.64457142857144,-1.2429999999999997,0.1071428571428571,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,3,83.492,-8.188500000000005,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,84.31049999999999,-10.0,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,PER,Cadillac,1,SOFT,4,80.9845,-1.1663333333333366,-0.3999999999999999,2,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,PER,Cadillac,2,SOFT,3,79.65899999999999,-6.118499999999997,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,PIA,McLaren,1,SOFT,9,89.07311111111112,-1.0010000000000012,0.0499999999999999,1,9
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,PIA,McLaren,3,SOFT,4,93.79175,-2.7919999999999967,0.1999999999999999,1,4
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,PIA,McLaren,4,SOFT,5,83.3544,-3.984499999999997,-0.3999999999999999,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,PIA,McLaren,5,SOFT,3,80.15066666666667,-7.719000000000001,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,PIA,McLaren,6,SOFT,3,82.67633333333333,-8.842500000000001,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,RUS,Mercedes,1,SOFT,9,90.97744444444444,-0.9605000000000016,0.0999999999999999,1,9
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,RUS,Mercedes,2,SOFT,6,88.03633333333335,0.5824000000000013,0.1428571428571428,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,RUS,Mercedes,3,SOFT,3,79.00733333333334,-4.467500000000001,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,RUS,Mercedes,4,SOFT,3,82.53533333333333,-5.123000000000005,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,RUS,Mercedes,5,SOFT,3,78.58800000000001,-6.666500000000006,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,SAI,Williams,1,SOFT,7,93.726,-2.058333333333332,0.2857142857142857,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,SAI,Williams,2,SOFT,2,85.8805,-3.227000000000004,0.0,1,2
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,SAI,Williams,3,SOFT,2,85.9945,-10.0,0.0,4,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,SAI,Williams,4,SOFT,5,84.6572,-4.671749999999999,-0.4999999999999999,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,SAI,Williams,5,SOFT,3,82.361,-8.654499999999999,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,STR,Aston Martin,1,SOFT,6,89.63683333333336,-0.5121999999999985,-0.0857142857142857,1,6
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,STR,Aston Martin,2,SOFT,3,84.917,-7.064999999999998,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,VER,Red Bull Racing,1,SOFT,7,80.97857142857143,-1.7076666666666658,-0.3571428571428572,1,7
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,VER,Red Bull Racing,2,SOFT,5,82.91300000000001,-4.556750000000001,-0.7,1,5
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,VER,Red Bull Racing,3,SOFT,3,79.23799999999999,-7.286999999999999,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,VER,Red Bull Racing,4,SOFT,3,80.65666666666667,-6.374000000000002,-1.0,1,3
+2026_06_Q_Monaco Grand Prix,2026,6,Monaco Grand Prix,Q,VER,Red Bull Racing,5,SOFT,3,78.40133333333334,-6.093500000000006,-1.0,1,3
 2026_06_R_Monaco Grand Prix,2026,6,Monaco Grand Prix,R,ALB,Williams,1,MEDIUM,43,80.10544186046512,-0.0287857142857143,0.3474157136164243,1,43
 2026_06_R_Monaco Grand Prix,2026,6,Monaco Grand Prix,R,ALB,Williams,2,SOFT,16,83.4429375,1.056533333333333,-0.1823529411764705,1,16
 2026_06_R_Monaco Grand Prix,2026,6,Monaco Grand Prix,R,ALB,Williams,3,SOFT,6,100.09933333333336,-0.4659999999999996,-0.3142857142857143,17,22
@@ -343,6 +1158,87 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_06_R_Monaco Grand Prix,2026,6,Monaco Grand Prix,R,SAI,Williams,6,SOFT,1,92.832,0.0,0.0,5,5
 2026_06_R_Monaco Grand Prix,2026,6,Monaco Grand Prix,R,STR,Aston Martin,1,MEDIUM,4,90.422,-0.0606666666666626,-0.3999999999999999,1,4
 2026_06_R_Monaco Grand Prix,2026,6,Monaco Grand Prix,R,STR,Aston Martin,2,SOFT,52,79.80909615384616,-0.0918627450980392,0.069966489525233,1,52
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ALB,Williams,1,SOFT,2,93.3555,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ALB,Williams,2,SOFT,2,86.7295,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ALB,Williams,3,SOFT,1,77.424,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ALO,Aston Martin,1,SOFT,2,94.4095,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ALO,Aston Martin,2,SOFT,1,92.041,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ALO,Aston Martin,3,SOFT,2,88.62049999999999,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,1,SOFT,2,112.2955,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,2,SOFT,2,86.47800000000001,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,4,SOFT,2,84.6285,10.0,0.0,4,5
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,ANT,Mercedes,5,SOFT,3,107.31566666666669,0.0,-0.5,1,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,1,MEDIUM,2,93.616,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,91.257,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,93.4575,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,2,98.473,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BEA,Haas F1 Team,5,SOFT,2,93.96,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BOR,Audi,1,SOFT,2,92.8235,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BOR,Audi,2,SOFT,2,90.6775,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BOR,Audi,3,SOFT,1,76.001,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BOT,Cadillac,1,SOFT,2,87.775,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BOT,Cadillac,2,SOFT,2,88.82499999999999,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,BOT,Cadillac,3,SOFT,2,93.7285,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,COL,Alpine,1,SOFT,2,93.6385,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,COL,Alpine,2,SOFT,2,93.999,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,COL,Alpine,3,SOFT,2,96.6715,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,COL,Alpine,4,SOFT,2,93.2935,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,GAS,Alpine,1,SOFT,2,93.3985,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,GAS,Alpine,2,SOFT,2,92.533,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,GAS,Alpine,3,SOFT,2,113.388,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,GAS,Alpine,4,SOFT,2,91.9385,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,2,89.1995,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,2,112.4325,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,82.8615,10.0,0.0,4,5
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,1,75.077,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,1,SOFT,2,94.281,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,2,SOFT,2,86.73,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,4,SOFT,2,82.5695,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HAM,Ferrari,5,SOFT,2,92.6145,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HUL,Audi,1,SOFT,2,107.909,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HUL,Audi,2,SOFT,2,91.3435,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HUL,Audi,3,SOFT,2,87.1115,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HUL,Audi,4,SOFT,2,88.8775,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,HUL,Audi,6,SOFT,1,76.657,0.0,0.0,5,5
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,1,SOFT,2,87.34100000000001,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,2,SOFT,2,87.571,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,3,SOFT,2,87.768,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LAW,Racing Bulls,5,SOFT,1,76.542,0.0,0.0,5,5
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LEC,Ferrari,1,SOFT,2,91.836,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LEC,Ferrari,2,SOFT,2,87.44200000000001,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LIN,Racing Bulls,1,SOFT,2,87.256,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LIN,Racing Bulls,2,SOFT,2,90.0075,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,LIN,Racing Bulls,3,SOFT,1,138.746,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,NOR,McLaren,1,SOFT,2,90.1825,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,NOR,McLaren,2,SOFT,2,85.536,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,NOR,McLaren,3,SOFT,2,88.5545,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,NOR,McLaren,5,SOFT,1,75.001,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,OCO,Haas F1 Team,1,MEDIUM,2,111.218,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,2,88.793,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,92.287,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,PER,Cadillac,1,SOFT,2,91.449,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,PER,Cadillac,2,SOFT,2,91.9635,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,PIA,McLaren,1,SOFT,2,91.0265,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,PIA,McLaren,2,SOFT,2,84.902,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,PIA,McLaren,3,SOFT,2,89.9675,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,PIA,McLaren,4,SOFT,1,75.176,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,PIA,McLaren,5,SOFT,1,75.09,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,1,SOFT,2,95.291,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,2,SOFT,2,91.523,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,4,SOFT,2,88.36349999999999,10.0,0.0,3,4
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,RUS,Mercedes,5,SOFT,3,104.82333333333334,0.0,-0.5,1,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,SAI,Williams,1,SOFT,2,92.6305,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,SAI,Williams,2,SOFT,2,105.5225,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,SAI,Williams,3,SOFT,2,90.2635,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,SAI,Williams,4,SOFT,2,94.479,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,SAI,Williams,5,SOFT,2,93.321,10.0,0.0,5,6
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,STR,Aston Martin,1,SOFT,2,88.0655,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,STR,Aston Martin,2,SOFT,1,100.342,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,STR,Aston Martin,3,SOFT,2,88.845,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,1,SOFT,2,94.1685,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,92.887,10.0,0.0,2,3
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,3,SOFT,1,75.328,0.0,0.0,2,2
+2026_07_Q_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,Q,VER,Red Bull Racing,4,SOFT,1,75.021,0.0,0.0,2,2
 2026_07_R_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,R,ALB,Williams,1,MEDIUM,13,86.99692307692308,-0.3445,0.521978021978022,1,13
 2026_07_R_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,R,ALB,Williams,2,HARD,16,87.393625,-0.2625333333333335,0.4441176470588235,1,16
 2026_07_R_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,R,ALB,Williams,3,HARD,5,89.1068,-1.651250000000001,-0.0999999999999999,1,5
@@ -413,6 +1309,104 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_07_R_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,R,VER,Red Bull Racing,2,MEDIUM,17,84.05482352941176,-0.2913749999999995,0.6200980392156864,1,17
 2026_07_R_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,R,VER,Red Bull Racing,3,HARD,11,84.66345454545454,0.0876000000000004,0.4272727272727273,1,11
 2026_07_R_Barcelona Grand Prix,2026,7,Barcelona Grand Prix,R,VER,Red Bull Racing,4,MEDIUM,26,85.2958076923077,-0.24168,0.7367521367521367,1,26
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ALB,Williams,1,SOFT,2,78.804,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ALB,Williams,2,SOFT,2,78.8115,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ALB,Williams,3,SOFT,2,98.5525,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ALO,Aston Martin,1,SOFT,2,80.2145,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ALO,Aston Martin,2,SOFT,2,82.346,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ALO,Aston Martin,3,SOFT,2,82.172,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ANT,Mercedes,1,SOFT,2,97.6585,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ANT,Mercedes,2,SOFT,1,76.35,0.0,0.0,5,5
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ANT,Mercedes,3,SOFT,2,80.483,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ANT,Mercedes,4,SOFT,1,66.965,0.0,0.0,5,5
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ANT,Mercedes,5,SOFT,2,77.914,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,ANT,Mercedes,6,SOFT,1,68.215,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,2,79.11500000000001,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,84.3045,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,78.0955,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,2,81.626,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BOR,Audi,1,SOFT,2,81.1505,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BOR,Audi,2,SOFT,2,81.16499999999999,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BOR,Audi,3,SOFT,2,77.85499999999999,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BOR,Audi,4,SOFT,2,82.116,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BOT,Cadillac,1,SOFT,2,78.03299999999999,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BOT,Cadillac,2,SOFT,2,80.0245,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,BOT,Cadillac,3,SOFT,1,69.188,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,COL,Alpine,1,SOFT,2,82.15350000000001,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,COL,Alpine,2,SOFT,2,84.6685,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,COL,Alpine,3,SOFT,2,100.2225,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,COL,Alpine,4,SOFT,1,91.909,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,GAS,Alpine,1,SOFT,2,103.202,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,GAS,Alpine,2,SOFT,2,81.7375,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,GAS,Alpine,3,SOFT,2,81.27,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,GAS,Alpine,4,SOFT,2,81.069,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,2,82.906,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,2,79.709,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,2,98.929,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,78.15950000000001,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,2,75.395,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,1,66.632,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAM,Ferrari,1,SOFT,2,82.2825,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAM,Ferrari,2,SOFT,2,81.519,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAM,Ferrari,3,SOFT,2,75.4365,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAM,Ferrari,4,SOFT,1,84.692,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HAM,Ferrari,5,SOFT,1,66.408,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HUL,Audi,1,SOFT,2,81.87100000000001,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HUL,Audi,2,SOFT,2,91.7475,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HUL,Audi,3,SOFT,2,81.1995,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HUL,Audi,4,SOFT,2,75.975,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,HUL,Audi,5,SOFT,1,67.611,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,1,SOFT,2,80.364,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,2,SOFT,2,79.909,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,3,SOFT,2,79.25800000000001,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,4,SOFT,2,79.5205,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,5,SOFT,2,76.6115,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LAW,Racing Bulls,6,SOFT,1,66.955,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LEC,Ferrari,1,SOFT,2,82.7235,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LEC,Ferrari,2,SOFT,2,79.39750000000001,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LEC,Ferrari,3,SOFT,2,76.77250000000001,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LEC,Ferrari,4,SOFT,2,77.5085,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LEC,Ferrari,5,SOFT,1,66.349,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,1,SOFT,2,78.8095,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,2,SOFT,2,80.3155,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,3,SOFT,2,75.004,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,4,SOFT,2,78.013,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,5,SOFT,2,74.3395,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,LIN,Racing Bulls,6,SOFT,1,67.007,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,NOR,McLaren,1,SOFT,2,81.259,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,NOR,McLaren,2,SOFT,2,77.322,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,NOR,McLaren,3,SOFT,2,77.147,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,NOR,McLaren,4,SOFT,2,77.565,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,NOR,McLaren,5,SOFT,1,66.502,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,2,102.8335,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,2,79.5315,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,83.574,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,4,SOFT,2,80.45949999999999,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,OCO,Haas F1 Team,5,SOFT,2,80.553,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PER,Cadillac,1,SOFT,2,80.96950000000001,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PER,Cadillac,2,SOFT,2,80.23349999999999,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PER,Cadillac,3,SOFT,2,81.08500000000001,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PIA,McLaren,1,SOFT,2,83.005,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PIA,McLaren,2,SOFT,1,116.248,0.0,0.0,5,5
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PIA,McLaren,3,SOFT,2,79.2205,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PIA,McLaren,4,SOFT,2,76.8655,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,PIA,McLaren,5,SOFT,1,66.511,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,RUS,Mercedes,1,SOFT,2,87.4955,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,RUS,Mercedes,2,SOFT,2,100.20499999999998,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,RUS,Mercedes,3,SOFT,2,78.5685,10.0,0.0,8,9
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,RUS,Mercedes,4,SOFT,1,83.25,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,RUS,Mercedes,5,SOFT,2,78.49000000000001,10.0,0.0,4,5
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,RUS,Mercedes,6,SOFT,2,76.591,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,RUS,Mercedes,7,SOFT,1,66.113,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,SAI,Williams,1,SOFT,2,82.3215,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,SAI,Williams,2,SOFT,2,80.40899999999999,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,SAI,Williams,3,SOFT,2,83.846,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,STR,Aston Martin,1,SOFT,2,99.379,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,STR,Aston Martin,2,SOFT,2,79.6,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,STR,Aston Martin,3,SOFT,1,93.507,0.0,0.0,2,2
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,VER,Red Bull Racing,1,SOFT,2,98.2295,10.0,0.0,2,3
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,79.01,10.0,0.0,5,6
+2026_08_Q_Austrian Grand Prix,2026,8,Austrian Grand Prix,Q,VER,Red Bull Racing,3,SOFT,2,73.3415,10.0,0.0,2,3
 2026_08_R_Austrian Grand Prix,2026,8,Austrian Grand Prix,R,ALB,Williams,1,MEDIUM,18,75.53994444444443,-0.2155294117647059,0.3622291021671827,1,18
 2026_08_R_Austrian Grand Prix,2026,8,Austrian Grand Prix,R,ALB,Williams,2,MEDIUM,19,77.309,-0.2714999999999992,0.0824561403508772,1,19
 2026_08_R_Austrian Grand Prix,2026,8,Austrian Grand Prix,R,ALB,Williams,3,HARD,32,74.92096874999999,-0.2128064516129034,0.5075611789257768,1,32
@@ -476,6 +1470,108 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_08_R_Austrian Grand Prix,2026,8,Austrian Grand Prix,R,VER,Red Bull Racing,1,MEDIUM,18,73.05944444444444,-0.0600000000000006,0.47781217750258,1,18
 2026_08_R_Austrian Grand Prix,2026,8,Austrian Grand Prix,R,VER,Red Bull Racing,2,HARD,31,74.05832258064518,-0.2551999999999997,0.3439516129032258,1,31
 2026_08_R_Austrian Grand Prix,2026,8,Austrian Grand Prix,R,VER,Red Bull Racing,3,HARD,22,72.21418181818184,-0.4591428571428576,0.1869000564652738,1,22
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALB,Williams,1,SOFT,1,92.94,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALB,Williams,2,SOFT,2,96.8035,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALB,Williams,3,SOFT,2,103.0895,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALB,Williams,4,SOFT,2,102.5845,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALB,Williams,5,SOFT,2,104.3,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALO,Aston Martin,1,SOFT,1,101.031,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALO,Aston Martin,2,SOFT,3,107.04233333333332,0.0,-0.5,2,4
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ALO,Aston Martin,3,SOFT,2,99.9085,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ANT,Mercedes,1,SOFT,2,101.9755,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ANT,Mercedes,2,SOFT,2,99.975,10.0,0.0,9,10
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ANT,Mercedes,3,SOFT,3,102.41733333333332,0.0,-0.5,2,4
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ANT,Mercedes,4,SOFT,2,99.6905,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ANT,Mercedes,5,SOFT,2,94.6865,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,ANT,Mercedes,6,SOFT,1,88.111,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,2,97.124,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,97.337,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,103.92,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,2,101.098,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BEA,Haas F1 Team,5,SOFT,2,107.4145,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BOR,Audi,2,SOFT,2,103.5805,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BOR,Audi,3,SOFT,2,99.0545,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BOR,Audi,4,SOFT,2,103.1725,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BOT,Cadillac,1,SOFT,1,107.013,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BOT,Cadillac,2,SOFT,2,99.6235,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,BOT,Cadillac,3,SOFT,2,105.247,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,COL,Alpine,1,SOFT,2,106.002,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,COL,Alpine,2,SOFT,1,131.992,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,GAS,Alpine,1,SOFT,2,102.55,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,GAS,Alpine,2,SOFT,2,103.9555,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,GAS,Alpine,3,SOFT,2,103.8725,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,GAS,Alpine,4,SOFT,2,103.3395,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,2,102.4875,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,2,109.0855,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,2,102.6615,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,99.6985,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,2,96.194,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,1,88.746,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAM,Ferrari,1,SOFT,4,108.355,0.4879999999999995,0.3999999999999999,5,8
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAM,Ferrari,2,SOFT,2,103.1695,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAM,Ferrari,3,SOFT,2,98.7345,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAM,Ferrari,4,SOFT,2,96.0555,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HAM,Ferrari,5,SOFT,1,88.458,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HUL,Audi,1,MEDIUM,2,96.033,9.050000000000011,0.0,8,9
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HUL,Audi,2,SOFT,2,99.9705,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HUL,Audi,3,SOFT,2,99.4685,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HUL,Audi,4,SOFT,2,95.237,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,HUL,Audi,5,SOFT,2,102.2715,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LAW,Racing Bulls,1,SOFT,2,95.4175,5.162999999999997,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LAW,Racing Bulls,2,SOFT,2,94.6525,9.305000000000009,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LAW,Racing Bulls,3,SOFT,2,102.4695,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LAW,Racing Bulls,4,SOFT,2,99.8195,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LAW,Racing Bulls,5,SOFT,2,103.4615,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LAW,Racing Bulls,6,SOFT,1,92.923,0.0,0.0,5,5
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LAW,Racing Bulls,7,SOFT,1,89.716,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LEC,Ferrari,1,SOFT,5,104.0004,0.3902499999999982,0.0999999999999999,5,9
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LEC,Ferrari,2,SOFT,2,98.626,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LEC,Ferrari,3,SOFT,2,99.9205,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LEC,Ferrari,4,SOFT,2,97.301,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LEC,Ferrari,5,SOFT,1,88.286,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LIN,Racing Bulls,1,SOFT,1,92.375,0.0,0.0,5,5
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LIN,Racing Bulls,2,SOFT,2,102.0535,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LIN,Racing Bulls,3,SOFT,2,100.6595,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LIN,Racing Bulls,4,SOFT,2,101.157,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LIN,Racing Bulls,5,SOFT,2,102.4895,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,LIN,Racing Bulls,6,SOFT,1,89.305,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,NOR,McLaren,1,SOFT,2,102.067,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,NOR,McLaren,2,SOFT,1,106.246,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,NOR,McLaren,3,SOFT,2,96.919,10.0,0.0,4,5
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,NOR,McLaren,4,SOFT,2,101.7535,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,NOR,McLaren,5,SOFT,2,96.9195,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,NOR,McLaren,6,SOFT,1,88.877,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,2,98.746,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,2,97.331,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,105.7265,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PER,Cadillac,1,SOFT,2,97.355,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PER,Cadillac,2,SOFT,2,98.2975,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PER,Cadillac,3,SOFT,1,91.451,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PIA,McLaren,1,SOFT,2,100.254,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PIA,McLaren,2,SOFT,2,102.7275,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PIA,McLaren,3,SOFT,2,97.5445,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PIA,McLaren,4,SOFT,2,103.6945,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PIA,McLaren,5,SOFT,2,98.6515,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,PIA,McLaren,6,SOFT,1,89.032,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,RUS,Mercedes,2,SOFT,2,105.203,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,RUS,Mercedes,3,SOFT,2,98.581,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,RUS,Mercedes,4,SOFT,1,89.567,0.0,0.0,5,5
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,RUS,Mercedes,5,SOFT,2,96.1215,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,RUS,Mercedes,6,SOFT,1,88.686,0.0,0.0,2,2
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,SAI,Williams,1,SOFT,2,97.8095,8.699000000000012,0.0,8,9
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,SAI,Williams,2,SOFT,2,98.043,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,SAI,Williams,3,SOFT,2,102.709,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,SAI,Williams,4,SOFT,2,104.1545,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,SAI,Williams,5,SOFT,2,105.1325,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,STR,Aston Martin,1,SOFT,2,101.4745,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,STR,Aston Martin,2,SOFT,3,116.99433333333332,0.0,-0.5,1,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,STR,Aston Martin,3,SOFT,2,105.6765,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,VER,Red Bull Racing,1,SOFT,2,103.367,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,102.1225,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,VER,Red Bull Racing,3,SOFT,2,100.556,10.0,0.0,5,6
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,99.406,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,VER,Red Bull Racing,5,SOFT,2,95.4365,10.0,0.0,2,3
+2026_09_Q_British Grand Prix,2026,9,British Grand Prix,Q,VER,Red Bull Racing,6,SOFT,1,88.893,0.0,0.0,2,2
 2026_09_R_British Grand Prix,2026,9,British Grand Prix,R,ALB,Williams,1,MEDIUM,1,142.352,0.0,0.0,1,1
 2026_09_R_British Grand Prix,2026,9,British Grand Prix,R,ALB,Williams,2,HARD,13,100.82015384615384,-0.7929166666666667,0.0659340659340659,1,13
 2026_09_R_British Grand Prix,2026,9,British Grand Prix,R,ALB,Williams,3,MEDIUM,9,101.66244444444446,-1.4090000000000007,-0.2666666666666666,8,16
@@ -549,6 +1645,93 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_09_R_British Grand Prix,2026,9,British Grand Prix,R,VER,Red Bull Racing,1,MEDIUM,17,95.02188235294116,-0.3268750000000002,-0.4534313725490197,1,17
 2026_09_R_British Grand Prix,2026,9,British Grand Prix,R,VER,Red Bull Racing,2,HARD,21,95.522,-0.4484499999999997,0.1032802912542146,1,21
 2026_09_R_British Grand Prix,2026,9,British Grand Prix,R,VER,Red Bull Racing,3,MEDIUM,8,96.921125,-1.3134285714285718,-0.0952380952380952,1,8
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,ALB,Williams,1,MEDIUM,16,94.672875,-0.2268666666666661,-0.5264705882352941,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,ALO,Aston Martin,1,SOFT,16,97.4169375,-0.3419999999999997,0.3999999999999999,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,ANT,Mercedes,1,MEDIUM,16,92.223375,-0.0516,-0.1617647058823529,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,BEA,Haas F1 Team,1,MEDIUM,16,94.7090625,-0.1355333333333334,-0.3676470588235294,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,BOR,Audi,1,MEDIUM,16,94.3695,-0.1808666666666662,-0.6411764705882352,8,23
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,BOT,Cadillac,1,SOFT,16,96.2794375,-0.1860000000000004,-0.2941176470588235,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,COL,Alpine,1,MEDIUM,16,94.4470625,-0.1459333333333338,-0.5264705882352941,5,20
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,GAS,Alpine,1,MEDIUM,16,94.516375,-0.0926000000000006,-0.6029411764705882,5,20
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,HAD,Red Bull Racing,1,MEDIUM,16,93.768125,-0.1621333333333335,-0.5911764705882353,7,22
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,HAM,Ferrari,1,MEDIUM,16,92.461875,-0.0045999999999992,0.1324503669836835,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,HUL,Audi,1,MEDIUM,16,94.402,-0.2104666666666664,-0.5558823529411765,8,23
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,LAW,Racing Bulls,1,MEDIUM,16,93.8514375,-0.1169999999999997,-0.4058823529411764,5,20
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,LEC,Ferrari,1,MEDIUM,16,92.861125,-0.1478666666666669,-0.7617647058823529,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,LIN,Racing Bulls,1,MEDIUM,16,94.1031875,-0.0649999999999996,-0.4794117647058824,5,20
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,NOR,McLaren,1,MEDIUM,16,92.759,-0.1172666666666666,-0.3058823529411765,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,OCO,Haas F1 Team,1,MEDIUM,16,94.8949375,-0.1678666666666667,-0.3999999999999999,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,PER,Cadillac,1,MEDIUM,1,101.423,0.0,0.0,2,2
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,PER,Cadillac,2,MEDIUM,14,99.18857142857144,-0.8399230769230767,-0.3010989010989011,3,16
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,PIA,McLaren,1,MEDIUM,16,93.2055,-0.1597333333333334,-0.4823529411764706,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,RUS,Mercedes,1,MEDIUM,16,92.830875,-0.176066666666666,-0.7352941176470589,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,SAI,Williams,1,MEDIUM,16,94.83725,-0.1726666666666659,-0.488235294117647,2,17
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,STR,Aston Martin,1,SOFT,13,97.72084615384613,-0.1102499999999994,0.1923076923076923,2,14
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,STR,Aston Martin,2,MEDIUM,2,108.904,-10.0,0.0,6,7
+2026_09_S_British Grand Prix,2026,9,British Grand Prix,S,VER,Red Bull Racing,1,MEDIUM,16,93.1278125,-0.0843333333333333,-0.2117647058823529,5,20
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ALB,Williams,1,MEDIUM,6,107.40866666666666,-2.0,0.1428571428571428,2,7
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ALB,Williams,2,MEDIUM,2,104.4065,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ALB,Williams,3,MEDIUM,2,104.2915,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ALO,Aston Martin,1,MEDIUM,4,110.0655,3.333333333333333,0.0,2,5
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ANT,Mercedes,1,MEDIUM,2,105.4305,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ANT,Mercedes,2,MEDIUM,2,105.2925,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ANT,Mercedes,3,MEDIUM,2,106.8035,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ANT,Mercedes,4,MEDIUM,2,101.7395,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,ANT,Mercedes,5,SOFT,1,88.387,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BEA,Haas F1 Team,1,MEDIUM,2,107.167,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BEA,Haas F1 Team,2,MEDIUM,2,105.637,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BOR,Audi,1,MEDIUM,2,105.19,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BOR,Audi,2,MEDIUM,2,103.7025,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BOR,Audi,3,MEDIUM,2,104.2265,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BOR,Audi,4,MEDIUM,2,105.1735,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BOT,Cadillac,1,MEDIUM,2,104.015,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,BOT,Cadillac,2,MEDIUM,2,106.576,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,COL,Alpine,1,MEDIUM,5,116.035,1.255749999999999,-0.1999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,COL,Alpine,2,MEDIUM,2,107.1185,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,GAS,Alpine,1,MEDIUM,5,108.2444,1.1799999999999995,0.0999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,GAS,Alpine,2,MEDIUM,2,106.28,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HAD,Red Bull Racing,1,MEDIUM,3,107.82133333333331,0.0,0.5,2,5
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HAD,Red Bull Racing,2,MEDIUM,5,109.3694,0.0,0.0999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HAD,Red Bull Racing,3,SOFT,1,88.835,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HAM,Ferrari,1,MEDIUM,5,108.0054,0.0,0.0999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HAM,Ferrari,2,MEDIUM,4,108.3705,-0.3039999999999973,0.1999999999999999,2,5
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HAM,Ferrari,3,SOFT,1,88.376,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HUL,Audi,1,MEDIUM,2,105.399,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HUL,Audi,2,MEDIUM,2,99.43,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HUL,Audi,3,MEDIUM,2,103.764,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,HUL,Audi,4,MEDIUM,2,101.7435,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LAW,Racing Bulls,1,MEDIUM,5,108.27579999999998,1.3870000000000005,0.0,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LAW,Racing Bulls,2,MEDIUM,2,103.494,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LAW,Racing Bulls,3,SOFT,1,88.927,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LEC,Ferrari,1,MEDIUM,4,105.05675,3.333333333333333,0.0,2,5
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LEC,Ferrari,2,MEDIUM,5,108.85,2.683250000000001,0.1999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LEC,Ferrari,3,SOFT,1,88.703,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LIN,Racing Bulls,1,MEDIUM,5,113.7006,1.1667500000000004,-0.1999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LIN,Racing Bulls,2,MEDIUM,2,108.803,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,LIN,Racing Bulls,3,SOFT,1,89.367,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,NOR,McLaren,1,MEDIUM,2,103.6535,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,NOR,McLaren,2,MEDIUM,2,100.8965,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,NOR,McLaren,3,MEDIUM,2,104.1065,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,NOR,McLaren,4,MEDIUM,3,113.899,0.0,-0.5,4,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,NOR,McLaren,5,SOFT,1,88.74,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,OCO,Haas F1 Team,1,MEDIUM,2,106.899,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,OCO,Haas F1 Team,2,MEDIUM,2,106.7265,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,PER,Cadillac,1,MEDIUM,2,101.3055,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,PER,Cadillac,2,MEDIUM,2,106.2885,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,PIA,McLaren,1,MEDIUM,2,103.3765,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,PIA,McLaren,2,MEDIUM,5,105.4702,2.0032500000000013,0.0999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,PIA,McLaren,3,SOFT,1,88.772,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,RUS,Mercedes,1,MEDIUM,2,108.857,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,RUS,Mercedes,2,MEDIUM,2,103.236,10.0,0.0,5,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,RUS,Mercedes,3,MEDIUM,5,107.5948,0.184000000000001,-0.1999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,RUS,Mercedes,4,SOFT,1,88.733,0.0,0.0,2,2
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,SAI,Williams,1,MEDIUM,6,108.19566666666668,0.549199999999999,0.0857142857142857,2,7
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,SAI,Williams,2,MEDIUM,2,97.2295,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,SAI,Williams,3,MEDIUM,1,105.78,0.0,0.0,5,5
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,STR,Aston Martin,1,MEDIUM,4,112.035,3.333333333333333,0.0,2,5
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,VER,Red Bull Racing,1,MEDIUM,5,109.9716,2.708999999999996,-0.0999999999999999,2,6
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,VER,Red Bull Racing,2,MEDIUM,2,102.731,10.0,0.0,2,3
+2026_09_SQ_British Grand Prix,2026,9,British Grand Prix,SQ,VER,Red Bull Racing,3,SOFT,1,88.697,0.0,0.0,2,2
 2026_10_FP1_Belgian Grand Prix,2026,10,Belgian Grand Prix,FP1,ALB,Williams,2,MEDIUM,5,116.4668,2.1522499999999987,0.0999999999999999,2,9
 2026_10_FP1_Belgian Grand Prix,2026,10,Belgian Grand Prix,FP1,ALB,Williams,3,SOFT,3,117.95133333333337,4.773499999999999,0.5,2,5
 2026_10_FP1_Belgian Grand Prix,2026,10,Belgian Grand Prix,FP1,ALB,Williams,4,SOFT,7,116.39228571428572,1.9204999999999997,1.0,7,14
@@ -1711,3 +2894,447 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_12_SQ_Dutch Grand Prix,2026,12,Dutch Grand Prix,SQ,VER,Red Bull Racing,1,MEDIUM,6,91.41566666666668,-0.5451999999999998,0.0285714285714285,2,7
 2026_12_SQ_Dutch Grand Prix,2026,12,Dutch Grand Prix,SQ,VER,Red Bull Racing,2,MEDIUM,3,88.09833333333334,0.0,0.5,2,4
 2026_12_SQ_Dutch Grand Prix,2026,12,Dutch Grand Prix,SQ,VER,Red Bull Racing,3,SOFT,2,81.339,-10.0,0.0,2,3
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ALO,Aston Martin,1,HARD,2,105.979,10.0,0.0,2,3
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ALO,Aston Martin,3,HARD,6,99.766,2.0,0.1428571428571428,7,12
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ALO,Aston Martin,4,MEDIUM,2,114.87,10.0,0.0,2,3
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ALO,Aston Martin,5,MEDIUM,5,106.11660000000002,0.0,0.0999999999999999,4,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ANT,Mercedes,1,MEDIUM,5,105.7698,0.0,0.0999999999999999,2,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ANT,Mercedes,3,SOFT,2,95.1895,10.0,0.0,3,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ANT,Mercedes,4,MEDIUM,13,87.23492307692308,0.738166666666667,-0.467032967032967,8,20
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ANT,Mercedes,5,SOFT,2,130.349,10.0,0.0,6,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ARO,Alpine,3,MEDIUM,1,128.45,0.0,0.0,4,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ARO,Alpine,4,MEDIUM,6,107.63533333333332,2.0,-0.0857142857142857,7,12
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ARO,Alpine,5,SOFT,1,84.766,0.0,0.0,2,2
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ARO,Alpine,6,SOFT,2,112.814,-10.0,0.0,4,5
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,ARO,Alpine,7,SOFT,5,119.65900000000002,-0.1120000000000018,0.3,7,11
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BEA,Haas F1 Team,1,HARD,2,106.3745,10.0,0.0,2,3
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BEA,Haas F1 Team,2,HARD,5,115.978,0.0,0.0999999999999999,5,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BEA,Haas F1 Team,3,HARD,1,90.036,0.0,0.0,12,12
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BEA,Haas F1 Team,4,SOFT,3,115.57333333333334,0.0,0.5,2,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BEA,Haas F1 Team,5,SOFT,2,90.53,10.0,0.0,6,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BEA,Haas F1 Team,6,HARD,8,96.76725,2.097285714285716,0.380952380952381,14,21
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BOR,Audi,1,MEDIUM,1,104.858,0.0,0.0,2,2
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BOR,Audi,2,MEDIUM,2,109.287,10.0,0.0,4,5
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BOR,Audi,3,MEDIUM,4,101.00925,2.573999999999998,0.3999999999999999,8,11
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BOR,Audi,4,SOFT,9,96.88888888888889,0.987375,0.4333333333333333,2,10
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BOT,Cadillac,1,HARD,9,106.54866666666668,0.722999999999999,0.0333333333333333,2,10
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BOT,Cadillac,2,MEDIUM,6,100.71466666666667,2.0,-0.0857142857142857,2,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BOT,Cadillac,3,MEDIUM,8,93.974125,1.5970000000000002,0.7619047619047621,9,16
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BRO,Williams,1,HARD,1,97.541,0.0,0.0,2,2
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BRO,Williams,2,HARD,3,102.81533333333334,0.0,0.5,4,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BRO,Williams,3,HARD,5,99.7434,0.0,0.3,9,13
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,BRO,Williams,4,SOFT,11,101.20045454545452,-2.0,-0.0727272727272727,2,12
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,COL,Alpine,1,MEDIUM,6,103.107,1.7445999999999997,-0.3142857142857143,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,COL,Alpine,2,SOFT,4,118.2515,-1.673333333333332,-0.3999999999999999,2,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,COL,Alpine,3,MEDIUM,11,97.05581818181818,1.8175,-0.0727272727272727,11,21
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HAM,Ferrari,1,HARD,7,104.42614285714284,1.6000000000000014,-0.2857142857142857,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HAM,Ferrari,2,MEDIUM,3,104.723,-3.094000000000001,-0.5,2,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HAM,Ferrari,3,MEDIUM,5,110.1824,-4.866249999999997,-0.8999999999999998,6,10
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HAM,Ferrari,4,MEDIUM,6,103.681,4.030599999999998,0.8857142857142858,12,17
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HER,Cadillac,1,HARD,1,128.792,0.0,0.0,2,2
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HER,Cadillac,2,HARD,1,89.922,0.0,0.0,4,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HUL,Audi,2,HARD,4,105.93075,3.333333333333333,0.3999999999999999,3,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HUL,Audi,3,HARD,2,92.1085,10.0,0.0,9,10
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HUL,Audi,4,SOFT,3,109.18266666666666,0.0,0.5,1,3
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HUL,Audi,5,SOFT,3,94.62333333333332,0.0,-0.5,5,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,HUL,Audi,6,HARD,9,97.6051111111111,2.5391250000000003,0.5333333333333333,12,20
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,IWA,Red Bull Racing,1,HARD,3,96.81166666666668,2.3190000000000026,1.0,2,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,IWA,Red Bull Racing,2,HARD,3,98.72466666666666,1.2905000000000015,0.5,6,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,IWA,Red Bull Racing,3,HARD,6,104.522,2.0,-0.0857142857142857,10,15
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,IWA,Red Bull Racing,4,SOFT,8,102.944125,-0.9641428571428564,-0.119047619047619,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LAW,Red Bull Racing,1,SOFT,4,108.72775,3.333333333333333,0.0,2,5
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LAW,Red Bull Racing,2,SOFT,3,112.46433333333334,0.0,-0.5,6,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LAW,Red Bull Racing,3,SOFT,5,103.518,5.0,0.1999999999999999,2,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LAW,Red Bull Racing,4,SOFT,5,102.1082,0.0,-0.1999999999999999,8,12
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LAW,Red Bull Racing,5,SOFT,5,109.9422,3.171000000000003,0.7,10,14
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LEC,Ferrari,1,HARD,9,106.45155555555556,2.033125,0.1833333333333333,2,10
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LEC,Ferrari,2,MEDIUM,4,106.30425,-3.333333333333333,0.1999999999999999,2,5
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LEC,Ferrari,3,MEDIUM,1,145.45,0.0,0.0,6,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LEC,Ferrari,4,MEDIUM,11,91.59909090909092,0.9230000000000004,-0.3818181818181818,8,18
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LIN,Racing Bulls,1,HARD,7,100.53942857142856,-1.8463333333333336,-0.4642857142857144,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LIN,Racing Bulls,2,MEDIUM,6,107.59983333333334,-0.2430000000000007,0.0285714285714285,2,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LIN,Racing Bulls,3,HARD,6,88.41516666666668,0.7602000000000004,0.0285714285714285,12,17
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,LIN,Racing Bulls,4,MEDIUM,5,108.1692,2.2642500000000005,0.6,8,12
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,NOR,McLaren,1,MEDIUM,7,105.55114285714286,1.6113333333333344,0.0714285714285714,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,NOR,McLaren,2,SOFT,4,104.04875,3.333333333333333,0.0,2,5
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,NOR,McLaren,3,MEDIUM,8,87.42099999999999,0.9408571428571426,0.2857142857142857,11,18
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,NOR,McLaren,4,SOFT,3,124.349,6.911000000000001,1.0,6,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,OCO,Haas F1 Team,1,HARD,2,118.096,10.0,0.0,2,3
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,OCO,Haas F1 Team,2,HARD,1,87.026,0.0,0.0,5,5
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,OCO,Haas F1 Team,3,HARD,4,103.94825,3.333333333333333,0.3999999999999999,9,12
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,OCO,Haas F1 Team,4,SOFT,3,103.38766666666668,0.0,0.5,2,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,OCO,Haas F1 Team,5,SOFT,3,110.58166666666666,0.0,-0.5,5,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,OCO,Haas F1 Team,6,HARD,6,103.451,3.918800000000002,0.4857142857142857,14,19
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,PIA,McLaren,1,MEDIUM,8,104.65725,-1.4285714285714286,0.0476190476190476,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,PIA,McLaren,2,SOFT,3,109.19466666666666,0.0,0.5,2,4
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,PIA,McLaren,3,SOFT,3,111.89333333333332,0.0,-0.5,5,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,PIA,McLaren,4,MEDIUM,9,96.09566666666666,2.0127499999999987,0.7,11,19
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,RUS,Mercedes,1,MEDIUM,7,113.01057142857144,0.0,-0.0714285714285714,2,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,RUS,Mercedes,2,SOFT,2,110.137,10.0,0.0,2,3
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,RUS,Mercedes,3,SOFT,3,114.56966666666666,0.0,-0.5,4,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,RUS,Mercedes,4,MEDIUM,9,86.95122222222221,0.4480000000000004,-0.1333333333333333,10,18
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,RUS,Mercedes,5,SOFT,1,140.626,0.0,0.0,8,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,SAI,Williams,1,HARD,5,105.0386,0.0,0.3,2,6
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,SAI,Williams,2,HARD,3,100.889,0.0,0.5,8,10
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,SAI,Williams,3,MEDIUM,7,104.97514285714286,0.0,0.2142857142857143,2,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,SAI,Williams,4,MEDIUM,7,104.44114285714284,1.7505,0.6071428571428572,9,15
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,STR,Aston Martin,1,HARD,8,104.824875,1.4285714285714286,0.2380952380952381,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,STR,Aston Martin,2,MEDIUM,6,107.66966666666669,2.0,-0.0857142857142857,2,7
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,STR,Aston Martin,3,MEDIUM,5,104.2184,2.245750000000001,0.3,9,13
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,TSU,Racing Bulls,1,HARD,7,109.39628571428572,0.0,-0.3571428571428572,2,8
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,TSU,Racing Bulls,2,MEDIUM,8,112.87425,-1.4285714285714286,0.2142857142857143,2,9
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,TSU,Racing Bulls,3,HARD,4,91.815,1.801666666666667,0.3999999999999999,11,14
+2026_13_FP1_Italian Grand Prix,2026,13,Italian Grand Prix,FP1,TSU,Racing Bulls,4,MEDIUM,4,120.4015,3.333333333333333,0.7999999999999999,10,13
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ALB,Williams,1,MEDIUM,10,106.5419,-1.1111111111111112,-0.006060606060606,2,11
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ALB,Williams,2,SOFT,2,100.5095,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ALB,Williams,3,MEDIUM,11,88.14209090909091,0.4244,-0.1818181818181818,13,23
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ALB,Williams,4,SOFT,4,112.30425,0.4393333333333326,0.7999999999999999,4,8
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ALO,Aston Martin,1,SOFT,6,100.84033333333332,2.0,-0.0857142857142857,2,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ALO,Aston Martin,2,SOFT,5,106.84380000000002,4.438500000000001,-0.0999999999999999,2,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ALO,Aston Martin,3,SOFT,4,104.78324999999998,-3.333333333333333,0.0,8,11
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ANT,Mercedes,1,HARD,3,104.79133333333334,0.0,0.5,2,4
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ANT,Mercedes,2,SOFT,1,91.894,0.0,0.0,2,2
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ANT,Mercedes,3,SOFT,2,90.0025,10.0,0.0,4,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ANT,Mercedes,4,HARD,18,86.39616666666667,0.2389411764705881,0.281733746130031,6,23
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,ANT,Mercedes,5,SOFT,3,134.43833333333333,6.208999999999996,1.0,6,9
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BEA,Haas F1 Team,1,MEDIUM,1,85.238,0.0,0.0,2,2
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BEA,Haas F1 Team,2,MEDIUM,1,84.961,0.0,0.0,5,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BEA,Haas F1 Team,3,MEDIUM,3,108.996,0.0,0.5,8,10
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BEA,Haas F1 Team,4,SOFT,2,111.7495,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BEA,Haas F1 Team,5,SOFT,3,103.89133333333332,0.0,-0.5,5,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BEA,Haas F1 Team,6,MEDIUM,10,95.4994,1.849222222222224,0.3212121212121211,12,22
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOR,Audi,1,HARD,4,113.76,3.333333333333333,0.0,2,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOR,Audi,2,HARD,3,120.026,0.0,-0.5,6,8
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOR,Audi,3,HARD,3,104.77433333333332,0.0,-0.5,9,11
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOR,Audi,4,SOFT,3,116.06366666666668,0.0,0.5,2,4
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOR,Audi,5,SOFT,2,113.182,-10.0,0.0,5,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOR,Audi,6,HARD,4,92.15575,3.563666666666668,0.7999999999999999,13,16
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOT,Cadillac,1,MEDIUM,4,106.6185,3.333333333333333,0.7999999999999999,2,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOT,Cadillac,2,MEDIUM,3,113.576,0.0,-0.5,6,8
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOT,Cadillac,3,SOFT,6,107.5335,-1.7759999999999991,0.0285714285714285,2,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,BOT,Cadillac,4,SOFT,12,99.16825,0.9639090909090904,0.7062937062937064,9,20
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,COL,Alpine,1,HARD,7,107.39714285714284,1.6129999999999995,0.0714285714285714,2,9
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,COL,Alpine,2,SOFT,3,103.213,6.475000000000001,1.0,2,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,COL,Alpine,3,SOFT,8,88.072125,0.6248571428571422,0.5000000000000001,7,14
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,COL,Alpine,4,HARD,5,124.7186,0.0,0.6,10,14
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,GAS,Alpine,1,HARD,8,103.89525,1.4285714285714286,-0.1904761904761905,2,9
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,GAS,Alpine,2,SOFT,5,106.7384,0.0,-0.1999999999999999,2,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,GAS,Alpine,3,HARD,11,98.80345454545454,0.9323000000000008,0.3818181818181818,11,21
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HAM,Ferrari,1,MEDIUM,2,113.832,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HAM,Ferrari,2,MEDIUM,4,105.45525,3.333333333333333,0.0,5,8
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HAM,Ferrari,3,SOFT,1,83.016,0.0,0.0,2,2
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HAM,Ferrari,4,SOFT,2,109.5315,-10.0,0.0,5,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HAM,Ferrari,5,SOFT,12,97.52425,1.2009999999999983,0.2867132867132868,8,19
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HUL,Audi,1,MEDIUM,10,107.8682,-0.3056666666666687,-0.006060606060606,2,11
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HUL,Audi,2,SOFT,2,103.6475,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HUL,Audi,3,SOFT,3,110.406,0.0,-0.5,4,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HUL,Audi,4,SOFT,9,88.112,0.4532500000000006,0.0585779186129006,8,16
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,HUL,Audi,5,MEDIUM,1,139.467,0.0,0.0,12,12
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LAW,Red Bull Racing,1,SOFT,8,107.606375,-1.4285714285714286,-0.2380952380952381,2,9
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LAW,Red Bull Racing,2,SOFT,11,87.26163636363636,0.2849999999999994,-0.3272727272727273,11,21
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LAW,Red Bull Racing,3,HARD,14,91.95678571428572,0.0159230769230775,0.2351648351648352,1,14
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LEC,Ferrari,1,MEDIUM,2,113.8635,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LEC,Ferrari,2,MEDIUM,3,103.73000000000002,0.0,0.5,5,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LEC,Ferrari,3,MEDIUM,2,93.002,10.0,0.0,9,10
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LEC,Ferrari,4,SOFT,2,103.9915,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LEC,Ferrari,5,SOFT,1,89.821,0.0,0.0,5,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LEC,Ferrari,6,SOFT,12,92.55766666666666,1.5826363636363645,0.0909090909090909,7,19
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LIN,Racing Bulls,1,MEDIUM,7,105.26828571428572,0.0,-0.1428571428571428,2,8
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LIN,Racing Bulls,2,SOFT,2,103.96,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LIN,Racing Bulls,3,SOFT,3,114.126,0.0,-0.5,4,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,LIN,Racing Bulls,4,MEDIUM,11,89.198,0.9107,-0.2545454545454546,10,20
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,NOR,McLaren,1,HARD,6,105.90533333333332,2.0,-0.0857142857142857,2,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,NOR,McLaren,2,SOFT,5,99.9418,0.0,-0.0999999999999999,2,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,NOR,McLaren,3,HARD,7,87.57842857142859,0.7786666666666662,0.7857142857142859,9,15
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,NOR,McLaren,4,SOFT,3,120.17166666666668,5.043000000000006,1.0,7,10
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,OCO,Haas F1 Team,1,MEDIUM,2,118.2775,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,OCO,Haas F1 Team,2,MEDIUM,5,111.39379999999998,0.0,0.0999999999999999,5,9
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,OCO,Haas F1 Team,3,MEDIUM,2,94.5785,10.0,0.0,11,12
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,OCO,Haas F1 Team,4,SOFT,2,107.201,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,OCO,Haas F1 Team,5,SOFT,2,103.2535,10.0,0.0,5,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,OCO,Haas F1 Team,6,SOFT,10,95.5817,2.2474444444444432,0.6484848484848483,8,18
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,PER,Cadillac,1,MEDIUM,8,103.003875,1.4285714285714286,-0.2380952380952381,2,9
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,PER,Cadillac,2,SOFT,5,106.988,0.0,-0.1999999999999999,2,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,PER,Cadillac,3,SOFT,10,92.7408,1.2546666666666668,0.3696969696969697,8,17
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,PIA,McLaren,1,HARD,6,107.66316666666668,2.0,-0.0857142857142857,2,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,PIA,McLaren,2,SOFT,6,108.16966666666669,1.5089999999999977,-0.0285714285714285,2,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,PIA,McLaren,3,HARD,5,87.54220000000001,1.1022500000000015,0.8999999999999998,9,13
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,PIA,McLaren,4,SOFT,5,117.6972,1.6297500000000014,0.6,8,13
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,RUS,Mercedes,1,HARD,4,116.31725,3.333333333333333,0.0,2,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,RUS,Mercedes,2,HARD,3,109.32166666666669,0.0,-0.5,6,8
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,RUS,Mercedes,4,SOFT,6,114.02533333333332,-2.0,-0.4285714285714286,2,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,RUS,Mercedes,5,HARD,11,86.63490909090909,0.4790999999999997,0.1181818181818181,10,20
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,RUS,Mercedes,6,SOFT,2,135.918,10.0,0.0,9,11
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,SAI,Williams,1,MEDIUM,6,110.01050000000002,2.0,-0.2,2,7
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,SAI,Williams,2,MEDIUM,3,116.44166666666666,-10.0,-1.0,8,10
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,SAI,Williams,3,SOFT,5,105.253,0.4447499999999955,0.0999999999999999,2,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,SAI,Williams,4,SOFT,13,96.13753846153848,0.9877500000000008,0.5714285714285714,8,20
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,STR,Aston Martin,1,SOFT,9,111.29677777777778,-2.5,-0.0666666666666666,2,10
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,STR,Aston Martin,2,SOFT,2,111.8,10.0,0.0,2,3
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,STR,Aston Martin,3,SOFT,2,117.788,10.0,0.0,5,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,STR,Aston Martin,4,SOFT,9,95.05666666666669,0.9444999999999996,0.2166666666666666,8,16
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,TSU,Racing Bulls,1,MEDIUM,8,114.91525,-1.4285714285714286,-0.1428571428571428,2,9
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,TSU,Racing Bulls,2,SOFT,5,113.8282,0.0,0.3,2,6
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,TSU,Racing Bulls,3,MEDIUM,12,95.87725,-0.1171818181818183,0.2307692307692307,11,23
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,VER,Red Bull Racing,1,MEDIUM,4,108.09975,3.333333333333333,0.3999999999999999,2,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,VER,Red Bull Racing,2,MEDIUM,6,109.52416666666666,-1.0129999999999997,-0.5428571428571429,6,11
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,VER,Red Bull Racing,3,SOFT,4,97.08375,3.333333333333333,0.0,2,5
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,VER,Red Bull Racing,4,MEDIUM,6,87.26733333333334,0.870399999999998,0.2571428571428572,13,18
+2026_13_FP2_Italian Grand Prix,2026,13,Italian Grand Prix,FP2,VER,Red Bull Racing,5,MEDIUM,5,101.3138,-0.1612500000000025,0.0,19,23
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ALB,Williams,1,SOFT,6,105.34933333333332,-2.0,-0.0285714285714285,2,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ALB,Williams,2,SOFT,9,87.06222222222222,0.9539999999999988,0.2833333333333333,2,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ALB,Williams,3,SOFT,11,94.44836363636364,2.0013999999999994,0.1727272727272727,9,19
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ALO,Aston Martin,1,SOFT,7,106.80528571428572,0.0,0.0357142857142857,2,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ALO,Aston Martin,2,SOFT,8,109.55875,-0.2851428571428585,-0.4761904761904762,2,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ALO,Aston Martin,3,SOFT,2,133.98700000000002,10.0,0.0,11,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ANT,Mercedes,1,SOFT,2,104.6925,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ANT,Mercedes,2,SOFT,2,96.791,10.0,0.0,5,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ANT,Mercedes,3,SOFT,1,97.726,0.0,0.0,8,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ANT,Mercedes,4,SOFT,3,107.66733333333332,0.0,-0.5,2,4
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ANT,Mercedes,5,SOFT,2,101.2245,10.0,0.0,6,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,ANT,Mercedes,6,SOFT,1,117.81,0.0,0.0,10,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BEA,Haas F1 Team,1,MEDIUM,5,112.8652,0.0,0.0,2,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BEA,Haas F1 Team,2,MEDIUM,2,101.8205,-10.0,0.0,8,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BEA,Haas F1 Team,3,MEDIUM,2,104.8825,10.0,0.0,12,13
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BEA,Haas F1 Team,4,SOFT,2,105.1305,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BEA,Haas F1 Team,5,SOFT,3,115.76,0.0,0.5,4,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BEA,Haas F1 Team,6,SOFT,3,114.70233333333331,8.857,1.0,8,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOR,Audi,2,MEDIUM,2,104.9225,10.0,0.0,3,4
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOR,Audi,3,MEDIUM,3,119.111,0.0,0.5,5,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOR,Audi,4,MEDIUM,3,122.48833333333334,0.0,-0.5,8,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOR,Audi,5,MEDIUM,2,116.743,-10.0,0.0,11,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOR,Audi,6,SOFT,2,105.4275,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOR,Audi,7,SOFT,2,115.729,10.0,0.0,5,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOR,Audi,8,SOFT,3,133.12033333333332,2.666499999999999,0.5,7,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOT,Cadillac,1,SOFT,2,117.283,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOT,Cadillac,2,SOFT,2,97.29,10.0,0.0,5,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOT,Cadillac,3,SOFT,5,102.222,2.0747500000000016,0.0999999999999999,8,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOT,Cadillac,4,SOFT,2,114.0715,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,BOT,Cadillac,5,SOFT,4,121.3265,0.971999999999999,0.7999999999999999,4,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,COL,Alpine,1,MEDIUM,6,107.53933333333332,2.0,-0.0857142857142857,2,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,COL,Alpine,2,MEDIUM,8,88.473625,1.2200000000000009,-0.2380952380952381,9,16
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,COL,Alpine,3,SOFT,2,111.376,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,COL,Alpine,4,SOFT,3,117.17266666666669,10.0,1.0,5,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,GAS,Alpine,1,MEDIUM,6,105.21133333333331,2.0,-0.0857142857142857,2,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,GAS,Alpine,2,MEDIUM,9,89.33522222222221,1.1797500000000003,0.0666666666666666,9,17
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,GAS,Alpine,3,SOFT,2,103.3115,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,GAS,Alpine,4,SOFT,3,114.53766666666668,10.0,1.0,5,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HAM,Ferrari,1,SOFT,3,102.78566666666669,0.0,-0.5,2,5
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HAM,Ferrari,2,SOFT,5,108.57540000000002,0.0,-0.3,8,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HAM,Ferrari,3,SOFT,7,114.62785714285717,0.4954999999999998,0.2142857142857143,2,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HUL,Audi,2,MEDIUM,2,106.5705,10.0,0.0,3,4
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HUL,Audi,3,MEDIUM,3,119.61,0.0,0.5,5,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HUL,Audi,4,MEDIUM,3,122.27166666666668,0.0,-0.5,8,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HUL,Audi,5,MEDIUM,3,113.33166666666666,0.0,-0.5,11,13
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HUL,Audi,6,SOFT,2,103.911,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HUL,Audi,7,SOFT,3,112.98566666666666,0.0,0.5,4,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,HUL,Audi,8,SOFT,2,131.645,10.0,0.0,8,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LAW,Red Bull Racing,1,MEDIUM,6,110.71833333333336,2.0,0.6,2,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LAW,Red Bull Racing,2,MEDIUM,6,88.74916666666667,1.2605999999999995,0.0857142857142857,9,14
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LAW,Red Bull Racing,3,SOFT,4,107.632,3.333333333333333,0.3999999999999999,2,5
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LAW,Red Bull Racing,4,SOFT,4,123.433,3.333333333333333,-0.1999999999999999,6,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LEC,Ferrari,1,SOFT,2,108.84,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LEC,Ferrari,2,SOFT,3,100.80066666666666,0.0,0.5,5,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LEC,Ferrari,3,SOFT,4,96.565,3.333333333333333,0.3999999999999999,9,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LEC,Ferrari,4,SOFT,2,109.3065,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LEC,Ferrari,5,SOFT,5,115.4804,-2.802250000000001,-0.3999999999999999,4,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LIN,Racing Bulls,1,SOFT,2,101.3315,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LIN,Racing Bulls,2,SOFT,2,97.9615,10.0,0.0,5,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LIN,Racing Bulls,3,SOFT,6,92.84233333333331,-1.2498000000000018,-0.4285714285714286,7,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LIN,Racing Bulls,4,SOFT,2,104.1345,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,LIN,Racing Bulls,5,SOFT,5,116.7316,5.0,0.7,5,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,NOR,McLaren,1,MEDIUM,2,104.6515,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,NOR,McLaren,2,MEDIUM,6,105.32516666666668,-2.0,-0.3714285714285715,4,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,NOR,McLaren,3,SOFT,6,105.5525,2.0,0.2571428571428572,2,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,1,MEDIUM,1,86.547,0.0,0.0,2,2
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,2,MEDIUM,2,102.098,10.0,0.0,5,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,3,MEDIUM,2,109.3815,10.0,0.0,8,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,4,MEDIUM,3,111.815,-0.3795000000000001,-0.5,10,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,5,MEDIUM,3,102.68633333333334,0.0,-0.5,13,15
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,6,SOFT,2,104.9765,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,7,SOFT,3,108.65866666666666,0.0,-0.5,4,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,OCO,Haas F1 Team,8,SOFT,3,124.75166666666668,10.0,1.0,8,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PER,Cadillac,1,SOFT,2,117.1275,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PER,Cadillac,2,SOFT,3,123.45333333333332,0.0,-0.5,4,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PER,Cadillac,3,SOFT,4,123.67575,1.0909999999999986,0.3999999999999999,8,11
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PER,Cadillac,4,SOFT,2,113.8375,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PER,Cadillac,5,SOFT,2,100.2445,10.0,0.0,5,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PER,Cadillac,6,SOFT,1,108.495,0.0,0.0,8,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PIA,McLaren,1,MEDIUM,3,108.88166666666666,6.8645,1.0,2,4
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PIA,McLaren,2,MEDIUM,4,126.5475,-3.333333333333333,-0.3999999999999999,5,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PIA,McLaren,3,MEDIUM,3,111.74,0.0,-0.5,9,11
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PIA,McLaren,4,MEDIUM,1,135.631,0.0,0.0,12,12
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,PIA,McLaren,5,SOFT,6,107.55033333333334,2.0,0.1428571428571428,2,8
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,RUS,Mercedes,1,SOFT,1,83.508,0.0,0.0,2,2
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,RUS,Mercedes,2,SOFT,2,104.978,10.0,0.0,5,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,RUS,Mercedes,3,SOFT,2,101.423,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,RUS,Mercedes,4,SOFT,3,100.81966666666666,0.0,-0.5,5,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,SAI,Williams,1,SOFT,9,107.32133333333331,-1.5417500000000004,-0.0999999999999999,2,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,SAI,Williams,2,SOFT,6,86.50166666666667,0.7963999999999999,0.3714285714285715,12,17
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,SAI,Williams,3,SOFT,1,120.254,0.0,0.0,18,18
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,SAI,Williams,4,SOFT,2,105.7745,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,SAI,Williams,5,SOFT,3,107.14666666666666,0.0,-0.5,4,6
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,SAI,Williams,6,SOFT,3,118.718,10.0,1.0,8,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,STR,Aston Martin,1,SOFT,2,118.653,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,STR,Aston Martin,2,SOFT,5,116.4402,0.0,0.3,5,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,STR,Aston Martin,4,SOFT,3,111.17166666666668,0.0,0.5,2,4
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,STR,Aston Martin,5,SOFT,6,113.03583333333331,-1.847399999999999,-0.5428571428571429,5,10
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,TSU,Racing Bulls,1,SOFT,2,107.3285,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,TSU,Racing Bulls,2,SOFT,5,91.9624,1.3490000000000002,0.3999999999999999,5,9
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,TSU,Racing Bulls,3,SOFT,1,108.193,0.0,0.0,2,2
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,TSU,Racing Bulls,4,SOFT,4,111.0835,-3.333333333333333,0.1999999999999999,4,7
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,VER,Red Bull Racing,1,MEDIUM,2,103.12,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,VER,Red Bull Racing,2,MEDIUM,7,106.959,0.0,-0.4285714285714286,4,11
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,VER,Red Bull Racing,3,SOFT,2,108.95600000000002,10.0,0.0,2,3
+2026_13_FP3_Italian Grand Prix,2026,13,Italian Grand Prix,FP3,VER,Red Bull Racing,4,SOFT,9,116.094,0.3546250000000022,0.0833333333333333,4,12
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ALB,Williams,1,SOFT,2,96.0385,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ALB,Williams,2,SOFT,2,99.3395,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ALO,Aston Martin,1,SOFT,2,100.7015,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ALO,Aston Martin,2,SOFT,2,94.953,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ANT,Mercedes,1,SOFT,2,102.0765,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ANT,Mercedes,2,SOFT,1,97.573,0.0,0.0,5,5
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ANT,Mercedes,3,SOFT,2,96.09,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ANT,Mercedes,4,SOFT,2,94.8165,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ANT,Mercedes,5,SOFT,1,114.259,0.0,0.0,8,8
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,ANT,Mercedes,6,SOFT,3,103.46933333333334,0.0,-0.5,1,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,2,93.338,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,93.678,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,93.2115,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,2,95.152,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,5,SOFT,2,92.1515,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BOR,Audi,1,SOFT,2,98.28,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BOR,Audi,2,SOFT,2,100.4325,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BOR,Audi,3,SOFT,2,95.7465,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BOR,Audi,4,SOFT,2,99.155,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BOT,Cadillac,1,SOFT,2,95.3155,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BOT,Cadillac,2,SOFT,2,95.7185,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,BOT,Cadillac,3,SOFT,2,101.01,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,COL,Alpine,1,SOFT,2,100.5325,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,COL,Alpine,2,SOFT,2,99.944,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,COL,Alpine,3,SOFT,2,97.061,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,COL,Alpine,4,SOFT,2,98.74,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,COL,Alpine,5,SOFT,2,99.117,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,COL,Alpine,6,SOFT,1,82.22,0.0,0.0,2,2
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,GAS,Alpine,1,SOFT,2,99.98,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,GAS,Alpine,2,SOFT,2,99.3955,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,GAS,Alpine,3,SOFT,2,98.4835,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,GAS,Alpine,4,SOFT,2,98.271,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,GAS,Alpine,5,SOFT,2,98.177,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,GAS,Alpine,6,SOFT,1,81.786,0.0,0.0,2,2
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HAM,Ferrari,1,SOFT,2,101.724,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HAM,Ferrari,2,SOFT,2,91.9275,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HAM,Ferrari,3,SOFT,2,97.069,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HAM,Ferrari,4,SOFT,2,90.6445,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HAM,Ferrari,5,SOFT,1,82.011,0.0,0.0,2,2
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HUL,Audi,1,SOFT,2,94.502,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HUL,Audi,2,SOFT,2,98.941,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HUL,Audi,3,SOFT,2,94.8985,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,HUL,Audi,4,SOFT,2,98.8075,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,1,MEDIUM,4,97.0185,3.333333333333333,0.3999999999999999,2,5
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,2,SOFT,3,106.80966666666666,0.0,0.5,2,4
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,3,SOFT,2,91.3015,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,4,SOFT,4,98.884,3.333333333333333,0.0,2,5
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LEC,Ferrari,1,SOFT,2,99.7575,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LEC,Ferrari,2,SOFT,3,105.55233333333337,0.0,-0.5,4,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LEC,Ferrari,3,SOFT,2,92.057,10.0,0.0,8,9
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LEC,Ferrari,4,SOFT,2,94.7915,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LEC,Ferrari,5,SOFT,2,93.597,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LEC,Ferrari,6,SOFT,1,82.146,0.0,0.0,2,2
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,1,SOFT,2,94.1195,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,2,SOFT,2,95.3145,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,3,SOFT,2,92.827,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,4,SOFT,2,93.903,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,5,SOFT,2,92.7685,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,6,SOFT,1,82.286,0.0,0.0,2,2
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,NOR,McLaren,1,SOFT,3,98.83633333333334,0.0,0.5,2,4
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,NOR,McLaren,2,SOFT,2,97.924,10.0,0.0,6,7
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,NOR,McLaren,3,SOFT,2,98.009,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,NOR,McLaren,4,SOFT,2,96.1485,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,NOR,McLaren,5,SOFT,2,93.408,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,NOR,McLaren,6,SOFT,1,82.573,0.0,0.0,2,2
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,2,96.959,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,2,94.1105,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,100.0035,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,4,SOFT,2,95.05,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,5,SOFT,2,101.7945,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PER,Cadillac,1,SOFT,2,94.4855,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PER,Cadillac,2,SOFT,2,94.3285,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PER,Cadillac,3,SOFT,2,100.895,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PIA,McLaren,1,SOFT,2,101.4705,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PIA,McLaren,2,SOFT,3,98.219,0.0,-0.5,5,7
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PIA,McLaren,3,SOFT,2,95.2355,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PIA,McLaren,4,SOFT,2,96.2025,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,PIA,McLaren,5,SOFT,2,94.3455,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,RUS,Mercedes,1,MEDIUM,2,100.9805,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,RUS,Mercedes,2,MEDIUM,1,101.617,0.0,0.0,5,5
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,RUS,Mercedes,3,SOFT,2,95.801,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,RUS,Mercedes,4,SOFT,2,95.3995,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,RUS,Mercedes,5,SOFT,2,93.6375,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,RUS,Mercedes,6,SOFT,1,81.846,0.0,0.0,2,2
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,SAI,Williams,1,SOFT,2,97.1715,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,SAI,Williams,2,SOFT,2,97.786,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,SAI,Williams,3,SOFT,2,97.748,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,SAI,Williams,4,SOFT,2,94.886,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,SAI,Williams,5,SOFT,2,100.0035,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,STR,Aston Martin,1,SOFT,2,100.3115,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,STR,Aston Martin,2,SOFT,2,99.8785,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,STR,Aston Martin,3,SOFT,2,101.2525,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,1,SOFT,2,93.714,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,2,SOFT,2,97.967,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,1,SOFT,2,98.223,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,90.7605,10.0,0.0,5,6
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,3,SOFT,4,98.74925,3.333333333333333,0.7999999999999999,2,5
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,92.3615,10.0,0.0,2,3
+2026_13_Q_Italian Grand Prix,2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,5,SOFT,1,82.381,0.0,0.0,2,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ALB,Williams,1,MEDIUM,2,93.888,-6.986000000000004,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ALB,Williams,2,HARD,41,89.17068292682927,-0.0567,-0.4050522648083624,3,43
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ALB,Williams,3,SOFT,6,90.40216666666667,-2.934,-0.7714285714285715,1,6
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ALO,Aston Martin,1,HARD,2,94.7585,-7.216999999999999,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ALO,Aston Martin,2,SOFT,18,91.00511111111112,-0.273941176470588,0.1826625386996904,3,20
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ANT,Mercedes,1,HARD,3,109.48933333333332,0.7984999999999971,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ANT,Mercedes,2,MEDIUM,23,89.2258695652174,-0.0435909090909092,-0.2569169960474308,3,25
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,ANT,Mercedes,3,MEDIUM,25,85.59548,-0.4621249999999997,-0.6684615384615384,1,25
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,BEA,Haas F1 Team,1,SOFT,3,107.70300000000002,2.536999999999999,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,BEA,Haas F1 Team,2,HARD,47,87.86212765957445,0.0844347826086956,-0.1569772484828148,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,BOR,Audi,1,SOFT,3,109.07166666666669,2.4919999999999973,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,BOR,Audi,2,MEDIUM,48,88.7549375,-0.2487659574468083,-0.6492618323925315,3,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,BOT,Cadillac,1,SOFT,2,94.81,-5.829999999999998,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,BOT,Cadillac,2,MEDIUM,22,91.5420909090909,-0.0544761904761907,-0.1948051948051948,3,24
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,BOT,Cadillac,3,SOFT,24,90.63962499999998,-0.4633478260869563,-0.1391304347826087,1,24
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,COL,Alpine,1,MEDIUM,3,101.54633333333334,3.265500000000003,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,COL,Alpine,2,HARD,47,87.11831914893617,0.0331521739130436,-0.8850601295097132,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,GAS,Alpine,1,MEDIUM,3,99.91333333333334,4.662500000000001,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,GAS,Alpine,2,HARD,47,86.85351063829788,-0.1926521739130436,-0.8036426726356394,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,HAM,Ferrari,1,SOFT,3,106.16833333333334,2.0050000000000026,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,HAM,Ferrari,2,MEDIUM,47,86.7542340425532,-0.1698478260869562,-0.4028215433442987,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,HUL,Audi,1,MEDIUM,3,110.16666666666669,1.454500000000003,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,HUL,Audi,2,HARD,22,90.18945454545452,-0.1834761904761908,-0.4635798983625071,3,24
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,HUL,Audi,3,MEDIUM,26,87.42461538461538,-0.5044399999999996,-0.7210256410256409,4,29
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,LAW,Red Bull Racing,1,MEDIUM,2,93.1665,-8.661000000000001,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,LAW,Red Bull Racing,2,HARD,7,95.33242857142857,-0.752833333333335,-0.0714285714285714,3,9
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,LAW,Red Bull Racing,3,MEDIUM,41,87.61819512195122,-0.0853000000000001,-0.6727066843193332,4,44
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,LEC,Ferrari,1,SOFT,1,89.371,0.0,0.0,1,1
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,LIN,Racing Bulls,1,MEDIUM,3,105.40166666666669,2.451500000000003,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,LIN,Racing Bulls,2,HARD,47,87.16251063829787,-0.1130434782608696,-0.7778677150786308,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,NOR,McLaren,1,MEDIUM,3,104.774,2.667500000000004,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,NOR,McLaren,2,HARD,47,86.60746808510639,-0.155804347826087,-0.5848751156336726,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,OCO,Haas F1 Team,1,SOFT,3,108.531,1.8190000000000024,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,OCO,Haas F1 Team,2,HARD,21,87.92266666666667,0.3552999999999997,-0.2155844155844156,4,24
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,OCO,Haas F1 Team,3,MEDIUM,25,88.37487999999999,-0.4517916666666668,0.2692307692307692,1,25
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,PER,Cadillac,1,SOFT,2,93.345,-6.623999999999995,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,PER,Cadillac,2,SOFT,22,91.60322727272728,0.0058095238095238,0.3264614645855282,3,24
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,PER,Cadillac,3,MEDIUM,25,89.34776000000002,-0.4463750000000003,-0.5538461538461539,1,25
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,PIA,McLaren,1,MEDIUM,3,103.74266666666666,3.728999999999999,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,PIA,McLaren,2,HARD,47,86.63959574468086,-0.1745217391304349,-0.5048566142460684,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,RUS,Mercedes,1,MEDIUM,3,98.191,3.9384999999999977,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,RUS,Mercedes,2,HARD,47,86.37765957446807,-0.1830652173913041,-0.68813598519889,4,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,SAI,Williams,1,SOFT,2,92.9505,-7.290999999999997,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,SAI,Williams,2,HARD,22,89.95831818181819,-0.1360952380952376,-0.5245623941276115,3,24
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,SAI,Williams,3,MEDIUM,26,87.56026923076924,-0.42596,-0.4864957264957265,1,26
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,STR,Aston Martin,1,SOFT,2,95.016,-5.402000000000001,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,STR,Aston Martin,2,HARD,21,91.27419047619048,-0.56935,0.1389610389610389,3,23
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,TSU,Racing Bulls,1,HARD,2,92.494,-7.360000000000014,0.0,1,2
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,TSU,Racing Bulls,2,MEDIUM,48,88.42385416666667,-0.3014680851063829,-0.4156217777386945,3,50
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,VER,Red Bull Racing,1,SOFT,3,100.94633333333331,3.746000000000002,0.5,1,3
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,VER,Red Bull Racing,2,MEDIUM,22,87.10949999999998,0.4515238095238095,-0.2840203274985884,4,25
+2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,VER,Red Bull Racing,3,HARD,25,86.10456,-0.4302499999999997,0.1769230769230769,1,25

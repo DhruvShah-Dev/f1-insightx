@@ -1,0 +1,308 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,13,Italian Grand Prix,Q,GAS,Alpine,1.0,1.0,SOFT,1.0,,,36.765,31.652,197.0,265.0,300.0,175.0,1,True,False,False,False,2026-09-05 14:05:37.661,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,2.0,1.0,SOFT,2.0,82.612,27.0,27.992,27.62,308.0,327.0,290.0,331.0,1,True,True,True,False,2026-09-05 14:07:23.872,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,3.0,1.0,SOFT,3.0,117.348,36.36,39.337,41.651,212.0,265.0,,185.0,1,True,False,False,False,2026-09-05 14:08:46.484,,33.8,55.8,34.2,False,0.7,56.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,4.0,2.0,SOFT,4.0,,,35.205,39.8,279.0,210.0,294.0,189.0,1,False,False,False,False,2026-09-05 14:10:43.832,,34.1,55.8,32.1,False,1.1,255.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,5.0,2.0,SOFT,5.0,82.615,27.084,27.992,27.539,305.0,324.0,287.0,331.0,1,False,False,True,False,2026-09-05 14:16:41.269,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,6.0,2.0,SOFT,6.0,116.176,37.045,37.951,41.18,222.0,255.0,,187.0,1,False,False,False,False,2026-09-05 14:18:03.884,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,7.0,3.0,SOFT,1.0,,,32.384,30.704,291.0,290.0,290.0,186.0,12,True,False,False,False,2026-09-05 14:20:00.060,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,8.0,3.0,SOFT,2.0,82.126,26.972,27.815,27.339,306.0,325.0,287.0,330.0,1,True,True,True,False,2026-09-05 14:31:21.029,,33.9,54.7,34.1,False,0.6,212.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,9.0,3.0,SOFT,3.0,114.841,35.901,37.49,41.45,222.0,270.0,,193.0,1,True,False,False,False,2026-09-05 14:32:43.155,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,10.0,4.0,SOFT,1.0,,,32.452,32.555,285.0,294.0,290.0,188.0,1,True,False,False,False,2026-09-05 14:34:37.996,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,11.0,4.0,SOFT,2.0,82.077,26.861,27.801,27.415,310.0,332.0,292.0,333.0,1,True,True,True,False,2026-09-05 14:39:27.568,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,12.0,4.0,SOFT,3.0,114.465,36.788,37.051,40.626,223.0,259.0,,226.0,12,True,False,False,False,2026-09-05 14:40:49.645,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,13.0,5.0,SOFT,1.0,,,32.312,31.425,267.0,266.0,292.0,234.0,21,True,False,False,False,2026-09-05 14:42:44.110,,34.0,53.5,34.6,False,1.5,185.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,14.0,5.0,SOFT,2.0,82.001,26.828,27.812,27.361,307.0,325.0,289.0,331.0,1,True,True,True,False,2026-09-05 14:48:56.693,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,15.0,5.0,SOFT,3.0,114.353,36.712,37.316,40.325,243.0,244.0,,202.0,1,True,False,False,False,2026-09-05 14:50:18.694,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,16.0,6.0,SOFT,1.0,,,31.951999999999998,32.341,265.0,276.0,291.0,230.0,1,True,False,False,False,2026-09-05 14:52:13.047,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,17.0,6.0,SOFT,2.0,81.786,26.817,27.706,27.263,308.0,327.0,287.0,334.0,1,True,True,True,False,2026-09-05 14:59:48.647,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,GAS,Alpine,18.0,6.0,SOFT,3.0,,37.919,36.752,,210.0,219.0,,200.0,1,True,False,False,False,2026-09-05 15:01:10.433,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,1.0,1.0,MEDIUM,1.0,,,33.511,31.727,282.0,268.0,297.0,255.0,1,True,False,False,False,2026-09-05 14:05:29.467,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,2.0,1.0,MEDIUM,2.0,82.779,27.304,27.938,27.537,305.0,318.0,281.0,325.0,1,True,True,True,False,2026-09-05 14:07:08.895,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,3.0,1.0,MEDIUM,3.0,119.182,39.475,38.94,40.767,272.0,242.0,,160.0,1,True,False,False,False,2026-09-05 14:08:31.674,,33.8,55.8,34.2,False,0.7,56.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,4.0,2.0,MEDIUM,4.0,,,35.685,36.865,280.0,280.0,295.0,219.0,1,False,False,False,False,2026-09-05 14:10:30.856,,34.1,55.8,32.1,False,1.1,255.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,5.0,2.0,MEDIUM,5.0,101.617,27.347,32.789,41.481,304.0,235.0,,327.0,1,False,False,False,False,2026-09-05 14:16:33.257,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,6.0,3.0,SOFT,1.0,,,34.112,31.721,273.0,265.0,294.0,271.0,12,True,False,False,False,2026-09-05 14:18:14.874,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,7.0,3.0,SOFT,2.0,82.161,27.071,27.77,27.32,304.0,320.0,284.0,325.0,1,True,True,True,False,2026-09-05 14:31:15.368,,33.9,54.7,34.1,False,0.6,212.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,8.0,3.0,SOFT,3.0,109.441,33.412,35.973,40.056,268.0,288.0,,239.0,1,True,False,False,False,2026-09-05 14:32:37.529,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,9.0,4.0,SOFT,1.0,,,34.436,32.591,286.0,155.0,295.0,258.0,1,True,False,False,False,2026-09-05 14:34:26.970,,34.0,55.1,34.8,False,1.5,214.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,10.0,4.0,SOFT,2.0,82.855,27.575,27.878,27.402,306.0,322.0,285.0,330.0,1,True,False,True,False,2026-09-05 14:39:16.807,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,11.0,4.0,SOFT,3.0,107.944,35.906,34.721,37.317,270.0,287.0,,197.0,12,True,False,False,False,2026-09-05 14:40:39.662,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,12.0,5.0,SOFT,1.0,,,32.77,31.139,279.0,210.0,297.0,273.0,21,True,False,False,False,2026-09-05 14:42:27.606,,34.1,53.4,34.7,False,1.3,212.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,13.0,5.0,SOFT,2.0,81.929,26.793,27.777,27.359,302.0,316.0,285.0,338.0,1,True,True,True,False,2026-09-05 14:48:47.853,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,14.0,5.0,SOFT,3.0,105.346,33.323,34.029,37.994,274.0,284.0,,255.0,1,True,False,False,False,2026-09-05 14:50:09.782,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,15.0,6.0,SOFT,1.0,,,31.921,33.168,286.0,276.0,293.0,268.0,1,True,False,False,False,2026-09-05 14:51:55.128,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,16.0,6.0,SOFT,2.0,81.846,27.006,27.596,27.244,306.0,328.0,286.0,336.0,1,True,True,True,False,2026-09-05 14:59:38.054,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,17.0,6.0,SOFT,3.0,,41.264,36.601,,247.0,219.0,,138.0,1,True,False,False,False,2026-09-05 15:00:59.900,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,1.0,1.0,SOFT,1.0,,,30.914,31.386,303.0,293.0,292.0,168.0,1,True,False,False,False,2026-09-05 14:01:54.302,,33.8,56.1,34.2,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,2.0,1.0,SOFT,2.0,82.924,27.26,27.998,27.666,305.0,321.0,286.0,322.0,1,True,True,True,False,2026-09-05 14:03:31.366,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,3.0,1.0,SOFT,3.0,120.017,42.28,36.983,40.754,226.0,280.0,,168.0,1,True,False,False,False,2026-09-05 14:04:54.290,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,4.0,2.0,SOFT,4.0,,,30.493,31.635,307.0,262.0,289.0,219.0,1,False,False,False,False,2026-09-05 14:06:54.307,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,5.0,2.0,SOFT,5.0,107.848,33.384,37.598,36.866,231.0,247.0,295.0,318.0,1,False,False,True,False,2026-09-05 14:16:06.888,,34.2,54.5,34.8,False,1.6,253.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,6.0,2.0,SOFT,6.0,82.987,27.182,28.063,27.742,301.0,315.0,283.0,327.0,1,False,False,True,False,2026-09-05 14:17:54.736,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,7.0,2.0,SOFT,7.0,103.822,32.622,32.786,38.414,262.0,264.0,,293.0,12,False,False,False,False,2026-09-05 14:19:17.723,,34.0,55.3,35.3,False,0.9,192.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,8.0,3.0,SOFT,1.0,,,31.256,31.234,294.0,294.0,295.0,206.0,21,True,False,False,False,2026-09-05 14:21:01.545,,34.1,53.8,34.0,False,2.0,295.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,9.0,3.0,SOFT,2.0,82.017,26.994,27.745,27.278,306.0,324.0,287.0,326.0,1,True,True,True,False,2026-09-05 14:31:38.131,,33.9,54.5,34.8,False,3.3,201.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,10.0,3.0,SOFT,3.0,108.454,35.44,33.973,39.041,263.0,264.0,,215.0,1,True,False,False,False,2026-09-05 14:33:00.148,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,11.0,4.0,SOFT,4.0,,,30.012,33.39,286.0,295.0,293.0,204.0,1,False,False,False,False,2026-09-05 14:34:48.602,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,12.0,4.0,SOFT,5.0,82.257,27.012,27.769,27.476,307.0,323.0,286.0,325.0,1,False,False,True,False,2026-09-05 14:39:22.924,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,13.0,4.0,SOFT,6.0,110.148,35.931,34.822,39.395,256.0,260.0,,203.0,12,False,False,False,False,2026-09-05 14:40:45.181,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,14.0,5.0,SOFT,1.0,,,30.121,32.684,298.0,254.0,295.0,251.0,21,True,False,False,False,2026-09-05 14:42:35.329,,34.0,53.5,34.6,False,1.5,185.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,15.0,5.0,SOFT,2.0,81.966,26.931,27.742,27.293,308.0,323.0,286.0,325.0,1,True,True,True,False,2026-09-05 14:48:53.427,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,16.0,5.0,SOFT,3.0,106.725,34.74,33.452,38.533,260.0,262.0,,195.0,1,True,False,False,False,2026-09-05 14:50:15.393,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,17.0,6.0,SOFT,1.0,,,29.541,31.146,287.0,257.0,287.0,265.0,1,True,False,False,False,2026-09-05 14:52:02.118,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,PIA,McLaren,18.0,6.0,SOFT,2.0,,33.16,30.629,,277.0,310.0,,315.0,1,True,False,False,False,2026-09-05 14:59:19.871,,34.0,53.3,34.5,False,0.8,290.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,1.0,1.0,SOFT,1.0,,,35.707,31.643,280.0,207.0,295.0,183.0,1,True,False,False,False,2026-09-05 14:01:27.342,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,2.0,1.0,SOFT,2.0,82.995,27.323,28.228,27.444,298.0,314.0,284.0,325.0,1,True,True,True,False,2026-09-05 14:03:07.249,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,3.0,1.0,SOFT,3.0,116.52,37.319,39.042,40.159,241.0,229.0,,176.0,1,True,False,False,False,2026-09-05 14:04:30.244,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,4.0,2.0,SOFT,4.0,130.77,61.265,35.742,33.763,246.0,185.0,292.0,130.0,1,False,False,False,False,2026-09-05 14:06:26.764,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,5.0,2.0,SOFT,5.0,82.902,27.297,28.098,27.507,298.0,314.0,279.0,319.0,1,False,True,True,False,2026-09-05 14:08:37.534,,33.8,55.8,34.2,False,0.7,56.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,6.0,2.0,SOFT,6.0,102.985,31.051,32.24,39.694,274.0,294.0,,268.0,1,False,False,False,False,2026-09-05 14:10:00.436,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,7.0,3.0,SOFT,7.0,,,31.766,30.978,274.0,264.0,295.0,200.0,12,False,False,False,False,2026-09-05 14:11:43.421,,34.2,55.0,32.6,False,0.9,266.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,8.0,3.0,SOFT,8.0,82.509,27.185,28.109,27.215,299.0,318.0,285.0,327.0,1,False,True,True,False,2026-09-05 14:31:26.982,,33.9,54.7,34.1,False,0.6,212.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,9.0,3.0,SOFT,9.0,101.605,31.95,32.263,37.392,281.0,291.0,,228.0,1,False,False,False,False,2026-09-05 14:32:49.491,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,10.0,4.0,SOFT,1.0,,,31.969,32.065,275.0,286.0,292.0,204.0,1,True,False,False,False,2026-09-05 14:34:31.096,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,11.0,4.0,SOFT,2.0,82.927,27.416,27.888,27.623,293.0,309.0,283.0,319.0,1,True,False,True,False,2026-09-05 14:39:01.052,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,12.0,4.0,SOFT,3.0,106.656,34.991,33.188,38.477,254.0,290.0,,193.0,12,True,False,False,False,2026-09-05 14:40:23.979,,34.0,53.1,34.1,False,1.2,253.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,13.0,5.0,SOFT,1.0,,,31.734,31.795,276.0,280.0,296.0,210.0,21,True,False,False,False,2026-09-05 14:42:10.635,,34.1,53.4,34.7,False,1.3,212.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,14.0,5.0,SOFT,2.0,82.004,26.982,27.941,27.081,298.0,316.0,285.0,328.0,1,True,True,True,False,2026-09-05 14:49:08.104,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,15.0,5.0,SOFT,3.0,105.19,34.038,34.078,37.074,271.0,240.0,,182.0,1,True,False,False,False,2026-09-05 14:50:30.108,,34.0,51.5,34.4,False,1.7,289.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,16.0,6.0,SOFT,1.0,,,31.383,31.358,275.0,270.0,294.0,216.0,1,True,False,False,False,2026-09-05 14:52:15.298,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,17.0,6.0,SOFT,2.0,82.146,27.087,27.918,27.141,300.0,317.0,283.0,328.0,1,True,False,True,False,2026-09-05 14:59:43.364,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,18.0,6.0,SOFT,3.0,,39.47,36.223,,241.0,228.0,,145.0,1,True,False,False,False,2026-09-05 15:01:05.510,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,1.0,1.0,SOFT,1.0,,,33.025,32.811,254.0,218.0,292.0,111.0,1,True,False,False,False,2026-09-05 14:01:29.501,,33.8,56.1,34.2,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,2.0,1.0,SOFT,2.0,82.847,27.282,28.042,27.523,297.0,315.0,282.0,324.0,1,True,True,True,False,2026-09-05 14:03:11.397,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,3.0,1.0,SOFT,3.0,120.601,38.962,40.361,41.278,236.0,169.0,,159.0,1,True,False,False,False,2026-09-05 14:04:34.244,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,4.0,2.0,SOFT,4.0,,,31.338,30.397,260.0,286.0,292.0,194.0,12,False,False,False,False,2026-09-05 14:06:34.845,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,5.0,2.0,SOFT,5.0,82.624,27.178,28.031,27.415,296.0,313.0,280.0,323.0,1,False,True,True,False,2026-09-05 14:31:35.039,,33.9,54.5,34.8,False,3.3,201.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,6.0,2.0,SOFT,6.0,101.231,32.068,32.313,36.85,276.0,285.0,,233.0,1,False,False,False,False,2026-09-05 14:32:57.663,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,7.0,3.0,SOFT,1.0,,,31.788,32.45,274.0,265.0,292.0,169.0,1,True,False,False,False,2026-09-05 14:34:38.894,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,8.0,3.0,SOFT,2.0,82.516,27.124,28.036,27.356,298.0,314.0,283.0,325.0,1,True,True,True,False,2026-09-05 14:39:03.408,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,9.0,3.0,SOFT,3.0,111.622,39.356,34.461,37.805,263.0,246.0,,151.0,12,True,False,False,False,2026-09-05 14:40:25.924,,34.0,53.1,34.1,False,1.2,253.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,10.0,4.0,SOFT,1.0,,,31.523,30.41,274.0,286.0,291.0,219.0,21,True,False,False,False,2026-09-05 14:42:17.546,,34.1,53.4,34.7,False,1.3,212.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,11.0,4.0,SOFT,2.0,82.724,27.355,27.934,27.435,293.0,310.0,279.0,320.0,1,True,True,True,False,2026-09-05 14:49:31.294,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,12.0,4.0,SOFT,3.0,98.565,32.384,31.298,34.883,255.0,273.0,,215.0,1,True,False,False,False,2026-09-05 14:50:54.018,,34.0,51.5,34.4,False,1.7,289.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,13.0,5.0,SOFT,1.0,,,31.658,31.541,263.0,262.0,294.0,212.0,1,True,False,False,False,2026-09-05 14:52:32.583,,34.0,52.1,34.5,False,0.7,310.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,14.0,5.0,SOFT,2.0,82.011,26.925,27.867,27.219,300.0,318.0,283.0,330.0,1,True,True,True,False,2026-09-05 14:59:45.766,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,15.0,5.0,SOFT,3.0,,38.519,36.034,,228.0,228.0,,142.0,1,True,False,False,False,2026-09-05 15:01:07.777,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,1.0,1.0,SOFT,1.0,,,30.898,30.286,272.0,308.0,296.0,136.0,1,True,False,False,False,2026-09-05 14:01:45.972,,33.8,56.1,34.2,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,2.0,1.0,SOFT,2.0,82.631,27.157,27.992,27.482,302.0,315.0,288.0,325.0,1,True,True,True,False,2026-09-05 14:03:22.369,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,3.0,1.0,SOFT,3.0,113.815,42.689,35.279,35.847,261.0,292.0,,131.0,1,True,False,False,False,2026-09-05 14:04:45.000,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,4.0,2.0,SOFT,4.0,,,32.562,31.532,270.0,281.0,293.0,209.0,12,False,False,False,False,2026-09-05 14:06:38.815,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,5.0,2.0,SOFT,5.0,82.573,27.198,28.016,27.359,301.0,313.0,288.0,320.0,1,False,True,True,False,2026-09-05 14:27:08.203,,34.0,55.3,33.7,False,2.3,195.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,6.0,2.0,SOFT,6.0,98.948,32.584,30.708,35.656,282.0,299.0,,257.0,1,False,False,False,False,2026-09-05 14:28:30.776,,34.0,54.8,33.5,False,1.5,234.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,7.0,3.0,SOFT,1.0,,,32.049,34.771,281.0,300.0,294.0,207.0,1,True,False,False,False,2026-09-05 14:30:09.724,,34.0,53.8,33.8,False,1.8,263.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,8.0,3.0,SOFT,2.0,82.188,27.129,27.886,27.173,302.0,313.0,289.0,322.0,1,True,True,True,False,2026-09-05 14:34:35.255,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,9.0,3.0,SOFT,3.0,110.029,38.297,35.5,36.232,258.0,230.0,287.0,201.0,1,True,False,True,False,2026-09-05 14:35:57.443,,34.2,54.9,33.3,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,10.0,3.0,SOFT,4.0,89.344,27.575,28.065,33.704,301.0,315.0,189.0,314.0,1,True,False,True,False,2026-09-05 14:37:47.472,,34.1,54.7,32.7,False,1.8,19.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,11.0,3.0,SOFT,5.0,113.436,37.73,38.202,37.504,171.0,290.0,,190.0,1,True,False,False,False,2026-09-05 14:39:16.816,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,12.0,4.0,SOFT,1.0,,,31.299,32.465,298.0,296.0,292.0,202.0,12,True,False,False,False,2026-09-05 14:41:10.252,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,13.0,4.0,SOFT,2.0,82.07,27.013,27.881,27.176,303.0,317.0,291.0,326.0,1,True,True,True,False,2026-09-05 14:49:04.632,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,14.0,4.0,SOFT,3.0,102.653,32.169,33.253,37.231,269.0,249.0,,255.0,1,True,False,False,False,2026-09-05 14:50:26.702,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,15.0,5.0,SOFT,1.0,,,30.084,37.238,273.0,267.0,289.0,208.0,1,True,False,False,False,2026-09-05 14:52:09.355,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,16.0,5.0,SOFT,2.0,82.381,27.238,27.905,27.238,300.0,311.0,285.0,318.0,1,True,False,True,False,2026-09-05 14:59:36.437,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,17.0,5.0,SOFT,3.0,,41.725,32.605,,250.0,288.0,,145.0,1,True,False,False,False,2026-09-05 15:00:58.818,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,1.0,1.0,SOFT,1.0,,,34.593,31.605,267.0,280.0,293.0,243.0,1,True,False,False,False,2026-09-05 14:05:25.673,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,2.0,1.0,SOFT,2.0,82.758,27.284,27.989,27.485,299.0,314.0,280.0,320.0,1,True,True,True,False,2026-09-05 14:07:05.569,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,3.0,1.0,SOFT,3.0,121.395,40.206,40.749,40.44,196.0,265.0,,217.0,1,True,False,False,False,2026-09-05 14:08:28.327,,33.9,56.0,34.5,False,1.7,19.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,4.0,2.0,SOFT,4.0,,,38.142,33.865,317.0,143.0,291.0,241.0,1,False,False,False,False,2026-09-05 14:10:29.722,,34.1,55.8,32.1,False,1.1,255.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,5.0,2.0,SOFT,5.0,97.573,27.165,28.054,42.354,297.0,315.0,,321.0,1,False,False,False,False,2026-09-05 14:16:26.901,,34.2,54.5,34.8,False,1.6,253.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,6.0,3.0,SOFT,1.0,,,34.072,31.382,265.0,283.0,290.0,235.0,12,True,False,False,False,2026-09-05 14:18:04.474,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,7.0,3.0,SOFT,2.0,82.334,27.189,27.8,27.345,298.0,314.0,281.0,320.0,1,True,True,True,False,2026-09-05 14:31:12.029,,33.9,54.7,34.1,False,0.6,212.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,8.0,3.0,SOFT,3.0,109.846,34.749,36.268,38.829,243.0,278.0,,221.0,1,True,False,False,False,2026-09-05 14:32:34.363,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,9.0,4.0,SOFT,4.0,,,34.256,33.48,270.0,288.0,292.0,186.0,1,False,False,False,False,2026-09-05 14:34:24.209,,34.0,55.1,34.8,False,1.5,214.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,10.0,4.0,SOFT,5.0,81.882,26.957,27.684,27.241,301.0,319.0,281.0,330.0,1,False,True,True,False,2026-09-05 14:39:13.969,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,11.0,4.0,SOFT,6.0,107.751,34.519,36.418,36.814,245.0,289.0,,223.0,12,False,False,False,False,2026-09-05 14:40:35.851,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,12.0,5.0,SOFT,7.0,,,33.575,31.236,283.0,273.0,287.0,252.0,21,False,False,False,False,2026-09-05 14:42:23.602,,34.1,53.4,34.7,False,1.3,212.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,13.0,5.0,SOFT,8.0,114.259,33.646,43.114,37.499,261.0,263.0,,278.0,1,False,False,False,False,2026-09-05 14:48:47.187,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,14.0,6.0,SOFT,1.0,122.737,57.488,34.105,31.144,281.0,285.0,290.0,246.0,1,True,False,False,False,2026-09-05 14:50:41.446,,34.0,51.5,34.4,False,1.7,289.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,15.0,6.0,SOFT,2.0,82.093,27.019,27.771,27.303,301.0,313.0,280.0,321.0,1,True,True,True,False,2026-09-05 14:52:44.183,,34.0,52.1,34.5,False,0.7,310.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,16.0,6.0,SOFT,3.0,105.578,32.387,35.176,38.015,270.0,276.0,,231.0,1,True,False,False,False,2026-09-05 14:54:06.276,,33.9,52.3,35.3,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,17.0,7.0,SOFT,4.0,,,32.706,34.102,281.0,288.0,287.0,226.0,1,False,False,False,False,2026-09-05 14:55:51.854,,33.9,52.8,34.7,False,0.8,262.0
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,18.0,7.0,SOFT,5.0,,41.596,32.923,,240.0,297.0,,263.0,1,False,False,False,False,2026-09-05 14:59:37.051,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,1.0,1.0,SOFT,1.0,,,33.611,32.35,255.0,268.0,304.0,180.0,1,True,False,False,False,2026-09-05 14:05:40.804,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,2.0,1.0,SOFT,2.0,82.662,26.924,28.093,27.645,307.0,327.0,287.0,332.0,1,True,True,True,False,2026-09-05 14:07:26.106,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,3.0,1.0,SOFT,3.0,118.403,38.628,38.459,41.316,224.0,257.0,,167.0,1,True,False,False,False,2026-09-05 14:08:48.768,,33.8,55.8,34.2,False,0.7,56.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,4.0,2.0,SOFT,4.0,,,35.325,40.122,264.0,282.0,302.0,171.0,1,False,False,False,False,2026-09-05 14:10:47.171,,34.1,55.8,32.1,False,1.1,255.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,5.0,2.0,SOFT,5.0,82.81,26.915,28.13,27.765,308.0,330.0,289.0,332.0,1,False,False,True,False,2026-09-05 14:16:56.054,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,6.0,2.0,SOFT,6.0,117.078,38.733,36.204,42.141,234.0,233.0,,168.0,12,False,False,False,False,2026-09-05 14:18:18.864,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,7.0,3.0,SOFT,1.0,,,32.75,30.432,270.0,268.0,305.0,197.0,21,True,False,False,False,2026-09-05 14:20:15.942,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,8.0,3.0,SOFT,2.0,82.403,26.779,27.997,27.627,308.0,329.0,289.0,335.0,1,True,True,True,False,2026-09-05 14:31:46.800,,33.9,54.5,34.8,False,3.3,201.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,9.0,3.0,SOFT,3.0,111.719,36.203,35.822,39.694,219.0,254.0,,203.0,1,True,False,False,False,2026-09-05 14:33:09.203,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,10.0,4.0,SOFT,1.0,,,32.308,32.951,282.0,277.0,303.0,167.0,1,True,False,False,False,2026-09-05 14:35:00.922,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,11.0,4.0,SOFT,2.0,82.4,26.937,27.878,27.585,308.0,330.0,289.0,334.0,1,True,True,True,False,2026-09-05 14:39:33.004,,34.0,53.1,34.1,False,1.2,253.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,12.0,4.0,SOFT,3.0,115.08,39.714,36.617,38.749,182.0,249.0,,171.0,12,True,False,False,False,2026-09-05 14:40:55.404,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,13.0,5.0,SOFT,1.0,,,32.371,31.475,274.0,278.0,300.0,208.0,21,True,False,False,False,2026-09-05 14:42:50.484,,34.0,53.5,34.6,False,1.5,185.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,14.0,5.0,SOFT,2.0,82.735,26.979,27.999,27.757,304.0,323.0,287.0,330.0,1,True,True,True,False,2026-09-05 14:48:59.434,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,15.0,5.0,SOFT,3.0,115.499,36.27,38.776,40.453,204.0,227.0,,191.0,1,True,False,False,False,2026-09-05 14:50:22.169,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,16.0,6.0,SOFT,1.0,,,32.895,31.434,280.0,287.0,300.0,237.0,1,True,False,False,False,2026-09-05 14:52:17.668,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,17.0,6.0,SOFT,2.0,82.22,26.874,27.84,27.506,308.0,328.0,288.0,332.0,1,True,True,True,False,2026-09-05 14:59:50.758,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,COL,Alpine,18.0,6.0,SOFT,3.0,,40.243,36.559,,185.0,218.0,,169.0,1,True,False,False,False,2026-09-05 15:01:12.978,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,1.0,1.0,SOFT,1.0,,,29.81,32.107,269.0,294.0,293.0,137.0,1,True,False,False,False,2026-09-05 14:01:40.178,,33.8,56.1,34.2,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,2.0,1.0,SOFT,2.0,99.935,29.907,35.83,34.198,255.0,259.0,292.0,325.0,1,True,True,True,False,2026-09-05 14:03:18.206,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,3.0,1.0,SOFT,3.0,83.004,27.211,28.08,27.713,301.0,318.0,284.0,319.0,1,True,True,True,False,2026-09-05 14:04:58.141,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,4.0,1.0,SOFT,4.0,113.57,32.984,40.029,40.557,220.0,253.0,,303.0,1,True,False,False,False,2026-09-05 14:06:21.145,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,5.0,2.0,SOFT,5.0,,,41.31,35.602,281.0,87.0,290.0,241.0,1,False,False,False,False,2026-09-05 14:08:14.715,,33.9,56.0,34.5,False,1.7,19.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,6.0,2.0,SOFT,6.0,82.659,27.066,27.931,27.662,304.0,322.0,281.0,325.0,1,False,True,True,False,2026-09-05 14:16:28.503,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,7.0,2.0,SOFT,7.0,113.189,36.897,37.211,39.081,230.0,241.0,,167.0,1,False,False,False,False,2026-09-05 14:17:51.162,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,8.0,3.0,SOFT,1.0,,,29.884,32.165,301.0,305.0,295.0,246.0,12,True,False,False,False,2026-09-05 14:19:44.351,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,9.0,3.0,SOFT,2.0,82.067,26.921,27.823,27.323,308.0,326.0,289.0,327.0,1,True,True,True,False,2026-09-05 14:31:29.243,,33.9,54.5,34.8,False,3.3,201.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,10.0,3.0,SOFT,3.0,113.951,34.355,37.764,41.832,212.0,210.0,,205.0,1,True,False,False,False,2026-09-05 14:32:51.310,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,11.0,4.0,SOFT,4.0,,,35.187,32.822,304.0,273.0,293.0,251.0,1,False,False,False,False,2026-09-05 14:34:45.261,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,12.0,4.0,SOFT,5.0,82.255,27.031,27.841,27.383,306.0,324.0,284.0,325.0,1,False,False,True,False,2026-09-05 14:39:19.473,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,13.0,4.0,SOFT,6.0,110.042,35.701,35.557,38.784,236.0,281.0,,175.0,12,False,False,False,False,2026-09-05 14:40:41.728,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,14.0,5.0,SOFT,1.0,,,31.892,31.12,300.0,292.0,293.0,258.0,21,True,False,False,False,2026-09-05 14:42:31.770,,34.0,53.5,34.6,False,1.5,185.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,15.0,5.0,SOFT,2.0,82.256,27.004,27.768,27.484,305.0,320.0,283.0,323.0,1,True,True,True,False,2026-09-05 14:48:50.639,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,16.0,5.0,SOFT,3.0,104.56,32.998,34.616,36.946,256.0,251.0,,214.0,1,True,False,False,False,2026-09-05 14:50:12.895,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,17.0,6.0,SOFT,1.0,,,28.955,30.399,298.0,289.0,290.0,282.0,1,True,False,False,False,2026-09-05 14:51:57.455,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,18.0,6.0,SOFT,2.0,82.573,27.202,27.77,27.601,302.0,316.0,279.0,318.0,1,True,False,True,False,2026-09-05 14:59:22.097,,34.0,53.3,34.5,False,0.8,290.0
+2026,13,Italian Grand Prix,Q,NOR,McLaren,19.0,6.0,SOFT,3.0,,38.579,36.477,,227.0,219.0,,176.0,1,True,False,False,False,2026-09-05 15:00:44.670,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,1.0,1.0,SOFT,1.0,,,32.447,35.354,260.0,173.0,291.0,188.0,1,True,False,False,False,2026-09-05 14:05:33.146,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,2.0,1.0,SOFT,2.0,83.452,27.394,28.422,27.636,300.0,310.0,284.0,319.0,1,True,True,True,False,2026-09-05 14:07:18.628,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,3.0,1.0,SOFT,3.0,104.787,31.549,34.102,39.136,284.0,294.0,,272.0,1,True,False,False,False,2026-09-05 14:08:42.080,,33.8,55.8,34.2,False,0.7,56.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,4.0,2.0,SOFT,4.0,,,36.773,37.744,278.0,164.0,293.0,204.0,1,False,False,False,False,2026-09-05 14:10:26.867,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,5.0,2.0,SOFT,5.0,82.727,27.25,28.119,27.358,302.0,318.0,292.0,326.0,1,False,True,True,False,2026-09-05 14:16:37.826,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,6.0,2.0,SOFT,6.0,107.902,36.69,33.637,37.575,265.0,289.0,,150.0,1,False,False,False,False,2026-09-05 14:18:00.553,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,7.0,3.0,SOFT,1.0,,,31.478,32.102,271.0,278.0,291.0,184.0,12,True,False,False,False,2026-09-05 14:19:48.455,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,8.0,3.0,SOFT,2.0,82.345,27.189,28.03,27.126,301.0,316.0,289.0,322.0,1,True,True,True,False,2026-09-05 14:31:45.110,,33.9,54.5,34.8,False,3.3,201.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,9.0,3.0,SOFT,3.0,103.309,31.947,33.683,37.679,283.0,301.0,,226.0,1,True,False,False,False,2026-09-05 14:33:07.455,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,10.0,4.0,SOFT,1.0,,,31.055,33.215,272.0,295.0,291.0,176.0,1,True,False,False,False,2026-09-05 14:34:50.764,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,11.0,4.0,SOFT,2.0,82.39,27.346,27.864,27.18,303.0,316.0,290.0,320.0,1,True,False,True,False,2026-09-05 14:39:07.808,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,12.0,4.0,SOFT,3.0,105.416,34.796,33.405,37.215,271.0,273.0,,147.0,12,True,False,False,False,2026-09-05 14:40:30.198,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,13.0,5.0,SOFT,1.0,,,32.034,32.599,275.0,276.0,295.0,205.0,21,True,False,False,False,2026-09-05 14:42:15.614,,34.1,53.4,34.7,False,1.3,212.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,14.0,5.0,SOFT,2.0,82.413,27.13,28.028,27.255,302.0,315.0,290.0,325.0,1,True,True,True,False,2026-09-05 14:49:01.948,,33.9,52.8,34.8,False,1.3,203.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,15.0,5.0,SOFT,3.0,103.124,33.4,33.286,36.438,279.0,272.0,,219.0,1,True,False,False,False,2026-09-05 14:50:24.361,,34.0,52.7,34.1,False,1.8,221.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,16.0,6.0,SOFT,1.0,,,31.146,32.297,278.0,275.0,292.0,212.0,1,True,False,False,False,2026-09-05 14:52:07.485,,34.0,52.4,34.5,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,17.0,6.0,SOFT,2.0,82.286,27.166,27.84,27.28,303.0,316.0,289.0,324.0,1,True,True,True,False,2026-09-05 14:59:40.289,,33.9,52.3,35.3,False,2.4,248.0
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,18.0,6.0,SOFT,3.0,,42.25,32.869,,268.0,233.0,,105.0,1,True,False,False,False,2026-09-05 15:01:02.575,,33.9,52.6,34.2,False,1.1,305.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,1.0,1.0,SOFT,1.0,,,32.76,34.831,263.0,235.0,297.0,161.0,1,True,False,False,False,2026-09-05 14:01:33.979,,33.8,56.1,34.2,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,2.0,1.0,SOFT,2.0,83.248,27.44,28.148,27.66,301.0,318.0,285.0,324.0,1,True,True,True,False,2026-09-05 14:03:14.954,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,3.0,1.0,SOFT,3.0,113.312,35.832,36.127,41.353,238.0,258.0,,144.0,1,True,False,False,False,2026-09-05 14:04:38.202,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,4.0,2.0,SOFT,1.0,,,33.316,40.962,262.0,227.0,300.0,166.0,1,True,False,False,False,2026-09-05 14:06:31.514,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,5.0,2.0,SOFT,2.0,82.946,27.25,28.064,27.632,303.0,322.0,286.0,327.0,1,True,True,True,False,2026-09-05 14:16:44.168,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,6.0,2.0,SOFT,3.0,117.919,36.194,37.658,44.067,214.0,258.0,,184.0,1,True,False,False,False,2026-09-05 14:18:07.114,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,7.0,3.0,SOFT,1.0,,,30.97,31.084,266.0,287.0,300.0,189.0,12,True,False,False,False,2026-09-05 14:20:05.033,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,8.0,3.0,SOFT,2.0,82.566,27.228,27.946,27.392,300.0,317.0,286.0,324.0,1,True,True,True,False,2026-09-05 14:31:41.708,,33.9,54.5,34.8,False,3.3,201.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,9.0,3.0,SOFT,3.0,108.927,33.714,35.023,40.19,262.0,257.0,,181.0,1,True,False,False,False,2026-09-05 14:33:04.274,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,10.0,4.0,SOFT,1.0,,,32.509,32.518,269.0,263.0,299.0,222.0,1,True,False,False,False,2026-09-05 14:34:53.201,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,11.0,4.0,SOFT,2.0,82.517,27.155,27.859,27.503,303.0,319.0,284.0,326.0,1,True,True,True,False,2026-09-05 14:39:29.133,,34.0,53.1,34.1,False,1.2,253.0
+2026,13,Italian Grand Prix,Q,BOR,Audi,12.0,4.0,SOFT,3.0,115.793,44.105,32.68,39.008,263.0,285.0,,152.0,12,True,False,False,False,2026-09-05 14:40:51.650,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,1.0,1.0,SOFT,1.0,,,34.156,32.147,285.0,272.0,291.0,190.0,1,True,False,False,False,2026-09-05 14:01:02.948,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,2.0,1.0,SOFT,2.0,83.877,27.502,28.542,27.833,297.0,314.0,288.0,323.0,1,True,True,True,False,2026-09-05 14:02:42.596,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,3.0,1.0,SOFT,3.0,102.799,32.337,32.91,37.552,262.0,262.0,,293.0,1,True,False,False,False,2026-09-05 14:04:06.473,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,4.0,2.0,SOFT,1.0,,,33.024,31.835,269.0,278.0,291.0,209.0,1,True,False,False,False,2026-09-05 14:05:49.272,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,5.0,2.0,SOFT,2.0,82.906,27.245,28.158,27.503,298.0,320.0,284.0,323.0,1,True,True,True,False,2026-09-05 14:10:08.292,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,6.0,2.0,SOFT,3.0,104.45,32.235,33.522,38.693,252.0,257.0,,236.0,1,True,False,False,False,2026-09-05 14:11:31.198,,34.2,55.0,32.6,False,0.9,266.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,7.0,3.0,SOFT,4.0,,,43.78,36.755,284.0,71.0,292.0,212.0,1,False,False,False,False,2026-09-05 14:13:15.648,,34.1,56.1,33.0,False,1.0,214.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,8.0,3.0,SOFT,5.0,83.555,27.384,28.417,27.754,299.0,315.0,282.0,332.0,1,False,False,True,False,2026-09-05 14:16:29.699,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,9.0,3.0,SOFT,6.0,102.868,32.855,32.971,37.042,249.0,261.0,,200.0,1,False,False,False,False,2026-09-05 14:17:53.254,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,10.0,4.0,SOFT,1.0,,,31.117,31.915,293.0,267.0,294.0,198.0,12,True,False,False,False,2026-09-05 14:19:36.122,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,11.0,4.0,SOFT,2.0,82.756,27.169,28.181,27.406,299.0,314.0,285.0,328.0,1,True,True,True,False,2026-09-05 14:31:16.915,,33.9,54.7,34.1,False,0.6,212.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,12.0,4.0,SOFT,3.0,107.548,34.45,34.41,38.688,260.0,266.0,,219.0,1,True,False,False,False,2026-09-05 14:32:39.671,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,13.0,5.0,SOFT,1.0,,,31.522,32.181,288.0,264.0,294.0,164.0,1,True,False,False,False,2026-09-05 14:34:27.219,,34.0,55.1,34.8,False,1.5,214.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,14.0,5.0,SOFT,2.0,82.94,27.091,28.229,27.62,301.0,316.0,285.0,331.0,1,True,False,True,False,2026-09-05 14:39:04.739,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,15.0,5.0,SOFT,3.0,101.363,31.699,33.138,36.526,262.0,292.0,,253.0,12,True,False,False,False,2026-09-05 14:40:27.679,,34.0,53.1,34.1,False,1.2,253.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,1.0,1.0,SOFT,1.0,,,33.129,34.324,268.0,197.0,295.0,144.0,1,True,False,False,False,2026-09-05 14:01:31.990,,33.8,56.1,34.2,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,2.0,1.0,SOFT,2.0,84.007,27.589,28.571,27.847,296.0,313.0,282.0,322.0,1,True,True,True,False,2026-09-05 14:03:13.194,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,3.0,1.0,SOFT,3.0,104.997,30.835,33.483,40.679,264.0,268.0,,273.0,1,True,False,False,False,2026-09-05 14:04:37.201,,33.6,55.8,35.4,False,1.6,205.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,4.0,2.0,SOFT,1.0,,,34.126,40.891,266.0,229.0,295.0,173.0,1,True,False,False,False,2026-09-05 14:06:22.198,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,5.0,2.0,SOFT,2.0,83.44,27.524,28.272,27.644,296.0,316.0,282.0,324.0,1,True,True,True,False,2026-09-05 14:16:42.784,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,6.0,2.0,SOFT,3.0,114.442,35.691,37.265,41.486,221.0,239.0,,187.0,1,True,False,False,False,2026-09-05 14:18:06.224,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,7.0,3.0,SOFT,1.0,,,30.819,30.971,274.0,290.0,301.0,184.0,12,True,False,False,False,2026-09-05 14:20:00.666,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,8.0,3.0,SOFT,2.0,83.175,27.145,28.152,27.878,300.0,315.0,281.0,328.0,1,True,True,True,False,2026-09-05 14:31:39.454,,33.9,54.5,34.8,False,3.3,201.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,9.0,3.0,SOFT,3.0,106.622,34.142,34.249,38.231,241.0,256.0,,186.0,1,True,False,False,False,2026-09-05 14:33:02.629,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,10.0,4.0,SOFT,1.0,,,31.48,33.418,261.0,284.0,299.0,197.0,1,True,False,False,False,2026-09-05 14:34:49.251,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,11.0,4.0,SOFT,2.0,82.779,27.179,28.005,27.595,302.0,320.0,285.0,327.0,1,True,True,True,False,2026-09-05 14:39:30.878,,34.0,53.1,34.1,False,1.2,253.0
+2026,13,Italian Grand Prix,Q,HUL,Audi,12.0,4.0,SOFT,3.0,114.836,40.085,35.362,39.389,189.0,261.0,,154.0,12,True,False,False,False,2026-09-05 14:40:53.657,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,1.0,1.0,MEDIUM,1.0,,,33.532,31.969,264.0,275.0,293.0,198.0,1,True,False,False,False,2026-09-05 14:00:58.233,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,2.0,1.0,MEDIUM,2.0,84.103,27.573,28.738,27.792,300.0,309.0,286.0,318.0,1,True,True,True,False,2026-09-05 14:02:36.964,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,3.0,1.0,MEDIUM,3.0,108.612,40.058,36.057,32.497,243.0,257.0,293.0,159.0,1,True,False,True,False,2026-09-05 14:04:01.067,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,4.0,1.0,MEDIUM,4.0,83.398,27.463,28.409,27.526,302.0,313.0,288.0,317.0,1,True,True,True,False,2026-09-05 14:05:49.679,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,5.0,1.0,MEDIUM,5.0,111.961,32.46,39.35,40.151,167.0,296.0,,298.0,1,True,False,False,False,2026-09-05 14:07:13.077,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,6.0,2.0,SOFT,1.0,,,34.042,32.636,276.0,277.0,292.0,230.0,1,True,False,False,False,2026-09-05 14:09:05.038,,33.8,55.8,34.2,False,0.7,56.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,7.0,2.0,SOFT,2.0,82.989,27.416,28.155,27.418,300.0,310.0,288.0,316.0,1,True,True,True,False,2026-09-05 14:13:20.530,,34.1,56.1,33.0,False,1.0,214.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,8.0,2.0,SOFT,3.0,126.969,40.797,40.248,45.924,216.0,220.0,272.0,172.0,1,True,False,True,False,2026-09-05 14:14:43.519,,34.1,55.0,34.2,False,1.9,210.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,9.0,2.0,SOFT,4.0,110.471,34.119,39.487,36.865,260.0,273.0,,303.0,1,True,False,False,False,2026-09-05 14:16:50.488,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,10.0,3.0,SOFT,1.0,,,32.569,31.253,279.0,272.0,293.0,211.0,12,True,False,False,False,2026-09-05 14:18:40.959,,34.0,55.3,35.3,False,0.9,192.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,11.0,3.0,SOFT,2.0,82.828,27.317,28.203,27.308,300.0,309.0,288.0,317.0,1,True,True,True,False,2026-09-05 14:27:04.442,,34.0,55.3,33.7,False,2.3,195.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,12.0,3.0,SOFT,3.0,99.775,30.551,32.189,37.035,272.0,293.0,,285.0,1,True,False,False,False,2026-09-05 14:28:27.270,,34.0,54.6,33.7,False,1.1,309.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,13.0,4.0,SOFT,1.0,,,32.353,33.109,277.0,278.0,293.0,206.0,1,True,False,False,False,2026-09-05 14:30:07.045,,34.0,53.8,33.8,False,1.8,263.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,14.0,4.0,SOFT,2.0,83.062,27.396,28.173,27.493,300.0,309.0,288.0,318.0,1,True,False,True,False,2026-09-05 14:34:31.782,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,15.0,4.0,SOFT,3.0,114.964,40.498,38.554,35.912,143.0,231.0,294.0,188.0,1,True,False,True,False,2026-09-05 14:35:54.844,,34.2,54.9,33.3,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,16.0,4.0,SOFT,4.0,82.821,27.407,28.05,27.364,302.0,320.0,288.0,324.0,1,True,True,True,False,2026-09-05 14:37:49.808,,34.1,54.7,32.7,False,1.8,19.0
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,17.0,4.0,SOFT,5.0,114.689,40.605,37.495,36.589,234.0,282.0,,178.0,1,True,False,False,False,2026-09-05 14:39:12.629,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,1.0,1.0,SOFT,1.0,,,32.768,32.049,283.0,259.0,304.0,217.0,1,True,False,False,False,2026-09-05 14:01:05.101,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,2.0,1.0,SOFT,2.0,83.736,27.082,28.519,28.135,307.0,324.0,286.0,331.0,1,True,True,True,False,2026-09-05 14:02:47.415,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,3.0,1.0,SOFT,3.0,110.607,36.001,35.474,39.132,254.0,276.0,,209.0,1,True,False,False,False,2026-09-05 14:04:11.151,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,4.0,2.0,SOFT,1.0,,,31.689,31.83,279.0,264.0,301.0,170.0,1,True,False,False,False,2026-09-05 14:06:01.758,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,5.0,2.0,SOFT,2.0,83.616,27.039,28.537,28.04,300.0,313.0,281.0,333.0,1,True,True,True,False,2026-09-05 14:10:01.411,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,6.0,2.0,SOFT,3.0,111.956,37.068,36.046,38.842,243.0,278.0,,264.0,1,True,False,False,False,2026-09-05 14:11:25.027,,34.1,55.8,32.1,False,1.1,255.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,7.0,3.0,SOFT,1.0,,,33.254,43.185,287.0,265.0,298.0,211.0,1,True,False,False,False,2026-09-05 14:13:16.983,,34.1,56.1,33.0,False,1.0,214.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,8.0,3.0,SOFT,2.0,84.039,27.258,28.489,28.292,304.0,326.0,280.0,329.0,1,True,False,True,False,2026-09-05 14:16:54.052,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,9.0,3.0,SOFT,3.0,111.457,36.658,35.664,39.135,253.0,276.0,,216.0,1,True,False,False,False,2026-09-05 14:18:18.091,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,10.0,4.0,SOFT,4.0,,,32.365,31.555,308.0,260.0,298.0,217.0,12,False,False,False,False,2026-09-05 14:20:09.548,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,11.0,4.0,SOFT,5.0,83.87,27.133,28.583,28.154,302.0,318.0,283.0,325.0,1,False,True,True,False,2026-09-05 14:27:11.172,,34.0,55.3,33.7,False,2.3,195.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,12.0,4.0,SOFT,6.0,105.902,35.292,34.425,36.185,241.0,287.0,,270.0,1,False,False,False,False,2026-09-05 14:28:35.042,,34.0,54.8,33.5,False,1.5,234.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,13.0,5.0,SOFT,1.0,,,31.9,34.51,320.0,281.0,299.0,248.0,1,True,False,False,False,2026-09-05 14:30:20.944,,34.0,53.8,33.8,False,1.8,263.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,14.0,5.0,SOFT,2.0,83.453,27.096,28.353,28.004,304.0,322.0,284.0,328.0,1,True,True,True,False,2026-09-05 14:34:37.228,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,SAI,Williams,15.0,5.0,SOFT,3.0,116.554,38.917,37.513,40.124,225.0,240.0,,171.0,1,True,False,False,False,2026-09-05 14:36:00.681,,34.2,54.9,33.3,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,1.0,1.0,SOFT,1.0,,,32.727,32.585,259.0,262.0,291.0,201.0,1,True,False,False,False,2026-09-05 14:01:12.102,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,2.0,1.0,SOFT,2.0,84.4,27.568,28.786,28.046,299.0,313.0,282.0,326.0,1,True,True,True,False,2026-09-05 14:02:51.636,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,3.0,1.0,SOFT,3.0,109.518,39.797,33.206,36.515,237.0,281.0,,148.0,1,True,False,False,False,2026-09-05 14:04:16.036,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,4.0,2.0,SOFT,1.0,,,31.652,32.584,297.0,292.0,289.0,195.0,1,True,False,False,False,2026-09-05 14:06:05.554,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,5.0,2.0,SOFT,2.0,83.891,27.408,28.623,27.86,299.0,308.0,281.0,323.0,1,True,True,True,False,2026-09-05 14:10:11.028,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,6.0,2.0,SOFT,3.0,104.33,30.906,32.711,40.713,277.0,278.0,,294.0,1,True,False,False,False,2026-09-05 14:11:34.919,,34.2,55.0,32.6,False,0.9,266.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,7.0,3.0,SOFT,1.0,,,32.756,42.961,291.0,223.0,290.0,150.0,1,True,False,False,False,2026-09-05 14:13:19.249,,34.1,56.1,33.0,False,1.0,214.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,8.0,3.0,SOFT,2.0,83.466,27.311,28.477,27.678,295.0,313.0,283.0,326.0,1,True,True,True,False,2026-09-05 14:16:46.785,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,9.0,3.0,SOFT,3.0,116.541,34.988,37.645,43.908,239.0,233.0,,180.0,1,True,False,False,False,2026-09-05 14:18:10.251,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,10.0,4.0,SOFT,4.0,,,30.881,32.786,296.0,292.0,290.0,182.0,12,False,False,False,False,2026-09-05 14:20:06.792,,34.1,55.3,34.7,False,0.5,101.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,11.0,4.0,SOFT,5.0,84.109,27.395,28.782,27.932,296.0,309.0,282.0,323.0,1,False,True,True,False,2026-09-05 14:31:24.004,,33.9,54.7,34.1,False,0.6,212.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,12.0,4.0,SOFT,6.0,105.991,32.963,34.658,38.37,254.0,271.0,,221.0,1,False,False,False,False,2026-09-05 14:32:48.113,,33.9,54.5,34.6,False,0.6,295.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,13.0,5.0,SOFT,1.0,,,31.047,33.688,295.0,292.0,290.0,190.0,1,True,False,False,False,2026-09-05 14:34:34.104,,34.1,54.6,34.0,False,1.1,259.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,14.0,5.0,SOFT,2.0,83.454,27.283,28.487,27.684,298.0,309.0,282.0,325.0,1,True,True,True,False,2026-09-05 14:39:25.348,,34.0,53.7,32.9,False,1.1,358.0
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,15.0,5.0,SOFT,3.0,120.135,39.706,35.97,44.459,216.0,244.0,,181.0,12,True,False,False,False,2026-09-05 14:40:48.802,,34.1,54.0,35.2,False,0.8,98.0
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,1.0,1.0,SOFT,1.0,,,35.236,33.285,265.0,283.0,286.0,187.0,1,True,False,False,False,2026-09-05 14:05:34.020,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,2.0,1.0,SOFT,2.0,83.755,27.835,28.409,27.511,299.0,311.0,288.0,315.0,1,True,True,True,False,2026-09-05 14:07:21.325,,33.7,56.1,34.9,False,1.5,37.0
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,3.0,1.0,SOFT,3.0,103.673,32.317,33.989,37.367,273.0,270.0,,233.0,1,True,False,False,False,2026-09-05 14:08:45.080,,33.8,55.8,34.2,False,0.7,56.0
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,4.0,2.0,SOFT,1.0,,,36.458,36.565,268.0,180.0,287.0,204.0,1,True,False,False,False,2026-09-05 14:10:28.753,,34.1,55.8,32.1,False,1.1,255.0
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,5.0,2.0,SOFT,2.0,83.76,27.882,28.196,27.682,298.0,310.0,285.0,315.0,1,True,False,True,False,2026-09-05 14:16:35.704,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,6.0,2.0,SOFT,3.0,112.174,39.291,33.795,39.088,238.0,286.0,,149.0,1,True,False,False,False,2026-09-05 14:17:59.464,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,ALB,Williams,1.0,1.0,SOFT,1.0,,,32.163,32.372,261.0,264.0,302.0,210.0,1,True,False,False,False,2026-09-05 14:01:06.346,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,ALB,Williams,2.0,1.0,SOFT,2.0,84.356,27.232,28.751,28.373,307.0,322.0,286.0,329.0,1,True,True,True,False,2026-09-05 14:02:45.435,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,ALB,Williams,3.0,1.0,SOFT,3.0,107.721,32.166,36.615,38.94,256.0,279.0,,298.0,1,True,False,False,False,2026-09-05 14:04:09.791,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,ALB,Williams,4.0,2.0,SOFT,4.0,,,32.11,42.476,246.0,269.0,285.0,208.0,1,False,False,False,False,2026-09-05 14:05:57.512,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,ALB,Williams,5.0,2.0,SOFT,5.0,88.778,27.992,28.606,32.18,301.0,319.0,272.0,320.0,1,False,False,True,False,2026-09-05 14:16:51.882,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,ALB,Williams,6.0,2.0,SOFT,6.0,109.901,34.688,33.553,41.66,257.0,288.0,,207.0,1,False,False,False,False,2026-09-05 14:18:20.660,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,1.0,1.0,SOFT,1.0,,,33.492,32.928,263.0,278.0,287.0,186.0,1,True,False,False,False,2026-09-05 14:01:21.345,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,2.0,1.0,SOFT,2.0,85.334,27.801,28.747,28.786,295.0,310.0,278.0,318.0,1,True,True,True,False,2026-09-05 14:03:01.888,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,3.0,1.0,SOFT,3.0,105.297,32.583,33.047,39.667,265.0,267.0,,214.0,1,True,False,False,False,2026-09-05 14:04:27.222,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,4.0,2.0,SOFT,1.0,,,32.909,32.418,280.0,277.0,289.0,180.0,1,True,False,False,False,2026-09-05 14:06:12.519,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,5.0,2.0,SOFT,2.0,84.457,27.454,28.589,28.414,299.0,313.0,282.0,324.0,1,True,True,True,False,2026-09-05 14:10:16.333,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,6.0,2.0,SOFT,3.0,106.98,32.118,36.387,38.475,245.0,266.0,,219.0,1,True,False,False,False,2026-09-05 14:11:40.790,,34.2,55.0,32.6,False,0.9,266.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,7.0,3.0,SOFT,1.0,,,34.307,42.716,285.0,254.0,288.0,210.0,1,True,False,False,False,2026-09-05 14:13:27.770,,34.1,56.1,33.0,False,1.0,214.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,8.0,3.0,SOFT,2.0,84.364,27.407,28.602,28.355,297.0,313.0,280.0,323.0,1,True,True,True,False,2026-09-05 14:17:03.859,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,9.0,3.0,SOFT,3.0,117.656,36.877,37.956,42.823,232.0,225.0,,173.0,12,True,False,False,False,2026-09-05 14:18:28.223,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,1.0,1.0,SOFT,1.0,,,32.519,31.769,241.0,258.0,283.0,154.0,1,True,False,False,False,2026-09-05 14:01:18.932,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,2.0,1.0,SOFT,2.0,85.649,28.015,29.023,28.611,288.0,303.0,275.0,316.0,1,True,True,True,False,2026-09-05 14:02:58.823,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,3.0,1.0,SOFT,3.0,103.322,32.915,33.56,36.847,250.0,286.0,,242.0,1,True,False,False,False,2026-09-05 14:04:24.472,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,4.0,2.0,SOFT,1.0,,,32.263,31.189,274.0,284.0,288.0,164.0,1,True,False,False,False,2026-09-05 14:06:07.794,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,5.0,2.0,SOFT,2.0,85.502,27.47,29.112,28.92,299.0,315.0,275.0,322.0,1,True,True,True,False,2026-09-05 14:10:13.499,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,6.0,2.0,SOFT,3.0,103.155,32.857,33.574,36.724,255.0,279.0,,242.0,1,True,False,False,False,2026-09-05 14:11:39.001,,34.2,55.0,32.6,False,0.9,266.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,7.0,3.0,SOFT,1.0,,,34.915,40.771,285.0,262.0,283.0,194.0,1,True,False,False,False,2026-09-05 14:13:22.156,,34.1,56.1,33.0,False,1.0,214.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,8.0,3.0,SOFT,2.0,84.595,27.703,28.721,28.171,290.0,310.0,278.0,321.0,1,True,True,True,False,2026-09-05 14:17:01.425,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,PER,Cadillac,9.0,3.0,SOFT,3.0,117.195,36.099,37.86,43.236,273.0,280.0,,197.0,12,True,False,False,False,2026-09-05 14:18:26.020,,34.0,54.2,34.7,False,3.1,225.0
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,1.0,1.0,SOFT,1.0,,,32.916,31.169,259.0,267.0,287.0,199.0,1,True,False,False,False,2026-09-05 14:01:09.580,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,2.0,1.0,SOFT,2.0,85.27,27.945,29.091,28.234,288.0,302.0,277.0,314.0,1,True,True,True,False,2026-09-05 14:02:48.947,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,3.0,1.0,SOFT,3.0,116.133,42.349,35.518,38.266,207.0,279.0,,155.0,1,True,False,False,False,2026-09-05 14:04:14.217,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,4.0,2.0,SOFT,4.0,,,31.966,30.513,256.0,269.0,283.0,174.0,1,False,False,False,False,2026-09-05 14:06:10.350,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,5.0,2.0,SOFT,5.0,85.15,27.995,28.8,28.355,289.0,297.0,276.0,308.0,1,False,True,True,False,2026-09-05 14:10:03.813,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,6.0,2.0,SOFT,6.0,104.756,32.722,34.465,37.569,226.0,239.0,,236.0,1,False,False,False,False,2026-09-05 14:11:28.963,,34.2,55.0,32.6,False,0.9,266.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,1.0,1.0,SOFT,1.0,,,33.446,31.688,259.0,275.0,282.0,193.0,1,True,False,False,False,2026-09-05 14:01:00.166,,33.9,56.2,34.1,False,0.0,0.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,2.0,1.0,SOFT,2.0,86.947,28.406,29.733,28.808,286.0,298.0,273.0,306.0,1,True,True,True,False,2026-09-05 14:02:38.819,,33.8,54.9,34.7,False,2.7,269.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,3.0,1.0,SOFT,3.0,113.676,36.956,37.985,38.735,209.0,269.0,,200.0,1,True,False,False,False,2026-09-05 14:04:05.766,,33.7,54.4,34.9,False,1.8,266.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,4.0,2.0,SOFT,4.0,,,36.623,31.905,223.0,276.0,281.0,188.0,1,False,False,False,False,2026-09-05 14:05:59.442,,33.6,55.8,35.5,False,0.9,47.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,5.0,2.0,SOFT,5.0,85.407,28.039,28.94,28.428,288.0,305.0,274.0,313.0,1,False,True,True,False,2026-09-05 14:10:12.402,,33.9,55.8,33.0,False,2.0,14.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,6.0,2.0,SOFT,6.0,114.35,33.838,38.965,41.547,228.0,243.0,,235.0,1,False,False,False,False,2026-09-05 14:11:37.809,,34.2,55.0,32.6,False,0.9,266.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,7.0,3.0,SOFT,1.0,,,35.796,40.714,277.0,273.0,281.0,167.0,1,True,False,False,False,2026-09-05 14:13:32.159,,34.1,54.9,33.5,False,2.9,211.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,8.0,3.0,SOFT,2.0,85.222,28.084,28.775,28.363,287.0,304.0,274.0,309.0,1,True,True,True,False,2026-09-05 14:16:58.501,,34.1,53.8,35.3,False,3.3,270.0
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,9.0,3.0,SOFT,3.0,117.283,35.206,39.149,42.928,224.0,258.0,,194.0,12,True,False,False,False,2026-09-05 14:18:23.723,,34.0,54.2,34.7,False,3.1,225.0

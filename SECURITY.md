@@ -9,7 +9,7 @@ This repository supports a production-minded Formula 1 data analytics platform. 
 - secret handling and environment leaks
 - Supabase policy or access-control weaknesses
 - abuse and rate-limiting gaps
-- client/server boundary issues in the Next.js app
+- client/server boundary issues in the active TanStack Start app
 
 ## Reporting a Vulnerability
 

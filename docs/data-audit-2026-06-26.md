@@ -1,3 +1,11 @@
+# Historical Audit Note
+
+This file is a dated audit record from June 26, 2026. It may mention the
+archived `apps/web` Next.js UI and old workspace commands. For current
+development, deployment, and route guidance, use `README.md`,
+`docs/architecture.md`, `docs/api-contracts.md`, and
+`docs/RELEASE_CHECKLIST.md`.
+
 # F1 InsightX Data Audit And ML Readiness Review
 
 Audit date: 2026-06-26
@@ -15,11 +23,11 @@ The main caveat is proxy interpretation. Race Analysis intentionally relies on i
 
 The raw and staged layers are substantial and are treated as offline source archives, not runtime dependencies:
 
-| Layer | Inventory | Primary use |
-| --- | ---: | --- |
-| `data/raw` | 2,195 JSON, 3,353 CSV, 1,324 parquet, 2 JSONL files | OpenF1, FastF1, reference snapshots, optional telemetry and position archives |
-| `data/staged` | 5,199 CSV, 689 JSON files | normalized OpenF1 and FastF1 session extracts |
-| `data/canonical_fastf1` | 361,422 laps, 13,261 results, 46,958 stints, 13,040 session-summary rows, 76 drivers | manifest-gated canonical session layer |
+| Layer                   |                                                                            Inventory | Primary use                                                                   |
+| ----------------------- | -----------------------------------------------------------------------------------: | ----------------------------------------------------------------------------- |
+| `data/raw`              |                                  2,195 JSON, 3,353 CSV, 1,324 parquet, 2 JSONL files | OpenF1, FastF1, reference snapshots, optional telemetry and position archives |
+| `data/staged`           |                                                            5,199 CSV, 689 JSON files | normalized OpenF1 and FastF1 session extracts                                 |
+| `data/canonical_fastf1` | 361,422 laps, 13,261 results, 46,958 stints, 13,040 session-summary rows, 76 drivers | manifest-gated canonical session layer                                        |
 
 OpenF1 source quality passes validation. `data/staged/openf1/reports/openf1_race_quality.csv` has 70 rows, 69 available OpenF1 races, 55 primary cross-check rows, and mean coverage score 0.7592. Coverage and source agreement scores are numeric and bounded in `[0, 1]`; the required `openf1_quality_v1` source label is preserved.
 
@@ -35,15 +43,15 @@ Raw/staged risk assessment:
 
 The modeled product layers validate cleanly, with caveats clearly separated from errors.
 
-| Surface | Evidence | Status |
-| --- | --- | --- |
+| Surface               | Evidence                                                                                                                                                             | Status                             |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Curated product views | `data/curated` includes races, drivers, constructors, standings, model features, prediction snapshots, fantasy inputs, and strategy profiles generated on 2026-06-17 | usable, no validator failure found |
-| Canonical FastF1 | 361,422 lap rows, 13,261 result rows, 46,958 stint rows | passed |
-| Telemetry features | 663 processed sessions, 0 sessions missing telemetry; 13,060 lap-summary rows and 91,569-104,289 segment/profile rows depending on artifact | passed |
-| Analytics views | 663 session index rows; 122,479 driver comparisons; 975,725 segment/braking/throttle rows; 856,389 straight/energy-proxy rows | passed |
-| Race Analysis | 52 race analyses; 58,465 pace-evolution rows; 58,392 position-timeline rows; 1,787 pit-strategy rows | passed with warnings |
-| Strategy Lab | `strategy_lab_signal_quality.json` has model version `strategy_lab_model_v2`, 22 drivers with telemetry signals, 34 track archetype rows, and no validation errors | usable with freshness caveat |
-| Product manifest | surfaces include analytics, analytics index, canonical FastF1, race analysis, race week, season state, strategy lab, and telemetry features | passed with warning |
+| Canonical FastF1      | 361,422 lap rows, 13,261 result rows, 46,958 stint rows                                                                                                              | passed                             |
+| Telemetry features    | 663 processed sessions, 0 sessions missing telemetry; 13,060 lap-summary rows and 91,569-104,289 segment/profile rows depending on artifact                          | passed                             |
+| Analytics views       | 663 session index rows; 122,479 driver comparisons; 975,725 segment/braking/throttle rows; 856,389 straight/energy-proxy rows                                        | passed                             |
+| Race Analysis         | 52 race analyses; 58,465 pace-evolution rows; 58,392 position-timeline rows; 1,787 pit-strategy rows                                                                 | passed with warnings               |
+| Strategy Lab          | `strategy_lab_signal_quality.json` has model version `strategy_lab_model_v2`, 22 drivers with telemetry signals, 34 track archetype rows, and no validation errors   | usable with freshness caveat       |
+| Product manifest      | surfaces include analytics, analytics index, canonical FastF1, race analysis, race week, season state, strategy lab, and telemetry features                          | passed with warning                |
 
 Race Analysis warnings are expected and should remain stakeholder-visible:
 
@@ -87,13 +95,13 @@ The pre-ML layer is ready for feature validation and deterministic baselines. It
 
 Generated ML artifacts under `data/ml/generated` pass validation:
 
-| Artifact | Rows | Role |
-| --- | ---: | --- |
-| `pre_race_driver_features.csv` | 1,090 | one row per driver/race pre-race feature set |
-| `pre_race_team_features.csv` | 546 | one row per constructor/race pre-race feature set |
-| `pre_race_track_features.csv` | 54 | one row per race/circuit context |
-| `race_outcome_labels.csv` | 1,090 | post-race labels kept separate from features |
-| `data_quality_labels.csv` | 1,690 | feature/entity quality and proxy metadata |
+| Artifact                       |  Rows | Role                                              |
+| ------------------------------ | ----: | ------------------------------------------------- |
+| `pre_race_driver_features.csv` | 1,090 | one row per driver/race pre-race feature set      |
+| `pre_race_team_features.csv`   |   546 | one row per constructor/race pre-race feature set |
+| `pre_race_track_features.csv`  |    54 | one row per race/circuit context                  |
+| `race_outcome_labels.csv`      | 1,090 | post-race labels kept separate from features      |
+| `data_quality_labels.csv`      | 1,690 | feature/entity quality and proxy metadata         |
 
 The generated ML validator checks the core leakage controls:
 
@@ -130,19 +138,19 @@ npm run test --workspace web
 
 Observed validation summary:
 
-| Command | Result | Key evidence |
-| --- | --- | --- |
-| `python validate_openf1_quality.py` | passed | 70 report rows, 69 available OpenF1 races, mean coverage score 0.7592 |
-| `python validate_canonical_fastf1.py` | passed | 361,422 laps, 13,261 results, no warnings or errors |
-| `python validate_telemetry_features.py` | passed | 663 sessions processed, 0 sessions missing telemetry |
-| `python validate_analytics_views.py` | passed | 663 expected telemetry sessions and 663 analytics sessions |
-| `python validate_race_analysis_views.py` | passed with warnings | 52 race analyses and explicit proxy/availability caveats |
-| `python validate_ml_schema_templates.py` | passed | 8 schema templates checked |
-| `python validate_ml_datasets.py` | passed | 1,090 driver feature rows and 1,090 label rows |
-| `python validate_product_manifest.py` | passed with warning | `season_state` stale by threshold |
-| `python check_generated_artifacts.py` | passed | generated artifact guard passed |
-| `python -m pytest tests` | passed | 37 Python tests passed |
-| `npm run test --workspace web` | passed | 59 web tests passed |
+| Command                                  | Result               | Key evidence                                                          |
+| ---------------------------------------- | -------------------- | --------------------------------------------------------------------- |
+| `python validate_openf1_quality.py`      | passed               | 70 report rows, 69 available OpenF1 races, mean coverage score 0.7592 |
+| `python validate_canonical_fastf1.py`    | passed               | 361,422 laps, 13,261 results, no warnings or errors                   |
+| `python validate_telemetry_features.py`  | passed               | 663 sessions processed, 0 sessions missing telemetry                  |
+| `python validate_analytics_views.py`     | passed               | 663 expected telemetry sessions and 663 analytics sessions            |
+| `python validate_race_analysis_views.py` | passed with warnings | 52 race analyses and explicit proxy/availability caveats              |
+| `python validate_ml_schema_templates.py` | passed               | 8 schema templates checked                                            |
+| `python validate_ml_datasets.py`         | passed               | 1,090 driver feature rows and 1,090 label rows                        |
+| `python validate_product_manifest.py`    | passed with warning  | `season_state` stale by threshold                                     |
+| `python check_generated_artifacts.py`    | passed               | generated artifact guard passed                                       |
+| `python -m pytest tests`                 | passed               | 37 Python tests passed                                                |
+| `npm run test --workspace web`           | passed               | 59 web tests passed                                                   |
 
 ## Assumptions
 

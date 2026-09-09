@@ -698,6 +698,91 @@
         "energy_proxy": 1617,
         "lap_pace": 0
       }
+    },
+    "2026_13_FP1_Italian Grand Prix": {
+      "file": "2026-13-fp1-italian-grand-prix-458844a7274e.json.gz",
+      "season": 2026,
+      "round": 13,
+      "event": "Italian Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_13_FP2_Italian Grand Prix": {
+      "file": "2026-13-fp2-italian-grand-prix-2f7a4ab1709b.json.gz",
+      "season": 2026,
+      "round": 13,
+      "event": "Italian Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_13_FP3_Italian Grand Prix": {
+      "file": "2026-13-fp3-italian-grand-prix-e9b414d80165.json.gz",
+      "season": 2026,
+      "round": 13,
+      "event": "Italian Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_13_Q_Italian Grand Prix": {
+      "file": "2026-13-q-italian-grand-prix-648e8327bfdc.json.gz",
+      "season": 2026,
+      "round": 13,
+      "event": "Italian Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_13_R_Italian Grand Prix": {
+      "file": "2026-13-r-italian-grand-prix-4b3dc8f66c73.json.gz",
+      "season": 2026,
+      "round": 13,
+      "event": "Italian Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 210,
+        "segments": 1890,
+        "corner_segments": 1890,
+        "braking": 1890,
+        "throttle": 1890,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 1054
+      }
     }
   }
 }

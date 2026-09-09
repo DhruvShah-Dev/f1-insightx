@@ -1,5 +1,9 @@
 import { useMemo, useState } from "react";
-import { cornersForCircuit, type CircuitCorner } from "@/data/circuit-corners";
+import {
+  cornerGuideForCircuit,
+  cornersForCircuit,
+  type CircuitCorner,
+} from "@/data/circuit-corners";
 import type { TrackPath } from "@/lib/f1.functions";
 
 type Pt = { x: number; y: number };
@@ -118,6 +122,27 @@ function tooltipPosition(corner: CircuitCorner, point: Pt = corner) {
   }
 }
 
+function cornerLabelPosition(corner: CircuitCorner, point: Pt) {
+  const side = corner.tooltipSide ?? "right";
+  const gap = 24;
+  switch (side) {
+    case "left":
+      return { x: point.x - gap, y: point.y - 9, anchor: "end" as const };
+    case "above":
+      return { x: point.x, y: point.y - gap, anchor: "middle" as const };
+    case "below":
+      return { x: point.x, y: point.y + gap + 10, anchor: "middle" as const };
+    default:
+      return { x: point.x + gap, y: point.y - 9, anchor: "start" as const };
+  }
+}
+
+function labelBoxX(x: number, width: number, anchor: "start" | "middle" | "end") {
+  if (anchor === "end") return x - width;
+  if (anchor === "middle") return x - width / 2;
+  return x;
+}
+
 export function CircuitMap({
   path,
   circuitId,
@@ -140,6 +165,10 @@ export function CircuitMap({
     () => cornersForCircuit(circuitId ?? path?.circuitId ?? null),
     [circuitId, path?.circuitId],
   );
+  const cornerGuide = useMemo(
+    () => cornerGuideForCircuit(circuitId ?? path?.circuitId ?? null),
+    [circuitId, path?.circuitId],
+  );
   const sectorColors =
     (circuitId ?? path?.circuitId) === "monza" ? ITALY_SECTOR_COLORS : DEFAULT_SECTOR_COLORS;
   const name = circuitName ?? "Circuit";
@@ -147,9 +176,42 @@ export function CircuitMap({
   if (!model) {
     return (
       <div
-        className={`flex min-h-[360px] items-center justify-center border border-border bg-card/40 ${className ?? ""}`}
+        className={`relative flex min-h-[360px] items-center justify-center overflow-hidden border border-border bg-[#070b10] text-white ${className ?? ""}`}
+        style={{ backgroundColor: "#070b10", color: "#ffffff" }}
       >
-        <p className="num text-xs text-muted-foreground">No circuit geometry stored.</p>
+        <div aria-hidden className="absolute inset-x-0 top-0 flex h-2">
+          {sectorColors.map((color, index) => (
+            <span key={`${color}-${index}`} className="flex-1" style={{ backgroundColor: color }} />
+          ))}
+        </div>
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:32px_32px]"
+        />
+        <div className="relative max-w-sm px-6 text-center">
+          <p className="label-xs text-white/58">{name} circuit</p>
+          <p className="mt-2 text-2xl font-black uppercase italic">Track map pending</p>
+          <p className="mt-2 text-sm text-white/64">
+            Verified geometry will appear here when source circuit path data is available.
+          </p>
+          {cornerGuide.length ? (
+            <div className="mt-5 grid max-h-56 gap-1.5 overflow-y-auto text-left sm:grid-cols-2">
+              {cornerGuide.map((corner) => (
+                <div
+                  key={corner.number}
+                  className="flex items-center gap-2 border border-white/10 bg-white/6 px-2 py-1.5"
+                >
+                  <span className="num grid size-6 shrink-0 place-items-center bg-white text-[10px] font-black text-[#07110c]">
+                    {corner.number}
+                  </span>
+                  <span className="truncate text-[11px] font-black uppercase text-white/82">
+                    {corner.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
       </div>
     );
   }
@@ -192,7 +254,7 @@ export function CircuitMap({
           viewBox={model.viewBox}
           className={compact ? "h-[330px] w-full pt-7" : "h-[390px] w-full pt-8 sm:h-[460px]"}
           role="img"
-          aria-label={`Interactive ${name} circuit map with corner numbers and sectors`}
+          aria-label={`Interactive ${name} circuit map with corner names, numbers, and sectors`}
         >
           <g transform={`rotate(${model.rotation} ${model.center.x} ${model.center.y})`}>
             <path
@@ -266,6 +328,56 @@ export function CircuitMap({
             );
           })}
 
+          {!compact && rotatedCorners.length ? (
+            <g pointerEvents="none">
+              {rotatedCorners.map(({ corner, point }) => {
+                const label = `${corner.number} ${corner.name}`;
+                const pos = cornerLabelPosition(corner, point);
+                const width = Math.min(188, Math.max(76, label.length * 6.4 + 16));
+                const x = labelBoxX(pos.x, width, pos.anchor);
+                return (
+                  <g key={`label-${corner.number}`}>
+                    <line
+                      x1={point.x}
+                      y1={point.y}
+                      x2={pos.x}
+                      y2={pos.y - 5}
+                      stroke="var(--foreground)"
+                      strokeWidth={1}
+                      opacity={0.28}
+                    />
+                    <rect
+                      x={x}
+                      y={pos.y - 17}
+                      width={width}
+                      height={22}
+                      rx={4}
+                      fill="var(--background)"
+                      stroke={sectorColors[corner.sector - 1]}
+                      strokeWidth={1.4}
+                      opacity={0.94}
+                    />
+                    <text
+                      x={
+                        pos.anchor === "end"
+                          ? x + width - 8
+                          : pos.anchor === "middle"
+                            ? x + width / 2
+                            : x + 8
+                      }
+                      y={pos.y - 2}
+                      textAnchor={pos.anchor}
+                      fontSize="11"
+                      className="fill-foreground font-sans font-black uppercase"
+                    >
+                      {label.length > 24 ? `${label.slice(0, 22)}...` : label}
+                    </text>
+                  </g>
+                );
+              })}
+            </g>
+          ) : null}
+
           {active ? (
             <g pointerEvents="none">
               {(() => {
@@ -327,7 +439,7 @@ export function CircuitMap({
         </svg>
 
         <div className="border-t border-border bg-card/40 px-4 py-3">
-          <p className="label-xs">Hover or focus a number</p>
+          <p className="label-xs">{corners.length ? "Corner names" : "Corner data"}</p>
           {activeCorner ? (
             <p className="mt-1 text-sm font-bold uppercase">
               T{activeCorner.number} - {activeCorner.name}

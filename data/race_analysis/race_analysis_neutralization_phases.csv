@@ -63,3 +63,6 @@ race_analysis_id,phase_id,start_lap,end_lap,status_label,affected_laps,confidenc
 2026-12-zandvoort,2026-12-zandvoort-status-03,3,5,yellow,3,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
 2026-12-zandvoort,2026-12-zandvoort-status-04,52,57,mixed,6,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.
 2026-12-zandvoort,2026-12-zandvoort-status-05,67,70,mixed,4,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-13-monza,2026-13-monza-status-01,2,3,mixed,2,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-13-monza,2026-13-monza-status-02,6,6,yellow,1,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-13-monza,2026-13-monza-status-03,27,29,mixed,3,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.

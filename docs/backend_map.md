@@ -1,29 +1,38 @@
-# F1 InsightX Backend API Map
+# Backend Surface Map
 
-| Route Path | HTTP Method(s) | Auth Required | Rate Limit Policy | Supabase Access Mode | Data Source |
-| :--- | :---: | :---: | :--- | :---: | :---: |
-| `/api/account/export` | POST | **Yes** | `profileWrite` | Server client (authenticated user) | Supabase |
-| `/api/account/profile` | GET | **Yes** | `profileRead` | Server client (authenticated user) | Supabase |
-| `/api/account/profile` | PATCH | **Yes** | `profileWrite` | Server client (authenticated user) + Admin client (username checks) | Supabase |
-| `/api/account/username/check` | GET | No | `usernameCheck` | Admin client (privileged) | Supabase |
-| `/api/account/username/suggest` | GET | **Yes** | `usernameSuggest` | Server client (authenticated user) + Admin client (username suggestion generation) | Supabase |
-| `/api/analytics/compare` | GET | No | `analyticsCompare` | Server client (public) | Supabase / CSV Fallback |
-| `/api/analytics/session/[sessionId]/drivers` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/analytics/sessions` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/fantasy-builder/dataset` | GET | No | `fantasyDataset` | Server client (public) | Supabase / CSV Fallback |
-| `/api/fantasy-builder/recommend` | POST | **Yes** | `fantasyRecommend` | Server client (authenticated user) | Supabase / CSV Fallback |
-| `/api/fantasy-builder/validate` | POST | No | `fantasyValidate` | Server client (public) | Supabase / CSV Fallback |
-| `/api/health` | GET | No | `health` | None | None |
-| `/api/health/supabase` | GET | No | `health` | Server client (public) | Supabase |
-| `/api/platform/race-week` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/predictions/upcoming` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/race-scenarios/simulate` | POST | **Yes** | `raceScenarioSimulate` | Server client (authenticated user) | Supabase / CSV Fallback |
-| `/api/race-scenarios/validate` | POST | No | `raceScenarioValidate` | Server client (public) | Supabase / CSV Fallback |
-| `/api/reference/circuits` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/reference/constructors` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/reference/drivers` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/reference/races` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/reference/races/[raceId]/context` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/api/strategy-lab/races/[raceId]` | GET | No | `publicRead` | Server client (public) | Supabase / CSV Fallback |
-| `/auth/callback` | GET | No | `authCallback` | Server client (public/anonymous session exchanges) | Supabase |
-| `/auth/sign-out` | POST | No | `signOut` | Server client (authenticated user) | Supabase |
+The active backend surface is a TanStack Start server-function layer in the
+repository root. The archived `apps/web` REST API map is retained only in git
+history and should not guide new product work.
+
+## Active Server Functions
+
+| Product Area    | Route(s)          | Server Function(s)                                    | Auth Required             | Data Source                                    |
+| --------------- | ----------------- | ----------------------------------------------------- | ------------------------- | ---------------------------------------------- |
+| Race Control    | `/`               | `getSeasonTelemetry`, `getRaceWeek`, `getRaceReports` | No                        | Bundled snapshot by default; optional Supabase |
+| Race Week       | `/raceweek`       | `getRaceWeek`                                         | No                        | Bundled snapshot by default; optional Supabase |
+| Championship    | `/championship`   | `getChampionship`                                     | No                        | Bundled snapshot by default; optional Supabase |
+| Analysis Index  | `/analysis`       | `getRaceReports`                                      | No                        | Bundled snapshot by default; optional Supabase |
+| Analysis Detail | `/analysis/$slug` | `getRaceReport`, `getLapTrace`                        | No                        | Bundled snapshot by default; optional Supabase |
+| Compare         | `/vs`             | `getWeekendIndex`, `getHeadToHead`, `getLapTrace`     | No                        | Bundled snapshot by default; optional Supabase |
+| Picks           | `/picks`          | `getPicksBoard`                                       | No                        | Bundled snapshot by default; optional Supabase |
+| Account         | `/account`        | account/profile helpers                               | Yes for profile mutations | Supabase Auth and `user_profiles`              |
+| Methodology     | `/method`         | none                                                  | No                        | Static route content                           |
+
+## Data Source Switch
+
+Public F1 product functions use local generated fallback data unless
+`F1_INSIGHTX_PUBLIC_DATA_SOURCE=supabase` is set. This prevents stale Supabase
+public product tables from overriding a freshly generated release snapshot.
+
+## Retired Surfaces
+
+The following old URLs are not active in the root UI and should not be added to
+new docs or navigation:
+
+- `/analytics`
+- `/race-analysis`
+- `/lab`
+- `/predictions`
+- `/api/analytics/*`
+- `/api/platform/race-week`
+- `/api/predictions/upcoming`

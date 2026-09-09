@@ -1,1 +1,4 @@
 race_id,season,round,driver_id,pit_duration_s,source_label
+2026-01-albert_park,2026,1,max_verstappen,17.6,openf1_pit_v1
+2026-02-shanghai,2026,2,hamilton,22.433,openf1_pit_v1
+2026-03-suzuka,2026,3,hamilton,22.891,openf1_pit_v1

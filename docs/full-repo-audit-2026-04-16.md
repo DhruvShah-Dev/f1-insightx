@@ -1,8 +1,16 @@
+# Historical Audit Note
+
+This file is a dated audit record from April 16, 2026. It may reference the
+archived `apps/web` Next.js UI and old route names. For current development,
+deployment, and route guidance, use `README.md`, `docs/architecture.md`,
+`docs/api-contracts.md`, and `docs/RELEASE_CHECKLIST.md`.
+
 # F1 InsightX — Full Repository Audit
 
 Date: 2026-04-16
 
 Scope covered:
+
 - Next.js App Router frontend and product surfaces
 - Supabase auth, middleware, and account/profile flows
 - API routes and shared server helpers
@@ -11,12 +19,14 @@ Scope covered:
 - CI/test posture
 
 Notion status:
+
 - Notion MCP tools were not exposed in this session, so this audit could not be written directly to Notion.
 - This document is the structured backlog artifact for later import.
 
 ## Findings
 
 ### 3. Runtime source of truth is still ambiguous across Supabase, curated CSV, and product CSV layers
+
 - Severity: High
 - Category: Architecture / Fallback Logic / Data Integrity
 - Subsystem: Runtime serving
@@ -45,6 +55,7 @@ Notion status:
 - Effort: Large
 
 ### 4. Full-table truncate-and-reload loader is operationally brittle
+
 - Severity: High
 - Category: Data Platform / Operations
 - Subsystem: Data publishing
@@ -63,6 +74,7 @@ Notion status:
 - Effort: Large
 
 ### 6. Several core files are oversized and mix too many concerns
+
 - Severity: Medium
 - Category: Code Quality / Maintainability
 - Subsystem: Frontend and server helpers
@@ -86,6 +98,7 @@ Notion status:
 - Effort: Medium
 
 ### 7. Two overlapping strategy simulation engines still exist
+
 - Severity: Medium
 - Category: Architecture / Reusability
 - Subsystem: Simulation
@@ -104,6 +117,7 @@ Notion status:
 - Effort: Medium
 
 ### 10. Product coverage depends on materialized CSV breadth when Supabase is unavailable
+
 - Severity: Medium
 - Category: Fallback Logic / Product Reliability
 - Subsystem: Race Week / Strategy Lab
@@ -123,6 +137,7 @@ Notion status:
 - Effort: Medium
 
 ### 13. Documentation is lagging the implemented layered data architecture
+
 - Severity: Low
 - Category: System Design / Documentation
 - Subsystem: Docs

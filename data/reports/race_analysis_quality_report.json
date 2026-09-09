@@ -6,8 +6,8 @@
     "min": 0.35,
     "tier": "strong"
   },
-  "generated_at": "2026-08-24T18:51:07Z",
-  "latest_race": "Dutch Grand Prix",
+  "generated_at": "2026-09-08T17:22:28Z",
+  "latest_race": "Italian Grand Prix",
   "missing_data_flags": {
     "drs_window": "proxy_only_no_exact_gap_feed",
     "dynamic_gap_feed": "missing",
@@ -18,22 +18,22 @@
     "track_status": "partial",
     "traffic_proxy": "proxy_no_exact_gap_feed"
   },
-  "races_generated": 12,
+  "races_generated": 13,
   "rows": {
-    "index": 12,
-    "links": 36,
-    "neutralization_phases": 64,
-    "pace_evolution": 14101,
-    "pit_strategy": 499,
-    "position_changes": 264,
-    "position_swing_events": 2350,
-    "position_timeline": 14073,
-    "stints": 762,
-    "story_points": 49,
-    "summary": 12,
-    "track_status": 745,
-    "traffic_proxy": 14101,
-    "weather_context": 745
+    "index": 13,
+    "links": 39,
+    "neutralization_phases": 67,
+    "pace_evolution": 15155,
+    "pit_strategy": 529,
+    "position_changes": 286,
+    "position_swing_events": 2552,
+    "position_timeline": 15126,
+    "stints": 814,
+    "story_points": 53,
+    "summary": 13,
+    "track_status": 798,
+    "traffic_proxy": 15155,
+    "weather_context": 798
   },
   "season_coverage": [
     2026

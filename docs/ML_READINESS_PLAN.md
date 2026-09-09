@@ -8,29 +8,29 @@ F1 InsightX is not using machine learning. The current platform is deterministic
 
 - Canonical FastF1 laps, results, stints, weather, and session summaries.
 - Telemetry-derived feature layer from fastest-lap telemetry traces.
-- Strategy Lab deterministic simulation and telemetry-informed signals.
-- Analytics product views for driver-vs-driver telemetry comparison.
-- Race Analysis product views for completed-race explanation.
+- Strategy-modeling deterministic simulation and telemetry-informed signals.
+- Analytics product views for the Compare driver-vs-driver telemetry surface.
+- Analysis product views for completed-race explanation.
 - Season state and product manifest governance.
 
 ML should wait until the deterministic feature layer is stable, leakage-safe, and temporally versioned.
 
 ## Feature Source Classification
 
-| Source | Examples | Classification | ML Use |
-| --- | --- | --- | --- |
-| Canonical results | finish position, grid, points, status | Observed labels/post-race facts | Labels only for pre-race ML; features only for historical rolling form |
-| Canonical laps | lap time, tyre life, compound, position, weather | Observed timing data | In-race/post-race features; rolling historical features |
-| Canonical stints | stint length, compound, degradation | Derived deterministic | Post-race/stint models; rolling historical summaries |
-| Session summary | representative pace, long-run pace, teammate gap | Derived deterministic | Pre-race if session occurred before feature cutoff |
-| Telemetry features | corner speed, braking, throttle, straight, energy proxy | Derived/proxy | Style features with proxy flags |
-| Strategy Lab outputs | finish bands, strategy ranking, sensitivity | Derived simulator outputs | Not training input for outcome labels unless explicitly model-stacking later |
-| Analytics views | pairwise telemetry comparisons | Derived product views | Style comparisons; avoid label leakage |
-| Race Analysis views | story, pit effect, position movement, traffic proxy | Post-race derived/inferred | Explanatory/post-race ML only |
-| Track archetypes | power, traction, braking, degradation weights | Derived deterministic | Track features |
-| Track status/neutralization | status-only phases | Partial observed context | Context features; no cause labels |
-| Position/traffic proxy | position timeline, traffic likely/uncertain | Inferred/proxy | Use only with proxy flags |
-| Circuit segment templates | future named segment metadata | Governance scaffold | Not feature-ready until verified |
+| Source                      | Examples                                                | Classification                  | ML Use                                                                       |
+| --------------------------- | ------------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------- |
+| Canonical results           | finish position, grid, points, status                   | Observed labels/post-race facts | Labels only for pre-race ML; features only for historical rolling form       |
+| Canonical laps              | lap time, tyre life, compound, position, weather        | Observed timing data            | In-race/post-race features; rolling historical features                      |
+| Canonical stints            | stint length, compound, degradation                     | Derived deterministic           | Post-race/stint models; rolling historical summaries                         |
+| Session summary             | representative pace, long-run pace, teammate gap        | Derived deterministic           | Pre-race if session occurred before feature cutoff                           |
+| Telemetry features          | corner speed, braking, throttle, straight, energy proxy | Derived/proxy                   | Style features with proxy flags                                              |
+| Strategy-modeling outputs   | finish bands, strategy ranking, sensitivity             | Derived simulator outputs       | Not training input for outcome labels unless explicitly model-stacking later |
+| Analytics / Compare views   | pairwise telemetry comparisons                          | Derived product views           | Style comparisons; avoid label leakage                                       |
+| Analysis views              | story, pit effect, position movement, traffic proxy     | Post-race derived/inferred      | Explanatory/post-race ML only                                                |
+| Track archetypes            | power, traction, braking, degradation weights           | Derived deterministic           | Track features                                                               |
+| Track status/neutralization | status-only phases                                      | Partial observed context        | Context features; no cause labels                                            |
+| Position/traffic proxy      | position timeline, traffic likely/uncertain             | Inferred/proxy                  | Use only with proxy flags                                                    |
+| Circuit segment templates   | future named segment metadata                           | Governance scaffold             | Not feature-ready until verified                                             |
 
 Unavailable or unsafe now:
 
@@ -206,19 +206,19 @@ Delay:
 Primary leakage risks:
 
 - Using final classification as a feature to predict finish position.
-- Using Race Analysis stints/pit effects to predict the same race.
+- Using Analysis stints/pit effects to predict the same race.
 - Using same-race telemetry after the race as pre-race features.
 - Random row splits across drivers within the same race.
 - Rolling windows that accidentally include future races.
-- Feeding Strategy Lab outputs back into ML labels built from the same deterministic assumptions.
+- Feeding strategy-modeling outputs back into ML labels built from the same deterministic assumptions.
 
 Feature boundaries:
 
-| Feature set | Allowed inputs | Forbidden inputs |
-| --- | --- | --- |
-| Pre-race | Prior races, current event sessions already completed before cutoff, schedule, track archetype | Race result, race stints, pit effects, Race Analysis, final position |
-| In-race | Laps/stints up to cutoff lap, weather/status up to cutoff | Future laps, final classification, post-race summaries |
-| Post-race explanatory | Full race timing, stints, pit-cycle proxy, Race Analysis views | Future races |
+| Feature set           | Allowed inputs                                                                                 | Forbidden inputs                                                |
+| --------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Pre-race              | Prior races, current event sessions already completed before cutoff, schedule, track archetype | Race result, race stints, pit effects, Analysis, final position |
+| In-race               | Laps/stints up to cutoff lap, weather/status up to cutoff                                      | Future laps, final classification, post-race summaries          |
+| Post-race explanatory | Full race timing, stints, pit-cycle proxy, Analysis views                                      | Future races                                                    |
 
 Every ML-ready row needs `feature_cutoff`, `feature_set_type`, and `source_data_version`.
 
@@ -237,7 +237,7 @@ Use temporal splits only:
 
 ## Sample Size Assessment
 
-Current usable completed Race Analysis coverage is 49 races and roughly 986 driver-race rows. That is enough for:
+Current usable completed Analysis coverage is 49 races and roughly 986 driver-race rows. That is enough for:
 
 - Deterministic baselines.
 - Simple historical averages.

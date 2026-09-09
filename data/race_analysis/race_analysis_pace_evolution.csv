@@ -14100,3 +14100,1057 @@ race_analysis_id,driver,team,lap_number,race_phase,compound,stint_number,lap_tim
 2026-12-zandvoort,TSU,Racing Bulls,70,closing,SOFT,4,77.385,-0.525,7,5.224,28,1.925,False,0.72
 2026-12-zandvoort,TSU,Racing Bulls,71,closing,SOFT,4,77.383,1.161,11,1.561,29,3.646,False,0.72
 2026-12-zandvoort,VER,Red Bull Racing,1,opening,SOFT,1,,,,,1,,False,0.35
+2026-13-monza,ALB,Williams,1,opening,MEDIUM,1,97.381,3.705,18,3.705,1,3.74,False,0.72
+2026-13-monza,ALB,Williams,2,opening,MEDIUM,1,90.395,2.6,18,3.152,2,2.67,False,0.72
+2026-13-monza,ALB,Williams,3,opening,MEDIUM,1,,,,3.152,3,,False,0.35
+2026-13-monza,ALB,Williams,4,opening,HARD,2,,,,2.6,1,,False,0.35
+2026-13-monza,ALB,Williams,5,opening,HARD,2,,,,,2,,False,0.35
+2026-13-monza,ALB,Williams,6,opening,HARD,2,132.275,-2.098,4,-2.098,3,-1.888,False,0.72
+2026-13-monza,ALB,Williams,7,opening,HARD,2,89.017,0.765,18,-0.666,4,1.01,False,0.72
+2026-13-monza,ALB,Williams,8,opening,HARD,2,88.244,0.565,16,-0.256,5,0.845,False,0.72
+2026-13-monza,ALB,Williams,9,opening,HARD,2,87.844,0.839,15,0.723,6,1.154,False,0.72
+2026-13-monza,ALB,Williams,10,opening,HARD,2,88.151,0.891,16,0.765,7,1.241,False,0.72
+2026-13-monza,ALB,Williams,11,middle,HARD,2,88.044,0.664,15,0.798,8,1.049,False,0.72
+2026-13-monza,ALB,Williams,12,middle,HARD,2,87.078,-0.026,10,0.51,9,0.394,False,0.72
+2026-13-monza,ALB,Williams,13,middle,HARD,2,87.066,0.176,13,0.271,10,0.631,False,0.72
+2026-13-monza,ALB,Williams,14,middle,HARD,2,87.405,0.334,15,0.161,11,0.824,False,0.72
+2026-13-monza,ALB,Williams,15,middle,HARD,2,87.772,0.779,16,0.43,12,1.304,False,0.72
+2026-13-monza,ALB,Williams,16,middle,HARD,2,87.356,0.437,15,0.517,13,0.997,False,0.72
+2026-13-monza,ALB,Williams,17,middle,HARD,2,87.29,0.313,16,0.51,14,0.908,False,0.72
+2026-13-monza,ALB,Williams,18,middle,HARD,2,87.195,0.356,16,0.369,15,0.986,False,0.72
+2026-13-monza,ALB,Williams,19,middle,HARD,2,87.073,0.136,15,0.268,16,0.801,False,0.72
+2026-13-monza,ALB,Williams,20,middle,HARD,2,87.018,0.123,14,0.205,17,0.823,False,0.72
+2026-13-monza,ALB,Williams,21,middle,HARD,2,87.287,0.426,14,0.228,18,1.161,False,0.72
+2026-13-monza,ALB,Williams,22,middle,HARD,2,86.992,-0.06,10,0.163,19,0.71,False,0.72
+2026-13-monza,ALB,Williams,23,middle,HARD,2,87.064,0.246,15,0.204,20,1.051,False,0.72
+2026-13-monza,ALB,Williams,24,middle,HARD,2,86.975,0.205,13,0.13,21,1.045,False,0.72
+2026-13-monza,ALB,Williams,25,middle,HARD,2,86.978,0.224,12,0.225,22,1.099,False,0.72
+2026-13-monza,ALB,Williams,26,middle,HARD,2,87.13,0.501,13,0.31,23,1.411,False,0.72
+2026-13-monza,ALB,Williams,27,middle,HARD,2,91.758,3.88,11,1.535,24,4.825,False,0.72
+2026-13-monza,ALB,Williams,28,middle,HARD,2,110.739,-0.521,7,1.287,25,0.459,False,0.72
+2026-13-monza,ALB,Williams,29,middle,HARD,2,86.935,-1.105,5,0.751,26,-0.09,False,0.72
+2026-13-monza,ALB,Williams,30,middle,HARD,2,87.063,0.575,17,-0.35,27,1.625,False,0.72
+2026-13-monza,ALB,Williams,31,middle,HARD,2,87.192,0.836,17,0.102,28,1.921,False,0.72
+2026-13-monza,ALB,Williams,32,middle,HARD,2,86.909,0.643,17,0.685,29,1.763,False,0.72
+2026-13-monza,ALB,Williams,33,middle,HARD,2,86.973,0.565,17,0.681,30,1.72,False,0.72
+2026-13-monza,ALB,Williams,34,middle,HARD,2,87.059,0.852,18,0.687,31,2.042,False,0.72
+2026-13-monza,ALB,Williams,35,middle,HARD,2,86.811,0.687,15,0.701,32,1.912,False,0.72
+2026-13-monza,ALB,Williams,36,middle,HARD,2,86.742,0.701,14,0.747,33,1.961,False,0.72
+2026-13-monza,ALB,Williams,37,middle,HARD,2,86.955,0.98,16,0.789,34,2.275,False,0.72
+2026-13-monza,ALB,Williams,38,middle,HARD,2,86.851,0.853,16,0.845,35,2.183,False,0.72
+2026-13-monza,ALB,Williams,39,middle,HARD,2,87.069,0.834,16,0.889,36,2.199,False,0.72
+2026-13-monza,ALB,Williams,40,closing,HARD,2,86.977,0.821,15,0.836,37,2.221,False,0.72
+2026-13-monza,ALB,Williams,41,closing,HARD,2,86.842,0.421,14,0.692,38,1.856,False,0.72
+2026-13-monza,ALB,Williams,42,closing,HARD,2,87.38,1.5,17,0.914,39,2.97,False,0.72
+2026-13-monza,ALB,Williams,43,closing,HARD,2,87.742,1.464,19,1.128,40,2.969,False,0.72
+2026-13-monza,ALB,Williams,44,closing,HARD,2,87.563,1.414,18,1.459,41,2.954,False,0.72
+2026-13-monza,ALB,Williams,45,closing,HARD,2,87.258,1.3,17,1.393,42,2.875,False,0.72
+2026-13-monza,ALB,Williams,46,closing,HARD,2,91.926,6.206,18,2.973,43,7.816,False,0.72
+2026-13-monza,ALB,Williams,47,closing,SOFT,3,109.658,23.875,19,10.46,1,25.52,False,0.72
+2026-13-monza,ALB,Williams,48,closing,SOFT,3,90.011,3.898,19,11.326,2,5.578,False,0.72
+2026-13-monza,ALB,Williams,49,closing,SOFT,3,85.456,-0.939,3,8.945,3,0.776,False,0.72
+2026-13-monza,ALB,Williams,50,closing,SOFT,3,85.783,-0.28,7,0.893,4,1.47,False,0.72
+2026-13-monza,ALB,Williams,51,closing,SOFT,3,86.164,-0.069,9,-0.429,5,1.716,False,0.72
+2026-13-monza,ALB,Williams,52,closing,SOFT,3,85.341,-0.275,6,-0.208,6,1.545,False,0.72
+2026-13-monza,ALO,Aston Martin,1,opening,HARD,1,98.367,4.691,22,4.691,1,4.726,False,0.72
+2026-13-monza,ALO,Aston Martin,2,opening,HARD,1,91.15,3.355,19,4.023,2,3.425,False,0.72
+2026-13-monza,ALO,Aston Martin,3,opening,HARD,1,,,,4.023,3,,False,0.35
+2026-13-monza,ALO,Aston Martin,4,opening,SOFT,2,,,,3.355,1,,False,0.35
+2026-13-monza,ALO,Aston Martin,5,opening,SOFT,2,,,,,2,,False,0.35
+2026-13-monza,ALO,Aston Martin,6,opening,SOFT,2,125.482,-8.891,1,-8.891,3,-8.681,False,0.72
+2026-13-monza,ALO,Aston Martin,7,opening,SOFT,2,89.577,1.325,19,-3.783,4,1.57,False,0.72
+2026-13-monza,ALO,Aston Martin,8,opening,SOFT,2,87.961,0.282,12,-2.428,5,0.562,False,0.72
+2026-13-monza,ALO,Aston Martin,9,opening,SOFT,2,88.093,1.088,17,0.898,6,1.403,False,0.72
+2026-13-monza,ALO,Aston Martin,10,opening,SOFT,2,88.261,1.001,18,0.79,7,1.351,False,0.72
+2026-13-monza,ALO,Aston Martin,11,middle,SOFT,2,88.548,1.168,19,1.086,8,1.553,False,0.72
+2026-13-monza,ALO,Aston Martin,12,middle,SOFT,2,88.323,1.219,18,1.129,9,1.639,False,0.72
+2026-13-monza,ALO,Aston Martin,13,middle,SOFT,2,88.213,1.323,17,1.237,10,1.778,False,0.72
+2026-13-monza,ALO,Aston Martin,14,middle,SOFT,2,88.889,1.818,19,1.453,11,2.308,False,0.72
+2026-13-monza,ALO,Aston Martin,15,middle,SOFT,2,88.951,1.958,19,1.7,12,2.483,False,0.72
+2026-13-monza,ALO,Aston Martin,16,middle,SOFT,2,88.058,1.139,16,1.638,13,1.699,False,0.72
+2026-13-monza,ALO,Aston Martin,17,middle,SOFT,2,89.39,2.413,21,1.837,14,3.008,False,0.72
+2026-13-monza,ALO,Aston Martin,18,middle,SOFT,2,88.488,1.649,18,1.734,15,2.279,False,0.72
+2026-13-monza,ALO,Aston Martin,19,middle,SOFT,2,89.067,2.13,20,2.064,16,2.795,False,0.72
+2026-13-monza,ALO,Aston Martin,20,middle,SOFT,2,88.702,1.807,17,1.862,17,2.507,False,0.72
+2026-13-monza,ALO,Aston Martin,21,middle,SOFT,2,88.45,1.589,19,1.842,18,2.324,False,0.72
+2026-13-monza,ALO,Aston Martin,22,middle,SOFT,2,88.719,1.667,18,1.688,19,2.437,False,0.72
+2026-13-monza,ALO,Aston Martin,23,middle,SOFT,2,94.92,8.102,21,3.786,20,8.907,False,0.72
+2026-13-monza,ANT,Mercedes,1,opening,HARD,1,95.414,1.738,14,1.738,1,1.773,False,0.72
+2026-13-monza,ANT,Mercedes,2,opening,HARD,1,87.011,-0.784,3,0.477,2,-0.714,False,0.72
+2026-13-monza,ANT,Mercedes,3,opening,HARD,1,146.043,9.265,12,3.406,3,9.37,False,0.72
+2026-13-monza,ANT,Mercedes,4,opening,MEDIUM,2,,,,4.241,1,,False,0.35
+2026-13-monza,ANT,Mercedes,5,opening,MEDIUM,2,,,,9.265,2,,False,0.35
+2026-13-monza,ANT,Mercedes,6,opening,MEDIUM,2,140.752,6.379,9,6.379,3,6.589,False,0.72
+2026-13-monza,ANT,Mercedes,7,opening,MEDIUM,2,86.503,-1.749,3,2.315,4,-1.504,False,0.72
+2026-13-monza,ANT,Mercedes,8,opening,MEDIUM,2,86.3,-1.379,4,1.084,5,-1.099,False,0.72
+2026-13-monza,ANT,Mercedes,9,opening,MEDIUM,2,85.749,-1.256,1,-1.461,6,-0.941,False,0.72
+2026-13-monza,ANT,Mercedes,10,opening,MEDIUM,2,86.352,-0.908,5,-1.181,7,-0.558,False,0.72
+2026-13-monza,ANT,Mercedes,11,middle,MEDIUM,2,86.101,-1.279,2,-1.148,8,-0.894,False,0.72
+2026-13-monza,ANT,Mercedes,12,middle,MEDIUM,2,85.721,-1.383,1,-1.19,9,-0.963,False,0.72
+2026-13-monza,ANT,Mercedes,13,middle,MEDIUM,2,85.469,-1.421,1,-1.361,10,-0.966,False,0.72
+2026-13-monza,ANT,Mercedes,14,middle,MEDIUM,2,85.828,-1.243,1,-1.349,11,-0.753,False,0.72
+2026-13-monza,ANT,Mercedes,15,middle,MEDIUM,2,86.118,-0.875,3,-1.18,12,-0.35,False,0.72
+2026-13-monza,ANT,Mercedes,16,middle,MEDIUM,2,85.615,-1.304,1,-1.141,13,-0.744,False,0.72
+2026-13-monza,ANT,Mercedes,17,middle,MEDIUM,2,85.203,-1.774,1,-1.318,14,-1.179,False,0.72
+2026-13-monza,ANT,Mercedes,18,middle,MEDIUM,2,85.224,-1.615,1,-1.564,15,-0.985,False,0.72
+2026-13-monza,ANT,Mercedes,19,middle,MEDIUM,2,85.729,-1.208,2,-1.532,16,-0.543,False,0.72
+2026-13-monza,ANT,Mercedes,20,middle,MEDIUM,2,85.589,-1.306,1,-1.376,17,-0.606,False,0.72
+2026-13-monza,ANT,Mercedes,21,middle,MEDIUM,2,85.833,-1.028,2,-1.181,18,-0.293,False,0.72
+2026-13-monza,ANT,Mercedes,22,middle,MEDIUM,2,86.536,-0.516,6,-0.95,19,0.254,False,0.72
+2026-13-monza,ANT,Mercedes,23,middle,MEDIUM,2,86.685,-0.133,7,-0.559,20,0.672,False,0.72
+2026-13-monza,ANT,Mercedes,24,middle,MEDIUM,2,85.994,-0.776,5,-0.475,21,0.064,False,0.72
+2026-13-monza,ANT,Mercedes,25,middle,MEDIUM,2,85.287,-1.467,1,-0.792,22,-0.592,False,0.72
+2026-13-monza,ANT,Mercedes,26,middle,MEDIUM,2,85.402,-1.227,1,-1.157,23,-0.317,False,0.72
+2026-13-monza,ANT,Mercedes,27,middle,MEDIUM,2,85.544,-2.334,2,-1.676,24,-1.389,False,0.72
+2026-13-monza,ANT,Mercedes,28,middle,MEDIUM,2,108.661,-2.599,3,-2.053,25,-1.619,False,0.72
+2026-13-monza,ANT,Mercedes,29,middle,MEDIUM,3,109.136,21.096,19,5.388,1,22.111,False,0.72
+2026-13-monza,ANT,Mercedes,30,middle,MEDIUM,3,84.595,-1.893,1,5.535,2,-0.843,False,0.72
+2026-13-monza,ANT,Mercedes,31,middle,MEDIUM,3,84.816,-1.54,2,5.888,3,-0.455,False,0.72
+2026-13-monza,ANT,Mercedes,32,middle,MEDIUM,3,84.672,-1.594,1,-1.676,4,-0.474,False,0.72
+2026-13-monza,ANT,Mercedes,33,middle,MEDIUM,3,84.976,-1.432,2,-1.522,5,-0.277,False,0.72
+2026-13-monza,ANT,Mercedes,34,middle,MEDIUM,3,84.669,-1.538,1,-1.521,6,-0.348,False,0.72
+2026-13-monza,ANT,Mercedes,35,middle,MEDIUM,3,84.421,-1.703,1,-1.558,7,-0.478,False,0.72
+2026-13-monza,ANT,Mercedes,36,middle,MEDIUM,3,84.684,-1.357,2,-1.533,8,-0.097,False,0.72
+2026-13-monza,ANT,Mercedes,37,middle,MEDIUM,3,84.463,-1.512,2,-1.524,9,-0.217,False,0.72
+2026-13-monza,ANT,Mercedes,38,middle,MEDIUM,3,84.86,-1.138,2,-1.336,10,0.192,False,0.72
+2026-13-monza,ANT,Mercedes,39,middle,MEDIUM,3,84.725,-1.51,2,-1.387,11,-0.145,False,0.72
+2026-13-monza,ANT,Mercedes,40,closing,MEDIUM,3,84.613,-1.543,1,-1.397,12,-0.143,False,0.72
+2026-13-monza,ANT,Mercedes,41,closing,MEDIUM,3,84.577,-1.844,1,-1.632,13,-0.409,False,0.72
+2026-13-monza,ANT,Mercedes,42,closing,MEDIUM,3,84.347,-1.533,1,-1.64,14,-0.063,False,0.72
+2026-13-monza,ANT,Mercedes,43,closing,MEDIUM,3,84.478,-1.8,1,-1.726,15,-0.295,False,0.72
+2026-13-monza,ANT,Mercedes,44,closing,MEDIUM,3,84.344,-1.805,1,-1.713,16,-0.265,False,0.72
+2026-13-monza,ANT,Mercedes,45,closing,MEDIUM,3,84.037,-1.921,1,-1.842,17,-0.346,False,0.72
+2026-13-monza,ANT,Mercedes,46,closing,MEDIUM,3,83.861,-1.859,1,-1.862,18,-0.249,False,0.72
+2026-13-monza,ANT,Mercedes,47,closing,MEDIUM,3,84.128,-1.655,1,-1.812,19,-0.01,False,0.72
+2026-13-monza,ANT,Mercedes,48,closing,MEDIUM,3,84.572,-1.541,1,-1.685,20,0.139,False,0.72
+2026-13-monza,ANT,Mercedes,49,closing,MEDIUM,3,88.582,2.187,18,-0.336,21,3.902,False,0.72
+2026-13-monza,ANT,Mercedes,50,closing,MEDIUM,3,84.124,-1.939,1,-0.431,22,-0.189,False,0.72
+2026-13-monza,ANT,Mercedes,51,closing,MEDIUM,3,84.398,-1.835,2,-0.529,23,-0.05,False,0.72
+2026-13-monza,ANT,Mercedes,52,closing,MEDIUM,3,84.305,-1.311,1,-1.695,24,0.509,False,0.72
+2026-13-monza,ANT,Mercedes,53,closing,MEDIUM,3,83.504,-2.074,1,-1.74,25,-0.219,False,0.72
+2026-13-monza,BEA,Haas F1 Team,1,opening,SOFT,1,92.659,-1.017,9,-1.017,1,-0.982,False,0.72
+2026-13-monza,BEA,Haas F1 Team,2,opening,SOFT,1,87.733,-0.062,10,-0.539,2,0.008,False,0.72
+2026-13-monza,BEA,Haas F1 Team,3,opening,SOFT,1,142.717,5.939,9,1.62,3,6.044,False,0.72
+2026-13-monza,BEA,Haas F1 Team,4,opening,HARD,2,,,,2.939,1,,False,0.35
+2026-13-monza,BEA,Haas F1 Team,5,opening,HARD,2,,,,5.939,2,,False,0.35
+2026-13-monza,BEA,Haas F1 Team,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,BEA,Haas F1 Team,7,opening,HARD,2,88.252,0.0,11,0,4,0.245,False,0.72
+2026-13-monza,BEA,Haas F1 Team,8,opening,HARD,2,87.442,-0.237,10,-0.119,5,0.043,False,0.72
+2026-13-monza,BEA,Haas F1 Team,9,opening,HARD,2,87.651,0.646,14,0.136,6,0.961,False,0.72
+2026-13-monza,BEA,Haas F1 Team,10,opening,HARD,2,87.26,0.0,11,0.136,7,0.35,False,0.72
+2026-13-monza,BEA,Haas F1 Team,11,middle,HARD,2,87.38,0.0,11,0.215,8,0.385,False,0.72
+2026-13-monza,BEA,Haas F1 Team,12,middle,HARD,2,87.033,-0.071,9,-0.024,9,0.349,False,0.72
+2026-13-monza,BEA,Haas F1 Team,13,middle,HARD,2,86.883,-0.007,10,-0.026,10,0.448,False,0.72
+2026-13-monza,BEA,Haas F1 Team,14,middle,HARD,2,87.305,0.234,13,0.052,11,0.724,False,0.72
+2026-13-monza,BEA,Haas F1 Team,15,middle,HARD,2,87.145,0.152,12,0.126,12,0.677,False,0.72
+2026-13-monza,BEA,Haas F1 Team,16,middle,HARD,2,87.283,0.364,12,0.25,13,0.924,False,0.72
+2026-13-monza,BEA,Haas F1 Team,17,middle,HARD,2,87.071,0.094,14,0.203,14,0.689,False,0.72
+2026-13-monza,BEA,Haas F1 Team,18,middle,HARD,2,86.939,0.1,14,0.186,15,0.73,False,0.72
+2026-13-monza,BEA,Haas F1 Team,19,middle,HARD,2,87.321,0.384,17,0.193,16,1.049,False,0.72
+2026-13-monza,BEA,Haas F1 Team,20,middle,HARD,2,87.378,0.483,15,0.322,17,1.183,False,0.72
+2026-13-monza,BEA,Haas F1 Team,21,middle,HARD,2,87.353,0.492,15,0.453,18,1.227,False,0.72
+2026-13-monza,BEA,Haas F1 Team,22,middle,HARD,2,87.582,0.53,15,0.502,19,1.3,False,0.72
+2026-13-monza,BEA,Haas F1 Team,23,middle,HARD,2,87.111,0.293,16,0.438,20,1.098,False,0.72
+2026-13-monza,BEA,Haas F1 Team,24,middle,HARD,2,87.252,0.482,17,0.435,21,1.322,False,0.72
+2026-13-monza,BEA,Haas F1 Team,25,middle,HARD,2,87.224,0.47,17,0.415,22,1.345,False,0.72
+2026-13-monza,BEA,Haas F1 Team,26,middle,HARD,2,87.231,0.602,15,0.518,23,1.512,False,0.72
+2026-13-monza,BEA,Haas F1 Team,27,middle,HARD,2,92.347,4.469,13,1.847,24,5.414,False,0.72
+2026-13-monza,BEA,Haas F1 Team,28,middle,HARD,2,111.9,0.64,11,1.904,25,1.62,False,0.72
+2026-13-monza,BEA,Haas F1 Team,29,middle,HARD,2,87.369,-0.671,7,1.479,26,0.344,False,0.72
+2026-13-monza,BEA,Haas F1 Team,30,middle,HARD,2,86.754,0.266,14,0.078,27,1.316,False,0.72
+2026-13-monza,BEA,Haas F1 Team,31,middle,HARD,2,86.356,0.0,10,-0.135,28,1.085,False,0.72
+2026-13-monza,BEA,Haas F1 Team,32,middle,HARD,2,86.734,0.468,16,0.245,29,1.588,False,0.72
+2026-13-monza,BEA,Haas F1 Team,33,middle,HARD,2,86.724,0.316,15,0.261,30,1.471,False,0.72
+2026-13-monza,BEA,Haas F1 Team,34,middle,HARD,2,87.017,0.81,16,0.531,31,2.0,False,0.72
+2026-13-monza,BEA,Haas F1 Team,35,middle,HARD,2,87.122,0.998,17,0.708,32,2.223,False,0.72
+2026-13-monza,BEA,Haas F1 Team,36,middle,HARD,2,87.322,1.281,17,1.03,33,2.541,False,0.72
+2026-13-monza,BEA,Haas F1 Team,37,middle,HARD,2,87.099,1.124,17,1.134,34,2.419,False,0.72
+2026-13-monza,BEA,Haas F1 Team,38,middle,HARD,2,87.281,1.283,17,1.229,35,2.613,False,0.72
+2026-13-monza,BEA,Haas F1 Team,39,middle,HARD,2,87.431,1.196,17,1.201,36,2.561,False,0.72
+2026-13-monza,BEA,Haas F1 Team,40,closing,HARD,2,87.156,1.0,16,1.16,37,2.4,False,0.72
+2026-13-monza,BEA,Haas F1 Team,41,closing,HARD,2,87.574,1.153,17,1.116,38,2.588,False,0.72
+2026-13-monza,BEA,Haas F1 Team,42,closing,HARD,2,87.137,1.257,16,1.137,39,2.727,False,0.72
+2026-13-monza,BEA,Haas F1 Team,43,closing,HARD,2,87.049,0.771,15,1.06,40,2.276,False,0.72
+2026-13-monza,BEA,Haas F1 Team,44,closing,HARD,2,87.02,0.871,15,0.966,41,2.411,False,0.72
+2026-13-monza,BEA,Haas F1 Team,45,closing,HARD,2,86.952,0.994,16,0.879,42,2.569,False,0.72
+2026-13-monza,BEA,Haas F1 Team,46,closing,HARD,2,87.224,1.504,16,1.123,43,3.114,False,0.72
+2026-13-monza,BEA,Haas F1 Team,47,closing,HARD,2,87.75,1.967,17,1.488,44,3.612,False,0.72
+2026-13-monza,BEA,Haas F1 Team,48,closing,HARD,2,86.933,0.82,15,1.43,45,2.5,False,0.72
+2026-13-monza,BEA,Haas F1 Team,49,closing,HARD,2,87.192,0.797,15,1.195,46,2.512,False,0.72
+2026-13-monza,BEA,Haas F1 Team,50,closing,HARD,2,87.828,1.765,18,1.127,47,3.515,False,0.72
+2026-13-monza,BEA,Haas F1 Team,51,closing,HARD,2,86.955,0.722,17,1.095,48,2.507,False,0.72
+2026-13-monza,BEA,Haas F1 Team,52,closing,HARD,2,88.04,2.424,18,1.637,49,4.244,False,0.72
+2026-13-monza,BEA,Haas F1 Team,53,closing,HARD,2,87.158,1.58,15,1.575,50,3.435,False,0.72
+2026-13-monza,BOR,Audi,1,opening,SOFT,1,93.432,-0.244,11,-0.244,1,-0.209,False,0.72
+2026-13-monza,BOR,Audi,2,opening,SOFT,1,88.416,0.621,13,0.188,2,0.691,False,0.72
+2026-13-monza,BOR,Audi,3,opening,SOFT,1,145.367,8.589,11,2.989,3,8.694,False,0.72
+2026-13-monza,BOR,Audi,4,opening,MEDIUM,2,,,,4.605,1,,False,0.35
+2026-13-monza,BOR,Audi,5,opening,MEDIUM,2,,,,8.589,2,,False,0.35
+2026-13-monza,BOR,Audi,6,opening,MEDIUM,2,147.85,13.477,11,13.477,3,13.687,False,0.72
+2026-13-monza,BOR,Audi,7,opening,MEDIUM,2,88.211,-0.041,10,6.718,4,0.204,False,0.72
+2026-13-monza,BOR,Audi,8,opening,MEDIUM,2,88.035,0.356,13,4.597,5,0.636,False,0.72
+2026-13-monza,BOR,Audi,9,opening,MEDIUM,2,87.597,0.592,13,0.302,6,0.907,False,0.72
+2026-13-monza,BOR,Audi,10,opening,MEDIUM,2,87.849,0.589,14,0.512,7,0.939,False,0.72
+2026-13-monza,BOR,Audi,11,middle,MEDIUM,2,87.978,0.598,14,0.593,8,0.983,False,0.72
+2026-13-monza,BOR,Audi,12,middle,MEDIUM,2,86.673,-0.431,7,0.252,9,-0.011,False,0.72
+2026-13-monza,BOR,Audi,13,middle,MEDIUM,2,86.929,0.039,12,0.069,10,0.494,False,0.72
+2026-13-monza,BOR,Audi,14,middle,MEDIUM,2,87.295,0.224,12,-0.056,11,0.714,False,0.72
+2026-13-monza,BOR,Audi,15,middle,MEDIUM,2,86.993,0.0,11,0.088,12,0.525,False,0.72
+2026-13-monza,BOR,Audi,16,middle,MEDIUM,2,86.813,-0.106,10,0.039,13,0.454,False,0.72
+2026-13-monza,BOR,Audi,17,middle,MEDIUM,2,87.012,0.035,12,-0.024,14,0.63,False,0.72
+2026-13-monza,BOR,Audi,18,middle,MEDIUM,2,86.949,0.11,15,0.013,15,0.74,False,0.72
+2026-13-monza,BOR,Audi,19,middle,MEDIUM,2,86.883,-0.054,9,0.03,16,0.611,False,0.72
+2026-13-monza,BOR,Audi,20,middle,MEDIUM,2,86.735,-0.16,9,-0.035,17,0.54,False,0.72
+2026-13-monza,BOR,Audi,21,middle,MEDIUM,2,86.582,-0.279,7,-0.164,18,0.456,False,0.72
+2026-13-monza,BOR,Audi,22,middle,MEDIUM,2,87.315,0.263,13,-0.059,19,1.033,False,0.72
+2026-13-monza,BOR,Audi,23,middle,MEDIUM,2,86.971,0.153,13,0.046,20,0.958,False,0.72
+2026-13-monza,BOR,Audi,24,middle,MEDIUM,2,86.94,0.17,12,0.195,21,1.01,False,0.72
+2026-13-monza,BOR,Audi,25,middle,MEDIUM,2,86.449,-0.305,8,0.006,22,0.57,False,0.72
+2026-13-monza,BOR,Audi,26,middle,MEDIUM,2,86.998,0.369,12,0.078,23,1.279,False,0.72
+2026-13-monza,BOR,Audi,27,middle,MEDIUM,2,87.878,0.0,10,0.021,24,0.945,False,0.72
+2026-13-monza,BOR,Audi,28,middle,MEDIUM,2,114.938,3.678,14,1.349,25,4.658,False,0.72
+2026-13-monza,BOR,Audi,29,middle,MEDIUM,2,87.681,-0.359,8,1.106,26,0.656,False,0.72
+2026-13-monza,BOR,Audi,30,middle,MEDIUM,2,86.882,0.394,16,1.238,27,1.444,False,0.72
+2026-13-monza,BOR,Audi,31,middle,MEDIUM,2,86.188,-0.168,9,-0.044,28,0.917,False,0.72
+2026-13-monza,BOR,Audi,32,middle,MEDIUM,2,86.488,0.222,14,0.149,29,1.342,False,0.72
+2026-13-monza,BOR,Audi,33,middle,MEDIUM,2,86.408,0.0,10,0.018,30,1.155,False,0.72
+2026-13-monza,BOR,Audi,34,middle,MEDIUM,2,86.549,0.342,13,0.188,31,1.532,False,0.72
+2026-13-monza,BOR,Audi,35,middle,MEDIUM,2,86.639,0.515,13,0.286,32,1.74,False,0.72
+2026-13-monza,BOR,Audi,36,middle,MEDIUM,2,86.798,0.757,15,0.538,33,2.017,False,0.72
+2026-13-monza,BOR,Audi,37,middle,MEDIUM,2,86.721,0.746,15,0.673,34,2.041,False,0.72
+2026-13-monza,BOR,Audi,38,middle,MEDIUM,2,86.615,0.617,15,0.707,35,1.947,False,0.72
+2026-13-monza,BOR,Audi,39,middle,MEDIUM,2,86.557,0.322,13,0.562,36,1.687,False,0.72
+2026-13-monza,BOR,Audi,40,closing,MEDIUM,2,86.706,0.55,13,0.496,37,1.95,False,0.72
+2026-13-monza,BOR,Audi,41,closing,MEDIUM,2,86.672,0.251,12,0.374,38,1.686,False,0.72
+2026-13-monza,BOR,Audi,42,closing,MEDIUM,2,86.761,0.881,14,0.561,39,2.351,False,0.72
+2026-13-monza,BOR,Audi,43,closing,MEDIUM,2,86.777,0.499,13,0.544,40,2.004,False,0.72
+2026-13-monza,BOR,Audi,44,closing,MEDIUM,2,86.592,0.443,13,0.608,41,1.983,False,0.72
+2026-13-monza,BOR,Audi,45,closing,MEDIUM,2,86.634,0.676,14,0.539,42,2.251,False,0.72
+2026-13-monza,BOR,Audi,46,closing,MEDIUM,2,86.607,0.887,13,0.669,43,2.497,False,0.72
+2026-13-monza,BOR,Audi,47,closing,MEDIUM,2,86.466,0.683,13,0.749,44,2.328,False,0.72
+2026-13-monza,BOR,Audi,48,closing,MEDIUM,2,86.363,0.25,13,0.607,45,1.93,False,0.72
+2026-13-monza,BOR,Audi,49,closing,MEDIUM,2,86.395,0.0,10,0.311,46,1.715,False,0.72
+2026-13-monza,BOR,Audi,50,closing,MEDIUM,2,86.788,0.725,15,0.325,47,2.475,False,0.72
+2026-13-monza,BOR,Audi,51,closing,MEDIUM,2,86.904,0.671,15,0.465,48,2.456,False,0.72
+2026-13-monza,BOR,Audi,52,closing,MEDIUM,2,86.851,1.235,16,0.877,49,3.055,False,0.72
+2026-13-monza,BOR,Audi,53,closing,MEDIUM,2,86.322,0.744,13,0.883,50,2.599,False,0.72
+2026-13-monza,BOT,Cadillac,1,opening,SOFT,1,97.725,4.049,21,4.049,1,4.084,False,0.72
+2026-13-monza,BOT,Cadillac,2,opening,SOFT,1,91.895,4.1,20,4.074,2,4.17,False,0.72
+2026-13-monza,BOT,Cadillac,3,opening,SOFT,1,,,,4.074,3,,False,0.35
+2026-13-monza,BOT,Cadillac,4,opening,MEDIUM,2,,,,4.1,1,,False,0.35
+2026-13-monza,BOT,Cadillac,5,opening,MEDIUM,2,,,,,2,,False,0.35
+2026-13-monza,BOT,Cadillac,6,opening,MEDIUM,2,131.615,-2.758,3,-2.758,3,-2.548,False,0.72
+2026-13-monza,BOT,Cadillac,7,opening,MEDIUM,2,89.851,1.599,20,-0.579,4,1.844,False,0.72
+2026-13-monza,BOT,Cadillac,8,opening,MEDIUM,2,88.429,0.75,18,-0.136,5,1.03,False,0.72
+2026-13-monza,BOT,Cadillac,9,opening,MEDIUM,2,89.044,2.039,20,1.463,6,2.354,False,0.72
+2026-13-monza,BOT,Cadillac,10,opening,MEDIUM,2,89.11,1.85,21,1.546,7,2.2,False,0.72
+2026-13-monza,BOT,Cadillac,11,middle,MEDIUM,2,88.906,1.526,21,1.805,8,1.911,False,0.72
+2026-13-monza,BOT,Cadillac,12,middle,MEDIUM,2,88.549,1.445,19,1.607,9,1.865,False,0.72
+2026-13-monza,BOT,Cadillac,13,middle,MEDIUM,2,88.807,1.917,19,1.629,10,2.372,False,0.72
+2026-13-monza,BOT,Cadillac,14,middle,MEDIUM,2,88.37,1.299,18,1.554,11,1.789,False,0.72
+2026-13-monza,BOT,Cadillac,15,middle,MEDIUM,2,88.597,1.604,18,1.607,12,2.129,False,0.72
+2026-13-monza,BOT,Cadillac,16,middle,MEDIUM,2,88.572,1.653,18,1.519,13,2.213,False,0.72
+2026-13-monza,BOT,Cadillac,17,middle,MEDIUM,2,88.476,1.499,19,1.585,14,2.094,False,0.72
+2026-13-monza,BOT,Cadillac,18,middle,MEDIUM,2,88.539,1.7,19,1.617,15,2.33,False,0.72
+2026-13-monza,BOT,Cadillac,19,middle,MEDIUM,2,88.471,1.534,19,1.578,16,2.199,False,0.72
+2026-13-monza,BOT,Cadillac,20,middle,MEDIUM,2,88.568,1.673,16,1.636,17,2.373,False,0.72
+2026-13-monza,BOT,Cadillac,21,middle,MEDIUM,2,88.41,1.549,18,1.585,18,2.284,False,0.72
+2026-13-monza,BOT,Cadillac,22,middle,MEDIUM,2,88.594,1.542,17,1.588,19,2.312,False,0.72
+2026-13-monza,BOT,Cadillac,23,middle,MEDIUM,2,88.386,1.568,18,1.553,20,2.373,False,0.72
+2026-13-monza,BOT,Cadillac,24,middle,MEDIUM,2,89.711,2.941,19,2.017,21,3.781,False,0.72
+2026-13-monza,BOT,Cadillac,25,middle,MEDIUM,2,88.57,1.816,19,2.108,22,2.691,False,0.72
+2026-13-monza,BOT,Cadillac,26,middle,MEDIUM,2,88.707,2.078,18,2.278,23,2.988,False,0.72
+2026-13-monza,BOT,Cadillac,27,middle,MEDIUM,2,107.644,19.766,19,7.887,24,20.711,False,0.72
+2026-13-monza,BOT,Cadillac,28,middle,SOFT,3,126.8,15.54,19,12.461,1,16.52,False,0.72
+2026-13-monza,BOT,Cadillac,29,middle,SOFT,3,87.982,-0.058,9,11.749,2,0.957,False,0.72
+2026-13-monza,BOT,Cadillac,30,middle,SOFT,3,90.847,4.359,19,6.614,3,5.409,False,0.72
+2026-13-monza,BOT,Cadillac,31,middle,SOFT,3,87.803,1.447,18,1.916,4,2.532,False,0.72
+2026-13-monza,BOT,Cadillac,32,middle,SOFT,3,89.253,2.987,18,2.931,5,4.107,False,0.72
+2026-13-monza,BOT,Cadillac,33,middle,SOFT,3,87.801,1.393,18,1.942,6,2.548,False,0.72
+2026-13-monza,BOT,Cadillac,34,middle,SOFT,3,87.661,1.454,19,1.945,7,2.644,False,0.72
+2026-13-monza,BOT,Cadillac,35,middle,SOFT,3,88.14,2.016,19,1.621,8,3.241,False,0.72
+2026-13-monza,BOT,Cadillac,36,middle,SOFT,3,88.744,2.703,19,2.058,9,3.963,False,0.72
+2026-13-monza,BOT,Cadillac,37,middle,SOFT,3,89.146,3.171,19,2.63,10,4.466,False,0.72
+2026-13-monza,BOT,Cadillac,38,middle,SOFT,3,87.625,1.627,19,2.5,11,2.957,False,0.72
+2026-13-monza,BOT,Cadillac,39,middle,SOFT,3,87.716,1.481,18,2.093,12,2.846,False,0.72
+2026-13-monza,BOT,Cadillac,40,closing,SOFT,3,89.414,3.258,19,2.122,13,4.658,False,0.72
+2026-13-monza,BOT,Cadillac,41,closing,SOFT,3,87.597,1.176,18,1.972,14,2.611,False,0.72
+2026-13-monza,BOT,Cadillac,42,closing,SOFT,3,87.468,1.588,18,2.007,15,3.058,False,0.72
+2026-13-monza,BOT,Cadillac,43,closing,SOFT,3,87.46,1.182,18,1.315,16,2.687,False,0.72
+2026-13-monza,BOT,Cadillac,44,closing,SOFT,3,87.616,1.467,19,1.412,17,3.007,False,0.72
+2026-13-monza,BOT,Cadillac,45,closing,SOFT,3,87.585,1.627,19,1.425,18,3.202,False,0.72
+2026-13-monza,BOT,Cadillac,46,closing,SOFT,3,92.412,6.692,19,3.262,19,8.302,False,0.72
+2026-13-monza,BOT,Cadillac,47,closing,SOFT,3,97.053,11.27,18,6.53,20,12.915,False,0.72
+2026-13-monza,BOT,Cadillac,48,closing,SOFT,3,88.393,2.28,17,6.747,21,3.96,False,0.72
+2026-13-monza,BOT,Cadillac,49,closing,SOFT,3,93.564,7.169,19,6.906,22,8.884,False,0.72
+2026-13-monza,BOT,Cadillac,50,closing,SOFT,3,89.946,3.883,19,4.444,23,5.633,False,0.72
+2026-13-monza,BOT,Cadillac,51,closing,SOFT,3,87.325,1.092,18,4.048,24,2.877,False,0.72
+2026-13-monza,COL,Alpine,1,opening,MEDIUM,1,90.606,-3.07,6,-3.07,1,-3.035,False,0.72
+2026-13-monza,COL,Alpine,2,opening,MEDIUM,1,87.137,-0.658,4,-1.864,2,-0.588,False,0.72
+2026-13-monza,COL,Alpine,3,opening,MEDIUM,1,126.896,-9.882,4,-4.537,3,-9.777,False,0.72
+2026-13-monza,COL,Alpine,4,opening,HARD,2,,,,-5.27,1,,False,0.35
+2026-13-monza,COL,Alpine,5,opening,HARD,2,,,,-9.882,2,,False,0.35
+2026-13-monza,COL,Alpine,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,COL,Alpine,7,opening,HARD,2,88.926,0.674,17,0.674,4,0.919,False,0.72
+2026-13-monza,COL,Alpine,8,opening,HARD,2,88.122,0.443,14,0.559,5,0.723,False,0.72
+2026-13-monza,COL,Alpine,9,opening,HARD,2,87.968,0.963,16,0.693,6,1.278,False,0.72
+2026-13-monza,COL,Alpine,10,opening,HARD,2,87.626,0.366,13,0.591,7,0.716,False,0.72
+2026-13-monza,COL,Alpine,11,middle,HARD,2,87.702,0.322,12,0.55,8,0.707,False,0.72
+2026-13-monza,COL,Alpine,12,middle,HARD,2,87.951,0.847,15,0.512,9,1.267,False,0.72
+2026-13-monza,COL,Alpine,13,middle,HARD,2,87.236,0.346,14,0.505,10,0.801,False,0.72
+2026-13-monza,COL,Alpine,14,middle,HARD,2,87.071,0.0,11,0.398,11,0.49,False,0.72
+2026-13-monza,COL,Alpine,15,middle,HARD,2,87.214,0.221,13,0.189,12,0.746,False,0.72
+2026-13-monza,COL,Alpine,16,middle,HARD,2,87.334,0.415,14,0.212,13,0.975,False,0.72
+2026-13-monza,COL,Alpine,17,middle,HARD,2,87.06,0.083,13,0.24,14,0.678,False,0.72
+2026-13-monza,COL,Alpine,18,middle,HARD,2,86.81,-0.029,10,0.156,15,0.601,False,0.72
+2026-13-monza,COL,Alpine,19,middle,HARD,2,86.908,-0.029,10,0.008,16,0.636,False,0.72
+2026-13-monza,COL,Alpine,20,middle,HARD,2,86.59,-0.305,8,-0.121,17,0.395,False,0.72
+2026-13-monza,COL,Alpine,21,middle,HARD,2,86.714,-0.147,9,-0.16,18,0.588,False,0.72
+2026-13-monza,COL,Alpine,22,middle,HARD,2,87.052,0.0,11,-0.151,19,0.77,False,0.72
+2026-13-monza,COL,Alpine,23,middle,HARD,2,86.727,-0.091,9,-0.079,20,0.714,False,0.72
+2026-13-monza,COL,Alpine,24,middle,HARD,2,86.302,-0.468,8,-0.186,21,0.372,False,0.72
+2026-13-monza,COL,Alpine,25,middle,HARD,2,86.238,-0.516,6,-0.358,22,0.359,False,0.72
+2026-13-monza,COL,Alpine,26,middle,HARD,2,86.376,-0.253,7,-0.412,23,0.657,False,0.72
+2026-13-monza,COL,Alpine,27,middle,HARD,2,91.763,3.885,12,1.039,24,4.83,False,0.72
+2026-13-monza,COL,Alpine,28,middle,HARD,2,111.26,0.0,10,1.211,25,0.98,False,0.72
+2026-13-monza,COL,Alpine,29,middle,HARD,2,86.245,-1.795,1,0.697,26,-0.78,False,0.72
+2026-13-monza,COL,Alpine,30,middle,HARD,2,86.558,0.07,11,-0.575,27,1.12,False,0.72
+2026-13-monza,COL,Alpine,31,middle,HARD,2,85.846,-0.51,4,-0.745,28,0.575,False,0.72
+2026-13-monza,COL,Alpine,32,middle,HARD,2,86.446,0.18,13,-0.087,29,1.3,False,0.72
+2026-13-monza,COL,Alpine,33,middle,HARD,2,86.354,-0.054,9,-0.128,30,1.101,False,0.72
+2026-13-monza,COL,Alpine,34,middle,HARD,2,86.326,0.119,12,0.082,31,1.309,False,0.72
+2026-13-monza,COL,Alpine,35,middle,HARD,2,85.991,-0.133,8,-0.023,32,1.092,False,0.72
+2026-13-monza,COL,Alpine,36,middle,HARD,2,85.862,-0.179,8,-0.064,33,1.081,False,0.72
+2026-13-monza,COL,Alpine,37,middle,HARD,2,85.669,-0.306,5,-0.206,34,0.989,False,0.72
+2026-13-monza,COL,Alpine,38,middle,HARD,2,85.64,-0.358,7,-0.281,35,0.972,False,0.72
+2026-13-monza,COL,Alpine,39,middle,HARD,2,85.676,-0.559,5,-0.408,36,0.806,False,0.72
+2026-13-monza,COL,Alpine,40,closing,HARD,2,85.817,-0.339,5,-0.419,37,1.061,False,0.72
+2026-13-monza,COL,Alpine,41,closing,HARD,2,86.223,-0.198,9,-0.365,38,1.237,False,0.72
+2026-13-monza,COL,Alpine,42,closing,HARD,2,85.834,-0.046,9,-0.194,39,1.424,False,0.72
+2026-13-monza,COL,Alpine,43,closing,HARD,2,86.278,0.0,10,-0.081,40,1.505,False,0.72
+2026-13-monza,COL,Alpine,44,closing,HARD,2,86.061,-0.088,9,-0.045,41,1.452,False,0.72
+2026-13-monza,COL,Alpine,45,closing,HARD,2,85.958,0.0,10,-0.029,42,1.575,False,0.72
+2026-13-monza,COL,Alpine,46,closing,HARD,2,85.72,0.0,10,-0.029,43,1.61,False,0.72
+2026-13-monza,COL,Alpine,47,closing,HARD,2,85.803,0.02,11,0.007,44,1.665,False,0.72
+2026-13-monza,COL,Alpine,48,closing,HARD,2,85.821,-0.292,8,-0.091,45,1.388,False,0.72
+2026-13-monza,COL,Alpine,49,closing,HARD,2,85.796,-0.599,5,-0.29,46,1.116,False,0.72
+2026-13-monza,COL,Alpine,50,closing,HARD,2,85.695,-0.368,6,-0.42,47,1.382,False,0.72
+2026-13-monza,COL,Alpine,51,closing,HARD,2,85.656,-0.577,5,-0.515,48,1.208,False,0.72
+2026-13-monza,COL,Alpine,52,closing,HARD,2,85.403,-0.213,8,-0.386,49,1.607,False,0.72
+2026-13-monza,COL,Alpine,53,closing,HARD,2,84.933,-0.645,5,-0.478,50,1.21,False,0.72
+2026-13-monza,GAS,Alpine,1,opening,MEDIUM,1,88.47,-5.206,1,-5.206,1,-5.171,False,0.72
+2026-13-monza,GAS,Alpine,2,opening,MEDIUM,1,87.795,0.0,11,-2.603,2,0.07,False,0.72
+2026-13-monza,GAS,Alpine,3,opening,MEDIUM,1,123.475,-13.303,2,-6.17,3,-13.198,False,0.72
+2026-13-monza,GAS,Alpine,4,opening,HARD,2,,,,-6.651,1,,False,0.35
+2026-13-monza,GAS,Alpine,5,opening,HARD,2,,,,-13.303,2,,False,0.35
+2026-13-monza,GAS,Alpine,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,GAS,Alpine,7,opening,HARD,2,87.477,-0.775,7,-0.775,4,-0.53,False,0.72
+2026-13-monza,GAS,Alpine,8,opening,HARD,2,86.557,-1.122,7,-0.948,5,-0.842,False,0.72
+2026-13-monza,GAS,Alpine,9,opening,HARD,2,86.428,-0.577,6,-0.825,6,-0.262,False,0.72
+2026-13-monza,GAS,Alpine,10,opening,HARD,2,88.305,1.045,19,-0.218,7,1.395,False,0.72
+2026-13-monza,GAS,Alpine,11,middle,HARD,2,86.546,-0.834,5,-0.122,8,-0.449,False,0.72
+2026-13-monza,GAS,Alpine,12,middle,HARD,2,86.112,-0.992,3,-0.26,9,-0.572,False,0.72
+2026-13-monza,GAS,Alpine,13,middle,HARD,2,85.998,-0.892,3,-0.906,10,-0.437,False,0.72
+2026-13-monza,GAS,Alpine,14,middle,HARD,2,86.221,-0.85,4,-0.911,11,-0.36,False,0.72
+2026-13-monza,GAS,Alpine,15,middle,HARD,2,86.246,-0.747,6,-0.83,12,-0.222,False,0.72
+2026-13-monza,GAS,Alpine,16,middle,HARD,2,86.249,-0.67,4,-0.756,13,-0.11,False,0.72
+2026-13-monza,GAS,Alpine,17,middle,HARD,2,86.329,-0.648,4,-0.688,14,-0.053,False,0.72
+2026-13-monza,GAS,Alpine,18,middle,HARD,2,86.809,-0.03,9,-0.449,15,0.6,False,0.72
+2026-13-monza,GAS,Alpine,19,middle,HARD,2,86.979,0.042,13,-0.212,16,0.707,False,0.72
+2026-13-monza,GAS,Alpine,20,middle,HARD,2,88.85,1.955,20,0.656,17,2.655,False,0.72
+2026-13-monza,GAS,Alpine,21,middle,HARD,2,87.627,0.766,16,0.921,18,1.501,False,0.72
+2026-13-monza,GAS,Alpine,22,middle,HARD,2,86.919,-0.133,9,0.863,19,0.637,False,0.72
+2026-13-monza,GAS,Alpine,23,middle,HARD,2,86.578,-0.24,6,0.131,20,0.565,False,0.72
+2026-13-monza,GAS,Alpine,24,middle,HARD,2,86.022,-0.748,6,-0.374,21,0.092,False,0.72
+2026-13-monza,GAS,Alpine,25,middle,HARD,2,86.283,-0.471,7,-0.486,22,0.404,False,0.72
+2026-13-monza,GAS,Alpine,26,middle,HARD,2,85.888,-0.741,5,-0.653,23,0.169,False,0.72
+2026-13-monza,GAS,Alpine,27,middle,HARD,2,85.82,-2.058,4,-1.09,24,-1.113,False,0.72
+2026-13-monza,GAS,Alpine,28,middle,HARD,2,111.068,-0.192,8,-0.997,25,0.788,False,0.72
+2026-13-monza,GAS,Alpine,29,middle,HARD,2,92.132,4.092,14,0.614,26,5.107,False,0.72
+2026-13-monza,GAS,Alpine,30,middle,HARD,2,86.733,0.245,12,1.382,27,1.295,False,0.72
+2026-13-monza,GAS,Alpine,31,middle,HARD,2,86.423,0.067,13,1.468,28,1.152,False,0.72
+2026-13-monza,GAS,Alpine,32,middle,HARD,2,85.927,-0.339,5,-0.009,29,0.781,False,0.72
+2026-13-monza,GAS,Alpine,33,middle,HARD,2,86.073,-0.335,6,-0.202,30,0.82,False,0.72
+2026-13-monza,GAS,Alpine,34,middle,HARD,2,85.974,-0.233,7,-0.302,31,0.957,False,0.72
+2026-13-monza,GAS,Alpine,35,middle,HARD,2,85.963,-0.161,7,-0.243,32,1.064,False,0.72
+2026-13-monza,GAS,Alpine,36,middle,HARD,2,86.041,0.0,10,-0.131,33,1.26,False,0.72
+2026-13-monza,GAS,Alpine,37,middle,HARD,2,85.938,-0.037,9,-0.066,34,1.258,False,0.72
+2026-13-monza,GAS,Alpine,38,middle,HARD,2,85.998,0.0,10,-0.012,35,1.33,False,0.72
+2026-13-monza,GAS,Alpine,39,middle,HARD,2,85.938,-0.297,9,-0.111,36,1.068,False,0.72
+2026-13-monza,GAS,Alpine,40,closing,HARD,2,85.844,-0.312,6,-0.203,37,1.088,False,0.72
+2026-13-monza,GAS,Alpine,41,closing,HARD,2,85.878,-0.543,4,-0.384,38,0.892,False,0.72
+2026-13-monza,GAS,Alpine,42,closing,HARD,2,85.776,-0.104,8,-0.32,39,1.366,False,0.72
+2026-13-monza,GAS,Alpine,43,closing,HARD,2,85.92,-0.358,8,-0.335,40,1.147,False,0.72
+2026-13-monza,GAS,Alpine,44,closing,HARD,2,85.632,-0.517,7,-0.326,41,1.023,False,0.72
+2026-13-monza,GAS,Alpine,45,closing,HARD,2,85.779,-0.179,8,-0.351,42,1.396,False,0.72
+2026-13-monza,GAS,Alpine,46,closing,HARD,2,85.52,-0.2,7,-0.299,43,1.41,False,0.72
+2026-13-monza,GAS,Alpine,47,closing,HARD,2,85.566,-0.217,6,-0.199,44,1.428,False,0.72
+2026-13-monza,GAS,Alpine,48,closing,HARD,2,85.453,-0.66,5,-0.359,45,1.02,False,0.72
+2026-13-monza,GAS,Alpine,49,closing,HARD,2,85.364,-1.031,2,-0.636,46,0.684,False,0.72
+2026-13-monza,GAS,Alpine,50,closing,HARD,2,85.277,-0.786,2,-0.826,47,0.964,False,0.72
+2026-13-monza,GAS,Alpine,51,closing,HARD,2,85.505,-0.728,4,-0.848,48,1.057,False,0.72
+2026-13-monza,GAS,Alpine,52,closing,HARD,2,85.223,-0.393,4,-0.636,49,1.427,False,0.72
+2026-13-monza,GAS,Alpine,53,closing,HARD,2,84.927,-0.651,4,-0.591,50,1.204,False,0.72
+2026-13-monza,HAM,Ferrari,1,opening,SOFT,1,93.234,-0.442,10,-0.442,1,-0.407,False,0.72
+2026-13-monza,HAM,Ferrari,2,opening,SOFT,1,87.244,-0.551,7,-0.497,2,-0.481,False,0.72
+2026-13-monza,HAM,Ferrari,3,opening,SOFT,1,138.027,1.249,8,0.085,3,1.354,False,0.72
+2026-13-monza,HAM,Ferrari,4,opening,MEDIUM,2,,,,0.349,1,,False,0.35
+2026-13-monza,HAM,Ferrari,5,opening,MEDIUM,2,,,,1.249,2,,False,0.35
+2026-13-monza,HAM,Ferrari,6,opening,MEDIUM,2,,,,,3,,False,0.35
+2026-13-monza,HAM,Ferrari,7,opening,MEDIUM,2,86.663,-1.589,4,-1.589,4,-1.344,False,0.72
+2026-13-monza,HAM,Ferrari,8,opening,MEDIUM,2,85.931,-1.748,1,-1.669,5,-1.468,False,0.72
+2026-13-monza,HAM,Ferrari,9,opening,MEDIUM,2,86.176,-0.829,4,-1.389,6,-0.514,False,0.72
+2026-13-monza,HAM,Ferrari,10,opening,MEDIUM,2,86.082,-1.178,2,-1.252,7,-0.828,False,0.72
+2026-13-monza,HAM,Ferrari,11,middle,MEDIUM,2,86.738,-0.642,8,-0.883,8,-0.257,False,0.72
+2026-13-monza,HAM,Ferrari,12,middle,MEDIUM,2,87.104,0.0,11,-0.607,9,0.42,False,0.72
+2026-13-monza,HAM,Ferrari,13,middle,MEDIUM,2,85.929,-0.961,2,-0.534,10,-0.506,False,0.72
+2026-13-monza,HAM,Ferrari,14,middle,MEDIUM,2,86.415,-0.656,6,-0.539,11,-0.166,False,0.72
+2026-13-monza,HAM,Ferrari,15,middle,MEDIUM,2,85.869,-1.124,2,-0.914,12,-0.599,False,0.72
+2026-13-monza,HAM,Ferrari,16,middle,MEDIUM,2,86.218,-0.701,3,-0.827,13,-0.141,False,0.72
+2026-13-monza,HAM,Ferrari,17,middle,MEDIUM,2,86.489,-0.488,6,-0.771,14,0.107,False,0.72
+2026-13-monza,HAM,Ferrari,18,middle,MEDIUM,2,86.839,0.0,11,-0.396,15,0.63,False,0.72
+2026-13-monza,HAM,Ferrari,19,middle,MEDIUM,2,86.587,-0.35,6,-0.279,16,0.315,False,0.72
+2026-13-monza,HAM,Ferrari,20,middle,MEDIUM,2,86.324,-0.571,6,-0.307,17,0.129,False,0.72
+2026-13-monza,HAM,Ferrari,21,middle,MEDIUM,2,86.171,-0.69,3,-0.537,18,0.045,False,0.72
+2026-13-monza,HAM,Ferrari,22,middle,MEDIUM,2,86.002,-1.05,1,-0.77,19,-0.28,False,0.72
+2026-13-monza,HAM,Ferrari,23,middle,MEDIUM,2,85.3,-1.518,1,-1.086,20,-0.713,False,0.72
+2026-13-monza,HAM,Ferrari,24,middle,MEDIUM,2,86.047,-0.723,7,-1.097,21,0.117,False,0.72
+2026-13-monza,HAM,Ferrari,25,middle,MEDIUM,2,87.168,0.414,16,-0.609,22,1.289,False,0.72
+2026-13-monza,HAM,Ferrari,26,middle,MEDIUM,2,86.493,-0.136,8,-0.148,23,0.774,False,0.72
+2026-13-monza,HAM,Ferrari,27,middle,MEDIUM,2,85.897,-1.981,5,-0.568,24,-1.036,False,0.72
+2026-13-monza,HAM,Ferrari,28,middle,MEDIUM,2,109.638,-1.622,6,-1.246,25,-0.642,False,0.72
+2026-13-monza,HAM,Ferrari,29,middle,MEDIUM,2,93.044,5.004,16,0.467,26,6.019,False,0.72
+2026-13-monza,HAM,Ferrari,30,middle,MEDIUM,2,85.912,-0.576,4,0.935,27,0.474,False,0.72
+2026-13-monza,HAM,Ferrari,31,middle,MEDIUM,2,85.964,-0.392,5,1.345,28,0.693,False,0.72
+2026-13-monza,HAM,Ferrari,32,middle,MEDIUM,2,86.065,-0.201,7,-0.39,29,0.919,False,0.72
+2026-13-monza,HAM,Ferrari,33,middle,MEDIUM,2,85.904,-0.504,5,-0.366,30,0.651,False,0.72
+2026-13-monza,HAM,Ferrari,34,middle,MEDIUM,2,85.73,-0.477,6,-0.394,31,0.713,False,0.72
+2026-13-monza,HAM,Ferrari,35,middle,MEDIUM,2,86.929,0.805,16,-0.059,32,2.03,False,0.72
+2026-13-monza,HAM,Ferrari,36,middle,MEDIUM,2,85.543,-0.498,5,-0.057,33,0.762,False,0.72
+2026-13-monza,HAM,Ferrari,37,middle,MEDIUM,2,85.925,-0.05,8,0.086,34,1.245,False,0.72
+2026-13-monza,HAM,Ferrari,38,middle,MEDIUM,2,85.443,-0.555,6,-0.368,35,0.775,False,0.72
+2026-13-monza,HAM,Ferrari,39,middle,MEDIUM,2,85.895,-0.34,8,-0.315,36,1.025,False,0.72
+2026-13-monza,HAM,Ferrari,40,closing,MEDIUM,2,85.75,-0.406,4,-0.434,37,0.994,False,0.72
+2026-13-monza,HAM,Ferrari,41,closing,MEDIUM,2,86.421,0.0,10,-0.249,38,1.435,False,0.72
+2026-13-monza,HAM,Ferrari,42,closing,MEDIUM,2,86.718,0.838,13,0.144,39,2.308,False,0.72
+2026-13-monza,HAM,Ferrari,43,closing,MEDIUM,2,85.463,-0.815,5,0.008,40,0.69,False,0.72
+2026-13-monza,HAM,Ferrari,44,closing,MEDIUM,2,85.612,-0.537,6,-0.171,41,1.003,False,0.72
+2026-13-monza,HAM,Ferrari,45,closing,MEDIUM,2,85.636,-0.322,7,-0.558,42,1.253,False,0.72
+2026-13-monza,HAM,Ferrari,46,closing,MEDIUM,2,85.469,-0.251,6,-0.37,43,1.359,False,0.72
+2026-13-monza,HAM,Ferrari,47,closing,MEDIUM,2,85.75,-0.033,9,-0.202,44,1.612,False,0.72
+2026-13-monza,HAM,Ferrari,48,closing,MEDIUM,2,85.601,-0.512,6,-0.265,45,1.168,False,0.72
+2026-13-monza,HAM,Ferrari,49,closing,MEDIUM,2,86.632,0.237,13,-0.103,46,1.952,False,0.72
+2026-13-monza,HAM,Ferrari,50,closing,MEDIUM,2,86.063,0.0,10,-0.092,47,1.75,False,0.72
+2026-13-monza,HAM,Ferrari,51,closing,MEDIUM,2,85.659,-0.574,6,-0.112,48,1.211,False,0.72
+2026-13-monza,HAM,Ferrari,52,closing,MEDIUM,2,86.244,0.628,14,0.018,49,2.448,False,0.72
+2026-13-monza,HAM,Ferrari,53,closing,MEDIUM,2,85.997,0.419,11,0.158,50,2.274,False,0.72
+2026-13-monza,HUL,Audi,1,opening,MEDIUM,1,95.032,1.356,13,1.356,1,1.391,False,0.72
+2026-13-monza,HUL,Audi,2,opening,MEDIUM,1,87.941,0.146,12,0.751,2,0.216,False,0.72
+2026-13-monza,HUL,Audi,3,opening,MEDIUM,1,147.527,10.749,13,4.084,3,10.854,False,0.72
+2026-13-monza,HUL,Audi,4,opening,HARD,2,,,,5.447,1,,False,0.35
+2026-13-monza,HUL,Audi,5,opening,HARD,2,,,,10.749,2,,False,0.35
+2026-13-monza,HUL,Audi,6,opening,HARD,2,140.996,6.623,10,6.623,3,6.833,False,0.72
+2026-13-monza,HUL,Audi,7,opening,HARD,2,88.531,0.279,14,3.451,4,0.524,False,0.72
+2026-13-monza,HUL,Audi,8,opening,HARD,2,88.742,1.063,20,2.655,5,1.343,False,0.72
+2026-13-monza,HUL,Audi,9,opening,HARD,2,87.005,0.0,11,0.447,6,0.315,False,0.72
+2026-13-monza,HUL,Audi,10,opening,HARD,2,87.082,-0.178,9,0.295,7,0.172,False,0.72
+2026-13-monza,HUL,Audi,11,middle,HARD,2,88.411,1.031,16,0.284,8,1.416,False,0.72
+2026-13-monza,HUL,Audi,12,middle,HARD,2,87.856,0.752,13,0.535,9,1.172,False,0.72
+2026-13-monza,HUL,Audi,13,middle,HARD,2,87.54,0.65,16,0.811,10,1.105,False,0.72
+2026-13-monza,HUL,Audi,14,middle,HARD,2,87.394,0.323,14,0.575,11,0.813,False,0.72
+2026-13-monza,HUL,Audi,15,middle,HARD,2,87.629,0.636,15,0.536,12,1.161,False,0.72
+2026-13-monza,HUL,Audi,16,middle,HARD,2,88.638,1.719,19,0.893,13,2.279,False,0.72
+2026-13-monza,HUL,Audi,17,middle,HARD,2,86.977,0.0,11,0.785,14,0.595,False,0.72
+2026-13-monza,HUL,Audi,18,middle,HARD,2,86.453,-0.386,5,0.444,15,0.244,False,0.72
+2026-13-monza,HUL,Audi,19,middle,HARD,2,86.662,-0.275,7,-0.22,16,0.39,False,0.72
+2026-13-monza,HUL,Audi,20,middle,HARD,2,86.345,-0.55,7,-0.404,17,0.15,False,0.72
+2026-13-monza,HUL,Audi,21,middle,HARD,2,86.672,-0.189,8,-0.338,18,0.546,False,0.72
+2026-13-monza,HUL,Audi,22,middle,HARD,2,89.803,2.751,20,0.671,19,3.521,False,0.72
+2026-13-monza,HUL,Audi,23,middle,HARD,2,86.917,0.099,12,0.887,20,0.904,False,0.72
+2026-13-monza,HUL,Audi,24,middle,HARD,2,86.544,-0.226,9,0.875,21,0.614,False,0.72
+2026-13-monza,HUL,Audi,25,middle,HARD,2,86.76,0.006,11,-0.04,22,0.881,False,0.72
+2026-13-monza,HUL,Audi,26,middle,HARD,2,86.533,-0.096,10,-0.105,23,0.814,False,0.72
+2026-13-monza,HUL,Audi,27,middle,HARD,2,94.678,6.8,14,2.237,24,7.745,False,0.72
+2026-13-monza,HUL,Audi,28,middle,MEDIUM,3,124.228,12.968,17,6.557,4,13.948,False,0.72
+2026-13-monza,HUL,Audi,29,middle,MEDIUM,3,86.975,-1.065,6,6.234,5,-0.05,False,0.72
+2026-13-monza,HUL,Audi,30,middle,MEDIUM,3,86.734,0.246,13,4.05,6,1.296,False,0.72
+2026-13-monza,HUL,Audi,31,middle,MEDIUM,3,86.407,0.051,12,-0.256,7,1.136,False,0.72
+2026-13-monza,HUL,Audi,32,middle,MEDIUM,3,86.398,0.132,11,0.143,8,1.252,False,0.72
+2026-13-monza,HUL,Audi,33,middle,MEDIUM,3,86.249,-0.159,7,0.008,9,0.996,False,0.72
+2026-13-monza,HUL,Audi,34,middle,MEDIUM,3,86.196,-0.011,9,-0.013,10,1.179,False,0.72
+2026-13-monza,HUL,Audi,35,middle,MEDIUM,3,86.033,-0.091,9,-0.087,11,1.134,False,0.72
+2026-13-monza,HUL,Audi,36,middle,MEDIUM,3,86.017,-0.024,9,-0.042,12,1.236,False,0.72
+2026-13-monza,HUL,Audi,37,middle,MEDIUM,3,85.975,0.0,10,-0.038,13,1.295,False,0.72
+2026-13-monza,HUL,Audi,38,middle,MEDIUM,3,86.093,0.095,11,0.024,14,1.425,False,0.72
+2026-13-monza,HUL,Audi,39,middle,MEDIUM,3,85.893,-0.342,7,-0.082,15,1.023,False,0.72
+2026-13-monza,HUL,Audi,40,closing,MEDIUM,3,85.991,-0.165,7,-0.137,16,1.235,False,0.72
+2026-13-monza,HUL,Audi,41,closing,MEDIUM,3,85.757,-0.664,3,-0.39,17,0.771,False,0.72
+2026-13-monza,HUL,Audi,42,closing,MEDIUM,3,85.648,-0.232,5,-0.354,18,1.238,False,0.72
+2026-13-monza,HUL,Audi,43,closing,MEDIUM,3,85.382,-0.896,4,-0.597,19,0.609,False,0.72
+2026-13-monza,HUL,Audi,44,closing,MEDIUM,3,86.052,-0.097,8,-0.408,20,1.443,False,0.72
+2026-13-monza,HUL,Audi,45,closing,MEDIUM,3,85.567,-0.391,6,-0.461,21,1.184,False,0.72
+2026-13-monza,HUL,Audi,46,closing,MEDIUM,3,86.659,0.939,14,0.15,22,2.549,False,0.72
+2026-13-monza,HUL,Audi,47,closing,MEDIUM,3,85.67,-0.113,7,0.145,23,1.532,False,0.72
+2026-13-monza,HUL,Audi,48,closing,MEDIUM,3,86.256,0.143,11,0.323,24,1.823,False,0.72
+2026-13-monza,HUL,Audi,49,closing,MEDIUM,3,85.912,-0.483,8,-0.151,25,1.232,False,0.72
+2026-13-monza,HUL,Audi,50,closing,MEDIUM,3,85.947,-0.116,9,-0.152,26,1.634,False,0.72
+2026-13-monza,HUL,Audi,51,closing,MEDIUM,3,85.71,-0.523,7,-0.374,27,1.262,False,0.72
+2026-13-monza,HUL,Audi,52,closing,MEDIUM,3,84.927,-0.689,2,-0.443,28,1.131,False,0.72
+2026-13-monza,HUL,Audi,53,closing,MEDIUM,3,84.364,-1.214,2,-0.809,29,0.641,False,0.72
+2026-13-monza,LAW,Red Bull Racing,1,opening,MEDIUM,1,97.497,3.821,19,3.821,1,3.856,False,0.72
+2026-13-monza,LAW,Red Bull Racing,2,opening,MEDIUM,1,88.836,1.041,15,2.431,2,1.111,False,0.72
+2026-13-monza,LAW,Red Bull Racing,3,opening,MEDIUM,1,,,,2.431,3,,False,0.35
+2026-13-monza,LAW,Red Bull Racing,4,opening,HARD,2,,,,1.041,1,,False,0.35
+2026-13-monza,LAW,Red Bull Racing,5,opening,HARD,2,,,,,2,,False,0.35
+2026-13-monza,LAW,Red Bull Racing,6,opening,HARD,2,134.843,0.47,7,0.47,3,0.68,False,0.72
+2026-13-monza,LAW,Red Bull Racing,7,opening,HARD,2,88.26,0.008,12,0.239,4,0.253,False,0.72
+2026-13-monza,LAW,Red Bull Racing,8,opening,HARD,2,87.679,0.0,11,0.159,5,0.28,False,0.72
+2026-13-monza,LAW,Red Bull Racing,9,opening,HARD,2,86.838,-0.167,10,-0.053,6,0.148,False,0.72
+2026-13-monza,LAW,Red Bull Racing,10,opening,HARD,2,87.259,-0.001,10,-0.056,7,0.349,False,0.72
+2026-13-monza,LAW,Red Bull Racing,11,middle,HARD,2,88.705,1.325,20,0.386,8,1.71,False,0.72
+2026-13-monza,LAW,Red Bull Racing,12,middle,HARD,2,93.743,6.639,21,2.654,9,7.059,False,0.72
+2026-13-monza,LAW,Red Bull Racing,13,middle,MEDIUM,3,115.493,28.603,21,12.189,4,29.058,False,0.72
+2026-13-monza,LAW,Red Bull Racing,14,middle,MEDIUM,3,87.044,-0.027,10,11.738,5,0.463,False,0.72
+2026-13-monza,LAW,Red Bull Racing,15,middle,MEDIUM,3,86.698,-0.295,8,9.427,6,0.23,False,0.72
+2026-13-monza,LAW,Red Bull Racing,16,middle,MEDIUM,3,86.544,-0.375,7,-0.232,7,0.185,False,0.72
+2026-13-monza,LAW,Red Bull Racing,17,middle,MEDIUM,3,86.377,-0.6,5,-0.423,8,-0.005,False,0.72
+2026-13-monza,LAW,Red Bull Racing,18,middle,MEDIUM,3,86.313,-0.526,4,-0.5,9,0.104,False,0.72
+2026-13-monza,LAW,Red Bull Racing,19,middle,MEDIUM,3,86.181,-0.756,4,-0.627,10,-0.091,False,0.72
+2026-13-monza,LAW,Red Bull Racing,20,middle,MEDIUM,3,86.294,-0.601,5,-0.628,11,0.099,False,0.72
+2026-13-monza,LAW,Red Bull Racing,21,middle,MEDIUM,3,86.506,-0.355,6,-0.571,12,0.38,False,0.72
+2026-13-monza,LAW,Red Bull Racing,22,middle,MEDIUM,3,86.352,-0.7,4,-0.552,13,0.07,False,0.72
+2026-13-monza,LAW,Red Bull Racing,23,middle,MEDIUM,3,86.313,-0.505,5,-0.52,14,0.3,False,0.72
+2026-13-monza,LAW,Red Bull Racing,24,middle,MEDIUM,3,87.045,0.275,16,-0.31,15,1.115,False,0.72
+2026-13-monza,LAW,Red Bull Racing,25,middle,MEDIUM,3,86.748,-0.006,10,-0.079,16,0.869,False,0.72
+2026-13-monza,LAW,Red Bull Racing,26,middle,MEDIUM,3,86.514,-0.115,9,0.051,17,0.795,False,0.72
+2026-13-monza,LAW,Red Bull Racing,27,middle,MEDIUM,3,97.509,9.631,17,3.17,18,10.576,False,0.72
+2026-13-monza,LAW,Red Bull Racing,28,middle,MEDIUM,3,105.3,-5.96,1,1.185,19,-4.98,False,0.72
+2026-13-monza,LAW,Red Bull Racing,29,middle,MEDIUM,3,86.251,-1.789,2,0.627,20,-0.774,False,0.72
+2026-13-monza,LAW,Red Bull Racing,30,middle,MEDIUM,3,86.343,-0.145,8,-2.631,21,0.905,False,0.72
+2026-13-monza,LAW,Red Bull Racing,31,middle,MEDIUM,3,86.071,-0.285,7,-0.74,22,0.8,False,0.72
+2026-13-monza,LAW,Red Bull Racing,32,middle,MEDIUM,3,86.097,-0.169,8,-0.2,23,0.951,False,0.72
+2026-13-monza,LAW,Red Bull Racing,33,middle,MEDIUM,3,85.838,-0.57,4,-0.341,24,0.585,False,0.72
+2026-13-monza,LAW,Red Bull Racing,34,middle,MEDIUM,3,85.728,-0.479,5,-0.406,25,0.711,False,0.72
+2026-13-monza,LAW,Red Bull Racing,35,middle,MEDIUM,3,85.662,-0.462,6,-0.504,26,0.763,False,0.72
+2026-13-monza,LAW,Red Bull Racing,36,middle,MEDIUM,3,85.777,-0.264,7,-0.402,27,0.996,False,0.72
+2026-13-monza,LAW,Red Bull Racing,37,middle,MEDIUM,3,85.917,-0.058,7,-0.261,28,1.237,False,0.72
+2026-13-monza,LAW,Red Bull Racing,38,middle,MEDIUM,3,85.838,-0.16,9,-0.161,29,1.17,False,0.72
+2026-13-monza,LAW,Red Bull Racing,39,middle,MEDIUM,3,85.776,-0.459,6,-0.226,30,0.906,False,0.72
+2026-13-monza,LAW,Red Bull Racing,40,closing,MEDIUM,3,86.138,-0.018,9,-0.212,31,1.382,False,0.72
+2026-13-monza,LAW,Red Bull Racing,41,closing,MEDIUM,3,85.898,-0.523,5,-0.333,32,0.912,False,0.72
+2026-13-monza,LAW,Red Bull Racing,42,closing,MEDIUM,3,85.752,-0.128,7,-0.223,33,1.342,False,0.72
+2026-13-monza,LAW,Red Bull Racing,43,closing,MEDIUM,3,85.731,-0.547,7,-0.399,34,0.958,False,0.72
+2026-13-monza,LAW,Red Bull Racing,44,closing,MEDIUM,3,87.463,1.314,17,0.213,35,2.854,False,0.72
+2026-13-monza,LAW,Red Bull Racing,45,closing,MEDIUM,3,85.862,-0.096,9,0.224,36,1.479,False,0.72
+2026-13-monza,LAW,Red Bull Racing,46,closing,MEDIUM,3,85.669,-0.051,8,0.389,37,1.559,False,0.72
+2026-13-monza,LAW,Red Bull Racing,47,closing,MEDIUM,3,85.74,-0.043,8,-0.063,38,1.602,False,0.72
+2026-13-monza,LAW,Red Bull Racing,48,closing,MEDIUM,3,86.328,0.215,12,0.04,39,1.895,False,0.72
+2026-13-monza,LAW,Red Bull Racing,49,closing,MEDIUM,3,85.857,-0.538,7,-0.122,40,1.177,False,0.72
+2026-13-monza,LAW,Red Bull Racing,50,closing,MEDIUM,3,85.81,-0.253,8,-0.192,41,1.497,False,0.72
+2026-13-monza,LAW,Red Bull Racing,51,closing,MEDIUM,3,86.13,-0.103,8,-0.298,42,1.682,False,0.72
+2026-13-monza,LAW,Red Bull Racing,52,closing,MEDIUM,3,85.861,0.245,11,-0.037,43,2.065,False,0.72
+2026-13-monza,LAW,Red Bull Racing,53,closing,MEDIUM,3,85.578,0.0,8,0.047,44,1.855,False,0.72
+2026-13-monza,LEC,Ferrari,1,opening,SOFT,1,89.371,-4.305,3,-4.305,1,-4.27,False,0.72
+2026-13-monza,LEC,Ferrari,2,opening,SOFT,1,,,,-4.305,2,,False,0.35
+2026-13-monza,LIN,Racing Bulls,1,opening,MEDIUM,1,92.262,-1.414,8,-1.414,1,-1.379,False,0.72
+2026-13-monza,LIN,Racing Bulls,2,opening,MEDIUM,1,87.165,-0.63,5,-1.022,2,-0.56,False,0.72
+2026-13-monza,LIN,Racing Bulls,3,opening,MEDIUM,1,136.778,0.0,7,-0.681,3,0.105,False,0.72
+2026-13-monza,LIN,Racing Bulls,4,opening,HARD,2,,,,-0.315,1,,False,0.35
+2026-13-monza,LIN,Racing Bulls,5,opening,HARD,2,,,,0,2,,False,0.35
+2026-13-monza,LIN,Racing Bulls,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,LIN,Racing Bulls,7,opening,HARD,2,87.902,-0.35,8,-0.35,4,-0.105,False,0.72
+2026-13-monza,LIN,Racing Bulls,8,opening,HARD,2,86.83,-0.849,8,-0.599,5,-0.569,False,0.72
+2026-13-monza,LIN,Racing Bulls,9,opening,HARD,2,86.526,-0.479,8,-0.559,6,-0.164,False,0.72
+2026-13-monza,LIN,Racing Bulls,10,opening,HARD,2,86.552,-0.708,6,-0.679,7,-0.358,False,0.72
+2026-13-monza,LIN,Racing Bulls,11,middle,HARD,2,86.667,-0.713,7,-0.633,8,-0.328,False,0.72
+2026-13-monza,LIN,Racing Bulls,12,middle,HARD,2,86.508,-0.596,6,-0.672,9,-0.176,False,0.72
+2026-13-monza,LIN,Racing Bulls,13,middle,HARD,2,86.71,-0.18,9,-0.496,10,0.275,False,0.72
+2026-13-monza,LIN,Racing Bulls,14,middle,HARD,2,86.522,-0.549,7,-0.442,11,-0.059,False,0.72
+2026-13-monza,LIN,Racing Bulls,15,middle,HARD,2,86.841,-0.152,9,-0.294,12,0.373,False,0.72
+2026-13-monza,LIN,Racing Bulls,16,middle,HARD,2,86.919,0.0,11,-0.234,13,0.56,False,0.72
+2026-13-monza,LIN,Racing Bulls,17,middle,HARD,2,86.858,-0.119,10,-0.09,14,0.476,False,0.72
+2026-13-monza,LIN,Racing Bulls,18,middle,HARD,2,86.892,0.053,12,-0.022,15,0.683,False,0.72
+2026-13-monza,LIN,Racing Bulls,19,middle,HARD,2,86.785,-0.152,8,-0.073,16,0.513,False,0.72
+2026-13-monza,LIN,Racing Bulls,20,middle,HARD,2,86.927,0.032,12,-0.022,17,0.732,False,0.72
+2026-13-monza,LIN,Racing Bulls,21,middle,HARD,2,86.861,0.0,11,-0.04,18,0.735,False,0.72
+2026-13-monza,LIN,Racing Bulls,22,middle,HARD,2,86.674,-0.378,7,-0.115,19,0.392,False,0.72
+2026-13-monza,LIN,Racing Bulls,23,middle,HARD,2,86.693,-0.125,8,-0.168,20,0.68,False,0.72
+2026-13-monza,LIN,Racing Bulls,24,middle,HARD,2,86.782,0.012,11,-0.164,21,0.852,False,0.72
+2026-13-monza,LIN,Racing Bulls,25,middle,HARD,2,86.657,-0.097,9,-0.07,22,0.778,False,0.72
+2026-13-monza,LIN,Racing Bulls,26,middle,HARD,2,86.725,0.096,11,0.004,23,1.006,False,0.72
+2026-13-monza,LIN,Racing Bulls,27,middle,HARD,2,86.907,-0.971,8,-0.324,24,-0.026,False,0.72
+2026-13-monza,LIN,Racing Bulls,28,middle,HARD,2,112.456,1.196,12,0.107,25,2.176,False,0.72
+2026-13-monza,LIN,Racing Bulls,29,middle,HARD,2,90.26,2.22,12,0.815,26,3.235,False,0.72
+2026-13-monza,LIN,Racing Bulls,30,middle,HARD,2,86.476,-0.012,9,1.135,27,1.038,False,0.72
+2026-13-monza,LIN,Racing Bulls,31,middle,HARD,2,86.451,0.095,15,0.768,28,1.18,False,0.72
+2026-13-monza,LIN,Racing Bulls,32,middle,HARD,2,86.266,0.0,10,0.028,29,1.12,False,0.72
+2026-13-monza,LIN,Racing Bulls,33,middle,HARD,2,86.412,0.004,11,0.033,30,1.159,False,0.72
+2026-13-monza,LIN,Racing Bulls,34,middle,HARD,2,86.58,0.373,14,0.126,31,1.563,False,0.72
+2026-13-monza,LIN,Racing Bulls,35,middle,HARD,2,86.401,0.277,12,0.218,32,1.502,False,0.72
+2026-13-monza,LIN,Racing Bulls,36,middle,HARD,2,86.301,0.26,12,0.303,33,1.52,False,0.72
+2026-13-monza,LIN,Racing Bulls,37,middle,HARD,2,86.345,0.37,13,0.302,34,1.665,False,0.72
+2026-13-monza,LIN,Racing Bulls,38,middle,HARD,2,86.482,0.484,13,0.371,35,1.814,False,0.72
+2026-13-monza,LIN,Racing Bulls,39,middle,HARD,2,86.314,0.079,11,0.311,36,1.444,False,0.72
+2026-13-monza,LIN,Racing Bulls,40,closing,HARD,2,86.324,0.168,11,0.244,37,1.568,False,0.72
+2026-13-monza,LIN,Racing Bulls,41,closing,HARD,2,86.638,0.217,11,0.155,38,1.652,False,0.72
+2026-13-monza,LIN,Racing Bulls,42,closing,HARD,2,86.427,0.547,12,0.311,39,2.017,False,0.72
+2026-13-monza,LIN,Racing Bulls,43,closing,HARD,2,86.343,0.065,11,0.276,40,1.57,False,0.72
+2026-13-monza,LIN,Racing Bulls,44,closing,HARD,2,86.162,0.013,11,0.208,41,1.553,False,0.72
+2026-13-monza,LIN,Racing Bulls,45,closing,HARD,2,86.194,0.236,12,0.105,42,1.811,False,0.72
+2026-13-monza,LIN,Racing Bulls,46,closing,HARD,2,86.053,0.333,11,0.194,43,1.943,False,0.72
+2026-13-monza,LIN,Racing Bulls,47,closing,HARD,2,86.028,0.245,12,0.271,44,1.89,False,0.72
+2026-13-monza,LIN,Racing Bulls,48,closing,HARD,2,86.033,-0.08,9,0.166,45,1.6,False,0.72
+2026-13-monza,LIN,Racing Bulls,49,closing,HARD,2,86.207,-0.188,9,-0.008,46,1.527,False,0.72
+2026-13-monza,LIN,Racing Bulls,50,closing,HARD,2,86.221,0.158,12,-0.037,47,1.908,False,0.72
+2026-13-monza,LIN,Racing Bulls,51,closing,HARD,2,86.233,0.0,10,-0.01,48,1.785,False,0.72
+2026-13-monza,LIN,Racing Bulls,52,closing,HARD,2,86.238,0.622,13,0.26,49,2.442,False,0.72
+2026-13-monza,LIN,Racing Bulls,53,closing,HARD,2,86.055,0.477,12,0.366,50,2.332,False,0.72
+2026-13-monza,NOR,McLaren,1,opening,MEDIUM,1,91.58,-2.096,7,-2.096,1,-2.061,False,0.72
+2026-13-monza,NOR,McLaren,2,opening,MEDIUM,1,86.915,-0.88,2,-1.488,2,-0.81,False,0.72
+2026-13-monza,NOR,McLaren,3,opening,MEDIUM,1,135.827,-0.951,6,-1.309,3,-0.846,False,0.72
+2026-13-monza,NOR,McLaren,4,opening,HARD,2,,,,-0.915,1,,False,0.35
+2026-13-monza,NOR,McLaren,5,opening,HARD,2,,,,-0.951,2,,False,0.35
+2026-13-monza,NOR,McLaren,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,NOR,McLaren,7,opening,HARD,2,86.993,-1.259,5,-1.259,4,-1.014,False,0.72
+2026-13-monza,NOR,McLaren,8,opening,HARD,2,86.433,-1.246,6,-1.252,5,-0.966,False,0.72
+2026-13-monza,NOR,McLaren,9,opening,HARD,2,86.203,-0.802,5,-1.102,6,-0.487,False,0.72
+2026-13-monza,NOR,McLaren,10,opening,HARD,2,86.591,-0.669,7,-0.906,7,-0.319,False,0.72
+2026-13-monza,NOR,McLaren,11,middle,HARD,2,86.238,-1.142,4,-0.871,8,-0.757,False,0.72
+2026-13-monza,NOR,McLaren,12,middle,HARD,2,86.213,-0.891,4,-0.901,9,-0.471,False,0.72
+2026-13-monza,NOR,McLaren,13,middle,HARD,2,86.07,-0.82,4,-0.951,10,-0.365,False,0.72
+2026-13-monza,NOR,McLaren,14,middle,HARD,2,86.06,-1.011,2,-0.907,11,-0.521,False,0.72
+2026-13-monza,NOR,McLaren,15,middle,HARD,2,86.201,-0.792,4,-0.874,12,-0.267,False,0.72
+2026-13-monza,NOR,McLaren,16,middle,HARD,2,86.262,-0.657,5,-0.82,13,-0.097,False,0.72
+2026-13-monza,NOR,McLaren,17,middle,HARD,2,86.549,-0.428,7,-0.626,14,0.167,False,0.72
+2026-13-monza,NOR,McLaren,18,middle,HARD,2,86.456,-0.383,6,-0.489,15,0.247,False,0.72
+2026-13-monza,NOR,McLaren,19,middle,HARD,2,86.99,0.053,14,-0.253,16,0.718,False,0.72
+2026-13-monza,NOR,McLaren,20,middle,HARD,2,88.809,1.914,19,0.528,17,2.614,False,0.72
+2026-13-monza,NOR,McLaren,21,middle,HARD,2,86.728,-0.133,10,0.611,18,0.602,False,0.72
+2026-13-monza,NOR,McLaren,22,middle,HARD,2,87.1,0.048,12,0.61,19,0.818,False,0.72
+2026-13-monza,NOR,McLaren,23,middle,HARD,2,85.706,-1.112,2,-0.399,20,-0.307,False,0.72
+2026-13-monza,NOR,McLaren,24,middle,HARD,2,85.988,-0.782,4,-0.615,21,0.058,False,0.72
+2026-13-monza,NOR,McLaren,25,middle,HARD,2,86.13,-0.624,5,-0.839,22,0.251,False,0.72
+2026-13-monza,NOR,McLaren,26,middle,HARD,2,85.864,-0.765,4,-0.724,23,0.145,False,0.72
+2026-13-monza,NOR,McLaren,27,middle,HARD,2,86.106,-1.772,6,-1.054,24,-0.827,False,0.72
+2026-13-monza,NOR,McLaren,28,middle,HARD,2,111.146,-0.114,9,-0.884,25,0.866,False,0.72
+2026-13-monza,NOR,McLaren,29,middle,HARD,2,91.49,3.45,13,0.521,26,4.465,False,0.72
+2026-13-monza,NOR,McLaren,30,middle,HARD,2,86.322,-0.166,7,1.057,27,0.884,False,0.72
+2026-13-monza,NOR,McLaren,31,middle,HARD,2,86.391,0.035,11,1.106,28,1.12,False,0.72
+2026-13-monza,NOR,McLaren,32,middle,HARD,2,85.685,-0.581,4,-0.237,29,0.539,False,0.72
+2026-13-monza,NOR,McLaren,33,middle,HARD,2,86.434,0.026,13,-0.173,30,1.181,False,0.72
+2026-13-monza,NOR,McLaren,34,middle,HARD,2,85.191,-1.016,3,-0.524,31,0.174,False,0.72
+2026-13-monza,NOR,McLaren,35,middle,HARD,2,84.971,-1.153,3,-0.714,32,0.072,False,0.72
+2026-13-monza,NOR,McLaren,36,middle,HARD,2,85.352,-0.689,4,-0.953,33,0.571,False,0.72
+2026-13-monza,NOR,McLaren,37,middle,HARD,2,85.22,-0.755,3,-0.866,34,0.54,False,0.72
+2026-13-monza,NOR,McLaren,38,middle,HARD,2,85.288,-0.71,3,-0.718,35,0.62,False,0.72
+2026-13-monza,NOR,McLaren,39,middle,HARD,2,85.213,-1.022,4,-0.829,36,0.343,False,0.72
+2026-13-monza,NOR,McLaren,40,closing,HARD,2,85.162,-0.994,3,-0.909,37,0.406,False,0.72
+2026-13-monza,NOR,McLaren,41,closing,HARD,2,86.173,-0.248,8,-0.755,38,1.187,False,0.72
+2026-13-monza,NOR,McLaren,42,closing,HARD,2,85.067,-0.813,2,-0.685,39,0.657,False,0.72
+2026-13-monza,NOR,McLaren,43,closing,HARD,2,85.482,-0.796,6,-0.619,40,0.709,False,0.72
+2026-13-monza,NOR,McLaren,44,closing,HARD,2,85.215,-0.934,5,-0.848,41,0.606,False,0.72
+2026-13-monza,NOR,McLaren,45,closing,HARD,2,84.873,-1.085,2,-0.938,42,0.49,False,0.72
+2026-13-monza,NOR,McLaren,46,closing,HARD,2,85.143,-0.577,3,-0.865,43,1.033,False,0.72
+2026-13-monza,NOR,McLaren,47,closing,HARD,2,85.234,-0.549,4,-0.737,44,1.096,False,0.72
+2026-13-monza,NOR,McLaren,48,closing,HARD,2,84.864,-1.249,3,-0.792,45,0.431,False,0.72
+2026-13-monza,NOR,McLaren,49,closing,HARD,2,86.503,0.108,11,-0.563,46,1.823,False,0.72
+2026-13-monza,NOR,McLaren,50,closing,HARD,2,85.327,-0.736,3,-0.626,47,1.014,False,0.72
+2026-13-monza,NOR,McLaren,51,closing,HARD,2,86.589,0.356,13,-0.091,48,2.141,False,0.72
+2026-13-monza,NOR,McLaren,52,closing,HARD,2,85.316,-0.3,5,-0.227,49,1.52,False,0.72
+2026-13-monza,NOR,McLaren,53,closing,HARD,2,85.21,-0.368,6,-0.104,50,1.487,False,0.72
+2026-13-monza,OCO,Haas F1 Team,1,opening,SOFT,1,93.92,0.244,12,0.244,1,0.279,False,0.72
+2026-13-monza,OCO,Haas F1 Team,2,opening,SOFT,1,87.558,-0.237,9,0.004,2,-0.167,False,0.72
+2026-13-monza,OCO,Haas F1 Team,3,opening,SOFT,1,144.115,7.337,10,2.448,3,7.442,False,0.72
+2026-13-monza,OCO,Haas F1 Team,4,opening,HARD,2,,,,3.55,1,,False,0.35
+2026-13-monza,OCO,Haas F1 Team,5,opening,HARD,2,,,,7.337,2,,False,0.35
+2026-13-monza,OCO,Haas F1 Team,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,OCO,Haas F1 Team,7,opening,HARD,2,88.798,0.546,16,0.546,4,0.791,False,0.72
+2026-13-monza,OCO,Haas F1 Team,8,opening,HARD,2,88.213,0.534,15,0.54,5,0.814,False,0.72
+2026-13-monza,OCO,Haas F1 Team,9,opening,HARD,2,87.357,0.352,12,0.477,6,0.667,False,0.72
+2026-13-monza,OCO,Haas F1 Team,10,opening,HARD,2,87.462,0.202,12,0.363,7,0.552,False,0.72
+2026-13-monza,OCO,Haas F1 Team,11,middle,HARD,2,87.862,0.482,13,0.345,8,0.867,False,0.72
+2026-13-monza,OCO,Haas F1 Team,12,middle,HARD,2,88.095,0.991,17,0.558,9,1.411,False,0.72
+2026-13-monza,OCO,Haas F1 Team,13,middle,HARD,2,86.89,0.0,11,0.491,10,0.455,False,0.72
+2026-13-monza,OCO,Haas F1 Team,14,middle,HARD,2,87.64,0.569,17,0.52,11,1.059,False,0.72
+2026-13-monza,OCO,Haas F1 Team,15,middle,HARD,2,87.795,0.802,17,0.457,12,1.327,False,0.72
+2026-13-monza,OCO,Haas F1 Team,16,middle,HARD,2,87.285,0.366,13,0.579,13,0.926,False,0.72
+2026-13-monza,OCO,Haas F1 Team,17,middle,HARD,2,87.129,0.152,15,0.44,14,0.747,False,0.72
+2026-13-monza,OCO,Haas F1 Team,18,middle,HARD,2,87.507,0.668,17,0.395,15,1.298,False,0.72
+2026-13-monza,OCO,Haas F1 Team,19,middle,HARD,2,86.937,0.0,11,0.273,16,0.665,False,0.72
+2026-13-monza,OCO,Haas F1 Team,20,middle,HARD,2,86.787,-0.108,10,0.187,17,0.592,False,0.72
+2026-13-monza,OCO,Haas F1 Team,21,middle,HARD,2,88.309,1.448,17,0.447,18,2.183,False,0.72
+2026-13-monza,OCO,Haas F1 Team,22,middle,HARD,2,87.61,0.558,16,0.633,19,1.328,False,0.72
+2026-13-monza,OCO,Haas F1 Team,23,middle,HARD,2,86.978,0.16,14,0.722,20,0.965,False,0.72
+2026-13-monza,OCO,Haas F1 Team,24,middle,HARD,2,86.758,-0.012,10,0.235,21,0.828,False,0.72
+2026-13-monza,OCO,Haas F1 Team,25,middle,HARD,2,87.046,0.292,13,0.147,22,1.167,False,0.72
+2026-13-monza,OCO,Haas F1 Team,26,middle,HARD,2,88.014,1.385,17,0.555,23,2.295,False,0.72
+2026-13-monza,OCO,Haas F1 Team,27,middle,HARD,2,95.904,8.026,16,3.234,24,8.971,False,0.72
+2026-13-monza,OCO,Haas F1 Team,28,middle,MEDIUM,3,125.899,14.639,18,8.017,1,15.619,False,0.72
+2026-13-monza,OCO,Haas F1 Team,29,middle,MEDIUM,3,86.554,-1.486,3,7.06,2,-0.471,False,0.72
+2026-13-monza,OCO,Haas F1 Team,30,middle,MEDIUM,3,86.32,-0.168,6,4.328,3,0.882,False,0.72
+2026-13-monza,OCO,Haas F1 Team,31,middle,MEDIUM,3,86.443,0.087,14,-0.522,4,1.172,False,0.72
+2026-13-monza,OCO,Haas F1 Team,32,middle,MEDIUM,3,86.4,0.134,12,0.018,5,1.254,False,0.72
+2026-13-monza,OCO,Haas F1 Team,33,middle,MEDIUM,3,86.577,0.169,14,0.13,6,1.324,False,0.72
+2026-13-monza,OCO,Haas F1 Team,34,middle,MEDIUM,3,86.207,0.0,10,0.101,7,1.19,False,0.72
+2026-13-monza,OCO,Haas F1 Team,35,middle,MEDIUM,3,86.303,0.179,11,0.116,8,1.404,False,0.72
+2026-13-monza,OCO,Haas F1 Team,36,middle,MEDIUM,3,87.157,1.116,16,0.432,9,2.376,False,0.72
+2026-13-monza,OCO,Haas F1 Team,37,middle,MEDIUM,3,86.108,0.133,11,0.476,10,1.428,False,0.72
+2026-13-monza,OCO,Haas F1 Team,38,middle,MEDIUM,3,86.22,0.222,12,0.49,11,1.552,False,0.72
+2026-13-monza,OCO,Haas F1 Team,39,middle,MEDIUM,3,86.88,0.645,15,0.333,12,2.01,False,0.72
+2026-13-monza,OCO,Haas F1 Team,40,closing,MEDIUM,3,87.268,1.112,17,0.66,13,2.512,False,0.72
+2026-13-monza,OCO,Haas F1 Team,41,closing,MEDIUM,3,86.802,0.381,13,0.713,14,1.816,False,0.72
+2026-13-monza,OCO,Haas F1 Team,42,closing,MEDIUM,3,87.065,1.185,15,0.893,15,2.655,False,0.72
+2026-13-monza,OCO,Haas F1 Team,43,closing,MEDIUM,3,87.169,0.891,17,0.819,16,2.396,False,0.72
+2026-13-monza,OCO,Haas F1 Team,44,closing,MEDIUM,3,86.874,0.725,14,0.934,17,2.265,False,0.72
+2026-13-monza,OCO,Haas F1 Team,45,closing,MEDIUM,3,86.827,0.869,15,0.828,18,2.444,False,0.72
+2026-13-monza,OCO,Haas F1 Team,46,closing,MEDIUM,3,87.095,1.375,15,0.99,19,2.985,False,0.72
+2026-13-monza,OCO,Haas F1 Team,47,closing,MEDIUM,3,87.06,1.277,15,1.174,20,2.922,False,0.72
+2026-13-monza,OCO,Haas F1 Team,48,closing,MEDIUM,3,87.059,0.946,16,1.199,21,2.626,False,0.72
+2026-13-monza,OCO,Haas F1 Team,49,closing,MEDIUM,3,86.899,0.504,14,0.909,22,2.219,False,0.72
+2026-13-monza,OCO,Haas F1 Team,50,closing,MEDIUM,3,86.831,0.768,16,0.739,23,2.518,False,0.72
+2026-13-monza,OCO,Haas F1 Team,51,closing,MEDIUM,3,89.644,3.411,19,1.561,24,5.196,False,0.72
+2026-13-monza,OCO,Haas F1 Team,52,closing,MEDIUM,3,85.711,0.095,10,1.425,25,1.915,False,0.72
+2026-13-monza,PER,Cadillac,1,opening,SOFT,1,96.657,2.981,17,2.981,1,3.016,False,0.72
+2026-13-monza,PER,Cadillac,2,opening,SOFT,1,90.033,2.238,17,2.609,2,2.308,False,0.72
+2026-13-monza,PER,Cadillac,3,opening,SOFT,1,,,,2.609,3,,False,0.35
+2026-13-monza,PER,Cadillac,4,opening,SOFT,2,,,,2.238,1,,False,0.35
+2026-13-monza,PER,Cadillac,5,opening,SOFT,2,,,,,2,,False,0.35
+2026-13-monza,PER,Cadillac,6,opening,SOFT,2,134.373,0.0,6,0,3,0.21,False,0.72
+2026-13-monza,PER,Cadillac,7,opening,SOFT,2,88.725,0.473,15,0.236,4,0.718,False,0.72
+2026-13-monza,PER,Cadillac,8,opening,SOFT,2,88.382,0.703,17,0.392,5,0.983,False,0.72
+2026-13-monza,PER,Cadillac,9,opening,SOFT,2,88.491,1.486,19,0.887,6,1.801,False,0.72
+2026-13-monza,PER,Cadillac,10,opening,SOFT,2,88.248,0.988,17,1.059,7,1.338,False,0.72
+2026-13-monza,PER,Cadillac,11,middle,SOFT,2,88.527,1.147,18,1.207,8,1.532,False,0.72
+2026-13-monza,PER,Cadillac,12,middle,SOFT,2,88.087,0.983,16,1.039,9,1.403,False,0.72
+2026-13-monza,PER,Cadillac,13,middle,SOFT,2,88.614,1.724,18,1.285,10,2.179,False,0.72
+2026-13-monza,PER,Cadillac,14,middle,SOFT,2,88.92,1.849,20,1.519,11,2.339,False,0.72
+2026-13-monza,PER,Cadillac,15,middle,SOFT,2,89.001,2.008,20,1.86,12,2.533,False,0.72
+2026-13-monza,PER,Cadillac,16,middle,SOFT,2,88.785,1.866,20,1.908,13,2.426,False,0.72
+2026-13-monza,PER,Cadillac,17,middle,SOFT,2,88.357,1.38,18,1.751,14,1.975,False,0.72
+2026-13-monza,PER,Cadillac,18,middle,SOFT,2,89.089,2.25,20,1.832,15,2.88,False,0.72
+2026-13-monza,PER,Cadillac,19,middle,SOFT,2,88.416,1.479,18,1.703,16,2.144,False,0.72
+2026-13-monza,PER,Cadillac,20,middle,SOFT,2,88.77,1.875,18,1.868,17,2.575,False,0.72
+2026-13-monza,PER,Cadillac,21,middle,SOFT,2,88.824,1.963,20,1.772,18,2.698,False,0.72
+2026-13-monza,PER,Cadillac,22,middle,SOFT,2,89.886,2.834,21,2.224,19,3.604,False,0.72
+2026-13-monza,PER,Cadillac,23,middle,SOFT,2,88.92,2.102,19,2.3,20,2.907,False,0.72
+2026-13-monza,PER,Cadillac,24,middle,SOFT,2,89.367,2.597,18,2.511,21,3.437,False,0.72
+2026-13-monza,PER,Cadillac,25,middle,SOFT,2,88.282,1.528,18,2.076,22,2.403,False,0.72
+2026-13-monza,PER,Cadillac,26,middle,SOFT,2,88.847,2.218,19,2.114,23,3.128,False,0.72
+2026-13-monza,PER,Cadillac,27,middle,SOFT,2,106.36,18.482,18,7.409,24,19.427,False,0.72
+2026-13-monza,PER,Cadillac,28,middle,MEDIUM,3,121.381,10.121,15,10.274,1,11.101,False,0.72
+2026-13-monza,PER,Cadillac,29,middle,MEDIUM,3,88.04,0.0,10,9.534,2,1.015,False,0.72
+2026-13-monza,PER,Cadillac,30,middle,MEDIUM,3,88.678,2.19,18,4.104,3,3.24,False,0.72
+2026-13-monza,PER,Cadillac,31,middle,MEDIUM,3,88.981,2.625,19,1.605,4,3.71,False,0.72
+2026-13-monza,PER,Cadillac,32,middle,MEDIUM,3,90.477,4.211,19,3.009,5,5.331,False,0.72
+2026-13-monza,PER,Cadillac,33,middle,MEDIUM,3,88.076,1.668,19,2.835,6,2.823,False,0.72
+2026-13-monza,PER,Cadillac,34,middle,MEDIUM,3,87.021,0.814,17,2.231,7,2.004,False,0.72
+2026-13-monza,PER,Cadillac,35,middle,MEDIUM,3,87.651,1.527,18,1.336,8,2.752,False,0.72
+2026-13-monza,PER,Cadillac,36,middle,MEDIUM,3,88.358,2.317,18,1.553,9,3.577,False,0.72
+2026-13-monza,PER,Cadillac,37,middle,MEDIUM,3,88.711,2.736,18,2.193,10,4.031,False,0.72
+2026-13-monza,PER,Cadillac,38,middle,MEDIUM,3,87.454,1.456,18,2.17,11,2.786,False,0.72
+2026-13-monza,PER,Cadillac,39,middle,MEDIUM,3,87.85,1.615,19,1.936,12,2.98,False,0.72
+2026-13-monza,PER,Cadillac,40,closing,MEDIUM,3,88.034,1.878,18,1.65,13,3.278,False,0.72
+2026-13-monza,PER,Cadillac,41,closing,MEDIUM,3,87.714,1.293,19,1.595,14,2.728,False,0.72
+2026-13-monza,PER,Cadillac,42,closing,MEDIUM,3,90.03,4.15,19,2.44,15,5.62,False,0.72
+2026-13-monza,PER,Cadillac,43,closing,MEDIUM,3,87.078,0.8,16,2.081,16,2.305,False,0.72
+2026-13-monza,PER,Cadillac,44,closing,MEDIUM,3,87.289,1.14,16,2.03,17,2.68,False,0.72
+2026-13-monza,PER,Cadillac,45,closing,MEDIUM,3,87.432,1.474,18,1.138,18,3.049,False,0.72
+2026-13-monza,PER,Cadillac,46,closing,MEDIUM,3,87.573,1.853,17,1.489,19,3.463,False,0.72
+2026-13-monza,PER,Cadillac,47,closing,MEDIUM,3,87.524,1.741,16,1.689,20,3.386,False,0.72
+2026-13-monza,PER,Cadillac,48,closing,MEDIUM,3,88.716,2.603,18,2.066,21,4.283,False,0.72
+2026-13-monza,PER,Cadillac,49,closing,MEDIUM,3,87.889,1.494,16,1.946,22,3.209,False,0.72
+2026-13-monza,PER,Cadillac,50,closing,MEDIUM,3,87.496,1.433,17,1.843,23,3.183,False,0.72
+2026-13-monza,PER,Cadillac,51,closing,MEDIUM,3,86.914,0.681,16,1.203,24,2.466,False,0.72
+2026-13-monza,PER,Cadillac,52,closing,MEDIUM,3,87.327,1.711,17,1.275,25,3.531,False,0.72
+2026-13-monza,PIA,McLaren,1,opening,MEDIUM,1,90.028,-3.648,5,-3.648,1,-3.613,False,0.72
+2026-13-monza,PIA,McLaren,2,opening,MEDIUM,1,87.486,-0.309,8,-1.978,2,-0.239,False,0.72
+2026-13-monza,PIA,McLaren,3,opening,MEDIUM,1,133.714,-3.064,5,-2.34,3,-2.959,False,0.72
+2026-13-monza,PIA,McLaren,4,opening,HARD,2,,,,-1.686,1,,False,0.35
+2026-13-monza,PIA,McLaren,5,opening,HARD,2,,,,-3.064,2,,False,0.35
+2026-13-monza,PIA,McLaren,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,PIA,McLaren,7,opening,HARD,2,87.432,-0.82,6,-0.82,4,-0.575,False,0.72
+2026-13-monza,PIA,McLaren,8,opening,HARD,2,86.051,-1.628,2,-1.224,5,-1.348,False,0.72
+2026-13-monza,PIA,McLaren,9,opening,HARD,2,85.978,-1.027,2,-1.158,6,-0.712,False,0.72
+2026-13-monza,PIA,McLaren,10,opening,HARD,2,86.321,-0.939,4,-1.198,7,-0.589,False,0.72
+2026-13-monza,PIA,McLaren,11,middle,HARD,2,86.086,-1.294,1,-1.087,8,-0.909,False,0.72
+2026-13-monza,PIA,McLaren,12,middle,HARD,2,85.975,-1.129,2,-1.121,9,-0.709,False,0.72
+2026-13-monza,PIA,McLaren,13,middle,HARD,2,86.547,-0.343,8,-0.922,10,0.112,False,0.72
+2026-13-monza,PIA,McLaren,14,middle,HARD,2,86.111,-0.96,3,-0.811,11,-0.47,False,0.72
+2026-13-monza,PIA,McLaren,15,middle,HARD,2,86.233,-0.76,5,-0.688,12,-0.235,False,0.72
+2026-13-monza,PIA,McLaren,16,middle,HARD,2,86.723,-0.196,9,-0.639,13,0.364,False,0.72
+2026-13-monza,PIA,McLaren,17,middle,HARD,2,86.552,-0.425,8,-0.46,14,0.17,False,0.72
+2026-13-monza,PIA,McLaren,18,middle,HARD,2,86.764,-0.075,8,-0.232,15,0.555,False,0.72
+2026-13-monza,PIA,McLaren,19,middle,HARD,2,85.646,-1.291,1,-0.597,16,-0.626,False,0.72
+2026-13-monza,PIA,McLaren,20,middle,HARD,2,86.094,-0.801,4,-0.722,17,-0.101,False,0.72
+2026-13-monza,PIA,McLaren,21,middle,HARD,2,86.231,-0.63,5,-0.907,18,0.105,False,0.72
+2026-13-monza,PIA,McLaren,22,middle,HARD,2,86.083,-0.969,3,-0.8,19,-0.199,False,0.72
+2026-13-monza,PIA,McLaren,23,middle,HARD,2,86.811,-0.007,10,-0.535,20,0.798,False,0.72
+2026-13-monza,PIA,McLaren,24,middle,HARD,2,85.926,-0.844,3,-0.607,21,-0.004,False,0.72
+2026-13-monza,PIA,McLaren,25,middle,HARD,2,85.884,-0.87,4,-0.574,22,0.005,False,0.72
+2026-13-monza,PIA,McLaren,26,middle,HARD,2,86.143,-0.486,6,-0.733,23,0.424,False,0.72
+2026-13-monza,PIA,McLaren,27,middle,HARD,2,86.106,-1.772,6,-1.043,24,-0.827,False,0.72
+2026-13-monza,PIA,McLaren,28,middle,HARD,2,109.065,-2.195,4,-1.484,25,-1.215,False,0.72
+2026-13-monza,PIA,McLaren,29,middle,HARD,2,92.536,4.496,15,0.176,26,5.511,False,0.72
+2026-13-monza,PIA,McLaren,30,middle,HARD,2,85.915,-0.573,5,0.576,27,0.477,False,0.72
+2026-13-monza,PIA,McLaren,31,middle,HARD,2,85.967,-0.389,6,1.178,28,0.696,False,0.72
+2026-13-monza,PIA,McLaren,32,middle,HARD,2,86.02,-0.246,6,-0.403,29,0.874,False,0.72
+2026-13-monza,PIA,McLaren,33,middle,HARD,2,86.251,-0.157,8,-0.264,30,0.998,False,0.72
+2026-13-monza,PIA,McLaren,34,middle,HARD,2,86.035,-0.172,8,-0.192,31,1.018,False,0.72
+2026-13-monza,PIA,McLaren,35,middle,HARD,2,85.597,-0.527,5,-0.285,32,0.698,False,0.72
+2026-13-monza,PIA,McLaren,36,middle,HARD,2,85.544,-0.497,6,-0.399,33,0.763,False,0.72
+2026-13-monza,PIA,McLaren,37,middle,HARD,2,86.128,0.153,12,-0.29,34,1.448,False,0.72
+2026-13-monza,PIA,McLaren,38,middle,HARD,2,85.315,-0.683,4,-0.342,35,0.647,False,0.72
+2026-13-monza,PIA,McLaren,39,middle,HARD,2,86.325,0.09,12,-0.147,36,1.455,False,0.72
+2026-13-monza,PIA,McLaren,40,closing,HARD,2,86.156,0.0,10,-0.198,37,1.4,False,0.72
+2026-13-monza,PIA,McLaren,41,closing,HARD,2,86.152,-0.269,7,-0.06,38,1.166,False,0.72
+2026-13-monza,PIA,McLaren,42,closing,HARD,2,85.692,-0.188,6,-0.152,39,1.282,False,0.72
+2026-13-monza,PIA,McLaren,43,closing,HARD,2,86.242,-0.036,9,-0.164,40,1.469,False,0.72
+2026-13-monza,PIA,McLaren,44,closing,HARD,2,85.194,-0.955,4,-0.393,41,0.585,False,0.72
+2026-13-monza,PIA,McLaren,45,closing,HARD,2,85.125,-0.833,3,-0.608,42,0.742,False,0.72
+2026-13-monza,PIA,McLaren,46,closing,HARD,2,85.313,-0.407,5,-0.732,43,1.203,False,0.72
+2026-13-monza,PIA,McLaren,47,closing,HARD,2,85.385,-0.398,5,-0.546,44,1.247,False,0.72
+2026-13-monza,PIA,McLaren,48,closing,HARD,2,85.755,-0.358,7,-0.388,45,1.322,False,0.72
+2026-13-monza,PIA,McLaren,49,closing,HARD,2,85.458,-0.937,4,-0.564,46,0.778,False,0.72
+2026-13-monza,PIA,McLaren,50,closing,HARD,2,85.525,-0.538,5,-0.611,47,1.212,False,0.72
+2026-13-monza,PIA,McLaren,51,closing,HARD,2,86.314,0.081,12,-0.465,48,1.866,False,0.72
+2026-13-monza,PIA,McLaren,52,closing,HARD,2,85.521,-0.095,9,-0.184,49,1.725,False,0.72
+2026-13-monza,PIA,McLaren,53,closing,HARD,2,85.834,0.256,9,0.081,50,2.111,False,0.72
+2026-13-monza,RUS,Mercedes,1,opening,MEDIUM,1,88.774,-4.902,2,-4.902,1,-4.867,False,0.72
+2026-13-monza,RUS,Mercedes,2,opening,MEDIUM,1,86.651,-1.144,1,-3.023,2,-1.074,False,0.72
+2026-13-monza,RUS,Mercedes,3,opening,MEDIUM,1,119.148,-17.63,1,-7.892,3,-17.525,False,0.72
+2026-13-monza,RUS,Mercedes,4,opening,HARD,2,,,,-9.387,1,,False,0.35
+2026-13-monza,RUS,Mercedes,5,opening,HARD,2,,,,-17.63,2,,False,0.35
+2026-13-monza,RUS,Mercedes,6,opening,HARD,2,,,,,3,,False,0.35
+2026-13-monza,RUS,Mercedes,7,opening,HARD,2,86.44,-1.812,2,-1.812,4,-1.567,False,0.72
+2026-13-monza,RUS,Mercedes,8,opening,HARD,2,86.093,-1.586,3,-1.699,5,-1.306,False,0.72
+2026-13-monza,RUS,Mercedes,9,opening,HARD,2,86.495,-0.51,7,-1.303,6,-0.195,False,0.72
+2026-13-monza,RUS,Mercedes,10,opening,HARD,2,86.305,-0.955,3,-1.017,7,-0.605,False,0.72
+2026-13-monza,RUS,Mercedes,11,middle,HARD,2,86.63,-0.75,6,-0.738,8,-0.365,False,0.72
+2026-13-monza,RUS,Mercedes,12,middle,HARD,2,87.352,0.248,12,-0.486,9,0.668,False,0.72
+2026-13-monza,RUS,Mercedes,13,middle,HARD,2,86.142,-0.748,5,-0.417,10,-0.293,False,0.72
+2026-13-monza,RUS,Mercedes,14,middle,HARD,2,86.549,-0.522,8,-0.341,11,-0.032,False,0.72
+2026-13-monza,RUS,Mercedes,15,middle,HARD,2,85.773,-1.22,1,-0.83,12,-0.695,False,0.72
+2026-13-monza,RUS,Mercedes,16,middle,HARD,2,85.742,-1.177,2,-0.973,13,-0.617,False,0.72
+2026-13-monza,RUS,Mercedes,17,middle,HARD,2,85.584,-1.393,3,-1.263,14,-0.798,False,0.72
+2026-13-monza,RUS,Mercedes,18,middle,HARD,2,86.152,-0.687,3,-1.086,15,-0.057,False,0.72
+2026-13-monza,RUS,Mercedes,19,middle,HARD,2,85.802,-1.135,3,-1.072,16,-0.47,False,0.72
+2026-13-monza,RUS,Mercedes,20,middle,HARD,2,85.606,-1.289,2,-1.037,17,-0.589,False,0.72
+2026-13-monza,RUS,Mercedes,21,middle,HARD,2,85.768,-1.093,1,-1.172,18,-0.358,False,0.72
+2026-13-monza,RUS,Mercedes,22,middle,HARD,2,86.496,-0.556,5,-0.979,19,0.214,False,0.72
+2026-13-monza,RUS,Mercedes,23,middle,HARD,2,85.827,-0.991,3,-0.88,20,-0.186,False,0.72
+2026-13-monza,RUS,Mercedes,24,middle,HARD,2,85.642,-1.128,1,-0.892,21,-0.288,False,0.72
+2026-13-monza,RUS,Mercedes,25,middle,HARD,2,85.345,-1.409,2,-1.176,22,-0.534,False,0.72
+2026-13-monza,RUS,Mercedes,26,middle,HARD,2,85.505,-1.124,2,-1.22,23,-0.214,False,0.72
+2026-13-monza,RUS,Mercedes,27,middle,HARD,2,85.517,-2.361,1,-1.631,24,-1.416,False,0.72
+2026-13-monza,RUS,Mercedes,28,middle,HARD,2,105.699,-5.561,2,-3.015,25,-4.581,False,0.72
+2026-13-monza,RUS,Mercedes,29,middle,HARD,2,98.375,10.335,17,0.804,26,11.35,False,0.72
+2026-13-monza,RUS,Mercedes,30,middle,HARD,2,85.66,-0.828,3,1.315,27,0.222,False,0.72
+2026-13-monza,RUS,Mercedes,31,middle,HARD,2,85.569,-0.787,3,2.907,28,0.298,False,0.72
+2026-13-monza,RUS,Mercedes,32,middle,HARD,2,85.34,-0.926,2,-0.847,29,0.194,False,0.72
+2026-13-monza,RUS,Mercedes,33,middle,HARD,2,85.404,-1.004,3,-0.906,30,0.151,False,0.72
+2026-13-monza,RUS,Mercedes,34,middle,HARD,2,85.412,-0.795,4,-0.908,31,0.395,False,0.72
+2026-13-monza,RUS,Mercedes,35,middle,HARD,2,85.296,-0.828,4,-0.876,32,0.397,False,0.72
+2026-13-monza,RUS,Mercedes,36,middle,HARD,2,85.223,-0.818,3,-0.814,33,0.442,False,0.72
+2026-13-monza,RUS,Mercedes,37,middle,HARD,2,85.337,-0.638,4,-0.761,34,0.657,False,0.72
+2026-13-monza,RUS,Mercedes,38,middle,HARD,2,85.386,-0.612,5,-0.689,35,0.718,False,0.72
+2026-13-monza,RUS,Mercedes,39,middle,HARD,2,85.018,-1.217,3,-0.822,36,0.148,False,0.72
+2026-13-monza,RUS,Mercedes,40,closing,HARD,2,85.094,-1.062,2,-0.964,37,0.338,False,0.72
+2026-13-monza,RUS,Mercedes,41,closing,HARD,2,85.331,-1.09,2,-1.123,38,0.345,False,0.72
+2026-13-monza,RUS,Mercedes,42,closing,HARD,2,85.137,-0.743,3,-0.965,39,0.727,False,0.72
+2026-13-monza,RUS,Mercedes,43,closing,HARD,2,85.261,-1.017,3,-0.95,40,0.488,False,0.72
+2026-13-monza,RUS,Mercedes,44,closing,HARD,2,85.128,-1.021,2,-0.927,41,0.519,False,0.72
+2026-13-monza,RUS,Mercedes,45,closing,HARD,2,85.183,-0.775,4,-0.938,42,0.8,False,0.72
+2026-13-monza,RUS,Mercedes,46,closing,HARD,2,84.961,-0.759,2,-0.852,43,0.851,False,0.72
+2026-13-monza,RUS,Mercedes,47,closing,HARD,2,84.861,-0.922,2,-0.819,44,0.723,False,0.72
+2026-13-monza,RUS,Mercedes,48,closing,HARD,2,85.276,-0.837,4,-0.839,45,0.843,False,0.72
+2026-13-monza,RUS,Mercedes,49,closing,HARD,2,87.975,1.58,17,-0.06,46,3.295,False,0.72
+2026-13-monza,RUS,Mercedes,50,closing,HARD,2,86.206,0.143,11,0.295,47,1.893,False,0.72
+2026-13-monza,RUS,Mercedes,51,closing,HARD,2,84.39,-1.843,1,-0.04,48,-0.058,False,0.72
+2026-13-monza,RUS,Mercedes,52,closing,HARD,2,84.977,-0.639,3,-0.78,49,1.181,False,0.72
+2026-13-monza,RUS,Mercedes,53,closing,HARD,2,85.486,-0.092,7,-0.858,50,1.763,False,0.72
+2026-13-monza,SAI,Williams,1,opening,SOFT,1,96.596,2.92,16,2.92,1,2.955,False,0.72
+2026-13-monza,SAI,Williams,2,opening,SOFT,1,89.305,1.51,16,2.215,2,1.58,False,0.72
+2026-13-monza,SAI,Williams,3,opening,SOFT,1,,,,2.215,3,,False,0.35
+2026-13-monza,SAI,Williams,4,opening,HARD,2,,,,1.51,1,,False,0.35
+2026-13-monza,SAI,Williams,5,opening,HARD,2,,,,,2,,False,0.35
+2026-13-monza,SAI,Williams,6,opening,HARD,2,133.388,-0.985,5,-0.985,3,-0.775,False,0.72
+2026-13-monza,SAI,Williams,7,opening,HARD,2,88.332,0.08,13,-0.452,4,0.325,False,0.72
+2026-13-monza,SAI,Williams,8,opening,HARD,2,88.665,0.986,19,0.027,5,1.266,False,0.72
+2026-13-monza,SAI,Williams,9,opening,HARD,2,88.223,1.218,18,0.761,6,1.533,False,0.72
+2026-13-monza,SAI,Williams,10,opening,HARD,2,87.945,0.685,15,0.963,7,1.035,False,0.72
+2026-13-monza,SAI,Williams,11,middle,HARD,2,87.155,-0.225,10,0.559,8,0.16,False,0.72
+2026-13-monza,SAI,Williams,12,middle,HARD,2,87.941,0.837,14,0.432,9,1.257,False,0.72
+2026-13-monza,SAI,Williams,13,middle,HARD,2,87.268,0.378,15,0.33,10,0.833,False,0.72
+2026-13-monza,SAI,Williams,14,middle,HARD,2,87.406,0.335,16,0.517,11,0.825,False,0.72
+2026-13-monza,SAI,Williams,15,middle,HARD,2,87.571,0.578,14,0.43,12,1.103,False,0.72
+2026-13-monza,SAI,Williams,16,middle,HARD,2,88.221,1.302,17,0.738,13,1.862,False,0.72
+2026-13-monza,SAI,Williams,17,middle,HARD,2,87.494,0.517,17,0.799,14,1.112,False,0.72
+2026-13-monza,SAI,Williams,18,middle,HARD,2,86.915,0.076,13,0.632,15,0.706,False,0.72
+2026-13-monza,SAI,Williams,19,middle,HARD,2,87.074,0.137,16,0.243,16,0.802,False,0.72
+2026-13-monza,SAI,Williams,20,middle,HARD,2,86.895,0.0,11,0.071,17,0.7,False,0.72
+2026-13-monza,SAI,Williams,21,middle,HARD,2,87.067,0.206,13,0.114,18,0.941,False,0.72
+2026-13-monza,SAI,Williams,22,middle,HARD,2,87.456,0.404,14,0.203,19,1.174,False,0.72
+2026-13-monza,SAI,Williams,23,middle,HARD,2,87.169,0.351,17,0.32,20,1.156,False,0.72
+2026-13-monza,SAI,Williams,24,middle,HARD,2,87.005,0.235,15,0.33,21,1.075,False,0.72
+2026-13-monza,SAI,Williams,25,middle,HARD,2,87.114,0.36,15,0.315,22,1.235,False,0.72
+2026-13-monza,SAI,Williams,26,middle,HARD,2,87.305,0.676,16,0.424,23,1.586,False,0.72
+2026-13-monza,SAI,Williams,27,middle,HARD,2,95.474,7.596,15,2.877,24,8.541,False,0.72
+2026-13-monza,SAI,Williams,28,middle,MEDIUM,3,123.779,12.519,16,6.93,1,13.499,False,0.72
+2026-13-monza,SAI,Williams,29,middle,MEDIUM,3,86.613,-1.427,4,6.229,2,-0.412,False,0.72
+2026-13-monza,SAI,Williams,30,middle,MEDIUM,3,86.488,0.0,10,3.697,3,1.05,False,0.72
+2026-13-monza,SAI,Williams,31,middle,MEDIUM,3,86.128,-0.228,8,-0.552,4,0.857,False,0.72
+2026-13-monza,SAI,Williams,32,middle,MEDIUM,3,86.236,-0.03,9,-0.086,5,1.09,False,0.72
+2026-13-monza,SAI,Williams,33,middle,MEDIUM,3,86.415,0.007,12,-0.084,6,1.162,False,0.72
+2026-13-monza,SAI,Williams,34,middle,MEDIUM,3,86.278,0.071,11,0.016,7,1.261,False,0.72
+2026-13-monza,SAI,Williams,35,middle,MEDIUM,3,86.124,0.0,10,0.026,8,1.225,False,0.72
+2026-13-monza,SAI,Williams,36,middle,MEDIUM,3,86.1,0.059,11,0.043,9,1.319,False,0.72
+2026-13-monza,SAI,Williams,37,middle,MEDIUM,3,85.91,-0.065,6,-0.002,10,1.23,False,0.72
+2026-13-monza,SAI,Williams,38,middle,MEDIUM,3,85.772,-0.226,8,-0.077,11,1.104,False,0.72
+2026-13-monza,SAI,Williams,39,middle,MEDIUM,3,86.235,0.0,10,-0.097,12,1.365,False,0.72
+2026-13-monza,SAI,Williams,40,closing,MEDIUM,3,86.036,-0.12,8,-0.115,13,1.28,False,0.72
+2026-13-monza,SAI,Williams,41,closing,MEDIUM,3,85.93,-0.491,6,-0.204,14,0.944,False,0.72
+2026-13-monza,SAI,Williams,42,closing,MEDIUM,3,85.88,0.0,10,-0.204,15,1.47,False,0.72
+2026-13-monza,SAI,Williams,43,closing,MEDIUM,3,86.39,0.112,12,-0.126,16,1.617,False,0.72
+2026-13-monza,SAI,Williams,44,closing,MEDIUM,3,86.149,0.0,10,0.037,17,1.54,False,0.72
+2026-13-monza,SAI,Williams,45,closing,MEDIUM,3,86.098,0.14,11,0.084,18,1.715,False,0.72
+2026-13-monza,SAI,Williams,46,closing,MEDIUM,3,85.683,-0.037,9,0.034,19,1.573,False,0.72
+2026-13-monza,SAI,Williams,47,closing,MEDIUM,3,85.783,0.0,10,0.034,20,1.645,False,0.72
+2026-13-monza,SAI,Williams,48,closing,MEDIUM,3,86.113,0.0,10,-0.012,21,1.68,False,0.72
+2026-13-monza,SAI,Williams,49,closing,MEDIUM,3,85.847,-0.548,6,-0.183,22,1.167,False,0.72
+2026-13-monza,SAI,Williams,50,closing,MEDIUM,3,86.399,0.336,13,-0.071,23,2.086,False,0.72
+2026-13-monza,SAI,Williams,51,closing,MEDIUM,3,86.257,0.024,11,-0.063,24,1.809,False,0.72
+2026-13-monza,SAI,Williams,52,closing,MEDIUM,3,85.96,0.344,12,0.235,25,2.164,False,0.72
+2026-13-monza,SAI,Williams,53,closing,MEDIUM,3,85.964,0.386,10,0.251,26,2.241,False,0.72
+2026-13-monza,STR,Aston Martin,1,opening,SOFT,1,97.717,4.041,20,4.041,1,4.076,False,0.72
+2026-13-monza,STR,Aston Martin,2,opening,SOFT,1,92.315,4.52,21,4.28,2,4.59,False,0.72
+2026-13-monza,STR,Aston Martin,3,opening,SOFT,1,,,,4.28,3,,False,0.35
+2026-13-monza,STR,Aston Martin,4,opening,HARD,2,,,,4.52,1,,False,0.35
+2026-13-monza,STR,Aston Martin,5,opening,HARD,2,,,,,2,,False,0.35
+2026-13-monza,STR,Aston Martin,6,opening,HARD,2,127.64,-6.733,2,-6.733,3,-6.523,False,0.72
+2026-13-monza,STR,Aston Martin,7,opening,HARD,2,90.832,2.58,21,-2.076,4,2.825,False,0.72
+2026-13-monza,STR,Aston Martin,8,opening,HARD,2,89.718,2.039,21,-0.705,5,2.319,False,0.72
+2026-13-monza,STR,Aston Martin,9,opening,HARD,2,89.406,2.401,21,2.34,6,2.716,False,0.72
+2026-13-monza,STR,Aston Martin,10,opening,HARD,2,89.06,1.8,20,2.08,7,2.15,False,0.72
+2026-13-monza,STR,Aston Martin,11,middle,HARD,2,88.415,1.035,17,1.745,8,1.42,False,0.72
+2026-13-monza,STR,Aston Martin,12,middle,HARD,2,88.887,1.783,20,1.539,9,2.203,False,0.72
+2026-13-monza,STR,Aston Martin,13,middle,HARD,2,88.946,2.056,20,1.625,10,2.511,False,0.72
+2026-13-monza,STR,Aston Martin,14,middle,HARD,2,89.076,2.005,21,1.948,11,2.495,False,0.72
+2026-13-monza,STR,Aston Martin,15,middle,HARD,2,89.438,2.445,21,2.169,12,2.97,False,0.72
+2026-13-monza,STR,Aston Martin,16,middle,HARD,2,89.347,2.428,21,2.293,13,2.988,False,0.72
+2026-13-monza,STR,Aston Martin,17,middle,HARD,2,89.085,2.108,20,2.327,14,2.703,False,0.72
+2026-13-monza,STR,Aston Martin,18,middle,HARD,2,89.285,2.446,21,2.327,15,3.076,False,0.72
+2026-13-monza,STR,Aston Martin,19,middle,HARD,2,89.11,2.173,21,2.242,16,2.838,False,0.72
+2026-13-monza,STR,Aston Martin,20,middle,HARD,2,89.196,2.301,21,2.307,17,3.001,False,0.72
+2026-13-monza,STR,Aston Martin,21,middle,HARD,2,89.655,2.794,21,2.423,18,3.529,False,0.72
+2026-13-monza,STR,Aston Martin,22,middle,HARD,2,89.206,2.154,19,2.416,19,2.924,False,0.72
+2026-13-monza,STR,Aston Martin,23,middle,HARD,2,89.428,2.61,20,2.519,20,3.415,False,0.72
+2026-13-monza,STR,Aston Martin,24,middle,HARD,2,89.978,3.208,20,2.657,21,4.048,False,0.72
+2026-13-monza,STR,Aston Martin,25,middle,HARD,2,91.605,4.851,20,3.556,22,5.726,False,0.72
+2026-13-monza,STR,Aston Martin,26,middle,HARD,2,89.445,2.816,20,3.625,23,3.726,False,0.72
+2026-13-monza,STR,Aston Martin,27,middle,HARD,2,,,,3.834,24,,False,0.35
+2026-13-monza,TSU,Racing Bulls,1,opening,HARD,1,96.174,2.498,15,2.498,1,2.533,False,0.72
+2026-13-monza,TSU,Racing Bulls,2,opening,HARD,1,88.814,1.019,14,1.758,2,1.089,False,0.72
+2026-13-monza,TSU,Racing Bulls,3,opening,HARD,1,,,,1.758,3,,False,0.35
+2026-13-monza,TSU,Racing Bulls,4,opening,MEDIUM,2,,,,1.019,1,,False,0.35
+2026-13-monza,TSU,Racing Bulls,5,opening,MEDIUM,2,,,,,2,,False,0.35
+2026-13-monza,TSU,Racing Bulls,6,opening,MEDIUM,2,136.065,1.692,8,1.692,3,1.902,False,0.72
+2026-13-monza,TSU,Racing Bulls,7,opening,MEDIUM,2,88.09,-0.162,9,0.765,4,0.083,False,0.72
+2026-13-monza,TSU,Racing Bulls,8,opening,MEDIUM,2,87.369,-0.31,9,0.407,5,-0.03,False,0.72
+2026-13-monza,TSU,Racing Bulls,9,opening,MEDIUM,2,86.631,-0.374,9,-0.282,6,-0.059,False,0.72
+2026-13-monza,TSU,Racing Bulls,10,opening,MEDIUM,2,86.994,-0.266,8,-0.317,7,0.084,False,0.72
+2026-13-monza,TSU,Racing Bulls,11,middle,MEDIUM,2,86.859,-0.521,9,-0.387,8,-0.136,False,0.72
+2026-13-monza,TSU,Racing Bulls,12,middle,MEDIUM,2,86.733,-0.371,8,-0.386,9,0.049,False,0.72
+2026-13-monza,TSU,Racing Bulls,13,middle,MEDIUM,2,86.481,-0.409,7,-0.434,10,0.046,False,0.72
+2026-13-monza,TSU,Racing Bulls,14,middle,MEDIUM,2,86.876,-0.195,9,-0.325,11,0.295,False,0.72
+2026-13-monza,TSU,Racing Bulls,15,middle,MEDIUM,2,86.53,-0.463,7,-0.356,12,0.062,False,0.72
+2026-13-monza,TSU,Racing Bulls,16,middle,MEDIUM,2,86.692,-0.227,8,-0.295,13,0.333,False,0.72
+2026-13-monza,TSU,Racing Bulls,17,middle,MEDIUM,2,86.585,-0.392,9,-0.361,14,0.203,False,0.72
+2026-13-monza,TSU,Racing Bulls,18,middle,MEDIUM,2,86.686,-0.153,7,-0.257,15,0.477,False,0.72
+2026-13-monza,TSU,Racing Bulls,19,middle,MEDIUM,2,86.976,0.039,12,-0.169,16,0.704,False,0.72
+2026-13-monza,TSU,Racing Bulls,20,middle,MEDIUM,2,86.951,0.056,13,-0.019,17,0.756,False,0.72
+2026-13-monza,TSU,Racing Bulls,21,middle,MEDIUM,2,86.899,0.038,12,0.044,18,0.773,False,0.72
+2026-13-monza,TSU,Racing Bulls,22,middle,MEDIUM,2,86.866,-0.186,8,-0.031,19,0.584,False,0.72
+2026-13-monza,TSU,Racing Bulls,23,middle,MEDIUM,2,86.818,0.0,11,-0.049,20,0.805,False,0.72
+2026-13-monza,TSU,Racing Bulls,24,middle,MEDIUM,2,86.997,0.227,14,0.014,21,1.067,False,0.72
+2026-13-monza,TSU,Racing Bulls,25,middle,MEDIUM,2,87.052,0.298,14,0.175,22,1.173,False,0.72
+2026-13-monza,TSU,Racing Bulls,26,middle,MEDIUM,2,87.135,0.506,14,0.344,23,1.416,False,0.72
+2026-13-monza,TSU,Racing Bulls,27,middle,MEDIUM,2,86.935,-0.943,9,-0.046,24,0.002,False,0.72
+2026-13-monza,TSU,Racing Bulls,28,middle,MEDIUM,2,113.621,2.361,13,0.641,25,3.341,False,0.72
+2026-13-monza,TSU,Racing Bulls,29,middle,MEDIUM,2,89.654,1.614,11,1.011,26,2.629,False,0.72
+2026-13-monza,TSU,Racing Bulls,30,middle,MEDIUM,2,86.86,0.372,15,1.449,27,1.422,False,0.72
+2026-13-monza,TSU,Racing Bulls,31,middle,MEDIUM,2,86.86,0.504,16,0.83,28,1.589,False,0.72
+2026-13-monza,TSU,Racing Bulls,32,middle,MEDIUM,2,86.625,0.359,15,0.412,29,1.479,False,0.72
+2026-13-monza,TSU,Racing Bulls,33,middle,MEDIUM,2,86.751,0.343,16,0.402,30,1.498,False,0.72
+2026-13-monza,TSU,Racing Bulls,34,middle,MEDIUM,2,86.634,0.427,15,0.376,31,1.617,False,0.72
+2026-13-monza,TSU,Racing Bulls,35,middle,MEDIUM,2,86.696,0.572,14,0.447,32,1.797,False,0.72
+2026-13-monza,TSU,Racing Bulls,36,middle,MEDIUM,2,86.408,0.367,13,0.455,33,1.627,False,0.72
+2026-13-monza,TSU,Racing Bulls,37,middle,MEDIUM,2,86.383,0.408,14,0.449,34,1.703,False,0.72
+2026-13-monza,TSU,Racing Bulls,38,middle,MEDIUM,2,86.612,0.614,14,0.463,35,1.944,False,0.72
+2026-13-monza,TSU,Racing Bulls,39,middle,MEDIUM,2,86.607,0.372,14,0.465,36,1.737,False,0.72
+2026-13-monza,TSU,Racing Bulls,40,closing,MEDIUM,2,86.892,0.736,14,0.574,37,2.136,False,0.72
+2026-13-monza,TSU,Racing Bulls,41,closing,MEDIUM,2,87.25,0.829,16,0.646,38,2.264,False,0.72
+2026-13-monza,TSU,Racing Bulls,42,closing,MEDIUM,2,86.32,0.44,11,0.668,39,1.91,False,0.72
+2026-13-monza,TSU,Racing Bulls,43,closing,MEDIUM,2,86.789,0.511,14,0.593,40,2.016,False,0.72
+2026-13-monza,TSU,Racing Bulls,44,closing,MEDIUM,2,86.494,0.345,12,0.432,41,1.885,False,0.72
+2026-13-monza,TSU,Racing Bulls,45,closing,MEDIUM,2,86.533,0.575,13,0.477,42,2.15,False,0.72
+2026-13-monza,TSU,Racing Bulls,46,closing,MEDIUM,2,86.495,0.775,12,0.565,43,2.385,False,0.72
+2026-13-monza,TSU,Racing Bulls,47,closing,MEDIUM,2,86.589,0.806,14,0.719,44,2.451,False,0.72
+2026-13-monza,TSU,Racing Bulls,48,closing,MEDIUM,2,86.613,0.5,14,0.694,45,2.18,False,0.72
+2026-13-monza,TSU,Racing Bulls,49,closing,MEDIUM,2,86.53,0.135,12,0.48,46,1.85,False,0.72
+2026-13-monza,TSU,Racing Bulls,50,closing,MEDIUM,2,86.694,0.631,14,0.422,47,2.381,False,0.72
+2026-13-monza,TSU,Racing Bulls,51,closing,MEDIUM,2,86.755,0.522,14,0.429,48,2.307,False,0.72
+2026-13-monza,TSU,Racing Bulls,52,closing,MEDIUM,2,86.82,1.204,15,0.786,49,3.024,False,0.72
+2026-13-monza,TSU,Racing Bulls,53,closing,MEDIUM,2,86.64,1.062,14,0.929,50,2.917,False,0.72
+2026-13-monza,VER,Red Bull Racing,1,opening,SOFT,1,89.682,-3.994,4,-3.994,1,-3.959,False,0.72
+2026-13-monza,VER,Red Bull Racing,2,opening,SOFT,1,87.174,-0.621,6,-2.307,2,-0.551,False,0.72
+2026-13-monza,VER,Red Bull Racing,3,opening,SOFT,1,125.983,-10.795,3,-5.137,3,-10.69,False,0.72
+2026-13-monza,VER,Red Bull Racing,4,opening,MEDIUM,2,,,,-5.708,1,,False,0.35
+2026-13-monza,VER,Red Bull Racing,5,opening,MEDIUM,2,,,,-10.795,2,,False,0.35
+2026-13-monza,VER,Red Bull Racing,6,opening,MEDIUM,2,,,,,3,,False,0.35
+2026-13-monza,VER,Red Bull Racing,7,opening,MEDIUM,2,86.328,-1.924,1,-1.924,4,-1.679,False,0.72
+2026-13-monza,VER,Red Bull Racing,8,opening,MEDIUM,2,86.407,-1.272,5,-1.598,5,-0.992,False,0.72
+2026-13-monza,VER,Red Bull Racing,9,opening,MEDIUM,2,86.096,-0.909,3,-1.368,6,-0.594,False,0.72
+2026-13-monza,VER,Red Bull Racing,10,opening,MEDIUM,2,85.609,-1.651,1,-1.277,7,-1.301,False,0.72
+2026-13-monza,VER,Red Bull Racing,11,middle,MEDIUM,2,86.154,-1.226,3,-1.262,8,-0.841,False,0.72
+2026-13-monza,VER,Red Bull Racing,12,middle,MEDIUM,2,86.438,-0.666,5,-1.181,9,-0.246,False,0.72
+2026-13-monza,VER,Red Bull Racing,13,middle,MEDIUM,2,86.28,-0.61,6,-0.834,10,-0.155,False,0.72
+2026-13-monza,VER,Red Bull Racing,14,middle,MEDIUM,2,86.411,-0.66,5,-0.645,11,-0.17,False,0.72
+2026-13-monza,VER,Red Bull Racing,15,middle,MEDIUM,2,86.958,-0.035,10,-0.435,12,0.49,False,0.72
+2026-13-monza,VER,Red Bull Racing,16,middle,MEDIUM,2,86.445,-0.474,6,-0.39,13,0.086,False,0.72
+2026-13-monza,VER,Red Bull Racing,17,middle,MEDIUM,2,85.419,-1.558,2,-0.689,14,-0.963,False,0.72
+2026-13-monza,VER,Red Bull Racing,18,middle,MEDIUM,2,85.467,-1.372,2,-1.135,15,-0.742,False,0.72
+2026-13-monza,VER,Red Bull Racing,19,middle,MEDIUM,2,86.426,-0.511,5,-1.147,16,0.154,False,0.72
+2026-13-monza,VER,Red Bull Racing,20,middle,MEDIUM,2,86.073,-0.822,3,-0.902,17,-0.122,False,0.72
+2026-13-monza,VER,Red Bull Racing,21,middle,MEDIUM,2,86.171,-0.69,3,-0.674,18,0.045,False,0.72
+2026-13-monza,VER,Red Bull Racing,22,middle,MEDIUM,2,86.062,-0.99,2,-0.834,19,-0.22,False,0.72
+2026-13-monza,VER,Red Bull Racing,23,middle,MEDIUM,2,85.85,-0.968,4,-0.883,20,-0.163,False,0.72
+2026-13-monza,VER,Red Bull Racing,24,middle,MEDIUM,2,85.725,-1.045,2,-1.001,21,-0.205,False,0.72
+2026-13-monza,VER,Red Bull Racing,25,middle,MEDIUM,2,85.377,-1.377,3,-1.13,22,-0.502,False,0.72
+2026-13-monza,VER,Red Bull Racing,26,middle,MEDIUM,2,85.706,-0.923,3,-1.115,23,-0.013,False,0.72
+2026-13-monza,VER,Red Bull Racing,27,middle,MEDIUM,2,85.81,-2.068,3,-1.456,24,-1.123,False,0.72
+2026-13-monza,VER,Red Bull Racing,28,middle,MEDIUM,2,109.197,-2.063,5,-1.685,25,-1.083,False,0.72
+2026-13-monza,VER,Red Bull Racing,29,middle,HARD,3,108.394,20.354,18,5.408,1,21.369,False,0.72
+2026-13-monza,VER,Red Bull Racing,30,middle,HARD,3,85.13,-1.358,2,5.644,2,-0.308,False,0.72
+2026-13-monza,VER,Red Bull Racing,31,middle,HARD,3,84.514,-1.842,1,5.718,3,-0.757,False,0.72
+2026-13-monza,VER,Red Bull Racing,32,middle,HARD,3,85.391,-0.875,3,-1.358,4,0.245,False,0.72
+2026-13-monza,VER,Red Bull Racing,33,middle,HARD,3,84.9,-1.508,1,-1.408,5,-0.353,False,0.72
+2026-13-monza,VER,Red Bull Racing,34,middle,HARD,3,85.025,-1.182,2,-1.188,6,0.008,False,0.72
+2026-13-monza,VER,Red Bull Racing,35,middle,HARD,3,84.816,-1.308,2,-1.333,7,-0.083,False,0.72
+2026-13-monza,VER,Red Bull Racing,36,middle,HARD,3,84.677,-1.364,1,-1.285,8,-0.104,False,0.72
+2026-13-monza,VER,Red Bull Racing,37,middle,HARD,3,84.242,-1.733,1,-1.468,9,-0.438,False,0.72
+2026-13-monza,VER,Red Bull Racing,38,middle,HARD,3,84.705,-1.293,1,-1.463,10,0.037,False,0.72
+2026-13-monza,VER,Red Bull Racing,39,middle,HARD,3,84.614,-1.621,1,-1.549,11,-0.256,False,0.72
+2026-13-monza,VER,Red Bull Racing,40,closing,HARD,3,86.643,0.487,12,-0.809,12,1.887,False,0.72
+2026-13-monza,VER,Red Bull Racing,41,closing,HARD,3,87.132,0.711,15,-0.141,13,2.146,False,0.72
+2026-13-monza,VER,Red Bull Racing,42,closing,HARD,3,85.533,-0.347,4,0.284,14,1.123,False,0.72
+2026-13-monza,VER,Red Bull Racing,43,closing,HARD,3,85.03,-1.248,2,-0.295,15,0.257,False,0.72
+2026-13-monza,VER,Red Bull Racing,44,closing,HARD,3,85.158,-0.991,3,-0.862,16,0.549,False,0.72
+2026-13-monza,VER,Red Bull Racing,45,closing,HARD,3,85.411,-0.547,5,-0.929,17,1.028,False,0.72
+2026-13-monza,VER,Red Bull Racing,46,closing,HARD,3,85.235,-0.485,4,-0.674,18,1.125,False,0.72
+2026-13-monza,VER,Red Bull Racing,47,closing,HARD,3,85.209,-0.574,3,-0.535,19,1.071,False,0.72
+2026-13-monza,VER,Red Bull Racing,48,closing,HARD,3,84.844,-1.269,2,-0.776,20,0.411,False,0.72
+2026-13-monza,VER,Red Bull Racing,49,closing,HARD,3,85.023,-1.372,1,-1.072,21,0.343,False,0.72
+2026-13-monza,VER,Red Bull Racing,50,closing,HARD,3,85.392,-0.671,4,-1.104,22,1.079,False,0.72
+2026-13-monza,VER,Red Bull Racing,51,closing,HARD,3,85.419,-0.814,3,-0.952,23,0.971,False,0.72
+2026-13-monza,VER,Red Bull Racing,52,closing,HARD,3,85.373,-0.243,7,-0.576,24,1.577,False,0.72
+2026-13-monza,VER,Red Bull Racing,53,closing,HARD,3,84.804,-0.774,3,-0.61,25,1.081,False,0.72

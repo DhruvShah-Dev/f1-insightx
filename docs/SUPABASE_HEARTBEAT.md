@@ -16,7 +16,7 @@ That route performs one read-only anon-key query against `public.races`:
 select id from races limit 1
 ```
 
-It does not use the service-role key, does not call Analytics, Strategy Lab, Race Analysis, or raw telemetry routes, and returns only a small health payload.
+It does not use the service-role key, does not call Compare, Analysis, strategy-modeling, or raw telemetry routes, and returns only a small health payload.
 
 ## Workflow
 

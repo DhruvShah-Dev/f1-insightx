@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 13,
+  "event_name": "Italian Grand Prix",
+  "event_format": "conventional",
+  "session_code": "FP3",
+  "session_name": "Practice 3",
+  "status": "complete",
+  "started_at": "2026-09-08T17:18:51Z",
+  "completed_at": "2026-09-08T17:19:05Z",
+  "source": "fastf1_staged_session_v2"
+}

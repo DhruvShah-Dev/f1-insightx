@@ -7,11 +7,11 @@
     "npm": ">=10.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "test": "tsx --test src/lib/auth/navigation.test.ts src/lib/auth/supabase-middleware.test.ts src/lib/security/rate-limit.test.ts src/lib/pit-wall-picks/scoring.test.ts src/lib/server/runtime-source.test.ts src/lib/server/csv.test.ts src/lib/server/supabase-public-boundary.test.ts src/lib/server/strategy-lab-simulator.test.ts src/lib/server/analytics-product.test.ts src/lib/server/achievements-product.test.ts src/lib/server/standings.test.ts src/lib/ui/home-hero.test.ts src/app/api/analytics/compare/route.test.ts src/app/api/strategy-lab/races/[raceId]/response.test.ts"
+    "dev": "node ./archived-app.cjs",
+    "build": "node ./archived-app.cjs",
+    "start": "node ./archived-app.cjs",
+    "lint": "node ./archived-app.cjs",
+    "test": "node ./archived-app.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.0",

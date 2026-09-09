@@ -1,12 +1,12 @@
-# Analytics
+# Compare
 
-Analytics is the driver-vs-driver telemetry comparison surface. It uses precomputed product views only; it is not a raw telemetry explorer.
+Compare is the driver-vs-driver telemetry comparison surface. It uses precomputed analytics product views only; it is not a raw telemetry explorer.
 
 The current UI is an adaptive telemetry workstation: a compact command deck, integrated battle rail, real circuit geometry, representative SVG traces, synchronized approximate-segment focus, and a concise engineering strip.
 
 ## Runtime Data Contract
 
-The Analytics API reads:
+The Compare data layer reads:
 
 - `analytics_session_index`
 - `analytics_driver_comparison`
@@ -22,11 +22,10 @@ The runtime must not read raw FastF1 parquet telemetry, scan source directories,
 
 Representative telemetry traces must come from offline trace shards or precomputed product payloads. The page may render SVG traces, but it must not smooth, infer, or rebuild raw telemetry at request time.
 
-## API Surfaces
+## Runtime Surface
 
-- `GET /api/analytics/sessions`
-- `GET /api/analytics/session/[sessionId]/drivers`
-- `GET /api/analytics/compare?sessionId=&driverA=&driverB=&mode=`
+- `/vs`
+- `/vs?slug=<race-analysis-id>&a=<driver-code>&b=<driver-code>`
 
 Supported comparison modes:
 

@@ -48,3 +48,7 @@ race_analysis_id,story_point_id,lap_number,phase,title,summary,evidence_type,dri
 2026-12-zandvoort,2026-12-zandvoort-story-03,70,closing,SAI showed stable tyre life,SOFT stint degradation measured at -5.08s/lap.,derived,SAI,Williams,stint degradation slope,0.58,0.517,Traffic and fuel effects are approximated.
 2026-12-zandvoort,2026-12-zandvoort-story-04,1,opening,Track-status phase shaped pace,Yellow context covered laps 1-1; cause unavailable.,inferred,,,FastF1 track_status code,0.45,0.85,Track-status only; no message-level cause is available.
 2026-12-zandvoort,2026-12-zandvoort-story-05,31,middle,Weather shifted the grip picture,Rainfall was present in the timing weather feed.,observed,,,rainfall,0.6,1.0,
+2026-13-monza,2026-13-monza-story-01,53,result,ANT controlled the result,ANT won for Mercedes.,observed,ANT,Mercedes,classified result,0.9,0.992,
+2026-13-monza,2026-13-monza-story-02,53,result,ANT gained the most ground,ANT finished 18 places better than the start.,derived,ANT,Mercedes,start-to-finish position delta,1.0,0.55,"Position movement is lap-position derived, not pass-by-pass verified."
+2026-13-monza,2026-13-monza-story-03,12,middle,LAW showed stable tyre life,HARD stint degradation measured at -4.39s/lap.,derived,LAW,Red Bull Racing,stint degradation slope,0.58,0.583,Traffic and fuel effects are approximated.
+2026-13-monza,2026-13-monza-story-04,2,opening,Track-status phase shaped pace,Mixed context covered laps 2-3; cause unavailable.,inferred,,,FastF1 track_status code,0.55,0.65,Track-status only; no message-level cause is available.

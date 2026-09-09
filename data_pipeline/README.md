@@ -1,6 +1,9 @@
 # FastF1 Data Pipeline
 
-This directory contains the raw FastF1 ingestion foundation for F1 InsightX. Treat it as production data infrastructure: it feeds user-facing predictions, telemetry comparisons, race analysis, and strategy views.
+This directory contains the historical raw FastF1 ingestion foundation for F1
+InsightX. The active maintained pipeline now runs primarily from scripts under
+`data/`, but this directory remains useful historical context for ingestion
+design and storage conventions.
 
 The pipeline stores cache-backed session downloads, raw extracts, and logs that feed the canonical product pipeline under `data/`.
 
@@ -63,7 +66,10 @@ The ingestion CLI is built to process:
 
 Future 2026 events are skipped dynamically using schedule/session metadata.
 
-The current local archive summary is generated at `2026-07-09T16:01:09Z`: 674 completed sessions out of 698 targets, with telemetry files present for 663 sessions.
+For the current release state, use `data/season_state.json` and the validation
+reports under `data/reports/`. As of the September 8, 2026 refresh, the active
+product data is current through the 2026 Italian Grand Prix, round 13, with
+Spanish Grand Prix race-week outputs for round 14.
 
 ## Raw storage layout
 

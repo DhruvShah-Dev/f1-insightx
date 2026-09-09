@@ -1,6 +1,10 @@
 ## Circuit Layout Assets
 
-Stored under `public/assets/circuits`.
+This attribution file belongs to the archived `apps/web` UI. Preserve it for
+historical asset provenance, but add new active-app asset documentation under
+root `src` or top-level `docs`.
+
+Stored under the archived app's `public/assets/circuits` directory.
 
 - `bahrain.svg`
   - Source: Wikimedia Commons
@@ -27,7 +31,7 @@ These files are stored locally so the app does not hotlink third-party media fro
 
 ## Team Visual Placeholders
 
-Stored under `public/assets/teams`.
+Stored under the archived app's `public/assets/teams` directory.
 
 - `car-placeholder.svg`
   - Local project placeholder for teams that do not yet have a consistent open-license media set
@@ -37,8 +41,8 @@ Stored under `public/assets/teams`.
 
 ## 2026 Team Car Assets
 
-Stored under `public/assets/teams/2026`.
-Runtime manifest paths resolve through `public/assets/teams/2026/cars`.
+Stored under the archived app's `public/assets/teams/2026` directory.
+Archived runtime manifest paths resolved through `public/assets/teams/2026/cars`.
 
 These files are stored locally so runtime cards do not hotlink unstable third-party media URLs.
 
@@ -67,9 +71,12 @@ These files are stored locally so runtime cards do not hotlink unstable third-pa
 
 ## 2026 Driver Portrait Assets
 
-Stored under `public/assets/drivers/2026`.
-Runtime body/cutout paths resolve through `public/assets/drivers/2026/body`.
-Dedicated headshot crops should be added under `public/assets/drivers/2026/headshots` when available; until then, UI helpers fall back to the body/cutout source.
+Stored under the archived app's `public/assets/drivers/2026` directory.
+Archived runtime body/cutout paths resolved through
+`public/assets/drivers/2026/body`.
+Dedicated headshot crops were intended for
+`public/assets/drivers/2026/headshots`; active-app assets should be documented
+with the current root UI helper paths instead.
 
 These files are stored locally so the standings cards do not depend on runtime hotlinks.
 
@@ -85,7 +92,8 @@ These files are stored locally so the standings cards do not depend on runtime h
 
 ## Team Logos
 
-Stored under `public/assets/teams/logos` as a single canonical set:
+Stored under the archived app's `public/assets/teams/logos` directory as a
+single canonical set:
 
 - One file per team: `<team-slug>.png`
 - Transparent background, monochrome white artwork, uniform 512x256 canvas
@@ -98,7 +106,7 @@ variant folders or mixed SVG/PNG sources.
 
 ## Product Logo Variants
 
-Stored under `public/assets/logos/product`.
+Stored under the archived app's `public/assets/logos/product` directory.
 
 - `dark/wordmark.svg`
 - `dark/wordmark.png`

@@ -110,11 +110,11 @@ function driverRows(
   note?: (driver: Driver) => string,
 ) {
   return drivers
-    .map((driver) => {
+    .flatMap((driver) => {
       const value = valueOf(driver, key);
-      if (value == null) return null;
+      if (value == null) return [];
       const t = team(driver.team);
-      return {
+      const row: BattleRow = {
         id: driver.driverId,
         label: driver.name,
         code: driver.code,
@@ -122,10 +122,11 @@ function driverRows(
         value,
         display: display(value),
         color: t.color,
-        note: note?.(driver),
-      } satisfies BattleRow;
+      };
+      const rowNote = note?.(driver);
+      if (rowNote) row.note = rowNote;
+      return [row];
     })
-    .filter((row): row is BattleRow => row != null)
     .sort((a, b) => b.value - a.value);
 }
 
@@ -135,20 +136,21 @@ function constructorRows(
   display: (value: number) => string = whole,
 ) {
   return constructors
-    .map((constructor) => {
+    .flatMap((constructor) => {
       const value = constructor[key];
-      if (typeof value !== "number" || !Number.isFinite(value)) return null;
+      if (typeof value !== "number" || !Number.isFinite(value)) return [];
       const t = team(constructor.name);
-      return {
-        id: constructor.id,
-        label: t.name,
-        teamName: constructor.name,
-        value,
-        display: display(value),
-        color: t.color,
-      } satisfies BattleRow;
+      return [
+        {
+          id: constructor.id,
+          label: t.name,
+          teamName: constructor.name,
+          value,
+          display: display(value),
+          color: t.color,
+        },
+      ];
     })
-    .filter((row): row is BattleRow => row != null)
     .sort((a, b) => b.value - a.value);
 }
 
@@ -308,7 +310,12 @@ function Championship() {
                   value={constructorLeader ? team(constructorLeader.name).short : "TBD"}
                   note={`${whole(constructorLeader?.points)} pts`}
                 />
-                <HeroStat icon={Eye} label="Battle boards" value={whole(trackedBattles)} note="Top 5 shown" />
+                <HeroStat
+                  icon={Eye}
+                  label="Battle boards"
+                  value={whole(trackedBattles)}
+                  note="Top 5 shown"
+                />
               </div>
             </div>
 
@@ -422,7 +429,9 @@ function HeroStat({
 function TrackSignal({ label, value }: { label: string; value: string }) {
   return (
     <div className="border-r border-[#2a303a] p-3 last:border-r-0">
-      <span className="block text-[9px] font-black uppercase tracking-widest text-[#9aa3ad]">{label}</span>
+      <span className="block text-[9px] font-black uppercase tracking-widest text-[#9aa3ad]">
+        {label}
+      </span>
       <span className="num mt-1 block text-sm font-black uppercase">{value}</span>
     </div>
   );
@@ -467,7 +476,13 @@ function StandingsStrip({
             </span>
             <div className="flex min-w-0 items-center gap-3">
               {row.code ? (
-                <DriverAvatar code={row.code} teamName={row.teamName} name={row.label} size="sm" showCode={false} />
+                <DriverAvatar
+                  code={row.code}
+                  teamName={row.teamName}
+                  name={row.label}
+                  size="sm"
+                  showCode={false}
+                />
               ) : (
                 <TeamBadge teamName={row.teamName} />
               )}
@@ -486,7 +501,15 @@ function StandingsStrip({
   );
 }
 
-function BattleCard({ battle, delay, onOpen }: { battle: Battle; delay: number; onOpen: () => void }) {
+function BattleCard({
+  battle,
+  delay,
+  onOpen,
+}: {
+  battle: Battle;
+  delay: number;
+  onOpen: () => void;
+}) {
   const Icon = battle.icon;
   const topRows = battle.rows.slice(0, 5);
   const max = Math.max(1, ...topRows.map((row) => row.value));
@@ -520,7 +543,9 @@ function BattleCard({ battle, delay, onOpen }: { battle: Battle; delay: number; 
         <div className="grid min-h-[210px] place-items-center border border-[#2a303a] bg-[#0c1016] p-5 text-center">
           <div>
             <p className="text-sm font-black uppercase text-[#ff6b7a]">Not tracked yet</p>
-            <p className="mt-2 text-sm font-semibold leading-6 text-[#a9b0bb]">{battle.unavailable}</p>
+            <p className="mt-2 text-sm font-semibold leading-6 text-[#a9b0bb]">
+              {battle.unavailable}
+            </p>
           </div>
         </div>
       ) : (
@@ -555,22 +580,35 @@ function RankRow({
         </span>
         <div className="flex min-w-0 items-center gap-2">
           {row.code ? (
-            <DriverAvatar code={row.code} teamName={row.teamName} name={row.label} size="sm" showCode={false} />
+            <DriverAvatar
+              code={row.code}
+              teamName={row.teamName}
+              name={row.label}
+              size="sm"
+              showCode={false}
+            />
           ) : (
             <TeamBadge teamName={row.teamName} />
           )}
           <div className="min-w-0">
             <p className="truncate text-sm font-black uppercase">{row.code ?? row.label}</p>
-            {!compact ? <p className="truncate text-xs font-semibold text-[#a9b0bb]">{row.label}</p> : null}
+            {!compact ? (
+              <p className="truncate text-xs font-semibold text-[#a9b0bb]">{row.label}</p>
+            ) : null}
           </div>
         </div>
         <div className="text-right">
           <span className="num block text-sm font-black">{row.display}</span>
-          {row.note ? <span className="num block text-[10px] font-bold text-[#9aa3ad]">{row.note}</span> : null}
+          {row.note ? (
+            <span className="num block text-[10px] font-bold text-[#9aa3ad]">{row.note}</span>
+          ) : null}
         </div>
       </div>
       <div className="h-2 border border-[#2a303a] bg-[#0c1016]">
-        <div className="h-full transition-all duration-500" style={{ width: `${width}%`, backgroundColor: row.color }} />
+        <div
+          className="h-full transition-all duration-500"
+          style={{ width: `${width}%`, backgroundColor: row.color }}
+        />
       </div>
     </div>
   );
@@ -618,7 +656,9 @@ function BattleDialog({ battle, onClose }: { battle: Battle; onClose: () => void
             </div>
           ) : (
             <div className="grid min-h-56 place-items-center border border-[#2a303a] bg-[#0c1016] p-6 text-center">
-              <p className="text-sm font-black uppercase text-[#a9b0bb]">No ranked entries for this board.</p>
+              <p className="text-sm font-black uppercase text-[#a9b0bb]">
+                No ranked entries for this board.
+              </p>
             </div>
           )}
         </div>

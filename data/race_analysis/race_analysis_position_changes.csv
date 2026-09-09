@@ -263,3 +263,25 @@ race_analysis_id,driver,team,start_position,finish_position,net_position_change,
 2026-12-zandvoort,STR,Aston Martin,19,20,-1,7.0,2.0,opening,middle,0.667,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-12-zandvoort,BEA,Haas F1 Team,20,21,-1,2.0,0.0,closing,none,0.067,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-12-zandvoort,VER,Red Bull Racing,7,22,-15,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,ANT,Mercedes,19,1,18,15.0,3.0,opening,middle,0.767,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,RUS,Mercedes,2,2,0,2.0,1.0,opening,middle,0.2,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,VER,Red Bull Racing,5,3,2,7.0,1.0,opening,middle,0.5,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,NOR,McLaren,8,4,4,6.0,1.0,middle,opening,0.367,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,PIA,McLaren,6,5,1,9.0,1.0,middle,opening,0.667,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,HAM,Ferrari,4,6,-2,9.0,2.0,opening,middle,0.6,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,GAS,Alpine,1,7,-6,2.0,0.0,middle,opening,0.333,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,LIN,Racing Bulls,9,8,1,0.0,1.0,opening,opening,0.067,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,COL,Alpine,7,9,-2,7.0,2.0,opening,opening,0.7,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,TSU,Racing Bulls,15,10,5,5.0,1.0,opening,closing,0.233,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,BOR,Audi,10,11,-1,7.0,0.0,middle,opening,0.467,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,HUL,Audi,12,12,0,6.0,0.0,opening,middle,0.367,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,SAI,Williams,13,13,0,5.0,2.0,opening,opening,0.367,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,LAW,Red Bull Racing,22,14,8,11.0,4.0,opening,middle,0.833,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,BEA,Haas F1 Team,11,15,-4,0.0,1.0,opening,opening,0.267,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,OCO,Haas F1 Team,14,16,-2,3.0,2.0,opening,opening,0.467,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,ALB,Williams,20,17,3,5.0,0.0,middle,closing,0.3,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,PER,Cadillac,17,18,-1,4.0,0.0,middle,opening,0.3,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,BOT,Cadillac,16,19,-3,3.0,2.0,opening,opening,0.267,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,STR,Aston Martin,18,20,-2,3.0,1.0,opening,opening,0.267,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,ALO,Aston Martin,21,21,0,6.0,3.0,opening,closing,0.533,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-13-monza,LEC,Ferrari,3,22,-19,0.0,0.0,none,closing,0.633,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.

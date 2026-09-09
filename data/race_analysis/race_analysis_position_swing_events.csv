@@ -2349,3 +2349,205 @@ race_analysis_id,event_id,driver,team,start_lap,end_lap,position_delta,phase,eve
 2026-12-zandvoort,2026-12-zandvoort-pos-0296,TSU,Racing Bulls,45,45,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
 2026-12-zandvoort,2026-12-zandvoort-pos-0297,TSU,Racing Bulls,47,47,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
 2026-12-zandvoort,2026-12-zandvoort-pos-0298,TSU,Racing Bulls,57,57,-1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0001,ALB,Williams,9,9,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0002,ALB,Williams,12,12,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0003,ALB,Williams,27,27,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0004,ALB,Williams,28,28,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0005,ALB,Williams,43,43,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0006,ALB,Williams,46,46,-2.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0007,ALB,Williams,47,47,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0008,ALO,Aston Martin,2,2,3.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0009,ALO,Aston Martin,3,3,-2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0010,ALO,Aston Martin,6,6,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0011,ALO,Aston Martin,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0012,ALO,Aston Martin,13,13,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0013,ALO,Aston Martin,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0014,ALO,Aston Martin,17,17,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0015,ALO,Aston Martin,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0016,ALO,Aston Martin,19,19,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0017,ALO,Aston Martin,22,22,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0018,ALO,Aston Martin,23,23,-3.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0019,ANT,Mercedes,2,2,2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0020,ANT,Mercedes,6,6,4.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0021,ANT,Mercedes,7,7,2.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0022,ANT,Mercedes,10,10,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0023,ANT,Mercedes,12,12,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0024,ANT,Mercedes,13,13,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0025,ANT,Mercedes,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0026,ANT,Mercedes,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0027,ANT,Mercedes,23,23,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0028,ANT,Mercedes,29,29,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0029,ANT,Mercedes,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0030,ANT,Mercedes,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0031,ANT,Mercedes,35,35,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0032,ANT,Mercedes,37,37,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0033,ANT,Mercedes,50,50,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0034,BEA,Haas F1 Team,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0035,BEA,Haas F1 Team,3,3,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0036,BEA,Haas F1 Team,9,9,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0037,BEA,Haas F1 Team,27,27,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0038,BEA,Haas F1 Team,28,28,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0039,BEA,Haas F1 Team,47,47,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0040,BEA,Haas F1 Team,50,50,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0041,BEA,Haas F1 Team,52,52,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0042,BOR,Audi,6,6,-5.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0043,BOR,Audi,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0044,BOR,Audi,9,9,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0045,BOR,Audi,11,11,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0046,BOR,Audi,12,12,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0047,BOR,Audi,15,15,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0048,BOR,Audi,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0049,BOR,Audi,27,27,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0050,BOR,Audi,29,29,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0051,BOT,Cadillac,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0052,BOT,Cadillac,3,3,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0053,BOT,Cadillac,6,6,-2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0054,BOT,Cadillac,8,8,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0055,BOT,Cadillac,13,13,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0056,BOT,Cadillac,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0057,BOT,Cadillac,24,24,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0058,COL,Alpine,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0059,COL,Alpine,3,3,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0060,COL,Alpine,6,6,-11.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0061,COL,Alpine,7,7,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0062,COL,Alpine,12,12,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0063,COL,Alpine,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0064,COL,Alpine,21,21,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0065,COL,Alpine,22,22,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0066,COL,Alpine,28,28,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0067,COL,Alpine,29,29,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0068,COL,Alpine,41,41,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0069,GAS,Alpine,2,2,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0070,GAS,Alpine,7,7,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0071,GAS,Alpine,10,10,-3.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0072,GAS,Alpine,21,21,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0073,GAS,Alpine,29,29,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0074,GAS,Alpine,30,30,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0075,GAS,Alpine,31,31,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0076,HAM,Ferrari,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0077,HAM,Ferrari,3,3,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0078,HAM,Ferrari,6,6,3.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0079,HAM,Ferrari,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0080,HAM,Ferrari,10,10,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0081,HAM,Ferrari,12,12,-2.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0082,HAM,Ferrari,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0083,HAM,Ferrari,19,19,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0084,HAM,Ferrari,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0085,HAM,Ferrari,25,25,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0086,HAM,Ferrari,29,29,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0087,HAM,Ferrari,35,35,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0088,HAM,Ferrari,37,37,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0089,HAM,Ferrari,42,42,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0090,HUL,Audi,6,6,2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0091,HUL,Audi,8,8,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0092,HUL,Audi,12,12,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0093,HUL,Audi,16,16,-2.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0094,HUL,Audi,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0095,HUL,Audi,22,22,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0096,HUL,Audi,28,28,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0097,HUL,Audi,43,43,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0098,HUL,Audi,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0099,LAW,Red Bull Racing,2,2,3.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0100,LAW,Red Bull Racing,3,3,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0101,LAW,Red Bull Racing,6,6,3.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0102,LAW,Red Bull Racing,8,8,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0103,LAW,Red Bull Racing,12,12,-6.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0104,LAW,Red Bull Racing,13,13,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0105,LAW,Red Bull Racing,21,21,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0106,LAW,Red Bull Racing,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0107,LAW,Red Bull Racing,24,24,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0108,LAW,Red Bull Racing,36,36,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0109,LAW,Red Bull Racing,46,46,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0110,LAW,Red Bull Racing,52,52,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0111,LEC,Ferrari,2,2,-19.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0112,LIN,Racing Bulls,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0113,LIN,Racing Bulls,7,7,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0114,NOR,McLaren,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0115,NOR,McLaren,7,7,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0116,NOR,McLaren,21,21,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0117,NOR,McLaren,29,29,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0118,NOR,McLaren,31,31,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0119,NOR,McLaren,33,33,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0120,NOR,McLaren,42,42,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0121,NOR,McLaren,48,48,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0122,NOR,McLaren,49,49,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0123,NOR,McLaren,53,53,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0124,OCO,Haas F1 Team,2,2,2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0125,OCO,Haas F1 Team,6,6,-3.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0126,OCO,Haas F1 Team,12,12,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0127,OCO,Haas F1 Team,15,15,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0128,OCO,Haas F1 Team,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0129,OCO,Haas F1 Team,18,18,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0130,OCO,Haas F1 Team,21,21,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0131,OCO,Haas F1 Team,27,27,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0132,OCO,Haas F1 Team,28,28,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0133,OCO,Haas F1 Team,36,36,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0134,OCO,Haas F1 Team,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0135,PER,Cadillac,9,9,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0136,PER,Cadillac,13,13,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0137,PER,Cadillac,16,16,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0138,PER,Cadillac,17,17,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0139,PER,Cadillac,18,18,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0140,PER,Cadillac,19,19,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0141,PER,Cadillac,22,22,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0142,PER,Cadillac,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0143,PER,Cadillac,24,24,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0144,PIA,McLaren,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0145,PIA,McLaren,3,3,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0146,PIA,McLaren,6,6,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0147,PIA,McLaren,7,7,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0148,PIA,McLaren,10,10,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0149,PIA,McLaren,12,12,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0150,PIA,McLaren,13,13,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0151,PIA,McLaren,16,16,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0152,PIA,McLaren,19,19,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0153,PIA,McLaren,23,23,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0154,PIA,McLaren,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0155,PIA,McLaren,29,29,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-13-monza,2026-13-monza-pos-0156,PIA,McLaren,37,37,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0157,PIA,McLaren,39,39,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0158,PIA,McLaren,41,41,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0159,PIA,McLaren,43,43,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0160,PIA,McLaren,48,48,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0161,PIA,McLaren,49,49,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0162,PIA,McLaren,53,53,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0163,RUS,Mercedes,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0164,RUS,Mercedes,12,12,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0165,RUS,Mercedes,15,15,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0166,RUS,Mercedes,18,18,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0167,RUS,Mercedes,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0168,RUS,Mercedes,50,50,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0169,SAI,Williams,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0170,SAI,Williams,3,3,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0171,SAI,Williams,6,6,2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0172,SAI,Williams,9,9,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0173,SAI,Williams,11,11,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0174,SAI,Williams,16,16,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0175,SAI,Williams,27,27,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0176,SAI,Williams,28,28,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0177,SAI,Williams,46,46,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0178,SAI,Williams,50,50,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0179,STR,Aston Martin,2,2,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0180,STR,Aston Martin,3,3,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0181,STR,Aston Martin,6,6,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0182,STR,Aston Martin,7,7,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0183,STR,Aston Martin,8,8,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0184,STR,Aston Martin,13,13,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0185,STR,Aston Martin,21,21,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0186,STR,Aston Martin,24,24,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0187,TSU,Racing Bulls,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0188,TSU,Racing Bulls,6,6,4.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0189,TSU,Racing Bulls,9,9,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0190,TSU,Racing Bulls,41,41,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0191,VER,Red Bull Racing,2,2,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0192,VER,Red Bull Racing,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0193,VER,Red Bull Racing,12,12,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0194,VER,Red Bull Racing,15,15,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0195,VER,Red Bull Racing,16,16,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0196,VER,Red Bull Racing,29,29,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0197,VER,Red Bull Racing,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-13-monza,2026-13-monza-pos-0198,VER,Red Bull Racing,33,33,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0199,VER,Red Bull Racing,37,37,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0200,VER,Red Bull Racing,39,39,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0201,VER,Red Bull Racing,41,41,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-13-monza,2026-13-monza-pos-0202,VER,Red Bull Racing,43,43,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.

@@ -21,9 +21,9 @@ These tasks require upstream releases, production credentials, deployed-preview 
 
 - Manually confirm latest completed race, next race, and current race-week facts against the official F1 calendar before production promotion.
 - Refresh `season_state` before a current-state release if `python validate_product_manifest.py` continues to report staleness.
-- Rebuild Strategy Lab product data for the upcoming/current race when that surface is expected to support the active race week.
+- Rebuild strategy-modeling product data for the upcoming/current race when it is expected to support active Race Week or Picks surfaces.
 
 ## Manual Preview QA
 
 - Run deployed-preview QA for auth sign-in/sign-out, protected account/profile flows, account export, username checks/suggestions, and CSP report-only behavior.
-- Verify Race Week, Home, Strategy Lab, Race Analysis, Championship, Picks, privacy, terms, and cookies pages across desktop and mobile viewports.
+- Verify Race Week, Home, Compare, Analysis, Championship, Picks, privacy, terms, and cookies pages across desktop and mobile viewports.

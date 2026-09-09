@@ -10,7 +10,7 @@ This project uses Supabase in two distinct ways:
 Put these in the repo-root `.env.local`:
 
 ```env
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_APP_URL=http://127.0.0.1:8080
 VITE_SUPABASE_URL=...
 VITE_SUPABASE_PUBLISHABLE_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
@@ -65,8 +65,8 @@ This:
 
 For local development, include:
 
-- `http://localhost:3000`
-- `http://localhost:3000/auth/callback`
+- `http://127.0.0.1:8080`
+- `http://127.0.0.1:8080/auth/callback`
 
 For production, verify:
 

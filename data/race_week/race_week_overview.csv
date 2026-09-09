@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-13-monza,2026,13,2026-13-monza,Italian Grand Prix,monza,monza,2026-09-06T13:00:00Z,upcoming,False,2026-12-zandvoort,Balanced circuit,High,0.0,0.26775990909090913,2026-08-24T18:50:28Z,race_week_20260824T185028Z,race_week_overview_v2
+2026-14-madring,2026,14,2026-14-madring,Spanish Grand Prix,madring,madring,2026-09-13T13:00:00Z,upcoming,False,2026-13-monza,Balanced circuit,High,0.0,0.25319477272727275,2026-09-08T17:23:19Z,race_week_20260908T172319Z,race_week_overview_v2

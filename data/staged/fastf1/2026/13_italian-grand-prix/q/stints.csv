@@ -1,0 +1,100 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026,13,Italian Grand Prix,Q,ALB,Williams,1.0,SOFT,2,96.0385,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,ALB,Williams,2.0,SOFT,2,99.3395,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,1.0,SOFT,2,100.7015,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,ALO,Aston Martin,2.0,SOFT,2,94.953,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,1.0,SOFT,2,102.0765,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,2.0,SOFT,1,97.573,0.0,0.0,5,5
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,3.0,SOFT,2,96.09,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,4.0,SOFT,2,94.8165,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,5.0,SOFT,1,114.259,0.0,0.0,8,8
+2026,13,Italian Grand Prix,Q,ANT,Mercedes,6.0,SOFT,3,103.46933333333334,0.0,-0.5,1,3
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,1.0,SOFT,2,93.338,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,2.0,SOFT,2,93.678,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,3.0,SOFT,2,93.2115,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,4.0,SOFT,2,95.152,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BEA,Haas F1 Team,5.0,SOFT,2,92.1515,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BOR,Audi,1.0,SOFT,2,98.28,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BOR,Audi,2.0,SOFT,2,100.4325,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BOR,Audi,3.0,SOFT,2,95.7465,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BOR,Audi,4.0,SOFT,2,99.155,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,1.0,SOFT,2,95.3155,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,2.0,SOFT,2,95.7185,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,BOT,Cadillac,3.0,SOFT,2,101.01,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,COL,Alpine,1.0,SOFT,2,100.5325,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,COL,Alpine,2.0,SOFT,2,99.944,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,COL,Alpine,3.0,SOFT,2,97.061,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,COL,Alpine,4.0,SOFT,2,98.74000000000001,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,COL,Alpine,5.0,SOFT,2,99.11699999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,COL,Alpine,6.0,SOFT,1,82.22,0.0,0.0,2,2
+2026,13,Italian Grand Prix,Q,GAS,Alpine,1.0,SOFT,2,99.97999999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,GAS,Alpine,2.0,SOFT,2,99.3955,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,GAS,Alpine,3.0,SOFT,2,98.48349999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,GAS,Alpine,4.0,SOFT,2,98.271,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,GAS,Alpine,5.0,SOFT,2,98.17699999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,GAS,Alpine,6.0,SOFT,1,81.786,0.0,0.0,2,2
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,1.0,SOFT,2,101.72399999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,2.0,SOFT,2,91.9275,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,3.0,SOFT,2,97.069,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,4.0,SOFT,2,90.6445,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,HAM,Ferrari,5.0,SOFT,1,82.011,0.0,0.0,2,2
+2026,13,Italian Grand Prix,Q,HUL,Audi,1.0,SOFT,2,94.50200000000001,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,HUL,Audi,2.0,SOFT,2,98.941,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,HUL,Audi,3.0,SOFT,2,94.8985,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,HUL,Audi,4.0,SOFT,2,98.8075,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,1.0,MEDIUM,4,97.01849999999999,3.3333333333333335,0.39999999999999997,2,5
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,2.0,SOFT,3,106.80966666666666,0.0,0.5,2,4
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,3.0,SOFT,2,91.3015,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LAW,Red Bull Racing,4.0,SOFT,4,98.88399999999999,3.3333333333333335,0.0,2,5
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,1.0,SOFT,2,99.7575,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,2.0,SOFT,3,105.55233333333335,0.0,-0.5,4,6
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,3.0,SOFT,2,92.057,10.0,0.0,8,9
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,4.0,SOFT,2,94.79150000000001,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,5.0,SOFT,2,93.59700000000001,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LEC,Ferrari,6.0,SOFT,1,82.146,0.0,0.0,2,2
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,1.0,SOFT,2,94.1195,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,2.0,SOFT,2,95.31450000000001,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,3.0,SOFT,2,92.827,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,4.0,SOFT,2,93.90299999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,5.0,SOFT,2,92.76849999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,LIN,Racing Bulls,6.0,SOFT,1,82.286,0.0,0.0,2,2
+2026,13,Italian Grand Prix,Q,NOR,McLaren,1.0,SOFT,3,98.83633333333334,0.0,0.5,2,4
+2026,13,Italian Grand Prix,Q,NOR,McLaren,2.0,SOFT,2,97.924,10.0,0.0,6,7
+2026,13,Italian Grand Prix,Q,NOR,McLaren,3.0,SOFT,2,98.00899999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,NOR,McLaren,4.0,SOFT,2,96.1485,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,NOR,McLaren,5.0,SOFT,2,93.408,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,NOR,McLaren,6.0,SOFT,1,82.573,0.0,0.0,2,2
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,1.0,SOFT,2,96.959,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,2.0,SOFT,2,94.1105,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,3.0,SOFT,2,100.0035,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,4.0,SOFT,2,95.05,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,OCO,Haas F1 Team,5.0,SOFT,2,101.7945,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,PER,Cadillac,1.0,SOFT,2,94.4855,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,PER,Cadillac,2.0,SOFT,2,94.32849999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,PER,Cadillac,3.0,SOFT,2,100.895,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,PIA,McLaren,1.0,SOFT,2,101.4705,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,PIA,McLaren,2.0,SOFT,3,98.219,0.0,-0.5,5,7
+2026,13,Italian Grand Prix,Q,PIA,McLaren,3.0,SOFT,2,95.2355,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,PIA,McLaren,4.0,SOFT,2,96.2025,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,PIA,McLaren,5.0,SOFT,2,94.34549999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,1.0,MEDIUM,2,100.9805,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,2.0,MEDIUM,1,101.617,0.0,0.0,5,5
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,3.0,SOFT,2,95.801,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,4.0,SOFT,2,95.3995,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,5.0,SOFT,2,93.6375,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,RUS,Mercedes,6.0,SOFT,1,81.846,0.0,0.0,2,2
+2026,13,Italian Grand Prix,Q,SAI,Williams,1.0,SOFT,2,97.17150000000001,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,SAI,Williams,2.0,SOFT,2,97.786,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,SAI,Williams,3.0,SOFT,2,97.74799999999999,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,SAI,Williams,4.0,SOFT,2,94.886,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,SAI,Williams,5.0,SOFT,2,100.0035,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,1.0,SOFT,2,100.3115,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,2.0,SOFT,2,99.8785,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,STR,Aston Martin,3.0,SOFT,2,101.2525,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,1.0,SOFT,2,93.714,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,TSU,Racing Bulls,2.0,SOFT,2,97.96700000000001,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,1.0,SOFT,2,98.223,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,2.0,SOFT,2,90.7605,10.0,0.0,5,6
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,3.0,SOFT,4,98.74924999999999,3.3333333333333335,0.7999999999999999,2,5
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,4.0,SOFT,2,92.3615,10.0,0.0,2,3
+2026,13,Italian Grand Prix,Q,VER,Red Bull Racing,5.0,SOFT,1,82.381,0.0,0.0,2,2

@@ -1,37 +1,53 @@
 race_analysis_id,surface,label,href,relevance_note,enabled,unavailable_reason
-2026-01-albert_park,race_archive,Race archive,/races/2026-01-albert_park,Classification and event facts.,True,
-2026-01-albert_park,analytics,Telemetry comparison,/analytics?sessionId=2026_01_R_Australian Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-01-albert_park,strategy_lab,Strategy Lab,/lab?raceId=2026-01-albert_park,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-02-shanghai,race_archive,Race archive,/races/2026-02-shanghai,Classification and event facts.,True,
-2026-02-shanghai,analytics,Telemetry comparison,/analytics?sessionId=2026_02_R_Chinese Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-02-shanghai,strategy_lab,Strategy Lab,/lab?raceId=2026-02-shanghai,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-03-suzuka,race_archive,Race archive,/races/2026-03-suzuka,Classification and event facts.,True,
-2026-03-suzuka,analytics,Telemetry comparison,/analytics?sessionId=2026_03_R_Japanese Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-03-suzuka,strategy_lab,Strategy Lab,/lab?raceId=2026-03-suzuka,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-04-miami,race_archive,Race archive,/races/2026-04-miami,Classification and event facts.,True,
-2026-04-miami,analytics,Telemetry comparison,/analytics?sessionId=2026_04_R_Miami Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-04-miami,strategy_lab,Strategy Lab,/lab?raceId=2026-04-miami,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-05-villeneuve,race_archive,Race archive,/races/2026-05-villeneuve,Classification and event facts.,True,
-2026-05-villeneuve,analytics,Telemetry comparison,/analytics?sessionId=2026_05_R_Canadian Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-05-villeneuve,strategy_lab,Strategy Lab,/lab?raceId=2026-05-villeneuve,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-06-monaco,race_archive,Race archive,/races/2026-06-monaco,Classification and event facts.,True,
-2026-06-monaco,analytics,Telemetry comparison,/analytics?sessionId=2026_06_R_Monaco Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-06-monaco,strategy_lab,Strategy Lab,/lab?raceId=2026-06-monaco,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-07-catalunya,race_archive,Race archive,/races/2026-07-catalunya,Classification and event facts.,True,
-2026-07-catalunya,analytics,Telemetry comparison,/analytics?sessionId=2026_07_R_Barcelona Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-07-catalunya,strategy_lab,Strategy Lab,/lab?raceId=2026-07-catalunya,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-08-red_bull_ring,race_archive,Race archive,/races/2026-08-red_bull_ring,Classification and event facts.,True,
-2026-08-red_bull_ring,analytics,Telemetry comparison,/analytics?sessionId=2026_08_R_Austrian Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-08-red_bull_ring,strategy_lab,Strategy Lab,/lab?raceId=2026-08-red_bull_ring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-09-silverstone,race_archive,Race archive,/races/2026-09-silverstone,Classification and event facts.,True,
-2026-09-silverstone,analytics,Telemetry comparison,/analytics?sessionId=2026_09_R_British Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-09-silverstone,strategy_lab,Strategy Lab,/lab?raceId=2026-09-silverstone,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-10-spa,race_archive,Race archive,/races/2026-10-spa,Classification and event facts.,True,
-2026-10-spa,analytics,Telemetry comparison,/analytics?sessionId=2026_10_R_Belgian Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-10-spa,strategy_lab,Strategy Lab,/lab?raceId=2026-10-spa,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-11-hungaroring,race_archive,Race archive,/races/2026-11-hungaroring,Classification and event facts.,True,
-2026-11-hungaroring,analytics,Telemetry comparison,/analytics?sessionId=2026_11_R_Hungarian Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-11-hungaroring,strategy_lab,Strategy Lab,/lab?raceId=2026-11-hungaroring,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
-2026-12-zandvoort,race_archive,Race archive,/races/2026-12-zandvoort,Classification and event facts.,True,
-2026-12-zandvoort,analytics,Telemetry comparison,/analytics?sessionId=2026_12_R_Dutch Grand Prix,Driver-vs-driver segment analysis.,True,
-2026-12-zandvoort,strategy_lab,Strategy Lab,/lab?raceId=2026-12-zandvoort,Re-run strategy assumptions from this race context.,False,Strategy product view is not built for this race.
+2026-01-albert_park,race_archive,Analysis report,/analysis/2026-01-albert_park,"Classification, event facts, and post-race read.",True,
+2026-01-albert_park,compare,Telemetry comparison,/vs?slug=
+2026-01-albert_park,Driver-vs-driver segment analysis.,True,
+2026-01-albert_park,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-02-shanghai,race_archive,Analysis report,/analysis/2026-02-shanghai,"Classification, event facts, and post-race read.",True,
+2026-02-shanghai,compare,Telemetry comparison,/vs?slug=
+2026-02-shanghai,Driver-vs-driver segment analysis.,True,
+2026-02-shanghai,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-03-suzuka,race_archive,Analysis report,/analysis/2026-03-suzuka,"Classification, event facts, and post-race read.",True,
+2026-03-suzuka,compare,Telemetry comparison,/vs?slug=
+2026-03-suzuka,Driver-vs-driver segment analysis.,True,
+2026-03-suzuka,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-04-miami,race_archive,Analysis report,/analysis/2026-04-miami,"Classification, event facts, and post-race read.",True,
+2026-04-miami,compare,Telemetry comparison,/vs?slug=
+2026-04-miami,Driver-vs-driver segment analysis.,True,
+2026-04-miami,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-05-villeneuve,race_archive,Analysis report,/analysis/2026-05-villeneuve,"Classification, event facts, and post-race read.",True,
+2026-05-villeneuve,compare,Telemetry comparison,/vs?slug=
+2026-05-villeneuve,Driver-vs-driver segment analysis.,True,
+2026-05-villeneuve,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-06-monaco,race_archive,Analysis report,/analysis/2026-06-monaco,"Classification, event facts, and post-race read.",True,
+2026-06-monaco,compare,Telemetry comparison,/vs?slug=
+2026-06-monaco,Driver-vs-driver segment analysis.,True,
+2026-06-monaco,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-07-catalunya,race_archive,Analysis report,/analysis/2026-07-catalunya,"Classification, event facts, and post-race read.",True,
+2026-07-catalunya,compare,Telemetry comparison,/vs?slug=
+2026-07-catalunya,Driver-vs-driver segment analysis.,True,
+2026-07-catalunya,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-08-red_bull_ring,race_archive,Analysis report,/analysis/2026-08-red_bull_ring,"Classification, event facts, and post-race read.",True,
+2026-08-red_bull_ring,compare,Telemetry comparison,/vs?slug=
+2026-08-red_bull_ring,Driver-vs-driver segment analysis.,True,
+2026-08-red_bull_ring,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-09-silverstone,race_archive,Analysis report,/analysis/2026-09-silverstone,"Classification, event facts, and post-race read.",True,
+2026-09-silverstone,compare,Telemetry comparison,/vs?slug=
+2026-09-silverstone,Driver-vs-driver segment analysis.,True,
+2026-09-silverstone,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-10-spa,race_archive,Analysis report,/analysis/2026-10-spa,"Classification, event facts, and post-race read.",True,
+2026-10-spa,compare,Telemetry comparison,/vs?slug=
+2026-10-spa,Driver-vs-driver segment analysis.,True,
+2026-10-spa,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-11-hungaroring,race_archive,Analysis report,/analysis/2026-11-hungaroring,"Classification, event facts, and post-race read.",True,
+2026-11-hungaroring,compare,Telemetry comparison,/vs?slug=
+2026-11-hungaroring,Driver-vs-driver segment analysis.,True,
+2026-11-hungaroring,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-12-zandvoort,race_archive,Analysis report,/analysis/2026-12-zandvoort,"Classification, event facts, and post-race read.",True,
+2026-12-zandvoort,compare,Telemetry comparison,/vs?slug=
+2026-12-zandvoort,Driver-vs-driver segment analysis.,True,
+2026-12-zandvoort,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-13-monza,race_archive,Analysis report,/analysis/2026-13-monza,"Classification, event facts, and post-race read.",True,
+2026-13-monza,compare,Telemetry comparison,/vs?slug=
+2026-13-monza,Driver-vs-driver segment analysis.,True,
+2026-13-monza,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.

@@ -744,3 +744,56 @@ race_analysis_id,lap_number,phase,track_status_raw,track_status_label,confidence
 2026-12-zandvoort,70,closing,167,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
 2026-12-zandvoort,71,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-12-zandvoort,72,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,1,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,2,opening,1245,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-13-monza,3,opening,1245,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-13-monza,4,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,5,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,6,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-13-monza,7,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,8,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,9,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,10,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,11,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,12,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,13,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,14,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,15,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,16,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,17,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,18,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,19,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,20,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,21,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,22,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,23,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,24,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,25,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,26,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,27,middle,1267,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-13-monza,28,middle,1267,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-13-monza,29,middle,167,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-13-monza,30,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,31,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,32,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,33,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,34,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,35,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,36,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,37,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,38,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,39,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,40,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,41,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,42,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,43,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,44,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,45,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,46,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,47,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,48,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,49,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,50,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,51,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,52,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-13-monza,53,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.

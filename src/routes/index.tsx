@@ -52,7 +52,6 @@ const raceWeekQuery = queryOptions({
   staleTime: 5 * 60_000,
 });
 
-
 export const Route = createFileRoute("/")({
   loader: async ({ context }) => {
     await Promise.all([
@@ -117,31 +116,38 @@ function RaceControl() {
   return (
     <SiteShell fullWidth>
       <div className="home-page-solid relative z-10" style={raceThemeStyle}>
-        {/* Masthead */}
         <section
-          className="home-section-enter relative overflow-hidden rounded-lg border border-white/18 text-white shadow-[0_18px_80px_rgba(0,0,0,0.22)]"
-          style={{ backgroundColor: flagStart }}
+          className="home-section-enter relative overflow-hidden rounded-lg border border-white/12 bg-[#070b10] text-white shadow-[0_18px_80px_rgba(0,0,0,0.28)]"
+          style={{
+            backgroundImage: `linear-gradient(135deg, #070b10 0%, #101722 56%, ${flagStart} 145%)`,
+          }}
         >
-          <div aria-hidden className="absolute inset-0 hidden md:grid md:grid-cols-3">
-            <span style={{ backgroundColor: flagStart }} />
-            <span style={{ backgroundColor: flagMiddle }} />
-            <span style={{ backgroundColor: flagEnd }} />
+          <div aria-hidden className="absolute inset-0 opacity-45">
+            <div
+              className="absolute -right-20 top-0 h-full w-1/2 skew-x-[-12deg]"
+              style={{
+                background: `linear-gradient(90deg, transparent, ${flagStart} 34%, ${flagEnd})`,
+              }}
+            />
           </div>
           <div aria-hidden className="absolute inset-x-0 top-0 z-10 flex h-2">
-            {theme.flag.map((col) => (
-              <span key={col} className="flex-1" style={{ backgroundColor: col }} />
+            {theme.flag.map((col, index) => (
+              <span key={`${col}-${index}`} className="flex-1" style={{ backgroundColor: col }} />
             ))}
           </div>
 
           <div className="relative p-5 pt-7 sm:p-7 lg:p-9">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1 bg-white px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-[#07110c]">
-                <Flag className="size-3" /> Next GP
+              <span
+                className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-[#07110c]"
+                style={{ backgroundColor: flagMiddle }}
+              >
+                <Flag className="size-3" /> Race week
               </span>
               <span
-                className="num rounded-sm border border-white/25 px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-white"
+                className="num rounded-sm border border-white/18 bg-white/10 px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-white"
                 style={{
-                  backgroundColor: theme.accent,
+                  boxShadow: `inset 0 -2px 0 ${flagEnd}`,
                 }}
               >
                 {theme.label}
@@ -158,10 +164,15 @@ function RaceControl() {
             <div className="mt-5 grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(360px,0.64fr)] xl:items-stretch">
               <div className="flex min-w-0 flex-col justify-between">
                 <div>
-                  <h1 className="text-4xl font-black uppercase italic leading-[0.95] tracking-tighter sm:text-6xl">
+                  <h1 className="text-4xl font-black uppercase italic leading-[0.95] tracking-tight text-white sm:text-6xl">
                     {gpTitle}{" "}
-                    <span style={{ color: flagEnd }}>Grand Prix</span>
+                    <span className="text-white" style={{ textShadow: `0 4px 26px ${flagEnd}` }}>
+                      Grand Prix
+                    </span>
                   </h1>
+                  <p className="mt-4 max-w-2xl text-sm font-semibold leading-6 text-white/72 sm:text-base">
+                    Latest race-week board for {rw?.circuit.name ?? "the next Formula 1 round"}.
+                  </p>
                   {rw?.scheduledAt ? (
                     <div className="mt-6">
                       <Countdown targetISO={rw.scheduledAt} label="Lights out" />
@@ -171,27 +182,41 @@ function RaceControl() {
                     aria-hidden
                     className="mt-5 flex h-3 max-w-72 overflow-hidden rounded-sm border border-white/20"
                   >
-                    {theme.flag.map((col) => (
-                      <span key={col} className="flex-1" style={{ backgroundColor: col }} />
+                    {theme.flag.map((col, index) => (
+                      <span
+                        key={`${col}-${index}`}
+                        className="flex-1"
+                        style={{ backgroundColor: col }}
+                      />
                     ))}
                   </div>
 
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <Link
-                    to="/raceweek"
-                    className="px-4 py-2 text-xs font-black uppercase italic tracking-wide text-[#07110c] transition-[filter] hover:brightness-95"
-                    style={{ backgroundColor: flagMiddle }}
-                  >
-                    Open race week
-                  </Link>
-                  <Link
-                    to="/analysis"
-                    className="border border-white/25 bg-black/35 px-4 py-2 text-xs font-black uppercase italic tracking-wide text-white transition-colors hover:bg-black/50"
-                  >
-                    Latest report
-                  </Link>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <Link
+                      to="/raceweek"
+                      className="px-4 py-2 text-xs font-black uppercase italic tracking-wide text-[#07110c] transition-[filter] hover:brightness-95"
+                      style={{ backgroundColor: flagMiddle }}
+                    >
+                      Open race week
+                    </Link>
+                    {latest ? (
+                      <Link
+                        to="/analysis/$slug"
+                        params={{ slug: latest.slug }}
+                        className="border border-white/25 bg-black/35 px-4 py-2 text-xs font-black uppercase italic tracking-wide text-white transition-colors hover:bg-black/50"
+                      >
+                        Latest report
+                      </Link>
+                    ) : (
+                      <Link
+                        to="/analysis"
+                        className="border border-white/25 bg-black/35 px-4 py-2 text-xs font-black uppercase italic tracking-wide text-white transition-colors hover:bg-black/50"
+                      >
+                        Latest report
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </div>
               </div>
 
               <CircuitMap
@@ -213,120 +238,128 @@ function RaceControl() {
           />
         </div>
 
-      {/* Upgrade watch */}
-      <section className="home-section-enter race-country-panel mt-12 overflow-hidden rounded-lg border">
-        <div className="relative p-5 sm:p-6">
-          <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1 bg-primary px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-primary-foreground">
-                  <Wrench className="size-3" />
-                  Upgrade watch
-                </span>
-                <span className="label-xs">FIA first - editorial context after</span>
+        {/* Upgrade watch */}
+        <section className="home-section-enter race-country-panel mt-12 overflow-hidden rounded-lg border">
+          <div className="relative p-5 sm:p-6">
+            <div className="relative flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1 bg-primary px-1.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-primary-foreground">
+                    <Wrench className="size-3" />
+                    Upgrade watch
+                  </span>
+                  <span className="label-xs">FIA first - editorial context after</span>
+                </div>
+                <h2 className="mt-3 text-2xl font-black uppercase italic tracking-tight sm:text-3xl">
+                  Track new F1 parts from official declarations
+                </h2>
+                <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+                  Use FIA car presentation files as the raw feed, then enrich with F1.com, The Race,
+                  Autosport and Motorsport reporting for purpose, photos and impact.
+                </p>
               </div>
-              <h2 className="mt-3 text-2xl font-black uppercase italic tracking-tight sm:text-3xl">
-                Track new F1 parts from official declarations
-              </h2>
-              <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-                Use FIA car presentation files as the raw feed, then enrich with F1.com,
-                The Race, Autosport and Motorsport reporting for purpose, photos and impact.
-              </p>
+              <div className="num border border-primary/30 bg-primary/10 px-3 py-2 text-[11px] font-black uppercase tracking-widest text-primary">
+                Derivable: team - part - round - impact
+              </div>
             </div>
-            <div className="num border border-primary/30 bg-primary/10 px-3 py-2 text-[11px] font-black uppercase tracking-widest text-primary">
-              Derivable: team - part - round - impact
+
+            <div className="relative mt-6 grid gap-3 lg:grid-cols-3">
+              {upgradeSources.map((source, index) => {
+                const Icon = source.icon;
+                return (
+                  <a
+                    key={source.name}
+                    href={source.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pw-ticker group border border-border bg-background/80 p-4 transition-colors hover:border-primary hover:bg-accent/60"
+                    style={{ animationDelay: `${index * 0.08}s` }}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="grid size-9 place-items-center border border-border bg-card text-primary">
+                        <Icon className="size-4" />
+                      </span>
+                      <ExternalLink className="size-3.5 text-muted-foreground transition-colors group-hover:text-primary" />
+                    </div>
+                    <p className="mt-4 text-sm font-black uppercase italic">{source.name}</p>
+                    <p className="label-xs mt-1">{source.role}</p>
+                    <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                      {source.detail}
+                    </p>
+                  </a>
+                );
+              })}
+            </div>
+
+            <div className="relative mt-5 grid gap-2 sm:grid-cols-4">
+              {["Upgrade count", "Affected area", "First race used", "Practice delta"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="border border-border bg-card/70 px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground"
+                  >
+                    {item}
+                  </span>
+                ),
+              )}
             </div>
           </div>
+        </section>
 
-          <div className="relative mt-6 grid gap-3 lg:grid-cols-3">
-            {upgradeSources.map((source, index) => {
-              const Icon = source.icon;
-              return (
-                <a
-                  key={source.name}
-                  href={source.href}
-                  target="_blank"
-                  rel="noreferrer"
-                className="pw-ticker group border border-border bg-background/80 p-4 transition-colors hover:border-primary hover:bg-accent/60"
-                  style={{ animationDelay: `${index * 0.08}s` }}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="grid size-9 place-items-center border border-border bg-card text-primary">
-                      <Icon className="size-4" />
-                    </span>
-                    <ExternalLink className="size-3.5 text-muted-foreground transition-colors group-hover:text-primary" />
-                  </div>
-                  <p className="mt-4 text-sm font-black uppercase italic">{source.name}</p>
-                  <p className="label-xs mt-1">{source.role}</p>
-                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{source.detail}</p>
-                </a>
-              );
-            })}
-          </div>
-
-          <div className="relative mt-5 grid gap-2 sm:grid-cols-4">
-            {["Upgrade count", "Affected area", "First race used", "Practice delta"].map((item) => (
-              <span
-                key={item}
-                className="border border-border bg-card/70 px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground"
+        {/* Report rail */}
+        <section className="home-section-enter mt-12">
+          <SectionHeading
+            kicker="Post-race telemetry"
+            title="Recent reports"
+            action={
+              <Link
+                to="/analysis"
+                className="whitespace-nowrap text-[11px] font-bold uppercase text-primary"
               >
-                {item}
-              </span>
+                All rounds {"->"}
+              </Link>
+            }
+          />
+          <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2">
+            {reports.map((r) => (
+              <Link
+                key={r.slug}
+                to="/analysis/$slug"
+                params={{ slug: r.slug }}
+                className="w-[280px] shrink-0 snap-start rounded-lg border border-border bg-card/60 p-4 transition-colors hover:border-primary"
+                style={{ borderTop: `3px solid ${teamOf(r.winnerTeam).color}` }}
+              >
+                <p className="num text-[10px] text-muted-foreground">
+                  R{r.round} - {fmtDate(r.dateISO)}
+                </p>
+                <p className="mt-1 text-sm font-black uppercase italic">{r.name}</p>
+                <p className="mt-2 text-xs font-bold uppercase">{r.winnerName}</p>
+                <p className="num text-[11px] text-muted-foreground">
+                  {teamOf(r.winnerTeam).name}
+                  {r.strategy ? ` - ${r.strategy}` : ""}
+                </p>
+                {r.podium.length === 3 ? (
+                  <p className="num mt-2 text-[11px] text-muted-foreground">
+                    Podium {r.podium.join(" - ")}
+                  </p>
+                ) : null}
+                <p className="mt-3 line-clamp-3 text-[11px] text-muted-foreground">
+                  {r.paceFactor ?? r.story ?? ""}
+                </p>
+                <p className="mt-3 text-[11px] font-bold uppercase text-primary">
+                  Read report {"->"}
+                </p>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Report rail */}
-      <section className="home-section-enter mt-12">
-        <SectionHeading
-          kicker="Post-race telemetry"
-          title="Recent reports"
-          action={
-            <Link to="/analysis" className="whitespace-nowrap text-[11px] font-bold uppercase text-primary">
-              All rounds {"->"}
-            </Link>
-          }
-        />
-        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2">
-          {reports.map((r) => (
-            <Link
-              key={r.slug}
-              to="/analysis/$slug"
-              params={{ slug: r.slug }}
-              className="w-[280px] shrink-0 snap-start rounded-lg border border-border bg-card/60 p-4 transition-colors hover:border-primary"
-              style={{ borderTop: `3px solid ${teamOf(r.winnerTeam).color}` }}
-            >
-              <p className="num text-[10px] text-muted-foreground">
-                R{r.round} - {fmtDate(r.dateISO)}
-              </p>
-              <p className="mt-1 text-sm font-black uppercase italic">{r.name}</p>
-              <p className="mt-2 text-xs font-bold uppercase">{r.winnerName}</p>
-              <p className="num text-[11px] text-muted-foreground">
-                {teamOf(r.winnerTeam).name}
-                {r.strategy ? ` - ${r.strategy}` : ""}
-              </p>
-              {r.podium.length === 3 ? (
-                <p className="num mt-2 text-[11px] text-muted-foreground">
-                  Podium {r.podium.join(" - ")}
-                </p>
-              ) : null}
-              <p className="mt-3 line-clamp-3 text-[11px] text-muted-foreground">
-                {r.paceFactor ?? r.story ?? ""}
-              </p>
-              <p className="mt-3 text-[11px] font-bold uppercase text-primary">Read report {"->"}</p>
-            </Link>
-          ))}
-        </div>
-        {latest ? (
-          <p className="num mt-2 text-[11px] text-muted-foreground">
-            Latest: R{latest.round} {latest.name} - {latest.weather ?? latest.raceShape ?? ""}
-          </p>
-        ) : null}
+          {latest ? (
+            <p className="num mt-2 text-[11px] text-muted-foreground">
+              Latest: R{latest.round} {latest.name} - {latest.weather ?? latest.raceShape ?? ""}
+            </p>
+          ) : null}
         </section>
       </div>
     </SiteShell>
-
   );
 }
 
@@ -350,13 +383,12 @@ type ChampionshipSectionProps = {
   standingsRound: number;
 };
 
-function ChampionshipSection({
-  drivers,
-  constructors,
-  standingsRound,
-}: ChampionshipSectionProps) {
+function ChampionshipSection({ drivers, constructors, standingsRound }: ChampionshipSectionProps) {
   const maxDriverPoints = Math.max(1, ...drivers.map((driver) => driver.points));
-  const maxConstructorPoints = Math.max(1, ...constructors.map((constructor) => constructor.points));
+  const maxConstructorPoints = Math.max(
+    1,
+    ...constructors.map((constructor) => constructor.points),
+  );
 
   return (
     <section>
@@ -364,7 +396,10 @@ function ChampionshipSection({
         kicker={`Championship - after R${standingsRound}`}
         title="Top 5 drivers and constructors"
         action={
-          <Link to="/championship" className="whitespace-nowrap text-[11px] font-bold uppercase text-primary">
+          <Link
+            to="/championship"
+            className="whitespace-nowrap text-[11px] font-bold uppercase text-primary"
+          >
             Full tables {"->"}
           </Link>
         }
@@ -431,7 +466,11 @@ function StandingsTable({
       </div>
       <div className="divide-y divide-border">
         {rows.map((row) => (
-          <Link key={row.id} to="/championship" className="grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 transition-colors hover:bg-accent/60">
+          <Link
+            key={row.id}
+            to="/championship"
+            className="grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 transition-colors hover:bg-accent/60"
+          >
             <span className="num text-xs text-muted-foreground">{row.position}</span>
             <div className="min-w-0">
               <div className="flex items-center gap-2">

@@ -23,6 +23,7 @@ import { CircuitMap } from "@/components/circuit-map";
 import { SiteShell } from "@/components/site-shell";
 import { countryForRace, countryTheme } from "@/data/country-theme";
 import {
+  cornerGuideForCircuit,
   cornerProfileForCircuit,
   cornerSummaryForCircuit,
   cornersForCircuit,
@@ -109,7 +110,8 @@ function RaceWeek() {
     ),
   );
   const corners = cornersForCircuit(data.circuit.id);
-  const visibleCorners = showAllTurns ? corners : corners.slice(0, 8);
+  const cornerGuide = cornerGuideForCircuit(data.circuit.id);
+  const visibleCorners = showAllTurns ? cornerGuide : cornerGuide.slice(0, 8);
   const cornerGroups = cornerProfileForCircuit(data.circuit.id);
   const qualiPredictions =
     data.qualifyingPredictions.length > 0
@@ -148,23 +150,43 @@ function RaceWeek() {
           } as CSSProperties
         }
       >
-        <section className="relative overflow-hidden rounded-lg border border-border bg-card">
-          <div aria-hidden className="absolute inset-0 grid grid-cols-1 md:grid-cols-3">
-            <span style={{ backgroundColor: flagA }} />
-            <span style={{ backgroundColor: flagB }} />
-            <span style={{ backgroundColor: flagC }} />
+        <section
+          className="relative overflow-hidden rounded-lg border border-white/12 bg-[#070b10] text-white shadow-[0_18px_80px_rgba(0,0,0,0.28)]"
+          style={{
+            backgroundImage: `linear-gradient(135deg, #070b10 0%, #111827 56%, ${flagA} 145%)`,
+          }}
+        >
+          <div aria-hidden className="absolute inset-0 opacity-45">
+            <div
+              className="absolute -right-24 top-0 h-full w-1/2 skew-x-[-12deg]"
+              style={{
+                background: `linear-gradient(90deg, transparent, ${flagA} 34%, ${flagC})`,
+              }}
+            />
+          </div>
+          <div aria-hidden className="absolute inset-x-0 top-0 z-10 flex h-2">
+            {[flagA, flagB, flagC].map((color, index) => (
+              <span
+                key={`${color}-${index}`}
+                className="flex-1"
+                style={{ backgroundColor: color }}
+              />
+            ))}
           </div>
           <div className="relative grid min-h-[560px] gap-5 p-5 sm:p-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(34rem,1.1fr)]">
             <div className="flex min-h-[500px] flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 bg-white px-3 py-2 text-[10px] font-black uppercase tracking-widest text-[#07110c]">
+                <div
+                  className="inline-flex items-center gap-2 px-3 py-2 text-[10px] font-black uppercase tracking-widest text-[#07110c]"
+                  style={{ backgroundColor: flagB }}
+                >
                   <Flag className="size-3.5" />
                   Round {data.round}
                 </div>
-                <h1 className="mt-6 max-w-4xl text-5xl font-black uppercase italic leading-none text-[#07110c] sm:text-7xl">
+                <h1 className="mt-6 max-w-4xl text-5xl font-black uppercase italic leading-none tracking-tight text-white sm:text-7xl">
                   {data.raceName}
                 </h1>
-                <p className="mt-4 max-w-xl text-base font-bold text-[#07110c] sm:text-lg">
+                <p className="mt-4 max-w-xl text-base font-bold text-white/76 sm:text-lg">
                   {data.circuit.name}
                   {data.circuit.location ? `, ${data.circuit.location}` : ""}
                 </p>
@@ -189,12 +211,12 @@ function RaceWeek() {
               </div>
             </div>
 
-            <div className="home-section-enter self-end rounded-lg border border-white bg-[#07110c] p-3">
+            <div className="home-section-enter self-end rounded-lg border border-white/14 bg-black/38 p-3 backdrop-blur">
               <CircuitMap
                 path={data.trackPath}
                 circuitId={data.circuit.id}
                 circuitName={data.circuit.name}
-                className="min-h-[460px] rounded-md border-white bg-white text-[#07110c]"
+                className="min-h-[460px] rounded-md border-white/10 bg-white text-[#07110c]"
               />
             </div>
           </div>
@@ -210,9 +232,7 @@ function RaceWeek() {
                 type="button"
                 onClick={() => setActiveView(tab.id)}
                 className={`pw-card rounded-lg border p-4 text-left transition-colors ${
-                  active
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card"
+                  active ? "border-primary bg-primary text-[#07110c]" : "border-border bg-card"
                 }`}
               >
                 <Icon className="size-5" />
@@ -424,7 +444,7 @@ function CircuitBoard({
 }: {
   data: RaceWeekData;
   cornerGroups: { label: string; value: string; detail: string }[];
-  corners: { number: number; name: string; sector: number }[];
+  corners: { number: number; name: string; sector?: number }[];
   totalCorners: number;
   expanded: boolean;
   onToggle: () => void;
@@ -438,20 +458,30 @@ function CircuitBoard({
       />
       <div className="grid gap-4 lg:grid-cols-[20rem_minmax(0,1fr)]">
         <div className="grid gap-2">
-          {cornerGroups.map((group, index) => (
-            <div
-              key={group.label}
-              className="pw-ticker rounded-lg border border-border bg-background p-4"
-              style={{
-                animationDelay: `${index * 32}ms`,
-                borderLeft: "5px solid var(--race-accent)",
-              }}
-            >
-              <p className="label-xs">{group.label}</p>
-              <p className="num mt-2 text-4xl font-black">{group.value}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{group.detail}</p>
+          {cornerGroups.length ? (
+            cornerGroups.map((group, index) => (
+              <div
+                key={group.label}
+                className="pw-ticker rounded-lg border border-border bg-background p-4"
+                style={{
+                  animationDelay: `${index * 32}ms`,
+                  borderLeft: "5px solid var(--race-accent)",
+                }}
+              >
+                <p className="label-xs">{group.label}</p>
+                <p className="num mt-2 text-4xl font-black">{group.value}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{group.detail}</p>
+              </div>
+            ))
+          ) : (
+            <div className="rounded-lg border border-border bg-background p-4">
+              <p className="label-xs">Verified profile</p>
+              <p className="mt-2 text-lg font-black uppercase italic">Pending source geometry</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Corner groups will appear after the official circuit map is loaded.
+              </p>
             </div>
-          ))}
+          )}
         </div>
         <div className="rounded-lg border border-border bg-background p-4">
           <div className="mb-3 flex items-center justify-between">
@@ -472,7 +502,7 @@ function CircuitBoard({
                   <span className="min-w-0 flex-1 truncate text-xs font-black uppercase">
                     {corner.name}
                   </span>
-                  <span className="label-xs">S{corner.sector}</span>
+                  {corner.sector ? <span className="label-xs">S{corner.sector}</span> : null}
                 </div>
               ))}
             </div>

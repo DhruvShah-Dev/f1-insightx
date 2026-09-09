@@ -4,7 +4,7 @@ This project uses low-cost, app-level abuse protection to keep Supabase and auth
 
 ## Approach
 
-- in-memory request rate limiting in `apps/web/src/lib/security/rate-limit.ts`
+- in-memory request rate limiting in the active root server helpers
 - stricter limits on auth-adjacent and mutation routes
 - short caching for public F1 data endpoints
 - no-store headers on account, auth, and write-heavy routes
@@ -26,47 +26,23 @@ For a free-tier hobby deployment, this is still a worthwhile first layer. If tra
 
 ## Default route limits
 
-These defaults live in `apps/web/src/lib/security/rate-limit.ts`.
+These defaults live with the active root server helpers.
 
-- `/auth/callback`
-  - `24` requests / `10 minutes`
-- `/auth/sign-out`
-  - `20` requests / `5 minutes`
-- `/api/account/username/check`
-  - `24` requests / `1 minute`
-- `/api/account/username/suggest`
-  - `12` requests / `1 minute`
-- `/api/account/profile` `GET`
-  - `60` requests / `1 minute`
-- `/api/account/profile` `PATCH`
-  - `10` requests / `10 minutes`
-- `/api/fantasy-builder/recommend`
-  - `12` requests / `5 minutes`
-- `/api/race-scenarios/simulate`
-  - `12` requests / `5 minutes`
-- `/api/fantasy-builder/validate`
-  - `60` requests / `1 minute`
-- `/api/race-scenarios/validate`
-  - `60` requests / `1 minute`
-- public read APIs like race week, predictions, and reference data
-  - `120` requests / `1 minute`
-- `/api/fantasy-builder/dataset`
-  - `60` requests / `1 minute`
-- `/api/health`
-  - `30` requests / `1 minute`
+- account/profile reads should allow normal browsing but prevent polling abuse
+- account/profile mutations should stay materially stricter than reads
+- username availability checks should be debounced in the UI and rate-limited server-side
+- public F1 data reads should be cached where possible and bounded per client
+- health checks should be cheap and capped so they cannot become a Supabase load source
 
 ## Cached endpoints
 
 To reduce repeated Supabase and server compute usage, these read-heavy routes send cache headers:
 
-- `/api/platform/race-week`
-- `/api/predictions/upcoming`
-- `/api/fantasy-builder/dataset`
-- `/api/reference/drivers`
-- `/api/reference/constructors`
-- `/api/reference/circuits`
-- `/api/reference/races`
-- `/api/reference/races/[raceId]/context`
+- Race Week server-function reads
+- Championship server-function reads
+- Analysis index/detail server-function reads
+- Compare server-function reads
+- Picks server-function reads
 
 Private/account routes intentionally use `Cache-Control: no-store`.
 
@@ -74,10 +50,9 @@ Private/account routes intentionally use `Cache-Control: no-store`.
 
 - username probing endpoints are rate-limited
 - profile read/write endpoints are rate-limited
-- expensive recommendation and simulation routes are rate-limited
-- auth callback is rate-limited
-- sign-out is rate-limited
-- public data routes are cached and rate-limited
+- expensive public product reads are cached and rate-limited
+- auth-adjacent flows are rate-limited where server-side handling exists
+- public data routes are bounded and rate-limited
 - the profile UI reduces unnecessary username-availability requests while typing
 
 ## What still depends on Supabase / Google setup
@@ -94,7 +69,7 @@ These protections are outside the app and still matter:
 
 If you need to adjust limits:
 
-1. edit `apps/web/src/lib/security/rate-limit.ts`
+1. edit the active root server rate-limit helper
 2. keep auth and mutation limits stricter than read-only routes
 3. prefer raising limits slowly after observing legitimate traffic
 4. keep public read routes cached before increasing their raw limit

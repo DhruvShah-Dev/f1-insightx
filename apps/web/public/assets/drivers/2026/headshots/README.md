@@ -1,16 +1,21 @@
 # Driver Headshots
 
+This directory belongs to the archived `apps/web` UI. It is retained for
+historical asset provenance and should not receive active product work unless
+the archived app is intentionally revived.
+
 Dedicated square driver headshot crops belong here. These assets support real product identity across Picks, profile views, comparison surfaces, and compact driver selectors.
 
-Until a driver-specific headshot is added, `getDriverImagePath(driver, "headshot")` falls back to the current body/cutout source in `../body`.
+In the archived app, `getDriverImagePath(driver, "headshot")` fell back to the
+body/cutout source in `../body`.
 
 ## Asset Rules
 
 - Use WebP for real driver imagery.
-- Match driver file names to the IDs used in `src/lib/ui/driver-asset-manifest.ts`.
+- Match driver file names to the IDs used by the current active-app asset manifest before reusing these assets.
 - Keep crops square and centered for compact UI surfaces such as Picks fields and profile/avatar previews.
 - Preserve the fallback SVG in `../fallback/driver-placeholder.svg`.
-- Run `npm run assets:audit` after adding or replacing driver assets.
+- Run the current asset audit command after adding or replacing driver assets.
 
 ## Product Standard
 

@@ -15,14 +15,14 @@ This project treats error handling as two systems at once:
 
 ## Shared building blocks
 
-- `apps/web/src/lib/errors/app-error.ts`
-  - defines application error categories and safe public payload mapping
-- `apps/web/src/lib/errors/logger.ts`
-  - structured server-side logging and safe fallback helpers
-- `apps/web/src/lib/errors/client.ts`
-  - client-side helpers for safe message extraction and network copy
-- `apps/web/src/lib/api/errors.ts`
-  - standard API response helpers, including `apiErrorFrom`
+- `src/lib/f1.functions.ts`
+  - public F1 server-function boundary and local fallback selection
+- `src/lib/f1.server.ts`
+  - optional Supabase-backed public product reads
+- `src/lib/f1.fallback.ts`
+  - generated snapshot fallback mapping for public routes
+- `src/routes/*`
+  - route-level error components and recoverable UI states
 
 ## Error categories
 
@@ -59,16 +59,16 @@ This project treats error handling as two systems at once:
 
 ## Recommended pattern for routes
 
-1. validate input
-2. return expected user-safe errors directly
-3. catch unexpected failures once
-4. map them through `apiErrorFrom`
+1. validate input with `zod` at the server-function boundary
+2. return expected user-safe empty or unavailable states directly
+3. catch unexpected external data failures once
+4. fall back to the generated local snapshot when public F1 reads fail
 
 ## Recommended pattern for pages
 
-- use `withServerFallback` for non-critical data
-- log failures with route/page context
-- render `StatePanel` for recoverable page-level failures
+- keep route-level `errorComponent` copy calm and specific
+- log failures with route/page context when server helpers catch them
+- render stable unavailable states for recoverable page-level failures
 
 ## Recommended pattern for client workspaces
 
@@ -83,10 +83,8 @@ This project treats error handling as two systems at once:
 ## Current focus areas covered
 
 - account and profile flows
-- auth callback
-- race strategy simulator
-- fantasy optimizer
-- homepage and race detail server loading
+- public F1 server functions
+- homepage, race-week, championship, analysis, compare, and picks loading
 
 ## What still needs future work
 

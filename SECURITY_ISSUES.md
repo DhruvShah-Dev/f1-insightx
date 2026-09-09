@@ -3,9 +3,10 @@
 Generated: 2026-06-18
 
 Scope reviewed:
+
 - `npm audit --omit=dev`
-- Web security helpers and API-adjacent code under `apps/web/src`
-- Next.js headers/configuration
+- Web security helpers and server-function-adjacent code under `src`
+- TanStack Start/Vite/Nitro runtime configuration
 - GitHub Actions workflow configuration
 - Python data pipeline dependency and subprocess surfaces
 
@@ -16,7 +17,7 @@ No local-remediable security issues are currently tracked in this file. Manual f
 ## Positive Findings
 
 - No tracked `.env.local` secrets were found during this pass.
-- No `dangerouslySetInnerHTML`, direct `innerHTML`, `eval`, or `new Function` usage was found under `apps/web/src`.
+- No `dangerouslySetInnerHTML`, direct `innerHTML`, `eval`, or `new Function` usage was found under `src`.
 - Sensitive account/profile routes already use authentication, same-origin checks, and rate limiting.
 - Supabase profile access is backed by RLS-oriented SQL migrations.
 - The Python subprocess calls found use argument arrays and do not use `shell=True`.

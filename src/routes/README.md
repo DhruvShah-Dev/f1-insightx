@@ -17,16 +17,16 @@ The legacy `apps/web` Next.js app is not part of the active root build. Do not a
 
 ## Conventions
 
-| File | URL |
-| --- | --- |
-| `index.tsx` | `/` |
-| `about.tsx` | `/about` |
-| `users/index.tsx` | `/users` |
-| `users/$id.tsx` | `/users/:id` |
-| `posts/{-$category}.tsx` | `/posts/:category?` |
-| `files/$.tsx` | `/files/*` |
-| `_layout.tsx` | layout route with `<Outlet />` |
-| `__root.tsx` | app shell wrapping every page |
+| File                     | URL                            |
+| ------------------------ | ------------------------------ |
+| `index.tsx`              | `/`                            |
+| `about.tsx`              | `/about`                       |
+| `users/index.tsx`        | `/users`                       |
+| `users/$id.tsx`          | `/users/:id`                   |
+| `posts/{-$category}.tsx` | `/posts/:category?`            |
+| `files/$.tsx`            | `/files/*`                     |
+| `_layout.tsx`            | layout route with `<Outlet />` |
+| `__root.tsx`             | app shell wrapping every page  |
 
 ## Shipping Checklist
 

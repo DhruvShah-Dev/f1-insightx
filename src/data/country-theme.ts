@@ -12,7 +12,7 @@ const THEMES: Record<string, CountryTheme> = {
   netherlands: { flag: ["#ae1c28", "#ffffff", "#21468b"], accent: "#ff6a00", label: "Nederland" },
   italy: { flag: ["#008c45", "#ffffff", "#cd212a"], accent: "#008c45", label: "Italia" },
   monaco: { flag: ["#ce1126", "#ffffff"], accent: "#ce1126", label: "Monaco" },
-  spain: { flag: ["#aa151b", "#f1bf00", "#aa151b"], accent: "#f1bf00", label: "España" },
+  spain: { flag: ["#aa151b", "#f1bf00", "#aa151b"], accent: "#f1bf00", label: "Spain" },
   belgium: { flag: ["#000000", "#fdda24", "#ef3340"], accent: "#fdda24", label: "Belgique" },
   uk: { flag: ["#012169", "#ffffff", "#c8102e"], accent: "#c8102e", label: "United Kingdom" },
   "united kingdom": {

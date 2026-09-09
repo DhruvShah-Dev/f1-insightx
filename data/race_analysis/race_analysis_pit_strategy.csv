@@ -498,3 +498,33 @@ race_analysis_id,driver,team,pit_stop_number,pit_lap,compound_from,compound_to,s
 2026-12-zandvoort,TSU,Racing Bulls,1,2,SOFT,SOFT,2,11,10,1,,gained after stop,medium,,Pit cycle improved track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-12-zandvoort,TSU,Racing Bulls,2,18,SOFT,HARD,16,10,14,-4,3.582,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-12-zandvoort,TSU,Racing Bulls,3,44,HARD,SOFT,26,10,11,-1,2.746,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,ALB,Williams,1,3,MEDIUM,HARD,3,18,18,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,ALB,Williams,2,46,HARD,SOFT,43,16,17,-1,7.677,lost after stop,high,2.881,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,ALO,Aston Martin,1,3,HARD,SOFT,3,21,21,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,ANT,Mercedes,1,3,HARD,MEDIUM,3,12,12,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,ANT,Mercedes,2,28,MEDIUM,MEDIUM,25,2,5,-3,22.682,lost after stop,low,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,BEA,Haas F1 Team,1,3,SOFT,HARD,3,9,9,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,BOR,Audi,1,3,SOFT,MEDIUM,3,11,11,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,BOT,Cadillac,1,3,SOFT,MEDIUM,3,19,19,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,BOT,Cadillac,2,27,MEDIUM,SOFT,24,19,19,0,18.484,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,COL,Alpine,1,3,MEDIUM,HARD,3,4,4,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,GAS,Alpine,1,3,MEDIUM,HARD,3,2,2,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,HAM,Ferrari,1,3,SOFT,MEDIUM,3,8,8,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,HUL,Audi,1,3,MEDIUM,HARD,3,13,13,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,HUL,Audi,2,27,HARD,MEDIUM,24,13,14,-1,8.565,lost after stop,high,0.431,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,LAW,Red Bull Racing,1,3,MEDIUM,HARD,3,15,15,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,LAW,Red Bull Racing,2,12,HARD,MEDIUM,9,17,21,-4,8.161,lost after stop,high,0.731,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,LIN,Racing Bulls,1,3,MEDIUM,HARD,3,7,7,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,NOR,McLaren,1,3,MEDIUM,HARD,3,6,6,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,OCO,Haas F1 Team,1,3,SOFT,HARD,3,10,10,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,OCO,Haas F1 Team,2,27,HARD,MEDIUM,24,15,16,-1,8.328,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,PER,Cadillac,1,3,SOFT,SOFT,3,17,17,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,PER,Cadillac,2,27,SOFT,MEDIUM,24,18,18,0,17.418,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,PIA,McLaren,1,3,MEDIUM,HARD,3,5,5,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,RUS,Mercedes,1,3,MEDIUM,HARD,3,1,1,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,SAI,Williams,1,3,SOFT,HARD,3,16,16,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,SAI,Williams,2,27,HARD,MEDIUM,24,16,15,1,8.579,gained after stop,high,0.0,Pit cycle improved track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,STR,Aston Martin,1,3,SOFT,HARD,3,20,20,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,TSU,Racing Bulls,1,3,HARD,MEDIUM,3,14,14,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,VER,Red Bull Racing,1,3,SOFT,MEDIUM,3,3,3,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-13-monza,VER,Red Bull Racing,2,28,MEDIUM,HARD,25,3,7,-4,23.185,lost after stop,medium,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.

@@ -44,7 +44,12 @@ export type {
 } from "./f1.server";
 
 async function withFallback<T>(load: () => Promise<T>, fallback: () => T): Promise<T> {
-  if (!hasSupabaseRuntimeEnv()) return fallback();
+  if (
+    !hasSupabaseRuntimeEnv() ||
+    process.env["F1_INSIGHTX_PUBLIC_DATA_SOURCE"]?.toLowerCase() !== "supabase"
+  ) {
+    return fallback();
+  }
   try {
     return await load();
   } catch (error) {
@@ -60,7 +65,10 @@ export const getSeasonTelemetry = createServerFn({ method: "GET" }).handler(() =
 export const getLapTrace = createServerFn({ method: "GET" })
   .validator((input) =>
     z
-      .object({ raceAnalysisId: z.string().min(1), drivers: z.array(z.string().min(1)).min(1).max(2) })
+      .object({
+        raceAnalysisId: z.string().min(1),
+        drivers: z.array(z.string().min(1)).min(1).max(2),
+      })
       .parse(input),
   )
   .handler(({ data }) =>
@@ -76,7 +84,12 @@ export const getRaceReports = createServerFn({ method: "GET" }).handler(() =>
 
 export const getRaceReport = createServerFn({ method: "GET" })
   .validator((input) => z.object({ slug: z.string().min(1) }).parse(input))
-  .handler(({ data }) => withFallback(() => fetchRaceReport(data.slug), () => fallbackRaceReport(data.slug)));
+  .handler(({ data }) =>
+    withFallback(
+      () => fetchRaceReport(data.slug),
+      () => fallbackRaceReport(data.slug),
+    ),
+  );
 
 export const getRaceWeek = createServerFn({ method: "GET" }).handler(() =>
   withFallback(fetchRaceWeek, fallbackRaceWeek),
@@ -85,24 +98,33 @@ export const getRaceWeek = createServerFn({ method: "GET" }).handler(() =>
 export const getWeekendIndex = createServerFn({ method: "GET" })
   .validator((input) => z.object({ season: z.number().int().optional() }).parse(input ?? {}))
   .handler(({ data }) =>
-    withFallback(() => fetchWeekendIndex(data.season ?? SEASON), () => fallbackWeekendIndex(data.season ?? SEASON)),
+    withFallback(
+      () => fetchWeekendIndex(data.season ?? SEASON),
+      () => fallbackWeekendIndex(data.season ?? SEASON),
+    ),
   );
 
 export const getWeekend = createServerFn({ method: "GET" })
   .validator((input) => z.object({ slug: z.string().min(1) }).parse(input))
-  .handler(({ data }) => withFallback(() => fetchWeekend(data.slug), () => fallbackWeekend(data.slug)));
+  .handler(({ data }) =>
+    withFallback(
+      () => fetchWeekend(data.slug),
+      () => fallbackWeekend(data.slug),
+    ),
+  );
 
 export const getChampionship = createServerFn({ method: "GET" })
   .validator((input) => z.object({ season: z.number().int().optional() }).parse(input ?? {}))
   .handler(({ data }) =>
-    withFallback(() => fetchChampionship(data.season ?? SEASON), () => fallbackChampionship(data.season ?? SEASON)),
+    withFallback(
+      () => fetchChampionship(data.season ?? SEASON),
+      () => fallbackChampionship(data.season ?? SEASON),
+    ),
   );
 
 export const getHeadToHead = createServerFn({ method: "GET" })
   .validator((input) =>
-    z
-      .object({ slug: z.string().min(1), a: z.string().min(2), b: z.string().min(2) })
-      .parse(input),
+    z.object({ slug: z.string().min(1), a: z.string().min(2), b: z.string().min(2) }).parse(input),
   )
   .handler(({ data }) =>
     withFallback(
@@ -116,5 +138,8 @@ export type { PickChallenge, PickEntrant, PickResults, TrafficSplit } from "./f1
 export const getPicksBoard = createServerFn({ method: "GET" })
   .validator((input) => z.object({ season: z.number().int().optional() }).parse(input ?? {}))
   .handler(({ data }) =>
-    withFallback(() => fetchPicksBoard(data.season ?? SEASON), () => fallbackPicksBoard(data.season ?? SEASON)),
+    withFallback(
+      () => fetchPicksBoard(data.season ?? SEASON),
+      () => fallbackPicksBoard(data.season ?? SEASON),
+    ),
   );

@@ -8,12 +8,12 @@ steps required before a Vercel preview or production promotion.
 
 Generated artifacts fall into four groups:
 
-| Group | Policy | Runtime required | Rebuildable | Notes |
-| --- | --- | --- | --- | --- |
-| Source scripts, validators, SQL, docs, tests | Tracked | No | Yes | Commit these normally. |
-| Small curated/reference CSVs | Tracked when intentional | Yes for CSV fallback | Yes | Used by Race Week, references, archive, Strategy Lab joins, and local fallback paths. |
-| Small product CSVs for lightweight deploy | Tracked when intentionally small | Yes for current Race Week / Strategy Lab fallback | Yes | Current `data/race_week/*.csv` and most `data/strategy_lab/*.csv` are small enough to bundle if the release chooses CSV fallback. |
-| Large generated product artifacts | Ignored | Yes for flagship surfaces unless regenerated at deploy time | Yes | Analytics global CSVs, Analytics indexed shards/traces, Race Analysis product views, canonical FastF1, telemetry features, reports. |
+| Group                                        | Policy                           | Runtime required                                            | Rebuildable | Notes                                                                                                                             |
+| -------------------------------------------- | -------------------------------- | ----------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Source scripts, validators, SQL, docs, tests | Tracked                          | No                                                          | Yes         | Commit these normally.                                                                                                            |
+| Small curated/reference CSVs                 | Tracked when intentional         | Yes for CSV fallback                                        | Yes         | Used by Race Week, references, archive joins, strategy modeling joins, and local fallback paths.                                  |
+| Small product CSVs for lightweight deploy    | Tracked when intentionally small | Yes for current Race Week / strategy-modeling fallback      | Yes         | Current `data/race_week/*.csv` and most `data/strategy_lab/*.csv` are small enough to bundle if the release chooses CSV fallback. |
+| Large generated product artifacts            | Ignored                          | Yes for flagship surfaces unless regenerated at deploy time | Yes         | Analytics data CSVs, Compare indexed shards/traces, Analysis product views, canonical FastF1, telemetry features, reports.        |
 
 Do not commit raw FastF1 data, staged data, telemetry parquet/feather/arrow,
 cache folders, reports, or large indexed/generated data. If production needs
@@ -22,16 +22,16 @@ them through a deliberate artifact release process.
 
 ## Runtime Dependency Matrix
 
-| Surface / API | Runtime dependency | Current git policy | Missing behavior |
-| --- | --- | --- | --- |
-| Home `/` | curated CSVs, Race Week summary, season state if present | curated small CSVs tracked; `data/season_state.json` tracked as a small authoritative runtime artifact | falls back/degrades depending on helper |
-| Race Week `/predictions`, `/raceweek`, `/api/platform/race-week` | `data/race_week/race_week_*.csv`, curated races/circuits | currently tracked small product CSVs | required CSVs missing cause product unavailability |
-| Strategy Lab `/lab`, `/api/strategy-lab/races/[raceId]` | `data/strategy_lab/*.csv`, curated races/drivers/constructors/circuits | most product CSVs tracked; telemetry/archetype source signals ignored | required CSVs missing cause product unavailability |
-| Analytics `/analytics`, `/api/analytics/*` | `data/analytics/analytics_session_index.csv`, `data/analytics/indexed/analytics_session_manifest.json`, session shards, optional trace shards | ignored except `.gitkeep`; CI uses tiny fixtures | hard requirement for production Analytics; traces degrade if absent |
-| Race Analysis `/race-analysis`, `/race-analysis/[raceId]` | `data/race_analysis/*.csv` | ignored except `.gitkeep` | optional loader returns empty/unavailable if absent |
-| Race Archive `/races/[raceId]` and reference APIs | curated CSVs or Supabase public tables | curated generated CSVs are generally ignored except intentional small tracked files | degraded if neither Supabase nor CSV fallback exists |
-| Account/Profile | Supabase Auth, `user_profiles`, service-role server key for profile helpers | no generated artifact | unavailable without Supabase env/config |
-| Supabase heartbeat `/api/health/supabase` | anon read of `public.races` | no generated artifact | returns `503` if Supabase env, grants, RLS, or data are missing |
+| Surface / API                                     | Runtime dependency                                                                                                                            | Current git policy                                                                                     | Missing behavior                                                  |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| Home `/`                                          | curated CSVs, Race Week summary, season state if present                                                                                      | curated small CSVs tracked; `data/season_state.json` tracked as a small authoritative runtime artifact | falls back/degrades depending on helper                           |
+| Race Week `/raceweek`                             | `data/race_week/race_week_*.csv`, curated races/circuits                                                                                      | currently tracked small product CSVs                                                                   | required CSVs missing cause product unavailability                |
+| Picks `/picks`                                    | `data/race_week/*.csv`, current season state                                                                                                  | currently tracked small product CSVs                                                                   | uses bundled snapshot or unavailable states                       |
+| Compare `/vs`                                     | `data/analytics/analytics_session_index.csv`, `data/analytics/indexed/analytics_session_manifest.json`, session shards, optional trace shards | ignored except `.gitkeep`; CI uses tiny fixtures                                                       | hard requirement for production Compare; traces degrade if absent |
+| Analysis `/analysis`, `/analysis/[slug]`          | `data/race_analysis/*.csv`                                                                                                                    | ignored except `.gitkeep`                                                                              | optional loader returns empty/unavailable if absent               |
+| Race Archive `/races/[raceId]` and reference APIs | curated CSVs or Supabase public tables                                                                                                        | curated generated CSVs are generally ignored except intentional small tracked files                    | degraded if neither Supabase nor CSV fallback exists              |
+| Account/Profile                                   | Supabase Auth, `user_profiles`, service-role server key for profile helpers                                                                   | no generated artifact                                                                                  | unavailable without Supabase env/config                           |
+| Supabase heartbeat `/api/health/supabase`         | anon read of `public.races`                                                                                                                   | no generated artifact                                                                                  | returns `503` if Supabase env, grants, RLS, or data are missing   |
 
 Hard runtime requirements that are currently ignored:
 
@@ -45,19 +45,18 @@ Hard runtime requirements that are currently ignored:
 
 ## Tracked vs Ignored Recommendation
 
-| Path | Recommendation | Reason |
-| --- | --- | --- |
-| `apps/**`, `data/*.py`, root `build_*.py`, root `validate_*.py`, `tests/**`, `docs/**`, `data/sql/**`, `supabase/migrations/**` | Track | Source, validation, migrations, and release docs. |
-| `apps/web/test-fixtures/**` | Track | Required for CI-safe unit tests without large product artifacts. |
-| `data/curated/*.csv` | Track only if intentionally small/current; otherwise generate | Runtime fallback uses these files. Decide per release. |
-| `data/race_week/*.csv` | Track for lightweight CSV fallback if size stays small | Current product views are small and deployment-friendly. |
-| `data/strategy_lab/*.csv` | Track for lightweight CSV fallback if size stays small | Current product views are small; source telemetry signal CSVs remain ignored. |
-| `data/season_state.json` | Track as a small authoritative runtime manifest and refresh before release | Runtime helper reads it. Stale state changes product defaults. |
-| `data/analytics/*.csv`, `data/analytics/indexed/**` | Ignore; deploy-generate or artifact-publish | Large generated flagship data. |
-| `data/race_analysis/**` | Ignore; deploy-generate or artifact-publish | Generated post-race product views can grow quickly. |
-| `data/reports/**` | Ignore; deploy-generate | Reports are build evidence, not source. |
-| `data/raw/**`, `data/staged/**`, `data/canonical_fastf1/*.csv`, `data/telemetry_features/**` | Ignore | Heavy rebuildable pipeline artifacts. |
-| `data/ml/generated/**` | Ignore | Deterministic ML datasets are rebuildable and not product runtime data. |
+| Path                                                                                                                            | Recommendation                                                             | Reason                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `apps/**`, `data/*.py`, root `build_*.py`, root `validate_*.py`, `tests/**`, `docs/**`, `data/sql/**`, `supabase/migrations/**` | Track                                                                      | Source, validation, migrations, and release docs.                             |
+| `data/curated/*.csv`                                                                                                            | Track only if intentionally small/current; otherwise generate              | Runtime fallback uses these files. Decide per release.                        |
+| `data/race_week/*.csv`                                                                                                          | Track for lightweight CSV fallback if size stays small                     | Current product views are small and deployment-friendly.                      |
+| `data/strategy_lab/*.csv`                                                                                                       | Track for lightweight CSV fallback if size stays small                     | Current product views are small; source telemetry signal CSVs remain ignored. |
+| `data/season_state.json`                                                                                                        | Track as a small authoritative runtime manifest and refresh before release | Runtime helper reads it. Stale state changes product defaults.                |
+| `data/analytics/*.csv`, `data/analytics/indexed/**`                                                                             | Ignore; deploy-generate or artifact-publish                                | Large generated flagship data.                                                |
+| `data/race_analysis/**`                                                                                                         | Ignore; deploy-generate or artifact-publish                                | Generated post-race product views can grow quickly.                           |
+| `data/reports/**`                                                                                                               | Ignore; deploy-generate                                                    | Reports are build evidence, not source.                                       |
+| `data/raw/**`, `data/staged/**`, `data/canonical_fastf1/*.csv`, `data/telemetry_features/**`                                    | Ignore                                                                     | Heavy rebuildable pipeline artifacts.                                         |
+| `data/ml/generated/**`                                                                                                          | Ignore                                                                     | Deterministic ML datasets are rebuildable and not product runtime data.       |
 
 ## Rebuild Order
 
@@ -99,9 +98,9 @@ Season-state must be generated after every product surface it summarizes:
 
 1. Refresh curated schedule/results.
 2. Rebuild Race Week for the current next race.
-3. Rebuild Strategy Lab if the next race changed.
-4. Rebuild Analytics if telemetry/product availability changed.
-5. Rebuild Race Analysis if a completed race was added.
+3. Rebuild strategy-modeling views if the next race changed.
+4. Rebuild analytics/Compare views if telemetry/product availability changed.
+5. Rebuild Analysis views if a completed race was added.
 6. Build and validate the product manifest.
 7. Build and validate season state.
 
@@ -126,7 +125,7 @@ Before public deployment, confirm:
 
 Recommended Vercel settings:
 
-- Root Directory: `apps/web`
+- Root Directory: repository root
 - Install Command: `npm install`
 - Build Command: `npm run build`
 - Node: 20+; Node 22 preferred
@@ -141,20 +140,25 @@ Required environment variables:
 
 Deployment options:
 
-1. **Source-only deploy with Supabase-backed public data**
+1. **Source-only deploy with bundled public data**
+   - Uses the generated `src/data` snapshot by default.
+   - Keep `F1_INSIGHTX_PUBLIC_DATA_SOURCE` unset unless Supabase product tables
+     have been refreshed through the latest completed race.
+
+2. **Source-only deploy with Supabase-backed public data**
    - Requires Supabase tables/views to be loaded and granted.
-   - Analytics and Race Analysis still need generated file artifacts unless
+   - Compare and Analysis still need generated file artifacts unless
      those surfaces are intentionally degraded.
 
-2. **Bundled compact artifact deploy**
+3. **Bundled compact artifact deploy**
    - Generate only runtime product artifacts before packaging.
-   - Include ignored Analytics indexes/traces and Race Analysis CSVs in the
+   - Include ignored Compare indexes/traces and Analysis CSVs in the
      deployment artifact without committing them.
    - Keep raw/staged/canonical/telemetry source artifacts out of the bundle.
 
-3. **Tracked lightweight fallback deploy**
-   - Track small curated, Race Week, and Strategy Lab CSVs.
-   - Do not track large Analytics/Race Analysis data.
+4. **Tracked lightweight fallback deploy**
+   - Track small curated, Race Week, and strategy-modeling CSVs.
+   - Do not track large Compare/Analysis data.
    - Use only for previews where flagship surfaces may be unavailable.
 
 ## Supabase Migration and Grant Order
@@ -200,19 +204,18 @@ count, project pause/billing state, and production domain configuration.
 python check_generated_artifacts.py
 python validate_product_manifest.py
 python validate_season_state.py
-npm run test --workspace web
-npm run typecheck
-npm run lint --workspace web
-npm run build --workspace web
+npx tsc --noEmit
+npm run lint
+npm run build
 ```
 
-If deployment includes Analytics traces:
+If deployment includes Compare traces:
 
 ```bash
 python validate_analytics_telemetry_traces.py
 ```
 
-If deployment includes Race Analysis:
+If deployment includes Analysis:
 
 ```bash
 python validate_race_analysis_views.py
@@ -223,19 +226,19 @@ python validate_race_analysis_views.py
 Check these URLs on preview and production:
 
 - `/`
-- `/analytics`
-- `/race-analysis`
-- `/race-analysis/2026-04-miami` or the latest available race
-- `/lab`
-- `/predictions`
+- `/raceweek`
+- `/championship`
+- `/analysis`
+- `/analysis/2026-13-monza` or the latest available race
+- `/vs`
+- `/picks`
 - `/account`
 - `/privacy`
 - `/terms`
 - `/cookies`
 - `/api/health`
 - `/api/health/supabase`
-- `/api/analytics/sessions`
-- `/api/platform/race-week`
+- Supabase-backed auth/profile server functions
 
 Viewport checks:
 
@@ -249,8 +252,8 @@ Public-access QA must confirm:
 - no raw telemetry runtime reads
 - no true ERS/battery claims
 - approximate segment wording remains visible
-- Race Week, Home, Analytics, Strategy Lab, and Race Analysis agree on season state
-- Analytics same-team driver comparisons remain visually distinct and label comparison colors as a visual aid
+- Race Week, Home, Compare, Analysis, Championship, and Picks agree on season state
+- Compare same-team driver comparisons remain visually distinct and label comparison colors as a visual aid
 - Native dropdown options are readable before hover, and scrollable rails expose a thin custom scrollbar
 - Google auth errors degrade cleanly and email fallback is visible
 - cookie preferences do not block core navigation after a user choice
@@ -260,9 +263,9 @@ Public-access QA must confirm:
 
 Do not promote production if any P0 gate fails:
 
-- build/test/typecheck/lint fail
+- build/test/TypeScript/lint fail
 - generated artifact guard fails
 - season state contradicts current schedule/results
 - Supabase heartbeat fails with production env
 - Google OAuth is suspended or misconfigured and email fallback is not working
-- Analytics flagship route lacks required runtime artifacts without a deliberate degraded-state decision
+- Compare flagship route lacks required runtime artifacts without a deliberate degraded-state decision

@@ -19,10 +19,9 @@ Use `.env.local` for local Supabase settings. Real environment files are ignored
 
 ```bash
 npm run dev
-npm run test --workspace web
-npm run typecheck
-npm run lint --workspace web
-npm run build --workspace web
+npx tsc --noEmit
+npm run lint
+npm run build
 ```
 
 The web runtime should read product views only. Raw FastF1 telemetry, parquet files, cache directories, and broad filesystem scans do not belong in API routes or client components.
@@ -33,10 +32,9 @@ Before syncing to GitHub:
 
 ```bash
 git status --short
-npm run test --workspace web
-npm run typecheck
-npm run lint --workspace web
-npm run build --workspace web
+npx tsc --noEmit
+npm run lint
+npm run build
 python validate_canonical_fastf1.py
 python validate_telemetry_features.py
 python validate_analytics_views.py

@@ -2,16 +2,16 @@
 
 ## Target Stack
 
-- Next.js App Router on Vercel
+- TanStack Start root app on Vercel/Lovable
 - Supabase for auth, profile, and database-backed surfaces
-- Offline Python builders for FastF1, Race Week, Strategy Lab, Analytics, representative telemetry traces, and Race Analysis product views
+- Offline Python builders for FastF1, Race Week, strategy modeling, analytics/Compare, representative telemetry traces, and Analysis product views
 
 ## Vercel Setup
 
 Recommended project settings:
 
-- `Framework Preset`: Next.js
-- `Root Directory`: `apps/web`
+- `Framework Preset`: Vite / Other
+- `Root Directory`: repository root
 - `Install Command`: `npm install`
 - `Build Command`: `npm run build`
 
@@ -29,7 +29,7 @@ Required environment variables:
 
 The app is designed to consume compact product views. Raw FastF1 data, staged data, cache files, and telemetry parquet should never be deployed.
 
-If Analytics, Strategy Lab, Race Week, or Race Analysis needs bundled CSV/JSON artifacts in production, generate them before packaging:
+If Compare, strategy-modeling, Race Week, or Analysis needs bundled CSV/JSON artifacts in production, generate them before packaging:
 
 ```bash
 python build_canonical_fastf1.py --start-season 2020 --end-season 2026
@@ -56,13 +56,14 @@ For normal GitHub syncs, keep large generated outputs ignored and publish them t
 
 ## Runtime Boundaries
 
-- API routes should read product views only.
-- Analytics detail modes should use session-scoped indexed shards.
-- Analytics representative traces should come from offline trace artifacts only.
+- The active UI is the root TanStack Start app. `apps/web` is archived and its scripts intentionally fail.
+- Server functions and route loaders should read product views only.
+- Compare detail modes should use session-scoped indexed shards.
+- Compare representative traces should come from offline trace artifacts only.
 - Raw telemetry processing belongs in offline Python builders.
 - Energy deployment is a proxy, not true battery or ERS telemetry.
 - Segment IDs are approximate until manually refined circuit maps exist.
-- Same-team Analytics comparison colors are visual aids and do not change source-derived constructor labels.
+- Same-team Compare colors are visual aids and do not change source-derived constructor labels.
 
 ## Supabase Heartbeat
 
@@ -79,10 +80,8 @@ The endpoint performs one anon-key read against `public.races` and does not touc
 ## Release Checks
 
 ```bash
-npm run test --workspace web
-npm run typecheck
-npm run lint --workspace web
-npm run build --workspace web
+npm run lint
+npm run build
 python validate_canonical_fastf1.py
 python validate_telemetry_features.py
 python validate_analytics_views.py

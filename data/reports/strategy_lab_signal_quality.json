@@ -6,11 +6,12 @@
     "missing_signal_count": 0
   },
   "track_archetype_coverage": {
-    "rows": 12,
+    "rows": 13,
     "archetypes": [
       "braking-heavy",
       "high-degradation",
-      "power-sensitive"
+      "power-sensitive",
+      "track-position-dominant"
     ]
   },
   "proxy_confidence_distribution": {

@@ -41,8 +41,8 @@ const codeToDriverId = (code: string) =>
 const driverName = (code: string) => driverStandings.find((d) => d.code === code)?.name ?? code;
 
 const constructorName = (key: string) => team(key).name;
-const fallbackCircuitId = "monza";
-const fallbackCircuitLocation = "Monza";
+const fallbackCircuitId = "madring";
+const fallbackCircuitLocation = "Madrid";
 const fallbackRaceId = `2026-${String(nextRace.round).padStart(2, "0")}-${fallbackCircuitId}`;
 
 export function fallbackSeasonTelemetry() {

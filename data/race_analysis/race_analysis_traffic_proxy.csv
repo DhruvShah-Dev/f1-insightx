@@ -14100,3 +14100,1057 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-12-zandvoort,TSU,Racing Bulls,70,closing,11,77.385,-0.525,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-12-zandvoort,TSU,Racing Bulls,71,closing,11,77.383,1.161,traffic likely,0.911,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-12-zandvoort,VER,Red Bull Racing,1,opening,,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,1,opening,18,97.381,3.705,traffic likely,3.455,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,2,opening,18,90.395,2.6,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,3,opening,18,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,4,opening,18,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,5,opening,18,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,6,opening,18,132.275,-2.098,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,7,opening,18,89.017,0.765,traffic likely,0.515,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,8,opening,18,88.244,0.565,uncertain,0.315,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,9,opening,17,87.844,0.839,traffic likely,0.589,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,10,opening,17,88.151,0.891,traffic likely,0.641,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,11,middle,17,88.044,0.664,uncertain,0.414,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,12,middle,16,87.078,-0.026,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,13,middle,16,87.066,0.176,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,14,middle,16,87.405,0.334,uncertain,0.084,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,15,middle,16,87.772,0.779,traffic likely,0.529,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,16,middle,16,87.356,0.437,uncertain,0.187,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,17,middle,16,87.29,0.313,uncertain,0.063,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,18,middle,16,87.195,0.356,uncertain,0.106,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,19,middle,16,87.073,0.136,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,20,middle,16,87.018,0.123,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,21,middle,16,87.287,0.426,uncertain,0.176,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,22,middle,16,86.992,-0.06,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,23,middle,16,87.064,0.246,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,24,middle,16,86.975,0.205,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,25,middle,16,86.978,0.224,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,26,middle,16,87.13,0.501,uncertain,0.251,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,27,middle,14,91.758,3.88,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,28,middle,13,110.739,-0.521,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,29,middle,13,86.935,-1.105,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,30,middle,13,87.063,0.575,uncertain,0.325,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,31,middle,13,87.192,0.836,traffic likely,0.586,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,32,middle,13,86.909,0.643,uncertain,0.393,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,33,middle,13,86.973,0.565,uncertain,0.315,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,34,middle,13,87.059,0.852,traffic likely,0.602,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,35,middle,13,86.811,0.687,uncertain,0.437,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,36,middle,13,86.742,0.701,uncertain,0.451,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,37,middle,13,86.955,0.98,traffic likely,0.73,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,38,middle,13,86.851,0.853,traffic likely,0.603,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,39,middle,13,87.069,0.834,traffic likely,0.584,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,40,closing,13,86.977,0.821,traffic likely,0.571,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,41,closing,13,86.842,0.421,uncertain,0.171,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,42,closing,13,87.38,1.5,traffic likely,1.25,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,43,closing,14,87.742,1.464,traffic likely,1.214,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,44,closing,14,87.563,1.414,traffic likely,1.164,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALB,Williams,45,closing,14,87.258,1.3,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,46,closing,16,91.926,6.206,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,47,closing,17,109.658,23.875,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,48,closing,17,90.011,3.898,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,49,closing,17,85.456,-0.939,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALB,Williams,50,closing,17,85.783,-0.28,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,51,closing,17,86.164,-0.069,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALB,Williams,52,closing,17,85.341,-0.275,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALO,Aston Martin,1,opening,22,98.367,4.691,traffic likely,4.441,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,2,opening,19,91.15,3.355,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALO,Aston Martin,3,opening,21,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALO,Aston Martin,4,opening,21,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALO,Aston Martin,5,opening,21,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALO,Aston Martin,6,opening,20,125.482,-8.891,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ALO,Aston Martin,7,opening,19,89.577,1.325,traffic likely,1.075,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,8,opening,19,87.961,0.282,uncertain,0.032,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ALO,Aston Martin,9,opening,19,88.093,1.088,traffic likely,0.838,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,10,opening,19,88.261,1.001,traffic likely,0.751,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,11,middle,19,88.548,1.168,traffic likely,0.918,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,12,middle,19,88.323,1.219,traffic likely,0.969,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,13,middle,18,88.213,1.323,traffic likely,1.073,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,14,middle,18,88.889,1.818,traffic likely,1.568,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,15,middle,18,88.951,1.958,traffic likely,1.708,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,16,middle,17,88.058,1.139,traffic likely,0.889,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,17,middle,18,89.39,2.413,traffic likely,2.163,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,18,middle,17,88.488,1.649,traffic likely,1.399,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,19,middle,18,89.067,2.13,traffic likely,1.88,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,20,middle,18,88.702,1.807,traffic likely,1.557,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,21,middle,18,88.45,1.589,traffic likely,1.339,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,22,middle,17,88.719,1.667,traffic likely,1.417,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ALO,Aston Martin,23,middle,20,94.92,8.102,traffic likely,7.852,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ANT,Mercedes,1,opening,14,95.414,1.738,traffic likely,1.488,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ANT,Mercedes,2,opening,12,87.011,-0.784,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,3,opening,12,146.043,9.265,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,4,opening,12,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,5,opening,12,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,6,opening,8,140.752,6.379,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,7,opening,6,86.503,-1.749,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,8,opening,6,86.3,-1.379,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,9,opening,6,85.749,-1.256,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,10,opening,5,86.352,-0.908,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,11,middle,5,86.101,-1.279,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,12,middle,4,85.721,-1.383,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,13,middle,3,85.469,-1.421,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,14,middle,3,85.828,-1.243,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,15,middle,3,86.118,-0.875,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,16,middle,2,85.615,-1.304,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,17,middle,2,85.203,-1.774,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,18,middle,1,85.224,-1.615,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,19,middle,1,85.729,-1.208,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,20,middle,1,85.589,-1.306,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,21,middle,1,85.833,-1.028,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,22,middle,1,86.536,-0.516,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,23,middle,2,86.685,-0.133,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,24,middle,2,85.994,-0.776,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,25,middle,2,85.287,-1.467,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,26,middle,2,85.402,-1.227,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,27,middle,2,85.544,-2.334,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,28,middle,2,108.661,-2.599,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,29,middle,6,109.136,21.096,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,30,middle,5,84.595,-1.893,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,31,middle,4,84.816,-1.54,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,ANT,Mercedes,32,middle,4,84.672,-1.594,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,33,middle,4,84.976,-1.432,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,34,middle,4,84.669,-1.538,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,ANT,Mercedes,35,middle,3,84.421,-1.703,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,36,middle,3,84.684,-1.357,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,37,middle,2,84.463,-1.512,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,38,middle,2,84.86,-1.138,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,39,middle,2,84.725,-1.51,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,40,closing,2,84.613,-1.543,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,41,closing,2,84.577,-1.844,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,42,closing,2,84.347,-1.533,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,43,closing,2,84.478,-1.8,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,44,closing,2,84.344,-1.805,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,45,closing,2,84.037,-1.921,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,46,closing,2,83.861,-1.859,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,47,closing,2,84.128,-1.655,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,48,closing,2,84.572,-1.541,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,49,closing,2,88.582,2.187,traffic likely,1.937,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,ANT,Mercedes,50,closing,1,84.124,-1.939,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,51,closing,1,84.398,-1.835,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,52,closing,1,84.305,-1.311,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,ANT,Mercedes,53,closing,1,83.504,-2.074,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,1,opening,9,92.659,-1.017,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,2,opening,8,87.733,-0.062,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,3,opening,9,142.717,5.939,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,4,opening,9,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,5,opening,9,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,6,opening,9,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,7,opening,9,88.252,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,8,opening,9,87.442,-0.237,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,9,opening,10,87.651,0.646,uncertain,0.396,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,10,opening,10,87.26,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,11,middle,10,87.38,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,12,middle,10,87.033,-0.071,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,13,middle,10,86.883,-0.007,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,14,middle,10,87.305,0.234,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,15,middle,10,87.145,0.152,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,16,middle,10,87.283,0.364,uncertain,0.114,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,17,middle,10,87.071,0.094,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,18,middle,10,86.939,0.1,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,19,middle,10,87.321,0.384,uncertain,0.134,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,20,middle,10,87.378,0.483,uncertain,0.233,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,21,middle,10,87.353,0.492,uncertain,0.242,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,22,middle,10,87.582,0.53,uncertain,0.28,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,23,middle,10,87.111,0.293,uncertain,0.043,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,24,middle,10,87.252,0.482,uncertain,0.232,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,25,middle,10,87.224,0.47,uncertain,0.22,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,26,middle,10,87.231,0.602,uncertain,0.352,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,27,middle,11,92.347,4.469,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,28,middle,12,111.9,0.64,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,29,middle,12,87.369,-0.671,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BEA,Haas F1 Team,30,middle,12,86.754,0.266,uncertain,0.016,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,31,middle,12,86.356,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,32,middle,12,86.734,0.468,uncertain,0.218,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,33,middle,12,86.724,0.316,uncertain,0.066,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,34,middle,12,87.017,0.81,traffic likely,0.56,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,35,middle,12,87.122,0.998,traffic likely,0.748,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,36,middle,12,87.322,1.281,traffic likely,1.031,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,37,middle,12,87.099,1.124,traffic likely,0.874,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,38,middle,12,87.281,1.283,traffic likely,1.033,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,39,middle,12,87.431,1.196,traffic likely,0.946,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,40,closing,12,87.156,1.0,traffic likely,0.75,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,41,closing,12,87.574,1.153,traffic likely,0.903,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,42,closing,12,87.137,1.257,traffic likely,1.007,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,43,closing,12,87.049,0.771,traffic likely,0.521,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,44,closing,12,87.02,0.871,traffic likely,0.621,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,45,closing,12,86.952,0.994,traffic likely,0.744,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,46,closing,12,87.224,1.504,traffic likely,1.254,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,47,closing,13,87.75,1.967,traffic likely,1.717,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,48,closing,13,86.933,0.82,traffic likely,0.57,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,49,closing,13,87.192,0.797,traffic likely,0.547,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,50,closing,14,87.828,1.765,traffic likely,1.515,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,51,closing,14,86.955,0.722,uncertain,0.472,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,52,closing,15,88.04,2.424,traffic likely,2.174,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BEA,Haas F1 Team,53,closing,15,87.158,1.58,traffic likely,1.33,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOR,Audi,1,opening,11,93.432,-0.244,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,2,opening,11,88.416,0.621,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,3,opening,11,145.367,8.589,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,4,opening,11,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,5,opening,11,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,6,opening,16,147.85,13.477,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,7,opening,15,88.211,-0.041,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,8,opening,15,88.035,0.356,uncertain,0.106,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,9,opening,14,87.597,0.592,uncertain,0.342,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,10,opening,14,87.849,0.589,uncertain,0.339,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,11,middle,15,87.978,0.598,uncertain,0.348,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,12,middle,13,86.673,-0.431,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,13,middle,13,86.929,0.039,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,14,middle,13,87.295,0.224,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,15,middle,12,86.993,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,16,middle,11,86.813,-0.106,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,17,middle,11,87.012,0.035,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,18,middle,11,86.949,0.11,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,19,middle,11,86.883,-0.054,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,20,middle,11,86.735,-0.16,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,21,middle,11,86.582,-0.279,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,22,middle,11,87.315,0.263,uncertain,0.013,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,23,middle,11,86.971,0.153,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,24,middle,11,86.94,0.17,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,25,middle,11,86.449,-0.305,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,26,middle,11,86.998,0.369,uncertain,0.119,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,27,middle,10,87.878,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,28,middle,10,114.938,3.678,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,29,middle,11,87.681,-0.359,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOR,Audi,30,middle,11,86.882,0.394,uncertain,0.144,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,31,middle,11,86.188,-0.168,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,32,middle,11,86.488,0.222,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,33,middle,11,86.408,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,34,middle,11,86.549,0.342,uncertain,0.092,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,35,middle,11,86.639,0.515,uncertain,0.265,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,36,middle,11,86.798,0.757,traffic likely,0.507,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOR,Audi,37,middle,11,86.721,0.746,uncertain,0.496,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,38,middle,11,86.615,0.617,uncertain,0.367,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,39,middle,11,86.557,0.322,uncertain,0.072,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,40,closing,11,86.706,0.55,uncertain,0.3,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,41,closing,11,86.672,0.251,uncertain,0.001,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,42,closing,11,86.761,0.881,traffic likely,0.631,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOR,Audi,43,closing,11,86.777,0.499,uncertain,0.249,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,44,closing,11,86.592,0.443,uncertain,0.193,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,45,closing,11,86.634,0.676,uncertain,0.426,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,46,closing,11,86.607,0.887,traffic likely,0.637,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOR,Audi,47,closing,11,86.466,0.683,uncertain,0.433,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,48,closing,11,86.363,0.25,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,49,closing,11,86.395,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,50,closing,11,86.788,0.725,uncertain,0.475,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,51,closing,11,86.904,0.671,uncertain,0.421,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOR,Audi,52,closing,11,86.851,1.235,traffic likely,0.985,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOR,Audi,53,closing,11,86.322,0.744,uncertain,0.494,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,BOT,Cadillac,1,opening,21,97.725,4.049,traffic likely,3.799,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,2,opening,20,91.895,4.1,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,3,opening,19,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,4,opening,19,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,5,opening,19,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,6,opening,21,131.615,-2.758,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,7,opening,21,89.851,1.599,traffic likely,1.349,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,8,opening,20,88.429,0.75,traffic likely,0.5,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,9,opening,20,89.044,2.039,traffic likely,1.789,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,10,opening,20,89.11,1.85,traffic likely,1.6,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,11,middle,20,88.906,1.526,traffic likely,1.276,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,12,middle,20,88.549,1.445,traffic likely,1.195,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,13,middle,19,88.807,1.917,traffic likely,1.667,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,14,middle,19,88.37,1.299,traffic likely,1.049,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,15,middle,19,88.597,1.604,traffic likely,1.354,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,16,middle,19,88.572,1.653,traffic likely,1.403,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,17,middle,19,88.476,1.499,traffic likely,1.249,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,18,middle,19,88.539,1.7,traffic likely,1.45,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,19,middle,19,88.471,1.534,traffic likely,1.284,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,20,middle,19,88.568,1.673,traffic likely,1.423,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,21,middle,19,88.41,1.549,traffic likely,1.299,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,22,middle,19,88.594,1.542,traffic likely,1.292,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,23,middle,18,88.386,1.568,traffic likely,1.318,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,24,middle,19,89.711,2.941,traffic likely,2.691,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,25,middle,19,88.57,1.816,traffic likely,1.566,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,26,middle,19,88.707,2.078,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,27,middle,19,107.644,19.766,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,28,middle,19,126.8,15.54,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,29,middle,19,87.982,-0.058,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,30,middle,19,90.847,4.359,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,BOT,Cadillac,31,middle,19,87.803,1.447,traffic likely,1.197,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,32,middle,19,89.253,2.987,traffic likely,2.737,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,33,middle,19,87.801,1.393,traffic likely,1.143,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,34,middle,19,87.661,1.454,traffic likely,1.204,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,35,middle,19,88.14,2.016,traffic likely,1.766,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,36,middle,19,88.744,2.703,traffic likely,2.453,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,37,middle,19,89.146,3.171,traffic likely,2.921,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,38,middle,19,87.625,1.627,traffic likely,1.377,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,39,middle,19,87.716,1.481,traffic likely,1.231,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,40,closing,19,89.414,3.258,traffic likely,3.008,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,41,closing,19,87.597,1.176,traffic likely,0.926,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,42,closing,19,87.468,1.588,traffic likely,1.338,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,43,closing,19,87.46,1.182,traffic likely,0.932,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,44,closing,19,87.616,1.467,traffic likely,1.217,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,45,closing,19,87.585,1.627,traffic likely,1.377,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,46,closing,19,92.412,6.692,traffic likely,6.442,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,47,closing,19,97.053,11.27,traffic likely,11.02,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,48,closing,19,88.393,2.28,traffic likely,2.03,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,49,closing,19,93.564,7.169,traffic likely,6.919,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,50,closing,19,89.946,3.883,traffic likely,3.633,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,BOT,Cadillac,51,closing,19,87.325,1.092,traffic likely,0.842,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,COL,Alpine,1,opening,6,90.606,-3.07,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,2,opening,5,87.137,-0.658,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,3,opening,4,126.896,-9.882,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,4,opening,4,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,5,opening,4,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,6,opening,15,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,7,opening,16,88.926,0.674,uncertain,0.424,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,8,opening,16,88.122,0.443,uncertain,0.193,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,9,opening,16,87.968,0.963,traffic likely,0.713,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,COL,Alpine,10,opening,16,87.626,0.366,uncertain,0.116,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,11,middle,16,87.702,0.322,uncertain,0.072,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,12,middle,15,87.951,0.847,traffic likely,0.597,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,COL,Alpine,13,middle,15,87.236,0.346,uncertain,0.096,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,14,middle,15,87.071,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,15,middle,15,87.214,0.221,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,16,middle,14,87.334,0.415,uncertain,0.165,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,17,middle,14,87.06,0.083,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,18,middle,14,86.81,-0.029,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,19,middle,14,86.908,-0.029,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,20,middle,14,86.59,-0.305,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,21,middle,13,86.714,-0.147,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,22,middle,12,87.052,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,23,middle,12,86.727,-0.091,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,24,middle,12,86.302,-0.468,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,25,middle,12,86.238,-0.516,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,26,middle,12,86.376,-0.253,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,27,middle,12,91.763,3.885,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,28,middle,11,111.26,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,29,middle,10,86.245,-1.795,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,COL,Alpine,30,middle,10,86.558,0.07,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,31,middle,10,85.846,-0.51,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,32,middle,10,86.446,0.18,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,33,middle,10,86.354,-0.054,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,34,middle,10,86.326,0.119,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,35,middle,10,85.991,-0.133,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,36,middle,10,85.862,-0.179,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,37,middle,10,85.669,-0.306,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,38,middle,10,85.64,-0.358,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,39,middle,10,85.676,-0.559,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,40,closing,10,85.817,-0.339,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,41,closing,9,86.223,-0.198,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,42,closing,9,85.834,-0.046,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,43,closing,9,86.278,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,44,closing,9,86.061,-0.088,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,45,closing,9,85.958,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,46,closing,9,85.72,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,47,closing,9,85.803,0.02,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,48,closing,9,85.821,-0.292,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,49,closing,9,85.796,-0.599,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,50,closing,9,85.695,-0.368,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,51,closing,9,85.656,-0.577,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,52,closing,9,85.403,-0.213,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,COL,Alpine,53,closing,9,84.933,-0.645,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,1,opening,1,88.47,-5.206,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,GAS,Alpine,2,opening,2,87.795,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,3,opening,2,123.475,-13.303,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,4,opening,2,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,5,opening,2,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,6,opening,2,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,7,opening,3,87.477,-0.775,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,GAS,Alpine,8,opening,3,86.557,-1.122,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,GAS,Alpine,9,opening,3,86.428,-0.577,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,GAS,Alpine,10,opening,6,88.305,1.045,traffic likely,0.795,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,GAS,Alpine,11,middle,6,86.546,-0.834,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,12,middle,6,86.112,-0.992,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,13,middle,6,85.998,-0.892,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,14,middle,6,86.221,-0.85,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,15,middle,6,86.246,-0.747,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,16,middle,6,86.249,-0.67,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,17,middle,6,86.329,-0.648,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,18,middle,6,86.809,-0.03,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,19,middle,6,86.979,0.042,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,20,middle,6,88.85,1.955,traffic likely,1.705,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,GAS,Alpine,21,middle,7,87.627,0.766,traffic likely,0.516,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,GAS,Alpine,22,middle,7,86.919,-0.133,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,23,middle,7,86.578,-0.24,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,24,middle,7,86.022,-0.748,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,25,middle,7,86.283,-0.471,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,26,middle,7,85.888,-0.741,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,27,middle,7,85.82,-2.058,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,28,middle,7,111.068,-0.192,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,29,middle,5,92.132,4.092,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,GAS,Alpine,30,middle,6,86.733,0.245,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,31,middle,7,86.423,0.067,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,32,middle,7,85.927,-0.339,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,33,middle,7,86.073,-0.335,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,34,middle,7,85.974,-0.233,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,35,middle,7,85.963,-0.161,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,36,middle,7,86.041,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,37,middle,7,85.938,-0.037,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,38,middle,7,85.998,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,39,middle,7,85.938,-0.297,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,40,closing,7,85.844,-0.312,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,41,closing,7,85.878,-0.543,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,42,closing,7,85.776,-0.104,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,43,closing,7,85.92,-0.358,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,44,closing,7,85.632,-0.517,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,45,closing,7,85.779,-0.179,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,46,closing,7,85.52,-0.2,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,47,closing,7,85.566,-0.217,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,48,closing,7,85.453,-0.66,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,49,closing,7,85.364,-1.031,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,50,closing,7,85.277,-0.786,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,51,closing,7,85.505,-0.728,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,52,closing,7,85.223,-0.393,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,GAS,Alpine,53,closing,7,84.927,-0.651,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,1,opening,10,93.234,-0.442,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,2,opening,9,87.244,-0.551,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,3,opening,8,138.027,1.249,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,4,opening,8,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,5,opening,8,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,6,opening,5,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,7,opening,4,86.663,-1.589,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,8,opening,4,85.931,-1.748,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,9,opening,4,86.176,-0.829,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,10,opening,3,86.082,-1.178,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,HAM,Ferrari,11,middle,3,86.738,-0.642,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,HAM,Ferrari,12,middle,5,87.104,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,13,middle,5,85.929,-0.961,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,14,middle,5,86.415,-0.656,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,15,middle,5,85.869,-1.124,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,16,middle,4,86.218,-0.701,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,17,middle,4,86.489,-0.488,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,18,middle,4,86.839,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,19,middle,5,86.587,-0.35,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,20,middle,5,86.324,-0.571,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,21,middle,5,86.171,-0.69,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,22,middle,5,86.002,-1.05,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,23,middle,4,85.3,-1.518,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,24,middle,4,86.047,-0.723,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,25,middle,5,87.168,0.414,uncertain,0.164,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,26,middle,5,86.493,-0.136,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,27,middle,5,85.897,-1.981,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,28,middle,5,109.638,-1.622,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,29,middle,3,93.044,5.004,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HAM,Ferrari,30,middle,3,85.912,-0.576,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,HAM,Ferrari,31,middle,3,85.964,-0.392,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,HAM,Ferrari,32,middle,3,86.065,-0.201,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,HAM,Ferrari,33,middle,3,85.904,-0.504,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,HAM,Ferrari,34,middle,3,85.73,-0.477,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,HAM,Ferrari,35,middle,4,86.929,0.805,traffic likely,0.555,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HAM,Ferrari,36,middle,4,85.543,-0.498,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,37,middle,5,85.925,-0.05,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,38,middle,5,85.443,-0.555,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,39,middle,5,85.895,-0.34,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,40,closing,5,85.75,-0.406,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,41,closing,5,86.421,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,42,closing,6,86.718,0.838,traffic likely,0.588,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HAM,Ferrari,43,closing,6,85.463,-0.815,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,44,closing,6,85.612,-0.537,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,45,closing,6,85.636,-0.322,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,46,closing,6,85.469,-0.251,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,47,closing,6,85.75,-0.033,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,48,closing,6,85.601,-0.512,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,49,closing,6,86.632,0.237,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,50,closing,6,86.063,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,51,closing,6,85.659,-0.574,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,52,closing,6,86.244,0.628,uncertain,0.378,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HAM,Ferrari,53,closing,6,85.997,0.419,uncertain,0.169,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,1,opening,13,95.032,1.356,traffic likely,1.106,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HUL,Audi,2,opening,13,87.941,0.146,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,3,opening,13,147.527,10.749,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,4,opening,13,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,5,opening,13,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,6,opening,11,140.996,6.623,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,7,opening,11,88.531,0.279,uncertain,0.029,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,8,opening,12,88.742,1.063,traffic likely,0.813,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HUL,Audi,9,opening,12,87.005,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,10,opening,12,87.082,-0.178,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,11,middle,12,88.411,1.031,traffic likely,0.781,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HUL,Audi,12,middle,11,87.856,0.752,traffic likely,0.502,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HUL,Audi,13,middle,11,87.54,0.65,uncertain,0.4,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,14,middle,11,87.394,0.323,uncertain,0.073,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,15,middle,11,87.629,0.636,uncertain,0.386,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,16,middle,13,88.638,1.719,traffic likely,1.469,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HUL,Audi,17,middle,13,86.977,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,18,middle,12,86.453,-0.386,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,19,middle,12,86.662,-0.275,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,20,middle,12,86.345,-0.55,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,21,middle,12,86.672,-0.189,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,22,middle,13,89.803,2.751,traffic likely,2.501,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HUL,Audi,23,middle,13,86.917,0.099,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,24,middle,13,86.544,-0.226,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,25,middle,13,86.76,0.006,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,26,middle,13,86.533,-0.096,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,27,middle,13,94.678,6.8,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,28,middle,14,124.228,12.968,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,29,middle,14,86.975,-1.065,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,30,middle,14,86.734,0.246,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,HUL,Audi,31,middle,14,86.407,0.051,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,32,middle,14,86.398,0.132,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,33,middle,14,86.249,-0.159,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,34,middle,14,86.196,-0.011,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,35,middle,14,86.033,-0.091,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,36,middle,14,86.017,-0.024,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,37,middle,14,85.975,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,38,middle,14,86.093,0.095,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,39,middle,14,85.893,-0.342,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,40,closing,14,85.991,-0.165,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,41,closing,14,85.757,-0.664,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,42,closing,14,85.648,-0.232,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,43,closing,13,85.382,-0.896,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,44,closing,13,86.052,-0.097,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,45,closing,13,85.567,-0.391,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,46,closing,13,86.659,0.939,traffic likely,0.689,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,HUL,Audi,47,closing,12,85.67,-0.113,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,48,closing,12,86.256,0.143,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,49,closing,12,85.912,-0.483,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,50,closing,12,85.947,-0.116,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,51,closing,12,85.71,-0.523,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,52,closing,12,84.927,-0.689,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,HUL,Audi,53,closing,12,84.364,-1.214,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,1,opening,19,97.497,3.821,traffic likely,3.571,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,2,opening,16,88.836,1.041,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,3,opening,15,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,4,opening,15,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,5,opening,15,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,6,opening,12,134.843,0.47,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,7,opening,12,88.26,0.008,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,8,opening,11,87.679,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,9,opening,11,86.838,-0.167,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,10,opening,11,87.259,-0.001,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,11,middle,11,88.705,1.325,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,12,middle,17,93.743,6.639,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,13,middle,21,115.493,28.603,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,14,middle,21,87.044,-0.027,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,15,middle,21,86.698,-0.295,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,16,middle,21,86.544,-0.375,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,17,middle,21,86.377,-0.6,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,18,middle,21,86.313,-0.526,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,19,middle,21,86.181,-0.756,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,20,middle,21,86.294,-0.601,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,21,middle,20,86.506,-0.355,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,22,middle,20,86.352,-0.7,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,23,middle,19,86.313,-0.505,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,24,middle,17,87.045,0.275,uncertain,0.025,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,25,middle,17,86.748,-0.006,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,26,middle,17,86.514,-0.115,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,27,middle,17,97.509,9.631,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,28,middle,17,105.3,-5.96,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,29,middle,17,86.251,-1.789,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LAW,Red Bull Racing,30,middle,17,86.343,-0.145,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,31,middle,17,86.071,-0.285,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,32,middle,17,86.097,-0.169,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,33,middle,17,85.838,-0.57,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,34,middle,17,85.728,-0.479,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,35,middle,17,85.662,-0.462,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,36,middle,16,85.777,-0.264,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,37,middle,16,85.917,-0.058,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,38,middle,16,85.838,-0.16,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,39,middle,16,85.776,-0.459,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,40,closing,16,86.138,-0.018,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,41,closing,16,85.898,-0.523,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,42,closing,16,85.752,-0.128,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,43,closing,16,85.731,-0.547,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,44,closing,16,87.463,1.314,traffic likely,1.064,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,45,closing,16,85.862,-0.096,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,46,closing,15,85.669,-0.051,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,47,closing,15,85.74,-0.043,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,48,closing,15,86.328,0.215,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,49,closing,15,85.857,-0.538,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,50,closing,15,85.81,-0.253,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,51,closing,15,86.13,-0.103,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,52,closing,14,85.861,0.245,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LAW,Red Bull Racing,53,closing,14,85.578,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LEC,Ferrari,1,opening,3,89.371,-4.305,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,LEC,Ferrari,2,opening,22,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,1,opening,8,92.262,-1.414,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,2,opening,7,87.165,-0.63,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,3,opening,7,136.778,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,4,opening,7,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,5,opening,7,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,6,opening,7,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,7,opening,8,87.902,-0.35,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,8,opening,8,86.83,-0.849,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,9,opening,8,86.526,-0.479,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,10,opening,8,86.552,-0.708,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,11,middle,8,86.667,-0.713,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,12,middle,8,86.508,-0.596,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,13,middle,8,86.71,-0.18,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,14,middle,8,86.522,-0.549,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,15,middle,8,86.841,-0.152,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,16,middle,8,86.919,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,17,middle,8,86.858,-0.119,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,18,middle,8,86.892,0.053,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,19,middle,8,86.785,-0.152,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,20,middle,8,86.927,0.032,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,21,middle,8,86.861,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,22,middle,8,86.674,-0.378,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,23,middle,8,86.693,-0.125,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,24,middle,8,86.782,0.012,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,25,middle,8,86.657,-0.097,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,26,middle,8,86.725,0.096,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,27,middle,8,86.907,-0.971,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,28,middle,8,112.456,1.196,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,29,middle,8,90.26,2.22,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,LIN,Racing Bulls,30,middle,8,86.476,-0.012,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,31,middle,8,86.451,0.095,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,32,middle,8,86.266,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,33,middle,8,86.412,0.004,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,34,middle,8,86.58,0.373,uncertain,0.123,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,35,middle,8,86.401,0.277,uncertain,0.027,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,36,middle,8,86.301,0.26,uncertain,0.01,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,37,middle,8,86.345,0.37,uncertain,0.12,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,38,middle,8,86.482,0.484,uncertain,0.234,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,39,middle,8,86.314,0.079,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,40,closing,8,86.324,0.168,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,41,closing,8,86.638,0.217,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,42,closing,8,86.427,0.547,uncertain,0.297,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,43,closing,8,86.343,0.065,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,44,closing,8,86.162,0.013,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,45,closing,8,86.194,0.236,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,46,closing,8,86.053,0.333,uncertain,0.083,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,47,closing,8,86.028,0.245,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,48,closing,8,86.033,-0.08,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,49,closing,8,86.207,-0.188,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,50,closing,8,86.221,0.158,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,51,closing,8,86.233,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,52,closing,8,86.238,0.622,uncertain,0.372,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,LIN,Racing Bulls,53,closing,8,86.055,0.477,uncertain,0.227,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,1,opening,7,91.58,-2.096,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,2,opening,6,86.915,-0.88,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,3,opening,6,135.827,-0.951,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,4,opening,6,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,5,opening,6,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,6,opening,6,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,7,opening,7,86.993,-1.259,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,8,opening,7,86.433,-1.246,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,9,opening,7,86.203,-0.802,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,10,opening,7,86.591,-0.669,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,11,middle,7,86.238,-1.142,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,12,middle,7,86.213,-0.891,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,13,middle,7,86.07,-0.82,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,14,middle,7,86.06,-1.011,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,15,middle,7,86.201,-0.792,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,16,middle,7,86.262,-0.657,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,17,middle,7,86.549,-0.428,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,18,middle,7,86.456,-0.383,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,19,middle,7,86.99,0.053,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,20,middle,7,88.809,1.914,traffic likely,1.664,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,NOR,McLaren,21,middle,6,86.728,-0.133,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,22,middle,6,87.1,0.048,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,23,middle,6,85.706,-1.112,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,24,middle,6,85.988,-0.782,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,25,middle,6,86.13,-0.624,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,26,middle,6,85.864,-0.765,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,27,middle,6,86.106,-1.772,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,28,middle,6,111.146,-0.114,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,29,middle,4,91.49,3.45,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,NOR,McLaren,30,middle,4,86.322,-0.166,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,31,middle,5,86.391,0.035,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,32,middle,5,85.685,-0.581,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,33,middle,6,86.434,0.026,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,34,middle,6,85.191,-1.016,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,35,middle,6,84.971,-1.153,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,36,middle,6,85.352,-0.689,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,37,middle,6,85.22,-0.755,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,38,middle,6,85.288,-0.71,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,39,middle,6,85.213,-1.022,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,40,closing,6,85.162,-0.994,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,41,closing,6,86.173,-0.248,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,42,closing,5,85.067,-0.813,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,43,closing,5,85.482,-0.796,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,44,closing,5,85.215,-0.934,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,45,closing,5,84.873,-1.085,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,46,closing,5,85.143,-0.577,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,47,closing,5,85.234,-0.549,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,48,closing,4,84.864,-1.249,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,49,closing,5,86.503,0.108,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,50,closing,5,85.327,-0.736,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,51,closing,5,86.589,0.356,uncertain,0.106,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,52,closing,5,85.316,-0.3,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,NOR,McLaren,53,closing,4,85.21,-0.368,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,1,opening,12,93.92,0.244,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,2,opening,10,87.558,-0.237,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,3,opening,10,144.115,7.337,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,4,opening,10,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,5,opening,10,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,6,opening,13,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,7,opening,13,88.798,0.546,uncertain,0.296,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,8,opening,13,88.213,0.534,uncertain,0.284,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,9,opening,13,87.357,0.352,uncertain,0.102,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,10,opening,13,87.462,0.202,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,11,middle,13,87.862,0.482,uncertain,0.232,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,12,middle,12,88.095,0.991,traffic likely,0.741,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,13,middle,12,86.89,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,14,middle,12,87.64,0.569,uncertain,0.319,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,15,middle,13,87.795,0.802,traffic likely,0.552,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,16,middle,12,87.285,0.366,uncertain,0.116,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,17,middle,12,87.129,0.152,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,18,middle,13,87.507,0.668,uncertain,0.418,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,19,middle,13,86.937,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,20,middle,13,86.787,-0.108,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,21,middle,14,88.309,1.448,traffic likely,1.198,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,22,middle,14,87.61,0.558,uncertain,0.308,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,23,middle,14,86.978,0.16,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,24,middle,14,86.758,-0.012,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,25,middle,14,87.046,0.292,uncertain,0.042,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,26,middle,14,88.014,1.385,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,27,middle,15,95.904,8.026,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,28,middle,16,125.899,14.639,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,29,middle,16,86.554,-1.486,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,30,middle,16,86.32,-0.168,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,OCO,Haas F1 Team,31,middle,16,86.443,0.087,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,32,middle,16,86.4,0.134,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,33,middle,16,86.577,0.169,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,34,middle,16,86.207,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,35,middle,16,86.303,0.179,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,36,middle,17,87.157,1.116,traffic likely,0.866,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,37,middle,17,86.108,0.133,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,38,middle,17,86.22,0.222,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,39,middle,17,86.88,0.645,uncertain,0.395,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,40,closing,17,87.268,1.112,traffic likely,0.862,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,41,closing,17,86.802,0.381,uncertain,0.131,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,42,closing,17,87.065,1.185,traffic likely,0.935,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,43,closing,17,87.169,0.891,traffic likely,0.641,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,44,closing,17,86.874,0.725,uncertain,0.475,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,45,closing,17,86.827,0.869,traffic likely,0.619,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,46,closing,17,87.095,1.375,traffic likely,1.125,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,47,closing,16,87.06,1.277,traffic likely,1.027,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,48,closing,16,87.059,0.946,traffic likely,0.696,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,49,closing,16,86.899,0.504,uncertain,0.254,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,50,closing,16,86.831,0.768,traffic likely,0.518,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,51,closing,16,89.644,3.411,traffic likely,3.161,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,OCO,Haas F1 Team,52,closing,16,85.711,0.095,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PER,Cadillac,1,opening,17,96.657,2.981,traffic likely,2.731,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,2,opening,17,90.033,2.238,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,3,opening,17,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,4,opening,17,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,5,opening,17,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,6,opening,17,134.373,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,7,opening,17,88.725,0.473,uncertain,0.223,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PER,Cadillac,8,opening,17,88.382,0.703,uncertain,0.453,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PER,Cadillac,9,opening,18,88.491,1.486,traffic likely,1.236,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,10,opening,18,88.248,0.988,traffic likely,0.738,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,11,middle,18,88.527,1.147,traffic likely,0.897,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,12,middle,18,88.087,0.983,traffic likely,0.733,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,13,middle,17,88.614,1.724,traffic likely,1.474,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,14,middle,17,88.92,1.849,traffic likely,1.599,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,15,middle,17,89.001,2.008,traffic likely,1.758,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,16,middle,18,88.785,1.866,traffic likely,1.616,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,17,middle,17,88.357,1.38,traffic likely,1.13,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,18,middle,18,89.089,2.25,traffic likely,2.0,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,19,middle,17,88.416,1.479,traffic likely,1.229,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,20,middle,17,88.77,1.875,traffic likely,1.625,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,21,middle,17,88.824,1.963,traffic likely,1.713,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,22,middle,18,89.886,2.834,traffic likely,2.584,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,23,middle,17,88.92,2.102,traffic likely,1.852,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,24,middle,18,89.367,2.597,traffic likely,2.347,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,25,middle,18,88.282,1.528,traffic likely,1.278,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,26,middle,18,88.847,2.218,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,27,middle,18,106.36,18.482,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,28,middle,18,121.381,10.121,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,29,middle,18,88.04,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,30,middle,18,88.678,2.19,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PER,Cadillac,31,middle,18,88.981,2.625,traffic likely,2.375,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,32,middle,18,90.477,4.211,traffic likely,3.961,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,33,middle,18,88.076,1.668,traffic likely,1.418,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,34,middle,18,87.021,0.814,traffic likely,0.564,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,35,middle,18,87.651,1.527,traffic likely,1.277,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,36,middle,18,88.358,2.317,traffic likely,2.067,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,37,middle,18,88.711,2.736,traffic likely,2.486,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,38,middle,18,87.454,1.456,traffic likely,1.206,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,39,middle,18,87.85,1.615,traffic likely,1.365,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,40,closing,18,88.034,1.878,traffic likely,1.628,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,41,closing,18,87.714,1.293,traffic likely,1.043,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,42,closing,18,90.03,4.15,traffic likely,3.9,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,43,closing,18,87.078,0.8,traffic likely,0.55,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,44,closing,18,87.289,1.14,traffic likely,0.89,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,45,closing,18,87.432,1.474,traffic likely,1.224,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,46,closing,18,87.573,1.853,traffic likely,1.603,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,47,closing,18,87.524,1.741,traffic likely,1.491,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,48,closing,18,88.716,2.603,traffic likely,2.353,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,49,closing,18,87.889,1.494,traffic likely,1.244,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,50,closing,18,87.496,1.433,traffic likely,1.183,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PER,Cadillac,51,closing,18,86.914,0.681,uncertain,0.431,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PER,Cadillac,52,closing,18,87.327,1.711,traffic likely,1.461,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,PIA,McLaren,1,opening,5,90.028,-3.648,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,2,opening,4,87.486,-0.309,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,3,opening,5,133.714,-3.064,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,4,opening,5,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,5,opening,5,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,6,opening,4,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,7,opening,5,87.432,-0.82,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,8,opening,5,86.051,-1.628,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,9,opening,5,85.978,-1.027,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,10,opening,4,86.321,-0.939,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,11,middle,4,86.086,-1.294,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,12,middle,3,85.975,-1.129,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,13,middle,4,86.547,-0.343,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,14,middle,4,86.111,-0.96,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,15,middle,4,86.233,-0.76,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,16,middle,5,86.723,-0.196,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,17,middle,5,86.552,-0.425,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,18,middle,5,86.764,-0.075,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,19,middle,4,85.646,-1.291,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,20,middle,4,86.094,-0.801,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,21,middle,4,86.231,-0.63,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,22,middle,4,86.083,-0.969,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,23,middle,5,86.811,-0.007,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,24,middle,5,85.926,-0.844,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,25,middle,4,85.884,-0.87,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,26,middle,4,86.143,-0.486,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,27,middle,4,86.106,-1.772,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,28,middle,4,109.065,-2.195,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,29,middle,2,92.536,4.496,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,PIA,McLaren,30,middle,2,85.915,-0.573,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,31,middle,2,85.967,-0.389,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,32,middle,2,86.02,-0.246,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,33,middle,2,86.251,-0.157,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,34,middle,2,86.035,-0.172,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,35,middle,2,85.597,-0.527,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,36,middle,2,85.544,-0.497,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,37,middle,3,86.128,0.153,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,38,middle,3,85.315,-0.683,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,39,middle,4,86.325,0.09,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,40,closing,4,86.156,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,41,closing,3,86.152,-0.269,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,42,closing,3,85.692,-0.188,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,PIA,McLaren,43,closing,4,86.242,-0.036,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,44,closing,4,85.194,-0.955,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,45,closing,4,85.125,-0.833,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,46,closing,4,85.313,-0.407,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,47,closing,4,85.385,-0.398,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,48,closing,5,85.755,-0.358,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,49,closing,4,85.458,-0.937,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,50,closing,4,85.525,-0.538,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,51,closing,4,86.314,0.081,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,52,closing,4,85.521,-0.095,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,PIA,McLaren,53,closing,5,85.834,0.256,uncertain,0.006,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,RUS,Mercedes,1,opening,2,88.774,-4.902,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,2,opening,1,86.651,-1.144,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,3,opening,1,119.148,-17.63,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,4,opening,1,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,5,opening,1,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,6,opening,1,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,7,opening,1,86.44,-1.812,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,8,opening,1,86.093,-1.586,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,9,opening,1,86.495,-0.51,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,10,opening,1,86.305,-0.955,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,11,middle,1,86.63,-0.75,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,12,middle,2,87.352,0.248,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,13,middle,2,86.142,-0.748,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,14,middle,2,86.549,-0.522,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,15,middle,1,85.773,-1.22,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,16,middle,1,85.742,-1.177,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,17,middle,1,85.584,-1.393,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,18,middle,2,86.152,-0.687,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,19,middle,2,85.802,-1.135,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,20,middle,2,85.606,-1.289,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,21,middle,2,85.768,-1.093,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,22,middle,2,86.496,-0.556,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,23,middle,1,85.827,-0.991,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,24,middle,1,85.642,-1.128,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,25,middle,1,85.345,-1.409,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,26,middle,1,85.505,-1.124,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,27,middle,1,85.517,-2.361,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,28,middle,1,105.699,-5.561,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,29,middle,1,98.375,10.335,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,RUS,Mercedes,30,middle,1,85.66,-0.828,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,31,middle,1,85.569,-0.787,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,32,middle,1,85.34,-0.926,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,33,middle,1,85.404,-1.004,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,34,middle,1,85.412,-0.795,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,35,middle,1,85.296,-0.828,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,36,middle,1,85.223,-0.818,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,37,middle,1,85.337,-0.638,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,38,middle,1,85.386,-0.612,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,39,middle,1,85.018,-1.217,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,40,closing,1,85.094,-1.062,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,41,closing,1,85.331,-1.09,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,42,closing,1,85.137,-0.743,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,43,closing,1,85.261,-1.017,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,44,closing,1,85.128,-1.021,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,45,closing,1,85.183,-0.775,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,46,closing,1,84.961,-0.759,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,47,closing,1,84.861,-0.922,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,48,closing,1,85.276,-0.837,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,49,closing,1,87.975,1.58,uncertain,1.33,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,RUS,Mercedes,50,closing,2,86.206,0.143,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,51,closing,2,84.39,-1.843,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,52,closing,2,84.977,-0.639,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,RUS,Mercedes,53,closing,2,85.486,-0.092,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,SAI,Williams,1,opening,16,96.596,2.92,traffic likely,2.67,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,SAI,Williams,2,opening,15,89.305,1.51,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,3,opening,16,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,4,opening,16,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,5,opening,16,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,6,opening,14,133.388,-0.985,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,7,opening,14,88.332,0.08,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,8,opening,14,88.665,0.986,traffic likely,0.736,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,SAI,Williams,9,opening,15,88.223,1.218,traffic likely,0.968,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,SAI,Williams,10,opening,15,87.945,0.685,uncertain,0.435,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,11,middle,14,87.155,-0.225,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,12,middle,14,87.941,0.837,traffic likely,0.587,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,SAI,Williams,13,middle,14,87.268,0.378,uncertain,0.128,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,14,middle,14,87.406,0.335,uncertain,0.085,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,15,middle,14,87.571,0.578,uncertain,0.328,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,16,middle,15,88.221,1.302,traffic likely,1.052,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,SAI,Williams,17,middle,15,87.494,0.517,uncertain,0.267,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,18,middle,15,86.915,0.076,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,19,middle,15,87.074,0.137,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,20,middle,15,86.895,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,21,middle,15,87.067,0.206,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,22,middle,15,87.456,0.404,uncertain,0.154,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,23,middle,15,87.169,0.351,uncertain,0.101,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,24,middle,15,87.005,0.235,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,25,middle,15,87.114,0.36,uncertain,0.11,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,26,middle,15,87.305,0.676,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,27,middle,16,95.474,7.596,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,28,middle,15,123.779,12.519,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,29,middle,15,86.613,-1.427,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,30,middle,15,86.488,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,SAI,Williams,31,middle,15,86.128,-0.228,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,32,middle,15,86.236,-0.03,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,33,middle,15,86.415,0.007,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,34,middle,15,86.278,0.071,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,35,middle,15,86.124,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,36,middle,15,86.1,0.059,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,37,middle,15,85.91,-0.065,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,38,middle,15,85.772,-0.226,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,39,middle,15,86.235,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,40,closing,15,86.036,-0.12,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,41,closing,15,85.93,-0.491,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,42,closing,15,85.88,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,43,closing,15,86.39,0.112,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,44,closing,15,86.149,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,45,closing,15,86.098,0.14,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,46,closing,14,85.683,-0.037,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,47,closing,14,85.783,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,48,closing,14,86.113,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,49,closing,14,85.847,-0.548,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,50,closing,13,86.399,0.336,uncertain,0.086,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,51,closing,13,86.257,0.024,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,52,closing,13,85.96,0.344,uncertain,0.094,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,SAI,Williams,53,closing,13,85.964,0.386,uncertain,0.136,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,STR,Aston Martin,1,opening,20,97.717,4.041,traffic likely,3.791,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,2,opening,21,92.315,4.52,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,STR,Aston Martin,3,opening,20,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,STR,Aston Martin,4,opening,20,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,STR,Aston Martin,5,opening,20,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,STR,Aston Martin,6,opening,19,127.64,-6.733,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,STR,Aston Martin,7,opening,20,90.832,2.58,traffic likely,2.33,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,8,opening,21,89.718,2.039,traffic likely,1.789,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,9,opening,21,89.406,2.401,traffic likely,2.151,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,10,opening,21,89.06,1.8,traffic likely,1.55,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,11,middle,21,88.415,1.035,traffic likely,0.785,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,12,middle,21,88.887,1.783,traffic likely,1.533,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,13,middle,20,88.946,2.056,traffic likely,1.806,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,14,middle,20,89.076,2.005,traffic likely,1.755,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,15,middle,20,89.438,2.445,traffic likely,2.195,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,16,middle,20,89.347,2.428,traffic likely,2.178,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,17,middle,20,89.085,2.108,traffic likely,1.858,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,18,middle,20,89.285,2.446,traffic likely,2.196,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,19,middle,20,89.11,2.173,traffic likely,1.923,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,20,middle,20,89.196,2.301,traffic likely,2.051,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,21,middle,21,89.655,2.794,traffic likely,2.544,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,22,middle,21,89.206,2.154,traffic likely,1.904,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,23,middle,21,89.428,2.61,traffic likely,2.36,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,24,middle,20,89.978,3.208,traffic likely,2.958,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,25,middle,20,91.605,4.851,traffic likely,4.601,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,26,middle,20,89.445,2.816,traffic likely,2.566,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,STR,Aston Martin,27,middle,,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,1,opening,15,96.174,2.498,traffic likely,2.248,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,TSU,Racing Bulls,2,opening,14,88.814,1.019,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,3,opening,14,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,4,opening,14,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,5,opening,14,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,6,opening,10,136.065,1.692,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,7,opening,10,88.09,-0.162,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,8,opening,10,87.369,-0.31,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,9,opening,9,86.631,-0.374,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,10,opening,9,86.994,-0.266,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,11,middle,9,86.859,-0.521,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,12,middle,9,86.733,-0.371,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,13,middle,9,86.481,-0.409,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,14,middle,9,86.876,-0.195,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,15,middle,9,86.53,-0.463,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,16,middle,9,86.692,-0.227,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,17,middle,9,86.585,-0.392,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,18,middle,9,86.686,-0.153,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,19,middle,9,86.976,0.039,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,20,middle,9,86.951,0.056,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,21,middle,9,86.899,0.038,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,22,middle,9,86.866,-0.186,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,23,middle,9,86.818,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,24,middle,9,86.997,0.227,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,25,middle,9,87.052,0.298,uncertain,0.048,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,26,middle,9,87.135,0.506,uncertain,0.256,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,27,middle,9,86.935,-0.943,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,28,middle,9,113.621,2.361,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,29,middle,9,89.654,1.614,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,TSU,Racing Bulls,30,middle,9,86.86,0.372,uncertain,0.122,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,31,middle,9,86.86,0.504,uncertain,0.254,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,32,middle,9,86.625,0.359,uncertain,0.109,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,33,middle,9,86.751,0.343,uncertain,0.093,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,34,middle,9,86.634,0.427,uncertain,0.177,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,35,middle,9,86.696,0.572,uncertain,0.322,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,36,middle,9,86.408,0.367,uncertain,0.117,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,37,middle,9,86.383,0.408,uncertain,0.158,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,38,middle,9,86.612,0.614,uncertain,0.364,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,39,middle,9,86.607,0.372,uncertain,0.122,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,40,closing,9,86.892,0.736,uncertain,0.486,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,41,closing,10,87.25,0.829,traffic likely,0.579,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,TSU,Racing Bulls,42,closing,10,86.32,0.44,uncertain,0.19,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,43,closing,10,86.789,0.511,uncertain,0.261,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,44,closing,10,86.494,0.345,uncertain,0.095,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,45,closing,10,86.533,0.575,uncertain,0.325,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,46,closing,10,86.495,0.775,traffic likely,0.525,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,TSU,Racing Bulls,47,closing,10,86.589,0.806,traffic likely,0.556,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,TSU,Racing Bulls,48,closing,10,86.613,0.5,uncertain,0.25,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,49,closing,10,86.53,0.135,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,50,closing,10,86.694,0.631,uncertain,0.381,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,51,closing,10,86.755,0.522,uncertain,0.272,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,TSU,Racing Bulls,52,closing,10,86.82,1.204,traffic likely,0.954,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,TSU,Racing Bulls,53,closing,10,86.64,1.062,traffic likely,0.812,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,1,opening,4,89.682,-3.994,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,2,opening,3,87.174,-0.621,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,3,opening,3,125.983,-10.795,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,4,opening,3,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,5,opening,3,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,6,opening,3,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,7,opening,2,86.328,-1.924,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,8,opening,2,86.407,-1.272,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,9,opening,2,86.096,-0.909,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,10,opening,2,85.609,-1.651,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,11,middle,2,86.154,-1.226,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,12,middle,1,86.438,-0.666,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,13,middle,1,86.28,-0.61,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,14,middle,1,86.411,-0.66,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,15,middle,2,86.958,-0.035,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,16,middle,3,86.445,-0.474,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,17,middle,3,85.419,-1.558,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,18,middle,3,85.467,-1.372,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,19,middle,3,86.426,-0.511,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,20,middle,3,86.073,-0.822,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,21,middle,3,86.171,-0.69,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,22,middle,3,86.062,-0.99,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,23,middle,3,85.85,-0.968,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,24,middle,3,85.725,-1.045,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,25,middle,3,85.377,-1.377,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,26,middle,3,85.706,-0.923,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,27,middle,3,85.81,-2.068,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,28,middle,3,109.197,-2.063,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,29,middle,7,108.394,20.354,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,30,middle,7,85.13,-1.358,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,31,middle,6,84.514,-1.842,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-13-monza,VER,Red Bull Racing,32,middle,6,85.391,-0.875,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,33,middle,5,84.9,-1.508,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,34,middle,5,85.025,-1.182,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,35,middle,5,84.816,-1.308,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,36,middle,5,84.677,-1.364,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,37,middle,4,84.242,-1.733,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,38,middle,4,84.705,-1.293,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,39,middle,3,84.614,-1.621,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,40,closing,3,86.643,0.487,uncertain,0.237,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,41,closing,4,87.132,0.711,uncertain,0.461,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,42,closing,4,85.533,-0.347,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-13-monza,VER,Red Bull Racing,43,closing,3,85.03,-1.248,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,44,closing,3,85.158,-0.991,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,45,closing,3,85.411,-0.547,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,46,closing,3,85.235,-0.485,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,47,closing,3,85.209,-0.574,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,48,closing,3,84.844,-1.269,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,49,closing,3,85.023,-1.372,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,50,closing,3,85.392,-0.671,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,51,closing,3,85.419,-0.814,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,52,closing,3,85.373,-0.243,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-13-monza,VER,Red Bull Racing,53,closing,3,84.804,-0.774,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.

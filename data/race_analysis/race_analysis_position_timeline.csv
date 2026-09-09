@@ -14072,3 +14072,1056 @@ race_analysis_id,driver,team,lap_number,position,position_delta_from_start,posit
 2026-12-zandvoort,TSU,Racing Bulls,69,11,1,0.0,closing,mixed,0.52,derived
 2026-12-zandvoort,TSU,Racing Bulls,70,11,1,0.0,closing,mixed,0.52,derived
 2026-12-zandvoort,TSU,Racing Bulls,71,11,1,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,1,18,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALB,Williams,2,18,2,0.0,opening,mixed,0.52,derived
+2026-13-monza,ALB,Williams,3,18,2,0.0,opening,mixed,0.52,derived
+2026-13-monza,ALB,Williams,4,18,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALB,Williams,5,18,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALB,Williams,6,18,2,0.0,opening,yellow,0.82,derived
+2026-13-monza,ALB,Williams,7,18,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALB,Williams,8,18,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALB,Williams,9,17,3,1.0,opening,green,0.82,derived
+2026-13-monza,ALB,Williams,10,17,3,0.0,opening,green,0.82,derived
+2026-13-monza,ALB,Williams,11,17,3,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,12,16,4,1.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,13,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,14,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,15,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,16,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,17,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,18,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,19,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,20,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,21,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,22,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,23,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,24,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,25,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,26,16,4,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,27,14,6,2.0,middle,mixed,0.52,derived
+2026-13-monza,ALB,Williams,28,13,7,1.0,middle,mixed,0.52,derived
+2026-13-monza,ALB,Williams,29,13,7,0.0,middle,mixed,0.52,derived
+2026-13-monza,ALB,Williams,30,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,31,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,32,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,33,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,34,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,35,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,36,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,37,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,38,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,39,13,7,0.0,middle,green,0.82,derived
+2026-13-monza,ALB,Williams,40,13,7,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,41,13,7,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,42,13,7,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,43,14,6,-1.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,44,14,6,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,45,14,6,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,46,16,4,-2.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,47,17,3,-1.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,48,17,3,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,49,17,3,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,50,17,3,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,51,17,3,0.0,closing,green,0.82,derived
+2026-13-monza,ALB,Williams,52,17,3,0.0,closing,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,1,22,-1,0.0,opening,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,2,19,2,3.0,opening,mixed,0.52,derived
+2026-13-monza,ALO,Aston Martin,3,21,0,-2.0,opening,mixed,0.52,derived
+2026-13-monza,ALO,Aston Martin,4,21,0,0.0,opening,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,5,21,0,0.0,opening,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,6,20,1,1.0,opening,yellow,0.82,derived
+2026-13-monza,ALO,Aston Martin,7,19,2,1.0,opening,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,8,19,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,9,19,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,10,19,2,0.0,opening,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,11,19,2,0.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,12,19,2,0.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,13,18,3,1.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,14,18,3,0.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,15,18,3,0.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,16,17,4,1.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,17,18,3,-1.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,18,17,4,1.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,19,18,3,-1.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,20,18,3,0.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,21,18,3,0.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,22,17,4,1.0,middle,green,0.82,derived
+2026-13-monza,ALO,Aston Martin,23,20,1,-3.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,1,14,5,0.0,opening,green,0.82,derived
+2026-13-monza,ANT,Mercedes,2,12,7,2.0,opening,mixed,0.52,derived
+2026-13-monza,ANT,Mercedes,3,12,7,0.0,opening,mixed,0.52,derived
+2026-13-monza,ANT,Mercedes,4,12,7,0.0,opening,green,0.82,derived
+2026-13-monza,ANT,Mercedes,5,12,7,0.0,opening,green,0.82,derived
+2026-13-monza,ANT,Mercedes,6,8,11,4.0,opening,yellow,0.82,derived
+2026-13-monza,ANT,Mercedes,7,6,13,2.0,opening,green,0.82,derived
+2026-13-monza,ANT,Mercedes,8,6,13,0.0,opening,green,0.82,derived
+2026-13-monza,ANT,Mercedes,9,6,13,0.0,opening,green,0.82,derived
+2026-13-monza,ANT,Mercedes,10,5,14,1.0,opening,green,0.82,derived
+2026-13-monza,ANT,Mercedes,11,5,14,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,12,4,15,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,13,3,16,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,14,3,16,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,15,3,16,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,16,2,17,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,17,2,17,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,18,1,18,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,19,1,18,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,20,1,18,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,21,1,18,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,22,1,18,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,23,2,17,-1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,24,2,17,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,25,2,17,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,26,2,17,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,27,2,17,0.0,middle,mixed,0.52,derived
+2026-13-monza,ANT,Mercedes,28,2,17,0.0,middle,mixed,0.52,derived
+2026-13-monza,ANT,Mercedes,29,6,13,-4.0,middle,mixed,0.52,derived
+2026-13-monza,ANT,Mercedes,30,5,14,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,31,4,15,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,32,4,15,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,33,4,15,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,34,4,15,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,35,3,16,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,36,3,16,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,37,2,17,1.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,38,2,17,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,39,2,17,0.0,middle,green,0.82,derived
+2026-13-monza,ANT,Mercedes,40,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,41,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,42,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,43,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,44,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,45,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,46,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,47,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,48,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,49,2,17,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,50,1,18,1.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,51,1,18,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,52,1,18,0.0,closing,green,0.82,derived
+2026-13-monza,ANT,Mercedes,53,1,18,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,1,9,2,0.0,opening,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,2,8,3,1.0,opening,mixed,0.52,derived
+2026-13-monza,BEA,Haas F1 Team,3,9,2,-1.0,opening,mixed,0.52,derived
+2026-13-monza,BEA,Haas F1 Team,4,9,2,0.0,opening,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,5,9,2,0.0,opening,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,6,9,2,0.0,opening,yellow,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,7,9,2,0.0,opening,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,8,9,2,0.0,opening,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,9,10,1,-1.0,opening,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,10,10,1,0.0,opening,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,11,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,12,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,13,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,14,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,15,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,16,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,17,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,18,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,19,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,20,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,21,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,22,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,23,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,24,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,25,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,26,10,1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,27,11,0,-1.0,middle,mixed,0.52,derived
+2026-13-monza,BEA,Haas F1 Team,28,12,-1,-1.0,middle,mixed,0.52,derived
+2026-13-monza,BEA,Haas F1 Team,29,12,-1,0.0,middle,mixed,0.52,derived
+2026-13-monza,BEA,Haas F1 Team,30,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,31,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,32,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,33,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,34,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,35,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,36,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,37,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,38,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,39,12,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,40,12,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,41,12,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,42,12,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,43,12,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,44,12,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,45,12,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,46,12,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,47,13,-2,-1.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,48,13,-2,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,49,13,-2,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,50,14,-3,-1.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,51,14,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,52,15,-4,-1.0,closing,green,0.82,derived
+2026-13-monza,BEA,Haas F1 Team,53,15,-4,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,1,11,-1,0.0,opening,green,0.82,derived
+2026-13-monza,BOR,Audi,2,11,-1,0.0,opening,mixed,0.52,derived
+2026-13-monza,BOR,Audi,3,11,-1,0.0,opening,mixed,0.52,derived
+2026-13-monza,BOR,Audi,4,11,-1,0.0,opening,green,0.82,derived
+2026-13-monza,BOR,Audi,5,11,-1,0.0,opening,green,0.82,derived
+2026-13-monza,BOR,Audi,6,16,-6,-5.0,opening,yellow,0.82,derived
+2026-13-monza,BOR,Audi,7,15,-5,1.0,opening,green,0.82,derived
+2026-13-monza,BOR,Audi,8,15,-5,0.0,opening,green,0.82,derived
+2026-13-monza,BOR,Audi,9,14,-4,1.0,opening,green,0.82,derived
+2026-13-monza,BOR,Audi,10,14,-4,0.0,opening,green,0.82,derived
+2026-13-monza,BOR,Audi,11,15,-5,-1.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,12,13,-3,2.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,13,13,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,14,13,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,15,12,-2,1.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,16,11,-1,1.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,17,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,18,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,19,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,20,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,21,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,22,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,23,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,24,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,25,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,26,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,27,10,0,1.0,middle,mixed,0.52,derived
+2026-13-monza,BOR,Audi,28,10,0,0.0,middle,mixed,0.52,derived
+2026-13-monza,BOR,Audi,29,11,-1,-1.0,middle,mixed,0.52,derived
+2026-13-monza,BOR,Audi,30,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,31,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,32,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,33,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,34,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,35,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,36,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,37,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,38,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,39,11,-1,0.0,middle,green,0.82,derived
+2026-13-monza,BOR,Audi,40,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,41,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,42,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,43,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,44,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,45,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,46,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,47,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,48,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,49,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,50,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,51,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,52,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOR,Audi,53,11,-1,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,1,21,-5,0.0,opening,green,0.82,derived
+2026-13-monza,BOT,Cadillac,2,20,-4,1.0,opening,mixed,0.52,derived
+2026-13-monza,BOT,Cadillac,3,19,-3,1.0,opening,mixed,0.52,derived
+2026-13-monza,BOT,Cadillac,4,19,-3,0.0,opening,green,0.82,derived
+2026-13-monza,BOT,Cadillac,5,19,-3,0.0,opening,green,0.82,derived
+2026-13-monza,BOT,Cadillac,6,21,-5,-2.0,opening,yellow,0.82,derived
+2026-13-monza,BOT,Cadillac,7,21,-5,0.0,opening,green,0.82,derived
+2026-13-monza,BOT,Cadillac,8,20,-4,1.0,opening,green,0.82,derived
+2026-13-monza,BOT,Cadillac,9,20,-4,0.0,opening,green,0.82,derived
+2026-13-monza,BOT,Cadillac,10,20,-4,0.0,opening,green,0.82,derived
+2026-13-monza,BOT,Cadillac,11,20,-4,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,12,20,-4,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,13,19,-3,1.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,14,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,15,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,16,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,17,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,18,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,19,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,20,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,21,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,22,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,23,18,-2,1.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,24,19,-3,-1.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,25,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,26,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,27,19,-3,0.0,middle,mixed,0.52,derived
+2026-13-monza,BOT,Cadillac,28,19,-3,0.0,middle,mixed,0.52,derived
+2026-13-monza,BOT,Cadillac,29,19,-3,0.0,middle,mixed,0.52,derived
+2026-13-monza,BOT,Cadillac,30,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,31,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,32,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,33,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,34,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,35,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,36,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,37,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,38,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,39,19,-3,0.0,middle,green,0.82,derived
+2026-13-monza,BOT,Cadillac,40,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,41,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,42,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,43,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,44,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,45,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,46,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,47,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,48,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,49,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,50,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,BOT,Cadillac,51,19,-3,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,1,6,1,0.0,opening,green,0.82,derived
+2026-13-monza,COL,Alpine,2,5,2,1.0,opening,mixed,0.52,derived
+2026-13-monza,COL,Alpine,3,4,3,1.0,opening,mixed,0.52,derived
+2026-13-monza,COL,Alpine,4,4,3,0.0,opening,green,0.82,derived
+2026-13-monza,COL,Alpine,5,4,3,0.0,opening,green,0.82,derived
+2026-13-monza,COL,Alpine,6,15,-8,-11.0,opening,yellow,0.82,derived
+2026-13-monza,COL,Alpine,7,16,-9,-1.0,opening,green,0.82,derived
+2026-13-monza,COL,Alpine,8,16,-9,0.0,opening,green,0.82,derived
+2026-13-monza,COL,Alpine,9,16,-9,0.0,opening,green,0.82,derived
+2026-13-monza,COL,Alpine,10,16,-9,0.0,opening,green,0.82,derived
+2026-13-monza,COL,Alpine,11,16,-9,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,12,15,-8,1.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,13,15,-8,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,14,15,-8,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,15,15,-8,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,16,14,-7,1.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,17,14,-7,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,18,14,-7,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,19,14,-7,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,20,14,-7,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,21,13,-6,1.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,22,12,-5,1.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,23,12,-5,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,24,12,-5,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,25,12,-5,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,26,12,-5,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,27,12,-5,0.0,middle,mixed,0.52,derived
+2026-13-monza,COL,Alpine,28,11,-4,1.0,middle,mixed,0.52,derived
+2026-13-monza,COL,Alpine,29,10,-3,1.0,middle,mixed,0.52,derived
+2026-13-monza,COL,Alpine,30,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,31,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,32,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,33,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,34,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,35,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,36,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,37,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,38,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,39,10,-3,0.0,middle,green,0.82,derived
+2026-13-monza,COL,Alpine,40,10,-3,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,41,9,-2,1.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,42,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,43,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,44,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,45,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,46,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,47,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,48,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,49,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,50,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,51,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,52,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,COL,Alpine,53,9,-2,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,1,1,0,0.0,opening,green,0.82,derived
+2026-13-monza,GAS,Alpine,2,2,-1,-1.0,opening,mixed,0.52,derived
+2026-13-monza,GAS,Alpine,3,2,-1,0.0,opening,mixed,0.52,derived
+2026-13-monza,GAS,Alpine,4,2,-1,0.0,opening,green,0.82,derived
+2026-13-monza,GAS,Alpine,5,2,-1,0.0,opening,green,0.82,derived
+2026-13-monza,GAS,Alpine,6,2,-1,0.0,opening,yellow,0.82,derived
+2026-13-monza,GAS,Alpine,7,3,-2,-1.0,opening,green,0.82,derived
+2026-13-monza,GAS,Alpine,8,3,-2,0.0,opening,green,0.82,derived
+2026-13-monza,GAS,Alpine,9,3,-2,0.0,opening,green,0.82,derived
+2026-13-monza,GAS,Alpine,10,6,-5,-3.0,opening,green,0.82,derived
+2026-13-monza,GAS,Alpine,11,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,12,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,13,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,14,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,15,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,16,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,17,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,18,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,19,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,20,6,-5,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,21,7,-6,-1.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,22,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,23,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,24,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,25,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,26,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,27,7,-6,0.0,middle,mixed,0.52,derived
+2026-13-monza,GAS,Alpine,28,7,-6,0.0,middle,mixed,0.52,derived
+2026-13-monza,GAS,Alpine,29,5,-4,2.0,middle,mixed,0.52,derived
+2026-13-monza,GAS,Alpine,30,6,-5,-1.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,31,7,-6,-1.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,32,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,33,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,34,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,35,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,36,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,37,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,38,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,39,7,-6,0.0,middle,green,0.82,derived
+2026-13-monza,GAS,Alpine,40,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,41,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,42,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,43,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,44,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,45,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,46,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,47,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,48,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,49,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,50,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,51,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,52,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,GAS,Alpine,53,7,-6,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,1,10,-6,0.0,opening,green,0.82,derived
+2026-13-monza,HAM,Ferrari,2,9,-5,1.0,opening,mixed,0.52,derived
+2026-13-monza,HAM,Ferrari,3,8,-4,1.0,opening,mixed,0.52,derived
+2026-13-monza,HAM,Ferrari,4,8,-4,0.0,opening,green,0.82,derived
+2026-13-monza,HAM,Ferrari,5,8,-4,0.0,opening,green,0.82,derived
+2026-13-monza,HAM,Ferrari,6,5,-1,3.0,opening,yellow,0.82,derived
+2026-13-monza,HAM,Ferrari,7,4,0,1.0,opening,green,0.82,derived
+2026-13-monza,HAM,Ferrari,8,4,0,0.0,opening,green,0.82,derived
+2026-13-monza,HAM,Ferrari,9,4,0,0.0,opening,green,0.82,derived
+2026-13-monza,HAM,Ferrari,10,3,1,1.0,opening,green,0.82,derived
+2026-13-monza,HAM,Ferrari,11,3,1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,12,5,-1,-2.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,13,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,14,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,15,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,16,4,0,1.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,17,4,0,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,18,4,0,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,19,5,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,20,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,21,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,22,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,23,4,0,1.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,24,4,0,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,25,5,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,26,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,27,5,-1,0.0,middle,mixed,0.52,derived
+2026-13-monza,HAM,Ferrari,28,5,-1,0.0,middle,mixed,0.52,derived
+2026-13-monza,HAM,Ferrari,29,3,1,2.0,middle,mixed,0.52,derived
+2026-13-monza,HAM,Ferrari,30,3,1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,31,3,1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,32,3,1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,33,3,1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,34,3,1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,35,4,0,-1.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,36,4,0,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,37,5,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,38,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,39,5,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HAM,Ferrari,40,5,-1,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,41,5,-1,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,42,6,-2,-1.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,43,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,44,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,45,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,46,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,47,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,48,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,49,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,50,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,51,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,52,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HAM,Ferrari,53,6,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,1,13,-1,0.0,opening,green,0.82,derived
+2026-13-monza,HUL,Audi,2,13,-1,0.0,opening,mixed,0.52,derived
+2026-13-monza,HUL,Audi,3,13,-1,0.0,opening,mixed,0.52,derived
+2026-13-monza,HUL,Audi,4,13,-1,0.0,opening,green,0.82,derived
+2026-13-monza,HUL,Audi,5,13,-1,0.0,opening,green,0.82,derived
+2026-13-monza,HUL,Audi,6,11,1,2.0,opening,yellow,0.82,derived
+2026-13-monza,HUL,Audi,7,11,1,0.0,opening,green,0.82,derived
+2026-13-monza,HUL,Audi,8,12,0,-1.0,opening,green,0.82,derived
+2026-13-monza,HUL,Audi,9,12,0,0.0,opening,green,0.82,derived
+2026-13-monza,HUL,Audi,10,12,0,0.0,opening,green,0.82,derived
+2026-13-monza,HUL,Audi,11,12,0,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,12,11,1,1.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,13,11,1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,14,11,1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,15,11,1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,16,13,-1,-2.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,17,13,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,18,12,0,1.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,19,12,0,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,20,12,0,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,21,12,0,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,22,13,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,23,13,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,24,13,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,25,13,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,26,13,-1,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,27,13,-1,0.0,middle,mixed,0.52,derived
+2026-13-monza,HUL,Audi,28,14,-2,-1.0,middle,mixed,0.52,derived
+2026-13-monza,HUL,Audi,29,14,-2,0.0,middle,mixed,0.52,derived
+2026-13-monza,HUL,Audi,30,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,31,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,32,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,33,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,34,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,35,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,36,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,37,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,38,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,39,14,-2,0.0,middle,green,0.82,derived
+2026-13-monza,HUL,Audi,40,14,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,41,14,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,42,14,-2,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,43,13,-1,1.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,44,13,-1,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,45,13,-1,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,46,13,-1,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,47,12,0,1.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,48,12,0,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,49,12,0,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,50,12,0,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,51,12,0,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,52,12,0,0.0,closing,green,0.82,derived
+2026-13-monza,HUL,Audi,53,12,0,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,1,19,3,0.0,opening,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,2,16,6,3.0,opening,mixed,0.52,derived
+2026-13-monza,LAW,Red Bull Racing,3,15,7,1.0,opening,mixed,0.52,derived
+2026-13-monza,LAW,Red Bull Racing,4,15,7,0.0,opening,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,5,15,7,0.0,opening,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,6,12,10,3.0,opening,yellow,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,7,12,10,0.0,opening,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,8,11,11,1.0,opening,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,9,11,11,0.0,opening,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,10,11,11,0.0,opening,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,11,11,11,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,12,17,5,-6.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,13,21,1,-4.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,14,21,1,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,15,21,1,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,16,21,1,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,17,21,1,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,18,21,1,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,19,21,1,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,20,21,1,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,21,20,2,1.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,22,20,2,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,23,19,3,1.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,24,17,5,2.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,25,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,26,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,27,17,5,0.0,middle,mixed,0.52,derived
+2026-13-monza,LAW,Red Bull Racing,28,17,5,0.0,middle,mixed,0.52,derived
+2026-13-monza,LAW,Red Bull Racing,29,17,5,0.0,middle,mixed,0.52,derived
+2026-13-monza,LAW,Red Bull Racing,30,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,31,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,32,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,33,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,34,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,35,17,5,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,36,16,6,1.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,37,16,6,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,38,16,6,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,39,16,6,0.0,middle,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,40,16,6,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,41,16,6,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,42,16,6,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,43,16,6,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,44,16,6,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,45,16,6,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,46,15,7,1.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,47,15,7,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,48,15,7,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,49,15,7,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,50,15,7,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,51,15,7,0.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,52,14,8,1.0,closing,green,0.82,derived
+2026-13-monza,LAW,Red Bull Racing,53,14,8,0.0,closing,green,0.82,derived
+2026-13-monza,LEC,Ferrari,1,3,0,0.0,opening,green,0.82,derived
+2026-13-monza,LEC,Ferrari,2,22,-19,-19.0,opening,mixed,0.52,derived
+2026-13-monza,LIN,Racing Bulls,1,8,1,0.0,opening,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,2,7,2,1.0,opening,mixed,0.52,derived
+2026-13-monza,LIN,Racing Bulls,3,7,2,0.0,opening,mixed,0.52,derived
+2026-13-monza,LIN,Racing Bulls,4,7,2,0.0,opening,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,5,7,2,0.0,opening,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,6,7,2,0.0,opening,yellow,0.82,derived
+2026-13-monza,LIN,Racing Bulls,7,8,1,-1.0,opening,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,8,8,1,0.0,opening,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,9,8,1,0.0,opening,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,10,8,1,0.0,opening,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,11,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,12,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,13,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,14,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,15,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,16,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,17,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,18,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,19,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,20,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,21,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,22,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,23,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,24,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,25,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,26,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,27,8,1,0.0,middle,mixed,0.52,derived
+2026-13-monza,LIN,Racing Bulls,28,8,1,0.0,middle,mixed,0.52,derived
+2026-13-monza,LIN,Racing Bulls,29,8,1,0.0,middle,mixed,0.52,derived
+2026-13-monza,LIN,Racing Bulls,30,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,31,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,32,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,33,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,34,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,35,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,36,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,37,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,38,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,39,8,1,0.0,middle,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,40,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,41,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,42,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,43,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,44,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,45,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,46,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,47,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,48,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,49,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,50,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,51,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,52,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,LIN,Racing Bulls,53,8,1,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,1,7,1,0.0,opening,green,0.82,derived
+2026-13-monza,NOR,McLaren,2,6,2,1.0,opening,mixed,0.52,derived
+2026-13-monza,NOR,McLaren,3,6,2,0.0,opening,mixed,0.52,derived
+2026-13-monza,NOR,McLaren,4,6,2,0.0,opening,green,0.82,derived
+2026-13-monza,NOR,McLaren,5,6,2,0.0,opening,green,0.82,derived
+2026-13-monza,NOR,McLaren,6,6,2,0.0,opening,yellow,0.82,derived
+2026-13-monza,NOR,McLaren,7,7,1,-1.0,opening,green,0.82,derived
+2026-13-monza,NOR,McLaren,8,7,1,0.0,opening,green,0.82,derived
+2026-13-monza,NOR,McLaren,9,7,1,0.0,opening,green,0.82,derived
+2026-13-monza,NOR,McLaren,10,7,1,0.0,opening,green,0.82,derived
+2026-13-monza,NOR,McLaren,11,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,12,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,13,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,14,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,15,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,16,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,17,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,18,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,19,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,20,7,1,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,21,6,2,1.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,22,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,23,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,24,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,25,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,26,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,27,6,2,0.0,middle,mixed,0.52,derived
+2026-13-monza,NOR,McLaren,28,6,2,0.0,middle,mixed,0.52,derived
+2026-13-monza,NOR,McLaren,29,4,4,2.0,middle,mixed,0.52,derived
+2026-13-monza,NOR,McLaren,30,4,4,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,31,5,3,-1.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,32,5,3,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,33,6,2,-1.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,34,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,35,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,36,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,37,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,38,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,39,6,2,0.0,middle,green,0.82,derived
+2026-13-monza,NOR,McLaren,40,6,2,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,41,6,2,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,42,5,3,1.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,43,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,44,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,45,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,46,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,47,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,48,4,4,1.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,49,5,3,-1.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,50,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,51,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,52,5,3,0.0,closing,green,0.82,derived
+2026-13-monza,NOR,McLaren,53,4,4,1.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,1,12,2,0.0,opening,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,2,10,4,2.0,opening,mixed,0.52,derived
+2026-13-monza,OCO,Haas F1 Team,3,10,4,0.0,opening,mixed,0.52,derived
+2026-13-monza,OCO,Haas F1 Team,4,10,4,0.0,opening,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,5,10,4,0.0,opening,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,6,13,1,-3.0,opening,yellow,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,7,13,1,0.0,opening,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,8,13,1,0.0,opening,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,9,13,1,0.0,opening,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,10,13,1,0.0,opening,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,11,13,1,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,12,12,2,1.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,13,12,2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,14,12,2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,15,13,1,-1.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,16,12,2,1.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,17,12,2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,18,13,1,-1.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,19,13,1,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,20,13,1,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,21,14,0,-1.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,22,14,0,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,23,14,0,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,24,14,0,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,25,14,0,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,26,14,0,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,27,15,-1,-1.0,middle,mixed,0.52,derived
+2026-13-monza,OCO,Haas F1 Team,28,16,-2,-1.0,middle,mixed,0.52,derived
+2026-13-monza,OCO,Haas F1 Team,29,16,-2,0.0,middle,mixed,0.52,derived
+2026-13-monza,OCO,Haas F1 Team,30,16,-2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,31,16,-2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,32,16,-2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,33,16,-2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,34,16,-2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,35,16,-2,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,36,17,-3,-1.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,37,17,-3,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,38,17,-3,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,39,17,-3,0.0,middle,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,40,17,-3,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,41,17,-3,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,42,17,-3,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,43,17,-3,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,44,17,-3,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,45,17,-3,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,46,17,-3,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,47,16,-2,1.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,48,16,-2,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,49,16,-2,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,50,16,-2,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,51,16,-2,0.0,closing,green,0.82,derived
+2026-13-monza,OCO,Haas F1 Team,52,16,-2,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,1,17,0,0.0,opening,green,0.82,derived
+2026-13-monza,PER,Cadillac,2,17,0,0.0,opening,mixed,0.52,derived
+2026-13-monza,PER,Cadillac,3,17,0,0.0,opening,mixed,0.52,derived
+2026-13-monza,PER,Cadillac,4,17,0,0.0,opening,green,0.82,derived
+2026-13-monza,PER,Cadillac,5,17,0,0.0,opening,green,0.82,derived
+2026-13-monza,PER,Cadillac,6,17,0,0.0,opening,yellow,0.82,derived
+2026-13-monza,PER,Cadillac,7,17,0,0.0,opening,green,0.82,derived
+2026-13-monza,PER,Cadillac,8,17,0,0.0,opening,green,0.82,derived
+2026-13-monza,PER,Cadillac,9,18,-1,-1.0,opening,green,0.82,derived
+2026-13-monza,PER,Cadillac,10,18,-1,0.0,opening,green,0.82,derived
+2026-13-monza,PER,Cadillac,11,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,12,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,13,17,0,1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,14,17,0,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,15,17,0,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,16,18,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,17,17,0,1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,18,18,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,19,17,0,1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,20,17,0,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,21,17,0,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,22,18,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,23,17,0,1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,24,18,-1,-1.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,25,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,26,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,27,18,-1,0.0,middle,mixed,0.52,derived
+2026-13-monza,PER,Cadillac,28,18,-1,0.0,middle,mixed,0.52,derived
+2026-13-monza,PER,Cadillac,29,18,-1,0.0,middle,mixed,0.52,derived
+2026-13-monza,PER,Cadillac,30,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,31,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,32,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,33,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,34,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,35,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,36,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,37,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,38,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,39,18,-1,0.0,middle,green,0.82,derived
+2026-13-monza,PER,Cadillac,40,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,41,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,42,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,43,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,44,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,45,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,46,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,47,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,48,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,49,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,50,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,51,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PER,Cadillac,52,18,-1,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,1,5,1,0.0,opening,green,0.82,derived
+2026-13-monza,PIA,McLaren,2,4,2,1.0,opening,mixed,0.52,derived
+2026-13-monza,PIA,McLaren,3,5,1,-1.0,opening,mixed,0.52,derived
+2026-13-monza,PIA,McLaren,4,5,1,0.0,opening,green,0.82,derived
+2026-13-monza,PIA,McLaren,5,5,1,0.0,opening,green,0.82,derived
+2026-13-monza,PIA,McLaren,6,4,2,1.0,opening,yellow,0.82,derived
+2026-13-monza,PIA,McLaren,7,5,1,-1.0,opening,green,0.82,derived
+2026-13-monza,PIA,McLaren,8,5,1,0.0,opening,green,0.82,derived
+2026-13-monza,PIA,McLaren,9,5,1,0.0,opening,green,0.82,derived
+2026-13-monza,PIA,McLaren,10,4,2,1.0,opening,green,0.82,derived
+2026-13-monza,PIA,McLaren,11,4,2,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,12,3,3,1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,13,4,2,-1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,14,4,2,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,15,4,2,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,16,5,1,-1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,17,5,1,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,18,5,1,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,19,4,2,1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,20,4,2,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,21,4,2,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,22,4,2,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,23,5,1,-1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,24,5,1,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,25,4,2,1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,26,4,2,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,27,4,2,0.0,middle,mixed,0.52,derived
+2026-13-monza,PIA,McLaren,28,4,2,0.0,middle,mixed,0.52,derived
+2026-13-monza,PIA,McLaren,29,2,4,2.0,middle,mixed,0.52,derived
+2026-13-monza,PIA,McLaren,30,2,4,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,31,2,4,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,32,2,4,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,33,2,4,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,34,2,4,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,35,2,4,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,36,2,4,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,37,3,3,-1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,38,3,3,0.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,39,4,2,-1.0,middle,green,0.82,derived
+2026-13-monza,PIA,McLaren,40,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,41,3,3,1.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,42,3,3,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,43,4,2,-1.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,44,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,45,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,46,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,47,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,48,5,1,-1.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,49,4,2,1.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,50,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,51,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,52,4,2,0.0,closing,green,0.82,derived
+2026-13-monza,PIA,McLaren,53,5,1,-1.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,1,2,0,0.0,opening,green,0.82,derived
+2026-13-monza,RUS,Mercedes,2,1,1,1.0,opening,mixed,0.52,derived
+2026-13-monza,RUS,Mercedes,3,1,1,0.0,opening,mixed,0.52,derived
+2026-13-monza,RUS,Mercedes,4,1,1,0.0,opening,green,0.82,derived
+2026-13-monza,RUS,Mercedes,5,1,1,0.0,opening,green,0.82,derived
+2026-13-monza,RUS,Mercedes,6,1,1,0.0,opening,yellow,0.82,derived
+2026-13-monza,RUS,Mercedes,7,1,1,0.0,opening,green,0.82,derived
+2026-13-monza,RUS,Mercedes,8,1,1,0.0,opening,green,0.82,derived
+2026-13-monza,RUS,Mercedes,9,1,1,0.0,opening,green,0.82,derived
+2026-13-monza,RUS,Mercedes,10,1,1,0.0,opening,green,0.82,derived
+2026-13-monza,RUS,Mercedes,11,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,12,2,0,-1.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,13,2,0,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,14,2,0,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,15,1,1,1.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,16,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,17,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,18,2,0,-1.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,19,2,0,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,20,2,0,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,21,2,0,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,22,2,0,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,23,1,1,1.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,24,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,25,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,26,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,27,1,1,0.0,middle,mixed,0.52,derived
+2026-13-monza,RUS,Mercedes,28,1,1,0.0,middle,mixed,0.52,derived
+2026-13-monza,RUS,Mercedes,29,1,1,0.0,middle,mixed,0.52,derived
+2026-13-monza,RUS,Mercedes,30,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,31,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,32,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,33,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,34,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,35,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,36,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,37,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,38,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,39,1,1,0.0,middle,green,0.82,derived
+2026-13-monza,RUS,Mercedes,40,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,41,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,42,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,43,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,44,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,45,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,46,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,47,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,48,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,49,1,1,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,50,2,0,-1.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,51,2,0,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,52,2,0,0.0,closing,green,0.82,derived
+2026-13-monza,RUS,Mercedes,53,2,0,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,1,16,-3,0.0,opening,green,0.82,derived
+2026-13-monza,SAI,Williams,2,15,-2,1.0,opening,mixed,0.52,derived
+2026-13-monza,SAI,Williams,3,16,-3,-1.0,opening,mixed,0.52,derived
+2026-13-monza,SAI,Williams,4,16,-3,0.0,opening,green,0.82,derived
+2026-13-monza,SAI,Williams,5,16,-3,0.0,opening,green,0.82,derived
+2026-13-monza,SAI,Williams,6,14,-1,2.0,opening,yellow,0.82,derived
+2026-13-monza,SAI,Williams,7,14,-1,0.0,opening,green,0.82,derived
+2026-13-monza,SAI,Williams,8,14,-1,0.0,opening,green,0.82,derived
+2026-13-monza,SAI,Williams,9,15,-2,-1.0,opening,green,0.82,derived
+2026-13-monza,SAI,Williams,10,15,-2,0.0,opening,green,0.82,derived
+2026-13-monza,SAI,Williams,11,14,-1,1.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,12,14,-1,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,13,14,-1,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,14,14,-1,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,15,14,-1,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,16,15,-2,-1.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,17,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,18,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,19,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,20,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,21,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,22,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,23,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,24,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,25,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,26,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,27,16,-3,-1.0,middle,mixed,0.52,derived
+2026-13-monza,SAI,Williams,28,15,-2,1.0,middle,mixed,0.52,derived
+2026-13-monza,SAI,Williams,29,15,-2,0.0,middle,mixed,0.52,derived
+2026-13-monza,SAI,Williams,30,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,31,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,32,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,33,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,34,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,35,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,36,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,37,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,38,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,39,15,-2,0.0,middle,green,0.82,derived
+2026-13-monza,SAI,Williams,40,15,-2,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,41,15,-2,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,42,15,-2,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,43,15,-2,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,44,15,-2,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,45,15,-2,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,46,14,-1,1.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,47,14,-1,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,48,14,-1,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,49,14,-1,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,50,13,0,1.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,51,13,0,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,52,13,0,0.0,closing,green,0.82,derived
+2026-13-monza,SAI,Williams,53,13,0,0.0,closing,green,0.82,derived
+2026-13-monza,STR,Aston Martin,1,20,-2,0.0,opening,green,0.82,derived
+2026-13-monza,STR,Aston Martin,2,21,-3,-1.0,opening,mixed,0.52,derived
+2026-13-monza,STR,Aston Martin,3,20,-2,1.0,opening,mixed,0.52,derived
+2026-13-monza,STR,Aston Martin,4,20,-2,0.0,opening,green,0.82,derived
+2026-13-monza,STR,Aston Martin,5,20,-2,0.0,opening,green,0.82,derived
+2026-13-monza,STR,Aston Martin,6,19,-1,1.0,opening,yellow,0.82,derived
+2026-13-monza,STR,Aston Martin,7,20,-2,-1.0,opening,green,0.82,derived
+2026-13-monza,STR,Aston Martin,8,21,-3,-1.0,opening,green,0.82,derived
+2026-13-monza,STR,Aston Martin,9,21,-3,0.0,opening,green,0.82,derived
+2026-13-monza,STR,Aston Martin,10,21,-3,0.0,opening,green,0.82,derived
+2026-13-monza,STR,Aston Martin,11,21,-3,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,12,21,-3,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,13,20,-2,1.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,14,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,15,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,16,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,17,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,18,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,19,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,20,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,21,21,-3,-1.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,22,21,-3,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,23,21,-3,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,24,20,-2,1.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,25,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,STR,Aston Martin,26,20,-2,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,1,15,0,0.0,opening,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,2,14,1,1.0,opening,mixed,0.52,derived
+2026-13-monza,TSU,Racing Bulls,3,14,1,0.0,opening,mixed,0.52,derived
+2026-13-monza,TSU,Racing Bulls,4,14,1,0.0,opening,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,5,14,1,0.0,opening,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,6,10,5,4.0,opening,yellow,0.82,derived
+2026-13-monza,TSU,Racing Bulls,7,10,5,0.0,opening,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,8,10,5,0.0,opening,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,9,9,6,1.0,opening,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,10,9,6,0.0,opening,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,11,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,12,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,13,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,14,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,15,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,16,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,17,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,18,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,19,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,20,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,21,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,22,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,23,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,24,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,25,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,26,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,27,9,6,0.0,middle,mixed,0.52,derived
+2026-13-monza,TSU,Racing Bulls,28,9,6,0.0,middle,mixed,0.52,derived
+2026-13-monza,TSU,Racing Bulls,29,9,6,0.0,middle,mixed,0.52,derived
+2026-13-monza,TSU,Racing Bulls,30,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,31,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,32,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,33,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,34,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,35,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,36,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,37,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,38,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,39,9,6,0.0,middle,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,40,9,6,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,41,10,5,-1.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,42,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,43,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,44,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,45,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,46,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,47,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,48,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,49,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,50,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,51,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,52,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,TSU,Racing Bulls,53,10,5,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,1,4,1,0.0,opening,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,2,3,2,1.0,opening,mixed,0.52,derived
+2026-13-monza,VER,Red Bull Racing,3,3,2,0.0,opening,mixed,0.52,derived
+2026-13-monza,VER,Red Bull Racing,4,3,2,0.0,opening,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,5,3,2,0.0,opening,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,6,3,2,0.0,opening,yellow,0.82,derived
+2026-13-monza,VER,Red Bull Racing,7,2,3,1.0,opening,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,8,2,3,0.0,opening,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,9,2,3,0.0,opening,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,10,2,3,0.0,opening,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,11,2,3,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,12,1,4,1.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,13,1,4,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,14,1,4,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,15,2,3,-1.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,16,3,2,-1.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,17,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,18,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,19,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,20,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,21,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,22,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,23,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,24,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,25,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,26,3,2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,27,3,2,0.0,middle,mixed,0.52,derived
+2026-13-monza,VER,Red Bull Racing,28,3,2,0.0,middle,mixed,0.52,derived
+2026-13-monza,VER,Red Bull Racing,29,7,-2,-4.0,middle,mixed,0.52,derived
+2026-13-monza,VER,Red Bull Racing,30,7,-2,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,31,6,-1,1.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,32,6,-1,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,33,5,0,1.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,34,5,0,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,35,5,0,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,36,5,0,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,37,4,1,1.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,38,4,1,0.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,39,3,2,1.0,middle,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,40,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,41,4,1,-1.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,42,4,1,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,43,3,2,1.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,44,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,45,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,46,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,47,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,48,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,49,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,50,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,51,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,52,3,2,0.0,closing,green,0.82,derived
+2026-13-monza,VER,Red Bull Racing,53,3,2,0.0,closing,green,0.82,derived

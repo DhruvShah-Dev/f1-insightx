@@ -4,8 +4,8 @@
 
 This pipeline extends the existing Jolpica -> curated -> product-view flow with a session-rich FastF1 intelligence layer for:
 
-- Strategy Lab
 - race-week prediction
+- strategy modeling outputs
 - future fantasy modeling
 - deeper driver, team, and tyre analysis
 
@@ -93,8 +93,14 @@ Do not treat telemetry-derived deployment patterns as true battery or ERS usage 
 python data/fastf1_ingest.py --start-season 2020 --end-season 2026 --only-missing --sleep-seconds 2
 python data/fastf1_ingest.py --start-season 2020 --end-season 2026 --sessions FP1 FP2 FP3 Q SQ S R --retry-failed --max-retries 3
 python data/fastf1_ingest.py --start-season 2026 --end-season 2026 --include-telemetry --sessions Q R --only-missing --sleep-seconds 3
-python data/build_fastf1_features.py
-python data/build_fastf1_models.py
+python build_canonical_fastf1.py --start-season 2020 --end-season 2026
+python build_telemetry_features.py --start-season 2020 --end-season 2026
+python data/build_analytics_views.py
+python data/build_analytics_indexes.py
+python data/build_analytics_telemetry_traces.py
+python data/build_race_analysis_views.py
+python data/build_race_week_layers.py
+python data/build_strategy_lab_layers.py
 ```
 
 Orchestrated:

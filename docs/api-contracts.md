@@ -1,91 +1,60 @@
-# API Contracts
+# Runtime Contracts
 
-## Runtime mode
+F1 InsightX uses TanStack Start routes and server functions for the active
+root UI. Legacy REST endpoint contracts from the archived Next app are no
+longer active product contracts.
 
-The M2 API layer can run in two modes:
+## Data Source Mode
 
-- `supabase`: uses `VITE_SUPABASE_URL`/`VITE_SUPABASE_PUBLISHABLE_KEY` in the TanStack app, still accepts `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY` as compatibility aliases, and uses `SUPABASE_SERVICE_ROLE_KEY` only on trusted server paths
-- `local-curated-csv`: reads from `data/curated/*.csv` when Supabase is not configured
+Public F1 product pages use the generated bundled snapshot by default. This
+keeps production and local previews current even when Supabase public tables are
+behind the latest data pipeline refresh.
 
-This keeps local development unblocked after M1 while preserving the production path.
+Set `F1_INSIGHTX_PUBLIC_DATA_SOURCE=supabase` only when the Supabase public
+product tables have been refreshed and validated through the latest completed
+race.
 
-## Reference endpoints
+Supabase remains the required runtime service for account/auth profile flows.
 
-### `GET /api/health`
+## Active Routes
 
-Returns a minimal public health payload with service status only.
+| Route             | Purpose                                                             | Primary server functions                              |
+| ----------------- | ------------------------------------------------------------------- | ----------------------------------------------------- |
+| `/`               | Race control home, next GP, championship pulse, latest report entry | `getSeasonTelemetry`, `getRaceWeek`, `getRaceReports` |
+| `/raceweek`       | Current race-week command center and projections                    | `getRaceWeek`                                         |
+| `/championship`   | Driver and constructor standings                                    | `getChampionship`                                     |
+| `/analysis`       | Completed-race report index                                         | `getRaceReports`                                      |
+| `/analysis/$slug` | Completed-race report detail                                        | `getRaceReport`, `getLapTrace`                        |
+| `/vs`             | Driver-vs-driver comparison workspace                               | `getWeekendIndex`, `getHeadToHead`, `getLapTrace`     |
+| `/picks`          | Race-week picks board                                               | `getPicksBoard`                                       |
+| `/method`         | Methodology and product honesty notes                               | Static route content                                  |
+| `/account`        | Supabase-backed account and profile surface                         | Account/auth helpers                                  |
 
-### `GET /api/reference/drivers?search=&limit=`
+## Public F1 Server Functions
 
-Returns driver reference rows.
+All public F1 functions live in `src/lib/f1.functions.ts` and delegate to
+`src/lib/f1.server.ts` only when Supabase public data is explicitly enabled.
+Otherwise they use `src/lib/f1.fallback.ts` and the generated local snapshot.
 
-### `GET /api/reference/constructors?search=&limit=`
+| Function             | Input                         | Output                                                                         |
+| -------------------- | ----------------------------- | ------------------------------------------------------------------------------ |
+| `getSeasonTelemetry` | none                          | season, standings round, driver standings, constructor standings, race options |
+| `getRaceWeek`        | none                          | next-race metadata, weather, projected order, strategy, qualifying predictions |
+| `getRaceReports`     | none                          | completed-race report summaries                                                |
+| `getRaceReport`      | `{ slug }`                    | report detail, stints, positions, stories, weather, lap context                |
+| `getWeekendIndex`    | optional `{ season }`         | available completed weekends                                                   |
+| `getWeekend`         | `{ slug }`                    | weekend detail payload                                                         |
+| `getHeadToHead`      | `{ slug, a, b }`              | two-driver comparison payload                                                  |
+| `getLapTrace`        | `{ raceAnalysisId, drivers }` | bounded lap trace rows for one or two drivers                                  |
+| `getPicksBoard`      | optional `{ season }`         | current picks challenge and leaderboard state                                  |
 
-Returns constructor reference rows.
+## Contract Rules
 
-### `GET /api/reference/circuits?search=&limit=`
-
-Returns circuit reference rows.
-
-### `GET /api/reference/races?season=&limit=`
-
-Returns race reference rows and available seasons.
-
-### `GET /api/reference/races/:raceId/context`
-
-Returns the race metadata plus entrant baselines used by the simulator:
-
-- qualifying position
-- constructor
-- rolling form proxy
-- overtake score
-- reliability score
-
-## Validation endpoints
-
-### `POST /api/race-scenarios/validate`
-
-Validates the contract for the upcoming race simulator. It does not predict anything yet.
-
-### `POST /api/race-scenarios/simulate`
-
-Runs the M4 heuristic race simulator and returns:
-
-- projected finishing order
-- projected points
-- podium probability
-- undercut impact
-- confidence labels
-- explanation lines per driver
-
-### `POST /api/fantasy-builder/validate`
-
-Validates fantasy lineup constraints for the upcoming optimization engine. It does not recommend a lineup yet.
-
-### `GET /api/fantasy-builder/dataset?season=&round=`
-
-Returns the fantasy candidate pool used by the optimizer:
-
-- derived driver prices
-- derived constructor prices
-- projected scores
-- value and volatility features
-- pricing source metadata
-
-### `POST /api/fantasy-builder/recommend`
-
-Runs the M5 lineup optimizer and returns:
-
-- primary lineup for the requested risk profile
-- captain choice
-- expected score
-- total budget used
-- conservative and aggressive alternative lineups
-- rationale lines explaining the build
-
-## Scope notes
-
-- These endpoints are the M2 contract layer, not the final simulation or optimization logic.
-- Validation warnings are advisory and intended to support transparent UX later in M4 and M5.
-- The M4 simulator is deliberately heuristic and should be presented as a scenario engine, not as a guaranteed prediction model.
-- The M5 fantasy optimizer currently uses derived historical pricing rather than official live fantasy prices. That limitation should remain visible in the UI.
+- Runtime handlers must return bounded product payloads.
+- Runtime code must not parse raw FastF1 telemetry, parquet files, or broad
+  source directories.
+- Public pages must preserve proxy wording for approximated telemetry,
+  position movement, and energy deployment.
+- Missing optional generated data should produce explicit unavailable states,
+  not invented precision.
+- Account/auth functions must keep service-role access server-side only.

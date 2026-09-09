@@ -1,8 +1,8 @@
-# Strategy Lab
+# Strategy Modeling
 
-Strategy Lab is a deterministic, explainable race strategy simulator. It is data-driven, but it is not a machine-learning model and should not be described as a calibrated race prediction engine.
+Strategy modeling is a deterministic, explainable data layer for race strategy context. It is data-driven, but it is not a machine-learning model and should not be described as a calibrated race prediction engine.
 
-The current product surface is a pit-wall strategy console: one race-specific hero, a sticky desktop control rail, a result-first strategy canvas, stint lanes, pit-window strips, position transition bands, and compact risk/sensitivity modules.
+The former public `/lab` route is retired in the active root UI. Current strategy outputs support Race Week, Picks, and Analysis surfaces through generated product views.
 
 ## Inputs
 
@@ -13,7 +13,7 @@ The current product surface is a pit-wall strategy console: one race-specific he
 
 ## Model Scope
 
-Strategy Lab models:
+Strategy modeling covers:
 
 - fuel correction to separate fuel burn from tyre degradation
 - non-linear tyre phases
@@ -31,12 +31,12 @@ It does not model:
 - full race-control stochastic behavior
 - exact corner-by-corner vehicle dynamics
 
-## UI Runtime Contract
+## Runtime Contract
 
-- Keep simulation math, presets, API contracts, and product-view schemas separate from the presentation layer.
-- Controls may be sticky on desktop but must stack before outputs on mobile.
-- Loading and failure states should stay inside the pit-wall workspace, not replace the whole route with a generic page.
-- Dropdowns and scroll rails should use the shared dark/select and custom-scrollbar treatment.
+- Keep strategy math, assumptions, and product-view schemas separate from presentation components.
+- Do not expose a new public strategy route without updating route docs, release checks, and navigation.
+- Loading and failure states should degrade inside the consuming surface rather than replacing a whole route with a generic page.
+- Generated strategy outputs must carry confidence and weakest-assumption fields.
 
 ## Product Output Rules
 

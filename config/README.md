@@ -23,16 +23,20 @@ Runtime behavior is controlled by root environment variables, framework config, 
 
 ## Important Environment Groups
 
-| Area | Variables |
-| --- | --- |
-| Public app config | `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL` |
-| Supabase browser auth | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` |
-| Supabase server/admin | `SUPABASE_SERVICE_ROLE_KEY` |
-| Rate limiting | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` |
-| Strategy Lab access | `STRATEGY_LAB_ACCESS_TOKEN`, `STRATEGY_LAB_ALLOWED_EMAILS`, `STRATEGY_LAB_ALLOWED_USER_IDS` |
-| Data sources | `JOLPICA_BASE_URL`, `OPENF1_BASE_URL`, `DATABASE_URL` |
+| Area                  | Variables                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------- |
+| Public app config     | `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL`                                  |
+| Supabase browser auth | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`                                 |
+| Supabase server/admin | `SUPABASE_SERVICE_ROLE_KEY`                                                                 |
+| Rate limiting         | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`                                        |
+| Strategy Lab access   | `STRATEGY_LAB_ACCESS_TOKEN`, `STRATEGY_LAB_ALLOWED_EMAILS`, `STRATEGY_LAB_ALLOWED_USER_IDS` |
+| Data sources          | `JOLPICA_BASE_URL`, `OPENF1_BASE_URL`, `DATABASE_URL`, `F1_INSIGHTX_PUBLIC_DATA_SOURCE`     |
 
 Keep service-role keys, database URLs, OAuth secrets, and Upstash tokens server-side only.
+
+Public F1 pages use the committed generated snapshot by default. Set
+`F1_INSIGHTX_PUBLIC_DATA_SOURCE=supabase` only after Supabase public product
+tables have been refreshed through the same latest completed race.
 
 ## Release Checks
 

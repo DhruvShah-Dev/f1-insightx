@@ -17,16 +17,16 @@ Generated datasets are intentionally ignored unless they are small fixtures or s
 
 ## Current Local State
 
-Latest local season state: `season_state_20260709T162227Z`, generated at `2026-07-09T16:22:27Z`.
+Latest local season state: `season_state_20260908T172324Z`, generated at `2026-09-08T17:23:24Z`.
 
-| Layer | Current evidence |
-| --- | --- |
-| FastF1 archive | 674 completed sessions out of 698 targets; telemetry files present for 663 sessions |
-| Canonical FastF1 | 369,010 laps, 13,569 results, 48,188 stints, 13,368 session-summary rows, 77 drivers |
-| Race Analysis | 54 race analyses, 60,841 position timeline rows, 1,879 pit-strategy rows |
-| Race Week | Belgian Grand Prix, round 10, scheduled `2026-07-19T13:00:00Z` |
-| Strategy Lab | Belgian Grand Prix product view available |
-| Analytics / telemetry caveat | Analytics and telemetry are available through Barcelona Grand Prix; British Grand Prix telemetry processing is pending |
+| Layer                      | Current evidence                                                                                            |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| FastF1 archive             | 2026 round 13 Italian Grand Prix sessions ingested with telemetry for FP1, FP2, FP3, qualifying, and race   |
+| Canonical FastF1           | 46 sessions, 28,089 laps, 1,012 results, 3,339 stints, 993 session-summary rows                             |
+| Analysis                   | 13 race analyses, 15,126 position timeline rows, 529 pit-strategy rows                                      |
+| Race Week                  | Spanish Grand Prix, round 14, scheduled `2026-09-13T13:00:00Z`                                              |
+| Strategy modeling          | Spanish Grand Prix product view available                                                                   |
+| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through the Italian Grand Prix, round 13 |
 
 ## Layers
 
@@ -56,7 +56,7 @@ Canonical outputs are the validated base for telemetry features, race-week layer
 - `data/curated`: compact reference/runtime tables such as drivers, constructors, circuits, races, standings, results, prediction snapshots, and fantasy inputs.
 - `data/features`: driver and constructor form snapshots.
 - `data/model_inputs`: leakage-aware model input tables.
-- `data/predictions`: deterministic prediction snapshots, Strategy Lab baselines, Picks challenges, and pit-stop result inputs.
+- `data/predictions`: deterministic prediction snapshots, strategy-modeling baselines, Picks challenges, and pit-stop result inputs.
 - `data/telemetry_features`: corner, braking, throttle, straight-line, energy-proxy, and lap-summary features.
 - `data/analytics`: telemetry comparison views, indexed session shards, track summaries, and trace manifests.
 - `data/race_analysis`: completed-race reports and derived post-race intelligence views.

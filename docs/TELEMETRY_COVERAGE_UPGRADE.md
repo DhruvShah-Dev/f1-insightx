@@ -8,38 +8,38 @@ F1 InsightX currently stores FastF1 telemetry as precomputed offline artifacts. 
 
 Current local telemetry footprint:
 
-| Layer | Artifact count | Size | Notes |
-| --- | ---: | ---: | --- |
-| Raw fastest-lap telemetry parquet | 648 | 128.04 MB | One fastest lap per driver per complete session where available |
-| Raw fastest-lap position parquet | 647 | 115.82 MB | Matching fastest-lap position traces where available |
-| Staged telemetry CSV | 0 | 0 MB | No staged telemetry trace layer |
-| Telemetry feature CSVs | 7 | 75.86 MB | Lap, segment, braking, throttle, straight, energy proxy, driver delta |
-| Analytics product CSVs | 8 | 581.60 MB | Pairwise product views; indexed for runtime |
-| Race Analysis CSVs | 14 | 20.68 MB | Lap/position/traffic/status product views |
+| Layer                             | Artifact count |      Size | Notes                                                                 |
+| --------------------------------- | -------------: | --------: | --------------------------------------------------------------------- |
+| Raw fastest-lap telemetry parquet |            648 | 128.04 MB | One fastest lap per driver per complete session where available       |
+| Raw fastest-lap position parquet  |            647 | 115.82 MB | Matching fastest-lap position traces where available                  |
+| Staged telemetry CSV              |              0 |      0 MB | No staged telemetry trace layer                                       |
+| Telemetry feature CSVs            |              7 |  75.86 MB | Lap, segment, braking, throttle, straight, energy proxy, driver delta |
+| Analytics / Compare product CSVs  |              8 | 581.60 MB | Pairwise product views; indexed for runtime                           |
+| Analysis CSVs                     |             14 |  20.68 MB | Lap/position/traffic/status product views                             |
 
 Raw telemetry availability by session type:
 
 | Session | Sessions | Complete | Telemetry | Position |
-| --- | ---: | ---: | ---: | ---: |
-| FP1 | 135 | 132 | 132 | 131 |
-| FP2 | 114 | 111 | 111 | 111 |
-| FP3 | 108 | 105 | 105 | 105 |
-| Q | 135 | 133 | 133 | 133 |
-| R | 135 | 128 | 127 | 127 |
-| S | 26 | 26 | 26 | 26 |
-| SQ | 20 | 14 | 14 | 14 |
+| ------- | -------: | -------: | --------: | -------: |
+| FP1     |      135 |      132 |       132 |      131 |
+| FP2     |      114 |      111 |       111 |      111 |
+| FP3     |      108 |      105 |       105 |      105 |
+| Q       |      135 |      133 |       133 |      133 |
+| R       |      135 |      128 |       127 |      127 |
+| S       |       26 |       26 |        26 |       26 |
+| SQ      |       20 |       14 |        14 |       14 |
 
 Telemetry feature coverage:
 
-| Feature view | Rows | Primary grain |
-| --- | ---: | --- |
-| telemetry_lap_summary | 12,736 | session-driver-selected lap |
-| corner_speed_profile | 101,704 | session-driver-selected lap-segment |
-| corner_braking_profile | 101,704 | session-driver-selected lap-segment |
-| corner_throttle_profile | 101,704 | session-driver-selected lap-segment |
-| straight_speed_profile | 89,308 | session-driver-selected lap-straight |
-| energy_deployment_proxy | 89,308 | session-driver-selected lap-straight |
-| driver_corner_delta | 101,704 | session-driver-segment comparison |
+| Feature view            |    Rows | Primary grain                        |
+| ----------------------- | ------: | ------------------------------------ |
+| telemetry_lap_summary   |  12,736 | session-driver-selected lap          |
+| corner_speed_profile    | 101,704 | session-driver-selected lap-segment  |
+| corner_braking_profile  | 101,704 | session-driver-selected lap-segment  |
+| corner_throttle_profile | 101,704 | session-driver-selected lap-segment  |
+| straight_speed_profile  |  89,308 | session-driver-selected lap-straight |
+| energy_deployment_proxy |  89,308 | session-driver-selected lap-straight |
+| driver_corner_delta     | 101,704 | session-driver-segment comparison    |
 
 The current downloader extracts each driver's fastest lap telemetry and position trace via FastF1. It does not store full-session telemetry, representative race laps, long-run windows, or complete race telemetry.
 
@@ -58,13 +58,13 @@ The current pipeline discards, or never materializes:
 
 ## Upgrade Tiers
 
-| Tier | Scope | Storage estimate | Rebuild/runtime cost | Product value | Recommendation |
-| --- | --- | ---: | --- | --- | --- |
-| A | Current fastest-lap telemetry and features | Current ~244 MB raw traces, ~76 MB feature CSVs | Low rebuild, no runtime raw reads | Strong for Analytics peak style, weak for race pace | Keep as baseline |
-| B | Representative telemetry: fastest race lap, median clean race lap, best long-run lap, representative stint lap, best qualifying lap, wet representative lap where available | ~2x-4x raw trace size for selected laps, likely <1 GB total for 2020-2026 | Medium offline rebuild, runtime unchanged | High value for Analytics, Strategy Lab, Race Analysis | Implement next |
-| C | Long-run telemetry: FP2 race sims and selected degradation windows | ~4x-8x current raw trace size depending windows | Medium/high offline rebuild | Very high for Strategy Lab tyre/traffic realism | Implement after Tier B |
-| D | Expanded race telemetry for selected modern/featured races only | Per featured race can be 20x-60x a fastest-lap race trace | High offline rebuild; requires partitioning | High for flagship Race Analysis and demos | Use selectively |
-| E | Full telemetry archive | Multi-GB to tens of GB as seasons grow | High storage, slow rebuilds, heavy validation | ML/replay value, low near-term product ROI | Do not implement yet |
+| Tier | Scope                                                                                                                                                                       |                                                          Storage estimate | Rebuild/runtime cost                          | Product value                                        | Recommendation         |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------: | --------------------------------------------- | ---------------------------------------------------- | ---------------------- |
+| A    | Current fastest-lap telemetry and features                                                                                                                                  |                           Current ~244 MB raw traces, ~76 MB feature CSVs | Low rebuild, no runtime raw reads             | Strong for Compare peak style, weak for race pace    | Keep as baseline       |
+| B    | Representative telemetry: fastest race lap, median clean race lap, best long-run lap, representative stint lap, best qualifying lap, wet representative lap where available | ~2x-4x raw trace size for selected laps, likely <1 GB total for 2020-2026 | Medium offline rebuild, runtime unchanged     | High value for Compare, strategy modeling, Analysis  | Implement next         |
+| C    | Long-run telemetry: FP2 race sims and selected degradation windows                                                                                                          |                           ~4x-8x current raw trace size depending windows | Medium/high offline rebuild                   | Very high for strategy-modeling tyre/traffic realism | Implement after Tier B |
+| D    | Expanded race telemetry for selected modern/featured races only                                                                                                             |                 Per featured race can be 20x-60x a fastest-lap race trace | High offline rebuild; requires partitioning   | High for flagship Analysis and demos                 | Use selectively        |
+| E    | Full telemetry archive                                                                                                                                                      |                                    Multi-GB to tens of GB as seasons grow | High storage, slow rebuilds, heavy validation | ML/replay value, low near-term product ROI           | Do not implement yet   |
 
 Recommended path: Tier B first, then Tier C for current season and selected benchmark races. Tier D should be opt-in for featured completed races only. Tier E should wait until storage, partitioning, and ML objectives are explicit.
 
@@ -90,7 +90,7 @@ Representative race laps:
 
 Traffic-filtered laps:
 
-- Prefer laps labelled `clean-air likely` from Race Analysis traffic proxy.
+- Prefer laps labelled `clean-air likely` from Analysis traffic proxy.
 - Exclude pit-window laps.
 - Down-rank neutralization-affected laps.
 - If exact gaps are missing, keep `traffic_filter_confidence` below strong.
@@ -119,7 +119,7 @@ Grain: session-driver-lap.
 
 Key fields: `season`, `round`, `event`, `session`, `driver`, `lap_number`, `compound`, `stint`, `tyre_life`, `lap_time_s`, `track_status_label`, `traffic_proxy_label`, `clean_lap_score`, `selection_eligibility`, `exclusion_reason`.
 
-Consumers: telemetry extraction, Analytics, Strategy Lab, Race Analysis, future ML.
+Consumers: telemetry extraction, Compare, strategy modeling, Analysis, future ML.
 
 Storage impact: small CSV.
 
@@ -143,7 +143,7 @@ Grain: session-driver-window.
 
 Key fields: `start_lap`, `end_lap`, `lap_count`, `compound`, `stint`, `median_pace_s`, `degradation_s_per_lap`, `track_status_context`, `window_quality_score`.
 
-Consumers: Strategy Lab tyre model, Race Analysis stint story, future ML.
+Consumers: strategy-modeling tyre model, Analysis stint story, future ML.
 
 Storage impact: small CSV.
 
@@ -155,7 +155,7 @@ Grain: season-driver-session type or season-driver-track archetype.
 
 Key fields: `braking_strength`, `throttle_pickup_strength`, `traction_exit_strength`, `straight_line_strength`, `traffic_sensitivity_proxy`, `energy_deployment_proxy_strength`, `sample_lap_count`, `confidence`.
 
-Consumers: Strategy Lab, Analytics, future ML.
+Consumers: strategy modeling, Compare, future ML.
 
 Storage impact: small CSV.
 
@@ -167,7 +167,7 @@ Grain: circuit-segment.
 
 Key fields: `segment_id`, `segment_kind`, `distance_start_m`, `distance_end_m`, `median_speed_kph`, `braking_frequency`, `throttle_pickup_frequency`, `confidence`, `manual_name_available`.
 
-Consumers: Analytics, Race Analysis, named-segment roadmap.
+Consumers: Compare, Analysis, named-segment roadmap.
 
 Storage impact: small CSV.
 
@@ -179,7 +179,7 @@ Grain: session-driver-lap-braking zone.
 
 Key fields: `zone_id`, `start_distance_m`, `end_distance_m`, `braking_duration_s`, `min_speed_kph`, `brake_intensity_proxy`, `late_brake_score`, `confidence`.
 
-Consumers: Analytics and future Race Analysis.
+Consumers: Compare and future Analysis.
 
 Storage impact: moderate, still product-view sized.
 
@@ -218,7 +218,7 @@ Commit:
 
 Implement Tier B as a controlled offline extraction pass:
 
-1. Build `telemetry_clean_lap_index.csv` from canonical laps, Race Analysis track status, and traffic proxy.
+1. Build `telemetry_clean_lap_index.csv` from canonical laps, Analysis track status, and traffic proxy.
 2. Build `telemetry_representative_laps.csv` without extracting telemetry.
 3. Validate row counts, clean-lap coverage, and selected lap diversity.
 4. Only then add an extraction command for selected laps.
