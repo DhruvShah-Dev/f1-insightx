@@ -39,6 +39,11 @@ const MADRING_CORNER_GUIDE: CircuitCornerGuide[] = [
   { number: 22, name: "El Parque", sector: 3 },
 ];
 
+const BAKU_CORNER_GUIDE: CircuitCornerGuide[] = Array.from({ length: 20 }, (_, index) => ({
+  number: index + 1,
+  name: `Turn ${index + 1}`,
+}));
+
 const ZANDVOORT_CORNERS: CircuitCorner[] = [
   {
     number: 1,
@@ -276,6 +281,7 @@ const CORNERS_BY_CIRCUIT: Record<string, CircuitCorner[]> = {
 };
 
 const CORNER_GUIDES_BY_CIRCUIT: Record<string, CircuitCornerGuide[]> = {
+  baku: BAKU_CORNER_GUIDE,
   madring: MADRING_CORNER_GUIDE,
 };
 

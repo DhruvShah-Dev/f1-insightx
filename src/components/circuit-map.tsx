@@ -172,6 +172,7 @@ export function CircuitMap({
   const sectorColors =
     (circuitId ?? path?.circuitId) === "monza" ? ITALY_SECTOR_COLORS : DEFAULT_SECTOR_COLORS;
   const name = circuitName ?? "Circuit";
+  const circuitLabel = /\bcircuit\b/i.test(name) ? name : `${name} circuit`;
 
   if (!model) {
     return (
@@ -189,7 +190,7 @@ export function CircuitMap({
           className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:32px_32px]"
         />
         <div className="relative max-w-sm px-6 text-center">
-          <p className="label-xs text-white/58">{name} circuit</p>
+          <p className="label-xs text-white/58">{circuitLabel}</p>
           <p className="mt-2 text-2xl font-black uppercase italic">Track map pending</p>
           <p className="mt-2 text-sm text-white/64">
             Verified geometry will appear here when source circuit path data is available.
@@ -229,7 +230,7 @@ export function CircuitMap({
           className={`absolute inset-x-0 top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-border bg-background ${compact ? "px-3 py-2" : "px-4 py-3"}`}
         >
           <div>
-            <p className="label-xs">{name} circuit</p>
+            <p className="label-xs">{circuitLabel}</p>
             <p
               className={
                 compact
@@ -254,7 +255,7 @@ export function CircuitMap({
           viewBox={model.viewBox}
           className={compact ? "h-[330px] w-full pt-7" : "h-[390px] w-full pt-8 sm:h-[460px]"}
           role="img"
-          aria-label={`Interactive ${name} circuit map with corner names, numbers, and sectors`}
+          aria-label={`Interactive ${circuitLabel} map with corner names, numbers, and sectors`}
         >
           <g transform={`rotate(${model.rotation} ${model.center.x} ${model.center.y})`}>
             <path

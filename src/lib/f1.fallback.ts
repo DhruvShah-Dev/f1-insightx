@@ -8,6 +8,7 @@ import {
 } from "@/data/season";
 import { fallbackQualifyingPredictions } from "@/data/race-week-qualifying";
 import { team } from "@/data/teams";
+import { localTrackPathForCircuit } from "@/data/track-paths";
 
 const DRIVER_ID_BY_CODE: Record<string, string> = {
   ALB: "albon",
@@ -41,8 +42,8 @@ const codeToDriverId = (code: string) =>
 const driverName = (code: string) => driverStandings.find((d) => d.code === code)?.name ?? code;
 
 const constructorName = (key: string) => team(key).name;
-const fallbackCircuitId = "madring";
-const fallbackCircuitLocation = "Madrid";
+const fallbackCircuitId = "baku";
+const fallbackCircuitLocation = "Baku";
 const fallbackRaceId = `2026-${String(nextRace.round).padStart(2, "0")}-${fallbackCircuitId}`;
 
 export function fallbackSeasonTelemetry() {
@@ -104,7 +105,7 @@ export function fallbackRaceWeek() {
       overtakeDifficulty: null,
       degBias: null,
     },
-    trackPath: null,
+    trackPath: localTrackPathForCircuit(fallbackCircuitId),
     archetype: "track-position-dominant",
     strategyDifficulty: "medium",
     weather: {

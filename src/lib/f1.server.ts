@@ -6,6 +6,7 @@ import seasonStateRaw from "../../data/season_state.json?raw";
 import seasonStateQualityRaw from "../../data/reports/season_state_quality_report.json?raw";
 import strategyLabQualityRaw from "../../data/reports/strategy_lab_signal_quality.json?raw";
 import { methodDashboardInventory } from "@/data/method-dashboard-inventory";
+import { localTrackPathForCircuit } from "@/data/track-paths";
 import { readSupabaseRuntimeEnv } from "./env.server";
 import { safeExternalHref } from "./security";
 
@@ -88,7 +89,7 @@ export async function fetchTrackPath(sb: SB, circuitId: string): Promise<TrackPa
     .order("season", { ascending: false })
     .limit(1);
   const r = data?.[0];
-  if (!r) return null;
+  if (!r) return localTrackPathForCircuit(circuitId);
   return {
     circuitId: String(r["circuit_id"]),
     pathData: String(r["path_data"] ?? ""),
@@ -161,6 +162,7 @@ export type RaceWeekQualifyingPrediction = {
 export async function fetchRaceWeek() {
   const sb = serverClient();
   const nowISO = new Date().toISOString();
+  const localSeasonState = parseJson<{ next_race?: { id?: string | null } }>(seasonStateRaw, {});
 
   const [{ data: raceRows }, { data: circuitRows }, idx] = await Promise.all([
     sb
@@ -181,7 +183,10 @@ export async function fetchRaceWeek() {
 
   const races = raceRows ?? [];
   const upcoming = races.filter((r) => String(r["scheduled_at"] ?? "") > nowISO);
-  const race = (upcoming[0] ?? races[races.length - 1]) as Row | undefined;
+  const seasonStateRaceId = localSeasonState.next_race?.id ?? null;
+  const race = (races.find((row) => seasonStateRaceId && String(row["id"]) === seasonStateRaceId) ??
+    upcoming[0] ??
+    races[races.length - 1]) as Row | undefined;
   if (!race) return null;
 
   const round = Number(race["round"]);

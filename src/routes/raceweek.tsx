@@ -252,7 +252,7 @@ function RaceWeek() {
                 data={data}
                 cornerGroups={cornerGroups}
                 corners={visibleCorners}
-                totalCorners={corners.length}
+                totalCorners={corners.length || cornerGuide.length}
                 expanded={showAllTurns}
                 onToggle={() => setShowAllTurns((value) => !value)}
               />
