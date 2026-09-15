@@ -1,6 +1,6 @@
 {
-  "build_version": "product_manifest_20260908T172324Z",
-  "generated_at": "2026-09-08T17:23:24Z",
+  "build_version": "product_manifest_20260915T180204Z",
+  "generated_at": "2026-09-15T18:02:04Z",
   "overall_status": "passed",
   "schema_version": 1,
   "surfaces": {
@@ -118,7 +118,7 @@
       "quality_report": "data/reports/race_analysis_quality_report.json",
       "row_counts": {
         "race_analysis_index": 13,
-        "race_analysis_links": 39,
+        "race_analysis_links": 52,
         "race_analysis_neutralization_phases": 67,
         "race_analysis_pace_evolution": 15155,
         "race_analysis_pit_strategy": 529,
@@ -152,9 +152,9 @@
         "data/race_week/race_week_storylines.csv",
         "data/race_week/race_week_confidence.csv"
       ],
-      "build_version": "race_week_20260908T172319Z",
+      "build_version": "race_week_20260915T180159Z",
       "errors": [],
-      "generated_at": "2026-09-08T17:23:19Z",
+      "generated_at": "2026-09-15T18:01:59Z",
       "last_validation_command": "python build_product_manifest.py && python validate_product_manifest.py",
       "last_validation_result": "passed",
       "quality_report": null,
@@ -164,7 +164,7 @@
         "race_week_driver_board": 22,
         "race_week_overview": 1,
         "race_week_storylines": 2,
-        "race_week_strategy": 22
+        "race_week_strategy": 21
       },
       "source_files": [
         "data/curated",

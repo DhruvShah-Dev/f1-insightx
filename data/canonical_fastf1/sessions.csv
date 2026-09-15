@@ -45,3 +45,8 @@ id,race_id,season,round,session_code,session_name,event_name,scheduled_at,source
 2026-13-monza|FP3,2026-13-monza,2026,13,FP3,FP3,Italian Grand Prix,,fastf1_canonical_v1
 2026-13-monza|Q,2026-13-monza,2026,13,Q,Q,Italian Grand Prix,,fastf1_canonical_v1
 2026-13-monza|R,2026-13-monza,2026,13,R,R,Italian Grand Prix,,fastf1_canonical_v1
+2026-14-madring|FP1,2026-14-madring,2026,14,FP1,FP1,Spanish Grand Prix,,fastf1_canonical_v1
+2026-14-madring|FP2,2026-14-madring,2026,14,FP2,FP2,Spanish Grand Prix,,fastf1_canonical_v1
+2026-14-madring|FP3,2026-14-madring,2026,14,FP3,FP3,Spanish Grand Prix,,fastf1_canonical_v1
+2026-14-madring|Q,2026-14-madring,2026,14,Q,Q,Spanish Grand Prix,,fastf1_canonical_v1
+2026-14-madring|R,2026-14-madring,2026,14,R,R,Spanish Grand Prix,,fastf1_canonical_v1

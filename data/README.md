@@ -17,16 +17,16 @@ Generated datasets are intentionally ignored unless they are small fixtures or s
 
 ## Current Local State
 
-Latest local season state: `season_state_20260908T172324Z`, generated at `2026-09-08T17:23:24Z`.
+Latest local season state: `season_state_20260915T180204Z`, generated at `2026-09-15T18:02:04Z`.
 
 | Layer                      | Current evidence                                                                                            |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| FastF1 archive             | 2026 round 13 Italian Grand Prix sessions ingested with telemetry for FP1, FP2, FP3, qualifying, and race   |
-| Canonical FastF1           | 46 sessions, 28,089 laps, 1,012 results, 3,339 stints, 993 session-summary rows                             |
-| Analysis                   | 13 race analyses, 15,126 position timeline rows, 529 pit-strategy rows                                      |
-| Race Week                  | Spanish Grand Prix, round 14, scheduled `2026-09-13T13:00:00Z`                                              |
-| Strategy modeling          | Spanish Grand Prix product view available                                                                   |
-| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through the Italian Grand Prix, round 13 |
+| FastF1 archive             | 2026 round 14 Spanish Grand Prix sessions ingested for FP1, FP2, FP3, qualifying, and race; telemetry files pending |
+| Canonical FastF1           | 51 sessions, 30,161 session laps, 1,097 session results, 3,619 session stints, 5,222 weather rows                 |
+| Analysis                   | 13 race analyses, 15,126 position timeline rows, 529 pit-strategy rows; analysis remains through round 13         |
+| Race Week                  | Spanish Grand Prix, round 14, product view refreshed at `2026-09-15T18:01:59Z`; next race is Azerbaijan GP        |
+| Strategy modeling          | Spanish Grand Prix product view available; Azerbaijan Grand Prix build pending                                    |
+| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through the Italian Grand Prix, round 13       |
 
 ## Layers
 

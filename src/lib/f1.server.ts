@@ -1,4 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
+import productManifestRaw from "../../data/reports/product_manifest.json?raw";
+import analyticsQualityRaw from "../../data/reports/analytics_quality_report.json?raw";
+import raceAnalysisQualityRaw from "../../data/reports/race_analysis_quality_report.json?raw";
+import seasonStateRaw from "../../data/season_state.json?raw";
+import seasonStateQualityRaw from "../../data/reports/season_state_quality_report.json?raw";
+import strategyLabQualityRaw from "../../data/reports/strategy_lab_signal_quality.json?raw";
+import { methodDashboardInventory } from "@/data/method-dashboard-inventory";
 import { readSupabaseRuntimeEnv } from "./env.server";
 import { safeExternalHref } from "./security";
 
@@ -2089,4 +2096,335 @@ export async function fetchPicksBoard(season: number) {
     challenges,
     activeRaceId: active?.raceId ?? null,
   };
+}
+
+type ProductSurfaceManifest = {
+  generated_at?: string;
+  build_version?: string;
+  validation_status?: string;
+  overall_status?: string;
+  stale_after_hours?: number;
+  artifact_paths?: string[];
+  row_counts?: Record<string, number>;
+  quality_report?: string | null;
+  warnings?: string[];
+  errors?: string[];
+};
+
+type ProductManifest = {
+  generated_at?: string;
+  build_version?: string;
+  overall_status?: string;
+  surfaces?: Record<string, ProductSurfaceManifest>;
+};
+
+type SeasonStateSnapshot = {
+  latest_completed_race?: { id?: string; race_name?: string; name?: string; round?: number };
+  latest_analytics_race?: { id?: string; race_name?: string; name?: string; round?: number };
+  latest_race_analysis_race?: { id?: string; race_name?: string; name?: string; round?: number };
+  race_week_product_race?: { id?: string; race_name?: string; name?: string; round?: number };
+  next_race?: { id?: string; race_name?: string; name?: string; round?: number };
+  resultsThrough?: { round?: number; name?: string; date?: string };
+  pipelineRunISO?: string;
+};
+
+type QualityReport = Record<string, unknown>;
+
+export type MethodDashboardFile = {
+  id: string;
+  category: string;
+  table: string;
+  path: string;
+  rows: number;
+  columns: number;
+  header: string[];
+  sourceSurface: string | null;
+  validationStatus: string | null;
+  generatedAt: string | null;
+  buildVersion: string | null;
+  supabaseRows: number | null;
+  supabaseStatus: "matched" | "different" | "missing" | "not_checked";
+};
+
+export type MethodDashboardCategory = {
+  category: string;
+  files: number;
+  rows: number;
+  columns: number;
+  maxColumns: number;
+};
+
+export type MethodDashboardSurface = {
+  id: string;
+  label: string;
+  status: string;
+  generatedAt: string | null;
+  buildVersion: string | null;
+  staleAfterHours: number | null;
+  rows: number;
+  files: number;
+  warnings: number;
+  errors: number;
+  qualityReport: string | null;
+};
+
+export type MethodDashboardData = {
+  generatedAt: string;
+  sourceMode: "supabase" | "local";
+  overallStatus: string;
+  totals: {
+    categories: number;
+    files: number;
+    rows: number;
+    columns: number;
+    validationPassed: number;
+    validationIssues: number;
+  };
+  freshness: {
+    pipelineRunISO: string | null;
+    latestCompletedRace: { id: string | null; name: string | null; round: number | null };
+    latestAnalyticsRace: { id: string | null; name: string | null; round: number | null };
+    latestRaceAnalysisRace: { id: string | null; name: string | null; round: number | null };
+    raceWeekProductRace: { id: string | null; name: string | null; round: number | null };
+    nextRace: { id: string | null; name: string | null; round: number | null };
+  };
+  categories: MethodDashboardCategory[];
+  surfaces: MethodDashboardSurface[];
+  files: MethodDashboardFile[];
+  largestFiles: MethodDashboardFile[];
+  quality: {
+    analyticsConfidence: { min: number | null; median: number | null; max: number | null };
+    raceAnalysisConfidence: {
+      min: number | null;
+      mean: number | null;
+      max: number | null;
+      tier: string | null;
+    };
+    proxyNotes: string[];
+    dataGaps: Array<{ key: string; value: string }>;
+    nullRateHighlights: Array<{ table: string; column: string; rate: number }>;
+  };
+};
+
+export type MethodDashboardLiveCount = {
+  table: string;
+  rows: number | null;
+  status: "matched" | "different" | "missing";
+};
+
+function parseJson<T>(raw: string, fallback: T): T {
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    return fallback;
+  }
+}
+
+function titleLabel(value: string) {
+  return value.replace(/[_-]+/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+function raceFrom(value: unknown) {
+  const r = (value ?? {}) as Record<string, unknown>;
+  return {
+    id: str(r["id"]),
+    name: str(r["race_name"] ?? r["name"]),
+    round: num(r["round"]),
+  };
+}
+
+function buildSurfaceLookup(manifest: ProductManifest) {
+  const lookup = new Map<string, { id: string; surface: ProductSurfaceManifest }>();
+  for (const [id, surface] of Object.entries(manifest.surfaces ?? {})) {
+    for (const path of surface.artifact_paths ?? []) {
+      lookup.set(path.replaceAll("\\", "/"), { id, surface });
+    }
+  }
+  return lookup;
+}
+
+async function countSupabaseRows(table: string): Promise<number | null> {
+  try {
+    const sb = serverClient();
+    const { count, error } = await sb.from(table).select("*", { count: "exact", head: true });
+    if (error) return null;
+    return count ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export async function fetchMethodDashboard(): Promise<MethodDashboardData> {
+  const manifest = parseJson<ProductManifest>(productManifestRaw, {});
+  const analyticsQuality = parseJson<QualityReport>(analyticsQualityRaw, {});
+  const raceAnalysisQuality = parseJson<QualityReport>(raceAnalysisQualityRaw, {});
+  const seasonState = parseJson<SeasonStateSnapshot>(seasonStateRaw, {});
+  const seasonQuality = parseJson<QualityReport>(seasonStateQualityRaw, {});
+  const strategyQuality = parseJson<QualityReport>(strategyLabQualityRaw, {});
+  const surfaceLookup = buildSurfaceLookup(manifest);
+
+  const files: MethodDashboardFile[] = methodDashboardInventory
+    .map((source) => {
+      const path = source.path.replaceAll("\\", "/");
+      const surfaceMeta = surfaceLookup.get(path);
+      return {
+        id: path,
+        category: source.category,
+        table: source.table,
+        path,
+        rows: source.rows,
+        columns: source.columns,
+        header: source.header,
+        sourceSurface: surfaceMeta?.id ?? null,
+        validationStatus: surfaceMeta?.surface.validation_status ?? null,
+        generatedAt: surfaceMeta?.surface.generated_at ?? null,
+        buildVersion: surfaceMeta?.surface.build_version ?? null,
+        supabaseRows: null,
+        supabaseStatus: "not_checked" as const,
+      };
+    })
+    .sort((a, b) => a.category.localeCompare(b.category) || b.rows - a.rows);
+
+  const sourceMode =
+    process.env["F1_INSIGHTX_PUBLIC_DATA_SOURCE"]?.toLowerCase() === "supabase"
+      ? "supabase"
+      : "local";
+
+  const byCategory = new Map<string, MethodDashboardCategory>();
+  for (const file of files) {
+    const current = byCategory.get(file.category) ?? {
+      category: file.category,
+      files: 0,
+      rows: 0,
+      columns: 0,
+      maxColumns: 0,
+    };
+    current.files += 1;
+    current.rows += file.rows;
+    current.columns += file.columns;
+    current.maxColumns = Math.max(current.maxColumns, file.columns);
+    byCategory.set(file.category, current);
+  }
+
+  const surfaces: MethodDashboardSurface[] = Object.entries(manifest.surfaces ?? {})
+    .map(([id, surface]) => ({
+      id,
+      label: titleLabel(id),
+      status: surface.validation_status ?? surface.overall_status ?? "unknown",
+      generatedAt: surface.generated_at ?? null,
+      buildVersion: surface.build_version ?? null,
+      staleAfterHours: surface.stale_after_hours ?? null,
+      rows: Object.values(surface.row_counts ?? {}).reduce(
+        (sum, value) => sum + Number(value ?? 0),
+        0,
+      ),
+      files: surface.artifact_paths?.length ?? 0,
+      warnings: surface.warnings?.length ?? 0,
+      errors: surface.errors?.length ?? 0,
+      qualityReport: surface.quality_report ?? null,
+    }))
+    .sort((a, b) => b.rows - a.rows);
+
+  const analyticsConfidence = (analyticsQuality["confidence_distribution"] ?? {}) as Row;
+  const raceConfidence = (raceAnalysisQuality["confidence_distribution"] ?? {}) as Row;
+  const seasonGaps = (seasonQuality["data_gaps"] ?? {}) as Record<string, unknown>;
+  const raceGaps = (raceAnalysisQuality["missing_data_flags"] ?? {}) as Record<string, unknown>;
+  const strategyNote = str(strategyQuality["proxy_note"]);
+  const analyticsNote = str(analyticsQuality["proxy_note"]);
+
+  const nullRateHighlights = Object.entries(
+    (analyticsQuality["null_rates"] ?? {}) as Record<string, Row>,
+  )
+    .flatMap(([table, columns]) =>
+      Object.entries(columns).map(([column, rate]) => ({
+        table,
+        column,
+        rate: Number(rate ?? 0),
+      })),
+    )
+    .filter((row) => Number.isFinite(row.rate) && row.rate >= 0.1)
+    .sort((a, b) => b.rate - a.rate)
+    .slice(0, 8);
+
+  const validationPassed = surfaces.filter((surface) =>
+    /passed|ready/i.test(surface.status),
+  ).length;
+  const totalRows = files.reduce((sum, file) => sum + file.rows, 0);
+  const totalColumns = files.reduce((sum, file) => sum + file.columns, 0);
+  const audit = (seasonQuality["audit"] ?? {}) as Row;
+
+  return {
+    generatedAt: manifest.generated_at ?? new Date().toISOString(),
+    sourceMode,
+    overallStatus: manifest.overall_status ?? "unknown",
+    totals: {
+      categories: byCategory.size,
+      files: files.length,
+      rows: totalRows,
+      columns: totalColumns,
+      validationPassed,
+      validationIssues: surfaces.length - validationPassed,
+    },
+    freshness: {
+      pipelineRunISO: seasonState.pipelineRunISO ?? manifest.generated_at ?? null,
+      latestCompletedRace: raceFrom(
+        audit["latest_completed_by_schedule"] ??
+          seasonState.latest_completed_race ??
+          seasonState.resultsThrough,
+      ),
+      latestAnalyticsRace: raceFrom(
+        audit["latest_analytics_race"] ?? seasonState.latest_analytics_race,
+      ),
+      latestRaceAnalysisRace: raceFrom(
+        audit["latest_race_analysis_race"] ?? seasonState.latest_race_analysis_race,
+      ),
+      raceWeekProductRace: raceFrom(
+        audit["race_week_product_race"] ?? seasonState.race_week_product_race,
+      ),
+      nextRace: raceFrom(audit["next_race"] ?? seasonState.next_race),
+    },
+    categories: [...byCategory.values()].sort((a, b) => b.rows - a.rows),
+    surfaces,
+    files,
+    largestFiles: [...files].sort((a, b) => b.rows - a.rows).slice(0, 8),
+    quality: {
+      analyticsConfidence: {
+        min: num(analyticsConfidence["min"]),
+        median: num(analyticsConfidence["median"]),
+        max: num(analyticsConfidence["max"]),
+      },
+      raceAnalysisConfidence: {
+        min: num(raceConfidence["min"]),
+        mean: num(raceConfidence["mean"]),
+        max: num(raceConfidence["max"]),
+        tier: str(raceConfidence["tier"]),
+      },
+      proxyNotes: [analyticsNote, strategyNote].filter((note): note is string => Boolean(note)),
+      dataGaps: [
+        ...Object.entries(seasonGaps).map(([key, value]) => ({ key, value: String(value) })),
+        ...Object.entries(raceGaps).map(([key, value]) => ({ key, value: String(value) })),
+      ],
+      nullRateHighlights,
+    },
+  };
+}
+
+export async function fetchMethodDashboardLiveCounts(
+  tables: Array<{ table: string; expectedRows: number }>,
+): Promise<MethodDashboardLiveCount[]> {
+  const unique = new Map<string, number>();
+  for (const row of tables) {
+    if (!unique.has(row.table)) unique.set(row.table, row.expectedRows);
+  }
+
+  return Promise.all(
+    [...unique.entries()].slice(0, 50).map(async ([table, expectedRows]) => {
+      const rows = await countSupabaseRows(table);
+      return {
+        table,
+        rows,
+        status: rows == null ? "missing" : rows === expectedRows ? "matched" : "different",
+      };
+    }),
+  );
 }

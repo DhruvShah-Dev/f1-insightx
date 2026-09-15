@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { BarChart3 } from "lucide-react";
 import { SectionHeading, SiteShell } from "@/components/site-shell";
 import { RaceFlagHero } from "@/components/race-flag-hero";
 import { seasonState } from "@/data/season";
@@ -26,9 +27,15 @@ export const Route = createFileRoute("/method")({
 });
 
 const sources = [
-  { name: "Session timing", detail: "Lap, sector and speed-trap times for every session since 2018." },
+  {
+    name: "Session timing",
+    detail: "Lap, sector and speed-trap times for every session since 2018.",
+  },
   { name: "Car telemetry", detail: "Throttle, brake, gear and speed traces sampled per lap." },
-  { name: "Weather", detail: "Track and air temperature, humidity, wind and rainfall per session." },
+  {
+    name: "Weather",
+    detail: "Track and air temperature, humidity, wind and rainfall per session.",
+  },
   { name: "Tyre and stint logs", detail: "Compound, stint length and pit-lane deltas per driver." },
 ];
 
@@ -50,6 +57,21 @@ function Method() {
 
       <section className="mt-10">
         <SectionHeading kicker="Inputs" title="Data sources" />
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border border-border bg-card/45 p-4">
+          <div>
+            <p className="text-xs font-black uppercase">Data trust dashboard</p>
+            <p className="mt-1 text-[11px] text-muted-foreground">
+              Inspect source categories, freshness, validation status and table inventory.
+            </p>
+          </div>
+          <Link
+            to="/method/dashboard"
+            className="inline-flex min-h-9 items-center gap-2 bg-primary px-3 text-[10px] font-black uppercase tracking-widest text-primary-foreground"
+          >
+            <BarChart3 className="size-3.5" />
+            Open dashboard
+          </Link>
+        </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {sources.map((s) => (
             <div key={s.name} className="rounded-lg border border-border bg-card/50 p-4">

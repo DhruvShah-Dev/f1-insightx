@@ -18,6 +18,7 @@ import { Route as RaceweekRouteImport } from './routes/raceweek'
 import { Route as VsRouteImport } from './routes/vs'
 import { Route as AnalysisIndexRouteImport } from './routes/analysis.index'
 import { Route as AnalysisSlugRouteImport } from './routes/analysis.$slug'
+import { Route as MethodDashboardRouteImport } from './routes/method_.dashboard'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +65,11 @@ const AnalysisSlugRoute = AnalysisSlugRouteImport.update({
   path: '/analysis/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MethodDashboardRoute = MethodDashboardRouteImport.update({
+  id: '/method_/dashboard',
+  path: '/method/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/raceweek': typeof RaceweekRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
+  '/method/dashboard': typeof MethodDashboardRoute
   '/analysis/': typeof AnalysisIndexRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/raceweek': typeof RaceweekRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
+  '/method/dashboard': typeof MethodDashboardRoute
   '/analysis': typeof AnalysisIndexRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/raceweek': typeof RaceweekRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
+  '/method_/dashboard': typeof MethodDashboardRoute
   '/analysis/': typeof AnalysisIndexRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/raceweek'
     | '/vs'
     | '/analysis/$slug'
+    | '/method/dashboard'
     | '/analysis/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/raceweek'
     | '/vs'
     | '/analysis/$slug'
+    | '/method/dashboard'
     | '/analysis'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/raceweek'
     | '/vs'
     | '/analysis/$slug'
+    | '/method_/dashboard'
     | '/analysis/'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   RaceweekRoute: typeof RaceweekRoute
   VsRoute: typeof VsRoute
   AnalysisSlugRoute: typeof AnalysisSlugRoute
+  MethodDashboardRoute: typeof MethodDashboardRoute
   AnalysisIndexRoute: typeof AnalysisIndexRoute
 }
 
@@ -212,6 +225,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalysisSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/method_/dashboard': {
+      id: '/method_/dashboard'
+      path: '/method/dashboard'
+      fullPath: '/method/dashboard'
+      preLoaderRoute: typeof MethodDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   RaceweekRoute: RaceweekRoute,
   VsRoute: VsRoute,
   AnalysisSlugRoute: AnalysisSlugRoute,
+  MethodDashboardRoute: MethodDashboardRoute,
   AnalysisIndexRoute: AnalysisIndexRoute,
 }
 export const routeTree = rootRouteImport

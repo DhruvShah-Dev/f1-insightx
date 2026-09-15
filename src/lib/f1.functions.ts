@@ -3,6 +3,8 @@ import { z } from "zod";
 import {
   fetchChampionship,
   fetchHeadToHead,
+  fetchMethodDashboard,
+  fetchMethodDashboardLiveCounts,
   fetchPicksBoard,
   fetchLapTrace,
   fetchRaceReport,
@@ -133,7 +135,15 @@ export const getHeadToHead = createServerFn({ method: "GET" })
     ),
   );
 
-export type { PickChallenge, PickEntrant, PickResults, TrafficSplit } from "./f1.server";
+export type {
+  MethodDashboardData,
+  MethodDashboardFile,
+  MethodDashboardLiveCount,
+  PickChallenge,
+  PickEntrant,
+  PickResults,
+  TrafficSplit,
+} from "./f1.server";
 
 export const getPicksBoard = createServerFn({ method: "GET" })
   .validator((input) => z.object({ season: z.number().int().optional() }).parse(input ?? {}))
@@ -143,3 +153,19 @@ export const getPicksBoard = createServerFn({ method: "GET" })
       () => fallbackPicksBoard(data.season ?? SEASON),
     ),
   );
+
+export const getMethodDashboard = createServerFn({ method: "GET" }).handler(() =>
+  fetchMethodDashboard(),
+);
+
+export const getMethodDashboardLiveCounts = createServerFn({ method: "GET" })
+  .validator((input) =>
+    z
+      .object({
+        tables: z
+          .array(z.object({ table: z.string().min(1), expectedRows: z.number().int().min(0) }))
+          .max(50),
+      })
+      .parse(input),
+  )
+  .handler(({ data }) => fetchMethodDashboardLiveCounts(data.tables));

@@ -19,11 +19,11 @@
       "status": "data_available"
     },
     "latest_completed_by_schedule": {
-      "circuit_id": "monza",
-      "id": "2026-13-monza",
-      "race_name": "Italian Grand Prix",
-      "round": 13,
-      "scheduled_at": "2026-09-06T13:00:00Z",
+      "circuit_id": "madring",
+      "id": "2026-14-madring",
+      "race_name": "Spanish Grand Prix",
+      "round": 14,
+      "scheduled_at": "2026-09-13T13:00:00Z",
       "season": 2026,
       "status": "completed_by_schedule"
     },
@@ -55,11 +55,11 @@
       "status": "data_available"
     },
     "next_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
-      "scheduled_at": "2026-09-13T13:00:00Z",
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
+      "scheduled_at": "2026-09-26T11:00:00Z",
       "season": 2026,
       "status": "upcoming"
     },
@@ -82,21 +82,33 @@
       "status": "strategy_lab_available"
     }
   },
-  "build_version": "season_state_20260908T172324Z",
+  "build_version": "season_state_20260915T180204Z",
   "data_gaps": {
     "clean_lap_filtering": "inferred/proxy",
     "drs_gap_context": "partial",
     "overtakes": "missing",
     "position_evolution": "partial",
     "race_control": "missing",
-    "race_results": "available",
-    "telemetry_sessions": "available",
+    "race_results": "partial",
+    "telemetry_sessions": "partial",
     "weather": "available"
   },
   "errors": [],
-  "generated_at": "2026-09-08T17:23:24Z",
-  "missing_data_flags": [],
+  "generated_at": "2026-09-15T18:02:04Z",
+  "missing_data_flags": [
+    "analytics_not_current",
+    "latest_completed_results_missing",
+    "race_week_target_stale",
+    "strategy_lab_next_race_unavailable",
+    "telemetry_not_current"
+  ],
   "schema_version": 1,
   "status": "passed",
-  "warnings": []
+  "warnings": [
+    "Spanish Grand Prix is latest by schedule, but curated race results are missing.",
+    "Analytics available through Italian Grand Prix; Spanish Grand Prix telemetry processing pending.",
+    "Telemetry features available through Italian Grand Prix; Spanish Grand Prix telemetry processing pending.",
+    "Race Week product targets Spanish Grand Prix; next race is Azerbaijan Grand Prix.",
+    "Strategy Lab available for Spanish Grand Prix; Azerbaijan Grand Prix build is pending."
+  ]
 }
