@@ -142,3 +142,14 @@ id,season,round,race_id,constructor_id,standing_position,points,wins,source_labe
 2026-13-monza|williams,2026,13,2026-13-monza,williams,9,11.0,0,derived_results_rollup
 2026-13-monza|aston_martin,2026,13,2026-13-monza,aston_martin,10,3.0,0,derived_results_rollup
 2026-13-monza|cadillac,2026,13,2026-13-monza,cadillac,11,0.0,0,derived_results_rollup
+2026-14-madring|mercedes,2026,14,2026-14-madring,mercedes,1,503.0,10,derived_results_rollup
+2026-14-madring|ferrari,2026,14,2026-14-madring,ferrari,2,358.0,2,derived_results_rollup
+2026-14-madring|mclaren,2026,14,2026-14-madring,mclaren,3,306.0,2,derived_results_rollup
+2026-14-madring|red_bull,2026,14,2026-14-madring,red_bull,4,230.0,0,derived_results_rollup
+2026-14-madring|rb,2026,14,2026-14-madring,rb,5,77.0,0,derived_results_rollup
+2026-14-madring|alpine,2026,14,2026-14-madring,alpine,6,68.0,0,derived_results_rollup
+2026-14-madring|haas,2026,14,2026-14-madring,haas,7,21.0,0,derived_results_rollup
+2026-14-madring|audi,2026,14,2026-14-madring,audi,8,17.0,0,derived_results_rollup
+2026-14-madring|williams,2026,14,2026-14-madring,williams,9,11.0,0,derived_results_rollup
+2026-14-madring|aston_martin,2026,14,2026-14-madring,aston_martin,10,3.0,0,derived_results_rollup
+2026-14-madring|cadillac,2026,14,2026-14-madring,cadillac,11,0.0,0,derived_results_rollup

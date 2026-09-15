@@ -15154,3 +15154,1109 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-13-monza,VER,Red Bull Racing,51,closing,3,85.419,-0.814,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
 2026-13-monza,VER,Red Bull Racing,52,closing,3,85.373,-0.243,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
 2026-13-monza,VER,Red Bull Racing,53,closing,3,84.804,-0.774,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ALB,Williams,1,opening,14,110.959,1.975,traffic likely,1.725,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,2,opening,15,104.211,1.241,traffic likely,0.991,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,3,opening,15,103.603,0.901,traffic likely,0.651,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,4,opening,15,103.364,0.665,uncertain,0.415,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,5,opening,15,104.477,1.127,traffic likely,0.877,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,6,opening,14,103.784,0.553,uncertain,0.303,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,7,opening,14,103.443,1.275,traffic likely,1.025,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,8,opening,14,103.201,1.105,traffic likely,0.855,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,9,opening,14,103.363,1.044,traffic likely,0.794,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,10,opening,14,103.186,0.141,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,11,opening,14,103.231,0.684,uncertain,0.434,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,12,middle,14,103.435,0.775,traffic likely,0.525,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,13,middle,14,103.495,0.985,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALB,Williams,14,middle,14,130.254,5.684,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALB,Williams,15,middle,17,128.429,-1.816,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALB,Williams,16,middle,17,102.132,1.605,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALB,Williams,17,middle,17,101.554,1.396,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALB,Williams,18,middle,17,101.726,1.448,traffic likely,1.198,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,19,middle,17,101.807,1.763,traffic likely,1.513,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,20,middle,17,101.917,1.733,traffic likely,1.483,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,21,middle,17,101.861,1.73,traffic likely,1.48,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,22,middle,17,101.901,1.919,traffic likely,1.669,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,23,middle,17,101.661,1.764,traffic likely,1.514,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,24,middle,16,101.292,1.354,traffic likely,1.104,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,25,middle,16,101.046,0.95,traffic likely,0.7,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,26,middle,16,100.625,0.874,traffic likely,0.624,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,27,middle,16,100.352,0.588,uncertain,0.338,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,28,middle,16,100.512,0.644,uncertain,0.394,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,29,middle,16,104.913,5.391,traffic likely,5.141,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,30,middle,16,102.529,3.23,traffic likely,2.98,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,31,middle,16,101.45,2.209,traffic likely,1.959,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,32,middle,16,102.086,2.823,traffic likely,2.573,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,33,middle,16,100.064,1.261,traffic likely,1.011,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,34,middle,15,99.897,1.164,traffic likely,0.914,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,35,middle,15,99.883,0.945,traffic likely,0.695,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,36,middle,15,99.994,1.307,traffic likely,1.057,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,37,middle,15,100.619,1.561,traffic likely,1.311,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,38,middle,15,100.166,1.421,traffic likely,1.171,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,39,middle,15,100.262,1.186,traffic likely,0.936,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,40,middle,15,100.072,1.308,traffic likely,1.058,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,41,middle,15,100.131,1.193,traffic likely,0.943,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,42,middle,15,101.782,2.772,traffic likely,2.522,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,43,closing,15,100.06,0.658,uncertain,0.408,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,44,closing,15,101.131,1.881,traffic likely,1.631,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,45,closing,15,99.772,0.488,uncertain,0.238,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,46,closing,15,99.496,0.391,uncertain,0.141,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,47,closing,15,99.397,0.621,uncertain,0.371,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALB,Williams,48,closing,15,99.435,1.168,traffic likely,0.918,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,49,closing,15,99.606,1.234,traffic likely,0.984,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,50,closing,15,100.127,1.977,traffic likely,1.727,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,51,closing,15,99.616,1.429,traffic likely,1.179,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,52,closing,15,100.294,1.998,traffic likely,1.748,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,53,closing,15,100.029,1.418,traffic likely,1.168,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,54,closing,15,100.52,2.105,traffic likely,1.855,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,55,closing,15,103.346,4.362,traffic likely,4.112,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALB,Williams,56,closing,15,102.468,4.104,traffic likely,3.854,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,1,opening,20,114.173,5.189,traffic likely,4.939,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,2,opening,20,105.467,2.497,traffic likely,2.247,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,3,opening,19,103.773,1.071,traffic likely,0.821,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,4,opening,19,104.268,1.569,traffic likely,1.319,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,5,opening,19,104.073,0.723,uncertain,0.473,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,6,opening,18,103.825,0.594,uncertain,0.344,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,7,opening,18,104.045,1.877,traffic likely,1.627,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,8,opening,18,103.626,1.53,traffic likely,1.28,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,9,opening,18,104.115,1.796,traffic likely,1.546,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,10,opening,18,103.696,0.651,uncertain,0.401,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,11,opening,18,103.362,0.815,traffic likely,0.565,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,12,middle,18,104.184,1.524,traffic likely,1.274,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,13,middle,18,103.288,0.778,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,14,middle,18,133.244,8.674,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,15,middle,20,137.454,7.209,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,16,middle,20,100.34,-0.187,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,17,middle,20,100.82,0.662,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,18,middle,20,101.455,1.177,traffic likely,0.927,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,19,middle,20,100.743,0.698,uncertain,0.448,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,20,middle,20,100.639,0.454,uncertain,0.204,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,21,middle,20,101.519,1.388,traffic likely,1.138,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,22,middle,20,101.843,1.862,traffic likely,1.612,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,23,middle,20,104.977,5.081,traffic likely,4.831,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,24,middle,18,101.271,1.333,traffic likely,1.083,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,25,middle,18,102.039,1.943,traffic likely,1.693,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,26,middle,18,103.761,4.01,traffic likely,3.76,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,27,middle,18,100.78,1.016,traffic likely,0.766,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,28,middle,18,100.645,0.776,traffic likely,0.526,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,29,middle,18,100.9,1.378,traffic likely,1.128,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,30,middle,17,100.467,1.168,traffic likely,0.918,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,31,middle,17,100.498,1.257,traffic likely,1.007,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,32,middle,17,100.488,1.225,traffic likely,0.975,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,33,middle,17,100.142,1.339,traffic likely,1.089,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,34,middle,17,100.425,1.692,traffic likely,1.442,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,35,middle,17,100.874,1.936,traffic likely,1.686,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,36,middle,17,105.2,6.513,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,37,middle,17,104.253,5.195,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,38,middle,17,125.391,26.646,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,39,middle,17,99.134,0.058,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,40,middle,17,99.003,0.239,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ALO,Aston Martin,41,middle,17,99.664,0.726,uncertain,0.476,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,42,middle,17,99.01,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,43,closing,17,102.7,3.298,traffic likely,3.048,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,44,closing,17,100.159,0.909,traffic likely,0.659,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,45,closing,17,100.108,0.824,traffic likely,0.574,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,46,closing,17,99.624,0.519,uncertain,0.269,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,ALO,Aston Martin,47,closing,17,104.41,5.633,traffic likely,5.383,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,48,closing,17,99.206,0.939,traffic likely,0.689,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,49,closing,17,99.846,1.474,traffic likely,1.224,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,50,closing,17,99.27,1.12,traffic likely,0.87,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,51,closing,17,99.619,1.432,traffic likely,1.182,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,52,closing,17,101.616,3.32,traffic likely,3.07,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,53,closing,17,99.634,1.023,traffic likely,0.773,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,54,closing,17,101.973,3.558,traffic likely,3.308,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ALO,Aston Martin,55,closing,17,100.491,1.507,traffic likely,1.257,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,ANT,Mercedes,1,opening,3,103.897,-5.087,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,2,opening,3,100.251,-2.719,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,3,opening,3,100.085,-2.617,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,4,opening,2,99.911,-2.788,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,5,opening,2,99.532,-3.818,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,6,opening,2,101.166,-2.065,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,7,opening,2,99.758,-2.41,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,8,opening,2,99.433,-2.663,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,9,opening,2,99.601,-2.718,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,10,opening,2,99.645,-3.4,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,11,opening,2,99.415,-3.132,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,12,middle,2,99.759,-2.901,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,13,middle,2,99.322,-3.188,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ANT,Mercedes,14,middle,2,104.304,-20.266,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ANT,Mercedes,15,middle,3,149.237,18.992,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ANT,Mercedes,16,middle,2,97.477,-3.05,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ANT,Mercedes,17,middle,2,98.161,-1.997,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,ANT,Mercedes,18,middle,2,98.519,-1.759,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,19,middle,2,98.365,-1.68,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,20,middle,2,98.407,-1.778,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,21,middle,2,99.779,-0.352,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,22,middle,2,99.187,-0.794,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,23,middle,2,99.145,-0.752,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,24,middle,2,98.785,-1.153,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,25,middle,2,97.492,-2.604,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,26,middle,2,98.057,-1.694,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,27,middle,2,98.661,-1.103,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,28,middle,2,99.027,-0.841,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,29,middle,2,98.484,-1.038,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,30,middle,2,98.664,-0.635,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,31,middle,2,97.753,-1.488,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,32,middle,2,97.867,-1.396,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,33,middle,2,98.044,-0.759,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,34,middle,2,97.786,-0.947,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,35,middle,2,97.859,-1.079,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,36,middle,2,97.999,-0.688,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,37,middle,2,97.642,-1.416,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,38,middle,2,98.492,-0.253,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,39,middle,2,97.627,-1.449,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,40,middle,2,97.743,-1.021,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,41,middle,2,97.547,-1.391,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,42,middle,2,97.296,-1.714,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,43,closing,2,97.335,-2.067,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,44,closing,2,97.167,-2.083,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,45,closing,2,98.315,-0.969,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,46,closing,2,98.31,-0.794,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,47,closing,2,97.668,-1.108,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,48,closing,1,97.833,-0.434,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,49,closing,1,96.561,-1.811,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,50,closing,1,96.561,-1.589,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,51,closing,1,96.597,-1.59,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,52,closing,1,96.197,-2.099,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,53,closing,1,96.08,-2.531,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,54,closing,1,97.19,-1.225,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,55,closing,1,98.04,-0.944,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,56,closing,1,96.689,-1.675,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,ANT,Mercedes,57,closing,1,96.03,-1.651,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,1,opening,22,116.813,7.829,traffic likely,7.579,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,2,opening,21,104.015,1.045,traffic likely,0.795,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,3,opening,21,103.779,1.077,traffic likely,0.827,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,4,opening,21,104.496,1.796,traffic likely,1.546,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,5,opening,21,104.274,0.924,traffic likely,0.674,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,6,opening,20,104.658,1.427,traffic likely,1.177,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,7,opening,20,103.768,1.6,traffic likely,1.35,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,8,opening,19,102.975,0.879,traffic likely,0.629,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,9,opening,19,103.496,1.177,traffic likely,0.927,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,10,opening,19,103.309,0.264,uncertain,0.014,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,11,opening,19,103.902,1.355,traffic likely,1.105,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,12,middle,19,104.215,1.555,traffic likely,1.305,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,13,middle,19,103.123,0.613,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,14,middle,19,133.149,8.579,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,15,middle,16,113.236,-17.009,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,16,middle,16,101.781,1.254,traffic likely,1.004,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,17,middle,16,102.196,2.038,traffic likely,1.788,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,18,middle,16,102.139,1.861,traffic likely,1.611,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,19,middle,16,101.796,1.752,traffic likely,1.502,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,20,middle,16,101.66,1.475,traffic likely,1.225,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,21,middle,16,101.694,1.563,traffic likely,1.313,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,22,middle,16,102.041,2.059,traffic likely,1.809,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,23,middle,15,101.936,2.04,traffic likely,1.79,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,24,middle,15,100.115,0.177,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,25,middle,15,100.157,0.061,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,26,middle,15,99.749,-0.002,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,27,middle,15,99.751,-0.013,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,28,middle,15,99.917,0.049,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,29,middle,15,99.198,-0.324,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,30,middle,15,99.205,-0.094,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,31,middle,15,99.321,0.08,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,32,middle,15,99.235,-0.028,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,33,middle,15,101.711,2.908,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,34,middle,16,124.98,26.247,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,35,middle,16,98.947,0.009,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,36,middle,16,98.951,0.264,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,37,middle,16,99.058,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,38,middle,16,99.399,0.654,uncertain,0.404,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,39,middle,16,99.497,0.421,uncertain,0.171,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,40,middle,16,99.953,1.189,traffic likely,0.939,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,41,middle,16,101.829,2.891,traffic likely,2.641,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,42,middle,16,100.194,1.184,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,43,closing,16,102.351,2.949,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,44,closing,16,121.49,22.24,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,45,closing,16,97.308,-1.976,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,46,closing,16,97.667,-1.438,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,47,closing,16,97.927,-0.849,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,48,closing,16,98.139,-0.129,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,49,closing,16,98.635,0.263,uncertain,0.013,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,50,closing,16,99.441,1.291,traffic likely,1.041,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,51,closing,16,101.079,2.892,traffic likely,2.642,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,52,closing,16,99.224,0.928,traffic likely,0.678,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,53,closing,16,100.479,1.868,traffic likely,1.618,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,54,closing,16,98.163,-0.252,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,55,closing,16,98.885,-0.099,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BEA,Haas F1 Team,56,closing,16,97.311,-1.053,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,1,opening,15,111.283,2.299,traffic likely,2.049,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOR,Audi,2,opening,14,102.582,-0.388,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,3,opening,14,102.84,0.138,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,4,opening,14,102.695,-0.005,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,5,opening,14,103.197,-0.153,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,6,opening,13,103.441,0.21,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,7,opening,13,102.511,0.343,uncertain,0.093,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,8,opening,13,102.322,0.226,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,9,opening,13,102.056,-0.263,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,10,opening,13,102.527,-0.518,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,11,opening,13,102.603,0.056,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,12,middle,13,102.358,-0.302,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,13,middle,13,102.253,-0.257,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,14,middle,13,126.013,1.443,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,15,middle,9,121.207,-9.038,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,16,middle,9,100.995,0.468,uncertain,0.218,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,17,middle,9,100.223,0.065,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,18,middle,9,100.227,-0.051,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,19,middle,9,100.089,0.044,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,20,middle,9,100.038,-0.147,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,21,middle,9,99.974,-0.157,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,22,middle,9,99.45,-0.531,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,23,middle,9,99.674,-0.222,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,24,middle,9,99.61,-0.328,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,25,middle,9,99.596,-0.5,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,26,middle,9,99.753,0.002,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,27,middle,9,99.778,0.014,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,28,middle,9,99.282,-0.587,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,29,middle,9,99.311,-0.211,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,30,middle,9,99.62,0.321,uncertain,0.071,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,31,middle,9,99.553,0.312,uncertain,0.062,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,32,middle,9,99.395,0.132,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,33,middle,9,99.013,0.21,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,34,middle,9,99.65,0.917,traffic likely,0.667,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOR,Audi,35,middle,9,99.138,0.2,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,36,middle,9,99.043,0.356,uncertain,0.106,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,37,middle,9,99.271,0.213,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,38,middle,9,99.133,0.388,uncertain,0.138,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,39,middle,9,99.411,0.335,uncertain,0.085,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,40,middle,9,99.379,0.615,uncertain,0.365,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,41,middle,9,99.349,0.411,uncertain,0.161,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,42,middle,9,99.442,0.432,uncertain,0.182,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,43,closing,8,99.402,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,44,closing,8,99.507,0.257,uncertain,0.007,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,45,closing,8,100.293,1.009,traffic likely,0.759,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOR,Audi,46,closing,8,99.747,0.642,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,47,closing,12,103.703,4.927,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,48,closing,13,120.65,22.383,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,49,closing,13,98.43,0.058,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,50,closing,13,97.837,-0.313,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,51,closing,13,98.188,0.001,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,52,closing,13,98.116,-0.18,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,53,closing,13,98.509,-0.102,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,54,closing,13,98.433,0.019,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,55,closing,13,99.458,0.474,uncertain,0.224,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,BOR,Audi,56,closing,13,100.585,2.221,traffic likely,1.971,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,1,opening,21,115.231,6.246,traffic likely,5.996,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,2,opening,22,106.52,3.55,traffic likely,3.3,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,3,opening,22,105.001,2.299,traffic likely,2.049,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,4,opening,22,104.761,2.061,traffic likely,1.811,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,5,opening,22,104.223,0.873,traffic likely,0.623,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,6,opening,21,105.057,1.826,traffic likely,1.576,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,7,opening,21,103.759,1.591,traffic likely,1.341,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,8,opening,21,103.843,1.747,traffic likely,1.497,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,9,opening,21,104.139,1.82,traffic likely,1.57,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,10,opening,21,104.189,1.144,traffic likely,0.894,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,11,opening,21,103.727,1.18,traffic likely,0.93,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,12,middle,21,104.342,1.682,traffic likely,1.432,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,13,middle,20,104.575,2.065,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,14,middle,20,136.01,11.44,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,15,middle,18,112.853,-17.392,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,16,middle,19,104.245,3.718,traffic likely,3.468,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,17,middle,19,103.192,3.034,traffic likely,2.784,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,18,middle,19,102.933,2.655,traffic likely,2.405,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,19,middle,19,102.583,2.538,traffic likely,2.288,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,20,middle,19,102.82,2.635,traffic likely,2.385,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,21,middle,19,102.885,2.754,traffic likely,2.504,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,22,middle,19,102.619,2.638,traffic likely,2.388,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,23,middle,19,105.124,5.227,traffic likely,4.977,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,24,middle,19,108.717,8.779,traffic likely,8.529,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,25,middle,19,103.725,3.629,traffic likely,3.379,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,26,middle,19,102.667,2.916,traffic likely,2.666,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,27,middle,19,102.77,3.005,traffic likely,2.755,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,28,middle,19,104.06,4.192,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,29,middle,19,108.049,8.527,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,30,middle,20,127.536,28.237,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,31,middle,20,103.788,4.547,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,32,middle,18,101.547,2.284,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,33,middle,18,101.651,2.848,traffic likely,2.598,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,34,middle,18,101.276,2.543,traffic likely,2.293,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,35,middle,18,101.283,2.345,traffic likely,2.095,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,36,middle,18,103.912,5.225,traffic likely,4.975,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,37,middle,18,109.793,10.735,traffic likely,10.485,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,38,middle,18,102.124,3.379,traffic likely,3.129,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,39,middle,18,102.042,2.966,traffic likely,2.716,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,40,middle,18,102.309,3.545,traffic likely,3.295,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,41,middle,18,102.478,3.54,traffic likely,3.29,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,42,middle,18,106.032,7.022,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,43,closing,18,106.131,6.729,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,44,closing,18,124.43,25.18,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,45,closing,18,99.13,-0.154,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,46,closing,18,102.219,3.114,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,47,closing,18,107.756,8.98,traffic likely,8.73,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,48,closing,18,110.365,12.097,traffic likely,11.847,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,49,closing,18,102.018,3.646,traffic likely,3.396,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,50,closing,18,105.816,7.666,traffic likely,7.416,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,51,closing,18,105.657,7.47,traffic likely,7.22,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,52,closing,18,102.417,4.121,traffic likely,3.871,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,53,closing,18,102.753,4.142,traffic likely,3.892,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,BOT,Cadillac,54,closing,18,103.918,5.504,traffic likely,5.254,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,COL,Alpine,1,opening,7,106.464,-2.52,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,2,opening,7,102.467,-0.503,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,3,opening,7,102.137,-0.565,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,4,opening,7,101.919,-0.781,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,5,opening,6,103.267,-0.083,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,6,opening,6,102.318,-0.913,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,7,opening,6,102.168,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,8,opening,6,101.793,-0.303,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,9,opening,6,102.564,0.245,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,10,opening,7,104.342,1.297,traffic likely,1.047,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,COL,Alpine,11,opening,7,102.259,-0.288,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,12,middle,7,102.66,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,13,middle,7,102.325,-0.185,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,COL,Alpine,14,middle,7,123.181,-1.389,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,COL,Alpine,15,middle,10,134.883,4.638,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,COL,Alpine,16,middle,10,99.818,-0.709,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,COL,Alpine,17,middle,10,99.924,-0.234,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,COL,Alpine,18,middle,10,100.409,0.131,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,19,middle,10,100.0,-0.044,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,20,middle,10,100.11,-0.075,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,21,middle,10,100.288,0.157,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,22,middle,10,99.803,-0.178,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,23,middle,10,100.179,0.282,uncertain,0.032,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,24,middle,10,100.051,0.113,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,25,middle,10,100.036,-0.06,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,26,middle,10,99.899,0.148,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,27,middle,10,99.686,-0.078,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,28,middle,10,99.708,-0.16,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,29,middle,10,99.356,-0.166,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,30,middle,10,99.148,-0.151,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,31,middle,10,98.775,-0.466,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,32,middle,10,99.489,0.226,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,33,middle,10,98.803,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,34,middle,10,98.733,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,35,middle,10,98.938,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,36,middle,10,97.966,-0.721,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,37,middle,10,98.604,-0.454,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,38,middle,10,98.223,-0.522,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,39,middle,10,99.21,0.134,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,40,middle,10,99.293,0.529,uncertain,0.279,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,41,middle,10,99.402,0.464,uncertain,0.214,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,42,middle,10,99.209,0.199,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,43,closing,9,99.664,0.262,uncertain,0.012,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,44,closing,9,99.092,-0.158,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,45,closing,9,100.47,1.186,traffic likely,0.936,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,COL,Alpine,46,closing,9,99.605,0.501,uncertain,0.251,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,47,closing,8,98.892,0.115,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,48,closing,8,97.472,-0.796,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,49,closing,8,97.524,-0.848,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,50,closing,8,97.76,-0.39,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,51,closing,8,97.325,-0.862,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,52,closing,8,97.321,-0.975,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,53,closing,8,97.45,-1.161,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,54,closing,8,98.299,-0.115,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,55,closing,7,100.851,1.867,traffic likely,1.617,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,COL,Alpine,56,closing,7,98.015,-0.349,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,COL,Alpine,57,closing,7,98.488,0.806,traffic likely,0.556,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,GAS,Alpine,1,opening,13,110.207,1.222,traffic likely,0.972,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,GAS,Alpine,2,opening,13,102.989,0.019,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,3,opening,13,102.795,0.093,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,4,opening,13,102.704,0.004,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,5,opening,13,103.252,-0.098,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,6,opening,12,103.376,0.145,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,7,opening,12,102.41,0.242,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,8,opening,12,102.112,0.016,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,9,opening,12,102.181,-0.138,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,10,opening,12,102.3,-0.745,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,11,opening,12,102.46,-0.087,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,12,middle,12,102.577,-0.083,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,13,middle,12,102.436,-0.074,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,GAS,Alpine,14,middle,12,125.674,1.104,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,GAS,Alpine,15,middle,8,121.034,-9.211,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,GAS,Alpine,16,middle,8,100.626,0.099,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,17,middle,8,100.093,-0.065,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,18,middle,8,100.077,-0.201,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,19,middle,8,99.753,-0.291,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,20,middle,8,99.961,-0.224,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,21,middle,8,99.454,-0.677,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,22,middle,8,98.986,-0.995,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,23,middle,8,99.138,-0.758,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,24,middle,8,99.192,-0.746,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,25,middle,8,99.895,-0.201,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,26,middle,8,99.315,-0.436,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,27,middle,8,99.259,-0.505,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,28,middle,8,98.73,-1.138,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,29,middle,8,99.288,-0.234,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,30,middle,8,99.632,0.333,uncertain,0.083,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,31,middle,8,99.273,0.032,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,32,middle,8,99.004,-0.259,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,33,middle,8,98.549,-0.254,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,34,middle,8,98.438,-0.295,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,35,middle,8,98.595,-0.343,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,36,middle,8,98.141,-0.546,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,37,middle,8,99.105,0.047,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,38,middle,8,99.166,0.421,uncertain,0.171,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,39,middle,8,99.228,0.152,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,40,middle,8,99.183,0.419,uncertain,0.169,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,41,middle,8,99.13,0.192,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,42,middle,8,98.982,-0.028,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,43,closing,7,98.715,-0.687,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,44,closing,7,99.325,0.075,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,45,closing,6,98.523,-0.761,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,46,closing,6,98.745,-0.359,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,47,closing,6,98.573,-0.204,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,48,closing,6,98.589,0.322,uncertain,0.072,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,49,closing,6,98.514,0.142,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,GAS,Alpine,50,closing,6,98.941,0.791,traffic likely,0.541,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,GAS,Alpine,51,closing,6,99.51,1.323,traffic likely,1.073,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,GAS,Alpine,52,closing,6,99.539,1.243,traffic likely,0.993,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,GAS,Alpine,53,closing,6,100.045,1.434,traffic likely,1.184,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,GAS,Alpine,54,closing,7,101.425,3.01,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,GAS,Alpine,55,closing,9,104.713,5.729,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,GAS,Alpine,56,closing,12,121.049,22.685,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,HAM,Ferrari,1,opening,4,104.424,-4.56,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HAM,Ferrari,2,opening,4,100.985,-1.985,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HAM,Ferrari,3,opening,4,99.839,-2.863,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HAM,Ferrari,4,opening,3,103.055,0.356,uncertain,0.106,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HAM,Ferrari,5,opening,10,111.932,8.582,traffic likely,8.332,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,HAM,Ferrari,6,opening,22,134.937,31.707,traffic likely,31.457,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,HUL,Audi,1,opening,12,109.232,0.248,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,2,opening,12,103.377,0.407,uncertain,0.157,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,3,opening,12,102.807,0.105,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,4,opening,12,102.521,-0.178,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,5,opening,12,103.154,-0.196,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,6,opening,11,103.085,-0.146,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,7,opening,11,102.109,-0.059,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,8,opening,11,102.047,-0.049,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,9,opening,11,102.447,0.128,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,10,opening,11,102.026,-1.019,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,11,opening,11,102.545,-0.002,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,12,middle,11,102.794,0.134,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,13,middle,11,102.53,0.02,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,HUL,Audi,14,middle,11,124.356,-0.214,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,HUL,Audi,15,middle,12,132.061,1.816,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,HUL,Audi,16,middle,12,100.428,-0.099,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,HUL,Audi,17,middle,12,100.384,0.226,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,HUL,Audi,18,middle,12,100.233,-0.045,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,19,middle,12,100.44,0.395,uncertain,0.145,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,20,middle,12,100.259,0.075,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,21,middle,12,99.591,-0.54,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,22,middle,12,100.16,0.178,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,23,middle,12,99.517,-0.38,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,24,middle,12,99.896,-0.042,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,25,middle,12,100.206,0.11,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,26,middle,12,99.992,0.241,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,27,middle,12,100.195,0.43,uncertain,0.18,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,28,middle,12,100.148,0.279,uncertain,0.029,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,29,middle,12,99.564,0.042,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,30,middle,12,99.23,-0.069,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,31,middle,12,99.209,-0.032,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,32,middle,12,99.192,-0.071,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,33,middle,12,98.937,0.134,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,34,middle,12,98.804,0.071,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,35,middle,12,98.368,-0.57,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,36,middle,12,98.59,-0.097,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,37,middle,12,98.813,-0.245,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,38,middle,12,98.851,0.106,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,39,middle,12,99.457,0.381,uncertain,0.131,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,40,middle,12,98.764,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,41,middle,12,98.566,-0.372,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,42,middle,12,98.761,-0.249,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,43,closing,12,98.785,-0.617,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,44,closing,12,98.78,-0.47,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,45,closing,12,99.75,0.466,uncertain,0.216,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,46,closing,12,99.92,0.816,traffic likely,0.566,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,HUL,Audi,47,closing,11,100.009,1.233,traffic likely,0.983,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,HUL,Audi,48,closing,11,98.879,0.612,uncertain,0.362,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,49,closing,11,98.689,0.317,uncertain,0.067,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,50,closing,11,98.114,-0.036,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,51,closing,11,98.186,-0.001,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,52,closing,11,98.184,-0.112,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,53,closing,11,98.823,0.212,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,HUL,Audi,54,closing,11,101.004,2.59,traffic likely,2.34,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,HUL,Audi,55,closing,11,102.637,3.653,traffic likely,3.403,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,HUL,Audi,56,closing,10,99.646,1.282,traffic likely,1.032,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,1,opening,8,107.203,-1.781,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,2,opening,8,102.589,-0.381,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,3,opening,8,102.163,-0.539,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,4,opening,8,101.81,-0.889,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,5,opening,7,103.455,0.105,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,6,opening,7,102.191,-1.04,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,7,opening,7,102.065,-0.103,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,8,opening,7,101.959,-0.137,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,9,opening,7,102.268,-0.051,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,10,opening,6,101.592,-1.453,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,11,opening,6,100.395,-2.152,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,12,middle,6,100.558,-2.102,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,13,middle,6,100.105,-2.405,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,14,middle,6,119.201,-5.369,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,15,middle,6,125.02,-5.225,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,16,middle,6,100.213,-0.314,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,17,middle,6,100.007,-0.151,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,18,middle,6,99.829,-0.449,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,19,middle,6,99.152,-0.892,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,20,middle,6,99.354,-0.831,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,21,middle,6,99.52,-0.611,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,22,middle,6,99.338,-0.644,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,23,middle,6,98.944,-0.953,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,24,middle,6,99.066,-0.872,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,25,middle,6,99.928,-0.168,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,26,middle,6,99.271,-0.48,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,27,middle,6,99.4,-0.364,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,28,middle,6,99.352,-0.516,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,29,middle,5,99.742,0.22,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,30,middle,5,98.883,-0.416,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,31,middle,5,99.182,-0.059,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,32,middle,5,99.273,0.01,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,33,middle,5,98.575,-0.228,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,34,middle,5,98.465,-0.268,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,35,middle,6,102.529,3.591,traffic likely,3.341,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,36,middle,6,98.941,0.254,uncertain,0.004,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,37,middle,6,99.085,0.027,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,38,middle,6,98.745,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,39,middle,6,98.761,-0.315,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,40,middle,6,98.698,-0.066,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,41,middle,6,98.667,-0.271,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,42,middle,6,98.885,-0.125,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,43,closing,6,98.506,-0.896,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,44,closing,6,101.585,2.335,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,45,closing,7,121.703,22.419,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,46,closing,7,97.939,-1.166,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,47,closing,7,97.201,-1.576,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,48,closing,7,97.231,-1.037,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,49,closing,7,96.846,-1.526,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,50,closing,7,97.398,-0.752,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,51,closing,7,97.625,-0.562,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,52,closing,7,98.427,0.132,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,53,closing,7,99.321,0.71,uncertain,0.46,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,54,closing,6,99.743,1.328,traffic likely,1.078,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,55,closing,6,97.456,-1.528,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,56,closing,6,97.288,-1.076,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LAW,Red Bull Racing,57,closing,6,97.852,0.171,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,1,opening,5,105.113,-3.871,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,2,opening,5,101.503,-1.467,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,3,opening,5,100.212,-2.49,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,4,opening,5,102.298,-0.401,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,5,opening,4,102.046,-1.304,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,6,opening,4,100.662,-2.569,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,7,opening,4,100.077,-2.091,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,8,opening,4,100.022,-2.074,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,9,opening,4,99.474,-2.845,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,10,opening,4,99.597,-3.448,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,11,opening,4,99.501,-3.046,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,12,middle,4,99.559,-3.101,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,13,middle,4,99.449,-3.061,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,14,middle,4,107.817,-16.753,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,15,middle,2,135.218,4.973,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,16,middle,1,98.773,-1.754,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,17,middle,1,98.298,-1.86,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,18,middle,1,98.856,-1.422,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,19,middle,1,98.335,-1.71,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,20,middle,1,98.595,-1.59,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,21,middle,1,98.384,-1.747,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,22,middle,1,98.477,-1.504,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,23,middle,1,98.601,-1.296,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,24,middle,1,98.655,-1.283,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,25,middle,1,98.328,-1.768,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,26,middle,1,98.614,-1.137,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,27,middle,1,98.905,-0.859,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,28,middle,1,98.401,-1.468,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,29,middle,1,98.139,-1.383,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,30,middle,1,97.926,-1.373,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,31,middle,1,97.937,-1.304,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,32,middle,1,98.18,-1.083,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,33,middle,1,98.072,-0.731,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,34,middle,1,98.018,-0.715,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,35,middle,1,98.023,-0.915,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,36,middle,1,98.162,-0.525,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,37,middle,1,97.92,-1.138,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,38,middle,1,97.939,-0.806,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,39,middle,1,97.715,-1.361,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,40,middle,1,97.787,-0.977,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,41,middle,1,97.661,-1.277,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,42,middle,1,97.771,-1.239,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,43,closing,1,97.51,-1.892,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,44,closing,1,97.82,-1.43,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,45,closing,1,98.095,-1.189,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,46,closing,1,98.161,-0.944,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,LEC,Ferrari,47,closing,1,98.169,-0.608,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,48,closing,4,101.576,3.308,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,49,closing,4,120.567,22.195,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,50,closing,4,96.063,-2.087,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,51,closing,4,96.339,-1.848,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,52,closing,4,97.637,-0.659,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,53,closing,4,97.016,-1.595,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,54,closing,4,97.004,-1.41,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,55,closing,4,96.677,-2.307,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,56,closing,4,97.267,-1.097,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LEC,Ferrari,57,closing,4,97.949,0.267,uncertain,0.017,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,1,opening,9,107.741,-1.243,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,2,opening,9,102.867,-0.103,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,3,opening,9,102.231,-0.471,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,4,opening,9,102.426,-0.273,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,5,opening,8,103.081,-0.269,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,6,opening,8,102.135,-1.096,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,7,opening,8,102.032,-0.136,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,8,opening,8,101.981,-0.115,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,9,opening,8,102.319,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,10,opening,8,103.253,0.208,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,11,opening,8,102.547,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,12,middle,8,102.617,-0.043,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,13,middle,8,102.605,0.095,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LIN,Racing Bulls,14,middle,8,124.205,-0.365,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LIN,Racing Bulls,15,middle,11,133.376,3.131,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LIN,Racing Bulls,16,middle,11,99.883,-0.644,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LIN,Racing Bulls,17,middle,11,99.901,-0.257,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LIN,Racing Bulls,18,middle,11,100.323,0.045,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,19,middle,11,99.957,-0.088,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,20,middle,11,100.302,0.118,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,21,middle,11,100.311,0.18,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,22,middle,11,100.164,0.183,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,23,middle,11,100.119,0.222,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,24,middle,11,99.98,0.042,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,25,middle,11,100.23,0.134,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,26,middle,11,99.648,-0.103,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,27,middle,11,99.897,0.133,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,28,middle,11,99.82,-0.049,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,29,middle,11,99.48,-0.042,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,30,middle,11,99.637,0.338,uncertain,0.088,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,31,middle,11,99.05,-0.191,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,32,middle,11,99.166,-0.097,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,33,middle,11,98.771,-0.032,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,34,middle,11,98.572,-0.161,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,35,middle,11,98.52,-0.418,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,36,middle,11,98.687,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,37,middle,11,99.716,0.658,uncertain,0.408,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,38,middle,11,98.385,-0.36,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,39,middle,11,98.356,-0.72,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,40,middle,11,98.211,-0.553,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,41,middle,11,98.938,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,42,middle,11,99.028,0.018,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,43,closing,10,99.511,0.109,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,44,closing,11,99.915,0.665,uncertain,0.415,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,45,closing,11,100.35,1.066,traffic likely,0.816,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,LIN,Racing Bulls,46,closing,11,99.464,0.359,uncertain,0.109,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,47,closing,10,100.648,1.871,traffic likely,1.621,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,LIN,Racing Bulls,48,closing,10,98.27,0.002,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,49,closing,10,98.314,-0.058,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,50,closing,10,98.279,0.129,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,51,closing,10,98.457,0.27,uncertain,0.02,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,52,closing,10,98.635,0.34,uncertain,0.09,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,53,closing,10,98.679,0.068,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,LIN,Racing Bulls,54,closing,10,101.555,3.141,traffic likely,2.891,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,LIN,Racing Bulls,55,closing,10,102.383,3.399,traffic likely,3.149,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,LIN,Racing Bulls,56,closing,9,99.234,0.87,traffic likely,0.62,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,NOR,McLaren,1,opening,1,101.813,-7.171,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,2,opening,1,99.404,-3.566,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,3,opening,1,100.111,-2.591,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,4,opening,1,100.119,-2.581,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,5,opening,1,99.764,-3.586,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,6,opening,1,99.345,-3.886,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,7,opening,1,99.498,-2.67,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,8,opening,1,99.343,-2.753,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,9,opening,1,99.122,-3.197,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,10,opening,1,99.091,-3.954,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,11,opening,1,99.229,-3.318,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,12,middle,1,99.295,-3.365,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,13,middle,1,99.422,-3.088,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,NOR,McLaren,14,middle,1,100.33,-24.24,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,NOR,McLaren,15,middle,1,146.124,15.879,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,NOR,McLaren,16,middle,5,126.51,25.983,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,NOR,McLaren,17,middle,5,98.286,-1.872,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,NOR,McLaren,18,middle,5,97.96,-2.318,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,NOR,McLaren,19,middle,5,98.225,-1.82,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,20,middle,5,97.985,-2.2,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,21,middle,5,98.239,-1.892,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,22,middle,5,98.167,-1.814,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,23,middle,5,98.176,-1.721,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,24,middle,5,98.051,-1.887,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,25,middle,5,98.521,-1.575,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,26,middle,5,98.898,-0.853,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,27,middle,5,99.035,-0.73,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,28,middle,4,98.869,-0.999,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,29,middle,4,97.709,-1.813,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,30,middle,4,98.237,-1.062,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,31,middle,4,97.611,-1.63,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,32,middle,4,98.124,-1.139,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,33,middle,4,97.473,-1.33,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,34,middle,4,97.133,-1.6,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,35,middle,4,97.16,-1.778,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,36,middle,4,97.029,-1.658,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,37,middle,4,97.705,-1.353,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,38,middle,4,96.897,-1.848,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,39,middle,4,96.951,-2.125,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,40,middle,4,96.796,-1.968,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,41,middle,4,97.208,-1.73,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,42,middle,4,97.067,-1.943,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,43,closing,4,97.149,-2.253,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,44,closing,4,97.09,-2.16,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,45,closing,4,97.126,-2.158,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,46,closing,4,97.333,-1.772,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,47,closing,4,97.327,-1.45,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,NOR,McLaren,48,closing,3,97.347,-0.921,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,49,closing,3,96.999,-1.373,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,50,closing,3,97.135,-1.015,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,51,closing,3,96.9,-1.287,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,52,closing,3,96.68,-1.615,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,53,closing,3,96.983,-1.628,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,54,closing,3,96.934,-1.481,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,55,closing,3,96.787,-2.197,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,56,closing,3,98.003,-0.361,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,NOR,McLaren,57,closing,3,97.018,-0.663,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,1,opening,11,108.737,-0.248,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,2,opening,11,103.205,0.235,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,3,opening,11,102.608,-0.094,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,4,opening,11,102.596,-0.103,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,5,opening,11,103.433,0.083,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,6,opening,10,102.478,-0.753,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,7,opening,10,102.118,-0.05,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,8,opening,10,102.096,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,9,opening,10,102.143,-0.176,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,10,opening,10,102.457,-0.588,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,11,opening,10,102.574,0.027,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,12,middle,10,102.612,-0.048,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,13,middle,10,102.623,0.113,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,OCO,Haas F1 Team,14,middle,10,124.784,0.214,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,OCO,Haas F1 Team,15,middle,13,133.727,3.482,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,OCO,Haas F1 Team,16,middle,13,100.848,0.321,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,OCO,Haas F1 Team,17,middle,13,100.544,0.386,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,OCO,Haas F1 Team,18,middle,13,100.872,0.594,uncertain,0.344,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,19,middle,13,100.584,0.54,uncertain,0.29,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,20,middle,13,100.644,0.46,uncertain,0.21,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,21,middle,13,100.904,0.773,traffic likely,0.523,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,22,middle,13,100.732,0.751,traffic likely,0.501,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,23,middle,13,100.47,0.573,uncertain,0.323,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,24,middle,13,100.648,0.71,uncertain,0.46,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,25,middle,13,100.676,0.58,uncertain,0.33,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,26,middle,13,100.289,0.538,uncertain,0.288,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,27,middle,13,100.016,0.252,uncertain,0.002,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,28,middle,13,100.006,0.138,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,29,middle,13,99.677,0.155,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,30,middle,13,99.369,0.07,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,31,middle,13,99.547,0.306,uncertain,0.056,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,32,middle,13,99.696,0.433,uncertain,0.183,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,33,middle,13,99.292,0.489,uncertain,0.239,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,34,middle,13,99.069,0.336,uncertain,0.086,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,35,middle,13,98.805,-0.133,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,36,middle,13,98.606,-0.081,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,37,middle,13,98.68,-0.378,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,38,middle,13,98.603,-0.142,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,39,middle,13,98.935,-0.141,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,40,middle,13,98.585,-0.179,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,41,middle,13,98.65,-0.288,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,42,middle,13,98.885,-0.125,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,43,closing,13,99.041,-0.361,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,44,closing,13,99.175,-0.075,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,45,closing,13,98.429,-0.855,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,46,closing,13,98.485,-0.62,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,47,closing,13,98.661,-0.115,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,48,closing,12,98.265,-0.002,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,49,closing,12,98.119,-0.253,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,50,closing,12,98.769,0.619,uncertain,0.369,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,51,closing,12,100.242,2.055,traffic likely,1.805,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,52,closing,12,101.627,3.331,traffic likely,3.081,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,53,closing,12,99.245,0.634,uncertain,0.384,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,54,closing,12,98.727,0.312,uncertain,0.062,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,55,closing,12,99.115,0.131,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,OCO,Haas F1 Team,56,closing,11,99.174,0.81,traffic likely,0.56,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,1,opening,16,111.706,2.722,traffic likely,2.472,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,2,opening,16,104.485,1.515,traffic likely,1.265,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,3,opening,16,103.795,1.093,traffic likely,0.843,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,4,opening,16,103.506,0.806,traffic likely,0.556,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,5,opening,16,104.091,0.741,uncertain,0.491,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PER,Cadillac,6,opening,15,104.448,1.217,traffic likely,0.967,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,7,opening,15,103.527,1.359,traffic likely,1.109,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,8,opening,15,103.85,1.754,traffic likely,1.504,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,9,opening,15,103.687,1.368,traffic likely,1.118,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,10,opening,15,103.685,0.64,uncertain,0.39,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PER,Cadillac,11,opening,15,103.624,1.077,traffic likely,0.827,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,12,middle,15,103.932,1.272,traffic likely,1.022,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,13,middle,15,104.87,2.36,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PER,Cadillac,14,middle,16,132.541,7.971,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PER,Cadillac,15,middle,19,126.905,-3.34,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PER,Cadillac,16,middle,18,101.116,0.589,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PER,Cadillac,17,middle,18,101.424,1.266,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PER,Cadillac,18,middle,18,101.425,1.147,traffic likely,0.897,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,19,middle,18,101.441,1.397,traffic likely,1.147,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,20,middle,18,101.261,1.076,traffic likely,0.826,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,21,middle,18,101.682,1.551,traffic likely,1.301,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,22,middle,18,101.335,1.353,traffic likely,1.103,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,23,middle,18,101.221,1.325,traffic likely,1.075,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,24,middle,17,101.12,1.182,traffic likely,0.932,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,25,middle,17,102.206,2.11,traffic likely,1.86,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,26,middle,17,103.523,3.772,traffic likely,3.522,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,27,middle,17,103.767,4.002,traffic likely,3.752,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,28,middle,17,105.416,5.547,traffic likely,5.297,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,29,middle,17,108.131,8.609,traffic likely,8.359,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,30,middle,18,108.743,9.444,traffic likely,9.194,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PER,Cadillac,31,middle,18,117.516,18.275,traffic likely,18.025,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PIA,McLaren,1,opening,10,108.258,-0.727,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,2,opening,10,102.951,-0.019,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,3,opening,10,102.497,-0.205,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,4,opening,10,102.422,-0.278,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,5,opening,9,102.864,-0.486,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,6,opening,9,102.754,-0.477,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,7,opening,9,101.994,-0.174,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,8,opening,9,101.958,-0.138,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,9,opening,9,101.81,-0.509,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,10,opening,9,103.045,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,11,opening,9,102.524,-0.023,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,12,middle,9,102.702,0.042,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,13,middle,9,102.49,-0.02,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,14,middle,9,124.233,-0.337,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,15,middle,7,121.918,-8.327,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,16,middle,7,100.067,-0.46,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,17,middle,7,99.959,-0.199,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,18,middle,7,99.179,-1.099,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,19,middle,7,99.328,-0.716,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,20,middle,7,99.383,-0.802,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,21,middle,7,99.147,-0.984,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,22,middle,7,99.114,-0.867,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,23,middle,7,98.526,-1.371,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,24,middle,7,98.687,-1.251,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,25,middle,7,98.679,-1.417,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,26,middle,7,99.395,-0.356,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,27,middle,7,98.848,-0.916,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,28,middle,7,99.18,-0.688,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,29,middle,7,99.054,-0.468,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,30,middle,7,99.033,-0.266,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,31,middle,7,98.188,-1.053,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,32,middle,7,99.263,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,33,middle,7,98.014,-0.789,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,34,middle,7,97.965,-0.768,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,35,middle,7,98.324,-0.614,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,36,middle,7,98.859,0.172,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,37,middle,7,98.832,-0.226,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,38,middle,7,98.636,-0.109,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,39,middle,7,98.85,-0.226,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,40,middle,7,98.565,-0.199,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,41,middle,7,98.767,-0.171,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,42,middle,7,102.194,3.184,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,43,closing,11,121.789,22.387,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,44,closing,10,98.641,-0.609,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,45,closing,10,100.554,1.27,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,46,closing,10,99.478,0.373,uncertain,0.123,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,47,closing,9,100.588,1.811,traffic likely,1.561,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,PIA,McLaren,48,closing,9,97.226,-1.041,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,49,closing,9,98.059,-0.313,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,50,closing,9,98.187,0.037,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,51,closing,9,97.288,-0.899,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,52,closing,9,97.522,-0.773,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,53,closing,9,97.657,-0.954,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,54,closing,9,97.579,-0.836,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,55,closing,8,98.984,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,56,closing,8,98.714,0.35,uncertain,0.1,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,PIA,McLaren,57,closing,8,98.871,1.189,traffic likely,0.939,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,RUS,Mercedes,1,opening,6,105.584,-3.4,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,2,opening,6,101.683,-1.287,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,3,opening,6,100.64,-2.062,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,4,opening,6,102.119,-0.581,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,5,opening,5,103.007,-0.343,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,6,opening,5,100.55,-2.681,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,7,opening,5,100.031,-2.137,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,8,opening,5,100.118,-1.978,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,9,opening,5,99.803,-2.516,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,10,opening,5,99.549,-3.496,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,11,opening,5,99.382,-3.165,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,12,middle,5,99.63,-3.03,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,13,middle,5,99.307,-3.203,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,14,middle,5,109.967,-14.603,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,15,middle,5,142.44,12.195,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,16,middle,4,98.378,-2.149,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,17,middle,4,98.669,-1.489,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,18,middle,4,98.301,-1.977,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,19,middle,4,98.947,-1.097,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,20,middle,4,99.081,-1.103,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,21,middle,4,98.303,-1.828,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,22,middle,4,98.916,-1.066,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,23,middle,4,98.501,-1.395,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,24,middle,4,98.552,-1.386,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,25,middle,4,99.399,-0.697,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,26,middle,4,99.312,-0.439,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,27,middle,4,98.914,-0.85,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,28,middle,5,101.437,1.569,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,29,middle,6,120.878,21.356,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,30,middle,6,97.904,-1.395,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,31,middle,6,97.818,-1.423,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,RUS,Mercedes,32,middle,6,97.947,-1.316,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,33,middle,6,97.718,-1.085,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,34,middle,6,97.93,-0.803,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,35,middle,5,100.551,1.613,traffic likely,1.363,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,RUS,Mercedes,36,middle,5,97.995,-0.692,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,37,middle,5,97.898,-1.16,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,38,middle,5,97.113,-1.632,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,39,middle,5,96.857,-2.219,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,40,middle,5,97.033,-1.731,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,41,middle,5,97.166,-1.772,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,42,middle,5,98.363,-0.647,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,43,closing,5,97.215,-2.187,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,44,closing,5,98.265,-0.985,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,45,closing,5,97.109,-2.175,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,46,closing,5,96.082,-3.023,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,47,closing,5,95.873,-2.903,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,48,closing,5,95.758,-2.51,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,49,closing,5,95.587,-2.785,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,50,closing,5,96.461,-1.689,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,51,closing,5,96.104,-2.083,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,52,closing,5,96.487,-1.809,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,53,closing,5,96.415,-2.196,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,54,closing,5,96.902,-1.513,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,55,closing,5,96.817,-2.167,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,56,closing,5,97.306,-1.058,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,RUS,Mercedes,57,closing,5,97.511,-0.171,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,SAI,Williams,1,opening,18,112.963,3.978,traffic likely,3.728,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,2,opening,18,105.181,2.211,traffic likely,1.961,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,3,opening,18,104.511,1.809,traffic likely,1.559,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,4,opening,18,104.301,1.602,traffic likely,1.352,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,5,opening,18,104.158,0.808,traffic likely,0.558,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,6,opening,17,103.981,0.75,traffic likely,0.5,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,7,opening,17,103.938,1.77,traffic likely,1.52,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,8,opening,17,103.638,1.542,traffic likely,1.292,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,9,opening,17,103.918,1.599,traffic likely,1.349,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,10,opening,17,103.944,0.899,traffic likely,0.649,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,11,opening,17,103.366,0.819,traffic likely,0.569,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,12,middle,17,104.117,1.457,traffic likely,1.207,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,13,middle,17,103.256,0.746,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,14,middle,17,131.665,7.095,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,15,middle,15,115.168,-15.077,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,16,middle,15,102.162,1.635,traffic likely,1.385,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,17,middle,15,102.175,2.017,traffic likely,1.767,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,18,middle,15,102.061,1.783,traffic likely,1.533,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,19,middle,15,101.704,1.659,traffic likely,1.409,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,20,middle,15,101.826,1.641,traffic likely,1.391,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,21,middle,15,101.725,1.594,traffic likely,1.344,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,22,middle,15,102.021,2.04,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,23,middle,16,104.987,5.09,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,24,middle,20,143.167,43.229,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,25,middle,20,100.585,0.489,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,26,middle,20,101.345,1.594,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,27,middle,20,103.364,3.6,traffic likely,3.35,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,28,middle,20,102.736,2.868,traffic likely,2.618,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,29,middle,20,102.659,3.137,traffic likely,2.887,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,30,middle,19,105.251,5.952,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,31,middle,19,107.505,8.264,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,32,middle,19,125.071,25.808,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,33,middle,19,100.632,1.829,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,34,middle,19,104.919,6.186,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,35,middle,19,104.517,5.579,traffic likely,5.329,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,36,middle,19,100.195,1.508,traffic likely,1.258,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,37,middle,19,101.439,2.381,traffic likely,2.131,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,38,middle,19,101.254,2.509,traffic likely,2.259,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,39,middle,19,101.044,1.968,traffic likely,1.718,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,40,middle,19,100.848,2.084,traffic likely,1.834,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,41,middle,19,101.975,3.037,traffic likely,2.787,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,42,middle,19,105.865,6.855,traffic likely,6.605,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,SAI,Williams,43,closing,19,107.611,8.209,traffic likely,7.959,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,1,opening,19,113.663,4.678,traffic likely,4.428,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,2,opening,19,105.373,2.403,traffic likely,2.153,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,3,opening,20,104.942,2.24,traffic likely,1.99,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,4,opening,20,104.584,1.885,traffic likely,1.635,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,5,opening,20,104.269,0.919,traffic likely,0.669,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,6,opening,19,104.168,0.938,traffic likely,0.688,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,7,opening,19,104.176,2.008,traffic likely,1.758,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,8,opening,20,104.91,2.814,traffic likely,2.564,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,9,opening,20,104.214,1.895,traffic likely,1.645,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,10,opening,20,103.989,0.944,traffic likely,0.694,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,11,opening,20,103.462,0.915,traffic likely,0.665,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,12,middle,20,103.673,1.013,traffic likely,0.763,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,STR,Aston Martin,13,middle,,,,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,1,opening,17,112.541,3.556,traffic likely,3.306,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,2,opening,17,104.161,1.191,traffic likely,0.941,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,3,opening,17,104.194,1.492,traffic likely,1.242,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,4,opening,17,103.594,0.894,traffic likely,0.644,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,5,opening,17,104.254,0.904,traffic likely,0.654,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,6,opening,16,103.835,0.604,uncertain,0.354,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,7,opening,16,103.517,1.349,traffic likely,1.099,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,8,opening,16,103.759,1.663,traffic likely,1.413,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,9,opening,16,103.837,1.518,traffic likely,1.268,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,10,opening,16,103.732,0.687,uncertain,0.437,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,11,opening,16,103.429,0.882,traffic likely,0.632,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,12,middle,16,104.359,1.699,traffic likely,1.449,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,13,middle,16,104.494,1.984,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,14,middle,15,131.357,6.787,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,15,middle,14,114.855,-15.39,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,16,middle,14,101.763,1.236,traffic likely,0.986,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,17,middle,14,101.254,1.096,traffic likely,0.846,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,18,middle,14,101.192,0.914,traffic likely,0.664,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,19,middle,14,101.049,1.005,traffic likely,0.755,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,20,middle,14,100.871,0.686,uncertain,0.436,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,21,middle,14,100.782,0.651,uncertain,0.401,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,22,middle,14,100.557,0.576,uncertain,0.326,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,23,middle,14,100.604,0.707,uncertain,0.457,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,24,middle,14,100.208,0.27,uncertain,0.02,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,25,middle,14,100.178,0.082,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,26,middle,14,100.226,0.475,uncertain,0.225,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,27,middle,14,100.355,0.591,uncertain,0.341,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,28,middle,14,100.087,0.219,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,29,middle,14,100.069,0.547,uncertain,0.297,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,30,middle,14,100.047,0.748,uncertain,0.498,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,31,middle,14,99.834,0.593,uncertain,0.343,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,32,middle,14,99.837,0.574,uncertain,0.324,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,33,middle,14,99.836,1.033,traffic likely,0.783,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,34,middle,14,99.86,1.127,traffic likely,0.877,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,35,middle,14,99.974,1.036,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,36,middle,14,102.736,4.049,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,37,middle,14,122.821,23.763,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,38,middle,14,98.87,0.125,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,39,middle,14,99.076,0.0,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,40,middle,14,99.249,0.485,uncertain,0.235,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,41,middle,14,99.761,0.823,traffic likely,0.573,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,42,middle,14,99.764,0.754,traffic likely,0.504,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,43,closing,14,99.677,0.275,uncertain,0.025,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,44,closing,14,100.632,1.382,traffic likely,1.132,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,45,closing,14,99.438,0.154,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,46,closing,14,99.516,0.412,uncertain,0.162,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,47,closing,14,99.147,0.371,uncertain,0.121,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,48,closing,14,99.07,0.802,traffic likely,0.552,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,49,closing,14,99.226,0.854,traffic likely,0.604,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,TSU,Racing Bulls,50,closing,14,98.726,0.576,uncertain,0.326,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,51,closing,14,98.759,0.572,uncertain,0.322,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,52,closing,14,98.407,0.111,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,53,closing,14,98.543,-0.068,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,54,closing,14,98.396,-0.019,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,55,closing,14,98.784,-0.2,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,TSU,Racing Bulls,56,closing,14,98.818,0.454,uncertain,0.204,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
+2026-14-madring,VER,Red Bull Racing,1,opening,2,103.131,-5.853,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,2,opening,2,100.125,-2.845,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,3,opening,2,100.155,-2.547,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,4,opening,4,105.324,2.624,traffic likely,2.374,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,5,opening,3,100.103,-3.247,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,6,opening,3,100.465,-2.766,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,7,opening,3,100.426,-1.742,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,8,opening,3,99.894,-2.202,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,9,opening,3,99.826,-2.493,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,10,opening,3,99.597,-3.448,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,11,opening,3,99.55,-2.997,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,12,middle,3,99.69,-2.97,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,13,middle,3,99.718,-2.792,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,VER,Red Bull Racing,14,middle,3,106.069,-18.501,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,VER,Red Bull Racing,15,middle,4,146.009,15.764,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,VER,Red Bull Racing,16,middle,3,99.054,-1.473,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,VER,Red Bull Racing,17,middle,3,98.819,-1.339,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,VER,Red Bull Racing,18,middle,3,98.68,-1.598,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,19,middle,3,98.441,-1.603,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,20,middle,3,98.554,-1.63,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,21,middle,3,98.707,-1.424,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,22,middle,3,98.836,-1.145,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,23,middle,3,98.735,-1.162,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,24,middle,3,98.551,-1.387,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,25,middle,3,98.9,-1.196,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,26,middle,3,98.074,-1.677,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,27,middle,3,98.081,-1.683,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,28,middle,3,98.678,-1.191,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,29,middle,3,98.24,-1.282,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,30,middle,3,98.25,-1.049,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,31,middle,3,98.268,-0.973,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,32,middle,3,97.91,-1.353,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,33,middle,3,98.03,-0.773,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,34,middle,3,97.568,-1.165,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,35,middle,3,97.691,-1.247,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,36,middle,3,97.691,-0.996,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,37,middle,3,97.818,-1.24,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,38,middle,3,97.512,-1.233,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,39,middle,3,97.676,-1.4,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,40,middle,3,97.419,-1.345,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,41,middle,3,97.563,-1.375,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,42,middle,3,97.377,-1.633,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,43,closing,3,97.156,-2.246,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,44,closing,3,97.077,-2.173,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,45,closing,3,97.104,-2.18,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,46,closing,3,97.317,-1.788,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,47,closing,3,97.311,-1.465,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,48,closing,2,97.66,-0.608,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,49,closing,2,96.922,-1.45,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,50,closing,2,96.934,-1.216,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,51,closing,2,96.945,-1.242,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,52,closing,2,96.76,-1.535,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,53,closing,2,96.817,-1.794,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,54,closing,2,96.824,-1.591,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,55,closing,2,97.235,-1.749,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,56,closing,2,97.837,-0.527,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
+2026-14-madring,VER,Red Bull Racing,57,closing,2,97.001,-0.68,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.

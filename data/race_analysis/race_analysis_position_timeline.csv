@@ -15125,3 +15125,1108 @@ race_analysis_id,driver,team,lap_number,position,position_delta_from_start,posit
 2026-13-monza,VER,Red Bull Racing,51,3,2,0.0,closing,green,0.82,derived
 2026-13-monza,VER,Red Bull Racing,52,3,2,0.0,closing,green,0.82,derived
 2026-13-monza,VER,Red Bull Racing,53,3,2,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,1,14,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,ALB,Williams,2,15,1,-1.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,3,15,1,0.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,4,15,1,0.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,5,15,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,ALB,Williams,6,14,2,1.0,opening,yellow,0.82,derived
+2026-14-madring,ALB,Williams,7,14,2,0.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,8,14,2,0.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,9,14,2,0.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,10,14,2,0.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,11,14,2,0.0,opening,green,0.82,derived
+2026-14-madring,ALB,Williams,12,14,2,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,13,14,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,ALB,Williams,14,14,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,ALB,Williams,15,17,-1,-3.0,middle,mixed,0.52,derived
+2026-14-madring,ALB,Williams,16,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,17,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,18,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,19,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,20,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,21,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,22,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,23,17,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,24,16,0,1.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,25,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,26,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,27,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,28,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,29,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,30,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,31,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,32,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,33,16,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,34,15,1,1.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,35,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,36,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,37,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,38,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,39,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,40,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,41,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,42,15,1,0.0,middle,green,0.82,derived
+2026-14-madring,ALB,Williams,43,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,44,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,45,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,46,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,47,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,48,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,49,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,50,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,51,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,52,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,53,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,54,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,55,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALB,Williams,56,15,1,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,1,20,-3,0.0,opening,yellow,0.82,derived
+2026-14-madring,ALO,Aston Martin,2,20,-3,0.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,3,19,-2,1.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,4,19,-2,0.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,5,19,-2,0.0,opening,yellow,0.82,derived
+2026-14-madring,ALO,Aston Martin,6,18,-1,1.0,opening,yellow,0.82,derived
+2026-14-madring,ALO,Aston Martin,7,18,-1,0.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,8,18,-1,0.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,9,18,-1,0.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,10,18,-1,0.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,11,18,-1,0.0,opening,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,12,18,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,13,18,-1,0.0,middle,mixed,0.52,derived
+2026-14-madring,ALO,Aston Martin,14,18,-1,0.0,middle,mixed,0.52,derived
+2026-14-madring,ALO,Aston Martin,15,20,-3,-2.0,middle,mixed,0.52,derived
+2026-14-madring,ALO,Aston Martin,16,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,17,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,18,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,19,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,20,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,21,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,22,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,23,20,-3,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,24,18,-1,2.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,25,18,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,26,18,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,27,18,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,28,18,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,29,18,-1,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,30,17,0,1.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,31,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,32,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,33,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,34,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,35,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,36,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,37,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,38,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,39,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,40,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,41,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,42,17,0,0.0,middle,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,43,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,44,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,45,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,46,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,47,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,48,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,49,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,50,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,51,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,52,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,53,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,54,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ALO,Aston Martin,55,17,0,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,1,3,-1,0.0,opening,yellow,0.82,derived
+2026-14-madring,ANT,Mercedes,2,3,-1,0.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,3,3,-1,0.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,4,2,0,1.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,5,2,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,ANT,Mercedes,6,2,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,ANT,Mercedes,7,2,0,0.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,8,2,0,0.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,9,2,0,0.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,10,2,0,0.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,11,2,0,0.0,opening,green,0.82,derived
+2026-14-madring,ANT,Mercedes,12,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,13,2,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,ANT,Mercedes,14,2,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,ANT,Mercedes,15,3,-1,-1.0,middle,mixed,0.52,derived
+2026-14-madring,ANT,Mercedes,16,2,0,1.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,17,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,18,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,19,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,20,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,21,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,22,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,23,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,24,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,25,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,26,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,27,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,28,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,29,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,30,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,31,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,32,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,33,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,34,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,35,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,36,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,37,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,38,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,39,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,40,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,41,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,42,2,0,0.0,middle,green,0.82,derived
+2026-14-madring,ANT,Mercedes,43,2,0,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,44,2,0,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,45,2,0,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,46,2,0,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,47,2,0,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,48,1,1,1.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,49,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,50,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,51,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,52,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,53,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,54,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,55,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,56,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,ANT,Mercedes,57,1,1,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,1,22,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,2,21,1,1.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,3,21,1,0.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,4,21,1,0.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,5,21,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,6,20,2,1.0,opening,yellow,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,7,20,2,0.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,8,19,3,1.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,9,19,3,0.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,10,19,3,0.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,11,19,3,0.0,opening,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,12,19,3,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,13,19,3,0.0,middle,mixed,0.52,derived
+2026-14-madring,BEA,Haas F1 Team,14,19,3,0.0,middle,mixed,0.52,derived
+2026-14-madring,BEA,Haas F1 Team,15,16,6,3.0,middle,mixed,0.52,derived
+2026-14-madring,BEA,Haas F1 Team,16,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,17,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,18,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,19,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,20,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,21,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,22,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,23,15,7,1.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,24,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,25,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,26,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,27,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,28,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,29,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,30,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,31,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,32,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,33,15,7,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,34,16,6,-1.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,35,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,36,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,37,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,38,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,39,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,40,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,41,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,42,16,6,0.0,middle,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,43,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,44,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,45,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,46,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,47,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,48,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,49,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,50,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,51,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,52,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,53,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,54,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,55,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BEA,Haas F1 Team,56,16,6,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,1,15,-3,0.0,opening,yellow,0.82,derived
+2026-14-madring,BOR,Audi,2,14,-2,1.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,3,14,-2,0.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,4,14,-2,0.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,5,14,-2,0.0,opening,yellow,0.82,derived
+2026-14-madring,BOR,Audi,6,13,-1,1.0,opening,yellow,0.82,derived
+2026-14-madring,BOR,Audi,7,13,-1,0.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,8,13,-1,0.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,9,13,-1,0.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,10,13,-1,0.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,11,13,-1,0.0,opening,green,0.82,derived
+2026-14-madring,BOR,Audi,12,13,-1,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,13,13,-1,0.0,middle,mixed,0.52,derived
+2026-14-madring,BOR,Audi,14,13,-1,0.0,middle,mixed,0.52,derived
+2026-14-madring,BOR,Audi,15,9,3,4.0,middle,mixed,0.52,derived
+2026-14-madring,BOR,Audi,16,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,17,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,18,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,19,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,20,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,21,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,22,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,23,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,24,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,25,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,26,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,27,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,28,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,29,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,30,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,31,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,32,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,33,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,34,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,35,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,36,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,37,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,38,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,39,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,40,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,41,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,42,9,3,0.0,middle,green,0.82,derived
+2026-14-madring,BOR,Audi,43,8,4,1.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,44,8,4,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,45,8,4,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,46,8,4,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,47,12,0,-4.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,48,13,-1,-1.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,49,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,50,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,51,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,52,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,53,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,54,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,55,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOR,Audi,56,13,-1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,1,21,-2,0.0,opening,yellow,0.82,derived
+2026-14-madring,BOT,Cadillac,2,22,-3,-1.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,3,22,-3,0.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,4,22,-3,0.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,5,22,-3,0.0,opening,yellow,0.82,derived
+2026-14-madring,BOT,Cadillac,6,21,-2,1.0,opening,yellow,0.82,derived
+2026-14-madring,BOT,Cadillac,7,21,-2,0.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,8,21,-2,0.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,9,21,-2,0.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,10,21,-2,0.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,11,21,-2,0.0,opening,green,0.82,derived
+2026-14-madring,BOT,Cadillac,12,21,-2,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,13,20,-1,1.0,middle,mixed,0.52,derived
+2026-14-madring,BOT,Cadillac,14,20,-1,0.0,middle,mixed,0.52,derived
+2026-14-madring,BOT,Cadillac,15,18,1,2.0,middle,mixed,0.52,derived
+2026-14-madring,BOT,Cadillac,16,19,0,-1.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,17,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,18,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,19,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,20,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,21,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,22,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,23,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,24,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,25,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,26,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,27,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,28,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,29,19,0,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,30,20,-1,-1.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,31,20,-1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,32,18,1,2.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,33,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,34,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,35,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,36,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,37,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,38,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,39,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,40,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,41,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,42,18,1,0.0,middle,green,0.82,derived
+2026-14-madring,BOT,Cadillac,43,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,44,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,45,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,46,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,47,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,48,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,49,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,50,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,51,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,52,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,53,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,BOT,Cadillac,54,18,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,1,7,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,COL,Alpine,2,7,2,0.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,3,7,2,0.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,4,7,2,0.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,5,6,3,1.0,opening,yellow,0.82,derived
+2026-14-madring,COL,Alpine,6,6,3,0.0,opening,yellow,0.82,derived
+2026-14-madring,COL,Alpine,7,6,3,0.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,8,6,3,0.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,9,6,3,0.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,10,7,2,-1.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,11,7,2,0.0,opening,green,0.82,derived
+2026-14-madring,COL,Alpine,12,7,2,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,13,7,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,COL,Alpine,14,7,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,COL,Alpine,15,10,-1,-3.0,middle,mixed,0.52,derived
+2026-14-madring,COL,Alpine,16,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,17,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,18,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,19,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,20,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,21,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,22,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,23,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,24,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,25,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,26,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,27,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,28,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,29,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,30,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,31,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,32,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,33,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,34,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,35,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,36,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,37,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,38,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,39,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,40,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,41,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,42,10,-1,0.0,middle,green,0.82,derived
+2026-14-madring,COL,Alpine,43,9,0,1.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,44,9,0,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,45,9,0,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,46,9,0,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,47,8,1,1.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,48,8,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,49,8,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,50,8,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,51,8,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,52,8,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,53,8,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,54,8,1,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,55,7,2,1.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,56,7,2,0.0,closing,green,0.82,derived
+2026-14-madring,COL,Alpine,57,7,2,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,1,13,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,GAS,Alpine,2,13,1,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,3,13,1,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,4,13,1,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,5,13,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,GAS,Alpine,6,12,2,1.0,opening,yellow,0.82,derived
+2026-14-madring,GAS,Alpine,7,12,2,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,8,12,2,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,9,12,2,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,10,12,2,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,11,12,2,0.0,opening,green,0.82,derived
+2026-14-madring,GAS,Alpine,12,12,2,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,13,12,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,GAS,Alpine,14,12,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,GAS,Alpine,15,8,6,4.0,middle,mixed,0.52,derived
+2026-14-madring,GAS,Alpine,16,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,17,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,18,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,19,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,20,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,21,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,22,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,23,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,24,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,25,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,26,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,27,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,28,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,29,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,30,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,31,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,32,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,33,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,34,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,35,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,36,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,37,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,38,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,39,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,40,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,41,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,42,8,6,0.0,middle,green,0.82,derived
+2026-14-madring,GAS,Alpine,43,7,7,1.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,44,7,7,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,45,6,8,1.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,46,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,47,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,48,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,49,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,50,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,51,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,52,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,53,6,8,0.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,54,7,7,-1.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,55,9,5,-2.0,closing,green,0.82,derived
+2026-14-madring,GAS,Alpine,56,12,2,-3.0,closing,green,0.82,derived
+2026-14-madring,HAM,Ferrari,1,4,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,HAM,Ferrari,2,4,0,0.0,opening,green,0.82,derived
+2026-14-madring,HAM,Ferrari,3,4,0,0.0,opening,green,0.82,derived
+2026-14-madring,HAM,Ferrari,4,3,1,1.0,opening,green,0.82,derived
+2026-14-madring,HAM,Ferrari,5,10,-6,-7.0,opening,yellow,0.82,derived
+2026-14-madring,HAM,Ferrari,6,22,-18,-12.0,opening,yellow,0.82,derived
+2026-14-madring,HUL,Audi,1,12,-1,0.0,opening,yellow,0.82,derived
+2026-14-madring,HUL,Audi,2,12,-1,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,3,12,-1,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,4,12,-1,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,5,12,-1,0.0,opening,yellow,0.82,derived
+2026-14-madring,HUL,Audi,6,11,0,1.0,opening,yellow,0.82,derived
+2026-14-madring,HUL,Audi,7,11,0,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,8,11,0,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,9,11,0,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,10,11,0,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,11,11,0,0.0,opening,green,0.82,derived
+2026-14-madring,HUL,Audi,12,11,0,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,13,11,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,HUL,Audi,14,11,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,HUL,Audi,15,12,-1,-1.0,middle,mixed,0.52,derived
+2026-14-madring,HUL,Audi,16,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,17,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,18,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,19,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,20,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,21,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,22,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,23,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,24,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,25,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,26,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,27,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,28,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,29,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,30,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,31,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,32,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,33,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,34,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,35,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,36,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,37,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,38,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,39,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,40,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,41,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,42,12,-1,0.0,middle,green,0.82,derived
+2026-14-madring,HUL,Audi,43,12,-1,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,44,12,-1,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,45,12,-1,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,46,12,-1,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,47,11,0,1.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,48,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,49,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,50,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,51,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,52,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,53,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,54,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,55,11,0,0.0,closing,green,0.82,derived
+2026-14-madring,HUL,Audi,56,10,1,1.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,1,8,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,2,8,0,0.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,3,8,0,0.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,4,8,0,0.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,5,7,1,1.0,opening,yellow,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,6,7,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,7,7,1,0.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,8,7,1,0.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,9,7,1,0.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,10,6,2,1.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,11,6,2,0.0,opening,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,12,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,13,6,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,LAW,Red Bull Racing,14,6,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,LAW,Red Bull Racing,15,6,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,LAW,Red Bull Racing,16,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,17,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,18,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,19,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,20,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,21,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,22,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,23,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,24,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,25,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,26,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,27,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,28,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,29,5,3,1.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,30,5,3,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,31,5,3,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,32,5,3,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,33,5,3,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,34,5,3,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,35,6,2,-1.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,36,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,37,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,38,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,39,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,40,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,41,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,42,6,2,0.0,middle,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,43,6,2,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,44,6,2,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,45,7,1,-1.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,46,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,47,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,48,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,49,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,50,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,51,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,52,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,53,7,1,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,54,6,2,1.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,55,6,2,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,56,6,2,0.0,closing,green,0.82,derived
+2026-14-madring,LAW,Red Bull Racing,57,6,2,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,1,5,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,LEC,Ferrari,2,5,0,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,3,5,0,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,4,5,0,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,5,4,1,1.0,opening,yellow,0.82,derived
+2026-14-madring,LEC,Ferrari,6,4,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,LEC,Ferrari,7,4,1,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,8,4,1,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,9,4,1,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,10,4,1,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,11,4,1,0.0,opening,green,0.82,derived
+2026-14-madring,LEC,Ferrari,12,4,1,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,13,4,1,0.0,middle,mixed,0.52,derived
+2026-14-madring,LEC,Ferrari,14,4,1,0.0,middle,mixed,0.52,derived
+2026-14-madring,LEC,Ferrari,15,2,3,2.0,middle,mixed,0.52,derived
+2026-14-madring,LEC,Ferrari,16,1,4,1.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,17,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,18,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,19,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,20,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,21,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,22,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,23,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,24,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,25,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,26,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,27,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,28,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,29,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,30,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,31,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,32,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,33,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,34,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,35,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,36,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,37,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,38,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,39,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,40,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,41,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,42,1,4,0.0,middle,green,0.82,derived
+2026-14-madring,LEC,Ferrari,43,1,4,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,44,1,4,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,45,1,4,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,46,1,4,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,47,1,4,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,48,4,1,-3.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,49,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,50,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,51,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,52,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,53,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,54,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,55,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,56,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LEC,Ferrari,57,4,1,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,1,9,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,LIN,Racing Bulls,2,9,1,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,3,9,1,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,4,9,1,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,5,8,2,1.0,opening,yellow,0.82,derived
+2026-14-madring,LIN,Racing Bulls,6,8,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,LIN,Racing Bulls,7,8,2,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,8,8,2,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,9,8,2,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,10,8,2,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,11,8,2,0.0,opening,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,12,8,2,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,13,8,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,LIN,Racing Bulls,14,8,2,0.0,middle,mixed,0.52,derived
+2026-14-madring,LIN,Racing Bulls,15,11,-1,-3.0,middle,mixed,0.52,derived
+2026-14-madring,LIN,Racing Bulls,16,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,17,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,18,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,19,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,20,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,21,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,22,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,23,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,24,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,25,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,26,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,27,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,28,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,29,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,30,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,31,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,32,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,33,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,34,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,35,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,36,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,37,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,38,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,39,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,40,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,41,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,42,11,-1,0.0,middle,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,43,10,0,1.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,44,11,-1,-1.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,45,11,-1,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,46,11,-1,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,47,10,0,1.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,48,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,49,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,50,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,51,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,52,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,53,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,54,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,55,10,0,0.0,closing,green,0.82,derived
+2026-14-madring,LIN,Racing Bulls,56,9,1,1.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,1,1,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,NOR,McLaren,2,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,3,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,4,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,5,1,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,NOR,McLaren,6,1,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,NOR,McLaren,7,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,8,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,9,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,10,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,11,1,0,0.0,opening,green,0.82,derived
+2026-14-madring,NOR,McLaren,12,1,0,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,13,1,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,NOR,McLaren,14,1,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,NOR,McLaren,15,1,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,NOR,McLaren,16,5,-4,-4.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,17,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,18,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,19,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,20,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,21,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,22,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,23,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,24,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,25,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,26,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,27,5,-4,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,28,4,-3,1.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,29,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,30,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,31,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,32,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,33,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,34,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,35,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,36,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,37,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,38,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,39,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,40,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,41,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,42,4,-3,0.0,middle,green,0.82,derived
+2026-14-madring,NOR,McLaren,43,4,-3,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,44,4,-3,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,45,4,-3,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,46,4,-3,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,47,4,-3,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,48,3,-2,1.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,49,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,50,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,51,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,52,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,53,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,54,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,55,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,56,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,NOR,McLaren,57,3,-2,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,1,11,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,2,11,2,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,3,11,2,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,4,11,2,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,5,11,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,6,10,3,1.0,opening,yellow,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,7,10,3,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,8,10,3,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,9,10,3,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,10,10,3,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,11,10,3,0.0,opening,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,12,10,3,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,13,10,3,0.0,middle,mixed,0.52,derived
+2026-14-madring,OCO,Haas F1 Team,14,10,3,0.0,middle,mixed,0.52,derived
+2026-14-madring,OCO,Haas F1 Team,15,13,0,-3.0,middle,mixed,0.52,derived
+2026-14-madring,OCO,Haas F1 Team,16,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,17,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,18,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,19,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,20,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,21,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,22,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,23,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,24,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,25,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,26,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,27,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,28,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,29,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,30,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,31,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,32,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,33,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,34,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,35,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,36,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,37,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,38,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,39,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,40,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,41,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,42,13,0,0.0,middle,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,43,13,0,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,44,13,0,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,45,13,0,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,46,13,0,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,47,13,0,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,48,12,1,1.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,49,12,1,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,50,12,1,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,51,12,1,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,52,12,1,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,53,12,1,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,54,12,1,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,55,12,1,0.0,closing,green,0.82,derived
+2026-14-madring,OCO,Haas F1 Team,56,11,2,1.0,closing,green,0.82,derived
+2026-14-madring,PER,Cadillac,1,16,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,PER,Cadillac,2,16,2,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,3,16,2,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,4,16,2,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,5,16,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,PER,Cadillac,6,15,3,1.0,opening,yellow,0.82,derived
+2026-14-madring,PER,Cadillac,7,15,3,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,8,15,3,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,9,15,3,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,10,15,3,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,11,15,3,0.0,opening,green,0.82,derived
+2026-14-madring,PER,Cadillac,12,15,3,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,13,15,3,0.0,middle,mixed,0.52,derived
+2026-14-madring,PER,Cadillac,14,16,2,-1.0,middle,mixed,0.52,derived
+2026-14-madring,PER,Cadillac,15,19,-1,-3.0,middle,mixed,0.52,derived
+2026-14-madring,PER,Cadillac,16,18,0,1.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,17,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,18,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,19,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,20,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,21,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,22,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,23,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,24,17,1,1.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,25,17,1,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,26,17,1,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,27,17,1,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,28,17,1,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,29,17,1,0.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,30,18,0,-1.0,middle,green,0.82,derived
+2026-14-madring,PER,Cadillac,31,18,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,1,10,-3,0.0,opening,yellow,0.82,derived
+2026-14-madring,PIA,McLaren,2,10,-3,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,3,10,-3,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,4,10,-3,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,5,9,-2,1.0,opening,yellow,0.82,derived
+2026-14-madring,PIA,McLaren,6,9,-2,0.0,opening,yellow,0.82,derived
+2026-14-madring,PIA,McLaren,7,9,-2,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,8,9,-2,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,9,9,-2,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,10,9,-2,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,11,9,-2,0.0,opening,green,0.82,derived
+2026-14-madring,PIA,McLaren,12,9,-2,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,13,9,-2,0.0,middle,mixed,0.52,derived
+2026-14-madring,PIA,McLaren,14,9,-2,0.0,middle,mixed,0.52,derived
+2026-14-madring,PIA,McLaren,15,7,0,2.0,middle,mixed,0.52,derived
+2026-14-madring,PIA,McLaren,16,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,17,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,18,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,19,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,20,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,21,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,22,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,23,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,24,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,25,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,26,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,27,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,28,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,29,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,30,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,31,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,32,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,33,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,34,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,35,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,36,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,37,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,38,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,39,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,40,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,41,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,42,7,0,0.0,middle,green,0.82,derived
+2026-14-madring,PIA,McLaren,43,11,-4,-4.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,44,10,-3,1.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,45,10,-3,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,46,10,-3,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,47,9,-2,1.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,48,9,-2,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,49,9,-2,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,50,9,-2,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,51,9,-2,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,52,9,-2,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,53,9,-2,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,54,9,-2,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,55,8,-1,1.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,56,8,-1,0.0,closing,green,0.82,derived
+2026-14-madring,PIA,McLaren,57,8,-1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,1,6,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,RUS,Mercedes,2,6,0,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,3,6,0,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,4,6,0,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,5,5,1,1.0,opening,yellow,0.82,derived
+2026-14-madring,RUS,Mercedes,6,5,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,RUS,Mercedes,7,5,1,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,8,5,1,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,9,5,1,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,10,5,1,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,11,5,1,0.0,opening,green,0.82,derived
+2026-14-madring,RUS,Mercedes,12,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,13,5,1,0.0,middle,mixed,0.52,derived
+2026-14-madring,RUS,Mercedes,14,5,1,0.0,middle,mixed,0.52,derived
+2026-14-madring,RUS,Mercedes,15,5,1,0.0,middle,mixed,0.52,derived
+2026-14-madring,RUS,Mercedes,16,4,2,1.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,17,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,18,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,19,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,20,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,21,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,22,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,23,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,24,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,25,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,26,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,27,4,2,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,28,5,1,-1.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,29,6,0,-1.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,30,6,0,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,31,6,0,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,32,6,0,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,33,6,0,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,34,6,0,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,35,5,1,1.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,36,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,37,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,38,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,39,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,40,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,41,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,42,5,1,0.0,middle,green,0.82,derived
+2026-14-madring,RUS,Mercedes,43,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,44,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,45,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,46,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,47,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,48,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,49,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,50,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,51,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,52,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,53,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,54,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,55,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,56,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,RUS,Mercedes,57,5,1,0.0,closing,green,0.82,derived
+2026-14-madring,SAI,Williams,1,18,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,SAI,Williams,2,18,2,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,3,18,2,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,4,18,2,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,5,18,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,SAI,Williams,6,17,3,1.0,opening,yellow,0.82,derived
+2026-14-madring,SAI,Williams,7,17,3,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,8,17,3,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,9,17,3,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,10,17,3,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,11,17,3,0.0,opening,green,0.82,derived
+2026-14-madring,SAI,Williams,12,17,3,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,13,17,3,0.0,middle,mixed,0.52,derived
+2026-14-madring,SAI,Williams,14,17,3,0.0,middle,mixed,0.52,derived
+2026-14-madring,SAI,Williams,15,15,5,2.0,middle,mixed,0.52,derived
+2026-14-madring,SAI,Williams,16,15,5,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,17,15,5,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,18,15,5,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,19,15,5,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,20,15,5,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,21,15,5,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,22,15,5,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,23,16,4,-1.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,24,20,0,-4.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,25,20,0,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,26,20,0,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,27,20,0,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,28,20,0,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,29,20,0,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,30,19,1,1.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,31,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,32,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,33,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,34,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,35,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,36,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,37,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,38,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,39,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,40,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,41,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,42,19,1,0.0,middle,green,0.82,derived
+2026-14-madring,SAI,Williams,43,19,1,0.0,closing,green,0.82,derived
+2026-14-madring,STR,Aston Martin,1,19,2,0.0,opening,yellow,0.82,derived
+2026-14-madring,STR,Aston Martin,2,19,2,0.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,3,20,1,-1.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,4,20,1,0.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,5,20,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,STR,Aston Martin,6,19,2,1.0,opening,yellow,0.82,derived
+2026-14-madring,STR,Aston Martin,7,19,2,0.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,8,20,1,-1.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,9,20,1,0.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,10,20,1,0.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,11,20,1,0.0,opening,green,0.82,derived
+2026-14-madring,STR,Aston Martin,12,20,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,1,17,-2,0.0,opening,yellow,0.82,derived
+2026-14-madring,TSU,Racing Bulls,2,17,-2,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,3,17,-2,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,4,17,-2,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,5,17,-2,0.0,opening,yellow,0.82,derived
+2026-14-madring,TSU,Racing Bulls,6,16,-1,1.0,opening,yellow,0.82,derived
+2026-14-madring,TSU,Racing Bulls,7,16,-1,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,8,16,-1,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,9,16,-1,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,10,16,-1,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,11,16,-1,0.0,opening,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,12,16,-1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,13,16,-1,0.0,middle,mixed,0.52,derived
+2026-14-madring,TSU,Racing Bulls,14,15,0,1.0,middle,mixed,0.52,derived
+2026-14-madring,TSU,Racing Bulls,15,14,1,1.0,middle,mixed,0.52,derived
+2026-14-madring,TSU,Racing Bulls,16,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,17,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,18,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,19,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,20,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,21,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,22,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,23,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,24,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,25,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,26,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,27,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,28,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,29,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,30,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,31,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,32,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,33,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,34,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,35,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,36,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,37,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,38,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,39,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,40,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,41,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,42,14,1,0.0,middle,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,43,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,44,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,45,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,46,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,47,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,48,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,49,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,50,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,51,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,52,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,53,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,54,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,55,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,TSU,Racing Bulls,56,14,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,1,2,1,0.0,opening,yellow,0.82,derived
+2026-14-madring,VER,Red Bull Racing,2,2,1,0.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,3,2,1,0.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,4,4,-1,-2.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,5,3,0,1.0,opening,yellow,0.82,derived
+2026-14-madring,VER,Red Bull Racing,6,3,0,0.0,opening,yellow,0.82,derived
+2026-14-madring,VER,Red Bull Racing,7,3,0,0.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,8,3,0,0.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,9,3,0,0.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,10,3,0,0.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,11,3,0,0.0,opening,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,12,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,13,3,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,VER,Red Bull Racing,14,3,0,0.0,middle,mixed,0.52,derived
+2026-14-madring,VER,Red Bull Racing,15,4,-1,-1.0,middle,mixed,0.52,derived
+2026-14-madring,VER,Red Bull Racing,16,3,0,1.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,17,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,18,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,19,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,20,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,21,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,22,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,23,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,24,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,25,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,26,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,27,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,28,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,29,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,30,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,31,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,32,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,33,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,34,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,35,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,36,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,37,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,38,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,39,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,40,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,41,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,42,3,0,0.0,middle,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,43,3,0,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,44,3,0,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,45,3,0,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,46,3,0,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,47,3,0,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,48,2,1,1.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,49,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,50,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,51,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,52,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,53,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,54,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,55,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,56,2,1,0.0,closing,green,0.82,derived
+2026-14-madring,VER,Red Bull Racing,57,2,1,0.0,closing,green,0.82,derived

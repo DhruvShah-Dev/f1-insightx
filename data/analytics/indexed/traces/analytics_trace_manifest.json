@@ -1,9 +1,9 @@
 {
-  "buildVersion": "analytics_telemetry_traces_20260908T172220Z",
-  "generatedAt": "2026-09-08T17:22:20Z",
+  "buildVersion": "analytics_telemetry_traces_20260915T185435Z",
+  "generatedAt": "2026-09-15T18:54:35Z",
   "sessions": {
     "2026_01_Q_Australian Grand Prix": {
-      "bytes": 31687,
+      "bytes": 31686,
       "drivers": 19,
       "event": "Australian Grand Prix",
       "file": "2026-01-q-australian-grand-prix-4e79f4ec7fee.json.gz",
@@ -14,7 +14,7 @@
       "tracePointCount": 96
     },
     "2026_01_R_Australian Grand Prix": {
-      "bytes": 33538,
+      "bytes": 33540,
       "drivers": 20,
       "event": "Australian Grand Prix",
       "file": "2026-01-r-australian-grand-prix-d7555cbf5ec1.json.gz",
@@ -25,7 +25,7 @@
       "tracePointCount": 96
     },
     "2026_02_Q_Chinese Grand Prix": {
-      "bytes": 37309,
+      "bytes": 37308,
       "drivers": 22,
       "event": "Chinese Grand Prix",
       "file": "2026-02-q-chinese-grand-prix-9efe5764d4f7.json.gz",
@@ -47,7 +47,7 @@
       "tracePointCount": 96
     },
     "2026_02_SQ_Chinese Grand Prix": {
-      "bytes": 34770,
+      "bytes": 34769,
       "drivers": 21,
       "event": "Chinese Grand Prix",
       "file": "2026-02-sq-chinese-grand-prix-2ad506672ee0.json.gz",
@@ -69,7 +69,7 @@
       "tracePointCount": 96
     },
     "2026_03_Q_Japanese Grand Prix": {
-      "bytes": 35542,
+      "bytes": 35543,
       "drivers": 22,
       "event": "Japanese Grand Prix",
       "file": "2026-03-q-japanese-grand-prix-359a94a6fd62.json.gz",
@@ -80,7 +80,7 @@
       "tracePointCount": 96
     },
     "2026_03_R_Japanese Grand Prix": {
-      "bytes": 37027,
+      "bytes": 37028,
       "drivers": 22,
       "event": "Japanese Grand Prix",
       "file": "2026-03-r-japanese-grand-prix-7f34daf7e18d.json.gz",
@@ -91,7 +91,7 @@
       "tracePointCount": 96
     },
     "2026_04_Q_Miami Grand Prix": {
-      "bytes": 36425,
+      "bytes": 36424,
       "drivers": 22,
       "event": "Miami Grand Prix",
       "file": "2026-04-q-miami-grand-prix-6a1e296ccb26.json.gz",
@@ -124,7 +124,7 @@
       "tracePointCount": 96
     },
     "2026_04_S_Miami Grand Prix": {
-      "bytes": 33507,
+      "bytes": 33505,
       "drivers": 20,
       "event": "Miami Grand Prix",
       "file": "2026-04-s-miami-grand-prix-bf7ca03f74ad.json.gz",
@@ -168,7 +168,7 @@
       "tracePointCount": 96
     },
     "2026_05_S_Canadian Grand Prix": {
-      "bytes": 36809,
+      "bytes": 36810,
       "drivers": 22,
       "event": "Canadian Grand Prix",
       "file": "2026-05-s-canadian-grand-prix-404f2ab66caf.json.gz",
@@ -179,7 +179,7 @@
       "tracePointCount": 96
     },
     "2026_06_Q_Monaco Grand Prix": {
-      "bytes": 39659,
+      "bytes": 39660,
       "drivers": 22,
       "event": "Monaco Grand Prix",
       "file": "2026-06-q-monaco-grand-prix-1daf25327e50.json.gz",
@@ -190,7 +190,7 @@
       "tracePointCount": 96
     },
     "2026_06_R_Monaco Grand Prix": {
-      "bytes": 38446,
+      "bytes": 38448,
       "drivers": 21,
       "event": "Monaco Grand Prix",
       "file": "2026-06-r-monaco-grand-prix-b1708efb1f78.json.gz",
@@ -201,7 +201,7 @@
       "tracePointCount": 96
     },
     "2026_07_Q_Barcelona Grand Prix": {
-      "bytes": 37675,
+      "bytes": 37676,
       "drivers": 22,
       "event": "Barcelona Grand Prix",
       "file": "2026-07-q-barcelona-grand-prix-ae48ef083375.json.gz",
@@ -212,7 +212,7 @@
       "tracePointCount": 96
     },
     "2026_07_R_Barcelona Grand Prix": {
-      "bytes": 38900,
+      "bytes": 38899,
       "drivers": 22,
       "event": "Barcelona Grand Prix",
       "file": "2026-07-r-barcelona-grand-prix-deb350088984.json.gz",
@@ -234,7 +234,7 @@
       "tracePointCount": 96
     },
     "2026_08_R_Austrian Grand Prix": {
-      "bytes": 35845,
+      "bytes": 35846,
       "drivers": 21,
       "event": "Austrian Grand Prix",
       "file": "2026-08-r-austrian-grand-prix-0b6cc23fa058.json.gz",
@@ -267,7 +267,7 @@
       "tracePointCount": 96
     },
     "2026_09_SQ_British Grand Prix": {
-      "bytes": 35559,
+      "bytes": 35557,
       "drivers": 22,
       "event": "British Grand Prix",
       "file": "2026-09-sq-british-grand-prix-054e56650ffc.json.gz",
@@ -278,7 +278,7 @@
       "tracePointCount": 96
     },
     "2026_09_S_British Grand Prix": {
-      "bytes": 36816,
+      "bytes": 36817,
       "drivers": 22,
       "event": "British Grand Prix",
       "file": "2026-09-s-british-grand-prix-ba3752c1a465.json.gz",
@@ -289,7 +289,7 @@
       "tracePointCount": 96
     },
     "2026_10_FP1_Belgian Grand Prix": {
-      "bytes": 35571,
+      "bytes": 35572,
       "drivers": 22,
       "event": "Belgian Grand Prix",
       "file": "2026-10-fp1-belgian-grand-prix-af688854b170.json.gz",
@@ -300,7 +300,7 @@
       "tracePointCount": 96
     },
     "2026_10_FP2_Belgian Grand Prix": {
-      "bytes": 35758,
+      "bytes": 35759,
       "drivers": 22,
       "event": "Belgian Grand Prix",
       "file": "2026-10-fp2-belgian-grand-prix-02ca3e6d081d.json.gz",
@@ -311,7 +311,7 @@
       "tracePointCount": 96
     },
     "2026_10_FP3_Belgian Grand Prix": {
-      "bytes": 35435,
+      "bytes": 35436,
       "drivers": 22,
       "event": "Belgian Grand Prix",
       "file": "2026-10-fp3-belgian-grand-prix-7e3a59d638ed.json.gz",
@@ -322,7 +322,7 @@
       "tracePointCount": 96
     },
     "2026_10_Q_Belgian Grand Prix": {
-      "bytes": 35095,
+      "bytes": 35096,
       "drivers": 22,
       "event": "Belgian Grand Prix",
       "file": "2026-10-q-belgian-grand-prix-7252eeb20962.json.gz",
@@ -333,7 +333,7 @@
       "tracePointCount": 96
     },
     "2026_10_R_Belgian Grand Prix": {
-      "bytes": 34230,
+      "bytes": 34229,
       "drivers": 21,
       "event": "Belgian Grand Prix",
       "file": "2026-10-r-belgian-grand-prix-a20a19e39cb1.json.gz",
@@ -344,7 +344,7 @@
       "tracePointCount": 96
     },
     "2026_11_FP1_Hungarian Grand Prix": {
-      "bytes": 39632,
+      "bytes": 39633,
       "drivers": 22,
       "event": "Hungarian Grand Prix",
       "file": "2026-11-fp1-hungarian-grand-prix-c50a16a87958.json.gz",
@@ -355,7 +355,7 @@
       "tracePointCount": 96
     },
     "2026_11_FP2_Hungarian Grand Prix": {
-      "bytes": 37629,
+      "bytes": 37630,
       "drivers": 21,
       "event": "Hungarian Grand Prix",
       "file": "2026-11-fp2-hungarian-grand-prix-2bb4dde1680e.json.gz",
@@ -377,7 +377,7 @@
       "tracePointCount": 96
     },
     "2026_11_Q_Hungarian Grand Prix": {
-      "bytes": 39191,
+      "bytes": 39190,
       "drivers": 22,
       "event": "Hungarian Grand Prix",
       "file": "2026-11-q-hungarian-grand-prix-1942e431a658.json.gz",
@@ -388,7 +388,7 @@
       "tracePointCount": 96
     },
     "2026_11_R_Hungarian Grand Prix": {
-      "bytes": 32666,
+      "bytes": 32667,
       "drivers": 22,
       "event": "Hungarian Grand Prix",
       "file": "2026-11-r-hungarian-grand-prix-3ca5defef9f8.json.gz",
@@ -399,7 +399,7 @@
       "tracePointCount": 96
     },
     "2026_12_FP1_Dutch Grand Prix": {
-      "bytes": 37173,
+      "bytes": 37172,
       "drivers": 21,
       "event": "Dutch Grand Prix",
       "file": "2026-12-fp1-dutch-grand-prix-2cdedf5dbf15.json.gz",
@@ -432,7 +432,7 @@
       "tracePointCount": 96
     },
     "2026_12_SQ_Dutch Grand Prix": {
-      "bytes": 38632,
+      "bytes": 38631,
       "drivers": 22,
       "event": "Dutch Grand Prix",
       "file": "2026-12-sq-dutch-grand-prix-8b69d299a775.json.gz",
@@ -454,7 +454,7 @@
       "tracePointCount": 96
     },
     "2026_13_FP1_Italian Grand Prix": {
-      "bytes": 34799,
+      "bytes": 34798,
       "drivers": 22,
       "event": "Italian Grand Prix",
       "file": "2026-13-fp1-italian-grand-prix-458844a7274e.json.gz",
@@ -465,7 +465,7 @@
       "tracePointCount": 96
     },
     "2026_13_FP2_Italian Grand Prix": {
-      "bytes": 34604,
+      "bytes": 34605,
       "drivers": 22,
       "event": "Italian Grand Prix",
       "file": "2026-13-fp2-italian-grand-prix-2f7a4ab1709b.json.gz",
@@ -498,7 +498,7 @@
       "tracePointCount": 96
     },
     "2026_13_R_Italian Grand Prix": {
-      "bytes": 33685,
+      "bytes": 33683,
       "drivers": 21,
       "event": "Italian Grand Prix",
       "file": "2026-13-r-italian-grand-prix-4b3dc8f66c73.json.gz",

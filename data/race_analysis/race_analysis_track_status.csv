@@ -770,7 +770,7 @@ race_analysis_id,lap_number,phase,track_status_raw,track_status_label,confidence
 2026-13-monza,24,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-13-monza,25,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-13-monza,26,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
-2026-13-monza,27,middle,1267,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-13-monza,27,middle,126,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
 2026-13-monza,28,middle,1267,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
 2026-13-monza,29,middle,167,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
 2026-13-monza,30,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
@@ -797,3 +797,60 @@ race_analysis_id,lap_number,phase,track_status_raw,track_status_label,confidence
 2026-13-monza,51,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-13-monza,52,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-13-monza,53,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,1,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-14-madring,2,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,3,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,4,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,5,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-14-madring,6,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-14-madring,7,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,8,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,9,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,10,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,11,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,12,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,13,middle,126,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-14-madring,14,middle,126,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-14-madring,15,middle,167,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-14-madring,16,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,17,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,18,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,19,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,20,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,21,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,22,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,23,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,24,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,25,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,26,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,27,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,28,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,29,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,30,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,31,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,32,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,33,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,34,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,35,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,36,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,37,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,38,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,39,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,40,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,41,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,42,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,43,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,44,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,45,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,46,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,47,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,48,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,49,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,50,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,51,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,52,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,53,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,54,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,55,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,56,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-14-madring,57,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.

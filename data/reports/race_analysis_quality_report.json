@@ -2,12 +2,12 @@
   "build_version": "race-analysis-v1",
   "confidence_distribution": {
     "max": 1.0,
-    "mean": 0.794,
+    "mean": 0.795,
     "min": 0.35,
     "tier": "strong"
   },
-  "generated_at": "2026-09-08T17:22:28Z",
-  "latest_race": "Italian Grand Prix",
+  "generated_at": "2026-09-15T18:54:35Z",
+  "latest_race": "Spanish Grand Prix",
   "missing_data_flags": {
     "drs_window": "proxy_only_no_exact_gap_feed",
     "dynamic_gap_feed": "missing",
@@ -18,22 +18,22 @@
     "track_status": "partial",
     "traffic_proxy": "proxy_no_exact_gap_feed"
   },
-  "races_generated": 13,
+  "races_generated": 14,
   "rows": {
-    "index": 13,
-    "links": 39,
-    "neutralization_phases": 67,
-    "pace_evolution": 15155,
-    "pit_strategy": 529,
-    "position_changes": 286,
-    "position_swing_events": 2552,
-    "position_timeline": 15126,
-    "stints": 814,
-    "story_points": 53,
-    "summary": 13,
-    "track_status": 798,
-    "traffic_proxy": 15155,
-    "weather_context": 798
+    "index": 14,
+    "links": 42,
+    "neutralization_phases": 70,
+    "pace_evolution": 16261,
+    "pit_strategy": 554,
+    "position_changes": 308,
+    "position_swing_events": 2661,
+    "position_timeline": 16231,
+    "stints": 861,
+    "story_points": 57,
+    "summary": 14,
+    "track_status": 855,
+    "traffic_proxy": 16261,
+    "weather_context": 855
   },
   "season_coverage": [
     2026

@@ -528,3 +528,28 @@ race_analysis_id,driver,team,pit_stop_number,pit_lap,compound_from,compound_to,s
 2026-13-monza,TSU,Racing Bulls,1,3,HARD,MEDIUM,3,14,14,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-13-monza,VER,Red Bull Racing,1,3,SOFT,MEDIUM,3,3,3,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-13-monza,VER,Red Bull Racing,2,28,MEDIUM,HARD,25,3,7,-4,23.185,lost after stop,medium,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,ALB,Williams,1,14,MEDIUM,HARD,14,14,17,-3,29.171,lost after stop,high,0.525,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,ALO,Aston Martin,1,14,HARD,SOFT,14,18,20,-2,30.674,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,ALO,Aston Martin,2,37,SOFT,HARD,23,17,17,0,0.477,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,ANT,Mercedes,1,14,MEDIUM,HARD,14,2,2,0,5.161,neutral stop,low,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,BEA,Haas F1 Team,1,33,HARD,MEDIUM,33,15,16,-1,0.0,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,BEA,Haas F1 Team,2,43,MEDIUM,HARD,10,16,16,0,0.0,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,BOR,Audi,1,47,HARD,SOFT,47,12,13,-1,2.712,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,BOT,Cadillac,1,29,HARD,HARD,29,19,20,-1,4.007,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,BOT,Cadillac,2,43,HARD,SOFT,14,18,18,0,0.0,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,COL,Alpine,1,14,MEDIUM,HARD,14,7,10,-3,23.583,lost after stop,medium,0.11,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,GAS,Alpine,1,55,HARD,SOFT,55,9,,,,pit-cycle unknown,low,,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,HUL,Audi,1,14,SOFT,HARD,14,11,12,-1,24.872,lost after stop,high,0.472,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,LAW,Red Bull Racing,1,44,HARD,MEDIUM,44,6,7,-1,0.848,lost after stop,medium,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,LEC,Ferrari,1,48,HARD,SOFT,48,4,4,0,0.983,neutral stop,low,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,LIN,Racing Bulls,1,14,MEDIUM,HARD,14,8,11,-3,24.272,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,NOR,McLaren,1,15,MEDIUM,HARD,15,1,5,-4,48.404,lost after stop,low,0.283,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,OCO,Haas F1 Team,1,14,MEDIUM,HARD,14,10,13,-3,25.374,lost after stop,high,0.719,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,PER,Cadillac,1,14,MEDIUM,HARD,14,16,18,-2,26.283,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,PIA,McLaren,1,42,HARD,MEDIUM,42,7,10,-3,2.541,lost after stop,medium,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,RUS,Mercedes,1,14,HARD,MEDIUM,14,5,4,1,11.619,gained after stop,low,0.015,Pit cycle improved track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,RUS,Mercedes,2,28,MEDIUM,HARD,14,5,6,-1,2.615,lost after stop,medium,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,SAI,Williams,1,23,HARD,MEDIUM,23,16,20,-4,0.0,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,SAI,Williams,2,31,MEDIUM,HARD,8,19,19,0,0.861,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,TSU,Racing Bulls,1,36,HARD,MEDIUM,36,14,14,0,1.172,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-14-madring,VER,Red Bull Racing,1,14,SOFT,HARD,14,3,3,0,8.643,neutral stop,low,0.814,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.

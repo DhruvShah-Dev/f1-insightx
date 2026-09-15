@@ -17,16 +17,16 @@ Generated datasets are intentionally ignored unless they are small fixtures or s
 
 ## Current Local State
 
-Latest local season state: `season_state_20260915T180204Z`, generated at `2026-09-15T18:02:04Z`.
+Latest local season state: `season_state_20260915T190122Z`, generated at `2026-09-15T19:01:22Z`.
 
-| Layer                      | Current evidence                                                                                            |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| FastF1 archive             | 2026 round 14 Spanish Grand Prix sessions ingested for FP1, FP2, FP3, qualifying, and race; telemetry files pending |
-| Canonical FastF1           | 51 sessions, 30,161 session laps, 1,097 session results, 3,619 session stints, 5,222 weather rows                 |
-| Analysis                   | 13 race analyses, 15,126 position timeline rows, 529 pit-strategy rows; analysis remains through round 13         |
-| Race Week                  | Spanish Grand Prix, round 14, product view refreshed at `2026-09-15T18:01:59Z`; next race is Azerbaijan GP        |
-| Strategy modeling          | Spanish Grand Prix product view available; Azerbaijan Grand Prix build pending                                    |
-| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through the Italian Grand Prix, round 13       |
+| Layer                      | Current evidence                                                                                                             |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| FastF1 archive             | 2026 round 14 Spanish Grand Prix sessions ingested for FP1, FP2, FP3, qualifying, and race; Madring telemetry files pending  |
+| Canonical FastF1           | 51 sessions, 30,806 session laps, 1,122 session results, 3,708 session stints, 1,102 session-summary rows                    |
+| Analysis                   | 14 race analyses, 16,231 position timeline rows, 554 pit-strategy rows; analysis now includes Spanish GP round 14            |
+| Race Week                  | Azerbaijan Grand Prix, round 15, product view refreshed at `2026-09-15T18:54:26Z`; race scheduled for `2026-09-26T11:00:00Z` |
+| Strategy modeling          | Spanish Grand Prix product view available; Azerbaijan Grand Prix build pending                                               |
+| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through the Italian Grand Prix, round 13                  |
 
 ## Layers
 

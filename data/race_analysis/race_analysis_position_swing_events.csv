@@ -2551,3 +2551,112 @@ race_analysis_id,event_id,driver,team,start_lap,end_lap,position_delta,phase,eve
 2026-13-monza,2026-13-monza-pos-0200,VER,Red Bull Racing,39,39,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
 2026-13-monza,2026-13-monza-pos-0201,VER,Red Bull Racing,41,41,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
 2026-13-monza,2026-13-monza-pos-0202,VER,Red Bull Racing,43,43,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0001,ALB,Williams,2,2,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0002,ALB,Williams,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0003,ALB,Williams,15,15,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0004,ALB,Williams,24,24,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0005,ALB,Williams,34,34,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0006,ALO,Aston Martin,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0007,ALO,Aston Martin,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0008,ALO,Aston Martin,15,15,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0009,ALO,Aston Martin,24,24,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0010,ALO,Aston Martin,30,30,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0011,ANT,Mercedes,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0012,ANT,Mercedes,15,15,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0013,ANT,Mercedes,16,16,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0014,ANT,Mercedes,48,48,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0015,BEA,Haas F1 Team,2,2,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0016,BEA,Haas F1 Team,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0017,BEA,Haas F1 Team,8,8,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0018,BEA,Haas F1 Team,15,15,3.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0019,BEA,Haas F1 Team,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0020,BEA,Haas F1 Team,34,34,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0021,BOR,Audi,2,2,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0022,BOR,Audi,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0023,BOR,Audi,15,15,4.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0024,BOR,Audi,43,43,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0025,BOR,Audi,47,47,-4.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0026,BOR,Audi,48,48,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0027,BOT,Cadillac,2,2,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0028,BOT,Cadillac,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0029,BOT,Cadillac,13,13,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0030,BOT,Cadillac,15,15,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0031,BOT,Cadillac,16,16,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0032,BOT,Cadillac,30,30,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0033,BOT,Cadillac,32,32,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0034,COL,Alpine,5,5,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0035,COL,Alpine,10,10,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0036,COL,Alpine,15,15,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0037,COL,Alpine,43,43,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0038,COL,Alpine,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0039,COL,Alpine,55,55,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0040,GAS,Alpine,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0041,GAS,Alpine,15,15,4.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0042,GAS,Alpine,43,43,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0043,GAS,Alpine,45,45,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0044,GAS,Alpine,54,54,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0045,GAS,Alpine,55,55,-2.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0046,GAS,Alpine,56,56,-3.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0047,HAM,Ferrari,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0048,HAM,Ferrari,5,5,-7.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0049,HAM,Ferrari,6,6,-12.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0050,HUL,Audi,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0051,HUL,Audi,15,15,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0052,HUL,Audi,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0053,HUL,Audi,56,56,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0054,LAW,Red Bull Racing,5,5,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0055,LAW,Red Bull Racing,10,10,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0056,LAW,Red Bull Racing,29,29,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0057,LAW,Red Bull Racing,35,35,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0058,LAW,Red Bull Racing,45,45,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0059,LAW,Red Bull Racing,54,54,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0060,LEC,Ferrari,5,5,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0061,LEC,Ferrari,15,15,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0062,LEC,Ferrari,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0063,LEC,Ferrari,48,48,-3.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0064,LIN,Racing Bulls,5,5,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0065,LIN,Racing Bulls,15,15,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0066,LIN,Racing Bulls,43,43,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0067,LIN,Racing Bulls,44,44,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0068,LIN,Racing Bulls,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0069,LIN,Racing Bulls,56,56,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0070,NOR,McLaren,16,16,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0071,NOR,McLaren,28,28,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0072,NOR,McLaren,48,48,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0073,OCO,Haas F1 Team,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0074,OCO,Haas F1 Team,15,15,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0075,OCO,Haas F1 Team,48,48,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0076,OCO,Haas F1 Team,56,56,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0077,PER,Cadillac,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0078,PER,Cadillac,14,14,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0079,PER,Cadillac,15,15,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0080,PER,Cadillac,16,16,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0081,PER,Cadillac,24,24,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0082,PER,Cadillac,30,30,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0083,PIA,McLaren,5,5,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0084,PIA,McLaren,15,15,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0085,PIA,McLaren,43,43,-4.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0086,PIA,McLaren,44,44,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0087,PIA,McLaren,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0088,PIA,McLaren,55,55,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0089,RUS,Mercedes,5,5,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0090,RUS,Mercedes,16,16,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0091,RUS,Mercedes,28,28,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0092,RUS,Mercedes,29,29,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0093,RUS,Mercedes,35,35,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0094,SAI,Williams,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0095,SAI,Williams,15,15,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0096,SAI,Williams,23,23,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0097,SAI,Williams,24,24,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0098,SAI,Williams,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0099,STR,Aston Martin,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0100,STR,Aston Martin,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0101,STR,Aston Martin,8,8,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0102,TSU,Racing Bulls,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0103,TSU,Racing Bulls,14,14,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0104,TSU,Racing Bulls,15,15,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0105,VER,Red Bull Racing,4,4,-2.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-14-madring,2026-14-madring-pos-0106,VER,Red Bull Racing,5,5,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-14-madring,2026-14-madring-pos-0107,VER,Red Bull Racing,15,15,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0108,VER,Red Bull Racing,16,16,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-14-madring,2026-14-madring-pos-0109,VER,Red Bull Racing,48,48,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.

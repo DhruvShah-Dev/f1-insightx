@@ -237,7 +237,7 @@ export const methodDashboardInventory = [
     path: "data/canonical_fastf1/laps_canonical.csv",
     category: "canonical_fastf1",
     table: "laps_canonical",
-    rows: 28089,
+    rows: 30806,
     columns: 32,
     header: [
       "session_id",
@@ -278,7 +278,7 @@ export const methodDashboardInventory = [
     path: "data/canonical_fastf1/results_canonical.csv",
     category: "canonical_fastf1",
     table: "results_canonical",
-    rows: 1012,
+    rows: 1122,
     columns: 20,
     header: [
       "session_id",
@@ -393,7 +393,7 @@ export const methodDashboardInventory = [
     path: "data/canonical_fastf1/session_summary_canonical.csv",
     category: "canonical_fastf1",
     table: "session_summary_canonical",
-    rows: 993,
+    rows: 1102,
     columns: 24,
     header: [
       "session_id",
@@ -466,7 +466,7 @@ export const methodDashboardInventory = [
     path: "data/canonical_fastf1/stints_canonical.csv",
     category: "canonical_fastf1",
     table: "stints_canonical",
-    rows: 3339,
+    rows: 3708,
     columns: 15,
     header: [
       "session_id",
@@ -543,7 +543,7 @@ export const methodDashboardInventory = [
     path: "data/curated/constructor_standings.csv",
     category: "curated",
     table: "constructor_standings",
-    rows: 143,
+    rows: 154,
     columns: 9,
     header: [
       "id",
@@ -569,7 +569,7 @@ export const methodDashboardInventory = [
     path: "data/curated/driver_standings.csv",
     category: "curated",
     table: "driver_standings",
-    rows: 299,
+    rows: 322,
     columns: 10,
     header: [
       "id",
@@ -605,7 +605,7 @@ export const methodDashboardInventory = [
     path: "data/curated/fantasy_inputs.csv",
     category: "curated",
     table: "fantasy_inputs",
-    rows: 330,
+    rows: 297,
     columns: 15,
     header: [
       "id",
@@ -667,7 +667,7 @@ export const methodDashboardInventory = [
     path: "data/curated/prediction_snapshots.csv",
     category: "curated",
     table: "prediction_snapshots",
-    rows: 220,
+    rows: 198,
     columns: 15,
     header: [
       "id",
@@ -691,7 +691,7 @@ export const methodDashboardInventory = [
     path: "data/curated/qualifying_results.csv",
     category: "curated",
     table: "qualifying_results",
-    rows: 283,
+    rows: 305,
     columns: 9,
     header: [
       "id",
@@ -709,7 +709,7 @@ export const methodDashboardInventory = [
     path: "data/curated/race_results.csv",
     category: "curated",
     table: "race_results",
-    rows: 286,
+    rows: 308,
     columns: 10,
     header: [
       "id",
@@ -954,7 +954,7 @@ export const methodDashboardInventory = [
     path: "data/predictions/race_pit_stop_results.csv",
     category: "predictions",
     table: "race_pit_stop_results",
-    rows: 3,
+    rows: 13,
     columns: 6,
     header: ["race_id", "season", "round", "driver_id", "pit_duration_s", "source_label"],
   },
@@ -987,7 +987,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_index.csv",
     category: "race_analysis",
     table: "race_analysis_index",
-    rows: 13,
+    rows: 14,
     columns: 20,
     header: [
       "race_analysis_id",
@@ -1016,7 +1016,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_links.csv",
     category: "race_analysis",
     table: "race_analysis_links",
-    rows: 52,
+    rows: 42,
     columns: 7,
     header: [
       "race_analysis_id",
@@ -1032,7 +1032,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_neutralization_phases.csv",
     category: "race_analysis",
     table: "race_analysis_neutralization_phases",
-    rows: 67,
+    rows: 70,
     columns: 10,
     header: [
       "race_analysis_id",
@@ -1051,7 +1051,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_pace_evolution.csv",
     category: "race_analysis",
     table: "race_analysis_pace_evolution",
-    rows: 15155,
+    rows: 16261,
     columns: 15,
     header: [
       "race_analysis_id",
@@ -1075,7 +1075,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_pit_strategy.csv",
     category: "race_analysis",
     table: "race_analysis_pit_strategy",
-    rows: 529,
+    rows: 554,
     columns: 18,
     header: [
       "race_analysis_id",
@@ -1102,7 +1102,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_position_changes.csv",
     category: "race_analysis",
     table: "race_analysis_position_changes",
-    rows: 286,
+    rows: 308,
     columns: 13,
     header: [
       "race_analysis_id",
@@ -1124,7 +1124,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_position_swing_events.csv",
     category: "race_analysis",
     table: "race_analysis_position_swing_events",
-    rows: 2552,
+    rows: 2661,
     columns: 12,
     header: [
       "race_analysis_id",
@@ -1145,7 +1145,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_position_timeline.csv",
     category: "race_analysis",
     table: "race_analysis_position_timeline",
-    rows: 15126,
+    rows: 16231,
     columns: 11,
     header: [
       "race_analysis_id",
@@ -1165,7 +1165,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_stints.csv",
     category: "race_analysis",
     table: "race_analysis_stints",
-    rows: 814,
+    rows: 861,
     columns: 18,
     header: [
       "race_analysis_id",
@@ -1192,7 +1192,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_story_points.csv",
     category: "race_analysis",
     table: "race_analysis_story_points",
-    rows: 53,
+    rows: 57,
     columns: 13,
     header: [
       "race_analysis_id",
@@ -1214,7 +1214,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_summary.csv",
     category: "race_analysis",
     table: "race_analysis_summary",
-    rows: 13,
+    rows: 14,
     columns: 14,
     header: [
       "race_analysis_id",
@@ -1237,7 +1237,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_track_status.csv",
     category: "race_analysis",
     table: "race_analysis_track_status",
-    rows: 798,
+    rows: 855,
     columns: 8,
     header: [
       "race_analysis_id",
@@ -1254,7 +1254,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_traffic_proxy.csv",
     category: "race_analysis",
     table: "race_analysis_traffic_proxy",
-    rows: 15155,
+    rows: 16261,
     columns: 14,
     header: [
       "race_analysis_id",
@@ -1277,7 +1277,7 @@ export const methodDashboardInventory = [
     path: "data/race_analysis/race_analysis_weather_context.csv",
     category: "race_analysis",
     table: "race_analysis_weather_context",
-    rows: 798,
+    rows: 855,
     columns: 12,
     header: [
       "race_analysis_id",
@@ -1395,7 +1395,7 @@ export const methodDashboardInventory = [
     path: "data/race_week/driver_race_week_features.csv",
     category: "race_week",
     table: "driver_race_week_features",
-    rows: 21,
+    rows: 22,
     columns: 21,
     header: [
       "id",
@@ -1495,7 +1495,7 @@ export const methodDashboardInventory = [
     path: "data/race_week/qualifying_driver_deltas.csv",
     category: "race_week",
     table: "qualifying_driver_deltas",
-    rows: 400,
+    rows: 0,
     columns: 16,
     header: [
       "id",
@@ -1685,7 +1685,7 @@ export const methodDashboardInventory = [
     path: "data/race_week/race_week_strategy.csv",
     category: "race_week",
     table: "race_week_strategy",
-    rows: 21,
+    rows: 22,
     columns: 15,
     header: [
       "id",
@@ -1896,7 +1896,7 @@ export const methodDashboardInventory = [
     path: "data/race_week/weekend_readiness_summary.csv",
     category: "race_week",
     table: "weekend_readiness_summary",
-    rows: 21,
+    rows: 22,
     columns: 11,
     header: [
       "id",

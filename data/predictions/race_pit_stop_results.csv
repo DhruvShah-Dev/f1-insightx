@@ -2,3 +2,13 @@ race_id,season,round,driver_id,pit_duration_s,source_label
 2026-01-albert_park,2026,1,max_verstappen,17.6,openf1_pit_v1
 2026-02-shanghai,2026,2,hamilton,22.433,openf1_pit_v1
 2026-03-suzuka,2026,3,hamilton,22.891,openf1_pit_v1
+2026-04-miami,2026,4,77,17.1,openf1_pit_v1
+2026-05-villeneuve,2026,5,max_verstappen,23.4,openf1_pit_v1
+2026-06-monaco,2026,6,hadjar,19.6,openf1_pit_v1
+2026-07-catalunya,2026,7,russell,21.677,openf1_pit_v1
+2026-08-red_bull_ring,2026,8,leclerc,21.0,openf1_pit_v1
+2026-09-silverstone,2026,9,russell,28.3,openf1_pit_v1
+2026-10-spa,2026,10,albon,22.638,openf1_pit_v1
+2026-11-hungaroring,2026,11,41,21.3,openf1_pit_v1
+2026-12-zandvoort,2026,12,colapinto,12.0,openf1_pit_v1
+2026-13-monza,2026,13,hulkenberg,24.2,openf1_pit_v1

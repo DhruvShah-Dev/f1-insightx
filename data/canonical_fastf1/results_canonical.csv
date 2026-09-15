@@ -1011,3 +1011,113 @@ session_id,session_code,event_name,round,season,position,classified_position,dri
 2026_13_R_Italian Grand Prix,R,Italian Grand Prix,13,2026,20,R,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,18,,,,,Retired,0.0
 2026_13_R_Italian Grand Prix,R,Italian Grand Prix,13,2026,21,R,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,21,,,,,Retired,0.0
 2026_13_R_Italian Grand Prix,R,Italian Grand Prix,13,2026,22,R,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,3,,,,,Retired,0.0
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,22,Y TSUNODA,TSU,Yuki Tsunoda,Racing Bulls,6C98FF,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,30,L LAWSON,LAW,Liam Lawson,Red Bull Racing,4781D7,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,,,,,,,
+2026_14_FP1_Spanish Grand Prix,FP1,Spanish Grand Prix,14,2026,,,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,22,Y TSUNODA,TSU,Yuki Tsunoda,Racing Bulls,6C98FF,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,30,L LAWSON,LAW,Liam Lawson,Red Bull Racing,4781D7,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,,,,,,,
+2026_14_FP2_Spanish Grand Prix,FP2,Spanish Grand Prix,14,2026,,,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,22,Y TSUNODA,TSU,Yuki Tsunoda,Racing Bulls,6C98FF,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,30,L LAWSON,LAW,Liam Lawson,Red Bull Racing,4781D7,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,,,,,,,
+2026_14_FP3_Spanish Grand Prix,FP3,Spanish Grand Prix,14,2026,,,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,,,,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,1,,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,,0 days 00:01:33.469000,0 days 00:01:32.873000,0 days 00:01:31.824000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,2,,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,,0 days 00:01:33.267000,0 days 00:01:32.591000,0 days 00:01:31.835000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,3,,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,,0 days 00:01:33.381000,0 days 00:01:32.431000,0 days 00:01:31.964000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,4,,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,,0 days 00:01:33.531000,0 days 00:01:32.710000,0 days 00:01:32.013000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,5,,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,,0 days 00:01:33.532000,0 days 00:01:32.755000,0 days 00:01:32.019000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,6,,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,,0 days 00:01:33.211000,0 days 00:01:32.850000,0 days 00:01:32.149000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,7,,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,,0 days 00:01:33.829000,0 days 00:01:33.204000,0 days 00:01:32.294000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,8,,30,L LAWSON,LAW,Liam Lawson,Red Bull Racing,4781D7,,0 days 00:01:33.310000,0 days 00:01:32.780000,0 days 00:01:32.316000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,9,,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,,0 days 00:01:33.963000,0 days 00:01:33.038000,0 days 00:01:32.903000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,10,,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,,0 days 00:01:34.340000,0 days 00:01:33.204000,0 days 00:01:33.041000,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,11,,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,,0 days 00:01:34.417000,0 days 00:01:33.223000,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,12,,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,,0 days 00:01:33.986000,0 days 00:01:33.388000,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,13,,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,,0 days 00:01:34.667000,0 days 00:01:33.667000,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,14,,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,,0 days 00:01:34.246000,0 days 00:01:33.753000,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,15,,22,Y TSUNODA,TSU,Yuki Tsunoda,Racing Bulls,6C98FF,,0 days 00:01:34.311000,0 days 00:01:34.084000,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,16,,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,,0 days 00:01:35.307000,0 days 00:01:35.532000,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,17,,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,,0 days 00:01:35.312000,,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,18,,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,,0 days 00:01:35.388000,,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,19,,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,,0 days 00:01:35.913000,,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,20,,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,,0 days 00:01:38.011000,,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,,,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,,,,,,,
+2026_14_Q_Spanish Grand Prix,Q,Spanish Grand Prix,14,2026,,,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,,,,,,,
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,1,1,12,K ANTONELLI,ANT,Kimi Antonelli,Mercedes,00D7B6,2,,,,0 days 01:34:23.754000,Finished,25.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,2,2,3,M VERSTAPPEN,VER,Max Verstappen,Red Bull Racing,4781D7,3,,,,0 days 00:00:04.351000,Finished,18.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,3,3,1,L NORRIS,NOR,Lando Norris,McLaren,F47600,1,,,,0 days 00:00:05.089000,Finished,15.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,4,4,16,C LECLERC,LEC,Charles Leclerc,Ferrari,ED1131,5,,,,0 days 00:00:29.116000,Finished,12.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,5,5,63,G RUSSELL,RUS,George Russell,Mercedes,00D7B6,6,,,,0 days 00:00:29.829000,Finished,10.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,6,6,30,L LAWSON,LAW,Liam Lawson,Red Bull Racing,4781D7,8,,,,0 days 00:01:26.746000,Finished,8.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,7,7,43,F COLAPINTO,COL,Franco Colapinto,Alpine,00A1E8,9,,,,0 days 00:01:34.281000,Finished,6.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,8,8,81,O PIASTRI,PIA,Oscar Piastri,McLaren,F47600,7,,,,0 days 00:01:35.839000,Finished,4.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,9,9,41,A LINDBLAD,LIN,Arvid Lindblad,Racing Bulls,6C98FF,10,,,,0 days 00:00:10.408000,Lapped,2.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,10,10,27,N HULKENBERG,HUL,Nico Hulkenberg,Audi,F50537,11,,,,0 days 00:00:11.298000,Lapped,1.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,11,11,31,E OCON,OCO,Esteban Ocon,Haas F1 Team,9C9FA2,13,,,,0 days 00:00:15.143000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,12,12,10,P GASLY,GAS,Pierre Gasly,Alpine,00A1E8,14,,,,0 days 00:00:26.152000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,13,13,5,G BORTOLETO,BOR,Gabriel Bortoleto,Audi,F50537,12,,,,0 days 00:00:28.389000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,14,14,22,Y TSUNODA,TSU,Yuki Tsunoda,Racing Bulls,6C98FF,15,,,,0 days 00:01:00.163000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,15,15,23,A ALBON,ALB,Alexander Albon,Williams,1868DB,16,,,,0 days 00:01:26.212000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,16,16,87,O BEARMAN,BEA,Oliver Bearman,Haas F1 Team,9C9FA2,22,,,,0 days 00:01:29.963000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,17,17,14,F ALONSO,ALO,Fernando Alonso,Aston Martin,229971,17,,,,0 days 00:00:33.776000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,18,18,77,V BOTTAS,BOT,Valtteri Bottas,Cadillac,909090,19,,,,0 days 00:00:49.246000,Lapped,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,19,R,55,C SAINZ,SAI,Carlos Sainz,Williams,1868DB,20,,,,,Retired,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,20,R,11,S PEREZ,PER,Sergio Perez,Cadillac,909090,18,,,,,Retired,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,21,R,18,L STROLL,STR,Lance Stroll,Aston Martin,229971,21,,,,,Retired,0.0
+2026_14_R_Spanish Grand Prix,R,Spanish Grand Prix,14,2026,22,R,44,L HAMILTON,HAM,Lewis Hamilton,Ferrari,ED1131,4,,,,,Retired,0.0

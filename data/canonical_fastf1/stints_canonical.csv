@@ -3338,3 +3338,372 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,VER,Red Bull Racing,1,SOFT,3,100.94633333333331,3.746000000000002,0.5,1,3
 2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,VER,Red Bull Racing,2,MEDIUM,22,87.10949999999998,0.4515238095238095,-0.2840203274985884,4,25
 2026_13_R_Italian Grand Prix,2026,13,Italian Grand Prix,R,VER,Red Bull Racing,3,HARD,25,86.10456,-0.4302499999999997,0.1769230769230769,1,25
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ALB,Williams,1,MEDIUM,12,116.70483333333334,-1.04809090909091,-0.2797202797202798,2,14
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ALB,Williams,2,SOFT,1,97.88,0.0,0.0,2,2
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ALB,Williams,3,SOFT,5,122.13,0.4890000000000043,0.6,5,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ALO,Aston Martin,1,MEDIUM,9,109.96155555555556,1.0559999999999992,0.15,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ALO,Aston Martin,2,MEDIUM,4,112.56675,-2.6340000000000003,0.1999999999999999,12,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ALO,Aston Martin,3,SOFT,10,122.2873,-1.4848888888888894,0.1393939393939393,2,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ANT,Mercedes,1,MEDIUM,9,117.00344444444444,-2.5,0.15,2,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ANT,Mercedes,2,SOFT,2,119.9305,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ANT,Mercedes,3,SOFT,2,116.845,10.0,0.0,5,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ANT,Mercedes,4,SOFT,4,120.43224999999998,-0.0653333333333326,0.1999999999999999,8,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,ANT,Mercedes,5,MEDIUM,3,114.445,4.8215,0.5,13,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BEA,Haas F1 Team,1,MEDIUM,2,115.542,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BEA,Haas F1 Team,2,MEDIUM,2,99.896,-0.5320000000000107,0.0,5,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BEA,Haas F1 Team,3,MEDIUM,2,121.936,10.0,0.0,9,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BEA,Haas F1 Team,4,MEDIUM,2,109.178,10.0,0.0,12,13
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BEA,Haas F1 Team,5,SOFT,2,110.8705,-10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BEA,Haas F1 Team,6,SOFT,2,117.81799999999998,10.0,0.0,6,7
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BEA,Haas F1 Team,7,SOFT,2,110.211,10.0,0.0,9,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOR,Audi,1,HARD,4,100.8305,1.2873333333333363,0.1999999999999999,2,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOR,Audi,2,HARD,7,108.95328571428573,-0.0801666666666681,-0.0357142857142857,8,16
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOR,Audi,3,SOFT,2,122.1115,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOR,Audi,4,SOFT,1,96.024,0.0,0.0,5,5
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOR,Audi,5,SOFT,5,127.8816,2.762999999999998,0.0,7,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOT,Cadillac,1,MEDIUM,10,117.1387,-1.2776666666666676,0.2121212121212121,2,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOT,Cadillac,2,MEDIUM,2,117.6305,10.0,0.0,13,14
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,BOT,Cadillac,3,SOFT,10,122.4849,-0.6180000000000013,-0.0666666666666666,2,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,COL,Alpine,2,MEDIUM,10,106.7779,0.7732222222222226,-0.2121212121212121,2,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,COL,Alpine,3,MEDIUM,2,106.2555,10.0,0.0,14,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,COL,Alpine,4,SOFT,7,118.82385714285716,1.5891666666666684,0.1071428571428571,1,9
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,GAS,Alpine,2,MEDIUM,7,113.72014285714285,0.9251666666666646,0.2857142857142857,2,9
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,GAS,Alpine,3,MEDIUM,2,114.5375,10.0,0.0,12,13
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,GAS,Alpine,4,SOFT,9,122.55233333333334,-2.5,0.25,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,HAM,Ferrari,1,MEDIUM,7,107.19157142857144,1.0390000000000017,-0.3214285714285715,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,HAM,Ferrari,2,MEDIUM,3,112.627,0.0,-0.5,13,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,HAM,Ferrari,3,SOFT,9,125.69911111111112,1.2760000000000034,0.1333333333333333,2,12
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,HUL,Audi,1,MEDIUM,9,116.20555555555556,1.1054999999999993,-0.0666666666666666,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,HUL,Audi,2,SOFT,2,117.0335,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,HUL,Audi,3,SOFT,3,128.19866666666667,0.0,-0.5,4,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,HUL,Audi,4,SOFT,9,110.78322222222222,0.3898749999999999,0.7166666666666667,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LAW,Red Bull Racing,1,MEDIUM,6,112.28366666666666,1.8537999999999983,-0.0857142857142857,2,8
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LAW,Red Bull Racing,2,SOFT,2,116.754,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LAW,Red Bull Racing,3,SOFT,2,106.657,10.0,0.0,5,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LAW,Red Bull Racing,4,SOFT,8,101.98425,0.6314285714285717,0.6190476190476191,8,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LAW,Red Bull Racing,5,MEDIUM,3,138.889,5.292500000000004,1.0,9,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LEC,Ferrari,1,MEDIUM,13,115.62415384615385,-1.1249166666666663,0.1593406593406593,2,14
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LEC,Ferrari,2,SOFT,3,109.20766666666668,0.0,0.5,2,4
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LEC,Ferrari,3,SOFT,8,121.193375,4.072714285714284,0.4761904761904762,6,13
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LIN,Racing Bulls,1,MEDIUM,10,111.7069,-1.8121111111111088,0.2848484848484848,2,12
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LIN,Racing Bulls,2,SOFT,2,118.719,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LIN,Racing Bulls,3,SOFT,3,127.27,0.0,-0.5,4,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LIN,Racing Bulls,4,SOFT,2,109.4515,10.0,0.0,8,9
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,LIN,Racing Bulls,5,SOFT,5,108.9632,4.14725,0.7,11,16
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,NOR,McLaren,1,MEDIUM,6,110.58116666666666,-0.1128000000000014,-0.3714285714285715,2,8
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,NOR,McLaren,2,MEDIUM,3,106.72700000000002,0.0,0.5,11,13
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,NOR,McLaren,3,SOFT,9,100.30255555555556,0.5967500000000001,0.5166666666666667,2,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,NOR,McLaren,4,MEDIUM,2,127.669,6.268000000000001,0.0,14,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,OCO,Haas F1 Team,1,MEDIUM,2,119.0205,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,OCO,Haas F1 Team,2,MEDIUM,3,114.66233333333334,4.116999999999997,0.5,5,7
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,OCO,Haas F1 Team,3,MEDIUM,4,117.74325,3.333333333333333,0.0,9,12
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,OCO,Haas F1 Team,4,MEDIUM,2,106.1735,10.0,0.0,14,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,OCO,Haas F1 Team,5,SOFT,2,121.3595,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,OCO,Haas F1 Team,6,SOFT,2,118.044,10.0,0.0,5,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,OCO,Haas F1 Team,7,SOFT,3,121.12066666666664,5.5944999999999965,1.0,8,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PER,Cadillac,2,MEDIUM,4,113.65475,-4.12333333333333,-1.0,1,5
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PER,Cadillac,3,MEDIUM,5,114.9816,2.5227499999999985,-0.0999999999999999,8,13
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PER,Cadillac,4,SOFT,2,117.694,10.0,0.0,2,3
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PER,Cadillac,5,SOFT,5,120.1256,5.0,0.4999999999999999,5,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PIA,McLaren,1,MEDIUM,7,117.03014285714286,1.5760000000000003,0.0357142857142857,2,9
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PIA,McLaren,2,MEDIUM,2,118.329,10.0,0.0,11,12
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PIA,McLaren,3,SOFT,5,121.3366,0.0,0.0999999999999999,2,6
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,PIA,McLaren,4,SOFT,3,129.499,4.6370000000000005,0.5,2,4
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,RUS,Mercedes,1,MEDIUM,8,110.302125,0.5094285714285718,-0.2857142857142857,2,11
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,RUS,Mercedes,2,SOFT,6,105.59566666666666,-0.400800000000001,-0.4285714285714286,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,RUS,Mercedes,3,MEDIUM,4,99.8745,0.728666666666669,1.0,13,16
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,SAI,Williams,1,MEDIUM,13,111.76523076923075,0.2933333333333341,-0.3461538461538461,2,17
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,SAI,Williams,2,SOFT,7,112.26114285714286,0.0,0.0,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,SAI,Williams,3,MEDIUM,2,135.8105,-10.0,0.0,18,19
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,STR,Aston Martin,1,MEDIUM,10,118.212,0.7055555555555565,-0.2121212121212121,2,12
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,STR,Aston Martin,2,MEDIUM,2,111.91,10.0,0.0,14,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,STR,Aston Martin,3,SOFT,7,116.99785714285711,-1.422333333333332,0.3928571428571429,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,TSU,Racing Bulls,1,MEDIUM,8,116.796875,1.174428571428572,-0.0238095238095238,2,10
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,TSU,Racing Bulls,2,MEDIUM,3,118.53266666666669,0.0,0.5,12,14
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,TSU,Racing Bulls,3,SOFT,1,120.164,0.0,0.0,2,2
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,VER,Red Bull Racing,1,MEDIUM,5,102.243,1.65925,0.0,2,8
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,VER,Red Bull Racing,2,MEDIUM,6,103.676,2.5212000000000017,0.8285714285714287,10,15
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,VER,Red Bull Racing,3,SOFT,1,94.703,0.0,0.0,2,2
+2026_14_FP1_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP1,VER,Red Bull Racing,4,SOFT,5,127.6568,5.0,0.7,5,10
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ALB,Williams,1,MEDIUM,4,119.3735,3.333333333333333,0.0,2,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ALB,Williams,2,MEDIUM,3,111.199,4.3765,0.5,7,10
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ALB,Williams,3,SOFT,2,121.196,-10.0,0.0,1,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ALB,Williams,4,MEDIUM,7,106.517,1.9386666666666676,0.8928571428571429,12,18
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ALO,Aston Martin,1,MEDIUM,4,108.69175,3.333333333333333,0.0,2,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ALO,Aston Martin,3,SOFT,9,118.34511111111112,-1.1255000000000006,0.5166666666666667,3,11
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ANT,Mercedes,1,MEDIUM,2,107.7405,-10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ANT,Mercedes,2,MEDIUM,1,111.216,0.0,0.0,6,6
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ANT,Mercedes,3,MEDIUM,2,111.1275,10.0,0.0,8,9
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ANT,Mercedes,4,SOFT,1,93.662,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,ANT,Mercedes,6,MEDIUM,7,107.11328571428572,1.819,0.8214285714285715,11,17
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BEA,Haas F1 Team,1,MEDIUM,3,110.093,0.0,-0.5,2,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BEA,Haas F1 Team,2,MEDIUM,1,95.909,0.0,0.0,8,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BEA,Haas F1 Team,3,MEDIUM,3,122.33133333333332,0.0,-0.5,10,12
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BEA,Haas F1 Team,4,SOFT,1,95.203,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BEA,Haas F1 Team,5,MEDIUM,9,110.37344444444444,1.6499999999999968,0.9,14,22
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOR,Audi,1,MEDIUM,1,96.931,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOR,Audi,2,MEDIUM,2,119.194,-10.0,0.0,4,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOR,Audi,3,MEDIUM,4,111.868,3.333333333333333,0.0,7,11
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOR,Audi,4,SOFT,1,95.17,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOR,Audi,5,MEDIUM,6,102.89416666666666,1.5175999999999987,1.0,13,18
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOR,Audi,6,SOFT,3,131.392,5.383500000000005,1.0,4,7
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOT,Cadillac,1,MEDIUM,4,123.06125,3.333333333333333,0.3999999999999999,2,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOT,Cadillac,2,MEDIUM,3,114.08166666666666,0.0,0.5,7,9
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOT,Cadillac,3,SOFT,2,116.13,10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,BOT,Cadillac,4,SOFT,8,112.296125,2.7887142857142857,0.3095238095238095,6,13
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,COL,Alpine,1,MEDIUM,4,102.643,3.447666666666668,0.7999999999999999,2,7
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,COL,Alpine,2,SOFT,1,95.886,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,COL,Alpine,4,MEDIUM,9,108.83944444444444,2.711124999999999,0.4666666666666666,9,18
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,GAS,Alpine,1,MEDIUM,4,107.9215,2.775333333333331,0.1999999999999999,2,7
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,GAS,Alpine,2,SOFT,1,94.959,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,GAS,Alpine,3,MEDIUM,8,106.698625,1.691285714285714,0.9523809523809524,9,18
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HAM,Ferrari,1,MEDIUM,2,95.2085,-0.7669999999999959,0.0,2,4
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HAM,Ferrari,2,MEDIUM,2,101.8175,10.0,0.0,7,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HAM,Ferrari,3,SOFT,2,114.832,10.0,0.0,2,4
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HAM,Ferrari,4,MEDIUM,8,111.441875,2.077999999999999,0.7619047619047621,10,18
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HUL,Audi,1,HARD,5,101.5916,2.2347499999999982,0.0,2,9
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HUL,Audi,2,SOFT,2,119.3145,10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HUL,Audi,3,SOFT,3,114.70266666666669,0.0,0.5,5,7
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,HUL,Audi,4,SOFT,4,118.19975,10.0,1.0,9,13
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LAW,Red Bull Racing,1,MEDIUM,3,113.73133333333334,4.344999999999999,0.5,2,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LAW,Red Bull Racing,2,MEDIUM,2,106.9675,10.0,0.0,7,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LAW,Red Bull Racing,3,SOFT,2,118.677,10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LAW,Red Bull Racing,4,SOFT,1,97.101,0.0,0.0,5,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LAW,Red Bull Racing,5,MEDIUM,2,104.5255,9.125,0.0,10,11
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LAW,Red Bull Racing,6,MEDIUM,2,144.546,-4.871999999999986,0.0,13,15
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LEC,Ferrari,1,MEDIUM,8,118.195375,1.4285714285714286,-0.0952380952380952,2,9
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LEC,Ferrari,2,SOFT,2,116.557,10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LEC,Ferrari,3,SOFT,2,114.7545,-10.0,0.0,4,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LEC,Ferrari,4,SOFT,8,106.973,1.8815714285714296,0.3095238095238095,8,17
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LIN,Racing Bulls,1,MEDIUM,2,95.4305,-0.6629999999999967,0.0,2,4
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LIN,Racing Bulls,2,MEDIUM,3,99.75266666666666,4.945499999999996,0.5,7,10
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,LIN,Racing Bulls,3,SOFT,1,93.89,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,NOR,McLaren,1,MEDIUM,1,120.105,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,OCO,Haas F1 Team,1,MEDIUM,5,113.6494,0.0,-0.3,2,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,OCO,Haas F1 Team,2,MEDIUM,3,121.31933333333332,0.0,-0.5,10,12
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,OCO,Haas F1 Team,3,SOFT,1,94.867,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,OCO,Haas F1 Team,4,SOFT,9,107.54144444444444,2.518625,0.8166666666666667,5,14
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,PER,Cadillac,1,MEDIUM,5,113.5764,2.5507500000000007,0.1999999999999999,2,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,PER,Cadillac,2,SOFT,1,97.195,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,PER,Cadillac,4,MEDIUM,8,109.372125,1.668142857142856,0.3571428571428572,10,19
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,PIA,McLaren,1,MEDIUM,6,117.78766666666664,-0.0945999999999998,-0.0285714285714285,2,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,PIA,McLaren,2,SOFT,4,121.349,3.333333333333333,0.0,2,5
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,PIA,McLaren,3,MEDIUM,7,109.43885714285716,1.338666666666666,0.8571428571428573,10,18
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,RUS,Mercedes,1,MEDIUM,2,121.638,10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,RUS,Mercedes,2,MEDIUM,5,110.7066,-0.1517499999999998,-0.3999999999999999,4,10
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,RUS,Mercedes,3,SOFT,1,100.614,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,RUS,Mercedes,4,SOFT,1,93.999,0.0,0.0,4,4
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,RUS,Mercedes,5,MEDIUM,7,107.47985714285714,1.8845000000000005,0.8571428571428573,12,20
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,SAI,Williams,1,MEDIUM,2,112.7615,10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,SAI,Williams,2,MEDIUM,4,105.344,3.1166666666666694,0.0,5,10
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,SAI,Williams,3,SOFT,2,113.855,-10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,SAI,Williams,4,MEDIUM,5,104.0518,2.232000000000003,1.0,12,16
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,SAI,Williams,5,SOFT,3,134.10866666666666,3.228000000000001,0.5,6,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,STR,Aston Martin,1,MEDIUM,8,118.185,1.4285714285714286,-0.1428571428571428,2,9
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,STR,Aston Martin,2,SOFT,1,97.273,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,STR,Aston Martin,3,SOFT,5,112.1312,2.4105000000000025,0.0999999999999999,7,11
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,TSU,Racing Bulls,1,MEDIUM,4,105.39375,-0.3683333333333347,-0.3999999999999999,2,7
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,TSU,Racing Bulls,2,MEDIUM,2,109.339,10.0,0.0,10,11
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,TSU,Racing Bulls,3,SOFT,1,123.548,0.0,0.0,2,2
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,TSU,Racing Bulls,5,SOFT,9,112.9212222222222,1.0656249999999972,0.4666666666666666,6,15
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,VER,Red Bull Racing,1,MEDIUM,5,107.9876,2.301000000000002,0.0999999999999999,2,8
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,VER,Red Bull Racing,2,SOFT,2,109.493,10.0,0.0,2,3
+2026_14_FP2_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP2,VER,Red Bull Racing,3,SOFT,8,106.29675,1.7767142857142857,0.6904761904761906,5,14
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,ALB,Williams,1,SOFT,1,106.647,0.0,0.0,2,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,ALO,Aston Martin,1,SOFT,7,108.42742857142858,0.0,-0.3571428571428572,2,8
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,ALO,Aston Martin,2,SOFT,2,113.662,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,ALO,Aston Martin,3,SOFT,3,116.67433333333334,0.0,0.5,5,7
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,ANT,Mercedes,1,SOFT,4,120.983,-3.333333333333333,0.6000000000000001,2,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,ANT,Mercedes,2,SOFT,3,101.17266666666669,4.768499999999996,0.5,2,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BEA,Haas F1 Team,1,SOFT,1,94.769,0.0,0.0,2,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BEA,Haas F1 Team,3,SOFT,1,100.028,0.0,0.0,7,7
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BEA,Haas F1 Team,4,SOFT,2,121.8535,-10.0,0.0,1,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BOR,Audi,1,MEDIUM,5,108.3204,2.632999999999999,0.4999999999999999,2,8
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BOR,Audi,2,SOFT,1,94.551,0.0,0.0,2,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BOR,Audi,3,SOFT,1,94.288,0.0,0.0,5,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BOT,Cadillac,1,SOFT,2,122.093,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BOT,Cadillac,2,SOFT,2,112.764,10.0,0.0,5,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,BOT,Cadillac,3,SOFT,4,119.972,3.333333333333333,0.3999999999999999,2,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,COL,Alpine,1,SOFT,2,122.4265,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,COL,Alpine,2,SOFT,3,122.65066666666668,0.0,0.5,5,7
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,COL,Alpine,3,SOFT,2,118.272,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,COL,Alpine,4,SOFT,2,118.3925,10.0,0.0,5,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,GAS,Alpine,1,SOFT,2,112.2705,-10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,GAS,Alpine,2,SOFT,2,107.262,10.0,0.0,7,8
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,GAS,Alpine,3,SOFT,2,125.608,-10.0,0.0,1,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,GAS,Alpine,4,SOFT,1,118.864,0.0,0.0,4,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,HAM,Ferrari,1,SOFT,1,94.284,0.0,0.0,2,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,HAM,Ferrari,2,SOFT,1,143.214,0.0,0.0,4,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,HUL,Audi,1,MEDIUM,7,108.65371428571429,0.0,-0.0714285714285714,2,9
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,HUL,Audi,2,SOFT,2,113.45600000000002,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,LAW,Red Bull Racing,1,HARD,4,118.4885,3.333333333333333,0.7999999999999999,2,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,LAW,Red Bull Racing,2,SOFT,3,108.13633333333333,4.747500000000002,0.5,2,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,LEC,Ferrari,1,SOFT,3,109.28333333333336,4.449499999999993,0.5,2,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,LEC,Ferrari,3,SOFT,5,120.0654,0.0,0.4999999999999999,2,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,LIN,Racing Bulls,1,SOFT,4,112.4325,3.333333333333333,0.0,2,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,LIN,Racing Bulls,2,SOFT,1,148.149,0.0,0.0,1,1
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,NOR,McLaren,1,SOFT,3,111.587,-2.355000000000004,-0.5,2,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,NOR,McLaren,2,SOFT,3,97.30833333333334,-4.926000000000002,-0.5,2,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,OCO,Haas F1 Team,1,SOFT,2,119.694,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,OCO,Haas F1 Team,3,SOFT,1,101.232,0.0,0.0,8,8
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,OCO,Haas F1 Team,4,SOFT,3,126.618,0.0,0.5,1,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,PER,Cadillac,1,SOFT,1,97.916,0.0,0.0,2,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,PER,Cadillac,2,SOFT,2,122.6835,-10.0,0.0,4,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,PER,Cadillac,3,SOFT,2,116.3245,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,PER,Cadillac,4,SOFT,1,96.441,0.0,0.0,5,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,PIA,McLaren,1,SOFT,3,126.242,0.0,0.5,2,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,PIA,McLaren,2,SOFT,2,118.21699999999998,10.0,0.0,2,3
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,PIA,McLaren,3,SOFT,1,92.986,0.0,0.0,5,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,RUS,Mercedes,1,SOFT,3,131.79166666666666,0.0,0.5,2,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,RUS,Mercedes,2,SOFT,2,93.53,0.0620000000000118,0.0,2,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,SAI,Williams,1,SOFT,3,113.25399999999998,10.0,1.0,2,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,SAI,Williams,2,SOFT,2,121.938,-10.0,0.0,6,7
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,SAI,Williams,4,SOFT,4,114.63375,-3.333333333333333,-0.7999999999999999,1,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,STR,Aston Martin,1,SOFT,3,105.16433333333332,4.792000000000002,0.5,2,6
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,STR,Aston Martin,2,SOFT,2,95.5725,-0.0050000000000096,0.0,2,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,TSU,Racing Bulls,1,SOFT,2,109.065,10.0,0.0,2,4
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,TSU,Racing Bulls,2,SOFT,2,105.5435,10.0,0.0,7,8
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,TSU,Racing Bulls,3,SOFT,2,119.971,-10.0,0.0,1,2
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,VER,Red Bull Racing,2,SOFT,2,101.2935,10.0,0.0,4,5
+2026_14_FP3_Spanish Grand Prix,2026,14,Spanish Grand Prix,FP3,VER,Red Bull Racing,3,SOFT,2,110.892,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ALB,Williams,1,SOFT,2,107.9335,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ALB,Williams,2,SOFT,3,121.19733333333332,0.0,-0.5,1,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ALB,Williams,3,SOFT,2,108.498,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ALB,Williams,4,SOFT,2,106.745,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ALB,Williams,5,SOFT,1,110.981,0.0,0.0,5,5
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ALO,Aston Martin,1,SOFT,5,108.2806,0.0,-0.0999999999999999,2,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ALO,Aston Martin,2,SOFT,2,109.5885,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ANT,Mercedes,1,SOFT,2,110.859,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ANT,Mercedes,2,SOFT,2,123.8065,-10.0,0.0,4,5
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ANT,Mercedes,3,SOFT,2,107.3985,10.0,0.0,7,8
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ANT,Mercedes,4,SOFT,2,109.486,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ANT,Mercedes,5,SOFT,2,109.4065,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ANT,Mercedes,6,SOFT,2,105.484,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,ANT,Mercedes,7,SOFT,2,116.037,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,BOR,Audi,1,SOFT,2,116.261,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,BOR,Audi,2,SOFT,2,101.257,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,BOR,Audi,3,SOFT,2,110.587,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,BOR,Audi,4,SOFT,2,115.748,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,BOT,Cadillac,1,SOFT,2,105.976,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,BOT,Cadillac,2,SOFT,2,125.466,-10.0,0.0,1,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,BOT,Cadillac,3,SOFT,2,122.652,-8.198000000000008,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,COL,Alpine,1,SOFT,2,115.0875,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,COL,Alpine,2,SOFT,2,111.639,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,COL,Alpine,3,SOFT,1,113.19,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,COL,Alpine,4,SOFT,2,110.649,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,COL,Alpine,5,SOFT,2,110.883,10.0,0.0,4,5
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,COL,Alpine,6,SOFT,2,114.272,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,GAS,Alpine,1,SOFT,2,113.972,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,GAS,Alpine,2,SOFT,2,111.733,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,GAS,Alpine,3,SOFT,1,125.337,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,GAS,Alpine,4,SOFT,2,114.0185,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HAM,Ferrari,1,MEDIUM,5,118.0696,4.667999999999999,-0.0999999999999999,2,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HAM,Ferrari,2,SOFT,8,117.596,1.7304285714285714,-0.0952380952380952,2,9
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HAM,Ferrari,3,SOFT,2,104.583,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HAM,Ferrari,4,SOFT,1,92.013,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HUL,Audi,1,SOFT,2,111.614,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HUL,Audi,2,SOFT,2,124.559,-10.0,0.0,4,5
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HUL,Audi,3,SOFT,1,120.945,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HUL,Audi,4,SOFT,2,106.769,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,HUL,Audi,5,SOFT,2,110.163,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LAW,Red Bull Racing,1,SOFT,2,109.298,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LAW,Red Bull Racing,2,SOFT,2,109.51,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LAW,Red Bull Racing,3,SOFT,2,107.6735,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LAW,Red Bull Racing,4,SOFT,2,108.505,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LAW,Red Bull Racing,5,SOFT,2,105.619,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LAW,Red Bull Racing,6,SOFT,1,92.316,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LEC,Ferrari,1,MEDIUM,5,116.3108,2.193249999999999,-0.1999999999999999,2,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LEC,Ferrari,2,SOFT,8,115.57475,2.094142857142856,0.2380952380952381,2,9
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LEC,Ferrari,3,SOFT,2,106.289,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LEC,Ferrari,4,SOFT,2,117.242,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LIN,Racing Bulls,1,SOFT,5,116.831,0.6797500000000056,0.0999999999999999,2,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LIN,Racing Bulls,2,SOFT,2,108.002,10.0,0.0,8,9
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LIN,Racing Bulls,3,SOFT,2,106.957,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LIN,Racing Bulls,4,SOFT,2,107.27,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LIN,Racing Bulls,5,SOFT,2,103.2065,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,LIN,Racing Bulls,6,SOFT,1,93.041,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,NOR,McLaren,1,SOFT,3,113.51999999999998,0.0,0.5,2,4
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,NOR,McLaren,2,SOFT,2,109.2405,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,NOR,McLaren,3,SOFT,2,105.9215,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,NOR,McLaren,4,SOFT,2,107.5095,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,NOR,McLaren,5,SOFT,2,106.8475,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,NOR,McLaren,6,SOFT,2,111.322,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,2,108.8655,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,1,114.239,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,105.648,10.0,0.0,4,5
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,OCO,Haas F1 Team,4,SOFT,2,109.433,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PER,Cadillac,1,SOFT,2,108.8335,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PER,Cadillac,2,SOFT,2,108.406,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PER,Cadillac,3,SOFT,2,111.672,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PIA,McLaren,1,SOFT,9,116.406,-2.175625,-0.3333333333333333,2,10
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PIA,McLaren,2,SOFT,2,109.029,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PIA,McLaren,3,SOFT,2,116.164,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PIA,McLaren,4,SOFT,2,104.1865,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,PIA,McLaren,5,SOFT,2,113.8735,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,RUS,Mercedes,1,SOFT,2,118.062,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,RUS,Mercedes,2,SOFT,3,113.60733333333332,0.0,0.5,7,9
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,RUS,Mercedes,3,SOFT,2,105.433,10.0,0.0,9,10
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,RUS,Mercedes,4,SOFT,2,110.524,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,RUS,Mercedes,5,SOFT,2,110.14,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,RUS,Mercedes,6,SOFT,2,106.21,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,RUS,Mercedes,7,SOFT,1,92.149,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,SAI,Williams,1,SOFT,2,113.8055,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,SAI,Williams,2,SOFT,3,123.388,0.0,-0.5,1,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,SAI,Williams,3,SOFT,2,114.498,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,STR,Aston Martin,1,SOFT,1,103.709,0.0,0.0,2,2
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,TSU,Racing Bulls,1,SOFT,5,116.38960000000002,3.4907500000000056,0.1999999999999999,2,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,TSU,Racing Bulls,2,SOFT,2,110.3905,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,TSU,Racing Bulls,3,SOFT,2,107.373,10.0,0.0,5,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,TSU,Racing Bulls,4,SOFT,2,110.937,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,VER,Red Bull Racing,1,MEDIUM,5,116.7076,1.6450000000000031,-0.1999999999999999,2,6
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,108.003,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,VER,Red Bull Racing,3,SOFT,2,109.4695,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,101.184,10.0,0.0,2,3
+2026_14_Q_Spanish Grand Prix,2026,14,Spanish Grand Prix,Q,VER,Red Bull Racing,5,SOFT,2,111.8995,10.0,0.0,2,3
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,ALB,Williams,1,MEDIUM,14,106.00042857142856,0.1950769230769231,-0.3054945054945055,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,ALB,Williams,2,HARD,42,101.5704761904762,-0.2357073170731707,-0.5181913945385301,1,42
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,ALO,Aston Martin,1,HARD,14,106.79564285714284,-0.0680769230769234,-0.3098901098901099,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,ALO,Aston Martin,2,SOFT,23,103.1101304347826,-0.2766818181818183,-0.1324110671936759,1,23
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,ALO,Aston Martin,3,HARD,18,101.71433333333334,-0.5084117647058823,0.1847265221878225,1,18
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,ANT,Mercedes,1,MEDIUM,14,100.4342142857143,0.031307692307692,-0.3934065934065934,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,ANT,Mercedes,2,HARD,43,99.0156976744186,-0.2725476190476191,-0.7234492397650427,1,43
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BEA,Haas F1 Team,1,HARD,33,103.72151515151516,-0.6550625000000001,-0.8736631016042781,1,33
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BEA,Haas F1 Team,2,MEDIUM,10,102.51590000000002,-0.7328888888888893,0.4424242424242424,1,10
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BEA,Haas F1 Team,3,HARD,13,100.44215384615384,-0.8330833333333333,0.0824175824175824,1,13
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BOR,Audi,1,HARD,47,101.74334042553193,-0.2419130434782611,-0.7169287696577243,1,47
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BOR,Audi,2,SOFT,9,101.134,-0.9806250000000016,0.2666666666666666,1,9
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BOT,Cadillac,1,HARD,29,106.0213448275862,-0.5521428571428564,-0.3866995073891625,1,29
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BOT,Cadillac,2,HARD,14,105.13585714285716,-0.5889999999999997,0.2131868131868131,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,BOT,Cadillac,3,SOFT,11,106.04354545454544,-0.5211999999999989,-0.1090909090909091,1,11
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,COL,Alpine,1,MEDIUM,14,104.276,0.4508461538461542,0.2131868131868131,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,COL,Alpine,2,HARD,43,99.95746511627908,-0.2697619047619047,-0.6751736635457566,1,43
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,GAS,Alpine,1,HARD,55,101.16103636363636,-0.1541481481481481,-0.6460317460317462,1,55
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,GAS,Alpine,2,SOFT,1,121.049,0.0,0.0,1,1
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,HAM,Ferrari,1,SOFT,6,109.19533333333334,3.501599999999999,0.6,1,6
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,HUL,Audi,1,SOFT,14,104.645,0.2536923076923078,-0.2571428571428571,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,HUL,Audi,2,HARD,42,100.23861904761904,-0.2629756097560974,-0.5006887610404344,1,42
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,LAW,Red Bull Racing,1,HARD,44,101.23795454545456,0.0021627906976745,-0.780831571529246,1,44
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,LAW,Red Bull Racing,2,MEDIUM,13,99.6946153846154,-0.8405833333333325,0.0714285714285714,1,13
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,LEC,Ferrari,1,HARD,48,99.92397916666664,0.1171702127659572,-0.8030829353017804,1,48
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,LEC,Ferrari,2,SOFT,9,99.61322222222222,-1.0142500000000003,0.1666666666666666,1,9
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,LIN,Racing Bulls,1,MEDIUM,14,104.43142857142855,0.3741538461538465,0.1164835164835165,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,LIN,Racing Bulls,2,HARD,42,100.28861904761904,-0.2597317073170732,-0.4143100234989061,1,42
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,NOR,McLaren,1,MEDIUM,15,102.80066666666669,0.6083571428571426,-0.15,1,15
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,NOR,McLaren,2,HARD,42,98.25792857142856,-0.2748292682926829,-0.7706830888906897,1,42
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,OCO,Haas F1 Team,1,MEDIUM,14,104.60457142857146,0.2989230769230777,-0.0945054945054945,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,OCO,Haas F1 Team,2,HARD,42,100.34364285714284,-0.284731707317073,-0.6706911919617535,1,42
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,PER,Cadillac,1,MEDIUM,14,106.55335714285717,0.2433846153846155,0.0461538461538461,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,PER,Cadillac,2,HARD,17,105.19011764705884,0.4000000000000003,0.5000000000000001,1,17
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,PIA,McLaren,1,HARD,42,101.39180952380951,-0.1452682926829265,-0.7838100640142615,1,42
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,PIA,McLaren,2,MEDIUM,15,100.0758,-0.6978571428571436,-0.35,1,15
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,RUS,Mercedes,1,HARD,14,101.52642857142858,0.2863846153846153,-0.5428571428571429,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,RUS,Mercedes,2,MEDIUM,14,102.08214285714284,-0.5339230769230772,0.2659340659340659,1,14
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,RUS,Mercedes,3,HARD,29,98.0366551724138,-0.3711785714285714,-0.643349753694581,1,29
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,SAI,Williams,1,HARD,23,105.5115652173913,-0.7673636363636366,-0.5790513833992095,1,23
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,SAI,Williams,2,MEDIUM,8,108.3265,-0.4399999999999998,0.2380952380952381,1,8
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,SAI,Williams,3,HARD,12,104.61416666666668,-0.2746363636363637,0.1048951048951049,1,12
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,STR,Aston Martin,1,HARD,12,105.11858333333332,-0.9081818181818178,-0.8811188811188813,1,12
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,TSU,Racing Bulls,1,HARD,36,103.25658333333334,-0.4878285714285714,-0.8483912483912485,1,36
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,TSU,Racing Bulls,2,MEDIUM,20,100.33400000000002,-0.5290526315789478,-0.7263157894736841,1,20
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,VER,Red Bull Racing,1,SOFT,14,101.00521428571427,0.2260000000000001,-0.4461538461538462,4,17
+2026_14_R_Spanish Grand Prix,2026,14,Spanish Grand Prix,R,VER,Red Bull Racing,2,HARD,43,98.93097674418604,-0.2869761904761904,-0.9137312650450664,1,43

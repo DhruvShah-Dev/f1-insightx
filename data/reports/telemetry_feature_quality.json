@@ -3,10 +3,10 @@
     "start": 2020,
     "end": 2026
   },
-  "sessions_considered": 46,
+  "sessions_considered": 51,
   "sessions_processed": 46,
   "sessions_skipped_non_complete": 0,
-  "sessions_missing_telemetry": 0,
+  "sessions_missing_telemetry": 5,
   "sessions_missing_position": 1,
   "sessions_failed": [],
   "row_counts": {

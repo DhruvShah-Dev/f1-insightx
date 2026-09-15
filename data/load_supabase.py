@@ -13,44 +13,153 @@ from f1_insightx_data.settings import ROOT_DIR, load_settings
 
 
 TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
-    ("drivers", "drivers.csv", ["id", "driver_code", "permanent_number", "first_name", "last_name", "full_name", "nationality", "date_of_birth"]),
-    ("constructors", "constructors.csv", ["id", "constructor_code", "name", "nationality"]),
+    (
+        "drivers",
+        "drivers.csv",
+        [
+            "id",
+            "driver_code",
+            "permanent_number",
+            "first_name",
+            "last_name",
+            "full_name",
+            "nationality",
+            "date_of_birth",
+        ],
+    ),
+    (
+        "constructors",
+        "constructors.csv",
+        ["id", "constructor_code", "name", "nationality"],
+    ),
     (
         "circuits",
         "circuits.csv",
-        ["id", "circuit_code", "name", "location", "country", "lat", "lng", "altitude_m", "track_length_km", "high_speed_bias", "overtake_difficulty", "tire_degradation_bias"],
+        [
+            "id",
+            "circuit_code",
+            "name",
+            "location",
+            "country",
+            "lat",
+            "lng",
+            "altitude_m",
+            "track_length_km",
+            "high_speed_bias",
+            "overtake_difficulty",
+            "tire_degradation_bias",
+        ],
     ),
-    ("races", "races.csv", ["id", "season", "round", "race_name", "official_name", "circuit_id", "scheduled_at", "sprint_weekend"]),
+    (
+        "races",
+        "races.csv",
+        [
+            "id",
+            "season",
+            "round",
+            "race_name",
+            "official_name",
+            "circuit_id",
+            "scheduled_at",
+            "sprint_weekend",
+        ],
+    ),
     (
         "qualifying_results",
         "qualifying_results.csv",
-        ["id", "race_id", "driver_id", "constructor_id", "position", "q1_time_ms", "q2_time_ms", "q3_time_ms", "status"],
+        [
+            "id",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "position",
+            "q1_time_ms",
+            "q2_time_ms",
+            "q3_time_ms",
+            "status",
+        ],
     ),
     (
         "race_results",
         "race_results.csv",
-        ["id", "race_id", "driver_id", "constructor_id", "grid_position", "finish_position", "finish_status", "points", "laps_completed", "fastest_lap_rank"],
+        [
+            "id",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "grid_position",
+            "finish_position",
+            "finish_status",
+            "points",
+            "laps_completed",
+            "fastest_lap_rank",
+        ],
     ),
     (
         "sprint_results",
         "sprint_results.csv",
-        ["id", "race_id", "driver_id", "constructor_id", "grid_position", "finish_position", "finish_status", "points", "laps_completed"],
+        [
+            "id",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "grid_position",
+            "finish_position",
+            "finish_status",
+            "points",
+            "laps_completed",
+        ],
     ),
     (
         "strategy_profiles",
         "strategy_profiles.csv",
-        ["id", "race_id", "driver_id", "expected_pit_stops", "tire_management_score", "overtake_score", "reliability_score", "wet_weather_score", "safety_car_gain_score"],
+        [
+            "id",
+            "race_id",
+            "driver_id",
+            "expected_pit_stops",
+            "tire_management_score",
+            "overtake_score",
+            "reliability_score",
+            "wet_weather_score",
+            "safety_car_gain_score",
+        ],
     ),
-    ("fantasy_pricing", "fantasy_pricing.csv", ["id", "season", "round", "entity_type", "entity_id", "price", "source_label"]),
+    (
+        "fantasy_pricing",
+        "fantasy_pricing.csv",
+        ["id", "season", "round", "entity_type", "entity_id", "price", "source_label"],
+    ),
     (
         "driver_standings",
         "driver_standings.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "standing_position", "points", "wins", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "standing_position",
+            "points",
+            "wins",
+            "source_label",
+        ],
     ),
     (
         "constructor_standings",
         "constructor_standings.csv",
-        ["id", "season", "round", "race_id", "constructor_id", "standing_position", "points", "wins", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "constructor_id",
+            "standing_position",
+            "points",
+            "wins",
+            "source_label",
+        ],
     ),
     (
         "race_week_context",
@@ -261,7 +370,17 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "sessions",
         "canonical_fastf1/sessions.csv",
-        ["id", "race_id", "season", "round", "session_code", "session_name", "event_name", "scheduled_at", "source_label"],
+        [
+            "id",
+            "race_id",
+            "season",
+            "round",
+            "session_code",
+            "session_name",
+            "event_name",
+            "scheduled_at",
+            "source_label",
+        ],
     ),
     (
         "event_entries",
@@ -271,212 +390,799 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "session_results",
         "canonical_fastf1/session_results.csv",
-        ["id", "session_id", "event_entry_id", "race_id", "driver_id", "constructor_id", "classification_position", "grid_position", "finish_position", "points", "status", "laps_completed", "fastest_lap_rank", "source_label"],
+        [
+            "id",
+            "session_id",
+            "event_entry_id",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "classification_position",
+            "grid_position",
+            "finish_position",
+            "points",
+            "status",
+            "laps_completed",
+            "fastest_lap_rank",
+            "source_label",
+        ],
     ),
     (
         "session_laps",
         "canonical_fastf1/session_laps.csv",
-        ["id", "session_id", "event_entry_id", "race_id", "driver_id", "constructor_id", "lap_number", "stint_number", "compound", "tyre_life", "lap_time_s", "sector_1_s", "sector_2_s", "sector_3_s", "top_speed_kph", "track_status", "fresh_tyre", "is_personal_best", "is_accurate", "deleted", "lap_start_time", "position", "air_temp_c", "track_temp_c", "humidity_pct", "rainfall", "wind_speed_mps", "wind_direction_deg", "source_label"],
+        [
+            "id",
+            "session_id",
+            "event_entry_id",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "lap_number",
+            "stint_number",
+            "compound",
+            "tyre_life",
+            "lap_time_s",
+            "sector_1_s",
+            "sector_2_s",
+            "sector_3_s",
+            "top_speed_kph",
+            "track_status",
+            "fresh_tyre",
+            "is_personal_best",
+            "is_accurate",
+            "deleted",
+            "lap_start_time",
+            "position",
+            "air_temp_c",
+            "track_temp_c",
+            "humidity_pct",
+            "rainfall",
+            "wind_speed_mps",
+            "wind_direction_deg",
+            "source_label",
+        ],
     ),
     (
         "session_stints",
         "canonical_fastf1/session_stints.csv",
-        ["id", "session_id", "event_entry_id", "race_id", "driver_id", "constructor_id", "stint_number", "compound", "lap_count", "mean_lap_time_s", "degradation_per_lap_s", "degradation_index", "start_tyre_life", "end_tyre_life", "session_code", "source_label"],
+        [
+            "id",
+            "session_id",
+            "event_entry_id",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "stint_number",
+            "compound",
+            "lap_count",
+            "mean_lap_time_s",
+            "degradation_per_lap_s",
+            "degradation_index",
+            "start_tyre_life",
+            "end_tyre_life",
+            "session_code",
+            "source_label",
+        ],
     ),
     (
         "session_weather",
         "canonical_fastf1/session_weather.csv",
-        ["id", "session_id", "race_id", "sample_order", "sample_time", "air_temp_c", "track_temp_c", "humidity_pct", "pressure_hpa", "rainfall", "wind_speed_mps", "wind_direction_deg", "source_label"],
+        [
+            "id",
+            "session_id",
+            "race_id",
+            "sample_order",
+            "sample_time",
+            "air_temp_c",
+            "track_temp_c",
+            "humidity_pct",
+            "pressure_hpa",
+            "rainfall",
+            "wind_speed_mps",
+            "wind_direction_deg",
+            "source_label",
+        ],
     ),
     (
         "session_features",
         "race_week/session_features.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "fp1_pace_s", "fp2_pace_s", "fp3_pace_s", "quali_pace_s", "fp2_long_run_pace_s", "lap_variance_s", "session_trend_delta_s", "session_completeness", "signal_confidence", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "fp1_pace_s",
+            "fp2_pace_s",
+            "fp3_pace_s",
+            "quali_pace_s",
+            "fp2_long_run_pace_s",
+            "lap_variance_s",
+            "session_trend_delta_s",
+            "session_completeness",
+            "signal_confidence",
+            "source_label",
+        ],
     ),
     (
         "driver_features",
         "race_week/driver_features.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "avg_race_pace_s", "fp2_long_run_pace_s", "lap_variance_s", "consistency_score", "quali_pace_s", "race_vs_quali_delta_s", "tyre_degradation_slope", "avg_finish_position_recent", "avg_qualifying_position_recent", "track_affinity_score", "teammate_delta_s", "reliability_score", "avg_quali_yoy_delta_s", "form_bias_score", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "avg_race_pace_s",
+            "fp2_long_run_pace_s",
+            "lap_variance_s",
+            "consistency_score",
+            "quali_pace_s",
+            "race_vs_quali_delta_s",
+            "tyre_degradation_slope",
+            "avg_finish_position_recent",
+            "avg_qualifying_position_recent",
+            "track_affinity_score",
+            "teammate_delta_s",
+            "reliability_score",
+            "avg_quali_yoy_delta_s",
+            "form_bias_score",
+            "source_label",
+        ],
     ),
     (
         "constructor_features",
         "race_week/constructor_features.csv",
-        ["id", "season", "round", "race_id", "constructor_id", "team_pace_s", "long_run_pace_s", "quali_pace_s", "degradation_profile", "reliability_score", "track_affinity_score", "avg_finish_position_recent", "strategy_tendency_score", "strategy_confidence", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "constructor_id",
+            "team_pace_s",
+            "long_run_pace_s",
+            "quali_pace_s",
+            "degradation_profile",
+            "reliability_score",
+            "track_affinity_score",
+            "avg_finish_position_recent",
+            "strategy_tendency_score",
+            "strategy_confidence",
+            "source_label",
+        ],
     ),
     (
         "race_context_features",
         "race_week/race_context_features.csv",
-        ["id", "season", "round", "race_id", "circuit_id", "archetype_label", "high_speed_bias", "overtake_difficulty", "tire_degradation_bias", "weather_risk_index", "safety_car_probability", "strategic_complexity_score", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "circuit_id",
+            "archetype_label",
+            "high_speed_bias",
+            "overtake_difficulty",
+            "tire_degradation_bias",
+            "weather_risk_index",
+            "safety_car_probability",
+            "strategic_complexity_score",
+            "source_label",
+        ],
     ),
     (
         "driver_signals",
         "race_week/driver_signals.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "form_signal", "consistency_signal", "racecraft_signal", "fp2_race_pace_signal", "quali_signal", "quali_delta_signal", "form_bias_signal", "trend_signal", "track_affinity_signal", "overall_signal", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "form_signal",
+            "consistency_signal",
+            "racecraft_signal",
+            "fp2_race_pace_signal",
+            "quali_signal",
+            "quali_delta_signal",
+            "form_bias_signal",
+            "trend_signal",
+            "track_affinity_signal",
+            "overall_signal",
+            "source_label",
+        ],
     ),
     (
         "constructor_signals",
         "race_week/constructor_signals.csv",
-        ["id", "season", "round", "race_id", "constructor_id", "pace_strength_signal", "degradation_strength_signal", "reliability_signal", "strategy_signal", "track_affinity_signal", "overall_signal", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "constructor_id",
+            "pace_strength_signal",
+            "degradation_strength_signal",
+            "reliability_signal",
+            "strategy_signal",
+            "track_affinity_signal",
+            "overall_signal",
+            "source_label",
+        ],
     ),
     (
         "race_context_signals",
         "race_week/race_context_signals.csv",
-        ["id", "season", "round", "race_id", "strategic_complexity_signal", "weather_signal", "safety_car_signal", "overtaking_signal", "high_speed_signal", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "strategic_complexity_signal",
+            "weather_signal",
+            "safety_car_signal",
+            "overtaking_signal",
+            "high_speed_signal",
+            "source_label",
+        ],
     ),
     (
         "race_week_confidence",
         "race_week/race_week_confidence.csv",
-        ["id", "season", "round", "race_id", "entity_type", "entity_id", "completeness_score", "agreement_score", "sample_score", "strength_score", "confidence_score", "confidence_band", "rationale", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "entity_type",
+            "entity_id",
+            "completeness_score",
+            "agreement_score",
+            "sample_score",
+            "strength_score",
+            "confidence_score",
+            "confidence_band",
+            "rationale",
+            "source_label",
+        ],
     ),
     (
         "session_pace_summary",
         "race_week/session_pace_summary.csv",
-        ["id", "season", "round", "race_id", "session_id", "session_code", "driver_id", "constructor_id", "representative_lap_s", "best_lap_s", "long_run_lap_s", "long_run_degradation_s", "gap_to_session_best_s", "pace_rank", "gap_to_teammate_s", "top_speed_kph", "air_temp_c", "track_temp_c", "rainfall_flag", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "session_id",
+            "session_code",
+            "driver_id",
+            "constructor_id",
+            "representative_lap_s",
+            "best_lap_s",
+            "long_run_lap_s",
+            "long_run_degradation_s",
+            "gap_to_session_best_s",
+            "pace_rank",
+            "gap_to_teammate_s",
+            "top_speed_kph",
+            "air_temp_c",
+            "track_temp_c",
+            "rainfall_flag",
+            "source_label",
+        ],
     ),
     (
         "session_year_over_year_deltas",
         "race_week/session_year_over_year_deltas.csv",
-        ["id", "season", "round", "race_id", "circuit_id", "session_code", "driver_id", "constructor_id", "comparison_season", "comparison_race_id", "current_gap_s", "prior_gap_s", "delta_gap_s", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "circuit_id",
+            "session_code",
+            "driver_id",
+            "constructor_id",
+            "comparison_season",
+            "comparison_race_id",
+            "current_gap_s",
+            "prior_gap_s",
+            "delta_gap_s",
+            "source_label",
+        ],
     ),
     (
         "qualifying_driver_deltas",
         "race_week/qualifying_driver_deltas.csv",
-        ["id", "season", "round", "race_id", "circuit_id", "delta_type", "driver_id", "comparison_driver_id", "constructor_id", "comparison_constructor_id", "current_quali_gap_s", "comparison_quali_gap_s", "pairwise_delta_gap_s", "avg_quali_yoy_delta_s", "source_sample_size", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "circuit_id",
+            "delta_type",
+            "driver_id",
+            "comparison_driver_id",
+            "constructor_id",
+            "comparison_constructor_id",
+            "current_quali_gap_s",
+            "comparison_quali_gap_s",
+            "pairwise_delta_gap_s",
+            "avg_quali_yoy_delta_s",
+            "source_sample_size",
+            "source_label",
+        ],
     ),
     (
         "spain_qualifying_prediction",
         "race_week/spain_qualifying_prediction.csv",
-        ["id", "season", "round", "race_id", "prediction_mode", "mode_label", "included_sessions", "mode_status", "driver_id", "constructor_id", "predicted_q_rank", "predicted_q_time_s", "predicted_q_gap_s", "base_pole_s", "season_delta_26_vs_25_s", "track_residual_s", "recent_quali_gap_s", "same_circuit_gap_s", "constructor_quali_gap_s", "race_week_delta_gap_s", "driver_gap_delta_s", "constructor_gap_delta_s", "form_bias_score", "track_fit_gap_s", "blend_recent_weight", "blend_same_circuit_weight", "blend_constructor_weight", "blend_driver_delta_weight", "blend_constructor_delta_weight", "blend_race_week_weight", "blend_track_fit_weight", "source_usefulness_score", "source_usefulness_rank", "quality_note", "confidence_score", "clamped_prediction", "missing_flags", "baseline_method", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "prediction_mode",
+            "mode_label",
+            "included_sessions",
+            "mode_status",
+            "driver_id",
+            "constructor_id",
+            "predicted_q_rank",
+            "predicted_q_time_s",
+            "predicted_q_gap_s",
+            "base_pole_s",
+            "season_delta_26_vs_25_s",
+            "track_residual_s",
+            "recent_quali_gap_s",
+            "same_circuit_gap_s",
+            "constructor_quali_gap_s",
+            "race_week_delta_gap_s",
+            "driver_gap_delta_s",
+            "constructor_gap_delta_s",
+            "form_bias_score",
+            "track_fit_gap_s",
+            "blend_recent_weight",
+            "blend_same_circuit_weight",
+            "blend_constructor_weight",
+            "blend_driver_delta_weight",
+            "blend_constructor_delta_weight",
+            "blend_race_week_weight",
+            "blend_track_fit_weight",
+            "source_usefulness_score",
+            "source_usefulness_rank",
+            "quality_note",
+            "confidence_score",
+            "clamped_prediction",
+            "missing_flags",
+            "baseline_method",
+            "source_label",
+        ],
     ),
     (
         "prediction_signal_quality",
         "race_week/prediction_signal_quality.csv",
-        ["id", "season", "round", "race_id", "prediction_mode", "signal_key", "usefulness_rank", "usefulness_score", "coverage_rate", "evidence_rows", "quality_band", "recommendation", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "prediction_mode",
+            "signal_key",
+            "usefulness_rank",
+            "usefulness_score",
+            "coverage_rate",
+            "evidence_rows",
+            "quality_band",
+            "recommendation",
+            "source_label",
+        ],
     ),
     (
         "fp2_long_run_summary",
         "race_week/fp2_long_run_summary.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "representative_long_run_pace_s", "gap_to_best_s", "degradation_per_lap_s", "lap_sample_size", "compound", "signal_confidence", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "representative_long_run_pace_s",
+            "gap_to_best_s",
+            "degradation_per_lap_s",
+            "lap_sample_size",
+            "compound",
+            "signal_confidence",
+            "source_label",
+        ],
     ),
     (
         "stint_degradation_summary",
         "race_week/stint_degradation_summary.csv",
-        ["id", "season", "round", "race_id", "session_code", "driver_id", "constructor_id", "compound", "avg_lap_count", "avg_degradation_per_lap_s", "avg_tyre_life", "degradation_risk", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "session_code",
+            "driver_id",
+            "constructor_id",
+            "compound",
+            "avg_lap_count",
+            "avg_degradation_per_lap_s",
+            "avg_tyre_life",
+            "degradation_risk",
+            "source_label",
+        ],
     ),
     (
         "weather_risk_summary",
         "race_week/weather_risk_summary.csv",
-        ["id", "season", "round", "race_id", "rainfall_probability", "track_temp_mean_c", "track_temp_volatility_c", "wind_speed_mean_mps", "weather_risk_index", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "rainfall_probability",
+            "track_temp_mean_c",
+            "track_temp_volatility_c",
+            "wind_speed_mean_mps",
+            "weather_risk_index",
+            "source_label",
+        ],
     ),
     (
         "driver_race_week_features",
         "race_week/driver_race_week_features.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "session_completeness", "fp2_long_run_pace_s", "fp2_degradation_s_per_lap", "one_lap_pace_s", "one_lap_session_code", "recent_pace_rank", "gap_to_best_s", "teammate_delta_s", "reliability_index", "weather_risk_index", "readiness_score", "signal_confidence", "overperforming_delta", "projected_finish", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "session_completeness",
+            "fp2_long_run_pace_s",
+            "fp2_degradation_s_per_lap",
+            "one_lap_pace_s",
+            "one_lap_session_code",
+            "recent_pace_rank",
+            "gap_to_best_s",
+            "teammate_delta_s",
+            "reliability_index",
+            "weather_risk_index",
+            "readiness_score",
+            "signal_confidence",
+            "overperforming_delta",
+            "projected_finish",
+            "source_label",
+        ],
     ),
     (
         "constructor_race_week_features",
         "race_week/constructor_race_week_features.csv",
-        ["id", "season", "round", "race_id", "constructor_id", "two_car_long_run_pace_s", "two_car_one_lap_pace_s", "degradation_index", "reliability_index", "weather_risk_index", "readiness_score", "signal_confidence", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "constructor_id",
+            "two_car_long_run_pace_s",
+            "two_car_one_lap_pace_s",
+            "degradation_index",
+            "reliability_index",
+            "weather_risk_index",
+            "readiness_score",
+            "signal_confidence",
+            "source_label",
+        ],
     ),
     (
         "weekend_readiness_summary",
         "race_week/weekend_readiness_summary.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "readiness_score", "signal_confidence", "readiness_rank", "rationale", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "readiness_score",
+            "signal_confidence",
+            "readiness_rank",
+            "rationale",
+            "source_label",
+        ],
     ),
     (
         "standings_context_snapshot",
         "race_week/standings_context_snapshot.csv",
-        ["id", "season", "round", "race_id", "entity_type", "entity_id", "constructor_id", "standing_position", "points", "wins", "source_race_id", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "entity_type",
+            "entity_id",
+            "constructor_id",
+            "standing_position",
+            "points",
+            "wins",
+            "source_race_id",
+            "source_label",
+        ],
     ),
     (
         "race_week_storylines",
         "race_week/race_week_storylines.csv",
-        ["id", "season", "round", "race_id", "entity_type", "entity_id", "storyline_type", "priority_rank", "headline", "body", "confidence_band", "signal_confidence", "source_title", "source_url", "published_at", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "entity_type",
+            "entity_id",
+            "storyline_type",
+            "priority_rank",
+            "headline",
+            "body",
+            "confidence_band",
+            "signal_confidence",
+            "source_title",
+            "source_url",
+            "published_at",
+            "source_label",
+        ],
     ),
     (
         "race_week_overview",
         "race_week/race_week_overview.csv",
-        ["id", "season", "round", "race_id", "race_name", "circuit_id", "circuit_name", "scheduled_at", "status", "sprint_weekend", "latest_completed_race_id", "archetype_label", "strategy_difficulty", "weather_risk_index", "signal_confidence", "generated_at", "build_version", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "race_name",
+            "circuit_id",
+            "circuit_name",
+            "scheduled_at",
+            "status",
+            "sprint_weekend",
+            "latest_completed_race_id",
+            "archetype_label",
+            "strategy_difficulty",
+            "weather_risk_index",
+            "signal_confidence",
+            "generated_at",
+            "build_version",
+            "source_label",
+        ],
     ),
     (
         "race_week_driver_board",
         "race_week/race_week_driver_board.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "driver_name", "constructor_name", "long_run_pace_s", "gap_to_long_run_best_s", "one_lap_pace_s", "gap_to_one_lap_best_s", "degradation_s_per_lap", "readiness_score", "signal_confidence", "projected_finish", "summary", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "driver_name",
+            "constructor_name",
+            "long_run_pace_s",
+            "gap_to_long_run_best_s",
+            "one_lap_pace_s",
+            "gap_to_one_lap_best_s",
+            "degradation_s_per_lap",
+            "readiness_score",
+            "signal_confidence",
+            "projected_finish",
+            "summary",
+            "source_label",
+        ],
     ),
     (
         "race_week_constructor_board",
         "race_week/race_week_constructor_board.csv",
-        ["id", "season", "round", "race_id", "constructor_id", "constructor_name", "long_run_pace_s", "one_lap_pace_s", "degradation_index", "readiness_score", "signal_confidence", "summary", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "constructor_id",
+            "constructor_name",
+            "long_run_pace_s",
+            "one_lap_pace_s",
+            "degradation_index",
+            "readiness_score",
+            "signal_confidence",
+            "summary",
+            "source_label",
+        ],
     ),
     (
         "race_week_strategy",
         "race_week/race_week_strategy.csv",
-        ["id", "season", "round", "race_id", "driver_id", "constructor_id", "recommended_stop_count", "preferred_primary_compound", "preferred_secondary_compound", "pit_window_start_lap", "pit_window_end_lap", "degradation_risk", "strategy_confidence", "rationale", "source_label"],
+        [
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "recommended_stop_count",
+            "preferred_primary_compound",
+            "preferred_secondary_compound",
+            "pit_window_start_lap",
+            "pit_window_end_lap",
+            "degradation_risk",
+            "strategy_confidence",
+            "rationale",
+            "source_label",
+        ],
     ),
     (
         "strategy_features",
         "strategy_lab/strategy_features.csv",
         [
-            "id", "season", "round", "race_id", "driver_id", "constructor_id", "nominal_race_laps",
-            "base_race_pace_s", "base_quali_pace_s", "pace_evolution_s_per_lap", "pit_loss_s",
-            "baseline_stop_count", "baseline_strategy_code", "baseline_pit_window_start_lap", "baseline_pit_window_end_lap",
-            "compound_delta_soft_s", "compound_delta_medium_s", "compound_delta_hard_s",
-            "degradation_soft_s_per_lap", "degradation_medium_s_per_lap", "degradation_hard_s_per_lap",
-            "stint_length_soft_laps", "stint_length_medium_laps", "stint_length_hard_laps", "source_label",
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "nominal_race_laps",
+            "base_race_pace_s",
+            "base_quali_pace_s",
+            "pace_evolution_s_per_lap",
+            "pit_loss_s",
+            "baseline_stop_count",
+            "baseline_strategy_code",
+            "baseline_pit_window_start_lap",
+            "baseline_pit_window_end_lap",
+            "compound_delta_soft_s",
+            "compound_delta_medium_s",
+            "compound_delta_hard_s",
+            "degradation_soft_s_per_lap",
+            "degradation_medium_s_per_lap",
+            "degradation_hard_s_per_lap",
+            "stint_length_soft_laps",
+            "stint_length_medium_laps",
+            "stint_length_hard_laps",
+            "source_label",
         ],
     ),
     (
         "driver_strategy_profile",
         "strategy_lab/driver_strategy_profile.csv",
         [
-            "id", "season", "round", "race_id", "driver_id", "constructor_id",
-            "aggressive_tendency_score", "tyre_management_score", "early_pit_bias_score", "late_pit_bias_score",
-            "racecraft_proxy_score", "confidence_score", "source_label",
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "aggressive_tendency_score",
+            "tyre_management_score",
+            "early_pit_bias_score",
+            "late_pit_bias_score",
+            "racecraft_proxy_score",
+            "confidence_score",
+            "source_label",
         ],
     ),
     (
         "constructor_strategy_profile",
         "strategy_lab/constructor_strategy_profile.csv",
         [
-            "id", "season", "round", "race_id", "constructor_id",
-            "pit_efficiency_score", "pit_loss_adjustment_s", "strategy_success_proxy",
-            "double_stack_risk_score", "confidence_score", "source_label",
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "constructor_id",
+            "pit_efficiency_score",
+            "pit_loss_adjustment_s",
+            "strategy_success_proxy",
+            "double_stack_risk_score",
+            "confidence_score",
+            "source_label",
         ],
     ),
     (
         "strategy_lab_overview",
         "strategy_lab/strategy_lab_overview.csv",
         [
-            "id", "season", "round", "race_id", "race_name", "circuit_id", "archetype_label", "race_difficulty",
-            "nominal_race_laps", "pit_loss_estimate_s", "best_strategy_code", "best_strategy_label",
-            "key_insight", "confidence_score", "model_version", "scenario_template_version", "feature_build_version", "generated_at", "build_version", "source_label",
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "race_name",
+            "circuit_id",
+            "archetype_label",
+            "race_difficulty",
+            "nominal_race_laps",
+            "pit_loss_estimate_s",
+            "best_strategy_code",
+            "best_strategy_label",
+            "key_insight",
+            "confidence_score",
+            "model_version",
+            "scenario_template_version",
+            "feature_build_version",
+            "generated_at",
+            "build_version",
+            "source_label",
         ],
     ),
     (
         "strategy_comparison",
         "strategy_lab/strategy_comparison.csv",
         [
-            "id", "season", "round", "race_id", "driver_id", "constructor_id", "scenario_code", "scenario_label",
-            "pit_stop_count", "compound_sequence", "total_race_time_s", "delta_vs_baseline_s",
-            "average_stint_degradation_s", "estimated_finish_position", "estimated_finish_band_low",
-            "estimated_finish_band_high", "confidence_score", "recommendation_rank", "rationale", "source_label",
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "scenario_code",
+            "scenario_label",
+            "pit_stop_count",
+            "compound_sequence",
+            "total_race_time_s",
+            "delta_vs_baseline_s",
+            "average_stint_degradation_s",
+            "estimated_finish_position",
+            "estimated_finish_band_low",
+            "estimated_finish_band_high",
+            "confidence_score",
+            "recommendation_rank",
+            "rationale",
+            "source_label",
         ],
     ),
     (
         "pit_window",
         "strategy_lab/pit_window.csv",
         [
-            "id", "season", "round", "race_id", "driver_id", "constructor_id", "scenario_code", "stop_number",
-            "window_start_lap", "window_end_lap", "compound_in", "compound_out", "source_label",
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "scenario_code",
+            "stop_number",
+            "window_start_lap",
+            "window_end_lap",
+            "compound_in",
+            "compound_out",
+            "source_label",
         ],
     ),
     (
         "race_projection",
         "strategy_lab/race_projection.csv",
         [
-            "id", "season", "round", "race_id", "driver_id", "constructor_id", "baseline_strategy_code",
-            "baseline_total_time_s", "projected_finish", "finish_band_low", "finish_band_high",
-            "win_probability", "podium_probability", "confidence_score", "source_label",
+            "id",
+            "season",
+            "round",
+            "race_id",
+            "driver_id",
+            "constructor_id",
+            "baseline_strategy_code",
+            "baseline_total_time_s",
+            "projected_finish",
+            "finish_band_low",
+            "finish_band_high",
+            "win_probability",
+            "podium_probability",
+            "confidence_score",
+            "source_label",
         ],
     ),
     (
@@ -501,117 +1207,450 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     (
         "analytics_session_index",
         "analytics/analytics_session_index.csv",
-        ["session_id", "season", "round", "event", "session", "driver_count", "segment_count", "straight_count", "telemetry_quality_mean", "track_archetype", "generated_at", "build_version"],
+        [
+            "session_id",
+            "season",
+            "round",
+            "event",
+            "session",
+            "driver_count",
+            "segment_count",
+            "straight_count",
+            "telemetry_quality_mean",
+            "track_archetype",
+            "generated_at",
+            "build_version",
+        ],
     ),
     (
         "analytics_segment_comparison",
         "analytics/analytics_segment_comparison.csv",
-        ["session_id", "segment_id", "segment_kind", "segment_confidence", "driver_a", "driver_b", "entry_speed_delta_kph", "apex_speed_delta_kph", "exit_speed_delta_kph", "min_speed_delta_kph", "entry_speed_kph_a", "entry_speed_kph_b", "apex_speed_kph_a", "apex_speed_kph_b", "exit_speed_kph_a", "exit_speed_kph_b", "min_speed_kph_a", "min_speed_kph_b", "entry_gear_a", "entry_gear_b", "apex_gear_a", "apex_gear_b", "exit_gear_a", "exit_gear_b", "faster_driver", "confidence"],
+        [
+            "session_id",
+            "segment_id",
+            "segment_kind",
+            "segment_confidence",
+            "driver_a",
+            "driver_b",
+            "entry_speed_delta_kph",
+            "apex_speed_delta_kph",
+            "exit_speed_delta_kph",
+            "min_speed_delta_kph",
+            "entry_speed_kph_a",
+            "entry_speed_kph_b",
+            "apex_speed_kph_a",
+            "apex_speed_kph_b",
+            "exit_speed_kph_a",
+            "exit_speed_kph_b",
+            "min_speed_kph_a",
+            "min_speed_kph_b",
+            "entry_gear_a",
+            "entry_gear_b",
+            "apex_gear_a",
+            "apex_gear_b",
+            "exit_gear_a",
+            "exit_gear_b",
+            "faster_driver",
+            "confidence",
+        ],
     ),
     (
         "analytics_braking_comparison",
         "analytics/analytics_braking_comparison.csv",
-        ["session_id", "segment_id", "driver_a", "driver_b", "braking_start_delta_m", "braking_duration_delta_s", "braking_distance_delta_m", "late_brake_delta", "brake_intensity_delta", "confidence", "favorable_driver"],
+        [
+            "session_id",
+            "segment_id",
+            "driver_a",
+            "driver_b",
+            "braking_start_delta_m",
+            "braking_duration_delta_s",
+            "braking_distance_delta_m",
+            "late_brake_delta",
+            "brake_intensity_delta",
+            "confidence",
+            "favorable_driver",
+        ],
     ),
     (
         "analytics_throttle_comparison",
         "analytics/analytics_throttle_comparison.csv",
-        ["session_id", "segment_id", "driver_a", "driver_b", "throttle_pickup_delta_m", "full_throttle_exit_delta_m", "traction_exit_delta", "confidence", "favorable_driver"],
+        [
+            "session_id",
+            "segment_id",
+            "driver_a",
+            "driver_b",
+            "throttle_pickup_delta_m",
+            "full_throttle_exit_delta_m",
+            "traction_exit_delta",
+            "confidence",
+            "favorable_driver",
+        ],
     ),
     (
         "analytics_driver_comparison",
         "analytics/analytics_driver_comparison.csv",
-        ["session_id", "driver_a", "driver_b", "driver_a_team", "driver_b_team", "corner_advantage_count_a", "corner_advantage_count_b", "straight_advantage_count_a", "straight_advantage_count_b", "avg_segment_delta_kph", "avg_straight_delta_kph", "braking_advantage_score", "traction_advantage_score", "energy_proxy_delta", "confidence", "weakest_assumption", "strategy_relevance_note"],
+        [
+            "session_id",
+            "driver_a",
+            "driver_b",
+            "driver_a_team",
+            "driver_b_team",
+            "corner_advantage_count_a",
+            "corner_advantage_count_b",
+            "straight_advantage_count_a",
+            "straight_advantage_count_b",
+            "avg_segment_delta_kph",
+            "avg_straight_delta_kph",
+            "braking_advantage_score",
+            "traction_advantage_score",
+            "energy_proxy_delta",
+            "confidence",
+            "weakest_assumption",
+            "strategy_relevance_note",
+        ],
     ),
     (
         "analytics_straight_comparison",
         "analytics/analytics_straight_comparison.csv",
-        ["session_id", "segment_id", "driver_a", "driver_b", "entry_speed_delta_kph", "terminal_speed_delta_kph", "acceleration_delta", "drs_active_delta_pct", "clipping_proxy_delta", "confidence", "favorable_driver"],
+        [
+            "session_id",
+            "segment_id",
+            "driver_a",
+            "driver_b",
+            "entry_speed_delta_kph",
+            "terminal_speed_delta_kph",
+            "acceleration_delta",
+            "drs_active_delta_pct",
+            "clipping_proxy_delta",
+            "confidence",
+            "favorable_driver",
+        ],
     ),
     (
         "analytics_energy_proxy_comparison",
         "analytics/analytics_energy_proxy_comparison.csv",
-        ["session_id", "segment_id", "driver_a", "driver_b", "deployment_proxy_delta", "lift_and_coast_delta", "clipping_proxy_delta", "recovery_zone_delta", "confidence", "proxy_note"],
+        [
+            "session_id",
+            "segment_id",
+            "driver_a",
+            "driver_b",
+            "deployment_proxy_delta",
+            "lift_and_coast_delta",
+            "clipping_proxy_delta",
+            "recovery_zone_delta",
+            "confidence",
+            "proxy_note",
+        ],
     ),
     (
         "analytics_lap_pace_driver",
         "analytics/analytics_lap_pace_driver.csv",
-        ["session_id", "driver", "team", "lap_number", "race_phase", "compound", "stint_number", "lap_time_s", "normalized_pace_delta_s", "rolling_pace_delta_s", "fuel_corrected_delta_s", "field_rank_on_lap", "tyre_age", "position", "track_status_label", "traffic_proxy_label", "dirty_air_proxy_s", "drs_window_proxy", "confidence", "evidence_type", "traffic_proxy_note"],
+        [
+            "session_id",
+            "driver",
+            "team",
+            "lap_number",
+            "race_phase",
+            "compound",
+            "stint_number",
+            "lap_time_s",
+            "normalized_pace_delta_s",
+            "rolling_pace_delta_s",
+            "fuel_corrected_delta_s",
+            "field_rank_on_lap",
+            "tyre_age",
+            "position",
+            "track_status_label",
+            "traffic_proxy_label",
+            "dirty_air_proxy_s",
+            "drs_window_proxy",
+            "confidence",
+            "evidence_type",
+            "traffic_proxy_note",
+        ],
     ),
     (
         "analytics_track_summary",
         "analytics/analytics_track_summary.csv",
-        ["session_id", "track_archetype", "straight_line_weight", "braking_weight", "traction_weight", "degradation_weight", "track_position_weight", "archetype_confidence"],
+        [
+            "session_id",
+            "track_archetype",
+            "straight_line_weight",
+            "braking_weight",
+            "traction_weight",
+            "degradation_weight",
+            "track_position_weight",
+            "archetype_confidence",
+        ],
     ),
     (
         "race_analysis_index",
         "race_analysis/race_analysis_index.csv",
-        ["race_analysis_id", "season", "round", "event", "race_name", "session_id", "circuit", "race_date", "winner", "winner_team", "driver_count", "classified_driver_count", "stint_count", "pit_stop_count", "weather_available", "race_control_available", "analysis_quality_score", "generated_at", "build_version", "freshness_status"],
+        [
+            "race_analysis_id",
+            "season",
+            "round",
+            "event",
+            "race_name",
+            "session_id",
+            "circuit",
+            "race_date",
+            "winner",
+            "winner_team",
+            "driver_count",
+            "classified_driver_count",
+            "stint_count",
+            "pit_stop_count",
+            "weather_available",
+            "race_control_available",
+            "analysis_quality_score",
+            "generated_at",
+            "build_version",
+            "freshness_status",
+        ],
     ),
     (
         "race_analysis_summary",
         "race_analysis/race_analysis_summary.csv",
-        ["race_analysis_id", "winner", "winner_team", "podium", "dominant_strategy", "winning_compound_path", "race_shape", "primary_story", "key_strategy_factor", "key_pace_factor", "key_position_factor", "weather_summary", "confidence", "weakest_assumption"],
+        [
+            "race_analysis_id",
+            "winner",
+            "winner_team",
+            "podium",
+            "dominant_strategy",
+            "winning_compound_path",
+            "race_shape",
+            "primary_story",
+            "key_strategy_factor",
+            "key_pace_factor",
+            "key_position_factor",
+            "weather_summary",
+            "confidence",
+            "weakest_assumption",
+        ],
     ),
     (
         "race_analysis_story_points",
         "race_analysis/race_analysis_story_points.csv",
-        ["race_analysis_id", "story_point_id", "lap_number", "phase", "title", "summary", "evidence_type", "drivers_involved", "teams_involved", "related_metric", "impact_score", "confidence", "data_limit_note"],
+        [
+            "race_analysis_id",
+            "story_point_id",
+            "lap_number",
+            "phase",
+            "title",
+            "summary",
+            "evidence_type",
+            "drivers_involved",
+            "teams_involved",
+            "related_metric",
+            "impact_score",
+            "confidence",
+            "data_limit_note",
+        ],
     ),
     (
         "race_analysis_stints",
         "race_analysis/race_analysis_stints.csv",
-        ["race_analysis_id", "driver", "team", "stint_number", "compound", "start_lap", "end_lap", "stint_length", "avg_lap_time_s", "median_lap_time_s", "best_lap_time_s", "degradation_s_per_lap", "degradation_confidence", "pace_rank_in_stint", "compound_phase", "traffic_adjusted_flag", "stint_quality_score", "note"],
+        [
+            "race_analysis_id",
+            "driver",
+            "team",
+            "stint_number",
+            "compound",
+            "start_lap",
+            "end_lap",
+            "stint_length",
+            "avg_lap_time_s",
+            "median_lap_time_s",
+            "best_lap_time_s",
+            "degradation_s_per_lap",
+            "degradation_confidence",
+            "pace_rank_in_stint",
+            "compound_phase",
+            "traffic_adjusted_flag",
+            "stint_quality_score",
+            "note",
+        ],
     ),
     (
         "race_analysis_pit_strategy",
         "race_analysis/race_analysis_pit_strategy.csv",
-        ["race_analysis_id", "driver", "team", "pit_stop_number", "pit_lap", "compound_from", "compound_to", "stint_length_before", "position_before_pit", "position_after_cycle", "net_position_change", "estimated_pit_loss_s", "undercut_overcut_label", "rejoin_risk", "traffic_penalty_proxy_s", "strategy_effect", "confidence", "weakest_assumption"],
+        [
+            "race_analysis_id",
+            "driver",
+            "team",
+            "pit_stop_number",
+            "pit_lap",
+            "compound_from",
+            "compound_to",
+            "stint_length_before",
+            "position_before_pit",
+            "position_after_cycle",
+            "net_position_change",
+            "estimated_pit_loss_s",
+            "undercut_overcut_label",
+            "rejoin_risk",
+            "traffic_penalty_proxy_s",
+            "strategy_effect",
+            "confidence",
+            "weakest_assumption",
+        ],
     ),
     (
         "race_analysis_pace_evolution",
         "race_analysis/race_analysis_pace_evolution.csv",
-        ["race_analysis_id", "driver", "team", "lap_number", "race_phase", "compound", "stint_number", "lap_time_s", "normalized_pace_delta_s", "field_rank_on_lap", "rolling_pace_delta_s", "tyre_age", "fuel_corrected_delta_s", "weather_adjusted_flag", "pace_confidence"],
+        [
+            "race_analysis_id",
+            "driver",
+            "team",
+            "lap_number",
+            "race_phase",
+            "compound",
+            "stint_number",
+            "lap_time_s",
+            "normalized_pace_delta_s",
+            "field_rank_on_lap",
+            "rolling_pace_delta_s",
+            "tyre_age",
+            "fuel_corrected_delta_s",
+            "weather_adjusted_flag",
+            "pace_confidence",
+        ],
     ),
     (
         "race_analysis_position_changes",
         "race_analysis/race_analysis_position_changes.csv",
-        ["race_analysis_id", "driver", "team", "start_position", "finish_position", "net_position_change", "positions_gained_on_track_proxy", "positions_gained_in_pit_cycles_proxy", "largest_gain_phase", "largest_loss_phase", "position_volatility_score", "confidence", "note"],
+        [
+            "race_analysis_id",
+            "driver",
+            "team",
+            "start_position",
+            "finish_position",
+            "net_position_change",
+            "positions_gained_on_track_proxy",
+            "positions_gained_in_pit_cycles_proxy",
+            "largest_gain_phase",
+            "largest_loss_phase",
+            "position_volatility_score",
+            "confidence",
+            "note",
+        ],
     ),
     (
         "race_analysis_weather_context",
         "race_analysis/race_analysis_weather_context.csv",
-        ["race_analysis_id", "lap_number", "race_phase", "air_temp_c", "track_temp_c", "humidity_pct", "rainfall", "wind_speed_mps", "weather_state", "track_temp_delta_from_start_c", "weather_impact_label", "confidence"],
+        [
+            "race_analysis_id",
+            "lap_number",
+            "race_phase",
+            "air_temp_c",
+            "track_temp_c",
+            "humidity_pct",
+            "rainfall",
+            "wind_speed_mps",
+            "weather_state",
+            "track_temp_delta_from_start_c",
+            "weather_impact_label",
+            "confidence",
+        ],
     ),
     (
         "race_analysis_links",
         "race_analysis/race_analysis_links.csv",
-        ["race_analysis_id", "surface", "label", "href", "relevance_note", "enabled", "unavailable_reason"],
+        [
+            "race_analysis_id",
+            "surface",
+            "label",
+            "href",
+            "relevance_note",
+            "enabled",
+            "unavailable_reason",
+        ],
     ),
     (
         "race_analysis_track_status",
         "race_analysis/race_analysis_track_status.csv",
-        ["race_analysis_id", "lap_number", "phase", "track_status_raw", "track_status_label", "confidence", "source", "note"],
+        [
+            "race_analysis_id",
+            "lap_number",
+            "phase",
+            "track_status_raw",
+            "track_status_label",
+            "confidence",
+            "source",
+            "note",
+        ],
     ),
     (
         "race_analysis_neutralization_phases",
         "race_analysis/race_analysis_neutralization_phases.csv",
-        ["race_analysis_id", "phase_id", "start_lap", "end_lap", "status_label", "affected_laps", "confidence", "evidence_type", "cause_available", "cause_note"],
+        [
+            "race_analysis_id",
+            "phase_id",
+            "start_lap",
+            "end_lap",
+            "status_label",
+            "affected_laps",
+            "confidence",
+            "evidence_type",
+            "cause_available",
+            "cause_note",
+        ],
     ),
     (
         "race_analysis_position_timeline",
         "race_analysis/race_analysis_position_timeline.csv",
-        ["race_analysis_id", "driver", "team", "lap_number", "position", "position_delta_from_start", "position_delta_from_previous_lap", "phase", "track_status_label", "confidence", "evidence_type"],
+        [
+            "race_analysis_id",
+            "driver",
+            "team",
+            "lap_number",
+            "position",
+            "position_delta_from_start",
+            "position_delta_from_previous_lap",
+            "phase",
+            "track_status_label",
+            "confidence",
+            "evidence_type",
+        ],
     ),
     (
         "race_analysis_position_swing_events",
         "race_analysis/race_analysis_position_swing_events.csv",
-        ["race_analysis_id", "event_id", "driver", "team", "start_lap", "end_lap", "position_delta", "phase", "event_type", "evidence_type", "confidence", "note"],
+        [
+            "race_analysis_id",
+            "event_id",
+            "driver",
+            "team",
+            "start_lap",
+            "end_lap",
+            "position_delta",
+            "phase",
+            "event_type",
+            "evidence_type",
+            "confidence",
+            "note",
+        ],
     ),
     (
         "race_analysis_traffic_proxy",
         "race_analysis/race_analysis_traffic_proxy.csv",
-        ["race_analysis_id", "driver", "team", "lap_number", "phase", "position", "lap_time_s", "normalized_pace_delta_s", "traffic_proxy_label", "dirty_air_proxy_s", "drs_window_proxy", "confidence", "evidence_type", "note"],
+        [
+            "race_analysis_id",
+            "driver",
+            "team",
+            "lap_number",
+            "phase",
+            "position",
+            "lap_time_s",
+            "normalized_pace_delta_s",
+            "traffic_proxy_label",
+            "dirty_air_proxy_s",
+            "drs_window_proxy",
+            "confidence",
+            "evidence_type",
+            "note",
+        ],
     ),
 ]
 
@@ -702,72 +1741,264 @@ UPSERT_CONFLICT_COLUMNS = {
 }
 
 SUPPLEMENTAL_DRIVERS: dict[str, dict[str, str]] = {
-    "arvid_lindblad": {"driver_code": "LIN", "first_name": "Arvid", "last_name": "Lindblad", "full_name": "Arvid Lindblad", "nationality": "British"},
-    "bottas": {"driver_code": "BOT", "first_name": "Valtteri", "last_name": "Bottas", "full_name": "Valtteri Bottas", "nationality": "Finnish"},
-    "colapinto": {"driver_code": "COL", "first_name": "Franco", "last_name": "Colapinto", "full_name": "Franco Colapinto", "nationality": "Argentine"},
-    "doohan": {"driver_code": "DOO", "first_name": "Jack", "last_name": "Doohan", "full_name": "Jack Doohan", "nationality": "Australian"},
-    "gasly": {"driver_code": "GAS", "first_name": "Pierre", "last_name": "Gasly", "full_name": "Pierre Gasly", "nationality": "French"},
-    "hadjar": {"driver_code": "HAD", "first_name": "Isack", "last_name": "Hadjar", "full_name": "Isack Hadjar", "nationality": "French"},
-    "hamilton": {"driver_code": "HAM", "first_name": "Lewis", "last_name": "Hamilton", "full_name": "Lewis Hamilton", "nationality": "British"},
-    "hulkenberg": {"driver_code": "HUL", "first_name": "Nico", "last_name": "Hulkenberg", "full_name": "Nico Hulkenberg", "nationality": "German"},
-    "kevin_magnussen": {"driver_code": "MAG", "first_name": "Kevin", "last_name": "Magnussen", "full_name": "Kevin Magnussen", "nationality": "Danish"},
-    "lawson": {"driver_code": "LAW", "first_name": "Liam", "last_name": "Lawson", "full_name": "Liam Lawson", "nationality": "New Zealander"},
-    "leclerc": {"driver_code": "LEC", "first_name": "Charles", "last_name": "Leclerc", "full_name": "Charles Leclerc", "nationality": "Monegasque"},
-    "max_verstappen": {"driver_code": "VER", "first_name": "Max", "last_name": "Verstappen", "full_name": "Max Verstappen", "nationality": "Dutch"},
-    "norris": {"driver_code": "NOR", "first_name": "Lando", "last_name": "Norris", "full_name": "Lando Norris", "nationality": "British"},
-    "ocon": {"driver_code": "OCO", "first_name": "Esteban", "last_name": "Ocon", "full_name": "Esteban Ocon", "nationality": "French"},
-    "perez": {"driver_code": "PER", "first_name": "Sergio", "last_name": "Perez", "full_name": "Sergio Perez", "nationality": "Mexican"},
-    "piastri": {"driver_code": "PIA", "first_name": "Oscar", "last_name": "Piastri", "full_name": "Oscar Piastri", "nationality": "Australian"},
-    "ricciardo": {"driver_code": "RIC", "first_name": "Daniel", "last_name": "Ricciardo", "full_name": "Daniel Ricciardo", "nationality": "Australian"},
-    "russell": {"driver_code": "RUS", "first_name": "George", "last_name": "Russell", "full_name": "George Russell", "nationality": "British"},
-    "sainz": {"driver_code": "SAI", "first_name": "Carlos", "last_name": "Sainz", "full_name": "Carlos Sainz", "nationality": "Spanish"},
-    "sargeant": {"driver_code": "SAR", "first_name": "Logan", "last_name": "Sargeant", "full_name": "Logan Sargeant", "nationality": "American"},
-    "stroll": {"driver_code": "STR", "first_name": "Lance", "last_name": "Stroll", "full_name": "Lance Stroll", "nationality": "Canadian"},
-    "tsunoda": {"driver_code": "TSU", "first_name": "Yuki", "last_name": "Tsunoda", "full_name": "Yuki Tsunoda", "nationality": "Japanese"},
-    "zhou": {"driver_code": "ZHO", "first_name": "Guanyu", "last_name": "Zhou", "full_name": "Guanyu Zhou", "nationality": "Chinese"},
+    "arvid_lindblad": {
+        "driver_code": "LIN",
+        "first_name": "Arvid",
+        "last_name": "Lindblad",
+        "full_name": "Arvid Lindblad",
+        "nationality": "British",
+    },
+    "bottas": {
+        "driver_code": "BOT",
+        "first_name": "Valtteri",
+        "last_name": "Bottas",
+        "full_name": "Valtteri Bottas",
+        "nationality": "Finnish",
+    },
+    "colapinto": {
+        "driver_code": "COL",
+        "first_name": "Franco",
+        "last_name": "Colapinto",
+        "full_name": "Franco Colapinto",
+        "nationality": "Argentine",
+    },
+    "doohan": {
+        "driver_code": "DOO",
+        "first_name": "Jack",
+        "last_name": "Doohan",
+        "full_name": "Jack Doohan",
+        "nationality": "Australian",
+    },
+    "gasly": {
+        "driver_code": "GAS",
+        "first_name": "Pierre",
+        "last_name": "Gasly",
+        "full_name": "Pierre Gasly",
+        "nationality": "French",
+    },
+    "hadjar": {
+        "driver_code": "HAD",
+        "first_name": "Isack",
+        "last_name": "Hadjar",
+        "full_name": "Isack Hadjar",
+        "nationality": "French",
+    },
+    "hamilton": {
+        "driver_code": "HAM",
+        "first_name": "Lewis",
+        "last_name": "Hamilton",
+        "full_name": "Lewis Hamilton",
+        "nationality": "British",
+    },
+    "hulkenberg": {
+        "driver_code": "HUL",
+        "first_name": "Nico",
+        "last_name": "Hulkenberg",
+        "full_name": "Nico Hulkenberg",
+        "nationality": "German",
+    },
+    "kevin_magnussen": {
+        "driver_code": "MAG",
+        "first_name": "Kevin",
+        "last_name": "Magnussen",
+        "full_name": "Kevin Magnussen",
+        "nationality": "Danish",
+    },
+    "lawson": {
+        "driver_code": "LAW",
+        "first_name": "Liam",
+        "last_name": "Lawson",
+        "full_name": "Liam Lawson",
+        "nationality": "New Zealander",
+    },
+    "leclerc": {
+        "driver_code": "LEC",
+        "first_name": "Charles",
+        "last_name": "Leclerc",
+        "full_name": "Charles Leclerc",
+        "nationality": "Monegasque",
+    },
+    "max_verstappen": {
+        "driver_code": "VER",
+        "first_name": "Max",
+        "last_name": "Verstappen",
+        "full_name": "Max Verstappen",
+        "nationality": "Dutch",
+    },
+    "norris": {
+        "driver_code": "NOR",
+        "first_name": "Lando",
+        "last_name": "Norris",
+        "full_name": "Lando Norris",
+        "nationality": "British",
+    },
+    "ocon": {
+        "driver_code": "OCO",
+        "first_name": "Esteban",
+        "last_name": "Ocon",
+        "full_name": "Esteban Ocon",
+        "nationality": "French",
+    },
+    "perez": {
+        "driver_code": "PER",
+        "first_name": "Sergio",
+        "last_name": "Perez",
+        "full_name": "Sergio Perez",
+        "nationality": "Mexican",
+    },
+    "piastri": {
+        "driver_code": "PIA",
+        "first_name": "Oscar",
+        "last_name": "Piastri",
+        "full_name": "Oscar Piastri",
+        "nationality": "Australian",
+    },
+    "ricciardo": {
+        "driver_code": "RIC",
+        "first_name": "Daniel",
+        "last_name": "Ricciardo",
+        "full_name": "Daniel Ricciardo",
+        "nationality": "Australian",
+    },
+    "russell": {
+        "driver_code": "RUS",
+        "first_name": "George",
+        "last_name": "Russell",
+        "full_name": "George Russell",
+        "nationality": "British",
+    },
+    "sainz": {
+        "driver_code": "SAI",
+        "first_name": "Carlos",
+        "last_name": "Sainz",
+        "full_name": "Carlos Sainz",
+        "nationality": "Spanish",
+    },
+    "sargeant": {
+        "driver_code": "SAR",
+        "first_name": "Logan",
+        "last_name": "Sargeant",
+        "full_name": "Logan Sargeant",
+        "nationality": "American",
+    },
+    "stroll": {
+        "driver_code": "STR",
+        "first_name": "Lance",
+        "last_name": "Stroll",
+        "full_name": "Lance Stroll",
+        "nationality": "Canadian",
+    },
+    "tsunoda": {
+        "driver_code": "TSU",
+        "first_name": "Yuki",
+        "last_name": "Tsunoda",
+        "full_name": "Yuki Tsunoda",
+        "nationality": "Japanese",
+    },
+    "zhou": {
+        "driver_code": "ZHO",
+        "first_name": "Guanyu",
+        "last_name": "Zhou",
+        "full_name": "Guanyu Zhou",
+        "nationality": "Chinese",
+    },
 }
 
 SUPPLEMENTAL_CONSTRUCTORS: dict[str, dict[str, str]] = {
     "mclaren": {"constructor_code": "MCL", "name": "McLaren", "nationality": "British"},
-    "mercedes": {"constructor_code": "MER", "name": "Mercedes", "nationality": "German"},
+    "mercedes": {
+        "constructor_code": "MER",
+        "name": "Mercedes",
+        "nationality": "German",
+    },
     "rb": {"constructor_code": "RB", "name": "RB", "nationality": "Italian"},
-    "red_bull": {"constructor_code": "RBR", "name": "Red Bull Racing", "nationality": "Austrian"},
+    "red_bull": {
+        "constructor_code": "RBR",
+        "name": "Red Bull Racing",
+        "nationality": "Austrian",
+    },
     "sauber": {"constructor_code": "SAU", "name": "Sauber", "nationality": "Swiss"},
-    "williams": {"constructor_code": "WIL", "name": "Williams", "nationality": "British"},
+    "williams": {
+        "constructor_code": "WIL",
+        "name": "Williams",
+        "nationality": "British",
+    },
 }
 
 INTEGER_COLUMNS: dict[str, set[str]] = {
     "drivers": {"permanent_number"},
     "races": {"season", "round"},
     "qualifying_results": {"position", "q1_time_ms", "q2_time_ms", "q3_time_ms"},
-    "race_results": {"grid_position", "finish_position", "laps_completed", "fastest_lap_rank"},
+    "race_results": {
+        "grid_position",
+        "finish_position",
+        "laps_completed",
+        "fastest_lap_rank",
+    },
     "sprint_results": {"grid_position", "finish_position", "laps_completed"},
     "fantasy_pricing": {"season", "round"},
     "driver_standings": {"season", "round", "standing_position", "wins"},
     "constructor_standings": {"season", "round", "standing_position", "wins"},
-    "race_week_context": {"season", "round", "latest_completed_season", "latest_completed_round"},
-    "model_features": {"season", "round", "driver_standing_position", "constructor_standing_position"},
+    "race_week_context": {
+        "season",
+        "round",
+        "latest_completed_season",
+        "latest_completed_round",
+    },
+    "model_features": {
+        "season",
+        "round",
+        "driver_standing_position",
+        "constructor_standing_position",
+    },
     "prediction_snapshots": {"season", "round", "projected_finish"},
     "fantasy_inputs": {"season", "round"},
     "driver_form_snapshots": {"season", "round", "session_completeness"},
     "constructor_form_snapshots": {"season", "round"},
     "prediction_feature_snapshots": {"season", "round", "session_completeness"},
-    "strategy_baselines": {"season", "round", "recommended_stop_count", "pit_window_start_lap", "pit_window_end_lap"},
+    "strategy_baselines": {
+        "season",
+        "round",
+        "recommended_stop_count",
+        "pit_window_start_lap",
+        "pit_window_end_lap",
+    },
     "fastf1_prediction_snapshots": {"season", "round", "projected_finish"},
     "sessions": {"season", "round"},
-    "session_results": {"classification_position", "grid_position", "finish_position", "laps_completed", "fastest_lap_rank"},
+    "session_results": {
+        "classification_position",
+        "grid_position",
+        "finish_position",
+        "laps_completed",
+        "fastest_lap_rank",
+    },
     "session_laps": {"lap_number", "stint_number", "tyre_life", "position"},
     "session_stints": {"stint_number", "lap_count", "start_tyre_life", "end_tyre_life"},
     "session_weather": {"sample_order"},
     "session_pace_summary": {"season", "round", "pace_rank"},
     "session_year_over_year_deltas": {"season", "round", "comparison_season"},
     "qualifying_driver_deltas": {"season", "round", "source_sample_size"},
-    "spain_qualifying_prediction": {"season", "round", "predicted_q_rank", "source_usefulness_rank"},
-    "prediction_signal_quality": {"season", "round", "usefulness_rank", "evidence_rows"},
+    "spain_qualifying_prediction": {
+        "season",
+        "round",
+        "predicted_q_rank",
+        "source_usefulness_rank",
+    },
+    "prediction_signal_quality": {
+        "season",
+        "round",
+        "usefulness_rank",
+        "evidence_rows",
+    },
     "fp2_long_run_summary": {"season", "round", "lap_sample_size"},
     "stint_degradation_summary": {"season", "round"},
     "weather_risk_summary": {"season", "round"},
-    "driver_race_week_features": {"season", "round", "session_completeness", "projected_finish"},
+    "driver_race_week_features": {
+        "season",
+        "round",
+        "session_completeness",
+        "projected_finish",
+    },
     "constructor_race_week_features": {"season", "round"},
     "weekend_readiness_summary": {"season", "round", "readiness_rank"},
     "standings_context_snapshot": {"season", "round", "standing_position", "wins"},
@@ -775,36 +2006,133 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     "race_week_overview": {"season", "round"},
     "race_week_driver_board": {"season", "round", "projected_finish"},
     "race_week_constructor_board": {"season", "round"},
-    "race_week_strategy": {"season", "round", "recommended_stop_count", "pit_window_start_lap", "pit_window_end_lap"},
-    "strategy_features": {"season", "round", "nominal_race_laps", "baseline_stop_count", "baseline_pit_window_start_lap", "baseline_pit_window_end_lap", "stint_length_soft_laps", "stint_length_medium_laps", "stint_length_hard_laps"},
+    "race_week_strategy": {
+        "season",
+        "round",
+        "recommended_stop_count",
+        "pit_window_start_lap",
+        "pit_window_end_lap",
+    },
+    "strategy_features": {
+        "season",
+        "round",
+        "nominal_race_laps",
+        "baseline_stop_count",
+        "baseline_pit_window_start_lap",
+        "baseline_pit_window_end_lap",
+        "stint_length_soft_laps",
+        "stint_length_medium_laps",
+        "stint_length_hard_laps",
+    },
     "driver_strategy_profile": {"season", "round"},
     "constructor_strategy_profile": {"season", "round"},
     "strategy_lab_overview": {"season", "round", "nominal_race_laps"},
-    "strategy_comparison": {"season", "round", "pit_stop_count", "estimated_finish_position", "estimated_finish_band_low", "estimated_finish_band_high", "recommendation_rank"},
-    "pit_window": {"season", "round", "stop_number", "window_start_lap", "window_end_lap"},
-    "race_projection": {"season", "round", "projected_finish", "finish_band_low", "finish_band_high"},
-    "race_pick_challenges": {"season", "round", "random_position_1", "random_position_2", "random_position_3"},
+    "strategy_comparison": {
+        "season",
+        "round",
+        "pit_stop_count",
+        "estimated_finish_position",
+        "estimated_finish_band_low",
+        "estimated_finish_band_high",
+        "recommendation_rank",
+    },
+    "pit_window": {
+        "season",
+        "round",
+        "stop_number",
+        "window_start_lap",
+        "window_end_lap",
+    },
+    "race_projection": {
+        "season",
+        "round",
+        "projected_finish",
+        "finish_band_low",
+        "finish_band_high",
+    },
+    "race_pick_challenges": {
+        "season",
+        "round",
+        "random_position_1",
+        "random_position_2",
+        "random_position_3",
+    },
     "race_pit_stop_results": {"season", "round"},
-    "analytics_session_index": {"season", "round", "driver_count", "segment_count", "straight_count"},
-    "analytics_driver_comparison": {"corner_advantage_count_a", "corner_advantage_count_b", "straight_advantage_count_a", "straight_advantage_count_b"},
-    "analytics_lap_pace_driver": {"lap_number", "stint_number", "field_rank_on_lap", "tyre_age", "position"},
-    "race_analysis_index": {"season", "round", "driver_count", "classified_driver_count", "stint_count", "pit_stop_count"},
+    "analytics_session_index": {
+        "season",
+        "round",
+        "driver_count",
+        "segment_count",
+        "straight_count",
+    },
+    "analytics_driver_comparison": {
+        "corner_advantage_count_a",
+        "corner_advantage_count_b",
+        "straight_advantage_count_a",
+        "straight_advantage_count_b",
+    },
+    "analytics_lap_pace_driver": {
+        "lap_number",
+        "stint_number",
+        "field_rank_on_lap",
+        "tyre_age",
+        "position",
+    },
+    "race_analysis_index": {
+        "season",
+        "round",
+        "driver_count",
+        "classified_driver_count",
+        "stint_count",
+        "pit_stop_count",
+    },
     "race_analysis_story_points": {"lap_number"},
-    "race_analysis_stints": {"stint_number", "start_lap", "end_lap", "stint_length", "pace_rank_in_stint"},
-    "race_analysis_pit_strategy": {"pit_stop_number", "pit_lap", "stint_length_before", "position_before_pit", "position_after_cycle", "net_position_change"},
-    "race_analysis_pace_evolution": {"lap_number", "stint_number", "field_rank_on_lap", "tyre_age"},
-    "race_analysis_position_changes": {"start_position", "finish_position", "net_position_change", "positions_gained_on_track_proxy", "positions_gained_in_pit_cycles_proxy"},
+    "race_analysis_stints": {
+        "stint_number",
+        "start_lap",
+        "end_lap",
+        "stint_length",
+        "pace_rank_in_stint",
+    },
+    "race_analysis_pit_strategy": {
+        "pit_stop_number",
+        "pit_lap",
+        "stint_length_before",
+        "position_before_pit",
+        "position_after_cycle",
+        "net_position_change",
+    },
+    "race_analysis_pace_evolution": {
+        "lap_number",
+        "stint_number",
+        "field_rank_on_lap",
+        "tyre_age",
+    },
+    "race_analysis_position_changes": {
+        "start_position",
+        "finish_position",
+        "net_position_change",
+        "positions_gained_on_track_proxy",
+        "positions_gained_in_pit_cycles_proxy",
+    },
     "race_analysis_weather_context": {"lap_number"},
     "race_analysis_track_status": {"lap_number"},
     "race_analysis_neutralization_phases": {"start_lap", "end_lap", "affected_laps"},
-    "race_analysis_position_timeline": {"lap_number", "position", "position_delta_from_start", "position_delta_from_previous_lap"},
+    "race_analysis_position_timeline": {
+        "lap_number",
+        "position",
+        "position_delta_from_start",
+        "position_delta_from_previous_lap",
+    },
     "race_analysis_position_swing_events": {"start_lap", "end_lap", "position_delta"},
     "race_analysis_traffic_proxy": {"lap_number", "position"},
 }
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Load curated CSV data into Supabase/Postgres.")
+    parser = argparse.ArgumentParser(
+        description="Load curated CSV data into Supabase/Postgres."
+    )
     parser.add_argument(
         "--skip-schema",
         action="store_true",
@@ -828,12 +2156,151 @@ def normalize_cell(table: str, column: str, value: str) -> str:
     try:
         number = float(value)
     except ValueError:
-        return value
+        return ""
 
     if number.is_integer():
         return str(int(number))
 
     return value
+
+
+def load_race_id_map(curated_dir: Path) -> dict[str, str]:
+    race_id_map: dict[str, str] = {}
+    races_path = curated_dir / "races.csv"
+    if not races_path.exists():
+        return race_id_map
+
+    with races_path.open(encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            season = row.get("season", "").strip()
+            round_number = row.get("round", "").strip()
+            race_id = row.get("id", "").strip()
+            if season and round_number and race_id:
+                race_id_map[f"{season}-{int(float(round_number)):02d}"] = race_id
+
+    return race_id_map
+
+
+def load_reference_maps(curated_dir: Path) -> dict[str, dict[str, str]]:
+    reference_maps = {
+        "constructors": {},
+        "drivers": {},
+        "races": load_race_id_map(curated_dir),
+    }
+
+    def add_reference(map_name: str, key: str, value: str) -> None:
+        key = key.strip()
+        if not key:
+            return
+        reference_maps[map_name][key.casefold()] = value
+        reference_maps[map_name][
+            key.replace("_", " ").replace("-", " ").casefold()
+        ] = value
+        if key.casefold().endswith(" f1 team"):
+            reference_maps[map_name][key[:-8].strip().casefold()] = value
+
+    drivers_path = curated_dir / "drivers.csv"
+    if drivers_path.exists():
+        with drivers_path.open(encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                driver_id = row.get("id", "").strip()
+                if not driver_id:
+                    continue
+                for key in [
+                    driver_id,
+                    row.get("driver_code", ""),
+                    row.get("full_name", ""),
+                    row.get("last_name", ""),
+                ]:
+                    add_reference("drivers", key, driver_id)
+
+    for driver_id, metadata in SUPPLEMENTAL_DRIVERS.items():
+        add_reference("drivers", driver_id, driver_id)
+        add_reference("drivers", metadata.get("driver_code", ""), driver_id)
+        add_reference("drivers", metadata.get("full_name", ""), driver_id)
+        add_reference("drivers", metadata.get("last_name", ""), driver_id)
+
+    constructors_path = curated_dir / "constructors.csv"
+    if constructors_path.exists():
+        with constructors_path.open(encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                constructor_id = row.get("id", "").strip()
+                if not constructor_id:
+                    continue
+                for key in [
+                    constructor_id,
+                    row.get("constructor_code", ""),
+                    row.get("name", ""),
+                ]:
+                    add_reference("constructors", key, constructor_id)
+
+    for constructor_id, metadata in SUPPLEMENTAL_CONSTRUCTORS.items():
+        add_reference("constructors", constructor_id, constructor_id)
+        add_reference(
+            "constructors", metadata.get("constructor_code", ""), constructor_id
+        )
+        add_reference("constructors", metadata.get("name", ""), constructor_id)
+
+    constructor_aliases = {
+        "Alpine": "alpine",
+        "Cadillac": "cadillac",
+        "McLaren": "mclaren",
+        "Mercedes": "mercedes",
+        "Racing Bulls": "rb",
+        "Red Bull": "red_bull",
+        "Red Bull Racing": "red_bull",
+        "Williams": "williams",
+    }
+    for key, constructor_id in constructor_aliases.items():
+        add_reference("constructors", key, constructor_id)
+
+    return reference_maps
+
+
+def normalize_references(
+    row: dict[str, str], reference_maps: dict[str, dict[str, str]]
+) -> dict[str, str]:
+    reference_maps = {
+        "constructors": reference_maps.get("constructors", {}),
+        "drivers": reference_maps.get("drivers", {}),
+        "races": reference_maps.get("races", {}),
+    }
+    normalized = dict(row)
+    race_reference_columns = {
+        "race_id",
+        "latest_completed_race_id",
+        "source_race_id",
+        "comparison_race_id",
+    }
+
+    for column in race_reference_columns.intersection(normalized):
+        value = normalized.get(column, "").strip()
+        if value in reference_maps["races"]:
+            normalized[column] = reference_maps["races"][value]
+
+    for column in ["driver_id", "comparison_driver_id", "entity_id"]:
+        if column not in normalized:
+            continue
+        entity_type = normalized.get("entity_type", "").strip().casefold()
+        if column == "entity_id" and entity_type not in {"driver", "drivers"}:
+            continue
+        value = normalized.get(column, "").strip().casefold()
+        replacement = reference_maps["drivers"].get(value)
+        if replacement:
+            normalized[column] = replacement
+
+    for column in ["constructor_id", "comparison_constructor_id", "entity_id"]:
+        if column not in normalized:
+            continue
+        entity_type = normalized.get("entity_type", "").strip().casefold()
+        if column == "entity_id" and entity_type not in {"constructor", "constructors"}:
+            continue
+        value = normalized.get(column, "").strip().casefold()
+        replacement = reference_maps["constructors"].get(value)
+        if replacement:
+            normalized[column] = replacement
+
+    return normalized
 
 
 def scan_missing_reference_ids(curated_dir: Path) -> tuple[set[str], set[str]]:
@@ -845,32 +2312,51 @@ def scan_missing_reference_ids(curated_dir: Path) -> tuple[set[str], set[str]]:
     missing_driver_ids: set[str] = set()
     missing_constructor_ids: set[str] = set()
 
-    for file_name in [
-        "qualifying_results.csv",
-        "race_results.csv",
-        "sprint_results.csv",
-        "driver_standings.csv",
-        "model_features.csv",
-        "prediction_snapshots.csv",
-        "predictions/race_pit_stop_results.csv",
-    ]:
-        path = curated_dir.parent / file_name if "/" in file_name else curated_dir / file_name
+    for _, file_name, _ in TABLE_LOAD_ORDER:
+        path = (
+            curated_dir.parent / file_name
+            if "/" in file_name
+            else curated_dir / file_name
+        )
         if not path.exists():
             continue
         with path.open(encoding="utf-8") as handle:
             for row in csv.DictReader(handle):
-                driver_id = row.get("driver_id") or ""
-                constructor_id = row.get("constructor_id") or ""
-                if driver_id and driver_id not in existing_driver_ids:
-                    missing_driver_ids.add(driver_id)
-                if constructor_id and constructor_id not in existing_constructor_ids:
-                    missing_constructor_ids.add(constructor_id)
+                for column in ["driver_id", "comparison_driver_id"]:
+                    driver_id = row.get(column) or ""
+                    if driver_id and driver_id not in existing_driver_ids:
+                        missing_driver_ids.add(driver_id)
+
+                for column in ["constructor_id", "comparison_constructor_id"]:
+                    constructor_id = row.get(column) or ""
+                    if (
+                        constructor_id
+                        and constructor_id not in existing_constructor_ids
+                    ):
+                        missing_constructor_ids.add(constructor_id)
+
+                entity_type = (row.get("entity_type") or "").casefold()
+                entity_id = row.get("entity_id") or ""
+                if (
+                    entity_type in {"driver", "drivers"}
+                    and entity_id not in existing_driver_ids
+                ):
+                    missing_driver_ids.add(entity_id)
+                if (
+                    entity_type in {"constructor", "constructors"}
+                    and entity_id not in existing_constructor_ids
+                ):
+                    missing_constructor_ids.add(entity_id)
 
     return missing_driver_ids, missing_constructor_ids
 
 
-def build_supplemental_rows(table: str, missing_ids: set[str], columns: list[str]) -> list[dict[str, str]]:
-    supplemental_source = SUPPLEMENTAL_DRIVERS if table == "drivers" else SUPPLEMENTAL_CONSTRUCTORS
+def build_supplemental_rows(
+    table: str, missing_ids: set[str], columns: list[str]
+) -> list[dict[str, str]]:
+    supplemental_source = (
+        SUPPLEMENTAL_DRIVERS if table == "drivers" else SUPPLEMENTAL_CONSTRUCTORS
+    )
     rows: list[dict[str, str]] = []
 
     for record_id in sorted(missing_ids):
@@ -879,7 +2365,9 @@ def build_supplemental_rows(table: str, missing_ids: set[str], columns: list[str
             if table == "drivers":
                 name_parts = record_id.replace("_", " ").title().split()
                 first_name = name_parts[0] if name_parts else "Unknown"
-                last_name = " ".join(name_parts[1:]) if len(name_parts) > 1 else "Driver"
+                last_name = (
+                    " ".join(name_parts[1:]) if len(name_parts) > 1 else "Driver"
+                )
                 metadata = {
                     "driver_code": record_id[:3].upper(),
                     "first_name": first_name,
@@ -909,6 +2397,7 @@ def copy_csv(
     file_path: Path,
     extra_rows: list[dict[str, str]] | None = None,
     upsert: bool = False,
+    reference_maps: dict[str, dict[str, str]] | None = None,
 ) -> None:
     if not file_path.exists():
         raise FileNotFoundError(f"Missing curated file: {file_path}")
@@ -917,17 +2406,22 @@ def copy_csv(
     dest_table = table
     if upsert:
         dest_table = f"staging_{table}"
-        cursor.execute(f"CREATE TEMP TABLE {dest_table} AS SELECT * FROM {table} WITH NO DATA")
+        cursor.execute(
+            f"CREATE TEMP TABLE {dest_table} AS SELECT * FROM {table} WITH NO DATA"
+        )
 
     try:
         with file_path.open("r", encoding="utf-8") as handle:
             reader = csv.DictReader(handle)
-            with cursor.copy(f"COPY {dest_table} ({joined_columns}) FROM STDIN WITH CSV HEADER") as copy:
+            with cursor.copy(
+                f"COPY {dest_table} ({joined_columns}) FROM STDIN WITH CSV HEADER"
+            ) as copy:
                 buffer = io.StringIO()
                 writer = csv.DictWriter(buffer, fieldnames=columns, lineterminator="\n")
                 writer.writeheader()
 
                 for row in reader:
+                    row = normalize_references(row, reference_maps or {})
                     normalized_row = {
                         column: normalize_cell(table, column, row.get(column, ""))
                         for column in columns
@@ -938,6 +2432,7 @@ def copy_csv(
                     buffer.truncate(0)
 
                 for row in extra_rows or []:
+                    row = normalize_references(row, reference_maps or {})
                     normalized_row = {
                         column: normalize_cell(table, column, row.get(column, ""))
                         for column in columns
@@ -951,7 +2446,9 @@ def copy_csv(
             conflict_columns = UPSERT_CONFLICT_COLUMNS.get(table, ["id"])
             conflict_target = ", ".join(conflict_columns)
             set_clause = ", ".join(
-                f"{col} = EXCLUDED.{col}" for col in columns if col not in conflict_columns
+                f"{col} = EXCLUDED.{col}"
+                for col in columns
+                if col not in conflict_columns
             )
             upsert_query = f"""
                 INSERT INTO {table} ({joined_columns})
@@ -1012,7 +2509,9 @@ def main() -> None:
     load_dotenv(ROOT_DIR / ".env.local")
     database_url = os.getenv("DATABASE_URL")
     if not database_url:
-        raise RuntimeError("DATABASE_URL is required to load data into Supabase/Postgres.")
+        raise RuntimeError(
+            "DATABASE_URL is required to load data into Supabase/Postgres."
+        )
 
     settings = load_settings()
     schema_sql = "\n\n".join(
@@ -1020,7 +2519,10 @@ def main() -> None:
         for path in sorted(settings.sql_dir.glob("*.sql"))
     )
     validate_load_inputs(settings)
-    missing_driver_ids, missing_constructor_ids = scan_missing_reference_ids(settings.curated_dir)
+    missing_driver_ids, missing_constructor_ids = scan_missing_reference_ids(
+        settings.curated_dir
+    )
+    reference_maps = load_reference_maps(settings.curated_dir)
 
     with psycopg.connect(database_url) as connection:
         with connection.cursor() as cursor:
@@ -1032,8 +2534,12 @@ def main() -> None:
                 print("Running in non-destructive upsert mode.")
             else:
                 print("WARNING: Running in destructive truncate mode!")
-                truncate_tables = ", ".join(table for table, _, _ in reversed(TABLE_LOAD_ORDER))
-                cursor.execute(f"TRUNCATE TABLE {truncate_tables} RESTART IDENTITY CASCADE")
+                truncate_tables = ", ".join(
+                    table for table, _, _ in reversed(TABLE_LOAD_ORDER)
+                )
+                cursor.execute(
+                    f"TRUNCATE TABLE {truncate_tables} RESTART IDENTITY CASCADE"
+                )
 
             for table, file_name, columns in TABLE_LOAD_ORDER:
                 extra_rows: list[dict[str, str]] | None = None
@@ -1041,9 +2547,17 @@ def main() -> None:
                 if table in OPTIONAL_TABLES and not file_path.exists():
                     continue
                 if table == "drivers":
-                    extra_rows = build_supplemental_rows(table, missing_driver_ids, columns)
+                    extra_rows = build_supplemental_rows(
+                        table,
+                        missing_driver_ids.union(SUPPLEMENTAL_DRIVERS.keys()),
+                        columns,
+                    )
                 elif table == "constructors":
-                    extra_rows = build_supplemental_rows(table, missing_constructor_ids, columns)
+                    extra_rows = build_supplemental_rows(
+                        table,
+                        missing_constructor_ids.union(SUPPLEMENTAL_CONSTRUCTORS.keys()),
+                        columns,
+                    )
 
                 print(f"Loading table: {table} ...")
                 replace_mode = upsert_mode and table in REPLACE_LOAD_TABLES
@@ -1056,6 +2570,7 @@ def main() -> None:
                     file_path,
                     extra_rows=extra_rows,
                     upsert=upsert_mode and not replace_mode,
+                    reference_maps=reference_maps,
                 )
 
         connection.commit()
