@@ -15,3 +15,10 @@ export function hasSupabaseRuntimeEnv() {
   const { url, publishableKey } = readSupabaseRuntimeEnv();
   return Boolean(url && publishableKey);
 }
+
+export function shouldUseSupabaseProductData() {
+  const source = process.env["F1_INSIGHTX_PUBLIC_DATA_SOURCE"]?.toLowerCase();
+  if (source === "local") return false;
+  if (source === "supabase") return true;
+  return hasSupabaseRuntimeEnv();
+}

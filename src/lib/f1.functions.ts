@@ -26,7 +26,7 @@ import {
   fallbackWeekend,
   fallbackWeekendIndex,
 } from "./f1.fallback";
-import { hasSupabaseRuntimeEnv } from "./env.server";
+import { shouldUseSupabaseProductData } from "./env.server";
 
 export type {
   ConstructorStanding,
@@ -46,10 +46,7 @@ export type {
 } from "./f1.server";
 
 async function withFallback<T>(load: () => Promise<T>, fallback: () => T): Promise<T> {
-  if (
-    !hasSupabaseRuntimeEnv() ||
-    process.env["F1_INSIGHTX_PUBLIC_DATA_SOURCE"]?.toLowerCase() !== "supabase"
-  ) {
+  if (!shouldUseSupabaseProductData()) {
     return fallback();
   }
   try {

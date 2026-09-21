@@ -15,7 +15,7 @@ Fantasy work is intentionally hidden from the public product until it is rebuilt
 ## Runtime Flow
 
 1. A user opens a TanStack Start route.
-2. Server functions load small curated/product views from the bundled generated snapshot by default, or Supabase-backed public tables when `F1_INSIGHTX_PUBLIC_DATA_SOURCE=supabase`.
+2. Server functions load small curated/product views from Supabase when runtime Supabase env vars are present, or from the bundled generated snapshot when `F1_INSIGHTX_PUBLIC_DATA_SOURCE=local` is set.
 3. Client components only manage interaction state such as form controls, synchronized telemetry focus, picks, and auth/profile forms.
 4. Server functions return bounded product payloads and never parse raw FastF1 telemetry at runtime.
 5. Product surfaces display data quality, proxy wording, and unavailable states instead of inventing missing precision.

@@ -7,7 +7,7 @@ import seasonStateQualityRaw from "../../data/reports/season_state_quality_repor
 import strategyLabQualityRaw from "../../data/reports/strategy_lab_signal_quality.json?raw";
 import { methodDashboardInventory } from "@/data/method-dashboard-inventory";
 import { localTrackPathForCircuit } from "@/data/track-paths";
-import { readSupabaseRuntimeEnv } from "./env.server";
+import { readSupabaseRuntimeEnv, shouldUseSupabaseProductData } from "./env.server";
 import { safeExternalHref } from "./security";
 
 export const SEASON = 2026;
@@ -2290,10 +2290,7 @@ export async function fetchMethodDashboard(): Promise<MethodDashboardData> {
     })
     .sort((a, b) => a.category.localeCompare(b.category) || b.rows - a.rows);
 
-  const sourceMode =
-    process.env["F1_INSIGHTX_PUBLIC_DATA_SOURCE"]?.toLowerCase() === "supabase"
-      ? "supabase"
-      : "local";
+  const sourceMode = shouldUseSupabaseProductData() ? "supabase" : "local";
 
   const byCategory = new Map<string, MethodDashboardCategory>();
   for (const file of files) {

@@ -34,9 +34,9 @@ Runtime behavior is controlled by root environment variables, framework config, 
 
 Keep service-role keys, database URLs, OAuth secrets, and Upstash tokens server-side only.
 
-Public F1 pages use the committed generated snapshot by default. Set
-`F1_INSIGHTX_PUBLIC_DATA_SOURCE=supabase` only after Supabase public product
-tables have been refreshed through the same latest completed race.
+Public F1 pages use Supabase when the runtime Supabase URL/key are present.
+Set `F1_INSIGHTX_PUBLIC_DATA_SOURCE=local` only when deliberately testing the
+committed generated snapshot instead of the refreshed product tables.
 
 ## Release Checks
 
