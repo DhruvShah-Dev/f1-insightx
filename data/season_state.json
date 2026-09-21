@@ -2,16 +2,16 @@
   "analytics_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "monza",
-      "id": "2026-13-monza",
-      "race_name": "Italian Grand Prix",
-      "round": 13,
-      "scheduled_at": "2026-09-06T13:00:00Z",
+      "circuit_id": "madring",
+      "id": "2026-14-madring",
+      "race_name": "Spanish Grand Prix",
+      "round": 14,
+      "scheduled_at": "2026-09-13T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     }
   },
-  "build_version": "season_state_20260915T190122Z",
+  "build_version": "season_state_20260921T181608Z",
   "current_race_week": {
     "available": true,
     "product_view_race": {
@@ -40,60 +40,60 @@
     "position_evolution": "partial",
     "race_control": "missing",
     "race_results": "available",
-    "telemetry_sessions": "partial",
+    "telemetry_sessions": "available",
     "weather": "available"
   },
   "freshness": {
     "analytics": {
-      "build_version": "analytics_views_20260915T185117Z",
-      "generated_at": "2026-09-15T18:51:17Z",
+      "build_version": "analytics_views_20260921T180952Z",
+      "generated_at": "2026-09-21T18:09:52Z",
       "validation_status": "passed",
       "warnings": []
     },
     "analytics_index": {
-      "build_version": "analytics_index_20260915T185504Z",
-      "generated_at": "2026-09-15T18:55:04Z",
+      "build_version": "analytics_index_20260921T181029Z",
+      "generated_at": "2026-09-21T18:10:29Z",
       "validation_status": "passed",
       "warnings": []
     },
     "canonical_fastf1": {
-      "build_version": "canonical_fastf1_20260915T185013Z",
-      "generated_at": "2026-09-15T18:50:13Z",
+      "build_version": "canonical_fastf1_20260921T180845Z",
+      "generated_at": "2026-09-21T18:08:45Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_analysis": {
       "build_version": "race-analysis-v1",
-      "generated_at": "2026-09-15T18:54:35Z",
+      "generated_at": "2026-09-21T18:10:39Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_week": {
-      "build_version": "race_week_20260915T185426Z",
-      "generated_at": "2026-09-15T18:54:26Z",
+      "build_version": "race_week_20260921T181141Z",
+      "generated_at": "2026-09-21T18:11:41Z",
       "validation_status": "passed",
       "warnings": []
     },
     "season_state": {
-      "build_version": "season_state_20260915T185526Z",
-      "generated_at": "2026-09-15T18:55:26Z",
+      "build_version": "season_state_20260921T181143Z",
+      "generated_at": "2026-09-21T18:11:43Z",
       "validation_status": "passed",
       "warnings": []
     },
     "strategy_lab": {
-      "build_version": "strategy_lab_20260915T185416Z",
-      "generated_at": "2026-09-15T18:54:16Z",
+      "build_version": "strategy_lab_20260921T181127Z",
+      "generated_at": "2026-09-21T18:11:27Z",
       "validation_status": "passed",
       "warnings": []
     },
     "telemetry_features": {
-      "build_version": "telemetry_features_20260915T185107Z",
-      "generated_at": "2026-09-15T18:51:07Z",
+      "build_version": "telemetry_features_20260921T180950Z",
+      "generated_at": "2026-09-21T18:09:50Z",
       "validation_status": "passed",
       "warnings": []
     }
   },
-  "generated_at": "2026-09-15T19:01:22Z",
+  "generated_at": "2026-09-21T18:16:08Z",
   "latest_completed_race": {
     "circuit_id": "madring",
     "id": "2026-14-madring",
@@ -104,11 +104,11 @@
     "status": "completed_by_schedule"
   },
   "latest_completed_race_with_analytics": {
-    "circuit_id": "monza",
-    "id": "2026-13-monza",
-    "race_name": "Italian Grand Prix",
-    "round": 13,
-    "scheduled_at": "2026-09-06T13:00:00Z",
+    "circuit_id": "madring",
+    "id": "2026-14-madring",
+    "race_name": "Spanish Grand Prix",
+    "round": 14,
+    "scheduled_at": "2026-09-13T13:00:00Z",
     "season": 2026,
     "status": "data_available"
   },
@@ -122,19 +122,15 @@
     "status": "results_available"
   },
   "latest_completed_race_with_telemetry": {
-    "circuit_id": "monza",
-    "id": "2026-13-monza",
-    "race_name": "Italian Grand Prix",
-    "round": 13,
-    "scheduled_at": "2026-09-06T13:00:00Z",
+    "circuit_id": "madring",
+    "id": "2026-14-madring",
+    "race_name": "Spanish Grand Prix",
+    "round": 14,
+    "scheduled_at": "2026-09-13T13:00:00Z",
     "season": 2026,
     "status": "data_available"
   },
-  "missing_data_flags": [
-    "analytics_not_current",
-    "strategy_lab_next_race_unavailable",
-    "telemetry_not_current"
-  ],
+  "missing_data_flags": [],
   "next_race": {
     "circuit_id": "baku",
     "id": "2026-15-baku",
@@ -162,31 +158,27 @@
   "strategy_lab_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
       "scheduled_at": null,
       "season": 2026,
       "status": "strategy_lab_available"
     },
-    "next_race_available": false
+    "next_race_available": true
   },
   "telemetry_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "monza",
-      "id": "2026-13-monza",
-      "race_name": "Italian Grand Prix",
-      "round": 13,
-      "scheduled_at": "2026-09-06T13:00:00Z",
+      "circuit_id": "madring",
+      "id": "2026-14-madring",
+      "race_name": "Spanish Grand Prix",
+      "round": 14,
+      "scheduled_at": "2026-09-13T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     }
   },
-  "warnings": [
-    "Analytics available through Italian Grand Prix; Spanish Grand Prix telemetry processing pending.",
-    "Telemetry features available through Italian Grand Prix; Spanish Grand Prix telemetry processing pending.",
-    "Strategy Lab available for Spanish Grand Prix; Azerbaijan Grand Prix build is pending."
-  ]
+  "warnings": []
 }

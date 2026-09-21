@@ -3,20 +3,20 @@
     "start": 2020,
     "end": 2026
   },
-  "sessions_considered": 51,
-  "sessions_processed": 46,
+  "sessions_considered": 54,
+  "sessions_processed": 52,
   "sessions_skipped_non_complete": 0,
-  "sessions_missing_telemetry": 5,
+  "sessions_missing_telemetry": 2,
   "sessions_missing_position": 1,
   "sessions_failed": [],
   "row_counts": {
-    "telemetry_lap_summary": 989,
-    "corner_speed_profile": 7953,
-    "corner_braking_profile": 7953,
-    "corner_throttle_profile": 7953,
-    "straight_speed_profile": 6824,
-    "energy_deployment_proxy": 6824,
-    "driver_corner_delta": 7953
+    "telemetry_lap_summary": 1115,
+    "corner_speed_profile": 8961,
+    "corner_braking_profile": 8961,
+    "corner_throttle_profile": 8961,
+    "straight_speed_profile": 7706,
+    "energy_deployment_proxy": 7706,
+    "driver_corner_delta": 8961
   },
   "quality_score_distribution": {
     "min": 0.9,
@@ -26,8 +26,8 @@
   "corner_segmentation": {
     "method": "distance-binned low-speed/high-speed fallback",
     "precision": "approximate",
-    "corner_rows": 7953,
-    "straight_rows": 6824
+    "corner_rows": 8961,
+    "straight_rows": 7706
   },
   "energy_proxy_note": "energy_deployment_proxy is derived from speed/throttle/RPM/gear/DRS shape only; it is not true ERS or battery state.",
   "validation_errors": []

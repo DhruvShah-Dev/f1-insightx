@@ -4,8 +4,8 @@ id,season,round,race_id,driver_id,constructor_id,recommended_stop_count,preferre
 2026-15-baku|russell,2026,15,2026-15-baku,russell,mercedes,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
 2026-15-baku|max_verstappen,2026,15,2026-15-baku,max_verstappen,red_bull,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
 2026-15-baku|piastri,2026,15,2026-15-baku,piastri,mclaren,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
-2026-15-baku|hamilton,2026,15,2026-15-baku,hamilton,ferrari,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
 2026-15-baku|leclerc,2026,15,2026-15-baku,leclerc,ferrari,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
+2026-15-baku|hamilton,2026,15,2026-15-baku,hamilton,ferrari,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
 2026-15-baku|lawson,2026,15,2026-15-baku,lawson,red_bull,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
 2026-15-baku|gasly,2026,15,2026-15-baku,gasly,alpine,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1
 2026-15-baku|arvid_lindblad,2026,15,2026-15-baku,arvid_lindblad,rb,1,,,16,24,0.0,0.25,Current degradation signal supports a conservative baseline until live practice data lands.,race_week_strategy_v1

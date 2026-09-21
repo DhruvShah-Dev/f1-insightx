@@ -1,11 +1,11 @@
 {
   "audit": {
     "latest_analytics_race": {
-      "circuit_id": "monza",
-      "id": "2026-13-monza",
-      "race_name": "Italian Grand Prix",
-      "round": 13,
-      "scheduled_at": "2026-09-06T13:00:00Z",
+      "circuit_id": "madring",
+      "id": "2026-14-madring",
+      "race_name": "Spanish Grand Prix",
+      "round": 14,
+      "scheduled_at": "2026-09-13T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
@@ -46,11 +46,11 @@
       "status": "results_available"
     },
     "latest_telemetry_race": {
-      "circuit_id": "monza",
-      "id": "2026-13-monza",
-      "race_name": "Italian Grand Prix",
-      "round": 13,
-      "scheduled_at": "2026-09-06T13:00:00Z",
+      "circuit_id": "madring",
+      "id": "2026-14-madring",
+      "race_name": "Spanish Grand Prix",
+      "round": 14,
+      "scheduled_at": "2026-09-13T13:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
@@ -73,16 +73,16 @@
       "status": "race_week_product_available"
     },
     "strategy_lab_product_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
       "scheduled_at": null,
       "season": 2026,
       "status": "strategy_lab_available"
     }
   },
-  "build_version": "season_state_20260915T190122Z",
+  "build_version": "season_state_20260921T181608Z",
   "data_gaps": {
     "clean_lap_filtering": "inferred/proxy",
     "drs_gap_context": "partial",
@@ -90,21 +90,13 @@
     "position_evolution": "partial",
     "race_control": "missing",
     "race_results": "available",
-    "telemetry_sessions": "partial",
+    "telemetry_sessions": "available",
     "weather": "available"
   },
   "errors": [],
-  "generated_at": "2026-09-15T19:01:22Z",
-  "missing_data_flags": [
-    "analytics_not_current",
-    "strategy_lab_next_race_unavailable",
-    "telemetry_not_current"
-  ],
+  "generated_at": "2026-09-21T18:16:08Z",
+  "missing_data_flags": [],
   "schema_version": 1,
   "status": "passed",
-  "warnings": [
-    "Analytics available through Italian Grand Prix; Spanish Grand Prix telemetry processing pending.",
-    "Telemetry features available through Italian Grand Prix; Spanish Grand Prix telemetry processing pending.",
-    "Strategy Lab available for Spanish Grand Prix; Azerbaijan Grand Prix build is pending."
-  ]
+  "warnings": []
 }

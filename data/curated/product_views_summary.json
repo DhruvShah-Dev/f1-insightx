@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-15T18:54:09.499612+00:00",
-  "driver_standings_rows": 322,
-  "constructor_standings_rows": 154,
-  "race_week_context_rows": 23,
-  "model_features_rows": 503,
+  "generated_at": "2026-09-21T17:52:48.023926+00:00",
+  "driver_standings_rows": 826,
+  "constructor_standings_rows": 394,
+  "race_week_context_rows": 47,
+  "model_features_rows": 980,
   "prediction_snapshots_rows": 198,
   "fantasy_inputs_rows": 297,
   "model_version": "pre_race_ranker_v1"

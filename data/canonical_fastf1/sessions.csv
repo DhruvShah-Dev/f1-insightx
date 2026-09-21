@@ -1,4 +1,7 @@
 id,race_id,season,round,session_code,session_name,event_name,scheduled_at,source_label
+2026-01-albert_park|FP1,2026-01-albert_park,2026,1,FP1,FP1,Australian Grand Prix,,fastf1_canonical_v1
+2026-01-albert_park|FP2,2026-01-albert_park,2026,1,FP2,FP2,Australian Grand Prix,,fastf1_canonical_v1
+2026-01-albert_park|FP3,2026-01-albert_park,2026,1,FP3,FP3,Australian Grand Prix,,fastf1_canonical_v1
 2026-01-albert_park|Q,2026-01-albert_park,2026,1,Q,Q,Australian Grand Prix,,fastf1_canonical_v1
 2026-01-albert_park|R,2026-01-albert_park,2026,1,R,R,Australian Grand Prix,,fastf1_canonical_v1
 2026-02-shanghai|Q,2026-02-shanghai,2026,2,Q,Q,Chinese Grand Prix,,fastf1_canonical_v1

@@ -2,6 +2,23 @@
   "version": 1,
   "row_cap": 10,
   "sessions": {
+    "2026_01_FP3_Australian Grand Prix": {
+      "file": "2026-01-fp3-australian-grand-prix-0ac4ec0651ab.json.gz",
+      "season": 2026,
+      "round": 1,
+      "event": "Australian Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 190,
+        "segments": 1520,
+        "corner_segments": 1520,
+        "braking": 1520,
+        "throttle": 1520,
+        "straights": 1330,
+        "energy_proxy": 1330,
+        "lap_pace": 0
+      }
+    },
     "2026_01_Q_Australian Grand Prix": {
       "file": "2026-01-q-australian-grand-prix-4e79f4ec7fee.json.gz",
       "season": 2026,
@@ -782,6 +799,91 @@
         "straights": 1470,
         "energy_proxy": 1470,
         "lap_pace": 1054
+      }
+    },
+    "2026_14_FP1_Spanish Grand Prix": {
+      "file": "2026-14-fp1-spanish-grand-prix-1448f29c0289.json.gz",
+      "season": 2026,
+      "round": 14,
+      "event": "Spanish Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_14_FP2_Spanish Grand Prix": {
+      "file": "2026-14-fp2-spanish-grand-prix-36a4b807cbb1.json.gz",
+      "season": 2026,
+      "round": 14,
+      "event": "Spanish Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "corner_segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_14_FP3_Spanish Grand Prix": {
+      "file": "2026-14-fp3-spanish-grand-prix-5b857d45a67d.json.gz",
+      "season": 2026,
+      "round": 14,
+      "event": "Spanish Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "corner_segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_14_Q_Spanish Grand Prix": {
+      "file": "2026-14-q-spanish-grand-prix-7586a6b71013.json.gz",
+      "season": 2026,
+      "round": 14,
+      "event": "Spanish Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 190,
+        "segments": 1520,
+        "corner_segments": 1520,
+        "braking": 1520,
+        "throttle": 1520,
+        "straights": 1330,
+        "energy_proxy": 1330,
+        "lap_pace": 0
+      }
+    },
+    "2026_14_R_Spanish Grand Prix": {
+      "file": "2026-14-r-spanish-grand-prix-a06899d349ed.json.gz",
+      "season": 2026,
+      "round": 14,
+      "event": "Spanish Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 1106
       }
     }
   }

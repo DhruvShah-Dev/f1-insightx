@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 14,
+  "event_name": "Spanish Grand Prix",
+  "event_format": "conventional",
+  "session_code": "Q",
+  "session_name": "Qualifying",
+  "status": "complete",
+  "started_at": "2026-09-21T18:07:51Z",
+  "completed_at": "2026-09-21T18:08:04Z",
+  "source": "fastf1_staged_session_v2"
+}

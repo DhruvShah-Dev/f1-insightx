@@ -1,0 +1,378 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,1.0,1.0,SOFT,1.0,148.3,80.197,21.307,46.796,231.0,252.0,274.0,90.0,1,True,False,False,False,2026-03-07 01:54:50.514,,20.4,35.3,65.5,False,1.4,81.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,2.0,1.0,SOFT,2.0,100.995,34.687,20.724,45.584,251.0,282.0,269.0,276.0,12,True,True,True,False,2026-03-07 01:57:14.789,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,3.0,1.0,SOFT,3.0,87.517,28.821,17.877,40.819,276.0,277.0,180.0,275.0,26,True,True,False,False,2026-03-07 01:58:55.784,,20.3,35.3,64.3,False,3.0,86.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,4.0,1.0,SOFT,4.0,129.252,48.332,25.025,55.895,175.0,263.0,198.0,110.0,6,True,False,False,False,2026-03-07 02:00:23.301,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,5.0,1.0,SOFT,5.0,,40.239,27.328,,216.0,255.0,,263.0,6512,True,False,False,False,2026-03-07 02:02:32.553,,20.3,35.2,63.5,False,2.1,84.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,6.0,2.0,SOFT,6.0,,93.72,20.735,40.271,250.0,282.0,278.0,149.0,1,False,False,False,False,2026-03-07 02:11:03.431,,20.4,36.2,63.3,False,2.6,92.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,7.0,2.0,SOFT,7.0,81.438,28.357,18.139,34.942,276.0,267.0,284.0,289.0,1,False,True,True,False,2026-03-07 02:12:45.441,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,8.0,2.0,SOFT,8.0,116.975,41.083,25.693,50.199,201.0,209.0,220.0,113.0,1,False,False,True,False,2026-03-07 02:14:06.879,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,9.0,2.0,SOFT,9.0,115.536,38.567,25.496,51.473,201.0,217.0,275.0,175.0,1,False,False,True,False,2026-03-07 02:16:03.854,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,10.0,2.0,SOFT,10.0,95.658,36.34,20.518,38.8,179.0,284.0,276.0,288.0,1,False,False,True,False,2026-03-07 02:17:59.390,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,11.0,2.0,SOFT,11.0,81.163,28.4,17.983,34.78,276.0,269.0,283.0,284.0,1,False,True,True,False,2026-03-07 02:19:35.048,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,12.0,2.0,SOFT,12.0,112.408,39.435,25.198,47.775,205.0,221.0,187.0,238.0,12,False,False,True,False,2026-03-07 02:20:56.211,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,13.0,2.0,SOFT,13.0,105.721,35.779,24.101,45.841,246.0,164.0,281.0,186.0,21,False,False,True,False,2026-03-07 02:22:48.619,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,14.0,2.0,SOFT,14.0,81.458,28.298,17.807,35.353,265.0,277.0,289.0,288.0,1,False,False,True,False,2026-03-07 02:24:34.340,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,15.0,2.0,SOFT,15.0,110.214,39.663,24.962,45.589,161.0,214.0,277.0,141.0,1,False,False,True,False,2026-03-07 02:25:55.798,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,16.0,2.0,SOFT,16.0,81.039,28.496,17.932,34.611,261.0,274.0,284.0,284.0,1,False,True,True,False,2026-03-07 02:27:46.012,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,17.0,2.0,SOFT,17.0,,32.35,20.925,,231.0,257.0,,232.0,125,False,False,False,False,2026-03-07 02:29:07.051,,20.5,36.0,64.3,False,2.2,99.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,18.0,3.0,SOFT,1.0,,,20.151,39.354,256.0,269.0,277.0,185.0,1,True,False,False,False,2026-03-07 02:46:03.739,,21.0,38.4,62.8,False,2.1,78.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,19.0,3.0,SOFT,2.0,80.443,28.224,17.784,34.435,268.0,277.0,281.0,284.0,1,True,True,True,False,2026-03-07 02:47:41.335,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,20.0,3.0,SOFT,3.0,87.635,31.166,20.78,35.689,239.0,256.0,300.0,255.0,1,True,False,True,False,2026-03-07 02:49:01.778,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,21.0,3.0,SOFT,4.0,,37.383,24.431,,196.0,214.0,3.0,286.0,1,True,False,False,False,2026-03-07 02:50:29.413,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,NOR,McLaren,22.0,3.0,SOFT,5.0,,37.138,18.221,,264.0,257.0,,163.0,1,True,False,False,False,2026-03-07 02:53:15.564,,21.0,39.3,62.4,False,2.6,79.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,1.0,1.0,SOFT,1.0,,,20.328,39.272,245.0,282.0,281.0,175.0,1,True,False,False,False,2026-03-07 02:11:21.648,,20.4,36.2,63.3,False,2.6,92.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,2.0,1.0,SOFT,2.0,80.979,28.38,17.776,34.823,283.0,280.0,304.0,302.0,1,True,True,True,False,2026-03-07 02:13:02.928,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,3.0,1.0,SOFT,3.0,136.003,46.401,24.626,64.976,180.0,239.0,,222.0,1,True,False,False,False,2026-03-07 02:14:23.907,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,4.0,2.0,SOFT,4.0,103.25,38.758,20.623,43.869,244.0,198.0,283.0,185.0,1,False,False,False,False,2026-03-07 02:16:39.910,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,5.0,2.0,SOFT,5.0,80.508,28.061,17.905,34.542,281.0,273.0,303.0,303.0,1,False,True,True,False,2026-03-07 02:18:23.160,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,6.0,2.0,SOFT,6.0,103.15,43.571,20.726,38.853,193.0,266.0,313.0,214.0,1,False,False,True,False,2026-03-07 02:19:43.668,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,7.0,2.0,SOFT,7.0,82.062,28.356,18.281,35.425,294.0,291.0,296.0,316.0,12,False,False,True,False,2026-03-07 02:21:26.818,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,8.0,2.0,SOFT,8.0,84.351,30.935,17.951,35.465,277.0,298.0,299.0,292.0,21,False,False,True,False,2026-03-07 02:22:48.880,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,9.0,2.0,SOFT,9.0,81.973,28.33,17.671,35.972,299.0,305.0,284.0,299.0,1,False,False,True,False,2026-03-07 02:24:13.231,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,10.0,2.0,SOFT,10.0,82.186,28.563,18.106,35.517,296.0,290.0,295.0,285.0,1,False,False,True,False,2026-03-07 02:25:35.204,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,11.0,2.0,SOFT,11.0,,29.873,18.903,,260.0,288.0,,,125,False,False,False,False,2026-03-07 02:26:57.390,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,12.0,3.0,SOFT,1.0,118.928,55.03,19.31,44.588,252.0,269.0,287.0,75.0,1,True,False,False,False,2026-03-07 02:47:37.346,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,13.0,3.0,SOFT,2.0,80.197,27.798000000000002,17.902,34.497,280.0,273.0,312.0,306.0,1,True,True,True,False,2026-03-07 02:49:27.028,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,14.0,3.0,SOFT,3.0,,41.294,23.22,,182.0,242.0,119.0,234.0,1,True,False,False,False,2026-03-07 02:50:47.225,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,VER,Red Bull Racing,15.0,3.0,SOFT,4.0,,30.688,18.307,,257.0,282.0,,255.0,1,True,False,False,False,2026-03-07 02:53:38.876,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,1.0,1.0,SOFT,1.0,124.999,62.469,21.053,41.477,235.0,233.0,268.0,157.0,1,True,False,False,False,2026-03-07 01:52:40.272,,20.4,34.3,66.6,False,2.8,113.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,2.0,1.0,SOFT,2.0,98.239,32.291,20.754,45.194,247.0,231.0,265.0,278.0,1,True,True,True,False,2026-03-07 01:54:39.786,,20.4,35.3,65.5,False,1.4,81.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,3.0,1.0,SOFT,3.0,82.287,29.181,17.806,35.3,247.0,285.0,304.0,282.0,1,True,True,True,False,2026-03-07 01:56:18.025,,20.4,34.8,65.0,False,2.8,86.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,4.0,1.0,SOFT,4.0,130.034,49.105,28.953,51.976,129.0,228.0,268.0,249.0,12,True,False,True,False,2026-03-07 01:57:40.312,,20.3,34.6,64.5,False,2.1,68.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,5.0,1.0,SOFT,5.0,135.482,28.806,39.516,67.16,250.0,119.0,172.0,285.0,26,True,False,False,False,2026-03-07 01:59:50.346,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,6.0,1.0,SOFT,6.0,,33.89,20.612,,242.0,225.0,,240.0,6512,True,False,False,False,2026-03-07 02:02:05.828,,20.3,35.2,63.5,False,2.1,84.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,7.0,2.0,SOFT,7.0,120.019,57.364,20.938,41.717,237.0,231.0,267.0,61.0,1,False,False,False,False,2026-03-07 02:12:32.290,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,8.0,2.0,SOFT,8.0,90.446,31.192,20.392,38.862,248.0,232.0,283.0,270.0,1,False,False,True,False,2026-03-07 02:14:27.472,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,9.0,2.0,SOFT,9.0,95.592,34.874,20.48,40.238,235.0,231.0,270.0,294.0,1,False,False,True,False,2026-03-07 02:15:57.918,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,10.0,2.0,SOFT,10.0,80.575,28.531,17.411,34.633,251.0,289.0,299.0,287.0,1,False,True,True,False,2026-03-07 02:17:33.510,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,11.0,2.0,SOFT,11.0,127.469,37.426,31.772,58.271,240.0,169.0,268.0,169.0,1,False,False,True,False,2026-03-07 02:18:54.085,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,12.0,2.0,SOFT,12.0,,28.68,17.716,,248.0,282.0,,284.0,12,False,False,False,False,2026-03-07 02:21:01.554,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,13.0,3.0,SOFT,1.0,102.19,39.183,20.501,42.506,247.0,234.0,202.0,188.0,12,True,False,False,False,2026-03-07 02:35:26.233,,20.5,38.2,66.3,False,1.3,99.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,14.0,3.0,SOFT,2.0,,,,,,,,153.0,251,True,False,False,False,2026-03-07 02:37:08.423,,20.6,36.8,65.4,False,0.4,88.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,15.0,4.0,SOFT,3.0,128.955,69.333,20.585,39.037,242.0,233.0,279.0,173.0,1,False,False,False,False,2026-03-07 02:46:37.824,,20.9,38.5,63.0,False,3.0,79.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,16.0,4.0,SOFT,4.0,80.459,28.42,17.505,34.534,254.0,281.0,304.0,290.0,1,False,True,True,False,2026-03-07 02:48:33.985,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,17.0,4.0,SOFT,5.0,111.594,43.72,21.031,46.843,216.0,235.0,272.0,285.0,1,False,False,True,False,2026-03-07 02:49:54.444,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,18.0,4.0,SOFT,6.0,,35.841,21.282,,237.0,221.0,194.0,208.0,1,False,False,False,False,2026-03-07 02:51:46.038,,20.9,39.1,63.4,False,1.0,156.0
+2026,1,Australian Grand Prix,FP3,BOR,Audi,19.0,4.0,SOFT,7.0,,35.91,21.039,,218.0,281.0,,221.0,1,False,False,False,False,2026-03-07 02:54:24.952,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,1.0,1.0,SOFT,1.0,120.651,56.397,20.574,43.68,235.0,286.0,279.0,110.0,1,True,False,False,False,2026-03-07 02:11:33.010,,20.4,36.2,63.3,False,2.6,92.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,2.0,1.0,SOFT,2.0,81.311,28.601,17.632,35.078,264.0,286.0,314.0,299.0,1,True,True,True,False,2026-03-07 02:13:28.759,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,3.0,1.0,SOFT,3.0,111.551,46.499,22.494,42.558,222.0,242.0,246.0,220.0,1,True,False,True,False,2026-03-07 02:14:50.070,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,4.0,1.0,SOFT,4.0,114.581,35.968,23.627,54.986,222.0,227.0,278.0,236.0,1,True,False,True,False,2026-03-07 02:16:41.621,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,5.0,1.0,SOFT,5.0,80.691,28.291,17.75,34.65,266.0,276.0,302.0,304.0,1,True,True,True,False,2026-03-07 02:18:36.202,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,6.0,1.0,SOFT,6.0,114.491,45.766,29.531,39.194,176.0,217.0,312.0,236.0,1,True,False,True,False,2026-03-07 02:19:56.893,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,7.0,1.0,SOFT,7.0,81.263,28.472,17.801,34.99,260.0,303.0,295.0,319.0,12,True,False,True,False,2026-03-07 02:21:51.384,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,8.0,1.0,SOFT,8.0,82.449,29.132,18.185,35.132,248.0,294.0,311.0,295.0,21,True,False,True,False,2026-03-07 02:23:12.647,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,9.0,1.0,SOFT,9.0,82.025,28.776,18.181,35.068,252.0,300.0,315.0,315.0,1,True,False,True,False,2026-03-07 02:24:35.096,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,10.0,1.0,SOFT,10.0,82.175,28.778,18.305,35.092,243.0,282.0,310.0,322.0,1,True,False,True,False,2026-03-07 02:25:57.121,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,11.0,1.0,SOFT,11.0,,28.659,18.87,,261.0,288.0,,318.0,125,True,False,False,False,2026-03-07 02:27:19.296,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,12.0,2.0,SOFT,1.0,117.347,53.317,21.455,42.575,178.0,295.0,282.0,152.0,1,True,False,False,False,2026-03-07 02:47:34.401,,20.9,38.5,63.0,False,3.0,79.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,13.0,2.0,SOFT,2.0,80.137,28.097,17.725,34.315,250.0,277.0,307.0,303.0,1,True,True,True,False,2026-03-07 02:49:20.870,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,14.0,2.0,SOFT,3.0,,47.626,29.229,91.519,139.0,207.0,4.0,242.0,1,True,False,False,False,2026-03-07 02:50:41.007,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,HAD,Red Bull Racing,15.0,2.0,SOFT,4.0,,31.781,18.331,,264.0,278.0,,246.0,1,True,False,False,False,2026-03-07 02:53:29.533,,21.0,39.3,62.4,False,2.6,79.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,1.0,1.0,HARD,1.0,103.838,41.143,20.609,42.086,246.0,275.0,273.0,176.0,1,True,False,False,False,2026-03-07 01:51:00.298,,20.3,33.5,65.9,False,3.4,89.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,2.0,1.0,HARD,2.0,83.473,29.52,17.934,36.019,265.0,275.0,290.0,289.0,1,True,True,True,False,2026-03-07 01:52:42.065,,20.4,34.3,66.6,False,2.8,113.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,3.0,1.0,HARD,3.0,106.504,39.122,23.223,44.159,232.0,274.0,278.0,238.0,1,True,False,True,False,2026-03-07 01:54:05.538,,20.4,34.2,65.8,False,1.4,102.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,4.0,1.0,HARD,4.0,82.663,29.049,17.909,35.705,272.0,270.0,298.0,295.0,1,True,True,True,False,2026-03-07 01:55:52.042,,20.4,34.8,65.0,False,2.8,86.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,5.0,1.0,HARD,5.0,141.191,54.088,30.931,56.172,135.0,265.0,208.0,178.0,12,True,False,True,False,2026-03-07 01:57:14.705,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,6.0,1.0,HARD,6.0,115.499,37.326,26.248,51.925,248.0,243.0,232.0,189.0,26,True,False,False,False,2026-03-07 01:59:35.896,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,7.0,1.0,HARD,7.0,117.575,36.816,25.484,55.275,197.0,271.0,209.0,244.0,6,True,False,False,False,2026-03-07 02:01:31.395,,20.3,35.3,63.5,False,2.3,90.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,8.0,1.0,HARD,8.0,,,,,,,,245.0,6512,True,False,False,False,2026-03-07 02:03:28.970,,20.3,35.3,63.7,False,0.9,45.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,9.0,2.0,HARD,9.0,134.603,73.026,20.214,41.363,162.0,297.0,276.0,192.0,1,False,False,False,False,2026-03-07 02:13:12.365,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,10.0,2.0,HARD,10.0,86.532,30.537,18.385,37.61,264.0,277.0,286.0,262.0,1,False,False,True,False,2026-03-07 02:15:23.456,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,11.0,2.0,HARD,11.0,100.613,34.708,20.255,45.65,234.0,284.0,271.0,266.0,1,False,False,True,False,2026-03-07 02:16:49.988,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,12.0,2.0,HARD,12.0,83.046,29.259,17.919,35.868,271.0,273.0,285.0,291.0,1,False,False,True,False,2026-03-07 02:18:30.601,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,13.0,2.0,HARD,13.0,86.225,30.421,18.617,37.187,244.0,273.0,279.0,281.0,1,False,False,True,False,2026-03-07 02:19:53.647,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,14.0,2.0,HARD,14.0,84.539,29.717,18.119,36.703,270.0,272.0,282.0,265.0,1,False,False,True,False,2026-03-07 02:21:19.872,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,15.0,2.0,HARD,15.0,87.327,32.288,18.541,36.498,254.0,276.0,294.0,258.0,12,False,False,True,False,2026-03-07 02:22:44.411,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,16.0,2.0,HARD,16.0,84.437,29.266,17.954,37.217,255.0,286.0,301.0,282.0,1,False,False,True,False,2026-03-07 02:24:11.738,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,17.0,2.0,HARD,17.0,83.782,29.282,17.924,36.576,256.0,290.0,295.0,293.0,1,False,False,True,False,2026-03-07 02:25:36.175,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,18.0,2.0,HARD,18.0,83.528,29.542,17.79,36.196,252.0,301.0,293.0,290.0,1,False,False,True,False,2026-03-07 02:26:59.957,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,19.0,2.0,HARD,19.0,103.895,29.502,18.044,56.349,256.0,292.0,,285.0,1,False,False,False,False,2026-03-07 02:28:23.485,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,20.0,3.0,HARD,20.0,,35.388,19.756,,252.0,283.0,,232.0,1,False,False,False,False,2026-03-07 02:30:07.380,,20.4,35.3,64.9,False,1.8,83.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,21.0,4.0,SOFT,1.0,,,,,,,,154.0,125,True,False,False,False,2026-03-07 02:36:47.324,,20.6,36.8,65.4,False,0.4,88.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,22.0,5.0,SOFT,2.0,129.561,65.361,20.214,43.986,243.0,281.0,280.0,120.0,1,False,False,False,False,2026-03-07 02:46:27.724,,21.0,38.4,62.8,False,2.1,78.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,23.0,5.0,SOFT,3.0,81.071,28.456,17.75,34.865,274.0,300.0,315.0,298.0,1,False,True,True,False,2026-03-07 02:48:28.660,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,24.0,5.0,SOFT,4.0,113.044,43.657,23.14,46.247,226.0,220.0,284.0,197.0,1,False,False,True,False,2026-03-07 02:49:49.731,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,25.0,5.0,SOFT,5.0,147.958,31.095,23.518,93.345,199.0,218.0,153.0,299.0,1,False,False,True,False,2026-03-07 02:51:42.775,,20.9,39.1,63.4,False,1.0,156.0
+2026,1,Australian Grand Prix,FP3,GAS,Alpine,26.0,5.0,SOFT,6.0,,32.633,18.03,,253.0,300.0,,252.0,1,False,False,False,False,2026-03-07 02:54:10.733,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,1.0,1.0,MEDIUM,1.0,107.154,42.371,21.693,43.09,228.0,247.0,283.0,176.0,1,True,False,False,False,2026-03-07 01:50:23.838,,20.3,34.2,65.8,False,2.4,94.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,2.0,1.0,MEDIUM,2.0,85.722,30.497,18.193,37.032,251.0,292.0,293.0,272.0,1,True,True,True,False,2026-03-07 01:52:08.613,,20.4,34.0,66.6,False,1.9,104.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,3.0,1.0,MEDIUM,3.0,130.03,45.499,35.984,48.547,175.0,152.0,285.0,185.0,1,True,False,True,False,2026-03-07 01:53:34.335,,20.4,34.3,66.6,False,2.8,113.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,4.0,1.0,MEDIUM,4.0,84.397,29.862,18.168,36.367,264.0,285.0,298.0,292.0,1,True,True,True,False,2026-03-07 01:55:44.365,,20.4,34.8,65.0,False,2.8,86.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,5.0,1.0,MEDIUM,5.0,,46.284,25.055,,216.0,198.0,,228.0,1265,True,False,False,False,2026-03-07 01:57:08.762,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,6.0,2.0,MEDIUM,6.0,,87.896,19.755,42.76,227.0,282.0,301.0,45.0,1,False,False,False,False,2026-03-07 02:12:24.206,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,7.0,2.0,MEDIUM,7.0,87.702,31.312,18.418,37.972,252.0,293.0,293.0,267.0,1,False,False,True,False,2026-03-07 02:14:50.024,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,8.0,2.0,MEDIUM,8.0,86.575,30.404,18.292,37.879,269.0,292.0,275.0,268.0,1,False,False,True,False,2026-03-07 02:16:17.726,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,9.0,2.0,MEDIUM,9.0,86.259,30.476,18.22,37.563,264.0,291.0,284.0,277.0,1,False,False,True,False,2026-03-07 02:17:44.301,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,10.0,2.0,MEDIUM,10.0,86.335,30.374,18.393,37.568,266.0,284.0,282.0,285.0,1,False,False,True,False,2026-03-07 02:19:10.560,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,11.0,2.0,MEDIUM,11.0,86.565,30.515,18.15,37.9,261.0,297.0,286.0,285.0,1,False,False,True,False,2026-03-07 02:20:36.895,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,12.0,2.0,MEDIUM,12.0,86.378,30.519,18.38,37.479,263.0,291.0,287.0,270.0,12,False,False,True,False,2026-03-07 02:22:03.460,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,13.0,2.0,MEDIUM,13.0,86.129,30.399,18.29,37.44,258.0,289.0,292.0,276.0,1,False,False,True,False,2026-03-07 02:23:29.838,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,14.0,2.0,MEDIUM,14.0,85.54,30.056,18.217,37.267,260.0,291.0,293.0,291.0,1,False,False,True,False,2026-03-07 02:24:55.967,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,15.0,2.0,MEDIUM,15.0,86.181,30.365,18.304,37.512,262.0,291.0,296.0,290.0,1,False,False,True,False,2026-03-07 02:26:21.507,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,16.0,2.0,MEDIUM,16.0,86.24,30.409,18.325,37.506,264.0,304.0,271.0,285.0,1,False,False,True,False,2026-03-07 02:27:47.688,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,17.0,2.0,MEDIUM,17.0,,39.467,23.518,,147.0,236.0,,206.0,125,False,False,False,False,2026-03-07 02:29:13.928,,20.5,36.0,64.3,False,2.2,99.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,18.0,3.0,SOFT,1.0,135.041,62.3,21.27,51.471,230.0,256.0,284.0,77.0,1,True,False,False,False,2026-03-07 02:47:51.762,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,19.0,3.0,SOFT,2.0,102.572,37.66,20.351,44.561,225.0,252.0,284.0,301.0,1,True,False,True,False,2026-03-07 02:50:00.475,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,20.0,3.0,SOFT,3.0,,32.192,24.388,97.134,155.0,229.0,167.0,250.0,1,True,False,False,False,2026-03-07 02:51:43.047,,20.9,39.1,63.4,False,1.0,156.0
+2026,1,Australian Grand Prix,FP3,PER,Cadillac,21.0,3.0,SOFT,4.0,,35.386,20.368,,244.0,279.0,,228.0,1,True,False,False,False,2026-03-07 02:54:16.806,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,1.0,1.0,SOFT,1.0,133.092,68.62,19.972,44.5,247.0,279.0,273.0,156.0,12,True,False,False,False,2026-03-07 01:57:31.233,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,2.0,1.0,SOFT,2.0,107.429,28.34,17.523,61.566,262.0,236.0,206.0,283.0,26,True,True,False,False,2026-03-07 01:59:40.459,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,3.0,1.0,SOFT,3.0,115.667,39.549,23.798000000000002,52.32,193.0,237.0,176.0,227.0,6,True,False,False,False,2026-03-07 02:01:27.888,,20.3,35.3,63.5,False,2.3,90.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,4.0,1.0,SOFT,4.0,,,,,,,,178.0,6512,True,False,False,False,2026-03-07 02:03:23.555,,20.3,35.3,63.7,False,0.9,45.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,5.0,2.0,SOFT,5.0,126.752,57.818,20.18,48.754,250.0,260.0,265.0,168.0,1,False,False,False,False,2026-03-07 02:11:38.891,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,6.0,2.0,SOFT,6.0,80.324,28.23,17.582,34.512,259.0,283.0,299.0,286.0,1,False,True,True,False,2026-03-07 02:13:37.832,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,7.0,2.0,SOFT,7.0,120.967,36.259,21.544,63.164,236.0,252.0,,212.0,1,False,False,False,False,2026-03-07 02:14:58.156,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,8.0,3.0,SOFT,8.0,117.27,61.347,18.581,37.342,259.0,177.0,288.0,217.0,1,False,False,False,False,2026-03-07 02:16:59.123,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,9.0,3.0,SOFT,9.0,81.911,28.533,17.977,35.401,257.0,270.0,291.0,272.0,1,False,False,True,False,2026-03-07 02:18:56.393,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,10.0,3.0,SOFT,10.0,82.126,28.691,17.942,35.493,244.0,303.0,286.0,273.0,1,False,False,True,False,2026-03-07 02:20:18.304,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,11.0,3.0,SOFT,11.0,81.732,28.657,17.859,35.216,250.0,298.0,300.0,271.0,12,False,False,True,False,2026-03-07 02:21:40.430,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,12.0,3.0,SOFT,12.0,81.268,28.396,17.76,35.112,256.0,302.0,298.0,286.0,21,False,False,True,False,2026-03-07 02:23:02.162,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,13.0,3.0,SOFT,13.0,81.13,28.302,17.74,35.088,251.0,296.0,292.0,292.0,1,False,False,True,False,2026-03-07 02:24:23.430,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,14.0,3.0,SOFT,14.0,81.17,28.497,17.719,34.954,249.0,296.0,298.0,287.0,1,False,False,True,False,2026-03-07 02:25:44.560,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,15.0,3.0,SOFT,15.0,80.884,28.377,17.67,34.837,249.0,296.0,303.0,290.0,1,False,False,True,False,2026-03-07 02:27:05.730,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,16.0,3.0,SOFT,16.0,,31.403,19.474,,254.0,268.0,,241.0,1,False,False,False,False,2026-03-07 02:28:26.614,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,17.0,4.0,SOFT,1.0,98.493,38.476,20.137,39.88,243.0,244.0,274.0,196.0,1,True,False,False,False,2026-03-07 02:35:03.370,,20.5,38.2,66.3,False,1.3,99.0
+2026,1,Australian Grand Prix,FP3,ANT,Mercedes,18.0,4.0,SOFT,2.0,,,,,,,,291.0,125,True,False,False,False,2026-03-07 02:36:41.863,,20.6,36.8,65.4,False,0.4,88.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,1.0,1.0,MEDIUM,1.0,103.389,40.33,21.553,41.506,241.0,258.0,264.0,161.0,1,True,False,False,False,2026-03-07 01:51:12.314,,20.3,33.5,65.9,False,3.4,89.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,2.0,1.0,MEDIUM,2.0,86.04,30.566,18.763,36.711,246.0,271.0,293.0,294.0,1,True,True,True,False,2026-03-07 01:52:53.477,,20.4,34.3,66.6,False,2.8,113.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,3.0,1.0,MEDIUM,3.0,101.774,38.174,21.138,42.462,242.0,273.0,275.0,148.0,1,True,False,True,False,2026-03-07 01:54:19.517,,20.4,34.2,65.8,False,1.4,102.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,4.0,1.0,MEDIUM,4.0,84.101,29.731,18.233,36.137,262.0,274.0,286.0,293.0,1,True,True,True,False,2026-03-07 01:56:01.291,,20.4,34.8,65.0,False,2.8,86.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,5.0,1.0,MEDIUM,5.0,,33.766,20.937,,219.0,268.0,,220.0,126,True,False,False,False,2026-03-07 01:57:25.392,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,6.0,2.0,MEDIUM,6.0,,,,,,,,164.0,6512,False,False,False,False,2026-03-07 02:03:06.395,,20.3,35.3,63.7,False,0.9,45.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,7.0,3.0,SOFT,1.0,122.162,53.721,21.026,47.415,247.0,196.0,271.0,45.0,1,True,False,False,False,2026-03-07 02:12:46.291,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,8.0,3.0,SOFT,2.0,83.717,29.507,18.317,35.893,252.0,271.0,276.0,291.0,1,True,True,True,False,2026-03-07 02:14:46.275,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,9.0,3.0,SOFT,3.0,103.393,35.049,20.831,47.513,245.0,178.0,272.0,262.0,1,True,False,True,False,2026-03-07 02:16:09.992,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,10.0,3.0,SOFT,4.0,82.972,29.272,18.176,35.524,253.0,272.0,274.0,294.0,1,True,True,True,False,2026-03-07 02:17:53.385,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,11.0,3.0,SOFT,5.0,,33.927,20.438,,233.0,268.0,,229.0,12,True,False,False,False,2026-03-07 02:19:16.357,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,12.0,4.0,SOFT,6.0,107.836,47.016,21.058,39.762,241.0,268.0,270.0,183.0,1,False,False,False,False,2026-03-07 02:24:43.920,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,13.0,4.0,SOFT,7.0,83.054,29.285,18.185,35.584,247.0,266.0,284.0,291.0,1,False,False,True,False,2026-03-07 02:26:31.756,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,14.0,4.0,SOFT,8.0,101.289,37.197,20.895,43.197,171.0,278.0,268.0,250.0,1,False,False,True,False,2026-03-07 02:27:54.810,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,15.0,4.0,SOFT,9.0,82.837,29.259,18.248,35.33,250.0,266.0,289.0,294.0,1,False,True,True,False,2026-03-07 02:29:36.099,,20.4,35.3,64.9,False,1.8,83.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,16.0,4.0,SOFT,10.0,,32.769,20.226,,229.0,275.0,,218.0,125,False,False,False,False,2026-03-07 02:30:58.936,,20.5,35.3,64.3,False,1.9,91.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,17.0,5.0,SOFT,1.0,117.097,49.66,20.876,46.561,242.0,251.0,275.0,98.0,1,True,False,False,False,2026-03-07 02:47:43.706,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,18.0,5.0,SOFT,2.0,82.72,29.185,18.179,35.356,240.0,270.0,292.0,298.0,1,True,True,True,False,2026-03-07 02:49:33.568,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,19.0,5.0,SOFT,3.0,,41.113,27.524,,177.0,199.0,157.0,214.0,1,True,False,False,False,2026-03-07 02:50:56.288,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,ALO,Aston Martin,20.0,5.0,SOFT,4.0,,35.003,21.071,,211.0,259.0,,211.0,1,True,False,False,False,2026-03-07 02:53:50.503,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,1.0,1.0,SOFT,1.0,114.579,40.945,21.264,52.37,230.0,305.0,226.0,186.0,12,True,False,False,False,2026-03-07 01:57:33.454,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,2.0,1.0,SOFT,2.0,114.611,36.909,21.54,56.162,225.0,262.0,271.0,169.0,26,True,True,False,False,2026-03-07 01:59:25.778,,20.3,35.3,64.3,False,3.0,86.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,3.0,1.0,SOFT,3.0,112.015,37.149,23.381,51.485,226.0,267.0,203.0,235.0,6,True,True,False,False,2026-03-07 02:01:20.389,,20.3,35.3,63.5,False,2.3,90.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,4.0,1.0,SOFT,4.0,,,,,,,,157.0,6512,True,False,False,False,2026-03-07 02:03:12.404,,20.3,35.3,63.7,False,0.9,45.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,5.0,2.0,SOFT,5.0,,,20.938,38.886,244.0,252.0,278.0,100.0,1,False,False,False,False,2026-03-07 02:11:29.209,,20.4,36.2,63.3,False,2.6,92.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,6.0,2.0,SOFT,6.0,80.979,28.448,17.929,34.602,261.0,287.0,308.0,291.0,1,False,True,True,False,2026-03-07 02:13:13.963,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,7.0,2.0,SOFT,7.0,113.168,41.739,23.033,48.396,161.0,194.0,280.0,247.0,1,False,False,True,False,2026-03-07 02:14:34.942,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,8.0,2.0,SOFT,8.0,80.271,28.174,17.592,34.505,263.0,292.0,304.0,288.0,1,False,True,True,False,2026-03-07 02:16:28.110,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,9.0,2.0,SOFT,9.0,146.044,42.256,32.919,70.869,160.0,121.0,,252.0,1,False,False,False,False,2026-03-07 02:17:48.381,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,10.0,3.0,SOFT,10.0,134.903,56.697,20.154,58.052,248.0,278.0,280.0,165.0,1,False,False,False,False,2026-03-07 02:20:14.425,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,11.0,3.0,SOFT,11.0,99.546,30.965,21.16,47.421,222.0,281.0,281.0,294.0,12,False,False,True,False,2026-03-07 02:22:29.328,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,12.0,3.0,SOFT,12.0,79.827,27.915,17.54,34.372,263.0,290.0,304.0,289.0,1,False,True,True,False,2026-03-07 02:24:08.874,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,13.0,3.0,SOFT,13.0,107.101,36.416,25.565,45.12,162.0,157.0,285.0,253.0,1,False,False,True,False,2026-03-07 02:25:28.701,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,14.0,3.0,SOFT,14.0,79.869,27.786,17.626,34.457,270.0,286.0,304.0,294.0,1,False,False,True,False,2026-03-07 02:27:15.802,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,15.0,3.0,SOFT,15.0,,31.087,20.058,,249.0,276.0,,255.0,125,False,False,False,False,2026-03-07 02:28:35.671,,20.5,36.0,64.3,False,2.2,99.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,16.0,4.0,SOFT,1.0,,,22.207,40.082,225.0,269.0,282.0,93.0,1,True,False,False,False,2026-03-07 02:46:11.364,,21.0,38.4,62.8,False,2.1,78.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,17.0,4.0,SOFT,2.0,79.935,28.111,17.615,34.209,262.0,293.0,305.0,294.0,1,True,False,True,False,2026-03-07 02:48:04.434,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,18.0,4.0,SOFT,3.0,106.341,34.304,23.516,48.521,244.0,297.0,283.0,281.0,1,True,False,True,False,2026-03-07 02:49:24.369,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,19.0,4.0,SOFT,4.0,,33.206,22.319,,224.0,214.0,178.0,293.0,1,True,False,False,False,2026-03-07 02:51:10.710,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,LEC,Ferrari,20.0,4.0,SOFT,5.0,,31.614,18.519,,251.0,298.0,,243.0,1,True,False,False,False,2026-03-07 02:54:00.971,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,1.0,1.0,MEDIUM,1.0,125.203,61.956,21.378,41.869,235.0,253.0,282.0,110.0,1,True,False,False,False,2026-03-07 02:12:20.924,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,2.0,1.0,MEDIUM,2.0,83.46,29.737,18.226,35.497,250.0,290.0,293.0,276.0,1,True,True,True,False,2026-03-07 02:14:09.139,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,3.0,1.0,MEDIUM,3.0,110.644,40.677,22.397,47.57,188.0,279.0,293.0,208.0,1,True,False,True,False,2026-03-07 02:15:32.599,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,4.0,1.0,MEDIUM,4.0,82.589,28.999,18.064,35.526,250.0,297.0,284.0,288.0,1,True,True,True,False,2026-03-07 02:17:23.243,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,5.0,1.0,MEDIUM,5.0,107.841,42.654,23.241,41.946,186.0,280.0,281.0,217.0,1,True,False,True,False,2026-03-07 02:18:45.832,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,6.0,1.0,MEDIUM,6.0,81.942,28.897,17.896,35.149,266.0,285.0,294.0,286.0,1,True,True,True,False,2026-03-07 02:20:33.673,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,7.0,1.0,MEDIUM,7.0,,85.15,23.527,45.036,208.0,109.0,283.0,272.0,12,True,False,False,False,2026-03-07 02:21:55.615,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,8.0,1.0,MEDIUM,8.0,81.949,28.875,17.8,35.274,248.0,294.0,288.0,296.0,1,True,False,True,False,2026-03-07 02:24:29.425,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,9.0,1.0,MEDIUM,9.0,110.045,42.194,28.068,39.783,151.0,188.0,286.0,267.0,1,True,False,True,False,2026-03-07 02:25:51.374,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,10.0,1.0,MEDIUM,10.0,101.257,35.726,21.87,43.661,176.0,274.0,282.0,283.0,1,True,False,True,False,2026-03-07 02:27:41.419,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,11.0,1.0,MEDIUM,11.0,82.309,28.901,18.002,35.406,249.0,291.0,289.0,281.0,1,True,False,True,False,2026-03-07 02:29:22.676,,20.5,36.0,64.3,False,2.2,99.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,12.0,1.0,MEDIUM,12.0,,33.607,23.042,,210.0,255.0,,275.0,125,True,False,False,False,2026-03-07 02:30:44.985,,20.5,35.3,64.3,False,1.9,91.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,13.0,2.0,SOFT,1.0,,,20.718,41.785,252.0,257.0,290.0,46.0,1,True,False,False,False,2026-03-07 02:46:13.646,,21.0,38.4,62.8,False,2.1,78.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,14.0,2.0,SOFT,2.0,102.551,33.776,21.619,47.156,248.0,224.0,285.0,287.0,1,True,False,True,False,2026-03-07 02:48:10.558,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,15.0,2.0,SOFT,3.0,81.664,28.869,17.8,34.995,263.0,297.0,290.0,285.0,1,True,True,True,False,2026-03-07 02:49:53.109,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,16.0,2.0,SOFT,4.0,,42.42,26.958,89.376,174.0,221.0,134.0,218.0,1,True,False,False,False,2026-03-07 02:51:14.773,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,ALB,Williams,17.0,2.0,SOFT,5.0,,36.263,21.918,,186.0,289.0,,250.0,1,True,False,False,False,2026-03-07 02:53:53.596,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,1.0,1.0,SOFT,1.0,115.013,55.264,20.326,39.423,241.0,257.0,279.0,144.0,1,True,False,False,False,2026-03-07 01:52:38.262,,20.4,34.3,66.6,False,2.8,113.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,2.0,1.0,SOFT,2.0,100.144,31.315,19.501,49.328,259.0,270.0,273.0,273.0,1,True,True,True,False,2026-03-07 01:54:17.367,,20.4,34.2,65.8,False,1.4,102.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,3.0,1.0,SOFT,3.0,82.129,29.258,17.75,35.121,257.0,293.0,300.0,290.0,1,True,True,True,False,2026-03-07 01:55:57.511,,20.4,34.8,65.0,False,2.8,86.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,4.0,1.0,SOFT,4.0,120.064,41.722,27.356,50.986,204.0,264.0,271.0,214.0,12,True,False,True,False,2026-03-07 01:57:19.640,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,5.0,1.0,SOFT,5.0,94.645,28.955,17.708,47.982,256.0,287.0,175.0,288.0,26,True,False,False,False,2026-03-07 01:59:19.704,,20.3,35.3,64.3,False,3.0,86.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,6.0,1.0,SOFT,6.0,115.975,42.254,25.513,48.208,207.0,258.0,189.0,161.0,6,True,False,False,False,2026-03-07 02:00:54.349,,20.3,35.3,63.5,False,2.3,90.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,7.0,1.0,SOFT,7.0,,37.204,,,218.0,,,177.0,6512,True,False,False,False,2026-03-07 02:02:50.324,,20.3,35.3,63.7,False,0.9,45.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,8.0,2.0,SOFT,8.0,117.94,61.028,19.539,37.373,259.0,262.0,284.0,155.0,1,False,False,False,False,2026-03-07 02:13:49.700,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,9.0,2.0,SOFT,9.0,96.537,29.707,19.381,47.449,260.0,258.0,281.0,286.0,1,False,False,True,False,2026-03-07 02:15:25.855,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,10.0,2.0,SOFT,10.0,81.067,28.434,17.717,34.916,258.0,291.0,309.0,314.0,1,False,True,True,False,2026-03-07 02:17:02.392,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,11.0,2.0,SOFT,11.0,123.3,41.905,20.283,61.112,224.0,261.0,,223.0,1,False,False,False,False,2026-03-07 02:18:23.459,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,12.0,3.0,SOFT,12.0,112.306,38.848,19.739,53.719,255.0,228.0,276.0,216.0,1,False,False,False,False,2026-03-07 02:20:26.759,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,13.0,3.0,SOFT,13.0,81.716,28.938,17.592,35.186,249.0,295.0,304.0,292.0,12,False,False,True,False,2026-03-07 02:22:19.065,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,14.0,3.0,SOFT,14.0,,33.023,24.16,,190.0,240.0,,235.0,1,False,False,False,False,2026-03-07 02:23:40.781,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,15.0,4.0,SOFT,1.0,95.606,37.86,19.613,38.133,258.0,253.0,284.0,193.0,1,True,False,False,False,2026-03-07 02:31:16.539,,20.5,35.3,64.3,False,1.9,91.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,16.0,4.0,SOFT,2.0,89.567,30.068,19.949,39.55,261.0,229.0,276.0,273.0,1,True,False,True,False,2026-03-07 02:32:52.145,,20.5,35.6,65.8,False,2.5,105.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,17.0,4.0,SOFT,3.0,82.51,28.381,17.766,36.363,258.0,285.0,252.0,307.0,1,True,False,True,False,2026-03-07 02:34:21.712,,20.5,37.1,66.1,False,2.6,97.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,18.0,4.0,SOFT,4.0,,43.356,27.898,,165.0,203.0,,194.0,125,True,False,False,False,2026-03-07 02:35:44.222,,20.5,37.0,65.3,False,3.2,104.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,19.0,5.0,SOFT,5.0,126.538,58.681,19.768,48.089,255.0,235.0,271.0,176.0,1,False,False,False,False,2026-03-07 02:46:59.746,,20.9,38.5,63.0,False,3.0,79.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,20.0,5.0,SOFT,6.0,81.644,28.939,17.937,34.768,258.0,283.0,304.0,292.0,1,False,False,True,False,2026-03-07 02:48:46.347,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,21.0,5.0,SOFT,7.0,,35.197,26.044,96.238,180.0,221.0,3.0,244.0,1,False,False,False,False,2026-03-07 02:50:07.991,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,HUL,Audi,22.0,5.0,SOFT,8.0,,39.194,19.132,,228.0,294.0,,152.0,1,False,False,False,False,2026-03-07 02:52:45.438,,21.0,39.3,62.4,False,2.6,79.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,1.0,1.0,HARD,1.0,135.09,71.225,21.079,42.786,234.0,258.0,278.0,124.0,1,True,False,False,False,2026-03-07 02:12:09.299,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,2.0,1.0,HARD,2.0,82.199,29.159,17.68,35.36,262.0,302.0,298.0,299.0,1,True,True,True,False,2026-03-07 02:13:57.565,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,3.0,1.0,HARD,3.0,112.355,41.477,27.07,43.808,179.0,210.0,278.0,245.0,1,True,False,True,False,2026-03-07 02:15:19.764,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,4.0,1.0,HARD,4.0,81.466,28.765,17.642,35.059,258.0,304.0,310.0,299.0,1,True,True,True,False,2026-03-07 02:17:12.119,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,5.0,1.0,HARD,5.0,109.68,36.628,26.554,46.498,144.0,230.0,279.0,292.0,1,True,False,True,False,2026-03-07 02:18:33.585,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,6.0,1.0,HARD,6.0,81.217,28.657,17.554,35.006,261.0,307.0,308.0,300.0,1,True,True,True,False,2026-03-07 02:20:23.265,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,7.0,1.0,HARD,7.0,131.895,67.292,22.203,42.4,210.0,241.0,284.0,286.0,12,True,False,True,False,2026-03-07 02:21:44.482,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,8.0,1.0,HARD,8.0,80.89,28.57,17.607,34.713,262.0,301.0,306.0,299.0,1,True,True,True,False,2026-03-07 02:23:56.377,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,9.0,1.0,HARD,9.0,112.734,34.73,23.201,54.803,228.0,248.0,,295.0,1,True,False,False,False,2026-03-07 02:25:17.267,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,10.0,2.0,HARD,10.0,,70.256,20.518,,227.0,296.0,,231.0,1,False,False,False,False,2026-03-07 02:27:10.001,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,11.0,3.0,SOFT,1.0,,42.806,20.731,,238.0,276.0,,169.0,125,True,False,False,False,2026-03-07 02:35:50.049,,20.5,37.0,65.3,False,3.2,104.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,12.0,4.0,SOFT,2.0,127.94,55.037,22.895,50.008,231.0,264.0,283.0,66.0,1,False,False,False,False,2026-03-07 02:47:55.841,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,LAW,Racing Bulls,13.0,4.0,SOFT,3.0,,28.431,19.905,,260.0,234.0,,304.0,1,False,False,False,False,2026-03-07 02:49:58.303,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,1.0,1.0,MEDIUM,1.0,105.958,41.746,21.705,42.507,235.0,251.0,259.0,164.0,1,True,False,False,False,2026-03-07 01:55:12.639,,20.4,35.3,65.5,False,1.4,81.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,2.0,1.0,MEDIUM,2.0,91.194,29.966,18.224,43.004,269.0,285.0,194.0,283.0,12,True,True,True,False,2026-03-07 01:56:56.226,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,3.0,1.0,MEDIUM,3.0,115.379,39.773,25.44,50.166,201.0,227.0,190.0,168.0,2,True,False,True,False,2026-03-07 01:58:27.420,,20.3,34.6,64.5,False,2.1,68.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,4.0,1.0,MEDIUM,4.0,123.59,41.504,26.027,56.059,201.0,232.0,199.0,108.0,26,True,False,False,False,2026-03-07 02:00:22.799,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,5.0,1.0,MEDIUM,5.0,,40.864,27.848,,150.0,262.0,,209.0,6512,True,False,False,False,2026-03-07 02:02:26.389,,20.3,35.2,63.5,False,2.1,84.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,6.0,2.0,MEDIUM,6.0,123.412,60.085,20.203,43.124,240.0,285.0,256.0,43.0,1,False,False,False,False,2026-03-07 02:12:33.997,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,7.0,2.0,MEDIUM,7.0,84.182,29.704,18.159,36.319,269.0,288.0,301.0,281.0,1,False,True,True,False,2026-03-07 02:14:33.286,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,8.0,2.0,MEDIUM,8.0,101.732,37.211,20.483,44.038,215.0,275.0,256.0,294.0,1,False,False,True,False,2026-03-07 02:15:57.468,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,9.0,2.0,MEDIUM,9.0,82.485,29.355,17.842,35.288,268.0,289.0,296.0,284.0,1,False,True,True,False,2026-03-07 02:17:39.200,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,10.0,2.0,MEDIUM,10.0,107.349,43.095,23.881,40.373,194.0,229.0,258.0,234.0,1,False,False,True,False,2026-03-07 02:19:01.685,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,11.0,2.0,MEDIUM,11.0,82.421,29.139,18.006,35.276,271.0,286.0,300.0,284.0,1,False,True,True,False,2026-03-07 02:20:49.034,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,12.0,2.0,MEDIUM,12.0,,42.45,23.401,,215.0,236.0,,227.0,12,False,False,False,False,2026-03-07 02:22:11.455,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,13.0,3.0,SOFT,1.0,103.824,42.023,20.927,40.874,233.0,252.0,221.0,115.0,12,True,False,False,False,2026-03-07 02:35:19.248,,20.5,38.2,66.3,False,1.3,99.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,14.0,3.0,SOFT,2.0,,,,,,,,159.0,251,True,False,False,False,2026-03-07 02:37:03.072,,20.6,36.8,65.4,False,0.4,88.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,15.0,4.0,SOFT,3.0,123.466,64.024,21.22,38.222,232.0,253.0,293.0,96.0,1,False,False,False,False,2026-03-07 02:46:18.927,,21.0,38.4,62.8,False,2.1,78.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,16.0,4.0,SOFT,4.0,94.204,30.592,20.043,43.569,248.0,279.0,269.0,283.0,1,False,False,True,False,2026-03-07 02:48:15.538,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,17.0,4.0,SOFT,5.0,80.983,28.643,17.645,34.695,260.0,298.0,309.0,279.0,1,False,True,True,False,2026-03-07 02:49:49.742,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,18.0,4.0,SOFT,6.0,,38.564,23.81,,204.0,227.0,203.0,173.0,1,False,False,False,False,2026-03-07 02:51:10.725,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,OCO,Haas F1 Team,19.0,4.0,SOFT,7.0,,31.127,25.313,,193.0,185.0,,269.0,1,False,False,False,False,2026-03-07 02:54:15.502,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,1.0,1.0,HARD,1.0,132.155,66.335,21.277,44.543,231.0,228.0,276.0,135.0,1,True,False,False,False,2026-03-07 02:11:56.237,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,2.0,1.0,HARD,2.0,82.793,29.466,17.743,35.584,254.0,299.0,301.0,293.0,1,True,True,True,False,2026-03-07 02:13:46.813,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,3.0,1.0,HARD,3.0,103.962,35.865,22.735,45.362,201.0,250.0,277.0,251.0,1,True,False,True,False,2026-03-07 02:15:09.606,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,4.0,1.0,HARD,4.0,81.458,28.788,17.579,35.091,258.0,298.0,311.0,298.0,1,True,True,True,False,2026-03-07 02:16:53.568,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,5.0,1.0,HARD,5.0,112.962,36.204,25.319,51.439,177.0,175.0,272.0,273.0,1,True,False,True,False,2026-03-07 02:18:15.026,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,6.0,1.0,HARD,6.0,113.037,31.141,27.44,54.456,174.0,178.0,272.0,293.0,1,True,False,True,False,2026-03-07 02:20:07.988,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,7.0,1.0,HARD,7.0,81.109,28.598,17.609,34.902,262.0,293.0,311.0,294.0,12,True,True,True,False,2026-03-07 02:22:01.025,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,8.0,1.0,HARD,8.0,107.195,33.824,23.292,50.079,225.0,222.0,,277.0,1,True,False,False,False,2026-03-07 02:23:22.134,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,9.0,2.0,HARD,9.0,,68.249,18.278,,254.0,289.0,,224.0,1,False,False,False,False,2026-03-07 02:25:09.329,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,10.0,3.0,SOFT,1.0,102.468,41.421,20.808,40.239,236.0,247.0,278.0,149.0,12,True,False,False,False,2026-03-07 02:35:10.876,,20.5,38.2,66.3,False,1.3,99.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,11.0,3.0,SOFT,2.0,,,,,,,,254.0,251,True,False,False,False,2026-03-07 02:36:53.344,,20.6,36.8,65.4,False,0.4,88.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,12.0,4.0,SOFT,3.0,135.403,71.812,21.128,42.463,233.0,253.0,280.0,81.0,1,False,False,False,False,2026-03-07 02:47:08.043,,20.9,38.5,63.0,False,3.0,79.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,13.0,4.0,SOFT,4.0,80.838,28.624,17.589,34.625,262.0,303.0,296.0,300.0,1,False,True,True,False,2026-03-07 02:49:05.278,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,14.0,4.0,SOFT,5.0,123.245,38.039,22.44,62.766,211.0,194.0,26.0,244.0,1,False,False,True,False,2026-03-07 02:50:26.116,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,LIN,Racing Bulls,15.0,4.0,SOFT,6.0,,53.613,17.88,,255.0,287.0,,243.0,1,False,False,False,False,2026-03-07 02:52:29.361,,20.9,39.1,63.4,False,1.0,156.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,1.0,1.0,HARD,1.0,,,20.716,43.004,220.0,279.0,271.0,175.0,1,True,False,False,False,2026-03-07 01:50:04.998,,20.3,34.2,65.8,False,2.4,94.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,2.0,1.0,HARD,2.0,84.222,29.853,18.191,36.178,263.0,265.0,300.0,283.0,1,True,True,True,False,2026-03-07 01:51:50.488,,20.4,34.0,66.6,False,1.9,104.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,3.0,1.0,HARD,3.0,117.822,51.056,23.564,43.202,159.0,275.0,271.0,170.0,1,True,False,True,False,2026-03-07 01:53:14.710,,20.4,34.3,66.6,False,2.8,113.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,4.0,1.0,HARD,4.0,83.071,29.412,18.033,35.626,264.0,270.0,295.0,294.0,1,True,True,True,False,2026-03-07 01:55:12.532,,20.4,35.3,65.5,False,1.4,81.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,5.0,1.0,HARD,5.0,149.344,53.062,39.509,56.773,145.0,159.0,265.0,198.0,12,True,False,True,False,2026-03-07 01:56:35.603,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,6.0,1.0,HARD,6.0,88.034,29.28,17.882,40.872,270.0,265.0,119.0,290.0,26,True,False,False,False,2026-03-07 01:59:04.947,,20.3,35.3,64.3,False,3.0,86.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,7.0,1.0,HARD,7.0,132.323,58.775,21.303,52.245,227.0,263.0,173.0,89.0,6,True,False,False,False,2026-03-07 02:00:32.981,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,8.0,1.0,HARD,8.0,,35.16,,,255.0,,,254.0,6512,True,False,False,False,2026-03-07 02:02:45.304,,20.3,35.3,63.7,False,0.9,45.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,9.0,2.0,HARD,9.0,114.272,54.521,20.865,38.886,233.0,261.0,259.0,158.0,1,False,False,False,False,2026-03-07 02:12:28.443,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,10.0,2.0,HARD,10.0,129.413,30.986,20.328,78.099,250.0,258.0,,260.0,1,False,False,False,False,2026-03-07 02:14:11.840,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,11.0,3.0,HARD,11.0,111.855,45.199,20.557,46.099,250.0,263.0,253.0,142.0,1,False,False,False,False,2026-03-07 02:16:21.253,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,12.0,3.0,HARD,12.0,83.438,29.812,17.932,35.694,256.0,287.0,289.0,286.0,1,False,False,True,False,2026-03-07 02:18:13.108,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,13.0,3.0,HARD,13.0,121.906,45.256,28.269,48.381,119.0,202.0,274.0,224.0,1,False,False,True,False,2026-03-07 02:19:36.546,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,14.0,3.0,HARD,14.0,82.908,29.157,17.938,35.813,258.0,276.0,294.0,297.0,12,False,True,True,False,2026-03-07 02:21:38.452,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,15.0,3.0,HARD,15.0,129.012,48.407,35.149,45.456,121.0,130.0,273.0,187.0,21,False,False,True,False,2026-03-07 02:23:01.360,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,16.0,3.0,HARD,16.0,83.336,29.411,17.958,35.967,254.0,278.0,290.0,297.0,1,False,False,True,False,2026-03-07 02:25:10.372,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,17.0,3.0,HARD,17.0,,38.108,23.264,,160.0,248.0,,244.0,1,False,False,False,False,2026-03-07 02:26:33.708,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,18.0,4.0,SOFT,1.0,,40.867,20.347,,247.0,279.0,,151.0,125,True,False,False,False,2026-03-07 02:35:42.846,,20.5,37.0,65.3,False,3.2,104.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,19.0,5.0,SOFT,2.0,132.233,70.127,20.32,41.786,238.0,275.0,277.0,128.0,1,False,False,False,False,2026-03-07 02:47:29.356,,20.9,38.5,63.0,False,3.0,79.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,20.0,5.0,SOFT,3.0,81.413,28.684,17.739,34.99,265.0,274.0,306.0,302.0,1,False,True,True,False,2026-03-07 02:49:15.359,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,21.0,5.0,SOFT,4.0,,36.634,25.065,,212.0,257.0,95.0,195.0,1,False,False,False,False,2026-03-07 02:50:36.772,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,COL,Alpine,22.0,5.0,SOFT,5.0,,31.528,18.074,,268.0,271.0,,245.0,1,False,False,False,False,2026-03-07 02:53:31.658,,21.0,39.3,62.4,False,2.6,79.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,1.0,1.0,SOFT,1.0,114.228,50.045,20.763,43.42,232.0,236.0,278.0,148.0,1,True,False,False,False,2026-03-07 01:50:30.760,,20.3,34.2,65.8,False,2.4,94.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,2.0,1.0,SOFT,2.0,81.599,28.754,17.889,34.956,260.0,286.0,301.0,283.0,1,True,True,True,False,2026-03-07 01:52:20.489,,20.4,34.0,66.6,False,1.9,104.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,3.0,1.0,SOFT,3.0,145.916,54.382,40.05,51.484,119.0,253.0,275.0,200.0,1,True,False,True,False,2026-03-07 01:53:42.088,,20.4,34.2,65.8,False,1.4,102.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,4.0,1.0,SOFT,4.0,80.572,28.449,17.598,34.525,263.0,285.0,307.0,288.0,1,True,True,True,False,2026-03-07 01:56:08.004,,20.4,34.8,65.0,False,2.8,86.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,5.0,1.0,SOFT,5.0,135.807,49.538,34.007,52.262,121.0,172.0,266.0,191.0,12,True,False,True,False,2026-03-07 01:57:28.576,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,6.0,1.0,SOFT,6.0,110.286,33.324,31.039,45.923,232.0,270.0,163.0,256.0,26,True,False,False,False,2026-03-07 01:59:44.383,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,7.0,1.0,SOFT,7.0,121.93,41.36,28.079,52.491,224.0,213.0,179.0,178.0,6,True,False,False,False,2026-03-07 02:01:34.669,,20.3,35.3,63.5,False,2.3,90.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,8.0,1.0,SOFT,8.0,,,,,,,,265.0,6512,True,False,False,False,2026-03-07 02:03:36.599,,20.3,35.5,64.0,False,0.5,103.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,9.0,2.0,SOFT,9.0,131.462,67.657,20.291,43.514,245.0,221.0,281.0,79.0,1,False,False,False,False,2026-03-07 02:12:52.309,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,10.0,2.0,SOFT,10.0,102.337,31.681,23.138,47.518,216.0,261.0,272.0,292.0,1,False,False,True,False,2026-03-07 02:14:58.140,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,11.0,2.0,SOFT,11.0,97.78,28.826,21.76,47.194,235.0,241.0,278.0,288.0,1,False,False,True,False,2026-03-07 02:16:40.477,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,12.0,2.0,SOFT,12.0,80.176,28.312,17.56,34.304,259.0,292.0,304.0,288.0,1,False,True,True,False,2026-03-07 02:18:18.257,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,13.0,2.0,SOFT,13.0,,48.919,44.105,58.9,116.0,182.0,271.0,206.0,1,False,False,False,False,2026-03-07 02:19:38.433,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,14.0,2.0,SOFT,14.0,89.145,29.683,20.843,38.619,214.0,259.0,279.0,285.0,12,False,False,True,False,2026-03-07 02:22:10.348,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,15.0,2.0,SOFT,15.0,80.728,28.25,17.721,34.757,261.0,277.0,304.0,287.0,1,False,False,True,False,2026-03-07 02:23:39.493,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,16.0,2.0,SOFT,16.0,113.402,44.788,26.732,41.882,163.0,248.0,281.0,183.0,1,False,False,True,False,2026-03-07 02:25:00.221,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,17.0,2.0,SOFT,17.0,80.243,27.957,17.676,34.61,270.0,275.0,297.0,285.0,1,False,False,True,False,2026-03-07 02:26:53.623,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,18.0,2.0,SOFT,18.0,,37.948,21.254,,241.0,283.0,,201.0,125,False,False,False,False,2026-03-07 02:28:13.866,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,19.0,3.0,SOFT,1.0,131.811,66.201,20.31,45.3,237.0,266.0,279.0,102.0,1,True,False,False,False,2026-03-07 02:47:02.153,,20.9,38.5,63.0,False,3.0,79.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,20.0,3.0,SOFT,2.0,79.669,28.01,17.431,34.228,264.0,296.0,299.0,285.0,1,True,True,True,False,2026-03-07 02:48:57.275,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,21.0,3.0,SOFT,3.0,,40.615,28.323,89.119,173.0,211.0,85.0,223.0,1,True,False,False,False,2026-03-07 02:50:16.944,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,HAM,Ferrari,22.0,3.0,SOFT,4.0,,34.498,19.351,,191.0,299.0,,245.0,1,True,False,False,False,2026-03-07 02:52:55.058,,21.0,39.3,62.4,False,2.6,79.0
+2026,1,Australian Grand Prix,FP3,SAI,Williams,1.0,1.0,SOFT,1.0,,40.294,20.502,,257.0,264.0,,160.0,1265,True,False,False,False,2026-03-07 01:56:32.162,,20.4,34.8,65.0,False,2.8,86.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,1.0,1.0,SOFT,1.0,131.62,67.8,21.345,42.475,261.0,124.0,256.0,208.0,26,True,False,False,False,2026-03-07 01:58:16.748,,20.3,34.6,64.5,False,2.1,68.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,2.0,1.0,SOFT,2.0,136.908,49.531,27.421,59.956,69.0,227.0,180.0,72.0,6,True,True,False,False,2026-03-07 02:00:24.915,,20.2,35.7,63.4,False,0.9,304.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,3.0,1.0,SOFT,3.0,,35.055,,,264.0,,,262.0,6512,True,False,False,False,2026-03-07 02:02:41.823,,20.3,35.3,63.7,False,0.9,45.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,4.0,2.0,SOFT,4.0,,98.465,19.322,44.961,252.0,278.0,272.0,126.0,1,False,False,False,False,2026-03-07 02:11:11.932,,20.4,36.2,63.3,False,2.6,92.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,5.0,2.0,SOFT,5.0,103.571,31.787,20.073,51.711,263.0,248.0,264.0,270.0,1,False,True,True,False,2026-03-07 02:12:56.971,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,6.0,2.0,SOFT,6.0,81.429,28.579,17.831,35.019,260.0,276.0,293.0,291.0,1,False,True,True,False,2026-03-07 02:14:40.542,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,7.0,2.0,SOFT,7.0,112.741,33.292,21.494,57.955,226.0,272.0,,235.0,1,False,False,False,False,2026-03-07 02:16:01.971,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,8.0,3.0,SOFT,8.0,113.863,58.312,18.214,37.337,268.0,283.0,296.0,226.0,1,False,False,False,False,2026-03-07 02:17:54.712,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,9.0,3.0,SOFT,9.0,82.245,28.922,18.003,35.32,245.0,274.0,291.0,283.0,1,False,False,True,False,2026-03-07 02:19:48.575,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,10.0,3.0,SOFT,10.0,82.221,28.79,17.935,35.496,243.0,276.0,293.0,272.0,1,False,False,True,False,2026-03-07 02:21:10.820,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,11.0,3.0,SOFT,11.0,83.286,29.713,17.929,35.644,272.0,284.0,292.0,281.0,12,False,False,True,False,2026-03-07 02:22:33.041,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,12.0,3.0,SOFT,12.0,83.341,29.736,17.863,35.742,264.0,303.0,297.0,238.0,1,False,False,True,False,2026-03-07 02:23:56.327,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,13.0,3.0,SOFT,13.0,81.73,28.651,17.816,35.263,251.0,291.0,295.0,288.0,1,False,False,True,False,2026-03-07 02:25:19.668,,20.5,35.8,63.5,False,1.3,55.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,14.0,3.0,SOFT,14.0,81.677,28.655,17.745,35.277,249.0,291.0,295.0,291.0,1,False,False,True,False,2026-03-07 02:26:41.398,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,15.0,3.0,SOFT,15.0,81.572,28.692,17.738,35.142,246.0,295.0,299.0,290.0,1,False,False,True,False,2026-03-07 02:28:03.075,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,16.0,3.0,SOFT,16.0,,28.753,17.808,,250.0,297.0,,291.0,1,False,False,False,False,2026-03-07 02:29:24.647,,20.5,36.0,64.3,False,2.2,99.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,17.0,4.0,SOFT,1.0,98.007,38.19,19.928,39.889,254.0,280.0,274.0,189.0,1,True,False,False,False,2026-03-07 02:34:50.014,,20.5,38.2,66.3,False,1.3,99.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,18.0,4.0,SOFT,2.0,,27.726,17.398,,263.0,287.0,,293.0,125,True,False,False,False,2026-03-07 02:36:28.021,,20.5,37.0,65.3,False,3.2,104.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,19.0,5.0,SOFT,3.0,,,19.971,42.939,252.0,281.0,274.0,164.0,1,False,False,False,False,2026-03-07 02:46:08.349,,21.0,38.4,62.8,False,2.1,78.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,20.0,5.0,SOFT,4.0,79.053,27.77,17.276,34.007,266.0,292.0,307.0,294.0,1,False,True,True,False,2026-03-07 02:47:50.126,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,21.0,5.0,SOFT,5.0,106.234,38.899,25.592,41.743,131.0,284.0,246.0,230.0,1,False,False,True,False,2026-03-07 02:49:09.179,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,22.0,5.0,SOFT,6.0,,39.985,24.75,,183.0,275.0,133.0,211.0,1,False,False,False,False,2026-03-07 02:50:55.413,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,RUS,Mercedes,23.0,5.0,SOFT,7.0,,30.337,18.4,,249.0,259.0,,272.0,1,False,False,False,False,2026-03-07 02:53:46.213,,20.9,38.7,62.0,False,2.1,83.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,1.0,1.0,SOFT,1.0,134.017,67.685,21.286,45.046,233.0,273.0,272.0,170.0,1,True,False,False,False,2026-03-07 02:12:01.315,,20.4,35.8,63.6,False,2.5,79.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,2.0,1.0,SOFT,2.0,85.146,30.445,18.246,36.455,235.0,293.0,294.0,278.0,1,True,True,True,False,2026-03-07 02:13:51.392,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,3.0,1.0,SOFT,3.0,120.31,45.595,26.73,47.985,176.0,233.0,272.0,216.0,1,True,False,True,False,2026-03-07 02:15:16.538,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,4.0,1.0,SOFT,4.0,84.583,30.055,18.241,36.287,243.0,290.0,295.0,286.0,1,True,True,True,False,2026-03-07 02:17:16.848,,20.4,34.9,64.7,False,1.6,111.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,5.0,1.0,SOFT,5.0,129.748,36.521,21.955,71.272,206.0,180.0,,228.0,1,True,False,False,False,2026-03-07 02:18:41.431,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,6.0,2.0,SOFT,6.0,125.549,47.463,23.362,54.724,98.0,257.0,275.0,134.0,12,False,False,False,False,2026-03-07 02:20:51.179,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,7.0,2.0,SOFT,7.0,84.275,29.917,18.109,36.249,235.0,296.0,297.0,288.0,21,False,True,True,False,2026-03-07 02:22:56.728,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,8.0,2.0,SOFT,8.0,,34.259,20.539,,238.0,247.0,,235.0,125,False,False,False,False,2026-03-07 02:24:21.003,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,9.0,3.0,SOFT,1.0,135.321,69.151,20.602,45.568,242.0,255.0,282.0,136.0,1,True,False,False,False,2026-03-07 02:47:14.105,,20.9,38.5,63.0,False,3.0,79.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,10.0,3.0,SOFT,2.0,83.514,29.481,18.237,35.796,279.0,285.0,300.0,302.0,1,True,True,True,False,2026-03-07 02:49:08.571,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,11.0,3.0,SOFT,3.0,,38.284,24.553,,195.0,204.0,12.0,245.0,1,True,False,False,False,2026-03-07 02:50:32.085,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,BOT,Cadillac,12.0,3.0,SOFT,4.0,,32.602,18.658,,254.0,287.0,,233.0,1,True,False,False,False,2026-03-07 02:53:15.517,,21.0,39.3,62.4,False,2.6,79.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,1.0,1.0,SOFT,1.0,,99.389,20.219,40.064,251.0,275.0,282.0,131.0,1,True,False,False,False,2026-03-07 02:11:07.216,,20.4,36.2,63.3,False,2.6,92.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,2.0,1.0,SOFT,2.0,81.179,28.499,17.826999999999998,34.853,264.0,282.0,290.0,291.0,1,True,True,True,False,2026-03-07 02:12:51.792,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,3.0,1.0,SOFT,3.0,119.164,40.273,28.143,50.748,199.0,161.0,197.0,186.0,1,True,False,True,False,2026-03-07 02:14:12.971,,20.4,35.6,65.4,False,1.9,103.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,4.0,1.0,SOFT,4.0,114.252,39.999,23.656,50.597,250.0,283.0,282.0,183.0,1,True,False,True,False,2026-03-07 02:16:12.135,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,5.0,1.0,SOFT,5.0,80.317,28.265,17.698,34.354,261.0,278.0,287.0,292.0,1,True,True,True,False,2026-03-07 02:18:06.387,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,6.0,1.0,SOFT,6.0,111.565,39.56,22.654,49.351,197.0,222.0,170.0,212.0,1,True,False,True,False,2026-03-07 02:19:26.704,,20.4,34.7,65.2,False,2.1,86.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,7.0,1.0,SOFT,7.0,111.945,43.673,26.568,41.704,182.0,270.0,283.0,171.0,12,True,False,True,False,2026-03-07 02:21:18.269,,20.4,35.3,64.7,False,0.6,124.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,8.0,1.0,SOFT,8.0,80.164,28.121,17.646,34.397,267.0,281.0,296.0,288.0,21,True,True,True,False,2026-03-07 02:23:10.214,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,9.0,1.0,SOFT,9.0,95.378,37.784,20.621,36.973,218.0,266.0,304.0,238.0,1,True,False,True,False,2026-03-07 02:24:30.378,,20.6,35.4,62.9,False,2.3,88.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,10.0,1.0,SOFT,10.0,81.428,28.36,18.028,35.04,271.0,272.0,294.0,294.0,1,True,False,True,False,2026-03-07 02:26:05.756,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,11.0,1.0,SOFT,11.0,81.693,28.591,18.088,35.014,262.0,289.0,291.0,274.0,1,True,False,True,False,2026-03-07 02:27:27.184,,20.4,36.0,64.3,False,2.9,90.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,12.0,1.0,SOFT,12.0,95.029,28.64,18.009,48.38,256.0,288.0,,280.0,1,True,False,False,False,2026-03-07 02:28:48.877,,20.5,36.0,64.3,False,2.2,99.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,13.0,2.0,SOFT,13.0,,60.945,17.958,,271.0,295.0,,235.0,125,False,False,False,False,2026-03-07 02:30:23.906,,20.4,35.3,64.9,False,1.8,83.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,14.0,3.0,SOFT,1.0,138.33,68.111,20.022,50.197,255.0,275.0,274.0,131.0,1,True,False,False,False,2026-03-07 02:46:33.590,,21.0,38.4,62.8,False,2.1,78.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,15.0,3.0,SOFT,2.0,80.087,28.31,17.565,34.212,265.0,280.0,297.0,285.0,1,True,True,True,False,2026-03-07 02:48:41.372,,20.8,38.6,64.1,False,3.5,97.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,16.0,3.0,SOFT,3.0,,37.757,23.231,99.008,186.0,283.0,3.0,208.0,1,True,False,False,False,2026-03-07 02:50:01.459,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,PIA,McLaren,17.0,3.0,SOFT,4.0,,32.39,18.756,,237.0,269.0,,253.0,1,True,False,False,False,2026-03-07 02:52:41.548,,21.0,39.3,62.4,False,2.6,79.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,1.0,1.0,MEDIUM,1.0,107.437,42.365,20.124,44.948,241.0,277.0,217.0,147.0,1,True,False,False,False,2026-03-07 01:55:18.280,,20.4,35.3,65.5,False,1.4,81.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,2.0,1.0,MEDIUM,2.0,99.241,34.857,20.186,44.198,218.0,218.0,258.0,224.0,12,True,True,True,False,2026-03-07 01:57:03.585,,20.4,34.6,64.1,False,2.1,114.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,3.0,1.0,MEDIUM,3.0,,29.612,17.899,,268.0,289.0,,278.0,2651,True,False,False,False,2026-03-07 01:58:42.826,,20.3,35.3,64.3,False,3.0,86.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,4.0,2.0,MEDIUM,4.0,128.735,61.263,21.193,46.279,232.0,252.0,244.0,47.0,1,False,False,False,False,2026-03-07 02:12:36.289,,20.4,35.2,63.8,False,2.8,81.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,5.0,2.0,MEDIUM,5.0,112.136,37.244,21.187,53.705,236.0,247.0,268.0,245.0,1,False,False,True,False,2026-03-07 02:14:41.913,,20.4,35.6,65.9,False,1.8,71.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,6.0,2.0,MEDIUM,6.0,81.53,28.963,17.614,34.953,275.0,298.0,306.0,286.0,1,False,True,True,False,2026-03-07 02:16:34.049,,20.4,35.4,64.8,False,1.1,27.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,7.0,2.0,MEDIUM,7.0,127.359,52.513,26.668,48.178,177.0,225.0,265.0,200.0,1,False,False,True,False,2026-03-07 02:17:55.579,,20.4,35.3,64.4,False,1.4,28.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,8.0,2.0,MEDIUM,8.0,106.775,40.908,21.209,44.658,210.0,215.0,270.0,288.0,1,False,False,True,False,2026-03-07 02:20:02.938,,20.4,35.4,65.1,False,2.4,86.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,9.0,2.0,MEDIUM,9.0,81.129,28.823,17.608,34.698,256.0,300.0,306.0,292.0,12,False,True,True,False,2026-03-07 02:21:49.713,,20.5,35.3,63.5,False,1.6,296.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,10.0,2.0,MEDIUM,10.0,146.22,45.91,30.043,70.267,165.0,241.0,,239.0,21,False,False,False,False,2026-03-07 02:23:10.842,,20.6,35.0,63.1,False,1.0,83.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,11.0,3.0,MEDIUM,11.0,140.368,67.031,21.041,52.296,268.0,240.0,266.0,167.0,1,False,False,False,False,2026-03-07 02:25:37.062,,20.4,35.5,64.0,False,0.8,16.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,12.0,3.0,MEDIUM,12.0,104.313,30.041,20.752,53.52,181.0,207.0,,284.0,1,False,False,False,False,2026-03-07 02:27:57.430,,20.5,36.1,64.0,False,2.0,98.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,13.0,4.0,MEDIUM,13.0,,56.32,20.078,,249.0,275.0,,211.0,1,False,False,False,False,2026-03-07 02:29:41.743,,20.4,35.3,64.9,False,1.8,83.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,14.0,5.0,SOFT,2.0,,43.48,20.909,,244.0,252.0,,155.0,125,False,False,False,False,2026-03-07 02:35:57.627,,20.5,37.0,65.3,False,3.2,104.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,15.0,6.0,SOFT,2.0,124.351,63.562,21.149,39.64,235.0,248.0,270.0,134.0,1,False,False,False,False,2026-03-07 02:47:49.426,,20.8,38.1,63.7,False,2.4,96.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,16.0,6.0,SOFT,3.0,80.778,28.696,17.567,34.515,251.0,303.0,305.0,290.0,1,False,True,True,False,2026-03-07 02:49:44.026,,20.8,38.9,65.2,False,0.9,118.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,17.0,6.0,SOFT,4.0,,39.239,22.692,,170.0,210.0,194.0,283.0,1,False,False,False,False,2026-03-07 02:51:04.804,,20.8,38.6,64.3,False,0.3,236.0
+2026,1,Australian Grand Prix,FP3,BEA,Haas F1 Team,18.0,6.0,SOFT,5.0,,30.384,18.445,,235.0,285.0,,266.0,1,False,False,False,False,2026-03-07 02:54:05.502,,20.9,38.7,62.0,False,2.1,83.0

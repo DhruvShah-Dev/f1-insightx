@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 14,
+  "event_name": "Spanish Grand Prix",
+  "event_format": "conventional",
+  "session_code": "FP3",
+  "session_name": "Practice 3",
+  "status": "complete",
+  "started_at": "2026-09-21T18:07:33Z",
+  "completed_at": "2026-09-21T18:07:49Z",
+  "source": "fastf1_staged_session_v2"
+}

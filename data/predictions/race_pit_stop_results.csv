@@ -12,3 +12,4 @@ race_id,season,round,driver_id,pit_duration_s,source_label
 2026-11-hungaroring,2026,11,41,21.3,openf1_pit_v1
 2026-12-zandvoort,2026,12,colapinto,12.0,openf1_pit_v1
 2026-13-monza,2026,13,hulkenberg,24.2,openf1_pit_v1
+2026-14-madring,2026,14,russell,30.6,openf1_pit_v1

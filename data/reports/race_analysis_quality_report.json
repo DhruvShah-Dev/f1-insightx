@@ -6,7 +6,7 @@
     "min": 0.35,
     "tier": "strong"
   },
-  "generated_at": "2026-09-15T18:54:35Z",
+  "generated_at": "2026-09-21T18:15:03Z",
   "latest_race": "Spanish Grand Prix",
   "missing_data_flags": {
     "drs_window": "proxy_only_no_exact_gap_feed",
@@ -22,7 +22,7 @@
   "rows": {
     "index": 14,
     "links": 42,
-    "neutralization_phases": 70,
+    "neutralization_phases": 71,
     "pace_evolution": 16261,
     "pit_strategy": 554,
     "position_changes": 308,

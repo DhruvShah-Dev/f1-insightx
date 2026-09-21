@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-09-21T17:52:37.094477+00:00",
+  "rows": 23,
+  "openf1_primary_cross_check_rows": 14,
+  "openf1_available_races": 22,
+  "mean_coverage_score": 0.6708695652173914,
+  "source_label": "openf1_quality_v1"
+}

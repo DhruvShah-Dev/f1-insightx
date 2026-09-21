@@ -809,7 +809,7 @@ race_analysis_id,lap_number,phase,track_status_raw,track_status_label,confidence
 2026-14-madring,10,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-14-madring,11,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-14-madring,12,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
-2026-14-madring,13,middle,126,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-14-madring,13,middle,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
 2026-14-madring,14,middle,126,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
 2026-14-madring,15,middle,167,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
 2026-14-madring,16,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.

@@ -1,11 +1,8 @@
 {
-  "fetched_at": "2026-09-08T17:09:37.809414+00:00",
+  "fetched_at": "2026-09-21T17:39:15.509152+00:00",
   "start_season": 2026,
   "end_season": 2026,
   "session_types": [
-    "FP1",
-    "FP2",
-    "FP3",
     "Q",
     "R"
   ],

@@ -1,6 +1,5 @@
 id,race_id,driver_id,constructor_id,source_label
 2026-01-albert_park|albon,2026-01-albert_park,albon,williams,fastf1_entry_v1
-2026-01-albert_park|alonso,2026-01-albert_park,alonso,aston_martin,fastf1_entry_v1
 2026-01-albert_park|antonelli,2026-01-albert_park,antonelli,mercedes,fastf1_entry_v1
 2026-01-albert_park|bearman,2026-01-albert_park,bearman,haas,fastf1_entry_v1
 2026-01-albert_park|bortoleto,2026-01-albert_park,bortoleto,audi,fastf1_entry_v1
@@ -18,9 +17,10 @@ id,race_id,driver_id,constructor_id,source_label
 2026-01-albert_park|perez,2026-01-albert_park,perez,cadillac,fastf1_entry_v1
 2026-01-albert_park|piastri,2026-01-albert_park,piastri,mclaren,fastf1_entry_v1
 2026-01-albert_park|russell,2026-01-albert_park,russell,mercedes,fastf1_entry_v1
-2026-01-albert_park|max_verstappen,2026-01-albert_park,max_verstappen,red_bull,fastf1_entry_v1
 2026-01-albert_park|sainz,2026-01-albert_park,sainz,williams,fastf1_entry_v1
 2026-01-albert_park|stroll,2026-01-albert_park,stroll,aston_martin,fastf1_entry_v1
+2026-01-albert_park|max_verstappen,2026-01-albert_park,max_verstappen,red_bull,fastf1_entry_v1
+2026-01-albert_park|alonso,2026-01-albert_park,alonso,aston_martin,fastf1_entry_v1
 2026-02-shanghai|albon,2026-02-shanghai,albon,williams,fastf1_entry_v1
 2026-02-shanghai|alonso,2026-02-shanghai,alonso,aston_martin,fastf1_entry_v1
 2026-02-shanghai|antonelli,2026-02-shanghai,antonelli,mercedes,fastf1_entry_v1

@@ -15334,7 +15334,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,BEA,Haas F1 Team,10,opening,19,103.309,0.264,uncertain,0.014,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,BEA,Haas F1 Team,11,opening,19,103.902,1.355,traffic likely,1.105,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,BEA,Haas F1 Team,12,middle,19,104.215,1.555,traffic likely,1.305,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
-2026-14-madring,BEA,Haas F1 Team,13,middle,19,103.123,0.613,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BEA,Haas F1 Team,13,middle,19,103.123,0.613,uncertain,0.363,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,BEA,Haas F1 Team,14,middle,19,133.149,8.579,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,BEA,Haas F1 Team,15,middle,16,113.236,-17.009,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,BEA,Haas F1 Team,16,middle,16,101.781,1.254,traffic likely,1.004,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
@@ -15390,7 +15390,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,BOR,Audi,10,opening,13,102.527,-0.518,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,BOR,Audi,11,opening,13,102.603,0.056,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,BOR,Audi,12,middle,13,102.358,-0.302,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
-2026-14-madring,BOR,Audi,13,middle,13,102.253,-0.257,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOR,Audi,13,middle,13,102.253,-0.257,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,BOR,Audi,14,middle,13,126.013,1.443,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,BOR,Audi,15,middle,9,121.207,-9.038,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,BOR,Audi,16,middle,9,100.995,0.468,uncertain,0.218,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
@@ -15446,7 +15446,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,BOT,Cadillac,10,opening,21,104.189,1.144,traffic likely,0.894,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,BOT,Cadillac,11,opening,21,103.727,1.18,traffic likely,0.93,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,BOT,Cadillac,12,middle,21,104.342,1.682,traffic likely,1.432,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
-2026-14-madring,BOT,Cadillac,13,middle,20,104.575,2.065,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,BOT,Cadillac,13,middle,20,104.575,2.065,traffic likely,1.815,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,BOT,Cadillac,14,middle,20,136.01,11.44,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,BOT,Cadillac,15,middle,18,112.853,-17.392,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,BOT,Cadillac,16,middle,19,104.245,3.718,traffic likely,3.468,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
@@ -15557,7 +15557,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,GAS,Alpine,10,opening,12,102.3,-0.745,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,GAS,Alpine,11,opening,12,102.46,-0.087,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,GAS,Alpine,12,middle,12,102.577,-0.083,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
-2026-14-madring,GAS,Alpine,13,middle,12,102.436,-0.074,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,GAS,Alpine,13,middle,12,102.436,-0.074,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,GAS,Alpine,14,middle,12,125.674,1.104,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,GAS,Alpine,15,middle,8,121.034,-9.211,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,GAS,Alpine,16,middle,8,100.626,0.099,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
@@ -15675,7 +15675,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,LAW,Red Bull Racing,10,opening,6,101.592,-1.453,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,LAW,Red Bull Racing,11,opening,6,100.395,-2.152,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,LAW,Red Bull Racing,12,middle,6,100.558,-2.102,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
-2026-14-madring,LAW,Red Bull Racing,13,middle,6,100.105,-2.405,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LAW,Red Bull Racing,13,middle,6,100.105,-2.405,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,LAW,Red Bull Racing,14,middle,6,119.201,-5.369,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,LAW,Red Bull Racing,15,middle,6,125.02,-5.225,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,LAW,Red Bull Racing,16,middle,6,100.213,-0.314,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
@@ -15732,7 +15732,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,LEC,Ferrari,10,opening,4,99.597,-3.448,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,LEC,Ferrari,11,opening,4,99.501,-3.046,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,LEC,Ferrari,12,middle,4,99.559,-3.101,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
-2026-14-madring,LEC,Ferrari,13,middle,4,99.449,-3.061,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,LEC,Ferrari,13,middle,4,99.449,-3.061,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,LEC,Ferrari,14,middle,4,107.817,-16.753,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,LEC,Ferrari,15,middle,2,135.218,4.973,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,LEC,Ferrari,16,middle,1,98.773,-1.754,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
@@ -15845,7 +15845,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,NOR,McLaren,10,opening,1,99.091,-3.954,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
 2026-14-madring,NOR,McLaren,11,opening,1,99.229,-3.318,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
 2026-14-madring,NOR,McLaren,12,middle,1,99.295,-3.365,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
-2026-14-madring,NOR,McLaren,13,middle,1,99.422,-3.088,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,NOR,McLaren,13,middle,1,99.422,-3.088,clean-air likely,0.0,gap-data-missing-proxy,0.5,proxy,Likely clean-air proxy from front-running position and neutral pace delta; no exact gap feed.
 2026-14-madring,NOR,McLaren,14,middle,1,100.33,-24.24,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,NOR,McLaren,15,middle,1,146.124,15.879,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,NOR,McLaren,16,middle,5,126.51,25.983,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
@@ -15989,7 +15989,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,PIA,McLaren,10,opening,9,103.045,0.0,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,PIA,McLaren,11,opening,9,102.524,-0.023,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,PIA,McLaren,12,middle,9,102.702,0.042,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
-2026-14-madring,PIA,McLaren,13,middle,9,102.49,-0.02,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,PIA,McLaren,13,middle,9,102.49,-0.02,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,PIA,McLaren,14,middle,9,124.233,-0.337,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,PIA,McLaren,15,middle,7,121.918,-8.327,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,PIA,McLaren,16,middle,7,100.067,-0.46,uncertain,0.0,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
@@ -16103,7 +16103,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,SAI,Williams,10,opening,17,103.944,0.899,traffic likely,0.649,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,SAI,Williams,11,opening,17,103.366,0.819,traffic likely,0.569,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,SAI,Williams,12,middle,17,104.117,1.457,traffic likely,1.207,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
-2026-14-madring,SAI,Williams,13,middle,17,103.256,0.746,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,SAI,Williams,13,middle,17,103.256,0.746,uncertain,0.496,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,SAI,Williams,14,middle,17,131.665,7.095,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,SAI,Williams,15,middle,15,115.168,-15.077,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,SAI,Williams,16,middle,15,102.162,1.635,traffic likely,1.385,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
@@ -16159,7 +16159,7 @@ race_analysis_id,driver,team,lap_number,phase,position,lap_time_s,normalized_pac
 2026-14-madring,TSU,Racing Bulls,10,opening,16,103.732,0.687,uncertain,0.437,gap-data-missing-proxy,0.42,proxy,Traffic state uncertain without exact gap feed.
 2026-14-madring,TSU,Racing Bulls,11,opening,16,103.429,0.882,traffic likely,0.632,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,TSU,Racing Bulls,12,middle,16,104.359,1.699,traffic likely,1.449,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
-2026-14-madring,TSU,Racing Bulls,13,middle,16,104.494,1.984,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
+2026-14-madring,TSU,Racing Bulls,13,middle,16,104.494,1.984,traffic likely,1.734,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.
 2026-14-madring,TSU,Racing Bulls,14,middle,15,131.357,6.787,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,TSU,Racing Bulls,15,middle,14,114.855,-15.39,uncertain,,gap-data-missing-proxy,0.38,proxy,"Traffic proxy limited by missing exact gaps, pit-window overlap, or track-status phase."
 2026-14-madring,TSU,Racing Bulls,16,middle,14,101.763,1.236,traffic likely,0.986,gap-data-missing-proxy,0.48,proxy,Traffic likely proxy from position and pace loss; no exact gap feed.

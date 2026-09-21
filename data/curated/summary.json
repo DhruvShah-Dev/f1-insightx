@@ -2,9 +2,9 @@
   "drivers": 100,
   "constructors": 100,
   "circuits": 78,
-  "races": 23,
-  "qualifying_results": 283,
-  "race_results": 286,
-  "sprint_results": 110,
-  "strategy_profiles": 286
+  "races": 47,
+  "qualifying_results": 782,
+  "race_results": 787,
+  "sprint_results": 230,
+  "strategy_profiles": 787
 }
