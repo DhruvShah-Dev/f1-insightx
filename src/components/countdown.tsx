@@ -16,10 +16,12 @@ export function Countdown({
   targetISO,
   label,
   compact = false,
+  variant = "default",
 }: {
   targetISO: string;
   label: string;
   compact?: boolean;
+  variant?: "default" | "hero";
 }) {
   const [t, setT] = useState<ReturnType<typeof diff> | null>(null);
 
@@ -35,6 +37,40 @@ export function Countdown({
     { v: t?.mins, u: "min" },
     { v: t?.secs, u: "sec" },
   ];
+
+  if (variant === "hero") {
+    return (
+      <div className="w-full border border-white/16 bg-[#050608]">
+        <div className="flex items-center justify-between gap-3 border-b border-white/12 px-4 py-3">
+          <p className="num text-[10px] font-black uppercase tracking-[0.22em] text-white/48">
+            {t?.done ? "Session underway" : label}
+          </p>
+          <p className="num text-[10px] font-black uppercase tracking-[0.22em] text-[#6fffe0]">
+            Race clock
+          </p>
+        </div>
+        <div className="grid grid-cols-4">
+          {units.map((unit, i) => (
+            <div
+              key={unit.u}
+              className="min-w-0 border-r border-white/12 px-3 py-4 last:border-r-0"
+            >
+              <span
+                className={`num block text-3xl font-black leading-none sm:text-4xl ${
+                  i === units.length - 1 ? "text-[#00d6ff]" : "text-white"
+                }`}
+              >
+                {unit.v == null ? "--" : String(unit.v).padStart(2, "0")}
+              </span>
+              <span className="num mt-2 block text-[10px] font-black uppercase tracking-widest text-white/46">
+                {unit.u}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>

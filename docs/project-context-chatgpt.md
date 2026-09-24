@@ -1,6 +1,6 @@
 # F1 InsightX Project Context
 
-Last updated: September 8, 2026
+Last updated: September 24, 2026
 
 ## Overview
 
@@ -10,14 +10,14 @@ and public picks. The active application is the root TanStack Start app. The
 historical `apps/web` Next.js app is archived and must not receive new product
 work unless it is intentionally revived.
 
-The latest local data snapshot is current through the 2026 Italian Grand Prix
-at Monza, round 13. The active race-week context points to the 2026 Spanish
-Grand Prix at Madring, round 14.
+The latest local data snapshot is current through the 2026 Spanish Grand Prix,
+round 14. The active race-week context points to the 2026 Azerbaijan Grand Prix
+at Baku City Circuit, round 15.
 
 ## Active Product Surfaces
 
-- `/`: Race Control home with next GP, countdown, standings pulse, and latest
-  report entry.
+- `/`: Race Control home with next GP, countdown, track layout, team-logo
+  constructor marks, driver imagery, standings pulse, and latest report entry.
 - `/raceweek`: current race-week command center and projection board.
 - `/championship`: driver and constructor standings.
 - `/analysis`: completed-race report index.
@@ -63,6 +63,8 @@ helpers.
 - `src/lib/f1.server.ts`: optional Supabase-backed public data reads.
 - `src/lib/f1.fallback.ts`: bundled snapshot fallback mapping.
 - `src/data`: generated root UI snapshot modules and small runtime helpers.
+- `public/assets`: active root app visual assets, including 2026 team logos and
+  driver imagery for the homepage.
 - `data`: offline ingestion, builders, validators, generated artifacts, and SQL.
 - `docs`: operational, architecture, release, and methodology documentation.
 - `apps/web`: archived Next.js UI retained for historical reference only.
@@ -70,14 +72,27 @@ helpers.
 ## Current Data State
 
 - Season: 2026.
-- Latest completed race: round 13, Italian Grand Prix, Monza,
-  2026-09-06.
-- Next race: round 14, Spanish Grand Prix, Madring, 2026-09-13.
-- Driver standings leader: Kimi Antonelli, 267 points.
-- Constructor standings leader: Mercedes, 468 points.
-- Race Analysis reports available: 13.
-- Telemetry and analytics product views include Monza FP1, FP2, FP3,
-  qualifying, and race sessions.
+- Latest completed race: round 14, Spanish Grand Prix, 2026-09-13.
+- Next race: round 15, Azerbaijan Grand Prix, Baku City Circuit, 2026-09-26.
+- Driver standings leader: Kimi Antonelli, 292 points.
+- Constructor standings leader: Mercedes, 503 points.
+- Race Analysis reports available: 14.
+- Race-week UI context includes Baku track layout, 2026 straight-mode/overtake
+  annotations, and Azerbaijan flag-color accents.
+
+## Visual Assets
+
+The active app stores homepage visual assets under `public/assets`:
+
+- `public/assets/teams/logos/2026/white-png` and `white-svg`: 2026 team logos
+  chosen for black-background UI.
+- `public/assets/drivers/2026/headshots`: square 2026 driver headshots.
+- `public/assets/drivers/2026/full-body/front`, `left`, and `right`:
+  transparent full-body driver PNGs.
+
+The homepage currently wires these assets locally in `src/routes/index.tsx` so
+other pages are not changed until the homepage treatment is approved. The app
+maps Max Verstappen's local `MAX` driver code to the official `ver.png` asset.
 
 ## Data Pipeline
 

@@ -28,6 +28,19 @@ Primary routes:
 - `/picks` - account-backed pick cards and scoring
 - `/account` - Google sign-in and signed-in profile
 
+Homepage visual assets now live in `public/assets` and are used by the root
+TanStack app:
+
+- `public/assets/teams/logos/2026` - 2026 white team logo PNG/SVG assets for
+  black-background UI.
+- `public/assets/drivers/2026/headshots` - square 2026 driver headshots.
+- `public/assets/drivers/2026/full-body` - transparent full-body driver images
+  in front, left, and right poses.
+
+Keep new homepage visual work scoped to the root app first. The archived
+`apps/web` asset tree is historical reference and should not be the target for
+new product asset wiring.
+
 ## Engineering Standards
 
 - Prefer user-facing product behavior over decorative demo work.

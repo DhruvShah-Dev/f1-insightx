@@ -24,7 +24,23 @@ npm run lint
 npm run build
 ```
 
+The active local URL is usually `http://127.0.0.1:8080/`. If Vite has been
+running while new `public/assets` subdirectories are added, restart the dev
+server before testing new static image paths.
+
 The web runtime should read product views only. Raw FastF1 telemetry, parquet files, cache directories, and broad filesystem scans do not belong in API routes or client components.
+
+## Visual Assets
+
+Use the root `public/assets` tree for active app imagery:
+
+- 2026 team logos: `public/assets/teams/logos/2026`
+- 2026 driver headshots: `public/assets/drivers/2026/headshots`
+- 2026 transparent driver poses: `public/assets/drivers/2026/full-body`
+
+The archived `apps/web/public/assets` tree is retained for historical reference
+and should not receive new active product assets unless the archived Next.js app
+is intentionally revived.
 
 ## Release Readiness Checklist
 
