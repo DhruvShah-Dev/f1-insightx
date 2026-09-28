@@ -17,16 +17,16 @@ Generated datasets are intentionally ignored unless they are small fixtures or s
 
 ## Current Local State
 
-Latest local season state: `season_state_20260915T190122Z`, generated at `2026-09-15T19:01:22Z`.
+Latest local season state: `season_state_20260928T172016Z`, generated at `2026-09-28T17:20:16Z`.
 
-| Layer                      | Current evidence                                                                                                             |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| FastF1 archive             | 2026 round 14 Spanish Grand Prix sessions ingested for FP1, FP2, FP3, qualifying, and race; Madring telemetry files pending  |
-| Canonical FastF1           | 51 sessions, 30,806 session laps, 1,122 session results, 3,708 session stints, 1,102 session-summary rows                    |
-| Analysis                   | 14 race analyses, 16,231 position timeline rows, 554 pit-strategy rows; analysis now includes Spanish GP round 14            |
-| Race Week                  | Azerbaijan Grand Prix, round 15, product view refreshed at `2026-09-15T18:54:26Z`; race scheduled for `2026-09-26T11:00:00Z` |
-| Strategy modeling          | Spanish Grand Prix product view available; Azerbaijan Grand Prix build pending                                               |
-| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through the Italian Grand Prix, round 13                  |
+| Layer                      | Current evidence                                                                                                        |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| FastF1 archive             | 2026 round 15 Azerbaijan Grand Prix sessions ingested for FP1, FP2, FP3, qualifying, and race with telemetry available |
+| Canonical FastF1           | 59 sessions, 34,290 session laps, 1,273 session results, 4,145 session stints, 1,275 session-summary rows               |
+| Analysis                   | 15 race analyses; analysis now includes Azerbaijan GP round 15                                                          |
+| Race Week                  | Bahrain Grand Prix in Malaysia, round 16, product view available for Sepang                                             |
+| Strategy modeling          | Azerbaijan Grand Prix product view available; next-race Strategy Lab build remains pending                              |
+| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through Azerbaijan GP round 15                       |
 
 ## Layers
 
@@ -70,6 +70,7 @@ Core refresh order from the repo root:
 
 ```bash
 python data/fetch_reference_data.py --start-season 2025 --end-season 2026
+python data/fastf1_ingest.py --season 2026 --round 15 --sessions FP1 FP2 FP3 Q R --include-telemetry --only-missing --retry-failed --max-retries 3 --sleep-seconds 2 --completion-buffer-minutes 30
 python data/fetch_openf1_data.py --start-season 2023 --end-season 2026 --session-types Q R --only-missing
 python data/build_openf1_quality_report.py
 python validate_openf1_quality.py
@@ -89,6 +90,9 @@ python data/build_race_analysis_views.py
 python data/build_pit_wall_picks.py
 python build_season_state.py
 python build_product_manifest.py
+python validate_product_manifest.py
+python validate_season_state.py
+python data/load_supabase.py
 ```
 
 Use `npm run data:refresh` for the bundled deterministic refresh path when the full local data estate is available.

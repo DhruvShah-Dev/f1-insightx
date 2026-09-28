@@ -95,6 +95,12 @@ Core outputs:
 - strategy and prediction snapshots
 - Pit Wall Picks challenges and result scoring inputs
 
+Current production data has been refreshed through the 2026 Azerbaijan Grand Prix
+(round 15). Race analysis, Driver vs Driver, telemetry comparison views, strategy
+lab outputs, product manifests, and Supabase product tables are current through
+that race; the next race-week surface points at the 2026 Bahrain Grand Prix in
+Malaysia at Sepang.
+
 See [data/README.md](data/README.md) and [data_pipeline/README.md](data_pipeline/README.md) before changing pipeline behavior.
 
 ## Deployment Posture

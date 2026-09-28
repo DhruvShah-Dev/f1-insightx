@@ -48,6 +48,13 @@ python validate_telemetry_features.py
 
 Telemetry features are derived offline from FastF1 telemetry and position parquet. They are reusable inputs for strategy modeling and Compare. They must remain deterministic and clearly label energy deployment as a proxy.
 
+For a completed race-week backfill, ingest the missing FastF1 sessions with
+telemetry first. The Azerbaijan GP round 15 refresh used:
+
+```bash
+python data/fastf1_ingest.py --season 2026 --round 15 --sessions FP1 FP2 FP3 Q R --include-telemetry --only-missing --retry-failed --max-retries 3 --sleep-seconds 2 --completion-buffer-minutes 30
+```
+
 ## Strategy Modeling Views
 
 ```bash
@@ -108,7 +115,15 @@ python data/build_race_analysis_views.py
 python validate_race_analysis_views.py
 python build_product_manifest.py
 python validate_product_manifest.py
+python build_season_state.py
+python validate_season_state.py
+python data/load_supabase.py
 ```
+
+As of the 2026 Azerbaijan Grand Prix refresh, the production product tables are
+current through round 15 for race analysis, Driver vs Driver, analytics traces,
+strategy lab, and telemetry comparison surfaces. The next race-week view points
+at round 16, Bahrain Grand Prix in Malaysia at Sepang.
 
 ## Git Policy
 
