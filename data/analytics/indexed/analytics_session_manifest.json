@@ -885,6 +885,91 @@
         "energy_proxy": 1617,
         "lap_pace": 1106
       }
+    },
+    "2026_15_FP1_Azerbaijan Grand Prix": {
+      "file": "2026-15-fp1-azerbaijan-grand-prix-8d327a1dc400.json.gz",
+      "season": 2026,
+      "round": 15,
+      "event": "Azerbaijan Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1555,
+        "energy_proxy": 1555,
+        "lap_pace": 0
+      }
+    },
+    "2026_15_FP2_Azerbaijan Grand Prix": {
+      "file": "2026-15-fp2-azerbaijan-grand-prix-ac6e4ccc7955.json.gz",
+      "season": 2026,
+      "round": 15,
+      "event": "Azerbaijan Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_15_FP3_Azerbaijan Grand Prix": {
+      "file": "2026-15-fp3-azerbaijan-grand-prix-cc38081caebc.json.gz",
+      "season": 2026,
+      "round": 15,
+      "event": "Azerbaijan Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1848,
+        "energy_proxy": 1848,
+        "lap_pace": 0
+      }
+    },
+    "2026_15_Q_Azerbaijan Grand Prix": {
+      "file": "2026-15-q-azerbaijan-grand-prix-6919ae604e34.json.gz",
+      "season": 2026,
+      "round": 15,
+      "event": "Azerbaijan Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_15_R_Azerbaijan Grand Prix": {
+      "file": "2026-15-r-azerbaijan-grand-prix-45907696e21e.json.gz",
+      "season": 2026,
+      "round": 15,
+      "event": "Azerbaijan Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 981
+      }
     }
   }
 }

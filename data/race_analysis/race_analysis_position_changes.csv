@@ -307,3 +307,25 @@ race_analysis_id,driver,team,start_position,finish_position,net_position_change,
 2026-14-madring,PER,Cadillac,18,20,-2,2.0,1.0,opening,middle,0.267,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-14-madring,STR,Aston Martin,21,21,0,1.0,0.0,middle,middle,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-14-madring,HAM,Ferrari,4,22,-18,1.0,0.0,middle,closing,0.667,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,RUS,Mercedes,1,1,0,0.0,0.0,none,none,0.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,VER,Red Bull Racing,8,2,6,4.0,1.0,opening,none,0.167,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,HAD,Red Bull Racing,4,3,1,3.0,0.0,opening,opening,0.133,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,LEC,Ferrari,2,4,-2,1.0,0.0,closing,opening,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,ANT,Mercedes,16,5,11,10.0,2.0,middle,none,0.4,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,HAM,Ferrari,6,6,0,2.0,0.0,middle,opening,0.133,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,LIN,Racing Bulls,15,7,8,4.0,5.0,middle,opening,0.367,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,OCO,Haas F1 Team,13,8,5,1.0,6.0,middle,opening,0.3,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,BEA,Haas F1 Team,10,9,1,3.0,3.0,middle,middle,0.3,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,SAI,Williams,14,10,4,2.0,7.0,middle,opening,0.433,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,HUL,Audi,18,11,7,2.0,7.0,middle,opening,0.433,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,LAW,Racing Bulls,11,12,-1,3.0,2.0,middle,middle,0.4,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,PIA,McLaren,3,13,-10,1.0,0.0,closing,closing,0.467,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,PER,Cadillac,20,14,6,2.0,4.0,middle,closing,0.267,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,BOR,Audi,17,15,2,4.0,3.0,middle,closing,0.3,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,BOT,Cadillac,19,16,3,3.0,3.0,middle,middle,0.233,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,COL,Alpine,9,17,-8,0.0,1.0,closing,closing,0.333,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,GAS,Alpine,7,18,-11,0.0,1.0,closing,none,0.033,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,NOR,McLaren,5,19,-14,0.0,0.0,none,closing,0.167,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,ALB,Williams,12,20,-8,0.0,0.0,none,opening,0.067,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,ALO,Aston Martin,21,21,0,1.0,0.0,middle,opening,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-15-baku,STR,Aston Martin,22,22,0,0.0,0.0,none,none,0.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.

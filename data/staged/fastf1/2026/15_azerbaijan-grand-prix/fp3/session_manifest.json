@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 15,
+  "event_name": "Azerbaijan Grand Prix",
+  "event_format": "conventional",
+  "session_code": "FP3",
+  "session_name": "Practice 3",
+  "status": "complete",
+  "started_at": "2026-09-28T17:11:51Z",
+  "completed_at": "2026-09-28T17:12:03Z",
+  "source": "fastf1_staged_session_v2"
+}

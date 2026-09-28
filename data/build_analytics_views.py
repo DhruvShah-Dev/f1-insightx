@@ -444,6 +444,11 @@ def build_lap_pace_driver(
         source = source.merge(traffic_subset, on=keys, how="left")
 
     source["lap_number"] = pd.to_numeric(source["lap_number"], errors="coerce").astype("Int64")
+    source["lap_time_s"] = pd.to_numeric(source.get("lap_time_s"), errors="coerce")
+    source = source[source["lap_time_s"].notna()].copy()
+    if source.empty:
+        return pd.DataFrame()
+
     confidence_parts = []
     for column in ["pace_confidence", "position_confidence", "traffic_confidence"]:
         if column in source.columns:

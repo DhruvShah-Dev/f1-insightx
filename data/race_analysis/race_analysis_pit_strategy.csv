@@ -553,3 +553,39 @@ race_analysis_id,driver,team,pit_stop_number,pit_lap,compound_from,compound_to,s
 2026-14-madring,SAI,Williams,2,31,MEDIUM,HARD,8,19,19,0,0.861,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-14-madring,TSU,Racing Bulls,1,36,HARD,MEDIUM,36,14,14,0,1.172,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-14-madring,VER,Red Bull Racing,1,14,SOFT,HARD,14,3,3,0,8.643,neutral stop,low,0.814,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,ANT,Mercedes,1,30,MEDIUM,SOFT,30,8,8,0,38.95,neutral stop,medium,24.513,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,ANT,Mercedes,2,36,SOFT,SOFT,6,7,7,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,BEA,Haas F1 Team,1,30,SOFT,MEDIUM,30,11,11,0,37.475,neutral stop,high,19.29,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,BEA,Haas F1 Team,2,36,MEDIUM,MEDIUM,6,9,9,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,BOR,Audi,1,30,MEDIUM,SOFT,30,16,16,0,48.295,neutral stop,high,21.348,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,BOR,Audi,2,36,SOFT,SOFT,6,13,13,0,76.422,neutral stop,high,39.529,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,BOT,Cadillac,1,26,MEDIUM,SOFT,26,20,20,0,7.431,neutral stop,high,0.316,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,BOT,Cadillac,2,36,SOFT,SOFT,10,16,16,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,COL,Alpine,1,30,MEDIUM,SOFT,30,10,10,0,39.478,neutral stop,medium,22.247,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,GAS,Alpine,1,30,MEDIUM,SOFT,30,7,7,0,39.662,neutral stop,medium,27.875,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,HAD,Red Bull Racing,1,31,SOFT,MEDIUM,31,4,4,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,HAD,Red Bull Racing,2,36,MEDIUM,MEDIUM,5,4,4,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,HAM,Ferrari,1,31,SOFT,MEDIUM,31,6,6,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,HAM,Ferrari,2,36,MEDIUM,MEDIUM,5,6,6,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,HUL,Audi,1,32,MEDIUM,SOFT,32,14,15,-1,,lost after stop,high,,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,HUL,Audi,2,36,SOFT,SOFT,4,11,11,0,75.112,neutral stop,high,40.218,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,LAW,Racing Bulls,1,31,SOFT,MEDIUM,31,10,12,-2,,lost after stop,high,,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,LAW,Racing Bulls,2,36,MEDIUM,SOFT,5,15,15,0,,neutral stop,high,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,LEC,Ferrari,1,31,SOFT,MEDIUM,31,5,5,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,LEC,Ferrari,2,36,MEDIUM,MEDIUM,5,5,5,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,LIN,Racing Bulls,1,30,MEDIUM,SOFT,30,14,15,-1,41.406,lost after stop,high,16.692,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,LIN,Racing Bulls,2,36,SOFT,SOFT,6,10,10,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,NOR,McLaren,1,30,MEDIUM,SOFT,30,9,9,0,54.301,neutral stop,medium,23.789,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,OCO,Haas F1 Team,1,30,SOFT,MEDIUM,30,13,13,0,42.312,neutral stop,high,20.313,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,OCO,Haas F1 Team,2,36,MEDIUM,MEDIUM,6,8,8,0,,neutral stop,medium,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,PER,Cadillac,1,30,MEDIUM,SOFT,30,17,17,0,46.527,neutral stop,high,15.94,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,PER,Cadillac,2,36,SOFT,SOFT,6,14,14,0,76.478,neutral stop,high,38.701,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,PIA,McLaren,1,31,SOFT,MEDIUM,31,2,2,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,PIA,McLaren,2,36,MEDIUM,MEDIUM,5,3,3,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,RUS,Mercedes,1,31,MEDIUM,SOFT,31,1,1,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,RUS,Mercedes,2,36,SOFT,SOFT,5,1,1,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,SAI,Williams,1,20,MEDIUM,SOFT,20,19,19,0,2.69,neutral stop,high,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,SAI,Williams,2,30,SOFT,SOFT,10,18,18,0,57.793,neutral stop,high,24.048,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,SAI,Williams,3,36,SOFT,SOFT,6,12,12,0,74.037,neutral stop,high,39.316,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,VER,Red Bull Racing,1,31,MEDIUM,SOFT,31,3,3,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-15-baku,VER,Red Bull Racing,2,36,SOFT,SOFT,5,2,2,0,,neutral stop,low,,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.

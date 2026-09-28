@@ -1,74 +1,74 @@
 {
   "audit": {
     "latest_analytics_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
-      "scheduled_at": "2026-09-13T13:00:00Z",
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
+      "scheduled_at": "2026-09-26T11:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
     "latest_canonical_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
-      "scheduled_at": "2026-09-13T13:00:00Z",
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
+      "scheduled_at": "2026-09-26T11:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
     "latest_completed_by_schedule": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
-      "scheduled_at": "2026-09-13T13:00:00Z",
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
+      "scheduled_at": "2026-09-26T11:00:00Z",
       "season": 2026,
       "status": "completed_by_schedule"
     },
     "latest_race_analysis_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
-      "scheduled_at": "2026-09-13T13:00:00Z",
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
+      "scheduled_at": "2026-09-26T11:00:00Z",
       "season": 2026,
       "status": "race_analysis_available"
     },
     "latest_results_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
-      "scheduled_at": "2026-09-13T13:00:00Z",
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
+      "scheduled_at": "2026-09-26T11:00:00Z",
       "season": 2026,
       "status": "results_available"
     },
     "latest_telemetry_race": {
-      "circuit_id": "madring",
-      "id": "2026-14-madring",
-      "race_name": "Spanish Grand Prix",
-      "round": 14,
-      "scheduled_at": "2026-09-13T13:00:00Z",
+      "circuit_id": "baku",
+      "id": "2026-15-baku",
+      "race_name": "Azerbaijan Grand Prix",
+      "round": 15,
+      "scheduled_at": "2026-09-26T11:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
     "next_race": {
-      "circuit_id": "baku",
-      "id": "2026-15-baku",
-      "race_name": "Azerbaijan Grand Prix",
-      "round": 15,
-      "scheduled_at": "2026-09-26T11:00:00Z",
+      "circuit_id": "sepang",
+      "id": "2026-16-sepang",
+      "race_name": "Bahrain Grand Prix in Malaysia",
+      "round": 16,
+      "scheduled_at": "2026-10-04T07:00:00Z",
       "season": 2026,
       "status": "upcoming"
     },
     "race_week_product_race": {
-      "circuit_id": "baku",
-      "id": "2026-15-baku",
-      "race_name": "Azerbaijan Grand Prix",
-      "round": 15,
-      "scheduled_at": "2026-09-26T11:00:00Z",
+      "circuit_id": "sepang",
+      "id": "2026-16-sepang",
+      "race_name": "Bahrain Grand Prix in Malaysia",
+      "round": 16,
+      "scheduled_at": "2026-10-04T07:00:00Z",
       "season": 2026,
       "status": "race_week_product_available"
     },
@@ -82,7 +82,7 @@
       "status": "strategy_lab_available"
     }
   },
-  "build_version": "season_state_20260921T181608Z",
+  "build_version": "season_state_20260928T172016Z",
   "data_gaps": {
     "clean_lap_filtering": "inferred/proxy",
     "drs_gap_context": "partial",
@@ -94,9 +94,13 @@
     "weather": "available"
   },
   "errors": [],
-  "generated_at": "2026-09-21T18:16:08Z",
-  "missing_data_flags": [],
+  "generated_at": "2026-09-28T17:20:16Z",
+  "missing_data_flags": [
+    "strategy_lab_next_race_unavailable"
+  ],
   "schema_version": 1,
   "status": "passed",
-  "warnings": []
+  "warnings": [
+    "Strategy Lab available for Azerbaijan Grand Prix; Bahrain Grand Prix in Malaysia build is pending."
+  ]
 }

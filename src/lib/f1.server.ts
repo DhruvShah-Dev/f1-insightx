@@ -1537,8 +1537,14 @@ async function fetchCornerComparisons(
 export async function fetchHeadToHead(slug: string, codeA: string, codeB: string) {
   const weekend = await fetchWeekend(slug);
   if (!weekend) return null;
-  const a = codeA.toUpperCase();
-  const b = codeB.toUpperCase();
+  const entrants = weekend.classification.map((r) => r.code).filter(Boolean);
+  const normalizeCode = (code: string | null | undefined) => String(code ?? "").trim().toUpperCase();
+  const isAuto = (code: string) => !code || code === "AUTO";
+  const firstAvailable = (except?: string) => entrants.find((code) => code !== except) ?? "";
+  let a = normalizeCode(codeA);
+  let b = normalizeCode(codeB);
+  if (isAuto(a) || !entrants.includes(a)) a = firstAvailable();
+  if (isAuto(b) || !entrants.includes(b) || b === a) b = firstAvailable(a);
   const pick = <T extends { code: string }>(rows: T[], code: string) =>
     rows.filter((r) => r.code === code);
 

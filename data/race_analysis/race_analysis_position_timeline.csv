@@ -16230,3 +16230,979 @@ race_analysis_id,driver,team,lap_number,position,position_delta_from_start,posit
 2026-14-madring,VER,Red Bull Racing,55,2,1,0.0,closing,green,0.82,derived
 2026-14-madring,VER,Red Bull Racing,56,2,1,0.0,closing,green,0.82,derived
 2026-14-madring,VER,Red Bull Racing,57,2,1,0.0,closing,green,0.82,derived
+2026-15-baku,ALB,Williams,1,11,1,0.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,2,12,0,-1.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,3,12,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,4,12,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,5,12,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,6,12,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,7,12,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,8,12,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,ALB,Williams,9,12,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,ALB,Williams,10,12,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALB,Williams,11,12,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,12,13,-1,-1.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,13,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,14,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,15,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,16,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,17,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,18,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,19,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,20,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,21,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,22,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,23,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,24,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,25,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,26,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,27,13,-1,0.0,middle,green,0.82,derived
+2026-15-baku,ALB,Williams,28,13,-1,0.0,middle,yellow,0.82,derived
+2026-15-baku,ALB,Williams,29,13,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,ALO,Aston Martin,1,20,1,0.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,2,20,1,0.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,3,21,0,-1.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,4,21,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,5,21,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,6,21,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,7,21,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,8,21,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,ALO,Aston Martin,9,21,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,ALO,Aston Martin,10,21,0,0.0,opening,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,11,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,12,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,13,20,1,1.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,14,21,0,-1.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,15,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,16,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,17,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,18,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,19,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ALO,Aston Martin,20,21,0,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,1,17,-1,0.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,2,17,-1,0.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,3,16,0,1.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,4,16,0,0.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,5,15,1,1.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,6,14,2,1.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,7,14,2,0.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,8,14,2,0.0,opening,yellow,0.82,derived
+2026-15-baku,ANT,Mercedes,9,14,2,0.0,opening,yellow,0.82,derived
+2026-15-baku,ANT,Mercedes,10,13,3,1.0,opening,green,0.82,derived
+2026-15-baku,ANT,Mercedes,11,13,3,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,12,11,5,2.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,13,11,5,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,14,11,5,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,15,11,5,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,16,11,5,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,17,10,6,1.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,18,10,6,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,19,10,6,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,20,10,6,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,21,10,6,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,22,9,7,1.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,23,9,7,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,24,9,7,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,25,9,7,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,26,9,7,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,27,9,7,0.0,middle,green,0.82,derived
+2026-15-baku,ANT,Mercedes,28,9,7,0.0,middle,yellow,0.82,derived
+2026-15-baku,ANT,Mercedes,29,9,7,0.0,middle,mixed,0.52,derived
+2026-15-baku,ANT,Mercedes,30,8,8,1.0,middle,mixed,0.52,derived
+2026-15-baku,ANT,Mercedes,31,8,8,0.0,middle,mixed,0.52,derived
+2026-15-baku,ANT,Mercedes,32,8,8,0.0,middle,safety-car,0.52,derived
+2026-15-baku,ANT,Mercedes,33,8,8,0.0,middle,safety-car,0.52,derived
+2026-15-baku,ANT,Mercedes,34,8,8,0.0,middle,safety-car,0.52,derived
+2026-15-baku,ANT,Mercedes,35,8,8,0.0,middle,mixed,0.52,derived
+2026-15-baku,ANT,Mercedes,36,7,9,1.0,middle,mixed,0.52,derived
+2026-15-baku,ANT,Mercedes,37,7,9,0.0,middle,safety-car,0.52,derived
+2026-15-baku,ANT,Mercedes,38,7,9,0.0,middle,safety-car,0.52,derived
+2026-15-baku,ANT,Mercedes,39,7,9,0.0,closing,yellow,0.82,derived
+2026-15-baku,ANT,Mercedes,40,6,10,1.0,closing,yellow,0.82,derived
+2026-15-baku,ANT,Mercedes,41,6,10,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,42,5,11,1.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,43,5,11,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,44,5,11,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,45,5,11,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,46,5,11,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,47,5,11,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,48,5,11,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,49,5,11,0.0,closing,green,0.82,derived
+2026-15-baku,ANT,Mercedes,50,5,11,0.0,closing,yellow,0.82,derived
+2026-15-baku,ANT,Mercedes,51,5,11,0.0,closing,yellow,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,1,12,-2,0.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,2,11,-1,1.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,3,11,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,4,11,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,5,11,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,6,10,0,1.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,7,10,0,0.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,8,10,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,9,10,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,10,10,0,0.0,opening,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,11,10,0,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,12,10,0,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,13,10,0,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,14,10,0,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,15,10,0,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,16,10,0,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,17,11,-1,-1.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,18,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,19,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,20,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,21,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,22,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,23,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,24,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,25,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,26,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,27,11,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,28,11,-1,0.0,middle,yellow,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,29,11,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,30,11,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,31,12,-2,-1.0,middle,mixed,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,32,11,-1,1.0,middle,safety-car,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,33,11,-1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,34,11,-1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,35,11,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,36,9,1,2.0,middle,mixed,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,37,9,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,38,9,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BEA,Haas F1 Team,39,9,1,0.0,closing,yellow,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,40,8,2,1.0,closing,yellow,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,41,8,2,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,42,8,2,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,43,8,2,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,44,8,2,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,45,8,2,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,46,8,2,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,47,8,2,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,48,9,1,-1.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,49,9,1,0.0,closing,green,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,50,9,1,0.0,closing,yellow,0.82,derived
+2026-15-baku,BEA,Haas F1 Team,51,9,1,0.0,closing,yellow,0.82,derived
+2026-15-baku,BOR,Audi,1,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,2,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,3,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,4,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,5,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,6,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,7,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,8,18,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,BOR,Audi,9,18,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,BOR,Audi,10,18,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOR,Audi,11,18,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,12,18,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,13,18,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,14,18,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,15,18,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,16,18,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,17,18,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,18,17,0,1.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,19,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,20,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,21,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,22,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,23,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,24,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,25,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,26,17,0,0.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,27,16,1,1.0,middle,green,0.82,derived
+2026-15-baku,BOR,Audi,28,16,1,0.0,middle,yellow,0.82,derived
+2026-15-baku,BOR,Audi,29,16,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BOR,Audi,30,16,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BOR,Audi,31,16,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BOR,Audi,32,16,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOR,Audi,33,16,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOR,Audi,34,16,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOR,Audi,35,16,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BOR,Audi,36,13,4,3.0,middle,mixed,0.52,derived
+2026-15-baku,BOR,Audi,37,13,4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOR,Audi,38,13,4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOR,Audi,39,15,2,-2.0,closing,yellow,0.82,derived
+2026-15-baku,BOR,Audi,40,14,3,1.0,closing,yellow,0.82,derived
+2026-15-baku,BOR,Audi,41,14,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,42,14,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,43,14,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,44,13,4,1.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,45,13,4,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,46,13,4,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,47,13,4,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,48,13,4,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,49,13,4,0.0,closing,green,0.82,derived
+2026-15-baku,BOR,Audi,50,13,4,0.0,closing,yellow,0.82,derived
+2026-15-baku,BOR,Audi,51,13,4,0.0,closing,yellow,0.82,derived
+2026-15-baku,BOT,Cadillac,1,21,-2,0.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,2,21,-2,0.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,3,20,-1,1.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,4,20,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,5,20,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,6,20,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,7,20,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,8,20,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,BOT,Cadillac,9,20,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,BOT,Cadillac,10,20,-1,0.0,opening,green,0.82,derived
+2026-15-baku,BOT,Cadillac,11,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,12,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,13,21,-2,-1.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,14,20,-1,1.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,15,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,16,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,17,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,18,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,19,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,20,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,21,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,22,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,23,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,24,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,25,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,26,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,27,20,-1,0.0,middle,green,0.82,derived
+2026-15-baku,BOT,Cadillac,28,20,-1,0.0,middle,yellow,0.82,derived
+2026-15-baku,BOT,Cadillac,29,20,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,BOT,Cadillac,30,19,0,1.0,middle,mixed,0.52,derived
+2026-15-baku,BOT,Cadillac,31,19,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,BOT,Cadillac,32,19,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOT,Cadillac,33,19,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOT,Cadillac,34,19,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOT,Cadillac,35,19,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,BOT,Cadillac,36,16,3,3.0,middle,mixed,0.52,derived
+2026-15-baku,BOT,Cadillac,37,16,3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOT,Cadillac,38,16,3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,BOT,Cadillac,39,16,3,0.0,closing,yellow,0.82,derived
+2026-15-baku,BOT,Cadillac,40,16,3,0.0,closing,yellow,0.82,derived
+2026-15-baku,BOT,Cadillac,41,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,42,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,43,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,44,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,45,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,46,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,47,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,48,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,BOT,Cadillac,49,16,3,0.0,closing,green,0.82,derived
+2026-15-baku,COL,Alpine,1,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,2,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,3,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,4,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,5,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,6,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,7,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,8,9,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,COL,Alpine,9,9,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,COL,Alpine,10,9,0,0.0,opening,green,0.82,derived
+2026-15-baku,COL,Alpine,11,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,12,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,13,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,14,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,15,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,16,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,17,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,18,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,19,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,20,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,21,9,0,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,22,10,-1,-1.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,23,10,-1,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,24,10,-1,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,25,10,-1,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,26,10,-1,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,27,10,-1,0.0,middle,green,0.82,derived
+2026-15-baku,COL,Alpine,28,10,-1,0.0,middle,yellow,0.82,derived
+2026-15-baku,COL,Alpine,29,10,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,COL,Alpine,30,10,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,COL,Alpine,31,11,-2,-1.0,middle,mixed,0.52,derived
+2026-15-baku,COL,Alpine,32,10,-1,1.0,middle,safety-car,0.52,derived
+2026-15-baku,COL,Alpine,33,10,-1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,COL,Alpine,34,10,-1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,COL,Alpine,35,10,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,COL,Alpine,36,17,-8,-7.0,middle,mixed,0.52,derived
+2026-15-baku,GAS,Alpine,1,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,2,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,3,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,4,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,5,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,6,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,7,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,8,8,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,GAS,Alpine,9,8,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,GAS,Alpine,10,8,-1,0.0,opening,green,0.82,derived
+2026-15-baku,GAS,Alpine,11,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,12,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,13,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,14,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,15,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,16,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,17,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,18,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,19,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,20,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,21,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,22,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,23,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,24,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,25,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,26,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,27,8,-1,0.0,middle,green,0.82,derived
+2026-15-baku,GAS,Alpine,28,8,-1,0.0,middle,yellow,0.82,derived
+2026-15-baku,GAS,Alpine,29,8,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,GAS,Alpine,30,7,0,1.0,middle,mixed,0.52,derived
+2026-15-baku,GAS,Alpine,31,7,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,GAS,Alpine,32,7,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,GAS,Alpine,33,7,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,GAS,Alpine,34,7,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,GAS,Alpine,35,7,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,1,5,-1,0.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,2,4,0,1.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,3,4,0,0.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,4,3,1,1.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,5,3,1,0.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,6,3,1,0.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,7,4,0,-1.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,8,4,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,9,4,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,10,4,0,0.0,opening,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,11,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,12,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,13,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,14,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,15,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,16,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,17,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,18,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,19,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,20,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,21,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,22,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,23,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,24,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,25,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,26,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,27,4,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,28,4,0,0.0,middle,yellow,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,29,4,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,30,4,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,31,4,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,32,4,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,33,4,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,34,4,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,35,4,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,36,4,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,37,4,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,38,4,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAD,Red Bull Racing,39,4,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,40,3,1,1.0,closing,yellow,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,41,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,42,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,43,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,44,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,45,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,46,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,47,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,48,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,49,3,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,50,3,1,0.0,closing,yellow,0.82,derived
+2026-15-baku,HAD,Red Bull Racing,51,3,1,0.0,closing,yellow,0.82,derived
+2026-15-baku,HAM,Ferrari,1,6,0,0.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,2,7,-1,-1.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,3,7,-1,0.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,4,7,-1,0.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,5,7,-1,0.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,6,7,-1,0.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,7,7,-1,0.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,8,7,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,HAM,Ferrari,9,7,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,HAM,Ferrari,10,7,-1,0.0,opening,green,0.82,derived
+2026-15-baku,HAM,Ferrari,11,7,-1,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,12,7,-1,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,13,7,-1,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,14,7,-1,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,15,7,-1,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,16,6,0,1.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,17,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,18,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,19,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,20,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,21,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,22,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,23,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,24,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,25,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,26,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,27,6,0,0.0,middle,green,0.82,derived
+2026-15-baku,HAM,Ferrari,28,6,0,0.0,middle,yellow,0.82,derived
+2026-15-baku,HAM,Ferrari,29,6,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAM,Ferrari,30,6,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAM,Ferrari,31,6,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAM,Ferrari,32,6,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAM,Ferrari,33,6,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAM,Ferrari,34,6,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAM,Ferrari,35,6,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAM,Ferrari,36,6,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,HAM,Ferrari,37,6,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAM,Ferrari,38,6,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HAM,Ferrari,39,6,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,HAM,Ferrari,40,5,1,1.0,closing,yellow,0.82,derived
+2026-15-baku,HAM,Ferrari,41,5,1,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,42,6,0,-1.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,43,6,0,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,44,6,0,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,45,6,0,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,46,6,0,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,47,6,0,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,48,6,0,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,49,6,0,0.0,closing,green,0.82,derived
+2026-15-baku,HAM,Ferrari,50,6,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,HAM,Ferrari,51,6,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,HUL,Audi,1,16,2,0.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,2,16,2,0.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,3,17,1,-1.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,4,17,1,0.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,5,17,1,0.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,6,17,1,0.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,7,17,1,0.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,8,17,1,0.0,opening,yellow,0.82,derived
+2026-15-baku,HUL,Audi,9,16,2,1.0,opening,yellow,0.82,derived
+2026-15-baku,HUL,Audi,10,16,2,0.0,opening,green,0.82,derived
+2026-15-baku,HUL,Audi,11,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,12,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,13,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,14,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,15,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,16,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,17,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,18,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,19,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,20,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,21,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,22,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,23,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,24,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,25,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,26,16,2,0.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,27,17,1,-1.0,middle,green,0.82,derived
+2026-15-baku,HUL,Audi,28,17,1,0.0,middle,yellow,0.82,derived
+2026-15-baku,HUL,Audi,29,17,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,HUL,Audi,30,15,3,2.0,middle,mixed,0.52,derived
+2026-15-baku,HUL,Audi,31,14,4,1.0,middle,mixed,0.52,derived
+2026-15-baku,HUL,Audi,32,14,4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HUL,Audi,33,15,3,-1.0,middle,safety-car,0.52,derived
+2026-15-baku,HUL,Audi,34,15,3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HUL,Audi,35,15,3,0.0,middle,mixed,0.52,derived
+2026-15-baku,HUL,Audi,36,11,7,4.0,middle,mixed,0.52,derived
+2026-15-baku,HUL,Audi,37,11,7,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HUL,Audi,38,11,7,0.0,middle,safety-car,0.52,derived
+2026-15-baku,HUL,Audi,39,11,7,0.0,closing,yellow,0.82,derived
+2026-15-baku,HUL,Audi,40,10,8,1.0,closing,yellow,0.82,derived
+2026-15-baku,HUL,Audi,41,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,42,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,43,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,44,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,45,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,46,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,47,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,48,10,8,0.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,49,11,7,-1.0,closing,green,0.82,derived
+2026-15-baku,HUL,Audi,50,11,7,0.0,closing,yellow,0.82,derived
+2026-15-baku,HUL,Audi,51,11,7,0.0,closing,yellow,0.82,derived
+2026-15-baku,LAW,Racing Bulls,1,10,1,0.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,2,10,1,0.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,3,10,1,0.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,4,10,1,0.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,5,10,1,0.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,6,11,0,-1.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,7,11,0,0.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,8,11,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,LAW,Racing Bulls,9,11,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,LAW,Racing Bulls,10,11,0,0.0,opening,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,11,11,0,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,12,12,-1,-1.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,13,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,14,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,15,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,16,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,17,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,18,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,19,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,20,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,21,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,22,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,23,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,24,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,25,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,26,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,27,12,-1,0.0,middle,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,28,12,-1,0.0,middle,yellow,0.82,derived
+2026-15-baku,LAW,Racing Bulls,29,12,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,LAW,Racing Bulls,30,12,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,LAW,Racing Bulls,31,10,1,2.0,middle,mixed,0.52,derived
+2026-15-baku,LAW,Racing Bulls,32,12,-1,-2.0,middle,safety-car,0.52,derived
+2026-15-baku,LAW,Racing Bulls,33,12,-1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LAW,Racing Bulls,34,12,-1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LAW,Racing Bulls,35,12,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,LAW,Racing Bulls,36,15,-4,-3.0,middle,mixed,0.52,derived
+2026-15-baku,LAW,Racing Bulls,37,15,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LAW,Racing Bulls,38,15,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LAW,Racing Bulls,39,14,-3,1.0,closing,yellow,0.82,derived
+2026-15-baku,LAW,Racing Bulls,40,12,-1,2.0,closing,yellow,0.82,derived
+2026-15-baku,LAW,Racing Bulls,41,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,42,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,43,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,44,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,45,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,46,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,47,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,48,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,49,12,-1,0.0,closing,green,0.82,derived
+2026-15-baku,LAW,Racing Bulls,50,12,-1,0.0,closing,yellow,0.82,derived
+2026-15-baku,LAW,Racing Bulls,51,12,-1,0.0,closing,yellow,0.82,derived
+2026-15-baku,LEC,Ferrari,1,3,-1,0.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,2,3,-1,0.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,3,3,-1,0.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,4,5,-3,-2.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,5,5,-3,0.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,6,5,-3,0.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,7,5,-3,0.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,8,5,-3,0.0,opening,yellow,0.82,derived
+2026-15-baku,LEC,Ferrari,9,5,-3,0.0,opening,yellow,0.82,derived
+2026-15-baku,LEC,Ferrari,10,5,-3,0.0,opening,green,0.82,derived
+2026-15-baku,LEC,Ferrari,11,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,12,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,13,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,14,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,15,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,16,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,17,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,18,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,19,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,20,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,21,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,22,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,23,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,24,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,25,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,26,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,27,5,-3,0.0,middle,green,0.82,derived
+2026-15-baku,LEC,Ferrari,28,5,-3,0.0,middle,yellow,0.82,derived
+2026-15-baku,LEC,Ferrari,29,5,-3,0.0,middle,mixed,0.52,derived
+2026-15-baku,LEC,Ferrari,30,5,-3,0.0,middle,mixed,0.52,derived
+2026-15-baku,LEC,Ferrari,31,5,-3,0.0,middle,mixed,0.52,derived
+2026-15-baku,LEC,Ferrari,32,5,-3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LEC,Ferrari,33,5,-3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LEC,Ferrari,34,5,-3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LEC,Ferrari,35,5,-3,0.0,middle,mixed,0.52,derived
+2026-15-baku,LEC,Ferrari,36,5,-3,0.0,middle,mixed,0.52,derived
+2026-15-baku,LEC,Ferrari,37,5,-3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LEC,Ferrari,38,5,-3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LEC,Ferrari,39,5,-3,0.0,closing,yellow,0.82,derived
+2026-15-baku,LEC,Ferrari,40,4,-2,1.0,closing,yellow,0.82,derived
+2026-15-baku,LEC,Ferrari,41,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,42,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,43,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,44,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,45,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,46,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,47,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,48,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,49,4,-2,0.0,closing,green,0.82,derived
+2026-15-baku,LEC,Ferrari,50,4,-2,0.0,closing,yellow,0.82,derived
+2026-15-baku,LEC,Ferrari,51,4,-2,0.0,closing,yellow,0.82,derived
+2026-15-baku,LIN,Racing Bulls,1,14,1,0.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,2,14,1,0.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,3,14,1,0.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,4,14,1,0.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,5,14,1,0.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,6,15,0,-1.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,7,15,0,0.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,8,15,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,LIN,Racing Bulls,9,15,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,LIN,Racing Bulls,10,15,0,0.0,opening,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,11,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,12,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,13,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,14,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,15,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,16,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,17,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,18,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,19,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,20,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,21,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,22,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,23,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,24,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,25,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,26,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,27,15,0,0.0,middle,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,28,15,0,0.0,middle,yellow,0.82,derived
+2026-15-baku,LIN,Racing Bulls,29,15,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,LIN,Racing Bulls,30,14,1,1.0,middle,mixed,0.52,derived
+2026-15-baku,LIN,Racing Bulls,31,15,0,-1.0,middle,mixed,0.52,derived
+2026-15-baku,LIN,Racing Bulls,32,15,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LIN,Racing Bulls,33,14,1,1.0,middle,safety-car,0.52,derived
+2026-15-baku,LIN,Racing Bulls,34,14,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LIN,Racing Bulls,35,14,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,LIN,Racing Bulls,36,10,5,4.0,middle,mixed,0.52,derived
+2026-15-baku,LIN,Racing Bulls,37,10,5,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LIN,Racing Bulls,38,10,5,0.0,middle,safety-car,0.52,derived
+2026-15-baku,LIN,Racing Bulls,39,10,5,0.0,closing,yellow,0.82,derived
+2026-15-baku,LIN,Racing Bulls,40,9,6,1.0,closing,yellow,0.82,derived
+2026-15-baku,LIN,Racing Bulls,41,9,6,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,42,9,6,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,43,9,6,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,44,9,6,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,45,9,6,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,46,9,6,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,47,9,6,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,48,8,7,1.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,49,8,7,0.0,closing,green,0.82,derived
+2026-15-baku,LIN,Racing Bulls,50,8,7,0.0,closing,yellow,0.82,derived
+2026-15-baku,LIN,Racing Bulls,51,7,8,1.0,closing,yellow,0.82,derived
+2026-15-baku,NOR,McLaren,1,4,1,0.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,2,5,0,-1.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,3,6,-1,-1.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,4,6,-1,0.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,5,6,-1,0.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,6,6,-1,0.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,7,6,-1,0.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,8,6,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,NOR,McLaren,9,6,-1,0.0,opening,yellow,0.82,derived
+2026-15-baku,NOR,McLaren,10,6,-1,0.0,opening,green,0.82,derived
+2026-15-baku,NOR,McLaren,11,6,-1,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,12,6,-1,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,13,6,-1,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,14,6,-1,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,15,6,-1,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,16,7,-2,-1.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,17,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,18,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,19,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,20,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,21,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,22,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,23,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,24,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,25,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,26,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,27,7,-2,0.0,middle,green,0.82,derived
+2026-15-baku,NOR,McLaren,28,7,-2,0.0,middle,yellow,0.82,derived
+2026-15-baku,NOR,McLaren,29,7,-2,0.0,middle,mixed,0.52,derived
+2026-15-baku,NOR,McLaren,30,9,-4,-2.0,middle,mixed,0.52,derived
+2026-15-baku,NOR,McLaren,31,9,-4,0.0,middle,mixed,0.52,derived
+2026-15-baku,NOR,McLaren,32,9,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,NOR,McLaren,33,9,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,NOR,McLaren,34,9,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,NOR,McLaren,35,9,-4,0.0,middle,mixed,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,1,13,0,0.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,2,13,0,0.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,3,13,0,0.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,4,13,0,0.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,5,13,0,0.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,6,13,0,0.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,7,13,0,0.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,8,13,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,9,13,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,10,14,-1,-1.0,opening,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,11,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,12,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,13,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,14,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,15,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,16,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,17,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,18,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,19,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,20,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,21,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,22,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,23,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,24,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,25,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,26,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,27,14,-1,0.0,middle,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,28,14,-1,0.0,middle,yellow,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,29,14,-1,0.0,middle,mixed,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,30,13,0,1.0,middle,mixed,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,31,13,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,32,13,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,33,13,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,34,13,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,35,13,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,36,8,5,5.0,middle,mixed,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,37,8,5,0.0,middle,safety-car,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,38,8,5,0.0,middle,safety-car,0.52,derived
+2026-15-baku,OCO,Haas F1 Team,39,8,5,0.0,closing,yellow,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,40,7,6,1.0,closing,yellow,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,41,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,42,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,43,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,44,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,45,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,46,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,47,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,48,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,49,7,6,0.0,closing,green,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,50,7,6,0.0,closing,yellow,0.82,derived
+2026-15-baku,OCO,Haas F1 Team,51,8,5,-1.0,closing,yellow,0.82,derived
+2026-15-baku,PER,Cadillac,1,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,2,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,3,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,4,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,5,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,6,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,7,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,8,19,1,0.0,opening,yellow,0.82,derived
+2026-15-baku,PER,Cadillac,9,19,1,0.0,opening,yellow,0.82,derived
+2026-15-baku,PER,Cadillac,10,19,1,0.0,opening,green,0.82,derived
+2026-15-baku,PER,Cadillac,11,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,12,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,13,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,14,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,15,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,16,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,17,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,18,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,19,19,1,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,20,18,2,1.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,21,18,2,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,22,18,2,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,23,18,2,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,24,18,2,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,25,18,2,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,26,18,2,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,27,18,2,0.0,middle,green,0.82,derived
+2026-15-baku,PER,Cadillac,28,18,2,0.0,middle,yellow,0.82,derived
+2026-15-baku,PER,Cadillac,29,18,2,0.0,middle,mixed,0.52,derived
+2026-15-baku,PER,Cadillac,30,17,3,1.0,middle,mixed,0.52,derived
+2026-15-baku,PER,Cadillac,31,17,3,0.0,middle,mixed,0.52,derived
+2026-15-baku,PER,Cadillac,32,17,3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PER,Cadillac,33,17,3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PER,Cadillac,34,17,3,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PER,Cadillac,35,17,3,0.0,middle,mixed,0.52,derived
+2026-15-baku,PER,Cadillac,36,14,6,3.0,middle,mixed,0.52,derived
+2026-15-baku,PER,Cadillac,37,14,6,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PER,Cadillac,38,14,6,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PER,Cadillac,39,13,7,1.0,closing,yellow,0.82,derived
+2026-15-baku,PER,Cadillac,40,13,7,0.0,closing,yellow,0.82,derived
+2026-15-baku,PER,Cadillac,41,13,7,0.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,42,13,7,0.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,43,13,7,0.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,44,14,6,-1.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,45,14,6,0.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,46,14,6,0.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,47,15,5,-1.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,48,15,5,0.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,49,15,5,0.0,closing,green,0.82,derived
+2026-15-baku,PER,Cadillac,50,15,5,0.0,closing,yellow,0.82,derived
+2026-15-baku,PER,Cadillac,51,15,5,0.0,closing,yellow,0.82,derived
+2026-15-baku,PIA,McLaren,1,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,2,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,3,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,4,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,5,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,6,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,7,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,8,2,1,0.0,opening,yellow,0.82,derived
+2026-15-baku,PIA,McLaren,9,2,1,0.0,opening,yellow,0.82,derived
+2026-15-baku,PIA,McLaren,10,2,1,0.0,opening,green,0.82,derived
+2026-15-baku,PIA,McLaren,11,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,12,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,13,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,14,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,15,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,16,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,17,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,18,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,19,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,20,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,21,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,22,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,23,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,24,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,25,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,26,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,27,2,1,0.0,middle,green,0.82,derived
+2026-15-baku,PIA,McLaren,28,2,1,0.0,middle,yellow,0.82,derived
+2026-15-baku,PIA,McLaren,29,2,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,PIA,McLaren,30,2,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,PIA,McLaren,31,2,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,PIA,McLaren,32,2,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PIA,McLaren,33,2,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PIA,McLaren,34,2,1,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PIA,McLaren,35,2,1,0.0,middle,mixed,0.52,derived
+2026-15-baku,PIA,McLaren,36,3,0,-1.0,middle,mixed,0.52,derived
+2026-15-baku,PIA,McLaren,37,3,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PIA,McLaren,38,3,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,PIA,McLaren,39,3,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,PIA,McLaren,40,15,-12,-12.0,closing,yellow,0.82,derived
+2026-15-baku,PIA,McLaren,41,15,-12,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,42,15,-12,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,43,15,-12,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,44,15,-12,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,45,15,-12,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,46,15,-12,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,47,14,-11,1.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,48,14,-11,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,49,14,-11,0.0,closing,green,0.82,derived
+2026-15-baku,PIA,McLaren,50,14,-11,0.0,closing,yellow,0.82,derived
+2026-15-baku,PIA,McLaren,51,14,-11,0.0,closing,yellow,0.82,derived
+2026-15-baku,RUS,Mercedes,1,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,2,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,3,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,4,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,5,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,6,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,7,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,8,1,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,RUS,Mercedes,9,1,0,0.0,opening,yellow,0.82,derived
+2026-15-baku,RUS,Mercedes,10,1,0,0.0,opening,green,0.82,derived
+2026-15-baku,RUS,Mercedes,11,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,12,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,13,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,14,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,15,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,16,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,17,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,18,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,19,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,20,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,21,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,22,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,23,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,24,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,25,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,26,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,27,1,0,0.0,middle,green,0.82,derived
+2026-15-baku,RUS,Mercedes,28,1,0,0.0,middle,yellow,0.82,derived
+2026-15-baku,RUS,Mercedes,29,1,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,RUS,Mercedes,30,1,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,RUS,Mercedes,31,1,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,RUS,Mercedes,32,1,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,RUS,Mercedes,33,1,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,RUS,Mercedes,34,1,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,RUS,Mercedes,35,1,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,RUS,Mercedes,36,1,0,0.0,middle,mixed,0.52,derived
+2026-15-baku,RUS,Mercedes,37,1,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,RUS,Mercedes,38,1,0,0.0,middle,safety-car,0.52,derived
+2026-15-baku,RUS,Mercedes,39,1,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,RUS,Mercedes,40,1,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,RUS,Mercedes,41,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,42,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,43,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,44,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,45,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,46,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,47,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,48,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,49,1,0,0.0,closing,green,0.82,derived
+2026-15-baku,RUS,Mercedes,50,1,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,RUS,Mercedes,51,1,0,0.0,closing,yellow,0.82,derived
+2026-15-baku,SAI,Williams,1,15,-1,0.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,2,15,-1,0.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,3,15,-1,0.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,4,15,-1,0.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,5,16,-2,-1.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,6,16,-2,0.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,7,16,-2,0.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,8,16,-2,0.0,opening,yellow,0.82,derived
+2026-15-baku,SAI,Williams,9,17,-3,-1.0,opening,yellow,0.82,derived
+2026-15-baku,SAI,Williams,10,17,-3,0.0,opening,green,0.82,derived
+2026-15-baku,SAI,Williams,11,17,-3,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,12,17,-3,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,13,17,-3,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,14,17,-3,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,15,17,-3,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,16,17,-3,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,17,17,-3,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,18,18,-4,-1.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,19,18,-4,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,20,19,-5,-1.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,21,19,-5,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,22,19,-5,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,23,19,-5,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,24,19,-5,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,25,19,-5,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,26,19,-5,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,27,19,-5,0.0,middle,green,0.82,derived
+2026-15-baku,SAI,Williams,28,19,-5,0.0,middle,yellow,0.82,derived
+2026-15-baku,SAI,Williams,29,19,-5,0.0,middle,mixed,0.52,derived
+2026-15-baku,SAI,Williams,30,18,-4,1.0,middle,mixed,0.52,derived
+2026-15-baku,SAI,Williams,31,18,-4,0.0,middle,mixed,0.52,derived
+2026-15-baku,SAI,Williams,32,18,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,SAI,Williams,33,18,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,SAI,Williams,34,18,-4,0.0,middle,safety-car,0.52,derived
+2026-15-baku,SAI,Williams,35,18,-4,0.0,middle,mixed,0.52,derived
+2026-15-baku,SAI,Williams,36,12,2,6.0,middle,mixed,0.52,derived
+2026-15-baku,SAI,Williams,37,12,2,0.0,middle,safety-car,0.52,derived
+2026-15-baku,SAI,Williams,38,12,2,0.0,middle,safety-car,0.52,derived
+2026-15-baku,SAI,Williams,39,12,2,0.0,closing,yellow,0.82,derived
+2026-15-baku,SAI,Williams,40,11,3,1.0,closing,yellow,0.82,derived
+2026-15-baku,SAI,Williams,41,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,42,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,43,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,44,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,45,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,46,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,47,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,48,11,3,0.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,49,10,4,1.0,closing,green,0.82,derived
+2026-15-baku,SAI,Williams,50,10,4,0.0,closing,yellow,0.82,derived
+2026-15-baku,SAI,Williams,51,10,4,0.0,closing,yellow,0.82,derived
+2026-15-baku,STR,Aston Martin,1,22,0,0.0,opening,green,0.82,derived
+2026-15-baku,STR,Aston Martin,2,22,0,0.0,opening,green,0.82,derived
+2026-15-baku,STR,Aston Martin,3,22,0,0.0,opening,green,0.82,derived
+2026-15-baku,STR,Aston Martin,4,22,0,0.0,opening,green,0.82,derived
+2026-15-baku,STR,Aston Martin,5,22,0,0.0,opening,green,0.82,derived
+2026-15-baku,STR,Aston Martin,6,22,0,0.0,opening,green,0.82,derived
+2026-15-baku,STR,Aston Martin,7,22,0,0.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,1,7,1,0.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,2,6,2,1.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,3,5,3,1.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,4,4,4,1.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,5,4,4,0.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,6,4,4,0.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,7,3,5,1.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,8,3,5,0.0,opening,yellow,0.82,derived
+2026-15-baku,VER,Red Bull Racing,9,3,5,0.0,opening,yellow,0.82,derived
+2026-15-baku,VER,Red Bull Racing,10,3,5,0.0,opening,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,11,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,12,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,13,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,14,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,15,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,16,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,17,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,18,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,19,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,20,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,21,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,22,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,23,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,24,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,25,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,26,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,27,3,5,0.0,middle,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,28,3,5,0.0,middle,yellow,0.82,derived
+2026-15-baku,VER,Red Bull Racing,29,3,5,0.0,middle,mixed,0.52,derived
+2026-15-baku,VER,Red Bull Racing,30,3,5,0.0,middle,mixed,0.52,derived
+2026-15-baku,VER,Red Bull Racing,31,3,5,0.0,middle,mixed,0.52,derived
+2026-15-baku,VER,Red Bull Racing,32,3,5,0.0,middle,safety-car,0.52,derived
+2026-15-baku,VER,Red Bull Racing,33,3,5,0.0,middle,safety-car,0.52,derived
+2026-15-baku,VER,Red Bull Racing,34,3,5,0.0,middle,safety-car,0.52,derived
+2026-15-baku,VER,Red Bull Racing,35,3,5,0.0,middle,mixed,0.52,derived
+2026-15-baku,VER,Red Bull Racing,36,2,6,1.0,middle,mixed,0.52,derived
+2026-15-baku,VER,Red Bull Racing,37,2,6,0.0,middle,safety-car,0.52,derived
+2026-15-baku,VER,Red Bull Racing,38,2,6,0.0,middle,safety-car,0.52,derived
+2026-15-baku,VER,Red Bull Racing,39,2,6,0.0,closing,yellow,0.82,derived
+2026-15-baku,VER,Red Bull Racing,40,2,6,0.0,closing,yellow,0.82,derived
+2026-15-baku,VER,Red Bull Racing,41,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,42,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,43,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,44,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,45,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,46,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,47,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,48,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,49,2,6,0.0,closing,green,0.82,derived
+2026-15-baku,VER,Red Bull Racing,50,2,6,0.0,closing,yellow,0.82,derived
+2026-15-baku,VER,Red Bull Racing,51,2,6,0.0,closing,yellow,0.82,derived

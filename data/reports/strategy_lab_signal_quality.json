@@ -1,12 +1,12 @@
 {
   "model_version": "strategy_lab_model_v2",
   "telemetry_signal_coverage": {
-    "rows": 22,
-    "drivers_with_signals": 22,
+    "rows": 23,
+    "drivers_with_signals": 23,
     "missing_signal_count": 0
   },
   "track_archetype_coverage": {
-    "rows": 14,
+    "rows": 15,
     "archetypes": [
       "braking-heavy",
       "high-degradation",
@@ -17,8 +17,8 @@
   },
   "proxy_confidence_distribution": {
     "min": 0.0,
-    "median": 0.55,
-    "max": 0.55
+    "median": 1.0,
+    "max": 1.0
   },
   "formula_notes": {
     "corner_speed_strength": "1 - mean speed_delta_vs_session_best normalized to a 0-35 kph practical range",

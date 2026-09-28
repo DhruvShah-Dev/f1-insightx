@@ -3,35 +3,35 @@
     "start": 2020,
     "end": 2026
   },
-  "sessions_processed": 54,
+  "sessions_processed": 59,
   "sessions_skipped": 0,
   "skipped_sessions": [],
   "canonical_row_counts": {
-    "laps": 32214,
-    "results": 1188,
-    "stints": 3933,
-    "session_summary": 1165,
+    "laps": 34935,
+    "results": 1298,
+    "stints": 4234,
+    "session_summary": 1275,
     "drivers": 31
   },
   "weather_coverage_pct": {
-    "air_temp_c": 99.93,
-    "track_temp_c": 99.93,
-    "humidity_pct": 99.93,
-    "wind_speed_mps": 99.93,
-    "wind_direction_deg": 99.93
+    "air_temp_c": 99.92,
+    "track_temp_c": 99.92,
+    "humidity_pct": 99.92,
+    "wind_speed_mps": 99.92,
+    "wind_direction_deg": 99.92
   },
-  "telemetry_availability_pct": 96.3,
-  "position_availability_pct": 94.44,
+  "telemetry_availability_pct": 96.61,
+  "position_availability_pct": 94.92,
   "null_rates": {
     "laps": {
-      "lap_time_s": 0.1283,
+      "lap_time_s": 0.1326,
       "lap_number": 0.0,
-      "air_temp_c": 0.0007,
-      "track_temp_c": 0.0007,
-      "humidity_pct": 0.0007,
+      "air_temp_c": 0.0008,
+      "track_temp_c": 0.0008,
+      "humidity_pct": 0.0008,
       "rainfall": 0.0,
-      "wind_speed_mps": 0.0007,
-      "wind_direction_deg": 0.0007
+      "wind_speed_mps": 0.0008,
+      "wind_direction_deg": 0.0008
     },
     "session_summary": {
       "representative_lap_s": 0.0,

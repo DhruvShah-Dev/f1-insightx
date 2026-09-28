@@ -1,6 +1,6 @@
 {
-  "build_version": "product_manifest_20260921T181608Z",
-  "generated_at": "2026-09-21T18:16:08Z",
+  "build_version": "product_manifest_20260928T172032Z",
+  "generated_at": "2026-09-28T17:20:32Z",
   "overall_status": "passed",
   "schema_version": 1,
   "surfaces": {
@@ -15,21 +15,21 @@
         "data/analytics/analytics_energy_proxy_comparison.csv",
         "data/analytics/analytics_track_summary.csv"
       ],
-      "build_version": "analytics_views_20260921T181410Z",
+      "build_version": "analytics_views_20260928T171905Z",
       "errors": [],
-      "generated_at": "2026-09-21T18:14:10Z",
+      "generated_at": "2026-09-28T17:19:05Z",
       "last_validation_command": "python validate_analytics_views.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/analytics_quality_report.json",
       "row_counts": {
-        "analytics_braking_comparison": 91519,
-        "analytics_driver_comparison": 11418,
-        "analytics_energy_proxy_comparison": 78423,
-        "analytics_segment_comparison": 91519,
-        "analytics_session_index": 52,
-        "analytics_straight_comparison": 78423,
-        "analytics_throttle_comparison": 91519,
-        "analytics_track_summary": 52
+        "analytics_braking_comparison": 100759,
+        "analytics_driver_comparison": 12573,
+        "analytics_energy_proxy_comparison": 86677,
+        "analytics_segment_comparison": 100759,
+        "analytics_session_index": 57,
+        "analytics_straight_comparison": 86677,
+        "analytics_throttle_comparison": 100759,
+        "analytics_track_summary": 57
       },
       "source_files": [
         "data/telemetry_features",
@@ -45,15 +45,15 @@
         "data/analytics/indexed/analytics_session_manifest.json",
         "data/analytics/indexed/sessions"
       ],
-      "build_version": "analytics_index_20260921T181452Z",
+      "build_version": "analytics_index_20260928T171938Z",
       "errors": [],
-      "generated_at": "2026-09-21T18:14:52Z",
+      "generated_at": "2026-09-28T17:19:38Z",
       "last_validation_command": "python data/build_analytics_indexes.py && python validate_analytics_views.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/analytics_index_report.json",
       "row_counts": {
         "analytics_session_manifest": 1,
-        "sessions": 52
+        "sessions": 57
       },
       "source_files": [
         "data/analytics/*.csv"
@@ -71,18 +71,18 @@
         "data/canonical_fastf1/session_summary_canonical.csv",
         "data/canonical_fastf1/drivers_canonical.csv"
       ],
-      "build_version": "canonical_fastf1_20260921T181302Z",
+      "build_version": "canonical_fastf1_20260928T171249Z",
       "errors": [],
-      "generated_at": "2026-09-21T18:13:02Z",
+      "generated_at": "2026-09-28T17:12:49Z",
       "last_validation_command": "python validate_canonical_fastf1.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/fastf1_data_quality.json",
       "row_counts": {
         "drivers_canonical": 31,
-        "laps_canonical": 32214,
-        "results_canonical": 1188,
-        "session_summary_canonical": 1165,
-        "stints_canonical": 3933
+        "laps_canonical": 34935,
+        "results_canonical": 1298,
+        "session_summary_canonical": 1275,
+        "stints_canonical": 4234
       },
       "source_files": [
         "data/raw/fastf1",
@@ -112,25 +112,25 @@
       ],
       "build_version": "race-analysis-v1",
       "errors": [],
-      "generated_at": "2026-09-21T18:15:03Z",
+      "generated_at": "2026-09-28T17:16:04Z",
       "last_validation_command": "python data/build_race_analysis_views.py && python validate_race_analysis_views.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/race_analysis_quality_report.json",
       "row_counts": {
-        "race_analysis_index": 14,
-        "race_analysis_links": 42,
-        "race_analysis_neutralization_phases": 71,
-        "race_analysis_pace_evolution": 16261,
-        "race_analysis_pit_strategy": 554,
-        "race_analysis_position_changes": 308,
-        "race_analysis_position_swing_events": 2661,
-        "race_analysis_position_timeline": 16231,
-        "race_analysis_stints": 861,
-        "race_analysis_story_points": 57,
-        "race_analysis_summary": 14,
-        "race_analysis_track_status": 855,
-        "race_analysis_traffic_proxy": 16261,
-        "race_analysis_weather_context": 855
+        "race_analysis_index": 15,
+        "race_analysis_links": 45,
+        "race_analysis_neutralization_phases": 79,
+        "race_analysis_pace_evolution": 17242,
+        "race_analysis_pit_strategy": 590,
+        "race_analysis_position_changes": 330,
+        "race_analysis_position_swing_events": 2766,
+        "race_analysis_position_timeline": 17207,
+        "race_analysis_stints": 919,
+        "race_analysis_story_points": 61,
+        "race_analysis_summary": 15,
+        "race_analysis_track_status": 906,
+        "race_analysis_traffic_proxy": 17242,
+        "race_analysis_weather_context": 906
       },
       "source_files": [
         "data/canonical_fastf1",
@@ -152,9 +152,9 @@
         "data/race_week/race_week_storylines.csv",
         "data/race_week/race_week_confidence.csv"
       ],
-      "build_version": "race_week_20260921T181606Z",
+      "build_version": "race_week_20260928T171615Z",
       "errors": [],
-      "generated_at": "2026-09-21T18:16:06Z",
+      "generated_at": "2026-09-28T17:16:15Z",
       "last_validation_command": "python build_product_manifest.py && python validate_product_manifest.py",
       "last_validation_result": "passed",
       "quality_report": null,
@@ -180,9 +180,9 @@
         "data/season_state.json",
         "data/reports/season_state_quality_report.json"
       ],
-      "build_version": "season_state_20260921T181608Z",
+      "build_version": "season_state_20260928T172016Z",
       "errors": [],
-      "generated_at": "2026-09-21T18:16:08Z",
+      "generated_at": "2026-09-28T17:20:16Z",
       "last_validation_command": "python build_season_state.py && python validate_season_state.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/season_state_quality_report.json",
@@ -213,19 +213,19 @@
         "data/strategy_lab/driver_strategy_profile.csv",
         "data/strategy_lab/constructor_strategy_profile.csv"
       ],
-      "build_version": "strategy_lab_20260921T181553Z",
+      "build_version": "strategy_lab_20260928T171605Z",
       "errors": [],
-      "generated_at": "2026-09-21T18:15:53Z",
+      "generated_at": "2026-09-28T17:16:05Z",
       "last_validation_command": "python data/build_strategy_lab_layers.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/strategy_lab_signal_quality.json",
       "row_counts": {
         "constructor_strategy_profile": 11,
-        "driver_strategy_profile": 22,
-        "pit_window": 132,
-        "race_projection": 22,
-        "strategy_comparison": 88,
-        "strategy_features": 22,
+        "driver_strategy_profile": 23,
+        "pit_window": 138,
+        "race_projection": 23,
+        "strategy_comparison": 92,
+        "strategy_features": 23,
         "strategy_lab_overview": 1
       },
       "source_files": [
@@ -248,20 +248,20 @@
         "data/telemetry_features/energy_deployment_proxy.csv",
         "data/telemetry_features/driver_corner_delta.csv"
       ],
-      "build_version": "telemetry_features_20260921T181408Z",
+      "build_version": "telemetry_features_20260928T171349Z",
       "errors": [],
-      "generated_at": "2026-09-21T18:14:08Z",
+      "generated_at": "2026-09-28T17:13:49Z",
       "last_validation_command": "python validate_telemetry_features.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/telemetry_feature_quality.json",
       "row_counts": {
-        "corner_braking_profile": 8961,
-        "corner_speed_profile": 8961,
-        "corner_throttle_profile": 8961,
-        "driver_corner_delta": 8961,
-        "energy_deployment_proxy": 7706,
-        "straight_speed_profile": 7706,
-        "telemetry_lap_summary": 1115
+        "corner_braking_profile": 9841,
+        "corner_speed_profile": 9841,
+        "corner_throttle_profile": 9841,
+        "driver_corner_delta": 9841,
+        "energy_deployment_proxy": 8495,
+        "straight_speed_profile": 8495,
+        "telemetry_lap_summary": 1225
       },
       "source_files": [
         "data/canonical_fastf1",

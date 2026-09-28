@@ -2660,3 +2660,108 @@ race_analysis_id,event_id,driver,team,start_lap,end_lap,position_delta,phase,eve
 2026-14-madring,2026-14-madring-pos-0107,VER,Red Bull Racing,15,15,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
 2026-14-madring,2026-14-madring-pos-0108,VER,Red Bull Racing,16,16,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
 2026-14-madring,2026-14-madring-pos-0109,VER,Red Bull Racing,48,48,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0001,ALB,Williams,2,2,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0002,ALB,Williams,12,12,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0003,ALO,Aston Martin,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0004,ALO,Aston Martin,13,13,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0005,ALO,Aston Martin,14,14,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0006,ANT,Mercedes,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0007,ANT,Mercedes,5,5,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0008,ANT,Mercedes,6,6,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0009,ANT,Mercedes,10,10,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0010,ANT,Mercedes,12,12,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0011,ANT,Mercedes,17,17,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0012,ANT,Mercedes,22,22,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0013,ANT,Mercedes,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0014,ANT,Mercedes,36,36,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0015,ANT,Mercedes,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0016,ANT,Mercedes,42,42,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0017,BEA,Haas F1 Team,2,2,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0018,BEA,Haas F1 Team,6,6,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0019,BEA,Haas F1 Team,17,17,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0020,BEA,Haas F1 Team,31,31,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0021,BEA,Haas F1 Team,32,32,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0022,BEA,Haas F1 Team,36,36,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0023,BEA,Haas F1 Team,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0024,BEA,Haas F1 Team,48,48,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0025,BOR,Audi,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0026,BOR,Audi,27,27,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0027,BOR,Audi,36,36,3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0028,BOR,Audi,39,39,-2.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0029,BOR,Audi,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0030,BOR,Audi,44,44,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0031,BOT,Cadillac,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0032,BOT,Cadillac,13,13,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0033,BOT,Cadillac,14,14,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0034,BOT,Cadillac,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0035,BOT,Cadillac,36,36,3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0036,COL,Alpine,22,22,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0037,COL,Alpine,31,31,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0038,COL,Alpine,32,32,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0039,COL,Alpine,36,36,-7.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0040,GAS,Alpine,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0041,HAD,Red Bull Racing,2,2,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0042,HAD,Red Bull Racing,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0043,HAD,Red Bull Racing,7,7,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0044,HAD,Red Bull Racing,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0045,HAM,Ferrari,2,2,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0046,HAM,Ferrari,16,16,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0047,HAM,Ferrari,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0048,HAM,Ferrari,42,42,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0049,HUL,Audi,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0050,HUL,Audi,9,9,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0051,HUL,Audi,27,27,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0052,HUL,Audi,30,30,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0053,HUL,Audi,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0054,HUL,Audi,33,33,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0055,HUL,Audi,36,36,4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0056,HUL,Audi,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0057,HUL,Audi,49,49,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0058,LAW,Racing Bulls,6,6,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0059,LAW,Racing Bulls,12,12,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0060,LAW,Racing Bulls,31,31,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0061,LAW,Racing Bulls,32,32,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0062,LAW,Racing Bulls,36,36,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0063,LAW,Racing Bulls,39,39,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0064,LAW,Racing Bulls,40,40,2.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0065,LEC,Ferrari,4,4,-2.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0066,LEC,Ferrari,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0067,LIN,Racing Bulls,6,6,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0068,LIN,Racing Bulls,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0069,LIN,Racing Bulls,31,31,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0070,LIN,Racing Bulls,33,33,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0071,LIN,Racing Bulls,36,36,4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0072,LIN,Racing Bulls,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0073,LIN,Racing Bulls,48,48,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0074,LIN,Racing Bulls,51,51,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0075,NOR,McLaren,2,2,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0076,NOR,McLaren,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0077,NOR,McLaren,16,16,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0078,NOR,McLaren,30,30,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0079,OCO,Haas F1 Team,10,10,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0080,OCO,Haas F1 Team,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0081,OCO,Haas F1 Team,36,36,5.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0082,OCO,Haas F1 Team,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0083,OCO,Haas F1 Team,51,51,-1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0084,PER,Cadillac,20,20,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0085,PER,Cadillac,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0086,PER,Cadillac,36,36,3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0087,PER,Cadillac,39,39,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0088,PER,Cadillac,44,44,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0089,PER,Cadillac,47,47,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0090,PIA,McLaren,36,36,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0091,PIA,McLaren,40,40,-12.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0092,PIA,McLaren,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0093,SAI,Williams,5,5,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0094,SAI,Williams,9,9,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0095,SAI,Williams,18,18,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0096,SAI,Williams,20,20,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0097,SAI,Williams,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0098,SAI,Williams,36,36,6.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-15-baku,2026-15-baku-pos-0099,SAI,Williams,40,40,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-15-baku,2026-15-baku-pos-0100,SAI,Williams,49,49,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0101,VER,Red Bull Racing,2,2,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0102,VER,Red Bull Racing,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0103,VER,Red Bull Racing,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0104,VER,Red Bull Racing,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-15-baku,2026-15-baku-pos-0105,VER,Red Bull Racing,36,36,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.

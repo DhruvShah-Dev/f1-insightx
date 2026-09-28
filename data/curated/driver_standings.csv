@@ -519,7 +519,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-01-albert_park|colapinto,2026,1,2026-01-albert_park,colapinto,alpine,14,0.0,0,derived_results_rollup
 2026-01-albert_park|hadjar,2026,1,2026-01-albert_park,hadjar,red_bull,15,0.0,0,derived_results_rollup
 2026-01-albert_park|hulkenberg,2026,1,2026-01-albert_park,hulkenberg,audi,16,0.0,0,derived_results_rollup
-2026-01-albert_park|lawson,2026,1,2026-01-albert_park,lawson,red_bull,17,0.0,0,derived_results_rollup
+2026-01-albert_park|lawson,2026,1,2026-01-albert_park,lawson,rb,17,0.0,0,derived_results_rollup
 2026-01-albert_park|ocon,2026,1,2026-01-albert_park,ocon,haas,18,0.0,0,derived_results_rollup
 2026-01-albert_park|perez,2026,1,2026-01-albert_park,perez,cadillac,19,0.0,0,derived_results_rollup
 2026-01-albert_park|piastri,2026,1,2026-01-albert_park,piastri,mclaren,20,0.0,0,derived_results_rollup
@@ -533,7 +533,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-02-shanghai|bearman,2026,2,2026-02-shanghai,bearman,haas,5,17.0,0,derived_results_rollup
 2026-02-shanghai|norris,2026,2,2026-02-shanghai,norris,mclaren,6,15.0,0,derived_results_rollup
 2026-02-shanghai|gasly,2026,2,2026-02-shanghai,gasly,alpine,7,9.0,0,derived_results_rollup
-2026-02-shanghai|lawson,2026,2,2026-02-shanghai,lawson,red_bull,8,8.0,0,derived_results_rollup
+2026-02-shanghai|lawson,2026,2,2026-02-shanghai,lawson,rb,8,8.0,0,derived_results_rollup
 2026-02-shanghai|max_verstappen,2026,2,2026-02-shanghai,max_verstappen,red_bull,9,8.0,0,derived_results_rollup
 2026-02-shanghai|arvid_lindblad,2026,2,2026-02-shanghai,arvid_lindblad,rb,10,4.0,0,derived_results_rollup
 2026-02-shanghai|hadjar,2026,2,2026-02-shanghai,hadjar,red_bull,11,4.0,0,derived_results_rollup
@@ -558,7 +558,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-03-suzuka|bearman,2026,3,2026-03-suzuka,bearman,haas,7,17.0,0,derived_results_rollup
 2026-03-suzuka|gasly,2026,3,2026-03-suzuka,gasly,alpine,8,15.0,0,derived_results_rollup
 2026-03-suzuka|max_verstappen,2026,3,2026-03-suzuka,max_verstappen,red_bull,9,12.0,0,derived_results_rollup
-2026-03-suzuka|lawson,2026,3,2026-03-suzuka,lawson,red_bull,10,10.0,0,derived_results_rollup
+2026-03-suzuka|lawson,2026,3,2026-03-suzuka,lawson,rb,10,10.0,0,derived_results_rollup
 2026-03-suzuka|arvid_lindblad,2026,3,2026-03-suzuka,arvid_lindblad,rb,11,4.0,0,derived_results_rollup
 2026-03-suzuka|hadjar,2026,3,2026-03-suzuka,hadjar,red_bull,12,4.0,0,derived_results_rollup
 2026-03-suzuka|bortoleto,2026,3,2026-03-suzuka,bortoleto,audi,13,2.0,0,derived_results_rollup
@@ -581,7 +581,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-04-miami|max_verstappen,2026,4,2026-04-miami,max_verstappen,red_bull,7,26.0,0,derived_results_rollup
 2026-04-miami|bearman,2026,4,2026-04-miami,bearman,haas,8,17.0,0,derived_results_rollup
 2026-04-miami|gasly,2026,4,2026-04-miami,gasly,alpine,9,16.0,0,derived_results_rollup
-2026-04-miami|lawson,2026,4,2026-04-miami,lawson,red_bull,10,10.0,0,derived_results_rollup
+2026-04-miami|lawson,2026,4,2026-04-miami,lawson,rb,10,10.0,0,derived_results_rollup
 2026-04-miami|colapinto,2026,4,2026-04-miami,colapinto,alpine,11,7.0,0,derived_results_rollup
 2026-04-miami|arvid_lindblad,2026,4,2026-04-miami,arvid_lindblad,rb,12,4.0,0,derived_results_rollup
 2026-04-miami|hadjar,2026,4,2026-04-miami,hadjar,red_bull,13,4.0,0,derived_results_rollup
@@ -604,7 +604,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-05-villeneuve|max_verstappen,2026,5,2026-05-villeneuve,max_verstappen,red_bull,7,43.0,0,derived_results_rollup
 2026-05-villeneuve|gasly,2026,5,2026-05-villeneuve,gasly,alpine,8,20.0,0,derived_results_rollup
 2026-05-villeneuve|bearman,2026,5,2026-05-villeneuve,bearman,haas,9,18.0,0,derived_results_rollup
-2026-05-villeneuve|lawson,2026,5,2026-05-villeneuve,lawson,red_bull,10,16.0,0,derived_results_rollup
+2026-05-villeneuve|lawson,2026,5,2026-05-villeneuve,lawson,rb,10,16.0,0,derived_results_rollup
 2026-05-villeneuve|colapinto,2026,5,2026-05-villeneuve,colapinto,alpine,11,15.0,0,derived_results_rollup
 2026-05-villeneuve|hadjar,2026,5,2026-05-villeneuve,hadjar,red_bull,12,14.0,0,derived_results_rollup
 2026-05-villeneuve|sainz,2026,5,2026-05-villeneuve,sainz,williams,13,6.0,0,derived_results_rollup
@@ -627,7 +627,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-06-monaco|max_verstappen,2026,6,2026-06-monaco,max_verstappen,red_bull,7,43.0,0,derived_results_rollup
 2026-06-monaco|hadjar,2026,6,2026-06-monaco,hadjar,red_bull,8,29.0,0,derived_results_rollup
 2026-06-monaco|gasly,2026,6,2026-06-monaco,gasly,alpine,9,26.0,0,derived_results_rollup
-2026-06-monaco|lawson,2026,6,2026-06-monaco,lawson,red_bull,10,26.0,0,derived_results_rollup
+2026-06-monaco|lawson,2026,6,2026-06-monaco,lawson,rb,10,26.0,0,derived_results_rollup
 2026-06-monaco|bearman,2026,6,2026-06-monaco,bearman,haas,11,18.0,0,derived_results_rollup
 2026-06-monaco|colapinto,2026,6,2026-06-monaco,colapinto,alpine,12,15.0,0,derived_results_rollup
 2026-06-monaco|arvid_lindblad,2026,6,2026-06-monaco,arvid_lindblad,rb,13,13.0,0,derived_results_rollup
@@ -650,7 +650,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-07-catalunya|max_verstappen,2026,7,2026-07-catalunya,max_verstappen,red_bull,7,55.0,0,derived_results_rollup
 2026-07-catalunya|hadjar,2026,7,2026-07-catalunya,hadjar,red_bull,8,37.0,0,derived_results_rollup
 2026-07-catalunya|gasly,2026,7,2026-07-catalunya,gasly,alpine,9,32.0,0,derived_results_rollup
-2026-07-catalunya|lawson,2026,7,2026-07-catalunya,lawson,red_bull,10,30.0,0,derived_results_rollup
+2026-07-catalunya|lawson,2026,7,2026-07-catalunya,lawson,rb,10,30.0,0,derived_results_rollup
 2026-07-catalunya|bearman,2026,7,2026-07-catalunya,bearman,haas,11,18.0,0,derived_results_rollup
 2026-07-catalunya|colapinto,2026,7,2026-07-catalunya,colapinto,alpine,12,16.0,0,derived_results_rollup
 2026-07-catalunya|arvid_lindblad,2026,7,2026-07-catalunya,arvid_lindblad,rb,13,15.0,0,derived_results_rollup
@@ -673,7 +673,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-08-red_bull_ring|max_verstappen,2026,8,2026-08-red_bull_ring,max_verstappen,red_bull,7,73.0,0,derived_results_rollup
 2026-08-red_bull_ring|hadjar,2026,8,2026-08-red_bull_ring,hadjar,red_bull,8,45.0,0,derived_results_rollup
 2026-08-red_bull_ring|gasly,2026,8,2026-08-red_bull_ring,gasly,alpine,9,32.0,0,derived_results_rollup
-2026-08-red_bull_ring|lawson,2026,8,2026-08-red_bull_ring,lawson,red_bull,10,32.0,0,derived_results_rollup
+2026-08-red_bull_ring|lawson,2026,8,2026-08-red_bull_ring,lawson,rb,10,32.0,0,derived_results_rollup
 2026-08-red_bull_ring|bearman,2026,8,2026-08-red_bull_ring,bearman,haas,11,18.0,0,derived_results_rollup
 2026-08-red_bull_ring|arvid_lindblad,2026,8,2026-08-red_bull_ring,arvid_lindblad,rb,12,16.0,0,derived_results_rollup
 2026-08-red_bull_ring|colapinto,2026,8,2026-08-red_bull_ring,colapinto,alpine,13,16.0,0,derived_results_rollup
@@ -695,7 +695,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-09-silverstone|piastri,2026,9,2026-09-silverstone,piastri,mclaren,6,84.0,0,derived_results_rollup
 2026-09-silverstone|max_verstappen,2026,9,2026-09-silverstone,max_verstappen,red_bull,7,76.0,0,derived_results_rollup
 2026-09-silverstone|hadjar,2026,9,2026-09-silverstone,hadjar,red_bull,8,55.0,0,derived_results_rollup
-2026-09-silverstone|lawson,2026,9,2026-09-silverstone,lawson,red_bull,9,41.0,0,derived_results_rollup
+2026-09-silverstone|lawson,2026,9,2026-09-silverstone,lawson,rb,9,41.0,0,derived_results_rollup
 2026-09-silverstone|gasly,2026,9,2026-09-silverstone,gasly,alpine,10,33.0,0,derived_results_rollup
 2026-09-silverstone|arvid_lindblad,2026,9,2026-09-silverstone,arvid_lindblad,rb,11,22.0,0,derived_results_rollup
 2026-09-silverstone|bearman,2026,9,2026-09-silverstone,bearman,haas,12,18.0,0,derived_results_rollup
@@ -718,7 +718,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-10-spa|piastri,2026,10,2026-10-spa,piastri,mclaren,6,94.0,0,derived_results_rollup
 2026-10-spa|max_verstappen,2026,10,2026-10-spa,max_verstappen,red_bull,7,91.0,0,derived_results_rollup
 2026-10-spa|hadjar,2026,10,2026-10-spa,hadjar,red_bull,8,63.0,0,derived_results_rollup
-2026-10-spa|lawson,2026,10,2026-10-spa,lawson,red_bull,9,41.0,0,derived_results_rollup
+2026-10-spa|lawson,2026,10,2026-10-spa,lawson,rb,9,41.0,0,derived_results_rollup
 2026-10-spa|gasly,2026,10,2026-10-spa,gasly,alpine,10,33.0,0,derived_results_rollup
 2026-10-spa|arvid_lindblad,2026,10,2026-10-spa,arvid_lindblad,rb,11,24.0,0,derived_results_rollup
 2026-10-spa|colapinto,2026,10,2026-10-spa,colapinto,alpine,12,19.0,0,derived_results_rollup
@@ -741,7 +741,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-11-hungaroring|max_verstappen,2026,11,2026-11-hungaroring,max_verstappen,red_bull,6,109.0,0,derived_results_rollup
 2026-11-hungaroring|piastri,2026,11,2026-11-hungaroring,piastri,mclaren,7,94.0,0,derived_results_rollup
 2026-11-hungaroring|hadjar,2026,11,2026-11-hungaroring,hadjar,red_bull,8,71.0,0,derived_results_rollup
-2026-11-hungaroring|lawson,2026,11,2026-11-hungaroring,lawson,red_bull,9,45.0,0,derived_results_rollup
+2026-11-hungaroring|lawson,2026,11,2026-11-hungaroring,lawson,rb,9,45.0,0,derived_results_rollup
 2026-11-hungaroring|gasly,2026,11,2026-11-hungaroring,gasly,alpine,10,33.0,0,derived_results_rollup
 2026-11-hungaroring|arvid_lindblad,2026,11,2026-11-hungaroring,arvid_lindblad,rb,11,25.0,0,derived_results_rollup
 2026-11-hungaroring|colapinto,2026,11,2026-11-hungaroring,colapinto,alpine,12,19.0,0,derived_results_rollup
@@ -764,7 +764,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-12-zandvoort|max_verstappen,2026,12,2026-12-zandvoort,max_verstappen,red_bull,6,112.0,0,derived_results_rollup
 2026-12-zandvoort|piastri,2026,12,2026-12-zandvoort,piastri,mclaren,7,106.0,0,derived_results_rollup
 2026-12-zandvoort|hadjar,2026,12,2026-12-zandvoort,hadjar,red_bull,8,71.0,0,derived_results_rollup
-2026-12-zandvoort|lawson,2026,12,2026-12-zandvoort,lawson,red_bull,9,51.0,0,derived_results_rollup
+2026-12-zandvoort|lawson,2026,12,2026-12-zandvoort,lawson,rb,9,51.0,0,derived_results_rollup
 2026-12-zandvoort|gasly,2026,12,2026-12-zandvoort,gasly,alpine,10,35.0,0,derived_results_rollup
 2026-12-zandvoort|arvid_lindblad,2026,12,2026-12-zandvoort,arvid_lindblad,rb,11,25.0,0,derived_results_rollup
 2026-12-zandvoort|colapinto,2026,12,2026-12-zandvoort,colapinto,alpine,12,19.0,0,derived_results_rollup
@@ -787,7 +787,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-13-monza|max_verstappen,2026,13,2026-13-monza,max_verstappen,red_bull,6,127.0,0,derived_results_rollup
 2026-13-monza|piastri,2026,13,2026-13-monza,piastri,mclaren,7,116.0,0,derived_results_rollup
 2026-13-monza|hadjar,2026,13,2026-13-monza,hadjar,red_bull,8,71.0,0,derived_results_rollup
-2026-13-monza|lawson,2026,13,2026-13-monza,lawson,red_bull,9,51.0,0,derived_results_rollup
+2026-13-monza|lawson,2026,13,2026-13-monza,lawson,rb,9,51.0,0,derived_results_rollup
 2026-13-monza|gasly,2026,13,2026-13-monza,gasly,alpine,10,41.0,0,derived_results_rollup
 2026-13-monza|arvid_lindblad,2026,13,2026-13-monza,arvid_lindblad,rb,11,29.0,0,derived_results_rollup
 2026-13-monza|colapinto,2026,13,2026-13-monza,colapinto,alpine,12,21.0,0,derived_results_rollup
@@ -810,7 +810,7 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-14-madring|max_verstappen,2026,14,2026-14-madring,max_verstappen,red_bull,6,145.0,0,derived_results_rollup
 2026-14-madring|piastri,2026,14,2026-14-madring,piastri,mclaren,7,120.0,0,derived_results_rollup
 2026-14-madring|hadjar,2026,14,2026-14-madring,hadjar,red_bull,8,71.0,0,derived_results_rollup
-2026-14-madring|lawson,2026,14,2026-14-madring,lawson,red_bull,9,59.0,0,derived_results_rollup
+2026-14-madring|lawson,2026,14,2026-14-madring,lawson,rb,9,59.0,0,derived_results_rollup
 2026-14-madring|gasly,2026,14,2026-14-madring,gasly,alpine,10,41.0,0,derived_results_rollup
 2026-14-madring|arvid_lindblad,2026,14,2026-14-madring,arvid_lindblad,rb,11,31.0,0,derived_results_rollup
 2026-14-madring|colapinto,2026,14,2026-14-madring,colapinto,alpine,12,27.0,0,derived_results_rollup
@@ -825,3 +825,26 @@ id,season,round,race_id,driver_id,constructor_id,standing_position,points,wins,s
 2026-14-madring|bottas,2026,14,2026-14-madring,bottas,cadillac,21,0.0,0,derived_results_rollup
 2026-14-madring|perez,2026,14,2026-14-madring,perez,cadillac,22,0.0,0,derived_results_rollup
 2026-14-madring|stroll,2026,14,2026-14-madring,stroll,aston_martin,23,0.0,0,derived_results_rollup
+2026-15-baku|antonelli,2026,15,2026-15-baku,antonelli,mercedes,1,302.0,8,derived_results_rollup
+2026-15-baku|russell,2026,15,2026-15-baku,russell,mercedes,2,236.0,3,derived_results_rollup
+2026-15-baku|hamilton,2026,15,2026-15-baku,hamilton,ferrari,3,199.0,1,derived_results_rollup
+2026-15-baku|norris,2026,15,2026-15-baku,norris,mclaren,4,186.0,2,derived_results_rollup
+2026-15-baku|leclerc,2026,15,2026-15-baku,leclerc,ferrari,5,179.0,1,derived_results_rollup
+2026-15-baku|max_verstappen,2026,15,2026-15-baku,max_verstappen,red_bull,6,163.0,0,derived_results_rollup
+2026-15-baku|piastri,2026,15,2026-15-baku,piastri,mclaren,7,120.0,0,derived_results_rollup
+2026-15-baku|hadjar,2026,15,2026-15-baku,hadjar,red_bull,8,86.0,0,derived_results_rollup
+2026-15-baku|lawson,2026,15,2026-15-baku,lawson,rb,9,59.0,0,derived_results_rollup
+2026-15-baku|gasly,2026,15,2026-15-baku,gasly,alpine,10,41.0,0,derived_results_rollup
+2026-15-baku|arvid_lindblad,2026,15,2026-15-baku,arvid_lindblad,rb,11,37.0,0,derived_results_rollup
+2026-15-baku|colapinto,2026,15,2026-15-baku,colapinto,alpine,12,27.0,0,derived_results_rollup
+2026-15-baku|bearman,2026,15,2026-15-baku,bearman,haas,13,20.0,0,derived_results_rollup
+2026-15-baku|bortoleto,2026,15,2026-15-baku,bortoleto,audi,14,10.0,0,derived_results_rollup
+2026-15-baku|hulkenberg,2026,15,2026-15-baku,hulkenberg,audi,15,7.0,0,derived_results_rollup
+2026-15-baku|ocon,2026,15,2026-15-baku,ocon,haas,16,7.0,0,derived_results_rollup
+2026-15-baku|sainz,2026,15,2026-15-baku,sainz,williams,17,7.0,0,derived_results_rollup
+2026-15-baku|albon,2026,15,2026-15-baku,albon,williams,18,5.0,0,derived_results_rollup
+2026-15-baku|alonso,2026,15,2026-15-baku,alonso,aston_martin,19,3.0,0,derived_results_rollup
+2026-15-baku|tsunoda,2026,15,2026-15-baku,tsunoda,rb,20,1.0,0,derived_results_rollup
+2026-15-baku|bottas,2026,15,2026-15-baku,bottas,cadillac,21,0.0,0,derived_results_rollup
+2026-15-baku|perez,2026,15,2026-15-baku,perez,cadillac,22,0.0,0,derived_results_rollup
+2026-15-baku|stroll,2026,15,2026-15-baku,stroll,aston_martin,23,0.0,0,derived_results_rollup

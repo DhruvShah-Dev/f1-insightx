@@ -860,3 +860,61 @@ race_analysis_id,driver,team,stint_number,compound,start_lap,end_lap,stint_lengt
 2026-14-madring,TSU,Racing Bulls,2,MEDIUM,37,56,20,100.334,99.112,98.396,-0.388,0.9,10.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
 2026-14-madring,VER,Red Bull Racing,1,SOFT,1,14,14,101.005,100.114,99.55,-0.0349,0.817,3.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
 2026-14-madring,VER,Red Bull Racing,2,HARD,15,57,43,98.931,97.691,96.76,-0.2003,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,ALB,Williams,1,SOFT,1,30,30,109.789,109.319,108.443,-0.1238,0.9,9.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,ALO,Aston Martin,1,SOFT,1,20,20,113.035,112.195,110.968,-0.1392,0.9,21.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,ANT,Mercedes,1,MEDIUM,1,30,30,109.51,108.126,107.289,-0.0934,0.9,8.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,ANT,Mercedes,2,SOFT,31,36,6,136.528,136.528,132.545,,0.35,11.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,ANT,Mercedes,3,SOFT,37,51,15,106.539,106.056,105.413,-0.1614,0.783,4.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BEA,Haas F1 Team,1,SOFT,1,30,30,110.176,109.137,108.548,0.0095,0.9,12.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BEA,Haas F1 Team,2,MEDIUM,31,36,6,140.964,143.922,128.345,,0.35,15.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BEA,Haas F1 Team,3,MEDIUM,37,51,15,107.773,107.516,106.978,-0.0578,0.783,9.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BOR,Audi,1,MEDIUM,1,30,30,111.16,109.749,108.909,0.0253,0.9,17.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BOR,Audi,2,SOFT,31,36,6,135.411,136.804,121.665,,0.35,7.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BOR,Audi,3,SOFT,37,51,15,110.818,107.684,106.336,-1.3593,0.817,13.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BOT,Cadillac,1,MEDIUM,1,26,26,112.823,111.977,111.193,-0.0681,0.9,20.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BOT,Cadillac,2,SOFT,27,36,10,125.138,125.595,111.601,-1.486,0.617,2.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,BOT,Cadillac,3,SOFT,37,50,14,110.363,109.776,108.852,-0.3621,0.75,12.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,COL,Alpine,1,MEDIUM,1,30,30,109.966,108.943,108.484,0.0292,0.9,11.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,COL,Alpine,2,SOFT,31,36,6,142.764,148.008,131.284,,0.35,17.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,GAS,Alpine,1,MEDIUM,1,30,30,109.337,108.567,107.822,-0.031,0.9,7.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,GAS,Alpine,2,SOFT,31,36,6,136.459,136.459,136.459,,0.35,10.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HAD,Red Bull Racing,1,SOFT,1,31,31,108.275,108.002,107.172,-0.0997,0.9,3.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HAD,Red Bull Racing,2,MEDIUM,32,36,5,136.263,136.263,136.263,,0.35,8.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HAD,Red Bull Racing,3,MEDIUM,37,51,15,106.298,105.932,105.618,-0.0573,0.783,3.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HAM,Ferrari,1,SOFT,1,31,31,108.899,108.343,107.487,-0.0706,0.9,5.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HAM,Ferrari,2,MEDIUM,32,36,5,139.352,139.352,139.352,,0.35,14.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HAM,Ferrari,3,MEDIUM,37,51,15,107.156,106.51,106.17,-0.062,0.783,6.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HUL,Audi,1,MEDIUM,1,32,32,111.647,109.746,109.014,0.1375,0.9,19.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HUL,Audi,2,SOFT,33,36,4,141.286,143.369,135.944,,0.35,16.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,HUL,Audi,3,SOFT,37,51,15,110.837,107.502,106.85,-1.2629,0.817,14.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LAW,Racing Bulls,1,SOFT,1,31,31,110.247,109.119,108.263,-0.0097,0.9,13.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LAW,Racing Bulls,2,MEDIUM,32,36,5,143.329,144.591,139.679,,0.35,18.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LAW,Racing Bulls,3,SOFT,37,51,15,109.972,107.577,106.906,-0.9742,0.817,11.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LEC,Ferrari,1,SOFT,1,31,31,108.443,108.094,107.208,-0.1049,0.9,4.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LEC,Ferrari,2,MEDIUM,32,36,5,138.696,138.696,138.696,,0.35,13.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LEC,Ferrari,3,MEDIUM,37,51,15,106.548,106.123,105.784,-0.023,0.783,5.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LIN,Racing Bulls,1,MEDIUM,1,30,30,110.805,109.373,108.889,0.0276,0.9,15.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LIN,Racing Bulls,2,SOFT,31,36,6,136.427,137.665,125.983,,0.35,9.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,LIN,Racing Bulls,3,SOFT,37,51,15,107.697,107.559,106.849,-0.0765,0.783,7.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,NOR,McLaren,1,MEDIUM,1,30,30,109.87,108.468,107.761,0.1108,0.9,10.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,NOR,McLaren,2,SOFT,31,36,6,143.631,149.017,132.33,,0.35,19.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,OCO,Haas F1 Team,1,SOFT,1,30,30,110.517,109.434,108.021,0.0161,0.9,14.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,OCO,Haas F1 Team,2,MEDIUM,31,36,6,138.265,139.281,129.39,,0.35,12.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,OCO,Haas F1 Team,3,MEDIUM,37,51,15,107.731,107.561,107.068,-0.0316,0.783,8.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,PER,Cadillac,1,MEDIUM,1,30,30,111.552,110.04,109.403,0.0657,0.9,18.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,PER,Cadillac,2,SOFT,31,36,6,133.966,134.079,120.02,,0.35,5.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,PER,Cadillac,3,SOFT,37,51,15,111.269,108.142,107.363,-1.2364,0.817,15.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,PIA,McLaren,1,SOFT,1,31,31,108.218,107.995,107.178,-0.0927,0.9,1.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,PIA,McLaren,2,MEDIUM,32,36,5,134.356,134.356,134.356,,0.35,6.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,PIA,McLaren,3,MEDIUM,37,51,15,108.276,107.255,106.602,-0.3177,0.783,10.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,RUS,Mercedes,1,MEDIUM,1,31,31,109.14,107.607,106.937,0.1721,0.9,6.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,RUS,Mercedes,2,SOFT,32,36,5,128.999,128.999,128.999,,0.35,3.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,RUS,Mercedes,3,SOFT,37,51,15,105.527,105.259,104.916,-0.0292,0.783,2.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,SAI,Williams,1,MEDIUM,1,20,20,111.061,110.243,109.319,-0.1748,0.9,16.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,SAI,Williams,2,SOFT,21,30,10,114.141,108.791,108.611,0.846,0.683,1.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,SAI,Williams,3,SOFT,31,36,6,134.523,135.025,119.09,4.2298,0.517,16.0,short,False,0.662,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,SAI,Williams,4,SOFT,37,51,15,110.721,107.351,106.737,-1.3066,0.817,1.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,STR,Aston Martin,1,SOFT,1,8,8,114.347,112.153,111.723,-1.7421,0.583,22.0,short,False,0.708,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,VER,Red Bull Racing,1,MEDIUM,1,31,31,108.253,107.917,107.207,-0.0991,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,VER,Red Bull Racing,2,SOFT,32,36,5,129.938,129.938,129.938,,0.35,4.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-15-baku,VER,Red Bull Racing,3,SOFT,37,51,15,105.515,105.271,104.993,-0.0518,0.783,1.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.

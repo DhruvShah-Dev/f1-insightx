@@ -41,3 +41,6 @@ race_analysis_id,surface,label,href,relevance_note,enabled,unavailable_reason
 2026-14-madring,race_archive,Analysis report,/analysis/2026-14-madring,"Classification, event facts, and post-race read.",True,
 2026-14-madring,compare,Telemetry comparison,/vs?slug=2026-14-madring,Driver-vs-driver segment analysis.,True,
 2026-14-madring,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-15-baku,race_archive,Analysis report,/analysis/2026-15-baku,"Classification, event facts, and post-race read.",True,
+2026-15-baku,compare,Telemetry comparison,/vs?slug=2026-15-baku,Driver-vs-driver segment analysis.,True,
+2026-15-baku,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.

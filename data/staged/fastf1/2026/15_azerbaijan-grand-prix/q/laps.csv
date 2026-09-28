@@ -1,0 +1,374 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,1.0,1.0,SOFT,1.0,,,45.682,25.954,172.0,208.0,306.0,312.0,1,True,False,False,False,2026-09-25 12:04:59.338,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,2.0,1.0,SOFT,2.0,131.152,49.812,52.611,28.729,156.0,194.0,297.0,285.0,12,True,True,True,False,2026-09-25 12:06:59.387,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,3.0,1.0,SOFT,3.0,105.896,37.388,43.181,25.327,208.0,210.0,310.0,323.0,1,True,True,True,False,2026-09-25 12:09:10.539,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,4.0,1.0,SOFT,4.0,122.662,44.168,49.871,28.623,172.0,198.0,298.0,286.0,1,True,False,True,False,2026-09-25 12:10:56.435,,24.6,41.1,68.5,False,1.3,334.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,5.0,1.0,SOFT,5.0,104.277,36.731,42.337,25.209,208.0,210.0,310.0,324.0,12,True,True,True,False,2026-09-25 12:12:59.097,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,6.0,1.0,SOFT,6.0,131.469,45.131,56.284,30.054,163.0,128.0,296.0,283.0,21,True,False,True,False,2026-09-25 12:14:43.374,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,7.0,1.0,SOFT,7.0,119.432,43.689,47.255,28.488,185.0,193.0,296.0,286.0,1,True,False,True,False,2026-09-25 12:16:54.843,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,8.0,1.0,SOFT,8.0,103.615,36.552,41.899,25.164,209.0,212.0,313.0,324.0,1,True,True,True,False,2026-09-25 12:18:54.275,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,9.0,1.0,SOFT,9.0,134.521,48.192,52.088,34.241,182.0,171.0,,283.0,12,True,False,False,False,2026-09-25 12:20:37.890,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,10.0,2.0,SOFT,1.0,,,44.305,26.132,184.0,207.0,294.0,307.0,12,True,False,False,False,2026-09-25 12:22:52.411,,24.5,39.9,68.5,False,1.8,354.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,11.0,2.0,SOFT,2.0,113.326,38.443,46.231,28.652,191.0,202.0,296.0,284.0,1,True,True,True,False,2026-09-25 12:32:25.903,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,12.0,2.0,SOFT,3.0,103.686,36.487,42.026,25.173,209.0,214.0,309.0,323.0,1,True,True,True,False,2026-09-25 12:34:19.229,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,13.0,2.0,SOFT,4.0,119.795,43.201,48.021,28.573,161.0,196.0,297.0,284.0,1,True,False,True,False,2026-09-25 12:36:02.915,,24.6,39.4,67.6,False,1.6,236.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,14.0,2.0,SOFT,5.0,115.171,36.407,50.1,28.664,215.0,190.0,296.0,285.0,1,True,False,True,False,2026-09-25 12:38:02.710,,24.6,38.3,68.1,False,2.3,72.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,15.0,2.0,SOFT,6.0,103.793,36.607,41.893,25.293,206.0,215.0,312.0,326.0,1,True,False,True,False,2026-09-25 12:39:57.881,,24.6,39.5,68.3,False,2.0,346.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,16.0,2.0,SOFT,7.0,120.734,44.556,47.609,28.569,123.0,199.0,296.0,284.0,12,True,False,True,False,2026-09-25 12:41:41.674,,24.6,39.3,68.0,False,1.6,340.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,17.0,2.0,SOFT,8.0,103.462,36.55,41.785,25.127,208.0,210.0,309.0,323.0,1,True,True,True,False,2026-09-25 12:43:42.408,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,18.0,2.0,SOFT,9.0,124.94,44.831,47.499,32.61,182.0,188.0,,282.0,1,True,False,False,False,2026-09-25 12:45:25.870,,24.6,39.3,68.2,False,3.1,16.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,19.0,3.0,SOFT,1.0,,,44.158,26.08,187.0,206.0,292.0,310.0,12,True,False,False,False,2026-09-25 12:47:30.810,,24.5,37.8,67.5,False,1.8,165.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,20.0,3.0,SOFT,2.0,113.262,39.093,45.356,28.813,188.0,207.0,293.0,280.0,1,True,True,True,False,2026-09-25 12:52:49.874,,24.3,36.9,69.4,False,0.9,150.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,21.0,3.0,SOFT,3.0,103.713,36.658,41.995,25.06,205.0,209.0,308.0,324.0,1,True,True,True,False,2026-09-25 12:54:43.136,,24.3,36.9,69.6,False,1.3,27.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,22.0,3.0,SOFT,4.0,116.847,41.823,46.458,28.566,186.0,195.0,294.0,282.0,1,True,False,True,False,2026-09-25 12:56:26.849,,24.2,36.3,69.8,False,2.5,30.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,23.0,3.0,SOFT,5.0,103.037,36.238,41.8,24.999,213.0,211.0,310.0,326.0,1,True,True,True,False,2026-09-25 12:58:23.696,,24.2,36.3,69.9,False,1.5,305.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,24.0,3.0,SOFT,6.0,131.007,51.407,50.785,28.815,151.0,193.0,297.0,282.0,12,True,False,True,False,2026-09-25 13:00:06.733,,24.2,36.6,70.0,False,2.3,232.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,25.0,3.0,SOFT,7.0,102.526,36.009,41.659,24.858,217.0,211.0,314.0,328.0,12,True,True,True,False,2026-09-25 13:02:17.740,,24.3,36.8,70.0,False,0.3,245.0
+2026,15,Azerbaijan Grand Prix,Q,RUS,Mercedes,26.0,3.0,SOFT,8.0,147.834,47.222,58.088,42.524,142.0,150.0,,219.0,1,True,False,False,False,2026-09-25 13:04:00.266,,24.3,36.6,70.2,False,1.7,172.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,1.0,1.0,SOFT,1.0,,,60.856,31.343,156.0,130.0,259.0,252.0,12,True,False,False,False,2026-09-25 12:05:38.715,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,2.0,1.0,SOFT,2.0,120.971,43.048,47.733,30.19,163.0,197.0,300.0,262.0,1,True,True,True,False,2026-09-25 12:08:12.177,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,3.0,1.0,SOFT,3.0,105.401,37.054,42.848,25.499,198.0,210.0,306.0,321.0,1,True,True,True,False,2026-09-25 12:10:13.148,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,4.0,1.0,SOFT,4.0,124.724,43.512,51.572,29.64,177.0,161.0,303.0,264.0,1,True,False,True,False,2026-09-25 12:11:58.549,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,5.0,1.0,SOFT,5.0,116.311,36.68,49.463,30.168,213.0,184.0,299.0,258.0,12,True,False,True,False,2026-09-25 12:14:03.273,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,6.0,1.0,SOFT,6.0,104.36,36.365,42.679,25.316,208.0,216.0,308.0,323.0,1,True,True,True,False,2026-09-25 12:15:59.584,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,7.0,1.0,SOFT,7.0,124.29,44.567,49.825,29.898,165.0,173.0,302.0,259.0,1,True,False,True,False,2026-09-25 12:17:43.944,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,8.0,1.0,SOFT,8.0,108.939,36.818,43.638,28.483,213.0,195.0,308.0,285.0,1,True,False,True,False,2026-09-25 12:19:48.234,,24.7,40.7,68.3,False,0.6,345.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,9.0,1.0,SOFT,9.0,125.965,41.955,47.911,36.099,169.0,178.0,,252.0,12,True,False,False,False,2026-09-25 12:21:37.173,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,10.0,2.0,SOFT,1.0,,,48.609,29.038,167.0,185.0,249.0,257.0,12,True,False,False,False,2026-09-25 12:23:43.138,,24.6,39.5,68.1,False,0.7,291.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,11.0,2.0,SOFT,2.0,119.928,41.659,48.563,29.706,179.0,193.0,302.0,259.0,1,True,True,True,False,2026-09-25 12:32:08.425,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,12.0,2.0,SOFT,3.0,103.835,36.45,42.184,25.201,208.0,214.0,309.0,325.0,1,True,True,True,False,2026-09-25 12:34:08.353,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,13.0,2.0,SOFT,4.0,126.366,45.411,50.922,30.033,155.0,184.0,295.0,259.0,1,True,False,True,False,2026-09-25 12:35:52.188,,24.6,39.4,67.6,False,1.6,236.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,14.0,2.0,SOFT,5.0,103.967,36.489,42.12,25.358,210.0,210.0,308.0,324.0,1,True,False,True,False,2026-09-25 12:37:58.554,,24.6,38.3,68.1,False,2.3,72.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,15.0,2.0,SOFT,6.0,127.049,45.878,51.192,29.979,172.0,179.0,295.0,259.0,1,True,False,True,False,2026-09-25 12:39:42.521,,24.6,39.5,68.3,False,2.0,346.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,16.0,2.0,SOFT,7.0,103.78,36.456,42.065,25.259,211.0,214.0,306.0,323.0,12,True,True,True,False,2026-09-25 12:41:49.570,,24.6,39.3,68.0,False,1.6,340.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,17.0,2.0,SOFT,8.0,134.464,48.996,49.013,36.455,168.0,184.0,,278.0,21,True,False,False,False,2026-09-25 12:43:33.350,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,18.0,3.0,SOFT,1.0,,,48.916,28.234,160.0,172.0,254.0,271.0,12,True,False,False,False,2026-09-25 12:45:47.814,,24.5,39.2,67.9,False,1.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,19.0,3.0,SOFT,2.0,118.029,42.108,46.895,29.026,173.0,188.0,309.0,278.0,1,True,True,True,False,2026-09-25 12:57:13.751,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,20.0,3.0,SOFT,3.0,103.472,36.165,42.147,25.16,217.0,213.0,310.0,327.0,12,True,True,True,False,2026-09-25 12:59:11.780,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,21.0,3.0,SOFT,4.0,125.436,46.99,49.249,29.197,165.0,195.0,306.0,276.0,21,True,False,True,False,2026-09-25 13:00:55.252,,24.3,36.4,70.2,False,3.2,192.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,22.0,3.0,SOFT,5.0,103.363,36.079,42.073,25.211,214.0,213.0,310.0,325.0,12,True,True,True,False,2026-09-25 13:03:00.688,,24.3,36.3,70.2,False,3.2,233.0
+2026,15,Azerbaijan Grand Prix,Q,LEC,Ferrari,23.0,3.0,SOFT,6.0,,45.832,61.275,43.404,150.0,145.0,,234.0,1,True,False,False,False,2026-09-25 13:04:44.051,,24.2,36.5,70.4,False,1.5,202.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,1.0,1.0,SOFT,1.0,,,50.544,31.591,105.0,156.0,286.0,248.0,12,True,False,False,False,2026-09-25 12:05:54.540,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,2.0,1.0,SOFT,2.0,127.362,42.107,55.114,30.141,171.0,148.0,314.0,286.0,1,True,True,True,False,2026-09-25 12:08:15.869,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,3.0,1.0,SOFT,3.0,105.014,36.863,42.759,25.392,207.0,204.0,316.0,318.0,1,True,True,True,False,2026-09-25 12:10:23.231,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,4.0,1.0,SOFT,4.0,139.097,54.296,56.053,28.748,63.0,175.0,308.0,285.0,1,True,False,True,False,2026-09-25 12:12:08.245,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,5.0,1.0,SOFT,5.0,124.403,36.517,58.371,29.515,216.0,116.0,310.0,284.0,12,True,False,True,False,2026-09-25 12:14:27.342,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,6.0,1.0,SOFT,6.0,129.7,38.819,59.534,31.347,141.0,150.0,311.0,284.0,1,True,False,True,False,2026-09-25 12:16:31.745,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,7.0,1.0,SOFT,7.0,105.573,36.975,42.915,25.683,202.0,206.0,301.0,315.0,1,True,False,True,False,2026-09-25 12:18:41.445,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,8.0,1.0,SOFT,8.0,142.432,49.23,55.63,37.572,159.0,141.0,,231.0,12,True,False,False,False,2026-09-25 12:20:27.018,,24.7,40.7,68.3,False,0.6,345.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,9.0,2.0,SOFT,1.0,,,49.581,29.679,149.0,186.0,286.0,258.0,12,True,False,False,False,2026-09-25 12:22:49.450,,24.5,39.9,68.5,False,1.8,354.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,10.0,2.0,SOFT,2.0,117.696,41.332,47.709,28.655,176.0,176.0,310.0,285.0,1,True,True,True,False,2026-09-25 12:31:59.051,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,11.0,2.0,SOFT,3.0,104.05,36.323,42.437,25.29,204.0,208.0,306.0,318.0,1,True,True,True,False,2026-09-25 12:33:56.747,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,12.0,2.0,SOFT,4.0,129.051,43.836,49.323,35.892,171.0,163.0,,280.0,1,True,False,False,False,2026-09-25 12:35:40.797,,24.6,39.4,67.6,False,1.6,236.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,13.0,3.0,SOFT,5.0,,,49.941,29.161,176.0,154.0,309.0,281.0,12,False,False,False,False,2026-09-25 12:37:49.848,,24.6,38.3,68.1,False,2.3,72.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,14.0,3.0,SOFT,6.0,103.814,36.277,42.237,25.3,210.0,210.0,306.0,316.0,21,False,True,True,False,2026-09-25 12:42:37.435,,24.5,39.6,68.3,False,0.7,112.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,15.0,3.0,SOFT,7.0,135.192,47.086,51.491,36.615,156.0,174.0,,241.0,1,False,False,False,False,2026-09-25 12:44:21.249,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,16.0,4.0,SOFT,1.0,,,47.816,28.754,177.0,196.0,292.0,281.0,12,True,False,False,False,2026-09-25 12:46:36.441,,24.5,37.8,67.5,False,1.8,165.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,17.0,4.0,SOFT,2.0,121.388,41.072,51.266,29.05,180.0,155.0,309.0,282.0,1,True,True,True,False,2026-09-25 12:53:17.914,,24.3,36.9,69.4,False,0.9,150.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,18.0,4.0,SOFT,3.0,103.571,36.295,41.993,25.283,212.0,213.0,306.0,320.0,1,True,True,True,False,2026-09-25 12:55:19.302,,24.3,36.9,69.6,False,1.3,27.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,19.0,4.0,SOFT,4.0,121.175,41.793,46.491,32.891,178.0,182.0,,282.0,1,True,False,False,False,2026-09-25 12:57:02.873,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,20.0,5.0,SOFT,1.0,,,52.104,28.706,172.0,184.0,309.0,281.0,12,True,False,False,False,2026-09-25 12:59:04.048,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,21.0,5.0,SOFT,2.0,103.364,36.134,42.028,25.202,207.0,207.0,307.0,320.0,12,True,True,True,False,2026-09-25 13:03:04.603,,24.3,36.3,70.2,False,3.2,233.0
+2026,15,Azerbaijan Grand Prix,Q,PIA,McLaren,22.0,5.0,SOFT,3.0,,50.152,54.718,46.002,141.0,149.0,,215.0,1,True,False,False,False,2026-09-25 13:04:47.967,,24.2,36.5,70.4,False,1.5,202.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,1.0,1.0,SOFT,1.0,,,47.223,29.923000000000002,171.0,189.0,287.0,259.0,1,True,False,False,False,2026-09-25 12:05:08.594,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,2.0,1.0,SOFT,2.0,123.43,41.465,53.254,28.711,193.0,183.0,308.0,285.0,12,True,True,True,False,2026-09-25 12:07:20.089,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,3.0,1.0,SOFT,3.0,104.702,36.791,42.472,25.439,211.0,218.0,307.0,323.0,1,True,True,True,False,2026-09-25 12:09:23.519,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,4.0,1.0,SOFT,4.0,128.998,49.423,50.915,28.66,174.0,198.0,307.0,285.0,1,True,False,True,False,2026-09-25 12:11:08.221,,24.6,41.1,68.5,False,1.3,334.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,5.0,1.0,SOFT,5.0,104.557,36.514,42.455,25.588,202.0,216.0,305.0,323.0,12,True,True,True,False,2026-09-25 12:13:17.219,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,6.0,1.0,SOFT,6.0,133.983,50.697,54.971,28.315,159.0,172.0,317.0,295.0,1,True,False,True,False,2026-09-25 12:15:01.776,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,7.0,1.0,SOFT,7.0,104.161,36.364,42.382,25.415,219.0,207.0,305.0,322.0,1,True,True,True,False,2026-09-25 12:17:15.759,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,8.0,1.0,SOFT,8.0,131.328,48.476,48.526,34.326,179.0,196.0,,290.0,1,True,False,False,False,2026-09-25 12:18:59.920,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,9.0,2.0,SOFT,1.0,,,46.572,29.669,173.0,205.0,290.0,259.0,12,True,False,False,False,2026-09-25 12:21:11.248,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,10.0,2.0,SOFT,2.0,115.0,41.165,45.319,28.516,192.0,193.0,307.0,285.0,1,True,True,True,False,2026-09-25 12:31:38.628,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,11.0,2.0,SOFT,3.0,104.236,36.68,42.169,25.387,211.0,212.0,306.0,323.0,1,True,True,True,False,2026-09-25 12:33:33.628,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,12.0,2.0,SOFT,4.0,129.443,51.381,49.315,28.747,167.0,193.0,305.0,283.0,1,True,False,True,False,2026-09-25 12:35:17.864,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,13.0,2.0,SOFT,5.0,103.88,36.357,41.976,25.547,216.0,212.0,305.0,323.0,1,True,True,True,False,2026-09-25 12:37:27.307,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,14.0,2.0,SOFT,6.0,130.884,53.346,48.807,28.731,166.0,192.0,305.0,284.0,1,True,False,True,False,2026-09-25 12:39:11.187,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,15.0,2.0,SOFT,7.0,133.805,36.374,60.978,36.453,218.0,151.0,,255.0,12,True,False,False,False,2026-09-25 12:41:22.071,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,16.0,3.0,SOFT,1.0,,,46.818,29.685,175.0,189.0,288.0,258.0,21,True,False,False,False,2026-09-25 12:43:35.876,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,17.0,3.0,SOFT,2.0,115.963,41.864,45.614,28.485,187.0,194.0,305.0,285.0,1,True,True,True,False,2026-09-25 12:56:20.844,,24.2,36.3,69.8,False,2.5,30.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,18.0,3.0,SOFT,3.0,103.703,36.24,42.049,25.414,218.0,215.0,303.0,321.0,1,True,True,True,False,2026-09-25 12:58:16.807,,24.2,36.3,69.9,False,1.5,305.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,19.0,3.0,SOFT,4.0,132.274,53.97,49.498,28.806,156.0,182.0,305.0,283.0,12,True,False,True,False,2026-09-25 13:00:00.510,,24.2,36.6,70.0,False,2.3,232.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,20.0,3.0,SOFT,5.0,103.5,36.214,41.919,25.367,226.0,214.0,306.0,320.0,12,True,True,True,False,2026-09-25 13:02:12.784,,24.3,36.8,70.0,False,0.3,245.0
+2026,15,Azerbaijan Grand Prix,Q,HAD,Red Bull Racing,21.0,3.0,SOFT,6.0,,44.106,50.177,,177.0,160.0,,246.0,1,True,False,False,False,2026-09-25 13:03:56.284,,24.3,36.6,70.2,False,1.7,172.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,1.0,1.0,SOFT,1.0,,,59.942,31.842,171.0,129.0,236.0,275.0,12,True,False,False,False,2026-09-25 12:05:45.958,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,2.0,1.0,SOFT,2.0,124.221,42.238,52.065,29.918,178.0,97.0,308.0,285.0,1,True,True,True,False,2026-09-25 12:08:13.718,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,3.0,1.0,SOFT,3.0,105.841,37.442,42.776,25.623,213.0,208.0,303.0,314.0,1,True,True,True,False,2026-09-25 12:10:17.939,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,4.0,1.0,SOFT,4.0,130.306,46.109,55.041,29.156,162.0,120.0,313.0,286.0,1,True,False,True,False,2026-09-25 12:12:03.780,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,5.0,1.0,SOFT,5.0,105.809,36.48,42.658,26.671,212.0,216.0,312.0,310.0,12,True,True,True,False,2026-09-25 12:14:14.086,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,6.0,1.0,SOFT,6.0,116.929,40.803,47.195,28.931,190.0,193.0,307.0,282.0,1,True,False,True,False,2026-09-25 12:15:59.895,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,7.0,1.0,SOFT,7.0,104.571,36.343,42.41,25.818,210.0,206.0,302.0,315.0,1,True,True,True,False,2026-09-25 12:17:56.824,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,8.0,1.0,SOFT,8.0,129.692,45.924,47.083,36.685,180.0,189.0,,242.0,12,True,False,False,False,2026-09-25 12:19:41.395,,24.7,40.7,68.3,False,0.6,345.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,9.0,2.0,SOFT,1.0,,,46.682,28.858,174.0,202.0,304.0,280.0,21,True,False,False,False,2026-09-25 12:21:51.087,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,10.0,2.0,SOFT,2.0,115.54,36.854,49.794,28.892,185.0,188.0,306.0,282.0,1,True,True,True,False,2026-09-25 12:31:51.240,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,11.0,2.0,SOFT,3.0,104.02,36.327,42.247,25.446,210.0,207.0,305.0,317.0,1,True,True,True,False,2026-09-25 12:33:46.780,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,12.0,2.0,SOFT,4.0,132.03,42.722,52.693,36.615,155.0,151.0,,237.0,1,True,False,False,False,2026-09-25 12:35:30.800,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,13.0,3.0,SOFT,5.0,,,50.273,29.364,186.0,147.0,303.0,279.0,1,False,False,False,False,2026-09-25 12:37:42.830,,24.6,38.3,68.1,False,2.3,72.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,14.0,3.0,SOFT,6.0,104.155,36.529,42.098,25.528,214.0,207.0,304.0,314.0,12,False,False,True,False,2026-09-25 12:42:27.793,,24.6,39.3,68.0,False,1.6,340.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,15.0,3.0,SOFT,7.0,130.291,43.942,50.058,36.291,142.0,175.0,,232.0,1,False,False,False,False,2026-09-25 12:44:11.948,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,16.0,4.0,SOFT,1.0,,,46.898,28.858,190.0,202.0,304.0,280.0,12,True,False,False,False,2026-09-25 12:46:22.239,,24.5,39.2,67.9,False,1.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,17.0,4.0,SOFT,2.0,120.799,38.256,53.386,29.157,183.0,192.0,308.0,281.0,1,True,True,True,False,2026-09-25 12:53:14.356,,24.3,36.9,69.4,False,0.9,150.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,18.0,4.0,SOFT,3.0,103.672,36.279,41.84,25.553,211.0,209.0,304.0,315.0,1,True,True,True,False,2026-09-25 12:55:15.155,,24.3,36.9,69.6,False,1.3,27.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,19.0,4.0,SOFT,4.0,122.698,41.08,48.468,33.15,177.0,194.0,,276.0,1,True,False,False,False,2026-09-25 12:56:58.827,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,20.0,5.0,SOFT,1.0,,,51.895,29.689,189.0,198.0,305.0,279.0,12,True,False,False,False,2026-09-25 12:59:01.525,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,NOR,McLaren,21.0,5.0,SOFT,2.0,,51.738,55.924,,96.0,132.0,,180.0,12,True,False,False,False,2026-09-25 13:03:10.241,,24.3,36.3,70.2,False,3.2,233.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,1.0,1.0,SOFT,1.0,,,48.173,28.63,175.0,193.0,249.0,266.0,12,True,False,False,False,2026-09-25 12:05:32.456,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,2.0,1.0,SOFT,2.0,117.767,41.265,46.817,29.685,184.0,201.0,301.0,257.0,21,True,True,True,False,2026-09-25 12:07:50.350,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,3.0,1.0,SOFT,3.0,104.857,36.858,42.862,25.137,215.0,211.0,325.0,328.0,1,True,True,True,False,2026-09-25 12:09:48.117,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,4.0,1.0,SOFT,4.0,133.666,44.616,59.299,29.751,160.0,191.0,301.0,258.0,1,True,False,True,False,2026-09-25 12:11:32.974,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,5.0,1.0,SOFT,5.0,104.714,36.821,42.445,25.448,206.0,209.0,308.0,325.0,12,True,True,True,False,2026-09-25 12:13:46.640,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,6.0,1.0,SOFT,6.0,123.652,46.301,48.338,29.013,163.0,196.0,306.0,277.0,1,True,False,True,False,2026-09-25 12:15:31.354,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,7.0,1.0,SOFT,7.0,104.26,36.496,42.344,25.42,214.0,213.0,307.0,321.0,1,True,True,True,False,2026-09-25 12:17:35.006,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,8.0,1.0,SOFT,8.0,142.209,56.219,53.957,32.033,163.0,161.0,302.0,259.0,1,True,False,True,False,2026-09-25 12:19:19.266,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,9.0,1.0,SOFT,9.0,123.66,39.948,48.394,35.318,176.0,179.0,,226.0,12,True,False,False,False,2026-09-25 12:21:41.475,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,10.0,2.0,SOFT,1.0,,,51.833,28.051,165.0,183.0,253.0,273.0,12,True,False,False,False,2026-09-25 12:23:45.135,,24.6,39.5,68.1,False,0.7,291.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,11.0,2.0,SOFT,2.0,118.453,41.391,48.111,28.951,185.0,148.0,307.0,281.0,1,True,True,True,False,2026-09-25 12:32:03.707,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,12.0,2.0,SOFT,3.0,104.077,36.485,42.319,25.273,211.0,213.0,308.0,321.0,1,True,True,True,False,2026-09-25 12:34:02.160,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,13.0,2.0,SOFT,4.0,126.838,47.027,50.863,28.948,159.0,197.0,305.0,280.0,1,True,False,True,False,2026-09-25 12:35:46.237,,24.6,39.4,67.6,False,1.6,236.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,14.0,2.0,SOFT,5.0,104.037,36.315,42.28,25.442,211.0,210.0,304.0,320.0,1,True,True,True,False,2026-09-25 12:37:53.075,,24.6,38.3,68.1,False,2.3,72.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,15.0,2.0,SOFT,6.0,120.821,45.45,46.664,28.707,181.0,200.0,305.0,281.0,1,True,False,True,False,2026-09-25 12:39:37.112,,24.6,39.5,68.3,False,2.0,346.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,16.0,2.0,SOFT,7.0,126.082,36.808,46.023,43.251,209.0,136.0,,251.0,12,True,False,False,False,2026-09-25 12:41:37.933,,24.6,39.3,68.0,False,1.6,340.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,17.0,3.0,SOFT,1.0,,,49.762,27.915,161.0,188.0,253.0,272.0,12,True,False,False,False,2026-09-25 12:43:44.015,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,18.0,3.0,SOFT,2.0,116.803,40.8,46.819,29.184,181.0,197.0,304.0,276.0,1,True,True,True,False,2026-09-25 12:57:10.101,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,19.0,3.0,SOFT,3.0,104.456,36.449,42.585,25.422,206.0,210.0,303.0,319.0,12,True,True,True,False,2026-09-25 12:59:06.904,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,20.0,3.0,SOFT,4.0,125.963,47.84,48.399,29.724,161.0,193.0,302.0,261.0,21,True,False,True,False,2026-09-25 13:00:51.360,,24.3,36.4,70.2,False,3.2,192.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,21.0,3.0,SOFT,5.0,103.858,36.347,42.087,25.424,208.0,212.0,303.0,316.0,12,True,True,True,False,2026-09-25 13:02:57.323,,24.3,36.3,70.2,False,3.2,233.0
+2026,15,Azerbaijan Grand Prix,Q,HAM,Ferrari,22.0,3.0,SOFT,6.0,,45.974,53.883,,164.0,91.0,,211.0,1,True,False,False,False,2026-09-25 13:04:41.181,,24.2,36.5,70.4,False,1.5,202.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,1.0,1.0,SOFT,1.0,,,49.553,29.769,166.0,171.0,293.0,277.0,1,True,False,False,False,2026-09-25 12:04:15.675,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,2.0,1.0,SOFT,2.0,120.342,42.875,48.958,28.509,172.0,191.0,311.0,286.0,12,True,True,True,False,2026-09-25 12:06:23.625,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,3.0,1.0,SOFT,3.0,107.108,38.12,43.445,25.543,197.0,209.0,307.0,315.0,1,True,True,True,False,2026-09-25 12:08:23.967,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,4.0,1.0,SOFT,4.0,134.065,49.471,49.307,35.287,133.0,177.0,,261.0,1,True,False,False,False,2026-09-25 12:10:11.075,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,5.0,2.0,SOFT,1.0,145.598,62.001,53.59,30.007,175.0,179.0,289.0,268.0,12,True,False,False,False,2026-09-25 12:12:25.140,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,6.0,2.0,SOFT,2.0,122.298,42.641,50.713,28.944,179.0,171.0,311.0,283.0,1,True,False,True,False,2026-09-25 12:14:50.738,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,7.0,2.0,SOFT,3.0,105.277,37.164,42.72,25.393,202.0,206.0,307.0,316.0,1,True,True,True,False,2026-09-25 12:16:53.036,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,8.0,2.0,SOFT,4.0,129.828,48.756,52.582,28.49,159.0,185.0,310.0,287.0,1,True,False,True,False,2026-09-25 12:18:38.313,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,9.0,2.0,SOFT,5.0,104.489,36.734,42.478,25.277,205.0,203.0,306.0,315.0,12,True,True,True,False,2026-09-25 12:20:48.141,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,10.0,2.0,SOFT,6.0,139.702,47.331,51.847,40.524,159.0,168.0,,213.0,1,True,False,False,False,2026-09-25 12:22:32.630,,24.5,39.9,68.5,False,1.8,354.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,11.0,3.0,SOFT,1.0,,,49.201,29.427,173.0,171.0,295.0,278.0,12,True,False,False,False,2026-09-25 12:24:52.332,,24.6,40.3,68.2,False,1.2,99.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,12.0,3.0,SOFT,2.0,122.842,40.849,53.035,28.958,186.0,176.0,313.0,287.0,1,True,True,True,False,2026-09-25 12:37:02.036,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,13.0,3.0,SOFT,3.0,104.106,36.716,42.293,25.097,213.0,207.0,309.0,318.0,1,True,True,True,False,2026-09-25 12:39:04.878,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,14.0,3.0,SOFT,4.0,149.593,58.709,61.167,29.717,157.0,175.0,286.0,266.0,12,True,False,True,False,2026-09-25 12:40:48.984,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,15.0,3.0,SOFT,5.0,120.14,38.949,42.906,38.285,189.0,208.0,,240.0,12,True,False,False,False,2026-09-25 12:43:18.577,,24.5,39.6,68.3,False,0.7,112.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,16.0,4.0,SOFT,1.0,,,49.089,29.182,185.0,174.0,296.0,280.0,12,True,False,False,False,2026-09-25 12:45:18.717,,24.6,39.3,68.2,False,3.1,16.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,17.0,4.0,SOFT,2.0,118.168,40.823,48.973,28.372,174.0,194.0,315.0,286.0,1,True,True,True,False,2026-09-25 12:57:19.818,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,18.0,4.0,SOFT,3.0,104.047,36.563,42.315,25.169,207.0,201.0,308.0,318.0,12,True,True,True,False,2026-09-25 12:59:17.986,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,19.0,4.0,SOFT,4.0,135.893,52.383,55.184,28.326,121.0,183.0,316.0,289.0,21,True,False,True,False,2026-09-25 13:01:02.033,,24.3,36.4,70.2,False,3.2,192.0
+2026,15,Azerbaijan Grand Prix,Q,GAS,Alpine,20.0,4.0,SOFT,5.0,,37.162,42.495,,197.0,206.0,,253.0,12,True,False,False,False,2026-09-25 13:03:17.926,,24.3,36.3,70.2,False,3.2,233.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,1.0,1.0,SOFT,1.0,,,48.861,29.682,178.0,188.0,286.0,274.0,1,True,False,False,False,2026-09-25 12:04:55.595,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,2.0,1.0,SOFT,2.0,125.407,43.163,53.461,28.783,184.0,198.0,306.0,283.0,12,True,True,True,False,2026-09-25 12:06:59.376,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,3.0,1.0,SOFT,3.0,105.168,36.957,42.599,25.612,207.0,210.0,303.0,318.0,1,True,True,True,False,2026-09-25 12:09:04.783,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,4.0,1.0,SOFT,4.0,123.309,46.921,47.257,29.131,180.0,195.0,305.0,282.0,1,True,False,True,False,2026-09-25 12:10:49.951,,24.6,41.1,68.5,False,1.3,334.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,5.0,1.0,SOFT,5.0,104.279,36.631,42.348,25.3,205.0,212.0,304.0,321.0,1,True,True,True,False,2026-09-25 12:12:53.260,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,6.0,1.0,SOFT,6.0,132.32,45.77,57.478,29.072,153.0,96.0,306.0,282.0,12,True,False,True,False,2026-09-25 12:14:37.539,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,7.0,1.0,SOFT,7.0,104.041,36.467,41.992,25.582,212.0,211.0,303.0,321.0,1,True,True,True,False,2026-09-25 12:16:49.859,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,8.0,1.0,SOFT,8.0,133.511,47.105,51.933,34.473,164.0,105.0,,264.0,1,True,False,False,False,2026-09-25 12:18:33.900,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,9.0,2.0,SOFT,1.0,,,46.888,30.544,173.0,200.0,257.0,253.0,12,True,False,False,False,2026-09-25 12:20:47.411,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,10.0,2.0,SOFT,2.0,118.309,42.968,46.404,28.937,191.0,205.0,301.0,281.0,1,True,True,True,False,2026-09-25 12:31:19.881,,24.6,38.8,65.8,False,2.4,305.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,11.0,2.0,SOFT,3.0,104.282,36.686,42.111,25.485,206.0,210.0,301.0,318.0,1,True,True,True,False,2026-09-25 12:33:18.190,,24.5,39.0,67.2,False,1.3,260.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,12.0,2.0,SOFT,4.0,129.466,42.12,54.932,32.414,178.0,195.0,299.0,263.0,1,True,False,True,False,2026-09-25 12:35:02.472,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,13.0,2.0,SOFT,5.0,104.752,36.492,42.195,26.065,223.0,206.0,298.0,314.0,1,True,False,True,False,2026-09-25 12:37:11.938,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,14.0,2.0,SOFT,6.0,121.6,45.165,47.263,29.172,134.0,200.0,301.0,281.0,1,True,False,True,False,2026-09-25 12:38:56.690,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,15.0,2.0,SOFT,7.0,103.706,36.395,41.845,25.466,215.0,207.0,302.0,318.0,12,True,True,True,False,2026-09-25 12:40:58.290,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,16.0,2.0,SOFT,8.0,133.14,46.855,51.991,34.294,142.0,173.0,,253.0,21,True,False,False,False,2026-09-25 12:42:41.996,,24.5,39.6,68.3,False,0.7,112.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,17.0,3.0,SOFT,1.0,,,46.039,30.678,191.0,206.0,252.0,250.0,12,True,False,False,False,2026-09-25 12:44:55.136,,24.6,39.3,68.2,False,3.1,16.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,18.0,3.0,SOFT,2.0,126.427,45.938,51.451,29.038,189.0,202.0,299.0,278.0,1,True,True,True,False,2026-09-25 12:53:04.321,,24.3,36.9,69.4,False,0.9,150.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,19.0,3.0,SOFT,3.0,104.487,36.496,42.225,25.766,217.0,210.0,299.0,317.0,1,True,True,True,False,2026-09-25 12:55:10.748,,24.3,36.9,69.6,False,1.3,27.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,20.0,3.0,SOFT,4.0,132.982,43.006,53.309,36.667,180.0,158.0,277.0,217.0,1,True,False,True,False,2026-09-25 12:56:55.235,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,21.0,3.0,SOFT,5.0,125.24,46.671,47.598,30.971,173.0,202.0,248.0,250.0,12,True,False,True,False,2026-09-25 12:59:08.217,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,22.0,3.0,SOFT,6.0,121.217,43.192,48.914,29.111,184.0,180.0,303.0,280.0,1,True,False,True,False,2026-09-25 13:01:13.457,,24.3,36.4,70.2,False,3.2,192.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,23.0,3.0,SOFT,7.0,104.081,36.427,42.047,25.607,214.0,208.0,299.0,315.0,12,True,True,True,False,2026-09-25 13:03:14.674,,24.3,36.3,70.2,False,3.2,233.0
+2026,15,Azerbaijan Grand Prix,Q,VER,Red Bull Racing,24.0,3.0,SOFT,8.0,,43.826,50.787,,165.0,139.0,,228.0,1,True,False,False,False,2026-09-25 13:04:58.755,,24.2,36.5,70.4,False,1.5,202.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,1.0,1.0,SOFT,1.0,,,48.812,29.932,170.0,173.0,303.0,260.0,12,True,False,False,False,2026-09-25 12:05:19.050,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,2.0,1.0,SOFT,2.0,120.813,38.394,53.068,29.351,189.0,167.0,311.0,271.0,21,True,True,True,False,2026-09-25 12:07:37.060,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,3.0,1.0,SOFT,3.0,105.903,37.246,43.23,25.427,200.0,199.0,311.0,323.0,1,True,True,True,False,2026-09-25 12:09:37.873,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,4.0,1.0,SOFT,4.0,132.712,47.57,49.148,35.994,106.0,169.0,,246.0,1,True,False,False,False,2026-09-25 12:11:23.776,,24.6,41.1,68.5,False,1.3,334.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,5.0,2.0,SOFT,1.0,,71.226,58.985,29.504,177.0,145.0,308.0,265.0,12,True,False,False,False,2026-09-25 12:13:36.488,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,6.0,2.0,SOFT,2.0,108.054,38.335,44.036,25.683,196.0,201.0,308.0,318.0,1,True,False,True,False,2026-09-25 12:16:16.212,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,7.0,2.0,SOFT,3.0,122.561,43.981,49.789,28.791,167.0,187.0,310.0,284.0,1,True,False,True,False,2026-09-25 12:18:04.266,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,8.0,2.0,SOFT,4.0,105.104,37.073,42.807,25.224,207.0,195.0,310.0,324.0,12,True,True,True,False,2026-09-25 12:20:06.827,,24.7,40.7,68.3,False,0.6,345.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,9.0,2.0,SOFT,5.0,133.244,47.235,50.181,35.828,159.0,176.0,,244.0,21,True,False,False,False,2026-09-25 12:21:51.931,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,10.0,3.0,SOFT,1.0,,,48.632,29.722,169.0,171.0,307.0,261.0,12,True,False,False,False,2026-09-25 12:24:05.175,,24.6,39.5,68.1,False,0.7,291.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,11.0,3.0,SOFT,2.0,114.603,38.144,47.16,29.299,194.0,184.0,308.0,275.0,1,True,True,True,False,2026-09-25 12:31:04.941,,24.6,38.8,65.8,False,2.4,305.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,12.0,3.0,SOFT,3.0,104.849,36.861,42.65,25.338,214.0,203.0,308.0,322.0,1,True,True,True,False,2026-09-25 12:32:59.544,,24.5,39.0,67.2,False,1.3,260.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,13.0,3.0,SOFT,4.0,130.141,43.748,49.48,36.913,180.0,171.0,,276.0,1,True,False,False,False,2026-09-25 12:34:44.393,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,14.0,4.0,SOFT,1.0,,,49.426,29.852,178.0,166.0,301.0,265.0,1,True,False,False,False,2026-09-25 12:36:54.534,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,15.0,4.0,SOFT,2.0,119.421,37.858,52.243,29.32,193.0,170.0,308.0,275.0,1,True,False,True,False,2026-09-25 12:40:33.420,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,16.0,4.0,SOFT,3.0,104.629,36.658,42.853,25.118,205.0,200.0,310.0,324.0,12,True,True,True,False,2026-09-25 12:42:32.841,,24.5,39.6,68.3,False,0.7,112.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,17.0,4.0,SOFT,4.0,132.401,45.309,50.843,36.249,169.0,155.0,,242.0,1,True,False,False,False,2026-09-25 12:44:17.470,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,18.0,5.0,SOFT,5.0,,,47.645,29.817,184.0,183.0,290.0,267.0,12,False,False,False,False,2026-09-25 12:46:29.871,,24.5,39.2,67.9,False,1.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,19.0,5.0,SOFT,6.0,115.412,38.947,47.006,29.459,181.0,178.0,308.0,272.0,1,False,True,True,False,2026-09-25 12:53:10.154,,24.3,36.9,69.4,False,0.9,150.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,20.0,5.0,SOFT,7.0,105.091,36.983,42.786,25.322,202.0,207.0,308.0,322.0,1,False,True,True,False,2026-09-25 12:55:05.566,,24.3,36.9,69.6,False,1.3,27.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,21.0,5.0,SOFT,8.0,128.418,45.833,48.168,34.417,172.0,189.0,,268.0,1,False,False,False,False,2026-09-25 12:56:50.657,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,22.0,6.0,SOFT,1.0,144.687,62.258,52.329,30.1,169.0,157.0,299.0,259.0,12,True,False,False,False,2026-09-25 12:58:59.075,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,23.0,6.0,SOFT,2.0,120.768,37.838,53.962,28.968,188.0,181.0,310.0,276.0,1,True,False,True,False,2026-09-25 13:01:23.762,,24.3,36.4,70.2,False,3.2,192.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,24.0,6.0,SOFT,3.0,104.566,36.777,42.59,25.199,204.0,208.0,308.0,323.0,12,True,True,True,False,2026-09-25 13:03:24.530,,24.3,36.3,70.2,False,3.2,233.0
+2026,15,Azerbaijan Grand Prix,Q,SAI,Williams,25.0,6.0,SOFT,4.0,,48.169,53.046,,147.0,151.0,,168.0,1,True,False,False,False,2026-09-25 13:05:09.096,,24.2,36.5,70.4,False,1.5,202.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,1.0,1.0,SOFT,1.0,,,48.912,29.413,181.0,180.0,292.0,276.0,1,True,False,False,False,2026-09-25 12:04:08.615,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,2.0,1.0,SOFT,2.0,119.492,41.057,47.98,30.455,176.0,161.0,314.0,284.0,12,True,True,True,False,2026-09-25 12:06:08.909,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,3.0,1.0,SOFT,3.0,105.768,37.555,43.149,25.064,206.0,201.0,325.0,327.0,1,True,True,True,False,2026-09-25 12:08:08.401,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,4.0,1.0,SOFT,4.0,145.397,50.622,55.49,39.285,154.0,189.0,,246.0,1,True,False,False,False,2026-09-25 12:09:54.169,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,5.0,2.0,SOFT,1.0,,,48.027,29.236,186.0,183.0,295.0,280.0,12,True,False,False,False,2026-09-25 12:12:19.566,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,6.0,2.0,SOFT,2.0,115.39,39.67,47.019,28.701,173.0,191.0,317.0,289.0,1,True,False,True,False,2026-09-25 12:15:26.464,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,7.0,2.0,SOFT,3.0,105.106,37.448,42.612,25.046,205.0,207.0,321.0,321.0,1,True,True,True,False,2026-09-25 12:17:21.854,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,8.0,2.0,SOFT,4.0,132.785,49.208,55.01,28.567,159.0,175.0,316.0,288.0,1,True,False,True,False,2026-09-25 12:19:06.960,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,9.0,2.0,SOFT,5.0,117.839,37.685,44.56,35.594,191.0,175.0,,285.0,12,True,False,False,False,2026-09-25 12:21:19.745,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,10.0,3.0,SOFT,1.0,,,48.412,29.575,179.0,181.0,272.0,281.0,12,True,False,False,False,2026-09-25 12:23:17.584,,24.5,39.9,68.5,False,1.8,354.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,11.0,3.0,SOFT,2.0,120.595,40.943,51.415,28.237,175.0,178.0,325.0,295.0,1,True,True,True,False,2026-09-25 12:36:59.962,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,12.0,3.0,SOFT,3.0,104.869,37.025,42.458,25.386,209.0,200.0,306.0,316.0,1,True,True,True,False,2026-09-25 12:39:00.557,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,13.0,3.0,SOFT,4.0,147.279,60.668,56.834,29.777,143.0,167.0,316.0,288.0,12,True,False,True,False,2026-09-25 12:40:45.426,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,14.0,3.0,SOFT,5.0,104.683,36.957,42.323,25.403,220.0,201.0,305.0,314.0,12,True,True,True,False,2026-09-25 12:43:12.705,,24.5,39.6,68.3,False,0.7,112.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,15.0,3.0,SOFT,6.0,143.967,48.128,55.88,39.959,152.0,120.0,,236.0,1,True,False,False,False,2026-09-25 12:44:57.388,,24.6,39.3,68.2,False,3.1,16.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,16.0,4.0,SOFT,1.0,,,49.094,28.948,171.0,187.0,294.0,283.0,12,True,False,False,False,2026-09-25 12:47:21.355,,24.5,37.8,67.5,False,1.8,165.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,17.0,4.0,SOFT,2.0,117.73,40.989,48.066,28.675,175.0,186.0,315.0,288.0,1,True,True,True,False,2026-09-25 12:57:16.980,,24.2,36.6,69.8,False,0.9,105.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,18.0,4.0,SOFT,3.0,144.868,37.021,78.002,29.845,207.0,155.0,293.0,282.0,12,True,False,True,False,2026-09-25 12:59:14.710,,24.2,35.5,69.4,False,1.9,287.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,19.0,4.0,SOFT,4.0,131.936,49.865,53.125,28.946,155.0,189.0,311.0,283.0,12,True,False,True,False,2026-09-25 13:01:39.578,,24.3,36.8,70.0,False,0.3,245.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,20.0,4.0,SOFT,5.0,104.963,37.084,42.517,25.362,215.0,205.0,305.0,316.0,1,True,True,True,False,2026-09-25 13:03:51.514,,24.3,36.6,70.2,False,1.7,172.0
+2026,15,Azerbaijan Grand Prix,Q,COL,Alpine,21.0,4.0,SOFT,6.0,,49.21,54.409,,139.0,166.0,,195.0,1,True,False,False,False,2026-09-25 13:05:36.477,,24.2,36.3,70.3,False,1.4,108.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,1.0,1.0,SOFT,1.0,,,48.586,30.75,160.0,168.0,286.0,256.0,1,True,False,False,False,2026-09-25 12:04:17.286,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,2.0,1.0,SOFT,2.0,120.336,41.863,48.827,29.646,163.0,155.0,300.0,278.0,12,True,True,True,False,2026-09-25 12:06:26.587,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,3.0,1.0,SOFT,3.0,106.557,37.982,43.08,25.495,195.0,205.0,315.0,322.0,1,True,True,True,False,2026-09-25 12:08:26.923,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,4.0,1.0,SOFT,4.0,131.068,49.295,52.73,29.043,163.0,176.0,303.0,283.0,1,True,False,True,False,2026-09-25 12:10:13.480,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,5.0,1.0,SOFT,5.0,106.146,37.52,42.707,25.919,206.0,214.0,305.0,320.0,1,True,True,True,False,2026-09-25 12:12:24.548,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,6.0,1.0,SOFT,6.0,130.575,48.044,53.581,28.95,148.0,187.0,303.0,280.0,12,True,False,True,False,2026-09-25 12:14:10.694,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,7.0,1.0,SOFT,7.0,106.286,37.215,43.391,25.68,208.0,206.0,303.0,320.0,1,True,False,True,False,2026-09-25 12:16:21.269,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,8.0,1.0,SOFT,8.0,122.717,45.713,48.032,28.972,166.0,187.0,304.0,283.0,1,True,False,True,False,2026-09-25 12:18:07.555,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,9.0,1.0,SOFT,9.0,105.228,37.091,42.713,25.424,207.0,210.0,304.0,318.0,12,True,True,True,False,2026-09-25 12:20:10.272,,24.7,40.7,68.3,False,0.6,345.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,10.0,1.0,SOFT,10.0,125.812,42.167,48.866,34.779,170.0,168.0,,277.0,21,True,False,False,False,2026-09-25 12:21:55.500,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,11.0,2.0,SOFT,1.0,,,47.752,29.364,168.0,179.0,298.0,273.0,12,True,False,False,False,2026-09-25 12:24:01.312,,24.6,39.5,68.1,False,0.7,291.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,12.0,2.0,SOFT,2.0,115.743,39.974,47.056,28.713,168.0,199.0,302.0,284.0,1,True,True,True,False,2026-09-25 12:31:41.189,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,13.0,2.0,SOFT,3.0,105.404,37.073,42.795,25.536,203.0,211.0,304.0,321.0,1,True,True,True,False,2026-09-25 12:33:36.932,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,14.0,2.0,SOFT,4.0,127.813,48.818,49.892,29.103,158.0,188.0,302.0,282.0,1,True,False,True,False,2026-09-25 12:35:22.336,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,15.0,2.0,SOFT,5.0,104.775,36.839,42.345,25.591,204.0,216.0,303.0,319.0,1,True,True,True,False,2026-09-25 12:37:30.149,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,16.0,2.0,SOFT,6.0,132.533,51.311,51.998,29.224,124.0,144.0,303.0,285.0,1,True,False,True,False,2026-09-25 12:39:14.924,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,BEA,Haas F1 Team,17.0,2.0,SOFT,7.0,122.741,36.8,45.658,40.283,209.0,111.0,,270.0,12,True,False,False,False,2026-09-25 12:41:27.457,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,1.0,1.0,SOFT,1.0,,,50.051,28.605,159.0,170.0,288.0,271.0,1,True,False,False,False,2026-09-25 12:04:43.797,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,2.0,1.0,SOFT,2.0,120.207,42.064,49.403,28.74,175.0,193.0,309.0,281.0,12,True,True,True,False,2026-09-25 12:06:53.139,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,3.0,1.0,SOFT,3.0,106.141,37.525,42.948,25.668,202.0,198.0,304.0,319.0,1,True,True,True,False,2026-09-25 12:08:53.346,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,4.0,1.0,SOFT,4.0,125.285,44.291,51.557,29.437,161.0,137.0,309.0,281.0,1,True,False,True,False,2026-09-25 12:10:39.487,,24.6,41.1,68.5,False,1.3,334.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,5.0,1.0,SOFT,5.0,105.697,37.38,42.917,25.4,201.0,204.0,307.0,323.0,1,True,True,True,False,2026-09-25 12:12:44.772,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,6.0,1.0,SOFT,6.0,138.299,45.401,57.779,35.119,150.0,160.0,,281.0,12,True,False,False,False,2026-09-25 12:14:30.469,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,7.0,2.0,SOFT,1.0,144.984,66.437,50.83,27.717,162.0,176.0,298.0,285.0,1,True,False,False,False,2026-09-25 12:16:48.768,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,8.0,2.0,SOFT,2.0,130.673,43.952,56.878,29.843,164.0,165.0,308.0,277.0,1,True,False,True,False,2026-09-25 12:19:13.752,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,9.0,2.0,SOFT,3.0,105.535,37.515,42.557,25.463,204.0,204.0,303.0,320.0,12,True,True,True,False,2026-09-25 12:21:24.425,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,10.0,2.0,SOFT,4.0,141.163,50.281,52.18,38.702,160.0,164.0,,252.0,12,True,False,False,False,2026-09-25 12:23:09.960,,24.5,39.9,68.5,False,1.8,354.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,11.0,3.0,SOFT,1.0,,,47.744,27.57,161.0,181.0,295.0,284.0,21,True,False,False,False,2026-09-25 12:25:31.123,,24.6,40.3,68.2,False,1.2,99.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,12.0,3.0,SOFT,2.0,116.441,41.337,46.282,28.822,175.0,187.0,309.0,282.0,1,True,True,True,False,2026-09-25 12:31:28.066,,24.6,38.8,65.8,False,2.4,305.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,13.0,3.0,SOFT,3.0,105.292,37.285,42.489,25.518,203.0,208.0,304.0,321.0,1,True,True,True,False,2026-09-25 12:33:24.507,,24.5,39.0,67.2,False,1.3,260.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,14.0,3.0,SOFT,4.0,125.089,43.057,50.61,31.422,166.0,177.0,301.0,247.0,1,True,False,True,False,2026-09-25 12:35:09.799,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,15.0,3.0,SOFT,5.0,105.09,37.084,42.687,25.319,206.0,206.0,305.0,326.0,1,True,True,True,False,2026-09-25 12:37:14.888,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,16.0,3.0,SOFT,6.0,123.307,47.599,46.937,28.771,166.0,185.0,308.0,284.0,1,True,False,True,False,2026-09-25 12:38:59.978,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,17.0,3.0,SOFT,7.0,104.86,36.794,42.508,25.558,209.0,203.0,304.0,319.0,12,True,True,True,False,2026-09-25 12:41:03.285,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,LAW,Racing Bulls,18.0,3.0,SOFT,8.0,134.904,42.983,52.552,39.369,171.0,173.0,,281.0,21,True,False,False,False,2026-09-25 12:42:48.145,,24.5,39.6,68.3,False,0.7,112.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,1.0,1.0,SOFT,1.0,,,50.835,29.486,171.0,175.0,305.0,264.0,1,True,False,False,False,2026-09-25 12:05:12.453,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,2.0,1.0,SOFT,2.0,122.981,38.483,54.87,29.628,196.0,159.0,304.0,266.0,12,True,True,True,False,2026-09-25 12:07:30.082,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,3.0,1.0,SOFT,3.0,107.082,37.632,43.243,26.207,214.0,207.0,308.0,323.0,1,True,True,True,False,2026-09-25 12:09:33.063,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,4.0,1.0,SOFT,4.0,129.764,45.404,50.278,34.082,180.0,158.0,,290.0,1,True,False,False,False,2026-09-25 12:11:20.145,,24.6,41.1,68.5,False,1.3,334.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,5.0,2.0,SOFT,1.0,,97.651,57.582,32.134,164.0,102.0,291.0,258.0,12,True,False,False,False,2026-09-25 12:13:29.909,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,6.0,2.0,SOFT,2.0,106.068,37.416,43.143,25.509,211.0,198.0,306.0,321.0,1,True,True,True,False,2026-09-25 12:16:37.263,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,7.0,2.0,SOFT,3.0,133.643,48.065,56.388,29.19,167.0,175.0,301.0,275.0,1,True,False,True,False,2026-09-25 12:18:23.331,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,8.0,2.0,SOFT,4.0,105.031,37.173,42.66,25.198,210.0,206.0,307.0,325.0,12,True,True,True,False,2026-09-25 12:20:36.974,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,9.0,2.0,SOFT,5.0,128.706,45.754,48.122,34.83,171.0,187.0,,257.0,1,True,False,False,False,2026-09-25 12:22:22.005,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,10.0,3.0,SOFT,1.0,,,49.871,29.597,176.0,175.0,302.0,265.0,12,True,False,False,False,2026-09-25 12:24:30.711,,24.6,39.5,68.1,False,0.7,291.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,11.0,3.0,SOFT,2.0,117.323,37.95,49.883,29.49,178.0,182.0,303.0,265.0,1,True,True,True,False,2026-09-25 12:31:14.407,,24.6,38.8,65.8,False,2.4,305.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,12.0,3.0,SOFT,3.0,105.019,37.11,42.74,25.169,205.0,212.0,310.0,325.0,1,True,True,True,False,2026-09-25 12:33:11.730,,24.5,39.0,67.2,False,1.3,260.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,13.0,3.0,SOFT,4.0,124.341,43.534,47.564,33.243,175.0,185.0,,284.0,1,True,False,False,False,2026-09-25 12:34:56.749,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,14.0,4.0,SOFT,1.0,,,50.652,29.485,172.0,174.0,295.0,268.0,1,True,False,False,False,2026-09-25 12:37:01.090,,24.6,39.3,67.7,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,15.0,4.0,SOFT,2.0,117.242,39.119,48.585,29.538,175.0,185.0,303.0,262.0,1,True,False,True,False,2026-09-25 12:40:26.464,,24.6,39.5,68.3,False,2.0,346.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,16.0,4.0,SOFT,3.0,105.001,36.887,42.845,25.269,207.0,206.0,307.0,323.0,12,True,True,True,False,2026-09-25 12:42:23.706,,24.6,39.3,68.0,False,1.6,340.0
+2026,15,Azerbaijan Grand Prix,Q,ALB,Williams,17.0,4.0,SOFT,4.0,136.056,45.449,55.017,35.59,160.0,149.0,,283.0,1,True,False,False,False,2026-09-25 12:44:08.707,,24.5,39.2,68.7,False,3.3,196.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,1.0,1.0,SOFT,1.0,,,49.453,30.942,165.0,166.0,262.0,257.0,1,True,False,False,False,2026-09-25 12:04:19.115,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,2.0,1.0,SOFT,2.0,125.541,40.657,54.012,30.872,183.0,104.0,304.0,279.0,12,True,True,True,False,2026-09-25 12:06:31.495,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,3.0,1.0,SOFT,3.0,106.247,37.709,43.426,25.112,192.0,205.0,325.0,329.0,1,True,True,True,False,2026-09-25 12:08:37.036,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,4.0,1.0,SOFT,4.0,125.163,43.937,51.945,29.281,172.0,167.0,305.0,283.0,1,True,False,True,False,2026-09-25 12:10:23.283,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,5.0,1.0,SOFT,5.0,105.662,37.527,42.883,25.252,201.0,202.0,314.0,330.0,1,True,True,True,False,2026-09-25 12:12:28.446,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,6.0,1.0,SOFT,6.0,131.371,46.138,56.086,29.147,158.0,177.0,304.0,281.0,12,True,False,True,False,2026-09-25 12:14:14.108,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,7.0,1.0,SOFT,7.0,105.788,37.209,42.935,25.644,198.0,206.0,302.0,321.0,1,True,False,True,False,2026-09-25 12:16:25.479,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,8.0,1.0,SOFT,8.0,122.48,43.418,49.831,29.231,169.0,155.0,305.0,283.0,1,True,False,True,False,2026-09-25 12:18:11.267,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,9.0,1.0,SOFT,9.0,105.039,36.95,42.691,25.398,201.0,207.0,305.0,322.0,12,True,True,True,False,2026-09-25 12:20:13.747,,24.7,40.7,68.3,False,0.6,345.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,10.0,1.0,SOFT,10.0,129.181,41.795,50.606,36.78,169.0,168.0,,281.0,21,True,False,False,False,2026-09-25 12:21:58.786,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,11.0,2.0,SOFT,1.0,,,47.576,30.535,164.0,178.0,263.0,256.0,12,True,False,False,False,2026-09-25 12:24:07.967,,24.6,39.5,68.1,False,0.7,291.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,12.0,2.0,SOFT,2.0,116.173,39.993,47.279,28.901,174.0,180.0,304.0,284.0,1,True,True,True,False,2026-09-25 12:31:44.210,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,13.0,2.0,SOFT,3.0,105.076,37.036,42.526,25.514,197.0,214.0,305.0,323.0,1,True,True,True,False,2026-09-25 12:33:40.383,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,14.0,2.0,SOFT,4.0,128.546,46.79,52.576,29.18,164.0,176.0,303.0,282.0,1,True,False,True,False,2026-09-25 12:35:25.459,,24.5,39.3,67.8,False,1.6,249.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,15.0,2.0,SOFT,5.0,105.016,36.803,42.43,25.783,208.0,209.0,302.0,322.0,1,True,True,True,False,2026-09-25 12:37:34.005,,24.6,38.3,68.1,False,2.3,72.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,16.0,2.0,SOFT,6.0,125.951,46.433,50.489,29.029,155.0,178.0,305.0,284.0,1,True,False,True,False,2026-09-25 12:39:19.021,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,17.0,2.0,SOFT,7.0,105.186,36.775,42.713,25.698,203.0,206.0,299.0,318.0,12,True,False,True,False,2026-09-25 12:41:24.972,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,OCO,Haas F1 Team,18.0,2.0,SOFT,8.0,144.575,52.759,51.188,40.628,171.0,159.0,,241.0,12,True,False,False,False,2026-09-25 12:43:10.158,,24.5,39.6,68.3,False,0.7,112.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,1.0,1.0,SOFT,1.0,,,49.27,28.697,164.0,176.0,270.0,268.0,1,True,False,False,False,2026-09-25 12:04:35.602,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,2.0,1.0,SOFT,2.0,120.079,41.47,49.606,29.003,180.0,184.0,310.0,276.0,12,True,True,True,False,2026-09-25 12:06:44.572,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,3.0,1.0,SOFT,3.0,106.331,37.38,43.523,25.428,196.0,201.0,307.0,323.0,1,True,True,True,False,2026-09-25 12:08:44.651,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,4.0,1.0,SOFT,4.0,132.982,47.084,53.304,32.594,164.0,189.0,,283.0,1,True,False,False,False,2026-09-25 12:10:30.982,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,5.0,2.0,SOFT,1.0,,,58.145,30.544,170.0,167.0,304.0,254.0,12,True,False,False,False,2026-09-25 12:12:43.964,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,6.0,2.0,SOFT,2.0,106.093,37.497,42.988,25.608,196.0,207.0,304.0,323.0,1,True,True,True,False,2026-09-25 12:16:40.375,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,7.0,2.0,SOFT,3.0,135.072,48.779,55.678,30.615,159.0,157.0,306.0,270.0,1,True,False,True,False,2026-09-25 12:18:26.468,,24.8,39.9,67.3,False,1.6,61.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,8.0,2.0,SOFT,4.0,105.381,37.357,42.626,25.398,205.0,208.0,303.0,323.0,12,True,True,True,False,2026-09-25 12:20:41.540,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,9.0,2.0,SOFT,5.0,126.702,42.98,50.645,33.077,156.0,169.0,,264.0,1,True,False,False,False,2026-09-25 12:22:26.921,,24.6,39.5,67.7,False,2.0,93.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,10.0,3.0,SOFT,1.0,,,48.909,28.806,146.0,176.0,265.0,266.0,12,True,False,False,False,2026-09-25 12:24:33.623,,24.6,40.3,68.2,False,1.2,99.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,11.0,3.0,SOFT,2.0,115.191,39.961,46.527,28.703,181.0,193.0,308.0,282.0,1,True,True,True,False,2026-09-25 12:31:56.951,,24.6,38.5,66.4,False,2.7,24.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,12.0,3.0,SOFT,3.0,105.401,37.163,42.804,25.434,206.0,201.0,305.0,323.0,1,True,True,True,False,2026-09-25 12:33:52.142,,24.5,39.1,68.3,False,2.9,5.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,13.0,3.0,SOFT,4.0,122.431,40.867,52.353,29.211,181.0,179.0,308.0,274.0,1,True,False,True,False,2026-09-25 12:35:37.543,,24.6,39.4,67.6,False,1.6,236.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,14.0,3.0,SOFT,5.0,105.106,37.18,42.487,25.439,207.0,215.0,304.0,324.0,1,True,True,True,False,2026-09-25 12:37:39.974,,24.6,38.3,68.1,False,2.3,72.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,15.0,3.0,SOFT,6.0,125.838,43.795,52.532,29.511,150.0,155.0,309.0,276.0,1,True,False,True,False,2026-09-25 12:39:25.080,,24.6,39.7,67.3,False,0.6,282.0
+2026,15,Azerbaijan Grand Prix,Q,LIN,Racing Bulls,16.0,3.0,SOFT,7.0,143.155,58.083,48.377,36.695,175.0,184.0,,232.0,12,True,False,False,False,2026-09-25 12:41:30.918,,24.6,39.9,67.8,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,ANT,Mercedes,1.0,1.0,SOFT,1.0,,,47.25,27.227,178.0,185.0,294.0,282.0,1,True,False,False,False,2026-09-25 12:05:03.711,,24.6,39.9,68.7,False,0.6,90.0
+2026,15,Azerbaijan Grand Prix,Q,ANT,Mercedes,2.0,1.0,SOFT,2.0,128.298,43.25,56.124,28.924,164.0,173.0,295.0,283.0,12,True,True,True,False,2026-09-25 12:07:09.155,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,ANT,Mercedes,3.0,1.0,SOFT,3.0,105.504,37.067,42.817,25.62,208.0,200.0,309.0,322.0,1,True,True,True,False,2026-09-25 12:09:17.453,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,ANT,Mercedes,4.0,1.0,SOFT,4.0,126.683,47.622,50.296,28.765,146.0,184.0,296.0,284.0,1,True,False,True,False,2026-09-25 12:11:02.957,,24.6,41.1,68.5,False,1.3,334.0
+2026,15,Azerbaijan Grand Prix,Q,ANT,Mercedes,5.0,1.0,SOFT,5.0,,66.319,,,100.0,184.0,,284.0,12,True,False,False,False,2026-09-25 12:13:09.640,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,1.0,1.0,SOFT,1.0,,,48.276,30.104,166.0,183.0,261.0,268.0,1,True,False,False,False,2026-09-25 12:04:29.038,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,2.0,1.0,SOFT,2.0,122.693,43.784,48.375,30.534,92.0,126.0,312.0,269.0,12,True,True,True,False,2026-09-25 12:06:37.917,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,3.0,1.0,SOFT,3.0,106.124,37.591,42.96,25.573,202.0,205.0,305.0,317.0,1,True,True,True,False,2026-09-25 12:08:40.610,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,4.0,1.0,SOFT,4.0,129.101,47.138,52.352,29.611,179.0,158.0,314.0,279.0,1,True,False,True,False,2026-09-25 12:10:26.734,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,5.0,1.0,SOFT,5.0,105.799,37.306,42.872,25.621,207.0,205.0,304.0,317.0,1,True,True,True,False,2026-09-25 12:12:35.835,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,6.0,1.0,SOFT,6.0,136.821,44.834,53.253,38.734,180.0,169.0,,240.0,12,True,False,False,False,2026-09-25 12:14:21.634,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,7.0,2.0,SOFT,1.0,,67.288,53.2,32.721,185.0,166.0,263.0,264.0,1,True,False,False,False,2026-09-25 12:16:38.455,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,8.0,2.0,SOFT,2.0,117.57,41.91,46.71,28.95,185.0,168.0,309.0,281.0,1,True,False,True,False,2026-09-25 12:19:11.638,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,9.0,2.0,SOFT,3.0,106.184,37.377,43.114,25.693,205.0,204.0,298.0,314.0,12,True,False,True,False,2026-09-25 12:21:09.208,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,BOR,Audi,10.0,2.0,SOFT,4.0,146.45,50.996,55.688,39.766,151.0,158.0,,231.0,12,True,False,False,False,2026-09-25 12:22:55.392,,24.5,39.9,68.5,False,1.8,354.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,1.0,1.0,SOFT,1.0,,,48.003,29.842,160.0,164.0,261.0,265.0,1,True,False,False,False,2026-09-25 12:04:25.502,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,2.0,1.0,SOFT,2.0,121.344,42.286,48.36,30.698,189.0,144.0,310.0,265.0,12,True,True,True,False,2026-09-25 12:06:32.508,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,3.0,1.0,SOFT,3.0,106.689,37.736,43.254,25.699,205.0,198.0,305.0,315.0,1,True,True,True,False,2026-09-25 12:08:33.852,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,4.0,1.0,SOFT,4.0,132.044,48.726,54.048,29.27,167.0,171.0,310.0,280.0,1,True,False,True,False,2026-09-25 12:10:20.541,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,5.0,1.0,SOFT,5.0,106.365,37.512,43.076,25.777,199.0,202.0,300.0,312.0,1,True,True,True,False,2026-09-25 12:12:32.585,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,6.0,1.0,SOFT,6.0,132.454,41.777,57.633,33.044,170.0,186.0,,266.0,12,True,False,False,False,2026-09-25 12:14:18.950,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,7.0,2.0,SOFT,1.0,,69.623,55.014,30.402,162.0,113.0,285.0,264.0,1,True,False,False,False,2026-09-25 12:16:31.404,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,8.0,2.0,SOFT,2.0,116.138,40.409,46.311,29.418,189.0,163.0,309.0,280.0,1,True,False,True,False,2026-09-25 12:19:06.464,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,9.0,2.0,SOFT,3.0,105.92,37.158,42.975,25.787,202.0,203.0,296.0,311.0,12,True,True,True,False,2026-09-25 12:21:02.602,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,HUL,Audi,10.0,2.0,SOFT,4.0,139.432,46.724,52.486,40.222,171.0,144.0,,220.0,1,True,False,False,False,2026-09-25 12:22:48.522,,24.5,39.9,68.5,False,1.8,354.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,1.0,1.0,SOFT,1.0,,,50.009,30.736,179.0,154.0,288.0,272.0,1,True,False,False,False,2026-09-25 12:04:20.559,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,2.0,1.0,SOFT,2.0,120.715,38.24,52.797,29.678,210.0,177.0,291.0,275.0,12,True,True,True,False,2026-09-25 12:06:29.645,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,3.0,1.0,SOFT,3.0,107.845,38.355,43.755,25.735,211.0,195.0,313.0,316.0,1,True,True,True,False,2026-09-25 12:08:30.360,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,4.0,1.0,SOFT,4.0,128.38,44.403,49.331,34.646,181.0,174.0,,271.0,1,True,False,False,False,2026-09-25 12:10:18.205,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,5.0,2.0,SOFT,1.0,145.307,61.246,54.318,29.743,163.0,176.0,256.0,255.0,12,True,False,False,False,2026-09-25 12:12:26.585,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,6.0,2.0,SOFT,2.0,124.67,43.737,50.342,30.591,166.0,156.0,291.0,246.0,1,True,False,True,False,2026-09-25 12:14:51.892,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,7.0,2.0,SOFT,3.0,106.593,37.456,43.241,25.896,208.0,197.0,297.0,315.0,1,True,True,True,False,2026-09-25 12:16:56.562,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,8.0,2.0,SOFT,4.0,128.263,48.081,50.553,29.629,146.0,170.0,290.0,277.0,1,True,False,True,False,2026-09-25 12:18:43.155,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,ALO,Aston Martin,9.0,2.0,SOFT,5.0,129.761,37.229,55.295,37.237,203.0,148.0,,230.0,12,True,False,False,False,2026-09-25 12:20:51.418,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,1.0,1.0,SOFT,1.0,,,49.0,29.524,179.0,183.0,299.0,274.0,1,True,False,False,False,2026-09-25 12:04:14.115,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,2.0,1.0,SOFT,2.0,115.905,38.769,47.274,29.862,187.0,142.0,302.0,270.0,12,True,True,True,False,2026-09-25 12:06:14.455,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,3.0,1.0,SOFT,3.0,106.658,37.526,43.527,25.605,202.0,201.0,305.0,324.0,1,True,True,True,False,2026-09-25 12:08:10.360,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,4.0,1.0,SOFT,4.0,132.649,46.673,56.522,29.454,151.0,163.0,300.0,282.0,1,True,False,True,False,2026-09-25 12:09:57.018,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,5.0,1.0,SOFT,5.0,106.845,37.603,43.421,25.821,203.0,201.0,298.0,318.0,1,True,False,True,False,2026-09-25 12:12:09.667,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,6.0,1.0,SOFT,6.0,145.309,44.145,53.166,47.998,135.0,154.0,,214.0,12,True,False,False,False,2026-09-25 12:13:56.512,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,7.0,2.0,SOFT,1.0,,78.42,54.888,29.545,163.0,120.0,302.0,280.0,1,True,False,False,False,2026-09-25 12:16:21.821,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,8.0,2.0,SOFT,2.0,114.559,38.67,46.914,28.975,175.0,194.0,301.0,280.0,1,True,False,True,False,2026-09-25 12:19:04.748,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,PER,Cadillac,9.0,2.0,SOFT,3.0,120.189,37.189,45.309,37.691,202.0,163.0,,274.0,12,True,False,False,False,2026-09-25 12:20:59.307,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,1.0,1.0,SOFT,1.0,,,50.057,30.822,164.0,128.0,295.0,273.0,1,True,False,False,False,2026-09-25 12:04:31.461,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,2.0,1.0,SOFT,2.0,144.046,38.798,68.154,37.094,202.0,172.0,,263.0,12,True,False,False,False,2026-09-25 12:06:42.747,,24.6,39.9,68.5,False,2.8,28.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,3.0,2.0,SOFT,1.0,146.042,62.065,53.852,30.125,163.0,170.0,296.0,274.0,1,True,False,False,False,2026-09-25 12:09:06.793,,24.6,40.4,69.0,False,1.4,75.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,4.0,2.0,SOFT,2.0,108.497,38.215,43.985,26.297,206.0,202.0,292.0,301.0,1,True,True,True,False,2026-09-25 12:11:32.835,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,5.0,2.0,SOFT,3.0,124.044,44.276,50.155,29.613,182.0,183.0,294.0,273.0,12,True,False,True,False,2026-09-25 12:13:21.332,,24.7,41.3,68.4,False,0.0,0.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,6.0,2.0,SOFT,4.0,110.438,37.85,43.651,28.937,211.0,202.0,288.0,279.0,1,True,False,True,False,2026-09-25 12:15:25.376,,24.8,41.2,67.8,False,0.7,42.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,7.0,2.0,SOFT,5.0,130.346,45.421,54.946,29.979,169.0,160.0,298.0,276.0,1,True,False,True,False,2026-09-25 12:17:15.814,,24.8,40.2,66.7,False,3.9,57.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,8.0,2.0,SOFT,6.0,107.337,37.727,43.365,26.245,206.0,201.0,291.0,300.0,1,True,True,True,False,2026-09-25 12:19:26.160,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,STR,Aston Martin,9.0,2.0,SOFT,7.0,165.344,68.183,57.463,39.698,115.0,151.0,,252.0,12,True,False,False,False,2026-09-25 12:21:13.497,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,1.0,1.0,SOFT,1.0,,,49.945,29.993,170.0,184.0,296.0,272.0,1,True,False,False,False,2026-09-25 12:04:02.169,,24.6,40.3,69.2,False,1.2,275.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,2.0,1.0,SOFT,2.0,120.401,39.711,49.739,30.951,186.0,106.0,298.0,273.0,12,True,True,True,False,2026-09-25 12:06:05.319,,24.6,39.6,69.3,False,1.3,325.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,3.0,1.0,SOFT,3.0,108.29,38.267,43.952,26.071,199.0,200.0,297.0,318.0,1,True,True,True,False,2026-09-25 12:08:05.720,,24.6,40.0,68.8,False,2.3,59.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,4.0,1.0,SOFT,4.0,134.266,48.523,56.072,29.671,154.0,123.0,303.0,279.0,1,True,False,True,False,2026-09-25 12:09:54.010,,24.6,40.8,69.2,False,0.8,91.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,5.0,1.0,SOFT,5.0,119.751,40.926,49.252,29.573,165.0,182.0,302.0,276.0,1,True,False,True,False,2026-09-25 12:12:08.276,,24.7,41.3,68.5,False,2.5,350.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,6.0,1.0,SOFT,6.0,128.763,37.673,54.425,36.665,200.0,167.0,,263.0,12,True,False,False,False,2026-09-25 12:14:08.027,,24.7,41.2,68.3,False,1.8,77.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,7.0,2.0,SOFT,1.0,,,54.838,29.428,170.0,152.0,306.0,282.0,1,True,False,False,False,2026-09-25 12:16:16.790,,24.8,40.7,67.2,False,1.5,353.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,8.0,2.0,SOFT,2.0,118.236,39.171,49.797,29.268,192.0,140.0,305.0,281.0,1,True,False,True,False,2026-09-25 12:19:27.868,,24.7,40.1,68.0,False,1.6,35.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,9.0,2.0,SOFT,3.0,107.147,38.4,43.416,25.331,197.0,206.0,304.0,328.0,12,True,False,True,False,2026-09-25 12:21:26.104,,24.7,39.3,68.0,False,1.9,36.0
+2026,15,Azerbaijan Grand Prix,Q,BOT,Cadillac,10.0,2.0,SOFT,4.0,144.838,48.481,56.597,39.76,157.0,156.0,,225.0,12,True,False,False,False,2026-09-25 12:23:13.251,,24.5,39.9,68.5,False,1.8,354.0
