@@ -1,5 +1,16 @@
 import { Link } from "@tanstack/react-router";
-import { BarChart3, BookOpen, Crosshair, Flag, Home, ShieldCheck, Swords, Trophy, UserRound } from "lucide-react";
+import { FastArrowRight, User } from "iconoir-react/regular";
+import {
+  BarChart3,
+  BookOpen,
+  Crosshair,
+  Flag,
+  Home,
+  ShieldCheck,
+  Swords,
+  Trophy,
+  UserRound,
+} from "lucide-react";
 import type { ReactNode } from "react";
 import { seasonState } from "@/data/season";
 import { fmtDate } from "@/lib/format";
@@ -14,7 +25,84 @@ const nav = [
   { to: "/method", label: "Method", icon: BookOpen },
 ];
 
-export function SiteShell({ children, fullWidth = false }: { children: ReactNode; fullWidth?: boolean }) {
+const homeNav = [
+  { to: "/raceweek", label: "Race week" },
+  { to: "/analysis", label: "Analysis" },
+  { to: "/championship", label: "Championship" },
+  { to: "/picks", label: "Picks" },
+] as const;
+
+export function SiteShell({
+  children,
+  fullWidth = false,
+  home = false,
+}: {
+  children: ReactNode;
+  fullWidth?: boolean;
+  home?: boolean;
+}) {
+  if (home) {
+    return (
+      <div className="hx-site-shell">
+        <header className="hx-site-header">
+          <div className="hx-header-inner">
+            <Link to="/" className="hx-header-brand" aria-label="F1 InsightX home">
+              <span className="hx-header-f1">F1</span>
+              <span>
+                INSIGHT<span className="hx-header-x">X</span>
+              </span>
+            </Link>
+            <nav className="hx-header-nav" aria-label="Main">
+              {homeNav.map((item) => (
+                <Link key={item.to} to={item.to} activeProps={{ className: "is-active" }}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <Link to="/account" className="hx-header-account" aria-label="Account">
+              <User className="hx-account-user" aria-hidden="true" />
+              <span>Account</span>
+              <FastArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+        </header>
+        <main className="hx-site-main">{children}</main>
+        <footer className="hx-site-footer">
+          <div className="hx-footer-top">
+            <div className="hx-footer-brand-block">
+              <span className="hx-footer-kicker">Race Control / {seasonState.season}</span>
+              <Link to="/" className="hx-footer-brand" aria-label="F1 InsightX home">
+                INSIGHT<span>X</span>
+              </Link>
+            </div>
+            <nav className="hx-footer-nav" aria-label="Footer">
+              {homeNav.map((item) => (
+                <Link key={item.to} to={item.to}>
+                  {item.label}
+                  <FastArrowRight aria-hidden="true" />
+                </Link>
+              ))}
+              <Link to="/method">
+                Method
+                <FastArrowRight aria-hidden="true" />
+              </Link>
+            </nav>
+          </div>
+          <div className="hx-footer-bottom">
+            <span>Standings through {fmtDate(seasonState.resultsThrough.date)}</span>
+            <p>
+              Independent, unofficial project. Not associated with or endorsed by Formula 1, the
+              FIA, or any team. F1, FORMULA 1, GRAND PRIX and related marks are trademarks of
+              Formula One Licensing BV. Projections and picks are informational only, not betting
+              advice; no money is staked or handled.
+            </p>
+            <Link to="/account">Account</Link>
+          </div>
+        </footer>
+      </div>
+    );
+  }
+
   return (
     <div className="relative min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b border-border bg-background">
@@ -30,16 +118,18 @@ export function SiteShell({ children, fullWidth = false }: { children: ReactNode
           >
             {nav.slice(1).map((item) => {
               const Icon = item.icon;
-              return <Link
-                key={item.to}
-                to={item.to}
-                className="group inline-flex items-center gap-1.5 border-b-2 border-transparent pb-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
-                activeProps={{ className: "border-primary text-foreground" }}
-                activeOptions={{ exact: item.to === "/" }}
-              >
-                <Icon className="size-3 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:opacity-100" />
-                {item.label}
-              </Link>
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="group inline-flex items-center gap-1.5 border-b-2 border-transparent pb-0.5 text-xs font-bold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+                  activeProps={{ className: "border-primary text-foreground" }}
+                  activeOptions={{ exact: item.to === "/" }}
+                >
+                  <Icon className="size-3 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:opacity-100" />
+                  {item.label}
+                </Link>
+              );
             })}
           </nav>
           <Link
@@ -53,7 +143,9 @@ export function SiteShell({ children, fullWidth = false }: { children: ReactNode
         </div>
       </header>
 
-      <main className={`race-page-enter relative z-10 mx-auto px-5 py-8 ${fullWidth ? "max-w-none" : "max-w-6xl"}`}>
+      <main
+        className={`race-page-enter relative z-10 mx-auto px-5 py-8 ${fullWidth ? "max-w-none" : "max-w-6xl"}`}
+      >
         {children}
       </main>
 
@@ -68,10 +160,16 @@ export function SiteShell({ children, fullWidth = false }: { children: ReactNode
             <nav aria-label="Footer" className="flex flex-wrap gap-4 sm:ml-auto">
               {nav.map((item) => {
                 const Icon = item.icon;
-                return <Link key={item.to} to={item.to} className="inline-flex items-center gap-1.5 hover:text-foreground">
-                  <Icon className="size-3" />
-                  {item.label}
-                </Link>
+                return (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className="inline-flex items-center gap-1.5 hover:text-foreground"
+                  >
+                    <Icon className="size-3" />
+                    {item.label}
+                  </Link>
+                );
               })}
             </nav>
           </div>
@@ -96,16 +194,15 @@ export function SectionHeading({
   title: string;
   action?: ReactNode;
 }) {
-  const Icon =
-    /circuit|race|week|forecast/i.test(kicker)
-      ? Flag
-      : /championship|standing/i.test(kicker)
-        ? Trophy
-        : /pick|prediction/i.test(kicker)
-          ? Crosshair
-          : /method|guide/i.test(kicker)
-            ? BookOpen
-            : BarChart3;
+  const Icon = /circuit|race|week|forecast/i.test(kicker)
+    ? Flag
+    : /championship|standing/i.test(kicker)
+      ? Trophy
+      : /pick|prediction/i.test(kicker)
+        ? Crosshair
+        : /method|guide/i.test(kicker)
+          ? BookOpen
+          : BarChart3;
 
   return (
     <div className="mb-4 flex items-end justify-between gap-4 border-b border-border pb-2">
@@ -114,8 +211,8 @@ export function SectionHeading({
           <Icon className="size-3.5" />
         </span>
         <div>
-        <p className="label-xs">{kicker}</p>
-        <h2 className="text-xl font-black uppercase italic tracking-tight">{title}</h2>
+          <p className="label-xs">{kicker}</p>
+          <h2 className="text-xl font-black uppercase italic tracking-tight">{title}</h2>
         </div>
       </div>
       {action ? <div className="shrink-0 text-right">{action}</div> : null}
@@ -150,4 +247,3 @@ export function Stat({
     </div>
   );
 }
-
