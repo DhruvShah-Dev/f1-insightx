@@ -6,6 +6,14 @@ TanStack Start uses **file-based routing**. Every `.tsx` file in this directory 
 
 The legacy `apps/web` Next.js app is not part of the active root build. Do not add new product routes, API handlers, security headers, or data loaders there unless you are intentionally working on the archived Next app.
 
+## Current Race Workflows
+
+- `analysis.index.tsx` (`/analysis`) shows the 2026 season index, a selectable featured race, search, completed/all/upcoming filters, and links to completed reports.
+- `analysis.$slug.tsx` (`/analysis/:slug`) shows the selected race's result table by default, with position movement, lap pace, pits, timeline, and circuit views when the underlying data supports them. Qualifying and sprint sessions appear when available.
+- `picks.tsx` (`/picks`) loads the picks board and renders `src/components/picks-experience.tsx`. Signed-in users can select drivers until the round locks. Cards are stored per user in browser local storage; completed-round points are calculated from stored results in that browser.
+
+The analysis pages have route-specific styles in `src/analysis.css` and `src/analysis-report.css`. Picks styles live in `src/styles.css`.
+
 ## Product Rules
 
 - Prefer dense, usable race-intelligence screens over landing-page filler.

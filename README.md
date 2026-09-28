@@ -12,7 +12,7 @@ F1 data is rich but scattered across timing feeds, session telemetry, historical
 - qualifying, sprint, and race predictions built from validated inputs
 - driver-vs-driver telemetry comparisons
 - post-race analysis and reports
-- account-backed picks with lock rules and scoring
+- signed-in picks with lock rules and local score tracking
 - data-quality caveats where evidence is partial or derived
 
 ## Current App
@@ -23,9 +23,10 @@ Primary routes:
 
 - `/` - product home and race-week entry
 - `/raceweek` - next-race operating view
-- `/analysis` - race reports and post-race intelligence
+- `/analysis` - searchable 2026 race index with completed, all, and upcoming filters; featured race and report links
+- `/analysis/:slug` - race report with classification, position movement, lap pace, pit stops, timeline, and circuit views where data is available
 - `/vs` - driver comparison and telemetry views
-- `/picks` - account-backed pick cards and scoring
+- `/picks` - round-by-round pick cards, driver selection, lock status, and scores
 - `/account` - Google sign-in and signed-in profile
 
 Homepage visual assets now live in `public/assets` and are used by the root
@@ -40,6 +41,11 @@ TanStack app:
 Keep new homepage visual work scoped to the root app first. The archived
 `apps/web` asset tree is historical reference and should not be the target for
 new product asset wiring.
+
+The analysis index, race reports, and Picks workspace use the root app's 2026
+driver imagery and team logos. Picks require a signed-in session to edit. Cards
+are saved in that user's **browser local storage** and scores are calculated
+from stored race results; cards and scores do not sync across devices.
 
 ## Engineering Standards
 

@@ -1,11 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { useMemo, useState, type CSSProperties } from "react";
-import { SiteShell, Stat } from "@/components/site-shell";
-import { RaceFlagHero } from "@/components/race-flag-hero";
+import { useMemo, useState } from "react";
+import { ArrowLeft, ArrowRight } from "iconoir-react/regular";
+import { SiteShell } from "@/components/site-shell";
 import { CompoundLegend, LapTraceChart } from "@/components/telemetry";
 import { buildCornerModel, CornerMap, CornerMapLegend } from "@/components/corner-profile";
-import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
 import {
   DriverChips,
   PaceDots,
@@ -13,10 +12,10 @@ import {
   PositionRibbon,
   QualiGapBars,
 } from "@/components/analysis-viz";
-import { countryForRace, countryTheme } from "@/data/country-theme";
 import { team } from "@/data/teams";
 import { fmtDate, fmtDelta, fmtNum, titleCase } from "@/lib/format";
 import { getWeekend } from "@/lib/f1.functions";
+import "@/analysis-report.css";
 
 const weekendQuery = (slug: string) =>
   queryOptions({
@@ -95,18 +94,14 @@ function Segmented<T extends string>({
   onChange: (k: T) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-1.5">
+    <div className="report-segmented">
       {options.map((o) => (
         <button
           key={o.k}
           type="button"
           onClick={() => onChange(o.k)}
           aria-pressed={value === o.k}
-          className={`num rounded-sm border px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider transition-colors ${
-            value === o.k
-              ? "border-primary bg-primary/15 text-foreground"
-              : "border-border text-muted-foreground hover:text-foreground"
-          }`}
+          className={value === o.k ? "is-active" : ""}
         >
           {o.l}
         </button>
@@ -116,11 +111,19 @@ function Segmented<T extends string>({
 }
 
 function Panel({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`pw-flip-in rounded-xl border border-border bg-card/40 p-4 ${className ?? ""}`}>
-      {children}
-    </div>
-  );
+  return <section className={`report-panel ${className ?? ""}`}>{children}</section>;
+}
+
+const portraitAliases: Record<string, string> = { MAX: "ver", LIN: "arv" };
+const portrait = (code?: string | null, full = false) => {
+  if (!code) return null;
+  const assetCode = portraitAliases[code.toUpperCase()] ?? code.toLowerCase();
+  return `/assets/drivers/2026/${full ? "full-body/front" : "headshots"}/${assetCode}.png`;
+};
+
+function ReportDriverPhoto({ code, name, large = false }: { code?: string | null; name?: string | null; large?: boolean }) {
+  const src = portrait(code, large);
+  return src ? <img className={large ? "report-driver-hero" : "report-driver-thumb"} src={src} alt={name ?? code ?? "Driver"} loading={large ? "eager" : "lazy"} onError={(event) => { event.currentTarget.style.display = "none"; }} /> : null;
 }
 
 function StintBars({
@@ -202,16 +205,16 @@ function WeekendPage() {
 
   const available = useMemo(() => {
     const list: Session[] = [];
+    if (w.classification.length || w.laps.length) list.push("race");
     if (w.qualifying.length) list.push("quali");
     if (w.sprint.length) list.push("sprint");
-    if (w.classification.length || w.laps.length) list.push("race");
     return list;
   }, [w]);
   const [session, setSession] = useState<Session>(
     available.includes("race") ? "race" : (available[0] ?? "race"),
   );
   const [view, setView] = useState<RaceView>("result");
-  const [resultMode, setResultMode] = useState<"table" | "ribbon">("ribbon");
+  const [resultMode, setResultMode] = useState<"table" | "ribbon">("table");
   const [hoverCorner, setHoverCorner] = useState<number | null>(null);
 
   const lapDrivers = useMemo(() => {
@@ -249,19 +252,9 @@ function WeekendPage() {
   }));
 
   const winnerTeam = team(w.winner.team);
-  const raceTheme = countryTheme(
-    countryForRace({
-      circuitId: w.circuitId,
-      circuit: w.circuit,
-      raceName: w.name,
-    }),
-  );
-  const raceThemeStyle = {
-    "--primary": raceTheme.accent,
-    "--ring": raceTheme.accent,
-    "--race-country-accent": raceTheme.accent,
-  } as CSSProperties;
-  const raceLaps = Math.max(1, ...w.laps.map((l) => l.lap), ...w.pits.map((p) => p.lap ?? 0));
+  const podium = [...w.classification].filter((row) => row.finish != null).sort((a, b) => (a.finish ?? 99) - (b.finish ?? 99)).slice(1, 3);
+  const completedLaps = Math.max(0, ...w.classification.map((r) => r.laps ?? 0), ...w.laps.map((l) => l.lap), ...w.pits.map((p) => p.lap ?? 0));
+  const raceLaps = Math.max(1, completedLaps);
   const label: Record<Session, string> = { quali: "Qualifying", sprint: "Sprint", race: "Race" };
   const cornerModel = useMemo(() => buildCornerModel(w.trackPath), [w.trackPath]);
   const cornerCounts = useMemo(() => {
@@ -297,72 +290,35 @@ function WeekendPage() {
 
   return (
     <SiteShell fullWidth>
-      <div style={raceThemeStyle}>
-        <nav className="text-[11px] text-muted-foreground">
-          <Link to="/analysis" className="text-primary underline underline-offset-2">
-            Analysis
-          </Link>
-          <span className="mx-1">/</span>
-          <span className="num">R{w.round}</span>
-        </nav>
-        <RaceFlagHero
-          kicker={`Round ${w.round} / ${w.season}`}
-          title={w.name}
-          meta={`${w.circuit}${w.resultsOnly ? " / results only - lap telemetry not ingested" : ` / ${w.lapsAnalysed} analysed laps`}`}
-          flag={raceTheme.flag}
-          stats={[
-            { label: "Race shape", value: titleCase(w.summary?.raceShape) },
-            {
-              label: "Strategy",
-              value: titleCase(w.summary?.strategy),
-              note: w.summary?.compoundPath ?? undefined,
-            },
-            {
-              label: "Corners",
-              value: `${cornerCounts.Slow}/${cornerCounts.Medium}/${cornerCounts.Fast}`,
-              note: "slow / medium / fast",
-            },
-            { label: "Winner", value: w.winner.code || "-", note: w.winner.team },
-          ]}
-        >
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
-            <div className="flex items-center gap-3 rounded-lg border border-white/18 bg-[#07110c]/88 p-3">
-              <DriverAvatar code={w.winner.code || "-"} teamName={w.winner.team} size="lg" />
-              <div className="min-w-0">
-                <p className="label-xs text-white/65">Winner</p>
-                <p className="truncate text-sm font-black uppercase italic text-white">
-                  {w.winner.name || w.winner.code || "-"}
-                </p>
-                <TeamBadge teamName={w.winner.team} showName />
+      <div className="analysis-detail">
+        <div className="report-wrap">
+          <Link to="/analysis" className="report-back"><ArrowLeft width={17} height={17} /> All reports</Link>
+          <section className="report-hero">
+            <div className="report-hero-photo" aria-hidden="true"><ReportDriverPhoto code={w.winner.code} name={w.winner.name} large /></div>
+            <div className="report-hero-main">
+              <h1>{w.name}</h1>
+              <p className="report-meta">Round {w.round} <span>·</span> {w.scheduledAt ? fmtDate(w.scheduledAt) : "Date TBC"} <span>·</span> {w.circuit}</p>
+              <div className="report-winner">
+                <span>Winner</span>
+                <strong>{w.winner.name || w.winner.code}</strong>
+                <div>{winnerTeam.logoPng && <img src={winnerTeam.logoPng} alt="" />}<span>{winnerTeam.name}</span></div>
               </div>
+              {podium.length > 0 && <div className="report-podium">{podium.map((row) => {
+                const t = team(row.team);
+                return <div key={row.code}><span>P{row.finish}</span><ReportDriverPhoto code={row.code} name={row.name} /><strong>{row.name}</strong><span className="report-podium-team">{t.logoPng && <img src={t.logoPng} alt="" />}{t.name}</span></div>;
+              })}</div>}
             </div>
-            <div className="rounded-lg border border-white/18 bg-white p-3 text-[#07110c]">
-              <p className="label-xs">Circuit</p>
-              <CornerMap
-                path={w.trackPath}
-                className="mx-auto mt-2 h-44 w-full"
-                highlightCorner={hoverCorner}
-              />
-              <div className="mt-2">
-                <CornerMapLegend />
-              </div>
+            <div className="report-circuit">
+              <CornerMap path={w.trackPath} className="report-circuit-map" highlightCorner={hoverCorner} />
+              <span>{w.circuit}</span>
+              {completedLaps > 0 && <strong>{completedLaps} laps</strong>}
             </div>
-          </div>
-        </RaceFlagHero>
+          </section>
 
-        <div className="sticky top-0 z-10 mt-8 -mx-1 flex flex-wrap items-center gap-2 border-b border-border bg-background/90 px-1 py-2 backdrop-blur">
-          <Segmented
-            options={available.map((s) => ({ k: s, l: label[s] }))}
-            value={session}
-            onChange={setSession}
-          />
-          {session === "race" ? (
-            <>
-              <span className="hidden h-4 w-px bg-border sm:block" />
-              <Segmented options={raceViews} value={view} onChange={setView} />
-            </>
-          ) : null}
-        </div>
+          <div className="report-tabs">
+            <div className="report-views">{session === "race" ? <Segmented options={raceViews} value={view} onChange={setView} /> : <span>{label[session]}</span>}</div>
+            <div className="report-sessions"><Segmented options={available.map((s) => ({ k: s, l: label[s] }))} value={session} onChange={setSession} /></div>
+          </div>
 
         {session === "quali" ? (
           <Panel className="mt-5">
@@ -414,15 +370,15 @@ function WeekendPage() {
           <div className="mt-5">
             {view === "result" ? (
               <Panel>
-                <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
+                <div className="report-section-head">
                   <div>
-                    <p className="label-xs">Race</p>
-                    <h2 className="text-lg font-black uppercase italic">Classification</h2>
+                    <h2>Race result</h2>
+                    <p>Final classification{completedLaps > 0 ? ` · ${completedLaps} laps` : ""}</p>
                   </div>
                   <Segmented
                     options={[
-                      { k: "ribbon" as const, l: "Ribbon" },
                       { k: "table" as const, l: "Table" },
+                      { k: "ribbon" as const, l: "Movement" },
                     ]}
                     value={resultMode}
                     onChange={setResultMode}
@@ -451,12 +407,13 @@ function WeekendPage() {
                     ).filter((r) => r.start != null && r.finish != null)}
                   />
                 ) : (
-                  <div className="overflow-x-auto rounded-lg border border-border">
-                    <table className="w-full min-w-[560px] text-left">
+                  <div className="report-table-scroll">
+                    <table className="report-table">
                       <thead className="bg-card/60">
                         <tr>
                           <th className="label-xs px-3 py-2">Fin</th>
                           <th className="label-xs px-3 py-2">Driver</th>
+                          <th className="label-xs px-3 py-2">Team</th>
                           <th className="label-xs px-3 py-2 text-right">Grid</th>
                           <th className="label-xs px-3 py-2 text-right">Δ</th>
                           <th className="label-xs px-3 py-2 text-right">Laps</th>
@@ -473,13 +430,10 @@ function WeekendPage() {
                             <td className="num px-3 py-2 text-xs text-muted-foreground">
                               {r.finish ?? titleCase(r.status)}
                             </td>
-                            <td className="px-3 py-2 text-xs font-bold uppercase">
-                              <span
-                                className="mr-2 inline-block h-3 w-0.5 align-middle"
-                                style={{ backgroundColor: team(r.team).color }}
-                              />
-                              {r.name}
+                            <td className="report-table-identity">
+                              <span className="report-table-driver"><ReportDriverPhoto code={r.code} name={r.name} /><strong>{r.name}</strong></span>
                             </td>
+                            <td className="report-table-team"><span className="report-team-content">{team(r.team).logoPng && <img className="report-table-logo" src={team(r.team).logoPng} alt="" />}<span>{team(r.team).name}</span></span></td>
                             <td className="num px-3 py-2 text-right text-xs">{r.grid ?? "—"}</td>
                             <td className="num px-3 py-2 text-right text-xs">
                               {r.grid != null && r.finish != null
@@ -504,12 +458,12 @@ function WeekendPage() {
                 <Panel>
                   <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
                     <div>
-                      <p className="label-xs">Lap pace · pick up to six</p>
-                      <h2 className="text-lg font-black uppercase italic">Trace</h2>
+                      <p className="label-xs">Select up to six drivers</p>
+                      <h2 className="text-lg font-black uppercase italic">Lap pace</h2>
                     </div>
                     <CompoundLegend />
                   </div>
-                  <DriverChips drivers={lapDrivers} selected={picked} onToggle={toggle} />
+                  <div className="report-driver-picker"><DriverChips drivers={lapDrivers} selected={picked} onToggle={toggle} /></div>
                   <div className="mt-3">
                     {traceSeries.some((s) => s.laps.length) ? (
                       <LapTraceChart series={traceSeries} />
@@ -553,8 +507,7 @@ function WeekendPage() {
             {view === "pits" ? (
               <Panel>
                 <div className="mb-3">
-                  <p className="label-xs">Pit cycles</p>
-                  <h2 className="text-lg font-black uppercase italic">When they stopped</h2>
+                  <h2 className="text-lg font-black uppercase italic">Pit stops</h2>
                 </div>
                 <PitTimeline pits={w.pits} maxLap={raceLaps} />
               </Panel>
@@ -565,7 +518,6 @@ function WeekendPage() {
                 {w.stories.length ? (
                   <Panel>
                     <div className="mb-3">
-                      <p className="label-xs">Narrative</p>
                       <h2 className="text-lg font-black uppercase italic">Race timeline</h2>
                     </div>
                     <ol className="space-y-3 border-l border-border pl-4">
@@ -669,7 +621,6 @@ function WeekendPage() {
             {view === "circuit" ? (
               <Panel>
                 <div className="mb-3">
-                  <p className="label-xs">Geometry · sectors, corners, speed trap</p>
                   <h2 className="text-lg font-black uppercase italic">{w.circuit}</h2>
                 </div>
                 <CornerMap
@@ -777,11 +728,12 @@ function WeekendPage() {
           </div>
         ) : null}
 
-        <div className="mt-8 flex flex-wrap gap-4 text-[11px] font-bold uppercase text-primary">
+        <div className="report-footer-links">
           <Link to="/vs" search={{ slug: w.slug }}>
-            Compare two drivers →
+            Compare two drivers <ArrowRight width={16} height={16} />
           </Link>
-          <Link to="/analysis">All weekends →</Link>
+          <Link to="/analysis">All reports <ArrowRight width={16} height={16} /></Link>
+        </div>
         </div>
       </div>
     </SiteShell>

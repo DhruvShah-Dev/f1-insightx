@@ -16,6 +16,10 @@ dist-ssr
 .nitro
 *.local
 
+# Local browser QA artifacts
+.chrome-qa/
+picks-check.png
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
