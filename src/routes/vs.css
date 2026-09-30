@@ -1,0 +1,499 @@
+.vs-page {
+  --background: #131315;
+  --card: #1c1d20;
+  --foreground: #eeeeee;
+  --muted-foreground: #a7a9ae;
+  --border: #37383d;
+  --primary: #fad732;
+  --ring: #fad732;
+  color: #eeeeee;
+  max-width: 1540px;
+  margin: -1.5rem auto 0;
+  padding-bottom: 5rem;
+}
+.vs-page .label-xs {
+  color: #a7a9ae;
+  letter-spacing: 0.13em;
+}
+.vs-hero {
+  position: relative;
+  min-height: 345px;
+  overflow: hidden;
+  border-bottom: 1px solid #424249;
+  background: radial-gradient(ellipse at 50% 110%, #363431 0%, #1b1b1d 44%, #131315 78%);
+}
+.vs-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 95px,
+    #828080 96px,
+    transparent 97px
+  );
+}
+.vs-hero-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 27px 32px 0;
+}
+.vs-eyebrow,
+.vs-race-meta,
+.vs-driver-code,
+.vs-team,
+.vs-score small,
+.vs-versus small,
+.vs-controls label > span {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+.vs-eyebrow {
+  color: #fad732;
+  font-size: 10px;
+  font-weight: 800;
+}
+.vs-hero h1 {
+  margin-top: 8px;
+  font-size: clamp(2rem, 4.6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  white-space: nowrap;
+}
+.vs-hero h1 span {
+  color: #fad732;
+}
+.vs-race-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 3px;
+  padding-top: 4px;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 700;
+}
+.vs-race-meta small {
+  color: #a7a9ae;
+  font-size: 10px;
+}
+.vs-duel-stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 86px minmax(0, 1fr);
+  min-height: 260px;
+}
+.vs-driver {
+  position: relative;
+  min-width: 0;
+  height: 260px;
+  overflow: hidden;
+  border-top: 2px solid var(--driver-color);
+}
+.vs-driver-left {
+  border-right: 1px solid #48484b;
+}
+.vs-driver-right {
+  border-left: 1px solid #48484b;
+}
+.vs-driver::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--driver-color) 9%, transparent),
+    transparent 65%
+  );
+}
+.vs-driver-right::before {
+  transform: scaleX(-1);
+}
+.vs-driver-photo {
+  position: absolute;
+  z-index: 1;
+  height: 120%;
+  max-width: 48%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  bottom: -17%;
+  right: 3%;
+  filter: drop-shadow(0 0 35px #0009);
+}
+.vs-driver-right .vs-driver-photo {
+  right: auto;
+  left: 3%;
+  transform: scaleX(-1);
+}
+.vs-driver-info {
+  position: absolute;
+  z-index: 2;
+  left: 30px;
+  top: 38px;
+  max-width: 58%;
+  text-shadow: 0 2px 16px #000;
+}
+.vs-driver-right .vs-driver-info {
+  left: auto;
+  right: 30px;
+  text-align: right;
+}
+.vs-driver-code {
+  color: var(--driver-color);
+  font-size: 12px;
+  font-weight: 900;
+}
+.vs-driver h2 {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 14px;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+.vs-driver h2 span {
+  font-size: clamp(1.2rem, 2.4vw, 2.7rem);
+  font-weight: 450;
+  letter-spacing: -0.04em;
+}
+.vs-driver h2 strong {
+  font-size: clamp(1.9rem, 3.7vw, 4rem);
+  font-weight: 950;
+  letter-spacing: -0.065em;
+}
+.vs-team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e0e0df;
+  font-size: 10px;
+  font-weight: 800;
+}
+.vs-driver-right .vs-team {
+  justify-content: flex-end;
+}
+.vs-team-mark {
+  display: inline-block;
+  width: 3px;
+  height: 17px;
+}
+.vs-team img {
+  max-width: 90px;
+  max-height: 18px;
+  object-fit: contain;
+}
+.vs-score {
+  position: absolute;
+  z-index: 3;
+  left: 30px;
+  bottom: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--driver-color);
+}
+.vs-driver-right .vs-score {
+  left: auto;
+  right: 30px;
+  flex-direction: row-reverse;
+}
+.vs-score small {
+  color: #b2b2b4;
+  font-size: 9px;
+}
+.vs-score strong {
+  font: 900 28px var(--font-mono);
+}
+.vs-versus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #eee;
+  border-top: 2px solid #fad732;
+  background: #19191b;
+}
+.vs-versus strong {
+  font-size: 29px;
+  font-style: italic;
+  letter-spacing: -0.08em;
+}
+.vs-versus button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #69696b;
+  border-radius: 50%;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.vs-versus button:hover {
+  background: #fad732;
+  color: #131315;
+  transform: rotate(180deg);
+}
+.vs-versus small {
+  color: #a7a9ae;
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.5;
+}
+.vs-controls {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 1px;
+  margin-top: 12px;
+  background: #37383d;
+  border: 1px solid #37383d;
+}
+.vs-controls label {
+  display: block;
+  min-width: 0;
+  background: #1c1d20;
+  padding: 13px 18px;
+}
+.vs-controls label > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #aaa;
+  font-size: 9px;
+  font-weight: 800;
+}
+.vs-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.vs-select select {
+  width: 100%;
+  min-width: 0;
+  padding-right: 20px;
+  appearance: none;
+  background: transparent;
+  color: #eee;
+  font-size: 13px;
+  font-weight: 750;
+  outline: none;
+  cursor: pointer;
+}
+.vs-select svg {
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+  color: #fad732;
+}
+.vs-select option {
+  color: #eee;
+  background: #202125;
+}
+.vs-switcher {
+  padding: 12px 16px;
+  border-block: 1px solid #424249;
+  background: #131315ee;
+  backdrop-filter: blur(14px);
+}
+.vs-switcher > div > svg {
+  color: #fad732;
+}
+.vs-page .pw-flip-in {
+  border-radius: 2px;
+  border-color: #3b3c42;
+  background: #1c1d20;
+  padding: clamp(16px, 2vw, 28px);
+}
+.vs-page .pw-flip-in h2 {
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-style: normal;
+  letter-spacing: -0.035em;
+}
+.vs-page .pw-ticker {
+  border-bottom: 1px solid #303137;
+  border-radius: 0;
+  padding-block: 12px;
+}
+.vs-page .pw-ticker {
+  animation: none;
+}
+.vs-page .pw-ticker:last-child {
+  border-bottom: 0;
+}
+.vs-page .pw-ticker .text-\[10px\] {
+  font-size: 11px;
+}
+.vs-sector-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid #404147;
+  padding-bottom: 20px;
+}
+.vs-sector-heading h2 {
+  margin-top: 4px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.vs-sector-legend {
+  display: flex;
+  gap: 15px;
+  font: 800 11px var(--font-mono);
+}
+.vs-sector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.vs-sector {
+  padding: 28px 24px 12px;
+  border-right: 1px solid #404147;
+}
+.vs-sector:first-child {
+  padding-left: 0;
+}
+.vs-sector:last-child {
+  border-right: 0;
+}
+.vs-sector-label {
+  color: #fad732;
+  font: 900 12px var(--font-mono);
+}
+.vs-sector-values {
+  display: grid;
+  gap: 9px;
+  margin-top: 26px;
+  font: 800 clamp(16px, 2vw, 30px) var(--font-mono);
+}
+.vs-sector-delta {
+  margin-top: 23px;
+  color: #ddd;
+  font: 700 12px var(--font-mono);
+  text-transform: uppercase;
+}
+.vs-sector-note {
+  margin-top: 20px;
+  color: #a7a9ae;
+  font-size: 11px;
+}
+.vs-page button:focus-visible,
+.vs-page select:focus-visible,
+.vs-page input:focus-visible {
+  outline: 2px solid #fad732;
+  outline-offset: 2px;
+}
+@media (max-width: 800px) {
+  .vs-hero {
+    min-height: 0;
+  }
+  .vs-hero-top {
+    padding: 22px 16px;
+  }
+  .vs-race-meta {
+    display: none;
+  }
+  .vs-duel-stage {
+    grid-template-columns: minmax(0, 1fr) 54px minmax(0, 1fr);
+    min-height: 210px;
+  }
+  .vs-driver {
+    height: 210px;
+  }
+  .vs-driver-info {
+    left: 12px;
+    top: 18px;
+    width: calc(100% - 24px);
+    max-width: none;
+  }
+  .vs-driver-right .vs-driver-info {
+    right: 12px;
+  }
+  .vs-driver-photo {
+    height: 86%;
+    max-width: 70%;
+    bottom: -8%;
+    right: 0;
+    opacity: 0.65;
+  }
+  .vs-driver-right .vs-driver-photo {
+    left: 0;
+  }
+  .vs-driver h2 {
+    margin-top: 7px;
+  }
+  .vs-driver h2 strong {
+    max-width: 100%;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    word-break: break-word;
+  }
+  .vs-driver h2 span {
+    font-size: 1rem;
+  }
+  .vs-team img {
+    display: none;
+  }
+  .vs-team {
+    font-size: 9px;
+  }
+  .vs-score,
+  .vs-driver-right .vs-score {
+    left: 12px;
+    right: auto;
+    bottom: 10px;
+    flex-direction: row;
+  }
+  .vs-driver-right .vs-score {
+    left: auto;
+    right: 12px;
+  }
+  .vs-score small {
+    display: none;
+  }
+  .vs-versus strong {
+    font-size: 20px;
+  }
+  .vs-versus small {
+    font-size: 8px;
+  }
+  .vs-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .vs-controls label {
+    padding: 11px 15px;
+  }
+  .vs-sector-grid {
+    grid-template-columns: 1fr;
+  }
+  .vs-sector,
+  .vs-sector:first-child {
+    padding: 20px 0;
+    border-right: 0;
+    border-bottom: 1px solid #404147;
+  }
+  .vs-sector:last-child {
+    border-bottom: 0;
+  }
+  .vs-sector-values {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .vs-sector-delta {
+    margin-top: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vs-versus button {
+    transition: none;
+  }
+}

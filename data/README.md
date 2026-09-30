@@ -95,7 +95,8 @@ python validate_season_state.py
 python data/load_supabase.py
 ```
 
-Use `npm run data:refresh` for the bundled deterministic refresh path when the full local data estate is available.
+Run the relevant commands above in order when the full local data estate is
+available. The root `package.json` does not define a `data:refresh` script.
 
 ## Validation
 

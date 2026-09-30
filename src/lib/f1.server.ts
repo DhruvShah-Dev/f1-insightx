@@ -1538,7 +1538,10 @@ export async function fetchHeadToHead(slug: string, codeA: string, codeB: string
   const weekend = await fetchWeekend(slug);
   if (!weekend) return null;
   const entrants = weekend.classification.map((r) => r.code).filter(Boolean);
-  const normalizeCode = (code: string | null | undefined) => String(code ?? "").trim().toUpperCase();
+  const normalizeCode = (code: string | null | undefined) =>
+    String(code ?? "")
+      .trim()
+      .toUpperCase();
   const isAuto = (code: string) => !code || code === "AUTO";
   const firstAvailable = (except?: string) => entrants.find((code) => code !== except) ?? "";
   let a = normalizeCode(codeA);
@@ -1549,16 +1552,25 @@ export async function fetchHeadToHead(slug: string, codeA: string, codeB: string
     rows.filter((r) => r.code === code);
 
   const sb = serverClient();
-  const [traffic, trafficLapsA, trafficLapsB, posLapsA, posLapsB, swings, cornerComparisons] =
-    await Promise.all([
-      fetchTrafficSplit(sb, slug, [a, b]),
-      fetchTrafficLaps(sb, slug, a),
-      fetchTrafficLaps(sb, slug, b),
-      fetchPositionLaps(sb, slug, a),
-      fetchPositionLaps(sb, slug, b),
-      fetchSwings(sb, slug, [a, b]),
-      fetchCornerComparisons(sb, weekend.season, weekend.round, a, b),
-    ]);
+  const [
+    traffic,
+    trafficLapsA,
+    trafficLapsB,
+    posLapsA,
+    posLapsB,
+    swings,
+    cornerComparisons,
+    sectorBests,
+  ] = await Promise.all([
+    fetchTrafficSplit(sb, slug, [a, b]),
+    fetchTrafficLaps(sb, slug, a),
+    fetchTrafficLaps(sb, slug, b),
+    fetchPositionLaps(sb, slug, a),
+    fetchPositionLaps(sb, slug, b),
+    fetchSwings(sb, slug, [a, b]),
+    fetchCornerComparisons(sb, weekend.season, weekend.round, a, b),
+    fetchSectorBests(sb, weekend.raceId, a, b),
+  ]);
 
   return {
     slug: weekend.slug,
@@ -1583,9 +1595,58 @@ export async function fetchHeadToHead(slug: string, codeA: string, codeB: string
     positionLaps: [posLapsA, posLapsB] as [PositionLap[], PositionLap[]],
     swings,
     cornerComparisons,
+    sectorBests,
     statusPhases: weekend.statusPhases,
     entrants: weekend.classification.map((r) => ({ code: r.code, name: r.name, team: r.team })),
   };
+}
+
+async function fetchSectorBests(sb: SB, raceId: string, codeA: string, codeB: string) {
+  const empty: Record<string, [number | null, number | null][]> = {};
+  try {
+    const [{ byCode }, sessions] = await Promise.all([
+      driverIndex(sb),
+      sb
+        .from("sessions")
+        .select("id, session_code")
+        .eq("race_id", raceId)
+        .in("session_code", ["Q", "SQ", "S", "R"]),
+    ]);
+    const ids = [byCode.get(codeA)?.id, byCode.get(codeB)?.id];
+    const sessionRows = (sessions.data ?? []) as Row[];
+    if (ids.some((id) => !id) || !sessionRows.length) return empty;
+    const sessionById = new Map(
+      sessionRows.map((row) => [String(row["id"]), String(row["session_code"])]),
+    );
+    const { data, error } = await sb
+      .from("session_laps")
+      .select("session_id, driver_id, sector_1_s, sector_2_s, sector_3_s, is_accurate, deleted")
+      .in("session_id", [...sessionById.keys()])
+      .in("driver_id", ids as string[])
+      .limit(2500);
+    if (error) return empty;
+    for (const row of (data ?? []) as Row[]) {
+      if (row["deleted"] === true || row["is_accurate"] === false) continue;
+      const session = sessionById.get(String(row["session_id"]));
+      const side = ids.indexOf(String(row["driver_id"]));
+      if (!session || side < 0) continue;
+      const sectors: [number | null, number | null][] = empty[session] ?? [
+        [null, null],
+        [null, null],
+        [null, null],
+      ];
+      for (let i = 0; i < 3; i++) {
+        const value = num(row[`sector_${i + 1}_s`]);
+        if (value == null || value <= 0) continue;
+        const pair = sectors[i]!;
+        if (pair[side] == null || value < pair[side]!) pair[side] = value;
+      }
+      empty[session] = sectors;
+    }
+    return empty;
+  } catch {
+    return empty;
+  }
 }
 
 /* ------------------------------------------------------------------ */

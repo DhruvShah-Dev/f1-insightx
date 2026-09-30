@@ -7,7 +7,9 @@ const SECTOR_COLORS = ["#e8002d", "#3fa9f5", "#ffd400"];
 type Side = { code: string; color: string };
 
 function line(points: { x: number; y: number }[]) {
-  return points.map((p, i) => `${i === 0 ? "M" : "L"}${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(" ");
+  return points
+    .map((p, i) => `${i === 0 ? "M" : "L"}${p.x.toFixed(2)},${p.y.toFixed(2)}`)
+    .join(" ");
 }
 
 /* ------------------------------------------------------------------ */
@@ -82,28 +84,30 @@ export function PositionBattleChart({
             opacity={0.1}
           />
         ))}
-        {[1, 5, 10, 15, 20].filter((p) => p <= maxPos).map((p) => (
-          <g key={p}>
-            <line
-              x1={padL}
-              x2={W - 10}
-              y1={y(p)}
-              y2={y(p)}
-              stroke="currentColor"
-              className="text-border"
-              strokeWidth="0.5"
-            />
-            <text
-              x={padL - 5}
-              y={y(p) + 3}
-              textAnchor="end"
-              className="fill-muted-foreground font-mono"
-              fontSize="9"
-            >
-              P{p}
-            </text>
-          </g>
-        ))}
+        {[1, 5, 10, 15, 20]
+          .filter((p) => p <= maxPos)
+          .map((p) => (
+            <g key={p}>
+              <line
+                x1={padL}
+                x2={W - 10}
+                y1={y(p)}
+                y2={y(p)}
+                stroke="currentColor"
+                className="text-border"
+                strokeWidth="0.5"
+              />
+              <text
+                x={padL - 5}
+                y={y(p) + 3}
+                textAnchor="end"
+                className="fill-muted-foreground font-mono"
+                fontSize="9"
+              >
+                P{p}
+              </text>
+            </g>
+          ))}
         {[
           { s: a, rows: lapsA },
           { s: b, rows: lapsB },
@@ -153,6 +157,15 @@ export function PositionBattleChart({
           L{maxLap}
         </text>
       </svg>
+      <input
+        type="range"
+        min={1}
+        max={maxLap}
+        value={hoverLap ?? 1}
+        onChange={(event) => setHoverLap(Number(event.target.value))}
+        aria-label="Inspect running order lap"
+        className="mt-2 w-full accent-[#fad732]"
+      />
       <div className="num mt-1 flex flex-wrap items-center gap-3 text-[11px]">
         <span className="text-muted-foreground">
           {hoverLap == null ? "Hover the chart to read a lap" : `Lap ${hoverLap}`}
@@ -171,7 +184,10 @@ export function PositionBattleChart({
           </span>
         ))}
         <span className="flex items-center gap-1.5 text-muted-foreground">
-          <span className="inline-block h-2.5 w-2.5" style={{ backgroundColor: "#ffd400", opacity: 0.4 }} />
+          <span
+            className="inline-block h-2.5 w-2.5"
+            style={{ backgroundColor: "#ffd400", opacity: 0.4 }}
+          />
           neutralised laps
         </span>
       </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { LapPoint } from "@/lib/f1.functions";
 
 const COMPOUND_COLORS: Record<string, string> = {
@@ -100,10 +101,31 @@ export function ChannelBar({
 type Series = { code: string; color: string; laps: LapPoint[] };
 
 function buildPath(points: { x: number; y: number }[]) {
-  return points.map((p, i) => `${i === 0 ? "M" : "L"}${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(" ");
+  return points
+    .map((p, i) => `${i === 0 ? "M" : "L"}${p.x.toFixed(2)},${p.y.toFixed(2)}`)
+    .join(" ");
 }
 
-export function LapTraceChart({ series }: { series: Series[] }) {
+type StatusPhase = { label: string; fromLap: number; toLap: number };
+
+function phaseKind(label: string): { short: string; color: string } | null {
+  const value = label.toLowerCase();
+  if (value.includes("red")) return { short: "RED", color: "#f16768" };
+  if (value.includes("virtual") || value.includes("vsc")) return { short: "VSC", color: "#b99aff" };
+  if (value.includes("safety") || value === "sc") return { short: "SC", color: "#f6cb5b" };
+  if (value.includes("yellow")) return { short: "YELLOW", color: "#f5df83" };
+  if (value.includes("mixed")) return { short: "MIXED", color: "#9ba5b5" };
+  return null;
+}
+
+export function LapTraceChart({
+  series,
+  statusPhases = [],
+}: {
+  series: Series[];
+  statusPhases?: StatusPhase[];
+}) {
+  const [selectedLap, setSelectedLap] = useState<number | null>(null);
   const all = series.flatMap((s) => s.laps.filter((l) => l.lapTimeS != null));
   if (all.length === 0) {
     return (
@@ -117,73 +139,222 @@ export function LapTraceChart({ series }: { series: Series[] }) {
   // clip the slow tail (pit / SC laps) so the racing pace is readable
   const cap = times[Math.floor(times.length * 0.92)]! + 0.4;
   const maxLap = Math.max(...all.map((l) => l.lap));
-  const W = 720;
-  const H = 220;
-  const padL = 46;
-  const padB = 22;
+  const W = 960;
+  const H = 290;
+  const padL = 54;
+  const padB = 27;
   const yMin = fastest - 0.2;
   const yMax = cap;
   const x = (lap: number) => padL + ((lap - 1) / Math.max(1, maxLap - 1)) * (W - padL - 8);
-  const y = (t: number) =>
-    8 + ((Math.min(t, yMax) - yMin) / (yMax - yMin || 1)) * (H - padB - 8 - 8);
+  const y = (t: number) => 18 + ((yMax - Math.min(t, yMax)) / (yMax - yMin || 1)) * (H - padB - 36);
 
   const gridTimes = [0, 0.25, 0.5, 0.75, 1].map((f) => yMin + f * (yMax - yMin));
+  const events = statusPhases
+    .map((phase) => ({ ...phase, kind: phaseKind(phase.label) }))
+    .filter((phase) => phase.kind && phase.toLap >= 1 && phase.fromLap <= maxLap);
+  const current = selectedLap == null ? null : Math.min(maxLap, Math.max(1, selectedLap));
+  const currentEvent =
+    current == null ? null : events.find((e) => current >= e.fromLap && current <= e.toLap);
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Lap time trace">
-      {gridTimes.map((t) => (
-        <g key={t}>
-          <line
-            x1={padL}
-            x2={W - 8}
-            y1={y(t)}
-            y2={y(t)}
-            stroke="currentColor"
-            className="text-border"
-            strokeWidth="0.5"
-          />
-          <text
-            x={padL - 6}
-            y={y(t) + 3}
-            textAnchor="end"
-            className="fill-muted-foreground font-mono"
-            fontSize="9"
-          >
-            {t.toFixed(1)}
-          </text>
-        </g>
-      ))}
-      {series.map((s) => {
-        const pts = s.laps
-          .filter((l) => l.lapTimeS != null && l.lapTimeS! <= yMax)
-          .map((l) => ({ x: x(l.lap), y: y(l.lapTimeS!) }));
-        return (
-          <path
-            key={s.code}
-            d={buildPath(pts)}
-            fill="none"
-            stroke={s.color}
-            strokeWidth="1.6"
-            strokeLinejoin="round"
-          />
-        );
-      })}
-      <text
-        x={padL}
-        y={H - 6}
-        className="fill-muted-foreground font-mono"
-        fontSize="9"
+    <div className="space-y-3">
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        className="w-full touch-pan-y"
+        role="img"
+        aria-label="Interactive lap time trace with race-control events"
+        onMouseLeave={() => setSelectedLap(null)}
+        onMouseMove={(event) => {
+          const box = event.currentTarget.getBoundingClientRect();
+          const px = ((event.clientX - box.left) / box.width) * W;
+          setSelectedLap(
+            Math.min(
+              maxLap,
+              Math.max(1, Math.round(((px - padL) / (W - padL - 8)) * (maxLap - 1)) + 1),
+            ),
+          );
+        }}
       >
-        L1
-      </text>
-      <text x={W - 8} y={H - 6} textAnchor="end" className="fill-muted-foreground font-mono" fontSize="9">
-        L{maxLap}
-      </text>
-    </svg>
+        {events.map((event, index) => (
+          <g key={`${event.label}-${event.fromLap}-${index}`}>
+            <rect
+              x={x(Math.max(1, event.fromLap)) - 3}
+              y={10}
+              width={Math.max(
+                5,
+                x(Math.min(maxLap, event.toLap)) - x(Math.max(1, event.fromLap)) + 6,
+              )}
+              height={H - padB - 10}
+              fill={event.kind!.color}
+              opacity="0.14"
+            />
+            <text
+              x={x(Math.max(1, event.fromLap)) + 2}
+              y={21}
+              fill={event.kind!.color}
+              fontSize="10"
+              fontWeight="700"
+            >
+              {event.kind!.short}
+            </text>
+          </g>
+        ))}
+        {gridTimes.map((t) => (
+          <g key={t}>
+            <line
+              x1={padL}
+              x2={W - 8}
+              y1={y(t)}
+              y2={y(t)}
+              stroke="currentColor"
+              className="text-border"
+              strokeWidth="0.5"
+            />
+            <text
+              x={padL - 6}
+              y={y(t) + 3}
+              textAnchor="end"
+              className="fill-muted-foreground font-mono"
+              fontSize="9"
+            >
+              {t.toFixed(1)}
+            </text>
+          </g>
+        ))}
+        {series.map((s) => {
+          const paths: { x: number; y: number }[][] = [];
+          for (const lap of s.laps) {
+            if (lap.lapTimeS == null || lap.lapTimeS > yMax) continue;
+            const point = { x: x(lap.lap), y: y(lap.lapTimeS) };
+            const previous = paths[paths.length - 1];
+            if (
+              previous?.length &&
+              s.laps.find((item) => item.lap === lap.lap - 1)?.lapTimeS != null &&
+              s.laps.find((item) => item.lap === lap.lap - 1)!.lapTimeS! <= yMax
+            )
+              previous.push(point);
+            else paths.push([point]);
+          }
+          return (
+            <g key={s.code}>
+              {paths.map((points, index) => (
+                <path
+                  key={index}
+                  d={buildPath(points)}
+                  fill="none"
+                  stroke={s.color}
+                  strokeWidth="2.3"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                />
+              ))}
+              {s.laps
+                .filter((lap) => lap.lapTimeS != null && lap.lapTimeS > yMax)
+                .map((lap) => (
+                  <path
+                    key={`clip-${lap.lap}`}
+                    d={`M${x(lap.lap) - 4},28 L${x(lap.lap) + 4},28 L${x(lap.lap)},21 Z`}
+                    fill={s.color}
+                    opacity=".9"
+                  />
+                ))}
+            </g>
+          );
+        })}
+        {current != null ? (
+          <g>
+            <line
+              x1={x(current)}
+              x2={x(current)}
+              y1={9}
+              y2={H - padB}
+              stroke="#e6e8e5"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+              opacity=".8"
+            />
+            {series.map((s) => {
+              const lap = s.laps.find(
+                (l) => l.lap === current && l.lapTimeS != null && l.lapTimeS <= yMax,
+              );
+              return lap ? (
+                <circle
+                  key={s.code}
+                  cx={x(current)}
+                  cy={y(lap.lapTimeS!)}
+                  r="5"
+                  fill={s.color}
+                  stroke="#111216"
+                  strokeWidth="2"
+                />
+              ) : null;
+            })}
+          </g>
+        ) : null}
+        <text x={padL} y={H - 6} className="fill-muted-foreground font-mono" fontSize="9">
+          L1
+        </text>
+        <text
+          x={W - 8}
+          y={H - 6}
+          textAnchor="end"
+          className="fill-muted-foreground font-mono"
+          fontSize="9"
+        >
+          L{maxLap}
+        </text>
+      </svg>
+      <div
+        className="num flex min-h-8 flex-wrap items-center gap-x-5 gap-y-1 text-xs"
+        aria-live="polite"
+      >
+        <span className="font-bold text-foreground">
+          {current == null ? "Select a lap" : `LAP ${current}`}
+        </span>
+        {series.map((s) => {
+          const lap = current == null ? null : s.laps.find((l) => l.lap === current);
+          return (
+            <span key={s.code} style={{ color: s.color }}>
+              <span className="font-bold">{s.code}</span>{" "}
+              {lap?.lapTimeS == null ? "—" : `${lap.lapTimeS.toFixed(3)}s`}
+            </span>
+          );
+        })}
+        {currentEvent ? (
+          <span style={{ color: currentEvent.kind!.color }}>
+            {currentEvent.kind!.short} · L{currentEvent.fromLap}
+            {currentEvent.toLap > currentEvent.fromLap ? `–${currentEvent.toLap}` : ""}
+          </span>
+        ) : null}
+      </div>
+      <input
+        type="range"
+        min={1}
+        max={maxLap}
+        value={current ?? 1}
+        onChange={(event) => setSelectedLap(Number(event.target.value))}
+        className="w-full accent-[#fad732]"
+        aria-label="Inspect race lap"
+      />
+      <div className="num flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-muted-foreground">
+        {events.map((event, index) => (
+          <span key={`${event.label}-${index}`}>
+            <i
+              className="mr-1 inline-block size-2 rounded-sm"
+              style={{ backgroundColor: event.kind!.color }}
+            />
+            {event.kind!.short} L{event.fromLap}
+            {event.toLap > event.fromLap ? `–${event.toLap}` : ""}
+          </span>
+        ))}
+        <span>▲ lap above pace scale · inspect for full time</span>
+      </div>
+    </div>
   );
 }
 
 export function DeltaChart({ series }: { series: [Series, Series] }) {
+  const [selectedLap, setSelectedLap] = useState<number | null>(null);
   const [a, b] = series;
   const mapB = new Map(b.laps.map((l) => [l.lap, l.lapTimeS]));
   let cum = 0;
@@ -212,10 +383,34 @@ export function DeltaChart({ series }: { series: [Series, Series] }) {
   const y = (d: number) => H / 2 - (d / maxAbs) * (H / 2 - 14);
   const path = buildPath(pts.map((p) => ({ x: x(p.lap), y: y(p.delta) })));
   const last = pts[pts.length - 1]!.delta;
+  const selected =
+    selectedLap == null
+      ? null
+      : pts.reduce(
+          (best, point) =>
+            Math.abs(point.lap - selectedLap) < Math.abs(best.lap - selectedLap) ? point : best,
+          pts[0]!,
+        );
 
   return (
     <div>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Cumulative gap">
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        className="w-full"
+        role="img"
+        aria-label="Interactive cumulative gap"
+        onMouseLeave={() => setSelectedLap(null)}
+        onMouseMove={(event) => {
+          const box = event.currentTarget.getBoundingClientRect();
+          const px = ((event.clientX - box.left) / box.width) * W;
+          setSelectedLap(
+            Math.min(
+              maxLap,
+              Math.max(1, Math.round(((px - padL) / (W - padL - 8)) * (maxLap - 1)) + 1),
+            ),
+          );
+        }}
+      >
         <line
           x1={padL}
           x2={W - 8}
@@ -231,7 +426,32 @@ export function DeltaChart({ series }: { series: [Series, Series] }) {
           opacity="0.14"
         />
         <path d={path} fill="none" stroke={last > 0 ? b.color : a.color} strokeWidth="1.6" />
-        <text x={padL - 6} y={20} textAnchor="end" className="fill-muted-foreground font-mono" fontSize="9">
+        {selected ? (
+          <g>
+            <line
+              x1={x(selected.lap)}
+              x2={x(selected.lap)}
+              y1={8}
+              y2={H - 6}
+              stroke="#eeeeee"
+              opacity=".7"
+              strokeDasharray="3 3"
+            />
+            <circle
+              cx={x(selected.lap)}
+              cy={y(selected.delta)}
+              r={4}
+              fill={selected.delta > 0 ? b.color : a.color}
+            />
+          </g>
+        ) : null}
+        <text
+          x={padL - 6}
+          y={20}
+          textAnchor="end"
+          className="fill-muted-foreground font-mono"
+          fontSize="9"
+        >
           +{maxAbs.toFixed(1)}
         </text>
         <text
@@ -244,10 +464,23 @@ export function DeltaChart({ series }: { series: [Series, Series] }) {
           -{maxAbs.toFixed(1)}
         </text>
       </svg>
-      <p className="num mt-1 text-[11px] text-muted-foreground">
-        Above the line means {b.code} is ahead on cumulative race time. Final swing{" "}
-        {Math.abs(last).toFixed(2)}s to {last > 0 ? b.code : a.code}.
-      </p>
+      <div className="num mt-1 flex flex-wrap items-center gap-3 text-[11px] text-muted-foreground">
+        <span>Above zero: {b.code} quicker</span>
+        <span>
+          {selected
+            ? `L${selected.lap} · ${Math.abs(selected.delta).toFixed(2)}s ${selected.delta > 0 ? b.code : a.code}`
+            : `Final · ${Math.abs(last).toFixed(2)}s ${last > 0 ? b.code : a.code}`}
+        </span>
+      </div>
+      <input
+        type="range"
+        min={1}
+        max={maxLap}
+        value={selected?.lap ?? 1}
+        onChange={(event) => setSelectedLap(Number(event.target.value))}
+        aria-label="Inspect cumulative gap lap"
+        className="mt-2 w-full accent-[#fad732]"
+      />
     </div>
   );
 }
@@ -292,10 +525,7 @@ export function CompoundLegend() {
     <div className="flex flex-wrap gap-3">
       {["SOFT", "MEDIUM", "HARD", "INTERMEDIATE", "WET"].map((c) => (
         <span key={c} className="flex items-center gap-1.5">
-          <span
-            className="size-2.5 rounded-full"
-            style={{ backgroundColor: compoundColor(c) }}
-          />
+          <span className="size-2.5 rounded-full" style={{ backgroundColor: compoundColor(c) }} />
           <span className="label-xs">{c}</span>
         </span>
       ))}

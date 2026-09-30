@@ -27,7 +27,14 @@ Primary routes:
 - `/analysis/:slug` - race report with classification, position movement, lap pace, pit stops, timeline, and circuit views where data is available
 - `/vs` - driver comparison and telemetry views
 - `/picks` - round-by-round pick cards, driver selection, lock status, and scores
-- `/account` - Google sign-in and signed-in profile
+- `/championship` - driver and constructor standings, season leaders, and metric rankings
+- `/account` - Google sign-in, profile, and account controls
+
+The root app now shares a responsive header and footer through
+`src/components/site-chrome.tsx`. Race Week, Compare, Championship, Account, and
+Picks have route-specific layouts and styles. Compare includes session and sector
+views when the underlying lap data is available; Race Week includes a circuit
+profile for the current weekend.
 
 Homepage visual assets now live in `public/assets` and are used by the root
 TanStack app:
@@ -101,11 +108,17 @@ Core outputs:
 - strategy and prediction snapshots
 - Pit Wall Picks challenges and result scoring inputs
 
-Current production data has been refreshed through the 2026 Azerbaijan Grand Prix
-(round 15). Race analysis, Driver vs Driver, telemetry comparison views, strategy
-lab outputs, product manifests, and Supabase product tables are current through
-that race; the next race-week surface points at the 2026 Bahrain Grand Prix in
-Malaysia at Sepang.
+The local pipeline and Supabase product tables contain results through the 2026
+Azerbaijan Grand Prix (round 15). The next race-week product view is round 16 at
+Sepang. The committed `src/data/season.ts` browser fallback is an older snapshot
+through round 14; its dates and standings should not be treated as live data.
+
+`data/load_supabase.py` loads validated local product CSVs into Supabase in
+upsert mode by default. The scheduled workflows under `.github/workflows/`
+refresh reference and race-week data. Before a manual load, run the validators
+in [data/README.md](data/README.md) and check the remote row counts and latest
+completed round. The loader only truncates tables when explicitly passed
+`--allow-destructive-reset`.
 
 See [data/README.md](data/README.md) and [data_pipeline/README.md](data_pipeline/README.md) before changing pipeline behavior.
 

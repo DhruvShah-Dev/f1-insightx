@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import type { Session, User } from "@supabase/supabase-js";
 import {
   CalendarClock,
@@ -11,15 +11,18 @@ import {
   Save,
   Shield,
   Trophy,
-  UserRound,
 } from "lucide-react";
 import { FormEvent, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
-import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
+import { SectionHeading, SiteShell } from "@/components/site-shell";
+import { SiteHeader } from "@/components/site-chrome";
 import { RaceFlagHero } from "@/components/race-flag-hero";
 import { nextRace } from "@/data/season";
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
 import { fmtDateTime } from "@/lib/format";
+import { FastArrowRight } from "iconoir-react/regular";
+import { driverStandings, seasonState, teams } from "@/data/season";
+import "./account.css";
 
 type Profile = Database["public"]["Tables"]["user_profiles"]["Row"];
 type AuthState = "loading" | "ready" | "unavailable";
@@ -268,60 +271,11 @@ function Account() {
   }
 
   if (authState === "loading") {
-    return (
-      <SiteShell fullWidth>
-        <AccountFrame title="Account" kicker="Session" subtitle="Checking account state..." />
-      </SiteShell>
-    );
+    return <SignInScreen onSignIn={signInWithGoogle} loading message="" checking />;
   }
 
   if (!user) {
-    return (
-      <SiteShell fullWidth>
-        <AccountFrame
-          title="Account"
-          kicker="Sign in"
-          subtitle="Use Google sign-in to save picks and keep a stable identity across race weeks."
-        >
-          <div className="mt-8 max-w-xl border border-border bg-card/50 p-4">
-            <button
-              type="button"
-              onClick={() => void signInWithGoogle()}
-              disabled={saveState === "saving"}
-              className="inline-flex min-h-11 w-full items-center justify-center gap-2 bg-primary px-4 text-xs font-black uppercase italic text-primary-foreground disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-            >
-              <GoogleLogo className="size-4" />
-              Continue with Google
-            </button>
-            {message ? <p className="mt-3 text-xs text-muted-foreground">{message}</p> : null}
-          </div>
-
-          <section className="mt-10">
-            <SectionHeading kicker="Account access" title="What unlocks" />
-            <div className="grid gap-3 sm:grid-cols-3">
-              <Stat
-                label="Picks identity"
-                value="Saved"
-                note="One profile across cards"
-                icon={<UserRound className="size-3.5" />}
-              />
-              <Stat
-                label="Session"
-                value="Secure"
-                note="Supabase auth token"
-                icon={<Shield className="size-3.5" />}
-              />
-              <Stat
-                label="Race week"
-                value="Ready"
-                note="Return after Google sign-in"
-                icon={<Flag className="size-3.5" />}
-              />
-            </div>
-          </section>
-        </AccountFrame>
-      </SiteShell>
-    );
+    return <SignInScreen onSignIn={signInWithGoogle} loading={saveState === "saving"} message={message} />;
   }
 
   return (
@@ -500,6 +454,82 @@ function Account() {
         </section>
       </AccountFrame>
     </SiteShell>
+  );
+}
+
+function SignInScreen({
+  onSignIn,
+  loading,
+  message,
+  checking = false,
+}: {
+  onSignIn: () => Promise<void>;
+  loading: boolean;
+  message: string;
+  checking?: boolean;
+}) {
+  const featuredDriver = driverStandings.find(({ code }) => code === "BOT");
+  const featuredTeam = featuredDriver?.team ?? "cadillac";
+
+  return (
+    <>
+    <SiteHeader />
+    <main className="account-login">
+      <section className="account-login-art" aria-label="2026 season feature">
+        <div className="account-login-art-grid" aria-hidden="true" />
+        <span className="account-login-year" aria-hidden="true">{String(seasonState.season).slice(-2)}</span>
+        <img
+          className="account-login-driver"
+          src={`/assets/drivers/2026/full-body/front/${featuredDriver?.code.toLowerCase() ?? "bot"}.png`}
+          alt=""
+          aria-hidden="true"
+        />
+        <div className="account-login-art-top">
+          <span>INSIGHT / {seasonState.season}</span>
+          <span className="account-login-art-rule" />
+        </div>
+        <div className="account-login-art-bottom">
+          <div>
+            <span className="account-login-art-label">IN THE FRAME</span>
+            <strong>Valtteri {featuredDriver?.name ?? "Bottas"}</strong>
+            <span>{teams[featuredTeam].name}</span>
+          </div>
+          <img src={`/assets/teams/logos/2026/white-svg/${featuredTeam}.svg`} alt={teams[featuredTeam].name} />
+        </div>
+      </section>
+
+      <section className="account-login-content" aria-labelledby="account-login-title">
+        <header className="account-login-header">
+          <span className="account-login-brand">ACCOUNT / {seasonState.season}</span>
+          <Link to="/" className="account-login-back">
+            Explore <FastArrowRight aria-hidden="true" />
+          </Link>
+        </header>
+
+        <div className="account-login-center">
+          <p className="account-login-overline"><span /> YOUR ACCOUNT</p>
+          <h1 id="account-login-title">Your seat<br /><em>awaits.</em></h1>
+          <p className="account-login-description">Save your picks. Follow the season.</p>
+          <button
+            type="button"
+            className="account-login-google"
+            onClick={() => void onSignIn()}
+            disabled={loading || checking}
+          >
+            <GoogleLogo className="account-login-google-icon" />
+            <span>{checking ? "Checking account…" : loading ? "Connecting…" : "Continue with Google"}</span>
+            <FastArrowRight aria-hidden="true" />
+          </button>
+          {message ? <p className="account-login-error" role="alert">{message}</p> : null}
+        </div>
+
+        <footer className="account-login-footer">
+          <span>One account. Every race week.</span>
+          <span>{seasonState.season} SEASON <span className="account-login-footer-dot" /> F1 INSIGHTX</span>
+        </footer>
+      </section>
+    </main>
+    </>
   );
 }
 

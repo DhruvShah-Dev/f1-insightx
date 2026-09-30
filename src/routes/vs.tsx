@@ -3,7 +3,7 @@ import { queryOptions, useQuery, useSuspenseQuery } from "@tanstack/react-query"
 import { useMemo, useState, type CSSProperties } from "react";
 import { z } from "zod";
 import { SiteShell } from "@/components/site-shell";
-import { RaceFlagHero } from "@/components/race-flag-hero";
+import { ArrowLeftRight, ChevronDown, SlidersHorizontal } from "lucide-react";
 import { CompoundLegend, DeltaChart, LapTraceChart, StintStrip } from "@/components/telemetry";
 import { buildCornerModel, CornerMap, CornerMapLegend } from "@/components/corner-profile";
 import { CornerProfileChart, DirtyAirChart, PositionBattleChart } from "@/components/duel-charts";
@@ -15,8 +15,7 @@ import {
   TrackDominanceRing,
 } from "@/components/dominance";
 import { SkeletonPanel } from "@/components/skeleton-block";
-import { DriverAvatar, TeamBadge } from "@/components/driver-avatar";
-import { countryForRace, countryTheme } from "@/data/country-theme";
+import "./vs.css";
 import { duelColors, team } from "@/data/teams";
 import { fmtDelta, fmtLapMs, fmtLapS, fmtNum, titleCase } from "@/lib/format";
 import { getHeadToHead, getWeekendIndex } from "@/lib/f1.functions";
@@ -67,6 +66,7 @@ type Session = "quali" | "sprint" | "race";
 type RaceView =
   | "duel"
   | "dominance"
+  | "sectors"
   | "trace"
   | "battle"
   | "tyres"
@@ -285,18 +285,7 @@ function Vs() {
   const duel = duelColors(d?.race[0]?.team ?? entrantA?.team, d?.race[1]?.team ?? entrantB?.team);
   const colorA = duel.colorA;
   const colorB = duel.colorB;
-  const raceTheme = countryTheme(
-    countryForRace({
-      circuitId: selectedWeekend?.circuitId,
-      circuit: d?.circuit ?? selectedWeekend?.circuit,
-      raceName: d?.name ?? selectedWeekend?.name,
-    }),
-  );
-  const vsThemeStyle = {
-    "--primary": raceTheme.accent,
-    "--ring": raceTheme.accent,
-    "--race-country-accent": raceTheme.accent,
-  } as CSSProperties;
+  const vsThemeStyle = { "--vs-a": colorA, "--vs-b": colorB } as CSSProperties;
 
   const setSearch = (patch: {
     slug?: string | undefined;
@@ -527,6 +516,9 @@ function Vs() {
 
   const raceViews: { k: RaceView; l: string }[] = [
     { k: "duel", l: "Duel" },
+    ...(d?.sectorBests["R"]?.some((pair) => pair.some((value) => value != null))
+      ? [{ k: "sectors" as const, l: "Sectors" }]
+      : []),
     ...(seriesA.laps.length && seriesB.laps.length
       ? [{ k: "dominance" as const, l: "Dominance" }]
       : []),
@@ -550,12 +542,18 @@ function Vs() {
       : active === "quali"
         ? [
             { k: "duel", l: "Duel" },
+            ...(d?.sectorBests["Q"]?.some((pair) => pair.some((value) => value != null))
+              ? [{ k: "sectors" as const, l: "Sectors" }]
+              : []),
             ...(cornerRowsBySession.Q.length
               ? [{ k: "cornerData" as const, l: "Corner data" }]
               : []),
           ]
         : [
             { k: "duel", l: "Duel" },
+            ...(d?.sectorBests["S"]?.some((pair) => pair.some((value) => value != null))
+              ? [{ k: "sectors" as const, l: "Sectors" }]
+              : []),
             ...(cornerRowsBySession.SQ.length
               ? [{ k: "sprintQualiCornerData" as const, l: "Sprint quali corners" }]
               : []),
@@ -585,15 +583,23 @@ function Vs() {
 
   return (
     <SiteShell fullWidth>
-      <div style={vsThemeStyle}>
-        {/* ---------------- hero ---------------- */}
-        <RaceFlagHero
-          kicker="Head to head"
-          title="Driver vs driver"
-          meta={d ? `R${d.round} ${d.name} / ${d.circuit}` : "Pick a weekend below"}
-          flag={raceTheme.flag}
-        >
-          <div className="grid items-center gap-3 sm:grid-cols-[1fr_auto_1fr]">
+      <div className="vs-page" style={vsThemeStyle}>
+        <div className="vs-hero">
+          <div className="vs-hero-top">
+            <div>
+              <p className="vs-eyebrow">
+                Comparison / {selectedWeekend ? `Round ${selectedWeekend.round}` : "Select a race"}
+              </p>
+              <h1>
+                DRIVER <span>/</span> DRIVER
+              </h1>
+            </div>
+            <div className="vs-race-meta">
+              <span>{d?.name ?? selectedWeekend?.name ?? "Race weekend"}</span>
+              <small>{d?.circuit ?? selectedWeekend?.circuit}</small>
+            </div>
+          </div>
+          <div className="vs-duel-stage">
             <DriverCard
               code={codeA}
               name={entrantA?.name ?? codeA}
@@ -602,25 +608,16 @@ function Vs() {
               score={score.a}
               align="left"
             />
-            <div className="flex flex-col items-center gap-2">
-              <span className="num rounded-full border border-white/25 bg-[#07110c]/88 px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
-                vs
-              </span>
-              <button
-                type="button"
-                onClick={swap}
-                className="num rounded-sm border border-white/35 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-[#07110c]"
-              >
-                swap
+            <div className="vs-versus">
+              <strong>VS</strong>
+              <button type="button" onClick={swap} title="Swap drivers" aria-label="Swap drivers">
+                <ArrowLeftRight size={17} />
               </button>
-              <span className="num text-[10px] text-white/80">
-                {label[active]} / {score.a}-{score.b}
-              </span>
-              {duel.sameTeam ? (
-                <span className="num rounded-sm border border-white/30 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-white/80">
-                  teammates / shaded
-                </span>
-              ) : null}
+              <small>
+                {label[active]}
+                <br />
+                {score.a} — {score.b}
+              </small>
             </div>
             <DriverCard
               code={codeB}
@@ -631,98 +628,54 @@ function Vs() {
               align="right"
             />
           </div>
-        </RaceFlagHero>
-
-        {/* ---------------- weekend rail ---------------- */}
-        <div className="mt-5">
-          <p className="label-xs">Weekend</p>
-          <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1">
-            {weekends.map((w) => {
-              const on = w.slug === slug;
-              const buttonTheme = countryTheme(
-                countryForRace({ circuitId: w.circuitId, circuit: w.circuit, raceName: w.name }),
-              );
-              return (
-                <button
-                  key={w.slug!}
-                  type="button"
-                  onClick={() => setSearch({ slug: w.slug!, a: undefined, b: undefined })}
-                  aria-pressed={on}
-                  className={`num relative shrink-0 overflow-hidden rounded-sm border px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider transition-colors ${
-                    on
-                      ? "border-white/30 text-white"
-                      : "border-border text-muted-foreground hover:text-foreground"
-                  }`}
-                  style={
-                    on ? { backgroundColor: buttonTheme.flag[0] ?? buttonTheme.accent } : undefined
-                  }
-                >
-                  R{w.round} · {w.name}
-                  {on ? (
-                    <span
-                      aria-hidden
-                      className="ml-2 inline-flex h-2.5 w-8 overflow-hidden rounded-sm align-middle"
-                    >
-                      {buttonTheme.flag.map((color, index) => (
-                        <span
-                          key={`${w.slug}-${color}-${index}`}
-                          className="flex-1"
-                          style={{ backgroundColor: color }}
-                        />
-                      ))}
-                    </span>
-                  ) : null}
-                  {w.resultsOnly ? (
-                    <span className="ml-1.5 text-[9px] font-bold text-primary/80">results</span>
-                  ) : null}
-                </button>
-              );
-            })}
-          </div>
         </div>
 
-        {/* ---------------- driver pickers ---------------- */}
-        {entrants.length ? (
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            {[
-              { side: "Driver A", value: codeA, other: codeB, key: "a" as const, color: colorA },
-              { side: "Driver B", value: codeB, other: codeA, key: "b" as const, color: colorB },
-            ].map((sel) => (
-              <div
-                key={sel.key}
-                className="rounded-xl border border-border bg-card/40 p-3"
-                style={{ borderLeft: `4px solid ${sel.color}` }}
+        <div className="vs-controls" aria-label="Comparison selectors">
+          <label>
+            <span>Weekend</span>
+            <div className="vs-select">
+              <select
+                value={selectedWeekend?.slug ?? ""}
+                onChange={(event) =>
+                  setSearch({ slug: event.target.value, a: undefined, b: undefined })
+                }
               >
-                <p className="label-xs">{sel.side}</p>
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {entrants.map((e) => {
-                    const t = team(e.team);
-                    const on = e.code === sel.value;
-                    const disabled = e.code === sel.other;
-                    return (
-                      <button
-                        key={e.code}
-                        type="button"
-                        disabled={disabled}
-                        onClick={() => setSearch({ [sel.key]: e.code })}
-                        aria-pressed={on}
-                        title={`${e.name} · ${t.name}`}
-                        className={`num rounded-full border px-2 py-1 text-[10px] font-black uppercase tracking-wider transition-all disabled:opacity-25 ${
-                          on
-                            ? "border-transparent text-background"
-                            : "border-border text-muted-foreground hover:text-foreground"
-                        }`}
-                        style={on ? { backgroundColor: sel.color } : undefined}
-                      >
-                        {e.code}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : null}
+                {weekends.map((w) => (
+                  <option key={w.slug} value={w.slug ?? ""}>
+                    R{w.round} · {w.name}
+                    {w.resultsOnly ? " · results" : ""}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown size={16} />
+            </div>
+          </label>
+          {entrants.length
+            ? [
+                { key: "a" as const, title: "Driver 01", value: codeA, other: codeB },
+                { key: "b" as const, title: "Driver 02", value: codeB, other: codeA },
+              ].map((item) => (
+                <label key={item.key}>
+                  <span>{item.title}</span>
+                  <div className="vs-select">
+                    <select
+                      value={item.value}
+                      onChange={(event) => setSearch({ [item.key]: event.target.value })}
+                    >
+                      {entrants
+                        .filter((e) => e.code !== item.other || e.code === item.value)
+                        .map((e) => (
+                          <option key={e.code} value={e.code}>
+                            {e.code} · {e.name} · {team(e.team).short}
+                          </option>
+                        ))}
+                    </select>
+                    <ChevronDown size={16} />
+                  </div>
+                </label>
+              ))
+            : null}
+        </div>
 
         {pending ? (
           <SkeletonPanel rows={7} label="Loading session data" />
@@ -731,8 +684,9 @@ function Vs() {
         ) : (
           <>
             {/* ---------------- sticky switcher ---------------- */}
-            <div className="sticky top-0 z-20 mt-6 -mx-4 border-y border-border bg-background/90 px-4 py-2 backdrop-blur">
+            <div className="vs-switcher sticky top-0 z-20 mt-6">
               <div className="flex flex-wrap items-center gap-3">
+                <SlidersHorizontal size={16} aria-hidden="true" />
                 <Segmented
                   options={available.map((s) => ({ k: s, l: label[s] }))}
                   value={active}
@@ -762,9 +716,6 @@ function Vs() {
                     <p className="label-xs">{label[active]}</p>
                     <h2 className="text-lg font-black uppercase italic">Metric duel</h2>
                   </div>
-                  <span className="num text-[10px] text-muted-foreground">
-                    bars scale to the larger value · winner highlighted
-                  </span>
                 </div>
                 <DuelBoard metrics={metrics} colorA={colorA} colorB={colorB} />
                 {extras.length ? (
@@ -775,6 +726,18 @@ function Vs() {
                   </div>
                 ) : null}
               </Panel>
+            ) : null}
+
+            {activeView === "sectors" ? (
+              <SectorBests
+                rows={
+                  d.sectorBests[active === "quali" ? "Q" : active === "sprint" ? "S" : "R"] ?? []
+                }
+                codeA={codeA}
+                codeB={codeB}
+                colorA={colorA}
+                colorB={colorB}
+              />
             ) : null}
 
             {/* ---------------- race views ---------------- */}
@@ -805,7 +768,10 @@ function Vs() {
                 <div className="space-y-6">
                   <div>
                     <p className="label-xs">Lap time (s, slow laps clipped)</p>
-                    <LapTraceChart series={[seriesA, seriesB]} />
+                    <LapTraceChart
+                      series={[seriesA, seriesB]}
+                      statusPhases={d.statusPhases ?? []}
+                    />
                   </div>
                   <div>
                     <p className="label-xs">Cumulative gap</p>
@@ -909,24 +875,96 @@ function DriverCard({
   score: number;
   align: "left" | "right";
 }) {
+  const identity = team(teamName);
+  const [firstName, ...lastNames] = name.split(" ");
   return (
     <div
-      className={`flex items-center gap-3 rounded-xl border border-border bg-background/40 p-3 ${
-        align === "right" ? "flex-row-reverse text-right" : ""
-      }`}
-      style={{ boxShadow: `inset 0 0 0 1px color-mix(in oklab, ${color} 35%, transparent)` }}
+      className={`vs-driver vs-driver-${align}`}
+      style={{ "--driver-color": color } as CSSProperties}
     >
-      <DriverAvatar code={code} teamName={teamName} name={name} size="lg" />
-      <div className={align === "right" ? "items-end" : ""}>
-        <p className="truncate text-sm font-black uppercase italic leading-tight">{name}</p>
-        <div className={`mt-1 flex ${align === "right" ? "justify-end" : ""}`}>
-          <TeamBadge teamName={teamName} />
+      <img
+        key={code}
+        className="vs-driver-photo"
+        src={`/assets/drivers/2026/full-body/right/${code.toLowerCase()}.png`}
+        alt=""
+        onError={(event) => {
+          const image = event.currentTarget;
+          if (image.dataset["fallback"] === "tried") image.style.display = "none";
+          else {
+            image.dataset["fallback"] = "tried";
+            image.src = `/assets/drivers/2026/headshots/${code.toLowerCase()}.png`;
+          }
+        }}
+      />
+      <div className="vs-driver-info">
+        <span className="vs-driver-code">{code}</span>
+        <h2>
+          <span>{firstName}</span>
+          <strong>{lastNames.join(" ") || code}</strong>
+        </h2>
+        <div className="vs-team">
+          <span className="vs-team-mark" style={{ backgroundColor: color }} />
+          {identity.logoSvg ? <img src={identity.logoSvg} alt="" /> : null}
+          <span>{identity.name}</span>
         </div>
       </div>
-      <span className="num pw-chip-pop ml-auto text-2xl font-black tabular-nums" style={{ color }}>
-        {score}
-      </span>
+      <div className="vs-score">
+        <small>Metrics led</small>
+        <strong>{score}</strong>
+      </div>
     </div>
+  );
+}
+
+function SectorBests({
+  rows,
+  codeA,
+  codeB,
+  colorA,
+  colorB,
+}: {
+  rows: [number | null, number | null][];
+  codeA: string;
+  codeB: string;
+  colorA: string;
+  colorB: string;
+}) {
+  return (
+    <Panel className="mt-5 vs-sector-panel">
+      <div className="vs-sector-heading">
+        <div>
+          <p className="label-xs">Timing</p>
+          <h2>Best sectors</h2>
+        </div>
+        <div className="vs-sector-legend">
+          <span style={{ color: colorA }}>● {codeA}</span>
+          <span style={{ color: colorB }}>● {codeB}</span>
+        </div>
+      </div>
+      <div className="vs-sector-grid">
+        {[0, 1, 2].map((index) => {
+          const [a, b] = rows[index] ?? [null, null];
+          const delta = a == null || b == null ? null : a - b;
+          return (
+            <div key={index} className="vs-sector">
+              <span className="vs-sector-label">S{index + 1}</span>
+              <div className="vs-sector-values">
+                <span style={{ color: colorA }}>{a == null ? "—" : `${a.toFixed(3)}s`}</span>
+                <span style={{ color: colorB }}>{b == null ? "—" : `${b.toFixed(3)}s`}</span>
+              </div>
+              <div className="vs-sector-delta">
+                {delta == null
+                  ? "—"
+                  : `${delta > 0 ? codeB : codeA} ${Math.abs(delta).toFixed(3)}s quicker`}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p className="vs-sector-note">
+        Fastest recorded sector for each driver; sectors may come from different laps.
+      </p>
+    </Panel>
   );
 }
 

@@ -67,9 +67,8 @@ The ingestion CLI is built to process:
 Future 2026 events are skipped dynamically using schedule/session metadata.
 
 For the current release state, use `data/season_state.json` and the validation
-reports under `data/reports/`. As of the September 8, 2026 refresh, the active
-product data is current through the 2026 Italian Grand Prix, round 13, with
-Spanish Grand Prix race-week outputs for round 14.
+reports under `data/reports/`. This historical ingestion layer is not the source
+of truth for current product freshness.
 
 ## Raw storage layout
 

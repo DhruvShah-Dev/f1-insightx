@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import type { Session } from "@supabase/supabase-js";
 import { Calendar, DashFlag, FastArrowRight, Timer } from "iconoir-react/regular";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { PicksShell } from "@/components/picks-shell";
 import { SiteShell } from "@/components/site-shell";
 import { team } from "@/data/teams";
 import { supabase } from "@/integrations/supabase/client";
@@ -70,10 +71,11 @@ function pointsFor(challenge: PickChallenge, id: string, picked?: string): numbe
 }
 
 function DriverImage({ driver, className = "" }: { driver: PickEntrant; className?: string }) {
+  const imageCode = driver.code.toUpperCase() === "LIN" ? "arv" : driver.code.toLowerCase();
   return (
     <img
       className={className}
-      src={`/assets/drivers/2026/headshots/${driver.code.toLowerCase()}.png`}
+      src={`/assets/drivers/2026/headshots/${imageCode}.png`}
       alt=""
       loading="lazy"
       onError={(event) => { event.currentTarget.style.visibility = "hidden"; }}
@@ -146,8 +148,9 @@ export function PicksExperience({ data }: { data: Board }) {
   const locked = challenge.lockAtISO ? Date.now() >= Date.parse(challenge.lockAtISO) : false;
   const scored = Boolean(challenge.results);
   const editable = Boolean(session?.user) && !locked && !scored;
-  const selected = data.entrants.find((driver) => driver.driverId === card[active.id]);
-  const visibleDrivers = filter === "top" ? data.entrants.filter((driver) => driver.standingPosition <= 10) : data.entrants;
+  const entrants = data.entrants.filter((driver) => driver.code.toUpperCase() !== "TSU" && !/tsunoda/i.test(driver.name));
+  const selected = entrants.find((driver) => driver.driverId === card[active.id]);
+  const visibleDrivers = filter === "top" ? entrants.filter((driver) => driver.standingPosition <= 10) : entrants;
   const racePoints = slots.reduce((sum, slot) => sum + pointsFor(challenge, slot.id, card[slot.id]), 0);
   const seasonPoints = ledger.reduce((sum, item) => sum + item.points, 0);
 
@@ -174,7 +177,7 @@ export function PicksExperience({ data }: { data: Board }) {
   }
 
   return (
-    <SiteShell fullWidth>
+    <PicksShell>
       <div className="picks-page">
         <header className="picks-intro">
           <div>
@@ -227,7 +230,7 @@ export function PicksExperience({ data }: { data: Board }) {
               return <div className="picks-slot-group" key={group}>
                 <h3>{group}</h3>
                 {groupSlots.map((slot) => {
-                  const driver = data.entrants.find((entry) => entry.driverId === card[slot.id]);
+                  const driver = entrants.find((entry) => entry.driverId === card[slot.id]);
                   return <button type="button" key={slot.id} aria-pressed={active.id === slot.id}
                     onClick={() => setSlotId(slot.id)} className={`picks-slot ${active.id === slot.id ? "is-active" : ""}`}>
                     <span className="picks-slot__position">{slot.compact}</span>
@@ -272,7 +275,7 @@ export function PicksExperience({ data }: { data: Board }) {
             </div>
             <div className="picks-summary__rows">
               {slots.map((slot) => {
-                const driver = data.entrants.find((entry) => entry.driverId === card[slot.id]);
+                const driver = entrants.find((entry) => entry.driverId === card[slot.id]);
                 return <button type="button" key={slot.id} onClick={() => setSlotId(slot.id)} className={active.id === slot.id ? "is-active" : ""}>
                   <span>{slot.compact}</span><strong>{driver?.name ?? "—"}</strong>
                   {driver && <DriverImage driver={driver} className="picks-summary__photo" />}
@@ -294,6 +297,6 @@ export function PicksExperience({ data }: { data: Board }) {
           </button>)}
         </section>}
       </div>
-    </SiteShell>
+    </PicksShell>
   );
 }

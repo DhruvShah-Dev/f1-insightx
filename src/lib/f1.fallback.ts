@@ -527,6 +527,7 @@ export function fallbackHeadToHead(slug: string, a: string, b: string) {
     positionLaps: [[], []] as [[], []],
     swings: [],
     cornerComparisons: [],
+    sectorBests: {} as Record<string, [number | null, number | null][]>,
     statusPhases: [],
     entrants,
   };
