@@ -2,20 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import type { Session, User } from "@supabase/supabase-js";
 import {
   CalendarClock,
-  Check,
-  Flag,
   Gauge,
-  Lock,
-  LogOut,
-  RefreshCw,
-  Save,
-  Shield,
   Trophy,
 } from "lucide-react";
-import { FormEvent, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
-import { SectionHeading, SiteShell } from "@/components/site-shell";
+import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import { SiteShell } from "@/components/site-shell";
 import { SiteHeader } from "@/components/site-chrome";
-import { RaceFlagHero } from "@/components/race-flag-hero";
+import { AccountDashboard } from "@/components/account-dashboard";
 import { nextRace } from "@/data/season";
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
@@ -103,7 +96,9 @@ function Account() {
   const currentAvatar = AVATARS.find((avatar) => avatar.id === avatarType) ?? AVATARS[0];
   const lockCopy = usernameLocked
     ? `Locked until ${fmtDateTime(profile?.username_locked_until ?? USERNAME_LOCK_UNTIL)}`
-    : `Next change locks until ${fmtDateTime(USERNAME_LOCK_UNTIL)}`;
+    : new Date(USERNAME_LOCK_UNTIL).getTime() > Date.now()
+      ? `Next change locks until ${fmtDateTime(USERNAME_LOCK_UNTIL)}`
+      : "Username can be changed now.";
   const identityName = useMemo(() => (user ? displayName(user) : "Driver profile"), [user]);
   const providerAvatar = useMemo(() => (user ? googleAvatarUrl(user) : ""), [user]);
 
@@ -226,7 +221,9 @@ function Account() {
           ? {
               username_is_custom: true,
               username_last_changed_at: new Date().toISOString(),
-              username_locked_until: USERNAME_LOCK_UNTIL,
+              username_locked_until: new Date(USERNAME_LOCK_UNTIL).getTime() > Date.now()
+                ? USERNAME_LOCK_UNTIL
+                : null,
             }
           : {}),
       };
@@ -246,7 +243,7 @@ function Account() {
       );
       setSaveState("saved");
       setMessage(
-        usernameChanged
+        usernameChanged && new Date(USERNAME_LOCK_UNTIL).getTime() > Date.now()
           ? `Profile saved. Username locked until ${fmtDateTime(USERNAME_LOCK_UNTIL)}.`
           : "Profile saved.",
       );
@@ -280,183 +277,31 @@ function Account() {
 
   return (
     <SiteShell fullWidth>
-      <AccountFrame
-        title="Profile"
-        kicker="Signed in"
-        subtitle="Manage the profile attached to picks, locks and race-week scoring."
-      >
-        <section className="mt-8 grid gap-5 xl:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)]">
-          <div className="pw-flip-in relative overflow-hidden border border-border bg-card/50 p-5 sm:p-6">
-            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <F1XLogo />
-                  <span className="inline-flex items-center gap-2 border border-border bg-background/80 px-2.5 py-1 text-[11px] font-black uppercase tracking-widest text-foreground">
-                    <GoogleLogo className="size-3.5" />
-                    Google
-                  </span>
-                </div>
-                <p className="mt-6 label-xs">Driver identity</p>
-                <h2 className="mt-2 break-words text-4xl font-black uppercase italic leading-none tracking-tighter sm:text-6xl">
-                  @{profile?.username ?? username}
-                </h2>
-                <p className="mt-3 max-w-xl text-sm text-muted-foreground">
-                  {identityName} · {user.email ?? "Private Google account"}
-                </p>
-              </div>
-              <div className="relative size-28 shrink-0 overflow-hidden border border-primary/40 bg-background sm:size-36">
-                {providerAvatar ? (
-                  <img
-                    src={providerAvatar}
-                    alt=""
-                    referrerPolicy="no-referrer"
-                    className="size-full object-cover"
-                  />
-                ) : (
-                  <AvatarMark avatar={currentAvatar.id} className="size-full" />
-                )}
-                <span className="absolute inset-x-0 bottom-0 bg-primary px-2 py-1 text-center text-[10px] font-black uppercase tracking-widest text-primary-foreground">
-                  {currentAvatar.label}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
-            <IdentityMetric
-              icon={<Shield className="size-4" />}
-              label="Account"
-              value="Connected"
-              detail={user.id.slice(0, 8)}
-            />
-            <IdentityMetric
-              icon={<Lock className="size-4" />}
-              label="Username"
-              value={usernameLocked ? "Locked" : "Open"}
-              detail={lockCopy}
-            />
-            <IdentityMetric
-              icon={<Flag className="size-4" />}
-              label="Race week"
-              value={`R${nextRace.round}`}
-              detail={`${nextRace.shortName} · ${fmtDateTime(USERNAME_LOCK_UNTIL)}`}
-            />
-          </div>
-        </section>
-
-        <section className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px]">
-          <form
-            onSubmit={saveProfile}
-            className="pw-flip-in border border-border bg-card/50 p-5 [animation-delay:0.08s] sm:p-6"
-          >
-            <SectionHeading kicker="Profile controls" title="Driver card" />
-            <label className="label-xs" htmlFor="username">
-              Username
-            </label>
-            <div className="mt-2 grid gap-2 sm:grid-cols-[1fr_auto]">
-              <input
-                id="username"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-                minLength={3}
-                maxLength={24}
-                disabled={usernameLocked}
-                className="min-h-11 border border-input bg-background px-3 text-sm outline-none transition-colors focus:border-primary disabled:cursor-not-allowed disabled:opacity-50"
-              />
-              <button
-                type="submit"
-                disabled={saveState === "saving" || profileLocked}
-                className="inline-flex min-h-11 items-center justify-center gap-2 bg-primary px-4 text-xs font-black uppercase italic text-primary-foreground transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-60"
-              >
-                {saveState === "saving" ? (
-                  <RefreshCw className="size-4 animate-spin" />
-                ) : (
-                  <Save className="size-4" />
-                )}
-                Save
-              </button>
-            </div>
-            <p className="mt-2 text-xs text-muted-foreground">{lockCopy}</p>
-
-            <div className="mt-6">
-              <p className="label-xs">Avatar type</p>
-              <div className="mt-2 grid gap-2 sm:grid-cols-3">
-                {AVATARS.map((avatar) => {
-                  const Icon = avatar.icon;
-                  const selected = avatarType === avatar.id;
-                  return (
-                    <button
-                      key={avatar.id}
-                      type="button"
-                      onClick={() => setAvatarType(avatar.id)}
-                      disabled={profileLocked}
-                      className={`group min-h-24 border p-3 text-left transition-all hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-60 ${
-                        selected
-                          ? "border-primary bg-primary text-primary-foreground"
-                          : "border-border bg-background text-foreground hover:border-primary/50"
-                      }`}
-                    >
-                      <Icon className="size-5" />
-                      <span className="mt-5 block text-xs font-black uppercase italic">
-                        {avatar.label}
-                      </span>
-                      <span
-                        className={`mt-1 block text-[10px] uppercase tracking-widest ${selected ? "text-primary-foreground/75" : "text-muted-foreground"}`}
-                      >
-                        {selected ? "Selected" : "Available"}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {message ? (
-              <p
-                className={`mt-4 text-xs ${saveState === "error" ? "text-destructive" : "text-positive"}`}
-              >
-                {message}
-              </p>
-            ) : null}
-          </form>
-
-          <aside className="pw-flip-in border border-border bg-card/50 p-5 [animation-delay:0.16s] sm:p-6">
-            <SectionHeading kicker="Session" title="Account state" />
-            <dl className="space-y-3 text-xs">
-              <ProfileRow label="Email" value={user.email ?? "Private"} />
-              <ProfileRow label="User id" value={user.id.slice(0, 8)} />
-              <ProfileRow
-                label="Created"
-                value={profile?.created_at ? fmtDateTime(profile.created_at) : "Pending"}
-              />
-              <ProfileRow
-                label="Updated"
-                value={profile?.updated_at ? fmtDateTime(profile.updated_at) : "Pending"}
-              />
-              <ProfileRow
-                label="Username lock"
-                value={usernameLocked ? fmtDateTime(profile?.username_locked_until ?? "") : "Open"}
-              />
-              <ProfileRow
-                label="Profile lock"
-                value={profileLocked ? fmtDateTime(profile?.profile_locked_until ?? "") : "Open"}
-              />
-            </dl>
-            <button
-              type="button"
-              onClick={() => void signOut()}
-              className="mt-5 inline-flex min-h-10 w-full items-center justify-center gap-2 border border-border bg-background px-4 text-xs font-black uppercase italic text-foreground transition-colors hover:bg-accent"
-            >
-              <LogOut className="size-4" />
-              Sign out
-            </button>
-          </aside>
-        </section>
-      </AccountFrame>
+      <AccountDashboard
+        identityName={identityName}
+        email={user.email ?? "Private Google account"}
+        userId={user.id}
+        providerAvatar={providerAvatar}
+        username={username}
+        savedUsername={profile?.username ?? username}
+        avatarType={avatarType}
+        avatars={AVATARS}
+        createdAt={profile?.created_at ?? null}
+        profileLockedUntil={profile?.profile_locked_until ?? null}
+        usernameLocked={usernameLocked}
+        profileLocked={profileLocked}
+        lockCopy={lockCopy}
+        saveState={saveState}
+        message={message}
+        onUsernameChange={setUsername}
+        onAvatarChange={(value) => setAvatarType(value as typeof avatarType)}
+        onSave={saveProfile}
+        onSignOut={() => void signOut()}
+        avatarFallback={<AvatarMark avatar={currentAvatar.id} />}
+      />
     </SiteShell>
   );
 }
-
 function SignInScreen({
   onSignIn,
   loading,
@@ -533,45 +378,6 @@ function SignInScreen({
   );
 }
 
-function AccountFrame({
-  title,
-  kicker,
-  subtitle,
-  children,
-}: {
-  title: string;
-  kicker: string;
-  subtitle: string;
-  children?: ReactNode;
-}) {
-  return (
-    <>
-      <RaceFlagHero
-        kicker={
-          <span className="inline-flex items-center gap-1">
-            {title === "Profile" ? <Check className="size-3" /> : <Lock className="size-3" />}
-            {kicker}
-          </span>
-        }
-        title={title}
-        meta={subtitle}
-      />
-      {children}
-    </>
-  );
-}
-
-function F1XLogo() {
-  return (
-    <span className="inline-flex items-center gap-2 bg-primary px-2.5 py-1 text-xs font-black uppercase italic tracking-tight text-primary-foreground">
-      <span className="grid size-5 place-items-center bg-primary-foreground text-[10px] text-primary">
-        X
-      </span>
-      F1 InsightX
-    </span>
-  );
-}
-
 function GoogleLogo({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
@@ -604,39 +410,5 @@ function AvatarMark({
     <span className={`grid place-items-center bg-primary/10 text-primary ${className ?? ""}`}>
       <Icon className="size-14" />
     </span>
-  );
-}
-
-function IdentityMetric({
-  icon,
-  label,
-  value,
-  detail,
-}: {
-  icon: ReactNode;
-  label: string;
-  value: string;
-  detail: string;
-}) {
-  return (
-    <div className="pw-ticker border border-border bg-card/50 p-4">
-      <div className="flex items-center gap-2 text-primary">
-        {icon}
-        <span className="label-xs">{label}</span>
-      </div>
-      <p className="mt-3 text-2xl font-black uppercase italic tracking-tight">{value}</p>
-      <p className="mt-1 text-xs text-muted-foreground">{detail}</p>
-    </div>
-  );
-}
-
-function ProfileRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="grid grid-cols-[auto_1fr] items-center gap-3 border-b border-border/70 pb-2">
-      <dt className="label-xs">{label}</dt>
-      <dd className="num truncate text-right text-foreground" title={value}>
-        {value}
-      </dd>
-    </div>
   );
 }
