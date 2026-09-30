@@ -19,6 +19,7 @@ import "./vs.css";
 import { duelColors, team } from "@/data/teams";
 import { fmtDelta, fmtLapMs, fmtLapS, fmtNum, titleCase } from "@/lib/format";
 import { getHeadToHead, getWeekendIndex } from "@/lib/f1.functions";
+import { pageSeo } from "@/lib/seo";
 
 const searchSchema = z.object({
   slug: z.string().optional(),
@@ -35,22 +36,10 @@ const indexQuery = queryOptions({
 export const Route = createFileRoute("/vs")({
   validateSearch: searchSchema,
   loader: ({ context }) => context.queryClient.ensureQueryData(indexQuery),
-  head: () => ({
-    meta: [
-      { title: "Driver vs driver — session-by-session F1 head to head" },
-      {
-        name: "description",
-        content:
-          "Pick a 2026 F1 weekend and two drivers to compare qualifying segments, sprint results, race classification, tyre strategy, pit cycles and lap-by-lap pace side by side.",
-      },
-      { property: "og:title", content: "F1 driver vs driver, session by session" },
-      {
-        property: "og:description",
-        content: "Qualifying, sprint and race head-to-head with lap traces and cumulative gap.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+  head: () => pageSeo({
+    title: "F1 Driver Comparison: Qualifying, Race Pace and Strategy | F1 InsightX",
+    description: "Compare two Formula 1 drivers across qualifying, race results, tyre strategy, pit stops and lap-by-lap pace for a 2026 weekend.",
+    path: "/vs",
   }),
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>

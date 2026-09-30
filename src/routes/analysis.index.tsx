@@ -6,6 +6,7 @@ import { SiteShell } from "@/components/site-shell";
 import { team } from "@/data/teams";
 import { fmtDate } from "@/lib/format";
 import { getWeekendIndex } from "@/lib/f1.functions";
+import { pageSeo } from "@/lib/seo";
 import "@/analysis.css";
 
 const indexQuery = queryOptions({
@@ -16,10 +17,11 @@ const indexQuery = queryOptions({
 
 export const Route = createFileRoute("/analysis/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(indexQuery),
-  head: () => ({ meta: [
-    { title: "Analysis 2026 — F1 InsightX" },
-    { name: "description", content: "Explore 2026 race results, winners, podiums and full race analysis." },
-  ] }),
+  head: () => pageSeo({
+    title: "2026 F1 Race Analysis and Grand Prix Reports | F1 InsightX",
+    description: "Browse 2026 Formula 1 Grand Prix reports with race results, podiums, qualifying, tyre strategy and lap pace analysis.",
+    path: "/analysis",
+  }),
   errorComponent: ({ error }) => <SiteShell fullWidth><div className="analysis-page analysis-error" role="alert">Analysis unavailable: {error.message}</div></SiteShell>,
   component: AnalysisIndex,
 });

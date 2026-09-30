@@ -4,24 +4,14 @@ import { SectionHeading, SiteShell } from "@/components/site-shell";
 import { RaceFlagHero } from "@/components/race-flag-hero";
 import { seasonState } from "@/data/season";
 import { fmtDateTime } from "@/lib/format";
+import { pageSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/method")({
-  head: () => ({
-    meta: [
-      { title: "Method — data sources, model design and known limits" },
-      {
-        name: "description",
-        content:
-          "How F1 InsightX builds its numbers: timing and telemetry sources, the offline pipeline, model spreads, and the limits you should read them with.",
-      },
-      { property: "og:title", content: "Method — sources, model and limits" },
-      {
-        property: "og:description",
-        content: "Data sources, the offline pipeline, model spreads and known model limits.",
-      },
-      { property: "og:type", content: "article" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+  head: () => pageSeo({
+    title: "How F1 InsightX Works: Data Sources and Model Limits",
+    description: "Read how F1 InsightX uses Formula 1 timing, telemetry and weather data, how projections are built, and where the models have limits.",
+    path: "/method",
+    type: "article",
   }),
   component: Method,
 });

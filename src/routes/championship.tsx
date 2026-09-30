@@ -13,6 +13,7 @@ import {
 import { SiteShell } from "@/components/site-shell";
 import { team } from "@/data/teams";
 import { getChampionship } from "@/lib/f1.functions";
+import { pageSeo } from "@/lib/seo";
 import "./championship.css";
 
 const champQuery = queryOptions({
@@ -25,11 +26,10 @@ export const Route = createFileRoute("/championship")({
   loader: async ({ context }) => {
     await context.queryClient.ensureQueryData(champQuery);
   },
-  head: () => ({
-    meta: [
-      { title: "Championship 2026 | F1 InsightX" },
-      { name: "description", content: "2026 driver and constructor standings, with the season's defining numbers." },
-    ],
+  head: () => pageSeo({
+    title: "2026 F1 Driver and Constructor Standings | F1 InsightX",
+    description: "Follow the 2026 Formula 1 championship with driver and constructor standings, points, wins and season performance metrics.",
+    path: "/championship",
   }),
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>

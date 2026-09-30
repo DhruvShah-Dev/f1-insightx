@@ -13,6 +13,7 @@ import { nextRace } from "@/data/season";
 import { supabase } from "@/integrations/supabase/client";
 import type { Database } from "@/integrations/supabase/types";
 import { fmtDateTime } from "@/lib/format";
+import { pageSeo } from "@/lib/seo";
 import { FastArrowRight } from "iconoir-react/regular";
 import { driverStandings, seasonState, teams } from "@/data/season";
 import "./account.css";
@@ -30,22 +31,11 @@ const AVATARS = [
 const USERNAME_LOCK_UNTIL = nextRace.sessions[0]?.startISO ?? nextRace.raceStartISO;
 
 export const Route = createFileRoute("/account")({
-  head: () => ({
-    meta: [
-      { title: "Account - F1 InsightX" },
-      {
-        name: "description",
-        content:
-          "Sign in to F1 InsightX or manage your profile, prediction card identity and account session.",
-      },
-      { property: "og:title", content: "Account - F1 InsightX" },
-      {
-        property: "og:description",
-        content: "Account sign-in and profile controls for F1 InsightX.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
+  head: () => pageSeo({
+    title: "Account | F1 InsightX",
+    description: "Sign in to manage your F1 InsightX profile and race weekend picks.",
+    path: "/account",
+    index: false,
   }),
   component: Account,
 });

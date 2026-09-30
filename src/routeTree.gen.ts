@@ -15,6 +15,7 @@ import { Route as ChampionshipRouteImport } from './routes/championship'
 import { Route as MethodRouteImport } from './routes/method'
 import { Route as PicksRouteImport } from './routes/picks'
 import { Route as RaceweekRouteImport } from './routes/raceweek'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as VsRouteImport } from './routes/vs'
 import { Route as AnalysisIndexRouteImport } from './routes/analysis.index'
 import { Route as AnalysisSlugRouteImport } from './routes/analysis.$slug'
@@ -50,6 +51,11 @@ const RaceweekRoute = RaceweekRouteImport.update({
   path: '/raceweek',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VsRoute = VsRouteImport.update({
   id: '/vs',
   path: '/vs',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/method': typeof MethodRoute
   '/picks': typeof PicksRoute
   '/raceweek': typeof RaceweekRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
   '/method/dashboard': typeof MethodDashboardRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/method': typeof MethodRoute
   '/picks': typeof PicksRoute
   '/raceweek': typeof RaceweekRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
   '/method/dashboard': typeof MethodDashboardRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/method': typeof MethodRoute
   '/picks': typeof PicksRoute
   '/raceweek': typeof RaceweekRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
   '/method_/dashboard': typeof MethodDashboardRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/method'
     | '/picks'
     | '/raceweek'
+    | '/sitemap.xml'
     | '/vs'
     | '/analysis/$slug'
     | '/method/dashboard'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/method'
     | '/picks'
     | '/raceweek'
+    | '/sitemap.xml'
     | '/vs'
     | '/analysis/$slug'
     | '/method/dashboard'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/method'
     | '/picks'
     | '/raceweek'
+    | '/sitemap.xml'
     | '/vs'
     | '/analysis/$slug'
     | '/method_/dashboard'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   MethodRoute: typeof MethodRoute
   PicksRoute: typeof PicksRoute
   RaceweekRoute: typeof RaceweekRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VsRoute: typeof VsRoute
   AnalysisSlugRoute: typeof AnalysisSlugRoute
   MethodDashboardRoute: typeof MethodDashboardRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RaceweekRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vs': {
       id: '/vs'
       path: '/vs'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   MethodRoute: MethodRoute,
   PicksRoute: PicksRoute,
   RaceweekRoute: RaceweekRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   VsRoute: VsRoute,
   AnalysisSlugRoute: AnalysisSlugRoute,
   MethodDashboardRoute: MethodDashboardRoute,

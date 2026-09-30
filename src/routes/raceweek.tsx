@@ -8,6 +8,7 @@ import { RaceCircuitProfile } from "@/components/race-circuit-profile";
 import { cornerSummaryForCircuit } from "@/data/circuit-corners";
 import { fmtDateTime, fmtLapS, pct } from "@/lib/format";
 import { getRaceWeek } from "@/lib/f1.functions";
+import { pageSeo } from "@/lib/seo";
 import "./raceweek.css";
 
 const raceWeekQuery = queryOptions({
@@ -19,11 +20,10 @@ const raceWeekQuery = queryOptions({
 
 export const Route = createFileRoute("/raceweek")({
   loader: ({ context }) => context.queryClient.ensureQueryData(raceWeekQuery),
-  head: () => ({
-    meta: [
-      { title: "Race Week - F1 InsightX" },
-      { name: "description", content: "Circuit, schedule, weather and projections for race week." },
-    ],
+  head: () => pageSeo({
+    title: "F1 Race Week Guide: Schedule, Circuit and Projections | F1 InsightX",
+    description: "See the next Formula 1 weekend's session schedule, circuit profile, weather and qualifying and race projections.",
+    path: "/raceweek",
   }),
   component: RaceWeek,
 });

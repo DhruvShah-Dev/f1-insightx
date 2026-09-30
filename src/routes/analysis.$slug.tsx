@@ -15,6 +15,7 @@ import {
 import { team } from "@/data/teams";
 import { fmtDate, fmtDelta, fmtNum, titleCase } from "@/lib/format";
 import { getWeekend } from "@/lib/f1.functions";
+import { pageSeo } from "@/lib/seo";
 import "@/analysis-report.css";
 
 const weekendQuery = (slug: string) =>
@@ -28,30 +29,14 @@ export const Route = createFileRoute("/analysis/$slug")({
   loader: async ({ context, params }) => {
     const data = await context.queryClient.ensureQueryData(weekendQuery(params.slug));
     if (!data) throw notFound();
+    return { name: data.name };
   },
-  head: ({ params }) => {
-    const title = params.slug
-      .split("-")
-      .slice(2)
-      .join(" ")
-      .replace(/\b\w/g, (c) => c.toUpperCase());
-    return {
-      meta: [
-        { title: `${title} weekend analysis — qualifying, strategy and race pace` },
-        {
-          name: "description",
-          content: `Session-by-session breakdown of the ${title} F1 weekend: qualifying segments, sprint result, race classification, tyre stints, pit cycles and lap-level pace.`,
-        },
-        { property: "og:title", content: `${title} weekend analysis` },
-        {
-          property: "og:description",
-          content: "Qualifying, sprint, race classification, stints, pit cycles and lap pace.",
-        },
-        { property: "og:type", content: "article" },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-    };
-  },
+  head: ({ params, loaderData }) => pageSeo({
+    title: `${loaderData?.name ?? "Grand Prix"} 2026 Race Analysis | F1 InsightX`,
+    description: `Explore the ${loaderData?.name ?? "Grand Prix"} 2026 results, qualifying, tyre strategy, pit stops and lap pace with F1 InsightX race analysis.`,
+    path: `/analysis/${encodeURIComponent(params.slug)}`,
+    type: "article",
+  }),
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">

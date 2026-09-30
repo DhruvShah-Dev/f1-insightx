@@ -6,6 +6,7 @@ import { SiteShell } from "@/components/site-shell";
 import { team as teamOf } from "@/data/teams";
 import { getRaceReports, getRaceWeek, getSeasonTelemetry } from "@/lib/f1.functions";
 import { fmtDate } from "@/lib/format";
+import { pageSeo, SITE_ORIGIN } from "@/lib/seo";
 import "./home.css";
 
 const seasonQuery = queryOptions({
@@ -35,16 +36,21 @@ export const Route = createFileRoute("/")({
     ]);
   },
   head: () => ({
-    meta: [
-      { title: "F1 InsightX — Race Control" },
-      {
-        name: "description",
-        content: "The next race, championship standings and race analysis in one place.",
-      },
-      { property: "og:title", content: "F1 InsightX — Race Control" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    ...pageSeo({
+      title: "F1 InsightX | Formula 1 Race Analysis, Standings and Predictions",
+      description: "Explore Formula 1 race analysis, driver comparisons, 2026 championship standings and race week projections backed by timing and telemetry data.",
+      path: "/",
+    }),
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "F1 InsightX",
+        alternateName: "InsightX",
+        url: `${SITE_ORIGIN}/`,
+      }),
+    }],
   }),
   errorComponent: ({ error }) => (
     <SiteShell>

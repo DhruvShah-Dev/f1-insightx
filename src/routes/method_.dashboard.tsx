@@ -26,6 +26,7 @@ import {
 } from "recharts";
 import { SectionHeading, SiteShell, Stat } from "@/components/site-shell";
 import { fmtDateTime } from "@/lib/format";
+import { pageSeo } from "@/lib/seo";
 import {
   getMethodDashboard,
   getMethodDashboardLiveCounts,
@@ -44,22 +45,11 @@ const dashboardQuery = queryOptions({
 
 export const Route = createFileRoute("/method_/dashboard")({
   loader: ({ context }) => context.queryClient.ensureQueryData(dashboardQuery),
-  head: () => ({
-    meta: [
-      { title: "Methods Dashboard - F1 InsightX data trust" },
-      {
-        name: "description",
-        content:
-          "Power BI-style data trust dashboard for F1 InsightX source categories, freshness, validation status, quality limits and table inventory.",
-      },
-      { property: "og:title", content: "F1 InsightX Methods Dashboard" },
-      {
-        property: "og:description",
-        content: "Data source inventory, freshness and validation coverage for F1 InsightX.",
-      },
-      { property: "og:type", content: "article" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+  head: () => pageSeo({
+    title: "F1 InsightX Data Quality and Source Dashboard",
+    description: "Inspect F1 InsightX source categories, freshness, validation status and known data quality limits.",
+    path: "/method/dashboard",
+    type: "article",
   }),
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>
