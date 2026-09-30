@@ -1,5 +1,5 @@
 const SITE_NAME = "F1 InsightX";
-export const SITE_ORIGIN = "https://f1insightx.live";
+export const SITE_ORIGIN = "https://www.f1insightx.live";
 const SOCIAL_IMAGE = "/images/race-control-hero.png";
 
 export function pageSeo({
