@@ -1,143 +1,86 @@
 # F1 InsightX
 
-F1 InsightX is a race-intelligence product for Formula 1 analysis, predictions, telemetry comparison, and fan decision workflows. The project is operated like an early-stage startup product: every screen should help users understand a race weekend faster, every dataset should be traceable, and every shipped change should improve trust in the product.
+**A sharper view of race day.** F1 InsightX brings the Formula 1 weekend into one place: the next race, post-race reports, driver comparisons, predictions, and championship standings.
 
-This is not a portfolio demo. Treat the app, pipeline, docs, and database as production assets for a real customer-facing company.
+![F1 InsightX home screen with the next race and championship leader](docs/screenshots/home.png)
 
-## Product Thesis
+## The experience
 
-F1 data is rich but scattered across timing feeds, session telemetry, historical results, weather, strategy signals, and race-control context. F1 InsightX turns that raw material into usable race-week intelligence:
+| Area | What you can do |
+| --- | --- |
+| **Race Week** | Check the next event's schedule, circuit profile, weather, and qualifying and race projections. |
+| **Analysis** | Browse the 2026 race calendar and open completed Grand Prix reports with results, position changes, pace, tyres, pit stops, and timelines where data is available. |
+| **Vs** | Select two drivers and a weekend to compare qualifying, race performance, strategy, and available lap and sector data. |
+| **Picks** | Fill a race-week card with qualifying, race, position, and speed picks; see lock status and points when results are available. |
+| **Championship** | Follow driver and constructor standings, season leaders, wins, and performance rankings. |
+| **Account** | Sign in with Google and manage your profile and picks access. |
 
-- race-week context, weather, circuit profile, and session timing
-- qualifying, sprint, and race predictions built from validated inputs
-- driver-vs-driver telemetry comparisons
-- post-race analysis and reports
-- signed-in picks with lock rules and local score tracking
-- data-quality caveats where evidence is partial or derived
+### Race analysis and driver comparison
 
-## Current App
+| Grand Prix reports | Head-to-head comparisons |
+| --- | --- |
+| ![Azerbaijan Grand Prix report with winner, podium and circuit](docs/screenshots/race-analysis.png) | ![George Russell and Max Verstappen driver comparison](docs/screenshots/driver-comparison.png) |
 
-The active product is a TanStack Start application in the repository root. The historical `apps/web` Next.js app is archived and should not receive new product work unless intentionally revived.
+### Picks and championship
 
-Primary routes:
+| Race-week picks | Season standings |
+| --- | --- |
+| ![Picks workspace with driver selections and a completed card](docs/screenshots/picks.png) | ![Championship leaders for drivers and constructors](docs/screenshots/championship.png) |
 
-- `/` - product home and race-week entry
-- `/raceweek` - next-race operating view
-- `/analysis` - searchable 2026 race index with completed, all, and upcoming filters; featured race and report links
-- `/analysis/:slug` - race report with classification, position movement, lap pace, pit stops, timeline, and circuit views where data is available
-- `/vs` - driver comparison and telemetry views
-- `/picks` - round-by-round pick cards, driver selection, lock status, and scores
-- `/championship` - driver and constructor standings, season leaders, and metric rankings
-- `/account` - Google sign-in, profile, and account controls
+*Screenshots captured October 1, 2026. They show a point-in-time season snapshot; the app displays the data available from its current refresh.*
 
-The root app now shares a responsive header and footer through
-`src/components/site-chrome.tsx`. Race Week, Compare, Championship, Account, and
-Picks have route-specific layouts and styles. Compare includes session and sector
-views when the underlying lap data is available; Race Week includes a circuit
-profile for the current weekend.
+## Data behind the product
 
-Homepage visual assets now live in `public/assets` and are used by the root
-TanStack app:
+F1 InsightX combines reference race results from Jolpica, session and race-control context from OpenF1, and timing, lap, stint, weather, and telemetry data from FastF1. The Python pipeline under [data](data/README.md) validates and turns those inputs into compact product views. The TanStack Start app reads those views from Supabase.
 
-- `public/assets/teams/logos/2026` - 2026 white team logo PNG/SVG assets for
-  black-background UI.
-- `public/assets/drivers/2026/headshots` - square 2026 driver headshots.
-- `public/assets/drivers/2026/full-body` - transparent full-body driver images
-  in front, left, and right poses.
+Projections and comparisons are derived from stored inputs. Available data varies by session and race, so some report panels or telemetry views may be absent. The in-app Method page and data dashboard explain sources, freshness, and limitations.
 
-Keep new homepage visual work scoped to the root app first. The archived
-`apps/web` asset tree is historical reference and should not be the target for
-new product asset wiring.
+Picks require a signed-in account to edit. Cards are saved automatically in **browser local storage for that account**, and completed-round points are calculated from stored results. Picks and scores do **not** sync across devices.
 
-The analysis index, race reports, and Picks workspace use the root app's 2026
-driver imagery and team logos. Picks require a signed-in session to edit. Cards
-are saved in that user's **browser local storage** and scores are calculated
-from stored race results; cards and scores do not sync across devices.
+When Supabase product data is unavailable, public pages can use a bundled fallback snapshot. That snapshot is for continuity and local development; its dates and standings may be older than the latest pipeline data.
 
-## Engineering Standards
+## Run locally
 
-- Prefer user-facing product behavior over decorative demo work.
-- Keep all race claims tied to stored source data, deterministic derivations, or clearly labelled proxies.
-- Do not expose service-role keys, database URLs, OAuth secrets, or raw telemetry payloads to browser code.
-- Use Supabase for product data and compact views; keep raw/session-heavy archives in the data pipeline.
-- Preserve Lovable history. Do not rewrite published git history.
-- Run `npm.cmd run lint` and `npm.cmd run build` before pushing product changes.
-
-## Local Development
-
-Requirements:
+### Requirements
 
 - Node.js and npm
-- Python for data pipeline work
-- Supabase environment variables for live product reads
+- A Supabase project and Google OAuth configuration for live data and account features
+- Python only if you plan to run the data pipeline
+
+From the repository root:
 
 ```sh
-npm i
+npm install
+cp .env.example .env.local
 npm run dev
 ```
 
-Local dev server:
+Open **http://127.0.0.1:8080**.
 
-```text
-http://127.0.0.1:8080
-```
+Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in `.env.local` to read live product data and use sign-in. Without them, public data routes use the bundled fallback snapshot; account and Picks editing need Supabase. See [the environment template](.env.example) for the other optional settings. Keep `SUPABASE_SERVICE_ROLE_KEY` and `DATABASE_URL` on the server only.
 
-Production checks:
+### Checks
 
 ```sh
-npm.cmd run lint
-npm.cmd run build
+npm run lint
+npm run build
 ```
 
-## Data Platform
+## Repository guide
 
-The product is backed by a deterministic local data platform under `data/` and `data_pipeline/`.
+| Path | Purpose |
+| --- | --- |
+| [src/routes](src/routes/README.md) | Product pages and route behavior |
+| [src/components](src/components) | Shared navigation, cards, charts, and visualizations |
+| [src/lib](src/lib) | Server reads, fallback data, formatting, and app utilities |
+| [public/assets](public/assets) | Driver portraits, team logos, and other visual assets |
+| [data](data/README.md) | Current ingestion, validation, product views, and Supabase loading |
+| [data_pipeline](data_pipeline/README.md) | Historical FastF1 ingestion foundation |
 
-Core inputs:
+The active application is the TanStack Start project at the repository root. The older Next.js application under `apps/web` is archived.
 
-- Jolpica/reference race data
-- OpenF1 session and race-control-adjacent data
-- FastF1 timing, laps, stints, weather, telemetry, and position traces
-- Supabase product tables and views
+## Built with
 
-Core outputs:
+TanStack Start, React, TypeScript, Tailwind CSS, Supabase, FastF1, OpenF1, and Jolpica.
 
-- race-week product views
-- analytics and telemetry comparison indexes
-- race-analysis reports
-- strategy and prediction snapshots
-- Pit Wall Picks challenges and result scoring inputs
-
-The local pipeline and Supabase product tables contain results through the 2026
-Azerbaijan Grand Prix (round 15). The next race-week product view is round 16 at
-Sepang. The committed `src/data/season.ts` browser fallback is an older snapshot
-through round 14; its dates and standings should not be treated as live data.
-
-`data/load_supabase.py` loads validated local product CSVs into Supabase in
-upsert mode by default. The scheduled workflows under `.github/workflows/`
-refresh reference and race-week data. Before a manual load, run the validators
-in [data/README.md](data/README.md) and check the remote row counts and latest
-completed round. The loader only truncates tables when explicitly passed
-`--allow-destructive-reset`.
-
-See [data/README.md](data/README.md) and [data_pipeline/README.md](data_pipeline/README.md) before changing pipeline behavior.
-
-## Deployment Posture
-
-This repository is connected to Lovable. Commits pushed to `main` sync back into the Lovable editor. Keep `main` shippable.
-
-Before shipping:
-
-- confirm the app builds
-- confirm changed routes load locally
-- confirm Supabase reads still have fallback behavior
-- document any data freshness limitation in product copy or docs
-
-## Built With
-
-- TanStack Start
-- React
-- TypeScript
-- Tailwind CSS
-- Supabase
-- FastF1 / OpenF1 / Jolpica data workflows
+This repository is connected to Lovable. Pushes to `main` sync to the Lovable editor; preserve published commit history and keep the branch buildable.
