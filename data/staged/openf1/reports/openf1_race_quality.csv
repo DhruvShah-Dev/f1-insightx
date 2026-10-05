@@ -1,24 +1,48 @@
 id,season,round,race_id,race_name,openf1_meeting_key,openf1_meeting_name,openf1_session_count,openf1_q_session_key,openf1_r_session_key,curated_has_results,curated_has_qualifying,openf1_has_results,openf1_has_grid,openf1_has_laps,openf1_has_weather,coverage_score,source_agreement_score,recommended_use,source_label
-2026-01-albert_park|openf1_quality,2026,1,2026-01-albert_park,Australian Grand Prix,1279.0,Australian Grand Prix,5,11230.0,11234.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-02-shanghai|openf1_quality,2026,2,2026-02-shanghai,Chinese Grand Prix,1280.0,Chinese Grand Prix,5,11241.0,11245.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-03-suzuka|openf1_quality,2026,3,2026-03-suzuka,Japanese Grand Prix,1281.0,Japanese Grand Prix,5,11249.0,11253.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-04-miami|openf1_quality,2026,4,2026-04-miami,Miami Grand Prix,1284.0,Miami Grand Prix,5,11276.0,11280.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-05-villeneuve|openf1_quality,2026,5,2026-05-villeneuve,Canadian Grand Prix,1285.0,Canadian Grand Prix,5,11287.0,11291.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-06-monaco|openf1_quality,2026,6,2026-06-monaco,Monaco Grand Prix,1286.0,Monaco Grand Prix,5,11295.0,11299.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-07-catalunya|openf1_quality,2026,7,2026-07-catalunya,Barcelona Grand Prix,1287.0,Barcelona Grand Prix,5,11303.0,11307.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-08-red_bull_ring|openf1_quality,2026,8,2026-08-red_bull_ring,Austrian Grand Prix,1288.0,Austrian Grand Prix,5,11311.0,11315.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-09-silverstone|openf1_quality,2026,9,2026-09-silverstone,British Grand Prix,1289.0,British Grand Prix,5,11322.0,11326.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-10-spa|openf1_quality,2026,10,2026-10-spa,Belgian Grand Prix,1290.0,Belgian Grand Prix,5,11330.0,11334.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-11-hungaroring|openf1_quality,2026,11,2026-11-hungaroring,Hungarian Grand Prix,1291.0,Hungarian Grand Prix,5,11338.0,11342.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-12-zandvoort|openf1_quality,2026,12,2026-12-zandvoort,Dutch Grand Prix,1292.0,Dutch Grand Prix,5,11349.0,11353.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-13-monza|openf1_quality,2026,13,2026-13-monza,Italian Grand Prix,1293.0,Italian Grand Prix,5,11357.0,11361.0,True,True,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-14-madring|openf1_quality,2026,14,2026-14-madring,Spanish Grand Prix,1294.0,Spanish Grand Prix,5,11365.0,11369.0,False,False,True,False,True,True,0.857,1.0,primary_cross_check,openf1_quality_v1
-2026-15-baku|openf1_quality,2026,15,2026-15-baku,Azerbaijan Grand Prix,1295.0,Azerbaijan Grand Prix,5,11373.0,11377.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
-2026-16-sepang|openf1_quality,2026,16,2026-16-sepang,Bahrain Grand Prix in Malaysia,1282.0,Bahrain Grand Prix,10,11257.0,11261.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
+2025-01-albert_park|openf1_quality,2025,1,2025-01-albert_park,Australian Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-02-shanghai|openf1_quality,2025,2,2025-02-shanghai,Chinese Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-03-suzuka|openf1_quality,2025,3,2025-03-suzuka,Japanese Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-04-bahrain|openf1_quality,2025,4,2025-04-bahrain,Bahrain Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-05-jeddah|openf1_quality,2025,5,2025-05-jeddah,Saudi Arabian Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-06-miami|openf1_quality,2025,6,2025-06-miami,Miami Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-07-imola|openf1_quality,2025,7,2025-07-imola,Emilia Romagna Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-08-monaco|openf1_quality,2025,8,2025-08-monaco,Monaco Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-09-catalunya|openf1_quality,2025,9,2025-09-catalunya,Spanish Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-10-villeneuve|openf1_quality,2025,10,2025-10-villeneuve,Canadian Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-11-red_bull_ring|openf1_quality,2025,11,2025-11-red_bull_ring,Austrian Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-12-silverstone|openf1_quality,2025,12,2025-12-silverstone,British Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-13-spa|openf1_quality,2025,13,2025-13-spa,Belgian Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-14-hungaroring|openf1_quality,2025,14,2025-14-hungaroring,Hungarian Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-15-zandvoort|openf1_quality,2025,15,2025-15-zandvoort,Dutch Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-16-monza|openf1_quality,2025,16,2025-16-monza,Italian Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-17-baku|openf1_quality,2025,17,2025-17-baku,Azerbaijan Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-18-marina_bay|openf1_quality,2025,18,2025-18-marina_bay,Singapore Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-19-americas|openf1_quality,2025,19,2025-19-americas,United States Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-20-rodriguez|openf1_quality,2025,20,2025-20-rodriguez,Mexico City Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-21-interlagos|openf1_quality,2025,21,2025-21-interlagos,São Paulo Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-22-vegas|openf1_quality,2025,22,2025-22-vegas,Las Vegas Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-23-losail|openf1_quality,2025,23,2025-23-losail,Qatar Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2025-24-yas_marina|openf1_quality,2025,24,2025-24-yas_marina,Abu Dhabi Grand Prix,,,0,,,True,True,False,False,False,False,0.0,0.0,supplemental_only,openf1_quality_v1
+2026-01-albert_park|openf1_quality,2026,1,2026-01-albert_park,Australian Grand Prix,1279.0,Australian Grand Prix,5,11230.0,11234.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-02-shanghai|openf1_quality,2026,2,2026-02-shanghai,Chinese Grand Prix,1280.0,Chinese Grand Prix,5,11241.0,11245.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-03-suzuka|openf1_quality,2026,3,2026-03-suzuka,Japanese Grand Prix,1281.0,Japanese Grand Prix,5,11249.0,11253.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-04-miami|openf1_quality,2026,4,2026-04-miami,Miami Grand Prix,1284.0,Miami Grand Prix,5,11276.0,11280.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-05-villeneuve|openf1_quality,2026,5,2026-05-villeneuve,Canadian Grand Prix,1285.0,Canadian Grand Prix,5,11287.0,11291.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-06-monaco|openf1_quality,2026,6,2026-06-monaco,Monaco Grand Prix,1286.0,Monaco Grand Prix,5,11295.0,11299.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-07-catalunya|openf1_quality,2026,7,2026-07-catalunya,Barcelona Grand Prix,1287.0,Barcelona Grand Prix,5,11303.0,11307.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-08-red_bull_ring|openf1_quality,2026,8,2026-08-red_bull_ring,Austrian Grand Prix,1288.0,Austrian Grand Prix,5,11311.0,11315.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-09-silverstone|openf1_quality,2026,9,2026-09-silverstone,British Grand Prix,1289.0,British Grand Prix,5,11322.0,11326.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-10-spa|openf1_quality,2026,10,2026-10-spa,Belgian Grand Prix,1290.0,Belgian Grand Prix,5,11330.0,11334.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-11-hungaroring|openf1_quality,2026,11,2026-11-hungaroring,Hungarian Grand Prix,1291.0,Hungarian Grand Prix,5,11338.0,11342.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-12-zandvoort|openf1_quality,2026,12,2026-12-zandvoort,Dutch Grand Prix,1292.0,Dutch Grand Prix,5,11349.0,11353.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-13-monza|openf1_quality,2026,13,2026-13-monza,Italian Grand Prix,1293.0,Italian Grand Prix,5,11357.0,11361.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-14-madring|openf1_quality,2026,14,2026-14-madring,Spanish Grand Prix,1294.0,Spanish Grand Prix,5,11365.0,11369.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
+2026-15-baku|openf1_quality,2026,15,2026-15-baku,Azerbaijan Grand Prix,1295.0,Azerbaijan Grand Prix,5,11373.0,11377.0,True,True,False,False,False,False,0.429,0.667,supplemental_only,openf1_quality_v1
+2026-16-sepang|openf1_quality,2026,16,2026-16-sepang,Bahrain Grand Prix in Malaysia,1308.0,Bahrain Grand Prix,5,11730.0,11731.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
 2026-17-marina_bay|openf1_quality,2026,17,2026-17-marina_bay,Singapore Grand Prix,1296.0,Singapore Grand Prix,5,11384.0,11388.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
 2026-18-americas|openf1_quality,2026,18,2026-18-americas,United States Grand Prix,1297.0,United States Grand Prix,5,11392.0,11396.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
 2026-19-rodriguez|openf1_quality,2026,19,2026-19-rodriguez,Mexico City Grand Prix,1298.0,Mexico City Grand Prix,5,11400.0,11404.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
-2026-20-interlagos|openf1_quality,2026,20,2026-20-interlagos,Brazilian Grand Prix,,,0,,,False,False,False,False,False,False,0.0,0.667,supplemental_only,openf1_quality_v1
+2026-20-interlagos|openf1_quality,2026,20,2026-20-interlagos,Brazilian Grand Prix,1299.0,São Paulo Grand Prix,5,11408.0,11412.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
 2026-21-vegas|openf1_quality,2026,21,2026-21-vegas,Las Vegas Grand Prix,1300.0,Las Vegas Grand Prix,5,11416.0,11420.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
 2026-22-losail|openf1_quality,2026,22,2026-22-losail,Qatar Grand Prix,1301.0,Qatar Grand Prix,5,11424.0,11428.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
 2026-23-yas_marina|openf1_quality,2026,23,2026-23-yas_marina,Abu Dhabi Grand Prix,1302.0,Abu Dhabi Grand Prix,5,11432.0,11436.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1

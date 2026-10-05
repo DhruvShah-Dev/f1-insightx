@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-16-sepang,2026,16,2026-16-sepang,Bahrain Grand Prix in Malaysia,sepang,sepang,2026-10-04T07:00:00Z,upcoming,False,2026-15-baku,Balanced circuit,High,0.0,0.2690322727272727,2026-09-28T17:16:15Z,race_week_20260928T171615Z,race_week_overview_v2
+2026-17-marina_bay,2026,17,2026-17-marina_bay,Singapore Grand Prix,marina_bay,marina_bay,2026-10-11T12:00:00Z,upcoming,True,2026-16-sepang,Balanced circuit,High,0.0,0.2698081363636363,2026-10-05T19:03:03Z,race_week_20261005T190303Z,race_week_overview_v2

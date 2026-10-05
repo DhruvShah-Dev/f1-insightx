@@ -17206,3 +17206,1145 @@ race_analysis_id,driver,team,lap_number,position,position_delta_from_start,posit
 2026-15-baku,VER,Red Bull Racing,49,2,6,0.0,closing,green,0.82,derived
 2026-15-baku,VER,Red Bull Racing,50,2,6,0.0,closing,yellow,0.82,derived
 2026-15-baku,VER,Red Bull Racing,51,2,6,0.0,closing,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,1,18,0,0.0,opening,green,0.82,derived
+2026-16-sepang,ALB,Williams,2,16,2,2.0,opening,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,3,7,11,9.0,opening,green,0.82,derived
+2026-16-sepang,ALB,Williams,4,8,10,-1.0,opening,green,0.82,derived
+2026-16-sepang,ALB,Williams,5,8,10,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,6,9,9,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,7,9,9,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,8,9,9,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,9,9,9,0.0,opening,mixed,0.52,derived
+2026-16-sepang,ALB,Williams,10,12,6,-3.0,opening,safety-car,0.52,derived
+2026-16-sepang,ALB,Williams,11,12,6,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,ALB,Williams,12,12,6,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,ALB,Williams,13,13,5,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,14,14,4,-1.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,15,15,3,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,16,16,2,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,ALB,Williams,17,20,-2,-4.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,18,20,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,19,19,-1,1.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,20,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,21,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,22,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,23,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,24,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,25,18,0,1.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,26,17,1,1.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,27,16,2,1.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,28,16,2,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,29,20,-2,-4.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,30,20,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,31,20,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,32,20,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,33,20,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,34,20,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,35,19,-1,1.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,36,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,37,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,38,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,39,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,40,19,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALB,Williams,41,19,-1,0.0,middle,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,1,11,1,0.0,opening,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,2,14,-2,-3.0,opening,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,3,17,-5,-3.0,opening,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,4,16,-4,1.0,opening,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,5,16,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,6,16,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,7,16,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,8,16,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,9,17,-5,-1.0,opening,mixed,0.52,derived
+2026-16-sepang,ALO,Aston Martin,10,17,-5,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,11,17,-5,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,12,17,-5,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,13,16,-4,1.0,middle,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,14,15,-3,1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,15,14,-2,1.0,middle,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,16,13,-1,1.0,middle,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,17,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,18,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,19,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,20,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,21,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,22,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,23,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,24,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,25,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,26,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,27,13,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,28,11,1,2.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,29,11,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,30,10,2,1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,31,9,3,1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,32,13,-1,-4.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,33,12,0,1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,34,12,0,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,35,11,1,1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,36,10,2,1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,37,11,1,-1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,38,11,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,39,11,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,40,10,2,1.0,middle,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,41,10,2,0.0,middle,yellow,0.82,derived
+2026-16-sepang,ALO,Aston Martin,42,10,2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,ALO,Aston Martin,43,10,2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,ALO,Aston Martin,44,9,3,1.0,closing,mixed,0.52,derived
+2026-16-sepang,ALO,Aston Martin,45,9,3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,ALO,Aston Martin,46,10,2,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,ALO,Aston Martin,47,10,2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,48,9,3,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,49,9,3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,50,7,5,2.0,closing,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,51,7,5,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ALO,Aston Martin,52,7,5,0.0,closing,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,53,7,5,0.0,closing,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,54,7,5,0.0,closing,green,0.82,derived
+2026-16-sepang,ALO,Aston Martin,55,7,5,0.0,closing,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,1,3,0,0.0,opening,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,2,8,-5,-5.0,opening,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,3,1,2,7.0,opening,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,4,1,2,0.0,opening,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,5,1,2,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,6,1,2,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,7,1,2,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,8,1,2,0.0,opening,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,9,1,2,0.0,opening,mixed,0.52,derived
+2026-16-sepang,ANT,Mercedes,10,1,2,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,11,1,2,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,12,1,2,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,13,3,0,-2.0,middle,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,14,3,0,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,15,3,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,16,3,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,17,3,0,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,18,3,0,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,19,3,0,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,20,3,0,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,21,2,1,1.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,22,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,23,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,24,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,25,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,26,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,27,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,28,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,29,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,30,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,31,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,32,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,33,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,34,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,35,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,36,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,37,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,38,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,39,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,40,2,1,0.0,middle,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,41,2,1,0.0,middle,yellow,0.82,derived
+2026-16-sepang,ANT,Mercedes,42,2,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,ANT,Mercedes,43,2,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,ANT,Mercedes,44,1,2,1.0,closing,mixed,0.52,derived
+2026-16-sepang,ANT,Mercedes,45,2,1,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,ANT,Mercedes,46,2,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,ANT,Mercedes,47,2,1,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,48,2,1,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,49,2,1,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,50,2,1,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,51,2,1,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,ANT,Mercedes,52,2,1,0.0,closing,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,53,2,1,0.0,closing,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,54,2,1,0.0,closing,green,0.82,derived
+2026-16-sepang,ANT,Mercedes,55,2,1,0.0,closing,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,1,16,0,0.0,opening,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,2,18,-2,-2.0,opening,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,3,19,-3,-1.0,opening,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,4,19,-3,0.0,opening,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,5,19,-3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,6,19,-3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,7,19,-3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,8,20,-4,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,9,19,-3,1.0,opening,mixed,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,10,18,-2,1.0,opening,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,11,20,-4,-2.0,opening,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,12,20,-4,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,13,19,-3,1.0,middle,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,14,19,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,15,19,-3,0.0,middle,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,16,18,-2,1.0,middle,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,17,17,-1,1.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,18,16,0,1.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,19,16,0,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,20,16,0,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,21,16,0,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,22,16,0,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,23,16,0,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,24,18,-2,-2.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,25,20,-4,-2.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,26,19,-3,1.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,27,18,-2,1.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,28,18,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,29,15,1,3.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,30,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,31,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,32,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,33,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,34,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,35,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,36,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,37,15,1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,38,16,0,-1.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,39,17,-1,-1.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,40,17,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,41,17,-1,0.0,middle,yellow,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,42,16,0,1.0,closing,mixed,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,43,14,2,2.0,closing,mixed,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,44,14,2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,45,14,2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,46,14,2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,47,14,2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,48,13,3,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,49,13,3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,50,12,4,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,51,12,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,BEA,Haas F1 Team,52,13,3,-1.0,closing,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,53,13,3,0.0,closing,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,54,13,3,0.0,closing,green,0.82,derived
+2026-16-sepang,BEA,Haas F1 Team,55,13,3,0.0,closing,green,0.82,derived
+2026-16-sepang,BOR,Audi,1,8,2,0.0,opening,green,0.82,derived
+2026-16-sepang,BOR,Audi,2,2,8,6.0,opening,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,3,11,-1,-9.0,opening,green,0.82,derived
+2026-16-sepang,BOR,Audi,4,11,-1,0.0,opening,green,0.82,derived
+2026-16-sepang,BOR,Audi,5,11,-1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,6,11,-1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,7,11,-1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,8,11,-1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,9,11,-1,0.0,opening,mixed,0.52,derived
+2026-16-sepang,BOR,Audi,10,9,1,2.0,opening,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,11,9,1,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,12,9,1,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,13,8,2,1.0,middle,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,14,9,1,-1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,15,13,-3,-4.0,middle,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,16,21,-11,-8.0,middle,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,17,21,-11,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,18,21,-11,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,19,20,-10,1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,20,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,21,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,22,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,23,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,24,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,25,19,-9,1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,26,18,-8,1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,27,17,-7,1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,28,17,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,29,17,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,30,19,-9,-2.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,31,19,-9,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,32,18,-8,1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,33,19,-9,-1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,34,19,-9,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,35,21,-11,-2.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,36,21,-11,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,37,20,-10,1.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,38,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,39,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,40,20,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,BOR,Audi,41,20,-10,0.0,middle,yellow,0.82,derived
+2026-16-sepang,BOR,Audi,42,19,-9,1.0,closing,mixed,0.52,derived
+2026-16-sepang,BOR,Audi,43,19,-9,0.0,closing,mixed,0.52,derived
+2026-16-sepang,BOR,Audi,44,19,-9,0.0,closing,mixed,0.52,derived
+2026-16-sepang,BOR,Audi,45,19,-9,0.0,closing,mixed,0.52,derived
+2026-16-sepang,BOR,Audi,46,19,-9,0.0,closing,mixed,0.52,derived
+2026-16-sepang,BOR,Audi,47,19,-9,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,48,19,-9,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,49,18,-8,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,50,17,-7,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,51,17,-7,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,BOR,Audi,52,17,-7,0.0,closing,green,0.82,derived
+2026-16-sepang,BOR,Audi,53,17,-7,0.0,closing,green,0.82,derived
+2026-16-sepang,BOR,Audi,54,17,-7,0.0,closing,green,0.82,derived
+2026-16-sepang,BOR,Audi,55,18,-8,-1.0,closing,green,0.82,derived
+2026-16-sepang,BOT,Cadillac,1,19,0,0.0,opening,green,0.82,derived
+2026-16-sepang,BOT,Cadillac,2,20,-1,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,BOT,Cadillac,3,21,-2,-1.0,opening,green,0.82,derived
+2026-16-sepang,BOT,Cadillac,4,21,-2,0.0,opening,green,0.82,derived
+2026-16-sepang,BOT,Cadillac,5,21,-2,0.0,opening,yellow,0.82,derived
+2026-16-sepang,BOT,Cadillac,6,22,-3,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,BOT,Cadillac,7,22,-3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,1,20,1,0.0,opening,green,0.82,derived
+2026-16-sepang,COL,Alpine,2,21,0,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,3,20,1,1.0,opening,green,0.82,derived
+2026-16-sepang,COL,Alpine,4,20,1,0.0,opening,green,0.82,derived
+2026-16-sepang,COL,Alpine,5,20,1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,6,20,1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,7,21,0,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,8,21,0,0.0,opening,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,9,21,0,0.0,opening,mixed,0.52,derived
+2026-16-sepang,COL,Alpine,10,21,0,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,11,21,0,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,12,21,0,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,13,21,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,14,21,0,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,15,21,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,16,20,1,1.0,middle,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,17,19,2,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,18,19,2,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,19,18,3,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,20,18,3,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,21,18,3,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,22,18,3,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,23,18,3,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,24,17,4,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,25,16,5,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,26,15,6,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,27,15,6,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,28,14,7,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,29,12,9,2.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,30,11,10,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,31,14,7,-3.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,32,19,2,-5.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,33,18,3,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,34,18,3,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,35,18,3,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,36,18,3,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,37,16,5,2.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,38,15,6,1.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,39,15,6,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,40,15,6,0.0,middle,green,0.82,derived
+2026-16-sepang,COL,Alpine,41,15,6,0.0,middle,yellow,0.82,derived
+2026-16-sepang,COL,Alpine,42,14,7,1.0,closing,mixed,0.52,derived
+2026-16-sepang,COL,Alpine,43,15,6,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,COL,Alpine,44,15,6,0.0,closing,mixed,0.52,derived
+2026-16-sepang,COL,Alpine,45,15,6,0.0,closing,mixed,0.52,derived
+2026-16-sepang,COL,Alpine,46,15,6,0.0,closing,mixed,0.52,derived
+2026-16-sepang,COL,Alpine,47,15,6,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,48,14,7,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,49,14,7,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,50,13,8,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,51,13,8,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,COL,Alpine,52,12,9,1.0,closing,green,0.82,derived
+2026-16-sepang,COL,Alpine,53,12,9,0.0,closing,green,0.82,derived
+2026-16-sepang,COL,Alpine,54,12,9,0.0,closing,green,0.82,derived
+2026-16-sepang,COL,Alpine,55,12,9,0.0,closing,green,0.82,derived
+2026-16-sepang,GAS,Alpine,1,13,-4,0.0,opening,green,0.82,derived
+2026-16-sepang,GAS,Alpine,2,15,-6,-2.0,opening,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,3,18,-9,-3.0,opening,green,0.82,derived
+2026-16-sepang,GAS,Alpine,4,18,-9,0.0,opening,green,0.82,derived
+2026-16-sepang,GAS,Alpine,5,18,-9,0.0,opening,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,6,18,-9,0.0,opening,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,7,18,-9,0.0,opening,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,8,19,-10,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,9,20,-11,-1.0,opening,mixed,0.52,derived
+2026-16-sepang,GAS,Alpine,10,20,-11,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,11,19,-10,1.0,opening,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,12,18,-9,1.0,middle,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,13,18,-9,0.0,middle,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,14,18,-9,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,15,18,-9,0.0,middle,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,16,17,-8,1.0,middle,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,17,16,-7,1.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,18,15,-6,1.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,19,15,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,20,15,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,21,15,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,22,15,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,23,15,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,24,15,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,25,17,-8,-2.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,26,20,-11,-3.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,27,19,-10,1.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,28,19,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,29,16,-7,3.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,30,16,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,31,17,-8,-1.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,32,16,-7,1.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,33,16,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,34,16,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,35,16,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,36,16,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,37,18,-9,-2.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,38,18,-9,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,39,18,-9,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,40,18,-9,0.0,middle,green,0.82,derived
+2026-16-sepang,GAS,Alpine,41,18,-9,0.0,middle,yellow,0.82,derived
+2026-16-sepang,GAS,Alpine,42,18,-9,0.0,closing,mixed,0.52,derived
+2026-16-sepang,GAS,Alpine,43,17,-8,1.0,closing,mixed,0.52,derived
+2026-16-sepang,GAS,Alpine,44,17,-8,0.0,closing,mixed,0.52,derived
+2026-16-sepang,GAS,Alpine,45,17,-8,0.0,closing,mixed,0.52,derived
+2026-16-sepang,GAS,Alpine,46,17,-8,0.0,closing,mixed,0.52,derived
+2026-16-sepang,GAS,Alpine,47,17,-8,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,48,17,-8,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,49,16,-7,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,50,15,-6,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,51,15,-6,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,GAS,Alpine,52,15,-6,0.0,closing,green,0.82,derived
+2026-16-sepang,GAS,Alpine,53,15,-6,0.0,closing,green,0.82,derived
+2026-16-sepang,GAS,Alpine,54,15,-6,0.0,closing,green,0.82,derived
+2026-16-sepang,GAS,Alpine,55,15,-6,0.0,closing,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,1,7,1,0.0,opening,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,2,11,-3,-4.0,opening,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,3,5,3,6.0,opening,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,4,5,3,0.0,opening,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,5,5,3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,6,4,4,1.0,opening,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,7,4,4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,8,4,4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,9,4,4,0.0,opening,mixed,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,10,4,4,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,11,4,4,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,12,4,4,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,13,4,4,0.0,middle,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,14,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,15,4,4,0.0,middle,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,16,4,4,0.0,middle,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,17,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,18,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,19,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,20,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,21,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,22,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,23,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,24,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,25,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,26,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,27,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,28,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,29,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,30,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,31,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,32,6,2,-2.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,33,5,3,1.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,34,4,4,1.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,35,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,36,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,37,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,38,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,39,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,40,4,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,41,4,4,0.0,middle,yellow,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,42,4,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,43,4,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,44,4,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,45,4,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,46,4,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,47,4,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,48,4,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,49,4,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,50,3,5,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,51,3,5,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAD,Red Bull Racing,52,3,5,0.0,closing,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,53,4,4,-1.0,closing,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,54,4,4,0.0,closing,green,0.82,derived
+2026-16-sepang,HAD,Red Bull Racing,55,4,4,0.0,closing,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,1,2,0,0.0,opening,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,2,7,-5,-5.0,opening,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,3,15,-13,-8.0,opening,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,4,17,-15,-2.0,opening,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,5,17,-15,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,6,17,-15,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,7,17,-15,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,8,17,-15,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,9,16,-14,1.0,opening,mixed,0.52,derived
+2026-16-sepang,HAM,Ferrari,10,15,-13,1.0,opening,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,11,15,-13,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,12,15,-13,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,13,12,-10,3.0,middle,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,14,11,-9,1.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,15,10,-8,1.0,middle,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,16,9,-7,1.0,middle,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,17,9,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,18,9,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,19,7,-5,2.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,20,6,-4,1.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,21,6,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,22,5,-3,1.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,23,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,24,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,25,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,26,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,27,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,28,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,29,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,30,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,31,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,32,7,-5,-2.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,33,6,-4,1.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,34,5,-3,1.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,35,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,36,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,37,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,38,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,39,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,40,5,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,41,5,-3,0.0,middle,yellow,0.82,derived
+2026-16-sepang,HAM,Ferrari,42,5,-3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAM,Ferrari,43,5,-3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAM,Ferrari,44,6,-4,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,HAM,Ferrari,45,5,-3,1.0,closing,mixed,0.52,derived
+2026-16-sepang,HAM,Ferrari,46,5,-3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HAM,Ferrari,47,5,-3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,48,5,-3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,49,5,-3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,50,4,-2,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,51,4,-2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HAM,Ferrari,52,4,-2,0.0,closing,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,53,3,-1,1.0,closing,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,54,3,-1,0.0,closing,green,0.82,derived
+2026-16-sepang,HAM,Ferrari,55,3,-1,0.0,closing,green,0.82,derived
+2026-16-sepang,HUL,Audi,1,15,0,0.0,opening,green,0.82,derived
+2026-16-sepang,HUL,Audi,2,4,11,11.0,opening,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,3,12,3,-8.0,opening,green,0.82,derived
+2026-16-sepang,HUL,Audi,4,12,3,0.0,opening,green,0.82,derived
+2026-16-sepang,HUL,Audi,5,12,3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,6,12,3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,7,12,3,0.0,opening,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,8,13,2,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,9,14,1,-1.0,opening,mixed,0.52,derived
+2026-16-sepang,HUL,Audi,10,13,2,1.0,opening,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,11,13,2,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,12,13,2,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,13,10,5,3.0,middle,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,14,10,5,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,15,9,6,1.0,middle,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,16,10,5,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,17,10,5,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,18,10,5,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,19,10,5,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,20,10,5,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,21,10,5,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,22,10,5,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,23,11,4,-1.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,24,11,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,25,11,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,26,11,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,27,11,4,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,28,10,5,1.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,29,9,6,1.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,30,9,6,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,31,8,7,1.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,32,8,7,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,33,13,2,-5.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,34,14,1,-1.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,35,14,1,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,36,14,1,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,37,14,1,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,38,12,3,2.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,39,12,3,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,40,12,3,0.0,middle,green,0.82,derived
+2026-16-sepang,HUL,Audi,41,11,4,1.0,middle,yellow,0.82,derived
+2026-16-sepang,HUL,Audi,42,11,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HUL,Audi,43,11,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HUL,Audi,44,10,5,1.0,closing,mixed,0.52,derived
+2026-16-sepang,HUL,Audi,45,10,5,0.0,closing,mixed,0.52,derived
+2026-16-sepang,HUL,Audi,46,11,4,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,HUL,Audi,47,11,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,48,10,5,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,49,10,5,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,50,8,7,2.0,closing,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,51,8,7,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,HUL,Audi,52,8,7,0.0,closing,green,0.82,derived
+2026-16-sepang,HUL,Audi,53,9,6,-1.0,closing,green,0.82,derived
+2026-16-sepang,HUL,Audi,54,9,6,0.0,closing,green,0.82,derived
+2026-16-sepang,HUL,Audi,55,10,5,-1.0,closing,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,1,10,1,0.0,opening,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,2,12,-1,-2.0,opening,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,3,4,7,8.0,opening,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,4,4,7,0.0,opening,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,5,4,7,0.0,opening,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,6,5,6,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,7,5,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,8,5,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,9,5,6,0.0,opening,mixed,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,10,5,6,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,11,5,6,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,12,5,6,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,13,5,6,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,14,5,6,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,15,5,6,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,16,5,6,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,17,5,6,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,18,5,6,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,19,5,6,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,20,5,6,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,21,5,6,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,22,6,5,-1.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,23,6,5,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,24,6,5,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,25,6,5,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,26,6,5,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,27,6,5,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,28,6,5,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,29,6,5,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,30,8,3,-2.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,31,10,1,-2.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,32,9,2,1.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,33,8,3,1.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,34,7,4,1.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,35,7,4,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,36,7,4,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,37,7,4,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,38,7,4,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,39,8,3,-1.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,40,8,3,0.0,middle,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,41,8,3,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,42,8,3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,43,8,3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,44,8,3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,45,8,3,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,46,9,2,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,47,8,3,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,48,8,3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,49,8,3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,50,6,5,2.0,closing,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,51,5,6,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,LAW,Racing Bulls,52,6,5,-1.0,closing,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,53,6,5,0.0,closing,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,54,6,5,0.0,closing,green,0.82,derived
+2026-16-sepang,LAW,Racing Bulls,55,6,5,0.0,closing,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,1,9,-5,0.0,opening,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,2,22,-18,-13.0,opening,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,3,22,-18,0.0,opening,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,4,22,-18,0.0,opening,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,5,22,-18,0.0,opening,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,6,21,-17,1.0,opening,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,7,20,-16,1.0,opening,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,8,18,-14,2.0,opening,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,9,18,-14,0.0,opening,mixed,0.52,derived
+2026-16-sepang,LEC,Ferrari,10,19,-15,-1.0,opening,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,11,18,-14,1.0,opening,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,12,19,-15,-1.0,middle,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,13,20,-16,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,14,20,-16,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,15,20,-16,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,16,19,-15,1.0,middle,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,17,18,-14,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,18,17,-13,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,19,17,-13,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,20,17,-13,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,21,17,-13,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,22,17,-13,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,23,17,-13,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,24,16,-12,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,25,15,-11,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,26,14,-10,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,27,14,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,28,15,-11,-1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,29,19,-15,-4.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,30,18,-14,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,31,16,-12,2.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,32,14,-10,2.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,33,14,-10,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,34,13,-9,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,35,13,-9,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,36,11,-7,2.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,37,10,-6,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,38,9,-5,1.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,39,9,-5,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,40,9,-5,0.0,middle,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,41,9,-5,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LEC,Ferrari,42,9,-5,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LEC,Ferrari,43,9,-5,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LEC,Ferrari,44,11,-7,-2.0,closing,mixed,0.52,derived
+2026-16-sepang,LEC,Ferrari,45,11,-7,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LEC,Ferrari,46,8,-4,3.0,closing,mixed,0.52,derived
+2026-16-sepang,LEC,Ferrari,47,9,-5,-1.0,closing,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,48,16,-12,-7.0,closing,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,49,19,-15,-3.0,closing,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,50,18,-14,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,51,19,-15,-1.0,closing,safety-car,0.52,derived
+2026-16-sepang,LEC,Ferrari,52,19,-15,0.0,closing,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,53,19,-15,0.0,closing,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,54,19,-15,0.0,closing,green,0.82,derived
+2026-16-sepang,LEC,Ferrari,55,17,-13,2.0,closing,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,1,21,1,0.0,opening,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,2,19,3,2.0,opening,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,3,9,13,10.0,opening,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,4,9,13,0.0,opening,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,5,9,13,0.0,opening,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,6,8,14,1.0,opening,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,7,8,14,0.0,opening,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,8,8,14,0.0,opening,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,9,8,14,0.0,opening,mixed,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,10,7,15,1.0,opening,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,11,7,15,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,12,7,15,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,13,7,15,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,14,7,15,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,15,7,15,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,16,7,15,0.0,middle,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,17,7,15,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,18,7,15,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,19,8,14,-1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,20,8,14,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,21,8,14,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,22,8,14,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,23,9,13,-1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,24,9,13,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,25,10,12,-1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,26,10,12,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,27,10,12,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,28,12,10,-2.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,29,13,9,-1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,30,12,10,1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,31,11,11,1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,32,11,11,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,33,9,13,2.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,34,9,13,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,35,9,13,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,36,9,13,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,37,9,13,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,38,10,12,-1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,39,10,12,0.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,40,11,11,-1.0,middle,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,41,12,10,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,42,12,10,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,43,12,10,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,44,12,10,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,45,12,10,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,46,12,10,0.0,closing,mixed,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,47,12,10,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,48,11,11,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,49,11,11,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,50,9,13,2.0,closing,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,51,9,13,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,LIN,Racing Bulls,52,10,12,-1.0,closing,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,53,10,12,0.0,closing,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,54,10,12,0.0,closing,green,0.82,derived
+2026-16-sepang,LIN,Racing Bulls,55,9,13,1.0,closing,green,0.82,derived
+2026-16-sepang,NOR,McLaren,1,4,1,0.0,opening,green,0.82,derived
+2026-16-sepang,NOR,McLaren,2,10,-5,-6.0,opening,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,3,16,-11,-6.0,opening,green,0.82,derived
+2026-16-sepang,NOR,McLaren,4,15,-10,1.0,opening,green,0.82,derived
+2026-16-sepang,NOR,McLaren,5,15,-10,0.0,opening,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,6,15,-10,0.0,opening,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,7,15,-10,0.0,opening,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,8,15,-10,0.0,opening,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,9,15,-10,0.0,opening,mixed,0.52,derived
+2026-16-sepang,NOR,McLaren,10,16,-11,-1.0,opening,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,11,16,-11,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,12,16,-11,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,13,14,-9,2.0,middle,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,14,13,-8,1.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,15,11,-6,2.0,middle,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,16,11,-6,0.0,middle,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,17,11,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,18,11,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,19,11,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,20,11,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,21,11,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,22,11,-6,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,23,10,-5,1.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,24,10,-5,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,25,9,-4,1.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,26,9,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,27,9,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,28,8,-3,1.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,29,8,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,30,7,-2,1.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,31,7,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,32,5,0,2.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,33,4,1,1.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,34,6,-1,-2.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,35,8,-3,-2.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,36,8,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,37,8,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,38,8,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,39,7,-2,1.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,40,7,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,NOR,McLaren,41,7,-2,0.0,middle,yellow,0.82,derived
+2026-16-sepang,NOR,McLaren,42,7,-2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,NOR,McLaren,43,7,-2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,NOR,McLaren,44,7,-2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,NOR,McLaren,45,7,-2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,NOR,McLaren,46,7,-2,0.0,closing,mixed,0.52,derived
+2026-16-sepang,NOR,McLaren,47,7,-2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,48,7,-2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,49,7,-2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,50,10,-5,-3.0,closing,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,51,10,-5,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,NOR,McLaren,52,9,-4,1.0,closing,green,0.82,derived
+2026-16-sepang,NOR,McLaren,53,8,-3,1.0,closing,green,0.82,derived
+2026-16-sepang,NOR,McLaren,54,8,-3,0.0,closing,green,0.82,derived
+2026-16-sepang,NOR,McLaren,55,8,-3,0.0,closing,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,1,17,0,0.0,opening,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,2,17,0,0.0,opening,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,3,8,9,9.0,opening,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,4,7,10,1.0,opening,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,5,7,10,0.0,opening,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,6,6,11,1.0,opening,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,7,6,11,0.0,opening,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,8,6,11,0.0,opening,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,9,6,11,0.0,opening,mixed,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,10,6,11,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,11,6,11,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,12,6,11,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,13,6,11,0.0,middle,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,14,6,11,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,15,6,11,0.0,middle,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,16,6,11,0.0,middle,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,17,6,11,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,18,6,11,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,19,6,11,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,20,7,10,-1.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,21,7,10,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,22,7,10,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,23,7,10,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,24,7,10,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,25,7,10,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,26,7,10,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,27,8,9,-1.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,28,9,8,-1.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,29,10,7,-1.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,30,13,4,-3.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,31,12,5,1.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,32,10,7,2.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,33,10,7,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,34,10,7,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,35,10,7,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,36,12,5,-2.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,37,12,5,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,38,13,4,-1.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,39,13,4,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,40,13,4,0.0,middle,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,41,14,3,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,42,17,0,-3.0,closing,mixed,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,43,16,1,1.0,closing,mixed,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,44,16,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,45,16,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,46,16,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,47,16,1,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,48,15,2,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,49,15,2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,50,14,3,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,51,14,3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,OCO,Haas F1 Team,52,14,3,0.0,closing,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,53,14,3,0.0,closing,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,54,14,3,0.0,closing,green,0.82,derived
+2026-16-sepang,OCO,Haas F1 Team,55,14,3,0.0,closing,green,0.82,derived
+2026-16-sepang,PER,Cadillac,1,22,-2,0.0,opening,green,0.82,derived
+2026-16-sepang,PER,Cadillac,2,5,15,17.0,opening,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,3,14,6,-9.0,opening,green,0.82,derived
+2026-16-sepang,PER,Cadillac,4,14,6,0.0,opening,green,0.82,derived
+2026-16-sepang,PER,Cadillac,5,14,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,6,14,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,7,14,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,8,14,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,9,13,7,1.0,opening,mixed,0.52,derived
+2026-16-sepang,PER,Cadillac,10,14,6,-1.0,opening,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,11,14,6,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,12,14,6,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,13,15,5,-1.0,middle,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,14,16,4,-1.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,15,16,4,0.0,middle,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,16,14,6,2.0,middle,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,17,14,6,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,18,18,2,-4.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,19,21,-1,-3.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,20,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,21,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,22,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,23,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,24,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,25,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,26,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,27,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,28,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,29,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,30,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,31,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,32,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,33,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,34,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,35,20,0,1.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,36,20,0,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,37,21,-1,-1.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,38,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,39,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,40,21,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PER,Cadillac,41,21,-1,0.0,middle,yellow,0.82,derived
+2026-16-sepang,PER,Cadillac,42,20,0,1.0,closing,mixed,0.52,derived
+2026-16-sepang,PER,Cadillac,43,20,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,PER,Cadillac,44,20,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,PER,Cadillac,45,20,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,PER,Cadillac,46,20,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,PER,Cadillac,47,20,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,48,20,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,49,20,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,50,19,1,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,51,18,2,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,PER,Cadillac,52,18,2,0.0,closing,green,0.82,derived
+2026-16-sepang,PER,Cadillac,53,18,2,0.0,closing,green,0.82,derived
+2026-16-sepang,PER,Cadillac,54,18,2,0.0,closing,green,0.82,derived
+2026-16-sepang,PER,Cadillac,55,19,1,-1.0,closing,green,0.82,derived
+2026-16-sepang,PIA,McLaren,1,5,1,0.0,opening,green,0.82,derived
+2026-16-sepang,PIA,McLaren,2,1,5,4.0,opening,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,3,10,-4,-9.0,opening,green,0.82,derived
+2026-16-sepang,PIA,McLaren,4,10,-4,0.0,opening,green,0.82,derived
+2026-16-sepang,PIA,McLaren,5,10,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,6,10,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,7,10,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,8,10,-4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,9,10,-4,0.0,opening,mixed,0.52,derived
+2026-16-sepang,PIA,McLaren,10,10,-4,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,11,10,-4,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,12,10,-4,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,13,9,-3,1.0,middle,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,14,8,-2,1.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,15,8,-2,0.0,middle,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,16,8,-2,0.0,middle,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,17,8,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,18,8,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,19,9,-3,-1.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,20,9,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,21,9,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,22,9,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,23,8,-2,1.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,24,8,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,25,8,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,26,8,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,27,7,-1,1.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,28,7,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,29,7,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,30,6,0,1.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,31,6,0,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,32,4,2,2.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,33,7,-1,-3.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,34,8,-2,-1.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,35,6,0,2.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,36,6,0,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,37,6,0,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,38,6,0,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,39,6,0,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,40,6,0,0.0,middle,green,0.82,derived
+2026-16-sepang,PIA,McLaren,41,6,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,PIA,McLaren,42,6,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,PIA,McLaren,43,6,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,PIA,McLaren,44,5,1,1.0,closing,mixed,0.52,derived
+2026-16-sepang,PIA,McLaren,45,6,0,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,PIA,McLaren,46,6,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,PIA,McLaren,47,6,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,48,6,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,49,6,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,50,5,1,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,51,6,0,-1.0,closing,safety-car,0.52,derived
+2026-16-sepang,PIA,McLaren,52,5,1,1.0,closing,green,0.82,derived
+2026-16-sepang,PIA,McLaren,53,5,1,0.0,closing,green,0.82,derived
+2026-16-sepang,PIA,McLaren,54,5,1,0.0,closing,green,0.82,derived
+2026-16-sepang,PIA,McLaren,55,5,1,0.0,closing,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,1,6,1,0.0,opening,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,2,9,-2,-3.0,opening,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,3,2,5,7.0,opening,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,4,2,5,0.0,opening,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,5,2,5,0.0,opening,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,6,3,4,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,7,3,4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,8,3,4,0.0,opening,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,9,3,4,0.0,opening,mixed,0.52,derived
+2026-16-sepang,RUS,Mercedes,10,3,4,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,RUS,Mercedes,11,3,4,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,RUS,Mercedes,12,3,4,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,RUS,Mercedes,13,2,5,1.0,middle,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,14,2,5,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,15,2,5,0.0,middle,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,16,2,5,0.0,middle,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,17,2,5,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,18,2,5,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,19,2,5,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,20,2,5,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,21,3,4,-1.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,22,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,23,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,24,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,25,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,26,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,27,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,28,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,29,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,30,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,31,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,32,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,33,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,34,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,35,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,36,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,37,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,38,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,39,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,40,3,4,0.0,middle,green,0.82,derived
+2026-16-sepang,RUS,Mercedes,41,3,4,0.0,middle,yellow,0.82,derived
+2026-16-sepang,RUS,Mercedes,42,3,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,RUS,Mercedes,43,3,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,RUS,Mercedes,44,3,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,RUS,Mercedes,45,3,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,RUS,Mercedes,46,3,4,0.0,closing,mixed,0.52,derived
+2026-16-sepang,RUS,Mercedes,47,3,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,RUS,Mercedes,48,3,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,RUS,Mercedes,49,3,4,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,1,12,1,0.0,opening,green,0.82,derived
+2026-16-sepang,SAI,Williams,2,13,0,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,3,6,7,7.0,opening,green,0.82,derived
+2026-16-sepang,SAI,Williams,4,6,7,0.0,opening,green,0.82,derived
+2026-16-sepang,SAI,Williams,5,6,7,0.0,opening,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,6,7,6,-1.0,opening,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,7,7,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,8,7,6,0.0,opening,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,9,7,6,0.0,opening,mixed,0.52,derived
+2026-16-sepang,SAI,Williams,10,8,5,-1.0,opening,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,11,8,5,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,12,8,5,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,13,17,-4,-9.0,middle,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,14,17,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,15,17,-4,0.0,middle,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,16,15,-2,2.0,middle,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,17,15,-2,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,18,14,-1,1.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,19,14,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,20,14,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,21,14,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,22,14,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,23,14,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,24,14,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,25,14,-1,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,26,16,-3,-2.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,27,20,-7,-4.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,28,20,-7,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,29,18,-5,2.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,30,17,-4,1.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,31,18,-5,-1.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,32,17,-4,1.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,33,17,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,34,17,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,35,17,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,36,17,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,37,17,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,38,17,-4,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,39,16,-3,1.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,40,16,-3,0.0,middle,green,0.82,derived
+2026-16-sepang,SAI,Williams,41,16,-3,0.0,middle,yellow,0.82,derived
+2026-16-sepang,SAI,Williams,42,15,-2,1.0,closing,mixed,0.52,derived
+2026-16-sepang,SAI,Williams,43,18,-5,-3.0,closing,mixed,0.52,derived
+2026-16-sepang,SAI,Williams,44,18,-5,0.0,closing,mixed,0.52,derived
+2026-16-sepang,SAI,Williams,45,18,-5,0.0,closing,mixed,0.52,derived
+2026-16-sepang,SAI,Williams,46,18,-5,0.0,closing,mixed,0.52,derived
+2026-16-sepang,SAI,Williams,47,18,-5,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,48,18,-5,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,49,17,-4,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,50,16,-3,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,51,16,-3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,SAI,Williams,52,16,-3,0.0,closing,green,0.82,derived
+2026-16-sepang,SAI,Williams,53,16,-3,0.0,closing,green,0.82,derived
+2026-16-sepang,SAI,Williams,54,16,-3,0.0,closing,green,0.82,derived
+2026-16-sepang,SAI,Williams,55,16,-3,0.0,closing,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,1,14,0,0.0,opening,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,2,3,11,11.0,opening,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,3,13,1,-10.0,opening,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,4,13,1,0.0,opening,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,5,13,1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,6,13,1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,7,13,1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,8,12,2,1.0,opening,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,9,12,2,0.0,opening,mixed,0.52,derived
+2026-16-sepang,STR,Aston Martin,10,11,3,1.0,opening,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,11,11,3,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,12,11,3,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,13,11,3,0.0,middle,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,14,12,2,-1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,15,12,2,0.0,middle,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,16,12,2,0.0,middle,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,17,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,18,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,19,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,20,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,21,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,22,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,23,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,24,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,25,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,26,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,27,12,2,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,28,13,1,-1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,29,14,0,-1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,30,14,0,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,31,13,1,1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,32,12,2,1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,33,11,3,1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,34,11,3,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,35,12,2,-1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,36,13,1,-1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,37,13,1,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,38,14,0,-1.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,39,14,0,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,40,14,0,0.0,middle,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,41,13,1,1.0,middle,yellow,0.82,derived
+2026-16-sepang,STR,Aston Martin,42,13,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,STR,Aston Martin,43,13,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,STR,Aston Martin,44,13,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,STR,Aston Martin,45,13,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,STR,Aston Martin,46,13,1,0.0,closing,mixed,0.52,derived
+2026-16-sepang,STR,Aston Martin,47,13,1,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,48,12,2,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,49,12,2,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,50,11,3,1.0,closing,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,51,11,3,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,STR,Aston Martin,52,11,3,0.0,closing,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,53,11,3,0.0,closing,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,54,11,3,0.0,closing,green,0.82,derived
+2026-16-sepang,STR,Aston Martin,55,11,3,0.0,closing,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,1,1,0,0.0,opening,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,2,6,-5,-5.0,opening,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,3,3,-2,3.0,opening,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,4,3,-2,0.0,opening,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,5,3,-2,0.0,opening,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,6,2,-1,1.0,opening,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,7,2,-1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,8,2,-1,0.0,opening,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,9,2,-1,0.0,opening,mixed,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,10,2,-1,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,11,2,-1,0.0,opening,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,12,2,-1,0.0,middle,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,13,1,0,1.0,middle,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,14,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,15,1,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,16,1,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,17,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,18,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,19,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,20,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,21,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,22,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,23,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,24,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,25,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,26,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,27,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,28,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,29,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,30,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,31,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,32,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,33,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,34,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,35,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,36,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,37,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,38,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,39,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,40,1,0,0.0,middle,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,41,1,0,0.0,middle,yellow,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,42,1,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,43,1,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,44,2,-1,-1.0,closing,mixed,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,45,1,0,1.0,closing,mixed,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,46,1,0,0.0,closing,mixed,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,47,1,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,48,1,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,49,1,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,50,1,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,51,1,0,0.0,closing,safety-car,0.52,derived
+2026-16-sepang,VER,Red Bull Racing,52,1,0,0.0,closing,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,53,1,0,0.0,closing,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,54,1,0,0.0,closing,green,0.82,derived
+2026-16-sepang,VER,Red Bull Racing,55,1,0,0.0,closing,green,0.82,derived

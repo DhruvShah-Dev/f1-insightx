@@ -329,3 +329,25 @@ race_analysis_id,driver,team,start_position,finish_position,net_position_change,
 2026-15-baku,ALB,Williams,12,20,-8,0.0,0.0,none,opening,0.067,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-15-baku,ALO,Aston Martin,21,21,0,1.0,0.0,middle,opening,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-15-baku,STR,Aston Martin,22,22,0,0.0,0.0,none,none,0.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,VER,Red Bull Racing,1,1,0,5.0,1.0,opening,opening,0.4,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,ANT,Mercedes,3,2,1,8.0,1.0,opening,opening,0.567,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,HAM,Ferrari,2,3,-1,15.0,2.0,middle,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,LEC,Ferrari,4,4,0,21.0,6.0,closing,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,HAD,Red Bull Racing,8,5,3,9.0,1.0,opening,opening,0.567,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,PIA,McLaren,6,6,0,7.0,9.0,opening,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,LAW,Racing Bulls,11,7,4,13.0,2.0,opening,opening,0.867,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,ALO,Aston Martin,12,8,4,13.0,4.0,middle,middle,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,NOR,McLaren,5,9,-4,13.0,3.0,middle,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,LIN,Racing Bulls,22,10,12,20.0,2.0,opening,middle,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,HUL,Audi,15,11,4,12.0,14.0,opening,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,STR,Aston Martin,14,12,2,5.0,14.0,opening,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,COL,Alpine,21,13,8,14.0,5.0,middle,middle,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,BEA,Haas F1 Team,16,14,2,13.0,3.0,middle,opening,0.967,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,OCO,Haas F1 Team,17,15,2,15.0,2.0,opening,middle,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,GAS,Alpine,9,16,-7,10.0,3.0,middle,opening,0.933,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,SAI,Williams,13,17,-4,17.0,1.0,opening,middle,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,BOR,Audi,10,18,-8,7.0,11.0,opening,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,PER,Cadillac,20,19,1,3.0,21.0,opening,opening,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,RUS,Mercedes,7,20,-13,8.0,0.0,opening,opening,0.433,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,ALB,Williams,18,21,-3,15.0,1.0,opening,middle,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-16-sepang,BOT,Cadillac,19,22,-3,0.0,0.0,none,middle,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.

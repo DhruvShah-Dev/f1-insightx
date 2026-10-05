@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-21T17:52:37.094477+00:00",
-  "rows": 23,
-  "openf1_primary_cross_check_rows": 14,
-  "openf1_available_races": 22,
-  "mean_coverage_score": 0.6708695652173914,
+  "generated_at": "2026-10-05T19:05:27.340927+00:00",
+  "rows": 47,
+  "openf1_primary_cross_check_rows": 15,
+  "openf1_available_races": 23,
+  "mean_coverage_score": 0.39217021276595726,
   "source_label": "openf1_quality_v1"
 }

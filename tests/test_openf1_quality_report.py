@@ -97,3 +97,30 @@ def test_openf1_quality_does_not_recommend_pre_2023_races() -> None:
 
     assert report.iloc[0]["recommended_use"] == "not_available_pre_2023"
     assert report.iloc[0]["coverage_score"] == 0.0
+
+
+def test_openf1_quality_matches_relocated_race_by_date() -> None:
+    race = pd.Series({
+        "season": 2026,
+        "race_name": "Bahrain Grand Prix in Malaysia",
+        "scheduled_at": "2026-10-04T07:00:00Z",
+    })
+    sessions = pd.DataFrame([
+        {
+            "year": 2026, "meeting_key": 1282, "meeting_name": "Bahrain Grand Prix",
+            "session_name": "Race", "date_start": "2026-04-12T15:00:00Z", "is_cancelled": True,
+        },
+        {
+            "year": 2026, "meeting_key": 1308, "meeting_name": "Bahrain Grand Prix",
+            "session_name": "Qualifying", "date_start": "2026-10-03T09:00:00Z", "is_cancelled": False,
+        },
+        {
+            "year": 2026, "meeting_key": 1308, "meeting_name": "Bahrain Grand Prix",
+            "session_name": "Race", "date_start": "2026-10-04T07:00:00Z", "is_cancelled": False,
+        },
+    ])
+
+    matched = builder.match_race_sessions(race, sessions)
+
+    assert matched["meeting_key"].unique().tolist() == [1308]
+    assert len(matched) == 2

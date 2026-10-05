@@ -1,0 +1,82 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life
+2026,16,Bahrain Grand Prix,Q,ALB,Williams,1.0,SOFT,2,112.1815,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ALB,Williams,2.0,SOFT,2,121.6955,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ALO,Aston Martin,1.0,SOFT,2,114.89699999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ALO,Aston Martin,2.0,SOFT,2,112.9855,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ALO,Aston Martin,3.0,SOFT,2,122.742,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,1.0,SOFT,2,123.1605,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,2.0,SOFT,2,112.434,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,3.0,SOFT,2,111.265,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,4.0,SOFT,1,95.631,0.0,0.0,2,2
+2026,16,Bahrain Grand Prix,Q,BEA,Haas F1 Team,1.0,SOFT,2,114.7835,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BEA,Haas F1 Team,2.0,SOFT,2,106.864,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BEA,Haas F1 Team,3.0,SOFT,2,113.8015,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BOR,Audi,1.0,MEDIUM,2,110.4265,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BOR,Audi,2.0,SOFT,2,118.695,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BOR,Audi,3.0,SOFT,2,116.59100000000001,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BOR,Audi,4.0,SOFT,2,118.189,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BOR,Audi,5.0,SOFT,2,112.4305,10.0,0.0,5,6
+2026,16,Bahrain Grand Prix,Q,BOR,Audi,6.0,SOFT,1,97.677,0.0,0.0,5,5
+2026,16,Bahrain Grand Prix,Q,BOT,Cadillac,1.0,SOFT,2,117.8345,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,BOT,Cadillac,2.0,SOFT,2,115.225,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,COL,Alpine,1.0,SOFT,2,119.071,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,COL,Alpine,2.0,SOFT,1,97.179,0.0,0.0,2,2
+2026,16,Bahrain Grand Prix,Q,COL,Alpine,3.0,SOFT,1,108.421,0.0,0.0,4,4
+2026,16,Bahrain Grand Prix,Q,GAS,Alpine,1.0,SOFT,2,118.74300000000001,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,GAS,Alpine,2.0,SOFT,2,119.39,10.0,0.0,5,6
+2026,16,Bahrain Grand Prix,Q,GAS,Alpine,3.0,SOFT,2,119.1565,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,GAS,Alpine,4.0,SOFT,2,118.6605,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,GAS,Alpine,5.0,SOFT,2,117.36099999999999,10.0,0.0,5,6
+2026,16,Bahrain Grand Prix,Q,GAS,Alpine,6.0,SOFT,1,97.21,0.0,0.0,5,5
+2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,1.0,SOFT,2,115.80199999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,2.0,SOFT,2,112.54499999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,3.0,SOFT,2,109.58600000000001,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,4.0,SOFT,2,117.411,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,1.0,MEDIUM,2,113.136,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,2.0,SOFT,2,107.5885,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,3.0,SOFT,2,110.368,10.0,0.0,5,6
+2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,4.0,SOFT,2,105.379,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,5.0,SOFT,2,115.06099999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HUL,Audi,1.0,MEDIUM,2,109.612,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,HUL,Audi,2.0,SOFT,2,116.8165,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,1.0,SOFT,2,117.59799999999998,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,2.0,SOFT,2,118.42649999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,3.0,SOFT,2,114.9665,10.0,0.0,5,6
+2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,4.0,SOFT,2,117.9495,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,1.0,MEDIUM,2,120.7295,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,2.0,SOFT,2,112.8475,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,3.0,SOFT,2,108.6005,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,4.0,SOFT,1,95.666,0.0,0.0,2,2
+2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,1.0,SOFT,2,110.732,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,2.0,SOFT,1,105.015,0.0,0.0,2,2
+2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,3.0,SOFT,1,126.6,0.0,0.0,5,5
+2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,4.0,SOFT,1,114.809,0.0,0.0,7,7
+2026,16,Bahrain Grand Prix,Q,NOR,McLaren,1.0,SOFT,2,114.54150000000001,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,NOR,McLaren,2.0,SOFT,2,114.71000000000001,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,NOR,McLaren,3.0,SOFT,2,114.5135,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,NOR,McLaren,4.0,SOFT,1,95.757,0.0,0.0,2,2
+2026,16,Bahrain Grand Prix,Q,OCO,Haas F1 Team,1.0,SOFT,2,111.809,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,OCO,Haas F1 Team,2.0,SOFT,2,114.0745,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,OCO,Haas F1 Team,3.0,SOFT,2,115.6435,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,PER,Cadillac,1.0,SOFT,2,116.29050000000001,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,PER,Cadillac,2.0,SOFT,2,114.33449999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,PIA,McLaren,1.0,SOFT,2,117.09,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,PIA,McLaren,2.0,SOFT,2,116.31450000000001,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,PIA,McLaren,3.0,SOFT,2,112.5365,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,PIA,McLaren,4.0,SOFT,1,95.887,0.0,0.0,2,2
+2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,1.0,SOFT,2,120.2935,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,2.0,SOFT,2,117.7155,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,3.0,SOFT,2,111.3175,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,4.0,SOFT,1,95.871,0.0,0.0,2,2
+2026,16,Bahrain Grand Prix,Q,SAI,Williams,1.0,SOFT,2,113.7445,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,SAI,Williams,2.0,SOFT,2,113.684,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,SAI,Williams,3.0,SOFT,2,117.4695,10.0,0.0,5,6
+2026,16,Bahrain Grand Prix,Q,SAI,Williams,4.0,SOFT,2,118.20849999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,1.0,SOFT,2,111.8185,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,2.0,SOFT,2,113.93199999999999,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,3.0,SOFT,2,111.465,10.0,0.0,5,6
+2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,4.0,SOFT,2,116.7955,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,1.0,SOFT,2,117.3515,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,2.0,SOFT,2,117.107,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,3.0,SOFT,2,104.181,10.0,0.0,2,3
+2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,4.0,SOFT,2,115.0585,10.0,0.0,2,3

@@ -107,6 +107,19 @@ def match_race_sessions(race: pd.Series, sessions: pd.DataFrame) -> pd.DataFrame
     if season_sessions.empty:
         return pd.DataFrame()
 
+    if "is_cancelled" in season_sessions.columns:
+        season_sessions = season_sessions[
+            ~season_sessions["is_cancelled"].astype(str).str.lower().isin({"true", "1"})
+        ]
+    scheduled_at = pd.to_datetime(race.get("scheduled_at"), utc=True, errors="coerce")
+    if pd.notna(scheduled_at) and "date_start" in season_sessions.columns:
+        race_sessions = season_sessions[season_sessions["session_name"].eq("Race")].copy()
+        race_dates = pd.to_datetime(race_sessions["date_start"], utc=True, errors="coerce")
+        nearby = race_sessions[(race_dates - scheduled_at).abs() <= pd.Timedelta(days=2)]
+        if not nearby.empty:
+            meeting_key = nearby.iloc[(pd.to_datetime(nearby["date_start"], utc=True) - scheduled_at).abs().argmin()]["meeting_key"]
+            return season_sessions[season_sessions["meeting_key"] == meeting_key]
+
     race_name = normalize_text(race.get("race_name"))
     event_name = season_sessions.get("meeting_name", pd.Series("", index=season_sessions.index)).apply(normalize_text)
     exact = season_sessions[event_name == race_name]
@@ -162,7 +175,9 @@ def build_openf1_quality_report(
             not qualifying_results.empty and (qualifying_results["race_id"].astype(str) == race_id).any()
         )
         openf1_has_results = endpoint_available(endpoint_counts, r_session_key, "session_result")
-        openf1_has_grid = endpoint_available(endpoint_counts, r_session_key, "starting_grid")
+        openf1_has_grid = endpoint_available(endpoint_counts, r_session_key, "starting_grid") or endpoint_available(
+            endpoint_counts, q_session_key, "starting_grid"
+        )
         openf1_has_laps = endpoint_available(endpoint_counts, r_session_key, "laps") or endpoint_available(
             endpoint_counts,
             q_session_key,

@@ -2,12 +2,12 @@
   "build_version": "race-analysis-v1",
   "confidence_distribution": {
     "max": 1.0,
-    "mean": 0.794,
+    "mean": 0.791,
     "min": 0.35,
     "tier": "strong"
   },
-  "generated_at": "2026-09-28T17:16:04Z",
-  "latest_race": "Azerbaijan Grand Prix",
+  "generated_at": "2026-10-05T19:04:12Z",
+  "latest_race": "Bahrain Grand Prix in Malaysia",
   "missing_data_flags": {
     "drs_window": "proxy_only_no_exact_gap_feed",
     "dynamic_gap_feed": "missing",
@@ -18,22 +18,22 @@
     "track_status": "partial",
     "traffic_proxy": "proxy_no_exact_gap_feed"
   },
-  "races_generated": 15,
+  "races_generated": 16,
   "rows": {
-    "index": 15,
-    "links": 45,
-    "neutralization_phases": 79,
-    "pace_evolution": 17242,
-    "pit_strategy": 590,
-    "position_changes": 330,
-    "position_swing_events": 2766,
-    "position_timeline": 17207,
-    "stints": 919,
-    "story_points": 61,
-    "summary": 15,
-    "track_status": 906,
-    "traffic_proxy": 17242,
-    "weather_context": 906
+    "index": 16,
+    "links": 48,
+    "neutralization_phases": 88,
+    "pace_evolution": 18387,
+    "pit_strategy": 663,
+    "position_changes": 352,
+    "position_swing_events": 3122,
+    "position_timeline": 18349,
+    "stints": 1014,
+    "story_points": 66,
+    "summary": 16,
+    "track_status": 961,
+    "traffic_proxy": 18387,
+    "weather_context": 961
   },
   "season_coverage": [
     2026

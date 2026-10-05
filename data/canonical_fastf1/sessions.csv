@@ -58,3 +58,8 @@ id,race_id,season,round,session_code,session_name,event_name,scheduled_at,source
 2026-15-baku|FP3,2026-15-baku,2026,15,FP3,FP3,Azerbaijan Grand Prix,,fastf1_canonical_v1
 2026-15-baku|Q,2026-15-baku,2026,15,Q,Q,Azerbaijan Grand Prix,,fastf1_canonical_v1
 2026-15-baku|R,2026-15-baku,2026,15,R,R,Azerbaijan Grand Prix,,fastf1_canonical_v1
+2026-16-sepang|FP1,2026-16-sepang,2026,16,FP1,FP1,Bahrain Grand Prix,,fastf1_canonical_v1
+2026-16-sepang|FP2,2026-16-sepang,2026,16,FP2,FP2,Bahrain Grand Prix,,fastf1_canonical_v1
+2026-16-sepang|FP3,2026-16-sepang,2026,16,FP3,FP3,Bahrain Grand Prix,,fastf1_canonical_v1
+2026-16-sepang|Q,2026-16-sepang,2026,16,Q,Q,Bahrain Grand Prix,,fastf1_canonical_v1
+2026-16-sepang|R,2026-16-sepang,2026,16,R,R,Bahrain Grand Prix,,fastf1_canonical_v1

@@ -404,3 +404,14 @@ id,season,round,race_id,constructor_id,standing_position,points,wins,source_labe
 2026-15-baku|williams,2026,15,2026-15-baku,williams,9,12.0,0,derived_results_rollup
 2026-15-baku|aston_martin,2026,15,2026-15-baku,aston_martin,10,3.0,0,derived_results_rollup
 2026-15-baku|cadillac,2026,15,2026-15-baku,cadillac,11,0.0,0,derived_results_rollup
+2026-16-sepang|mercedes,2026,16,2026-16-sepang,mercedes,1,556.0,11,derived_results_rollup
+2026-16-sepang|ferrari,2026,16,2026-16-sepang,ferrari,2,405.0,2,derived_results_rollup
+2026-16-sepang|mclaren,2026,16,2026-16-sepang,mclaren,3,316.0,2,derived_results_rollup
+2026-16-sepang|red_bull,2026,16,2026-16-sepang,red_bull,4,298.0,1,derived_results_rollup
+2026-16-sepang|rb,2026,16,2026-16-sepang,rb,5,90.0,0,derived_results_rollup
+2026-16-sepang|alpine,2026,16,2026-16-sepang,alpine,6,68.0,0,derived_results_rollup
+2026-16-sepang|haas,2026,16,2026-16-sepang,haas,7,27.0,0,derived_results_rollup
+2026-16-sepang|audi,2026,16,2026-16-sepang,audi,8,17.0,0,derived_results_rollup
+2026-16-sepang|williams,2026,16,2026-16-sepang,williams,9,12.0,0,derived_results_rollup
+2026-16-sepang|aston_martin,2026,16,2026-16-sepang,aston_martin,10,7.0,0,derived_results_rollup
+2026-16-sepang|cadillac,2026,16,2026-16-sepang,cadillac,11,0.0,0,derived_results_rollup

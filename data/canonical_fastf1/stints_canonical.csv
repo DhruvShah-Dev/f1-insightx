@@ -4233,3 +4233,454 @@ session_id,season,round,event_name,session_code,driver,team,stint,compound,lap_c
 2026_15_R_Azerbaijan Grand Prix,2026,15,Azerbaijan Grand Prix,R,VER,Red Bull Racing,1,MEDIUM,30,108.2529,-0.3041379310344825,-0.7997775305895439,1,30
 2026_15_R_Azerbaijan Grand Prix,2026,15,Azerbaijan Grand Prix,R,VER,Red Bull Racing,2,SOFT,1,129.938,0.0,0.0,5,5
 2026_15_R_Azerbaijan Grand Prix,2026,15,Azerbaijan Grand Prix,R,VER,Red Bull Racing,3,SOFT,13,105.51523076923078,0.0081666666666665,-0.4230769230769231,8,20
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ALB,Williams,2,MEDIUM,6,119.71083333333333,2.0,0.3714285714285715,3,10
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ALB,Williams,3,SOFT,2,111.914,10.0,0.0,2,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ALB,Williams,4,MEDIUM,5,109.3486,2.81475,0.8999999999999998,12,17
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ALO,Aston Martin,1,MEDIUM,4,109.25325,3.4453333333333327,0.7999999999999999,2,7
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ALO,Aston Martin,2,MEDIUM,2,107.9535,10.0,0.0,9,11
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ALO,Aston Martin,3,SOFT,1,99.683,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ALO,Aston Martin,4,SOFT,5,109.4032,0.2600000000000015,0.0,6,11
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ANT,Mercedes,1,MEDIUM,1,100.137,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ANT,Mercedes,2,MEDIUM,1,99.454,0.0,0.0,5,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ANT,Mercedes,3,MEDIUM,2,121.638,10.0,0.0,8,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ANT,Mercedes,4,SOFT,2,119.6155,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,ANT,Mercedes,5,MEDIUM,9,108.63177777777776,1.4173749999999998,0.4833333333333333,11,20
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BEA,Haas F1 Team,1,MEDIUM,2,119.004,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BEA,Haas F1 Team,3,MEDIUM,3,115.03733333333332,5.686,1.0,6,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BEA,Haas F1 Team,4,MEDIUM,2,112.456,10.0,0.0,11,12
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BEA,Haas F1 Team,5,SOFT,2,124.455,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BEA,Haas F1 Team,6,SOFT,7,111.204,-0.2546666666666652,0.0,4,11
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOR,Audi,1,MEDIUM,2,106.388,8.334000000000003,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOR,Audi,2,MEDIUM,2,102.617,-0.7420000000000044,0.0,5,7
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOR,Audi,3,MEDIUM,1,101.514,0.0,0.0,10,10
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOR,Audi,4,MEDIUM,1,108.191,0.0,0.0,13,13
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOR,Audi,5,SOFT,1,99.548,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOR,Audi,6,SOFT,1,107.165,0.0,0.0,5,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOR,Audi,7,SOFT,5,109.8888,1.5405000000000015,0.3,7,12
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOT,Cadillac,1,MEDIUM,6,120.83966666666667,2.0,-0.2,2,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOT,Cadillac,4,SOFT,1,100.8,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOT,Cadillac,5,SOFT,1,113.189,0.0,0.0,5,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,BOT,Cadillac,6,MEDIUM,5,111.1708,3.15025,0.8999999999999998,13,18
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,COL,Alpine,3,SOFT,1,101.185,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,COL,Alpine,4,SOFT,2,122.8045,10.0,0.0,5,6
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,COL,Alpine,5,SOFT,10,107.257,1.2429999999999997,0.8666666666666665,4,13
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,COL,Alpine,6,SOFT,3,128.43833333333333,0.0,-0.5,7,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,GAS,Alpine,1,MEDIUM,2,101.0545,0.4450000000000074,0.0,2,4
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,GAS,Alpine,2,MEDIUM,4,118.9575,3.333333333333333,0.0,7,11
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,GAS,Alpine,3,SOFT,2,121.588,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,GAS,Alpine,4,MEDIUM,6,112.30183333333332,2.126599999999999,1.0,13,19
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HAD,Red Bull Racing,1,SOFT,5,114.031,2.365500000000001,0.3,2,8
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HAD,Red Bull Racing,2,SOFT,3,114.606,0.0,0.5,2,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HAD,Red Bull Racing,3,SOFT,8,107.690875,1.5551428571428585,0.7142857142857144,7,15
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HAM,Ferrari,1,MEDIUM,4,114.912,3.333333333333333,0.0,2,7
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HAM,Ferrari,2,SOFT,1,98.59,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HAM,Ferrari,3,SOFT,1,106.702,0.0,0.0,5,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HAM,Ferrari,4,MEDIUM,7,106.735,1.7531666666666677,0.9642857142857144,9,16
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HUL,Audi,3,MEDIUM,3,112.74033333333334,5.200499999999998,1.0,4,7
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HUL,Audi,4,MEDIUM,3,116.95533333333331,0.0,0.5,9,11
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HUL,Audi,5,SOFT,4,119.82225,-0.7036666666666633,0.1999999999999999,2,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,HUL,Audi,6,SOFT,5,109.3162,3.358999999999998,0.8999999999999998,7,12
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LAW,Racing Bulls,1,MEDIUM,2,100.568,-0.4780000000000086,0.0,2,4
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LAW,Racing Bulls,2,MEDIUM,2,118.3285,10.0,0.0,7,8
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LAW,Racing Bulls,3,SOFT,3,120.82433333333334,0.0,0.5,2,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LAW,Racing Bulls,4,MEDIUM,4,108.177,2.539333333333337,0.1999999999999999,10,13
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LAW,Racing Bulls,5,SOFT,2,109.666,9.781999999999996,0.0,7,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LEC,Ferrari,1,MEDIUM,6,112.71466666666667,2.069,-0.0857142857142857,2,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LEC,Ferrari,2,SOFT,1,98.367,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LEC,Ferrari,3,SOFT,2,116.5525,10.0,0.0,5,6
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LEC,Ferrari,4,SOFT,8,110.058875,1.7047142857142847,0.9285714285714288,8,16
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LIN,Racing Bulls,1,SOFT,7,118.05542857142858,0.0,0.1071428571428571,2,8
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LIN,Racing Bulls,2,SOFT,2,110.047,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LIN,Racing Bulls,3,SOFT,1,114.252,0.0,0.0,10,10
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LIN,Racing Bulls,4,SOFT,8,108.221875,1.0014285714285722,0.5000000000000001,2,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,LIN,Racing Bulls,5,SOFT,5,117.4588,0.3954999999999984,-0.0999999999999999,1,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,NOR,McLaren,1,MEDIUM,5,109.05,2.6359999999999992,0.1999999999999999,2,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,NOR,McLaren,2,SOFT,1,99.293,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,NOR,McLaren,3,SOFT,7,105.73942857142858,1.5923333333333314,0.4642857142857144,5,12
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,OCO,Haas F1 Team,1,MEDIUM,2,104.754,6.9339999999999975,0.0,2,4
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,OCO,Haas F1 Team,2,MEDIUM,1,101.176,0.0,0.0,6,6
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,OCO,Haas F1 Team,3,MEDIUM,2,117.8975,10.0,0.0,9,10
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,OCO,Haas F1 Team,4,MEDIUM,2,115.7715,10.0,0.0,12,13
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,OCO,Haas F1 Team,5,SOFT,1,100.158,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,OCO,Haas F1 Team,6,SOFT,6,114.43616666666668,-0.3363999999999976,0.4857142857142857,5,10
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PER,Cadillac,1,MEDIUM,6,120.68883333333332,2.0,-0.0857142857142857,2,8
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PER,Cadillac,2,MEDIUM,2,112.515,10.0,0.0,10,11
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PER,Cadillac,3,SOFT,2,124.9365,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PER,Cadillac,4,SOFT,1,114.429,0.0,0.0,5,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PER,Cadillac,5,MEDIUM,6,111.31183333333335,2.371799999999999,0.8285714285714287,13,19
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PIA,McLaren,1,MEDIUM,3,100.705,-0.0609999999999999,-0.5,2,7
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PIA,McLaren,2,SOFT,1,99.276,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PIA,McLaren,3,SOFT,2,115.657,10.0,0.0,5,6
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,PIA,McLaren,4,MEDIUM,7,106.70471428571427,1.910999999999999,0.8571428571428573,10,17
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,RUS,Mercedes,1,MEDIUM,2,99.2795,-0.6949999999999932,0.0,2,4
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,RUS,Mercedes,2,MEDIUM,2,116.532,10.0,0.0,7,8
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,RUS,Mercedes,3,SOFT,2,116.369,10.0,0.0,3,4
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,RUS,Mercedes,4,MEDIUM,9,107.07333333333334,1.2137499999999992,0.9666666666666668,10,18
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,RUS,Mercedes,5,SOFT,2,121.0025,-10.0,0.0,5,7
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,SAI,Williams,2,MEDIUM,2,102.607,0.0020000000000095,0.0,3,5
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,SAI,Williams,3,MEDIUM,3,131.641,0.0,-0.5,7,9
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,SAI,Williams,4,MEDIUM,3,130.21833333333333,0.0,-0.5,10,12
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,SAI,Williams,5,SOFT,2,123.02100000000002,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,SAI,Williams,6,SOFT,8,107.2965,1.5619999999999996,0.5952380952380953,5,13
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,STR,Aston Martin,1,MEDIUM,3,102.40933333333334,0.0594999999999998,0.5,2,6
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,STR,Aston Martin,2,MEDIUM,3,108.54433333333331,5.038499999999999,1.0,9,13
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,STR,Aston Martin,3,SOFT,1,100.413,0.0,0.0,2,2
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,STR,Aston Martin,4,SOFT,2,125.423,-10.0,0.0,5,6
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,VER,Red Bull Racing,1,SOFT,4,104.91875,3.3553333333333293,0.7999999999999999,2,7
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,VER,Red Bull Racing,2,SOFT,2,106.129,10.0,0.0,2,3
+2026_16_FP1_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP1,VER,Red Bull Racing,3,SOFT,11,107.62772727272728,1.0393,0.7090909090909092,5,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALB,Williams,1,MEDIUM,4,120.92325,3.333333333333333,0.3999999999999999,2,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALB,Williams,2,SOFT,2,118.0715,-10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALB,Williams,4,SOFT,12,109.97191666666669,0.0237272727272723,0.3846153846153847,5,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALB,Williams,5,MEDIUM,5,119.4788,-2.773,-0.1999999999999999,8,14
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALO,Aston Martin,1,MEDIUM,3,105.40733333333333,5.536000000000001,1.0,2,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALO,Aston Martin,2,SOFT,1,99.478,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALO,Aston Martin,3,SOFT,2,114.7775,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALO,Aston Martin,4,SOFT,9,107.52733333333332,1.1014999999999997,0.75,8,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ALO,Aston Martin,5,MEDIUM,6,132.76633333333334,-1.9620000000000004,-0.0857142857142857,7,12
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ANT,Mercedes,1,MEDIUM,1,98.06,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ANT,Mercedes,2,MEDIUM,1,108.601,0.0,0.0,5,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ANT,Mercedes,3,SOFT,2,120.074,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ANT,Mercedes,4,SOFT,8,105.984125,1.1152857142857129,0.880952380952381,5,12
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ANT,Mercedes,5,MEDIUM,7,109.77657142857144,-0.4066666666666663,0.1428571428571428,6,12
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,ANT,Mercedes,6,SOFT,2,140.6495,10.0,0.0,15,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BEA,Haas F1 Team,1,MEDIUM,1,100.473,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BEA,Haas F1 Team,2,MEDIUM,2,113.347,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BEA,Haas F1 Team,3,SOFT,2,117.229,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BEA,Haas F1 Team,4,MEDIUM,9,107.98233333333332,0.8611250000000013,0.65,8,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BEA,Haas F1 Team,5,SOFT,8,111.992875,0.0338571428571441,0.7619047619047621,5,14
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOR,Audi,1,MEDIUM,1,99.702,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOR,Audi,2,MEDIUM,1,100.422,0.0,0.0,5,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOR,Audi,3,MEDIUM,1,114.776,0.0,0.0,8,8
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOR,Audi,4,SOFT,2,107.4795,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOR,Audi,5,MEDIUM,9,107.71733333333331,1.06625,0.5833333333333334,10,18
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOR,Audi,6,SOFT,3,114.54933333333334,-4.657000000000004,-0.5,4,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOT,Cadillac,1,SOFT,3,108.35166666666667,5.439,1.0,2,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOT,Cadillac,2,SOFT,3,123.65066666666668,0.0,0.5,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOT,Cadillac,3,SOFT,11,109.1068181818182,1.6310000000000002,0.9727272727272728,7,17
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,BOT,Cadillac,4,SOFT,3,140.25533333333334,-4.9114999999999895,-0.5,7,10
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,COL,Alpine,1,MEDIUM,8,106.438875,1.7167142857142852,0.9761904761904764,2,9
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,COL,Alpine,2,MEDIUM,8,107.53125,1.1817142857142866,0.6428571428571429,11,18
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,COL,Alpine,3,SOFT,10,111.242,0.1514444444444443,0.9393939393939392,2,13
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,GAS,Alpine,1,SOFT,1,98.677,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,GAS,Alpine,2,SOFT,1,108.143,0.0,0.0,5,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,GAS,Alpine,3,MEDIUM,1,98.588,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,GAS,Alpine,4,MEDIUM,2,113.2515,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,GAS,Alpine,5,MEDIUM,11,106.63127272727272,0.972099999999999,0.8181818181818182,8,18
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,GAS,Alpine,6,SOFT,5,131.5046,0.0,-0.0999999999999999,6,11
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAD,Red Bull Racing,1,MEDIUM,3,108.125,5.119500000000002,1.0,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAD,Red Bull Racing,2,SOFT,2,107.9295,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAD,Red Bull Racing,3,MEDIUM,10,106.4568,1.0702222222222229,0.6242424242424242,7,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAD,Red Bull Racing,4,SOFT,2,130.2455,-10.0,0.0,5,7
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAM,Ferrari,1,MEDIUM,3,115.09366666666666,0.0,0.5,2,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAM,Ferrari,2,SOFT,3,114.675,0.0,0.5,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAM,Ferrari,3,SOFT,9,106.52755555555557,1.1803750000000015,0.8833333333333333,7,15
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HAM,Ferrari,4,MEDIUM,5,122.4506,-2.8125,-0.1999999999999999,7,13
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HUL,Audi,1,MEDIUM,4,126.55325,0.5200000000000008,0.3999999999999999,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HUL,Audi,2,MEDIUM,1,109.202,0.0,0.0,7,7
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HUL,Audi,3,SOFT,2,111.124,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HUL,Audi,4,MEDIUM,9,107.05988888888888,1.127000000000001,0.8166666666666667,9,17
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,HUL,Audi,5,SOFT,9,117.08733333333332,1.0767500000000003,0.4602550748156477,4,13
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LAW,Racing Bulls,1,MEDIUM,3,116.58766666666668,0.0,0.5,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LAW,Racing Bulls,2,SOFT,2,117.976,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LAW,Racing Bulls,3,MEDIUM,12,106.92075,0.8165454545454545,0.9860139860139862,5,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LAW,Racing Bulls,4,SOFT,8,117.530125,0.92757142857143,0.523809523809524,4,12
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LEC,Ferrari,1,MEDIUM,4,116.62575,3.333333333333333,0.7999999999999999,2,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LEC,Ferrari,2,SOFT,3,124.54433333333334,0.0,0.5,2,4
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LEC,Ferrari,3,SOFT,10,105.8149,1.1269999999999984,0.9515151515151514,6,15
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LEC,Ferrari,4,MEDIUM,6,120.055,-4.015799999999999,0.0285714285714285,7,14
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LIN,Racing Bulls,1,MEDIUM,2,111.2875,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LIN,Racing Bulls,2,SOFT,2,119.172,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LIN,Racing Bulls,3,MEDIUM,13,106.99353846153846,0.7556666666666665,0.8736263736263737,5,17
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,LIN,Racing Bulls,4,SOFT,11,113.41772727272728,-1.0667000000000002,0.5272727272727273,4,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,NOR,McLaren,1,SOFT,3,108.61466666666666,5.213999999999999,1.0,2,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,NOR,McLaren,2,SOFT,2,112.662,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,NOR,McLaren,3,SOFT,11,107.80081818181816,1.0444000000000002,0.0818181818181818,5,15
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,NOR,McLaren,4,SOFT,2,130.183,-10.0,0.0,7,10
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,OCO,Haas F1 Team,1,MEDIUM,1,99.361,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,OCO,Haas F1 Team,2,MEDIUM,2,113.174,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,OCO,Haas F1 Team,3,SOFT,1,99.407,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,OCO,Haas F1 Team,4,SOFT,14,108.33292857142858,0.9835384615384616,0.7832788018113928,5,18
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,OCO,Haas F1 Team,5,MEDIUM,3,128.42733333333334,0.0,-0.5,8,11
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PER,Cadillac,1,SOFT,2,116.119,-10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PER,Cadillac,2,SOFT,1,100.938,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PER,Cadillac,3,SOFT,2,110.4685,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PER,Cadillac,4,SOFT,13,111.59646153846153,1.1443333333333332,0.8571428571428571,8,20
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PER,Cadillac,5,SOFT,3,135.60500000000002,0.0,-0.5,5,8
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PIA,McLaren,1,SOFT,1,99.165,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PIA,McLaren,2,SOFT,2,115.308,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PIA,McLaren,3,SOFT,1,97.899,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PIA,McLaren,4,SOFT,2,111.219,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PIA,McLaren,5,SOFT,9,108.86466666666666,1.2228750000000002,0.2333333333333333,8,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,PIA,McLaren,6,SOFT,2,132.872,-10.0,0.0,7,10
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,RUS,Mercedes,1,MEDIUM,2,103.8165,10.0,0.0,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,RUS,Mercedes,2,SOFT,1,108.819,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,RUS,Mercedes,3,SOFT,16,106.129125,0.4909999999999996,0.8029411764705883,4,19
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,RUS,Mercedes,4,MEDIUM,1,116.735,0.0,0.0,9,9
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,SAI,Williams,1,MEDIUM,4,118.46775,3.333333333333333,0.3999999999999999,2,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,SAI,Williams,2,SOFT,2,120.463,10.0,0.0,2,3
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,SAI,Williams,3,MEDIUM,9,107.5217777777778,1.1643749999999995,0.9333333333333332,8,16
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,SAI,Williams,4,SOFT,10,115.3623,-1.2293333333333325,0.4787878787878787,4,15
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,STR,Aston Martin,1,MEDIUM,2,115.3785,10.0,0.0,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,STR,Aston Martin,2,SOFT,1,100.15,0.0,0.0,2,2
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,STR,Aston Martin,3,SOFT,2,114.08,10.0,0.0,5,6
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,STR,Aston Martin,4,SOFT,6,108.23433333333332,1.6581999999999997,0.8857142857142858,8,13
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,STR,Aston Martin,5,MEDIUM,7,119.962,0.0841666666666659,0.4642857142857144,6,13
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,VER,Red Bull Racing,1,MEDIUM,3,105.96733333333331,5.367000000000004,1.0,2,5
+2026_16_FP2_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP2,VER,Red Bull Racing,2,MEDIUM,14,105.708,0.9310000000000008,0.8725274725274725,7,20
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ALB,Williams,1,SOFT,2,119.998,10.0,0.0,2,4
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ALB,Williams,2,SOFT,6,104.96116666666668,2.253,1.0,7,12
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ALB,Williams,3,SOFT,1,99.049,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ALB,Williams,4,SOFT,2,134.993,-10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ALO,Aston Martin,1,SOFT,1,98.301,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ALO,Aston Martin,2,SOFT,2,113.5895,10.0,0.0,5,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ALO,Aston Martin,3,SOFT,3,108.48766666666666,5.347999999999999,1.0,2,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ANT,Mercedes,1,SOFT,2,120.772,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ANT,Mercedes,2,SOFT,2,115.7585,10.0,0.0,5,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ANT,Mercedes,3,SOFT,2,121.011,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,ANT,Mercedes,4,SOFT,1,123.022,0.0,0.0,9,9
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BEA,Haas F1 Team,1,SOFT,1,98.841,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BEA,Haas F1 Team,2,SOFT,2,111.39,10.0,0.0,5,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BEA,Haas F1 Team,3,SOFT,2,115.51749999999998,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BEA,Haas F1 Team,4,SOFT,1,119.567,0.0,0.0,6,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOR,Audi,1,SOFT,2,122.0925,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOR,Audi,2,SOFT,5,107.03719999999998,2.839750000000002,0.7,5,9
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOR,Audi,3,SOFT,2,114.731,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOR,Audi,4,SOFT,1,112.854,0.0,0.0,6,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOT,Cadillac,1,SOFT,1,99.931,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOT,Cadillac,3,SOFT,2,111.0415,10.0,0.0,6,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOT,Cadillac,4,SOFT,1,100.099,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,BOT,Cadillac,5,SOFT,2,113.31,10.0,0.0,5,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,COL,Alpine,1,SOFT,2,117.988,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,COL,Alpine,2,SOFT,6,104.76916666666666,2.3434,0.8285714285714287,5,10
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,COL,Alpine,3,SOFT,2,120.0235,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,COL,Alpine,4,SOFT,2,111.642,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,COL,Alpine,5,SOFT,3,124.154,0.0,0.5,8,10
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,GAS,Alpine,1,SOFT,1,98.241,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,GAS,Alpine,2,SOFT,2,116.854,10.0,0.0,5,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,GAS,Alpine,3,SOFT,6,106.26266666666668,2.237599999999998,0.7714285714285715,8,13
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,GAS,Alpine,4,SOFT,1,98.282,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,GAS,Alpine,5,SOFT,2,115.007,10.0,0.0,5,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HAD,Red Bull Racing,2,MEDIUM,4,114.51775,3.333333333333333,0.3999999999999999,4,8
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HAD,Red Bull Racing,3,SOFT,4,118.71824999999998,-0.8019999999999973,0.1999999999999999,2,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HAM,Ferrari,1,SOFT,6,107.54949999999998,-0.1947999999999979,-0.2571428571428572,2,8
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HAM,Ferrari,2,SOFT,5,119.7266,0.0,0.3,2,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HUL,Audi,1,SOFT,2,120.3025,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HUL,Audi,2,SOFT,4,106.2885,3.143666666666666,0.3999999999999999,5,8
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HUL,Audi,3,SOFT,2,118.0285,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,HUL,Audi,4,SOFT,1,117.569,0.0,0.0,6,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LAW,Racing Bulls,3,SOFT,5,108.91580000000002,3.1092499999999994,0.3999999999999999,5,9
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LAW,Racing Bulls,5,SOFT,3,109.165,0.0,0.5,2,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LEC,Ferrari,1,HARD,3,110.05533333333337,5.089499999999994,1.0,2,5
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LEC,Ferrari,2,HARD,6,103.16433333333332,2.0118,0.6,7,12
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LEC,Ferrari,3,SOFT,3,101.63866666666668,5.0959999999999965,1.0,2,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LIN,Racing Bulls,2,SOFT,3,121.85,-1.552500000000002,-0.5,2,4
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LIN,Racing Bulls,3,SOFT,4,113.27675,-3.0776666666666634,-0.1999999999999999,5,8
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LIN,Racing Bulls,4,SOFT,7,108.13385714285714,1.2253333333333316,0.5357142857142858,11,17
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,LIN,Racing Bulls,5,SOFT,5,119.9916,3.882249999999999,0.1999999999999999,2,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,NOR,McLaren,1,MEDIUM,1,97.161,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,NOR,McLaren,2,MEDIUM,2,111.322,10.0,0.0,7,8
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,NOR,McLaren,3,SOFT,2,112.579,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,NOR,McLaren,4,SOFT,2,107.869,10.0,0.0,5,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,OCO,Haas F1 Team,1,SOFT,1,98.666,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,OCO,Haas F1 Team,2,SOFT,2,115.544,10.0,0.0,5,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,OCO,Haas F1 Team,3,SOFT,2,117.7315,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,OCO,Haas F1 Team,4,SOFT,1,110.248,0.0,0.0,6,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PER,Cadillac,1,SOFT,1,101.252,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PER,Cadillac,2,SOFT,2,112.3675,10.0,0.0,5,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PER,Cadillac,4,SOFT,5,109.256,2.315999999999999,0.3,10,14
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PER,Cadillac,5,SOFT,3,106.88466666666666,5.155500000000004,1.0,2,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PIA,McLaren,1,MEDIUM,1,97.483,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PIA,McLaren,3,MEDIUM,2,110.583,10.0,0.0,6,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PIA,McLaren,4,SOFT,3,125.487,0.0,0.5,2,4
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PIA,McLaren,5,SOFT,1,105.072,0.0,0.0,6,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,PIA,McLaren,6,MEDIUM,1,115.594,0.0,0.0,12,12
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,RUS,Mercedes,1,SOFT,1,97.053,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,RUS,Mercedes,2,SOFT,1,111.214,0.0,0.0,5,5
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,RUS,Mercedes,3,SOFT,2,117.7805,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,RUS,Mercedes,4,SOFT,1,112.5,0.0,0.0,3,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,SAI,Williams,1,SOFT,1,99.562,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,SAI,Williams,3,SOFT,8,106.42925,1.2935714285714297,0.6190476190476191,7,14
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,SAI,Williams,4,SOFT,4,114.13825,3.333333333333333,0.3999999999999999,2,7
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,STR,Aston Martin,1,SOFT,1,98.97,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,STR,Aston Martin,3,SOFT,1,98.811,0.0,0.0,2,2
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,STR,Aston Martin,4,SOFT,3,116.196,7.055,1.0,5,8
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,VER,Red Bull Racing,1,MEDIUM,2,120.6215,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,VER,Red Bull Racing,2,MEDIUM,2,106.5095,10.0,0.0,5,6
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,VER,Red Bull Racing,3,SOFT,2,117.4095,10.0,0.0,2,3
+2026_16_FP3_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,FP3,VER,Red Bull Racing,4,SOFT,1,114.264,0.0,0.0,6,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ALB,Williams,1,SOFT,2,112.1815,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ALB,Williams,2,SOFT,2,121.6955,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ALO,Aston Martin,1,SOFT,2,114.897,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ALO,Aston Martin,2,SOFT,2,112.9855,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ALO,Aston Martin,3,SOFT,2,122.742,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,1,SOFT,2,123.1605,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,2,SOFT,2,112.434,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,3,SOFT,2,111.265,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,ANT,Mercedes,4,SOFT,1,95.631,0.0,0.0,2,2
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,2,114.7835,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BEA,Haas F1 Team,2,SOFT,2,106.864,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,2,113.8015,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOR,Audi,1,MEDIUM,2,110.4265,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOR,Audi,2,SOFT,2,118.695,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOR,Audi,3,SOFT,2,116.591,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOR,Audi,4,SOFT,2,118.189,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOR,Audi,5,SOFT,2,112.4305,10.0,0.0,5,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOR,Audi,6,SOFT,1,97.677,0.0,0.0,5,5
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOT,Cadillac,1,SOFT,2,117.8345,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,BOT,Cadillac,2,SOFT,2,115.225,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,COL,Alpine,1,SOFT,2,119.071,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,COL,Alpine,2,SOFT,1,97.179,0.0,0.0,2,2
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,COL,Alpine,3,SOFT,1,108.421,0.0,0.0,4,4
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,GAS,Alpine,1,SOFT,2,118.743,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,GAS,Alpine,2,SOFT,2,119.39,10.0,0.0,5,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,GAS,Alpine,3,SOFT,2,119.1565,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,GAS,Alpine,4,SOFT,2,118.6605,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,GAS,Alpine,5,SOFT,2,117.361,10.0,0.0,5,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,GAS,Alpine,6,SOFT,1,97.21,0.0,0.0,5,5
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,2,115.802,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,2,112.545,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,2,109.586,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,2,117.411,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,1,MEDIUM,2,113.136,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,2,SOFT,2,107.5885,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,3,SOFT,2,110.368,10.0,0.0,5,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,4,SOFT,2,105.379,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HAM,Ferrari,5,SOFT,2,115.061,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HUL,Audi,1,MEDIUM,2,109.612,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,HUL,Audi,2,SOFT,2,116.8165,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,1,SOFT,2,117.59799999999998,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,2,SOFT,2,118.4265,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,3,SOFT,2,114.9665,10.0,0.0,5,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LAW,Racing Bulls,4,SOFT,2,117.9495,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,1,MEDIUM,2,120.7295,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,2,SOFT,2,112.8475,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,3,SOFT,2,108.6005,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LEC,Ferrari,4,SOFT,1,95.666,0.0,0.0,2,2
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,1,SOFT,2,110.732,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,2,SOFT,1,105.015,0.0,0.0,2,2
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,3,SOFT,1,126.6,0.0,0.0,5,5
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,LIN,Racing Bulls,4,SOFT,1,114.809,0.0,0.0,7,7
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,NOR,McLaren,1,SOFT,2,114.5415,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,NOR,McLaren,2,SOFT,2,114.71,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,NOR,McLaren,3,SOFT,2,114.5135,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,NOR,McLaren,4,SOFT,1,95.757,0.0,0.0,2,2
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,OCO,Haas F1 Team,1,SOFT,2,111.809,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,OCO,Haas F1 Team,2,SOFT,2,114.0745,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,OCO,Haas F1 Team,3,SOFT,2,115.6435,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,PER,Cadillac,1,SOFT,2,116.2905,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,PER,Cadillac,2,SOFT,2,114.3345,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,PIA,McLaren,1,SOFT,2,117.09,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,PIA,McLaren,2,SOFT,2,116.3145,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,PIA,McLaren,3,SOFT,2,112.5365,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,PIA,McLaren,4,SOFT,1,95.887,0.0,0.0,2,2
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,1,SOFT,2,120.2935,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,2,SOFT,2,117.7155,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,3,SOFT,2,111.3175,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,RUS,Mercedes,4,SOFT,1,95.871,0.0,0.0,2,2
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,SAI,Williams,1,SOFT,2,113.7445,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,SAI,Williams,2,SOFT,2,113.684,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,SAI,Williams,3,SOFT,2,117.4695,10.0,0.0,5,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,SAI,Williams,4,SOFT,2,118.2085,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,1,SOFT,2,111.8185,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,2,SOFT,2,113.932,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,3,SOFT,2,111.465,10.0,0.0,5,6
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,STR,Aston Martin,4,SOFT,2,116.7955,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,1,SOFT,2,117.3515,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,2,SOFT,2,117.107,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,3,SOFT,2,104.181,10.0,0.0,2,3
+2026_16_Q_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,Q,VER,Red Bull Racing,4,SOFT,2,115.0585,10.0,0.0,2,3
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALB,Williams,1,INTERMEDIATE,8,127.515375,-0.1290000000000008,-0.0476190476190476,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALB,Williams,2,SOFT,5,113.7906,-2.7605000000000004,-0.7,2,7
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALB,Williams,3,HARD,13,105.94776923076924,-0.0369166666666664,0.5549450549450549,1,13
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALB,Williams,4,SOFT,12,105.11016666666669,-0.7199090909090919,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALO,Aston Martin,1,MEDIUM,8,133.9035,-3.5684285714285693,-0.5000000000000001,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALO,Aston Martin,2,HARD,21,105.49095238095238,-0.1843499999999998,-0.2818181818181818,2,22
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALO,Aston Martin,3,,14,110.9615,0.4566923076923086,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ALO,Aston Martin,4,SOFT,8,116.204875,0.6367142857142848,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ANT,Mercedes,1,INTERMEDIATE,8,118.341875,0.1664285714285723,0.1666666666666667,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ANT,Mercedes,2,MEDIUM,22,104.69040909090909,-0.3478571428571425,0.0739695087521174,2,24
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ANT,Mercedes,3,SOFT,11,107.59109090909092,1.1353000000000009,0.5545454545454546,4,14
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,ANT,Mercedes,4,SOFT,8,122.0015,-0.6087142857142851,-0.5476190476190477,5,14
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BEA,Haas F1 Team,1,SOFT,9,138.28177777777776,-2.5551249999999985,-0.1833333333333333,1,10
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BEA,Haas F1 Team,2,MEDIUM,14,106.9837142857143,-0.6683846153846148,-0.432967032967033,1,14
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BEA,Haas F1 Team,3,HARD,14,104.718,-0.1104615384615379,0.4065934065934066,1,14
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BEA,Haas F1 Team,4,,16,118.5780625,0.1882000000000005,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BOR,Audi,1,SOFT,1,178.127,0.0,0.0,1,1
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BOR,Audi,2,INTERMEDIATE,6,116.35383333333333,2.822399999999999,1.0,2,7
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BOR,Audi,3,SOFT,4,114.99175,-2.517333333333331,-0.3999999999999999,4,8
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BOR,Audi,4,HARD,19,105.9763684210526,-0.1307777777777777,0.6421052631578947,1,19
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BOR,Audi,5,SOFT,10,115.8028,1.423111111111112,0.2969696969696969,9,18
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BOR,Audi,6,SOFT,11,117.92363636363636,-0.9808999999999998,-0.4727272727272727,7,17
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,BOT,Cadillac,1,SOFT,6,142.5608333333333,-6.751999999999998,-1.0,1,7
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,COL,Alpine,1,SOFT,8,141.32925,-3.402571428571428,-0.5000000000000001,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,COL,Alpine,2,MEDIUM,21,104.83876190476188,-0.2289999999999999,-0.1363636363636363,2,22
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,COL,Alpine,3,HARD,11,104.96536363636363,0.1552000000000006,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,COL,Alpine,4,MEDIUM,12,122.84483333333333,0.216727272727274,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,GAS,Alpine,1,SOFT,8,137.109875,-3.8867142857142847,-0.5000000000000001,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,GAS,Alpine,2,MEDIUM,15,105.63866666666668,-0.4693571428571427,-0.3285714285714285,2,16
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,GAS,Alpine,3,HARD,12,105.20516666666668,-0.2929090909090917,0.2797202797202798,1,12
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,GAS,Alpine,4,SOFT,8,118.657625,1.788714285714288,0.6666666666666669,7,14
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,GAS,Alpine,5,SOFT,9,116.73466666666668,1.065500000000002,-0.1833333333333333,8,16
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HAD,Red Bull Racing,1,INTERMEDIATE,8,121.204125,-0.4204285714285711,-0.1428571428571428,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HAD,Red Bull Racing,2,SOFT,20,105.53245,-0.3468947368421057,-0.0225563909774436,5,25
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HAD,Red Bull Racing,3,,13,107.5133846153846,0.910833333333334,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HAD,Red Bull Racing,4,SOFT,8,119.598375,-1.2681428571428566,-0.6428571428571429,5,14
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HAM,Ferrari,1,SOFT,30,113.19096666666664,-1.2976551724137932,-0.8122358175750835,1,31
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HAM,Ferrari,2,MEDIUM,12,105.12808333333334,0.136090909090909,0.4755244755244756,4,15
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HAM,Ferrari,3,SOFT,10,123.75820000000002,-1.5122222222222206,-0.6242424242424242,5,15
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HUL,Audi,1,SOFT,1,194.684,0.0,0.0,1,1
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HUL,Audi,2,INTERMEDIATE,5,114.0386,2.5985000000000014,1.0,2,6
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HUL,Audi,3,SOFT,22,107.50363636363636,-0.8949047619047622,-0.1033314511575381,2,24
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HUL,Audi,4,SOFT,13,111.66184615384616,0.5745833333333342,0.6208791208791209,1,13
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,HUL,Audi,5,SOFT,8,116.752,0.8805714285714288,-0.6190476190476191,4,12
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LAW,Racing Bulls,1,INTERMEDIATE,8,123.64937500000002,0.034714285714285,0.1428571428571428,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LAW,Racing Bulls,2,HARD,19,106.49447368421052,-0.3239444444444446,-0.2210526315789474,2,21
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LAW,Racing Bulls,3,HARD,15,110.21773333333331,0.6763571428571434,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LAW,Racing Bulls,4,SOFT,8,117.52625,0.3689999999999998,-0.6904761904761906,2,10
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LEC,Ferrari,1,SOFT,1,159.318,0.0,0.0,1,1
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LEC,Ferrari,2,INTERMEDIATE,6,121.27816666666668,0.1340000000000003,0.3142857142857143,1,6
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LEC,Ferrari,3,SOFT,18,105.6515,-0.3853529411764707,-0.3044375644994839,2,19
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LEC,Ferrari,4,,15,104.87766666666668,-0.0027857142857143,0.4214285714285714,4,18
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LEC,Ferrari,5,SOFT,9,118.96411111111112,-1.914375,-0.65,5,15
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LIN,Racing Bulls,1,INTERMEDIATE,8,128.848,-0.3508571428571433,-0.119047619047619,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LIN,Racing Bulls,2,HARD,17,106.80729411764706,-0.5468124999999997,-0.0759803921568627,2,19
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LIN,Racing Bulls,3,HARD,15,106.99946666666668,0.3877142857142855,0.4678571428571427,1,15
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,LIN,Racing Bulls,4,SOFT,10,119.7545,-0.9522222222222232,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,NOR,McLaren,1,MEDIUM,8,129.79199999999997,-3.530857142857144,-0.5000000000000001,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,NOR,McLaren,2,HARD,24,105.17375,-0.313304347826087,-0.2704347826086956,2,25
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,NOR,McLaren,3,SOFT,11,111.9110909090909,0.9264999999999988,0.7272727272727273,4,14
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,NOR,McLaren,4,SOFT,8,119.585625,0.5065714285714316,-0.6904761904761906,5,13
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,OCO,Haas F1 Team,1,INTERMEDIATE,8,125.855375,-0.4167142857142859,-0.0952380952380952,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,OCO,Haas F1 Team,2,SOFT,18,106.70833333333331,-0.4210588235294118,-0.023735810113519,2,20
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,OCO,Haas F1 Team,3,HARD,12,105.81783333333333,-0.0769999999999994,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,OCO,Haas F1 Team,4,SOFT,14,124.46028571428567,-0.0366153846153867,-0.5032967032967033,4,17
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PER,Cadillac,1,SOFT,1,217.87,0.0,0.0,1,1
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PER,Cadillac,3,INTERMEDIATE,6,117.517,2.3155999999999977,0.942857142857143,2,7
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PER,Cadillac,4,MEDIUM,7,111.173,-1.6153333333333346,-0.4642857142857144,2,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PER,Cadillac,5,HARD,3,112.87433333333333,-0.8140000000000001,-0.5,1,3
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PER,Cadillac,6,HARD,18,107.03083333333332,0.1322352941176473,0.4881320949432404,1,18
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PER,Cadillac,7,MEDIUM,5,127.75539999999998,1.3657500000000056,0.7999999999999999,1,5
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PER,Cadillac,8,SOFT,10,108.70559999999998,0.2041111111111099,-0.5030303030303029,3,12
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PIA,McLaren,1,MEDIUM,1,165.216,0.0,0.0,1,1
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PIA,McLaren,2,INTERMEDIATE,6,116.38150000000002,3.003999999999999,1.0,2,7
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PIA,McLaren,3,HARD,22,105.37513636363636,-0.5217619047619051,-0.233201581027668,2,24
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PIA,McLaren,4,HARD,12,110.62441666666666,1.0598181818181809,0.7272727272727274,1,12
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,PIA,McLaren,5,MEDIUM,8,119.38025,-0.7942857142857166,-0.7857142857142858,4,12
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,RUS,Mercedes,1,INTERMEDIATE,8,119.841125,0.2112857142857141,0.261904761904762,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,RUS,Mercedes,2,MEDIUM,21,105.00442857142856,-0.3113500000000002,0.161038961038961,2,23
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,RUS,Mercedes,3,SOFT,12,107.3665,0.9888181818181814,0.5664335664335665,4,15
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,RUS,Mercedes,4,SOFT,3,143.03466666666665,7.188500000000005,1.0,5,8
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,SAI,Williams,1,INTERMEDIATE,8,124.971875,-0.167428571428571,-0.0238095238095238,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,SAI,Williams,2,SOFT,15,107.90540000000004,-1.0597142857142856,-0.475,2,17
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,SAI,Williams,3,HARD,16,105.6566875,0.1294000000000001,0.2441176470588235,1,16
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,SAI,Williams,4,SOFT,11,118.70300000000002,1.2438999999999991,-0.3181818181818182,5,16
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,STR,Aston Martin,1,MEDIUM,1,194.052,0.0,0.0,1,1
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,STR,Aston Martin,2,INTERMEDIATE,6,116.19266666666664,2.2274000000000003,0.942857142857143,2,7
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,STR,Aston Martin,3,HARD,17,106.61029411764709,-0.7116249999999997,-0.3676470588235294,2,19
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,STR,Aston Martin,4,HARD,15,106.9822,0.3496428571428578,0.5392857142857141,1,15
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,STR,Aston Martin,5,SOFT,10,119.8058,-1.4063333333333314,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,VER,Red Bull Racing,1,INTERMEDIATE,8,117.807875,-0.3804285714285709,-0.0238095238095238,1,9
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,VER,Red Bull Racing,2,SOFT,22,104.20822727272729,-0.2841904761904764,0.1293054771315641,2,24
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,VER,Red Bull Racing,3,SOFT,10,104.48510000000002,0.0085555555555553,0.0,,
+2026_16_R_Bahrain Grand Prix,2026,16,Bahrain Grand Prix,R,VER,Red Bull Racing,4,SOFT,7,117.3437142857143,-0.3161666666666652,-0.7500000000000002,5,15

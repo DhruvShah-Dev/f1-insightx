@@ -50,7 +50,7 @@
         "throttle": 1520,
         "straights": 1330,
         "energy_proxy": 1330,
-        "lap_pace": 1007
+        "lap_pace": 1000
       }
     },
     "2026_02_Q_Chinese Grand Prix": {
@@ -84,7 +84,7 @@
         "throttle": 1224,
         "straights": 984,
         "energy_proxy": 984,
-        "lap_pace": 924
+        "lap_pace": 904
       }
     },
     "2026_02_SQ_Chinese Grand Prix": {
@@ -152,7 +152,7 @@
         "throttle": 1848,
         "straights": 1539,
         "energy_proxy": 1539,
-        "lap_pace": 1107
+        "lap_pace": 1086
       }
     },
     "2026_04_Q_Miami Grand Prix": {
@@ -186,7 +186,7 @@
         "throttle": 1848,
         "straights": 1617,
         "energy_proxy": 1617,
-        "lap_pace": 1040
+        "lap_pace": 1033
       }
     },
     "2026_04_SQ_Miami Grand Prix": {
@@ -254,7 +254,7 @@
         "throttle": 1680,
         "straights": 1470,
         "energy_proxy": 1470,
-        "lap_pace": 1212
+        "lap_pace": 1206
       }
     },
     "2026_05_SQ_Canadian Grand Prix": {
@@ -322,7 +322,7 @@
         "throttle": 1680,
         "straights": 1470,
         "energy_proxy": 1470,
-        "lap_pace": 1452
+        "lap_pace": 1415
       }
     },
     "2026_07_Q_Barcelona Grand Prix": {
@@ -356,7 +356,7 @@
         "throttle": 1848,
         "straights": 1617,
         "energy_proxy": 1617,
-        "lap_pace": 1236
+        "lap_pace": 1233
       }
     },
     "2026_08_Q_Austrian Grand Prix": {
@@ -390,7 +390,7 @@
         "throttle": 1680,
         "straights": 1470,
         "energy_proxy": 1470,
-        "lap_pace": 1339
+        "lap_pace": 1338
       }
     },
     "2026_09_Q_British Grand Prix": {
@@ -424,7 +424,7 @@
         "throttle": 1848,
         "straights": 1617,
         "energy_proxy": 1617,
-        "lap_pace": 1113
+        "lap_pace": 1092
       }
     },
     "2026_09_SQ_British Grand Prix": {
@@ -543,7 +543,7 @@
         "throttle": 1680,
         "straights": 1470,
         "energy_proxy": 1470,
-        "lap_pace": 872
+        "lap_pace": 810
       }
     },
     "2026_11_FP1_Hungarian Grand Prix": {
@@ -628,7 +628,7 @@
         "throttle": 1704,
         "straights": 903,
         "energy_proxy": 903,
-        "lap_pace": 1431
+        "lap_pace": 1429
       }
     },
     "2026_12_FP1_Dutch Grand Prix": {
@@ -679,7 +679,7 @@
         "throttle": 1520,
         "straights": 1330,
         "energy_proxy": 1330,
-        "lap_pace": 1368
+        "lap_pace": 1321
       }
     },
     "2026_12_SQ_Dutch Grand Prix": {
@@ -798,7 +798,7 @@
         "throttle": 1890,
         "straights": 1470,
         "energy_proxy": 1470,
-        "lap_pace": 1054
+        "lap_pace": 992
       }
     },
     "2026_14_FP1_Spanish Grand Prix": {
@@ -883,7 +883,7 @@
         "throttle": 1848,
         "straights": 1617,
         "energy_proxy": 1617,
-        "lap_pace": 1106
+        "lap_pace": 1105
       }
     },
     "2026_15_FP1_Azerbaijan Grand Prix": {
@@ -968,7 +968,92 @@
         "throttle": 1848,
         "straights": 1617,
         "energy_proxy": 1617,
-        "lap_pace": 981
+        "lap_pace": 890
+      }
+    },
+    "2026_16_FP1_Bahrain Grand Prix": {
+      "file": "2026-16-fp1-bahrain-grand-prix-a4c74e42cdb4.json.gz",
+      "season": 2026,
+      "round": 16,
+      "event": "Bahrain Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_16_FP2_Bahrain Grand Prix": {
+      "file": "2026-16-fp2-bahrain-grand-prix-0bb2a94c0f48.json.gz",
+      "season": 2026,
+      "round": 16,
+      "event": "Bahrain Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_16_FP3_Bahrain Grand Prix": {
+      "file": "2026-16-fp3-bahrain-grand-prix-a0050b29f0f8.json.gz",
+      "season": 2026,
+      "round": 16,
+      "event": "Bahrain Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_16_Q_Bahrain Grand Prix": {
+      "file": "2026-16-q-bahrain-grand-prix-d03b4f119151.json.gz",
+      "season": 2026,
+      "round": 16,
+      "event": "Bahrain Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_16_R_Bahrain Grand Prix": {
+      "file": "2026-16-r-bahrain-grand-prix-3855b08c78e4.json.gz",
+      "season": 2026,
+      "round": 16,
+      "event": "Bahrain Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1827,
+        "corner_segments": 1827,
+        "braking": 1827,
+        "throttle": 1827,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
       }
     }
   }

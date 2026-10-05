@@ -4,7 +4,7 @@ This directory contains the F1 InsightX data platform: source snapshots, staged 
 
 Treat this as the operating backbone of a real race-intelligence startup. The app should earn user trust by showing only data that is current enough, validated enough, and explainable enough for the product surface using it.
 
-Generated datasets are intentionally ignored unless they are small fixtures or schema templates. Keep code, validators, SQL, docs, and `.gitkeep` placeholders in git; rebuild large data products from the pipeline.
+The repository includes validated release snapshots alongside code, validators, SQL, and docs. Cache files and bulk historical archives remain local; regenerate release snapshots through the pipeline before publishing a new race.
 
 ## Product Data Principles
 
@@ -17,16 +17,16 @@ Generated datasets are intentionally ignored unless they are small fixtures or s
 
 ## Current Local State
 
-Latest local season state: `season_state_20260928T172016Z`, generated at `2026-09-28T17:20:16Z`.
+Latest local season state: `season_state_20261005T191203Z`, generated at `2026-10-05T19:12:03Z`.
 
 | Layer                      | Current evidence                                                                                                        |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| FastF1 archive             | 2026 round 15 Azerbaijan Grand Prix sessions ingested for FP1, FP2, FP3, qualifying, and race with telemetry available |
-| Canonical FastF1           | 59 sessions, 34,290 session laps, 1,273 session results, 4,145 session stints, 1,275 session-summary rows               |
-| Analysis                   | 15 race analyses; analysis now includes Azerbaijan GP round 15                                                          |
-| Race Week                  | Bahrain Grand Prix in Malaysia, round 16, product view available for Sepang                                             |
-| Strategy modeling          | Azerbaijan Grand Prix product view available; next-race Strategy Lab build remains pending                              |
-| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through Azerbaijan GP round 15                       |
+| FastF1 archive             | 2026 round 16 Bahrain Grand Prix in Malaysia sessions ingested for FP1, FP2, FP3, qualifying, and race with telemetry available |
+| Canonical FastF1           | 64 sessions, 37,786 session laps, 1,408 session results, 4,685 session stints, 1,385 session-summary rows               |
+| Analysis                   | 16 race analyses; analysis includes Bahrain Grand Prix in Malaysia round 16                                              |
+| Race Week                  | Singapore Grand Prix, round 17, product view available                                                                    |
+| Strategy modeling          | Singapore Grand Prix, round 17, Strategy Lab view available                                                             |
+| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through round 16                                       |
 
 ## Layers
 
@@ -70,8 +70,8 @@ Core refresh order from the repo root:
 
 ```bash
 python data/fetch_reference_data.py --start-season 2025 --end-season 2026
-python data/fastf1_ingest.py --season 2026 --round 15 --sessions FP1 FP2 FP3 Q R --include-telemetry --only-missing --retry-failed --max-retries 3 --sleep-seconds 2 --completion-buffer-minutes 30
-python data/fetch_openf1_data.py --start-season 2023 --end-season 2026 --session-types Q R --only-missing
+python data/fastf1_ingest.py --season 2026 --round 16 --sessions FP1 FP2 FP3 Q R --include-telemetry --only-missing --retry-failed --max-retries 3 --sleep-seconds 2 --completion-buffer-minutes 30
+python data/fetch_openf1_data.py --start-season 2026 --end-season 2026 --meeting-key 1308 --session-types FP1 FP2 FP3 Q R --only-missing
 python data/build_openf1_quality_report.py
 python validate_openf1_quality.py
 python data/normalize_results.py
@@ -81,8 +81,8 @@ python build_canonical_fastf1.py --start-season 2020 --end-season 2026
 python validate_canonical_fastf1.py
 python build_telemetry_features.py --start-season 2020 --end-season 2026
 python validate_telemetry_features.py
-python data/build_strategy_lab_layers.py
 python data/build_race_week_layers.py
+python data/build_strategy_lab_layers.py
 python data/build_analytics_views.py
 python data/build_analytics_indexes.py
 python data/build_analytics_telemetry_traces.py

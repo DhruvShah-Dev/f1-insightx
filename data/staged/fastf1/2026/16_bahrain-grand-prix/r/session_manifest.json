@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 16,
+  "event_name": "Bahrain Grand Prix",
+  "event_format": "conventional",
+  "session_code": "R",
+  "session_name": "Race",
+  "status": "complete",
+  "started_at": "2026-10-05T18:36:50Z",
+  "completed_at": "2026-10-05T18:37:27Z",
+  "source": "fastf1_staged_session_v2"
+}

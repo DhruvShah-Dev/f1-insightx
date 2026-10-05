@@ -905,3 +905,58 @@ race_analysis_id,lap_number,phase,track_status_raw,track_status_label,confidence
 2026-15-baku,49,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
 2026-15-baku,50,closing,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
 2026-15-baku,51,closing,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,1,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,2,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,3,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,4,opening,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,5,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,6,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,7,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,8,opening,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,9,opening,124,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-16-sepang,10,opening,4,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,11,opening,4,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,12,middle,14,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,13,middle,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,14,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,15,middle,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,16,middle,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,17,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,18,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,19,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,20,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,21,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,22,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,23,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,24,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,25,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,26,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,27,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,28,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,29,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,30,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,31,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,32,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,33,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,34,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,35,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,36,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,37,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,38,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,39,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,40,middle,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,41,middle,12,yellow,0.85,canonical_fastf1_laps.track_status,Yellow flag from FastF1 track-status feed; sectors and cause unavailable.
+2026-16-sepang,42,closing,126,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-16-sepang,43,closing,126,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-16-sepang,44,closing,46,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-16-sepang,45,closing,46,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-16-sepang,46,closing,46,mixed,0.65,canonical_fastf1_laps.track_status,Multiple FastF1 track-status codes occurred within this lap; cause unavailable.
+2026-16-sepang,47,closing,4,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,48,closing,4,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,49,closing,4,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,50,closing,4,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,51,closing,14,safety-car,0.85,canonical_fastf1_laps.track_status,Safety-car status from FastF1 track-status feed; cause unavailable.
+2026-16-sepang,52,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,53,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,54,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.
+2026-16-sepang,55,closing,1,green,0.95,canonical_fastf1_laps.track_status,Track clear in FastF1 track-status feed.

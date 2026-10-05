@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from datetime import UTC, datetime
 from pathlib import Path
@@ -41,6 +42,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Fetch historical OpenF1 snapshots for F1 InsightX.")
     parser.add_argument("--start-season", type=int, default=2023, help="OpenF1 historical data starts in 2023.")
     parser.add_argument("--end-season", type=int, default=current_year)
+    parser.add_argument("--meeting-key", type=int, default=None, help="Fetch only one OpenF1 meeting.")
     parser.add_argument(
         "--session-types",
         nargs="+",
@@ -99,6 +101,7 @@ def main() -> None:
                 session
                 for session in sessions
                 if str(session.get("session_name")) in allowed_session_names
+                and (args.meeting_key is None or int(session["meeting_key"]) == args.meeting_key)
             ]
 
             for session in target_sessions:
@@ -146,10 +149,25 @@ def main() -> None:
                 "end_season": args.end_season,
                 "session_types": args.session_types,
                 "endpoints": args.endpoints,
+                "meeting_key": args.meeting_key,
                 "free_tier_note": "Historical data only; keep requests under 3 req/s and 30 req/min.",
             },
         )
-        write_records_csv(manifest_rows, settings.staged_openf1_dir / "ingestion_manifest.csv")
+        manifest_path = settings.staged_openf1_dir / "ingestion_manifest.csv"
+        if args.meeting_key is not None and manifest_path.exists():
+            with manifest_path.open(newline="", encoding="utf-8") as handle:
+                existing_rows = list(csv.DictReader(handle))
+            manifest_rows = [
+                row for row in existing_rows
+                if not (
+                    int(row["season"]) >= args.start_season
+                    and int(row["season"]) <= args.end_season
+                    and int(row["meeting_key"]) == args.meeting_key
+                    and row["session_name"] in allowed_session_names
+                    and row["endpoint"] in args.endpoints
+                )
+            ] + manifest_rows
+        write_records_csv(manifest_rows, manifest_path)
     finally:
         client.close()
 

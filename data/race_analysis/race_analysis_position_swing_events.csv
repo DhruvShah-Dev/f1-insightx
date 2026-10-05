@@ -2765,3 +2765,359 @@ race_analysis_id,event_id,driver,team,start_lap,end_lap,position_delta,phase,eve
 2026-15-baku,2026-15-baku-pos-0103,VER,Red Bull Racing,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
 2026-15-baku,2026-15-baku-pos-0104,VER,Red Bull Racing,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
 2026-15-baku,2026-15-baku-pos-0105,VER,Red Bull Racing,36,36,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0001,ALB,Williams,2,2,2.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0002,ALB,Williams,3,3,9.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0003,ALB,Williams,4,4,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0004,ALB,Williams,6,6,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0005,ALB,Williams,10,10,-3.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0006,ALB,Williams,13,13,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0007,ALB,Williams,14,14,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0008,ALB,Williams,15,15,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0009,ALB,Williams,16,16,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0010,ALB,Williams,17,17,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0011,ALB,Williams,19,19,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0012,ALB,Williams,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0013,ALB,Williams,26,26,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0014,ALB,Williams,27,27,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0015,ALB,Williams,29,29,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0016,ALB,Williams,35,35,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0017,ALO,Aston Martin,2,2,-3.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0018,ALO,Aston Martin,3,3,-3.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0019,ALO,Aston Martin,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0020,ALO,Aston Martin,9,9,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0021,ALO,Aston Martin,13,13,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0022,ALO,Aston Martin,14,14,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0023,ALO,Aston Martin,15,15,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0024,ALO,Aston Martin,16,16,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0025,ALO,Aston Martin,28,28,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0026,ALO,Aston Martin,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0027,ALO,Aston Martin,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0028,ALO,Aston Martin,32,32,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0029,ALO,Aston Martin,33,33,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0030,ALO,Aston Martin,35,35,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0031,ALO,Aston Martin,36,36,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0032,ALO,Aston Martin,37,37,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0033,ALO,Aston Martin,40,40,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0034,ALO,Aston Martin,44,44,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0035,ALO,Aston Martin,46,46,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0036,ALO,Aston Martin,48,48,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0037,ALO,Aston Martin,50,50,2.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0038,ANT,Mercedes,2,2,-5.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0039,ANT,Mercedes,3,3,7.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0040,ANT,Mercedes,13,13,-2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0041,ANT,Mercedes,21,21,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0042,ANT,Mercedes,44,44,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0043,ANT,Mercedes,45,45,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0044,BEA,Haas F1 Team,2,2,-2.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0045,BEA,Haas F1 Team,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0046,BEA,Haas F1 Team,8,8,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0047,BEA,Haas F1 Team,9,9,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0048,BEA,Haas F1 Team,10,10,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0049,BEA,Haas F1 Team,11,11,-2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0050,BEA,Haas F1 Team,13,13,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0051,BEA,Haas F1 Team,16,16,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0052,BEA,Haas F1 Team,17,17,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0053,BEA,Haas F1 Team,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0054,BEA,Haas F1 Team,24,24,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0055,BEA,Haas F1 Team,25,25,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0056,BEA,Haas F1 Team,26,26,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0057,BEA,Haas F1 Team,27,27,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0058,BEA,Haas F1 Team,29,29,3.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0059,BEA,Haas F1 Team,38,38,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0060,BEA,Haas F1 Team,39,39,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0061,BEA,Haas F1 Team,42,42,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0062,BEA,Haas F1 Team,43,43,2.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0063,BEA,Haas F1 Team,48,48,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0064,BEA,Haas F1 Team,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0065,BEA,Haas F1 Team,52,52,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0066,BOR,Audi,2,2,6.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0067,BOR,Audi,3,3,-9.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0068,BOR,Audi,10,10,2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0069,BOR,Audi,13,13,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0070,BOR,Audi,14,14,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0071,BOR,Audi,15,15,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0072,BOR,Audi,16,16,-8.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0073,BOR,Audi,19,19,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0074,BOR,Audi,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0075,BOR,Audi,26,26,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0076,BOR,Audi,27,27,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0077,BOR,Audi,30,30,-2.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0078,BOR,Audi,32,32,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0079,BOR,Audi,33,33,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0080,BOR,Audi,35,35,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0081,BOR,Audi,37,37,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0082,BOR,Audi,42,42,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0083,BOR,Audi,49,49,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0084,BOR,Audi,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0085,BOR,Audi,55,55,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0086,BOT,Cadillac,2,2,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0087,BOT,Cadillac,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0088,BOT,Cadillac,6,6,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0089,COL,Alpine,2,2,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0090,COL,Alpine,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0091,COL,Alpine,7,7,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0092,COL,Alpine,16,16,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0093,COL,Alpine,17,17,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0094,COL,Alpine,19,19,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0095,COL,Alpine,24,24,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0096,COL,Alpine,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0097,COL,Alpine,26,26,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0098,COL,Alpine,28,28,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0099,COL,Alpine,29,29,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0100,COL,Alpine,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0101,COL,Alpine,31,31,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0102,COL,Alpine,32,32,-5.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0103,COL,Alpine,33,33,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0104,COL,Alpine,37,37,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0105,COL,Alpine,38,38,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0106,COL,Alpine,42,42,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0107,COL,Alpine,43,43,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0108,COL,Alpine,48,48,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0109,COL,Alpine,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0110,COL,Alpine,52,52,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0111,GAS,Alpine,2,2,-2.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0112,GAS,Alpine,3,3,-3.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0113,GAS,Alpine,8,8,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0114,GAS,Alpine,9,9,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0115,GAS,Alpine,11,11,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0116,GAS,Alpine,12,12,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0117,GAS,Alpine,16,16,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0118,GAS,Alpine,17,17,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0119,GAS,Alpine,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0120,GAS,Alpine,25,25,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0121,GAS,Alpine,26,26,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0122,GAS,Alpine,27,27,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0123,GAS,Alpine,29,29,3.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0124,GAS,Alpine,31,31,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0125,GAS,Alpine,32,32,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0126,GAS,Alpine,37,37,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0127,GAS,Alpine,43,43,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0128,GAS,Alpine,49,49,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0129,GAS,Alpine,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0130,HAD,Red Bull Racing,2,2,-4.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0131,HAD,Red Bull Racing,3,3,6.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0132,HAD,Red Bull Racing,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0133,HAD,Red Bull Racing,32,32,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0134,HAD,Red Bull Racing,33,33,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0135,HAD,Red Bull Racing,34,34,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0136,HAD,Red Bull Racing,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0137,HAD,Red Bull Racing,53,53,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0138,HAM,Ferrari,2,2,-5.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0139,HAM,Ferrari,3,3,-8.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0140,HAM,Ferrari,4,4,-2.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0141,HAM,Ferrari,9,9,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0142,HAM,Ferrari,10,10,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0143,HAM,Ferrari,13,13,3.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0144,HAM,Ferrari,14,14,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0145,HAM,Ferrari,15,15,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0146,HAM,Ferrari,16,16,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0147,HAM,Ferrari,19,19,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0148,HAM,Ferrari,20,20,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0149,HAM,Ferrari,22,22,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0150,HAM,Ferrari,32,32,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0151,HAM,Ferrari,33,33,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0152,HAM,Ferrari,34,34,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0153,HAM,Ferrari,44,44,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0154,HAM,Ferrari,45,45,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0155,HAM,Ferrari,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0156,HAM,Ferrari,53,53,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0157,HUL,Audi,2,2,11.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0158,HUL,Audi,3,3,-8.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0159,HUL,Audi,8,8,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0160,HUL,Audi,9,9,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0161,HUL,Audi,10,10,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0162,HUL,Audi,13,13,3.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0163,HUL,Audi,15,15,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0164,HUL,Audi,16,16,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0165,HUL,Audi,23,23,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0166,HUL,Audi,28,28,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0167,HUL,Audi,29,29,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0168,HUL,Audi,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0169,HUL,Audi,33,33,-5.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0170,HUL,Audi,34,34,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0171,HUL,Audi,38,38,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0172,HUL,Audi,41,41,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0173,HUL,Audi,44,44,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0174,HUL,Audi,46,46,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0175,HUL,Audi,48,48,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0176,HUL,Audi,50,50,2.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0177,HUL,Audi,53,53,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0178,HUL,Audi,55,55,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0179,LAW,Racing Bulls,2,2,-2.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0180,LAW,Racing Bulls,3,3,8.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0181,LAW,Racing Bulls,6,6,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0182,LAW,Racing Bulls,22,22,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0183,LAW,Racing Bulls,30,30,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0184,LAW,Racing Bulls,31,31,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0185,LAW,Racing Bulls,32,32,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0186,LAW,Racing Bulls,33,33,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0187,LAW,Racing Bulls,34,34,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0188,LAW,Racing Bulls,39,39,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0189,LAW,Racing Bulls,46,46,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0190,LAW,Racing Bulls,47,47,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0191,LAW,Racing Bulls,50,50,2.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0192,LAW,Racing Bulls,51,51,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0193,LAW,Racing Bulls,52,52,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0194,LEC,Ferrari,2,2,-13.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0195,LEC,Ferrari,6,6,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0196,LEC,Ferrari,7,7,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0197,LEC,Ferrari,8,8,2.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0198,LEC,Ferrari,10,10,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0199,LEC,Ferrari,11,11,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0200,LEC,Ferrari,12,12,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0201,LEC,Ferrari,13,13,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0202,LEC,Ferrari,16,16,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0203,LEC,Ferrari,17,17,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0204,LEC,Ferrari,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0205,LEC,Ferrari,24,24,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0206,LEC,Ferrari,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0207,LEC,Ferrari,26,26,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0208,LEC,Ferrari,28,28,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0209,LEC,Ferrari,29,29,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0210,LEC,Ferrari,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0211,LEC,Ferrari,31,31,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0212,LEC,Ferrari,32,32,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0213,LEC,Ferrari,34,34,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0214,LEC,Ferrari,36,36,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0215,LEC,Ferrari,37,37,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0216,LEC,Ferrari,38,38,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0217,LEC,Ferrari,44,44,-2.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0218,LEC,Ferrari,46,46,3.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0219,LEC,Ferrari,47,47,-1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0220,LEC,Ferrari,48,48,-7.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0221,LEC,Ferrari,49,49,-3.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0222,LEC,Ferrari,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0223,LEC,Ferrari,51,51,-1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0224,LEC,Ferrari,55,55,2.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0225,LIN,Racing Bulls,2,2,2.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0226,LIN,Racing Bulls,3,3,10.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0227,LIN,Racing Bulls,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0228,LIN,Racing Bulls,10,10,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0229,LIN,Racing Bulls,19,19,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0230,LIN,Racing Bulls,23,23,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0231,LIN,Racing Bulls,25,25,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0232,LIN,Racing Bulls,28,28,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0233,LIN,Racing Bulls,29,29,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0234,LIN,Racing Bulls,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0235,LIN,Racing Bulls,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0236,LIN,Racing Bulls,33,33,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0237,LIN,Racing Bulls,38,38,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0238,LIN,Racing Bulls,40,40,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0239,LIN,Racing Bulls,41,41,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0240,LIN,Racing Bulls,48,48,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0241,LIN,Racing Bulls,50,50,2.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0242,LIN,Racing Bulls,52,52,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0243,LIN,Racing Bulls,55,55,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0244,NOR,McLaren,2,2,-6.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0245,NOR,McLaren,3,3,-6.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0246,NOR,McLaren,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0247,NOR,McLaren,10,10,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0248,NOR,McLaren,13,13,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0249,NOR,McLaren,14,14,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0250,NOR,McLaren,15,15,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0251,NOR,McLaren,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0252,NOR,McLaren,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0253,NOR,McLaren,28,28,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0254,NOR,McLaren,30,30,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0255,NOR,McLaren,32,32,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0256,NOR,McLaren,33,33,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0257,NOR,McLaren,34,34,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0258,NOR,McLaren,35,35,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0259,NOR,McLaren,39,39,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0260,NOR,McLaren,50,50,-3.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0261,NOR,McLaren,52,52,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0262,NOR,McLaren,53,53,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0263,OCO,Haas F1 Team,3,3,9.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0264,OCO,Haas F1 Team,4,4,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0265,OCO,Haas F1 Team,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0266,OCO,Haas F1 Team,20,20,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0267,OCO,Haas F1 Team,27,27,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0268,OCO,Haas F1 Team,28,28,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0269,OCO,Haas F1 Team,29,29,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0270,OCO,Haas F1 Team,30,30,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0271,OCO,Haas F1 Team,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0272,OCO,Haas F1 Team,32,32,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0273,OCO,Haas F1 Team,36,36,-2.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0274,OCO,Haas F1 Team,38,38,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0275,OCO,Haas F1 Team,41,41,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0276,OCO,Haas F1 Team,42,42,-3.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0277,OCO,Haas F1 Team,43,43,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0278,OCO,Haas F1 Team,48,48,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0279,OCO,Haas F1 Team,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0280,PER,Cadillac,2,2,17.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0281,PER,Cadillac,3,3,-9.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0282,PER,Cadillac,9,9,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0283,PER,Cadillac,10,10,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0284,PER,Cadillac,13,13,-1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0285,PER,Cadillac,14,14,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0286,PER,Cadillac,16,16,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0287,PER,Cadillac,18,18,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0288,PER,Cadillac,19,19,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0289,PER,Cadillac,35,35,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0290,PER,Cadillac,37,37,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0291,PER,Cadillac,42,42,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0292,PER,Cadillac,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0293,PER,Cadillac,51,51,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0294,PER,Cadillac,55,55,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0295,PIA,McLaren,2,2,4.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0296,PIA,McLaren,3,3,-9.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0297,PIA,McLaren,13,13,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0298,PIA,McLaren,14,14,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0299,PIA,McLaren,19,19,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0300,PIA,McLaren,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0301,PIA,McLaren,27,27,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0302,PIA,McLaren,30,30,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0303,PIA,McLaren,32,32,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0304,PIA,McLaren,33,33,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0305,PIA,McLaren,34,34,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0306,PIA,McLaren,35,35,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0307,PIA,McLaren,44,44,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0308,PIA,McLaren,45,45,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0309,PIA,McLaren,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0310,PIA,McLaren,51,51,-1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0311,PIA,McLaren,52,52,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0312,RUS,Mercedes,2,2,-3.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0313,RUS,Mercedes,3,3,7.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0314,RUS,Mercedes,6,6,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0315,RUS,Mercedes,13,13,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0316,RUS,Mercedes,21,21,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0317,SAI,Williams,2,2,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0318,SAI,Williams,3,3,7.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0319,SAI,Williams,6,6,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0320,SAI,Williams,10,10,-1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0321,SAI,Williams,13,13,-9.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0322,SAI,Williams,16,16,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0323,SAI,Williams,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0324,SAI,Williams,26,26,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0325,SAI,Williams,27,27,-4.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0326,SAI,Williams,29,29,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0327,SAI,Williams,30,30,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0328,SAI,Williams,31,31,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0329,SAI,Williams,32,32,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0330,SAI,Williams,39,39,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0331,SAI,Williams,42,42,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0332,SAI,Williams,43,43,-3.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0333,SAI,Williams,49,49,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0334,SAI,Williams,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0335,STR,Aston Martin,2,2,11.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0336,STR,Aston Martin,3,3,-10.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0337,STR,Aston Martin,8,8,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0338,STR,Aston Martin,10,10,1.0,opening,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0339,STR,Aston Martin,14,14,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0340,STR,Aston Martin,28,28,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0341,STR,Aston Martin,29,29,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0342,STR,Aston Martin,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0343,STR,Aston Martin,32,32,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0344,STR,Aston Martin,33,33,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0345,STR,Aston Martin,35,35,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0346,STR,Aston Martin,36,36,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0347,STR,Aston Martin,38,38,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0348,STR,Aston Martin,41,41,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0349,STR,Aston Martin,48,48,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0350,STR,Aston Martin,50,50,1.0,closing,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0351,VER,Red Bull Racing,2,2,-5.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0352,VER,Red Bull Racing,3,3,3.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-16-sepang,2026-16-sepang-pos-0353,VER,Red Bull Racing,6,6,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0354,VER,Red Bull Racing,13,13,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-16-sepang,2026-16-sepang-pos-0355,VER,Red Bull Racing,44,44,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-16-sepang,2026-16-sepang-pos-0356,VER,Red Bull Racing,45,45,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.

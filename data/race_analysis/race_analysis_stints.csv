@@ -918,3 +918,98 @@ race_analysis_id,driver,team,stint_number,compound,start_lap,end_lap,stint_lengt
 2026-15-baku,VER,Red Bull Racing,1,MEDIUM,1,31,31,108.253,107.917,107.207,-0.0991,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
 2026-15-baku,VER,Red Bull Racing,2,SOFT,32,36,5,129.938,129.938,129.938,,0.35,4.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
 2026-15-baku,VER,Red Bull Racing,3,SOFT,37,51,15,105.515,105.271,104.993,-0.0518,0.783,1.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALB,Williams,1,INTERMEDIATE,1,9,9,127.515,115.276,113.353,-5.9131,0.617,9.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALB,Williams,2,SOFT,10,16,7,113.791,111.239,107.106,-3.7787,0.517,15.0,short,False,0.662,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALB,Williams,3,HARD,17,29,13,105.948,103.921,102.844,-0.2379,0.783,9.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALB,Williams,4,SOFT,30,42,13,105.11,103.442,102.284,-0.6033,0.75,2.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALO,Aston Martin,1,MEDIUM,1,9,9,133.904,126.607,114.007,-5.3371,0.617,12.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALO,Aston Martin,2,HARD,10,31,22,105.491,103.813,103.124,-0.2895,0.9,7.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALO,Aston Martin,3,,32,45,14,110.961,102.755,101.283,2.0035,0.817,17.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ALO,Aston Martin,4,SOFT,46,55,10,116.205,106.97,100.353,-4.2381,0.617,8.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ANT,Mercedes,1,INTERMEDIATE,1,9,9,118.342,112.041,108.702,-3.0675,0.617,3.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ANT,Mercedes,2,MEDIUM,10,33,24,104.69,102.103,101.337,-0.5386,0.9,2.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ANT,Mercedes,3,SOFT,34,44,11,107.591,101.23,100.338,1.3324,0.717,15.0,medium,False,0.802,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,ANT,Mercedes,4,SOFT,45,55,11,122.002,119.537,98.589,-6.5457,0.617,17.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BEA,Haas F1 Team,1,SOFT,1,10,10,138.282,132.805,114.634,-4.0664,0.65,14.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BEA,Haas F1 Team,2,MEDIUM,11,24,14,106.984,103.854,103.045,-0.9153,0.817,13.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BEA,Haas F1 Team,3,HARD,25,38,14,104.718,103.07,100.996,-0.3051,0.817,2.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BEA,Haas F1 Team,4,,39,55,17,118.578,115.929,100.366,-0.4722,0.883,11.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BOR,Audi,1,SOFT,1,2,2,178.127,178.127,178.127,,0.35,19.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BOR,Audi,2,INTERMEDIATE,3,9,7,116.354,113.521,111.116,3.5839,0.55,18.0,short,False,0.685,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BOR,Audi,3,SOFT,10,15,6,114.992,110.911,107.565,,0.35,19.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BOR,Audi,4,HARD,16,34,19,105.976,104.142,102.742,-0.2432,0.9,3.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BOR,Audi,5,SOFT,35,44,10,115.803,102.832,101.382,1.4468,0.683,2.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BOR,Audi,6,SOFT,45,55,11,117.924,104.289,102.037,-2.5413,0.717,2.0,medium,False,0.802,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,BOT,Cadillac,1,SOFT,1,8,8,142.561,131.841,119.953,-12.8975,0.55,16.0,short,False,0.685,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,COL,Alpine,1,SOFT,1,9,9,141.329,130.501,118.605,-7.6285,0.617,15.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,COL,Alpine,2,MEDIUM,10,31,22,104.839,103.487,102.444,-0.1518,0.9,3.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,COL,Alpine,3,HARD,32,42,11,104.965,102.265,100.988,-0.2747,0.717,3.0,medium,False,0.802,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,COL,Alpine,4,MEDIUM,43,55,13,122.845,125.816,101.348,-2.8443,0.75,18.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,GAS,Alpine,1,SOFT,1,9,9,137.11,129.134,114.626,-5.9102,0.617,13.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,GAS,Alpine,2,MEDIUM,10,25,16,105.639,103.853,102.903,-0.3644,0.85,9.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,GAS,Alpine,3,HARD,26,37,12,105.205,103.272,101.835,-0.4407,0.75,4.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,GAS,Alpine,4,SOFT,38,45,8,118.658,119.584,101.514,4.2924,0.617,12.0,short,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,GAS,Alpine,5,SOFT,46,55,10,116.735,103.233,101.693,-2.067,0.65,3.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HAD,Red Bull Racing,1,INTERMEDIATE,1,9,9,121.204,112.013,111.549,-3.8966,0.617,5.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HAD,Red Bull Racing,2,SOFT,10,31,22,105.532,102.954,101.867,-0.586,0.9,8.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HAD,Red Bull Racing,3,,32,44,13,107.513,101.494,100.369,1.1831,0.783,14.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HAD,Red Bull Racing,4,SOFT,45,55,11,119.598,115.083,99.792,-5.0762,0.617,15.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HAM,Ferrari,1,SOFT,1,31,31,113.191,103.768,101.727,-1.365,0.9,1.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HAM,Ferrari,2,MEDIUM,32,43,12,105.128,101.308,100.178,0.3952,0.75,5.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HAM,Ferrari,3,SOFT,44,55,12,123.758,130.661,98.61,-4.9177,0.683,21.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HUL,Audi,1,SOFT,1,2,2,194.684,194.684,194.684,,0.35,21.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HUL,Audi,2,INTERMEDIATE,3,8,6,114.039,112.657,110.737,2.3322,0.517,16.0,short,False,0.662,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HUL,Audi,3,SOFT,9,32,24,107.504,104.338,102.633,-0.7006,0.9,13.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HUL,Audi,4,SOFT,33,45,13,111.662,102.493,101.718,2.1834,0.783,7.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,HUL,Audi,5,SOFT,46,55,10,116.752,108.009,101.394,-4.1224,0.617,4.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LAW,Racing Bulls,1,INTERMEDIATE,1,9,9,123.649,114.001,111.636,-4.3783,0.617,6.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LAW,Racing Bulls,2,HARD,10,30,21,106.494,103.953,103.085,-0.5644,0.9,10.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LAW,Racing Bulls,3,HARD,31,45,15,110.218,102.626,101.369,1.7146,0.85,16.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LAW,Racing Bulls,4,SOFT,46,55,10,117.526,105.907,100.254,-4.6874,0.617,10.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LEC,Ferrari,1,SOFT,1,3,3,159.318,159.318,159.318,,0.35,17.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LEC,Ferrari,2,INTERMEDIATE,4,9,6,121.278,111.679,110.593,0.5689,0.55,20.0,short,False,0.685,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LEC,Ferrari,3,SOFT,10,28,19,105.651,103.439,101.896,-0.4427,0.9,6.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LEC,Ferrari,4,,29,43,15,104.878,101.456,100.906,0.3167,0.85,1.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LEC,Ferrari,5,SOFT,44,55,12,118.964,113.77,99.336,-3.9524,0.65,5.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LIN,Racing Bulls,1,INTERMEDIATE,1,9,9,128.848,113.936,112.69,-7.8079,0.617,10.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LIN,Racing Bulls,2,HARD,10,28,19,106.807,104.437,103.06,-0.6272,0.9,12.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LIN,Racing Bulls,3,HARD,29,43,15,106.999,103.005,101.827,0.556,0.85,11.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,LIN,Racing Bulls,4,SOFT,44,55,12,119.755,118.727,100.315,-3.6662,0.683,16.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,NOR,McLaren,1,MEDIUM,1,9,9,129.792,124.374,112.056,-3.8007,0.617,11.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,NOR,McLaren,2,HARD,10,34,25,105.174,103.558,102.355,-0.2795,0.9,6.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,NOR,McLaren,3,SOFT,35,45,11,111.911,101.013,100.659,2.8035,0.717,18.0,medium,False,0.802,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,NOR,McLaren,4,SOFT,46,55,10,119.586,106.607,99.97,-5.3576,0.617,14.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,OCO,Haas F1 Team,1,INTERMEDIATE,1,9,9,125.855,113.394,111.853,-6.1453,0.617,8.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,OCO,Haas F1 Team,2,SOFT,10,29,20,106.708,103.871,103.059,-0.6032,0.9,11.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,OCO,Haas F1 Team,3,HARD,30,41,12,105.818,103.624,102.282,-0.3981,0.75,8.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,OCO,Haas F1 Team,4,SOFT,42,55,14,124.46,132.264,102.062,-2.3097,0.817,19.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,1,SOFT,1,1,1,217.87,217.87,217.87,,0.35,22.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,2,INTERMEDIATE,2,2,1,,,,,0.35,,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,3,INTERMEDIATE,3,9,7,117.517,113.989,113.472,3.1909,0.55,20.0,short,False,0.685,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,4,MEDIUM,10,18,9,111.173,108.64,105.037,-2.009,0.583,6.0,medium,False,0.708,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,5,HARD,19,21,3,112.874,111.06,102.688,,0.35,1.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,6,HARD,22,39,18,107.031,105.174,102.726,-0.0213,0.9,1.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,7,MEDIUM,40,44,5,127.755,133.118,107.507,5.2717,0.517,1.0,short,False,0.662,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PER,Cadillac,8,SOFT,45,55,11,108.706,104.307,103.272,-0.1751,0.683,1.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PIA,McLaren,1,MEDIUM,1,2,2,165.216,165.216,165.216,,0.35,18.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PIA,McLaren,2,INTERMEDIATE,3,9,7,116.382,113.527,110.656,3.8623,0.55,19.0,short,False,0.685,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PIA,McLaren,3,HARD,10,33,24,105.375,103.507,102.616,-0.3705,0.9,5.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PIA,McLaren,4,HARD,34,45,12,110.624,100.925,100.34,2.4636,0.75,5.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,PIA,McLaren,5,MEDIUM,46,55,10,119.38,106.676,99.485,-5.7066,0.617,6.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,RUS,Mercedes,1,INTERMEDIATE,1,9,9,119.841,112.315,109.122,-3.5951,0.617,4.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,RUS,Mercedes,2,MEDIUM,10,32,23,105.004,102.659,101.536,-0.5358,0.9,4.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,RUS,Mercedes,3,SOFT,33,44,12,107.366,101.312,100.715,1.275,0.75,12.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,RUS,Mercedes,4,SOFT,45,50,6,143.035,145.099,134.529,,0.35,20.0,short,False,0.545,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,SAI,Williams,1,INTERMEDIATE,1,9,9,124.972,114.142,112.997,-4.9451,0.617,7.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,SAI,Williams,2,SOFT,10,26,17,107.905,104.447,103.287,-1.046,0.85,14.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,SAI,Williams,3,HARD,27,42,16,105.657,103.853,101.738,-0.0368,0.883,7.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,SAI,Williams,4,SOFT,43,55,13,118.703,104.003,102.167,-2.6043,0.717,13.0,medium,False,0.802,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,STR,Aston Martin,1,MEDIUM,1,2,2,194.052,194.052,194.052,,0.35,20.0,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,STR,Aston Martin,2,INTERMEDIATE,3,9,7,116.193,112.906,111.98,3.0507,0.55,17.0,short,False,0.685,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,STR,Aston Martin,3,HARD,10,28,19,106.61,103.845,103.2,-0.6629,0.9,10.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,STR,Aston Martin,4,HARD,29,43,15,106.982,103.245,102.276,0.5377,0.85,4.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,STR,Aston Martin,5,SOFT,44,55,12,119.806,117.769,101.248,-3.555,0.683,7.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,VER,Red Bull Racing,1,INTERMEDIATE,1,9,9,117.808,111.672,109.03,-2.718,0.617,2.0,medium,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,VER,Red Bull Racing,2,SOFT,10,33,24,104.208,101.735,100.953,-0.5197,0.9,1.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,VER,Red Bull Racing,3,SOFT,34,43,10,104.485,100.912,100.275,-0.2072,0.683,1.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-16-sepang,VER,Red Bull Racing,4,SOFT,44,55,12,117.344,98.614,98.22,-5.3418,0.583,9.0,medium,False,0.708,Timing-derived; traffic and gaps are not directly measured.

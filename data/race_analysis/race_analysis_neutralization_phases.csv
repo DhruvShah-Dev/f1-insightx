@@ -78,3 +78,12 @@ race_analysis_id,phase_id,start_lap,end_lap,status_label,affected_laps,confidenc
 2026-15-baku,2026-15-baku-status-06,37,38,safety-car,2,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
 2026-15-baku,2026-15-baku-status-07,39,40,yellow,2,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
 2026-15-baku,2026-15-baku-status-08,50,51,yellow,2,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-01,2,2,yellow,1,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-02,5,8,yellow,4,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-03,9,9,mixed,1,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-04,10,12,safety-car,3,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-05,13,13,yellow,1,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-06,15,16,yellow,2,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-07,41,41,yellow,1,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-08,42,46,mixed,5,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-16-sepang,2026-16-sepang-status-09,47,51,safety-car,5,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
