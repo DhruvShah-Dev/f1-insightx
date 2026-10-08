@@ -69,13 +69,16 @@ function RaceWeek() {
   const start = data.scheduledAt ? fmtDateTime(data.scheduledAt) : "TBC";
   const turns = cornerSummaryForCircuit(data.circuit.id);
   const isSepang = /sepang/i.test(data.circuit.name);
+  const isSingapore = data.circuit.id === "marina_bay";
   const circuitLength =
     data.circuit.lengthKm != null && data.circuit.lengthKm > 0
       ? data.circuit.lengthKm
       : isSepang
         ? 5.543
+        : isSingapore
+          ? 4.927
         : null;
-  const turnCount = turns === "TBC" && isSepang ? "15" : turns;
+  const turnCount = turns === "TBC" && isSepang ? "15" : isSingapore ? "19" : turns;
 
   return (
     <SiteShell fullWidth>

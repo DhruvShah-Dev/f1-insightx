@@ -139,6 +139,64 @@
 .rw-map-reference svg {
   mix-blend-mode: screen;
 }
+.rw-map-singapore {
+  position: relative;
+  background: #050607;
+  margin-top: 1.25rem;
+  overflow: hidden;
+}
+.rw-map-singapore svg {
+  padding: 0.35rem;
+}
+.rw-sg-border,
+.rw-sg-road,
+.rw-sg-sector {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.rw-sg-border { stroke: #f2f3f5; stroke-width: 16; }
+.rw-sg-road { stroke: #0b1015; stroke-width: 12; }
+.rw-sg-sector { stroke-width: 4; }
+.rw-sg-sector-1 { stroke: #ed198b; }
+.rw-sg-sector-2 { stroke: #f6d342; }
+.rw-sg-sector-3 { stroke: #42aefa; }
+.rw-sg-turn circle {
+  fill: #f7f8f9;
+  stroke: #111419;
+  stroke-width: 1.5;
+}
+.rw-sg-turn text {
+  fill: #111419;
+  font: 800 11px Outfit, sans-serif;
+}
+.rw-sg-callout path {
+  fill: none;
+  stroke: #e8eaf0;
+  stroke-width: 1.4;
+}
+.rw-sg-speed { fill: #e8ed49; }
+.rw-sg-detection { fill: #77dbfa; }
+.rw-sg-activation { fill: #6bdfaa; }
+.rw-sg-callout-text {
+  fill: #081119;
+  font: 800 9px Outfit, sans-serif;
+}
+.rw-sg-sector-labels text {
+  fill: #111419;
+  stroke: #f6f7f8;
+  stroke-width: 5;
+  paint-order: stroke;
+  font: 800 10px Outfit, sans-serif;
+}
+.rw-sg-source {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.45rem;
+  color: #a8afb5;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+}
 .rw-big-stat {
   padding: 2.5rem 0 2rem;
 }

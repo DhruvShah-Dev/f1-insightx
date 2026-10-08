@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { TrackPath } from "@/lib/f1.functions";
+import { SingaporeCircuitProfile } from "@/components/singapore-circuit-profile";
 
 export function RaceCircuitProfile({
   path,
@@ -40,6 +41,8 @@ export function RaceCircuitProfile({
       start: points[0]!,
     };
   }, [path]);
+  if (/singapore|marina bay/i.test(circuitName) && path)
+    return <SingaporeCircuitProfile path={path} />;
   if (/sepang/i.test(circuitName))
     return (
       <div className="rw-map-canvas rw-map-reference">
