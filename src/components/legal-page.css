@@ -1,0 +1,22 @@
+.legal-page { max-width: 760px; margin: 20px auto 70px; color: #f2f0e9; }
+.legal-eyebrow { color: #c7f36b; font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.legal-page h1 { margin: 16px 0 8px; font-size: clamp(38px,6vw,72px); font-weight: 900; line-height: 1; letter-spacing: -.05em; }
+.legal-updated { color: #aaaab2; font-size: 13px; }
+.legal-content { margin-top: 40px; font-size: 15px; line-height: 1.7; color: #d4d3d8; }
+.legal-content h2 { margin: 38px 0 8px; color: #f2f0e9; font-size: 22px; line-height: 1.2; }
+.legal-content p, .legal-content ul { margin: 10px 0; }
+.legal-content ul { padding-left: 22px; }
+.legal-content a, .account-data-controls a, .account-login-legal a { color: #c7f36b; text-underline-offset: 3px; }
+.account-login-legal { margin: 16px 0 0; max-width: 440px; color: #bdbdc4; font-size: 12px; line-height: 1.5; }
+.account-login-legal input { margin-right: 8px; accent-color: #c7f36b; }
+.account-data-controls { margin: 30px 0 50px; padding: 24px; border: 1px solid #42434a; background: #1b1c24; color: #d4d3d8; }
+.account-data-controls h2 { color: #f2f0e9; font-size: 23px; font-weight: 800; }
+.account-data-controls h3 { color: #f2f0e9; font-size: 18px; font-weight: 700; }
+.account-data-controls p { margin: 10px 0 16px; font-size: 13px; line-height: 1.6; }
+.account-data-controls button { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 8px 14px; border: 1px solid #c7f36b; color: #c7f36b; font-size: 13px; font-weight: 800; }
+.account-data-controls button:disabled { opacity: .45; cursor: not-allowed; }
+.account-data-controls button svg { width: 16px; height: 16px; }
+.account-delete-controls { margin: 24px 0; padding-top: 20px; border-top: 1px solid #42434a; }
+.account-delete-controls label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 700; }
+.account-delete-controls input { display: block; width: min(100%, 280px); min-height: 42px; margin-bottom: 12px; padding: 8px 12px; border: 1px solid #73747c; background: #101116; color: #fff; }
+.account-data-controls .account-delete-button { border-color: #f29b9b; color: #f29b9b; }

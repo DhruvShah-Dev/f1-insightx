@@ -8,6 +8,7 @@
 .ix-theme-championship { --ix-accent: #91d5c3; --ix-art: url('/assets/teams/logos/2026/white-svg/mercedes.svg'); }
 .ix-theme-account { --ix-accent: #c9f27a; --ix-art: url('/assets/drivers/2026/full-body/front/bot.png'); }
 .ix-theme-method { --ix-accent: #9ebdc4; --ix-art: url('/images/race-control-hero.png'); }
+.ix-theme-legal { --ix-accent: #c7f36b; --ix-art: none; }
 
 .ix-header { position: sticky; top: 0; z-index: 50; color: #f2f0e9; background: rgba(15,16,22,.94); border-bottom: 1px solid rgba(242,240,233,.14); box-shadow: 0 12px 28px rgba(0,0,0,.12); backdrop-filter: blur(20px); }
 .ix-header::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--ix-accent); }

@@ -11,12 +11,14 @@ import { SiteHeader } from "@/components/site-chrome";
 import { AccountDashboard } from "@/components/account-dashboard";
 import { nextRace } from "@/data/season";
 import { supabase } from "@/integrations/supabase/client";
+import { deleteAccountData, exportAccountData } from "@/lib/account-data.functions";
 import type { Database } from "@/integrations/supabase/types";
 import { fmtDateTime } from "@/lib/format";
 import { pageSeo } from "@/lib/seo";
 import { FastArrowRight } from "iconoir-react/regular";
 import { driverStandings, seasonState, teams } from "@/data/season";
 import "./account.css";
+import "@/components/legal-page.css";
 
 type Profile = Database["public"]["Tables"]["user_profiles"]["Row"];
 type AuthState = "loading" | "ready" | "unavailable";
@@ -79,6 +81,9 @@ function Account() {
   const [avatarType, setAvatarType] = useState<(typeof AVATARS)[number]["id"]>("helmet");
   const [message, setMessage] = useState("");
   const [saveState, setSaveState] = useState<SaveState>("idle");
+  const [dataAction, setDataAction] = useState<"idle" | "exporting" | "deleting">("idle");
+  const [deleteConfirmation, setDeleteConfirmation] = useState("");
+  const [legalConfirmed, setLegalConfirmed] = useState(false);
 
   const user = session?.user ?? null;
   const usernameLocked = isLocked(profile?.username_locked_until ?? null);
@@ -176,6 +181,7 @@ function Account() {
   }, [loadProfile, refreshSession]);
 
   async function signInWithGoogle() {
+    if (!legalConfirmed) return;
     setSaveState("saving");
     setMessage("");
     try {
@@ -257,12 +263,57 @@ function Account() {
     setSaveState("idle");
   }
 
+  async function exportData() {
+    if (!session) return;
+    setDataAction("exporting");
+    setMessage("");
+    try {
+      const serverData = await exportAccountData({ data: { accessToken: session.access_token } });
+      let browserPicks: unknown = null;
+      try {
+        const raw = localStorage.getItem(`f1ix.picks.v1.${session.user.id}`);
+        browserPicks = raw ? JSON.parse(raw) : null;
+      } catch { /* Browser storage may be unavailable. */ }
+      const blob = new Blob([JSON.stringify({ ...serverData, browserPicks }, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = "f1-insightx-account-data.json";
+      anchor.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setMessage("Your account data was downloaded.");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Export failed. Please try again.");
+    } finally {
+      setDataAction("idle");
+    }
+  }
+
+  async function deleteData() {
+    if (!session || deleteConfirmation !== "DELETE") return;
+    setDataAction("deleting");
+    setMessage("");
+    try {
+      await deleteAccountData({ data: { accessToken: session.access_token, confirmation: "DELETE" } });
+      try { localStorage.removeItem(`f1ix.picks.v1.${session.user.id}`); } catch { /* Browser storage may be unavailable. */ }
+      await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
+      setSession(null);
+      setProfile(null);
+      setDeleteConfirmation("");
+      setMessage("Your account was deleted.");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Deletion failed. Please try again.");
+    } finally {
+      setDataAction("idle");
+    }
+  }
+
   if (authState === "loading") {
-    return <SignInScreen onSignIn={signInWithGoogle} loading message="" checking />;
+    return <SignInScreen onSignIn={signInWithGoogle} loading message="" checking legalConfirmed={legalConfirmed} onLegalConfirmedChange={setLegalConfirmed} />;
   }
 
   if (!user) {
-    return <SignInScreen onSignIn={signInWithGoogle} loading={saveState === "saving"} message={message} />;
+    return <SignInScreen onSignIn={signInWithGoogle} loading={saveState === "saving"} message={message} legalConfirmed={legalConfirmed} onLegalConfirmedChange={setLegalConfirmed} />;
   }
 
   return (
@@ -287,6 +338,11 @@ function Account() {
         onAvatarChange={(value) => setAvatarType(value as typeof avatarType)}
         onSave={saveProfile}
         onSignOut={() => void signOut()}
+        onExport={() => void exportData()}
+        onDelete={() => void deleteData()}
+        dataAction={dataAction}
+        deleteConfirmation={deleteConfirmation}
+        onDeleteConfirmationChange={setDeleteConfirmation}
         avatarFallback={<AvatarMark avatar={currentAvatar.id} />}
       />
     </SiteShell>
@@ -297,11 +353,15 @@ function SignInScreen({
   loading,
   message,
   checking = false,
+  legalConfirmed,
+  onLegalConfirmedChange,
 }: {
   onSignIn: () => Promise<void>;
   loading: boolean;
   message: string;
   checking?: boolean;
+  legalConfirmed: boolean;
+  onLegalConfirmedChange: (value: boolean) => void;
 }) {
   const featuredDriver = driverStandings.find(({ code }) => code === "BOT");
   const featuredTeam = featuredDriver?.team ?? "cadillac";
@@ -349,12 +409,13 @@ function SignInScreen({
             type="button"
             className="account-login-google"
             onClick={() => void onSignIn()}
-            disabled={loading || checking}
+            disabled={loading || checking || !legalConfirmed}
           >
             <GoogleLogo className="account-login-google-icon" />
             <span>{checking ? "Checking account…" : loading ? "Connecting…" : "Continue with Google"}</span>
             <FastArrowRight aria-hidden="true" />
           </button>
+          <label className="account-login-legal"><input type="checkbox" checked={legalConfirmed} onChange={(event) => onLegalConfirmedChange(event.target.checked)} /> I am at least 16 and agree to the <Link to="/terms">Terms of Use</Link>. I have read the <Link to="/privacy">Privacy Policy</Link> and <Link to="/cookies">Storage Notice</Link>.</label>
           {message ? <p className="account-login-error" role="alert">{message}</p> : null}
         </div>
 

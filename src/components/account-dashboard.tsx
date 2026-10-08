@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ComponentType, FormEvent, ReactNode } from "react";
-import { ArrowUpRight, Flag, Lock, LogOut, RefreshCw, Save, Shield } from "lucide-react";
+import { ArrowUpRight, Download, Flag, Lock, LogOut, RefreshCw, Save, Shield, Trash2 } from "lucide-react";
 import { constructorStandings, driverStandings, seasonState, teams } from "@/data/season";
 import { fmtDateTime } from "@/lib/format";
 
@@ -9,7 +9,8 @@ type AvatarOption = { id: string; label: string; icon: ComponentType<{ className
 export function AccountDashboard({
   identityName, email, userId, providerAvatar, username, savedUsername, avatarType, avatars,
   createdAt, profileLockedUntil, usernameLocked, profileLocked, lockCopy, saveState, message,
-  onUsernameChange, onAvatarChange, onSave, onSignOut, avatarFallback,
+  onUsernameChange, onAvatarChange, onSave, onSignOut, onExport, onDelete,
+  dataAction, deleteConfirmation, onDeleteConfirmationChange, avatarFallback,
 }: {
   identityName: string;
   email: string;
@@ -30,6 +31,11 @@ export function AccountDashboard({
   onAvatarChange: (value: string) => void;
   onSave: (event: FormEvent<HTMLFormElement>) => void;
   onSignOut: () => void;
+  onExport: () => void;
+  onDelete: () => void;
+  dataAction: "idle" | "exporting" | "deleting";
+  deleteConfirmation: string;
+  onDeleteConfirmationChange: (value: string) => void;
   avatarFallback: ReactNode;
 }) {
   const leader = driverStandings[0]!;
@@ -90,6 +96,19 @@ export function AccountDashboard({
         <div className="account-details-bottom"><span><Flag aria-hidden="true" /> Data through R{seasonState.resultsThrough.round}</span><button type="button" onClick={onSignOut}><LogOut aria-hidden="true" /> Sign out</button></div>
       </aside>
     </div>
+    <section className="account-data-controls" aria-labelledby="account-data-title">
+      <h2 id="account-data-title">Your data</h2>
+      <p>Download your account details and picks. Browser picks are saved on this device, so export from each device you use.</p>
+      <button type="button" onClick={onExport} disabled={dataAction !== "idle"}><Download aria-hidden="true" /> {dataAction === "exporting" ? "Preparing download…" : "Download my data"}</button>
+      <div className="account-delete-controls">
+        <h3>Delete your account</h3>
+        <p>This permanently removes your Google sign-in record, F1 InsightX profile, and submitted picks. It also clears picks saved in this browser. Type DELETE to confirm.</p>
+        <label htmlFor="delete-confirmation">Confirmation</label>
+        <input id="delete-confirmation" value={deleteConfirmation} onChange={(event) => onDeleteConfirmationChange(event.target.value)} autoComplete="off" />
+        <button type="button" className="account-delete-button" onClick={onDelete} disabled={deleteConfirmation !== "DELETE" || dataAction !== "idle"}><Trash2 aria-hidden="true" /> {dataAction === "deleting" ? "Deleting…" : "Permanently delete account"}</button>
+      </div>
+      <p>For access, correction, or deletion help, see the <Link to="/privacy">Privacy Policy</Link>.</p>
+    </section>
   </div>;
 }
 

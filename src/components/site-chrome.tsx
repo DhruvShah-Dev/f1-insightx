@@ -24,12 +24,14 @@ const pageDetails = {
   championship: { title: "Championship.", next: "/raceweek", nextLabel: "RaceWeek" },
   account: { title: "Account.", next: "/picks", nextLabel: "Picks" },
   method: { title: "Method.", next: "/analysis", nextLabel: "Analysis" },
+  legal: { title: "Your information.", next: "/account", nextLabel: "Account" },
 } as const;
 
 type PageKey = keyof typeof pageDetails;
 
 function currentPage(pathname: string): PageKey {
   if (pathname.startsWith("/method")) return "method";
+  if (["/privacy", "/terms", "/cookies"].some((path) => pathname.startsWith(path))) return "legal";
   return sections.find((item) => item.to !== "/" && pathname.startsWith(item.to))?.key ?? "home";
 }
 
@@ -103,6 +105,10 @@ export function SiteFooter() {
         <nav className="ix-footer-links" aria-label="Footer navigation">
           {sections.map(({ to, label }) => <Link key={to} to={to}>{label}<ArrowUpRight aria-hidden="true" /></Link>)}
           <Link to="/method">Method<ArrowUpRight aria-hidden="true" /></Link>
+          <Link to="/privacy">Privacy<ArrowUpRight aria-hidden="true" /></Link>
+          <Link to="/terms">Terms<ArrowUpRight aria-hidden="true" /></Link>
+          <Link to="/cookies">Cookies & storage<ArrowUpRight aria-hidden="true" /></Link>
+          <a href="mailto:f1.insightx@gmail.com">Contact<ArrowUpRight aria-hidden="true" /></a>
         </nav>
       </div>
       <div className="ix-footer-bottom">

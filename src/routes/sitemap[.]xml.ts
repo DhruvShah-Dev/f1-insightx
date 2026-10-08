@@ -14,6 +14,9 @@ const publicPaths = [
   "/picks",
   "/method",
   "/method/dashboard",
+  "/privacy",
+  "/terms",
+  "/cookies",
 ];
 
 function escapeXml(value: string) {

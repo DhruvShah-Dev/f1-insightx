@@ -12,10 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as ChampionshipRouteImport } from './routes/championship'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as MethodRouteImport } from './routes/method'
 import { Route as PicksRouteImport } from './routes/picks'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RaceweekRouteImport } from './routes/raceweek'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VsRouteImport } from './routes/vs'
 import { Route as AnalysisIndexRouteImport } from './routes/analysis.index'
 import { Route as AnalysisSlugRouteImport } from './routes/analysis.$slug'
@@ -36,6 +39,11 @@ const ChampionshipRoute = ChampionshipRouteImport.update({
   path: '/championship',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MethodRoute = MethodRouteImport.update({
   id: '/method',
   path: '/method',
@@ -46,6 +54,11 @@ const PicksRoute = PicksRouteImport.update({
   path: '/picks',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RaceweekRoute = RaceweekRouteImport.update({
   id: '/raceweek',
   path: '/raceweek',
@@ -54,6 +67,11 @@ const RaceweekRoute = RaceweekRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VsRoute = VsRouteImport.update({
@@ -81,10 +99,13 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
   '/championship': typeof ChampionshipRoute
+  '/cookies': typeof CookiesRoute
   '/method': typeof MethodRoute
   '/picks': typeof PicksRoute
+  '/privacy': typeof PrivacyRoute
   '/raceweek': typeof RaceweekRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
   '/method/dashboard': typeof MethodDashboardRoute
@@ -94,10 +115,13 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
   '/championship': typeof ChampionshipRoute
+  '/cookies': typeof CookiesRoute
   '/method': typeof MethodRoute
   '/picks': typeof PicksRoute
+  '/privacy': typeof PrivacyRoute
   '/raceweek': typeof RaceweekRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
   '/method/dashboard': typeof MethodDashboardRoute
@@ -108,10 +132,13 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
   '/championship': typeof ChampionshipRoute
+  '/cookies': typeof CookiesRoute
   '/method': typeof MethodRoute
   '/picks': typeof PicksRoute
+  '/privacy': typeof PrivacyRoute
   '/raceweek': typeof RaceweekRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
   '/method_/dashboard': typeof MethodDashboardRoute
@@ -123,10 +150,13 @@ export interface FileRouteTypes {
     | '/'
     | '/account'
     | '/championship'
+    | '/cookies'
     | '/method'
     | '/picks'
+    | '/privacy'
     | '/raceweek'
     | '/sitemap.xml'
+    | '/terms'
     | '/vs'
     | '/analysis/$slug'
     | '/method/dashboard'
@@ -136,10 +166,13 @@ export interface FileRouteTypes {
     | '/'
     | '/account'
     | '/championship'
+    | '/cookies'
     | '/method'
     | '/picks'
+    | '/privacy'
     | '/raceweek'
     | '/sitemap.xml'
+    | '/terms'
     | '/vs'
     | '/analysis/$slug'
     | '/method/dashboard'
@@ -149,10 +182,13 @@ export interface FileRouteTypes {
     | '/'
     | '/account'
     | '/championship'
+    | '/cookies'
     | '/method'
     | '/picks'
+    | '/privacy'
     | '/raceweek'
     | '/sitemap.xml'
+    | '/terms'
     | '/vs'
     | '/analysis/$slug'
     | '/method_/dashboard'
@@ -163,10 +199,13 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccountRoute: typeof AccountRoute
   ChampionshipRoute: typeof ChampionshipRoute
+  CookiesRoute: typeof CookiesRoute
   MethodRoute: typeof MethodRoute
   PicksRoute: typeof PicksRoute
+  PrivacyRoute: typeof PrivacyRoute
   RaceweekRoute: typeof RaceweekRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
   VsRoute: typeof VsRoute
   AnalysisSlugRoute: typeof AnalysisSlugRoute
   MethodDashboardRoute: typeof MethodDashboardRoute
@@ -196,6 +235,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChampionshipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/method': {
       id: '/method'
       path: '/method'
@@ -210,6 +256,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PicksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/raceweek': {
       id: '/raceweek'
       path: '/raceweek'
@@ -222,6 +275,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vs': {
@@ -259,10 +319,13 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRoute: AccountRoute,
   ChampionshipRoute: ChampionshipRoute,
+  CookiesRoute: CookiesRoute,
   MethodRoute: MethodRoute,
   PicksRoute: PicksRoute,
+  PrivacyRoute: PrivacyRoute,
   RaceweekRoute: RaceweekRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
   VsRoute: VsRoute,
   AnalysisSlugRoute: AnalysisSlugRoute,
   MethodDashboardRoute: MethodDashboardRoute,
