@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-17-marina_bay,2026,17,2026-17-marina_bay,Singapore Grand Prix,marina_bay,marina_bay,2026-10-11T12:00:00Z,upcoming,True,2026-16-sepang,Balanced circuit,High,0.0,0.2698081363636363,2026-10-05T19:03:03Z,race_week_20261005T190303Z,race_week_overview_v2
+2026-18-americas,2026,18,2026-18-americas,United States Grand Prix,americas,americas,2026-10-25T20:00:00Z,upcoming,False,2026-17-marina_bay,Balanced circuit,High,0.0,0.2627495454545454,2026-10-13T16:03:01Z,race_week_20261013T160301Z,race_week_overview_v2

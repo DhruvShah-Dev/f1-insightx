@@ -1013,3 +1013,50 @@ race_analysis_id,driver,team,stint_number,compound,start_lap,end_lap,stint_lengt
 2026-16-sepang,VER,Red Bull Racing,2,SOFT,10,33,24,104.208,101.735,100.953,-0.5197,0.9,1.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
 2026-16-sepang,VER,Red Bull Racing,3,SOFT,34,43,10,104.485,100.912,100.275,-0.2072,0.683,1.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
 2026-16-sepang,VER,Red Bull Racing,4,SOFT,44,55,12,117.344,98.614,98.22,-5.3418,0.583,9.0,medium,False,0.708,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ALB,Williams,1,MEDIUM,1,22,22,102.578,100.898,99.99,-0.1693,0.9,18.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ALB,Williams,2,SOFT,23,37,15,100.764,99.002,98.396,-0.304,0.85,13.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ALB,Williams,3,SOFT,38,60,23,101.39,98.363,97.436,-0.615,0.9,5.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ALO,Aston Martin,1,SOFT,1,35,35,101.789,100.729,99.482,-0.1328,0.9,16.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ALO,Aston Martin,2,MEDIUM,36,61,26,101.255,99.102,98.032,-0.4026,0.9,16.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ANT,Mercedes,1,SOFT,1,23,23,99.661,98.342,97.395,-0.0998,0.9,5.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ANT,Mercedes,2,MEDIUM,24,39,16,100.276,97.615,97.077,0.1641,0.883,11.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,ANT,Mercedes,3,SOFT,40,62,23,97.772,96.371,95.589,-0.2613,0.9,3.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,BEA,Haas F1 Team,1,SOFT,1,33,33,100.64,99.467,98.863,-0.0922,0.9,9.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,BEA,Haas F1 Team,2,MEDIUM,34,61,28,100.167,98.084,97.556,-0.2721,0.9,10.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,BOR,Audi,1,MEDIUM,1,8,8,103.393,101.858,100.486,-0.8938,0.583,21.0,short,False,0.708,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,BOT,Cadillac,1,MEDIUM,1,28,28,104.08,102.425,101.527,-0.06,0.9,22.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,BOT,Cadillac,2,SOFT,29,59,31,103.997,101.596,100.171,-0.2364,0.9,18.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,COL,Alpine,1,MEDIUM,1,30,30,101.246,100.046,99.265,-0.1789,0.9,13.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,GAS,Alpine,1,MEDIUM,1,29,29,100.77,99.51,99.061,-0.0921,0.9,10.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,GAS,Alpine,2,SOFT,30,61,32,100.019,97.943,97.39,-0.1653,0.9,9.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,HAD,Red Bull Racing,1,MEDIUM,1,33,33,101.306,100.043,98.752,-0.1396,0.9,14.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,HAD,Red Bull Racing,2,SOFT,34,62,29,98.915,96.731,95.917,-0.2774,0.9,3.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,HAM,Ferrari,1,MEDIUM,1,18,18,100.138,98.359,97.599,-0.0314,0.9,6.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,HAM,Ferrari,2,SOFT,19,62,44,99.352,97.654,96.922,0.0063,0.9,5.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,HUL,Audi,1,MEDIUM,1,30,30,100.637,99.453,99.03,-0.0882,0.9,8.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,HUL,Audi,2,SOFT,31,62,32,99.533,97.734,97.055,-0.234,0.9,6.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,LAW,Racing Bulls,1,SOFT,1,31,31,100.528,99.322,98.785,-0.0702,0.9,7.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,LAW,Racing Bulls,2,MEDIUM,32,62,31,99.551,97.663,97.193,-0.2506,0.9,7.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,LEC,Ferrari,1,SOFT,1,24,24,99.414,98.131,97.493,-0.0566,0.9,3.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,LEC,Ferrari,2,MEDIUM,25,39,15,99.96,97.22,96.78,0.0865,0.85,8.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,LEC,Ferrari,3,SOFT,40,62,23,97.512,96.205,95.202,-0.2516,0.9,2.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,LIN,Racing Bulls,1,MEDIUM,1,26,26,101.976,100.322,99.744,-0.1413,0.9,17.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,LIN,Racing Bulls,2,SOFT,27,61,35,100.868,98.935,98.154,-0.1166,0.9,14.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,NOR,McLaren,1,SOFT,1,32,32,99.404,98.327,97.558,-0.0603,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,NOR,McLaren,2,MEDIUM,33,62,30,99.345,97.269,96.282,-0.1827,0.9,4.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,OCO,Haas F1 Team,1,SOFT,1,28,28,101.029,99.51,98.973,-0.1163,0.9,11.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,OCO,Haas F1 Team,2,MEDIUM,29,61,33,100.534,98.641,98.129,-0.1475,0.9,12.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,PER,Cadillac,1,SOFT,1,21,21,102.822,100.816,100.467,-0.2115,0.9,20.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,PER,Cadillac,2,MEDIUM,22,38,17,104.038,100.74,99.474,0.4682,0.9,19.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,PER,Cadillac,3,SOFT,39,60,22,100.609,99.278,98.574,-0.2106,0.9,4.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,PIA,McLaren,1,SOFT,1,33,33,99.499,98.385,97.724,-0.056,0.9,4.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,PIA,McLaren,2,MEDIUM,34,41,8,105.077,100.038,96.426,0.4756,0.617,20.0,short,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,PIA,McLaren,3,SOFT,42,62,21,97.445,96.24,95.665,-0.1031,0.9,1.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,RUS,Mercedes,1,MEDIUM,1,39,39,101.16,99.345,98.101,0.0088,0.9,12.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,RUS,Mercedes,2,SOFT,40,62,23,98.27,97.539,96.722,-0.1744,0.9,1.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,SAI,Williams,1,SOFT,1,31,31,101.368,100.106,99.352,-0.0895,0.9,15.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,SAI,Williams,2,MEDIUM,32,61,30,101.217,98.982,98.326,-0.2377,0.9,15.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,STR,Aston Martin,1,SOFT,1,26,26,102.602,100.95,100.597,-0.1928,0.9,19.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,STR,Aston Martin,2,MEDIUM,27,37,11,102.492,101.06,99.137,-0.716,0.683,17.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,VER,Red Bull Racing,1,SOFT,1,32,32,98.773,97.614,97.197,-0.0545,0.9,1.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-17-marina_bay,VER,Red Bull Racing,2,MEDIUM,33,62,30,98.668,96.734,96.201,-0.2427,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.

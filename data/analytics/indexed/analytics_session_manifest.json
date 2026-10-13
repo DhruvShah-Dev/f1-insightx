@@ -1053,6 +1053,91 @@
         "throttle": 1827,
         "straights": 1617,
         "energy_proxy": 1617,
+        "lap_pace": 1043
+      }
+    },
+    "2026_17_FP1_Singapore Grand Prix": {
+      "file": "2026-17-fp1-singapore-grand-prix-cc69c37221f4.json.gz",
+      "season": 2026,
+      "round": 17,
+      "event": "Singapore Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_17_Q_Singapore Grand Prix": {
+      "file": "2026-17-q-singapore-grand-prix-61179917315a.json.gz",
+      "season": 2026,
+      "round": 17,
+      "event": "Singapore Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "corner_segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_17_R_Singapore Grand Prix": {
+      "file": "2026-17-r-singapore-grand-prix-19be8e29f296.json.gz",
+      "season": 2026,
+      "round": 17,
+      "event": "Singapore Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_17_SQ_Singapore Grand Prix": {
+      "file": "2026-17-sq-singapore-grand-prix-8153e9f088aa.json.gz",
+      "season": 2026,
+      "round": 17,
+      "event": "Singapore Grand Prix",
+      "session": "SQ",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_17_S_Singapore Grand Prix": {
+      "file": "2026-17-s-singapore-grand-prix-2d48d8ce8b34.json.gz",
+      "season": 2026,
+      "round": 17,
+      "event": "Singapore Grand Prix",
+      "session": "S",
+      "counts": {
+        "overview": 105,
+        "segments": 840,
+        "corner_segments": 840,
+        "braking": 840,
+        "throttle": 840,
+        "straights": 735,
+        "energy_proxy": 735,
         "lap_pace": 0
       }
     }

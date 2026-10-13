@@ -415,3 +415,14 @@ id,season,round,race_id,constructor_id,standing_position,points,wins,source_labe
 2026-16-sepang|williams,2026,16,2026-16-sepang,williams,9,12.0,0,derived_results_rollup
 2026-16-sepang|aston_martin,2026,16,2026-16-sepang,aston_martin,10,7.0,0,derived_results_rollup
 2026-16-sepang|cadillac,2026,16,2026-16-sepang,cadillac,11,0.0,0,derived_results_rollup
+2026-17-marina_bay|mercedes,2026,17,2026-17-marina_bay,mercedes,1,578.0,11,derived_results_rollup
+2026-17-marina_bay|ferrari,2026,17,2026-17-marina_bay,ferrari,2,444.0,2,derived_results_rollup
+2026-17-marina_bay|mclaren,2026,17,2026-17-marina_bay,mclaren,3,339.0,2,derived_results_rollup
+2026-17-marina_bay|red_bull,2026,17,2026-17-marina_bay,red_bull,4,332.0,2,derived_results_rollup
+2026-17-marina_bay|rb,2026,17,2026-17-marina_bay,rb,5,100.0,0,derived_results_rollup
+2026-17-marina_bay|alpine,2026,17,2026-17-marina_bay,alpine,6,68.0,0,derived_results_rollup
+2026-17-marina_bay|haas,2026,17,2026-17-marina_bay,haas,7,30.0,0,derived_results_rollup
+2026-17-marina_bay|audi,2026,17,2026-17-marina_bay,audi,8,23.0,0,derived_results_rollup
+2026-17-marina_bay|williams,2026,17,2026-17-marina_bay,williams,9,12.0,0,derived_results_rollup
+2026-17-marina_bay|aston_martin,2026,17,2026-17-marina_bay,aston_martin,10,7.0,0,derived_results_rollup
+2026-17-marina_bay|cadillac,2026,17,2026-17-marina_bay,cadillac,11,0.0,0,derived_results_rollup

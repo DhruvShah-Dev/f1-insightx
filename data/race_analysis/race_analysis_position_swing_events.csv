@@ -3121,3 +3121,153 @@ race_analysis_id,event_id,driver,team,start_lap,end_lap,position_delta,phase,eve
 2026-16-sepang,2026-16-sepang-pos-0354,VER,Red Bull Racing,13,13,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
 2026-16-sepang,2026-16-sepang-pos-0355,VER,Red Bull Racing,44,44,-1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
 2026-16-sepang,2026-16-sepang-pos-0356,VER,Red Bull Racing,45,45,1.0,closing,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0001,ALB,Williams,5,5,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0002,ALB,Williams,12,12,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0003,ALB,Williams,22,22,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0004,ALB,Williams,23,23,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0005,ALB,Williams,27,27,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0006,ALB,Williams,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0007,ALB,Williams,36,36,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0008,ALB,Williams,38,38,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0009,ALO,Aston Martin,2,2,2.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0010,ALO,Aston Martin,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0011,ALO,Aston Martin,9,9,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0012,ALO,Aston Martin,21,21,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0013,ALO,Aston Martin,22,22,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0014,ALO,Aston Martin,27,27,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0015,ALO,Aston Martin,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0016,ALO,Aston Martin,32,32,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0017,ALO,Aston Martin,34,34,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0018,ALO,Aston Martin,35,35,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0019,ALO,Aston Martin,36,36,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0020,ALO,Aston Martin,38,38,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0021,ANT,Mercedes,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0022,ANT,Mercedes,23,23,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0023,ANT,Mercedes,24,24,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0024,ANT,Mercedes,33,33,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0025,ANT,Mercedes,34,34,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0026,ANT,Mercedes,40,40,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0027,ANT,Mercedes,54,54,2.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0028,BEA,Haas F1 Team,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0029,BEA,Haas F1 Team,5,5,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0030,BEA,Haas F1 Team,29,29,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0031,BEA,Haas F1 Team,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0032,BEA,Haas F1 Team,31,31,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0033,BEA,Haas F1 Team,33,33,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0034,BEA,Haas F1 Team,34,34,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0035,BEA,Haas F1 Team,54,54,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0036,BOR,Audi,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0037,BOR,Audi,7,7,-3.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0038,BOT,Cadillac,2,2,-2.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0039,BOT,Cadillac,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0040,BOT,Cadillac,8,8,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0041,BOT,Cadillac,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0042,BOT,Cadillac,37,37,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0043,COL,Alpine,6,6,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0044,COL,Alpine,9,9,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0045,COL,Alpine,29,29,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0046,GAS,Alpine,29,29,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0047,GAS,Alpine,30,30,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0048,GAS,Alpine,31,31,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0049,GAS,Alpine,33,33,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0050,GAS,Alpine,34,34,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0051,GAS,Alpine,40,40,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0052,GAS,Alpine,47,47,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0053,GAS,Alpine,58,58,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0054,HAD,Red Bull Racing,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0055,HAD,Red Bull Racing,9,9,2.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0056,HAD,Red Bull Racing,12,12,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0057,HAD,Red Bull Racing,15,15,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0058,HAD,Red Bull Racing,29,29,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0059,HAD,Red Bull Racing,30,30,2.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0060,HAD,Red Bull Racing,31,31,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0061,HAD,Red Bull Racing,33,33,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0062,HAD,Red Bull Racing,34,34,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0063,HAD,Red Bull Racing,35,35,2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0064,HAD,Red Bull Racing,46,46,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0065,HAD,Red Bull Racing,54,54,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0066,HAD,Red Bull Racing,58,58,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0067,HAM,Ferrari,18,18,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0068,HAM,Ferrari,19,19,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0069,HAM,Ferrari,20,20,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0070,HAM,Ferrari,24,24,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0071,HAM,Ferrari,33,33,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0072,HAM,Ferrari,40,40,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0073,HAM,Ferrari,46,46,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0074,HAM,Ferrari,54,54,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0075,HAM,Ferrari,55,55,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0076,HAM,Ferrari,61,61,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0077,HUL,Audi,30,30,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0078,HUL,Audi,34,34,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0079,HUL,Audi,40,40,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0080,LAW,Racing Bulls,19,19,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0081,LAW,Racing Bulls,20,20,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0082,LAW,Racing Bulls,31,31,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0083,LAW,Racing Bulls,32,32,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0084,LAW,Racing Bulls,34,34,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0085,LAW,Racing Bulls,40,40,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0086,LEC,Ferrari,25,25,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0087,LEC,Ferrari,33,33,2.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0088,LEC,Ferrari,40,40,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0089,LEC,Ferrari,46,46,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0090,LIN,Racing Bulls,8,8,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0091,LIN,Racing Bulls,9,9,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0092,LIN,Racing Bulls,15,15,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0093,LIN,Racing Bulls,27,27,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0094,LIN,Racing Bulls,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0095,LIN,Racing Bulls,35,35,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0096,NOR,McLaren,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0097,NOR,McLaren,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0098,NOR,McLaren,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0099,NOR,McLaren,32,32,-1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0100,NOR,McLaren,33,33,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0101,NOR,McLaren,34,34,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0102,NOR,McLaren,40,40,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0103,NOR,McLaren,54,54,-1.0,closing,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0104,NOR,McLaren,55,55,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0105,OCO,Haas F1 Team,3,3,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0106,OCO,Haas F1 Team,6,6,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0107,OCO,Haas F1 Team,22,22,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0108,OCO,Haas F1 Team,29,29,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0109,OCO,Haas F1 Team,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0110,OCO,Haas F1 Team,32,32,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0111,OCO,Haas F1 Team,33,33,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0112,OCO,Haas F1 Team,46,46,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0113,PER,Cadillac,7,7,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0114,PER,Cadillac,9,9,-1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0115,PER,Cadillac,21,21,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0116,PER,Cadillac,27,27,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0117,PER,Cadillac,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0118,PIA,McLaren,18,18,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0119,PIA,McLaren,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0120,PIA,McLaren,25,25,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0121,PIA,McLaren,32,32,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0122,PIA,McLaren,33,33,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0123,PIA,McLaren,34,34,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0124,PIA,McLaren,61,61,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0125,RUS,Mercedes,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0126,RUS,Mercedes,5,5,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0127,RUS,Mercedes,6,6,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0128,RUS,Mercedes,8,8,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0129,RUS,Mercedes,13,13,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0130,RUS,Mercedes,22,22,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0131,RUS,Mercedes,29,29,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0132,RUS,Mercedes,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0133,RUS,Mercedes,32,32,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0134,RUS,Mercedes,33,33,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0135,RUS,Mercedes,40,40,-3.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0136,RUS,Mercedes,47,47,1.0,closing,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0137,SAI,Williams,5,5,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0138,SAI,Williams,6,6,-1.0,opening,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0139,SAI,Williams,13,13,-1.0,middle,track-position loss,inferred,0.52,Lap-position loss; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0140,SAI,Williams,29,29,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0141,SAI,Williams,30,30,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0142,SAI,Williams,31,31,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0143,SAI,Williams,32,32,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0144,SAI,Williams,34,34,1.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0145,STR,Aston Martin,3,3,1.0,opening,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0146,STR,Aston Martin,8,8,1.0,opening,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0147,STR,Aston Martin,21,21,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0148,STR,Aston Martin,23,23,1.0,middle,track-position gain,inferred,0.52,Lap-position gain; pass-by-pass attribution unavailable.
+2026-17-marina_bay,2026-17-marina_bay-pos-0149,STR,Aston Martin,27,27,-2.0,middle,pit-cycle movement,inferred,0.58,Pit-window position movement inferred from lap-position changes; no exact gaps.
+2026-17-marina_bay,2026-17-marina_bay-pos-0150,STR,Aston Martin,30,30,1.0,middle,neutralization-affected movement,inferred,0.42,Track-status phase overlaps position movement; cause unavailable.

@@ -63,3 +63,8 @@ id,race_id,season,round,session_code,session_name,event_name,scheduled_at,source
 2026-16-sepang|FP3,2026-16-sepang,2026,16,FP3,FP3,Bahrain Grand Prix,,fastf1_canonical_v1
 2026-16-sepang|Q,2026-16-sepang,2026,16,Q,Q,Bahrain Grand Prix,,fastf1_canonical_v1
 2026-16-sepang|R,2026-16-sepang,2026,16,R,R,Bahrain Grand Prix,,fastf1_canonical_v1
+2026-17-marina_bay|FP1,2026-17-marina_bay,2026,17,FP1,FP1,Singapore Grand Prix,,fastf1_canonical_v1
+2026-17-marina_bay|Q,2026-17-marina_bay,2026,17,Q,Q,Singapore Grand Prix,,fastf1_canonical_v1
+2026-17-marina_bay|R,2026-17-marina_bay,2026,17,R,R,Singapore Grand Prix,,fastf1_canonical_v1
+2026-17-marina_bay|S,2026-17-marina_bay,2026,17,S,S,Singapore Grand Prix,,fastf1_canonical_v1
+2026-17-marina_bay|SQ,2026-17-marina_bay,2026,17,SQ,SQ,Singapore Grand Prix,,fastf1_canonical_v1

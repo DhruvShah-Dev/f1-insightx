@@ -87,3 +87,6 @@ race_analysis_id,phase_id,start_lap,end_lap,status_label,affected_laps,confidenc
 2026-16-sepang,2026-16-sepang-status-07,41,41,yellow,1,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
 2026-16-sepang,2026-16-sepang-status-08,42,46,mixed,5,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.
 2026-16-sepang,2026-16-sepang-status-09,47,51,safety-car,5,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-17-marina_bay,2026-17-marina_bay-status-01,8,9,mixed,2,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-17-marina_bay,2026-17-marina_bay-status-02,29,31,yellow,3,0.85,track_status_only,False,Cause unavailable: no race-control message source found locally.
+2026-17-marina_bay,2026-17-marina_bay-status-03,37,40,mixed,4,0.65,track_status_only,False,Cause unavailable: no race-control message source found locally.

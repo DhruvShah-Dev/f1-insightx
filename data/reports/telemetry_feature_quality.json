@@ -3,20 +3,20 @@
     "start": 2020,
     "end": 2026
   },
-  "sessions_considered": 64,
-  "sessions_processed": 62,
+  "sessions_considered": 69,
+  "sessions_processed": 67,
   "sessions_skipped_non_complete": 0,
   "sessions_missing_telemetry": 2,
   "sessions_missing_position": 1,
   "sessions_failed": [],
   "row_counts": {
-    "telemetry_lap_summary": 1335,
-    "corner_speed_profile": 10720,
-    "corner_braking_profile": 10720,
-    "corner_throttle_profile": 10720,
-    "straight_speed_profile": 9265,
-    "energy_deployment_proxy": 9265,
-    "driver_corner_delta": 10720
+    "telemetry_lap_summary": 1437,
+    "corner_speed_profile": 11536,
+    "corner_braking_profile": 11536,
+    "corner_throttle_profile": 11536,
+    "straight_speed_profile": 9979,
+    "energy_deployment_proxy": 9979,
+    "driver_corner_delta": 11536
   },
   "quality_score_distribution": {
     "min": 0.9,
@@ -26,8 +26,8 @@
   "corner_segmentation": {
     "method": "distance-binned low-speed/high-speed fallback",
     "precision": "approximate",
-    "corner_rows": 10720,
-    "straight_rows": 9265
+    "corner_rows": 11536,
+    "straight_rows": 9979
   },
   "energy_proxy_note": "energy_deployment_proxy is derived from speed/throttle/RPM/gear/DRS shape only; it is not true ERS or battery state.",
   "validation_errors": []

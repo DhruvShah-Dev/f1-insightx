@@ -1,0 +1,109 @@
+{
+  "season": 2026,
+  "round": 17,
+  "event_name": "Singapore Grand Prix",
+  "event_format": "sprint_qualifying",
+  "session_code": "FP1",
+  "session_name": "Practice 1",
+  "event_date": "2026-10-11",
+  "country": "Singapore",
+  "location": "Marina Bay",
+  "official_event_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2026",
+  "status": "complete",
+  "download_attempts": 1,
+  "telemetry_requested": true,
+  "started_at": "2026-10-13T15:56:47Z",
+  "completed_at": "2026-10-13T15:57:35Z",
+  "error": null,
+  "row_counts": {
+    "results": 22,
+    "laps": 568,
+    "weather": 83,
+    "best_laps": 22,
+    "stints": 76,
+    "telemetry_rows": 7710,
+    "position_rows": 7860
+  },
+  "telemetry_available": true,
+  "position_available": true,
+  "raw_files": {
+    "session_manifest.json": {
+      "path": "session_manifest.json",
+      "bytes": 778,
+      "sha256": "a4b834c2361450bc62aaa972d6c500b8a00dde94530240d49146ee45cdb9492d"
+    },
+    "results.csv": {
+      "path": "results.csv",
+      "bytes": 1421,
+      "sha256": "7d25462bca0fa37fb687457f1383fcd08bde1225ece8fae782f401756caf8789"
+    },
+    "laps.csv": {
+      "path": "laps.csv",
+      "bytes": 111972,
+      "sha256": "43da8c48ee181e6e53dc22634537f551c913cecf1f9f241e69d155182388867d"
+    },
+    "weather.csv": {
+      "path": "weather.csv",
+      "bytes": 5054,
+      "sha256": "49c94284f83fc7fed1ced6b43dd7044edd6d7cd6ac2cbe43bfc7e4f7850d93e3"
+    },
+    "best_laps.csv": {
+      "path": "best_laps.csv",
+      "bytes": 1222,
+      "sha256": "983c4c3740aa09b46a34f93d4e2e36e968df8813c7e6fe5a35395a3283780e7b"
+    },
+    "stints.csv": {
+      "path": "stints.csv",
+      "bytes": 3422,
+      "sha256": "0bdd00dddb542bbd173190333c0173152f6fdee6b713f91fa34cc5ee33572100"
+    },
+    "telemetry.parquet": {
+      "path": "telemetry.parquet",
+      "bytes": 224458,
+      "sha256": "8beace2b189b2f0ddbd201ddb9661696cf6b15791f3985fea7f01ec309b3f0bb"
+    },
+    "position.parquet": {
+      "path": "position.parquet",
+      "bytes": 198902,
+      "sha256": "28c51cf21d9bb01e9d66e9c97aaaf773d0e92f33be70b100d88119cca29bbcad"
+    }
+  },
+  "staged_files": {
+    "session_manifest.json": {
+      "path": "session_manifest.json",
+      "bytes": 328,
+      "sha256": "4fdcb92380e5a6c499904b0b9eedb929f06f14c4fc3429b2b61230ddbfabda77"
+    },
+    "laps.csv": {
+      "path": "laps.csv",
+      "bytes": 111972,
+      "sha256": "43da8c48ee181e6e53dc22634537f551c913cecf1f9f241e69d155182388867d"
+    },
+    "stints.csv": {
+      "path": "stints.csv",
+      "bytes": 8464,
+      "sha256": "f62a3244a405c3a5fc9c539521d4219457e69c6c4abb18a23774c04aa01e6999"
+    },
+    "session_summary.csv": {
+      "path": "session_summary.csv",
+      "bytes": 6408,
+      "sha256": "48900caac4fd4739059dc5189561e78b33742c942a328129a1e4826b7a3b0d92"
+    },
+    "results.csv": {
+      "path": "results.csv",
+      "bytes": 1421,
+      "sha256": "7d25462bca0fa37fb687457f1383fcd08bde1225ece8fae782f401756caf8789"
+    },
+    "weather.csv": {
+      "path": "weather.csv",
+      "bytes": 5054,
+      "sha256": "49c94284f83fc7fed1ced6b43dd7044edd6d7cd6ac2cbe43bfc7e4f7850d93e3"
+    },
+    "best_laps.csv": {
+      "path": "best_laps.csv",
+      "bytes": 1222,
+      "sha256": "983c4c3740aa09b46a34f93d4e2e36e968df8813c7e6fe5a35395a3283780e7b"
+    }
+  },
+  "manifest_sha256": "4a16fc9d204eb131df3fbda2bbe3b3090a127e854e4b1e050381b8c05fa0a3ed"
+}

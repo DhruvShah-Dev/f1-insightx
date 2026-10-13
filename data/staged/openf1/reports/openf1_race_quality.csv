@@ -39,7 +39,7 @@ id,season,round,race_id,race_name,openf1_meeting_key,openf1_meeting_name,openf1_
 2026-14-madring|openf1_quality,2026,14,2026-14-madring,Spanish Grand Prix,1294.0,Spanish Grand Prix,5,11365.0,11369.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
 2026-15-baku|openf1_quality,2026,15,2026-15-baku,Azerbaijan Grand Prix,1295.0,Azerbaijan Grand Prix,5,11373.0,11377.0,True,True,False,False,False,False,0.429,0.667,supplemental_only,openf1_quality_v1
 2026-16-sepang|openf1_quality,2026,16,2026-16-sepang,Bahrain Grand Prix in Malaysia,1308.0,Bahrain Grand Prix,5,11730.0,11731.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
-2026-17-marina_bay|openf1_quality,2026,17,2026-17-marina_bay,Singapore Grand Prix,1296.0,Singapore Grand Prix,5,11384.0,11388.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
+2026-17-marina_bay|openf1_quality,2026,17,2026-17-marina_bay,Singapore Grand Prix,1296.0,Singapore Grand Prix,5,11384.0,11388.0,True,True,True,True,True,True,1.0,1.0,primary_cross_check,openf1_quality_v1
 2026-18-americas|openf1_quality,2026,18,2026-18-americas,United States Grand Prix,1297.0,United States Grand Prix,5,11392.0,11396.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
 2026-19-rodriguez|openf1_quality,2026,19,2026-19-rodriguez,Mexico City Grand Prix,1298.0,Mexico City Grand Prix,5,11400.0,11404.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1
 2026-20-interlagos|openf1_quality,2026,20,2026-20-interlagos,Brazilian Grand Prix,1299.0,São Paulo Grand Prix,5,11408.0,11412.0,False,False,False,False,False,False,0.429,1.0,supplemental_only,openf1_quality_v1

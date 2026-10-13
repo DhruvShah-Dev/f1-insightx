@@ -1,0 +1,12 @@
+{
+  "season": 2026,
+  "round": 17,
+  "event_name": "Singapore Grand Prix",
+  "event_format": "sprint_qualifying",
+  "session_code": "FP1",
+  "session_name": "Practice 1",
+  "status": "complete",
+  "started_at": "2026-10-13T15:56:47Z",
+  "completed_at": "2026-10-13T15:57:35Z",
+  "source": "fastf1_staged_session_v2"
+}

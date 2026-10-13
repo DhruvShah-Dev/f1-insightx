@@ -18386,3 +18386,1243 @@ race_analysis_id,driver,team,lap_number,race_phase,compound,stint_number,lap_tim
 2026-16-sepang,VER,Red Bull Racing,53,closing,SOFT,4,98.529,-2.547,1,-2.875,13,-0.692,True,0.72
 2026-16-sepang,VER,Red Bull Racing,54,closing,SOFT,4,98.614,-2.707,1,-2.819,14,-0.817,True,0.72
 2026-16-sepang,VER,Red Bull Racing,55,closing,SOFT,4,98.22,-2.749,1,-2.668,15,-0.824,True,0.72
+2026-17-marina_bay,ALB,Williams,1,opening,MEDIUM,1,111.583,2.29,15,2.29,1,2.325,False,0.72
+2026-17-marina_bay,ALB,Williams,2,opening,MEDIUM,1,101.813,0.623,16,1.456,2,0.693,False,0.72
+2026-17-marina_bay,ALB,Williams,3,opening,MEDIUM,1,101.747,1.141,17,1.351,3,1.246,False,0.72
+2026-17-marina_bay,ALB,Williams,4,opening,MEDIUM,1,101.011,1.159,17,0.974,4,1.299,False,0.72
+2026-17-marina_bay,ALB,Williams,5,opening,MEDIUM,1,101.429,1.68,19,1.327,5,1.855,False,0.72
+2026-17-marina_bay,ALB,Williams,6,opening,MEDIUM,1,100.441,0.606,14,1.148,6,0.816,False,0.72
+2026-17-marina_bay,ALB,Williams,7,opening,MEDIUM,1,100.418,0.851,14,1.046,7,1.096,False,0.72
+2026-17-marina_bay,ALB,Williams,8,opening,MEDIUM,1,117.29,4.939,16,2.132,8,5.219,False,0.72
+2026-17-marina_bay,ALB,Williams,9,opening,MEDIUM,1,105.932,-2.278,7,1.171,9,-1.963,False,0.72
+2026-17-marina_bay,ALB,Williams,10,opening,MEDIUM,1,100.266,1.079,15,1.247,10,1.429,False,0.72
+2026-17-marina_bay,ALB,Williams,11,opening,MEDIUM,1,100.45,1.113,17,-0.029,11,1.498,False,0.72
+2026-17-marina_bay,ALB,Williams,12,opening,MEDIUM,1,101.975,2.723,21,1.638,12,3.143,False,0.72
+2026-17-marina_bay,ALB,Williams,13,middle,MEDIUM,1,100.686,1.385,17,1.74,13,1.84,False,0.72
+2026-17-marina_bay,ALB,Williams,14,middle,MEDIUM,1,100.784,1.508,18,1.872,14,1.998,False,0.72
+2026-17-marina_bay,ALB,Williams,15,middle,MEDIUM,1,100.675,1.158,18,1.35,15,1.683,False,0.72
+2026-17-marina_bay,ALB,Williams,16,middle,MEDIUM,1,100.159,0.748,15,1.138,16,1.308,False,0.72
+2026-17-marina_bay,ALB,Williams,17,middle,MEDIUM,1,99.99,0.542,16,0.816,17,1.137,False,0.72
+2026-17-marina_bay,ALB,Williams,18,middle,MEDIUM,1,101.173,1.698,18,0.996,18,2.328,False,0.72
+2026-17-marina_bay,ALB,Williams,19,middle,MEDIUM,1,101.745,2.355,19,1.532,19,3.02,False,0.72
+2026-17-marina_bay,ALB,Williams,20,middle,MEDIUM,1,100.769,1.353,18,1.802,20,2.053,False,0.72
+2026-17-marina_bay,ALB,Williams,21,middle,MEDIUM,1,100.348,0.796,17,1.501,21,1.531,False,0.72
+2026-17-marina_bay,ALB,Williams,22,middle,MEDIUM,1,106.035,6.274,20,2.808,22,7.044,False,0.72
+2026-17-marina_bay,ALB,Williams,23,middle,SOFT,2,117.267,17.729,21,8.266,1,18.534,False,0.72
+2026-17-marina_bay,ALB,Williams,24,middle,SOFT,2,98.396,-1.078,4,7.642,2,-0.238,False,0.72
+2026-17-marina_bay,ALB,Williams,25,middle,SOFT,2,98.624,-0.879,5,5.257,3,-0.004,False,0.72
+2026-17-marina_bay,ALB,Williams,26,middle,SOFT,2,98.467,-0.988,7,-0.982,4,-0.078,False,0.72
+2026-17-marina_bay,ALB,Williams,27,middle,SOFT,2,99.561,0.039,12,-0.609,5,0.984,False,0.72
+2026-17-marina_bay,ALB,Williams,28,middle,SOFT,2,100.565,1.053,19,0.035,6,2.033,False,0.72
+2026-17-marina_bay,ALB,Williams,29,middle,SOFT,2,99.255,-0.322,8,0.257,7,0.693,False,0.72
+2026-17-marina_bay,ALB,Williams,30,middle,SOFT,2,100.874,0.984,15,0.572,8,2.034,False,0.72
+2026-17-marina_bay,ALB,Williams,31,middle,SOFT,2,98.894,-0.819,6,-0.052,9,0.266,False,0.72
+2026-17-marina_bay,ALB,Williams,32,middle,SOFT,2,98.72,-0.721,5,-0.185,10,0.399,False,0.72
+2026-17-marina_bay,ALB,Williams,33,middle,SOFT,2,99.002,-0.392,9,-0.644,11,0.763,False,0.72
+2026-17-marina_bay,ALB,Williams,34,middle,SOFT,2,98.67,0.093,11,-0.34,12,1.283,False,0.72
+2026-17-marina_bay,ALB,Williams,35,middle,SOFT,2,98.704,0.513,14,0.071,13,1.738,False,0.72
+2026-17-marina_bay,ALB,Williams,36,middle,SOFT,2,100.575,2.447,16,1.018,14,3.707,False,0.72
+2026-17-marina_bay,ALB,Williams,37,middle,SOFT,2,103.883,5.953,18,2.971,15,7.248,False,0.72
+2026-17-marina_bay,ALB,Williams,38,middle,SOFT,3,144.163,39.68,19,16.027,1,41.01,False,0.72
+2026-17-marina_bay,ALB,Williams,39,middle,SOFT,3,110.921,-10.198,2,11.812,2,-8.833,False,0.72
+2026-17-marina_bay,ALB,Williams,40,middle,SOFT,3,97.671,-1.257,2,9.408,3,0.143,False,0.72
+2026-17-marina_bay,ALB,Williams,41,middle,SOFT,3,97.436,-0.376,7,-3.944,4,1.059,False,0.72
+2026-17-marina_bay,ALB,Williams,42,middle,SOFT,3,97.714,0.03,11,-0.534,5,1.5,False,0.72
+2026-17-marina_bay,ALB,Williams,43,middle,SOFT,3,97.914,0.119,13,-0.076,6,1.624,False,0.72
+2026-17-marina_bay,ALB,Williams,44,middle,SOFT,3,98.152,0.472,13,0.207,7,2.012,False,0.72
+2026-17-marina_bay,ALB,Williams,45,middle,SOFT,3,98.304,0.481,13,0.357,8,2.056,False,0.72
+2026-17-marina_bay,ALB,Williams,46,middle,SOFT,3,98.798,0.079,12,0.344,9,1.689,False,0.72
+2026-17-marina_bay,ALB,Williams,47,closing,SOFT,3,99.207,1.174,14,0.578,10,2.819,False,0.72
+2026-17-marina_bay,ALB,Williams,48,closing,SOFT,3,99.585,1.535,16,0.929,11,3.215,False,0.72
+2026-17-marina_bay,ALB,Williams,49,closing,SOFT,3,100.991,3.373,18,2.027,12,5.088,False,0.72
+2026-17-marina_bay,ALB,Williams,50,closing,SOFT,3,100.182,2.385,18,2.431,13,4.135,False,0.72
+2026-17-marina_bay,ALB,Williams,51,closing,SOFT,3,98.525,0.477,13,2.078,14,2.262,False,0.72
+2026-17-marina_bay,ALB,Williams,52,closing,SOFT,3,98.127,0.449,13,1.104,15,2.269,False,0.72
+2026-17-marina_bay,ALB,Williams,53,closing,SOFT,3,98.113,0.0,10,0.309,16,1.855,False,0.72
+2026-17-marina_bay,ALB,Williams,54,closing,SOFT,3,98.341,-0.055,9,0.131,17,1.835,False,0.72
+2026-17-marina_bay,ALB,Williams,55,closing,SOFT,3,98.385,0.0,10,-0.018,18,1.925,False,0.72
+2026-17-marina_bay,ALB,Williams,56,closing,SOFT,3,100.66,2.752,17,0.899,19,4.712,False,0.72
+2026-17-marina_bay,ALB,Williams,57,closing,SOFT,3,101.573,3.2,18,1.984,20,5.195,False,0.72
+2026-17-marina_bay,ALB,Williams,58,closing,SOFT,3,97.823,0.0,10,1.984,21,2.03,False,0.72
+2026-17-marina_bay,ALB,Williams,59,closing,SOFT,3,97.985,0.0,10,1.067,22,2.065,False,0.72
+2026-17-marina_bay,ALB,Williams,60,closing,SOFT,3,,,,0,23,,False,0.35
+2026-17-marina_bay,ALO,Aston Martin,1,opening,SOFT,1,114.802,5.509,21,5.509,1,5.544,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,2,opening,SOFT,1,101.018,-0.172,11,2.668,2,-0.102,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,3,opening,SOFT,1,101.376,0.77,13,2.035,3,0.875,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,4,opening,SOFT,1,101.298,1.446,18,0.681,4,1.586,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,5,opening,SOFT,1,101.415,1.666,18,1.294,5,1.841,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,6,opening,SOFT,1,100.768,0.933,18,1.348,6,1.143,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,7,opening,SOFT,1,101.072,1.505,19,1.368,7,1.75,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,8,opening,SOFT,1,118.334,5.983,19,2.807,8,6.263,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,9,opening,SOFT,1,106.021,-2.189,8,1.766,9,-1.874,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,10,opening,SOFT,1,100.741,1.554,18,1.783,10,1.904,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,11,opening,SOFT,1,100.622,1.285,18,0.217,11,1.67,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,12,opening,SOFT,1,100.804,1.552,18,1.464,12,1.972,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,13,middle,SOFT,1,100.724,1.423,18,1.42,13,1.878,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,14,middle,SOFT,1,100.583,1.307,17,1.427,14,1.797,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,15,middle,SOFT,1,100.729,1.212,19,1.314,15,1.737,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,16,middle,SOFT,1,100.699,1.288,19,1.269,16,1.848,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,17,middle,SOFT,1,100.627,1.179,19,1.226,17,1.774,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,18,middle,SOFT,1,100.919,1.444,17,1.304,18,2.074,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,19,middle,SOFT,1,100.952,1.562,17,1.395,19,2.227,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,20,middle,SOFT,1,100.918,1.502,20,1.503,20,2.202,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,21,middle,SOFT,1,100.379,0.827,18,1.297,21,1.562,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,22,middle,SOFT,1,99.859,0.098,14,0.809,22,0.868,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,23,middle,SOFT,1,99.688,0.15,12,0.358,23,0.955,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,24,middle,SOFT,1,100.306,0.832,16,0.36,24,1.672,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,25,middle,SOFT,1,100.032,0.529,14,0.504,25,1.404,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,26,middle,SOFT,1,99.885,0.43,15,0.597,26,1.34,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,27,middle,SOFT,1,99.482,-0.04,9,0.306,27,0.905,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,28,middle,SOFT,1,99.522,0.01,12,0.133,28,0.99,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,29,middle,SOFT,1,99.501,-0.076,10,-0.035,29,0.939,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,30,middle,SOFT,1,101.467,1.577,17,0.504,30,2.627,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,31,middle,SOFT,1,101.794,2.081,15,1.194,31,3.166,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,32,middle,SOFT,1,99.819,0.379,13,1.346,32,1.499,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,33,middle,SOFT,1,100.454,1.06,13,1.173,33,2.215,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,34,middle,SOFT,1,100.145,1.568,14,1.002,34,2.758,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,35,middle,SOFT,1,105.85,7.659,20,3.429,35,8.884,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,36,middle,MEDIUM,2,116.796,18.668,20,9.298,,19.928,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,37,middle,MEDIUM,2,98.032,0.102,12,8.81,,1.397,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,38,middle,MEDIUM,2,121.252,16.769,16,11.846,,18.099,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,39,middle,MEDIUM,2,114.218,-6.901,3,3.323,,-5.536,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,40,middle,MEDIUM,2,100.366,1.438,11,3.769,,2.838,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,41,middle,MEDIUM,2,99.862,2.05,17,-1.138,,3.485,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,42,middle,MEDIUM,2,98.704,1.02,16,1.503,,2.49,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,43,middle,MEDIUM,2,99.004,1.209,18,1.426,,2.714,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,44,middle,MEDIUM,2,99.192,1.512,18,1.247,,3.052,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,45,middle,MEDIUM,2,99.271,1.448,17,1.39,,3.023,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,46,middle,MEDIUM,2,99.302,0.583,16,1.181,,2.193,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,47,closing,MEDIUM,2,99.182,1.149,13,1.06,,2.794,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,48,closing,MEDIUM,2,99.54,1.49,15,1.074,,3.17,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,49,closing,MEDIUM,2,100.396,2.778,16,1.806,,4.493,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,50,closing,MEDIUM,2,98.49,0.693,13,1.654,,2.443,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,51,closing,MEDIUM,2,98.703,0.655,14,1.375,,2.44,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,52,closing,MEDIUM,2,98.386,0.708,14,0.685,,2.528,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,53,closing,MEDIUM,2,98.66,0.547,13,0.637,,2.402,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,54,closing,MEDIUM,2,98.396,0.0,10,0.418,,1.89,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,55,closing,MEDIUM,2,99.022,0.637,14,0.395,,2.562,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,56,closing,MEDIUM,2,98.773,0.865,13,0.501,,2.825,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,57,closing,MEDIUM,2,98.779,0.406,13,0.636,,2.401,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,58,closing,MEDIUM,2,98.125,0.302,11,0.524,,2.332,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,59,closing,MEDIUM,2,98.671,0.686,13,0.465,,2.751,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,60,closing,MEDIUM,2,99.898,1.599,15,0.862,,3.699,False,0.72
+2026-17-marina_bay,ALO,Aston Martin,61,closing,MEDIUM,2,101.614,3.454,15,1.913,,5.589,False,0.72
+2026-17-marina_bay,ANT,Mercedes,1,opening,SOFT,1,104.114,-5.179,4,-5.179,4,-5.144,False,0.72
+2026-17-marina_bay,ANT,Mercedes,2,opening,SOFT,1,99.088,-2.103,6,-3.641,5,-2.033,False,0.72
+2026-17-marina_bay,ANT,Mercedes,3,opening,SOFT,1,98.674,-1.932,4,-3.071,6,-1.827,False,0.72
+2026-17-marina_bay,ANT,Mercedes,4,opening,SOFT,1,98.342,-1.51,3,-1.848,7,-1.37,False,0.72
+2026-17-marina_bay,ANT,Mercedes,5,opening,SOFT,1,98.491,-1.258,6,-1.567,8,-1.083,False,0.72
+2026-17-marina_bay,ANT,Mercedes,6,opening,SOFT,1,98.225,-1.611,5,-1.46,9,-1.401,False,0.72
+2026-17-marina_bay,ANT,Mercedes,7,opening,SOFT,1,98.103,-1.464,4,-1.444,10,-1.219,False,0.72
+2026-17-marina_bay,ANT,Mercedes,8,opening,SOFT,1,105.745,-6.606,4,-3.227,11,-6.326,False,0.72
+2026-17-marina_bay,ANT,Mercedes,9,opening,SOFT,1,113.159,4.949,18,-1.04,12,5.264,False,0.72
+2026-17-marina_bay,ANT,Mercedes,10,opening,SOFT,1,97.51,-1.677,3,-1.111,13,-1.327,False,0.72
+2026-17-marina_bay,ANT,Mercedes,11,opening,SOFT,1,97.635,-1.702,2,0.523,14,-1.317,False,0.72
+2026-17-marina_bay,ANT,Mercedes,12,opening,SOFT,1,97.803,-1.449,4,-1.609,15,-1.029,False,0.72
+2026-17-marina_bay,ANT,Mercedes,13,middle,SOFT,1,98.537,-0.764,6,-1.305,16,-0.309,False,0.72
+2026-17-marina_bay,ANT,Mercedes,14,middle,SOFT,1,98.008,-1.268,4,-1.16,17,-0.778,False,0.72
+2026-17-marina_bay,ANT,Mercedes,15,middle,SOFT,1,98.035,-1.482,3,-1.171,18,-0.957,False,0.72
+2026-17-marina_bay,ANT,Mercedes,16,middle,SOFT,1,98.354,-1.057,4,-1.269,19,-0.497,True,0.72
+2026-17-marina_bay,ANT,Mercedes,17,middle,SOFT,1,99.124,-0.324,7,-0.954,20,0.271,False,0.72
+2026-17-marina_bay,ANT,Mercedes,18,middle,SOFT,1,98.638,-0.837,4,-0.739,21,-0.207,False,0.72
+2026-17-marina_bay,ANT,Mercedes,19,middle,SOFT,1,97.395,-1.995,2,-1.052,22,-1.33,False,0.72
+2026-17-marina_bay,ANT,Mercedes,20,middle,SOFT,1,97.605,-1.811,2,-1.548,23,-1.111,False,0.72
+2026-17-marina_bay,ANT,Mercedes,21,middle,SOFT,1,97.724,-1.828,3,-1.878,24,-1.093,False,0.72
+2026-17-marina_bay,ANT,Mercedes,22,middle,SOFT,1,98.161,-1.6,3,-1.746,25,-0.83,False,0.72
+2026-17-marina_bay,ANT,Mercedes,23,middle,SOFT,1,103.732,4.194,19,0.255,26,4.999,False,0.72
+2026-17-marina_bay,ANT,Mercedes,24,middle,MEDIUM,2,115.413,15.939,21,6.178,1,16.779,False,0.72
+2026-17-marina_bay,ANT,Mercedes,25,middle,MEDIUM,2,97.746,-1.757,2,6.125,2,-0.882,False,0.72
+2026-17-marina_bay,ANT,Mercedes,26,middle,MEDIUM,2,97.522,-1.933,3,4.083,3,-1.023,False,0.72
+2026-17-marina_bay,ANT,Mercedes,27,middle,MEDIUM,2,97.763,-1.759,3,-1.816,4,-0.814,False,0.72
+2026-17-marina_bay,ANT,Mercedes,28,middle,MEDIUM,2,97.188,-2.324,3,-2.005,5,-1.344,False,0.72
+2026-17-marina_bay,ANT,Mercedes,29,middle,MEDIUM,2,97.077,-2.5,2,-2.194,6,-1.485,False,0.72
+2026-17-marina_bay,ANT,Mercedes,30,middle,MEDIUM,2,97.077,-2.813,1,-2.546,7,-1.763,False,0.72
+2026-17-marina_bay,ANT,Mercedes,31,middle,MEDIUM,2,98.652,-1.061,5,-2.125,8,0.024,False,0.72
+2026-17-marina_bay,ANT,Mercedes,32,middle,MEDIUM,2,97.653,-1.787,3,-1.887,9,-0.667,False,0.72
+2026-17-marina_bay,ANT,Mercedes,33,middle,MEDIUM,2,97.744,-1.65,4,-1.499,10,-0.495,False,0.72
+2026-17-marina_bay,ANT,Mercedes,34,middle,MEDIUM,2,97.577,-1.0,6,-1.479,11,0.19,False,0.72
+2026-17-marina_bay,ANT,Mercedes,35,middle,MEDIUM,2,97.221,-0.97,6,-1.207,12,0.255,False,0.72
+2026-17-marina_bay,ANT,Mercedes,36,middle,MEDIUM,2,98.321,0.193,13,-0.592,13,1.453,False,0.72
+2026-17-marina_bay,ANT,Mercedes,37,middle,MEDIUM,2,97.386,-0.544,6,-0.44,14,0.751,False,0.72
+2026-17-marina_bay,ANT,Mercedes,38,middle,MEDIUM,2,97.428,-7.055,6,-2.469,15,-5.725,False,0.72
+2026-17-marina_bay,ANT,Mercedes,39,middle,MEDIUM,2,122.642,1.523,12,-2.025,16,2.888,False,0.72
+2026-17-marina_bay,ANT,Mercedes,40,middle,SOFT,3,123.833,24.905,18,6.458,4,26.305,False,0.72
+2026-17-marina_bay,ANT,Mercedes,41,middle,SOFT,3,95.887,-1.925,2,8.168,5,-0.49,False,0.72
+2026-17-marina_bay,ANT,Mercedes,42,middle,SOFT,3,96.089,-1.595,3,7.128,6,-0.125,False,0.72
+2026-17-marina_bay,ANT,Mercedes,43,middle,SOFT,3,95.589,-2.206,1,-1.909,7,-0.701,False,0.72
+2026-17-marina_bay,ANT,Mercedes,44,middle,SOFT,3,96.371,-1.309,5,-1.703,8,0.231,False,0.72
+2026-17-marina_bay,ANT,Mercedes,45,middle,SOFT,3,96.011,-1.812,2,-1.776,9,-0.237,False,0.72
+2026-17-marina_bay,ANT,Mercedes,46,middle,SOFT,3,96.185,-2.534,2,-1.885,10,-0.924,False,0.72
+2026-17-marina_bay,ANT,Mercedes,47,closing,SOFT,3,96.238,-1.795,4,-2.047,11,-0.15,False,0.72
+2026-17-marina_bay,ANT,Mercedes,48,closing,SOFT,3,96.606,-1.444,5,-1.924,12,0.236,False,0.72
+2026-17-marina_bay,ANT,Mercedes,49,closing,SOFT,3,96.678,-0.94,5,-1.393,13,0.775,False,0.72
+2026-17-marina_bay,ANT,Mercedes,50,closing,SOFT,3,96.777,-1.02,3,-1.135,14,0.73,False,0.72
+2026-17-marina_bay,ANT,Mercedes,51,closing,SOFT,3,96.375,-1.673,4,-1.211,15,0.112,False,0.72
+2026-17-marina_bay,ANT,Mercedes,52,closing,SOFT,3,96.946,-0.732,5,-1.142,16,1.088,False,0.72
+2026-17-marina_bay,ANT,Mercedes,53,closing,SOFT,3,98.366,0.253,11,-0.717,17,2.108,False,0.72
+2026-17-marina_bay,ANT,Mercedes,54,closing,SOFT,3,99.154,0.758,12,0.093,18,2.648,False,0.72
+2026-17-marina_bay,ANT,Mercedes,55,closing,SOFT,3,96.489,-1.896,2,-0.295,19,0.029,False,0.72
+2026-17-marina_bay,ANT,Mercedes,56,closing,SOFT,3,96.443,-1.465,1,-0.868,20,0.495,False,0.72
+2026-17-marina_bay,ANT,Mercedes,57,closing,SOFT,3,96.239,-2.134,1,-1.832,21,-0.139,False,0.72
+2026-17-marina_bay,ANT,Mercedes,58,closing,SOFT,3,96.094,-1.729,1,-1.776,22,0.301,False,0.72
+2026-17-marina_bay,ANT,Mercedes,59,closing,SOFT,3,96.192,-1.793,1,-1.885,23,0.272,False,0.72
+2026-17-marina_bay,ANT,Mercedes,60,closing,SOFT,3,95.986,-2.313,1,-1.945,24,-0.213,False,0.72
+2026-17-marina_bay,ANT,Mercedes,61,closing,SOFT,3,96.352,-1.808,1,-1.971,25,0.327,False,0.72
+2026-17-marina_bay,ANT,Mercedes,62,closing,SOFT,3,97.846,-0.004,5,-1.375,26,2.166,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,1,opening,SOFT,1,109.539,0.246,12,0.246,1,0.281,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,2,opening,SOFT,1,101.363,0.172,12,0.209,2,0.242,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,3,opening,SOFT,1,100.294,-0.312,11,0.035,3,-0.207,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,4,opening,SOFT,1,99.436,-0.416,8,-0.185,4,-0.276,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,5,opening,SOFT,1,99.568,-0.181,11,-0.303,5,-0.006,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,6,opening,SOFT,1,99.12,-0.715,8,-0.437,6,-0.505,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,7,opening,SOFT,1,98.863,-0.704,7,-0.533,7,-0.459,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,8,opening,SOFT,1,112.024,-0.327,10,-0.582,8,-0.047,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,9,opening,SOFT,1,108.21,0.0,11,-0.344,9,0.315,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,10,opening,SOFT,1,99.128,-0.059,9,-0.129,10,0.291,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,11,opening,SOFT,1,99.182,-0.155,9,-0.071,11,0.23,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,12,opening,SOFT,1,99.104,-0.148,8,-0.121,12,0.272,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,13,middle,SOFT,1,99.481,0.18,13,-0.041,13,0.635,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,14,middle,SOFT,1,99.228,-0.048,10,-0.005,14,0.442,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,15,middle,SOFT,1,99.517,0.0,11,0.044,15,0.525,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,16,middle,SOFT,1,100.332,0.921,16,0.291,16,1.481,True,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,17,middle,SOFT,1,99.615,0.167,13,0.363,17,0.762,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,18,middle,SOFT,1,99.408,-0.067,9,0.34,18,0.563,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,19,middle,SOFT,1,99.39,0.0,11,0.033,19,0.665,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,20,middle,SOFT,1,99.542,0.126,12,0.02,20,0.826,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,21,middle,SOFT,1,99.467,-0.085,10,0.014,21,0.65,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,22,middle,SOFT,1,99.381,-0.38,8,-0.113,22,0.39,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,23,middle,SOFT,1,99.282,-0.256,7,-0.24,23,0.549,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,24,middle,SOFT,1,99.398,-0.076,8,-0.237,24,0.764,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,25,middle,SOFT,1,99.311,-0.192,8,-0.175,25,0.683,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,26,middle,SOFT,1,99.653,0.198,12,-0.023,26,1.108,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,27,middle,SOFT,1,99.522,0.0,11,0.002,27,0.945,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,28,middle,SOFT,1,99.768,0.256,14,0.151,28,1.236,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,29,middle,SOFT,1,99.625,0.048,13,0.101,29,1.063,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,30,middle,SOFT,1,99.127,-0.763,7,-0.153,30,0.287,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,31,middle,SOFT,1,99.322,-0.391,9,-0.369,31,0.694,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,32,middle,SOFT,1,99.43,-0.01,10,-0.388,32,1.11,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,33,middle,SOFT,1,105.487,6.093,17,1.897,33,7.248,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,34,middle,MEDIUM,2,116.457,17.88,19,7.988,1,19.07,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,35,middle,MEDIUM,2,97.597,-0.594,8,7.793,2,0.631,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,36,middle,MEDIUM,2,97.806,-0.322,8,5.655,3,0.938,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,37,middle,MEDIUM,2,97.556,-0.374,8,-0.43,4,0.921,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,38,middle,MEDIUM,2,104.978,0.495,11,-0.067,5,1.825,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,39,middle,MEDIUM,2,128.593,7.474,15,2.532,6,8.839,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,40,middle,MEDIUM,2,98.361,-0.567,5,2.467,7,0.833,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,41,middle,MEDIUM,2,97.695,-0.117,9,2.263,8,1.318,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,42,middle,MEDIUM,2,97.589,-0.095,9,-0.26,9,1.375,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,43,middle,MEDIUM,2,97.615,-0.18,8,-0.131,10,1.325,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,44,middle,MEDIUM,2,97.882,0.202,12,-0.024,11,1.742,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,45,middle,MEDIUM,2,97.985,0.162,12,0.061,12,1.737,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,46,middle,MEDIUM,2,97.764,-0.955,8,-0.197,13,0.655,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,47,closing,MEDIUM,2,98.027,-0.006,9,-0.266,14,1.639,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,48,closing,MEDIUM,2,98.14,0.09,11,-0.29,15,1.77,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,49,closing,MEDIUM,2,98.029,0.411,12,0.165,16,2.126,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,50,closing,MEDIUM,2,98.074,0.277,12,0.259,17,2.027,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,51,closing,MEDIUM,2,98.048,0.0,10,0.229,18,1.785,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,52,closing,MEDIUM,2,98.099,0.421,11,0.233,19,2.241,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,53,closing,MEDIUM,2,98.093,-0.02,9,0.134,20,1.835,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,54,closing,MEDIUM,2,99.51,1.114,14,0.505,21,3.004,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,55,closing,MEDIUM,2,98.357,-0.028,9,0.355,22,1.897,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,56,closing,MEDIUM,2,98.062,0.154,11,0.413,23,2.114,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,57,closing,MEDIUM,2,98.373,0.0,10,0.042,24,1.995,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,58,closing,MEDIUM,2,100.767,2.944,18,1.033,25,4.974,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,59,closing,MEDIUM,2,98.424,0.439,11,1.128,26,2.504,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,60,closing,MEDIUM,2,98.299,0.0,9,1.128,27,2.1,False,0.72
+2026-17-marina_bay,BEA,Haas F1 Team,61,closing,MEDIUM,2,98.494,0.334,9,0.258,28,2.469,False,0.72
+2026-17-marina_bay,BOR,Audi,1,opening,MEDIUM,1,111.998,2.705,16,2.705,1,2.74,False,0.72
+2026-17-marina_bay,BOR,Audi,2,opening,MEDIUM,1,101.858,0.668,17,1.686,2,0.738,False,0.72
+2026-17-marina_bay,BOR,Audi,3,opening,MEDIUM,1,102.434,1.828,21,1.733,3,1.933,False,0.72
+2026-17-marina_bay,BOR,Audi,4,opening,MEDIUM,1,100.988,1.136,16,1.21,4,1.276,False,0.72
+2026-17-marina_bay,BOR,Audi,5,opening,MEDIUM,1,100.905,1.156,15,1.373,5,1.331,False,0.72
+2026-17-marina_bay,BOR,Audi,6,opening,MEDIUM,1,100.486,0.651,15,0.981,6,0.861,False,0.72
+2026-17-marina_bay,BOR,Audi,7,opening,MEDIUM,1,105.08,5.513,22,2.44,7,5.758,False,0.72
+2026-17-marina_bay,BOR,Audi,8,opening,MEDIUM,1,,,,3.082,8,,False,0.35
+2026-17-marina_bay,BOT,Cadillac,1,opening,MEDIUM,1,113.797,4.504,19,4.504,1,4.539,False,0.72
+2026-17-marina_bay,BOT,Cadillac,2,opening,MEDIUM,1,103.57,2.379,22,3.442,2,2.449,False,0.72
+2026-17-marina_bay,BOT,Cadillac,3,opening,MEDIUM,1,103.447,2.841,22,3.241,3,2.946,False,0.72
+2026-17-marina_bay,BOT,Cadillac,4,opening,MEDIUM,1,102.707,2.855,22,2.692,4,2.995,False,0.72
+2026-17-marina_bay,BOT,Cadillac,5,opening,MEDIUM,1,102.386,2.637,22,2.777,5,2.812,False,0.72
+2026-17-marina_bay,BOT,Cadillac,6,opening,MEDIUM,1,102.213,2.377,22,2.623,6,2.587,False,0.72
+2026-17-marina_bay,BOT,Cadillac,7,opening,MEDIUM,1,102.552,2.985,21,2.666,7,3.23,False,0.72
+2026-17-marina_bay,BOT,Cadillac,8,opening,MEDIUM,1,121.4,9.049,21,4.804,8,9.329,False,0.72
+2026-17-marina_bay,BOT,Cadillac,9,opening,MEDIUM,1,102.592,-5.618,1,2.139,9,-5.303,False,0.72
+2026-17-marina_bay,BOT,Cadillac,10,opening,MEDIUM,1,101.527,2.34,21,1.924,10,2.69,False,0.72
+2026-17-marina_bay,BOT,Cadillac,11,opening,MEDIUM,1,101.613,2.276,21,-0.334,11,2.661,False,0.72
+2026-17-marina_bay,BOT,Cadillac,12,opening,MEDIUM,1,101.891,2.639,20,2.418,12,3.059,False,0.72
+2026-17-marina_bay,BOT,Cadillac,13,middle,MEDIUM,1,101.879,2.578,21,2.498,13,3.033,False,0.72
+2026-17-marina_bay,BOT,Cadillac,14,middle,MEDIUM,1,102.091,2.815,21,2.677,14,3.305,False,0.72
+2026-17-marina_bay,BOT,Cadillac,15,middle,MEDIUM,1,102.23,2.713,21,2.702,15,3.238,False,0.72
+2026-17-marina_bay,BOT,Cadillac,16,middle,MEDIUM,1,102.0,2.589,21,2.706,16,3.149,False,0.72
+2026-17-marina_bay,BOT,Cadillac,17,middle,MEDIUM,1,102.117,2.669,21,2.657,17,3.264,False,0.72
+2026-17-marina_bay,BOT,Cadillac,18,middle,MEDIUM,1,102.3,2.825,20,2.694,18,3.455,False,0.72
+2026-17-marina_bay,BOT,Cadillac,19,middle,MEDIUM,1,102.189,2.799,20,2.764,19,3.464,False,0.72
+2026-17-marina_bay,BOT,Cadillac,20,middle,MEDIUM,1,102.412,2.996,21,2.873,20,3.696,False,0.72
+2026-17-marina_bay,BOT,Cadillac,21,middle,MEDIUM,1,103.986,4.434,20,3.41,21,5.169,False,0.72
+2026-17-marina_bay,BOT,Cadillac,22,middle,MEDIUM,1,104.861,5.1,19,4.177,22,5.87,False,0.72
+2026-17-marina_bay,BOT,Cadillac,23,middle,MEDIUM,1,106.019,6.481,20,5.338,23,7.286,False,0.72
+2026-17-marina_bay,BOT,Cadillac,24,middle,MEDIUM,1,102.438,2.964,19,4.848,24,3.804,False,0.72
+2026-17-marina_bay,BOT,Cadillac,25,middle,MEDIUM,1,102.314,2.811,20,4.085,25,3.686,False,0.72
+2026-17-marina_bay,BOT,Cadillac,26,middle,MEDIUM,1,106.452,6.997,20,4.257,26,7.907,False,0.72
+2026-17-marina_bay,BOT,Cadillac,27,middle,MEDIUM,1,103.3,3.778,19,4.529,27,4.723,False,0.72
+2026-17-marina_bay,BOT,Cadillac,28,middle,MEDIUM,1,107.952,8.44,21,6.405,28,9.42,False,0.72
+2026-17-marina_bay,BOT,Cadillac,29,middle,SOFT,2,127.836,28.259,21,13.492,1,29.274,False,0.72
+2026-17-marina_bay,BOT,Cadillac,30,middle,SOFT,2,100.171,0.281,11,12.327,2,1.331,False,0.72
+2026-17-marina_bay,BOT,Cadillac,31,middle,SOFT,2,102.905,3.192,17,10.577,3,4.277,False,0.72
+2026-17-marina_bay,BOT,Cadillac,32,middle,SOFT,2,103.948,4.507,17,2.66,4,5.627,False,0.72
+2026-17-marina_bay,BOT,Cadillac,33,middle,SOFT,2,100.774,1.38,14,3.026,5,2.535,False,0.72
+2026-17-marina_bay,BOT,Cadillac,34,middle,SOFT,2,100.987,2.41,17,2.766,6,3.6,False,0.72
+2026-17-marina_bay,BOT,Cadillac,35,middle,SOFT,2,101.021,2.83,16,2.207,7,4.055,False,0.72
+2026-17-marina_bay,BOT,Cadillac,36,middle,SOFT,2,102.955,4.827,19,3.356,8,6.087,False,0.72
+2026-17-marina_bay,BOT,Cadillac,37,middle,SOFT,2,118.022,20.092,19,9.25,9,21.387,False,0.72
+2026-17-marina_bay,BOT,Cadillac,38,middle,SOFT,2,124.371,19.888,17,14.936,10,21.218,False,0.72
+2026-17-marina_bay,BOT,Cadillac,39,middle,SOFT,2,102.984,-18.135,1,7.282,11,-16.77,False,0.72
+2026-17-marina_bay,BOT,Cadillac,40,middle,SOFT,2,100.455,1.527,12,1.093,12,2.927,False,0.72
+2026-17-marina_bay,BOT,Cadillac,41,middle,SOFT,2,102.05,4.238,18,-4.123,13,5.673,False,0.72
+2026-17-marina_bay,BOT,Cadillac,42,middle,SOFT,2,103.791,6.107,18,3.957,14,7.577,False,0.72
+2026-17-marina_bay,BOT,Cadillac,43,middle,SOFT,2,100.447,2.652,19,4.332,15,4.157,False,0.72
+2026-17-marina_bay,BOT,Cadillac,44,middle,SOFT,2,100.474,2.794,19,3.851,16,4.334,False,0.72
+2026-17-marina_bay,BOT,Cadillac,45,middle,SOFT,2,100.454,2.631,18,2.692,17,4.206,False,0.72
+2026-17-marina_bay,BOT,Cadillac,46,middle,SOFT,2,103.746,5.027,19,3.484,18,6.637,False,0.72
+2026-17-marina_bay,BOT,Cadillac,47,closing,SOFT,2,102.868,4.835,17,4.164,19,6.48,False,0.72
+2026-17-marina_bay,BOT,Cadillac,48,closing,SOFT,2,100.553,2.503,18,4.122,20,4.183,False,0.72
+2026-17-marina_bay,BOT,Cadillac,49,closing,SOFT,2,100.568,2.95,17,3.429,21,4.665,False,0.72
+2026-17-marina_bay,BOT,Cadillac,50,closing,SOFT,2,100.585,2.788,19,2.747,22,4.538,False,0.72
+2026-17-marina_bay,BOT,Cadillac,51,closing,SOFT,2,100.606,2.558,19,2.765,23,4.343,False,0.72
+2026-17-marina_bay,BOT,Cadillac,52,closing,SOFT,2,100.636,2.958,19,2.768,24,4.778,False,0.72
+2026-17-marina_bay,BOT,Cadillac,53,closing,SOFT,2,101.032,2.919,18,2.812,25,4.774,False,0.72
+2026-17-marina_bay,BOT,Cadillac,54,closing,SOFT,2,105.242,6.846,19,4.241,26,8.736,False,0.72
+2026-17-marina_bay,BOT,Cadillac,55,closing,SOFT,2,104.946,6.561,19,5.442,27,8.486,False,0.72
+2026-17-marina_bay,BOT,Cadillac,56,closing,SOFT,2,104.31,6.402,19,6.603,28,8.362,False,0.72
+2026-17-marina_bay,BOT,Cadillac,57,closing,SOFT,2,102.733,4.36,19,5.774,29,6.355,False,0.72
+2026-17-marina_bay,BOT,Cadillac,58,closing,SOFT,2,100.831,3.008,19,4.59,30,5.038,False,0.72
+2026-17-marina_bay,BOT,Cadillac,59,closing,SOFT,2,101.596,3.611,19,3.66,31,5.676,False,0.72
+2026-17-marina_bay,COL,Alpine,1,opening,MEDIUM,1,111.148,1.855,14,1.855,1,1.89,False,0.72
+2026-17-marina_bay,COL,Alpine,2,opening,MEDIUM,1,101.543,0.353,14,1.104,2,0.423,False,0.72
+2026-17-marina_bay,COL,Alpine,3,opening,MEDIUM,1,101.78,1.174,18,1.127,3,1.279,False,0.72
+2026-17-marina_bay,COL,Alpine,4,opening,MEDIUM,1,100.68,0.828,14,0.785,4,0.968,False,0.72
+2026-17-marina_bay,COL,Alpine,5,opening,MEDIUM,1,99.93,0.181,12,0.728,5,0.356,False,0.72
+2026-17-marina_bay,COL,Alpine,6,opening,MEDIUM,1,101.544,1.709,20,0.906,6,1.919,False,0.72
+2026-17-marina_bay,COL,Alpine,7,opening,MEDIUM,1,100.158,0.591,13,0.827,7,0.836,False,0.72
+2026-17-marina_bay,COL,Alpine,8,opening,MEDIUM,1,116.367,4.016,14,2.105,8,4.296,False,0.72
+2026-17-marina_bay,COL,Alpine,9,opening,MEDIUM,1,105.57,-2.64,5,0.656,9,-2.325,False,0.72
+2026-17-marina_bay,COL,Alpine,10,opening,MEDIUM,1,100.453,1.266,16,0.881,10,1.616,False,0.72
+2026-17-marina_bay,COL,Alpine,11,opening,MEDIUM,1,99.967,0.63,15,-0.248,11,1.015,False,0.72
+2026-17-marina_bay,COL,Alpine,12,opening,MEDIUM,1,99.451,0.199,13,0.698,12,0.619,False,0.72
+2026-17-marina_bay,COL,Alpine,13,middle,MEDIUM,1,99.265,-0.036,10,0.264,13,0.419,False,0.72
+2026-17-marina_bay,COL,Alpine,14,middle,MEDIUM,1,99.276,0.0,11,0.054,14,0.49,False,0.72
+2026-17-marina_bay,COL,Alpine,15,middle,MEDIUM,1,99.758,0.241,14,0.068,15,0.766,False,0.72
+2026-17-marina_bay,COL,Alpine,16,middle,MEDIUM,1,99.714,0.303,13,0.181,16,0.863,False,0.72
+2026-17-marina_bay,COL,Alpine,17,middle,MEDIUM,1,99.497,0.049,12,0.198,17,0.644,False,0.72
+2026-17-marina_bay,COL,Alpine,18,middle,MEDIUM,1,99.849,0.374,14,0.242,18,1.004,False,0.72
+2026-17-marina_bay,COL,Alpine,19,middle,MEDIUM,1,100.016,0.626,14,0.35,19,1.291,False,0.72
+2026-17-marina_bay,COL,Alpine,20,middle,MEDIUM,1,100.078,0.662,14,0.554,20,1.362,False,0.72
+2026-17-marina_bay,COL,Alpine,21,middle,MEDIUM,1,99.791,0.239,15,0.509,21,0.974,False,0.72
+2026-17-marina_bay,COL,Alpine,22,middle,MEDIUM,1,99.799,0.038,12,0.313,22,0.808,False,0.72
+2026-17-marina_bay,COL,Alpine,23,middle,MEDIUM,1,100.123,0.585,16,0.287,23,1.39,False,0.72
+2026-17-marina_bay,COL,Alpine,24,middle,MEDIUM,1,99.817,0.343,13,0.322,24,1.183,False,0.72
+2026-17-marina_bay,COL,Alpine,25,middle,MEDIUM,1,100.047,0.544,15,0.491,25,1.419,False,0.72
+2026-17-marina_bay,COL,Alpine,26,middle,MEDIUM,1,100.126,0.671,17,0.519,26,1.581,False,0.72
+2026-17-marina_bay,COL,Alpine,27,middle,MEDIUM,1,100.046,0.524,17,0.58,27,1.469,False,0.72
+2026-17-marina_bay,COL,Alpine,28,middle,MEDIUM,1,100.024,0.512,18,0.569,28,1.492,False,0.72
+2026-17-marina_bay,COL,Alpine,29,middle,MEDIUM,1,100.312,0.735,17,0.59,29,1.75,False,0.72
+2026-17-marina_bay,COL,Alpine,30,middle,MEDIUM,1,,,,0.623,30,,False,0.35
+2026-17-marina_bay,GAS,Alpine,1,opening,MEDIUM,1,107.867,-1.426,9,-1.426,1,-1.391,False,0.72
+2026-17-marina_bay,GAS,Alpine,2,opening,MEDIUM,1,100.617,-0.573,9,-1.0,2,-0.503,False,0.72
+2026-17-marina_bay,GAS,Alpine,3,opening,MEDIUM,1,99.834,-0.772,9,-0.924,3,-0.667,False,0.72
+2026-17-marina_bay,GAS,Alpine,4,opening,MEDIUM,1,99.51,-0.342,10,-0.563,4,-0.202,False,0.72
+2026-17-marina_bay,GAS,Alpine,5,opening,MEDIUM,1,99.278,-0.471,9,-0.528,5,-0.296,False,0.72
+2026-17-marina_bay,GAS,Alpine,6,opening,MEDIUM,1,99.249,-0.587,9,-0.466,6,-0.377,False,0.72
+2026-17-marina_bay,GAS,Alpine,7,opening,MEDIUM,1,99.309,-0.258,10,-0.439,7,-0.013,False,0.72
+2026-17-marina_bay,GAS,Alpine,8,opening,MEDIUM,1,110.55,-1.801,9,-0.882,8,-1.521,False,0.72
+2026-17-marina_bay,GAS,Alpine,9,opening,MEDIUM,1,111.261,3.051,13,0.331,9,3.366,False,0.72
+2026-17-marina_bay,GAS,Alpine,10,opening,MEDIUM,1,99.178,-0.009,10,0.414,10,0.341,False,0.72
+2026-17-marina_bay,GAS,Alpine,11,opening,MEDIUM,1,99.132,-0.205,8,0.946,11,0.18,False,0.72
+2026-17-marina_bay,GAS,Alpine,12,opening,MEDIUM,1,99.406,0.154,12,-0.02,12,0.574,False,0.72
+2026-17-marina_bay,GAS,Alpine,13,middle,MEDIUM,1,99.324,0.023,12,-0.009,13,0.478,False,0.72
+2026-17-marina_bay,GAS,Alpine,14,middle,MEDIUM,1,99.445,0.169,12,0.115,14,0.659,False,0.72
+2026-17-marina_bay,GAS,Alpine,15,middle,MEDIUM,1,99.513,-0.004,10,0.063,15,0.521,False,0.72
+2026-17-marina_bay,GAS,Alpine,16,middle,MEDIUM,1,99.411,0.0,11,0.055,16,0.56,True,0.72
+2026-17-marina_bay,GAS,Alpine,17,middle,MEDIUM,1,99.625,0.177,14,0.058,17,0.772,False,0.72
+2026-17-marina_bay,GAS,Alpine,18,middle,MEDIUM,1,99.586,0.111,12,0.096,18,0.741,False,0.72
+2026-17-marina_bay,GAS,Alpine,19,middle,MEDIUM,1,99.28,-0.11,9,0.059,19,0.555,False,0.72
+2026-17-marina_bay,GAS,Alpine,20,middle,MEDIUM,1,99.061,-0.355,8,-0.118,20,0.345,False,0.72
+2026-17-marina_bay,GAS,Alpine,21,middle,MEDIUM,1,99.318,-0.234,8,-0.233,21,0.501,False,0.72
+2026-17-marina_bay,GAS,Alpine,22,middle,MEDIUM,1,99.538,-0.223,9,-0.271,22,0.547,False,0.72
+2026-17-marina_bay,GAS,Alpine,23,middle,MEDIUM,1,99.438,-0.1,10,-0.186,23,0.705,False,0.72
+2026-17-marina_bay,GAS,Alpine,24,middle,MEDIUM,1,99.459,-0.015,10,-0.113,24,0.825,False,0.72
+2026-17-marina_bay,GAS,Alpine,25,middle,MEDIUM,1,99.56,0.057,12,-0.019,25,0.932,False,0.72
+2026-17-marina_bay,GAS,Alpine,26,middle,MEDIUM,1,99.792,0.337,13,0.126,26,1.247,False,0.72
+2026-17-marina_bay,GAS,Alpine,27,middle,MEDIUM,1,99.717,0.195,13,0.196,27,1.14,False,0.72
+2026-17-marina_bay,GAS,Alpine,28,middle,MEDIUM,1,99.797,0.285,16,0.272,28,1.265,False,0.72
+2026-17-marina_bay,GAS,Alpine,29,middle,MEDIUM,1,105.282,5.705,19,2.062,29,6.72,False,0.72
+2026-17-marina_bay,GAS,Alpine,30,middle,SOFT,2,116.61,16.72,20,7.57,4,17.77,False,0.72
+2026-17-marina_bay,GAS,Alpine,31,middle,SOFT,2,99.169,-0.544,8,7.294,5,0.541,False,0.72
+2026-17-marina_bay,GAS,Alpine,32,middle,SOFT,2,98.799,-0.641,7,5.178,6,0.479,False,0.72
+2026-17-marina_bay,GAS,Alpine,33,middle,SOFT,2,98.212,-1.182,6,-0.789,7,-0.027,False,0.72
+2026-17-marina_bay,GAS,Alpine,34,middle,SOFT,2,97.478,-1.099,5,-0.974,8,0.091,False,0.72
+2026-17-marina_bay,GAS,Alpine,35,middle,SOFT,2,97.558,-0.633,7,-0.971,9,0.592,False,0.72
+2026-17-marina_bay,GAS,Alpine,36,middle,SOFT,2,97.595,-0.533,6,-0.755,10,0.727,False,0.72
+2026-17-marina_bay,GAS,Alpine,37,middle,SOFT,2,97.93,0.0,10,-0.389,11,1.295,False,0.72
+2026-17-marina_bay,GAS,Alpine,38,middle,SOFT,2,104.044,-0.439,9,-0.324,12,0.891,False,0.72
+2026-17-marina_bay,GAS,Alpine,39,middle,SOFT,2,129.617,8.498,16,2.686,13,9.863,False,0.72
+2026-17-marina_bay,GAS,Alpine,40,middle,SOFT,2,97.76,-1.168,3,2.297,14,0.232,False,0.72
+2026-17-marina_bay,GAS,Alpine,41,middle,SOFT,2,97.832,0.02,11,2.45,15,1.455,False,0.72
+2026-17-marina_bay,GAS,Alpine,42,middle,SOFT,2,97.684,0.0,10,-0.383,16,1.47,False,0.72
+2026-17-marina_bay,GAS,Alpine,43,middle,SOFT,2,97.795,0.0,10,0.007,17,1.505,False,0.72
+2026-17-marina_bay,GAS,Alpine,44,middle,SOFT,2,97.68,0.0,10,0,18,1.54,False,0.72
+2026-17-marina_bay,GAS,Alpine,45,middle,SOFT,2,97.956,0.133,11,0.044,19,1.708,False,0.72
+2026-17-marina_bay,GAS,Alpine,46,middle,SOFT,2,98.719,0.0,10,0.044,20,1.61,False,0.72
+2026-17-marina_bay,GAS,Alpine,47,closing,SOFT,2,99.61,1.577,15,0.57,21,3.222,False,0.72
+2026-17-marina_bay,GAS,Alpine,48,closing,SOFT,2,98.847,0.797,13,0.791,22,2.477,False,0.72
+2026-17-marina_bay,GAS,Alpine,49,closing,SOFT,2,97.918,0.3,11,0.891,23,2.015,False,0.72
+2026-17-marina_bay,GAS,Alpine,50,closing,SOFT,2,97.39,-0.407,8,0.23,24,1.343,False,0.72
+2026-17-marina_bay,GAS,Alpine,51,closing,SOFT,2,97.676,-0.372,9,-0.16,25,1.413,False,0.72
+2026-17-marina_bay,GAS,Alpine,52,closing,SOFT,2,97.678,0.0,10,-0.26,26,1.82,False,0.72
+2026-17-marina_bay,GAS,Alpine,53,closing,SOFT,2,97.558,-0.555,7,-0.309,27,1.3,False,0.72
+2026-17-marina_bay,GAS,Alpine,54,closing,SOFT,2,97.676,-0.72,6,-0.425,28,1.17,False,0.72
+2026-17-marina_bay,GAS,Alpine,55,closing,SOFT,2,98.038,-0.347,7,-0.541,29,1.578,False,0.72
+2026-17-marina_bay,GAS,Alpine,56,closing,SOFT,2,97.908,0.0,10,-0.356,30,1.96,False,0.72
+2026-17-marina_bay,GAS,Alpine,57,closing,SOFT,2,98.518,0.145,11,-0.067,31,2.14,False,0.72
+2026-17-marina_bay,GAS,Alpine,58,closing,SOFT,2,100.182,2.359,17,0.835,32,4.389,False,0.72
+2026-17-marina_bay,GAS,Alpine,59,closing,SOFT,2,99.171,1.186,16,1.23,33,3.251,False,0.72
+2026-17-marina_bay,GAS,Alpine,60,closing,SOFT,2,101.044,2.745,17,2.097,34,4.845,False,0.72
+2026-17-marina_bay,GAS,Alpine,61,closing,SOFT,2,98.967,0.807,10,1.579,35,2.942,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,1,opening,MEDIUM,1,114.461,5.168,20,5.168,1,5.203,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,2,opening,MEDIUM,1,102.233,1.043,20,3.105,2,1.113,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,3,opening,MEDIUM,1,100.919,0.312,12,2.174,3,0.417,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,4,opening,MEDIUM,1,101.652,1.8,20,1.052,4,1.94,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,5,opening,MEDIUM,1,101.28,1.531,17,1.215,5,1.706,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,6,opening,MEDIUM,1,100.699,0.864,16,1.398,6,1.074,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,7,opening,MEDIUM,1,101.043,1.476,18,1.29,7,1.721,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,8,opening,MEDIUM,1,118.722,6.371,20,2.903,8,6.651,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,9,opening,MEDIUM,1,102.598,-5.612,2,0.745,9,-5.297,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,10,opening,MEDIUM,1,99.236,0.049,12,0.269,10,0.399,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,11,opening,MEDIUM,1,99.932,0.595,14,-1.656,11,0.98,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,12,opening,MEDIUM,1,99.111,-0.141,9,0.168,12,0.279,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,13,middle,MEDIUM,1,99.74,0.439,14,0.298,13,0.894,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,14,middle,MEDIUM,1,99.824,0.548,14,0.282,14,1.038,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,15,middle,MEDIUM,1,100.043,0.526,15,0.504,15,1.051,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,16,middle,MEDIUM,1,99.221,-0.19,10,0.295,16,0.37,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,17,middle,MEDIUM,1,98.752,-0.696,5,-0.12,17,-0.101,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,18,middle,MEDIUM,1,99.025,-0.45,7,-0.445,18,0.18,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,19,middle,MEDIUM,1,99.171,-0.219,7,-0.455,19,0.446,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,20,middle,MEDIUM,1,99.415,-0.001,10,-0.223,20,0.699,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,21,middle,MEDIUM,1,99.552,0.0,11,-0.073,21,0.735,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,22,middle,MEDIUM,1,99.855,0.094,13,0.031,22,0.864,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,23,middle,MEDIUM,1,100.073,0.535,15,0.21,23,1.34,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,24,middle,MEDIUM,1,100.429,0.955,17,0.528,24,1.795,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,25,middle,MEDIUM,1,100.434,0.931,17,0.807,25,1.806,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,26,middle,MEDIUM,1,100.316,0.861,18,0.916,26,1.771,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,27,middle,MEDIUM,1,99.956,0.434,16,0.742,27,1.379,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,28,middle,MEDIUM,1,99.477,-0.035,10,0.42,28,0.945,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,29,middle,MEDIUM,1,99.748,0.171,14,0.19,29,1.186,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,30,middle,MEDIUM,1,100.236,0.346,12,0.161,30,1.396,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,31,middle,MEDIUM,1,100.471,0.758,14,0.425,31,1.843,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,32,middle,MEDIUM,1,98.91,-0.531,8,0.191,32,0.589,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,33,middle,MEDIUM,1,106.564,7.17,18,2.466,33,8.325,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,34,middle,SOFT,2,115.73,17.153,18,7.931,,18.343,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,35,middle,SOFT,2,98.448,0.257,13,8.193,,1.482,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,36,middle,SOFT,2,96.224,-1.904,1,5.169,,-0.644,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,37,middle,SOFT,2,96.47,-1.46,1,-1.036,,-0.165,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,38,middle,SOFT,2,111.226,6.743,13,1.126,,8.073,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,39,middle,SOFT,2,121.119,0.0,10,1.761,,1.365,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,40,middle,SOFT,2,96.525,-2.403,1,1.447,,-1.003,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,41,middle,SOFT,2,95.996,-1.816,3,-1.406,,-0.381,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,42,middle,SOFT,2,95.917,-1.767,2,-1.995,,-0.297,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,43,middle,SOFT,2,96.082,-1.713,4,-1.765,,-0.208,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,44,middle,SOFT,2,96.303,-1.377,4,-1.619,,0.163,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,45,middle,SOFT,2,97.448,-0.375,6,-1.155,,1.2,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,46,middle,SOFT,2,97.797,-0.922,9,-0.891,,0.688,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,47,closing,SOFT,2,97.49,-0.543,6,-0.613,,1.102,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,48,closing,SOFT,2,96.359,-1.691,4,-1.052,,-0.011,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,49,closing,SOFT,2,96.21,-1.408,3,-1.214,,0.307,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,50,closing,SOFT,2,96.59,-1.207,2,-1.435,,0.543,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,51,closing,SOFT,2,96.206,-1.842,3,-1.486,,-0.057,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,52,closing,SOFT,2,96.885,-0.793,4,-1.281,,1.027,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,53,closing,SOFT,2,97.784,-0.329,8,-0.988,,1.526,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,54,closing,SOFT,2,96.965,-1.431,4,-0.851,,0.459,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,55,closing,SOFT,2,96.534,-1.851,3,-1.204,,0.074,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,56,closing,SOFT,2,96.922,-0.986,5,-1.423,,0.974,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,57,closing,SOFT,2,97.743,-0.63,9,-1.156,,1.365,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,58,closing,SOFT,2,96.731,-1.092,3,-0.903,,0.938,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,59,closing,SOFT,2,96.885,-1.1,4,-0.941,,0.965,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,60,closing,SOFT,2,96.527,-1.772,2,-1.321,,0.328,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,61,closing,SOFT,2,96.676,-1.484,2,-1.452,,0.651,False,0.72
+2026-17-marina_bay,HAD,Red Bull Racing,62,closing,SOFT,2,100.757,2.907,9,-0.116,,5.077,False,0.72
+2026-17-marina_bay,HAM,Ferrari,1,opening,MEDIUM,1,103.681,-5.612,3,-5.612,1,-5.577,False,0.72
+2026-17-marina_bay,HAM,Ferrari,2,opening,MEDIUM,1,98.923,-2.267,4,-3.94,2,-2.197,False,0.72
+2026-17-marina_bay,HAM,Ferrari,3,opening,MEDIUM,1,98.435,-2.171,1,-3.35,3,-2.066,False,0.72
+2026-17-marina_bay,HAM,Ferrari,4,opening,MEDIUM,1,98.427,-1.425,5,-1.955,4,-1.285,False,0.72
+2026-17-marina_bay,HAM,Ferrari,5,opening,MEDIUM,1,98.29,-1.459,3,-1.685,5,-1.284,False,0.72
+2026-17-marina_bay,HAM,Ferrari,6,opening,MEDIUM,1,98.242,-1.593,6,-1.492,6,-1.383,False,0.72
+2026-17-marina_bay,HAM,Ferrari,7,opening,MEDIUM,1,98.053,-1.514,3,-1.522,7,-1.269,False,0.72
+2026-17-marina_bay,HAM,Ferrari,8,opening,MEDIUM,1,104.88,-7.471,3,-3.526,8,-7.191,False,0.72
+2026-17-marina_bay,HAM,Ferrari,9,opening,MEDIUM,1,114.015,5.805,20,-1.06,9,6.12,False,0.72
+2026-17-marina_bay,HAM,Ferrari,10,opening,MEDIUM,1,97.599,-1.588,5,-1.085,10,-1.238,False,0.72
+2026-17-marina_bay,HAM,Ferrari,11,opening,MEDIUM,1,97.846,-1.491,6,0.909,11,-1.106,False,0.72
+2026-17-marina_bay,HAM,Ferrari,12,opening,MEDIUM,1,97.771,-1.481,3,-1.52,12,-1.061,False,0.72
+2026-17-marina_bay,HAM,Ferrari,13,middle,MEDIUM,1,98.064,-1.237,3,-1.403,13,-0.782,False,0.72
+2026-17-marina_bay,HAM,Ferrari,14,middle,MEDIUM,1,98.264,-1.012,6,-1.243,14,-0.522,False,0.72
+2026-17-marina_bay,HAM,Ferrari,15,middle,MEDIUM,1,98.185,-1.332,5,-1.194,15,-0.807,False,0.72
+2026-17-marina_bay,HAM,Ferrari,16,middle,MEDIUM,1,98.462,-0.949,5,-1.098,16,-0.389,True,0.72
+2026-17-marina_bay,HAM,Ferrari,17,middle,MEDIUM,1,99.173,-0.275,8,-0.852,17,0.32,False,0.72
+2026-17-marina_bay,HAM,Ferrari,18,middle,MEDIUM,1,104.182,4.707,21,1.161,18,5.337,False,0.72
+2026-17-marina_bay,HAM,Ferrari,19,middle,SOFT,2,114.442,15.052,21,6.495,4,15.717,False,0.72
+2026-17-marina_bay,HAM,Ferrari,20,middle,SOFT,2,98.278,-1.138,6,6.207,5,-0.438,False,0.72
+2026-17-marina_bay,HAM,Ferrari,21,middle,SOFT,2,97.247,-2.305,1,3.87,6,-1.57,False,0.72
+2026-17-marina_bay,HAM,Ferrari,22,middle,SOFT,2,97.17,-2.591,1,-2.011,7,-1.821,False,0.72
+2026-17-marina_bay,HAM,Ferrari,23,middle,SOFT,2,97.075,-2.463,1,-2.453,8,-1.658,False,0.72
+2026-17-marina_bay,HAM,Ferrari,24,middle,SOFT,2,97.254,-2.22,1,-2.425,9,-1.38,False,0.72
+2026-17-marina_bay,HAM,Ferrari,25,middle,SOFT,2,98.879,-0.624,7,-1.769,10,0.251,False,0.72
+2026-17-marina_bay,HAM,Ferrari,26,middle,SOFT,2,97.249,-2.206,1,-1.683,11,-1.296,False,0.72
+2026-17-marina_bay,HAM,Ferrari,27,middle,SOFT,2,97.191,-2.331,2,-1.72,12,-1.386,False,0.72
+2026-17-marina_bay,HAM,Ferrari,28,middle,SOFT,2,96.922,-2.59,2,-2.376,13,-1.61,False,0.72
+2026-17-marina_bay,HAM,Ferrari,29,middle,SOFT,2,97.165,-2.412,3,-2.444,14,-1.397,False,0.72
+2026-17-marina_bay,HAM,Ferrari,30,middle,SOFT,2,97.276,-2.614,3,-2.539,15,-1.564,False,0.72
+2026-17-marina_bay,HAM,Ferrari,31,middle,SOFT,2,98.319,-1.394,2,-2.14,16,-0.309,False,0.72
+2026-17-marina_bay,HAM,Ferrari,32,middle,SOFT,2,97.538,-1.903,2,-1.97,17,-0.783,False,0.72
+2026-17-marina_bay,HAM,Ferrari,33,middle,SOFT,2,97.53,-1.864,2,-1.72,18,-0.709,False,0.72
+2026-17-marina_bay,HAM,Ferrari,34,middle,SOFT,2,97.271,-1.306,3,-1.691,19,-0.116,False,0.72
+2026-17-marina_bay,HAM,Ferrari,35,middle,SOFT,2,97.136,-1.055,5,-1.408,20,0.17,False,0.72
+2026-17-marina_bay,HAM,Ferrari,36,middle,SOFT,2,97.308,-0.82,5,-1.06,21,0.44,False,0.72
+2026-17-marina_bay,HAM,Ferrari,37,middle,SOFT,2,97.363,-0.567,5,-0.814,22,0.728,False,0.72
+2026-17-marina_bay,HAM,Ferrari,38,middle,SOFT,2,97.221,-7.262,4,-2.883,23,-5.932,False,0.72
+2026-17-marina_bay,HAM,Ferrari,39,middle,SOFT,2,118.638,-2.481,8,-3.437,24,-1.116,False,0.72
+2026-17-marina_bay,HAM,Ferrari,40,middle,SOFT,2,113.801,14.873,16,1.71,25,16.273,False,0.72
+2026-17-marina_bay,HAM,Ferrari,41,middle,SOFT,2,97.504,-0.308,8,4.028,26,1.127,False,0.72
+2026-17-marina_bay,HAM,Ferrari,42,middle,SOFT,2,97.957,0.273,12,4.946,27,1.743,False,0.72
+2026-17-marina_bay,HAM,Ferrari,43,middle,SOFT,2,97.381,-0.414,7,-0.15,28,1.091,False,0.72
+2026-17-marina_bay,HAM,Ferrari,44,middle,SOFT,2,97.541,-0.139,8,-0.093,29,1.401,False,0.72
+2026-17-marina_bay,HAM,Ferrari,45,middle,SOFT,2,97.561,-0.262,8,-0.272,30,1.313,False,0.72
+2026-17-marina_bay,HAM,Ferrari,46,middle,SOFT,2,98.895,0.176,13,-0.075,31,1.786,False,0.72
+2026-17-marina_bay,HAM,Ferrari,47,closing,SOFT,2,98.033,0.0,10,-0.029,32,1.645,False,0.72
+2026-17-marina_bay,HAM,Ferrari,48,closing,SOFT,2,98.05,0.0,10,0.059,33,1.68,False,0.72
+2026-17-marina_bay,HAM,Ferrari,49,closing,SOFT,2,97.507,-0.111,8,-0.037,34,1.604,False,0.72
+2026-17-marina_bay,HAM,Ferrari,50,closing,SOFT,2,97.693,-0.104,9,-0.072,35,1.646,False,0.72
+2026-17-marina_bay,HAM,Ferrari,51,closing,SOFT,2,97.614,-0.434,8,-0.216,36,1.351,False,0.72
+2026-17-marina_bay,HAM,Ferrari,52,closing,SOFT,2,98.126,0.448,12,-0.03,37,2.268,False,0.72
+2026-17-marina_bay,HAM,Ferrari,53,closing,SOFT,2,99.092,0.979,17,0.331,38,2.834,False,0.72
+2026-17-marina_bay,HAM,Ferrari,54,closing,SOFT,2,100.977,2.581,18,1.336,39,4.471,False,0.72
+2026-17-marina_bay,HAM,Ferrari,55,closing,SOFT,2,101.645,3.26,18,2.273,40,5.185,False,0.72
+2026-17-marina_bay,HAM,Ferrari,56,closing,SOFT,2,99.095,1.187,15,2.343,41,3.147,False,0.72
+2026-17-marina_bay,HAM,Ferrari,57,closing,SOFT,2,98.641,0.268,12,1.572,42,2.263,False,0.72
+2026-17-marina_bay,HAM,Ferrari,58,closing,SOFT,2,98.894,1.071,13,0.842,43,3.101,False,0.72
+2026-17-marina_bay,HAM,Ferrari,59,closing,SOFT,2,98.579,0.594,12,0.644,44,2.659,False,0.72
+2026-17-marina_bay,HAM,Ferrari,60,closing,SOFT,2,99.754,1.455,14,1.04,45,3.555,False,0.72
+2026-17-marina_bay,HAM,Ferrari,61,closing,SOFT,2,102.068,3.908,16,1.986,46,6.043,False,0.72
+2026-17-marina_bay,HAM,Ferrari,62,closing,SOFT,2,100.601,2.751,8,2.705,47,4.921,False,0.72
+2026-17-marina_bay,HUL,Audi,1,opening,MEDIUM,1,107.388,-1.905,8,-1.905,1,-1.87,False,0.72
+2026-17-marina_bay,HUL,Audi,2,opening,MEDIUM,1,100.064,-1.127,8,-1.516,2,-1.057,False,0.72
+2026-17-marina_bay,HUL,Audi,3,opening,MEDIUM,1,99.726,-0.88,8,-1.304,3,-0.775,False,0.72
+2026-17-marina_bay,HUL,Audi,4,opening,MEDIUM,1,99.478,-0.374,9,-0.794,4,-0.234,False,0.72
+2026-17-marina_bay,HUL,Audi,5,opening,MEDIUM,1,99.292,-0.457,10,-0.571,5,-0.282,False,0.72
+2026-17-marina_bay,HUL,Audi,6,opening,MEDIUM,1,99.646,-0.189,11,-0.34,6,0.021,False,0.72
+2026-17-marina_bay,HUL,Audi,7,opening,MEDIUM,1,99.463,-0.104,11,-0.25,7,0.141,False,0.72
+2026-17-marina_bay,HUL,Audi,8,opening,MEDIUM,1,110.105,-2.246,8,-0.847,8,-1.966,False,0.72
+2026-17-marina_bay,HUL,Audi,9,opening,MEDIUM,1,111.577,3.367,14,0.339,9,3.682,False,0.72
+2026-17-marina_bay,HUL,Audi,10,opening,MEDIUM,1,99.03,-0.157,7,0.321,10,0.193,False,0.72
+2026-17-marina_bay,HUL,Audi,11,opening,MEDIUM,1,99.337,0.0,11,1.07,11,0.385,False,0.72
+2026-17-marina_bay,HUL,Audi,12,opening,MEDIUM,1,99.208,-0.044,10,-0.067,12,0.376,False,0.72
+2026-17-marina_bay,HUL,Audi,13,middle,MEDIUM,1,99.252,-0.049,9,-0.031,13,0.406,False,0.72
+2026-17-marina_bay,HUL,Audi,14,middle,MEDIUM,1,99.225,-0.051,9,-0.048,14,0.439,False,0.72
+2026-17-marina_bay,HUL,Audi,15,middle,MEDIUM,1,99.224,-0.293,9,-0.131,15,0.232,False,0.72
+2026-17-marina_bay,HUL,Audi,16,middle,MEDIUM,1,99.121,-0.29,8,-0.211,16,0.27,True,0.72
+2026-17-marina_bay,HUL,Audi,17,middle,MEDIUM,1,99.431,-0.017,10,-0.2,17,0.578,False,0.72
+2026-17-marina_bay,HUL,Audi,18,middle,MEDIUM,1,99.29,-0.185,8,-0.164,18,0.445,False,0.72
+2026-17-marina_bay,HUL,Audi,19,middle,MEDIUM,1,99.538,0.148,12,-0.018,19,0.813,False,0.72
+2026-17-marina_bay,HUL,Audi,20,middle,MEDIUM,1,99.416,0.0,11,-0.012,20,0.7,False,0.72
+2026-17-marina_bay,HUL,Audi,21,middle,MEDIUM,1,99.67,0.118,12,0.089,21,0.853,False,0.72
+2026-17-marina_bay,HUL,Audi,22,middle,MEDIUM,1,99.545,-0.216,10,-0.033,22,0.554,False,0.72
+2026-17-marina_bay,HUL,Audi,23,middle,MEDIUM,1,99.377,-0.161,8,-0.086,23,0.644,False,0.72
+2026-17-marina_bay,HUL,Audi,24,middle,MEDIUM,1,99.21,-0.264,7,-0.214,24,0.576,False,0.72
+2026-17-marina_bay,HUL,Audi,25,middle,MEDIUM,1,99.444,-0.059,10,-0.161,25,0.816,False,0.72
+2026-17-marina_bay,HUL,Audi,26,middle,MEDIUM,1,99.225,-0.23,9,-0.184,26,0.68,False,0.72
+2026-17-marina_bay,HUL,Audi,27,middle,MEDIUM,1,99.496,-0.026,10,-0.105,27,0.919,False,0.72
+2026-17-marina_bay,HUL,Audi,28,middle,MEDIUM,1,99.614,0.102,13,-0.051,28,1.082,False,0.72
+2026-17-marina_bay,HUL,Audi,29,middle,MEDIUM,1,99.577,0.0,11,0.025,29,1.015,False,0.72
+2026-17-marina_bay,HUL,Audi,30,middle,MEDIUM,1,105.152,5.262,19,1.788,30,6.312,False,0.72
+2026-17-marina_bay,HUL,Audi,31,middle,SOFT,2,114.905,15.192,20,6.818,1,16.277,False,0.72
+2026-17-marina_bay,HUL,Audi,32,middle,SOFT,2,99.451,0.01,11,6.822,2,1.13,False,0.72
+2026-17-marina_bay,HUL,Audi,33,middle,SOFT,2,97.93,-1.464,5,4.58,3,-0.309,False,0.72
+2026-17-marina_bay,HUL,Audi,34,middle,SOFT,2,98.29,-0.287,9,-0.58,4,0.903,False,0.72
+2026-17-marina_bay,HUL,Audi,35,middle,SOFT,2,98.251,0.06,11,-0.564,5,1.285,False,0.72
+2026-17-marina_bay,HUL,Audi,36,middle,SOFT,2,97.967,-0.161,9,-0.129,6,1.099,False,0.72
+2026-17-marina_bay,HUL,Audi,37,middle,SOFT,2,97.86,-0.07,9,-0.057,7,1.225,False,0.72
+2026-17-marina_bay,HUL,Audi,38,middle,SOFT,2,104.483,0.0,10,-0.077,8,1.33,False,0.72
+2026-17-marina_bay,HUL,Audi,39,middle,SOFT,2,130.373,9.254,17,3.061,9,10.619,False,0.72
+2026-17-marina_bay,HUL,Audi,40,middle,SOFT,2,97.979,-0.949,4,2.768,10,0.451,False,0.72
+2026-17-marina_bay,HUL,Audi,41,middle,SOFT,2,97.812,0.0,10,2.768,11,1.435,False,0.72
+2026-17-marina_bay,HUL,Audi,42,middle,SOFT,2,97.448,-0.236,6,-0.395,12,1.234,False,0.72
+2026-17-marina_bay,HUL,Audi,43,middle,SOFT,2,97.658,-0.137,9,-0.124,13,1.368,False,0.72
+2026-17-marina_bay,HUL,Audi,44,middle,SOFT,2,97.515,-0.165,7,-0.179,14,1.375,False,0.72
+2026-17-marina_bay,HUL,Audi,45,middle,SOFT,2,97.477,-0.346,7,-0.216,15,1.229,False,0.72
+2026-17-marina_bay,HUL,Audi,46,middle,SOFT,2,97.562,-1.157,6,-0.556,16,0.453,False,0.72
+2026-17-marina_bay,HUL,Audi,47,closing,SOFT,2,98.07,0.037,11,-0.489,17,1.682,False,0.72
+2026-17-marina_bay,HUL,Audi,48,closing,SOFT,2,97.662,-0.388,8,-0.503,18,1.292,False,0.72
+2026-17-marina_bay,HUL,Audi,49,closing,SOFT,2,97.618,0.0,10,-0.117,19,1.715,False,0.72
+2026-17-marina_bay,HUL,Audi,50,closing,SOFT,2,97.797,0.0,10,-0.129,20,1.75,False,0.72
+2026-17-marina_bay,HUL,Audi,51,closing,SOFT,2,98.26,0.212,11,0.071,21,1.997,False,0.72
+2026-17-marina_bay,HUL,Audi,52,closing,SOFT,2,97.398,-0.28,7,-0.023,22,1.54,False,0.72
+2026-17-marina_bay,HUL,Audi,53,closing,SOFT,2,97.316,-0.797,5,-0.288,23,1.058,False,0.72
+2026-17-marina_bay,HUL,Audi,54,closing,SOFT,2,98.15,-0.246,8,-0.441,24,1.644,False,0.72
+2026-17-marina_bay,HUL,Audi,55,closing,SOFT,2,98.324,-0.061,8,-0.368,25,1.864,False,0.72
+2026-17-marina_bay,HUL,Audi,56,closing,SOFT,2,97.646,-0.262,8,-0.19,26,1.698,False,0.72
+2026-17-marina_bay,HUL,Audi,57,closing,SOFT,2,97.058,-1.315,4,-0.546,27,0.68,False,0.72
+2026-17-marina_bay,HUL,Audi,58,closing,SOFT,2,97.302,-0.521,8,-0.699,28,1.509,False,0.72
+2026-17-marina_bay,HUL,Audi,59,closing,SOFT,2,97.28,-0.705,7,-0.847,29,1.36,False,0.72
+2026-17-marina_bay,HUL,Audi,60,closing,SOFT,2,97.055,-1.244,4,-0.823,30,0.856,False,0.72
+2026-17-marina_bay,HUL,Audi,61,closing,SOFT,2,97.482,-0.678,6,-0.876,31,1.457,False,0.72
+2026-17-marina_bay,HUL,Audi,62,closing,SOFT,2,97.671,-0.178,2,-0.7,32,1.992,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,1,opening,SOFT,1,106.747,-2.546,7,-2.546,4,-2.511,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,2,opening,SOFT,1,99.975,-1.216,7,-1.881,5,-1.146,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,3,opening,SOFT,1,99.606,-1.001,7,-1.587,6,-0.896,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,4,opening,SOFT,1,99.184,-0.668,7,-0.961,7,-0.528,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,5,opening,SOFT,1,99.058,-0.691,7,-0.786,8,-0.516,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,6,opening,SOFT,1,99.111,-0.724,7,-0.694,9,-0.514,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,7,opening,SOFT,1,99.057,-0.51,9,-0.642,10,-0.265,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,8,opening,SOFT,1,109.763,-2.588,7,-1.274,11,-2.308,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,9,opening,SOFT,1,112.121,3.911,16,0.271,12,4.226,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,10,opening,SOFT,1,99.187,0.0,11,0.441,13,0.35,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,11,opening,SOFT,1,98.785,-0.552,7,1.12,14,-0.167,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,12,opening,SOFT,1,99.096,-0.156,7,-0.236,15,0.264,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,13,middle,SOFT,1,99.301,0.0,11,-0.236,16,0.455,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,14,middle,SOFT,1,99.129,-0.147,8,-0.101,17,0.343,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,15,middle,SOFT,1,99.052,-0.465,8,-0.204,18,0.06,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,16,middle,SOFT,1,99.209,-0.202,9,-0.271,19,0.358,True,0.72
+2026-17-marina_bay,LAW,Racing Bulls,17,middle,SOFT,1,99.198,-0.25,9,-0.306,20,0.345,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,18,middle,SOFT,1,98.997,-0.478,5,-0.31,21,0.152,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,19,middle,SOFT,1,99.192,-0.198,8,-0.309,22,0.467,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,20,middle,SOFT,1,100.539,1.123,16,0.149,23,1.823,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,21,middle,SOFT,1,99.714,0.162,13,0.362,24,0.897,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,22,middle,SOFT,1,99.311,-0.45,7,0.278,25,0.32,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,23,middle,SOFT,1,99.381,-0.157,9,-0.148,26,0.648,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,24,middle,SOFT,1,99.458,-0.016,9,-0.208,27,0.824,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,25,middle,SOFT,1,99.322,-0.181,9,-0.118,28,0.694,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,26,middle,SOFT,1,99.455,0.0,11,-0.066,29,0.91,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,27,middle,SOFT,1,99.405,-0.117,8,-0.099,30,0.828,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,28,middle,SOFT,1,99.348,-0.164,9,-0.094,31,0.816,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,29,middle,SOFT,1,99.78,0.203,15,-0.026,32,1.218,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,30,middle,SOFT,1,99.609,-0.281,10,-0.081,33,0.769,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,31,middle,SOFT,1,105.278,5.565,18,1.829,34,6.65,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,32,middle,MEDIUM,2,116.559,17.118,19,7.468,1,18.238,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,33,middle,MEDIUM,2,97.636,-1.758,3,6.975,2,-0.603,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,34,middle,MEDIUM,2,97.921,-0.656,7,4.902,3,0.534,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,35,middle,MEDIUM,2,97.994,-0.197,9,-0.87,4,1.028,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,36,middle,MEDIUM,2,98.014,-0.114,10,-0.322,5,1.146,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,37,middle,MEDIUM,2,97.957,0.027,11,-0.095,6,1.322,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,38,middle,MEDIUM,2,102.99,-1.493,8,-0.527,7,-0.163,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,39,middle,MEDIUM,2,131.037,9.918,18,2.817,8,11.283,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,40,middle,MEDIUM,2,98.373,-0.555,6,2.623,9,0.845,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,41,middle,MEDIUM,2,97.854,0.042,12,3.135,10,1.477,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,42,middle,MEDIUM,2,97.497,-0.187,7,-0.233,11,1.283,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,43,middle,MEDIUM,2,97.842,0.047,11,-0.033,12,1.552,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,44,middle,MEDIUM,2,97.552,-0.128,9,-0.089,13,1.412,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,45,middle,MEDIUM,2,97.663,-0.16,9,-0.08,14,1.415,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,46,middle,MEDIUM,2,97.566,-1.153,7,-0.48,15,0.457,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,47,closing,MEDIUM,2,97.925,-0.108,8,-0.474,16,1.537,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,48,closing,MEDIUM,2,97.68,-0.37,9,-0.544,17,1.31,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,49,closing,MEDIUM,2,97.571,-0.047,9,-0.175,18,1.668,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,50,closing,MEDIUM,2,97.259,-0.538,7,-0.318,19,1.212,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,51,closing,MEDIUM,2,97.193,-0.855,7,-0.48,20,0.93,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,52,closing,MEDIUM,2,97.513,-0.165,8,-0.519,21,1.655,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,53,closing,MEDIUM,2,97.495,-0.618,6,-0.546,22,1.237,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,54,closing,MEDIUM,2,97.562,-0.834,5,-0.539,23,1.056,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,55,closing,MEDIUM,2,97.829,-0.556,6,-0.669,24,1.369,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,56,closing,MEDIUM,2,97.546,-0.362,7,-0.584,25,1.598,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,57,closing,MEDIUM,2,97.597,-0.776,8,-0.565,26,1.219,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,58,closing,MEDIUM,2,97.661,-0.162,9,-0.433,27,1.868,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,59,closing,MEDIUM,2,97.643,-0.342,9,-0.427,28,1.723,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,60,closing,MEDIUM,2,97.499,-0.8,7,-0.435,29,1.3,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,61,closing,MEDIUM,2,97.802,-0.358,7,-0.5,30,1.777,False,0.72
+2026-17-marina_bay,LAW,Racing Bulls,62,closing,MEDIUM,2,97.853,0.003,6,-0.385,31,2.173,False,0.72
+2026-17-marina_bay,LEC,Ferrari,1,opening,SOFT,1,102.895,-6.398,2,-6.398,4,-6.363,False,0.72
+2026-17-marina_bay,LEC,Ferrari,2,opening,SOFT,1,98.791,-2.4,2,-4.399,5,-2.33,False,0.72
+2026-17-marina_bay,LEC,Ferrari,3,opening,SOFT,1,98.62,-1.986,3,-3.595,6,-1.881,False,0.72
+2026-17-marina_bay,LEC,Ferrari,4,opening,SOFT,1,98.074,-1.778,2,-2.055,7,-1.638,False,0.72
+2026-17-marina_bay,LEC,Ferrari,5,opening,SOFT,1,97.741,-2.008,1,-1.924,8,-1.833,False,0.72
+2026-17-marina_bay,LEC,Ferrari,6,opening,SOFT,1,98.212,-1.623,3,-1.803,9,-1.413,False,0.72
+2026-17-marina_bay,LEC,Ferrari,7,opening,SOFT,1,97.617,-1.95,1,-1.86,10,-1.705,False,0.72
+2026-17-marina_bay,LEC,Ferrari,8,opening,SOFT,1,104.725,-7.626,2,-3.733,11,-7.346,False,0.72
+2026-17-marina_bay,LEC,Ferrari,9,opening,SOFT,1,113.334,5.124,19,-1.484,12,5.439,False,0.72
+2026-17-marina_bay,LEC,Ferrari,10,opening,SOFT,1,97.493,-1.694,2,-1.399,13,-1.344,False,0.72
+2026-17-marina_bay,LEC,Ferrari,11,opening,SOFT,1,97.776,-1.561,4,0.623,14,-1.176,False,0.72
+2026-17-marina_bay,LEC,Ferrari,12,opening,SOFT,1,97.696,-1.556,2,-1.604,15,-1.136,False,0.72
+2026-17-marina_bay,LEC,Ferrari,13,middle,SOFT,1,97.986,-1.315,2,-1.477,16,-0.86,False,0.72
+2026-17-marina_bay,LEC,Ferrari,14,middle,SOFT,1,97.752,-1.524,2,-1.465,17,-1.034,False,0.72
+2026-17-marina_bay,LEC,Ferrari,15,middle,SOFT,1,97.522,-1.995,2,-1.611,18,-1.47,False,0.72
+2026-17-marina_bay,LEC,Ferrari,16,middle,SOFT,1,97.834,-1.577,2,-1.699,19,-1.017,True,0.72
+2026-17-marina_bay,LEC,Ferrari,17,middle,SOFT,1,97.802,-1.646,2,-1.739,20,-1.051,False,0.72
+2026-17-marina_bay,LEC,Ferrari,18,middle,SOFT,1,98.039,-1.436,2,-1.553,21,-0.806,False,0.72
+2026-17-marina_bay,LEC,Ferrari,19,middle,SOFT,1,98.188,-1.202,4,-1.428,22,-0.537,False,0.72
+2026-17-marina_bay,LEC,Ferrari,20,middle,SOFT,1,98.225,-1.191,5,-1.276,23,-0.491,False,0.72
+2026-17-marina_bay,LEC,Ferrari,21,middle,SOFT,1,98.342,-1.21,6,-1.201,24,-0.475,False,0.72
+2026-17-marina_bay,LEC,Ferrari,22,middle,SOFT,1,98.278,-1.483,4,-1.295,25,-0.713,False,0.72
+2026-17-marina_bay,LEC,Ferrari,23,middle,SOFT,1,98.597,-0.941,5,-1.211,26,-0.136,False,0.72
+2026-17-marina_bay,LEC,Ferrari,24,middle,SOFT,1,104.408,4.934,20,0.837,27,5.774,False,0.72
+2026-17-marina_bay,LEC,Ferrari,25,middle,MEDIUM,2,116.04,16.537,21,6.843,1,17.412,False,0.72
+2026-17-marina_bay,LEC,Ferrari,26,middle,MEDIUM,2,97.314,-2.141,2,6.443,2,-1.231,False,0.72
+2026-17-marina_bay,LEC,Ferrari,27,middle,MEDIUM,2,96.89,-2.632,1,3.921,3,-1.687,False,0.72
+2026-17-marina_bay,LEC,Ferrari,28,middle,MEDIUM,2,96.912,-2.6,1,-2.458,4,-1.62,False,0.72
+2026-17-marina_bay,LEC,Ferrari,29,middle,MEDIUM,2,96.921,-2.656,1,-2.629,5,-1.641,False,0.72
+2026-17-marina_bay,LEC,Ferrari,30,middle,MEDIUM,2,97.263,-2.627,2,-2.628,6,-1.577,False,0.72
+2026-17-marina_bay,LEC,Ferrari,31,middle,MEDIUM,2,98.502,-1.211,4,-2.165,7,-0.126,False,0.72
+2026-17-marina_bay,LEC,Ferrari,32,middle,MEDIUM,2,97.22,-2.221,1,-2.019,8,-1.101,False,0.72
+2026-17-marina_bay,LEC,Ferrari,33,middle,MEDIUM,2,97.43,-1.964,1,-1.798,9,-0.809,False,0.72
+2026-17-marina_bay,LEC,Ferrari,34,middle,MEDIUM,2,97.115,-1.462,2,-1.882,10,-0.272,False,0.72
+2026-17-marina_bay,LEC,Ferrari,35,middle,MEDIUM,2,96.78,-1.411,4,-1.612,11,-0.186,False,0.72
+2026-17-marina_bay,LEC,Ferrari,36,middle,MEDIUM,2,97.138,-0.99,4,-1.288,12,0.27,False,0.72
+2026-17-marina_bay,LEC,Ferrari,37,middle,MEDIUM,2,97.237,-0.693,4,-1.031,13,0.602,False,0.72
+2026-17-marina_bay,LEC,Ferrari,38,middle,MEDIUM,2,96.919,-7.564,2,-3.082,14,-6.234,False,0.72
+2026-17-marina_bay,LEC,Ferrari,39,middle,MEDIUM,2,119.717,-1.402,9,-3.22,15,-0.037,False,0.72
+2026-17-marina_bay,LEC,Ferrari,40,middle,SOFT,3,125.407,26.479,19,5.838,4,27.879,False,0.72
+2026-17-marina_bay,LEC,Ferrari,41,middle,SOFT,3,95.202,-2.61,1,7.489,5,-1.175,False,0.72
+2026-17-marina_bay,LEC,Ferrari,42,middle,SOFT,3,95.647,-2.037,1,7.277,6,-0.567,False,0.72
+2026-17-marina_bay,LEC,Ferrari,43,middle,SOFT,3,95.661,-2.134,2,-2.26,7,-0.629,False,0.72
+2026-17-marina_bay,LEC,Ferrari,44,middle,SOFT,3,95.65,-2.03,1,-2.067,8,-0.49,False,0.72
+2026-17-marina_bay,LEC,Ferrari,45,middle,SOFT,3,96.209,-1.614,3,-1.926,9,-0.039,False,0.72
+2026-17-marina_bay,LEC,Ferrari,46,middle,SOFT,3,97.131,-1.588,5,-1.744,10,0.022,False,0.72
+2026-17-marina_bay,LEC,Ferrari,47,closing,SOFT,3,95.69,-2.343,1,-1.848,11,-0.698,False,0.72
+2026-17-marina_bay,LEC,Ferrari,48,closing,SOFT,3,95.771,-2.279,1,-2.07,12,-0.599,False,0.72
+2026-17-marina_bay,LEC,Ferrari,49,closing,SOFT,3,95.585,-2.033,1,-2.218,13,-0.318,False,0.72
+2026-17-marina_bay,LEC,Ferrari,50,closing,SOFT,3,95.663,-2.134,1,-2.149,14,-0.384,False,0.72
+2026-17-marina_bay,LEC,Ferrari,51,closing,SOFT,3,95.717,-2.331,1,-2.166,15,-0.546,False,0.72
+2026-17-marina_bay,LEC,Ferrari,52,closing,SOFT,3,96.059,-1.619,1,-2.028,16,0.201,False,0.72
+2026-17-marina_bay,LEC,Ferrari,53,closing,SOFT,3,95.967,-2.146,2,-2.032,17,-0.291,False,0.72
+2026-17-marina_bay,LEC,Ferrari,54,closing,SOFT,3,96.35,-2.046,2,-1.937,18,-0.156,False,0.72
+2026-17-marina_bay,LEC,Ferrari,55,closing,SOFT,3,96.792,-1.593,5,-1.928,19,0.332,False,0.72
+2026-17-marina_bay,LEC,Ferrari,56,closing,SOFT,3,96.494,-1.414,2,-1.684,20,0.546,False,0.72
+2026-17-marina_bay,LEC,Ferrari,57,closing,SOFT,3,97.573,-0.8,7,-1.269,21,1.195,False,0.72
+2026-17-marina_bay,LEC,Ferrari,58,closing,SOFT,3,96.816,-1.007,5,-1.074,22,1.023,False,0.72
+2026-17-marina_bay,LEC,Ferrari,59,closing,SOFT,3,96.205,-1.78,2,-1.196,23,0.285,False,0.72
+2026-17-marina_bay,LEC,Ferrari,60,closing,SOFT,3,96.628,-1.671,3,-1.486,24,0.429,False,0.72
+2026-17-marina_bay,LEC,Ferrari,61,closing,SOFT,3,96.898,-1.262,3,-1.571,25,0.873,False,0.72
+2026-17-marina_bay,LEC,Ferrari,62,closing,SOFT,3,97.66,-0.19,1,-1.041,26,1.98,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,1,opening,MEDIUM,1,110.502,1.209,13,1.209,1,1.244,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,2,opening,MEDIUM,1,101.419,0.228,13,0.719,2,0.298,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,3,opening,MEDIUM,1,101.722,1.115,16,0.851,3,1.22,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,4,opening,MEDIUM,1,100.181,0.329,12,0.558,4,0.469,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,5,opening,MEDIUM,1,100.339,0.59,13,0.678,5,0.765,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,6,opening,MEDIUM,1,100.138,0.303,13,0.407,6,0.513,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,7,opening,MEDIUM,1,100.785,1.218,16,0.704,7,1.463,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,8,opening,MEDIUM,1,116.656,4.305,15,1.942,8,4.585,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,9,opening,MEDIUM,1,108.34,0.13,12,1.884,9,0.445,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,10,opening,MEDIUM,1,100.576,1.389,17,1.941,10,1.739,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,11,opening,MEDIUM,1,100.431,1.094,16,0.871,11,1.479,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,12,opening,MEDIUM,1,99.744,0.492,16,0.992,12,0.912,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,13,middle,MEDIUM,1,100.102,0.801,15,0.796,13,1.256,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,14,middle,MEDIUM,1,99.845,0.569,15,0.621,14,1.059,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,15,middle,MEDIUM,1,101.495,1.978,20,1.116,15,2.503,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,16,middle,MEDIUM,1,100.451,1.04,17,1.196,16,1.6,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,17,middle,MEDIUM,1,100.257,0.809,17,1.276,17,1.404,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,18,middle,MEDIUM,1,100.275,0.8,15,0.883,18,1.43,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,19,middle,MEDIUM,1,100.16,0.77,15,0.793,19,1.435,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,20,middle,MEDIUM,1,100.163,0.747,15,0.772,20,1.447,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,21,middle,MEDIUM,1,100.063,0.511,16,0.676,21,1.246,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,22,middle,MEDIUM,1,100.265,0.504,16,0.587,22,1.274,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,23,middle,MEDIUM,1,100.181,0.643,17,0.553,23,1.448,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,24,middle,MEDIUM,1,100.305,0.831,15,0.659,24,1.671,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,25,middle,MEDIUM,1,100.516,1.013,18,0.829,25,1.888,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,26,middle,MEDIUM,1,106.454,6.999,21,2.948,26,7.909,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,27,middle,SOFT,2,116.807,17.285,20,8.432,4,18.23,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,28,middle,SOFT,2,98.563,-0.949,6,7.778,5,0.031,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,29,middle,SOFT,2,98.37,-1.207,5,5.043,6,-0.192,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,30,middle,SOFT,2,100.442,0.552,13,-0.535,7,1.602,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,31,middle,SOFT,2,98.27,-1.443,1,-0.699,8,-0.358,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,32,middle,SOFT,2,98.279,-1.162,4,-0.684,9,-0.042,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,33,middle,SOFT,2,98.301,-1.093,7,-1.233,10,0.062,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,34,middle,SOFT,2,99.924,1.347,13,-0.302,11,2.537,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,35,middle,SOFT,2,99.621,1.43,15,0.561,12,2.655,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,36,middle,SOFT,2,99.223,1.095,15,1.291,13,2.355,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,37,middle,SOFT,2,98.765,0.835,16,1.12,14,2.13,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,38,middle,SOFT,2,119.973,15.49,15,5.807,15,16.82,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,39,middle,SOFT,2,116.98,-4.139,4,4.062,16,-2.774,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,40,middle,SOFT,2,98.453,-0.475,7,3.625,17,0.925,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,41,middle,SOFT,2,98.154,0.342,14,-1.424,18,1.777,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,42,middle,SOFT,2,98.441,0.757,15,0.208,19,2.227,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,43,middle,SOFT,2,98.743,0.948,17,0.682,20,2.453,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,44,middle,SOFT,2,98.578,0.898,16,0.868,21,2.438,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,45,middle,SOFT,2,101.7,3.877,19,1.908,22,5.452,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,46,middle,SOFT,2,98.935,0.216,14,1.664,23,1.826,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,47,closing,SOFT,2,103.143,5.11,19,3.068,24,6.755,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,48,closing,SOFT,2,98.863,0.813,14,2.046,25,2.493,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,49,closing,SOFT,2,98.755,1.137,14,2.353,26,2.852,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,50,closing,SOFT,2,98.573,0.776,14,0.909,27,2.526,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,51,closing,SOFT,2,98.867,0.819,16,0.911,28,2.604,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,52,closing,SOFT,2,98.671,0.993,17,0.863,29,2.813,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,53,closing,SOFT,2,98.89,0.777,14,0.863,30,2.632,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,54,closing,SOFT,2,98.966,0.57,11,0.78,31,2.46,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,55,closing,SOFT,2,98.985,0.6,13,0.649,32,2.525,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,56,closing,SOFT,2,101.939,4.031,18,1.734,33,5.991,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,57,closing,SOFT,2,99.759,1.386,15,2.006,34,3.381,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,58,closing,SOFT,2,99.519,1.696,16,2.371,35,3.726,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,59,closing,SOFT,2,99.589,1.604,17,1.562,36,3.669,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,60,closing,SOFT,2,99.515,1.216,13,1.505,37,3.316,False,0.72
+2026-17-marina_bay,LIN,Racing Bulls,61,closing,SOFT,2,99.814,1.654,12,1.491,38,3.789,False,0.72
+2026-17-marina_bay,NOR,McLaren,1,opening,SOFT,1,104.827,-4.466,5,-4.466,1,-4.431,False,0.72
+2026-17-marina_bay,NOR,McLaren,2,opening,SOFT,1,98.874,-2.317,3,-3.391,2,-2.247,False,0.72
+2026-17-marina_bay,NOR,McLaren,3,opening,SOFT,1,98.977,-1.629,6,-2.804,3,-1.524,False,0.72
+2026-17-marina_bay,NOR,McLaren,4,opening,SOFT,1,98.396,-1.456,4,-1.801,4,-1.316,False,0.72
+2026-17-marina_bay,NOR,McLaren,5,opening,SOFT,1,98.466,-1.283,5,-1.456,5,-1.108,False,0.72
+2026-17-marina_bay,NOR,McLaren,6,opening,SOFT,1,98.213,-1.623,4,-1.454,6,-1.413,False,0.72
+2026-17-marina_bay,NOR,McLaren,7,opening,SOFT,1,98.165,-1.402,6,-1.436,7,-1.157,False,0.72
+2026-17-marina_bay,NOR,McLaren,8,opening,SOFT,1,105.968,-6.383,5,-3.136,8,-6.103,False,0.72
+2026-17-marina_bay,NOR,McLaren,9,opening,SOFT,1,113.017,4.807,17,-0.993,9,5.122,False,0.72
+2026-17-marina_bay,NOR,McLaren,10,opening,SOFT,1,97.558,-1.629,4,-1.068,10,-1.279,False,0.72
+2026-17-marina_bay,NOR,McLaren,11,opening,SOFT,1,97.685,-1.652,3,0.509,11,-1.267,False,0.72
+2026-17-marina_bay,NOR,McLaren,12,opening,SOFT,1,97.974,-1.278,6,-1.52,12,-0.858,False,0.72
+2026-17-marina_bay,NOR,McLaren,13,middle,SOFT,1,98.125,-1.176,4,-1.369,13,-0.721,False,0.72
+2026-17-marina_bay,NOR,McLaren,14,middle,SOFT,1,97.897,-1.379,3,-1.278,14,-0.889,False,0.72
+2026-17-marina_bay,NOR,McLaren,15,middle,SOFT,1,98.113,-1.404,4,-1.32,15,-0.879,False,0.72
+2026-17-marina_bay,NOR,McLaren,16,middle,SOFT,1,98.09,-1.321,3,-1.368,16,-0.761,True,0.72
+2026-17-marina_bay,NOR,McLaren,17,middle,SOFT,1,98.931,-0.517,6,-1.081,17,0.078,False,0.72
+2026-17-marina_bay,NOR,McLaren,18,middle,SOFT,1,98.999,-0.476,6,-0.771,18,0.154,False,0.72
+2026-17-marina_bay,NOR,McLaren,19,middle,SOFT,1,97.735,-1.655,3,-0.883,19,-0.99,False,0.72
+2026-17-marina_bay,NOR,McLaren,20,middle,SOFT,1,97.997,-1.419,3,-1.183,20,-0.719,False,0.72
+2026-17-marina_bay,NOR,McLaren,21,middle,SOFT,1,97.877,-1.675,4,-1.583,21,-0.94,False,0.72
+2026-17-marina_bay,NOR,McLaren,22,middle,SOFT,1,98.347,-1.414,5,-1.503,22,-0.644,False,0.72
+2026-17-marina_bay,NOR,McLaren,23,middle,SOFT,1,98.22,-1.318,3,-1.469,23,-0.513,False,0.72
+2026-17-marina_bay,NOR,McLaren,24,middle,SOFT,1,98.077,-1.397,3,-1.376,24,-0.557,False,0.72
+2026-17-marina_bay,NOR,McLaren,25,middle,SOFT,1,97.879,-1.624,3,-1.446,25,-0.749,False,0.72
+2026-17-marina_bay,NOR,McLaren,26,middle,SOFT,1,98.309,-1.146,6,-1.389,26,-0.236,False,0.72
+2026-17-marina_bay,NOR,McLaren,27,middle,SOFT,1,98.391,-1.131,6,-1.3,27,-0.186,False,0.72
+2026-17-marina_bay,NOR,McLaren,28,middle,SOFT,1,98.345,-1.167,5,-1.148,28,-0.187,False,0.72
+2026-17-marina_bay,NOR,McLaren,29,middle,SOFT,1,98.473,-1.104,7,-1.134,29,-0.089,False,0.72
+2026-17-marina_bay,NOR,McLaren,30,middle,SOFT,1,98.736,-1.154,5,-1.142,30,-0.104,False,0.72
+2026-17-marina_bay,NOR,McLaren,31,middle,SOFT,1,99.519,-0.194,10,-0.817,31,0.891,False,0.72
+2026-17-marina_bay,NOR,McLaren,32,middle,SOFT,1,104.755,5.314,18,1.322,32,6.434,False,0.72
+2026-17-marina_bay,NOR,McLaren,33,middle,MEDIUM,2,115.421,16.027,20,7.049,1,17.182,False,0.72
+2026-17-marina_bay,NOR,McLaren,34,middle,MEDIUM,2,97.37,-1.207,4,6.712,2,-0.017,False,0.72
+2026-17-marina_bay,NOR,McLaren,35,middle,MEDIUM,2,96.775,-1.416,3,4.468,3,-0.191,False,0.72
+2026-17-marina_bay,NOR,McLaren,36,middle,MEDIUM,2,97.79,-0.338,7,-0.987,4,0.922,False,0.72
+2026-17-marina_bay,NOR,McLaren,37,middle,MEDIUM,2,96.725,-1.205,2,-0.986,5,0.09,False,0.72
+2026-17-marina_bay,NOR,McLaren,38,middle,MEDIUM,2,96.634,-7.849,1,-3.131,6,-6.519,False,0.72
+2026-17-marina_bay,NOR,McLaren,39,middle,MEDIUM,2,122.337,1.218,11,-2.612,7,2.583,False,0.72
+2026-17-marina_bay,NOR,McLaren,40,middle,MEDIUM,2,110.096,11.168,14,1.512,8,12.568,False,0.72
+2026-17-marina_bay,NOR,McLaren,41,middle,MEDIUM,2,96.406,-1.406,4,3.66,9,0.029,False,0.72
+2026-17-marina_bay,NOR,McLaren,42,middle,MEDIUM,2,96.282,-1.402,4,2.787,10,0.068,False,0.72
+2026-17-marina_bay,NOR,McLaren,43,middle,MEDIUM,2,96.641,-1.154,6,-1.321,11,0.351,False,0.72
+2026-17-marina_bay,NOR,McLaren,44,middle,MEDIUM,2,96.44,-1.24,6,-1.265,12,0.3,False,0.72
+2026-17-marina_bay,NOR,McLaren,45,middle,MEDIUM,2,96.552,-1.271,5,-1.222,13,0.304,False,0.72
+2026-17-marina_bay,NOR,McLaren,46,middle,MEDIUM,2,96.621,-2.098,4,-1.536,14,-0.488,False,0.72
+2026-17-marina_bay,NOR,McLaren,47,closing,MEDIUM,2,96.556,-1.477,5,-1.615,15,0.168,False,0.72
+2026-17-marina_bay,NOR,McLaren,48,closing,MEDIUM,2,97.26,-0.79,7,-1.455,16,0.89,False,0.72
+2026-17-marina_bay,NOR,McLaren,49,closing,MEDIUM,2,96.47,-1.148,4,-1.138,17,0.567,False,0.72
+2026-17-marina_bay,NOR,McLaren,50,closing,MEDIUM,2,97.257,-0.54,6,-0.826,18,1.21,False,0.72
+2026-17-marina_bay,NOR,McLaren,51,closing,MEDIUM,2,96.805,-1.243,6,-0.977,19,0.542,False,0.72
+2026-17-marina_bay,NOR,McLaren,52,closing,MEDIUM,2,97.659,-0.019,9,-0.601,20,1.801,False,0.72
+2026-17-marina_bay,NOR,McLaren,53,closing,MEDIUM,2,98.974,0.861,16,-0.134,21,2.716,False,0.72
+2026-17-marina_bay,NOR,McLaren,54,closing,MEDIUM,2,100.918,2.522,17,1.121,22,4.412,False,0.72
+2026-17-marina_bay,NOR,McLaren,55,closing,MEDIUM,2,99.906,1.521,16,1.635,23,3.446,False,0.72
+2026-17-marina_bay,NOR,McLaren,56,closing,MEDIUM,2,97.278,-0.63,6,1.138,24,1.33,False,0.72
+2026-17-marina_bay,NOR,McLaren,57,closing,MEDIUM,2,97.525,-0.848,6,0.014,25,1.147,False,0.72
+2026-17-marina_bay,NOR,McLaren,58,closing,MEDIUM,2,96.809,-1.014,4,-0.831,26,1.016,False,0.72
+2026-17-marina_bay,NOR,McLaren,59,closing,MEDIUM,2,97.457,-0.528,8,-0.797,27,1.537,False,0.72
+2026-17-marina_bay,NOR,McLaren,60,closing,MEDIUM,2,97.536,-0.763,8,-0.768,28,1.337,False,0.72
+2026-17-marina_bay,NOR,McLaren,61,closing,MEDIUM,2,97.826,-0.334,8,-0.542,29,1.801,False,0.72
+2026-17-marina_bay,NOR,McLaren,62,closing,MEDIUM,2,102.03,4.18,10,1.028,30,6.35,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,1,opening,SOFT,1,109.047,-0.246,11,-0.246,1,-0.211,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,2,opening,SOFT,1,101.693,0.502,15,0.128,2,0.572,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,3,opening,SOFT,1,101.456,0.85,15,0.369,3,0.955,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,4,opening,SOFT,1,99.523,-0.329,11,0.341,4,-0.189,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,5,opening,SOFT,1,100.655,0.906,14,0.476,5,1.081,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,6,opening,SOFT,1,99.517,-0.319,10,0.086,6,-0.109,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,7,opening,SOFT,1,98.973,-0.594,8,-0.002,7,-0.349,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,8,opening,SOFT,1,112.351,0.0,11,-0.304,8,0.28,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,9,opening,SOFT,1,108.104,-0.106,10,-0.233,9,0.209,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,10,opening,SOFT,1,99.076,-0.111,8,-0.072,10,0.239,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,11,opening,SOFT,1,99.317,-0.02,10,-0.079,11,0.365,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,12,opening,SOFT,1,99.252,0.0,11,-0.044,12,0.42,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,13,middle,SOFT,1,99.24,-0.061,8,-0.027,13,0.394,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,14,middle,SOFT,1,99.49,0.214,13,0.051,14,0.704,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,15,middle,SOFT,1,99.527,0.01,12,0.054,15,0.535,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,16,middle,SOFT,1,99.471,0.06,12,0.095,16,0.62,True,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,17,middle,SOFT,1,99.448,0.0,11,0.023,17,0.595,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,18,middle,SOFT,1,99.475,0.0,11,0.02,18,0.63,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,19,middle,SOFT,1,99.339,-0.051,10,-0.017,19,0.614,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,20,middle,SOFT,1,99.407,-0.009,9,-0.02,20,0.691,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,21,middle,SOFT,1,99.385,-0.167,9,-0.076,21,0.568,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,22,middle,SOFT,1,101.155,1.394,18,0.406,22,2.164,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,23,middle,SOFT,1,99.815,0.277,13,0.501,23,1.082,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,24,middle,SOFT,1,99.674,0.2,12,0.624,24,1.04,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,25,middle,SOFT,1,99.503,0.0,11,0.159,25,0.875,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,26,middle,SOFT,1,99.439,-0.016,10,0.061,26,0.894,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,27,middle,SOFT,1,99.79,0.268,14,0.084,27,1.213,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,28,middle,SOFT,1,105.688,6.176,20,2.143,28,7.156,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,29,middle,MEDIUM,2,117.629,18.052,20,8.165,1,19.067,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,30,middle,MEDIUM,2,99.54,-0.35,9,7.959,2,0.7,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,31,middle,MEDIUM,2,98.44,-1.273,3,5.476,3,-0.188,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,32,middle,MEDIUM,2,98.727,-0.713,6,-0.779,4,0.407,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,33,middle,MEDIUM,2,98.347,-1.047,8,-1.011,5,0.108,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,34,middle,MEDIUM,2,98.483,-0.094,10,-0.618,6,1.096,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,35,middle,MEDIUM,2,98.29,0.099,12,-0.347,7,1.324,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,36,middle,MEDIUM,2,98.32,0.192,12,0.066,8,1.452,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,37,middle,MEDIUM,2,98.56,0.63,14,0.307,9,1.925,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,38,middle,MEDIUM,2,106.492,2.009,12,0.944,10,3.339,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,39,middle,MEDIUM,2,128.585,7.466,14,3.368,11,8.831,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,40,middle,MEDIUM,2,98.693,-0.235,9,3.08,12,1.165,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,41,middle,MEDIUM,2,98.129,0.317,13,2.516,13,1.752,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,42,middle,MEDIUM,2,98.19,0.506,13,0.196,14,1.976,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,43,middle,MEDIUM,2,98.129,0.334,14,0.386,15,1.839,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,44,middle,MEDIUM,2,98.158,0.478,14,0.439,16,2.018,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,45,middle,MEDIUM,2,98.347,0.524,14,0.445,17,2.099,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,46,middle,MEDIUM,2,99.217,0.498,15,0.5,18,2.108,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,47,closing,MEDIUM,2,98.784,0.751,12,0.591,19,2.396,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,48,closing,MEDIUM,2,98.321,0.271,12,0.507,20,1.951,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,49,closing,MEDIUM,2,98.356,0.738,13,0.587,21,2.453,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,50,closing,MEDIUM,2,98.596,0.799,15,0.603,22,2.549,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,51,closing,MEDIUM,2,100.321,2.273,18,1.27,23,4.058,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,52,closing,MEDIUM,2,98.549,0.871,15,1.314,24,2.691,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,53,closing,MEDIUM,2,98.655,0.542,12,1.229,25,2.397,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,54,closing,MEDIUM,2,100.424,2.028,16,1.147,26,3.918,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,55,closing,MEDIUM,2,98.593,0.208,12,0.926,27,2.133,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,56,closing,MEDIUM,2,98.662,0.754,12,0.997,28,2.714,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,57,closing,MEDIUM,2,100.819,2.446,16,1.136,29,4.441,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,58,closing,MEDIUM,2,98.924,1.101,14,1.434,30,3.131,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,59,closing,MEDIUM,2,98.865,0.88,14,1.476,31,2.945,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,60,closing,MEDIUM,2,98.641,0.342,11,0.774,32,2.442,False,0.72
+2026-17-marina_bay,OCO,Haas F1 Team,61,closing,MEDIUM,2,100.836,2.676,13,1.299,33,4.811,False,0.72
+2026-17-marina_bay,PER,Cadillac,1,opening,SOFT,1,113.015,3.722,18,3.722,1,3.757,False,0.72
+2026-17-marina_bay,PER,Cadillac,2,opening,SOFT,1,102.069,0.879,19,2.3,2,0.949,False,0.72
+2026-17-marina_bay,PER,Cadillac,3,opening,SOFT,1,101.813,1.207,19,1.936,3,1.312,False,0.72
+2026-17-marina_bay,PER,Cadillac,4,opening,SOFT,1,101.353,1.501,19,1.195,4,1.641,False,0.72
+2026-17-marina_bay,PER,Cadillac,5,opening,SOFT,1,101.068,1.319,16,1.342,5,1.494,False,0.72
+2026-17-marina_bay,PER,Cadillac,6,opening,SOFT,1,100.742,0.907,17,1.242,6,1.117,False,0.72
+2026-17-marina_bay,PER,Cadillac,7,opening,SOFT,1,101.344,1.777,20,1.334,7,2.022,False,0.72
+2026-17-marina_bay,PER,Cadillac,8,opening,SOFT,1,118.138,5.787,17,2.824,8,6.067,False,0.72
+2026-17-marina_bay,PER,Cadillac,9,opening,SOFT,1,106.061,-2.149,9,1.805,9,-1.834,False,0.72
+2026-17-marina_bay,PER,Cadillac,10,opening,SOFT,1,100.816,1.629,20,1.756,10,1.979,False,0.72
+2026-17-marina_bay,PER,Cadillac,11,opening,SOFT,1,100.69,1.353,19,0.278,11,1.738,False,0.72
+2026-17-marina_bay,PER,Cadillac,12,opening,SOFT,1,100.628,1.376,17,1.453,12,1.796,False,0.72
+2026-17-marina_bay,PER,Cadillac,13,middle,SOFT,1,100.654,1.353,16,1.361,13,1.808,False,0.72
+2026-17-marina_bay,PER,Cadillac,14,middle,SOFT,1,100.785,1.509,19,1.413,14,1.999,False,0.72
+2026-17-marina_bay,PER,Cadillac,15,middle,SOFT,1,100.467,0.95,16,1.271,15,1.475,False,0.72
+2026-17-marina_bay,PER,Cadillac,16,middle,SOFT,1,100.529,1.118,18,1.192,16,1.678,False,0.72
+2026-17-marina_bay,PER,Cadillac,17,middle,SOFT,1,100.577,1.129,18,1.066,17,1.724,False,0.72
+2026-17-marina_bay,PER,Cadillac,18,middle,SOFT,1,100.777,1.302,16,1.183,18,1.932,False,0.72
+2026-17-marina_bay,PER,Cadillac,19,middle,SOFT,1,100.818,1.428,16,1.286,19,2.093,False,0.72
+2026-17-marina_bay,PER,Cadillac,20,middle,SOFT,1,100.626,1.21,17,1.313,20,1.91,False,0.72
+2026-17-marina_bay,PER,Cadillac,21,middle,SOFT,1,106.283,6.731,21,3.123,21,7.466,False,0.72
+2026-17-marina_bay,PER,Cadillac,22,middle,MEDIUM,2,118.293,18.532,21,8.824,1,19.302,False,0.72
+2026-17-marina_bay,PER,Cadillac,23,middle,MEDIUM,2,99.538,0.0,11,8.421,2,0.805,False,0.72
+2026-17-marina_bay,PER,Cadillac,24,middle,MEDIUM,2,99.474,0.0,11,6.177,3,0.84,False,0.72
+2026-17-marina_bay,PER,Cadillac,25,middle,MEDIUM,2,99.654,0.151,13,0.05,4,1.026,False,0.72
+2026-17-marina_bay,PER,Cadillac,26,middle,MEDIUM,2,99.853,0.398,14,0.183,5,1.308,False,0.72
+2026-17-marina_bay,PER,Cadillac,27,middle,MEDIUM,2,99.841,0.319,15,0.289,6,1.264,False,0.72
+2026-17-marina_bay,PER,Cadillac,28,middle,MEDIUM,2,99.806,0.294,17,0.337,7,1.274,False,0.72
+2026-17-marina_bay,PER,Cadillac,29,middle,MEDIUM,2,102.195,2.618,18,1.077,8,3.633,False,0.72
+2026-17-marina_bay,PER,Cadillac,30,middle,MEDIUM,2,102.754,2.864,18,1.925,9,3.914,False,0.72
+2026-17-marina_bay,PER,Cadillac,31,middle,MEDIUM,2,100.339,0.626,13,2.036,10,1.711,False,0.72
+2026-17-marina_bay,PER,Cadillac,32,middle,MEDIUM,2,103.35,3.909,15,2.467,11,5.029,False,0.72
+2026-17-marina_bay,PER,Cadillac,33,middle,MEDIUM,2,102.834,3.44,15,2.658,12,4.595,False,0.72
+2026-17-marina_bay,PER,Cadillac,34,middle,MEDIUM,2,100.705,2.128,16,3.159,13,3.318,False,0.72
+2026-17-marina_bay,PER,Cadillac,35,middle,MEDIUM,2,101.774,3.583,19,3.05,14,4.808,False,0.72
+2026-17-marina_bay,PER,Cadillac,36,middle,MEDIUM,2,100.74,2.612,17,2.774,15,3.872,False,0.72
+2026-17-marina_bay,PER,Cadillac,37,middle,MEDIUM,2,101.676,3.746,17,3.314,16,5.041,False,0.72
+2026-17-marina_bay,PER,Cadillac,38,middle,MEDIUM,2,135.823,31.34,18,12.566,17,32.67,False,0.72
+2026-17-marina_bay,PER,Cadillac,39,middle,SOFT,3,117.601,-3.518,7,10.523,1,-2.153,False,0.72
+2026-17-marina_bay,PER,Cadillac,40,middle,SOFT,3,98.928,0.0,10,9.274,2,1.4,False,0.72
+2026-17-marina_bay,PER,Cadillac,41,middle,SOFT,3,99.222,1.41,16,-0.703,3,2.845,False,0.72
+2026-17-marina_bay,PER,Cadillac,42,middle,SOFT,3,98.909,1.225,17,0.878,4,2.695,False,0.72
+2026-17-marina_bay,PER,Cadillac,43,middle,SOFT,3,98.574,0.779,16,1.138,5,2.284,False,0.72
+2026-17-marina_bay,PER,Cadillac,44,middle,SOFT,3,98.75,1.07,17,1.025,6,2.61,False,0.72
+2026-17-marina_bay,PER,Cadillac,45,middle,SOFT,3,98.834,1.011,16,0.953,7,2.586,False,0.72
+2026-17-marina_bay,PER,Cadillac,46,middle,SOFT,3,102.614,3.895,18,1.992,8,5.505,False,0.72
+2026-17-marina_bay,PER,Cadillac,47,closing,SOFT,3,102.941,4.908,18,3.271,9,6.553,False,0.72
+2026-17-marina_bay,PER,Cadillac,48,closing,SOFT,3,100.75,2.7,19,3.834,10,4.38,False,0.72
+2026-17-marina_bay,PER,Cadillac,49,closing,SOFT,3,101.095,3.477,19,3.695,11,5.192,False,0.72
+2026-17-marina_bay,PER,Cadillac,50,closing,SOFT,3,98.932,1.135,17,2.437,12,2.885,False,0.72
+2026-17-marina_bay,PER,Cadillac,51,closing,SOFT,3,99.326,1.278,17,1.963,13,3.063,False,0.72
+2026-17-marina_bay,PER,Cadillac,52,closing,SOFT,3,99.186,1.508,18,1.307,14,3.328,False,0.72
+2026-17-marina_bay,PER,Cadillac,53,closing,SOFT,3,101.205,3.092,19,1.959,15,4.947,False,0.72
+2026-17-marina_bay,PER,Cadillac,54,closing,SOFT,3,99.511,1.115,15,1.905,16,3.005,False,0.72
+2026-17-marina_bay,PER,Cadillac,55,closing,SOFT,3,100.708,2.323,17,2.177,17,4.248,False,0.72
+2026-17-marina_bay,PER,Cadillac,56,closing,SOFT,3,99.231,1.323,16,1.587,18,3.283,False,0.72
+2026-17-marina_bay,PER,Cadillac,57,closing,SOFT,3,99.629,1.256,14,1.634,19,3.251,False,0.72
+2026-17-marina_bay,PER,Cadillac,58,closing,SOFT,3,99.39,1.567,15,1.382,20,3.597,False,0.72
+2026-17-marina_bay,PER,Cadillac,59,closing,SOFT,3,98.932,0.947,15,1.257,21,3.012,False,0.72
+2026-17-marina_bay,PER,Cadillac,60,closing,SOFT,3,99.135,0.836,12,1.117,22,2.936,False,0.72
+2026-17-marina_bay,PIA,McLaren,1,opening,SOFT,1,105.73,-3.563,6,-3.563,1,-3.528,False,0.72
+2026-17-marina_bay,PIA,McLaren,2,opening,SOFT,1,99.038,-2.153,5,-2.858,2,-2.083,False,0.72
+2026-17-marina_bay,PIA,McLaren,3,opening,SOFT,1,98.897,-1.709,5,-2.475,3,-1.604,False,0.72
+2026-17-marina_bay,PIA,McLaren,4,opening,SOFT,1,98.553,-1.299,6,-1.72,4,-1.159,False,0.72
+2026-17-marina_bay,PIA,McLaren,5,opening,SOFT,1,98.326,-1.423,4,-1.477,5,-1.248,False,0.72
+2026-17-marina_bay,PIA,McLaren,6,opening,SOFT,1,98.123,-1.712,2,-1.478,6,-1.502,False,0.72
+2026-17-marina_bay,PIA,McLaren,7,opening,SOFT,1,98.11,-1.457,5,-1.531,7,-1.212,False,0.72
+2026-17-marina_bay,PIA,McLaren,8,opening,SOFT,1,106.936,-5.415,6,-2.861,8,-5.135,False,0.72
+2026-17-marina_bay,PIA,McLaren,9,opening,SOFT,1,112.035,3.825,15,-1.016,9,4.14,False,0.72
+2026-17-marina_bay,PIA,McLaren,10,opening,SOFT,1,97.724,-1.463,6,-1.018,10,-1.113,False,0.72
+2026-17-marina_bay,PIA,McLaren,11,opening,SOFT,1,97.803,-1.534,5,0.276,11,-1.149,False,0.72
+2026-17-marina_bay,PIA,McLaren,12,opening,SOFT,1,97.951,-1.301,5,-1.433,12,-0.881,False,0.72
+2026-17-marina_bay,PIA,McLaren,13,middle,SOFT,1,98.22,-1.081,5,-1.305,13,-0.626,False,0.72
+2026-17-marina_bay,PIA,McLaren,14,middle,SOFT,1,98.122,-1.154,5,-1.179,14,-0.664,False,0.72
+2026-17-marina_bay,PIA,McLaren,15,middle,SOFT,1,98.437,-1.08,6,-1.105,15,-0.555,False,0.72
+2026-17-marina_bay,PIA,McLaren,16,middle,SOFT,1,98.699,-0.712,7,-0.982,16,-0.152,True,0.72
+2026-17-marina_bay,PIA,McLaren,17,middle,SOFT,1,98.277,-1.171,3,-0.988,17,-0.576,False,0.72
+2026-17-marina_bay,PIA,McLaren,18,middle,SOFT,1,98.608,-0.867,3,-0.917,18,-0.237,False,0.72
+2026-17-marina_bay,PIA,McLaren,19,middle,SOFT,1,98.237,-1.153,5,-1.064,19,-0.488,False,0.72
+2026-17-marina_bay,PIA,McLaren,20,middle,SOFT,1,98.046,-1.37,4,-1.13,20,-0.67,False,0.72
+2026-17-marina_bay,PIA,McLaren,21,middle,SOFT,1,97.892,-1.66,5,-1.394,21,-0.925,False,0.72
+2026-17-marina_bay,PIA,McLaren,22,middle,SOFT,1,98.385,-1.376,6,-1.469,22,-0.606,False,0.72
+2026-17-marina_bay,PIA,McLaren,23,middle,SOFT,1,98.371,-1.167,4,-1.401,23,-0.362,False,0.72
+2026-17-marina_bay,PIA,McLaren,24,middle,SOFT,1,98.741,-0.733,5,-1.092,24,0.107,False,0.72
+2026-17-marina_bay,PIA,McLaren,25,middle,SOFT,1,98.092,-1.411,4,-1.104,25,-0.536,False,0.72
+2026-17-marina_bay,PIA,McLaren,26,middle,SOFT,1,98.132,-1.323,5,-1.156,26,-0.413,False,0.72
+2026-17-marina_bay,PIA,McLaren,27,middle,SOFT,1,98.214,-1.308,5,-1.347,27,-0.363,False,0.72
+2026-17-marina_bay,PIA,McLaren,28,middle,SOFT,1,98.675,-0.837,7,-1.156,28,0.143,False,0.72
+2026-17-marina_bay,PIA,McLaren,29,middle,SOFT,1,98.446,-1.131,6,-1.092,29,-0.116,False,0.72
+2026-17-marina_bay,PIA,McLaren,30,middle,SOFT,1,98.808,-1.082,6,-1.017,30,-0.032,False,0.72
+2026-17-marina_bay,PIA,McLaren,31,middle,SOFT,1,99.958,0.245,12,-0.656,31,1.33,False,0.72
+2026-17-marina_bay,PIA,McLaren,32,middle,SOFT,1,99.006,-0.434,9,-0.424,32,0.686,False,0.72
+2026-17-marina_bay,PIA,McLaren,33,middle,SOFT,1,104.874,5.48,16,1.763,33,6.635,False,0.72
+2026-17-marina_bay,PIA,McLaren,34,middle,MEDIUM,2,117.098,18.521,20,7.856,1,19.711,False,0.72
+2026-17-marina_bay,PIA,McLaren,35,middle,MEDIUM,2,96.426,-1.765,1,7.412,2,-0.54,False,0.72
+2026-17-marina_bay,PIA,McLaren,36,middle,MEDIUM,2,96.611,-1.517,2,5.08,3,-0.257,False,0.72
+2026-17-marina_bay,PIA,McLaren,37,middle,MEDIUM,2,97.555,-0.375,7,-1.219,4,0.92,False,0.72
+2026-17-marina_bay,PIA,McLaren,38,middle,MEDIUM,2,97.371,-7.112,5,-3.001,5,-5.782,False,0.72
+2026-17-marina_bay,PIA,McLaren,39,middle,MEDIUM,2,125.509,4.39,13,-1.032,6,5.755,False,0.72
+2026-17-marina_bay,PIA,McLaren,40,middle,MEDIUM,2,107.52,8.592,13,1.957,7,9.992,False,0.72
+2026-17-marina_bay,PIA,McLaren,41,middle,MEDIUM,2,102.522,4.71,19,5.897,8,6.145,False,0.72
+2026-17-marina_bay,PIA,McLaren,42,middle,SOFT,3,114.151,16.467,19,9.923,4,17.937,False,0.72
+2026-17-marina_bay,PIA,McLaren,43,middle,SOFT,3,95.667,-2.128,3,6.35,5,-0.623,False,0.72
+2026-17-marina_bay,PIA,McLaren,44,middle,SOFT,3,95.665,-2.015,2,4.108,6,-0.475,False,0.72
+2026-17-marina_bay,PIA,McLaren,45,middle,SOFT,3,95.762,-2.061,1,-2.068,7,-0.486,False,0.72
+2026-17-marina_bay,PIA,McLaren,46,middle,SOFT,3,96.069,-2.65,1,-2.242,8,-1.04,False,0.72
+2026-17-marina_bay,PIA,McLaren,47,closing,SOFT,3,95.98,-2.053,2,-2.255,9,-0.408,False,0.72
+2026-17-marina_bay,PIA,McLaren,48,closing,SOFT,3,95.96,-2.09,2,-2.264,10,-0.41,False,0.72
+2026-17-marina_bay,PIA,McLaren,49,closing,SOFT,3,96.205,-1.413,2,-1.852,11,0.302,False,0.72
+2026-17-marina_bay,PIA,McLaren,50,closing,SOFT,3,96.784,-1.013,4,-1.505,12,0.737,False,0.72
+2026-17-marina_bay,PIA,McLaren,51,closing,SOFT,3,95.831,-2.217,2,-1.548,13,-0.432,False,0.72
+2026-17-marina_bay,PIA,McLaren,52,closing,SOFT,3,96.24,-1.438,2,-1.556,14,0.382,False,0.72
+2026-17-marina_bay,PIA,McLaren,53,closing,SOFT,3,95.835,-2.278,1,-1.978,15,-0.423,False,0.72
+2026-17-marina_bay,PIA,McLaren,54,closing,SOFT,3,95.935,-2.461,1,-2.059,16,-0.571,False,0.72
+2026-17-marina_bay,PIA,McLaren,55,closing,SOFT,3,96.646,-1.739,4,-2.159,17,0.186,False,0.72
+2026-17-marina_bay,PIA,McLaren,56,closing,SOFT,3,96.577,-1.331,3,-1.844,18,0.629,False,0.72
+2026-17-marina_bay,PIA,McLaren,57,closing,SOFT,3,96.83,-1.543,3,-1.538,19,0.452,False,0.72
+2026-17-marina_bay,PIA,McLaren,58,closing,SOFT,3,96.54,-1.283,2,-1.386,20,0.747,False,0.72
+2026-17-marina_bay,PIA,McLaren,59,closing,SOFT,3,96.385,-1.6,3,-1.475,21,0.465,False,0.72
+2026-17-marina_bay,PIA,McLaren,60,closing,SOFT,3,98.459,0.16,10,-0.908,22,2.26,False,0.72
+2026-17-marina_bay,PIA,McLaren,61,closing,SOFT,3,101.031,2.871,14,0.477,23,5.006,False,0.72
+2026-17-marina_bay,PIA,McLaren,62,closing,SOFT,3,97.799,-0.05,3,0.994,24,2.12,False,0.72
+2026-17-marina_bay,RUS,Mercedes,1,opening,MEDIUM,1,112.426,3.133,17,3.133,1,3.168,False,0.72
+2026-17-marina_bay,RUS,Mercedes,2,opening,MEDIUM,1,101.899,0.709,18,1.921,2,0.779,False,0.72
+2026-17-marina_bay,RUS,Mercedes,3,opening,MEDIUM,1,101.451,0.844,14,1.562,3,0.949,False,0.72
+2026-17-marina_bay,RUS,Mercedes,4,opening,MEDIUM,1,100.706,0.854,15,0.802,4,0.994,False,0.72
+2026-17-marina_bay,RUS,Mercedes,5,opening,MEDIUM,1,99.259,-0.49,8,0.403,5,-0.315,False,0.72
+2026-17-marina_bay,RUS,Mercedes,6,opening,MEDIUM,1,100.025,0.19,12,0.185,6,0.4,False,0.72
+2026-17-marina_bay,RUS,Mercedes,7,opening,MEDIUM,1,99.671,0.104,12,-0.065,7,0.349,False,0.72
+2026-17-marina_bay,RUS,Mercedes,8,opening,MEDIUM,1,114.57,2.219,12,0.838,8,2.499,False,0.72
+2026-17-marina_bay,RUS,Mercedes,9,opening,MEDIUM,1,105.415,-2.795,4,-0.157,9,-2.48,False,0.72
+2026-17-marina_bay,RUS,Mercedes,10,opening,MEDIUM,1,99.529,0.342,14,-0.078,10,0.692,False,0.72
+2026-17-marina_bay,RUS,Mercedes,11,opening,MEDIUM,1,99.682,0.345,12,-0.703,11,0.73,False,0.72
+2026-17-marina_bay,RUS,Mercedes,12,opening,MEDIUM,1,99.477,0.225,14,0.304,12,0.645,False,0.72
+2026-17-marina_bay,RUS,Mercedes,13,middle,MEDIUM,1,99.123,-0.178,7,0.131,13,0.277,False,0.72
+2026-17-marina_bay,RUS,Mercedes,14,middle,MEDIUM,1,98.443,-0.833,7,-0.262,14,-0.343,False,0.72
+2026-17-marina_bay,RUS,Mercedes,15,middle,MEDIUM,1,98.977,-0.54,7,-0.517,15,-0.015,False,0.72
+2026-17-marina_bay,RUS,Mercedes,16,middle,MEDIUM,1,98.54,-0.871,6,-0.748,16,-0.311,False,0.72
+2026-17-marina_bay,RUS,Mercedes,17,middle,MEDIUM,1,98.621,-0.827,4,-0.746,17,-0.232,False,0.72
+2026-17-marina_bay,RUS,Mercedes,18,middle,MEDIUM,1,99.431,-0.044,10,-0.581,18,0.586,False,0.72
+2026-17-marina_bay,RUS,Mercedes,19,middle,MEDIUM,1,98.972,-0.418,6,-0.43,19,0.247,False,0.72
+2026-17-marina_bay,RUS,Mercedes,20,middle,MEDIUM,1,98.99,-0.426,7,-0.296,20,0.274,False,0.72
+2026-17-marina_bay,RUS,Mercedes,21,middle,MEDIUM,1,99.019,-0.533,7,-0.459,21,0.202,False,0.72
+2026-17-marina_bay,RUS,Mercedes,22,middle,MEDIUM,1,99.983,0.222,15,-0.246,22,0.992,False,0.72
+2026-17-marina_bay,RUS,Mercedes,23,middle,MEDIUM,1,98.969,-0.569,6,-0.293,23,0.236,False,0.72
+2026-17-marina_bay,RUS,Mercedes,24,middle,MEDIUM,1,98.747,-0.727,6,-0.358,24,0.113,False,0.72
+2026-17-marina_bay,RUS,Mercedes,25,middle,MEDIUM,1,98.853,-0.65,6,-0.649,25,0.225,False,0.72
+2026-17-marina_bay,RUS,Mercedes,26,middle,MEDIUM,1,99.161,-0.294,8,-0.557,26,0.616,False,0.72
+2026-17-marina_bay,RUS,Mercedes,27,middle,MEDIUM,1,99.214,-0.308,7,-0.417,27,0.637,False,0.72
+2026-17-marina_bay,RUS,Mercedes,28,middle,MEDIUM,1,99.512,0.0,11,-0.201,28,0.98,False,0.72
+2026-17-marina_bay,RUS,Mercedes,29,middle,MEDIUM,1,99.621,0.044,12,-0.088,29,1.059,False,0.72
+2026-17-marina_bay,RUS,Mercedes,30,middle,MEDIUM,1,99.345,-0.545,8,-0.167,30,0.505,False,0.72
+2026-17-marina_bay,RUS,Mercedes,31,middle,MEDIUM,1,99.078,-0.635,7,-0.379,31,0.45,False,0.72
+2026-17-marina_bay,RUS,Mercedes,32,middle,MEDIUM,1,99.613,0.172,12,-0.336,32,1.292,False,0.72
+2026-17-marina_bay,RUS,Mercedes,33,middle,MEDIUM,1,99.447,0.053,11,-0.136,33,1.208,False,0.72
+2026-17-marina_bay,RUS,Mercedes,34,middle,MEDIUM,1,98.101,-0.476,8,-0.083,34,0.714,False,0.72
+2026-17-marina_bay,RUS,Mercedes,35,middle,MEDIUM,1,98.131,-0.06,10,-0.161,35,1.165,False,0.72
+2026-17-marina_bay,RUS,Mercedes,36,middle,MEDIUM,1,98.242,0.114,11,-0.141,36,1.374,False,0.72
+2026-17-marina_bay,RUS,Mercedes,37,middle,MEDIUM,1,98.502,0.572,13,0.209,37,1.867,False,0.72
+2026-17-marina_bay,RUS,Mercedes,38,middle,MEDIUM,1,99.4,-5.083,7,-1.466,38,-3.753,False,0.72
+2026-17-marina_bay,RUS,Mercedes,39,middle,MEDIUM,1,137.099,15.98,19,3.823,39,17.345,False,0.72
+2026-17-marina_bay,RUS,Mercedes,40,middle,SOFT,2,113.463,14.535,15,8.477,1,15.935,False,0.72
+2026-17-marina_bay,RUS,Mercedes,41,middle,SOFT,2,96.722,-1.09,5,9.808,2,0.345,False,0.72
+2026-17-marina_bay,RUS,Mercedes,42,middle,SOFT,2,97.539,-0.145,8,4.433,3,1.325,False,0.72
+2026-17-marina_bay,RUS,Mercedes,43,middle,SOFT,2,97.912,0.117,12,-0.373,4,1.622,False,0.72
+2026-17-marina_bay,RUS,Mercedes,44,middle,SOFT,2,97.74,0.06,11,0.011,5,1.6,False,0.72
+2026-17-marina_bay,RUS,Mercedes,45,middle,SOFT,2,97.823,0.0,10,0.059,6,1.575,False,0.72
+2026-17-marina_bay,RUS,Mercedes,46,middle,SOFT,2,98.786,0.067,11,0.042,7,1.677,False,0.72
+2026-17-marina_bay,RUS,Mercedes,47,closing,SOFT,2,97.549,-0.484,7,-0.139,8,1.161,False,0.72
+2026-17-marina_bay,RUS,Mercedes,48,closing,SOFT,2,97.173,-0.877,6,-0.431,9,0.803,False,0.72
+2026-17-marina_bay,RUS,Mercedes,49,closing,SOFT,2,96.859,-0.759,7,-0.707,10,0.956,False,0.72
+2026-17-marina_bay,RUS,Mercedes,50,closing,SOFT,2,96.992,-0.805,5,-0.814,11,0.945,False,0.72
+2026-17-marina_bay,RUS,Mercedes,51,closing,SOFT,2,98.393,0.345,12,-0.406,12,2.13,False,0.72
+2026-17-marina_bay,RUS,Mercedes,52,closing,SOFT,2,97.348,-0.33,6,-0.263,13,1.49,False,0.72
+2026-17-marina_bay,RUS,Mercedes,53,closing,SOFT,2,97.233,-0.88,4,-0.288,14,0.975,False,0.72
+2026-17-marina_bay,RUS,Mercedes,54,closing,SOFT,2,97.982,-0.414,7,-0.541,15,1.476,False,0.72
+2026-17-marina_bay,RUS,Mercedes,55,closing,SOFT,2,98.57,0.185,11,-0.37,16,2.11,False,0.72
+2026-17-marina_bay,RUS,Mercedes,56,closing,SOFT,2,97.707,-0.201,9,-0.143,17,1.759,False,0.72
+2026-17-marina_bay,RUS,Mercedes,57,closing,SOFT,2,97.478,-0.895,5,-0.304,18,1.1,False,0.72
+2026-17-marina_bay,RUS,Mercedes,58,closing,SOFT,2,97.299,-0.524,7,-0.54,19,1.506,False,0.72
+2026-17-marina_bay,RUS,Mercedes,59,closing,SOFT,2,97.14,-0.845,6,-0.755,20,1.22,False,0.72
+2026-17-marina_bay,RUS,Mercedes,60,closing,SOFT,2,97.212,-1.087,5,-0.819,21,1.013,False,0.72
+2026-17-marina_bay,RUS,Mercedes,61,closing,SOFT,2,97.364,-0.796,4,-0.909,22,1.339,False,0.72
+2026-17-marina_bay,RUS,Mercedes,62,closing,SOFT,2,97.934,0.084,7,-0.6,23,2.254,False,0.72
+2026-17-marina_bay,SAI,Williams,1,opening,SOFT,1,108.683,-0.61,10,-0.61,1,-0.575,False,0.72
+2026-17-marina_bay,SAI,Williams,2,opening,SOFT,1,100.659,-0.531,10,-0.571,2,-0.461,False,0.72
+2026-17-marina_bay,SAI,Williams,3,opening,SOFT,1,100.249,-0.358,10,-0.5,3,-0.253,False,0.72
+2026-17-marina_bay,SAI,Williams,4,opening,SOFT,1,100.358,0.506,13,-0.128,4,0.646,False,0.72
+2026-17-marina_bay,SAI,Williams,5,opening,SOFT,1,101.942,2.193,21,0.78,5,2.368,False,0.72
+2026-17-marina_bay,SAI,Williams,6,opening,SOFT,1,101.399,1.564,19,1.421,6,1.774,False,0.72
+2026-17-marina_bay,SAI,Williams,7,opening,SOFT,1,100.429,0.862,15,1.539,7,1.107,False,0.72
+2026-17-marina_bay,SAI,Williams,8,opening,SOFT,1,115.5,3.149,13,1.858,8,3.429,False,0.72
+2026-17-marina_bay,SAI,Williams,9,opening,SOFT,1,105.842,-2.368,6,0.548,9,-2.053,False,0.72
+2026-17-marina_bay,SAI,Williams,10,opening,SOFT,1,99.352,0.165,13,0.315,10,0.515,False,0.72
+2026-17-marina_bay,SAI,Williams,11,opening,SOFT,1,99.762,0.425,13,-0.593,11,0.81,False,0.72
+2026-17-marina_bay,SAI,Williams,12,opening,SOFT,1,99.515,0.263,15,0.284,12,0.683,False,0.72
+2026-17-marina_bay,SAI,Williams,13,middle,SOFT,1,101.423,2.122,20,0.937,13,2.577,False,0.72
+2026-17-marina_bay,SAI,Williams,14,middle,SOFT,1,99.96,0.684,16,1.023,14,1.174,False,0.72
+2026-17-marina_bay,SAI,Williams,15,middle,SOFT,1,99.635,0.118,13,0.975,15,0.643,False,0.72
+2026-17-marina_bay,SAI,Williams,16,middle,SOFT,1,99.806,0.395,14,0.399,16,0.955,False,0.72
+2026-17-marina_bay,SAI,Williams,17,middle,SOFT,1,99.705,0.257,15,0.257,17,0.852,False,0.72
+2026-17-marina_bay,SAI,Williams,18,middle,SOFT,1,99.777,0.302,13,0.318,18,0.932,False,0.72
+2026-17-marina_bay,SAI,Williams,19,middle,SOFT,1,99.828,0.438,13,0.332,19,1.103,False,0.72
+2026-17-marina_bay,SAI,Williams,20,middle,SOFT,1,99.971,0.555,13,0.432,20,1.255,False,0.72
+2026-17-marina_bay,SAI,Williams,21,middle,SOFT,1,99.778,0.226,14,0.406,21,0.961,False,0.72
+2026-17-marina_bay,SAI,Williams,22,middle,SOFT,1,99.761,0.0,11,0.26,22,0.77,False,0.72
+2026-17-marina_bay,SAI,Williams,23,middle,SOFT,1,100.045,0.507,14,0.244,23,1.312,False,0.72
+2026-17-marina_bay,SAI,Williams,24,middle,SOFT,1,100.187,0.713,14,0.407,24,1.553,False,0.72
+2026-17-marina_bay,SAI,Williams,25,middle,SOFT,1,100.417,0.914,16,0.711,25,1.789,False,0.72
+2026-17-marina_bay,SAI,Williams,26,middle,SOFT,1,100.106,0.651,16,0.759,26,1.561,False,0.72
+2026-17-marina_bay,SAI,Williams,27,middle,SOFT,1,100.267,0.745,18,0.77,27,1.69,False,0.72
+2026-17-marina_bay,SAI,Williams,28,middle,SOFT,1,99.78,0.268,15,0.555,28,1.248,False,0.72
+2026-17-marina_bay,SAI,Williams,29,middle,SOFT,1,99.924,0.347,16,0.453,29,1.362,False,0.72
+2026-17-marina_bay,SAI,Williams,30,middle,SOFT,1,101.447,1.557,16,0.724,30,2.607,False,0.72
+2026-17-marina_bay,SAI,Williams,31,middle,SOFT,1,106.907,7.194,19,3.033,31,8.279,False,0.72
+2026-17-marina_bay,SAI,Williams,32,middle,MEDIUM,2,117.447,18.007,20,8.919,1,19.127,False,0.72
+2026-17-marina_bay,SAI,Williams,33,middle,MEDIUM,2,99.341,-0.053,10,8.382,2,1.102,False,0.72
+2026-17-marina_bay,SAI,Williams,34,middle,MEDIUM,2,98.935,0.358,12,6.104,3,1.548,False,0.72
+2026-17-marina_bay,SAI,Williams,35,middle,MEDIUM,2,101.064,2.873,17,1.059,4,4.098,False,0.72
+2026-17-marina_bay,SAI,Williams,36,middle,MEDIUM,2,99.198,1.07,14,1.434,5,2.33,False,0.72
+2026-17-marina_bay,SAI,Williams,37,middle,MEDIUM,2,98.626,0.696,15,1.546,6,1.991,False,0.72
+2026-17-marina_bay,SAI,Williams,38,middle,MEDIUM,2,119.288,14.805,14,5.524,7,16.135,False,0.72
+2026-17-marina_bay,SAI,Williams,39,middle,MEDIUM,2,117.486,-3.633,6,3.956,8,-2.268,False,0.72
+2026-17-marina_bay,SAI,Williams,40,middle,MEDIUM,2,98.458,-0.47,8,3.567,9,0.93,False,0.72
+2026-17-marina_bay,SAI,Williams,41,middle,MEDIUM,2,98.326,0.514,15,-1.196,10,1.949,False,0.72
+2026-17-marina_bay,SAI,Williams,42,middle,MEDIUM,2,98.417,0.733,14,0.259,11,2.203,False,0.72
+2026-17-marina_bay,SAI,Williams,43,middle,MEDIUM,2,98.555,0.76,15,0.669,12,2.265,False,0.72
+2026-17-marina_bay,SAI,Williams,44,middle,MEDIUM,2,98.525,0.845,15,0.779,13,2.385,False,0.72
+2026-17-marina_bay,SAI,Williams,45,middle,MEDIUM,2,98.734,0.911,15,0.839,14,2.486,False,0.72
+2026-17-marina_bay,SAI,Williams,46,middle,MEDIUM,2,102.228,3.509,17,1.755,15,5.119,False,0.72
+2026-17-marina_bay,SAI,Williams,47,closing,MEDIUM,2,100.931,2.898,16,2.439,16,4.543,False,0.72
+2026-17-marina_bay,SAI,Williams,48,closing,MEDIUM,2,99.942,1.892,17,2.766,17,3.572,False,0.72
+2026-17-marina_bay,SAI,Williams,49,closing,MEDIUM,2,98.894,1.276,15,2.022,18,2.991,False,0.72
+2026-17-marina_bay,SAI,Williams,50,closing,MEDIUM,2,98.68,0.883,16,1.35,19,2.633,False,0.72
+2026-17-marina_bay,SAI,Williams,51,closing,MEDIUM,2,98.724,0.676,15,0.945,20,2.461,False,0.72
+2026-17-marina_bay,SAI,Williams,52,closing,MEDIUM,2,98.598,0.92,16,0.826,21,2.74,False,0.72
+2026-17-marina_bay,SAI,Williams,53,closing,MEDIUM,2,98.928,0.815,15,0.804,22,2.67,False,0.72
+2026-17-marina_bay,SAI,Williams,54,closing,MEDIUM,2,99.373,0.977,13,0.904,23,2.867,False,0.72
+2026-17-marina_bay,SAI,Williams,55,closing,MEDIUM,2,99.028,0.643,15,0.812,24,2.568,False,0.72
+2026-17-marina_bay,SAI,Williams,56,closing,MEDIUM,2,98.798,0.89,14,0.837,25,2.85,False,0.72
+2026-17-marina_bay,SAI,Williams,57,closing,MEDIUM,2,101.032,2.659,17,1.397,26,4.654,False,0.72
+2026-17-marina_bay,SAI,Williams,58,closing,MEDIUM,2,98.761,0.938,12,1.496,27,2.968,False,0.72
+2026-17-marina_bay,SAI,Williams,59,closing,MEDIUM,2,100.294,2.309,18,1.969,28,4.374,False,0.72
+2026-17-marina_bay,SAI,Williams,60,closing,MEDIUM,2,100.373,2.074,16,1.774,29,4.174,False,0.72
+2026-17-marina_bay,SAI,Williams,61,closing,MEDIUM,2,99.526,1.366,11,1.916,30,3.501,False,0.72
+2026-17-marina_bay,STR,Aston Martin,1,opening,SOFT,1,115.212,5.919,22,5.919,1,5.954,False,0.72
+2026-17-marina_bay,STR,Aston Martin,2,opening,SOFT,1,102.516,1.326,21,3.622,2,1.396,False,0.72
+2026-17-marina_bay,STR,Aston Martin,3,opening,SOFT,1,102.191,1.585,20,2.943,3,1.69,False,0.72
+2026-17-marina_bay,STR,Aston Martin,4,opening,SOFT,1,101.655,1.803,21,1.571,4,1.943,False,0.72
+2026-17-marina_bay,STR,Aston Martin,5,opening,SOFT,1,101.473,1.724,20,1.704,5,1.899,False,0.72
+2026-17-marina_bay,STR,Aston Martin,6,opening,SOFT,1,101.641,1.806,21,1.778,6,2.016,False,0.72
+2026-17-marina_bay,STR,Aston Martin,7,opening,SOFT,1,100.935,1.368,17,1.633,7,1.613,False,0.72
+2026-17-marina_bay,STR,Aston Martin,8,opening,SOFT,1,118.309,5.958,18,3.044,8,6.238,False,0.72
+2026-17-marina_bay,STR,Aston Martin,9,opening,SOFT,1,104.203,-4.007,3,1.106,9,-3.692,False,0.72
+2026-17-marina_bay,STR,Aston Martin,10,opening,SOFT,1,100.812,1.625,19,1.192,10,1.975,False,0.72
+2026-17-marina_bay,STR,Aston Martin,11,opening,SOFT,1,100.812,1.475,20,-0.302,11,1.86,False,0.72
+2026-17-marina_bay,STR,Aston Martin,12,opening,SOFT,1,100.964,1.712,19,1.604,12,2.132,False,0.72
+2026-17-marina_bay,STR,Aston Martin,13,middle,SOFT,1,100.789,1.488,19,1.558,13,1.943,False,0.72
+2026-17-marina_bay,STR,Aston Martin,14,middle,SOFT,1,100.996,1.72,20,1.64,14,2.21,False,0.72
+2026-17-marina_bay,STR,Aston Martin,15,middle,SOFT,1,100.651,1.134,17,1.447,15,1.659,False,0.72
+2026-17-marina_bay,STR,Aston Martin,16,middle,SOFT,1,100.898,1.487,20,1.447,16,2.047,False,0.72
+2026-17-marina_bay,STR,Aston Martin,17,middle,SOFT,1,100.813,1.365,20,1.329,17,1.96,False,0.72
+2026-17-marina_bay,STR,Aston Martin,18,middle,SOFT,1,101.242,1.767,19,1.54,18,2.397,False,0.72
+2026-17-marina_bay,STR,Aston Martin,19,middle,SOFT,1,101.037,1.647,18,1.593,19,2.312,False,0.72
+2026-17-marina_bay,STR,Aston Martin,20,middle,SOFT,1,100.82,1.404,19,1.606,20,2.104,False,0.72
+2026-17-marina_bay,STR,Aston Martin,21,middle,SOFT,1,100.916,1.364,19,1.472,21,2.099,False,0.72
+2026-17-marina_bay,STR,Aston Martin,22,middle,SOFT,1,100.597,0.836,17,1.201,22,1.606,False,0.72
+2026-17-marina_bay,STR,Aston Martin,23,middle,SOFT,1,100.633,1.095,18,1.098,23,1.9,False,0.72
+2026-17-marina_bay,STR,Aston Martin,24,middle,SOFT,1,100.671,1.197,18,1.043,24,2.037,False,0.72
+2026-17-marina_bay,STR,Aston Martin,25,middle,SOFT,1,100.773,1.27,19,1.187,25,2.145,False,0.72
+2026-17-marina_bay,STR,Aston Martin,26,middle,SOFT,1,106.084,6.629,19,3.032,26,7.539,False,0.72
+2026-17-marina_bay,STR,Aston Martin,27,middle,MEDIUM,2,117.241,17.719,21,8.539,,18.664,False,0.72
+2026-17-marina_bay,STR,Aston Martin,28,middle,MEDIUM,2,99.137,-0.375,8,7.991,,0.605,False,0.72
+2026-17-marina_bay,STR,Aston Martin,29,middle,MEDIUM,2,99.406,-0.171,9,5.724,,0.844,False,0.72
+2026-17-marina_bay,STR,Aston Martin,30,middle,MEDIUM,2,100.643,0.753,14,0.069,,1.803,False,0.72
+2026-17-marina_bay,STR,Aston Martin,31,middle,MEDIUM,2,102.807,3.094,16,1.225,,4.179,False,0.72
+2026-17-marina_bay,STR,Aston Martin,32,middle,MEDIUM,2,101.929,2.489,14,2.112,,3.609,False,0.72
+2026-17-marina_bay,STR,Aston Martin,33,middle,MEDIUM,2,99.881,0.487,12,2.023,,1.642,False,0.72
+2026-17-marina_bay,STR,Aston Martin,34,middle,MEDIUM,2,100.178,1.601,15,1.526,,2.791,False,0.72
+2026-17-marina_bay,STR,Aston Martin,35,middle,MEDIUM,2,101.478,3.287,18,1.792,,4.512,False,0.72
+2026-17-marina_bay,STR,Aston Martin,36,middle,MEDIUM,2,102.216,4.088,18,2.992,,5.348,False,0.72
+2026-17-marina_bay,STR,Aston Martin,37,middle,MEDIUM,2,,,,3.687,,,False,0.35
+2026-17-marina_bay,VER,Red Bull Racing,1,opening,SOFT,1,102.29,-7.003,1,-7.003,1,-6.968,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,2,opening,SOFT,1,98.722,-2.469,1,-4.736,2,-2.399,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,3,opening,SOFT,1,98.465,-2.141,2,-3.871,3,-2.036,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,4,opening,SOFT,1,97.949,-1.903,1,-2.171,4,-1.763,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,5,opening,SOFT,1,98.046,-1.703,2,-1.916,5,-1.528,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,6,opening,SOFT,1,97.604,-2.231,1,-1.946,6,-2.021,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,7,opening,SOFT,1,97.887,-1.68,2,-1.871,7,-1.435,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,8,opening,SOFT,1,103.565,-8.786,1,-4.233,8,-8.506,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,9,opening,SOFT,1,114.738,6.528,21,-1.313,9,6.843,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,10,opening,SOFT,1,97.28,-1.907,1,-1.388,10,-1.557,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,11,opening,SOFT,1,97.379,-1.958,1,0.888,11,-1.573,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,12,opening,SOFT,1,97.505,-1.747,1,-1.871,12,-1.327,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,13,middle,SOFT,1,97.426,-1.875,1,-1.86,13,-1.42,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,14,middle,SOFT,1,97.197,-2.079,1,-1.9,14,-1.589,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,15,middle,SOFT,1,97.3,-2.217,1,-2.057,15,-1.692,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,16,middle,SOFT,1,97.29,-2.121,1,-2.139,16,-1.561,True,0.72
+2026-17-marina_bay,VER,Red Bull Racing,17,middle,SOFT,1,97.398,-2.05,1,-2.129,17,-1.455,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,18,middle,SOFT,1,97.372,-2.103,1,-2.091,18,-1.473,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,19,middle,SOFT,1,97.211,-2.179,1,-2.111,19,-1.514,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,20,middle,SOFT,1,97.582,-1.834,1,-2.039,20,-1.134,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,21,middle,SOFT,1,97.684,-1.868,2,-1.96,21,-1.133,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,22,middle,SOFT,1,97.704,-2.057,2,-1.92,22,-1.287,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,23,middle,SOFT,1,97.574,-1.964,2,-1.963,23,-1.159,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,24,middle,SOFT,1,97.605,-1.869,2,-1.963,24,-1.029,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,25,middle,SOFT,1,97.543,-1.96,1,-1.931,25,-1.085,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,26,middle,SOFT,1,97.623,-1.832,4,-1.887,26,-0.922,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,27,middle,SOFT,1,97.927,-1.595,4,-1.796,27,-0.65,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,28,middle,SOFT,1,97.465,-2.047,4,-1.825,28,-1.067,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,29,middle,SOFT,1,97.658,-1.919,4,-1.854,29,-0.904,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,30,middle,SOFT,1,97.952,-1.938,4,-1.968,30,-0.888,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,31,middle,SOFT,1,99.907,0.194,11,-1.221,31,1.279,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,32,middle,SOFT,1,103.902,4.462,16,0.906,32,5.582,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,33,middle,MEDIUM,2,115.014,15.62,19,6.758,1,16.775,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,34,middle,MEDIUM,2,96.945,-1.632,1,6.15,2,-0.442,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,35,middle,MEDIUM,2,96.574,-1.617,2,4.124,3,-0.392,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,36,middle,MEDIUM,2,96.784,-1.344,3,-1.531,4,-0.084,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,37,middle,MEDIUM,2,96.885,-1.045,3,-1.335,5,0.25,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,38,middle,MEDIUM,2,96.965,-7.518,3,-3.302,6,-6.188,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,39,middle,MEDIUM,2,117.159,-3.96,5,-4.174,7,-2.595,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,40,middle,MEDIUM,2,115.693,16.765,17,1.762,8,18.165,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,41,middle,MEDIUM,2,96.91,-0.902,6,3.968,9,0.533,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,42,middle,MEDIUM,2,96.343,-1.341,5,4.841,10,0.129,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,43,middle,MEDIUM,2,96.316,-1.479,5,-1.241,11,0.026,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,44,middle,MEDIUM,2,96.201,-1.479,3,-1.433,12,0.061,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,45,middle,MEDIUM,2,96.255,-1.568,4,-1.509,13,0.007,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,46,middle,MEDIUM,2,96.236,-2.483,3,-1.843,14,-0.873,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,47,closing,MEDIUM,2,96.219,-1.814,3,-1.955,15,-0.169,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,48,closing,MEDIUM,2,96.284,-1.766,3,-2.021,16,-0.086,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,49,closing,MEDIUM,2,96.815,-0.803,6,-1.461,17,0.912,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,50,closing,MEDIUM,2,97.976,0.179,11,-0.797,18,1.929,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,51,closing,MEDIUM,2,96.606,-1.442,5,-0.689,19,0.343,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,52,closing,MEDIUM,2,96.645,-1.033,3,-0.765,20,0.787,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,53,closing,MEDIUM,2,96.281,-1.832,3,-1.436,21,0.023,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,54,closing,MEDIUM,2,96.684,-1.712,3,-1.526,22,0.178,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,55,closing,MEDIUM,2,96.331,-2.054,1,-1.866,23,-0.129,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,56,closing,MEDIUM,2,96.593,-1.315,4,-1.694,24,0.645,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,57,closing,MEDIUM,2,96.615,-1.758,2,-1.709,25,0.237,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,58,closing,MEDIUM,2,97.13,-0.693,6,-1.255,26,1.337,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,59,closing,MEDIUM,2,97.107,-0.878,5,-1.11,27,1.187,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,60,closing,MEDIUM,2,97.235,-1.064,6,-0.878,28,1.036,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,61,closing,MEDIUM,2,97.394,-0.766,5,-0.903,29,1.369,False,0.72
+2026-17-marina_bay,VER,Red Bull Racing,62,closing,MEDIUM,2,97.84,-0.01,4,-0.613,30,2.16,False,0.72

@@ -351,3 +351,25 @@ race_analysis_id,driver,team,start_position,finish_position,net_position_change,
 2026-16-sepang,RUS,Mercedes,7,20,-13,8.0,0.0,opening,opening,0.433,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-16-sepang,ALB,Williams,18,21,-3,15.0,1.0,opening,middle,1.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-16-sepang,BOT,Cadillac,19,22,-3,0.0,0.0,none,middle,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,VER,Red Bull Racing,1,1,0,0.0,0.0,none,none,0.0,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,LEC,Ferrari,2,2,0,3.0,0.0,middle,middle,0.2,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,ANT,Mercedes,4,3,1,5.0,0.0,closing,middle,0.3,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,NOR,McLaren,5,4,1,5.0,1.0,middle,middle,0.367,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,PIA,McLaren,6,5,1,4.0,1.0,middle,middle,0.3,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,HAM,Ferrari,3,6,-3,4.0,1.0,middle,middle,0.433,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,LAW,Racing Bulls,8,7,1,3.0,0.0,middle,middle,0.2,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,HUL,Audi,10,8,2,2.0,0.0,middle,middle,0.133,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,RUS,Mercedes,19,9,10,11.0,0.0,opening,middle,0.467,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,HAD,Red Bull Racing,22,10,12,11.0,3.0,opening,middle,0.6,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,GAS,Alpine,7,11,-4,3.0,1.0,middle,middle,0.333,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,BEA,Haas F1 Team,11,12,-1,4.0,1.0,opening,middle,0.333,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,OCO,Haas F1 Team,12,13,-1,3.0,1.0,opening,middle,0.333,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,SAI,Williams,13,14,-1,1.0,2.0,middle,middle,0.333,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,LIN,Racing Bulls,9,15,-6,2.0,0.0,middle,opening,0.2,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,ALO,Aston Martin,20,16,4,9.0,1.0,opening,middle,0.5,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,PER,Cadillac,17,17,0,3.0,0.0,opening,middle,0.2,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,ALB,Williams,16,18,-2,2.0,1.0,middle,opening,0.267,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,BOT,Cadillac,18,19,-1,2.0,1.0,opening,opening,0.2,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,STR,Aston Martin,21,20,1,5.0,0.0,opening,middle,0.233,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,COL,Alpine,15,21,-6,2.0,0.0,middle,middle,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-17-marina_bay,BOR,Audi,14,22,-8,0.0,0.0,none,closing,0.133,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.

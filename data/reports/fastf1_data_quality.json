@@ -3,14 +3,14 @@
     "start": 2020,
     "end": 2026
   },
-  "sessions_processed": 64,
+  "sessions_processed": 69,
   "sessions_skipped": 0,
   "skipped_sessions": [],
   "canonical_row_counts": {
-    "laps": 37786,
-    "results": 1408,
-    "stints": 4685,
-    "session_summary": 1385,
+    "laps": 40557,
+    "results": 1518,
+    "stints": 4993,
+    "session_summary": 1487,
     "drivers": 31
   },
   "weather_coverage_pct": {
@@ -20,11 +20,11 @@
     "wind_speed_mps": 99.91,
     "wind_direction_deg": 99.91
   },
-  "telemetry_availability_pct": 96.88,
-  "position_availability_pct": 95.31,
+  "telemetry_availability_pct": 97.1,
+  "position_availability_pct": 95.65,
   "null_rates": {
     "laps": {
-      "lap_time_s": 0.1402,
+      "lap_time_s": 0.1418,
       "lap_number": 0.0,
       "air_temp_c": 0.0009,
       "track_temp_c": 0.0009,

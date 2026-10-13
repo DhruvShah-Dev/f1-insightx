@@ -327,36 +327,6 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1295/11377_R/pit.json,2026/1295/11377_R/pit.csv
 2026,1295,,11377,Race,race_control,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11377'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1295/11377_R/race_control.json,2026/1295/11377_R/race_control.csv
-2026,1296,,11384,Qualifying,drivers,fetched,22.0,2026/1296/11384_Q/drivers.json,2026/1296/11384_Q/drivers.csv
-2026,1296,,11384,Qualifying,session_result,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11384'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11384_Q/session_result.json,2026/1296/11384_Q/session_result.csv
-2026,1296,,11384,Qualifying,starting_grid,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11384'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11384_Q/starting_grid.json,2026/1296/11384_Q/starting_grid.csv
-2026,1296,,11384,Qualifying,weather,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11384'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11384_Q/weather.json,2026/1296/11384_Q/weather.csv
-2026,1296,,11384,Qualifying,laps,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11384'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11384_Q/laps.json,2026/1296/11384_Q/laps.csv
-2026,1296,,11384,Qualifying,stints,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11384'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11384_Q/stints.json,2026/1296/11384_Q/stints.csv
-2026,1296,,11384,Qualifying,pit,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/pit?session_key=11384'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11384_Q/pit.json,2026/1296/11384_Q/pit.csv
-2026,1296,,11384,Qualifying,race_control,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11384'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11384_Q/race_control.json,2026/1296/11384_Q/race_control.csv
-2026,1296,,11388,Race,drivers,fetched,22.0,2026/1296/11388_R/drivers.json,2026/1296/11388_R/drivers.csv
-2026,1296,,11388,Race,session_result,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11388'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/session_result.json,2026/1296/11388_R/session_result.csv
-2026,1296,,11388,Race,starting_grid,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11388'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/starting_grid.json,2026/1296/11388_R/starting_grid.csv
-2026,1296,,11388,Race,weather,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11388'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/weather.json,2026/1296/11388_R/weather.csv
-2026,1296,,11388,Race,laps,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11388'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/laps.json,2026/1296/11388_R/laps.csv
-2026,1296,,11388,Race,stints,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11388'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/stints.json,2026/1296/11388_R/stints.csv
-2026,1296,,11388,Race,pit,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/pit?session_key=11388'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/pit.json,2026/1296/11388_R/pit.csv
-2026,1296,,11388,Race,race_control,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11388'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/race_control.json,2026/1296/11388_R/race_control.csv
 2026,1297,,11392,Qualifying,drivers,fetched,22.0,2026/1297/11392_Q/drivers.json,2026/1297/11392_Q/drivers.csv
 2026,1297,,11392,Qualifying,session_result,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11392'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1297/11392_Q/session_result.json,2026/1297/11392_Q/session_result.csv
@@ -581,3 +551,46 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026,1308,,11731,Race,stints,fetched,97,2026/1308/11731_R/stints.json,2026/1308/11731_R/stints.csv
 2026,1308,,11731,Race,pit,fetched,73,2026/1308/11731_R/pit.json,2026/1308/11731_R/pit.csv
 2026,1308,,11731,Race,race_control,fetched,328,2026/1308/11731_R/race_control.json,2026/1308/11731_R/race_control.csv
+2026,1296,,11378,Practice 1,drivers,fetched,22,2026/1296/11378_FP1/drivers.json,2026/1296/11378_FP1/drivers.csv
+2026,1296,,11378,Practice 1,session_result,fetched,22,2026/1296/11378_FP1/session_result.json,2026/1296/11378_FP1/session_result.csv
+2026,1296,,11378,Practice 1,starting_grid,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11378'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11378_FP1/starting_grid.json,2026/1296/11378_FP1/starting_grid.csv
+2026,1296,,11378,Practice 1,weather,fetched,83,2026/1296/11378_FP1/weather.json,2026/1296/11378_FP1/weather.csv
+2026,1296,,11378,Practice 1,laps,fetched,568,2026/1296/11378_FP1/laps.json,2026/1296/11378_FP1/laps.csv
+2026,1296,,11378,Practice 1,stints,fetched,76,2026/1296/11378_FP1/stints.json,2026/1296/11378_FP1/stints.csv
+2026,1296,,11378,Practice 1,pit,fetched,76,2026/1296/11378_FP1/pit.json,2026/1296/11378_FP1/pit.csv
+2026,1296,,11378,Practice 1,race_control,fetched,72,2026/1296/11378_FP1/race_control.json,2026/1296/11378_FP1/race_control.csv
+2026,1296,,11379,Sprint Qualifying,drivers,fetched,22,2026/1296/11379_SQ/drivers.json,2026/1296/11379_SQ/drivers.csv
+2026,1296,,11379,Sprint Qualifying,session_result,fetched,22,2026/1296/11379_SQ/session_result.json,2026/1296/11379_SQ/session_result.csv
+2026,1296,,11379,Sprint Qualifying,starting_grid,fetched,22,2026/1296/11379_SQ/starting_grid.json,2026/1296/11379_SQ/starting_grid.csv
+2026,1296,,11379,Sprint Qualifying,weather,fetched,98,2026/1296/11379_SQ/weather.json,2026/1296/11379_SQ/weather.csv
+2026,1296,,11379,Sprint Qualifying,laps,fetched,287,2026/1296/11379_SQ/laps.json,2026/1296/11379_SQ/laps.csv
+2026,1296,,11379,Sprint Qualifying,stints,fetched,74,2026/1296/11379_SQ/stints.json,2026/1296/11379_SQ/stints.csv
+2026,1296,,11379,Sprint Qualifying,pit,fetched,74,2026/1296/11379_SQ/pit.json,2026/1296/11379_SQ/pit.csv
+2026,1296,,11379,Sprint Qualifying,race_control,fetched,75,2026/1296/11379_SQ/race_control.json,2026/1296/11379_SQ/race_control.csv
+2026,1296,,11383,Sprint,drivers,fetched,22,2026/1296/11383_S/drivers.json,2026/1296/11383_S/drivers.csv
+2026,1296,,11383,Sprint,session_result,fetched,22,2026/1296/11383_S/session_result.json,2026/1296/11383_S/session_result.csv
+2026,1296,,11383,Sprint,starting_grid,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11383'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11383_S/starting_grid.json,2026/1296/11383_S/starting_grid.csv
+2026,1296,,11383,Sprint,weather,fetched,127,2026/1296/11383_S/weather.json,2026/1296/11383_S/weather.csv
+2026,1296,,11383,Sprint,laps,fetched,320,2026/1296/11383_S/laps.json,2026/1296/11383_S/laps.csv
+2026,1296,,11383,Sprint,stints,fetched,76,2026/1296/11383_S/stints.json,2026/1296/11383_S/stints.csv
+2026,1296,,11383,Sprint,pit,fetched,54,2026/1296/11383_S/pit.json,2026/1296/11383_S/pit.csv
+2026,1296,,11383,Sprint,race_control,fetched,159,2026/1296/11383_S/race_control.json,2026/1296/11383_S/race_control.csv
+2026,1296,,11384,Qualifying,drivers,fetched,22,2026/1296/11384_Q/drivers.json,2026/1296/11384_Q/drivers.csv
+2026,1296,,11384,Qualifying,session_result,fetched,22,2026/1296/11384_Q/session_result.json,2026/1296/11384_Q/session_result.csv
+2026,1296,,11384,Qualifying,starting_grid,fetched,22,2026/1296/11384_Q/starting_grid.json,2026/1296/11384_Q/starting_grid.csv
+2026,1296,,11384,Qualifying,weather,fetched,88,2026/1296/11384_Q/weather.json,2026/1296/11384_Q/weather.csv
+2026,1296,,11384,Qualifying,laps,fetched,363,2026/1296/11384_Q/laps.json,2026/1296/11384_Q/laps.csv
+2026,1296,,11384,Qualifying,stints,fetched,103,2026/1296/11384_Q/stints.json,2026/1296/11384_Q/stints.csv
+2026,1296,,11384,Qualifying,pit,fetched,103,2026/1296/11384_Q/pit.json,2026/1296/11384_Q/pit.csv
+2026,1296,,11384,Qualifying,race_control,fetched,64,2026/1296/11384_Q/race_control.json,2026/1296/11384_Q/race_control.csv
+2026,1296,,11388,Race,drivers,fetched,22,2026/1296/11388_R/drivers.json,2026/1296/11388_R/drivers.csv
+2026,1296,,11388,Race,session_result,fetched,22,2026/1296/11388_R/session_result.json,2026/1296/11388_R/session_result.csv
+2026,1296,,11388,Race,starting_grid,"failed: Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11388'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",,2026/1296/11388_R/starting_grid.json,2026/1296/11388_R/starting_grid.csv
+2026,1296,,11388,Race,weather,fetched,160,2026/1296/11388_R/weather.json,2026/1296/11388_R/weather.csv
+2026,1296,,11388,Race,laps,fetched,1240,2026/1296/11388_R/laps.json,2026/1296/11388_R/laps.csv
+2026,1296,,11388,Race,stints,fetched,47,2026/1296/11388_R/stints.json,2026/1296/11388_R/stints.csv
+2026,1296,,11388,Race,pit,fetched,25,2026/1296/11388_R/pit.json,2026/1296/11388_R/pit.csv
+2026,1296,,11388,Race,race_control,fetched,155,2026/1296/11388_R/race_control.json,2026/1296/11388_R/race_control.csv

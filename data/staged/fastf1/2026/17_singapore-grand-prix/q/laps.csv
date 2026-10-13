@@ -1,0 +1,364 @@
+season,round,event_name,session_code,driver,team,lap_number,stint,compound,tyre_life,lap_time_s,sector_1_s,sector_2_s,sector_3_s,speed_i1,speed_i2,speed_fl,speed_st,track_status,fresh_tyre,is_personal_best,is_accurate,deleted,lap_start_time,position,air_temp_c,track_temp_c,humidity_pct,rainfall,wind_speed_mps,wind_direction_deg
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,1.0,1.0,SOFT,4.0,,,46.603,37.127,228.0,243.0,258.0,,12,False,False,False,False,2026-10-10 13:34:13.409,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,2.0,1.0,SOFT,5.0,93.241,27.674,39.19,26.377,308.0,285.0,260.0,304.0,21,False,True,True,False,2026-10-10 13:36:10.144,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,3.0,1.0,SOFT,6.0,139.198,31.359,41.7,66.139,265.0,260.0,,208.0,1,False,False,False,False,2026-10-10 13:37:43.385,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,4.0,2.0,SOFT,1.0,,,47.833,39.459,275.0,241.0,260.0,208.0,1,True,False,False,False,2026-10-10 13:40:02.583,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,5.0,2.0,SOFT,2.0,92.292,27.363,38.84,26.089,307.0,286.0,254.0,304.0,1,True,True,True,False,2026-10-10 13:58:15.752,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,6.0,2.0,SOFT,3.0,112.844,31.322,42.322,39.2,249.0,214.0,,206.0,1,True,False,False,False,2026-10-10 13:59:48.044,,29.8,39.3,75.3,False,1.5,161.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,7.0,3.0,SOFT,1.0,,,42.498,28.131,266.0,248.0,262.0,206.0,1,True,False,False,False,2026-10-10 14:01:40.888,,29.8,38.9,75.4,False,1.3,174.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,8.0,3.0,SOFT,2.0,91.639,27.129,38.545,25.965,307.0,285.0,260.0,303.0,1,True,True,True,False,2026-10-10 14:06:22.784,,29.8,40.5,75.4,False,1.1,149.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,9.0,3.0,SOFT,3.0,119.464,33.027,48.419,38.018,206.0,159.0,,209.0,1,True,False,False,False,2026-10-10 14:07:54.423,,29.7,42.4,75.3,False,1.3,185.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,10.0,4.0,SOFT,1.0,,,44.57,28.398,267.0,246.0,264.0,209.0,12,True,False,False,False,2026-10-10 14:09:53.887,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,11.0,4.0,SOFT,2.0,91.373,27.002,38.531,25.84,307.0,285.0,259.0,304.0,1,True,True,True,False,2026-10-10 14:19:02.180,,29.9,39.6,73.4,False,1.3,158.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,12.0,4.0,SOFT,3.0,116.983,35.016,47.72,34.247,253.0,253.0,,214.0,1,True,False,False,False,2026-10-10 14:20:33.553,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,13.0,5.0,SOFT,1.0,,,45.887,30.619,277.0,239.0,261.0,214.0,1,True,False,False,False,2026-10-10 14:22:30.536,,29.9,39.3,73.8,False,1.4,166.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,14.0,5.0,SOFT,2.0,91.625,27.033,38.642,25.95,307.0,284.0,259.0,304.0,1,True,False,True,False,2026-10-10 14:29:36.436,,29.8,41.4,73.4,False,1.5,133.0
+2026,17,Singapore Grand Prix,Q,VER,Red Bull Racing,15.0,5.0,SOFT,3.0,,39.46,50.405,,170.0,199.0,,190.0,1,True,False,False,False,2026-10-10 14:31:08.061,,29.7,41.2,74.0,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,1.0,1.0,SOFT,6.0,,,48.893,31.062,256.0,216.0,244.0,,12,False,False,False,False,2026-10-10 13:31:31.631,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,2.0,1.0,SOFT,7.0,95.7,28.514,40.132,27.054,304.0,280.0,252.0,296.0,12,False,True,True,False,2026-10-10 13:33:48.053,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,3.0,1.0,SOFT,8.0,120.236,32.402,48.598,39.236,287.0,227.0,,230.0,12,False,False,False,False,2026-10-10 13:35:23.753,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,4.0,2.0,SOFT,1.0,149.177,66.69,51.914,30.573,288.0,260.0,256.0,230.0,1,True,False,False,False,2026-10-10 13:37:23.989,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,5.0,2.0,SOFT,2.0,93.594,27.781,39.261,26.552,306.0,282.0,256.0,301.0,1,True,True,True,False,2026-10-10 13:39:53.166,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,6.0,2.0,SOFT,3.0,124.928,34.086,56.449,34.393,214.0,232.0,256.0,272.0,1,True,False,True,False,2026-10-10 13:41:26.760,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,7.0,2.0,SOFT,4.0,92.774,27.512,38.903,26.359,305.0,279.0,254.0,301.0,1,True,True,True,False,2026-10-10 13:43:31.688,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,8.0,2.0,SOFT,5.0,123.042,32.531,47.492,43.019,252.0,186.0,250.0,258.0,1,True,False,True,False,2026-10-10 13:45:04.462,,29.6,39.1,77.7,False,2.0,160.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,9.0,2.0,SOFT,6.0,94.914,27.801,39.209,27.904,305.0,282.0,236.0,298.0,1,True,False,True,False,2026-10-10 13:47:07.504,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,10.0,2.0,SOFT,7.0,121.383,34.278,48.998,38.107,191.0,244.0,,228.0,1,True,False,False,False,2026-10-10 13:48:42.418,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,11.0,3.0,SOFT,1.0,,,48.33,29.754,287.0,231.0,256.0,228.0,1,True,False,False,False,2026-10-10 13:50:43.801,,29.8,39.6,75.3,False,1.7,161.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,12.0,3.0,SOFT,2.0,92.434,27.392,38.666,26.376,305.0,281.0,252.0,300.0,1,True,True,True,False,2026-10-10 13:57:44.742,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,13.0,3.0,SOFT,3.0,128.747,38.729,54.719,35.299,203.0,177.0,201.0,146.0,1,True,False,True,False,2026-10-10 13:59:17.176,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,14.0,3.0,SOFT,4.0,114.318,35.541,47.961,30.816,235.0,234.0,256.0,200.0,1,True,False,True,False,2026-10-10 14:01:25.923,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,15.0,3.0,SOFT,5.0,92.182,27.441,38.569,26.172,304.0,279.0,255.0,299.0,1,True,True,True,False,2026-10-10 14:03:20.241,,29.8,39.7,75.6,False,1.1,159.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,16.0,3.0,SOFT,6.0,119.724,34.218,53.553,31.953,216.0,240.0,225.0,243.0,1,True,False,True,False,2026-10-10 14:04:52.423,,29.8,40.3,75.6,False,1.4,150.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,17.0,3.0,SOFT,7.0,113.052,32.002,46.668,34.382,232.0,241.0,257.0,266.0,1,True,False,True,False,2026-10-10 14:06:52.147,,29.8,40.7,75.1,False,1.0,174.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,18.0,3.0,SOFT,8.0,91.953,27.167,38.502,26.284,306.0,280.0,255.0,300.0,1,True,True,True,False,2026-10-10 14:08:45.199,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,19.0,3.0,SOFT,9.0,120.622,33.621,48.419,38.582,199.0,203.0,,220.0,1,True,False,False,False,2026-10-10 14:10:17.152,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,20.0,4.0,SOFT,1.0,,,43.186,29.04,281.0,252.0,259.0,220.0,12,True,False,False,False,2026-10-10 14:12:17.774,,29.8,40.1,75.3,False,0.8,158.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,21.0,4.0,SOFT,2.0,91.661,27.028,38.568,26.065,305.0,280.0,258.0,301.0,1,True,True,True,False,2026-10-10 14:19:12.737,,29.9,39.6,73.4,False,1.3,158.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,22.0,4.0,SOFT,3.0,118.14,34.643,46.047,37.45,266.0,201.0,,154.0,1,True,False,False,False,2026-10-10 14:20:44.398,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,23.0,5.0,SOFT,1.0,,,43.746,28.839,285.0,269.0,260.0,154.0,1,True,False,False,False,2026-10-10 14:22:42.538,,30.0,38.6,73.7,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,24.0,5.0,SOFT,2.0,91.427,27.025,38.401,26.001,306.0,280.0,259.0,300.0,1,True,True,True,False,2026-10-10 14:28:52.517,,29.8,40.5,73.3,False,2.1,138.0
+2026,17,Singapore Grand Prix,Q,LEC,Ferrari,25.0,5.0,SOFT,3.0,,34.385,52.426,,211.0,142.0,,222.0,1,True,False,False,False,2026-10-10 14:30:23.944,,29.8,41.4,73.4,False,1.5,133.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,1.0,1.0,SOFT,4.0,,,47.494,30.373,279.0,249.0,256.0,,12,False,False,False,False,2026-10-10 13:31:26.146,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,2.0,1.0,SOFT,5.0,93.311,27.613,39.101,26.597,305.0,278.0,247.0,300.0,12,False,True,True,False,2026-10-10 13:33:40.157,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,3.0,1.0,SOFT,6.0,123.086,35.541,50.369,37.176,258.0,191.0,,217.0,12,False,False,False,False,2026-10-10 13:35:13.468,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,4.0,2.0,SOFT,1.0,146.009,61.641,48.136,36.232,243.0,258.0,202.0,217.0,1,True,False,False,False,2026-10-10 13:37:16.554,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,5.0,2.0,SOFT,2.0,117.812,37.334,51.0,29.478,204.0,231.0,259.0,236.0,1,True,False,True,False,2026-10-10 13:39:42.563,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,6.0,2.0,SOFT,3.0,92.68,27.415,38.883,26.382,305.0,279.0,249.0,301.0,1,True,True,True,False,2026-10-10 13:41:40.375,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,7.0,2.0,SOFT,4.0,128.225,39.475,53.576,35.174,200.0,234.0,256.0,227.0,1,True,False,True,False,2026-10-10 13:43:13.055,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,8.0,2.0,SOFT,5.0,127.476,31.39,54.482,41.604,201.0,148.0,256.0,301.0,1,True,False,True,False,2026-10-10 13:45:21.280,,29.6,39.1,77.7,False,2.0,160.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,9.0,2.0,SOFT,6.0,92.429,27.491,38.739,26.199,306.0,270.0,251.0,301.0,1,True,True,True,False,2026-10-10 13:47:28.756,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,10.0,2.0,SOFT,7.0,114.931,31.735,45.962,37.234,236.0,194.0,,224.0,1,True,False,False,False,2026-10-10 13:49:01.185,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,11.0,3.0,SOFT,1.0,,,47.219,29.166,282.0,245.0,259.0,224.0,1,True,False,False,False,2026-10-10 13:50:56.116,,29.8,39.6,75.3,False,1.7,161.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,12.0,3.0,SOFT,2.0,91.766,27.26,38.543,25.963,305.0,277.0,253.0,301.0,1,True,True,True,False,2026-10-10 13:57:34.792,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,13.0,3.0,SOFT,3.0,132.562,41.018,53.156,38.388,194.0,230.0,,217.0,1,True,False,False,False,2026-10-10 13:59:06.558,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,14.0,4.0,SOFT,4.0,,73.277,48.227,30.26,269.0,190.0,258.0,217.0,1,False,False,False,False,2026-10-10 14:01:19.120,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,15.0,4.0,SOFT,5.0,91.529,27.161,38.359,26.009,304.0,277.0,250.0,299.0,1,False,True,True,False,2026-10-10 14:03:50.978,,29.9,40.1,75.9,False,1.6,169.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,16.0,4.0,SOFT,6.0,122.696,30.273,56.192,36.231,225.0,168.0,170.0,265.0,1,False,False,True,False,2026-10-10 14:05:22.507,,29.8,40.3,75.6,False,1.4,150.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,17.0,4.0,SOFT,7.0,126.189,44.428,50.666,31.095,270.0,242.0,259.0,136.0,1,False,False,True,False,2026-10-10 14:07:25.203,,29.8,40.7,75.1,False,1.0,174.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,18.0,4.0,SOFT,8.0,94.825,27.294,38.596,28.935,305.0,280.0,249.0,300.0,1,False,False,True,False,2026-10-10 14:09:31.392,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,19.0,4.0,SOFT,9.0,,29.954,42.623,,254.0,187.0,,283.0,12,False,False,False,False,2026-10-10 14:11:06.217,,29.7,41.1,75.6,False,1.5,162.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,20.0,5.0,SOFT,1.0,,,47.697,28.846,281.0,243.0,261.0,283.0,1,True,False,False,False,2026-10-10 14:18:17.249,,29.9,39.5,73.3,False,1.2,166.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,21.0,5.0,SOFT,2.0,91.496,27.273,38.258,25.965,305.0,278.0,256.0,301.0,1,True,True,True,False,2026-10-10 14:20:19.046,,29.9,39.8,73.0,False,1.6,158.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,22.0,5.0,SOFT,3.0,108.956,30.285,42.995,35.676,278.0,226.0,,267.0,1,True,False,False,False,2026-10-10 14:21:50.542,,29.9,39.3,73.8,False,1.4,166.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,23.0,6.0,SOFT,1.0,,,44.773,28.581,285.0,248.0,261.0,267.0,1,True,False,False,False,2026-10-10 14:23:39.498,,30.0,39.2,73.7,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,24.0,6.0,SOFT,2.0,91.648,27.124,38.415,26.109,305.0,276.0,256.0,301.0,1,True,False,True,False,2026-10-10 14:28:42.954,,29.8,40.5,73.3,False,2.1,138.0
+2026,17,Singapore Grand Prix,Q,HAM,Ferrari,25.0,6.0,SOFT,3.0,,36.782,47.716,,231.0,209.0,,208.0,1,True,False,False,False,2026-10-10 14:30:14.602,,29.8,41.4,73.4,False,1.5,133.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,1.0,1.0,SOFT,7.0,,,45.839,36.504,265.0,232.0,250.0,,12,False,False,False,False,2026-10-10 13:30:37.626,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,2.0,1.0,SOFT,8.0,95.728,28.175,40.694,26.859,305.0,283.0,257.0,299.0,12,False,True,True,False,2026-10-10 13:32:45.288,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,3.0,1.0,SOFT,9.0,114.548,34.267,49.832,30.449,174.0,228.0,256.0,239.0,12,False,False,True,False,2026-10-10 13:34:21.016,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,4.0,1.0,SOFT,10.0,93.601,27.622,39.385,26.594,306.0,281.0,252.0,301.0,21,False,True,True,False,2026-10-10 13:36:15.564,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,5.0,1.0,SOFT,11.0,120.079,33.491,47.253,39.335,237.0,217.0,,270.0,1,False,False,False,False,2026-10-10 13:37:49.165,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,6.0,2.0,SOFT,1.0,127.582,54.427,43.665,29.49,286.0,239.0,261.0,270.0,1,True,False,False,False,2026-10-10 13:39:49.244,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,7.0,2.0,SOFT,2.0,92.818,27.489,39.0,26.329,306.0,280.0,256.0,302.0,1,True,False,True,False,2026-10-10 13:41:56.826,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,8.0,2.0,SOFT,3.0,123.688,35.414,51.24,37.034,216.0,201.0,150.0,254.0,1,True,False,True,False,2026-10-10 13:43:29.644,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,9.0,2.0,SOFT,4.0,125.139,41.714,51.885,31.54,224.0,160.0,257.0,116.0,1,True,False,True,False,2026-10-10 13:45:33.332,,29.7,39.3,77.6,False,1.7,168.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,10.0,2.0,SOFT,5.0,127.55,33.78,51.188,42.582,228.0,192.0,,286.0,1,True,False,False,False,2026-10-10 13:47:38.471,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,11.0,3.0,SOFT,1.0,,,43.737,29.028,270.0,237.0,262.0,286.0,1,True,False,False,False,2026-10-10 13:49:46.021,,29.8,38.8,75.4,False,1.9,153.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,12.0,3.0,SOFT,2.0,92.165,27.32,38.723,26.122,306.0,282.0,252.0,302.0,1,True,True,True,False,2026-10-10 13:56:58.097,,29.8,39.7,74.8,False,2.3,160.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,13.0,3.0,SOFT,3.0,,33.129,49.444,78.164,240.0,184.0,,248.0,1,True,False,False,False,2026-10-10 13:58:30.262,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,14.0,4.0,SOFT,1.0,,,43.025,29.05,265.0,238.0,262.0,248.0,1,True,False,False,False,2026-10-10 14:01:10.964,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,15.0,4.0,SOFT,2.0,92.079,27.335,38.703,26.041,306.0,283.0,255.0,302.0,1,True,True,True,False,2026-10-10 14:07:30.712,,29.8,40.7,75.1,False,1.0,174.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,16.0,4.0,SOFT,3.0,142.285,46.775,54.87,40.64,187.0,204.0,,199.0,1,True,False,False,False,2026-10-10 14:09:02.791,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,17.0,5.0,SOFT,1.0,,,43.722,29.135,271.0,263.0,231.0,199.0,12,True,False,False,False,2026-10-10 14:11:25.076,,29.7,41.1,75.6,False,1.5,162.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,18.0,5.0,SOFT,2.0,111.124,30.147,47.858,33.119,277.0,231.0,261.0,286.0,1,True,True,True,False,2026-10-10 14:18:55.133,,29.9,39.6,73.4,False,1.3,158.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,19.0,5.0,SOFT,3.0,91.562,27.156,38.452,25.954,307.0,281.0,252.0,302.0,1,True,True,True,False,2026-10-10 14:20:46.257,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,20.0,5.0,SOFT,4.0,114.837,31.462,45.477,37.898,260.0,216.0,,243.0,1,True,False,False,False,2026-10-10 14:22:17.819,,29.9,39.3,73.8,False,1.4,166.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,21.0,6.0,SOFT,1.0,,,43.9,28.873,281.0,255.0,234.0,243.0,1,True,False,False,False,2026-10-10 14:24:12.656,,30.0,39.2,73.7,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,22.0,6.0,SOFT,2.0,118.833,30.673000000000002,51.908,36.252,281.0,234.0,263.0,276.0,1,True,False,True,False,2026-10-10 14:27:12.392,,29.9,41.5,73.3,False,1.6,155.0
+2026,17,Singapore Grand Prix,Q,ANT,Mercedes,23.0,6.0,SOFT,3.0,,27.17,38.86,,306.0,279.0,,303.0,1,True,False,False,False,2026-10-10 14:29:11.225,,29.8,40.5,73.3,False,2.1,138.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,1.0,1.0,SOFT,7.0,,,48.584,31.868,241.0,226.0,254.0,,12,False,False,False,False,2026-10-10 13:31:22.021,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,2.0,1.0,SOFT,8.0,94.23,27.92,39.665,26.645,306.0,283.0,255.0,300.0,12,False,True,True,False,2026-10-10 13:33:26.966,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,3.0,1.0,SOFT,9.0,133.079,44.988,54.207,33.884,188.0,216.0,258.0,168.0,12,False,False,True,False,2026-10-10 13:35:01.196,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,4.0,1.0,SOFT,10.0,93.047,27.608,39.057,26.382,306.0,280.0,255.0,302.0,1,False,True,True,False,2026-10-10 13:37:14.275,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,5.0,1.0,SOFT,11.0,122.069,34.922,54.117,33.03,189.0,130.0,258.0,227.0,1,False,False,True,False,2026-10-10 13:38:47.322,,29.6,41.3,76.6,False,1.5,158.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,6.0,1.0,SOFT,12.0,92.775,27.506,39.043,26.226,306.0,280.0,253.0,301.0,1,False,True,True,False,2026-10-10 13:40:49.391,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,7.0,1.0,SOFT,13.0,121.947,33.828,48.065,40.054,196.0,212.0,,229.0,1,False,False,False,False,2026-10-10 13:42:22.166,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,8.0,2.0,SOFT,8.0,,73.621,48.001,46.667,283.0,235.0,255.0,229.0,1,False,False,False,False,2026-10-10 13:44:24.113,,29.6,40.5,77.7,False,1.5,152.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,9.0,2.0,SOFT,9.0,99.197,29.8,42.923,26.474,258.0,281.0,240.0,302.0,1,False,False,True,False,2026-10-10 13:47:12.405,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,10.0,2.0,SOFT,10.0,114.296,30.941,44.828,38.527,233.0,215.0,,241.0,1,False,False,False,False,2026-10-10 13:48:51.602,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,11.0,3.0,SOFT,1.0,,,42.509,29.068,259.0,237.0,260.0,241.0,1,True,False,False,False,2026-10-10 13:50:45.898,,29.8,39.6,75.3,False,1.7,161.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,12.0,3.0,SOFT,2.0,92.368,27.318,38.738,26.312,306.0,282.0,252.0,303.0,1,True,True,True,False,2026-10-10 13:57:15.175,,29.8,39.7,74.8,False,2.3,160.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,13.0,3.0,SOFT,3.0,121.891,38.649,53.676,29.566,200.0,214.0,260.0,231.0,1,True,False,True,False,2026-10-10 13:58:47.543,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,14.0,3.0,SOFT,4.0,91.895,27.211,38.572,26.112,306.0,280.0,253.0,301.0,1,True,True,True,False,2026-10-10 14:00:49.434,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,15.0,3.0,SOFT,5.0,120.644,31.281,46.61,42.753,228.0,145.0,,233.0,1,True,False,False,False,2026-10-10 14:02:21.329,,29.8,38.9,75.4,False,1.3,174.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,16.0,4.0,SOFT,6.0,,,42.641,28.511,240.0,251.0,261.0,233.0,1,False,False,False,False,2026-10-10 14:04:21.973,,29.9,40.1,75.9,False,1.6,169.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,17.0,4.0,SOFT,7.0,92.364,27.378,38.598,26.388,306.0,283.0,256.0,302.0,1,False,False,True,False,2026-10-10 14:07:40.375,,29.7,42.4,75.3,False,1.3,185.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,18.0,4.0,SOFT,8.0,123.235,34.171,45.214,43.85,200.0,195.0,,262.0,1,False,False,False,False,2026-10-10 14:09:12.739,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,19.0,5.0,SOFT,1.0,,,42.305,31.16,251.0,231.0,261.0,262.0,12,True,False,False,False,2026-10-10 14:11:15.974,,29.7,41.1,75.6,False,1.5,162.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,20.0,5.0,SOFT,2.0,91.712,27.193,38.471,26.048,307.0,282.0,255.0,303.0,1,True,True,True,False,2026-10-10 14:19:36.174,,29.9,39.8,73.0,False,1.6,158.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,21.0,5.0,SOFT,3.0,113.823,32.357,43.965,37.501,216.0,209.0,,248.0,1,True,False,False,False,2026-10-10 14:21:07.886,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,22.0,6.0,SOFT,1.0,,,41.93,28.616,267.0,232.0,261.0,248.0,1,True,False,False,False,2026-10-10 14:23:01.709,,30.0,38.6,73.7,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,23.0,6.0,SOFT,2.0,91.876,27.136,38.609,26.131,306.0,280.0,250.0,301.0,1,True,False,True,False,2026-10-10 14:28:17.572,,29.9,41.1,73.5,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,NOR,McLaren,24.0,6.0,SOFT,3.0,,37.789,51.081,,183.0,170.0,,230.0,1,True,False,False,False,2026-10-10 14:29:49.448,,29.8,41.4,73.4,False,1.5,133.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,1.0,1.0,SOFT,7.0,,,48.255,39.346,261.0,228.0,230.0,,12,False,False,False,False,2026-10-10 13:31:56.772,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,2.0,1.0,SOFT,8.0,108.902,30.683,48.262,29.957,199.0,238.0,258.0,277.0,12,False,True,True,False,2026-10-10 13:34:10.965,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,3.0,1.0,SOFT,9.0,94.643,27.623,40.216,26.804,308.0,285.0,258.0,302.0,21,False,True,True,False,2026-10-10 13:35:59.867,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,4.0,1.0,SOFT,10.0,123.859,42.852,48.61,32.397,231.0,244.0,257.0,163.0,1,False,False,True,False,2026-10-10 13:37:34.510,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,5.0,1.0,SOFT,11.0,93.705,27.525,39.618,26.562,308.0,285.0,261.0,303.0,1,False,True,True,False,2026-10-10 13:39:38.369,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,6.0,1.0,SOFT,12.0,130.957,42.665,52.603,35.689,245.0,205.0,173.0,160.0,1,False,False,True,False,2026-10-10 13:41:12.074,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,7.0,1.0,SOFT,13.0,112.899,36.045,47.121,29.733,241.0,231.0,262.0,212.0,1,False,False,True,False,2026-10-10 13:43:23.031,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,8.0,1.0,SOFT,14.0,93.617,27.601,39.574,26.442,308.0,284.0,261.0,303.0,1,False,True,True,False,2026-10-10 13:45:15.930,,29.6,39.1,77.7,False,2.0,160.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,9.0,1.0,SOFT,15.0,124.978,35.335,49.407,40.236,189.0,162.0,,258.0,1,False,False,False,False,2026-10-10 13:46:49.547,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,10.0,2.0,SOFT,1.0,,,42.938,28.502,273.0,239.0,264.0,258.0,1,True,False,False,False,2026-10-10 13:48:54.525,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,11.0,2.0,SOFT,2.0,92.323,27.198,39.036,26.089,307.0,284.0,262.0,303.0,1,True,True,True,False,2026-10-10 13:56:49.667,,29.8,39.7,74.8,False,2.3,160.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,12.0,2.0,SOFT,3.0,130.953,37.19,52.509,41.254,220.0,228.0,,191.0,1,True,False,False,False,2026-10-10 13:58:21.990,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,13.0,3.0,SOFT,4.0,,,43.943,29.291,278.0,237.0,260.0,191.0,1,False,False,False,False,2026-10-10 14:00:32.943,,29.8,39.3,75.3,False,1.5,161.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,14.0,3.0,SOFT,5.0,111.825,31.308,49.607,30.91,169.0,190.0,263.0,302.0,1,False,False,True,False,2026-10-10 14:07:24.679,,29.8,40.7,75.1,False,1.0,174.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,15.0,3.0,SOFT,6.0,92.212,27.173,38.865,26.174,307.0,284.0,260.0,305.0,1,False,True,True,False,2026-10-10 14:09:16.504,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,16.0,3.0,SOFT,7.0,124.637,34.104,52.033,38.5,241.0,229.0,,217.0,12,False,False,False,False,2026-10-10 14:10:48.716,,29.7,41.1,75.6,False,1.5,162.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,17.0,4.0,SOFT,1.0,,,43.551,28.83,278.0,260.0,243.0,217.0,21,True,False,False,False,2026-10-10 14:12:53.353,,29.8,39.6,75.5,False,1.3,156.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,18.0,4.0,SOFT,2.0,109.589,30.21,46.825,32.554,284.0,137.0,263.0,281.0,1,True,True,True,False,2026-10-10 14:18:49.318,,29.9,39.6,73.4,False,1.3,158.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,19.0,4.0,SOFT,3.0,91.747,27.177,38.675,25.895,306.0,282.0,262.0,304.0,1,True,True,True,False,2026-10-10 14:20:38.907,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,20.0,4.0,SOFT,4.0,114.569,31.604,46.408,36.557,252.0,236.0,,229.0,1,True,False,False,False,2026-10-10 14:22:10.654,,29.9,39.3,73.8,False,1.4,166.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,21.0,5.0,SOFT,1.0,,,41.469,28.283,279.0,246.0,264.0,229.0,1,True,False,False,False,2026-10-10 14:24:05.223,,30.0,39.2,73.7,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,22.0,5.0,SOFT,2.0,120.985,32.257,52.592,36.136,234.0,243.0,262.0,303.0,1,True,False,True,False,2026-10-10 14:26:58.619,,29.9,41.5,73.3,False,1.6,155.0
+2026,17,Singapore Grand Prix,Q,RUS,Mercedes,23.0,5.0,SOFT,3.0,,27.101,40.044,,307.0,194.0,,304.0,1,True,False,False,False,2026-10-10 14:28:59.604,,29.8,40.5,73.3,False,2.1,138.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,1.0,1.0,SOFT,7.0,,,48.805,38.461,255.0,235.0,255.0,,12,False,False,False,False,2026-10-10 13:31:36.396,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,2.0,1.0,SOFT,8.0,94.321,28.123,39.652,26.546,306.0,282.0,257.0,300.0,12,False,True,True,False,2026-10-10 13:33:56.361,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,3.0,1.0,SOFT,9.0,125.672,43.114,49.93,32.628,218.0,240.0,259.0,164.0,12,False,False,True,False,2026-10-10 13:35:30.682,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,4.0,1.0,SOFT,10.0,93.076,27.701,38.995,26.38,306.0,281.0,256.0,302.0,1,False,True,True,False,2026-10-10 13:37:36.354,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,5.0,1.0,SOFT,11.0,124.595,37.354,53.28,33.961,204.0,155.0,260.0,247.0,1,False,False,True,False,2026-10-10 13:39:09.430,,29.6,41.3,76.6,False,1.5,158.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,6.0,1.0,SOFT,12.0,93.298,27.586,39.224,26.488,307.0,282.0,250.0,303.0,1,False,False,True,False,2026-10-10 13:41:14.025,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,7.0,1.0,SOFT,13.0,115.998,31.859,46.228,37.911,275.0,245.0,,254.0,1,False,False,False,False,2026-10-10 13:42:47.323,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,8.0,2.0,SOFT,11.0,,71.484,45.869,55.645,302.0,231.0,234.0,254.0,1,False,False,False,False,2026-10-10 13:44:43.321,,29.6,39.1,77.7,False,2.0,160.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,9.0,2.0,SOFT,12.0,131.946,39.961,50.966,41.019,274.0,217.0,,265.0,1,False,False,False,False,2026-10-10 13:47:36.393,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,10.0,3.0,SOFT,1.0,,,45.278,35.841,285.0,236.0,259.0,265.0,1,True,False,False,False,2026-10-10 13:49:48.339,,29.8,38.8,75.4,False,1.9,153.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,11.0,3.0,SOFT,2.0,92.42,27.421,38.728,26.271,307.0,283.0,251.0,302.0,1,True,True,True,False,2026-10-10 13:57:51.827,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,12.0,3.0,SOFT,3.0,131.2,38.416,53.844,38.94,200.0,201.0,,226.0,1,True,False,False,False,2026-10-10 13:59:24.247,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,13.0,4.0,SOFT,4.0,,,44.698,29.409,280.0,232.0,260.0,226.0,1,False,False,False,False,2026-10-10 14:01:35.447,,29.8,38.9,75.4,False,1.3,174.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,14.0,4.0,SOFT,5.0,92.245,27.417,38.656,26.172,306.0,281.0,251.0,302.0,1,False,True,True,False,2026-10-10 14:05:08.535,,29.8,40.3,75.6,False,1.4,150.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,15.0,4.0,SOFT,6.0,145.965,38.988,54.88,52.097,225.0,179.0,258.0,238.0,1,False,False,True,False,2026-10-10 14:06:40.780,,29.8,40.7,75.1,False,1.0,174.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,16.0,4.0,SOFT,7.0,121.972,37.77,46.575,37.627,201.0,222.0,,303.0,1,False,False,False,False,2026-10-10 14:09:06.745,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,17.0,5.0,SOFT,1.0,,,44.326,29.01,275.0,234.0,261.0,303.0,12,True,False,False,False,2026-10-10 14:11:08.717,,29.7,41.1,75.6,False,1.5,162.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,18.0,5.0,SOFT,2.0,92.193,27.252,38.733,26.208,306.0,282.0,259.0,302.0,1,True,True,True,False,2026-10-10 14:19:48.538,,29.9,39.8,73.0,False,1.6,158.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,19.0,5.0,SOFT,3.0,116.163,33.165,45.859,37.139,241.0,211.0,,237.0,1,True,False,False,False,2026-10-10 14:21:20.731,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,20.0,6.0,SOFT,1.0,,,43.836,29.238,278.0,241.0,262.0,237.0,1,True,False,False,False,2026-10-10 14:23:16.894,,30.0,38.6,73.7,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,21.0,6.0,SOFT,2.0,91.86,27.2,38.376,26.284,306.0,281.0,255.0,302.0,1,True,True,True,False,2026-10-10 14:28:29.270,,29.9,41.1,73.5,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,PIA,McLaren,22.0,6.0,SOFT,3.0,,36.852,48.924,,219.0,190.0,,222.0,1,True,False,False,False,2026-10-10 14:30:01.130,,29.8,41.4,73.4,False,1.5,133.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,1.0,1.0,SOFT,4.0,,,48.901,32.494,276.0,242.0,223.0,,1,False,False,False,False,2026-10-10 13:30:06.279,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,2.0,1.0,SOFT,5.0,119.415,31.373,49.85,38.192,257.0,260.0,249.0,252.0,12,False,True,True,False,2026-10-10 13:32:07.427,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,3.0,1.0,SOFT,6.0,96.017,28.418,40.816,26.783,308.0,286.0,249.0,302.0,12,False,True,True,False,2026-10-10 13:34:06.842,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,4.0,1.0,SOFT,7.0,125.917,34.324,49.853,41.74,249.0,134.0,,255.0,12,False,False,False,False,2026-10-10 13:35:42.859,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,5.0,2.0,SOFT,1.0,,,44.742,31.024,303.0,269.0,257.0,255.0,1,True,False,False,False,2026-10-10 13:37:48.776,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,6.0,2.0,SOFT,2.0,93.523,27.677,39.385,26.461,308.0,285.0,252.0,303.0,1,True,True,True,False,2026-10-10 13:40:56.518,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,7.0,2.0,SOFT,3.0,129.671,40.237,51.993,37.441,201.0,190.0,105.0,254.0,1,True,False,True,False,2026-10-10 13:42:30.041,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,8.0,2.0,SOFT,4.0,129.225,44.659,49.515,35.051,168.0,273.0,255.0,107.0,1,True,False,True,False,2026-10-10 13:44:39.712,,29.6,39.1,77.7,False,2.0,160.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,9.0,2.0,SOFT,5.0,93.182,27.674,39.222,26.286,308.0,286.0,253.0,302.0,1,True,True,True,False,2026-10-10 13:46:48.937,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,10.0,2.0,SOFT,6.0,128.774,35.481,50.671,42.622,218.0,188.0,,253.0,1,True,False,False,False,2026-10-10 13:48:22.119,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,11.0,3.0,SOFT,1.0,,,44.95,41.681,295.0,271.0,249.0,253.0,1,True,False,False,False,2026-10-10 13:50:30.893,,29.8,38.8,75.4,False,1.9,153.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,12.0,3.0,SOFT,2.0,93.174,27.647,39.007,26.52,308.0,286.0,251.0,301.0,1,True,True,True,False,2026-10-10 13:58:27.416,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,13.0,3.0,SOFT,3.0,126.881,35.941,51.193,39.747,237.0,194.0,,253.0,1,True,False,False,False,2026-10-10 14:00:00.590,,29.8,39.3,75.3,False,1.5,161.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,14.0,4.0,SOFT,1.0,,,45.103,30.891,298.0,266.0,261.0,253.0,1,True,False,False,False,2026-10-10 14:02:07.471,,29.8,38.9,75.4,False,1.3,174.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,15.0,4.0,SOFT,2.0,92.602,27.268,38.891,26.443,308.0,286.0,254.0,303.0,1,True,True,True,False,2026-10-10 14:08:15.622,,29.7,42.4,75.3,False,1.3,185.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,16.0,4.0,SOFT,3.0,128.657,36.084,49.435,43.138,233.0,178.0,,241.0,1,True,False,False,False,2026-10-10 14:09:48.224,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,17.0,5.0,SOFT,1.0,,,45.534,30.737,289.0,263.0,258.0,241.0,12,True,False,False,False,2026-10-10 14:11:56.881,,29.8,40.1,75.3,False,0.8,158.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,18.0,5.0,SOFT,2.0,92.502,27.265,39.114,26.123,307.0,285.0,254.0,302.0,1,True,True,True,False,2026-10-10 14:20:01.437,,29.9,39.8,73.0,False,1.6,158.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,19.0,5.0,SOFT,3.0,126.372,35.338,50.469,40.565,226.0,196.0,,239.0,1,True,False,False,False,2026-10-10 14:21:33.939,,29.9,39.3,73.8,False,1.4,166.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,20.0,6.0,SOFT,1.0,,,46.06,30.632,303.0,270.0,259.0,239.0,1,True,False,False,False,2026-10-10 14:23:40.311,,30.0,39.2,73.7,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,21.0,6.0,SOFT,2.0,92.225,27.177,38.775,26.273,308.0,285.0,255.0,303.0,1,True,True,True,False,2026-10-10 14:29:28.237,,29.8,40.5,73.3,False,2.1,138.0
+2026,17,Singapore Grand Prix,Q,GAS,Alpine,22.0,6.0,SOFT,3.0,,37.058,51.916,,211.0,199.0,,255.0,1,True,False,False,False,2026-10-10 14:31:00.462,,29.7,41.2,74.0,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,1.0,1.0,SOFT,1.0,,,45.897,36.694,272.0,246.0,254.0,,12,True,False,False,False,2026-10-10 13:30:35.117,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,2.0,1.0,SOFT,2.0,94.913,27.951999999999998,39.962,26.999,307.0,283.0,257.0,301.0,12,True,True,True,False,2026-10-10 13:32:40.160,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,3.0,1.0,SOFT,3.0,126.701,39.585,53.959,33.157,192.0,201.0,223.0,258.0,12,True,False,True,False,2026-10-10 13:34:15.073,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,4.0,1.0,SOFT,4.0,110.526,32.593,47.37,30.563,255.0,239.0,257.0,258.0,21,True,False,True,False,2026-10-10 13:36:21.774,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,5.0,1.0,SOFT,5.0,93.765,27.601,39.352,26.812,306.0,283.0,253.0,301.0,1,True,True,True,False,2026-10-10 13:38:12.300,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,6.0,1.0,SOFT,6.0,,36.511,50.972,82.273,245.0,235.0,,246.0,1,True,False,False,False,2026-10-10 13:39:46.065,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,7.0,2.0,SOFT,1.0,,,46.387,34.074,265.0,239.0,258.0,246.0,1,True,False,False,False,2026-10-10 13:42:35.845,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,8.0,2.0,SOFT,2.0,92.885,27.415,39.127,26.343,307.0,284.0,259.0,302.0,1,True,True,True,False,2026-10-10 13:46:43.440,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,9.0,2.0,SOFT,3.0,121.36,34.382,48.551,38.427,230.0,212.0,,236.0,1,True,False,False,False,2026-10-10 13:48:16.325,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,10.0,3.0,SOFT,1.0,,,47.03,34.344,270.0,246.0,259.0,236.0,1,True,False,False,False,2026-10-10 13:50:17.685,,29.8,38.8,75.4,False,1.9,153.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,11.0,3.0,SOFT,2.0,92.741,27.416,39.116,26.209,307.0,284.0,261.0,303.0,1,True,True,True,False,2026-10-10 13:57:57.591,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,12.0,3.0,SOFT,3.0,128.48,34.125,54.03,40.325,202.0,203.0,,276.0,1,True,False,False,False,2026-10-10 13:59:30.332,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,13.0,4.0,SOFT,1.0,,,48.115,37.279,226.0,239.0,261.0,276.0,1,True,False,False,False,2026-10-10 14:01:38.812,,29.8,38.9,75.4,False,1.3,174.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,14.0,4.0,SOFT,2.0,92.319,27.305,38.909,26.105,308.0,285.0,261.0,304.0,1,True,True,True,False,2026-10-10 14:08:53.288,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,15.0,4.0,SOFT,3.0,130.088,36.605,52.223,41.26,192.0,206.0,,239.0,1,True,False,False,False,2026-10-10 14:10:25.607,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,16.0,5.0,SOFT,4.0,,,45.656,29.685,274.0,243.0,261.0,239.0,12,False,False,False,False,2026-10-10 14:12:35.695,,29.8,39.6,75.5,False,1.3,156.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,17.0,5.0,SOFT,5.0,92.372,27.259,38.963,26.15,307.0,285.0,260.0,303.0,1,False,True,True,False,2026-10-10 14:19:26.795,,29.9,39.6,73.4,False,1.3,158.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,18.0,5.0,SOFT,6.0,116.661,33.476,46.029,37.156,257.0,222.0,,258.0,1,False,False,False,False,2026-10-10 14:20:59.167,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,19.0,6.0,SOFT,1.0,,,50.514,37.467,267.0,242.0,259.0,258.0,1,True,False,False,False,2026-10-10 14:22:55.828,,30.0,38.6,73.7,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,20.0,6.0,SOFT,2.0,92.369,27.29,38.853,26.226,307.0,285.0,262.0,303.0,1,True,True,True,False,2026-10-10 14:29:17.404,,29.8,40.5,73.3,False,2.1,138.0
+2026,17,Singapore Grand Prix,Q,LAW,Racing Bulls,21.0,6.0,SOFT,3.0,,34.294,52.896,,251.0,178.0,,243.0,1,True,False,False,False,2026-10-10 14:30:49.773,,29.7,41.2,74.0,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,1.0,1.0,SOFT,1.0,,,50.636,33.632,259.0,221.0,256.0,,12,True,False,False,False,2026-10-10 13:30:26.617,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,2.0,1.0,SOFT,2.0,95.668,28.075,40.205,27.388,305.0,284.0,247.0,301.0,21,True,True,True,False,2026-10-10 13:32:28.261,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,3.0,1.0,SOFT,3.0,133.307,40.225,50.637,42.445,260.0,250.0,,254.0,12,True,False,False,False,2026-10-10 13:34:03.929,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,4.0,2.0,SOFT,1.0,133.155,55.714,47.814,29.627,269.0,242.0,257.0,254.0,21,True,False,False,False,2026-10-10 13:36:17.236,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,5.0,2.0,SOFT,2.0,94.987,27.759,39.502,27.726,306.0,282.0,245.0,301.0,1,True,True,True,False,2026-10-10 13:38:30.391,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,6.0,2.0,SOFT,3.0,112.814,31.095,46.011,35.708,277.0,245.0,,252.0,1,True,False,False,False,2026-10-10 13:40:05.378,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,7.0,3.0,SOFT,1.0,,,47.22,35.283,262.0,225.0,256.0,252.0,1,True,False,False,False,2026-10-10 13:41:58.192,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,8.0,3.0,SOFT,2.0,93.288,27.674,39.247,26.367,306.0,283.0,246.0,300.0,1,True,True,True,False,2026-10-10 13:46:36.447,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,9.0,3.0,SOFT,3.0,119.25,34.894,44.918,39.438,252.0,228.0,,227.0,1,True,False,False,False,2026-10-10 13:48:09.735,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,10.0,4.0,SOFT,1.0,,,47.707,35.817,266.0,230.0,256.0,227.0,1,True,False,False,False,2026-10-10 13:50:08.985,,29.8,38.8,75.4,False,1.9,153.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,11.0,4.0,SOFT,2.0,92.759,27.51,39.017,26.232,306.0,283.0,251.0,301.0,1,True,True,True,False,2026-10-10 13:58:05.917,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,12.0,4.0,SOFT,3.0,121.356,31.529,50.296,39.531,252.0,191.0,,245.0,1,True,False,False,False,2026-10-10 13:59:38.676,,29.8,39.3,75.3,False,1.5,161.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,13.0,5.0,SOFT,1.0,,,48.551,29.427,262.0,230.0,258.0,245.0,1,True,False,False,False,2026-10-10 14:01:40.032,,29.8,38.9,75.4,False,1.3,174.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,14.0,5.0,SOFT,2.0,92.498,27.331,38.964,26.203,306.0,284.0,253.0,302.0,1,True,True,True,False,2026-10-10 14:08:37.498,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,15.0,5.0,SOFT,3.0,121.43,34.101,47.783,39.546,248.0,225.0,,246.0,1,True,False,False,False,2026-10-10 14:10:09.996,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,16.0,6.0,SOFT,4.0,,,43.882,29.282,258.0,237.0,258.0,246.0,12,False,False,False,False,2026-10-10 14:12:11.426,,29.8,40.1,75.3,False,0.8,158.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,17.0,6.0,SOFT,5.0,92.781,27.377,39.101,26.303,307.0,283.0,250.0,301.0,1,False,True,True,False,2026-10-10 14:19:20.630,,29.9,39.6,73.4,False,1.3,158.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,18.0,6.0,SOFT,6.0,112.625,31.797,44.15,36.678,266.0,241.0,,237.0,1,False,False,False,False,2026-10-10 14:20:53.411,,29.9,39.0,73.5,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,19.0,7.0,SOFT,1.0,,,50.175,34.357,264.0,234.0,258.0,237.0,1,True,False,False,False,2026-10-10 14:22:46.036,,30.0,38.6,73.7,False,1.5,166.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,20.0,7.0,SOFT,2.0,92.819,27.525,39.026,26.268,306.0,283.0,253.0,301.0,1,True,False,True,False,2026-10-10 14:29:06.247,,29.8,40.5,73.3,False,2.1,138.0
+2026,17,Singapore Grand Prix,Q,LIN,Racing Bulls,21.0,7.0,SOFT,3.0,,35.938,47.819,,250.0,216.0,,132.0,1,True,False,False,False,2026-10-10 14:30:39.066,,29.7,41.2,74.0,False,1.3,173.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,1.0,1.0,MEDIUM,7.0,,,46.838,36.978,253.0,227.0,,,1,False,False,False,False,2026-10-10 13:30:03.061,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,2.0,2.0,SOFT,1.0,133.844,48.996,44.857,39.991,244.0,246.0,247.0,,12,True,False,False,False,2026-10-10 13:32:00.793,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,3.0,2.0,SOFT,2.0,97.113,28.145,42.399,26.569,306.0,280.0,256.0,297.0,12,True,True,True,False,2026-10-10 13:34:14.637,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,4.0,2.0,SOFT,3.0,121.045,32.471,48.637,39.937,272.0,238.0,,262.0,12,True,False,False,False,2026-10-10 13:35:51.750,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,5.0,3.0,SOFT,1.0,130.084,51.346,44.908,33.83,273.0,236.0,249.0,262.0,1,True,False,False,False,2026-10-10 13:37:52.795,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,6.0,3.0,SOFT,2.0,93.478,27.622,39.542,26.314,305.0,280.0,254.0,297.0,1,True,True,True,False,2026-10-10 13:40:02.879,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,7.0,3.0,SOFT,3.0,131.106,36.533,52.118,42.455,237.0,175.0,,207.0,1,True,False,False,False,2026-10-10 13:41:36.357,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,8.0,4.0,SOFT,4.0,126.348,47.132,49.889,29.327,210.0,240.0,251.0,207.0,1,False,False,False,False,2026-10-10 13:43:47.463,,29.6,40.5,77.7,False,1.5,152.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,9.0,4.0,SOFT,5.0,93.147,27.539,39.243,26.365,303.0,278.0,254.0,296.0,1,False,True,True,False,2026-10-10 13:45:53.811,,29.7,39.3,77.6,False,1.7,168.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,10.0,4.0,SOFT,6.0,124.149,34.088,50.527,39.534,264.0,186.0,,146.0,1,False,False,False,False,2026-10-10 13:47:26.958,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,11.0,5.0,SOFT,1.0,,,43.355,29.926,273.0,237.0,253.0,146.0,1,True,False,False,False,2026-10-10 13:49:31.107,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,12.0,5.0,SOFT,2.0,93.165,27.743,39.222,26.2,305.0,281.0,255.0,299.0,1,True,True,True,False,2026-10-10 13:57:04.823,,29.8,39.7,74.8,False,2.3,160.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,13.0,5.0,SOFT,3.0,119.559,33.136,47.121,39.302,252.0,204.0,,249.0,1,True,False,False,False,2026-10-10 13:58:37.988,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,14.0,6.0,SOFT,1.0,122.23,48.981,43.917,29.332,273.0,238.0,252.0,249.0,1,True,False,False,False,2026-10-10 14:00:37.547,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,15.0,6.0,SOFT,2.0,92.963,27.578,39.083,26.302,304.0,278.0,253.0,296.0,1,True,True,True,False,2026-10-10 14:02:39.777,,29.8,39.7,75.6,False,1.1,159.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,16.0,6.0,SOFT,3.0,109.449,31.056,43.058,35.335,264.0,235.0,,238.0,1,True,False,False,False,2026-10-10 14:04:12.740,,29.9,40.1,75.9,False,1.6,169.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,17.0,7.0,SOFT,1.0,139.881,64.152,44.453,31.276,269.0,234.0,252.0,238.0,1,True,False,False,False,2026-10-10 14:06:02.189,,29.8,40.5,75.4,False,1.1,149.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,18.0,7.0,SOFT,2.0,92.784,27.462,39.173,26.149,305.0,280.0,256.0,298.0,1,True,True,True,False,2026-10-10 14:08:22.070,,29.7,42.4,75.3,False,1.3,185.0
+2026,17,Singapore Grand Prix,Q,HUL,Audi,19.0,7.0,SOFT,3.0,130.728,36.847,49.742,44.139,200.0,181.0,,223.0,1,True,False,False,False,2026-10-10 14:09:54.854,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,1.0,1.0,SOFT,1.0,,,45.354,35.809,272.0,229.0,255.0,,12,True,False,False,False,2026-10-10 13:30:40.512,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,2.0,1.0,SOFT,2.0,95.482,28.271,40.469,26.742,283.0,280.0,251.0,300.0,12,True,True,True,False,2026-10-10 13:32:49.338,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,3.0,1.0,SOFT,3.0,,31.679,49.524,69.366,198.0,227.0,,248.0,12,True,False,False,False,2026-10-10 13:34:24.820,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,4.0,2.0,SOFT,1.0,,,46.874,30.147,271.0,233.0,259.0,248.0,1,True,False,False,False,2026-10-10 13:36:55.444,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,5.0,2.0,SOFT,2.0,93.356,27.679,39.188,26.489,304.0,278.0,247.0,299.0,1,True,True,True,False,2026-10-10 13:40:27.881,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,6.0,2.0,SOFT,3.0,123.771,32.67,47.461,43.64,249.0,207.0,,246.0,1,True,False,False,False,2026-10-10 13:42:01.237,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,7.0,3.0,SOFT,1.0,,,47.371,32.438,271.0,229.0,259.0,246.0,1,True,False,False,False,2026-10-10 13:44:05.008,,29.6,40.5,77.7,False,1.5,152.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,8.0,3.0,SOFT,2.0,93.492,27.517,39.575,26.4,303.0,279.0,253.0,300.0,1,True,True,True,False,2026-10-10 13:59:19.270,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,9.0,3.0,SOFT,3.0,114.607,33.518,45.196,35.893,191.0,242.0,,257.0,1,True,False,False,False,2026-10-10 14:00:52.762,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,10.0,4.0,SOFT,1.0,,,46.428,29.854,272.0,231.0,261.0,257.0,1,True,False,False,False,2026-10-10 14:02:47.369,,29.8,39.7,75.6,False,1.1,159.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,11.0,4.0,SOFT,2.0,92.908,27.543,39.046,26.319,304.0,278.0,247.0,301.0,1,True,True,True,False,2026-10-10 14:08:28.639,,29.7,42.4,75.3,False,1.3,185.0
+2026,17,Singapore Grand Prix,Q,BEA,Haas F1 Team,12.0,4.0,SOFT,3.0,128.125,36.73,51.205,40.19,273.0,196.0,,227.0,1,True,False,False,False,2026-10-10 14:10:01.547,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,1.0,1.0,SOFT,1.0,,,66.755,32.622,275.0,202.0,251.0,,12,True,False,False,False,2026-10-10 13:30:49.060,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,2.0,1.0,SOFT,2.0,95.47,28.46,40.041,26.969,303.0,281.0,252.0,298.0,12,True,True,True,False,2026-10-10 13:33:14.292,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,3.0,1.0,SOFT,3.0,128.664,33.333,54.692,40.639,231.0,187.0,,271.0,21,True,False,False,False,2026-10-10 13:34:49.762,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,4.0,2.0,SOFT,1.0,,,48.093,30.714,276.0,228.0,254.0,271.0,1,True,False,False,False,2026-10-10 13:36:58.426,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,5.0,2.0,SOFT,2.0,94.687,28.111,39.755,26.821,304.0,278.0,250.0,299.0,1,True,True,True,False,2026-10-10 13:40:12.135,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,6.0,2.0,SOFT,3.0,119.358,31.716,49.192,38.45,234.0,216.0,,274.0,1,True,False,False,False,2026-10-10 13:41:46.822,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,7.0,3.0,SOFT,1.0,,80.654,45.142,36.082,277.0,239.0,255.0,274.0,1,True,False,False,False,2026-10-10 13:43:46.180,,29.6,40.5,77.7,False,1.5,152.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,8.0,3.0,SOFT,2.0,93.803,27.866,39.33,26.607,304.0,278.0,252.0,299.0,1,True,True,True,False,2026-10-10 13:46:28.108,,29.7,39.3,77.6,False,1.7,168.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,9.0,3.0,SOFT,3.0,123.853,33.876,48.507,41.47,225.0,191.0,,277.0,1,True,False,False,False,2026-10-10 13:48:01.911,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,10.0,4.0,SOFT,1.0,,,45.76,33.039,281.0,126.0,255.0,277.0,1,True,False,False,False,2026-10-10 13:50:05.764,,29.8,38.8,75.4,False,1.9,153.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,11.0,4.0,SOFT,2.0,93.323,27.828,39.091,26.404,304.0,277.0,250.0,299.0,1,True,True,True,False,2026-10-10 13:59:23.094,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,12.0,4.0,SOFT,3.0,114.668,31.409,46.242,37.017,244.0,218.0,,277.0,1,True,False,False,False,2026-10-10 14:00:56.417,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,13.0,5.0,SOFT,1.0,,,44.022,40.503,278.0,235.0,257.0,277.0,1,True,False,False,False,2026-10-10 14:02:51.085,,29.8,39.7,75.6,False,1.1,159.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,14.0,5.0,SOFT,2.0,93.496,27.765,39.161,26.57,304.0,279.0,246.0,300.0,1,True,False,True,False,2026-10-10 14:08:57.996,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,OCO,Haas F1 Team,15.0,5.0,SOFT,3.0,126.944,36.288,50.244,40.412,209.0,191.0,,257.0,1,True,False,False,False,2026-10-10 14:10:31.492,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,1.0,1.0,SOFT,1.0,,,51.398,31.979,288.0,243.0,257.0,,12,True,False,False,False,2026-10-10 13:31:14.318,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,2.0,1.0,SOFT,2.0,94.868,27.995,40.01,26.863,306.0,285.0,250.0,302.0,21,True,True,True,False,2026-10-10 13:33:20.781,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,3.0,1.0,SOFT,3.0,130.026,43.048,54.342,32.636,219.0,201.0,259.0,108.0,21,True,False,True,False,2026-10-10 13:34:55.649,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,4.0,1.0,SOFT,4.0,94.35,27.823,39.797,26.73,306.0,283.0,246.0,302.0,1,True,True,True,False,2026-10-10 13:37:05.675,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,5.0,1.0,SOFT,5.0,126.876,37.351,49.265,40.26,220.0,239.0,,200.0,1,True,False,False,False,2026-10-10 13:38:40.025,,29.6,41.3,76.6,False,1.5,158.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,6.0,2.0,SOFT,1.0,144.78,52.212,52.39,40.178,294.0,225.0,260.0,200.0,1,True,False,False,False,2026-10-10 13:40:46.901,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,7.0,2.0,SOFT,2.0,93.774,27.793,39.455,26.526,305.0,282.0,247.0,302.0,1,True,True,True,False,2026-10-10 13:43:11.681,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,8.0,2.0,SOFT,3.0,134.089,44.472,53.784,35.833,270.0,223.0,257.0,170.0,1,True,False,True,False,2026-10-10 13:44:45.455,,29.6,39.1,77.7,False,2.0,160.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,9.0,2.0,SOFT,4.0,93.818,27.81,39.574,26.434,307.0,284.0,258.0,303.0,1,True,False,True,False,2026-10-10 13:46:59.544,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,10.0,2.0,SOFT,5.0,128.048,38.534,48.235,41.279,229.0,241.0,,183.0,1,True,False,False,False,2026-10-10 13:48:33.362,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,11.0,3.0,SOFT,1.0,,,45.396,29.809,301.0,230.0,259.0,183.0,1,True,False,False,False,2026-10-10 13:50:41.410,,29.8,39.6,75.3,False,1.7,161.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,12.0,3.0,SOFT,2.0,93.526,27.682,39.402,26.442,305.0,283.0,253.0,301.0,1,True,True,True,False,2026-10-10 14:00:14.532,,29.8,39.3,75.3,False,1.5,161.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,13.0,3.0,SOFT,3.0,,36.465,47.568,72.345,228.0,244.0,,201.0,1,True,False,False,False,2026-10-10 14:01:48.058,,29.8,38.9,75.4,False,1.3,174.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,14.0,4.0,SOFT,1.0,,,46.421,28.607,299.0,240.0,258.0,201.0,1,True,False,False,False,2026-10-10 14:04:24.597,,29.9,40.1,75.9,False,1.6,169.0
+2026,17,Singapore Grand Prix,Q,SAI,Williams,15.0,4.0,SOFT,2.0,,29.992,48.477,,267.0,243.0,,302.0,1,True,False,False,False,2026-10-10 14:10:00.328,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,1.0,1.0,MEDIUM,7.0,,,49.989,39.813,205.0,204.0,,,12,False,False,False,False,2026-10-10 13:30:12.951,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,2.0,2.0,SOFT,1.0,132.805,53.811,48.857,30.137,173.0,239.0,247.0,,21,True,False,False,False,2026-10-10 13:32:19.253,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,3.0,2.0,SOFT,2.0,96.05,28.179,40.679,27.192,304.0,277.0,250.0,295.0,12,True,True,True,False,2026-10-10 13:34:32.058,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,4.0,2.0,SOFT,3.0,115.871,33.353,46.33,36.188,267.0,232.0,,226.0,21,True,False,False,False,2026-10-10 13:36:08.108,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,5.0,3.0,SOFT,1.0,,,46.011,32.544,276.0,215.0,254.0,226.0,1,True,False,False,False,2026-10-10 13:38:03.979,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,6.0,3.0,SOFT,2.0,94.169,27.854,39.566,26.749,304.0,278.0,249.0,298.0,1,True,True,True,False,2026-10-10 13:41:43.869,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,7.0,3.0,SOFT,3.0,126.608,38.29,54.605,33.713,220.0,196.0,207.0,223.0,1,True,False,True,False,2026-10-10 13:43:18.038,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,8.0,3.0,SOFT,4.0,133.591,34.537,57.238,41.816,239.0,197.0,238.0,239.0,1,True,False,True,False,2026-10-10 13:45:24.646,,29.6,39.1,77.7,False,2.0,160.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,9.0,3.0,SOFT,5.0,94.182,28.233,39.444,26.505,301.0,277.0,243.0,293.0,1,True,False,True,False,2026-10-10 13:47:38.237,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,10.0,3.0,SOFT,6.0,,38.401,48.651,,229.0,227.0,,146.0,1,True,False,False,False,2026-10-10 13:49:12.419,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,11.0,4.0,SOFT,1.0,,,43.307,30.423,273.0,242.0,249.0,146.0,1,True,False,False,False,2026-10-10 13:55:24.070,,29.9,40.6,74.8,False,2.1,162.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,12.0,4.0,SOFT,2.0,94.792,27.61,40.28,26.902,305.0,271.0,252.0,297.0,1,True,True,True,False,2026-10-10 13:57:08.517,,29.8,39.7,74.8,False,2.3,160.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,13.0,4.0,SOFT,3.0,118.486,31.178,45.285,42.023,261.0,228.0,,239.0,1,True,False,False,False,2026-10-10 13:58:43.309,,29.8,39.9,75.0,False,1.2,160.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,14.0,5.0,SOFT,1.0,125.315,51.699,43.333,30.283,266.0,238.0,250.0,239.0,1,True,False,False,False,2026-10-10 14:00:41.795,,29.8,39.7,75.7,False,1.2,165.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,15.0,5.0,SOFT,2.0,93.658,27.67,39.484,26.504,301.0,275.0,252.0,295.0,1,True,True,True,False,2026-10-10 14:02:47.110,,29.8,39.7,75.6,False,1.1,159.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,16.0,5.0,SOFT,3.0,111.714,32.517,43.809,35.388,263.0,231.0,,208.0,1,True,False,False,False,2026-10-10 14:04:20.768,,29.9,40.1,75.9,False,1.6,169.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,17.0,6.0,SOFT,1.0,,74.112,45.015,37.487,274.0,234.0,249.0,208.0,1,True,False,False,False,2026-10-10 14:06:12.482,,29.8,40.5,75.4,False,1.1,149.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,18.0,6.0,SOFT,2.0,93.697,27.598,39.199,26.9,302.0,277.0,252.0,296.0,1,True,False,True,False,2026-10-10 14:08:49.110,,29.7,40.2,74.9,False,2.3,159.0
+2026,17,Singapore Grand Prix,Q,BOR,Audi,19.0,6.0,SOFT,3.0,129.381,37.539,50.562,41.28,199.0,169.0,,193.0,1,True,False,False,False,2026-10-10 14:10:22.807,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,1.0,1.0,SOFT,1.0,,,51.672,35.511,213.0,243.0,251.0,,1,True,False,False,False,2026-10-10 13:30:08.967,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,2.0,1.0,SOFT,2.0,104.256,28.53,40.796,34.93,309.0,285.0,,301.0,12,True,False,False,False,2026-10-10 13:32:12.037,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,3.0,2.0,SOFT,1.0,,,47.782,35.065,286.0,254.0,255.0,301.0,12,True,False,False,False,2026-10-10 13:33:56.293,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,4.0,2.0,SOFT,2.0,93.782,27.75,39.504,26.528,308.0,284.0,246.0,303.0,1,True,True,True,False,2026-10-10 13:37:17.824,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,5.0,2.0,SOFT,3.0,127.8,34.58,52.248,40.972,203.0,146.0,,221.0,1,True,False,False,False,2026-10-10 13:38:51.606,,29.6,41.3,76.6,False,1.5,158.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,6.0,3.0,SOFT,1.0,,,44.437,29.562,284.0,258.0,259.0,221.0,1,True,False,False,False,2026-10-10 13:40:59.406,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,7.0,3.0,SOFT,2.0,93.261,27.567,39.385,26.309,308.0,286.0,256.0,303.0,1,True,True,True,False,2026-10-10 13:46:06.719,,29.7,39.3,77.6,False,1.7,168.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,8.0,3.0,SOFT,3.0,133.722,36.455,54.442,42.825,182.0,162.0,,224.0,1,True,False,False,False,2026-10-10 13:47:39.980,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,9.0,4.0,SOFT,1.0,,,48.308,41.957,286.0,248.0,248.0,224.0,1,True,False,False,False,2026-10-10 13:49:53.702,,29.8,38.8,75.4,False,1.9,153.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,10.0,4.0,SOFT,2.0,93.866,27.734,39.186,26.946,308.0,286.0,254.0,301.0,1,True,True,True,False,2026-10-10 13:58:23.382,,29.8,40.1,74.6,False,2.0,164.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,11.0,4.0,SOFT,3.0,,34.987,54.616,72.901,203.0,186.0,,207.0,1,True,False,False,False,2026-10-10 13:59:57.248,,29.8,39.3,75.3,False,1.5,161.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,12.0,5.0,SOFT,1.0,,,44.542,29.801,287.0,267.0,260.0,207.0,1,True,False,False,False,2026-10-10 14:02:39.745,,29.8,39.7,75.6,False,1.1,159.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,13.0,5.0,SOFT,2.0,93.787,27.624,39.41,26.753,307.0,285.0,251.0,302.0,1,True,True,True,False,2026-10-10 14:08:09.044,,29.7,42.4,75.3,False,1.3,185.0
+2026,17,Singapore Grand Prix,Q,COL,Alpine,14.0,5.0,SOFT,3.0,131.738,39.381,50.47,41.887,192.0,171.0,,162.0,1,True,False,False,False,2026-10-10 14:09:42.831,,29.7,40.5,75.2,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,1.0,1.0,SOFT,1.0,,,50.972,35.614,270.0,220.0,255.0,,12,True,False,False,False,2026-10-10 13:30:20.076,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,2.0,1.0,SOFT,2.0,95.389,28.263,39.955,27.171,302.0,275.0,243.0,292.0,21,True,True,True,False,2026-10-10 13:32:22.659,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,3.0,1.0,SOFT,3.0,131.421,41.691,52.486,37.244,236.0,217.0,,196.0,12,True,False,False,False,2026-10-10 13:33:58.048,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,4.0,2.0,SOFT,1.0,,,45.38,41.124,250.0,223.0,246.0,196.0,21,True,False,False,False,2026-10-10 13:36:09.469,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,5.0,2.0,SOFT,2.0,94.542,28.077,39.776,26.689,301.0,274.0,246.0,287.0,1,True,True,True,False,2026-10-10 13:39:48.338,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,6.0,2.0,SOFT,3.0,120.434,34.014,47.68,38.74,227.0,222.0,,207.0,1,True,False,False,False,2026-10-10 13:41:22.880,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,7.0,3.0,SOFT,1.0,,,44.032,41.677,299.0,246.0,256.0,207.0,1,True,False,False,False,2026-10-10 13:43:23.314,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,8.0,3.0,SOFT,2.0,94.223,27.955,39.352,26.916,302.0,275.0,240.0,296.0,1,True,True,True,False,2026-10-10 13:46:55.900,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,ALO,Aston Martin,9.0,3.0,SOFT,3.0,,36.362,49.437,,241.0,163.0,,190.0,1,True,False,False,False,2026-10-10 13:48:30.123,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,1.0,1.0,SOFT,1.0,,,48.316,29.696,277.0,226.0,257.0,,12,True,False,False,False,2026-10-10 13:30:54.520,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,2.0,1.0,SOFT,2.0,97.654,28.636,41.749,27.269,266.0,280.0,256.0,302.0,12,True,True,True,False,2026-10-10 13:33:01.149,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,3.0,1.0,SOFT,3.0,123.349,36.865,56.086,30.398,272.0,205.0,260.0,253.0,12,True,False,True,False,2026-10-10 13:34:38.803,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,4.0,1.0,SOFT,4.0,95.162,27.87,40.211,27.081,306.0,282.0,254.0,302.0,1,True,True,True,False,2026-10-10 13:36:42.152,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,5.0,1.0,SOFT,5.0,122.575,33.931,52.288,36.356,264.0,238.0,,259.0,1,True,False,False,False,2026-10-10 13:38:17.314,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,6.0,2.0,SOFT,1.0,139.836,61.02,49.751,29.065,295.0,229.0,261.0,259.0,1,True,False,False,False,2026-10-10 13:40:19.889,,29.6,39.9,76.8,False,1.6,152.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,7.0,2.0,SOFT,2.0,94.55,27.775,40.068,26.707,306.0,283.0,252.0,303.0,1,True,True,True,False,2026-10-10 13:42:39.725,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,8.0,2.0,SOFT,3.0,128.44,39.229,58.101,31.11,267.0,239.0,260.0,243.0,1,True,False,True,False,2026-10-10 13:44:14.275,,29.6,40.5,77.7,False,1.5,152.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,9.0,2.0,SOFT,4.0,94.289,27.811,39.85,26.628,306.0,283.0,253.0,302.0,1,True,True,True,False,2026-10-10 13:46:22.715,,29.7,39.3,77.6,False,1.7,168.0
+2026,17,Singapore Grand Prix,Q,ALB,Williams,10.0,2.0,SOFT,5.0,127.141,33.786,50.105,43.25,250.0,174.0,,260.0,1,True,False,False,False,2026-10-10 13:47:57.004,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,1.0,1.0,SOFT,1.0,,,49.787,36.467,265.0,223.0,251.0,,12,True,False,False,False,2026-10-10 13:30:29.476,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,2.0,1.0,SOFT,2.0,,28.202,77.653,71.392,303.0,222.0,,295.0,21,True,False,False,False,2026-10-10 13:32:35.575,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,3.0,2.0,SOFT,1.0,,,48.485,36.804,261.0,238.0,253.0,295.0,12,True,False,False,False,2026-10-10 13:35:32.930,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,4.0,2.0,SOFT,2.0,94.946,28.117,39.784,27.045,302.0,276.0,237.0,293.0,1,True,True,True,False,2026-10-10 13:39:32.252,,29.6,41.3,76.6,False,1.5,158.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,5.0,2.0,SOFT,3.0,121.489,35.535,47.682,38.272,257.0,218.0,,252.0,1,True,False,False,False,2026-10-10 13:41:07.198,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,6.0,3.0,SOFT,1.0,,,49.736,47.233,264.0,241.0,250.0,252.0,1,True,False,False,False,2026-10-10 13:43:08.687,,29.6,41.0,77.6,False,1.7,153.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,7.0,3.0,SOFT,2.0,95.728,28.223,39.845,27.66,305.0,279.0,248.0,279.0,1,True,False,True,False,2026-10-10 13:47:23.957,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,STR,Aston Martin,8.0,3.0,SOFT,3.0,128.045,37.964,51.174,38.907,229.0,215.0,,125.0,1,True,False,False,False,2026-10-10 13:48:59.685,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,1.0,1.0,SOFT,1.0,,,46.41,30.77,289.0,240.0,252.0,,12,True,False,False,False,2026-10-10 13:31:04.176,,29.7,41.2,75.8,False,1.4,146.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,2.0,1.0,SOFT,2.0,97.06,28.56,40.831,27.669,303.0,281.0,245.0,298.0,12,True,True,True,False,2026-10-10 13:33:07.119,,29.7,41.1,75.7,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,3.0,1.0,SOFT,3.0,125.108,37.57,54.009,33.529,241.0,204.0,254.0,233.0,21,True,False,True,False,2026-10-10 13:34:44.179,,29.7,40.7,76.3,False,1.7,155.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,4.0,1.0,SOFT,4.0,95.857,28.374,40.296,27.187,304.0,278.0,253.0,300.0,1,True,True,True,False,2026-10-10 13:36:49.287,,29.6,41.3,76.7,False,1.4,167.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,5.0,1.0,SOFT,5.0,,33.705,46.252,91.975,262.0,240.0,,283.0,1,True,False,False,False,2026-10-10 13:38:25.144,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,6.0,2.0,SOFT,1.0,,,45.356,32.237,299.0,240.0,257.0,283.0,1,True,False,False,False,2026-10-10 13:41:17.193,,29.6,41.5,76.6,False,1.5,156.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,7.0,2.0,SOFT,2.0,95.123,28.031,40.017,27.075,304.0,276.0,254.0,300.0,1,True,True,True,False,2026-10-10 13:45:59.607,,29.7,39.3,77.6,False,1.7,168.0
+2026,17,Singapore Grand Prix,Q,PER,Cadillac,8.0,2.0,SOFT,3.0,137.597,42.702,51.336,43.559,223.0,197.0,,167.0,1,True,False,False,False,2026-10-10 13:47:34.730,,29.8,40.3,76.3,False,1.9,171.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,1.0,1.0,SOFT,1.0,,,49.175,32.733,230.0,241.0,247.0,,1,True,False,False,False,2026-10-10 13:30:11.467,,29.7,41.1,76.1,False,1.0,152.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,2.0,1.0,SOFT,2.0,115.126,30.593,46.056,38.477,280.0,233.0,253.0,284.0,12,True,True,True,False,2026-10-10 13:32:08.381,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,3.0,1.0,SOFT,3.0,96.666,28.539,40.932,27.195,305.0,281.0,253.0,301.0,12,True,True,True,False,2026-10-10 13:34:03.507,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,4.0,1.0,SOFT,4.0,130.79,35.277,53.598,41.915,203.0,184.0,250.0,280.0,12,True,False,True,False,2026-10-10 13:35:40.173,,29.7,40.8,76.4,False,1.7,151.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,5.0,1.0,SOFT,5.0,95.984,28.415,40.507,27.062,304.0,282.0,253.0,300.0,1,True,True,True,False,2026-10-10 13:37:50.963,,29.7,41.5,76.9,False,1.3,140.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,6.0,1.0,SOFT,6.0,130.459,35.363,54.39,40.706,215.0,138.0,,278.0,1,True,False,False,False,2026-10-10 13:39:26.947,,29.6,41.3,76.6,False,1.5,158.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,7.0,2.0,SOFT,1.0,,,47.067,31.792,279.0,242.0,254.0,278.0,1,True,False,False,False,2026-10-10 13:41:37.406,,29.6,40.4,76.8,False,2.1,154.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,8.0,2.0,SOFT,2.0,103.565,28.308,43.552,31.705,305.0,247.0,250.0,299.0,1,True,False,True,False,2026-10-10 13:45:37.860,,29.7,39.3,77.6,False,1.7,168.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,9.0,2.0,SOFT,3.0,97.843,28.592,40.9,28.351,304.0,259.0,255.0,284.0,1,True,False,True,False,2026-10-10 13:47:21.425,,29.7,39.1,76.6,False,1.2,158.0
+2026,17,Singapore Grand Prix,Q,BOT,Cadillac,10.0,2.0,SOFT,4.0,133.457,36.702,53.201,43.554,201.0,160.0,,224.0,1,True,False,False,False,2026-10-10 13:48:59.268,,29.8,40.2,75.7,False,1.8,158.0
+2026,17,Singapore Grand Prix,Q,HAD,Red Bull Racing,1.0,1.0,SOFT,1.0,,,45.669,40.868,283.0,215.0,257.0,,12,True,False,False,False,2026-10-10 13:31:47.227,,29.7,40.1,76.0,False,1.5,157.0
+2026,17,Singapore Grand Prix,Q,HAD,Red Bull Racing,2.0,1.0,SOFT,2.0,,27.725,,,307.0,67.0,,301.0,12,True,False,False,False,2026-10-10 13:34:01.650,,29.7,40.5,76.2,False,1.9,155.0
+2026,17,Singapore Grand Prix,Q,HAD,Red Bull Racing,3.0,2.0,SOFT,1.0,,,58.886,45.931,135.0,150.0,,301.0,1,True,False,False,False,2026-10-10 13:40:37.828,,29.6,41.5,76.6,False,1.5,156.0
