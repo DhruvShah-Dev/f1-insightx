@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
   }),
   errorComponent: ({ error }) => (
     <SiteShell>
-      <p role="alert">Race Control data unavailable: {error.message}</p>
+      <p role="alert">Race Control data unavailable: {error instanceof Error ? error.message : String(error)}</p>
     </SiteShell>
   ),
   component: Home,

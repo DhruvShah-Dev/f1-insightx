@@ -6,7 +6,7 @@
     "missing_signal_count": 0
   },
   "track_archetype_coverage": {
-    "rows": 16,
+    "rows": 17,
     "archetypes": [
       "braking-heavy",
       "high-degradation",

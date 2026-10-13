@@ -6,6 +6,7 @@ import { useState } from "react";
 import { SiteShell } from "@/components/site-shell";
 import { RaceCircuitProfile } from "@/components/race-circuit-profile";
 import { cornerSummaryForCircuit } from "@/data/circuit-corners";
+import { nextRace } from "@/data/season";
 import { fmtDateTime, fmtLapS, pct } from "@/lib/format";
 import { getRaceWeek } from "@/lib/f1.functions";
 import { pageSeo } from "@/lib/seo";
@@ -67,9 +68,11 @@ function RaceWeek() {
     data.weather?.windMps == null ? null : `${Math.round(data.weather.windMps * 3.6)} km/h`;
   const hasWeather = rain != null || trackTemp != null || wind != null;
   const start = data.scheduledAt ? fmtDateTime(data.scheduledAt) : "TBC";
+  const weekendSessions = data.round === nextRace.round ? nextRace.sessions : [];
   const turns = cornerSummaryForCircuit(data.circuit.id);
   const isSepang = /sepang/i.test(data.circuit.name);
   const isSingapore = data.circuit.id === "marina_bay";
+  const isAustin = data.circuit.id === "americas";
   const circuitLength =
     data.circuit.lengthKm != null && data.circuit.lengthKm > 0
       ? data.circuit.lengthKm
@@ -77,8 +80,10 @@ function RaceWeek() {
         ? 5.543
         : isSingapore
           ? 4.927
+        : isAustin
+          ? 5.513
         : null;
-  const turnCount = turns === "TBC" && isSepang ? "15" : isSingapore ? "19" : turns;
+  const turnCount = turns === "TBC" && isSepang ? "15" : isSingapore ? "19" : isAustin ? "20" : turns;
 
   return (
     <SiteShell fullWidth>
@@ -202,13 +207,22 @@ function RaceWeek() {
                 <Timer aria-hidden="true" />
                 <div>
                   <h2>Weekend</h2>
-                  <p>Conditions</p>
+                  <p>Session schedule</p>
                 </div>
               </div>
-              <div className="rw-brief-row">
-                <span>Race start</span>
-                <strong>{start}</strong>
-              </div>
+              {weekendSessions.map((session) => (
+                <div className="rw-brief-row" key={session.code}>
+                  <span>{session.label}</span>
+                  <strong>{fmtDateTime(session.startISO)}</strong>
+                </div>
+              ))}
+              {weekendSessions.length === 0 ? (
+                <div className="rw-brief-row">
+                  <span>Race start</span>
+                  <strong>{start}</strong>
+                </div>
+              ) : null}
+              {hasWeather ? <>
               <div className="rw-brief-row">
                 <span>Rain chance</span>
                 <strong>{rain ?? "—"}</strong>
@@ -221,6 +235,7 @@ function RaceWeek() {
                 <span>Wind</span>
                 <strong>{wind ?? "—"}</strong>
               </div>
+              </> : null}
             </div>
           )}
         </section>

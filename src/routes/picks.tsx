@@ -18,7 +18,7 @@ export const Route = createFileRoute("/picks")({
     description: "Choose qualifying, race and bonus picks for each Formula 1 weekend and track your prediction points.",
     path: "/picks",
   }),
-  errorComponent: ({ error }) => <SiteShell><p role="alert">Picks unavailable: {error.message}</p></SiteShell>,
+  errorComponent: ({ error }) => <SiteShell><p role="alert">Picks unavailable: {error instanceof Error ? error.message : String(error)}</p></SiteShell>,
   component: Picks,
 });
 

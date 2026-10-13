@@ -40,7 +40,7 @@ export const Route = createFileRoute("/analysis/$slug")({
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
-        Weekend unavailable: {error.message}
+        Weekend unavailable: {error instanceof Error ? error.message : String(error)}
       </p>
     </SiteShell>
   ),

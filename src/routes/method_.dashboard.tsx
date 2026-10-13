@@ -57,7 +57,7 @@ export const Route = createFileRoute("/method_/dashboard")({
         role="alert"
         className="border border-destructive bg-card p-4 text-sm font-bold text-destructive"
       >
-        Methods dashboard unavailable: {error.message}
+        Methods dashboard unavailable: {error instanceof Error ? error.message : String(error)}
       </p>
     </SiteShell>
   ),

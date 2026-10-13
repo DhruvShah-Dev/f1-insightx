@@ -44,7 +44,7 @@ export const Route = createFileRoute("/vs")({
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>
       <p role="alert" className="text-sm text-destructive">
-        Head to head unavailable: {error.message}
+        Head to head unavailable: {error instanceof Error ? error.message : String(error)}
       </p>
     </SiteShell>
   ),

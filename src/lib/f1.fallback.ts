@@ -42,8 +42,8 @@ const codeToDriverId = (code: string) =>
 const driverName = (code: string) => driverStandings.find((d) => d.code === code)?.name ?? code;
 
 const constructorName = (key: string) => team(key).name;
-const fallbackCircuitId = "baku";
-const fallbackCircuitLocation = "Baku";
+const fallbackCircuitId = nextRace.circuitId;
+const fallbackCircuitLocation = nextRace.location;
 const fallbackRaceId = `2026-${String(nextRace.round).padStart(2, "0")}-${fallbackCircuitId}`;
 
 export function fallbackSeasonTelemetry() {
@@ -94,7 +94,7 @@ export function fallbackRaceWeek() {
     raceName: nextRace.name,
     officialName: null,
     scheduledAt: nextRace.raceStartISO,
-    sprintWeekend: false,
+    sprintWeekend: nextRace.sprintWeekend,
     circuit: {
       id: fallbackCircuitId,
       name: nextRace.circuit,
@@ -108,13 +108,7 @@ export function fallbackRaceWeek() {
     trackPath: localTrackPathForCircuit(fallbackCircuitId),
     archetype: "track-position-dominant",
     strategyDifficulty: "medium",
-    weather: {
-      rainProb: nextRace.conditions.rainRiskPct / 100,
-      trackTempC: nextRace.conditions.trackTempC,
-      trackTempVolatility: null,
-      windMps: Math.round((nextRace.conditions.windKph / 3.6) * 10) / 10,
-      riskIndex: nextRace.conditions.rainRiskPct,
-    },
+    weather: null,
     lastCompleted: {
       slug: staticRaceReports[0]?.slug ?? null,
       name: seasonState.resultsThrough.name,
@@ -147,13 +141,13 @@ export function fallbackRaceWeek() {
       name: d.name,
       team: constructorName(d.team),
       stops: 1,
-      primary: "medium",
-      secondary: "hard",
-      windowStart: 24,
-      windowEnd: 34,
+      primary: "TBC",
+      secondary: "TBC",
+      windowStart: nextRace.pitWindowStart || null,
+      windowEnd: nextRace.pitWindowEnd || null,
       degRisk: "baseline",
       confidence: d.conf,
-      rationale: "Local fallback uses the committed snapshot because Supabase is not configured.",
+      rationale: "Estimated pit window from the local race week snapshot; compounds pending session data.",
     })),
     projections: sortedProjection.map((d) => ({
       code: d.code,
@@ -252,7 +246,27 @@ export function fallbackRaceReports() {
 export function fallbackWeekendIndex(season = seasonState.season) {
   return {
     season,
-    weekends: staticRaceReports.map((r) => ({
+    weekends: [{
+      raceId: fallbackRaceId,
+      round: nextRace.round,
+      name: nextRace.name,
+      circuitId: fallbackCircuitId,
+      circuit: nextRace.circuit,
+      scheduledAt: nextRace.raceStartISO,
+      sprintWeekend: nextRace.sprintWeekend,
+      slug: null,
+      resultsOnly: false,
+      winnerCode: null,
+      winnerName: null,
+      winnerTeam: null,
+      podium: [],
+      strategy: null,
+      raceShape: null,
+      story: null,
+      hasQuali: false,
+      hasSprint: false,
+      hasRace: false,
+    }, ...staticRaceReports.map((r) => ({
       raceId: r.slug,
       round: r.round,
       name: r.name,
@@ -272,7 +286,7 @@ export function fallbackWeekendIndex(season = seasonState.season) {
       hasQuali: false,
       hasSprint: false,
       hasRace: true,
-    })),
+    }))],
   };
 }
 

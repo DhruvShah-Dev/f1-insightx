@@ -22,7 +22,7 @@ export const Route = createFileRoute("/analysis/")({
     description: "Browse 2026 Formula 1 Grand Prix reports with race results, podiums, qualifying, tyre strategy and lap pace analysis.",
     path: "/analysis",
   }),
-  errorComponent: ({ error }) => <SiteShell fullWidth><div className="analysis-page analysis-error" role="alert">Analysis unavailable: {error.message}</div></SiteShell>,
+  errorComponent: ({ error }) => <SiteShell fullWidth><div className="analysis-page analysis-error" role="alert">Analysis unavailable: {error instanceof Error ? error.message : String(error)}</div></SiteShell>,
   component: AnalysisIndex,
 });
 

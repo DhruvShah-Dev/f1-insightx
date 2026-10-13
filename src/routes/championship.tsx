@@ -33,7 +33,7 @@ export const Route = createFileRoute("/championship")({
   }),
   errorComponent: ({ error }) => (
     <SiteShell fullWidth>
-      <div className="cp-error" role="alert">Standings unavailable: {error.message}</div>
+      <div className="cp-error" role="alert">Standings unavailable: {error instanceof Error ? error.message : String(error)}</div>
     </SiteShell>
   ),
   component: Championship,
