@@ -1,0 +1,89 @@
+name: Post Race Refresh
+
+on:
+  workflow_dispatch:
+    inputs:
+      race_id:
+        description: "Optional race ID for a targeted backfill or correction"
+        required: false
+        type: string
+      force:
+        description: "Rebuild an already published race"
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    - cron: "0 */2 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: f1-data-publish
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      PIPELINE_STORAGE_BUCKET: ${{ vars.PIPELINE_STORAGE_BUCKET }}
+      PRODUCTION_BASE_URL: ${{ vars.PRODUCTION_BASE_URL }}
+      JOLPICA_BASE_URL: ${{ secrets.JOLPICA_BASE_URL }}
+      AUTOMATION_RACE_ID: ${{ inputs.race_id }}
+      AUTOMATION_FORCE: ${{ inputs.force }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: main
+          token: ${{ github.token }}
+          persist-credentials: true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install dependencies
+        run: |
+          python -m pip install -c data/constraints.txt -r data/requirements.txt
+          npm ci
+      - name: Refresh and publish validated race data
+        id: refresh
+        run: |
+          if [ "$AUTOMATION_FORCE" = "true" ]; then
+            python data/post_race_refresh.py run --race-id "$AUTOMATION_RACE_ID" --force
+          else
+            python data/post_race_refresh.py run --race-id "$AUTOMATION_RACE_ID"
+          fi
+      - name: Commit compact release snapshots
+        if: steps.refresh.outputs.stage != 'none'
+        env:
+          RACE_ID: ${{ steps.refresh.outputs.race_id }}
+          STAGE: ${{ steps.refresh.outputs.stage }}
+        run: |
+          git config user.name "f1-insightx-automation"
+          git config user.email "automation@users.noreply.github.com"
+          git add -- src/data/season.ts src/data/race-week-qualifying.ts data/season_state.json data/reports/*.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh ${RACE_ID} ${STAGE} product snapshot"
+            git push origin HEAD:main
+          fi
+      - name: Verify production pages
+        if: steps.refresh.outputs.stage != 'none'
+        run: |
+          python data/verify_published_pages.py \
+            --expected-name "$(python -c 'import json; s=json.load(open("data/season_state.json")); print((s.get("next_race") or s["latest_completed_race"])["race_name"])')" \
+            --expected-snapshot "$(python -c 'import json; print(json.load(open("data/season_state.json"))["generated_at"])')" \
+            --analysis-slug "$(python -c 'import csv; p="data/race_analysis/race_analysis_index.csv"; rows=list(csv.DictReader(open(p))); print(rows[-1]["race_analysis_id"] if rows else "")')"
+      - name: Record completed release stage
+        if: steps.refresh.outputs.stage != 'none'
+        env:
+          RACE_ID: ${{ steps.refresh.outputs.race_id }}
+          STAGE: ${{ steps.refresh.outputs.stage }}
+        run: python data/post_race_refresh.py finalize --race-id "$RACE_ID" --stage "$STAGE"

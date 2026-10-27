@@ -109,7 +109,7 @@ function Home() {
             <div className="hx-next-race">
               <div className="hx-next-meta">
                 <span className="hx-eyebrow">
-                  <span className="hx-signal" /> {raceUpcoming ? "Next race" : "Race focus"}{" "}
+                  <span className="hx-signal" /> {race?.seasonComplete ? "Season complete" : raceUpcoming ? "Next race" : "Race focus"}{" "}
                   <span className="hx-round">/ Round {race?.round ?? "—"}</span>
                 </span>
                 <h2>{raceName}</h2>
@@ -125,7 +125,7 @@ function Home() {
               </div>
               <div className="hx-hero-actions">
                 <Link to="/raceweek" className="hx-primary-link">
-                  Race week <FastArrowRight aria-hidden="true" />
+                  {race?.seasonComplete ? "Final race" : "Race week"} <FastArrowRight aria-hidden="true" />
                 </Link>
                 <Link to="/championship" className="hx-text-link">
                   Championship <FastArrowRight aria-hidden="true" />

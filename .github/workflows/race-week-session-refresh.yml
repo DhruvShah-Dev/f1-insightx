@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: race-week-session-refresh
+  group: f1-data-publish
   cancel-in-progress: false
 
 jobs:
@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      PIPELINE_STORAGE_BUCKET: ${{ vars.PIPELINE_STORAGE_BUCKET }}
       JOLPICA_BASE_URL: ${{ secrets.JOLPICA_BASE_URL }}
     steps:
       - name: Checkout
@@ -46,6 +49,10 @@ jobs:
         run: |
           python -m pip install pip-audit
           python -m pip_audit --progress-spinner off
+
+      - name: Restore validated pipeline archive
+        if: steps.gate.outputs.refresh == 'true'
+        run: python data/automation_storage.py restore
 
       - name: Refresh completed race-week sessions
         if: steps.gate.outputs.refresh == 'true'
@@ -96,11 +103,8 @@ jobs:
           PY
 
       - name: Load Supabase/Postgres
-        if: steps.gate.outputs.refresh == 'true' && env.DATABASE_URL != ''
-        run: python data/load_supabase.py
-
-      - name: Supabase load skipped
-        if: steps.gate.outputs.refresh == 'true' && env.DATABASE_URL == ''
+        if: steps.gate.outputs.refresh == 'true'
         run: |
-          echo "DATABASE_URL secret is not configured."
-          echo "Race Week session refresh completed locally in the workflow only."
+          test -n "$DATABASE_URL" || { echo "DATABASE_URL is required"; exit 1; }
+          python data/automation_storage.py save
+          python data/load_supabase.py

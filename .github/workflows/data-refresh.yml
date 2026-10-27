@@ -1,18 +1,19 @@
-name: Data Refresh
+name: Reference Data Fetch (Manual)
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 11 * * 2"
 
 permissions:
   contents: read
+
+concurrency:
+  group: f1-data-publish
+  cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
     env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
       JOLPICA_BASE_URL: ${{ secrets.JOLPICA_BASE_URL }}
     steps:
       - name: Checkout
@@ -38,12 +39,5 @@ jobs:
       - name: Normalize curated outputs
         run: python data/normalize_results.py
 
-      - name: Load Supabase/Postgres
-        if: env.DATABASE_URL != ''
-        run: python data/load_supabase.py
-
-      - name: Supabase load skipped
-        if: env.DATABASE_URL == ''
-        run: |
-          echo "DATABASE_URL secret is not configured."
-          echo "Skipping Supabase load; fetched/normalized data remains a local workflow artifact only."
+      - name: Validate fetched reference coverage
+        run: python -c "import csv; from pathlib import Path; p=Path('data/curated/races.csv'); rows=list(csv.DictReader(p.open())); assert rows, 'No races fetched'"

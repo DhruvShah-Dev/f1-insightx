@@ -44,7 +44,7 @@ const driverName = (code: string) => driverStandings.find((d) => d.code === code
 const constructorName = (key: string) => team(key).name;
 const fallbackCircuitId = nextRace.circuitId;
 const fallbackCircuitLocation = nextRace.location;
-const fallbackRaceId = `2026-${String(nextRace.round).padStart(2, "0")}-${fallbackCircuitId}`;
+const fallbackRaceId = `${seasonState.season}-${String(nextRace.round).padStart(2, "0")}-${fallbackCircuitId}`;
 
 export function fallbackSeasonTelemetry() {
   return {
@@ -94,6 +94,7 @@ export function fallbackRaceWeek() {
     raceName: nextRace.name,
     officialName: null,
     scheduledAt: nextRace.raceStartISO,
+    seasonComplete: nextRace.seasonComplete,
     sprintWeekend: nextRace.sprintWeekend,
     circuit: {
       id: fallbackCircuitId,
@@ -106,8 +107,8 @@ export function fallbackRaceWeek() {
       degBias: null,
     },
     trackPath: localTrackPathForCircuit(fallbackCircuitId),
-    archetype: "track-position-dominant",
-    strategyDifficulty: "medium",
+    archetype: sortedProjection.length ? "track-position-dominant" : null,
+    strategyDifficulty: sortedProjection.length ? "medium" : null,
     weather: null,
     lastCompleted: {
       slug: staticRaceReports[0]?.slug ?? null,
@@ -198,7 +199,7 @@ export function fallbackRaceWeek() {
     storylines: [
       {
         headline: "Local snapshot mode",
-        body: "Supabase is not configured, so this view is using committed fallback data.",
+        body: "This view is using the last validated committed data snapshot.",
         type: "data_source",
         confidence: "fallback",
         sourceTitle: null,
@@ -576,6 +577,6 @@ export function fallbackPicksBoard(season = seasonState.season) {
         results: null,
       },
     ],
-    activeRaceId: fallbackRaceId,
+    activeRaceId: nextRace.seasonComplete ? null : fallbackRaceId,
   };
 }

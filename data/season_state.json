@@ -11,24 +11,24 @@
       "status": "data_available"
     }
   },
-  "build_version": "season_state_20261013T163209Z",
+  "build_version": "season_state_20261027T193021Z",
   "current_race_week": {
     "available": true,
     "product_view_race": {
-      "circuit_id": "americas",
-      "id": "2026-18-americas",
-      "race_name": "United States Grand Prix",
-      "round": 18,
-      "scheduled_at": "2026-10-25T20:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "race_week_product_available"
     },
     "race": {
-      "circuit_id": "americas",
-      "id": "2026-18-americas",
-      "race_name": "United States Grand Prix",
-      "round": 18,
-      "scheduled_at": "2026-10-25T20:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "upcoming"
     }
@@ -40,7 +40,7 @@
     "position_evolution": "partial",
     "race_control": "missing",
     "race_results": "available",
-    "telemetry_sessions": "available",
+    "telemetry_sessions": "partial",
     "weather": "available"
   },
   "freshness": {
@@ -69,20 +69,20 @@
       "warnings": []
     },
     "race_week": {
-      "build_version": "race_week_20261013T160301Z",
-      "generated_at": "2026-10-13T16:03:01Z",
+      "build_version": "race_week_20261027T193001Z",
+      "generated_at": "2026-10-27T19:30:01Z",
       "validation_status": "passed",
       "warnings": []
     },
     "season_state": {
-      "build_version": "season_state_20261013T160553Z",
-      "generated_at": "2026-10-13T16:05:53Z",
+      "build_version": "season_state_20261027T192924Z",
+      "generated_at": "2026-10-27T19:29:24Z",
       "validation_status": "passed",
       "warnings": []
     },
     "strategy_lab": {
-      "build_version": "strategy_lab_20261013T160308Z",
-      "generated_at": "2026-10-13T16:03:08Z",
+      "build_version": "strategy_lab_20261027T193006Z",
+      "generated_at": "2026-10-27T19:30:06Z",
       "validation_status": "passed",
       "warnings": []
     },
@@ -93,13 +93,13 @@
       "warnings": []
     }
   },
-  "generated_at": "2026-10-13T16:32:09Z",
+  "generated_at": "2026-10-27T19:30:21Z",
   "latest_completed_race": {
-    "circuit_id": "marina_bay",
-    "id": "2026-17-marina_bay",
-    "race_name": "Singapore Grand Prix",
-    "round": 17,
-    "scheduled_at": "2026-10-11T12:00:00Z",
+    "circuit_id": "americas",
+    "id": "2026-18-americas",
+    "race_name": "United States Grand Prix",
+    "round": 18,
+    "scheduled_at": "2026-10-25T20:00:00Z",
     "season": 2026,
     "status": "completed_by_schedule"
   },
@@ -113,11 +113,11 @@
     "status": "data_available"
   },
   "latest_completed_race_with_results": {
-    "circuit_id": "marina_bay",
-    "id": "2026-17-marina_bay",
-    "race_name": "Singapore Grand Prix",
-    "round": 17,
-    "scheduled_at": "2026-10-11T12:00:00Z",
+    "circuit_id": "americas",
+    "id": "2026-18-americas",
+    "race_name": "United States Grand Prix",
+    "round": 18,
+    "scheduled_at": "2026-10-25T20:00:00Z",
     "season": 2026,
     "status": "results_available"
   },
@@ -130,13 +130,17 @@
     "season": 2026,
     "status": "data_available"
   },
-  "missing_data_flags": [],
+  "missing_data_flags": [
+    "analytics_not_current",
+    "race_analysis_not_current",
+    "telemetry_not_current"
+  ],
   "next_race": {
-    "circuit_id": "americas",
-    "id": "2026-18-americas",
-    "race_name": "United States Grand Prix",
-    "round": 18,
-    "scheduled_at": "2026-10-25T20:00:00Z",
+    "circuit_id": "rodriguez",
+    "id": "2026-19-rodriguez",
+    "race_name": "Mexico City Grand Prix",
+    "round": 19,
+    "scheduled_at": "2026-11-01T20:00:00Z",
     "season": 2026,
     "status": "upcoming"
   },
@@ -158,10 +162,10 @@
   "strategy_lab_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "americas",
-      "id": "2026-18-americas",
-      "race_name": "United States Grand Prix",
-      "round": 18,
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
       "scheduled_at": null,
       "season": 2026,
       "status": "strategy_lab_available"
@@ -180,5 +184,9 @@
       "status": "data_available"
     }
   },
-  "warnings": []
+  "warnings": [
+    "Analytics available through Singapore Grand Prix; United States Grand Prix telemetry processing pending.",
+    "Telemetry features available through Singapore Grand Prix; United States Grand Prix telemetry processing pending.",
+    "Race Analysis available through Singapore Grand Prix; United States Grand Prix analysis build is pending."
+  ]
 }

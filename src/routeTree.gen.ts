@@ -22,6 +22,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VsRouteImport } from './routes/vs'
 import { Route as AnalysisIndexRouteImport } from './routes/analysis.index'
 import { Route as AnalysisSlugRouteImport } from './routes/analysis.$slug'
+import { Route as ApiDataReleaseRouteImport } from './routes/api.data-release'
 import { Route as MethodDashboardRouteImport } from './routes/method_.dashboard'
 
 const IndexRoute = IndexRouteImport.update({
@@ -89,6 +90,11 @@ const AnalysisSlugRoute = AnalysisSlugRouteImport.update({
   path: '/analysis/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiDataReleaseRoute = ApiDataReleaseRouteImport.update({
+  id: '/api/data-release',
+  path: '/api/data-release',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MethodDashboardRoute = MethodDashboardRouteImport.update({
   id: '/method_/dashboard',
   path: '/method/dashboard',
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
+  '/api/data-release': typeof ApiDataReleaseRoute
   '/method/dashboard': typeof MethodDashboardRoute
   '/analysis/': typeof AnalysisIndexRoute
 }
@@ -124,6 +131,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
+  '/api/data-release': typeof ApiDataReleaseRoute
   '/method/dashboard': typeof MethodDashboardRoute
   '/analysis': typeof AnalysisIndexRoute
 }
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/vs': typeof VsRoute
   '/analysis/$slug': typeof AnalysisSlugRoute
+  '/api/data-release': typeof ApiDataReleaseRoute
   '/method_/dashboard': typeof MethodDashboardRoute
   '/analysis/': typeof AnalysisIndexRoute
 }
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vs'
     | '/analysis/$slug'
+    | '/api/data-release'
     | '/method/dashboard'
     | '/analysis/'
   fileRoutesByTo: FileRoutesByTo
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vs'
     | '/analysis/$slug'
+    | '/api/data-release'
     | '/method/dashboard'
     | '/analysis'
   id:
@@ -191,6 +202,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/vs'
     | '/analysis/$slug'
+    | '/api/data-release'
     | '/method_/dashboard'
     | '/analysis/'
   fileRoutesById: FileRoutesById
@@ -208,6 +220,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   VsRoute: typeof VsRoute
   AnalysisSlugRoute: typeof AnalysisSlugRoute
+  ApiDataReleaseRoute: typeof ApiDataReleaseRoute
   MethodDashboardRoute: typeof MethodDashboardRoute
   AnalysisIndexRoute: typeof AnalysisIndexRoute
 }
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalysisSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/data-release': {
+      id: '/api/data-release'
+      path: '/api/data-release'
+      fullPath: '/api/data-release'
+      preLoaderRoute: typeof ApiDataReleaseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/method_/dashboard': {
       id: '/method_/dashboard'
       path: '/method/dashboard'
@@ -328,6 +348,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   VsRoute: VsRoute,
   AnalysisSlugRoute: AnalysisSlugRoute,
+  ApiDataReleaseRoute: ApiDataReleaseRoute,
   MethodDashboardRoute: MethodDashboardRoute,
   AnalysisIndexRoute: AnalysisIndexRoute,
 }

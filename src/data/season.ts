@@ -4,28 +4,28 @@
 export const seasonState = {
   "season": 2026,
   "resultsThrough": {
-    "round": 17,
-    "name": "Singapore Grand Prix",
-    "date": "2026-10-11"
+    "round": 18,
+    "name": "United States Grand Prix",
+    "date": "2026-10-25"
   },
-  "raceWeekRound": 18,
-  "snapshotISO": "2026-10-13T16:32:09Z",
-  "pipelineRunISO": "2026-10-13T16:32:09Z"
+  "raceWeekRound": 19,
+  "snapshotISO": "2026-10-27T19:30:21Z",
+  "pipelineRunISO": "2026-10-27T19:30:21Z"
 };
 
 export const nextRace = {
-  "round": 18,
+  "round": 19,
   "totalRounds": 23,
-  "name": "United States Grand Prix",
-  "shortName": "United States GP",
-  "circuit": "Circuit of the Americas",
-  "circuitId": "americas",
-  "location": "Austin",
-  "country": "United States",
-  "timeZone": "America/Chicago",
-  "raceStartISO": "2026-10-25T20:00:00Z",
-  "laps": 56,
-  "lapKm": 5.513,
+  "name": "Mexico City Grand Prix",
+  "shortName": "Mexico City GP",
+  "circuit": "Autódromo Hermanos Rodríguez",
+  "circuitId": "rodriguez",
+  "location": "Mexico City",
+  "country": "Mexico",
+  "timeZone": "America/Mexico_City",
+  "raceStartISO": "2026-11-01T20:00:00Z",
+  "laps": 71,
+  "lapKm": 4.304,
   "pitWindow": "L16-L24",
   "pitWindowStart": 16,
   "pitWindowEnd": 24,
@@ -33,35 +33,36 @@ export const nextRace = {
     {
       "code": "FP1",
       "label": "Practice 1",
-      "startISO": "2026-10-23T17:30:00Z",
+      "startISO": "2026-10-30T18:30:00Z",
       "status": "scheduled"
     },
     {
       "code": "FP2",
       "label": "Practice 2",
-      "startISO": "2026-10-23T21:00:00Z",
+      "startISO": "2026-10-30T22:00:00Z",
       "status": "scheduled"
     },
     {
       "code": "FP3",
       "label": "Practice 3",
-      "startISO": "2026-10-24T17:30:00Z",
+      "startISO": "2026-10-31T17:30:00Z",
       "status": "scheduled"
     },
     {
       "code": "Q",
       "label": "Qualifying",
-      "startISO": "2026-10-24T21:00:00Z",
+      "startISO": "2026-10-31T21:00:00Z",
       "status": "scheduled"
     },
     {
       "code": "R",
       "label": "Race",
-      "startISO": "2026-10-25T20:00:00Z",
+      "startISO": "2026-11-01T20:00:00Z",
       "status": "scheduled"
     }
   ],
-  "sprintWeekend": false
+  "sprintWeekend": false,
+  "seasonComplete": false
 } as const;
 
 export type TeamKey =
@@ -95,8 +96,8 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 1,
     "team": "mercedes",
-    "points": 578,
-    "wins": 11,
+    "points": 607,
+    "wins": 12,
     "form": [
       1
     ]
@@ -104,7 +105,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 2,
     "team": "ferrari",
-    "points": 444,
+    "points": 474,
     "wins": 2,
     "form": [
       2
@@ -113,7 +114,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 3,
     "team": "mclaren",
-    "points": 339,
+    "points": 355,
     "wins": 2,
     "form": [
       3
@@ -122,7 +123,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 4,
     "team": "red-bull",
-    "points": 332,
+    "points": 355,
     "wins": 2,
     "form": [
       4
@@ -131,7 +132,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 5,
     "team": "racing-bulls",
-    "points": 100,
+    "points": 102,
     "wins": 0,
     "form": [
       5
@@ -140,7 +141,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 6,
     "team": "alpine",
-    "points": 68,
+    "points": 69,
     "wins": 0,
     "form": [
       6
@@ -199,15 +200,15 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "ANT",
     "name": "Andrea Kimi Antonelli",
     "team": "mercedes",
-    "points": 340,
-    "wins": 8
+    "points": 365,
+    "wins": 9
   },
   {
     "pos": 2,
     "code": "RUS",
     "name": "George Russell",
     "team": "mercedes",
-    "points": 238,
+    "points": 242,
     "wins": 3
   },
   {
@@ -215,7 +216,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "HAM",
     "name": "Lewis Hamilton",
     "team": "ferrari",
-    "points": 229,
+    "points": 241,
     "wins": 1
   },
   {
@@ -223,7 +224,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "VER",
     "name": "Max Verstappen",
     "team": "red-bull",
-    "points": 221,
+    "points": 236,
     "wins": 2
   },
   {
@@ -231,7 +232,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "LEC",
     "name": "Charles Leclerc",
     "team": "ferrari",
-    "points": 215,
+    "points": 233,
     "wins": 1
   },
   {
@@ -239,7 +240,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "NOR",
     "name": "Lando Norris",
     "team": "mclaren",
-    "points": 201,
+    "points": 211,
     "wins": 2
   },
   {
@@ -247,7 +248,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "PIA",
     "name": "Oscar Piastri",
     "team": "mclaren",
-    "points": 138,
+    "points": 144,
     "wins": 0
   },
   {
@@ -255,7 +256,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "HAD",
     "name": "Isack Hadjar",
     "team": "red-bull",
-    "points": 97,
+    "points": 105,
     "wins": 0
   },
   {
@@ -263,7 +264,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "LAW",
     "name": "Liam Lawson",
     "team": "racing-bulls",
-    "points": 75,
+    "points": 77,
     "wins": 0
   },
   {
@@ -271,7 +272,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "GAS",
     "name": "Pierre Gasly",
     "team": "alpine",
-    "points": 41,
+    "points": 42,
     "wins": 0
   },
   {
@@ -383,11 +384,11 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
 export const qualiProjection: { pos: number; code: string; name: string; team: TeamKey; lap: string; delta: string; conf: number }[] = [
   {
     "pos": 1,
-    "code": "RUS",
-    "name": "George Russell",
-    "team": "mercedes",
-    "lap": "1:35.174",
-    "delta": "+0.398",
+    "code": "VER",
+    "name": "Max Verstappen",
+    "team": "red-bull",
+    "lap": "1:18.111",
+    "delta": "+0.310",
     "conf": 0.68
   },
   {
@@ -395,35 +396,35 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "LEC",
     "name": "Charles Leclerc",
     "team": "ferrari",
-    "lap": "1:35.246",
-    "delta": "+0.470",
+    "lap": "1:18.129",
+    "delta": "+0.328",
     "conf": 0.68
   },
   {
     "pos": 3,
-    "code": "HAM",
-    "name": "Lewis Hamilton",
-    "team": "ferrari",
-    "lap": "1:35.335",
-    "delta": "+0.559",
+    "code": "ANT",
+    "name": "Andrea Kimi Antonelli",
+    "team": "mercedes",
+    "lap": "1:18.147",
+    "delta": "+0.346",
     "conf": 0.68
   },
   {
     "pos": 4,
-    "code": "VER",
-    "name": "Max Verstappen",
-    "team": "red-bull",
-    "lap": "1:35.345",
-    "delta": "+0.569",
+    "code": "HAM",
+    "name": "Lewis Hamilton",
+    "team": "ferrari",
+    "lap": "1:18.164",
+    "delta": "+0.363",
     "conf": 0.68
   },
   {
     "pos": 5,
-    "code": "NOR",
-    "name": "Lando Norris",
-    "team": "mclaren",
-    "lap": "1:35.392",
-    "delta": "+0.616",
+    "code": "RUS",
+    "name": "George Russell",
+    "team": "mercedes",
+    "lap": "1:18.270",
+    "delta": "+0.469",
     "conf": 0.68
   },
   {
@@ -431,8 +432,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "PIA",
     "name": "Oscar Piastri",
     "team": "mclaren",
-    "lap": "1:35.395",
-    "delta": "+0.619",
+    "lap": "1:18.402",
+    "delta": "+0.601",
     "conf": 0.68
   },
   {
@@ -440,89 +441,89 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "HAD",
     "name": "Isack Hadjar",
     "team": "red-bull",
-    "lap": "1:35.407",
-    "delta": "+0.631",
+    "lap": "1:18.456",
+    "delta": "+0.655",
     "conf": 0.68
   },
   {
     "pos": 8,
-    "code": "ANT",
-    "name": "Andrea Kimi Antonelli",
-    "team": "mercedes",
-    "lap": "1:35.636",
-    "delta": "+0.860",
+    "code": "NOR",
+    "name": "Lando Norris",
+    "team": "mclaren",
+    "lap": "1:18.536",
+    "delta": "+0.735",
     "conf": 0.68
   },
   {
     "pos": 9,
-    "code": "GAS",
-    "name": "Pierre Gasly",
-    "team": "alpine",
-    "lap": "1:36.098",
-    "delta": "+1.322",
+    "code": "LAW",
+    "name": "Liam Lawson",
+    "team": "racing-bulls",
+    "lap": "1:19.112",
+    "delta": "+1.311",
     "conf": 0.68
   },
   {
     "pos": 10,
-    "code": "LAW",
-    "name": "Liam Lawson",
+    "code": "LIN",
+    "name": "Arvid Lindblad",
     "team": "racing-bulls",
-    "lap": "1:36.247",
-    "delta": "+1.471",
+    "lap": "1:19.162",
+    "delta": "+1.361",
     "conf": 0.68
   },
   {
     "pos": 11,
-    "code": "LIN",
-    "name": "Arvid Lindblad",
-    "team": "racing-bulls",
-    "lap": "1:36.292",
-    "delta": "+1.516",
+    "code": "GAS",
+    "name": "Pierre Gasly",
+    "team": "alpine",
+    "lap": "1:19.202",
+    "delta": "+1.401",
     "conf": 0.68
   },
   {
     "pos": 12,
-    "code": "COL",
-    "name": "Franco Colapinto",
-    "team": "alpine",
-    "lap": "1:36.585",
-    "delta": "+1.809",
+    "code": "HUL",
+    "name": "Nico Hulkenberg",
+    "team": "audi",
+    "lap": "1:19.527",
+    "delta": "+1.726",
     "conf": 0.68
   },
   {
     "pos": 13,
-    "code": "BEA",
-    "name": "Oliver Bearman",
-    "team": "haas",
-    "lap": "1:36.648",
-    "delta": "+1.872",
+    "code": "BOR",
+    "name": "Gabriel Bortoleto",
+    "team": "audi",
+    "lap": "1:19.651",
+    "delta": "+1.850",
     "conf": 0.68
   },
   {
     "pos": 14,
-    "code": "SAI",
-    "name": "Carlos Sainz",
-    "team": "williams",
-    "lap": "1:36.735",
-    "delta": "+1.959",
+    "code": "COL",
+    "name": "Franco Colapinto",
+    "team": "alpine",
+    "lap": "1:19.661",
+    "delta": "+1.860",
     "conf": 0.68
   },
   {
     "pos": 15,
-    "code": "HUL",
-    "name": "Nico Hulkenberg",
-    "team": "audi",
-    "lap": "1:36.830",
-    "delta": "+2.054",
+    "code": "BEA",
+    "name": "Oliver Bearman",
+    "team": "haas",
+    "lap": "1:19.662",
+    "delta": "+1.861",
     "conf": 0.68
   },
   {
     "pos": 16,
-    "code": "BOR",
-    "name": "Gabriel Bortoleto",
-    "team": "audi",
-    "lap": "1:36.896",
-    "delta": "+2.120",
+    "code": "SAI",
+    "name": "Carlos Sainz",
+    "team": "williams",
+    "lap": "1:19.874",
+    "delta": "+2.073",
     "conf": 0.68
   },
   {
@@ -530,26 +531,26 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "OCO",
     "name": "Esteban Ocon",
     "team": "haas",
-    "lap": "1:36.934",
-    "delta": "+2.158",
+    "lap": "1:19.910",
+    "delta": "+2.109",
     "conf": 0.68
   },
   {
     "pos": 18,
-    "code": "ALB",
-    "name": "Alexander Albon",
-    "team": "williams",
-    "lap": "1:37.321",
-    "delta": "+2.545",
+    "code": "ALO",
+    "name": "Fernando Alonso",
+    "team": "aston-martin",
+    "lap": "1:20.131",
+    "delta": "+2.330",
     "conf": 0.68
   },
   {
     "pos": 19,
-    "code": "ALO",
-    "name": "Fernando Alonso",
-    "team": "aston-martin",
-    "lap": "1:37.382",
-    "delta": "+2.606",
+    "code": "ALB",
+    "name": "Alexander Albon",
+    "team": "williams",
+    "lap": "1:20.385",
+    "delta": "+2.584",
     "conf": 0.68
   },
   {
@@ -557,8 +558,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "STR",
     "name": "Lance Stroll",
     "team": "aston-martin",
-    "lap": "1:37.885",
-    "delta": "+3.109",
+    "lap": "1:20.548",
+    "delta": "+2.747",
     "conf": 0.68
   },
   {
@@ -566,7 +567,7 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "PER",
     "name": "Sergio Perez",
     "team": "cadillac",
-    "lap": "1:37.976",
+    "lap": "1:21.001",
     "delta": "+3.200",
     "conf": 0.68
   },
@@ -575,7 +576,7 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "BOT",
     "name": "Valtteri Bottas",
     "team": "cadillac",
-    "lap": "1:37.976",
+    "lap": "1:21.001",
     "delta": "+3.200",
     "conf": 0.68
   }

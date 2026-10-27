@@ -91,7 +91,7 @@ function RaceWeek() {
         <header className="rw-heading">
           <div>
             <p className="rw-eyebrow">
-              Race week <span>·</span> Round {data.round} / {data.season}
+              {data.seasonComplete ? "Season complete" : "Race week"} <span>·</span> Round {data.round} / {data.season}
             </p>
             <h1>{data.raceName}</h1>
             <p className="rw-subtitle">

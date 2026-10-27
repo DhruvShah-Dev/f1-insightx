@@ -14,7 +14,10 @@ DATA = ROOT / "data"
 SEASON_FILE = ROOT / "src/data/season.ts"
 QUALIFYING_FILE = ROOT / "src/data/race-week-qualifying.ts"
 TEAM_KEYS = {"red_bull": "red-bull", "aston_martin": "aston-martin", "rb": "racing-bulls"}
-EVENT_DETAILS = {"americas": {"laps": 56, "lapKm": 5.513, "timeZone": "America/Chicago"}}
+EVENT_DETAILS = {
+    "americas": {"laps": 56, "lapKm": 5.513, "timeZone": "America/Chicago"},
+    "rodriguez": {"laps": 71, "lapKm": 4.304, "timeZone": "America/Mexico_City"},
+}
 SESSION_CODES = {
     "Practice 1": "FP1",
     "Practice 2": "FP2",
@@ -55,10 +58,20 @@ def ts_json(value) -> str:
     return json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False)
 
 
+def select_upcoming(state: dict) -> tuple[dict, bool]:
+    upcoming = state.get("next_race")
+    if upcoming:
+        return upcoming, False
+    completed = state.get("latest_completed_race")
+    if not completed:
+        raise RuntimeError("Season state has neither a next race nor a completed race")
+    return completed, True
+
+
 def main() -> None:
     state = json.loads((DATA / "season_state.json").read_text(encoding="utf-8"))
     completed = state["latest_completed_race"]
-    upcoming = state["next_race"]
+    upcoming, season_complete = select_upcoming(state)
     season = int(upcoming["season"])
     round_number = int(upcoming["round"])
     race_id = upcoming["id"]
@@ -106,11 +119,9 @@ def main() -> None:
     ]
 
     qualifying_rows = sorted(
-        (row for row in records("race_week/spain_qualifying_prediction.csv") if row["race_id"] == race_id and row["prediction_mode"] == "baseline"),
+        (row for row in records("race_week/spain_qualifying_prediction.csv") if not season_complete and row["race_id"] == race_id and row["prediction_mode"] == "baseline"),
         key=lambda row: int(row["predicted_q_rank"]),
     )
-    if not qualifying_rows:
-        raise RuntimeError(f"No baseline qualifying predictions for {race_id}")
     qualifying = []
     projection = []
     for row in qualifying_rows:
@@ -133,13 +144,14 @@ def main() -> None:
             "mode": row["prediction_mode"], "modeLabel": row["mode_label"], "sourceLabel": row["source_label"],
         })
 
-    schedule = next(row for row in records("raw/fastf1/event_schedule_2026.csv") if int(row["RoundNumber"]) == round_number)
+    schedule_path = DATA / f"raw/fastf1/event_schedule_{season}.csv"
+    schedule = next((row for row in records(f"raw/fastf1/event_schedule_{season}.csv") if int(row["RoundNumber"]) == round_number), {}) if schedule_path.exists() else {}
     sessions = []
     for index in range(1, 6):
         label = schedule.get(f"Session{index}")
         start = schedule.get(f"Session{index}DateUtc")
         if label and start:
-            sessions.append({"code": SESSION_CODES[label], "label": label, "startISO": f"{start.replace(' ', 'T')}Z", "status": "scheduled"})
+            sessions.append({"code": SESSION_CODES.get(label, label), "label": label, "startISO": f"{start.replace(' ', 'T')}Z", "status": "scheduled"})
     pit_rows = [row for row in records("race_week/race_week_strategy.csv") if row["race_id"] == race_id]
     pit_start = int(pit_rows[0]["pit_window_start_lap"]) if pit_rows else 0
     pit_end = int(pit_rows[0]["pit_window_end_lap"]) if pit_rows else 0
@@ -148,11 +160,12 @@ def main() -> None:
         "round": round_number, "totalRounds": len([row for row in records("curated/races.csv") if int(row["season"]) == season]),
         "name": upcoming["race_name"], "shortName": upcoming["race_name"].replace(" Grand Prix", " GP"),
         "circuit": circuits[circuit_id]["name"], "circuitId": circuit_id,
-        "location": circuits[circuit_id]["location"], "country": schedule["Country"],
+        "location": circuits[circuit_id]["location"], "country": schedule.get("Country") or circuits[circuit_id].get("country") or "",
         "timeZone": details.get("timeZone", "UTC"), "raceStartISO": upcoming["scheduled_at"],
         "laps": details.get("laps", 0), "lapKm": details.get("lapKm", 0),
         "pitWindow": f"L{pit_start}-L{pit_end}" if pit_rows else "TBC", "pitWindowStart": pit_start, "pitWindowEnd": pit_end,
         "sessions": sessions, "sprintWeekend": any(session["code"] == "S" for session in sessions),
+        "seasonComplete": season_complete,
     }
 
     summary_by_id = {row["race_analysis_id"]: row for row in records("race_analysis/race_analysis_summary.csv")}

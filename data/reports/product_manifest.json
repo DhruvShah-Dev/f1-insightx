@@ -1,6 +1,6 @@
 {
-  "build_version": "product_manifest_20261013T163219Z",
-  "generated_at": "2026-10-13T16:32:19Z",
+  "build_version": "product_manifest_20261027T193019Z",
+  "generated_at": "2026-10-27T19:30:19Z",
   "overall_status": "passed",
   "schema_version": 1,
   "surfaces": {
@@ -152,9 +152,9 @@
         "data/race_week/race_week_storylines.csv",
         "data/race_week/race_week_confidence.csv"
       ],
-      "build_version": "race_week_20261013T160301Z",
+      "build_version": "race_week_20261027T193001Z",
       "errors": [],
-      "generated_at": "2026-10-13T16:03:01Z",
+      "generated_at": "2026-10-27T19:30:01Z",
       "last_validation_command": "python build_product_manifest.py && python validate_product_manifest.py",
       "last_validation_result": "passed",
       "quality_report": null,
@@ -180,9 +180,9 @@
         "data/season_state.json",
         "data/reports/season_state_quality_report.json"
       ],
-      "build_version": "season_state_20261013T163209Z",
+      "build_version": "season_state_20261027T192924Z",
       "errors": [],
-      "generated_at": "2026-10-13T16:32:09Z",
+      "generated_at": "2026-10-27T19:29:24Z",
       "last_validation_command": "python build_season_state.py && python validate_season_state.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/season_state_quality_report.json",
@@ -213,9 +213,9 @@
         "data/strategy_lab/driver_strategy_profile.csv",
         "data/strategy_lab/constructor_strategy_profile.csv"
       ],
-      "build_version": "strategy_lab_20261013T160308Z",
+      "build_version": "strategy_lab_20261027T193006Z",
       "errors": [],
-      "generated_at": "2026-10-13T16:03:08Z",
+      "generated_at": "2026-10-27T19:30:06Z",
       "last_validation_command": "python data/build_strategy_lab_layers.py",
       "last_validation_result": "passed",
       "quality_report": "data/reports/strategy_lab_signal_quality.json",

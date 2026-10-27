@@ -162,9 +162,8 @@ export type RaceWeekQualifyingPrediction = {
 export async function fetchRaceWeek() {
   const sb = serverClient();
   const nowISO = new Date().toISOString();
-  const localSeasonState = parseJson<{ next_race?: { id?: string | null } }>(seasonStateRaw, {});
 
-  const [{ data: raceRows }, { data: circuitRows }, idx] = await Promise.all([
+  const [{ data: raceRows, error: raceError }, { data: circuitRows }, idx] = await Promise.all([
     sb
       .from("races")
       .select(
@@ -181,11 +180,11 @@ export async function fetchRaceWeek() {
     driverIndex(sb),
   ]);
 
+  if (raceError) throw raceError;
+
   const races = raceRows ?? [];
   const upcoming = races.filter((r) => String(r["scheduled_at"] ?? "") > nowISO);
-  const seasonStateRaceId = localSeasonState.next_race?.id ?? null;
-  const race = (races.find((row) => seasonStateRaceId && String(row["id"]) === seasonStateRaceId) ??
-    upcoming[0] ??
+  const race = (upcoming[0] ??
     races[races.length - 1]) as Row | undefined;
   if (!race) return null;
 
@@ -392,6 +391,7 @@ export async function fetchRaceWeek() {
     raceName: String(race["race_name"] ?? ""),
     officialName: str(race["official_name"]),
     scheduledAt: String(race["scheduled_at"] ?? ""),
+    seasonComplete: upcoming.length === 0,
     sprintWeekend: Boolean(race["sprint_weekend"]),
     circuit: {
       id: circuitId,

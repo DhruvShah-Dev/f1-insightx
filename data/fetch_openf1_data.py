@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -43,6 +43,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--start-season", type=int, default=2023, help="OpenF1 historical data starts in 2023.")
     parser.add_argument("--end-season", type=int, default=current_year)
     parser.add_argument("--meeting-key", type=int, default=None, help="Fetch only one OpenF1 meeting.")
+    parser.add_argument("--race-date", default=None, help="Fetch sessions within five days of this UTC race timestamp.")
     parser.add_argument(
         "--session-types",
         nargs="+",
@@ -79,6 +80,17 @@ def session_dir_for(base_dir: Path, session: dict[str, Any]) -> Path:
     return base_dir / str(year) / f"{meeting_key}" / f"{key}_{code}"
 
 
+def near_race(session: dict[str, Any], race_date: str | None) -> bool:
+    if race_date is None:
+        return True
+    try:
+        race_at = datetime.fromisoformat(race_date.replace("Z", "+00:00")).astimezone(UTC)
+        session_at = datetime.fromisoformat(str(session["date_start"]).replace("Z", "+00:00")).astimezone(UTC)
+    except (KeyError, ValueError):
+        return False
+    return race_at - timedelta(days=5) <= session_at <= race_at + timedelta(days=1)
+
+
 def main() -> None:
     args = parse_args()
     settings = load_settings()
@@ -87,6 +99,7 @@ def main() -> None:
 
     client = OpenF1Client(settings.openf1_base_url)
     manifest_rows: list[dict[str, Any]] = []
+    refreshed_session_keys: set[str] = set()
     try:
         for season in range(max(2023, args.start_season), args.end_season + 1):
             season_raw_dir = settings.raw_openf1_dir / str(season)
@@ -102,7 +115,9 @@ def main() -> None:
                 for session in sessions
                 if str(session.get("session_name")) in allowed_session_names
                 and (args.meeting_key is None or int(session["meeting_key"]) == args.meeting_key)
+                and near_race(session, args.race_date)
             ]
+            refreshed_session_keys.update(str(session["session_key"]) for session in target_sessions)
 
             for session in target_sessions:
                 raw_session_dir = session_dir_for(settings.raw_openf1_dir, session)
@@ -154,18 +169,12 @@ def main() -> None:
             },
         )
         manifest_path = settings.staged_openf1_dir / "ingestion_manifest.csv"
-        if args.meeting_key is not None and manifest_path.exists():
+        if (args.meeting_key is not None or args.race_date is not None) and manifest_path.exists():
             with manifest_path.open(newline="", encoding="utf-8") as handle:
                 existing_rows = list(csv.DictReader(handle))
             manifest_rows = [
                 row for row in existing_rows
-                if not (
-                    int(row["season"]) >= args.start_season
-                    and int(row["season"]) <= args.end_season
-                    and int(row["meeting_key"]) == args.meeting_key
-                    and row["session_name"] in allowed_session_names
-                    and row["endpoint"] in args.endpoints
-                )
+                if not (str(row.get("session_key")) in refreshed_session_keys and row.get("endpoint") in args.endpoints)
             ] + manifest_rows
         write_records_csv(manifest_rows, manifest_path)
     finally:
