@@ -4,8 +4,59 @@
     "end": 2026
   },
   "sessions_processed": 69,
-  "sessions_skipped": 0,
-  "skipped_sessions": [],
+  "sessions_skipped": 10,
+  "skipped_sessions": [
+    {
+      "session_id": "2026_18_FP1_United States Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_18_FP2_United States Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_18_FP3_United States Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_18_Q_United States Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_18_R_United States Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_19_FP1_Mexico City Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_19_FP2_Mexico City Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_19_FP3_Mexico City Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_19_Q_Mexico City Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    },
+    {
+      "session_id": "2026_19_R_Mexico City Grand Prix",
+      "status": "unavailable",
+      "error": "The data you are trying to access has not been loaded yet. See `Session.load`"
+    }
+  ],
   "canonical_row_counts": {
     "laps": 40557,
     "results": 1518,

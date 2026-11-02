@@ -1,0 +1,13 @@
+{
+  "season": 2026,
+  "round": 19,
+  "event_name": "Mexico City Grand Prix",
+  "event_format": "conventional",
+  "session_code": "FP3",
+  "session_name": "Practice 3",
+  "status": "unavailable",
+  "started_at": "2026-11-02T19:22:20Z",
+  "completed_at": "2026-11-02T19:22:27Z",
+  "error": "The data you are trying to access has not been loaded yet. See `Session.load`",
+  "source": "fastf1_staged_session_v2"
+}

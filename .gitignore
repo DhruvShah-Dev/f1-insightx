@@ -16,6 +16,9 @@ dist-ssr
 .nitro
 *.local
 
+# Rebuildable ML pipeline outputs
+data/ml/generated/
+
 # Local browser QA artifacts
 .chrome-qa/
 picks-check.png

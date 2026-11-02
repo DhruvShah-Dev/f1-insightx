@@ -175,7 +175,15 @@ def race_archetype(row: dict[str, Any], lookup: dict[str, dict[str, Any]]) -> st
             archetype = str(match.get("track_archetype") or "").strip()
             if archetype and archetype.lower() != "nan":
                 return archetype
-    return "unknown"
+    return "mixed"
+
+
+def has_track_archetype(row: dict[str, Any], lookup: dict[str, dict[str, Any]]) -> bool:
+    return any(
+        slug_text(value) in lookup
+        for value in [row.get("race_id"), row.get("race_name"), row.get("circuit_id")]
+        if value
+    )
 
 
 def finish_band(position: Any) -> str:
@@ -275,9 +283,10 @@ def build_driver_features(
         flags: list[str] = []
         proxy_flags: list[str] = []
         target_archetype = race_archetype(row, track_archetype_lookup)
-        if target_archetype == "unknown":
+        target_archetype_known = has_track_archetype(row, track_archetype_lookup)
+        if not target_archetype_known:
             flags.append("missing_track_archetype")
-            proxy_flags.append("track_archetype_missing")
+            proxy_flags.append("track_archetype_mixed_fallback")
         if recent.empty:
             flags.append("no_prior_driver_races")
         deg = prior_metric_average(recent, degradation_lookup, driver_id)
@@ -299,10 +308,14 @@ def build_driver_features(
         else:
             same_archetype = prior[
                 prior.apply(lambda item: race_archetype(item.to_dict(), track_archetype_lookup) == target_archetype, axis=1)
-            ] if target_archetype != "unknown" and not prior.empty else pd.DataFrame()
+            ] if target_archetype_known and not prior.empty else pd.DataFrame()
             if not same_archetype.empty:
                 track_fit = clamp01(1 - ((pd.to_numeric(same_archetype["finish_position"], errors="coerce").mean() - 1) / 19), 0.5)
                 proxy_flags.append("track_fit_archetype_history")
+            elif not recent.empty:
+                track_fit = clamp01(1 - ((pd.to_numeric(recent["finish_position"], errors="coerce").mean() - 1) / 19), 0.5)
+                proxy_flags.append("track_fit_recent_form_fallback")
+                flags.append("track_fit_uses_recent_form_proxy")
             else:
                 flags.append("missing_prior_same_circuit_or_archetype")
         reliability = 1 - prior["finish_status"].map(dnf_flag).mean() if not prior.empty else ""
@@ -419,6 +432,7 @@ def build_track_features(
         prior_neutral = neutralization[neutralization["race_analysis_id"].astype(str).isin(prior_ids)] if not neutralization.empty else pd.DataFrame()
         prior_weather = weather[weather["race_analysis_id"].astype(str).isin(prior_ids)] if not weather.empty else pd.DataFrame()
         archetype = race_archetype(row, track_archetype_lookup)
+        archetype_known = has_track_archetype(row, track_archetype_lookup)
         degradation = mean_or_blank(prior_stints["degradation_s_per_lap"]) if not prior_stints.empty else ""
         overtaking_proxy = mean_or_blank(abs(pd.to_numeric(prior_positions["net_position_change"], errors="coerce"))) if not prior_positions.empty else ""
         weather_volatility = mean_or_blank(pd.to_numeric(prior_weather["track_temp_delta_from_start_c"], errors="coerce").abs()) if not prior_weather.empty else ""
@@ -426,7 +440,7 @@ def build_track_features(
         if degradation == "":
             flags.append("missing_prior_circuit_degradation")
         proxy_flags = [
-            "track_archetype_strategy_lab_weights" if archetype != "unknown" else "track_archetype_missing",
+            "track_archetype_strategy_lab_weights" if archetype_known else "track_archetype_mixed_fallback",
             "overtaking_position_movement_proxy" if overtaking_proxy != "" else "",
             "neutralization_track_status_proxy" if neutral_freq != "" else "",
             "weather_context_summary" if weather_volatility != "" else "",
@@ -447,7 +461,7 @@ def build_track_features(
                 "round": int(row["round"]),
                 "circuit_id": circuit_id,
                 "source_race_ids": ";".join(prior_ids[-5:]),
-                "track_archetype": archetype if archetype != "unknown" else ("historical_circuit_proxy" if prior_ids else "unknown"),
+                "track_archetype": archetype,
                 "degradation_tendency_s_per_lap": degradation,
                 "overtaking_proxy_score": clamp01((float(overtaking_proxy) if overtaking_proxy != "" else 0) / 8, 0.0) if overtaking_proxy != "" else "",
                 "weather_volatility_score": clamp01((float(weather_volatility) if weather_volatility != "" else 0) / 12, 0.0) if weather_volatility != "" else "",

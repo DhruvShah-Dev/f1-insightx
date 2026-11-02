@@ -1,12 +1,14 @@
 {
-  "fetched_at": "2026-10-13T15:56:47.241848+00:00",
+  "fetched_at": "2026-11-02T19:22:54.139234+00:00",
   "start_season": 2026,
   "end_season": 2026,
   "session_types": [
     "FP1",
+    "FP2",
+    "FP3",
+    "Q",
     "SQ",
     "S",
-    "Q",
     "R"
   ],
   "endpoints": [
@@ -19,6 +21,6 @@
     "pit",
     "race_control"
   ],
-  "meeting_key": 1296,
+  "meeting_key": null,
   "free_tier_note": "Historical data only; keep requests under 3 req/s and 30 req/min."
 }

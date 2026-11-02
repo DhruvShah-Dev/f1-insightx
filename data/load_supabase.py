@@ -1860,6 +1860,13 @@ SUPPLEMENTAL_DRIVERS: dict[str, dict[str, str]] = {
         "full_name": "Daniel Ricciardo",
         "nationality": "Australian",
     },
+    "ryo_hirakawa": {
+        "driver_code": "HIR",
+        "first_name": "Ryo",
+        "last_name": "Hirakawa",
+        "full_name": "Ryo Hirakawa",
+        "nationality": "Japanese",
+    },
     "russell": {
         "driver_code": "RUS",
         "first_name": "George",

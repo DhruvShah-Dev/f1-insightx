@@ -5,7 +5,7 @@
   },
   "sessions_considered": 69,
   "sessions_processed": 67,
-  "sessions_skipped_non_complete": 0,
+  "sessions_skipped_non_complete": 10,
   "sessions_missing_telemetry": 2,
   "sessions_missing_position": 1,
   "sessions_failed": [],

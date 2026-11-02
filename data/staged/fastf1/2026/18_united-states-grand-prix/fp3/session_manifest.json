@@ -1,0 +1,13 @@
+{
+  "season": 2026,
+  "round": 18,
+  "event_name": "United States Grand Prix",
+  "event_format": "conventional",
+  "session_code": "FP3",
+  "session_name": "Practice 3",
+  "status": "unavailable",
+  "started_at": "2026-10-27T19:28:25Z",
+  "completed_at": "2026-10-27T19:28:34Z",
+  "error": "The data you are trying to access has not been loaded yet. See `Session.load`",
+  "source": "fastf1_staged_session_v2"
+}

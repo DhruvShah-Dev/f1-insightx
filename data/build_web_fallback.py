@@ -38,7 +38,7 @@ CURRENT_DRIVER_NAMES = {
     "ocon": ("OCO", "Esteban Ocon"), "sainz": ("SAI", "Carlos Sainz"),
     "albon": ("ALB", "Alexander Albon"), "tsunoda": ("TSU", "Yuki Tsunoda"),
     "bottas": ("BOT", "Valtteri Bottas"), "perez": ("PER", "Sergio Perez"),
-    "stroll": ("STR", "Lance Stroll"),
+    "stroll": ("STR", "Lance Stroll"), "ryo_hirakawa": ("HIR", "Ryo Hirakawa"),
 }
 
 

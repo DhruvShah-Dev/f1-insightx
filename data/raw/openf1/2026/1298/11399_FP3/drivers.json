@@ -170,34 +170,6 @@
   {
     "meeting_key": 1298,
     "session_key": 11399,
-    "driver_number": 30,
-    "broadcast_name": "L LAWSON",
-    "full_name": "Liam LAWSON",
-    "name_acronym": "LAW",
-    "team_name": "Racing Bulls",
-    "team_colour": "6C98FF",
-    "first_name": "Liam",
-    "last_name": "Lawson",
-    "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
-    "country_code": null
-  },
-  {
-    "meeting_key": 1298,
-    "session_key": 11399,
-    "driver_number": 31,
-    "broadcast_name": "E OCON",
-    "full_name": "Esteban OCON",
-    "name_acronym": "OCO",
-    "team_name": "Haas F1 Team",
-    "team_colour": "9C9FA2",
-    "first_name": "Esteban",
-    "last_name": "Ocon",
-    "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
-    "country_code": null
-  },
-  {
-    "meeting_key": 1298,
-    "session_key": 11399,
     "driver_number": 41,
     "broadcast_name": "A LINDBLAD",
     "full_name": "Arvid LINDBLAD",
@@ -235,6 +207,20 @@
     "first_name": "Lewis",
     "last_name": "Hamilton",
     "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+    "country_code": null
+  },
+  {
+    "meeting_key": 1298,
+    "session_key": 11399,
+    "driver_number": 50,
+    "broadcast_name": "R HIRAKAWA",
+    "full_name": "Ryo HIRAKAWA",
+    "name_acronym": "HIR",
+    "team_name": "Haas F1 Team",
+    "team_colour": "9C9FA2",
+    "first_name": "Ryo",
+    "last_name": "Hirakawa",
+    "headshot_url": null,
     "country_code": null
   },
   {

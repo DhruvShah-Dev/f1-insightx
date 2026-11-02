@@ -19,11 +19,11 @@
       "status": "data_available"
     },
     "latest_completed_by_schedule": {
-      "circuit_id": "americas",
-      "id": "2026-18-americas",
-      "race_name": "United States Grand Prix",
-      "round": 18,
-      "scheduled_at": "2026-10-25T20:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "completed_by_schedule"
     },
@@ -37,11 +37,11 @@
       "status": "race_analysis_available"
     },
     "latest_results_race": {
-      "circuit_id": "americas",
-      "id": "2026-18-americas",
-      "race_name": "United States Grand Prix",
-      "round": 18,
-      "scheduled_at": "2026-10-25T20:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "results_available"
     },
@@ -55,34 +55,34 @@
       "status": "data_available"
     },
     "next_race": {
-      "circuit_id": "rodriguez",
-      "id": "2026-19-rodriguez",
-      "race_name": "Mexico City Grand Prix",
-      "round": 19,
-      "scheduled_at": "2026-11-01T20:00:00Z",
+      "circuit_id": "interlagos",
+      "id": "2026-20-interlagos",
+      "race_name": "Brazilian Grand Prix",
+      "round": 20,
+      "scheduled_at": "2026-11-08T17:00:00Z",
       "season": 2026,
       "status": "upcoming"
     },
     "race_week_product_race": {
-      "circuit_id": "rodriguez",
-      "id": "2026-19-rodriguez",
-      "race_name": "Mexico City Grand Prix",
-      "round": 19,
-      "scheduled_at": "2026-11-01T20:00:00Z",
+      "circuit_id": "interlagos",
+      "id": "2026-20-interlagos",
+      "race_name": "Brazilian Grand Prix",
+      "round": 20,
+      "scheduled_at": "2026-11-08T17:00:00Z",
       "season": 2026,
       "status": "race_week_product_available"
     },
     "strategy_lab_product_race": {
-      "circuit_id": "rodriguez",
-      "id": "2026-19-rodriguez",
-      "race_name": "Mexico City Grand Prix",
-      "round": 19,
+      "circuit_id": "interlagos",
+      "id": "2026-20-interlagos",
+      "race_name": "Brazilian Grand Prix",
+      "round": 20,
       "scheduled_at": null,
       "season": 2026,
       "status": "strategy_lab_available"
     }
   },
-  "build_version": "season_state_20261027T193021Z",
+  "build_version": "season_state_20261102T192859Z",
   "data_gaps": {
     "clean_lap_filtering": "inferred/proxy",
     "drs_gap_context": "partial",
@@ -94,7 +94,7 @@
     "weather": "available"
   },
   "errors": [],
-  "generated_at": "2026-10-27T19:30:21Z",
+  "generated_at": "2026-11-02T19:28:59Z",
   "missing_data_flags": [
     "analytics_not_current",
     "race_analysis_not_current",
@@ -103,8 +103,8 @@
   "schema_version": 1,
   "status": "passed",
   "warnings": [
-    "Analytics available through Singapore Grand Prix; United States Grand Prix telemetry processing pending.",
-    "Telemetry features available through Singapore Grand Prix; United States Grand Prix telemetry processing pending.",
-    "Race Analysis available through Singapore Grand Prix; United States Grand Prix analysis build is pending."
+    "Analytics available through Singapore Grand Prix; Mexico City Grand Prix telemetry processing pending.",
+    "Telemetry features available through Singapore Grand Prix; Mexico City Grand Prix telemetry processing pending.",
+    "Race Analysis available through Singapore Grand Prix; Mexico City Grand Prix analysis build is pending."
   ]
 }

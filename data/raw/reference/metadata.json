@@ -1,16 +1,23 @@
 {
-  "fetched_at": "2026-10-13T15:56:46.700669+00:00",
-  "start_season": 2026,
+  "fetched_at": "2026-11-02T19:17:53.543864+00:00",
+  "start_season": 2025,
   "end_season": 2026,
   "driver_count": 100,
   "constructor_count": 100,
   "circuit_count": 78,
   "seasons": [
     {
+      "season": 2025,
+      "scheduled_races": 24,
+      "results_fetched": 24,
+      "qualifying_fetched": 24,
+      "sprint_fetched": 6
+    },
+    {
       "season": 2026,
       "scheduled_races": 23,
-      "results_fetched": 17,
-      "qualifying_fetched": 17,
+      "results_fetched": 19,
+      "qualifying_fetched": 19,
       "sprint_fetched": 6
     }
   ]
