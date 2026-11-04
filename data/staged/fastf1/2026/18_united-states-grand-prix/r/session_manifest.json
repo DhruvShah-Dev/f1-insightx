@@ -5,9 +5,21 @@
   "event_format": "conventional",
   "session_code": "R",
   "session_name": "Race",
-  "status": "unavailable",
-  "started_at": "2026-10-27T19:28:45Z",
-  "completed_at": "2026-10-27T19:28:54Z",
-  "error": "The data you are trying to access has not been loaded yet. See `Session.load`",
-  "source": "fastf1_staged_session_v2"
+  "event_date": "2026-10-25",
+  "country": "United States",
+  "location": "Austin",
+  "status": "complete",
+  "error": null,
+  "telemetry_requested": true,
+  "telemetry_available": true,
+  "position_available": true,
+  "source": "openf1_post_session_bridge_v1",
+  "row_counts": {
+    "results": 22,
+    "laps": 1166,
+    "weather": 159,
+    "stints": 54,
+    "telemetry_rows": 8174,
+    "position_rows": 8356
+  }
 }

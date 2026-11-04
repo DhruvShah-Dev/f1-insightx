@@ -1140,6 +1140,176 @@
         "energy_proxy": 735,
         "lap_pace": 0
       }
+    },
+    "2026_18_FP1_United States Grand Prix": {
+      "file": "2026-18-fp1-united-states-grand-prix-e0e9cd095755.json.gz",
+      "season": 2026,
+      "round": 18,
+      "event": "United States Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 210,
+        "segments": 1660,
+        "corner_segments": 1660,
+        "braking": 1660,
+        "throttle": 1660,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_18_FP2_United States Grand Prix": {
+      "file": "2026-18-fp2-united-states-grand-prix-eef3f91ed865.json.gz",
+      "season": 2026,
+      "round": 18,
+      "event": "United States Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_18_FP3_United States Grand Prix": {
+      "file": "2026-18-fp3-united-states-grand-prix-c564043eb3e4.json.gz",
+      "season": 2026,
+      "round": 18,
+      "event": "United States Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_18_Q_United States Grand Prix": {
+      "file": "2026-18-q-united-states-grand-prix-b062d0d20991.json.gz",
+      "season": 2026,
+      "round": 18,
+      "event": "United States Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_18_R_United States Grand Prix": {
+      "file": "2026-18-r-united-states-grand-prix-d984cba7dbeb.json.gz",
+      "season": 2026,
+      "round": 18,
+      "event": "United States Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_19_FP1_Mexico City Grand Prix": {
+      "file": "2026-19-fp1-mexico-city-grand-prix-5a92f3c5b3b6.json.gz",
+      "season": 2026,
+      "round": 19,
+      "event": "Mexico City Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_19_FP2_Mexico City Grand Prix": {
+      "file": "2026-19-fp2-mexico-city-grand-prix-2d6865f518de.json.gz",
+      "season": 2026,
+      "round": 19,
+      "event": "Mexico City Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_19_FP3_Mexico City Grand Prix": {
+      "file": "2026-19-fp3-mexico-city-grand-prix-224e865b90e0.json.gz",
+      "season": 2026,
+      "round": 19,
+      "event": "Mexico City Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 171,
+        "segments": 1368,
+        "corner_segments": 1368,
+        "braking": 1368,
+        "throttle": 1368,
+        "straights": 1197,
+        "energy_proxy": 1197,
+        "lap_pace": 0
+      }
+    },
+    "2026_19_Q_Mexico City Grand Prix": {
+      "file": "2026-19-q-mexico-city-grand-prix-4c8516472b24.json.gz",
+      "season": 2026,
+      "round": 19,
+      "event": "Mexico City Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_19_R_Mexico City Grand Prix": {
+      "file": "2026-19-r-mexico-city-grand-prix-2ad29e0ad867.json.gz",
+      "season": 2026,
+      "round": 19,
+      "event": "Mexico City Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
     }
   }
 }

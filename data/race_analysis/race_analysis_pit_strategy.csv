@@ -687,3 +687,93 @@ race_analysis_id,driver,team,pit_stop_number,pit_lap,compound_from,compound_to,s
 2026-17-marina_bay,SAI,Williams,1,31,SOFT,MEDIUM,31,13,15,-2,6.592,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-17-marina_bay,STR,Aston Martin,1,26,SOFT,MEDIUM,26,18,20,-2,3.322,lost after stop,high,0.0,Pit cycle cost track position proxy.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
 2026-17-marina_bay,VER,Red Bull Racing,1,32,SOFT,MEDIUM,32,1,1,0,6.074,neutral stop,low,0.0,Pit cycle kept track position proxy stable.,0.62,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,ALB,Williams,1,16,SOFT,SOFT,16,,,,0.122,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,ALB,Williams,2,31,SOFT,HARD,15,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,ALO,Aston Martin,1,28,SOFT,MEDIUM,28,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,ALO,Aston Martin,2,42,MEDIUM,SOFT,14,,,,8.374,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,ANT,Mercedes,1,24,MEDIUM,HARD,24,,,,0.394,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,BEA,Haas F1 Team,1,13,SOFT,HARD,13,,,,0.717,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,BEA,Haas F1 Team,2,22,HARD,MEDIUM,9,,,,8.851,pit-cycle unknown,low,8.422,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,BOR,Audi,1,26,SOFT,HARD,26,,,,0.713,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,BOR,Audi,2,50,HARD,SOFT,24,,,,19.496,pit-cycle unknown,low,19.732,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,BOT,Cadillac,1,29,HARD,SOFT,29,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,COL,Alpine,1,30,HARD,SOFT,30,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,GAS,Alpine,1,24,SOFT,HARD,24,,,,1.86,pit-cycle unknown,low,0.079,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,HAD,Red Bull Racing,1,25,SOFT,HARD,25,,,,1.321,pit-cycle unknown,low,0.084,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,HAM,Ferrari,1,14,SOFT,MEDIUM,14,,,,1.832,pit-cycle unknown,low,0.354,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,HAM,Ferrari,2,38,MEDIUM,HARD,24,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,HUL,Audi,1,29,SOFT,HARD,29,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,LAW,Racing Bulls,1,25,SOFT,HARD,25,,,,0.636,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,LEC,Ferrari,1,15,SOFT,MEDIUM,15,,,,1.082,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,LEC,Ferrari,2,39,MEDIUM,HARD,24,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,LIN,Racing Bulls,1,18,SOFT,MEDIUM,18,,,,1.367,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,LIN,Racing Bulls,2,40,MEDIUM,SOFT,22,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,NOR,McLaren,1,16,MEDIUM,HARD,16,,,,1.81,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,OCO,Haas F1 Team,1,21,SOFT,HARD,21,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,PER,Cadillac,1,23,SOFT,HARD,23,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,PIA,McLaren,1,15,MEDIUM,HARD,15,,,,2.514,pit-cycle unknown,low,0.624,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,RUS,Mercedes,1,22,MEDIUM,HARD,22,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,SAI,Williams,1,17,SOFT,HARD,17,,,,1.317,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,SAI,Williams,2,38,HARD,SOFT,21,,,,1.026,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,STR,Aston Martin,1,1,MEDIUM,SOFT,1,,,,12.529,pit-cycle unknown,low,1.287,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,STR,Aston Martin,2,41,SOFT,SOFT,40,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,VER,Red Bull Racing,1,13,SOFT,SOFT,13,,,,1.341,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-18-americas,VER,Red Bull Racing,2,31,SOFT,MEDIUM,18,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,ALB,Williams,1,18,SOFT,SOFT,18,,,,2.49,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,ALB,Williams,2,41,SOFT,MEDIUM,23,,,,15.033,pit-cycle unknown,low,11.698,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,ALB,Williams,3,44,MEDIUM,SOFT,3,,,,126.832,pit-cycle unknown,low,82.746,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,ALB,Williams,4,45,SOFT,SOFT,1,,,,2236.153,pit-cycle unknown,low,32.315,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,ALO,Aston Martin,1,3,SOFT,SOFT,3,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,ANT,Mercedes,1,43,SOFT,MEDIUM,43,,,,45.27,pit-cycle unknown,low,41.354,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,ANT,Mercedes,2,45,MEDIUM,SOFT,2,,,,104.278,pit-cycle unknown,low,62.924,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,BEA,Haas F1 Team,1,40,SOFT,MEDIUM,40,,,,2.183,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,BEA,Haas F1 Team,2,45,MEDIUM,SOFT,5,,,,101.882,pit-cycle unknown,low,63.344,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,BOR,Audi,1,38,MEDIUM,SOFT,38,,,,1.779,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,BOR,Audi,2,45,SOFT,SOFT,7,,,,85.262,pit-cycle unknown,low,43.946,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,BOT,Cadillac,1,30,SOFT,MEDIUM,30,,,,4.137,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,COL,Alpine,1,34,MEDIUM,SOFT,34,,,,2.848,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,COL,Alpine,2,45,SOFT,SOFT,11,,,,91.767,pit-cycle unknown,low,50.334,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,GAS,Alpine,1,17,SOFT,MEDIUM,17,,,,2.285,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,GAS,Alpine,2,44,MEDIUM,SOFT,27,,,,2320.332,pit-cycle unknown,low,2291.678,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,GAS,Alpine,3,45,SOFT,SOFT,1,,,,101.105,pit-cycle unknown,low,47.939,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HAD,Red Bull Racing,1,7,SOFT,MEDIUM,7,,,,29.626,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HAD,Red Bull Racing,2,41,MEDIUM,SOFT,34,,,,1.362,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HAD,Red Bull Racing,3,45,SOFT,SOFT,4,,,,84.3,pit-cycle unknown,low,45.161,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HAM,Ferrari,1,28,SOFT,MEDIUM,28,,,,3.036,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HAM,Ferrari,2,44,MEDIUM,SOFT,16,,,,2354.917,pit-cycle unknown,low,2348.03,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HAM,Ferrari,3,45,SOFT,SOFT,1,,,,123.11,pit-cycle unknown,low,63.411,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HIR,Haas F1 Team,1,1,MEDIUM,SOFT,1,,,,12.254,pit-cycle unknown,low,0.31,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HIR,Haas F1 Team,2,43,SOFT,SOFT,42,,,,2208.614,pit-cycle unknown,low,2199.837,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HIR,Haas F1 Team,3,44,SOFT,SOFT,1,,,,143.264,pit-cycle unknown,low,85.311,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HIR,Haas F1 Team,4,45,SOFT,SOFT,1,,,,2238.123,pit-cycle unknown,low,38.286,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HIR,Haas F1 Team,5,59,SOFT,SOFT,14,,,,39.584,pit-cycle unknown,low,11.516,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HUL,Audi,1,31,MEDIUM,SOFT,31,,,,2.895,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HUL,Audi,2,45,SOFT,SOFT,14,,,,85.796,pit-cycle unknown,low,48.862,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,HUL,Audi,3,59,SOFT,SOFT,14,,,,38.595,pit-cycle unknown,low,11.189,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LAW,Racing Bulls,1,1,MEDIUM,SOFT,1,,,,16.21,pit-cycle unknown,low,0.744,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LAW,Racing Bulls,2,42,SOFT,SOFT,41,,,,53.482,pit-cycle unknown,low,49.588,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LAW,Racing Bulls,3,44,SOFT,SOFT,2,,,,141.285,pit-cycle unknown,low,91.697,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LAW,Racing Bulls,4,45,SOFT,SOFT,1,,,,2246.535,pit-cycle unknown,low,39.068,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LEC,Ferrari,1,27,SOFT,MEDIUM,27,,,,3.568,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LEC,Ferrari,2,45,MEDIUM,SOFT,18,,,,125.091,pit-cycle unknown,low,68.69,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LIN,Racing Bulls,1,35,SOFT,MEDIUM,35,,,,2.947,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,LIN,Racing Bulls,2,45,MEDIUM,SOFT,10,,,,90.088,pit-cycle unknown,low,53.611,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,NOR,McLaren,1,39,SOFT,MEDIUM,39,,,,2.964,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,NOR,McLaren,2,45,MEDIUM,SOFT,6,,,,100.273,pit-cycle unknown,low,61.482,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PER,Cadillac,1,30,SOFT,MEDIUM,30,,,,3.435,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PER,Cadillac,2,43,MEDIUM,SOFT,13,,,,2208.875,pit-cycle unknown,low,2195.528,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PER,Cadillac,3,44,SOFT,SOFT,1,,,,137.286,pit-cycle unknown,low,83.408,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PER,Cadillac,4,45,SOFT,SOFT,1,,,,2229.981,pit-cycle unknown,low,34.453,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PER,Cadillac,5,59,SOFT,SOFT,14,,,,39.163,pit-cycle unknown,low,10.911,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PIA,McLaren,1,26,SOFT,MEDIUM,26,,,,3.749,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PIA,McLaren,2,44,MEDIUM,SOFT,18,,,,2327.759,pit-cycle unknown,low,2308.905,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,PIA,McLaren,3,45,SOFT,SOFT,1,,,,119.206,pit-cycle unknown,low,56.232,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,RUS,Mercedes,1,33,SOFT,MEDIUM,33,,,,2.757,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,RUS,Mercedes,2,44,MEDIUM,SOFT,11,,,,2345.728,pit-cycle unknown,low,2331.001,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,RUS,Mercedes,3,45,SOFT,SOFT,1,,,,111.199,pit-cycle unknown,low,59.401,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,SAI,Williams,1,36,SOFT,MEDIUM,36,,,,1.345,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,SAI,Williams,2,44,MEDIUM,SOFT,8,,,,133.186,pit-cycle unknown,low,85.949,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,SAI,Williams,3,45,SOFT,SOFT,1,,,,2250.951,pit-cycle unknown,low,39.018,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,STR,Aston Martin,1,3,SOFT,UNKNOWN,3,,,,0.0,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,VER,Red Bull Racing,1,27,MEDIUM,SOFT,27,,,,3.073,pit-cycle unknown,low,0.0,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.
+2026-19-rodriguez,VER,Red Bull Racing,2,45,SOFT,SOFT,18,,,,127.391,pit-cycle unknown,low,68.933,Pit-cycle effect is unavailable.,0.38,Pit-cycle position is a lap-position proxy; no gap feed is available.

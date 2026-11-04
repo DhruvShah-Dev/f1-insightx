@@ -50,3 +50,9 @@ race_analysis_id,surface,label,href,relevance_note,enabled,unavailable_reason
 2026-17-marina_bay,race_archive,Analysis report,/analysis/2026-17-marina_bay,"Classification, event facts, and post-race read.",True,
 2026-17-marina_bay,compare,Telemetry comparison,/vs?slug=2026-17-marina_bay,Driver-vs-driver segment analysis.,True,
 2026-17-marina_bay,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-18-americas,race_archive,Analysis report,/analysis/2026-18-americas,"Classification, event facts, and post-race read.",True,
+2026-18-americas,compare,Telemetry comparison,/vs?slug=2026-18-americas,Driver-vs-driver segment analysis.,True,
+2026-18-americas,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-19-rodriguez,race_archive,Analysis report,/analysis/2026-19-rodriguez,"Classification, event facts, and post-race read.",True,
+2026-19-rodriguez,compare,Telemetry comparison,/vs?slug=2026-19-rodriguez,Driver-vs-driver segment analysis.,True,
+2026-19-rodriguez,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.

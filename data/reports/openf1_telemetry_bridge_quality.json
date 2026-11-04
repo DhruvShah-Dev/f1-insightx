@@ -1,0 +1,112 @@
+{
+  "source": "openf1_post_session_bridge_v1",
+  "season": 2026,
+  "meeting_keys": [
+    1297,
+    1298
+  ],
+  "sessions": [
+    {
+      "meeting_key": 1297,
+      "results": 22,
+      "laps": 486,
+      "weather": 81,
+      "stints": 88,
+      "telemetry_rows": 7531,
+      "position_rows": 7674,
+      "session_code": "FP1"
+    },
+    {
+      "meeting_key": 1297,
+      "results": 22,
+      "laps": 589,
+      "weather": 85,
+      "stints": 84,
+      "telemetry_rows": 7889,
+      "position_rows": 8023,
+      "session_code": "FP2"
+    },
+    {
+      "meeting_key": 1297,
+      "results": 22,
+      "laps": 423,
+      "weather": 82,
+      "stints": 91,
+      "telemetry_rows": 7946,
+      "position_rows": 7966,
+      "session_code": "FP3"
+    },
+    {
+      "meeting_key": 1297,
+      "results": 22,
+      "laps": 280,
+      "weather": 77,
+      "stints": 90,
+      "telemetry_rows": 7712,
+      "position_rows": 7783,
+      "session_code": "Q"
+    },
+    {
+      "meeting_key": 1297,
+      "results": 22,
+      "laps": 1166,
+      "weather": 159,
+      "stints": 54,
+      "telemetry_rows": 8174,
+      "position_rows": 8356,
+      "session_code": "R"
+    },
+    {
+      "meeting_key": 1298,
+      "results": 22,
+      "laps": 589,
+      "weather": 79,
+      "stints": 90,
+      "telemetry_rows": 6555,
+      "position_rows": 6611,
+      "session_code": "FP1"
+    },
+    {
+      "meeting_key": 1298,
+      "results": 22,
+      "laps": 656,
+      "weather": 82,
+      "stints": 101,
+      "telemetry_rows": 6435,
+      "position_rows": 6554,
+      "session_code": "FP2"
+    },
+    {
+      "meeting_key": 1298,
+      "results": 22,
+      "laps": 441,
+      "weather": 54,
+      "stints": 72,
+      "telemetry_rows": 5556,
+      "position_rows": 5694,
+      "session_code": "FP3"
+    },
+    {
+      "meeting_key": 1298,
+      "results": 22,
+      "laps": 366,
+      "weather": 83,
+      "stints": 102,
+      "telemetry_rows": 6282,
+      "position_rows": 6399,
+      "session_code": "Q"
+    },
+    {
+      "meeting_key": 1298,
+      "results": 22,
+      "laps": 1360,
+      "weather": 205,
+      "stints": 80,
+      "telemetry_rows": 6591,
+      "position_rows": 6857,
+      "session_code": "R"
+    }
+  ],
+  "sessions_processed": 10,
+  "validation_errors": []
+}

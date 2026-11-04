@@ -1,0 +1,103 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life,source_label
+2026,19,Mexico City Grand Prix,Q,ALB,Williams,1,SOFT,2,84.0995,-8.696999999999989,0.0,2,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ALB,Williams,2,SOFT,4,237.92399999999998,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ALB,Williams,3,SOFT,4,102.48349999999999,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ALO,Aston Martin,1,SOFT,3,90.80499999999999,0.0,0.5,2,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ANT,Mercedes,2,SOFT,4,219.3415,-3.3333333333333335,-0.39999999999999997,3,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ANT,Mercedes,3,SOFT,3,115.67333333333333,0.0,-0.5,7,9,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ANT,Mercedes,4,SOFT,4,181.7585,-3.1939999999999977,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ANT,Mercedes,5,SOFT,3,178.70866666666666,0.0,-0.5,5,7,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ANT,Mercedes,6,SOFT,4,196.49125,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,ANT,Mercedes,7,SOFT,3,147.73166666666665,-10.0,-1.0,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BEA,Haas F1 Team,1,SOFT,3,92.8,0.6424999999999983,0.5,2,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BEA,Haas F1 Team,3,SOFT,4,209.4955,-2.546666666666667,-0.39999999999999997,6,9,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BEA,Haas F1 Team,4,SOFT,3,121.63,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BEA,Haas F1 Team,5,SOFT,3,303.4193333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BEA,Haas F1 Team,6,SOFT,3,144.95533333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOR,Audi,1,SOFT,2,98.0005,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOR,Audi,3,SOFT,3,277.907,0.0,-0.5,5,7,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOR,Audi,4,SOFT,3,137.98,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOR,Audi,5,SOFT,3,240.92066666666665,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOR,Audi,6,SOFT,3,94.62666666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOR,Audi,7,SOFT,3,126.05500000000002,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOT,Cadillac,1,SOFT,2,96.36949999999999,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOT,Cadillac,2,SOFT,2,347.007,-10.0,0.0,4,5,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,BOT,Cadillac,3,SOFT,4,149.41825,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,COL,Alpine,1,SOFT,1,95.547,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,COL,Alpine,2,SOFT,3,254.05066666666667,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,COL,Alpine,3,SOFT,2,182.695,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,COL,Alpine,4,SOFT,3,335.26533333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,COL,Alpine,5,SOFT,3,143.31433333333334,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,GAS,Alpine,1,SOFT,1,91.617,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,GAS,Alpine,2,SOFT,3,256.3496666666667,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,GAS,Alpine,3,SOFT,2,181.531,-10.0,0.0,7,8,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,GAS,Alpine,4,SOFT,3,334.7,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,GAS,Alpine,5,SOFT,3,139.912,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,GAS,Alpine,6,SOFT,3,265.91066666666666,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,GAS,Alpine,7,SOFT,2,176.429,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAD,Red Bull Racing,1,SOFT,1,79.035,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAD,Red Bull Racing,2,SOFT,3,265.70233333333334,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAD,Red Bull Racing,3,SOFT,3,141.418,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAD,Red Bull Racing,4,SOFT,3,270.8933333333333,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAD,Red Bull Racing,5,SOFT,3,151.67333333333332,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAD,Red Bull Racing,6,SOFT,2,383.4585,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAD,Red Bull Racing,7,SOFT,2,185.55900000000003,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAM,Ferrari,1,SOFT,1,78.249,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAM,Ferrari,2,SOFT,4,247.92325000000002,-3.3333333333333335,-0.39999999999999997,4,7,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAM,Ferrari,3,SOFT,4,252.10750000000002,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAM,Ferrari,4,SOFT,3,137.972,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAM,Ferrari,5,SOFT,3,255.77633333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HAM,Ferrari,6,SOFT,3,180.024,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HIR,Haas F1 Team,1,SOFT,3,90.71466666666667,0.0,-0.5,2,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HIR,Haas F1 Team,2,SOFT,3,250.99733333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HIR,Haas F1 Team,3,SOFT,3,149.987,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HUL,Audi,1,SOFT,2,95.26599999999999,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HUL,Audi,3,SOFT,3,282.9536666666667,0.0,-0.5,5,7,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HUL,Audi,4,SOFT,3,133.59366666666668,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HUL,Audi,5,SOFT,3,241.34733333333335,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HUL,Audi,6,SOFT,3,92.11866666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,HUL,Audi,7,SOFT,3,121.15133333333331,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LAW,Racing Bulls,2,SOFT,7,170.36385714285714,-2.971499999999999,-0.28571428571428575,3,9,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LAW,Racing Bulls,3,SOFT,3,263.64799999999997,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LAW,Racing Bulls,4,SOFT,3,209.41466666666668,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LAW,Racing Bulls,5,SOFT,3,253.82233333333332,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LAW,Racing Bulls,6,SOFT,2,161.94549999999998,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LEC,Ferrari,2,SOFT,8,166.20925,-0.9755714285714276,-0.023809523809523815,3,10,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LEC,Ferrari,3,SOFT,5,163.1694,0.0,-0.3,1,5,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LEC,Ferrari,4,SOFT,3,156.34066666666666,0.0,-0.5,6,8,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LEC,Ferrari,5,SOFT,3,215.2636666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LEC,Ferrari,6,SOFT,3,193.94833333333335,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LIN,Racing Bulls,2,SOFT,7,168.622,-3.0725000000000002,-0.28571428571428575,3,9,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LIN,Racing Bulls,3,SOFT,3,264.6886666666666,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LIN,Racing Bulls,4,SOFT,3,208.77633333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LIN,Racing Bulls,5,SOFT,3,260.149,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,LIN,Racing Bulls,6,SOFT,2,157.466,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,NOR,McLaren,1,SOFT,1,100.9,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,NOR,McLaren,2,SOFT,3,292.56733333333335,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,NOR,McLaren,3,SOFT,3,350.1306666666667,0.0,-0.5,7,9,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,NOR,McLaren,4,SOFT,6,116.1555,0.050199999999998114,-0.48571428571428577,1,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,NOR,McLaren,5,SOFT,4,175.55975,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,NOR,McLaren,6,SOFT,1,372.146,0.0,0.0,1,1,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,PER,Cadillac,1,SOFT,3,89.918,0.4720000000000013,0.5,2,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,PER,Cadillac,2,SOFT,2,329.608,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,PER,Cadillac,3,SOFT,3,173.46366666666665,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,PIA,McLaren,1,SOFT,2,83.25999999999999,-9.341999999999999,0.0,2,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,PIA,McLaren,2,SOFT,4,244.74025,-2.8729999999999998,-0.39999999999999997,5,8,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,PIA,McLaren,3,SOFT,3,299.7033333333333,0.0,-0.5,9,11,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,PIA,McLaren,4,SOFT,6,111.63516666666665,-1.1494,-0.3714285714285715,1,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,RUS,Mercedes,2,SOFT,6,94.64966666666668,-2.0,0.14285714285714288,3,8,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,RUS,Mercedes,3,SOFT,4,196.462,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,RUS,Mercedes,4,SOFT,3,177.67466666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,RUS,Mercedes,5,SOFT,4,193.03,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,RUS,Mercedes,6,SOFT,3,153.7363333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,SAI,Williams,1,SOFT,2,82.5955,-6.625,0.0,2,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,SAI,Williams,2,SOFT,4,237.27274999999997,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,SAI,Williams,3,SOFT,4,101.33325,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,SAI,Williams,4,SOFT,3,329.7716666666667,-3.9894999999999996,-0.5,5,7,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,SAI,Williams,5,SOFT,3,122.77233333333334,0.0,-0.5,5,7,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,STR,Aston Martin,1,SOFT,3,87.23033333333335,0.41499999999999915,0.5,2,4,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,STR,Aston Martin,2,SOFT,6,184.27866666666668,-3.3358000000000003,-0.14285714285714288,1,6,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,VER,Red Bull Racing,2,SOFT,3,291.47866666666664,0.0,-0.5,3,5,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,VER,Red Bull Racing,3,SOFT,3,401.517,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,VER,Red Bull Racing,4,SOFT,3,432.9316666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,19,Mexico City Grand Prix,Q,VER,Red Bull Racing,5,SOFT,2,201.403,-10.0,0.0,1,2,openf1_post_session_bridge_v1

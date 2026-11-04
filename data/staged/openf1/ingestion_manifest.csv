@@ -622,3 +622,23 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026,1298,,11404,Race,stints,fetched,80,2026/1298/11404_R/stints.json,2026/1298/11404_R/stints.csv
 2026,1298,,11404,Race,pit,fetched,67,2026/1298/11404_R/pit.json,2026/1298/11404_R/pit.csv
 2026,1298,,11404,Race,race_control,fetched,169,2026/1298/11404_R/race_control.json,2026/1298/11404_R/race_control.csv
+2026,1297,,11389,Practice 1,car_data,fetched,395669,2026/1297/11389_FP1/car_data.json,2026/1297/11389_FP1/car_data.csv
+2026,1297,,11389,Practice 1,location,fetched,403060,2026/1297/11389_FP1/location.json,2026/1297/11389_FP1/location.csv
+2026,1297,,11390,Practice 2,car_data,fetched,410584,2026/1297/11390_FP2/car_data.json,2026/1297/11390_FP2/car_data.csv
+2026,1297,,11390,Practice 2,location,fetched,421936,2026/1297/11390_FP2/location.json,2026/1297/11390_FP2/location.csv
+2026,1297,,11391,Practice 3,car_data,fetched,398860,2026/1297/11391_FP3/car_data.json,2026/1297/11391_FP3/car_data.csv
+2026,1297,,11391,Practice 3,location,fetched,405196,2026/1297/11391_FP3/location.json,2026/1297/11391_FP3/location.csv
+2026,1297,,11392,Qualifying,car_data,fetched,372328,2026/1297/11392_Q/car_data.json,2026/1297/11392_Q/car_data.csv
+2026,1297,,11392,Qualifying,location,fetched,380534,2026/1297/11392_Q/location.json,2026/1297/11392_Q/location.csv
+2026,1297,,11396,Race,car_data,fetched,768108,2026/1297/11396_R/car_data.json,2026/1297/11396_R/car_data.csv
+2026,1297,,11396,Race,location,fetched,788392,2026/1297/11396_R/location.json,2026/1297/11396_R/location.csv
+2026,1298,,11397,Practice 1,car_data,fetched,386886,2026/1298/11397_FP1/car_data.json,2026/1298/11397_FP1/car_data.csv
+2026,1298,,11397,Practice 1,location,fetched,393174,2026/1298/11397_FP1/location.json,2026/1298/11397_FP1/location.csv
+2026,1298,,11398,Practice 2,car_data,fetched,400160,2026/1298/11398_FP2/car_data.json,2026/1298/11398_FP2/car_data.csv
+2026,1298,,11398,Practice 2,location,fetched,408322,2026/1298/11398_FP2/location.json,2026/1298/11398_FP2/location.csv
+2026,1298,,11399,Practice 3,car_data,fetched,255276,2026/1298/11399_FP3/car_data.json,2026/1298/11399_FP3/car_data.csv
+2026,1298,,11399,Practice 3,location,fetched,261261,2026/1298/11399_FP3/location.json,2026/1298/11399_FP3/location.csv
+2026,1298,,11400,Qualifying,car_data,fetched,406296,2026/1298/11400_Q/car_data.json,2026/1298/11400_Q/car_data.csv
+2026,1298,,11400,Qualifying,location,fetched,418198,2026/1298/11400_Q/location.json,2026/1298/11400_Q/location.csv
+2026,1298,,11404,Race,car_data,fetched,953084,2026/1298/11404_R/car_data.json,2026/1298/11404_R/car_data.csv
+2026,1298,,11404,Race,location,fetched,993630,2026/1298/11404_R/location.json,2026/1298/11404_R/location.csv

@@ -186,3 +186,25 @@ id,season,round,race_id,constructor_id,regulation_era,two_car_long_run_pace_s,tw
 2026-17|Racing Bulls,2026,17,2026-17,Racing Bulls,regulations_2026_reset,,92.4085,10.1249,100.0,20.0,fastf1_constructor_form_v1
 2026-17|Red Bull Racing,2026,17,2026-17,Red Bull Racing,regulations_2026_reset,,91.373,6.9534,100.0,10.0,fastf1_constructor_form_v1
 2026-17|Williams,2026,17,2026-17,Williams,regulations_2026_reset,,93.9075,14.869700000000002,100.0,10.0,fastf1_constructor_form_v1
+2026-18|Alpine,2026,18,2026-18,Alpine,regulations_2026_reset,122.96765588235294,95.401,11.8351,100.0,0.0,openf1_constructor_form_v1
+2026-18|Aston Martin,2026,18,2026-18,Aston Martin,regulations_2026_reset,132.23374642857144,96.2475,17.75265,100.0,0.0,openf1_constructor_form_v1
+2026-18|Audi,2026,18,2026-18,Audi,regulations_2026_reset,123.48603571428572,95.39500000000001,11.69165,100.0,0.0,openf1_constructor_form_v1
+2026-18|Cadillac,2026,18,2026-18,Cadillac,regulations_2026_reset,136.3191875,97.47800000000001,18.625,100.0,0.0,openf1_constructor_form_v1
+2026-18|Ferrari,2026,18,2026-18,Ferrari,regulations_2026_reset,131.00603759398496,94.25450000000001,5.2163,100.0,0.0,openf1_constructor_form_v1
+2026-18|Haas F1 Team,2026,18,2026-18,Haas F1 Team,regulations_2026_reset,119.28182142857142,96.0615,14.30265,100.0,0.0,openf1_constructor_form_v1
+2026-18|McLaren,2026,18,2026-18,McLaren,regulations_2026_reset,124.84087878787881,94.59100000000001,6.478400000000001,100.0,0.0,openf1_constructor_form_v1
+2026-18|Mercedes,2026,18,2026-18,Mercedes,regulations_2026_reset,138.9543263888889,94.17,5.98305,100.0,0.0,openf1_constructor_form_v1
+2026-18|Racing Bulls,2026,18,2026-18,Racing Bulls,regulations_2026_reset,123.78873529411767,95.004,10.1445,100.0,0.0,openf1_constructor_form_v1
+2026-18|Red Bull Racing,2026,18,2026-18,Red Bull Racing,regulations_2026_reset,128.2651875,94.232,6.9178,100.0,0.0,openf1_constructor_form_v1
+2026-18|Williams,2026,18,2026-18,Williams,regulations_2026_reset,125.36338980263157,96.8685,15.038499999999999,100.0,0.0,openf1_constructor_form_v1
+2026-19|Alpine,2026,19,2026-19,Alpine,regulations_2026_reset,123.9902825,77.3965,12.125150000000001,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Aston Martin,2026,19,2026-19,Aston Martin,regulations_2026_reset,139.6685761904762,78.99000000000001,18.741600000000002,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Audi,2026,19,2026-19,Audi,regulations_2026_reset,114.20215384615385,77.493,11.61515,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Cadillac,2026,19,2026-19,Cadillac,regulations_2026_reset,111.58114416666666,79.4785,19.541633333333333,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Ferrari,2026,19,2026-19,Ferrari,regulations_2026_reset,106.07589102564103,76.5735,4.9994499999999995,100.0,0.0,openf1_constructor_form_v1
+2026-19|Haas F1 Team,2026,19,2026-19,Haas F1 Team,regulations_2026_reset,121.8953043478261,78.4025,14.978433333333333,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|McLaren,2026,19,2026-19,McLaren,regulations_2026_reset,113.68619363636364,77.187,6.160966666666667,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Mercedes,2026,19,2026-19,Mercedes,regulations_2026_reset,134.13252272727274,76.615,5.4392,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Racing Bulls,2026,19,2026-19,Racing Bulls,regulations_2026_reset,115.74830357142858,77.07300000000001,10.096250000000001,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Red Bull Racing,2026,19,2026-19,Red Bull Racing,regulations_2026_reset,127.29591711229946,76.79599999999999,10.453333333333333,93.33333333333333,0.0,openf1_constructor_form_v1
+2026-19|Williams,2026,19,2026-19,Williams,regulations_2026_reset,129.2123325358852,78.5755,13.818833333333332,93.33333333333333,0.0,openf1_constructor_form_v1

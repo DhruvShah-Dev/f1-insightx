@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,source_label
+1,1,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,77.827,Finished,,35,openf1_post_session_bridge_v1
+2,2,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,77.93,Finished,,33,openf1_post_session_bridge_v1
+3,3,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,77.933,Finished,,31,openf1_post_session_bridge_v1
+4,4,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,78.044,Finished,,33,openf1_post_session_bridge_v1
+5,5,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,78.138,Finished,,26,openf1_post_session_bridge_v1
+6,6,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,78.237,Finished,,31,openf1_post_session_bridge_v1
+7,7,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,78.389,Finished,,34,openf1_post_session_bridge_v1
+8,8,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,78.407,Finished,,33,openf1_post_session_bridge_v1
+9,9,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,78.455,Finished,,32,openf1_post_session_bridge_v1
+10,10,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,78.469,Finished,,31,openf1_post_session_bridge_v1
+11,11,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,78.512,Finished,,13,openf1_post_session_bridge_v1
+12,12,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,78.596,Finished,,30,openf1_post_session_bridge_v1
+13,13,31,E OCON,OCO,Esteban OCON,Haas F1 Team,9C9FA2,,,,,78.774,Finished,,32,openf1_post_session_bridge_v1
+14,14,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,78.849,Finished,,32,openf1_post_session_bridge_v1
+15,15,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,79.023,Finished,,35,openf1_post_session_bridge_v1
+16,16,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,79.132,Finished,,34,openf1_post_session_bridge_v1
+17,17,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,79.248,Finished,,28,openf1_post_session_bridge_v1
+18,18,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,79.406,Finished,,33,openf1_post_session_bridge_v1
+19,19,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,79.578,Finished,,31,openf1_post_session_bridge_v1
+20,20,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,79.631,Finished,,24,openf1_post_session_bridge_v1
+21,21,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,80.165,Finished,,33,openf1_post_session_bridge_v1
+22,22,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,80.174,Finished,,12,openf1_post_session_bridge_v1

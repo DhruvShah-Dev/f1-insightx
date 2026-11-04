@@ -1,2 +1,2 @@
 id,season,round,race_id,race_name,circuit_id,circuit_name,scheduled_at,status,sprint_weekend,latest_completed_race_id,archetype_label,strategy_difficulty,weather_risk_index,signal_confidence,generated_at,build_version,source_label
-2026-20-interlagos,2026,20,2026-20-interlagos,Brazilian Grand Prix,interlagos,interlagos,2026-11-08T17:00:00Z,upcoming,False,2026-19-rodriguez,Balanced circuit,High,0.0,0.2792458636363636,2026-11-02T19:26:23Z,race_week_20261102T192623Z,race_week_overview_v2
+2026-20-interlagos,2026,20,2026-20-interlagos,Brazilian Grand Prix,interlagos,interlagos,2026-11-08T17:00:00Z,upcoming,False,2026-19-rodriguez,Balanced circuit,High,0.0,0.26956436363636366,2026-11-03T22:31:35Z,race_week_20261103T223135Z,race_week_overview_v2

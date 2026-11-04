@@ -1022,3 +1022,130 @@ race_analysis_id,lap_number,race_phase,air_temp_c,track_temp_c,humidity_pct,rain
 2026-17-marina_bay,60,closing,30.5,42.0,72.68,False,1.61,dry,-2.0,stable dry phase,1.0
 2026-17-marina_bay,61,closing,30.5,42.1,72.5,False,1.58,dry,-1.9,stable dry phase,1.0
 2026-17-marina_bay,62,closing,30.5,42.24,72.74,False,1.66,dry,-1.76,stable dry phase,1.0
+2026-18-americas,1,opening,26.7,36.5,44.1,False,1.2,dry,0.0,stable dry phase,1.0
+2026-18-americas,2,opening,26.9,36.8,43.9,False,2.3,dry,0.3,stable dry phase,1.0
+2026-18-americas,3,opening,26.9,36.6,41.3,False,2.3,dry,0.1,stable dry phase,1.0
+2026-18-americas,4,opening,26.99,36.69,41.01,False,2.29,dry,0.19,stable dry phase,1.0
+2026-18-americas,5,opening,27.02,37.14,40.62,False,2.6,dry,0.64,stable dry phase,1.0
+2026-18-americas,6,opening,27.1,37.2,38.7,False,2.3,dry,0.7,stable dry phase,1.0
+2026-18-americas,7,opening,27.1,37.2,39.19,False,0.88,dry,0.7,stable dry phase,1.0
+2026-18-americas,8,opening,27.15,37.45,39.85,False,0.9,dry,0.95,stable dry phase,1.0
+2026-18-americas,9,opening,27.4,37.31,40.02,False,1.94,dry,0.81,stable dry phase,1.0
+2026-18-americas,10,opening,27.4,37.5,41.1,False,0.3,dry,1.0,stable dry phase,1.0
+2026-18-americas,11,opening,27.6,37.64,40.61,False,1.01,dry,1.14,stable dry phase,1.0
+2026-18-americas,12,middle,27.5,37.74,41.23,False,1.14,dry,1.24,stable dry phase,1.0
+2026-18-americas,13,middle,27.4,37.8,41.1,False,2.1,dry,1.3,stable dry phase,1.0
+2026-18-americas,14,middle,27.33,36.86,40.79,False,2.89,dry,0.36,stable dry phase,1.0
+2026-18-americas,15,middle,27.3,36.85,41.28,False,2.47,dry,0.35,stable dry phase,1.0
+2026-18-americas,16,middle,27.24,36.67,40.96,False,2.79,dry,0.17,stable dry phase,1.0
+2026-18-americas,17,middle,27.1,36.5,40.99,False,1.3,dry,-0.0,stable dry phase,1.0
+2026-18-americas,18,middle,27.1,36.08,40.85,False,2.16,dry,-0.42,stable dry phase,1.0
+2026-18-americas,19,middle,27.15,36.15,40.5,False,2.0,dry,-0.35,stable dry phase,1.0
+2026-18-americas,20,middle,27.3,35.94,39.3,False,2.8,dry,-0.56,stable dry phase,1.0
+2026-18-americas,21,middle,27.23,36.07,38.67,False,2.34,dry,-0.43,stable dry phase,1.0
+2026-18-americas,22,middle,27.14,36.12,38.84,False,2.26,dry,-0.38,stable dry phase,1.0
+2026-18-americas,23,middle,27.15,35.94,39.26,False,3.12,dry,-0.56,stable dry phase,1.0
+2026-18-americas,24,middle,26.99,35.48,40.85,False,2.77,dry,-1.02,stable dry phase,1.0
+2026-18-americas,25,middle,26.98,35.96,41.38,False,1.8,dry,-0.54,stable dry phase,1.0
+2026-18-americas,26,middle,27.1,35.95,41.91,False,2.32,dry,-0.55,stable dry phase,1.0
+2026-18-americas,27,middle,27.1,35.6,42.06,False,2.88,dry,-0.9,stable dry phase,1.0
+2026-18-americas,28,middle,27.1,35.79,42.28,False,1.64,dry,-0.71,stable dry phase,1.0
+2026-18-americas,29,middle,27.1,35.74,41.84,False,1.75,dry,-0.76,stable dry phase,1.0
+2026-18-americas,30,middle,27.06,35.66,40.93,False,2.56,dry,-0.84,stable dry phase,1.0
+2026-18-americas,31,middle,27.1,35.6,40.95,False,2.47,dry,-0.9,stable dry phase,1.0
+2026-18-americas,32,middle,27.1,35.49,41.53,False,2.49,dry,-1.01,stable dry phase,1.0
+2026-18-americas,33,middle,27.04,35.34,41.37,False,2.3,dry,-1.16,stable dry phase,1.0
+2026-18-americas,34,middle,26.96,35.33,41.6,False,2.28,dry,-1.17,stable dry phase,1.0
+2026-18-americas,35,middle,26.98,35.28,41.28,False,2.48,dry,-1.22,stable dry phase,1.0
+2026-18-americas,36,middle,26.94,35.26,41.06,False,1.56,dry,-1.24,stable dry phase,1.0
+2026-18-americas,37,middle,26.96,35.3,40.64,False,1.91,dry,-1.2,stable dry phase,1.0
+2026-18-americas,38,middle,27.0,35.27,40.01,False,2.47,dry,-1.23,stable dry phase,1.0
+2026-18-americas,39,middle,27.01,35.23,39.9,False,1.9,dry,-1.27,stable dry phase,1.0
+2026-18-americas,40,middle,27.08,35.35,40.2,False,1.8,dry,-1.15,stable dry phase,1.0
+2026-18-americas,41,middle,27.12,35.39,40.36,False,1.85,dry,-1.11,stable dry phase,1.0
+2026-18-americas,42,middle,27.2,35.45,39.45,False,1.89,dry,-1.05,stable dry phase,1.0
+2026-18-americas,43,closing,27.15,35.27,39.74,False,1.77,dry,-1.23,stable dry phase,1.0
+2026-18-americas,44,closing,27.1,35.27,40.2,False,1.74,dry,-1.23,stable dry phase,1.0
+2026-18-americas,45,closing,27.16,35.43,40.05,False,1.77,dry,-1.07,stable dry phase,1.0
+2026-18-americas,46,closing,27.2,35.35,39.78,False,2.13,dry,-1.15,stable dry phase,1.0
+2026-18-americas,47,closing,27.2,35.29,39.97,False,2.06,dry,-1.21,stable dry phase,1.0
+2026-18-americas,48,closing,27.2,35.27,40.57,False,1.39,dry,-1.23,stable dry phase,1.0
+2026-18-americas,49,closing,27.15,35.26,40.88,False,1.18,dry,-1.24,stable dry phase,1.0
+2026-18-americas,50,closing,27.09,35.16,40.95,False,1.34,dry,-1.34,stable dry phase,1.0
+2026-18-americas,51,closing,27.05,35.05,41.1,False,1.72,dry,-1.45,stable dry phase,1.0
+2026-18-americas,52,closing,27.08,35.08,40.87,False,1.96,dry,-1.42,stable dry phase,1.0
+2026-18-americas,53,closing,27.15,34.91,40.25,False,2.43,dry,-1.59,stable dry phase,1.0
+2026-18-americas,54,closing,27.14,34.74,40.41,False,1.89,dry,-1.76,stable dry phase,1.0
+2026-18-americas,55,closing,27.1,34.75,41.06,False,1.53,dry,-1.75,stable dry phase,1.0
+2026-18-americas,56,closing,27.1,34.76,41.25,False,1.77,dry,-1.74,stable dry phase,1.0
+2026-19-rodriguez,1,opening,23.7,46.8,39.7,False,0.8,dry,0.0,stable dry phase,1.0
+2026-19-rodriguez,2,opening,23.6,45.7,40.2,False,2.0,dry,-1.1,stable dry phase,1.0
+2026-19-rodriguez,3,opening,23.5,45.1,40.4,False,1.5,dry,-1.7,stable dry phase,1.0
+2026-19-rodriguez,4,opening,23.5,44.0,40.7,False,1.6,dry,-2.8,stable dry phase,1.0
+2026-19-rodriguez,5,opening,23.7,45.8,40.5,False,2.6,dry,-1.0,stable dry phase,1.0
+2026-19-rodriguez,6,opening,23.8,43.8,40.6,False,2.0,dry,-3.0,stable dry phase,1.0
+2026-19-rodriguez,7,opening,23.9,44.4,40.8,False,1.5,dry,-2.4,stable dry phase,1.0
+2026-19-rodriguez,8,opening,23.9,45.7,40.8,False,2.6,dry,-1.1,stable dry phase,1.0
+2026-19-rodriguez,9,opening,23.92,45.92,40.6,False,2.84,dry,-0.88,stable dry phase,1.0
+2026-19-rodriguez,10,opening,23.9,45.3,41.0,False,0.9,dry,-1.5,stable dry phase,1.0
+2026-19-rodriguez,11,opening,24.07,43.79,40.67,False,1.32,dry,-3.01,stable dry phase,1.0
+2026-19-rodriguez,12,opening,24.0,43.59,40.88,False,2.13,dry,-3.21,stable dry phase,1.0
+2026-19-rodriguez,13,opening,23.9,43.27,41.59,False,3.02,dry,-3.52,stable dry phase,1.0
+2026-19-rodriguez,14,opening,23.84,42.98,41.48,False,2.48,dry,-3.82,stable dry phase,1.0
+2026-19-rodriguez,15,middle,23.7,44.2,41.2,False,2.1,dry,-2.6,stable dry phase,1.0
+2026-19-rodriguez,16,middle,23.7,45.23,40.95,False,2.42,dry,-1.57,stable dry phase,1.0
+2026-19-rodriguez,17,middle,23.84,45.74,40.47,False,3.25,dry,-1.06,stable dry phase,1.0
+2026-19-rodriguez,18,middle,23.8,45.77,40.46,False,1.84,dry,-1.02,stable dry phase,1.0
+2026-19-rodriguez,19,middle,23.9,45.5,39.88,False,1.6,dry,-1.3,stable dry phase,1.0
+2026-19-rodriguez,20,middle,23.83,46.01,40.14,False,2.31,dry,-0.79,stable dry phase,1.0
+2026-19-rodriguez,21,middle,23.8,44.04,40.48,False,4.12,dry,-2.76,stable dry phase,1.0
+2026-19-rodriguez,22,middle,23.85,42.8,40.98,False,2.35,dry,-4.0,stable dry phase,1.0
+2026-19-rodriguez,23,middle,23.91,42.71,41.29,False,1.0,dry,-4.09,stable dry phase,1.0
+2026-19-rodriguez,24,middle,24.0,42.62,41.26,False,1.96,dry,-4.18,stable dry phase,1.0
+2026-19-rodriguez,25,middle,24.0,41.88,41.03,False,2.54,dry,-4.92,stable dry phase,1.0
+2026-19-rodriguez,26,middle,24.18,42.23,40.64,False,0.71,dry,-4.57,stable dry phase,1.0
+2026-19-rodriguez,27,middle,24.24,42.16,40.27,False,1.28,dry,-4.64,stable dry phase,1.0
+2026-19-rodriguez,28,middle,24.37,42.11,40.01,False,2.18,dry,-4.69,stable dry phase,1.0
+2026-19-rodriguez,29,middle,24.36,42.04,40.0,False,1.74,dry,-4.76,stable dry phase,1.0
+2026-19-rodriguez,30,middle,24.3,41.93,39.64,False,1.8,dry,-4.87,stable dry phase,1.0
+2026-19-rodriguez,31,middle,24.21,41.48,39.73,False,1.16,dry,-5.32,track cooling,1.0
+2026-19-rodriguez,32,middle,24.11,41.1,40.12,False,0.88,dry,-5.7,track cooling,1.0
+2026-19-rodriguez,33,middle,24.17,40.8,40.04,False,1.29,dry,-6.0,track cooling,1.0
+2026-19-rodriguez,34,middle,24.2,40.65,39.73,False,1.35,dry,-6.15,track cooling,1.0
+2026-19-rodriguez,35,middle,24.26,40.67,39.23,False,1.61,dry,-6.12,track cooling,1.0
+2026-19-rodriguez,36,middle,24.3,40.83,39.07,False,1.84,dry,-5.97,track cooling,1.0
+2026-19-rodriguez,37,middle,24.3,41.41,38.95,False,1.84,dry,-5.39,track cooling,1.0
+2026-19-rodriguez,38,middle,24.3,42.39,38.71,False,1.91,dry,-4.41,stable dry phase,1.0
+2026-19-rodriguez,39,middle,24.35,43.2,38.8,False,1.68,dry,-3.6,stable dry phase,1.0
+2026-19-rodriguez,40,middle,24.55,42.28,38.57,False,2.94,dry,-4.52,stable dry phase,1.0
+2026-19-rodriguez,41,middle,24.52,42.39,39.01,False,2.98,dry,-4.41,stable dry phase,1.0
+2026-19-rodriguez,42,middle,24.57,43.12,39.37,False,2.14,dry,-3.68,stable dry phase,1.0
+2026-19-rodriguez,43,middle,24.77,43.7,39.42,False,1.87,dry,-3.09,stable dry phase,1.0
+2026-19-rodriguez,44,middle,24.85,44.29,39.31,False,2.55,dry,-2.51,stable dry phase,1.0
+2026-19-rodriguez,45,middle,25.03,44.46,39.4,False,2.61,dry,-2.34,stable dry phase,1.0
+2026-19-rodriguez,46,middle,24.81,42.05,39.66,False,1.96,dry,-4.75,stable dry phase,1.0
+2026-19-rodriguez,47,middle,23.81,36.43,39.51,False,2.27,dry,-10.37,track cooling,1.0
+2026-19-rodriguez,48,middle,23.8,36.1,39.0,False,3.4,dry,-10.7,track cooling,1.0
+2026-19-rodriguez,49,middle,23.9,36.2,39.0,False,2.4,dry,-10.6,track cooling,1.0
+2026-19-rodriguez,50,middle,24.0,36.0,38.6,False,0.5,dry,-10.8,track cooling,1.0
+2026-19-rodriguez,51,middle,24.1,36.2,38.3,False,1.5,dry,-10.6,track cooling,1.0
+2026-19-rodriguez,52,middle,24.12,36.17,38.2,False,0.73,dry,-10.63,track cooling,1.0
+2026-19-rodriguez,53,middle,24.2,36.9,38.0,False,0.7,dry,-9.9,track cooling,1.0
+2026-19-rodriguez,54,closing,24.4,37.5,37.8,False,1.4,dry,-9.3,track cooling,1.0
+2026-19-rodriguez,55,closing,24.5,37.37,37.33,False,3.83,dry,-9.43,track cooling,1.0
+2026-19-rodriguez,56,closing,24.7,37.4,37.2,False,0.6,dry,-9.4,track cooling,1.0
+2026-19-rodriguez,57,closing,24.8,0.0,36.7,False,0.5,dry,-46.8,track cooling,1.0
+2026-19-rodriguez,58,closing,25.01,37.61,36.59,False,1.5,dry,-9.19,track cooling,1.0
+2026-19-rodriguez,59,closing,25.1,37.6,37.2,False,2.0,dry,-9.2,track cooling,1.0
+2026-19-rodriguez,60,closing,25.0,37.34,37.56,False,2.64,dry,-9.46,track cooling,1.0
+2026-19-rodriguez,61,closing,24.9,37.21,37.51,False,1.71,dry,-9.59,track cooling,1.0
+2026-19-rodriguez,62,closing,24.9,36.8,37.04,False,3.45,dry,-10.0,track cooling,1.0
+2026-19-rodriguez,63,closing,24.9,36.5,37.4,False,0.5,dry,-10.3,track cooling,1.0
+2026-19-rodriguez,64,closing,24.7,35.8,36.9,False,3.5,dry,-11.0,track cooling,1.0
+2026-19-rodriguez,65,closing,24.7,35.6,37.1,False,1.8,dry,-11.2,track cooling,1.0
+2026-19-rodriguez,66,closing,24.69,35.54,37.61,False,1.98,dry,-11.26,track cooling,1.0
+2026-19-rodriguez,67,closing,24.5,35.0,37.5,False,2.3,dry,-11.8,track cooling,1.0
+2026-19-rodriguez,68,closing,24.5,34.6,37.4,False,3.5,dry,-12.2,track cooling,1.0
+2026-19-rodriguez,69,closing,24.4,34.95,37.45,False,0.82,dry,-11.85,track cooling,1.0
+2026-19-rodriguez,70,closing,24.4,34.7,37.4,False,1.2,dry,-12.1,track cooling,1.0
+2026-19-rodriguez,71,closing,24.4,34.5,37.5,False,2.0,dry,-12.3,track cooling,1.0

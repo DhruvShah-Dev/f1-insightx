@@ -281,6 +281,9 @@ def build_canonical_session_layer(
 
     for session_dir in staged_session_directories(settings):
         session_code = session_dir.name.upper()
+        manifest_path = session_dir / "session_manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
+        source_prefix = "openf1" if str(manifest.get("source", "")).startswith("openf1") else "fastf1"
         summary = read_csv(session_dir / "session_summary.csv")
         laps = read_csv(session_dir / "laps.csv")
         stints = read_csv(session_dir / "stints.csv")
@@ -306,7 +309,7 @@ def build_canonical_session_layer(
                     "session_name": session_code,
                     "event_name": event_name or race_id,
                     "scheduled_at": None,
-                    "source_label": "fastf1_canonical_v1",
+                    "source_label": f"{source_prefix}_canonical_v1",
                 }
             )
             seen_sessions.add(session_id)
@@ -337,7 +340,7 @@ def build_canonical_session_layer(
                         "race_id": race_id,
                         "driver_id": driver_id,
                         "constructor_id": constructor_id,
-                        "source_label": "fastf1_entry_v1",
+                        "source_label": f"{source_prefix}_entry_v1",
                     }
                 )
                 seen_entries.add(entry_id)
@@ -373,7 +376,7 @@ def build_canonical_session_layer(
                         "air_temp_c": row.get("air_temp_c"),
                         "track_temp_c": row.get("track_temp_c"),
                         "rainfall_flag": bool(row.get("rainfall_flag")) if pd.notna(row.get("rainfall_flag")) else False,
-                        "source_label": "race_week_session_pace_v1",
+                        "source_label": f"{source_prefix}_session_pace_v1",
                     }
                 )
 
@@ -421,7 +424,7 @@ def build_canonical_session_layer(
                         "rainfall": bool(row.get("rainfall")) if pd.notna(row.get("rainfall")) else False,
                         "wind_speed_mps": row.get("wind_speed_mps"),
                         "wind_direction_deg": row.get("wind_direction_deg"),
-                        "source_label": "fastf1_session_lap_v1",
+                        "source_label": f"{source_prefix}_session_lap_v1",
                     }
                 )
 
@@ -454,7 +457,7 @@ def build_canonical_session_layer(
                         "start_tyre_life": int(row["start_tyre_life"]) if pd.notna(row.get("start_tyre_life")) else None,
                         "end_tyre_life": int(row["end_tyre_life"]) if pd.notna(row.get("end_tyre_life")) else None,
                         "session_code": row.get("session_code") or session_code,
-                        "source_label": "fastf1_session_stint_v1",
+                        "source_label": f"{source_prefix}_session_stint_v1",
                     }
                 )
 
@@ -476,7 +479,7 @@ def build_canonical_session_layer(
                         "rainfall": bool(rainfall_value) if pd.notna(rainfall_value) else False,
                         "wind_speed_mps": pick_first(row, ["WindSpeed"]),
                         "wind_direction_deg": pick_first(row, ["WindDirection"]),
-                        "source_label": "fastf1_session_weather_v1",
+                        "source_label": f"{source_prefix}_session_weather_v1",
                     }
                 )
 
@@ -508,7 +511,7 @@ def build_canonical_session_layer(
                         "status": pick_first(row, ["Status", "Time"]),
                         "laps_completed": pick_first(row, ["Laps"]),
                         "fastest_lap_rank": pick_first(row, ["FastestLapRank"]),
-                        "source_label": "fastf1_session_result_v1",
+                        "source_label": f"{source_prefix}_session_result_v1",
                     }
                 )
 

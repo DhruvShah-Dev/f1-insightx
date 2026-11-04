@@ -5,9 +5,21 @@
   "event_format": "conventional",
   "session_code": "Q",
   "session_name": "Qualifying",
-  "status": "unavailable",
-  "started_at": "2026-11-02T19:22:29Z",
-  "completed_at": "2026-11-02T19:22:37Z",
-  "error": "The data you are trying to access has not been loaded yet. See `Session.load`",
-  "source": "fastf1_staged_session_v2"
+  "event_date": "2026-10-31",
+  "country": "Mexico",
+  "location": "Mexico City",
+  "status": "complete",
+  "error": null,
+  "telemetry_requested": true,
+  "telemetry_available": true,
+  "position_available": true,
+  "source": "openf1_post_session_bridge_v1",
+  "row_counts": {
+    "results": 22,
+    "laps": 366,
+    "weather": 83,
+    "stints": 102,
+    "telemetry_rows": 6282,
+    "position_rows": 6399
+  }
 }

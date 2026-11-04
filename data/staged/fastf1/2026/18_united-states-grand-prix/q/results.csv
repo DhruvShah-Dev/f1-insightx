@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,source_label
+1,1,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,"[95.39, 94.278, 94.035]",Finished,,18,openf1_post_session_bridge_v1
+2,2,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,"[95.215, 94.471, 94.214]",Finished,,12,openf1_post_session_bridge_v1
+3,3,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,"[95.286, 94.887, 94.25]",Finished,,12,openf1_post_session_bridge_v1
+4,4,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,"[95.2, 94.198, 94.267]",Finished,,15,openf1_post_session_bridge_v1
+5,5,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,"[95.355, 94.833, 94.311]",Finished,,14,openf1_post_session_bridge_v1
+6,6,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,"[95.73, 94.305, 94.476]",Finished,,18,openf1_post_session_bridge_v1
+7,7,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,"[95.842, 94.818, 94.803]",Finished,,20,openf1_post_session_bridge_v1
+8,8,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,"[95.029, 94.539, 95.049]",Finished,,15,openf1_post_session_bridge_v1
+9,9,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,"[95.755, 94.95, 96.049]",Finished,,15,openf1_post_session_bridge_v1
+10,10,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,"[95.662, 95.058, None]",Finished,,9,openf1_post_session_bridge_v1
+11,11,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,"[95.969, 95.08, None]",Finished,,12,openf1_post_session_bridge_v1
+12,12,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,"[95.704, 95.158, None]",Finished,,12,openf1_post_session_bridge_v1
+13,13,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,"[95.632, 95.691, None]",Finished,,12,openf1_post_session_bridge_v1
+14,14,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,"[95.898, 95.722, None]",Finished,,12,openf1_post_session_bridge_v1
+15,15,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,"[96.24, 95.818, None]",Finished,,15,openf1_post_session_bridge_v1
+16,16,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,"[96.175, 96.031, None]",Finished,,15,openf1_post_session_bridge_v1
+17,17,31,E OCON,OCO,Esteban OCON,Haas F1 Team,9C9FA2,,,,,"[96.531, None, None]",Finished,,9,openf1_post_session_bridge_v1
+18,18,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,"[96.677, None, None]",Finished,,9,openf1_post_session_bridge_v1
+19,19,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,"[96.77, None, None]",Finished,,9,openf1_post_session_bridge_v1
+20,20,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,"[96.967, None, None]",Finished,,9,openf1_post_session_bridge_v1
+21,21,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,"[97.433, None, None]",Finished,,9,openf1_post_session_bridge_v1
+22,22,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,"[97.523, None, None]",Finished,,9,openf1_post_session_bridge_v1

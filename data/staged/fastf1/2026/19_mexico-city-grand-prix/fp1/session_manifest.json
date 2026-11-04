@@ -5,9 +5,21 @@
   "event_format": "conventional",
   "session_code": "FP1",
   "session_name": "Practice 1",
-  "status": "unavailable",
-  "started_at": "2026-11-02T19:22:00Z",
-  "completed_at": "2026-11-02T19:22:09Z",
-  "error": "The data you are trying to access has not been loaded yet. See `Session.load`",
-  "source": "fastf1_staged_session_v2"
+  "event_date": "2026-10-30",
+  "country": "Mexico",
+  "location": "Mexico City",
+  "status": "complete",
+  "error": null,
+  "telemetry_requested": true,
+  "telemetry_available": true,
+  "position_available": true,
+  "source": "openf1_post_session_bridge_v1",
+  "row_counts": {
+    "results": 22,
+    "laps": 589,
+    "weather": 79,
+    "stints": 90,
+    "telemetry_rows": 6555,
+    "position_rows": 6611
+  }
 }

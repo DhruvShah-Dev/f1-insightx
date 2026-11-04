@@ -5,9 +5,21 @@
   "event_format": "conventional",
   "session_code": "Q",
   "session_name": "Qualifying",
-  "status": "unavailable",
-  "started_at": "2026-10-27T19:28:35Z",
-  "completed_at": "2026-10-27T19:28:43Z",
-  "error": "The data you are trying to access has not been loaded yet. See `Session.load`",
-  "source": "fastf1_staged_session_v2"
+  "event_date": "2026-10-24",
+  "country": "United States",
+  "location": "Austin",
+  "status": "complete",
+  "error": null,
+  "telemetry_requested": true,
+  "telemetry_available": true,
+  "position_available": true,
+  "source": "openf1_post_session_bridge_v1",
+  "row_counts": {
+    "results": 22,
+    "laps": 280,
+    "weather": 77,
+    "stints": 90,
+    "telemetry_rows": 7712,
+    "position_rows": 7783
+  }
 }

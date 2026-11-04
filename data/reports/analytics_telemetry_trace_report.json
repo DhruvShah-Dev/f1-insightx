@@ -1,11 +1,15 @@
 {
-  "average_session_bytes": 36155.4,
-  "build_version": "analytics_telemetry_traces_20261102T192721Z",
-  "drivers_with_traces": 1436,
-  "generated_at": "2026-11-02T19:27:21Z",
-  "sessions_available": 67,
-  "sessions_expected": 67,
-  "total_trace_bytes": 2422410,
+  "average_session_bytes": 36288.2,
+  "build_version": "analytics_telemetry_traces_20261103T223012Z",
+  "drivers_with_traces": 1652,
+  "generated_at": "2026-11-03T22:30:12Z",
+  "sessions_available": 77,
+  "sessions_expected": 77,
+  "source_counts": {
+    "offline_fastf1_telemetry_parquet": 67,
+    "openf1_post_session_telemetry": 10
+  },
+  "total_trace_bytes": 2794194,
   "trace_point_count": 96,
   "validation_errors": [],
   "warning_count": 1,

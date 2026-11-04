@@ -68,13 +68,13 @@ id,race_id,season,round,session_code,session_name,event_name,scheduled_at,source
 2026-17-marina_bay|R,2026-17-marina_bay,2026,17,R,R,Singapore Grand Prix,,fastf1_canonical_v1
 2026-17-marina_bay|S,2026-17-marina_bay,2026,17,S,S,Singapore Grand Prix,,fastf1_canonical_v1
 2026-17-marina_bay|SQ,2026-17-marina_bay,2026,17,SQ,SQ,Singapore Grand Prix,,fastf1_canonical_v1
-2026-18-americas|FP1,2026-18-americas,2026,18,FP1,FP1,United States Grand Prix,,fastf1_canonical_v1
-2026-18-americas|FP2,2026-18-americas,2026,18,FP2,FP2,United States Grand Prix,,fastf1_canonical_v1
-2026-18-americas|FP3,2026-18-americas,2026,18,FP3,FP3,United States Grand Prix,,fastf1_canonical_v1
-2026-18-americas|Q,2026-18-americas,2026,18,Q,Q,United States Grand Prix,,fastf1_canonical_v1
-2026-18-americas|R,2026-18-americas,2026,18,R,R,United States Grand Prix,,fastf1_canonical_v1
-2026-19-rodriguez|FP1,2026-19-rodriguez,2026,19,FP1,FP1,Mexico City Grand Prix,,fastf1_canonical_v1
-2026-19-rodriguez|FP2,2026-19-rodriguez,2026,19,FP2,FP2,Mexico City Grand Prix,,fastf1_canonical_v1
-2026-19-rodriguez|FP3,2026-19-rodriguez,2026,19,FP3,FP3,Mexico City Grand Prix,,fastf1_canonical_v1
-2026-19-rodriguez|Q,2026-19-rodriguez,2026,19,Q,Q,Mexico City Grand Prix,,fastf1_canonical_v1
-2026-19-rodriguez|R,2026-19-rodriguez,2026,19,R,R,Mexico City Grand Prix,,fastf1_canonical_v1
+2026-18-americas|FP1,2026-18-americas,2026,18,FP1,FP1,United States Grand Prix,,openf1_canonical_v1
+2026-18-americas|FP2,2026-18-americas,2026,18,FP2,FP2,United States Grand Prix,,openf1_canonical_v1
+2026-18-americas|FP3,2026-18-americas,2026,18,FP3,FP3,United States Grand Prix,,openf1_canonical_v1
+2026-18-americas|Q,2026-18-americas,2026,18,Q,Q,United States Grand Prix,,openf1_canonical_v1
+2026-18-americas|R,2026-18-americas,2026,18,R,R,United States Grand Prix,,openf1_canonical_v1
+2026-19-rodriguez|FP1,2026-19-rodriguez,2026,19,FP1,FP1,Mexico City Grand Prix,,openf1_canonical_v1
+2026-19-rodriguez|FP2,2026-19-rodriguez,2026,19,FP2,FP2,Mexico City Grand Prix,,openf1_canonical_v1
+2026-19-rodriguez|FP3,2026-19-rodriguez,2026,19,FP3,FP3,Mexico City Grand Prix,,openf1_canonical_v1
+2026-19-rodriguez|Q,2026-19-rodriguez,2026,19,Q,Q,Mexico City Grand Prix,,openf1_canonical_v1
+2026-19-rodriguez|R,2026-19-rodriguez,2026,19,R,R,Mexico City Grand Prix,,openf1_canonical_v1

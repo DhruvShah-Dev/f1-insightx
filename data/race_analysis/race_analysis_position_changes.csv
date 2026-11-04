@@ -373,3 +373,47 @@ race_analysis_id,driver,team,start_position,finish_position,net_position_change,
 2026-17-marina_bay,STR,Aston Martin,21,20,1,5.0,0.0,opening,middle,0.233,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-17-marina_bay,COL,Alpine,15,21,-6,2.0,0.0,middle,middle,0.1,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
 2026-17-marina_bay,BOR,Audi,14,22,-8,0.0,0.0,none,closing,0.133,0.55,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,ANT,Mercedes,,1,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,LEC,Ferrari,,2,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,VER,Red Bull Racing,,3,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,HAM,Ferrari,,4,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,NOR,McLaren,,5,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,HAD,Red Bull Racing,,6,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,PIA,McLaren,,7,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,RUS,Mercedes,,8,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,LAW,Racing Bulls,,9,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,GAS,Alpine,,10,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,HUL,Audi,,11,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,LIN,Racing Bulls,,12,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,BOR,Audi,,13,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,OCO,Haas F1 Team,,14,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,STR,Aston Martin,,15,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,ALO,Aston Martin,,16,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,ALB,Williams,,17,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,SAI,Williams,,18,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,PER,Cadillac,,19,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,BEA,Haas F1 Team,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,BOT,Cadillac,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-18-americas,COL,Alpine,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,VER,Red Bull Racing,,1,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,HAM,Ferrari,,2,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,ANT,Mercedes,,3,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,LEC,Ferrari,,4,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,NOR,McLaren,,5,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,RUS,Mercedes,,6,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,LAW,Racing Bulls,,7,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,BOR,Audi,,8,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,HAD,Red Bull Racing,,9,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,HIR,Haas F1 Team,,10,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,ALB,Williams,,11,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,SAI,Williams,,12,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,PIA,McLaren,,13,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,HUL,Audi,,14,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,COL,Alpine,,15,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,PER,Cadillac,,16,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,GAS,Alpine,,17,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,ALO,Aston Martin,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,BEA,Haas F1 Team,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,BOT,Cadillac,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,LIN,Racing Bulls,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.
+2026-19-rodriguez,STR,Aston Martin,,,,0.0,0.0,none,none,0.0,0.35,Lap-position movement proxy; pass-by-pass attribution is unavailable.

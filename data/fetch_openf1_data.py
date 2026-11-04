@@ -17,10 +17,13 @@ DEFAULT_ENDPOINTS = [
     "starting_grid",
     "weather",
     "laps",
+    "car_data",
+    "location",
     "stints",
     "pit",
     "race_control",
 ]
+DRIVER_PARTITIONED_ENDPOINTS = {"car_data", "location"}
 SESSION_TYPE_ALIASES = {
     "FP1": "Practice 1",
     "FP2": "Practice 2",
@@ -91,6 +94,10 @@ def near_race(session: dict[str, Any], race_date: str | None) -> bool:
     return race_at - timedelta(days=5) <= session_at <= race_at + timedelta(days=1)
 
 
+def driver_numbers(records: list[dict[str, Any]]) -> list[int]:
+    return sorted({int(record["driver_number"]) for record in records if record.get("driver_number") is not None})
+
+
 def main() -> None:
     args = parse_args()
     settings = load_settings()
@@ -123,6 +130,7 @@ def main() -> None:
                 raw_session_dir = session_dir_for(settings.raw_openf1_dir, session)
                 staged_session_dir = session_dir_for(settings.staged_openf1_dir, session)
                 write_json(raw_session_dir / "session.json", session)
+                session_drivers: list[int] | None = None
 
                 for endpoint in args.endpoints:
                     raw_path = raw_session_dir / f"{endpoint}.json"
@@ -132,7 +140,23 @@ def main() -> None:
                         row_count = None
                     else:
                         try:
-                            records = client.fetch_endpoint_for_session(endpoint, int(session["session_key"]))
+                            session_key = int(session["session_key"])
+                            if endpoint in DRIVER_PARTITIONED_ENDPOINTS:
+                                if session_drivers is None:
+                                    session_drivers = driver_numbers(
+                                        client.fetch_endpoint_for_session("drivers", session_key)
+                                    )
+                                records = []
+                                for driver_number in session_drivers:
+                                    records.extend(
+                                        client.fetch_endpoint_for_session(
+                                            endpoint,
+                                            session_key,
+                                            driver_number=driver_number,
+                                        )
+                                    )
+                            else:
+                                records = client.fetch_endpoint_for_session(endpoint, session_key)
                             write_json(raw_path, records)
                             write_records_csv(records, staged_path)
                             status = "fetched"

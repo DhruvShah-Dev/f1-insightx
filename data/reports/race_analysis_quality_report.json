@@ -2,12 +2,12 @@
   "build_version": "race-analysis-v1",
   "confidence_distribution": {
     "max": 1.0,
-    "mean": 0.792,
+    "mean": 0.78,
     "min": 0.35,
     "tier": "strong"
   },
-  "generated_at": "2026-11-02T19:27:37Z",
-  "latest_race": "Singapore Grand Prix",
+  "generated_at": "2026-11-03T22:30:23Z",
+  "latest_race": "Mexico City Grand Prix",
   "missing_data_flags": {
     "drs_window": "proxy_only_no_exact_gap_feed",
     "dynamic_gap_feed": "missing",
@@ -18,22 +18,22 @@
     "track_status": "partial",
     "traffic_proxy": "proxy_no_exact_gap_feed"
   },
-  "races_generated": 17,
+  "races_generated": 19,
   "rows": {
-    "index": 17,
-    "links": 51,
+    "index": 19,
+    "links": 57,
     "neutralization_phases": 91,
-    "pace_evolution": 19627,
-    "pit_strategy": 688,
-    "position_changes": 374,
+    "pace_evolution": 22153,
+    "pit_strategy": 778,
+    "position_changes": 418,
     "position_swing_events": 3272,
     "position_timeline": 19586,
-    "stints": 1061,
-    "story_points": 70,
-    "summary": 17,
-    "track_status": 1023,
+    "stints": 1195,
+    "story_points": 74,
+    "summary": 19,
+    "track_status": 1150,
     "traffic_proxy": 19627,
-    "weather_context": 1023
+    "weather_context": 1150
   },
   "season_coverage": [
     2026

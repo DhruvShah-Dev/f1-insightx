@@ -1,0 +1,92 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life,source_label
+2026,18,United States Grand Prix,FP3,ALB,Williams,1,SOFT,5,118.2298,0.0,0.0,2,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ALB,Williams,2,SOFT,8,142.84199999999998,-0.1962857142857136,-0.28571428571428575,7,14,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ALB,Williams,3,SOFT,8,176.522625,-1.4285714285714286,-0.19047619047619052,1,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ALO,Aston Martin,1,MEDIUM,6,124.78150000000001,2.0,-0.08571428571428573,2,7,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ALO,Aston Martin,2,MEDIUM,3,251.86266666666668,0.0,-0.5,8,10,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ALO,Aston Martin,3,SOFT,9,177.45444444444445,0.0,-0.016666666666666666,1,9,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ANT,Mercedes,1,SOFT,2,118.0505,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ANT,Mercedes,2,SOFT,3,200.35300000000004,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ANT,Mercedes,3,SOFT,3,265.613,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ANT,Mercedes,4,SOFT,2,275.8815,-10.0,0.0,4,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,ANT,Mercedes,5,SOFT,5,146.8186,0.6222500000000011,-0.09999999999999999,6,10,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BEA,Haas F1 Team,1,MEDIUM,5,124.48420000000002,0.0,0.0,2,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BEA,Haas F1 Team,2,SOFT,8,217.07662499999998,-1.4285714285714286,-0.523809523809524,1,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BEA,Haas F1 Team,3,MEDIUM,3,187.952,0.0,-0.5,7,9,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOR,Audi,2,MEDIUM,5,225.7214,0.0,-0.49999999999999994,1,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOR,Audi,3,MEDIUM,7,108.29771428571428,-0.8906666666666657,0.07142857142857144,1,7,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOR,Audi,4,MEDIUM,1,138.641,0.0,0.0,1,1,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOR,Audi,5,SOFT,5,202.9804,-1.6990000000000052,-0.3,1,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOR,Audi,6,SOFT,1,302.444,0.0,0.0,6,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOR,Audi,7,SOFT,3,142.055,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOT,Cadillac,1,HARD,7,122.772,0.0,-0.21428571428571433,2,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOT,Cadillac,2,HARD,6,200.62583333333336,1.0996000000000037,-0.48571428571428577,1,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOT,Cadillac,3,SOFT,3,261.238,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,BOT,Cadillac,4,SOFT,5,131.1184,0.0,-0.3,4,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,COL,Alpine,1,MEDIUM,11,102.85663636363637,1.0457999999999998,0.7636363636363637,2,12,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,COL,Alpine,2,SOFT,3,346.48566666666665,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,COL,Alpine,3,SOFT,3,232.78733333333332,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,COL,Alpine,4,SOFT,4,230.65875,3.3333333333333335,-0.19999999999999998,7,10,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,GAS,Alpine,1,MEDIUM,5,126.66980000000001,0.0,0.3,2,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,GAS,Alpine,2,MEDIUM,11,133.10727272727274,0.10649999999999978,0.45454545454545453,1,11,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,GAS,Alpine,3,SOFT,3,219.76633333333334,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,GAS,Alpine,4,SOFT,4,186.469,-3.3333333333333335,-0.39999999999999997,4,7,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAD,Red Bull Racing,1,MEDIUM,4,124.66725000000001,3.3333333333333335,0.0,2,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAD,Red Bull Racing,2,MEDIUM,5,130.263,-5.0,-0.8999999999999998,6,10,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAD,Red Bull Racing,3,MEDIUM,1,151.886,0.0,0.0,1,1,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAD,Red Bull Racing,4,SOFT,9,164.39977777777779,-4.778750000000002,-0.15,1,9,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAM,Ferrari,1,SOFT,5,131.0508,0.0,0.0,2,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAM,Ferrari,2,SOFT,4,130.49525,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAM,Ferrari,3,SOFT,3,312.61766666666665,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HAM,Ferrari,4,SOFT,8,138.10725000000002,-0.3031428571428571,-0.19047619047619052,1,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HUL,Audi,1,MEDIUM,7,121.41514285714285,0.0,-0.07142857142857144,2,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HUL,Audi,2,MEDIUM,3,119.55466666666666,0.0,-0.5,9,11,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HUL,Audi,3,SOFT,5,234.76860000000002,-4.0604999999999976,-0.39999999999999997,1,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,HUL,Audi,4,SOFT,3,250.91400000000002,0.0,-0.5,6,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LAW,Racing Bulls,1,MEDIUM,5,119.124,0.0,-0.19999999999999998,2,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LAW,Racing Bulls,2,MEDIUM,3,242.69699999999997,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LAW,Racing Bulls,3,MEDIUM,1,157.177,0.0,0.0,10,10,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LAW,Racing Bulls,4,SOFT,3,271.2146666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LAW,Racing Bulls,5,SOFT,4,174.2695,3.3333333333333335,-0.19999999999999998,1,4,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LEC,Ferrari,1,MEDIUM,2,120.471,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LEC,Ferrari,2,MEDIUM,4,134.6395,-3.3333333333333335,-0.39999999999999997,4,7,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LEC,Ferrari,3,MEDIUM,3,123.80499999999999,0.0,-0.5,8,10,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LEC,Ferrari,4,SOFT,3,282.45233333333334,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LEC,Ferrari,5,SOFT,7,126.09985714285713,-3.3333333333333335,-0.07142857142857144,4,10,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LIN,Racing Bulls,1,MEDIUM,5,119.2808,0.0,0.0,2,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LIN,Racing Bulls,2,MEDIUM,3,233.48366666666666,0.0,-0.5,7,9,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LIN,Racing Bulls,3,MEDIUM,1,149.033,0.0,0.0,1,1,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LIN,Racing Bulls,4,SOFT,3,264.252,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,LIN,Racing Bulls,5,SOFT,5,181.87539999999998,3.8924999999999983,0.0,4,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,NOR,McLaren,1,SOFT,7,127.48342857142858,-3.3333333333333335,-0.07142857142857144,2,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,NOR,McLaren,2,SOFT,6,229.56650000000002,-3.9512,-0.48571428571428577,1,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,NOR,McLaren,3,SOFT,3,260.78933333333333,0.0,-0.5,7,9,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,OCO,Haas F1 Team,1,MEDIUM,5,118.08160000000001,0.0,0.0,2,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,OCO,Haas F1 Team,2,MEDIUM,3,206.667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,OCO,Haas F1 Team,3,SOFT,3,247.08966666666666,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,OCO,Haas F1 Team,4,SOFT,3,131.274,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,OCO,Haas F1 Team,5,MEDIUM,3,251.102,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PER,Cadillac,1,HARD,8,119.982875,1.4285714285714286,-0.09523809523809526,2,9,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PER,Cadillac,2,HARD,9,166.05955555555556,0.1798750000000009,0.03333333333333333,1,9,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PER,Cadillac,3,SOFT,3,258.5246666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PER,Cadillac,4,SOFT,4,140.3405,3.3333333333333335,-0.19999999999999998,1,4,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PIA,McLaren,1,SOFT,2,118.3485,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PIA,McLaren,2,SOFT,3,232.50233333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PIA,McLaren,3,SOFT,3,303.563,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PIA,McLaren,4,SOFT,4,126.63175,-3.3333333333333335,-0.7999999999999999,1,4,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,PIA,McLaren,5,SOFT,3,200.36266666666668,-5.890999999999991,-1.0,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,RUS,Mercedes,1,SOFT,7,119.3247142857143,-3.3333333333333335,-0.39285714285714296,2,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,RUS,Mercedes,2,SOFT,3,224.78866666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,RUS,Mercedes,3,SOFT,4,177.64875,-3.3333333333333335,-0.7999999999999999,1,4,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,RUS,Mercedes,4,SOFT,3,198.64433333333332,0.0,-0.5,9,11,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,SAI,Williams,1,SOFT,2,117.54499999999999,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,SAI,Williams,2,SOFT,3,123.371,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,SAI,Williams,3,SOFT,8,148.88987500000002,-0.7395714285714275,-0.14285714285714288,1,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,SAI,Williams,4,SOFT,7,190.78414285714285,-2.490166666666667,-0.14285714285714288,1,7,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,STR,Aston Martin,1,MEDIUM,4,128.8285,3.994999999999995,0.7999999999999999,2,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,STR,Aston Martin,2,MEDIUM,2,438.613,-10.0,0.0,6,7,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,STR,Aston Martin,3,SOFT,5,352.4204,1.2482499999999987,-0.09999999999999999,1,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,VER,Red Bull Racing,1,MEDIUM,4,124.3135,-3.3333333333333335,0.19999999999999998,2,5,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,VER,Red Bull Racing,2,MEDIUM,3,122.72333333333331,0.0,-0.5,6,8,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,VER,Red Bull Racing,3,SOFT,3,319.1356666666667,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,18,United States Grand Prix,FP3,VER,Red Bull Racing,4,SOFT,5,229.2362,0.0,-0.09999999999999999,4,8,openf1_post_session_bridge_v1

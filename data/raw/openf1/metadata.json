@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-02T19:22:54.139234+00:00",
+  "fetched_at": "2026-11-03T21:53:52.157465+00:00",
   "start_season": 2026,
   "end_season": 2026,
   "session_types": [
@@ -7,20 +7,12 @@
     "FP2",
     "FP3",
     "Q",
-    "SQ",
-    "S",
     "R"
   ],
   "endpoints": [
-    "drivers",
-    "session_result",
-    "starting_grid",
-    "weather",
-    "laps",
-    "stints",
-    "pit",
-    "race_control"
+    "car_data",
+    "location"
   ],
-  "meeting_key": null,
+  "meeting_key": 1298,
   "free_tier_note": "Historical data only; keep requests under 3 req/s and 30 req/min."
 }

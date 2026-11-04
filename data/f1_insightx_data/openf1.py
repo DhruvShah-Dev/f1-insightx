@@ -20,7 +20,7 @@ class OpenF1Client:
         self,
         base_url: str,
         *,
-        timeout: float = 30.0,
+        timeout: float = 120.0,
         max_retries: int = 5,
         rate_limit: OpenF1RateLimit | None = None,
     ) -> None:
@@ -84,8 +84,17 @@ class OpenF1Client:
             params["year"] = season
         return self._get("/sessions", params)
 
-    def fetch_endpoint_for_session(self, endpoint: str, session_key: int | str) -> list[dict[str, Any]]:
-        return self._get(f"/{endpoint}", {"session_key": session_key})
+    def fetch_endpoint_for_session(
+        self,
+        endpoint: str,
+        session_key: int | str,
+        *,
+        driver_number: int | str | None = None,
+    ) -> list[dict[str, Any]]:
+        params: dict[str, Any] = {"session_key": session_key}
+        if driver_number is not None:
+            params["driver_number"] = driver_number
+        return self._get(f"/{endpoint}", params)
 
 
 def frame_from_records(records: list[dict[str, Any]]) -> pd.DataFrame:

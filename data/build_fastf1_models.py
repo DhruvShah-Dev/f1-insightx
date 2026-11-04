@@ -92,6 +92,7 @@ def build_prediction_snapshots(features: pd.DataFrame) -> pd.DataFrame:
         )
 
         for _, row in scored.iterrows():
+            source_prefix = "openf1" if str(row.get("source_label", "")).startswith("openf1") else "fastf1"
             rows.append(
                 {
                     "id": f"{race_id}|{row['driver_id']}|fastf1_v1",
@@ -109,7 +110,7 @@ def build_prediction_snapshots(features: pd.DataFrame) -> pd.DataFrame:
                     "top10_probability": round(float(min(99, row["top10_probability"])), 3),
                     "confidence_score": round(float(row["confidence_score"]), 3),
                     "rationale": build_prediction_rationale(row),
-                    "source_label": "fastf1_prediction_baseline_v1",
+                    "source_label": f"{source_prefix}_prediction_baseline_v1",
                 }
             )
 
@@ -170,7 +171,11 @@ def build_strategy_baselines(stints: pd.DataFrame, prediction_features: pd.DataF
                 "degradation_risk": round(float(best.get("degradation_risk") or 0.0), 3),
                 "strategy_confidence": round(confidence, 3),
                 "rationale": rationale,
-                "source_label": "fastf1_strategy_baseline_v1",
+                "source_label": (
+                    "openf1_strategy_baseline_v1"
+                    if str(best.get("source_label", "")).startswith("openf1")
+                    else "fastf1_strategy_baseline_v1"
+                ),
             }
         )
 

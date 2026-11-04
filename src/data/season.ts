@@ -9,8 +9,8 @@ export const seasonState = {
     "date": "2026-11-01"
   },
   "raceWeekRound": 20,
-  "snapshotISO": "2026-11-02T19:28:59Z",
-  "pipelineRunISO": "2026-11-02T19:28:59Z"
+  "snapshotISO": "2026-11-03T22:41:06Z",
+  "pipelineRunISO": "2026-11-03T22:41:06Z"
 };
 
 export const nextRace = {
@@ -392,20 +392,20 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
 export const qualiProjection: { pos: number; code: string; name: string; team: TeamKey; lap: string; delta: string; conf: number }[] = [
   {
     "pos": 1,
-    "code": "ANT",
-    "name": "Andrea Kimi Antonelli",
-    "team": "mercedes",
-    "lap": "1:11.955",
-    "delta": "+0.266",
+    "code": "LEC",
+    "name": "Charles Leclerc",
+    "team": "ferrari",
+    "lap": "1:11.963",
+    "delta": "+0.273",
     "conf": 0.68
   },
   {
     "pos": 2,
-    "code": "LEC",
-    "name": "Charles Leclerc",
-    "team": "ferrari",
-    "lap": "1:11.988",
-    "delta": "+0.298",
+    "code": "ANT",
+    "name": "Andrea Kimi Antonelli",
+    "team": "mercedes",
+    "lap": "1:11.972",
+    "delta": "+0.282",
     "conf": 0.68
   },
   {
@@ -413,8 +413,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "HAM",
     "name": "Lewis Hamilton",
     "team": "ferrari",
-    "lap": "1:12.037",
-    "delta": "+0.347",
+    "lap": "1:12.007",
+    "delta": "+0.317",
     "conf": 0.68
   },
   {
@@ -422,8 +422,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "RUS",
     "name": "George Russell",
     "team": "mercedes",
-    "lap": "1:12.036",
-    "delta": "+0.347",
+    "lap": "1:12.054",
+    "delta": "+0.365",
     "conf": 0.68
   },
   {
@@ -431,8 +431,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "VER",
     "name": "Max Verstappen",
     "team": "red-bull",
-    "lap": "1:12.127",
-    "delta": "+0.438",
+    "lap": "1:12.104",
+    "delta": "+0.415",
     "conf": 0.68
   },
   {
@@ -440,8 +440,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "NOR",
     "name": "Lando Norris",
     "team": "mclaren",
-    "lap": "1:12.222",
-    "delta": "+0.533",
+    "lap": "1:12.192",
+    "delta": "+0.502",
     "conf": 0.68
   },
   {
@@ -449,8 +449,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "HAD",
     "name": "Isack Hadjar",
     "team": "red-bull",
-    "lap": "1:12.259",
-    "delta": "+0.570",
+    "lap": "1:12.234",
+    "delta": "+0.544",
     "conf": 0.68
   },
   {
@@ -458,8 +458,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "PIA",
     "name": "Oscar Piastri",
     "team": "mclaren",
-    "lap": "1:12.367",
-    "delta": "+0.677",
+    "lap": "1:12.339",
+    "delta": "+0.650",
     "conf": 0.68
   },
   {
@@ -467,8 +467,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "LIN",
     "name": "Arvid Lindblad",
     "team": "racing-bulls",
-    "lap": "1:12.607",
-    "delta": "+0.917",
+    "lap": "1:12.581",
+    "delta": "+0.892",
     "conf": 0.68
   },
   {
@@ -476,8 +476,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "LAW",
     "name": "Liam Lawson",
     "team": "racing-bulls",
-    "lap": "1:12.628",
-    "delta": "+0.939",
+    "lap": "1:12.606",
+    "delta": "+0.917",
     "conf": 0.68
   },
   {
@@ -485,8 +485,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "GAS",
     "name": "Pierre Gasly",
     "team": "alpine",
-    "lap": "1:12.700",
-    "delta": "+1.010",
+    "lap": "1:12.673",
+    "delta": "+0.983",
     "conf": 0.68
   },
   {
@@ -494,8 +494,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "HUL",
     "name": "Nico Hulkenberg",
     "team": "audi",
-    "lap": "1:12.967",
-    "delta": "+1.277",
+    "lap": "1:12.941",
+    "delta": "+1.251",
     "conf": 0.68
   },
   {
@@ -503,8 +503,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "COL",
     "name": "Franco Colapinto",
     "team": "alpine",
-    "lap": "1:13.190",
-    "delta": "+1.500",
+    "lap": "1:13.164",
+    "delta": "+1.474",
     "conf": 0.68
   },
   {
@@ -512,8 +512,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "BEA",
     "name": "Oliver Bearman",
     "team": "haas",
-    "lap": "1:13.243",
-    "delta": "+1.553",
+    "lap": "1:13.218",
+    "delta": "+1.528",
     "conf": 0.68
   },
   {
@@ -521,8 +521,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "BOR",
     "name": "Gabriel Bortoleto",
     "team": "audi",
-    "lap": "1:13.292",
-    "delta": "+1.602",
+    "lap": "1:13.261",
+    "delta": "+1.572",
     "conf": 0.68
   },
   {
@@ -539,26 +539,26 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "SAI",
     "name": "Carlos Sainz",
     "team": "williams",
-    "lap": "1:13.669",
-    "delta": "+1.979",
+    "lap": "1:13.640",
+    "delta": "+1.951",
     "conf": 0.68
   },
   {
     "pos": 18,
-    "code": "ALB",
-    "name": "Alexander Albon",
-    "team": "williams",
-    "lap": "1:13.847",
+    "code": "ALO",
+    "name": "Fernando Alonso",
+    "team": "aston-martin",
+    "lap": "1:13.848",
     "delta": "+2.158",
     "conf": 0.68
   },
   {
     "pos": 19,
-    "code": "ALO",
-    "name": "Fernando Alonso",
-    "team": "aston-martin",
-    "lap": "1:13.867",
-    "delta": "+2.177",
+    "code": "ALB",
+    "name": "Alexander Albon",
+    "team": "williams",
+    "lap": "1:13.868",
+    "delta": "+2.179",
     "conf": 0.68
   },
   {
@@ -566,8 +566,8 @@ export const qualiProjection: { pos: number; code: string; name: string; team: T
     "code": "STR",
     "name": "Lance Stroll",
     "team": "aston-martin",
-    "lap": "1:14.194",
-    "delta": "+2.504",
+    "lap": "1:14.177",
+    "delta": "+2.487",
     "conf": 0.68
   },
   {
@@ -605,6 +605,104 @@ export type RaceReport = {
 };
 
 export const raceReports: RaceReport[] = [
+  {
+    "round": 19,
+    "slug": "2026-19-rodriguez",
+    "name": "Mexico City Grand Prix",
+    "circuit": "Autódromo Hermanos Rodríguez",
+    "dateISO": "2026-11-01T20:00:00Z",
+    "winner": {
+      "code": "VER",
+      "name": "Max Verstappen",
+      "team": "red-bull"
+    },
+    "margin": "",
+    "strategy": "two-stop majority",
+    "lede": "VER won for Red Bull Racing.",
+    "keyReads": [
+      {
+        "label": "Pace factor",
+        "value": "LEC held the strongest median race pace.",
+        "note": "LEC held the strongest median race pace."
+      },
+      {
+        "label": "Strategy factor",
+        "value": "two-stop majority shaped stint length and tyre exposure.",
+        "note": "two-stop majority shaped stint length and tyre exposure."
+      },
+      {
+        "label": "Position factor",
+        "value": "Position movement is proxy-only.",
+        "note": "Position movement is proxy-only."
+      }
+    ],
+    "stints": [
+      {
+        "code": "VER",
+        "team": "red-bull",
+        "plan": "MEDIUM > SOFT > SOFT"
+      },
+      {
+        "code": "HAM",
+        "team": "ferrari",
+        "plan": "SOFT > MEDIUM > SOFT > SOFT"
+      },
+      {
+        "code": "ANT",
+        "team": "mercedes",
+        "plan": "SOFT > MEDIUM > SOFT"
+      }
+    ]
+  },
+  {
+    "round": 18,
+    "slug": "2026-18-americas",
+    "name": "United States Grand Prix",
+    "circuit": "Circuit of the Americas",
+    "dateISO": "2026-10-25T20:00:00Z",
+    "winner": {
+      "code": "ANT",
+      "name": "Andrea Kimi Antonelli",
+      "team": "mercedes"
+    },
+    "margin": "",
+    "strategy": "one-stop majority",
+    "lede": "ANT won for Mercedes.",
+    "keyReads": [
+      {
+        "label": "Pace factor",
+        "value": "VER held the strongest median race pace.",
+        "note": "VER held the strongest median race pace."
+      },
+      {
+        "label": "Strategy factor",
+        "value": "one-stop majority shaped stint length and tyre exposure.",
+        "note": "one-stop majority shaped stint length and tyre exposure."
+      },
+      {
+        "label": "Position factor",
+        "value": "Position movement is proxy-only.",
+        "note": "Position movement is proxy-only."
+      }
+    ],
+    "stints": [
+      {
+        "code": "ANT",
+        "team": "mercedes",
+        "plan": "MEDIUM > HARD"
+      },
+      {
+        "code": "LEC",
+        "team": "ferrari",
+        "plan": "SOFT > MEDIUM > HARD"
+      },
+      {
+        "code": "VER",
+        "team": "red-bull",
+        "plan": "SOFT > SOFT > MEDIUM"
+      }
+    ]
+  },
   {
     "round": 17,
     "slug": "2026-17-marina_bay",

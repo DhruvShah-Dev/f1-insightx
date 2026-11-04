@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,source_label
+1.0,1.0,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,8428.772,Finished,25.0,71,openf1_post_session_bridge_v1
+2.0,2.0,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,8429.571,Finished,18.0,71,openf1_post_session_bridge_v1
+3.0,3.0,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,8432.778,Finished,15.0,71,openf1_post_session_bridge_v1
+4.0,4.0,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,8439.479,Finished,12.0,71,openf1_post_session_bridge_v1
+5.0,5.0,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,8440.55,Finished,10.0,71,openf1_post_session_bridge_v1
+6.0,6.0,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,8441.035,Finished,8.0,71,openf1_post_session_bridge_v1
+7.0,7.0,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,8449.671,Finished,6.0,71,openf1_post_session_bridge_v1
+8.0,8.0,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,8450.813,Finished,4.0,71,openf1_post_session_bridge_v1
+9.0,9.0,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,8451.275,Finished,2.0,71,openf1_post_session_bridge_v1
+10.0,10.0,50,R HIRAKAWA,HIR,Ryo HIRAKAWA,Haas F1 Team,9C9FA2,,,,,8454.145,Finished,1.0,71,openf1_post_session_bridge_v1
+11.0,11.0,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,8456.334,Finished,0.0,71,openf1_post_session_bridge_v1
+12.0,12.0,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,8457.41,Finished,0.0,71,openf1_post_session_bridge_v1
+13.0,13.0,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,8458.247,Finished,0.0,71,openf1_post_session_bridge_v1
+14.0,14.0,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,8458.749,Finished,0.0,71,openf1_post_session_bridge_v1
+15.0,15.0,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,8458.976,Finished,0.0,71,openf1_post_session_bridge_v1
+16.0,16.0,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,8459.467,Finished,0.0,71,openf1_post_session_bridge_v1
+17.0,17.0,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,8480.255,Finished,0.0,71,openf1_post_session_bridge_v1
+,,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,,Retired,0.0,58,openf1_post_session_bridge_v1
+,,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,,Retired,0.0,47,openf1_post_session_bridge_v1
+,,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,,Retired,0.0,42,openf1_post_session_bridge_v1
+,,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,,Retired,0.0,5,openf1_post_session_bridge_v1
+,,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,,Retired,0.0,5,openf1_post_session_bridge_v1

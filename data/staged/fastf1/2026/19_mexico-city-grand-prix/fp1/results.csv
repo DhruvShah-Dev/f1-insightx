@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,source_label
+1,1,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,78.128,Finished,,29,openf1_post_session_bridge_v1
+2,2,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,78.787,Finished,,30,openf1_post_session_bridge_v1
+3,3,72,F VESTI,VES,Frederik VESTI,Mercedes,00D7B6,,,,,78.861,Finished,,24,openf1_post_session_bridge_v1
+4,4,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,78.866,Finished,,25,openf1_post_session_bridge_v1
+5,5,36,A IWASA,IWA,Ayumu IWASA,Red Bull Racing,4781D7,,,,,79.113,Finished,,23,openf1_post_session_bridge_v1
+6,6,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,79.21,Finished,,33,openf1_post_session_bridge_v1
+7,7,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,79.357,Finished,,29,openf1_post_session_bridge_v1
+8,8,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,79.376,Finished,,30,openf1_post_session_bridge_v1
+9,9,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,79.412,Finished,,28,openf1_post_session_bridge_v1
+10,10,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,79.478,Finished,,30,openf1_post_session_bridge_v1
+11,11,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,79.545,Finished,,21,openf1_post_session_bridge_v1
+12,12,91,N TSOLOV,TSO,Nikola TSOLOV,Racing Bulls,6C98FF,,,,,79.604,Finished,,29,openf1_post_session_bridge_v1
+13,13,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,79.608,Finished,,27,openf1_post_session_bridge_v1
+14,14,62,G MINI,MIN,Gabriele MINI,Alpine,00A1E8,,,,,79.946,Finished,,22,openf1_post_session_bridge_v1
+15,15,50,R HIRAKAWA,HIR,Ryo HIRAKAWA,Haas F1 Team,9C9FA2,,,,,79.982,Finished,,30,openf1_post_session_bridge_v1
+16,16,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,80.006,Finished,,31,openf1_post_session_bridge_v1
+17,17,67,L FORNAROLI,FOR,Leonardo FORNAROLI,McLaren,F47600,,,,,80.235,Finished,,25,openf1_post_session_bridge_v1
+18,18,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,80.395,Finished,,31,openf1_post_session_bridge_v1
+19,19,34,J CRAWFORD,CRA,Jak CRAWFORD,Aston Martin,229971,,,,,80.803,Finished,,15,openf1_post_session_bridge_v1
+20,20,46,L BROWNING,BRO,Luke BROWNING,Williams,1868DB,,,,,80.869,Finished,,33,openf1_post_session_bridge_v1
+21,21,98,F SLATER,SLA,Freddie SLATER,Audi,F50537,,,,,80.945,Finished,,14,openf1_post_session_bridge_v1
+22,22,25,C HERTA,HER,Colton HERTA,Cadillac,909090,,,,,81.365,Finished,,30,openf1_post_session_bridge_v1

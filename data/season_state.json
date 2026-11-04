@@ -2,16 +2,16 @@
   "analytics_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "marina_bay",
-      "id": "2026-17-marina_bay",
-      "race_name": "Singapore Grand Prix",
-      "round": 17,
-      "scheduled_at": "2026-10-11T12:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "data_available"
     }
   },
-  "build_version": "season_state_20261102T192859Z",
+  "build_version": "season_state_20261103T224106Z",
   "current_race_week": {
     "available": true,
     "product_view_race": {
@@ -40,60 +40,60 @@
     "position_evolution": "partial",
     "race_control": "missing",
     "race_results": "available",
-    "telemetry_sessions": "partial",
+    "telemetry_sessions": "available",
     "weather": "available"
   },
   "freshness": {
     "analytics": {
-      "build_version": "analytics_views_20261102T192627Z",
-      "generated_at": "2026-11-02T19:26:27Z",
+      "build_version": "analytics_views_20261103T222824Z",
+      "generated_at": "2026-11-03T22:28:24Z",
       "validation_status": "passed",
       "warnings": []
     },
     "analytics_index": {
-      "build_version": "analytics_index_20261102T192720Z",
-      "generated_at": "2026-11-02T19:27:20Z",
+      "build_version": "analytics_index_20261103T223001Z",
+      "generated_at": "2026-11-03T22:30:01Z",
       "validation_status": "passed",
       "warnings": []
     },
     "canonical_fastf1": {
-      "build_version": "canonical_fastf1_20261102T192430Z",
-      "generated_at": "2026-11-02T19:24:30Z",
+      "build_version": "canonical_fastf1_20261103T222224Z",
+      "generated_at": "2026-11-03T22:22:24Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_analysis": {
       "build_version": "race-analysis-v1",
-      "generated_at": "2026-11-02T19:27:37Z",
+      "generated_at": "2026-11-03T22:30:23Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_week": {
-      "build_version": "race_week_20261102T192623Z",
-      "generated_at": "2026-11-02T19:26:23Z",
+      "build_version": "race_week_20261103T223135Z",
+      "generated_at": "2026-11-03T22:31:35Z",
       "validation_status": "passed",
       "warnings": []
     },
     "season_state": {
-      "build_version": "season_state_20261027T193021Z",
-      "generated_at": "2026-10-27T19:30:21Z",
+      "build_version": "season_state_20261103T223156Z",
+      "generated_at": "2026-11-03T22:31:56Z",
       "validation_status": "passed",
       "warnings": []
     },
     "strategy_lab": {
-      "build_version": "strategy_lab_20261102T192625Z",
-      "generated_at": "2026-11-02T19:26:25Z",
+      "build_version": "strategy_lab_20261103T223138Z",
+      "generated_at": "2026-11-03T22:31:38Z",
       "validation_status": "passed",
       "warnings": []
     },
     "telemetry_features": {
-      "build_version": "telemetry_features_20261102T192608Z",
-      "generated_at": "2026-11-02T19:26:08Z",
+      "build_version": "telemetry_features_20261103T222601Z",
+      "generated_at": "2026-11-03T22:26:01Z",
       "validation_status": "passed",
       "warnings": []
     }
   },
-  "generated_at": "2026-11-02T19:28:59Z",
+  "generated_at": "2026-11-03T22:41:06Z",
   "latest_completed_race": {
     "circuit_id": "rodriguez",
     "id": "2026-19-rodriguez",
@@ -104,11 +104,11 @@
     "status": "completed_by_schedule"
   },
   "latest_completed_race_with_analytics": {
-    "circuit_id": "marina_bay",
-    "id": "2026-17-marina_bay",
-    "race_name": "Singapore Grand Prix",
-    "round": 17,
-    "scheduled_at": "2026-10-11T12:00:00Z",
+    "circuit_id": "rodriguez",
+    "id": "2026-19-rodriguez",
+    "race_name": "Mexico City Grand Prix",
+    "round": 19,
+    "scheduled_at": "2026-11-01T20:00:00Z",
     "season": 2026,
     "status": "data_available"
   },
@@ -122,19 +122,15 @@
     "status": "results_available"
   },
   "latest_completed_race_with_telemetry": {
-    "circuit_id": "marina_bay",
-    "id": "2026-17-marina_bay",
-    "race_name": "Singapore Grand Prix",
-    "round": 17,
-    "scheduled_at": "2026-10-11T12:00:00Z",
+    "circuit_id": "rodriguez",
+    "id": "2026-19-rodriguez",
+    "race_name": "Mexico City Grand Prix",
+    "round": 19,
+    "scheduled_at": "2026-11-01T20:00:00Z",
     "season": 2026,
     "status": "data_available"
   },
-  "missing_data_flags": [
-    "analytics_not_current",
-    "race_analysis_not_current",
-    "telemetry_not_current"
-  ],
+  "missing_data_flags": [],
   "next_race": {
     "circuit_id": "interlagos",
     "id": "2026-20-interlagos",
@@ -147,11 +143,11 @@
   "race_analysis_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "marina_bay",
-      "id": "2026-17-marina_bay",
-      "race_name": "Singapore Grand Prix",
-      "round": 17,
-      "scheduled_at": "2026-10-11T12:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "race_analysis_available"
     },
@@ -175,18 +171,14 @@
   "telemetry_available": {
     "available": true,
     "latest_race": {
-      "circuit_id": "marina_bay",
-      "id": "2026-17-marina_bay",
-      "race_name": "Singapore Grand Prix",
-      "round": 17,
-      "scheduled_at": "2026-10-11T12:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "data_available"
     }
   },
-  "warnings": [
-    "Analytics available through Singapore Grand Prix; Mexico City Grand Prix telemetry processing pending.",
-    "Telemetry features available through Singapore Grand Prix; Mexico City Grand Prix telemetry processing pending.",
-    "Race Analysis available through Singapore Grand Prix; Mexico City Grand Prix analysis build is pending."
-  ]
+  "warnings": []
 }

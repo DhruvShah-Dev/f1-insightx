@@ -157,6 +157,8 @@ def build_session_payload(row: pd.Series, generated_at: str, build_version: str)
     if missing:
         return None, [f"{row['session_id']}: missing telemetry columns {missing}"]
 
+    source_values = telemetry.get("Source", pd.Series(dtype=str)).dropna().astype(str)
+    source_name = "openf1_post_session_telemetry" if source_values.str.startswith("openf1").any() else "offline_fastf1_telemetry_parquet"
     drivers: dict[str, Any] = {}
     for driver, driver_frame in telemetry.groupby("driver", sort=True):
         lap_candidates = []
@@ -205,7 +207,7 @@ def build_session_payload(row: pd.Series, generated_at: str, build_version: str)
         "version": 1,
         "buildVersion": build_version,
         "generatedAt": generated_at,
-        "source": "offline_fastf1_telemetry_parquet",
+        "source": source_name,
         "session": {
             "sessionId": row["session_id"],
             "season": int(row["season"]),
@@ -259,16 +261,24 @@ def main() -> int:
             "drivers": len(payload["drivers"]),
             "tracePointCount": POINT_COUNT,
             "quality": payload["quality"],
+            "source": payload["source"],
             "bytes": size,
         }
         row_counts[session_id] = len(payload["drivers"])
 
+    sources = sorted({entry["source"] for entry in manifest_sessions.values()})
+    manifest_source = sources[0] if len(sources) == 1 else "mixed_post_session_telemetry_parquet"
+    source_counts = {
+        source: sum(entry["source"] == source for entry in manifest_sessions.values())
+        for source in sources
+    }
     manifest = {
         "version": 1,
         "buildVersion": build_version,
         "generatedAt": generated_at,
         "tracePointCount": POINT_COUNT,
-        "source": "offline_fastf1_telemetry_parquet",
+        "source": manifest_source,
+        "sourceCounts": source_counts,
         "sessions": manifest_sessions,
     }
     MANIFEST_PATH.write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
@@ -282,6 +292,7 @@ def main() -> int:
         "trace_point_count": POINT_COUNT,
         "total_trace_bytes": bytes_written,
         "average_session_bytes": round(bytes_written / max(1, len(manifest_sessions)), 1),
+        "source_counts": source_counts,
         "warnings": warnings[:200],
         "warning_count": len(warnings),
         "validation_errors": [],

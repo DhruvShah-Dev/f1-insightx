@@ -1,20 +1,20 @@
 {
   "audit": {
     "latest_analytics_race": {
-      "circuit_id": "marina_bay",
-      "id": "2026-17-marina_bay",
-      "race_name": "Singapore Grand Prix",
-      "round": 17,
-      "scheduled_at": "2026-10-11T12:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
     "latest_canonical_race": {
-      "circuit_id": "marina_bay",
-      "id": "2026-17-marina_bay",
-      "race_name": "Singapore Grand Prix",
-      "round": 17,
-      "scheduled_at": "2026-10-11T12:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
@@ -28,11 +28,11 @@
       "status": "completed_by_schedule"
     },
     "latest_race_analysis_race": {
-      "circuit_id": "marina_bay",
-      "id": "2026-17-marina_bay",
-      "race_name": "Singapore Grand Prix",
-      "round": 17,
-      "scheduled_at": "2026-10-11T12:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "race_analysis_available"
     },
@@ -46,11 +46,11 @@
       "status": "results_available"
     },
     "latest_telemetry_race": {
-      "circuit_id": "marina_bay",
-      "id": "2026-17-marina_bay",
-      "race_name": "Singapore Grand Prix",
-      "round": 17,
-      "scheduled_at": "2026-10-11T12:00:00Z",
+      "circuit_id": "rodriguez",
+      "id": "2026-19-rodriguez",
+      "race_name": "Mexico City Grand Prix",
+      "round": 19,
+      "scheduled_at": "2026-11-01T20:00:00Z",
       "season": 2026,
       "status": "data_available"
     },
@@ -82,7 +82,7 @@
       "status": "strategy_lab_available"
     }
   },
-  "build_version": "season_state_20261102T192859Z",
+  "build_version": "season_state_20261103T224106Z",
   "data_gaps": {
     "clean_lap_filtering": "inferred/proxy",
     "drs_gap_context": "partial",
@@ -90,21 +90,13 @@
     "position_evolution": "partial",
     "race_control": "missing",
     "race_results": "available",
-    "telemetry_sessions": "partial",
+    "telemetry_sessions": "available",
     "weather": "available"
   },
   "errors": [],
-  "generated_at": "2026-11-02T19:28:59Z",
-  "missing_data_flags": [
-    "analytics_not_current",
-    "race_analysis_not_current",
-    "telemetry_not_current"
-  ],
+  "generated_at": "2026-11-03T22:41:06Z",
+  "missing_data_flags": [],
   "schema_version": 1,
   "status": "passed",
-  "warnings": [
-    "Analytics available through Singapore Grand Prix; Mexico City Grand Prix telemetry processing pending.",
-    "Telemetry features available through Singapore Grand Prix; Mexico City Grand Prix telemetry processing pending.",
-    "Race Analysis available through Singapore Grand Prix; Mexico City Grand Prix analysis build is pending."
-  ]
+  "warnings": []
 }

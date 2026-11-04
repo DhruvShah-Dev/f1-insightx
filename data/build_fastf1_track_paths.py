@@ -116,7 +116,9 @@ def build_local_circuit_artifact(
                 continue
 
             try:
-                position = pd.read_parquet(position_path, columns=["driver", "lap_number", "X", "Y"])
+                # Read provenance when it is present; older local position files do not
+                # carry a Source column, so a fixed projected schema is not portable.
+                position = pd.read_parquet(position_path)
                 coordinates = select_representative_position_lap(position)
                 if coordinates is None:
                     continue
@@ -125,13 +127,15 @@ def build_local_circuit_artifact(
                 if len(simplified_points) < 12:
                     continue
 
+                source_values = position.get("Source", pd.Series(dtype=str)).dropna().astype(str)
+                source_name = "openf1_post_session_position" if source_values.str.startswith("openf1").any() else "fastf1_position_parquet"
                 return {
                     "circuitId": str(row["circuit_id"]),
                     "season": season,
                     "round": round_number,
                     "raceName": race_name,
                     "sessionCode": session_code,
-                    "source": "fastf1_position_parquet",
+                    "source": source_name,
                     "rotationDegrees": 0.0,
                     "pathData": fit_points_to_path(simplified_points),
                 }

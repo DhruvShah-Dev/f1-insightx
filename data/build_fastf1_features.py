@@ -43,6 +43,7 @@ def build_driver_form_snapshots(session_summary: pd.DataFrame) -> pd.DataFrame:
     grouped = session_summary.groupby(["season", "round", "event_name", "driver", "team"], dropna=False)
 
     for (season, round_number, event_name, driver, team), driver_rows in grouped:
+        source_prefix = "openf1" if driver_rows.get("source_label", pd.Series(dtype=str)).astype(str).str.startswith("openf1").any() else "fastf1"
         fp1 = driver_rows[driver_rows["session_code"] == "FP1"]
         fp2 = driver_rows[driver_rows["session_code"] == "FP2"]
         fp3 = driver_rows[driver_rows["session_code"] == "FP3"]
@@ -93,7 +94,7 @@ def build_driver_form_snapshots(session_summary: pd.DataFrame) -> pd.DataFrame:
                 "top_speed_kph": float(driver_rows["top_speed_kph"].max()),
                 "reliability_index": round(100 - (driver_rows["session_code"].nunique() < 2) * 20, 2),
                 "weather_risk_index": round(driver_rows["rainfall_flag"].astype(int).mean() * 100, 2),
-                "source_label": "fastf1_session_feature_v1",
+                "source_label": f"{source_prefix}_session_feature_v1",
             }
         )
 
@@ -108,6 +109,7 @@ def build_constructor_form_snapshots(driver_form: pd.DataFrame) -> pd.DataFrame:
     for (season, round_number, constructor_id), team_rows in driver_form.groupby(
         ["season", "round", "constructor_id"], dropna=False
     ):
+        source_prefix = "openf1" if team_rows["source_label"].astype(str).str.startswith("openf1").any() else "fastf1"
         rows.append(
             {
                 "id": f"{int(season)}-{int(round_number):02d}|{constructor_id}",
@@ -121,7 +123,7 @@ def build_constructor_form_snapshots(driver_form: pd.DataFrame) -> pd.DataFrame:
                 "recent_pace_rank": float(team_rows["recent_pace_rank"].mean()) if team_rows["recent_pace_rank"].notna().any() else None,
                 "reliability_index": float(team_rows["reliability_index"].mean()),
                 "weather_risk_index": float(team_rows["weather_risk_index"].mean()),
-                "source_label": "fastf1_constructor_form_v1",
+                "source_label": f"{source_prefix}_constructor_form_v1",
             }
         )
 
@@ -171,7 +173,11 @@ def build_prediction_model_inputs(driver_form: pd.DataFrame, constructor_form: p
                 "constructor_reliability_index": constructor_row["reliability_index"] if constructor_row is not None else None,
                 "weather_risk_index": row["weather_risk_index"],
                 "driver_reliability_index": row["reliability_index"],
-                "source_label": "fastf1_prediction_features_v1",
+                "source_label": (
+                    "openf1_prediction_features_v1"
+                    if str(row.get("source_label", "")).startswith("openf1")
+                    else "fastf1_prediction_features_v1"
+                ),
             }
         )
 

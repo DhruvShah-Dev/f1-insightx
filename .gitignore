@@ -19,6 +19,13 @@ dist-ssr
 # Rebuildable ML pipeline outputs
 data/ml/generated/
 
+# Large, reproducible OpenF1 high-frequency downloads (kept in pipeline archives,
+# not Git; normalized compatibility and analytics outputs remain versioned).
+data/raw/openf1/**/car_data.json
+data/raw/openf1/**/location.json
+data/staged/openf1/**/car_data.csv
+data/staged/openf1/**/location.csv
+
 # Local browser QA artifacts
 .chrome-qa/
 picks-check.png

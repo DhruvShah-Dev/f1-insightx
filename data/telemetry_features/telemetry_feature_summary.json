@@ -1,12 +1,12 @@
 {
-  "telemetry_files": 41,
+  "telemetry_files": 77,
   "rows": {
-    "telemetry_lap_summary": 880,
-    "corner_speed_profile": 7060,
-    "corner_braking_profile": 7060,
-    "corner_throttle_profile": 7060,
-    "straight_speed_profile": 6061,
-    "energy_deployment_proxy": 6061
+    "telemetry_lap_summary": 1653,
+    "corner_speed_profile": 13263,
+    "corner_braking_profile": 13263,
+    "corner_throttle_profile": 13263,
+    "straight_speed_profile": 11491,
+    "energy_deployment_proxy": 11491
   },
   "source": "fastf1_fastest_lap_telemetry_parquet"
 }

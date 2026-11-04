@@ -11,7 +11,7 @@ import pytest
 from data import post_race_refresh as refresh
 from data.build_web_fallback import select_upcoming
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data"))
-from data.fetch_openf1_data import near_race
+from data.fetch_openf1_data import DEFAULT_ENDPOINTS, driver_numbers, near_race
 
 
 def race(round_number: int, scheduled: datetime, sprint: bool = False) -> dict[str, str]:
@@ -100,3 +100,13 @@ def test_openf1_refresh_targets_only_the_completed_weekend() -> None:
     assert near_race({"date_start": "2026-10-23T17:30:00Z"}, race_at)
     assert near_race({"date_start": "2026-10-24T19:00:00Z"}, race_at)
     assert not near_race({"date_start": "2026-10-30T17:30:00Z"}, race_at)
+
+
+def test_openf1_default_snapshot_includes_post_session_telemetry() -> None:
+    assert "car_data" in DEFAULT_ENDPOINTS
+    assert "location" in DEFAULT_ENDPOINTS
+
+
+def test_openf1_telemetry_partitions_use_unique_driver_numbers() -> None:
+    records = [{"driver_number": 44}, {"driver_number": "1"}, {"driver_number": 44}, {}]
+    assert driver_numbers(records) == [1, 44]

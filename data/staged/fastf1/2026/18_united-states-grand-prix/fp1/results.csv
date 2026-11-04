@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,source_label
+1,1,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,96.052,Finished,,26,openf1_post_session_bridge_v1
+2,2,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,96.136,Finished,,25,openf1_post_session_bridge_v1
+3,3,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,96.297,Finished,,22,openf1_post_session_bridge_v1
+4,4,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,96.378,Finished,,26,openf1_post_session_bridge_v1
+5,5,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,96.533,Finished,,25,openf1_post_session_bridge_v1
+6,6,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,96.555,Finished,,23,openf1_post_session_bridge_v1
+7,7,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,96.786,Finished,,23,openf1_post_session_bridge_v1
+8,8,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,96.995,Finished,,23,openf1_post_session_bridge_v1
+9,9,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,97.063,Finished,,26,openf1_post_session_bridge_v1
+10,10,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,97.309,Finished,,22,openf1_post_session_bridge_v1
+11,11,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,97.665,Finished,,23,openf1_post_session_bridge_v1
+12,12,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,97.688,Finished,,22,openf1_post_session_bridge_v1
+13,13,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,97.783,Finished,,25,openf1_post_session_bridge_v1
+14,14,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,97.79,Finished,,23,openf1_post_session_bridge_v1
+15,15,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,97.801,Finished,,23,openf1_post_session_bridge_v1
+16,16,31,E OCON,OCO,Esteban OCON,Haas F1 Team,9C9FA2,,,,,97.896,Finished,,26,openf1_post_session_bridge_v1
+17,17,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,98.121,Finished,,23,openf1_post_session_bridge_v1
+18,18,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,98.122,Finished,,21,openf1_post_session_bridge_v1
+19,19,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,98.846,Finished,,19,openf1_post_session_bridge_v1
+20,20,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,99.053,Finished,,21,openf1_post_session_bridge_v1
+21,21,25,,,,,,,,,,99.979,Finished,,21,openf1_post_session_bridge_v1
+22,22,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,136.468,Finished,,19,openf1_post_session_bridge_v1
