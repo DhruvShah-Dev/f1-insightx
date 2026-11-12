@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data"))
 
-from data.build_openf1_telemetry_bridge import annotate_laps, integrated_distance
+from data.build_openf1_telemetry_bridge import annotate_laps, integrated_distance, match_curated_race
 
 
 def test_integrated_distance_uses_speed_and_elapsed_time() -> None:
@@ -32,3 +32,28 @@ def test_annotate_laps_maps_compound_stint_and_tyre_life() -> None:
     assert annotated["compound"].tolist() == ["MEDIUM", "MEDIUM"]
     assert annotated["tyre_life"].tolist() == [2.0, 3.0]
     assert not annotated["fresh_tyre"].any()
+
+
+def test_match_curated_race_falls_back_to_circuit_name() -> None:
+    races = pd.DataFrame(
+        [
+            {
+                "season": 2026,
+                "round": 20,
+                "race_name": "Brazilian Grand Prix",
+                "circuit_id": "interlagos",
+                "scheduled_at": "2026-11-08T17:00:00Z",
+            }
+        ]
+    )
+    meeting = pd.Series(
+        {
+            "meeting_name": "São Paulo Grand Prix",
+            "circuit_short_name": "Interlagos",
+            "date_end": "2026-11-08T19:00:00Z",
+        }
+    )
+
+    matched = match_curated_race(races, meeting, 2026)
+
+    assert matched.iloc[0]["round"] == 20

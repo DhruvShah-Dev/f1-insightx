@@ -56,3 +56,6 @@ race_analysis_id,surface,label,href,relevance_note,enabled,unavailable_reason
 2026-19-rodriguez,race_archive,Analysis report,/analysis/2026-19-rodriguez,"Classification, event facts, and post-race read.",True,
 2026-19-rodriguez,compare,Telemetry comparison,/vs?slug=2026-19-rodriguez,Driver-vs-driver segment analysis.,True,
 2026-19-rodriguez,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.
+2026-20-interlagos,race_archive,Analysis report,/analysis/2026-20-interlagos,"Classification, event facts, and post-race read.",True,
+2026-20-interlagos,compare,Telemetry comparison,/vs?slug=2026-20-interlagos,Driver-vs-driver segment analysis.,True,
+2026-20-interlagos,race_week,Race Week,/raceweek,Current race-week assumptions and projections.,False,Strategy product view is not built for this race.

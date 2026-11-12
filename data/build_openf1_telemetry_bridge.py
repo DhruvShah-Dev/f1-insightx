@@ -42,6 +42,31 @@ def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.strip().lower()).strip("-")
 
 
+def match_curated_race(races: pd.DataFrame, meeting: pd.Series, season: int) -> pd.DataFrame:
+    season_races = races[races["season"].eq(season)]
+    meeting_name = str(meeting.get("meeting_name") or "")
+    exact = season_races[season_races["race_name"].eq(meeting_name)]
+    if not exact.empty:
+        return exact
+
+    circuit_slug = slugify(str(meeting.get("circuit_short_name") or "")).replace("-", "_")
+    if circuit_slug:
+        race_circuits = season_races["circuit_id"].astype(str).map(
+            lambda value: slugify(value).replace("-", "_")
+        )
+        by_circuit = season_races[race_circuits.eq(circuit_slug)]
+        if len(by_circuit) == 1:
+            return by_circuit
+
+    meeting_date = pd.to_datetime(meeting.get("date_end"), utc=True, errors="coerce")
+    if pd.notna(meeting_date):
+        scheduled = pd.to_datetime(season_races["scheduled_at"], utc=True, errors="coerce")
+        by_date = season_races[scheduled.dt.date.eq(meeting_date.date())]
+        if len(by_date) == 1:
+            return by_date
+    return season_races.iloc[0:0]
+
+
 def read_csv(path: Path) -> pd.DataFrame:
     if not path.exists() or path.stat().st_size == 0:
         return pd.DataFrame()
@@ -381,6 +406,17 @@ def main() -> None:
         race_name = str(race.iloc[0]["race_name"])
         match = meetings[meetings["meeting_name"].eq(race_name)]
         if match.empty:
+            circuit_slug = slugify(str(race.iloc[0]["circuit_id"])).replace("-", "_")
+            meeting_circuits = meetings["circuit_short_name"].astype(str).map(
+                lambda value: slugify(value).replace("-", "_")
+            )
+            match = meetings[meeting_circuits.eq(circuit_slug)]
+        if match.empty:
+            race_date = pd.to_datetime(race.iloc[0]["scheduled_at"], utc=True, errors="coerce")
+            meeting_dates = pd.to_datetime(meetings["date_end"], utc=True, errors="coerce")
+            if pd.notna(race_date):
+                match = meetings[meeting_dates.dt.date.eq(race_date.date())]
+        if match.empty:
             raise RuntimeError(f"No OpenF1 meeting matches curated race {race_name}")
         meeting_keys = [int(match.iloc[0]["meeting_key"])]
 
@@ -388,10 +424,11 @@ def main() -> None:
         meeting = meetings[meetings["meeting_key"].eq(meeting_key)]
         if meeting.empty:
             raise RuntimeError(f"OpenF1 meeting {meeting_key} is unavailable")
-        event_name = str(meeting.iloc[0]["meeting_name"])
-        race = races[(races["season"].eq(args.season)) & (races["race_name"].eq(event_name))]
+        openf1_event_name = str(meeting.iloc[0]["meeting_name"])
+        race = match_curated_race(races, meeting.iloc[0], args.season)
         if race.empty:
-            raise RuntimeError(f"No curated race matches OpenF1 meeting {event_name}")
+            raise RuntimeError(f"No curated race matches OpenF1 meeting {openf1_event_name}")
+        event_name = str(race.iloc[0]["race_name"])
         round_number = int(race.iloc[0]["round"])
         round_slug = f"{round_number:02d}_{slugify(event_name)}"
 

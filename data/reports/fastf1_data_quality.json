@@ -3,35 +3,35 @@
     "start": 2020,
     "end": 2026
   },
-  "sessions_processed": 79,
+  "sessions_processed": 84,
   "sessions_skipped": 0,
   "skipped_sessions": [],
   "canonical_row_counts": {
-    "laps": 46913,
-    "results": 1738,
-    "stints": 5845,
-    "session_summary": 1704,
-    "drivers": 34
+    "laps": 50491,
+    "results": 1847,
+    "stints": 6285,
+    "session_summary": 1812,
+    "drivers": 36
   },
   "weather_coverage_pct": {
-    "air_temp_c": 99.88,
-    "track_temp_c": 99.88,
-    "humidity_pct": 99.88,
-    "wind_speed_mps": 99.88,
-    "wind_direction_deg": 99.88
+    "air_temp_c": 99.87,
+    "track_temp_c": 99.87,
+    "humidity_pct": 99.87,
+    "wind_speed_mps": 99.87,
+    "wind_direction_deg": 99.87
   },
-  "telemetry_availability_pct": 97.47,
-  "position_availability_pct": 96.2,
+  "telemetry_availability_pct": 97.62,
+  "position_availability_pct": 96.43,
   "null_rates": {
     "laps": {
-      "lap_time_s": 0.1274,
+      "lap_time_s": 0.1211,
       "lap_number": 0.0,
-      "air_temp_c": 0.0012,
-      "track_temp_c": 0.0012,
-      "humidity_pct": 0.0012,
+      "air_temp_c": 0.0013,
+      "track_temp_c": 0.0013,
+      "humidity_pct": 0.0013,
       "rainfall": 0.0,
-      "wind_speed_mps": 0.0012,
-      "wind_direction_deg": 0.0012
+      "wind_speed_mps": 0.0013,
+      "wind_direction_deg": 0.0013
     },
     "session_summary": {
       "representative_lap_s": 0.0,

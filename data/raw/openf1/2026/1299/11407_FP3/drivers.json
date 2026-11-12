@@ -184,20 +184,6 @@
   {
     "meeting_key": 1299,
     "session_key": 11407,
-    "driver_number": 31,
-    "broadcast_name": "E OCON",
-    "full_name": "Esteban OCON",
-    "name_acronym": "OCO",
-    "team_name": "Haas F1 Team",
-    "team_colour": "9C9FA2",
-    "first_name": "Esteban",
-    "last_name": "Ocon",
-    "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
-    "country_code": null
-  },
-  {
-    "meeting_key": 1299,
-    "session_key": 11407,
     "driver_number": 41,
     "broadcast_name": "A LINDBLAD",
     "full_name": "Arvid LINDBLAD",
@@ -235,6 +221,20 @@
     "first_name": "Lewis",
     "last_name": "Hamilton",
     "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+    "country_code": null
+  },
+  {
+    "meeting_key": 1299,
+    "session_key": 11407,
+    "driver_number": 51,
+    "broadcast_name": "R CAMARA",
+    "full_name": "Rafael CAMARA",
+    "name_acronym": "CAM",
+    "team_name": "Haas F1 Team",
+    "team_colour": "9C9FA2",
+    "first_name": "Rafael",
+    "last_name": "C\u00e2mara",
+    "headshot_url": null,
     "country_code": null
   },
   {

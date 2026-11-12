@@ -1223,7 +1223,7 @@
         "throttle": 1848,
         "straights": 1617,
         "energy_proxy": 1617,
-        "lap_pace": 0
+        "lap_pace": 1163
       }
     },
     "2026_19_FP1_Mexico City Grand Prix": {
@@ -1308,6 +1308,91 @@
         "throttle": 1848,
         "straights": 1617,
         "energy_proxy": 1617,
+        "lap_pace": 1355
+      }
+    },
+    "2026_20_FP1_Brazilian Grand Prix": {
+      "file": "2026-20-fp1-brazilian-grand-prix-998200f4b023.json.gz",
+      "season": 2026,
+      "round": 20,
+      "event": "Brazilian Grand Prix",
+      "session": "FP1",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_20_FP2_Brazilian Grand Prix": {
+      "file": "2026-20-fp2-brazilian-grand-prix-22dd6b5178e9.json.gz",
+      "season": 2026,
+      "round": 20,
+      "event": "Brazilian Grand Prix",
+      "session": "FP2",
+      "counts": {
+        "overview": 210,
+        "segments": 1680,
+        "corner_segments": 1680,
+        "braking": 1680,
+        "throttle": 1680,
+        "straights": 1470,
+        "energy_proxy": 1470,
+        "lap_pace": 0
+      }
+    },
+    "2026_20_FP3_Brazilian Grand Prix": {
+      "file": "2026-20-fp3-brazilian-grand-prix-01bd18eb3991.json.gz",
+      "season": 2026,
+      "round": 20,
+      "event": "Brazilian Grand Prix",
+      "session": "FP3",
+      "counts": {
+        "overview": 231,
+        "segments": 1848,
+        "corner_segments": 1848,
+        "braking": 1848,
+        "throttle": 1848,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_20_Q_Brazilian Grand Prix": {
+      "file": "2026-20-q-brazilian-grand-prix-8b7e5fe0e868.json.gz",
+      "season": 2026,
+      "round": 20,
+      "event": "Brazilian Grand Prix",
+      "session": "Q",
+      "counts": {
+        "overview": 231,
+        "segments": 2079,
+        "corner_segments": 2079,
+        "braking": 2079,
+        "throttle": 2079,
+        "straights": 1617,
+        "energy_proxy": 1617,
+        "lap_pace": 0
+      }
+    },
+    "2026_20_R_Brazilian Grand Prix": {
+      "file": "2026-20-r-brazilian-grand-prix-7517674785f8.json.gz",
+      "season": 2026,
+      "round": 20,
+      "event": "Brazilian Grand Prix",
+      "session": "R",
+      "counts": {
+        "overview": 210,
+        "segments": 1890,
+        "corner_segments": 1890,
+        "braking": 1890,
+        "throttle": 1890,
+        "straights": 1470,
+        "energy_proxy": 1470,
         "lap_pace": 0
       }
     }

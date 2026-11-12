@@ -1194,3 +1194,83 @@ race_analysis_id,driver,team,stint_number,compound,start_lap,end_lap,stint_lengt
 2026-19-rodriguez,VER,Red Bull Racing,1,MEDIUM,1,27,27,83.508,81.413,81.006,-0.2141,0.9,5.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
 2026-19-rodriguez,VER,Red Bull Racing,2,SOFT,28,45,18,85.326,80.892,80.499,0.7569,0.9,10.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
 2026-19-rodriguez,VER,Red Bull Racing,3,SOFT,46,71,26,178.498,79.789,79.328,-20.4521,0.9,14.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALB,Williams,1,INTERMEDIATE,1,15,15,89.447,88.722,87.767,-0.1059,0.85,12.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALB,Williams,2,SOFT,16,42,27,79.52,78.077,76.283,-0.3971,0.9,17.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALB,Williams,3,SOFT,43,60,18,77.768,75.888,74.464,-0.2051,0.9,7.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALB,Williams,4,INTERMEDIATE,61,70,10,89.954,87.7,86.504,-0.3533,0.683,15.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALO,Aston Martin,1,INTERMEDIATE,1,17,17,89.399,88.57,87.034,-0.2599,0.9,10.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALO,Aston Martin,2,SOFT,18,46,29,78.23,76.925,75.707,-0.269,0.9,11.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALO,Aston Martin,3,SOFT,47,60,14,77.817,75.339,74.706,-0.1414,0.817,9.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ALO,Aston Martin,4,INTERMEDIATE,61,70,10,88.293,86.999,84.638,-0.7278,0.683,6.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ANT,Mercedes,1,INTERMEDIATE,1,17,17,87.094,86.346,85.98,-0.0022,0.9,1.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ANT,Mercedes,2,SOFT,18,53,36,76.999,75.269,74.315,-0.2779,0.9,2.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ANT,Mercedes,3,SOFT,54,62,9,78.985,75.859,72.689,0.3112,0.65,13.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,ANT,Mercedes,4,INTERMEDIATE,63,71,9,88.498,86.31,84.343,-1.0878,0.65,8.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BEA,Haas F1 Team,1,INTERMEDIATE,1,16,16,89.328,88.517,87.914,-0.2059,0.883,9.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BEA,Haas F1 Team,2,SOFT,17,48,32,79.391,77.586,75.613,-0.4169,0.9,15.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BEA,Haas F1 Team,3,SOFT,49,60,12,78.865,76.404,74.036,-0.177,0.75,12.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BEA,Haas F1 Team,4,INTERMEDIATE,61,70,10,89.446,86.705,85.2,-0.3498,0.683,12.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BOR,Audi,1,INTERMEDIATE,1,16,16,90.442,89.415,87.381,-0.2814,0.883,17.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BOR,Audi,2,SOFT,17,32,16,81.604,79.341,77.438,-0.8026,0.883,20.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BOR,Audi,3,SOFT,33,60,28,77.246,75.647,74.94,-0.0011,0.9,4.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BOR,Audi,4,INTERMEDIATE,61,70,10,88.48,86.337,84.915,-0.7035,0.683,7.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,BOT,Cadillac,1,INTERMEDIATE,1,1,1,,,,,0.35,,short,False,0.345,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,CAM,Haas F1 Team,1,INTERMEDIATE,1,15,15,90.875,89.996,87.976,-0.1423,0.85,21.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,CAM,Haas F1 Team,2,SOFT,16,49,34,79.782,77.704,75.696,-0.3787,0.9,18.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,CAM,Haas F1 Team,3,SOFT,50,59,10,79.793,75.981,74.369,-0.4359,0.683,15.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,CAM,Haas F1 Team,4,INTERMEDIATE,60,69,10,90.206,88.483,86.007,-0.9563,0.683,17.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,COL,Alpine,1,INTERMEDIATE,1,17,17,89.787,88.758,87.004,-0.2646,0.9,15.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,COL,Alpine,2,SOFT,18,53,36,77.837,76.54,75.596,-0.1817,0.9,8.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,COL,Alpine,3,SOFT,54,61,8,80.12,76.475,73.71,0.3552,0.617,16.0,short,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,COL,Alpine,4,INTERMEDIATE,62,70,9,89.443,86.646,85.094,-0.8599,0.65,11.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,GAS,Alpine,1,INTERMEDIATE,1,17,17,89.492,88.599,86.872,-0.3058,0.9,13.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,GAS,Alpine,2,SOFT,18,37,20,79.132,77.036,75.909,-0.5049,0.9,13.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,GAS,Alpine,3,SOFT,38,61,24,77.808,75.354,74.462,0.2001,0.9,8.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,GAS,Alpine,4,INTERMEDIATE,62,70,9,90.137,86.542,84.91,-0.8636,0.65,16.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAD,Red Bull Racing,1,INTERMEDIATE,1,16,16,87.808,87.219,85.962,-0.1094,0.883,5.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAD,Red Bull Racing,2,SOFT,17,50,34,77.121,75.561,74.792,-0.2461,0.9,3.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAD,Red Bull Racing,3,SOFT,51,62,12,77.946,74.63,72.877,0.1998,0.75,10.0,medium,False,0.825,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAD,Red Bull Racing,4,INTERMEDIATE,63,71,9,87.331,84.97,83.533,-1.0261,0.65,1.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAM,Ferrari,1,INTERMEDIATE,1,14,14,89.934,88.82,87.933,-0.1171,0.817,16.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAM,Ferrari,2,SOFT,15,38,24,79.455,77.009,75.097,-0.5902,0.9,16.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAM,Ferrari,3,SOFT,39,62,24,77.373,74.182,73.724,0.2969,0.9,6.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HAM,Ferrari,4,INTERMEDIATE,63,70,8,88.18,85.264,83.335,-1.3989,0.617,5.0,short,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HUL,Audi,1,INTERMEDIATE,1,16,16,89.008,88.409,87.073,-0.07,0.883,8.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HUL,Audi,2,SOFT,17,44,28,78.365,76.631,75.078,-0.3851,0.9,12.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HUL,Audi,3,SOFT,45,61,17,77.34,75.207,74.0,-0.0793,0.9,5.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,HUL,Audi,4,INTERMEDIATE,62,70,9,89.771,86.422,85.097,-1.8606,0.65,13.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LAW,Racing Bulls,1,INTERMEDIATE,1,16,16,88.332,87.868,86.964,-0.0418,0.883,6.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LAW,Racing Bulls,2,SOFT,17,48,32,77.913,76.171,75.145,-0.3047,0.9,9.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LAW,Racing Bulls,3,SOFT,49,61,13,77.225,75.096,73.495,-0.0531,0.783,3.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LAW,Racing Bulls,4,INTERMEDIATE,62,71,10,88.882,86.141,84.302,-0.5125,0.683,9.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LEC,Ferrari,1,INTERMEDIATE,1,16,16,89.513,88.56,87.043,-0.2327,0.883,14.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LEC,Ferrari,2,SOFT,17,61,45,77.445,76.028,74.17,-0.1582,0.9,7.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LEC,Ferrari,3,INTERMEDIATE,62,71,10,88.022,85.523,83.801,-0.3586,0.683,19.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LIN,Racing Bulls,1,INTERMEDIATE,1,16,16,89.426,88.572,87.101,-0.2329,0.883,11.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LIN,Racing Bulls,2,SOFT,17,45,29,78.055,76.449,74.971,-0.3603,0.9,10.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LIN,Racing Bulls,3,SOFT,46,61,16,77.96,75.907,74.004,-0.0592,0.883,11.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,LIN,Racing Bulls,4,INTERMEDIATE,62,70,9,89.031,86.813,85.855,-1.2135,0.65,10.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,NOR,McLaren,1,INTERMEDIATE,1,16,16,87.506,86.949,85.619,-0.0935,0.883,2.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,NOR,McLaren,2,SOFT,17,49,33,76.917,75.27,74.404,-0.281,0.9,1.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,NOR,McLaren,3,SOFT,50,62,13,76.794,73.864,72.983,-0.0648,0.783,2.0,medium,False,0.848,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,NOR,McLaren,4,INTERMEDIATE,63,71,9,87.465,85.123,83.526,-1.2601,0.65,3.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,PER,Cadillac,1,INTERMEDIATE,1,15,15,90.638,88.886,87.884,-0.3304,0.85,19.0,medium,False,0.895,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,PER,Cadillac,2,SOFT,16,59,44,79.282,78.076,76.123,-0.1754,0.9,14.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,PER,Cadillac,3,INTERMEDIATE,60,69,10,90.312,88.374,86.337,-0.4418,0.683,20.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,PIA,McLaren,1,INTERMEDIATE,1,16,16,88.399,87.658,86.423,-0.2268,0.883,7.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,PIA,McLaren,2,SOFT,17,51,35,77.147,75.219,74.453,-0.2714,0.9,5.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,PIA,McLaren,3,SOFT,52,62,11,79.467,75.85,73.018,0.6501,0.717,14.0,medium,False,0.802,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,PIA,McLaren,4,INTERMEDIATE,63,71,9,87.972,85.316,83.56,-0.6895,0.65,4.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,RUS,Mercedes,1,INTERMEDIATE,1,16,16,87.69,86.895,86.19,-0.1326,0.883,3.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,RUS,Mercedes,2,SOFT,17,61,45,77.366,75.404,74.04,-0.2228,0.9,6.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,RUS,Mercedes,3,INTERMEDIATE,62,71,10,87.347,85.757,83.762,-0.5163,0.683,18.0,medium,False,0.778,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,SAI,Williams,1,INTERMEDIATE,1,14,14,90.604,89.599,88.472,-0.1549,0.817,18.0,medium,False,0.872,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,SAI,Williams,2,SOFT,15,45,31,80.143,78.332,76.268,-0.3981,0.9,19.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,SAI,Williams,3,SOFT,46,61,16,80.317,76.172,74.613,0.6658,0.883,17.0,medium,False,0.918,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,SAI,Williams,4,INTERMEDIATE,62,69,8,89.799,87.744,85.104,-0.9854,0.617,14.0,short,False,0.732,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,STR,Aston Martin,1,INTERMEDIATE,1,9,9,90.718,89.162,87.843,-1.165,0.65,20.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,STR,Aston Martin,2,SOFT,10,30,21,85.174,82.301,77.43,-0.6314,0.9,21.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,VER,Red Bull Racing,1,INTERMEDIATE,1,17,17,87.763,86.94,85.135,-0.3009,0.9,4.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,VER,Red Bull Racing,2,SOFT,18,45,28,77.139,75.554,74.914,-0.2995,0.9,4.0,long,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,VER,Red Bull Racing,3,SOFT,46,62,17,76.476,73.648,73.131,0.0955,0.9,1.0,medium,False,0.93,Timing-derived; traffic and gaps are not directly measured.
+2026-20-interlagos,VER,Red Bull Racing,4,INTERMEDIATE,63,71,9,87.39,85.026,84.293,-0.9489,0.65,2.0,medium,False,0.755,Timing-derived; traffic and gaps are not directly measured.

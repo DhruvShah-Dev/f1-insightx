@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-03T21:53:52.157465+00:00",
+  "fetched_at": "2026-11-12T14:46:44.572559+00:00",
   "start_season": 2026,
   "end_season": 2026,
   "session_types": [
@@ -10,9 +10,8 @@
     "R"
   ],
   "endpoints": [
-    "car_data",
-    "location"
+    "drivers"
   ],
-  "meeting_key": 1298,
+  "meeting_key": 1299,
   "free_tier_note": "Historical data only; keep requests under 3 req/s and 30 req/min."
 }

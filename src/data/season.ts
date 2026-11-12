@@ -4,28 +4,28 @@
 export const seasonState = {
   "season": 2026,
   "resultsThrough": {
-    "round": 19,
-    "name": "Mexico City Grand Prix",
-    "date": "2026-11-01"
+    "round": 20,
+    "name": "Brazilian Grand Prix",
+    "date": "2026-11-08"
   },
-  "raceWeekRound": 20,
-  "snapshotISO": "2026-11-03T22:41:06Z",
-  "pipelineRunISO": "2026-11-03T22:41:06Z"
+  "raceWeekRound": 21,
+  "snapshotISO": "2026-11-12T14:59:16Z",
+  "pipelineRunISO": "2026-11-12T14:59:16Z"
 };
 
 export const nextRace = {
-  "round": 20,
+  "round": 21,
   "totalRounds": 23,
-  "name": "Brazilian Grand Prix",
-  "shortName": "Brazilian GP",
-  "circuit": "Autódromo José Carlos Pace",
-  "circuitId": "interlagos",
-  "location": "São Paulo",
-  "country": "Brazil",
-  "timeZone": "UTC",
-  "raceStartISO": "2026-11-08T17:00:00Z",
-  "laps": 0,
-  "lapKm": 0,
+  "name": "Las Vegas Grand Prix",
+  "shortName": "Las Vegas GP",
+  "circuit": "Las Vegas Strip Street Circuit",
+  "circuitId": "vegas",
+  "location": "Las Vegas",
+  "country": "United States",
+  "timeZone": "America/Los_Angeles",
+  "raceStartISO": "2026-11-22T04:00:00Z",
+  "laps": 50,
+  "lapKm": 6.201,
   "pitWindow": "L16-L24",
   "pitWindowStart": 16,
   "pitWindowEnd": 24,
@@ -33,31 +33,31 @@ export const nextRace = {
     {
       "code": "FP1",
       "label": "Practice 1",
-      "startISO": "2026-11-06T15:30:00Z",
+      "startISO": "2026-11-20T00:30:00Z",
       "status": "scheduled"
     },
     {
       "code": "FP2",
       "label": "Practice 2",
-      "startISO": "2026-11-06T19:00:00Z",
+      "startISO": "2026-11-20T04:00:00Z",
       "status": "scheduled"
     },
     {
       "code": "FP3",
       "label": "Practice 3",
-      "startISO": "2026-11-07T14:30:00Z",
+      "startISO": "2026-11-21T00:30:00Z",
       "status": "scheduled"
     },
     {
       "code": "Q",
       "label": "Qualifying",
-      "startISO": "2026-11-07T18:00:00Z",
+      "startISO": "2026-11-21T04:00:00Z",
       "status": "scheduled"
     },
     {
       "code": "R",
       "label": "Race",
-      "startISO": "2026-11-08T17:00:00Z",
+      "startISO": "2026-11-22T04:00:00Z",
       "status": "scheduled"
     }
   ],
@@ -96,7 +96,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 1,
     "team": "mercedes",
-    "points": 630,
+    "points": 652,
     "wins": 12,
     "form": [
       1
@@ -105,7 +105,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 2,
     "team": "ferrari",
-    "points": 504,
+    "points": 510,
     "wins": 2,
     "form": [
       2
@@ -114,7 +114,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 3,
     "team": "red-bull",
-    "points": 380,
+    "points": 415,
     "wins": 3,
     "form": [
       3
@@ -123,8 +123,8 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 4,
     "team": "mclaren",
-    "points": 371,
-    "wins": 2,
+    "points": 398,
+    "wins": 3,
     "form": [
       4
     ]
@@ -132,7 +132,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 5,
     "team": "racing-bulls",
-    "points": 104,
+    "points": 114,
     "wins": 0,
     "form": [
       5
@@ -141,7 +141,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 6,
     "team": "alpine",
-    "points": 74,
+    "points": 69,
     "wins": 0,
     "form": [
       6
@@ -150,7 +150,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 7,
     "team": "haas",
-    "points": 30,
+    "points": 31,
     "wins": 0,
     "form": [
       7
@@ -159,7 +159,7 @@ export const constructorStandings: { pos: number; team: TeamKey; points: number;
   {
     "pos": 8,
     "team": "audi",
-    "points": 23,
+    "points": 28,
     "wins": 0,
     "form": [
       8
@@ -200,7 +200,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "ANT",
     "name": "Andrea Kimi Antonelli",
     "team": "mercedes",
-    "points": 380,
+    "points": 390,
     "wins": 9
   },
   {
@@ -208,31 +208,31 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "VER",
     "name": "Max Verstappen",
     "team": "red-bull",
-    "points": 261,
+    "points": 279,
     "wins": 3
   },
   {
     "pos": 3,
-    "code": "HAM",
-    "name": "Lewis Hamilton",
-    "team": "ferrari",
-    "points": 259,
-    "wins": 1
-  },
-  {
-    "pos": 4,
     "code": "RUS",
     "name": "George Russell",
     "team": "mercedes",
-    "points": 250,
+    "points": 262,
     "wins": 3
+  },
+  {
+    "pos": 4,
+    "code": "HAM",
+    "name": "Lewis Hamilton",
+    "team": "ferrari",
+    "points": 261,
+    "wins": 1
   },
   {
     "pos": 5,
     "code": "LEC",
     "name": "Charles Leclerc",
     "team": "ferrari",
-    "points": 245,
+    "points": 249,
     "wins": 1
   },
   {
@@ -240,15 +240,15 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "NOR",
     "name": "Lando Norris",
     "team": "mclaren",
-    "points": 221,
-    "wins": 2
+    "points": 246,
+    "wins": 3
   },
   {
     "pos": 7,
     "code": "PIA",
     "name": "Oscar Piastri",
     "team": "mclaren",
-    "points": 150,
+    "points": 152,
     "wins": 0
   },
   {
@@ -256,7 +256,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "HAD",
     "name": "Isack Hadjar",
     "team": "red-bull",
-    "points": 105,
+    "points": 122,
     "wins": 0
   },
   {
@@ -264,7 +264,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "LAW",
     "name": "Liam Lawson",
     "team": "racing-bulls",
-    "points": 79,
+    "points": 89,
     "wins": 0
   },
   {
@@ -272,7 +272,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "GAS",
     "name": "Pierre Gasly",
     "team": "alpine",
-    "points": 43,
+    "points": 42,
     "wins": 0
   },
   {
@@ -288,7 +288,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "code": "COL",
     "name": "Franco Colapinto",
     "team": "alpine",
-    "points": 31,
+    "points": 27,
     "wins": 0
   },
   {
@@ -301,18 +301,18 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
   },
   {
     "pos": 14,
-    "code": "HUL",
-    "name": "Nico Hulkenberg",
+    "code": "BOR",
+    "name": "Gabriel Bortoleto",
     "team": "audi",
-    "points": 13,
+    "points": 14,
     "wins": 0
   },
   {
     "pos": 15,
-    "code": "BOR",
-    "name": "Gabriel Bortoleto",
+    "code": "HUL",
+    "name": "Nico Hulkenberg",
     "team": "audi",
-    "points": 10,
+    "points": 14,
     "wins": 0
   },
   {
@@ -349,6 +349,14 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
   },
   {
     "pos": 20,
+    "code": "HIR",
+    "name": "Ryo Hirakawa",
+    "team": "haas",
+    "points": 1,
+    "wins": 0
+  },
+  {
+    "pos": 21,
     "code": "TSU",
     "name": "Yuki Tsunoda",
     "team": "racing-bulls",
@@ -356,7 +364,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "wins": 0
   },
   {
-    "pos": 21,
+    "pos": 22,
     "code": "BOT",
     "name": "Valtteri Bottas",
     "team": "cadillac",
@@ -364,7 +372,7 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "wins": 0
   },
   {
-    "pos": 22,
+    "pos": 23,
     "code": "PER",
     "name": "Sergio Perez",
     "team": "cadillac",
@@ -372,15 +380,15 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
     "wins": 0
   },
   {
-    "pos": 23,
-    "code": "HIR",
-    "name": "Ryo Hirakawa",
+    "pos": 24,
+    "code": "CAM",
+    "name": "Rafael Câmara",
     "team": "haas",
     "points": 0,
     "wins": 0
   },
   {
-    "pos": 24,
+    "pos": 25,
     "code": "STR",
     "name": "Lance Stroll",
     "team": "aston-martin",
@@ -392,199 +400,199 @@ export const driverStandings: { pos: number; code: string; name: string; team: T
 export const qualiProjection: { pos: number; code: string; name: string; team: TeamKey; lap: string; delta: string; conf: number }[] = [
   {
     "pos": 1,
-    "code": "LEC",
-    "name": "Charles Leclerc",
-    "team": "ferrari",
-    "lap": "1:11.963",
-    "delta": "+0.273",
+    "code": "RUS",
+    "name": "George Russell",
+    "team": "mercedes",
+    "lap": "1:50.858",
+    "delta": "+0.709",
     "conf": 0.68
   },
   {
     "pos": 2,
-    "code": "ANT",
-    "name": "Andrea Kimi Antonelli",
-    "team": "mercedes",
-    "lap": "1:11.972",
-    "delta": "+0.282",
+    "code": "LAW",
+    "name": "Liam Lawson",
+    "team": "racing-bulls",
+    "lap": "1:51.104",
+    "delta": "+0.955",
     "conf": 0.68
   },
   {
     "pos": 3,
-    "code": "HAM",
-    "name": "Lewis Hamilton",
-    "team": "ferrari",
-    "lap": "1:12.007",
-    "delta": "+0.317",
+    "code": "HAD",
+    "name": "Isack Hadjar",
+    "team": "red-bull",
+    "lap": "1:51.128",
+    "delta": "+0.979",
     "conf": 0.68
   },
   {
     "pos": 4,
-    "code": "RUS",
-    "name": "George Russell",
-    "team": "mercedes",
-    "lap": "1:12.054",
-    "delta": "+0.365",
+    "code": "LEC",
+    "name": "Charles Leclerc",
+    "team": "ferrari",
+    "lap": "1:51.264",
+    "delta": "+1.115",
     "conf": 0.68
   },
   {
     "pos": 5,
-    "code": "VER",
-    "name": "Max Verstappen",
-    "team": "red-bull",
-    "lap": "1:12.104",
-    "delta": "+0.415",
+    "code": "PIA",
+    "name": "Oscar Piastri",
+    "team": "mclaren",
+    "lap": "1:51.457",
+    "delta": "+1.308",
     "conf": 0.68
   },
   {
     "pos": 6,
-    "code": "NOR",
-    "name": "Lando Norris",
-    "team": "mclaren",
-    "lap": "1:12.192",
-    "delta": "+0.502",
+    "code": "VER",
+    "name": "Max Verstappen",
+    "team": "red-bull",
+    "lap": "1:51.564",
+    "delta": "+1.415",
     "conf": 0.68
   },
   {
     "pos": 7,
-    "code": "HAD",
-    "name": "Isack Hadjar",
-    "team": "red-bull",
-    "lap": "1:12.234",
-    "delta": "+0.544",
+    "code": "NOR",
+    "name": "Lando Norris",
+    "team": "mclaren",
+    "lap": "1:51.709",
+    "delta": "+1.560",
     "conf": 0.68
   },
   {
     "pos": 8,
-    "code": "PIA",
-    "name": "Oscar Piastri",
-    "team": "mclaren",
-    "lap": "1:12.339",
-    "delta": "+0.650",
+    "code": "LIN",
+    "name": "Arvid Lindblad",
+    "team": "racing-bulls",
+    "lap": "1:51.843",
+    "delta": "+1.694",
     "conf": 0.68
   },
   {
     "pos": 9,
-    "code": "LIN",
-    "name": "Arvid Lindblad",
-    "team": "racing-bulls",
-    "lap": "1:12.581",
-    "delta": "+0.892",
+    "code": "ANT",
+    "name": "Andrea Kimi Antonelli",
+    "team": "mercedes",
+    "lap": "1:51.967",
+    "delta": "+1.818",
     "conf": 0.68
   },
   {
     "pos": 10,
-    "code": "LAW",
-    "name": "Liam Lawson",
-    "team": "racing-bulls",
-    "lap": "1:12.606",
-    "delta": "+0.917",
+    "code": "HUL",
+    "name": "Nico Hulkenberg",
+    "team": "audi",
+    "lap": "1:52.028",
+    "delta": "+1.879",
     "conf": 0.68
   },
   {
     "pos": 11,
-    "code": "GAS",
-    "name": "Pierre Gasly",
-    "team": "alpine",
-    "lap": "1:12.673",
-    "delta": "+0.983",
+    "code": "HAM",
+    "name": "Lewis Hamilton",
+    "team": "ferrari",
+    "lap": "1:52.470",
+    "delta": "+2.321",
     "conf": 0.68
   },
   {
     "pos": 12,
-    "code": "HUL",
-    "name": "Nico Hulkenberg",
-    "team": "audi",
-    "lap": "1:12.941",
-    "delta": "+1.251",
+    "code": "ALO",
+    "name": "Fernando Alonso",
+    "team": "aston-martin",
+    "lap": "1:52.548",
+    "delta": "+2.399",
     "conf": 0.68
   },
   {
     "pos": 13,
-    "code": "COL",
-    "name": "Franco Colapinto",
-    "team": "alpine",
-    "lap": "1:13.164",
-    "delta": "+1.474",
+    "code": "BEA",
+    "name": "Oliver Bearman",
+    "team": "haas",
+    "lap": "1:52.782",
+    "delta": "+2.633",
     "conf": 0.68
   },
   {
     "pos": 14,
-    "code": "BEA",
-    "name": "Oliver Bearman",
-    "team": "haas",
-    "lap": "1:13.218",
-    "delta": "+1.528",
+    "code": "SAI",
+    "name": "Carlos Sainz",
+    "team": "williams",
+    "lap": "1:52.862",
+    "delta": "+2.713",
     "conf": 0.68
   },
   {
     "pos": 15,
-    "code": "BOR",
-    "name": "Gabriel Bortoleto",
-    "team": "audi",
-    "lap": "1:13.261",
-    "delta": "+1.572",
+    "code": "GAS",
+    "name": "Pierre Gasly",
+    "team": "alpine",
+    "lap": "1:52.889",
+    "delta": "+2.740",
     "conf": 0.68
   },
   {
     "pos": 16,
-    "code": "HIR",
-    "name": "Ryo Hirakawa",
-    "team": "haas",
-    "lap": "1:13.358",
-    "delta": "+1.668",
+    "code": "COL",
+    "name": "Franco Colapinto",
+    "team": "alpine",
+    "lap": "1:53.343",
+    "delta": "+3.194",
     "conf": 0.68
   },
   {
     "pos": 17,
-    "code": "SAI",
-    "name": "Carlos Sainz",
+    "code": "ALB",
+    "name": "Alexander Albon",
     "team": "williams",
-    "lap": "1:13.640",
-    "delta": "+1.951",
+    "lap": "1:53.349",
+    "delta": "+3.200",
     "conf": 0.68
   },
   {
     "pos": 18,
-    "code": "ALO",
-    "name": "Fernando Alonso",
+    "code": "STR",
+    "name": "Lance Stroll",
     "team": "aston-martin",
-    "lap": "1:13.848",
-    "delta": "+2.158",
+    "lap": "1:53.349",
+    "delta": "+3.200",
     "conf": 0.68
   },
   {
     "pos": 19,
-    "code": "ALB",
-    "name": "Alexander Albon",
-    "team": "williams",
-    "lap": "1:13.868",
-    "delta": "+2.179",
+    "code": "PER",
+    "name": "Sergio Perez",
+    "team": "cadillac",
+    "lap": "1:53.349",
+    "delta": "+3.200",
     "conf": 0.68
   },
   {
     "pos": 20,
-    "code": "STR",
-    "name": "Lance Stroll",
-    "team": "aston-martin",
-    "lap": "1:14.177",
-    "delta": "+2.487",
+    "code": "BOT",
+    "name": "Valtteri Bottas",
+    "team": "cadillac",
+    "lap": "1:53.349",
+    "delta": "+3.200",
     "conf": 0.68
   },
   {
     "pos": 21,
-    "code": "PER",
-    "name": "Sergio Perez",
-    "team": "cadillac",
-    "lap": "1:14.889",
+    "code": "CAM",
+    "name": "Rafael Câmara",
+    "team": "haas",
+    "lap": "1:53.349",
     "delta": "+3.200",
     "conf": 0.68
   },
   {
     "pos": 22,
-    "code": "BOT",
-    "name": "Valtteri Bottas",
-    "team": "cadillac",
-    "lap": "1:14.889",
+    "code": "BOR",
+    "name": "Gabriel Bortoleto",
+    "team": "audi",
+    "lap": "1:53.349",
     "delta": "+3.200",
     "conf": 0.68
   }
@@ -605,6 +613,55 @@ export type RaceReport = {
 };
 
 export const raceReports: RaceReport[] = [
+  {
+    "round": 20,
+    "slug": "2026-20-interlagos",
+    "name": "Brazilian Grand Prix",
+    "circuit": "Autódromo José Carlos Pace",
+    "dateISO": "2026-11-08T17:00:00Z",
+    "winner": {
+      "code": "NOR",
+      "name": "Lando Norris",
+      "team": "mclaren"
+    },
+    "margin": "",
+    "strategy": "3-stop majority",
+    "lede": "NOR won for McLaren.",
+    "keyReads": [
+      {
+        "label": "Pace factor",
+        "value": "NOR held the strongest median race pace.",
+        "note": "NOR held the strongest median race pace."
+      },
+      {
+        "label": "Strategy factor",
+        "value": "3-stop majority shaped stint length and tyre exposure.",
+        "note": "3-stop majority shaped stint length and tyre exposure."
+      },
+      {
+        "label": "Position factor",
+        "value": "Position movement is proxy-only.",
+        "note": "Position movement is proxy-only."
+      }
+    ],
+    "stints": [
+      {
+        "code": "NOR",
+        "team": "mclaren",
+        "plan": "INTERMEDIATE > SOFT > SOFT > INTERMEDIATE"
+      },
+      {
+        "code": "VER",
+        "team": "red-bull",
+        "plan": "INTERMEDIATE > SOFT > SOFT > INTERMEDIATE"
+      },
+      {
+        "code": "HAD",
+        "team": "red-bull",
+        "plan": "INTERMEDIATE > SOFT > SOFT > INTERMEDIATE"
+      }
+    ]
+  },
   {
     "round": 19,
     "slug": "2026-19-rodriguez",

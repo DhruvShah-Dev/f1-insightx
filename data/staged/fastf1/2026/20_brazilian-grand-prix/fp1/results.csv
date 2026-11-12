@@ -1,0 +1,23 @@
+Position,ClassifiedPosition,DriverNumber,BroadcastName,Abbreviation,FullName,TeamName,TeamColor,GridPosition,Q1,Q2,Q3,Time,Status,Points,Laps,source_label
+1,1,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,71.717,Finished,,33,openf1_post_session_bridge_v1
+2,2,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,71.799,Finished,,32,openf1_post_session_bridge_v1
+3,3,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,71.953,Finished,,29,openf1_post_session_bridge_v1
+4,4,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,72.041,Finished,,31,openf1_post_session_bridge_v1
+5,5,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,72.103,Finished,,30,openf1_post_session_bridge_v1
+6,6,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,72.156,Finished,,25,openf1_post_session_bridge_v1
+7,7,62,G MINI,MIN,Gabriele MINI,Alpine,00A1E8,,,,,72.569,Finished,,28,openf1_post_session_bridge_v1
+8,8,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,72.614,Finished,,30,openf1_post_session_bridge_v1
+9,9,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,72.654,Finished,,34,openf1_post_session_bridge_v1
+10,10,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,72.715,Finished,,32,openf1_post_session_bridge_v1
+11,11,67,L FORNAROLI,FOR,Leonardo FORNAROLI,McLaren,F47600,,,,,72.833,Finished,,28,openf1_post_session_bridge_v1
+12,12,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,72.837,Finished,,27,openf1_post_session_bridge_v1
+13,13,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,73.017,Finished,,26,openf1_post_session_bridge_v1
+14,14,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,73.038,Finished,,32,openf1_post_session_bridge_v1
+15,15,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,73.371,Finished,,16,openf1_post_session_bridge_v1
+16,16,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,73.511,Finished,,18,openf1_post_session_bridge_v1
+17,17,46,L BROWNING,BRO,Luke BROWNING,Williams,1868DB,,,,,73.591,Finished,,12,openf1_post_session_bridge_v1
+18,18,51,R CAMARA,CAM,Rafael CAMARA,Haas F1 Team,9C9FA2,,,,,73.696,Finished,,30,openf1_post_session_bridge_v1
+19,19,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,73.76,Finished,,28,openf1_post_session_bridge_v1
+20,20,25,C HERTA,HER,Colton HERTA,Cadillac,909090,,,,,74.275,Finished,,31,openf1_post_session_bridge_v1
+21,21,38,D BEGANOVIC,BEG,Dino BEGANOVIC,Ferrari,ED1131,,,,,74.357,Finished,,11,openf1_post_session_bridge_v1
+22,22,98,F SLATER,SLA,Freddie SLATER,Audi,F50537,,,,,74.966,Finished,,7,openf1_post_session_bridge_v1

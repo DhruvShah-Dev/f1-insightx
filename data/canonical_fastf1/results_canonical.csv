@@ -1737,3 +1737,112 @@ session_id,session_code,event_name,round,season,position,classified_position,dri
 2026_19_R_Mexico City Grand Prix,R,Mexico City Grand Prix,19,2026,,,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,,Retired,0.0,42.0,openf1_post_session_bridge_v1
 2026_19_R_Mexico City Grand Prix,R,Mexico City Grand Prix,19,2026,,,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,,Retired,0.0,5.0,openf1_post_session_bridge_v1
 2026_19_R_Mexico City Grand Prix,R,Mexico City Grand Prix,19,2026,,,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,,Retired,0.0,5.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,1,1,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,71.717,Finished,,33.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,2,2,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,71.799,Finished,,32.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,3,3,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,71.953,Finished,,29.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,4,4,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,72.041,Finished,,31.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,5,5,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,72.103,Finished,,30.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,6,6,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,72.156,Finished,,25.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,7,7,62,G MINI,MIN,Gabriele MINI,Alpine,00A1E8,,,,,72.569,Finished,,28.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,8,8,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,72.614,Finished,,30.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,9,9,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,72.654,Finished,,34.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,10,10,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,72.715,Finished,,32.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,11,11,67,L FORNAROLI,FOR,Leonardo FORNAROLI,McLaren,F47600,,,,,72.833,Finished,,28.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,12,12,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,72.837,Finished,,27.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,13,13,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,73.017,Finished,,26.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,14,14,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,73.038,Finished,,32.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,15,15,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,73.371,Finished,,16.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,16,16,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,73.511,Finished,,18.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,17,17,46,L BROWNING,BRO,Luke BROWNING,Williams,1868DB,,,,,73.591,Finished,,12.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,18,18,51,R CAMARA,CAM,Rafael CAMARA,Haas F1 Team,9C9FA2,,,,,73.696,Finished,,30.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,19,19,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,73.76,Finished,,28.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,20,20,25,C HERTA,HER,Colton HERTA,Cadillac,909090,,,,,74.275,Finished,,31.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,21,21,38,D BEGANOVIC,BEG,Dino BEGANOVIC,Ferrari,ED1131,,,,,74.357,Finished,,11.0,openf1_post_session_bridge_v1
+2026_20_FP1_Brazilian Grand Prix,FP1,Brazilian Grand Prix,20,2026,22,22,98,F SLATER,SLA,Freddie SLATER,Audi,F50537,,,,,74.966,Finished,,7.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,1,1,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,70.763,Finished,,37.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,2,2,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,71.016,Finished,,31.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,3,3,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,71.022,Finished,,23.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,4,4,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,71.036,Finished,,35.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,5,5,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,71.084,Finished,,32.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,6,6,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,71.213,Finished,,35.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,7,7,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,71.483,Finished,,33.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,8,8,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,71.78,Finished,,33.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,9,9,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,71.839,Finished,,33.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,10,10,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,71.991,Finished,,36.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,11,11,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,71.996,Finished,,33.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,12,12,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,72.008,Finished,,36.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,13,13,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,72.042,Finished,,36.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,14,14,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,72.109,Finished,,37.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,15,15,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,72.538,Finished,,34.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,16,16,51,R CAMARA,CAM,Rafael CAMARA,Haas F1 Team,9C9FA2,,,,,72.561,Finished,,30.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,17,17,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,72.742,Finished,,33.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,18,18,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,72.942,Finished,,31.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,19,19,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,72.953,Finished,,37.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,20,20,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,73.316,Finished,,34.0,openf1_post_session_bridge_v1
+2026_20_FP2_Brazilian Grand Prix,FP2,Brazilian Grand Prix,20,2026,21,21,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,73.383,Finished,,33.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,1,1,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,71.622,Finished,,19.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,2,2,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,71.647,Finished,,21.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,3,3,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,71.753,Finished,,22.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,4,4,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,71.806,Finished,,22.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,5,5,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,71.896,Finished,,30.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,6,6,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,71.935,Finished,,20.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,7,7,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,72.06,Finished,,25.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,8,8,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,72.171,Finished,,20.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,9,9,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,72.213,Finished,,24.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,10,10,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,72.644,Finished,,24.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,11,11,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,72.644,Finished,,26.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,12,12,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,72.833,Finished,,7.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,13,13,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,72.865,Finished,,27.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,14,14,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,72.925,Finished,,25.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,15,15,51,R CAMARA,CAM,Rafael CAMARA,Haas F1 Team,9C9FA2,,,,,72.981,Finished,,19.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,16,16,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,73.109,Finished,,20.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,17,17,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,73.147,Finished,,25.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,18,18,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,73.171,Finished,,23.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,19,19,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,73.303,Finished,,21.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,20,20,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,73.573,Finished,,32.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,21,21,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,73.722,Finished,,19.0,openf1_post_session_bridge_v1
+2026_20_FP3_Brazilian Grand Prix,FP3,Brazilian Grand Prix,20,2026,22,22,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,74.766,Finished,,7.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,1,1,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,"[90.939, 89.207, 87.47]",Finished,,24.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,2,2,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,"[91.206, 86.745, 87.674]",Finished,,23.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,3,3,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,"[92.229, 89.302, 88.095]",Finished,,23.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,4,4,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,"[92.121, 88.082, 88.289]",Finished,,22.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,5,5,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,"[92.085, 87.049, 88.321]",Finished,,24.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,6,6,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,"[91.693, 88.361, 88.668]",Finished,,23.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,7,7,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,"[92.059, 87.218, 88.763]",Finished,,24.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,8,8,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,"[93.03, 89.13, 89.831]",Finished,,22.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,9,9,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,"[92.092, 89.072, 90.311]",Finished,,23.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,10,10,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,"[93.15, 88.918, 90.456]",Finished,,24.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,11,11,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,"[91.666, 90.001, None]",Finished,,13.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,12,12,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,"[92.251, 90.369, None]",Finished,,20.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,13,13,51,R CAMARA,CAM,Rafael CAMARA,Haas F1 Team,9C9FA2,,,,,"[92.809, 91.515, None]",Finished,,18.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,14,14,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,"[92.306, 91.687, None]",Finished,,16.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,15,15,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,"[92.959, 91.785, None]",Finished,,19.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,16,16,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,"[91.238, None, None]",Finished,,9.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,17,17,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,"[93.327, None, None]",Finished,,12.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,18,18,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,"[93.449, None, None]",Finished,,12.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,19,19,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,"[93.653, None, None]",Finished,,11.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,20,20,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,"[93.774, None, None]",Finished,,12.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,21,21,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,"[94.509, None, None]",Finished,,12.0,openf1_post_session_bridge_v1
+2026_20_Q_Brazilian Grand Prix,Q,Brazilian Grand Prix,20,2026,22,22,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,"[101.564, None, None]",Finished,,5.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,1,1.0,1,L NORRIS,NOR,Lando NORRIS,McLaren,F47600,,,,,5723.504,Finished,25.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,2,2.0,3,M VERSTAPPEN,VER,Max VERSTAPPEN,Red Bull Racing,4781D7,,,,,5738.106,Finished,18.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,3,3.0,6,I HADJAR,HAD,Isack HADJAR,Red Bull Racing,4781D7,,,,,5747.989,Finished,15.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,4,4.0,63,G RUSSELL,RUS,George RUSSELL,Mercedes,00D7B6,,,,,5757.495,Finished,12.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,5,5.0,12,K ANTONELLI,ANT,Kimi ANTONELLI,Mercedes,00D7B6,,,,,5764.521,Finished,10.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,6,6.0,81,O PIASTRI,PIA,Oscar PIASTRI,McLaren,F47600,,,,,5779.979,Finished,8.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,7,7.0,30,L LAWSON,LAW,Liam LAWSON,Racing Bulls,6C98FF,,,,,5798.906,Finished,6.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,8,8.0,16,C LECLERC,LEC,Charles LECLERC,Ferrari,ED1131,,,,,5802.09,Finished,4.0,71.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,9,9.0,44,L HAMILTON,HAM,Lewis HAMILTON,Ferrari,ED1131,,,,,,Finished,2.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,10,10.0,27,N HULKENBERG,HUL,Nico HULKENBERG,Audi,F50537,,,,,,Finished,1.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,11,11.0,41,A LINDBLAD,LIN,Arvid LINDBLAD,Racing Bulls,6C98FF,,,,,,Finished,0.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,12,12.0,14,F ALONSO,ALO,Fernando ALONSO,Aston Martin,229971,,,,,,Finished,0.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,13,13.0,43,F COLAPINTO,COL,Franco COLAPINTO,Alpine,00A1E8,,,,,,Finished,0.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,14,14.0,10,P GASLY,GAS,Pierre GASLY,Alpine,00A1E8,,,,,,Finished,0.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,15,15.0,23,A ALBON,ALB,Alexander ALBON,Williams,1868DB,,,,,,Finished,0.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,16,16.0,5,G BORTOLETO,BOR,Gabriel BORTOLETO,Audi,F50537,,,,,,Finished,0.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,17,17.0,87,O BEARMAN,BEA,Oliver BEARMAN,Haas F1 Team,9C9FA2,,,,,,Finished,0.0,70.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,18,18.0,11,S PEREZ,PER,Sergio PEREZ,Cadillac,909090,,,,,,Finished,0.0,69.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,19,19.0,55,C SAINZ,SAI,Carlos SAINZ,Williams,1868DB,,,,,,Finished,0.0,69.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,20,20.0,51,R CAMARA,CAM,Rafael CAMARA,Haas F1 Team,9C9FA2,,,,,,Finished,0.0,69.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,,,18,L STROLL,STR,Lance STROLL,Aston Martin,229971,,,,,,Retired,0.0,30.0,openf1_post_session_bridge_v1
+2026_20_R_Brazilian Grand Prix,R,Brazilian Grand Prix,20,2026,,,77,V BOTTAS,BOT,Valtteri BOTTAS,Cadillac,909090,,,,,,Did not start,0.0,0.0,openf1_post_session_bridge_v1

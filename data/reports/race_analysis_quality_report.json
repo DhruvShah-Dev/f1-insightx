@@ -2,12 +2,12 @@
   "build_version": "race-analysis-v1",
   "confidence_distribution": {
     "max": 1.0,
-    "mean": 0.78,
+    "mean": 0.774,
     "min": 0.35,
-    "tier": "strong"
+    "tier": "moderate"
   },
-  "generated_at": "2026-11-03T22:30:23Z",
-  "latest_race": "Mexico City Grand Prix",
+  "generated_at": "2026-11-12T14:56:31Z",
+  "latest_race": "Brazilian Grand Prix",
   "missing_data_flags": {
     "drs_window": "proxy_only_no_exact_gap_feed",
     "dynamic_gap_feed": "missing",
@@ -18,22 +18,22 @@
     "track_status": "partial",
     "traffic_proxy": "proxy_no_exact_gap_feed"
   },
-  "races_generated": 19,
+  "races_generated": 20,
   "rows": {
-    "index": 19,
-    "links": 57,
+    "index": 20,
+    "links": 60,
     "neutralization_phases": 91,
-    "pace_evolution": 22153,
-    "pit_strategy": 778,
-    "position_changes": 418,
+    "pace_evolution": 23590,
+    "pit_strategy": 836,
+    "position_changes": 440,
     "position_swing_events": 3272,
     "position_timeline": 19586,
-    "stints": 1195,
-    "story_points": 74,
-    "summary": 19,
-    "track_status": 1150,
+    "stints": 1275,
+    "story_points": 77,
+    "summary": 20,
+    "track_status": 1221,
     "traffic_proxy": 19627,
-    "weather_context": 1150
+    "weather_context": 1221
   },
   "season_coverage": [
     2026

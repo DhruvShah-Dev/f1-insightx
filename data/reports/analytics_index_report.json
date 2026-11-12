@@ -1,15 +1,15 @@
 {
-  "sessions": 77,
+  "sessions": 82,
   "row_cap": 10,
   "rows": {
-    "overview": 16965,
-    "segments": 135854,
-    "corner_segments": 135854,
-    "braking": 135854,
-    "throttle": 135854,
-    "straights": 117421,
-    "energy_proxy": 117421,
-    "lap_pace": 19133
+    "overview": 18078,
+    "segments": 145199,
+    "corner_segments": 145199,
+    "braking": 145199,
+    "throttle": 145199,
+    "straights": 125212,
+    "energy_proxy": 125212,
+    "lap_pace": 21651
   },
   "manifest": "analytics\\indexed\\analytics_session_manifest.json",
   "validation_errors": []

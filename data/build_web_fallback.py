@@ -17,6 +17,7 @@ TEAM_KEYS = {"red_bull": "red-bull", "aston_martin": "aston-martin", "rb": "raci
 EVENT_DETAILS = {
     "americas": {"laps": 56, "lapKm": 5.513, "timeZone": "America/Chicago"},
     "rodriguez": {"laps": 71, "lapKm": 4.304, "timeZone": "America/Mexico_City"},
+    "vegas": {"laps": 50, "lapKm": 6.201, "timeZone": "America/Los_Angeles"},
 }
 SESSION_CODES = {
     "Practice 1": "FP1",
@@ -39,6 +40,7 @@ CURRENT_DRIVER_NAMES = {
     "albon": ("ALB", "Alexander Albon"), "tsunoda": ("TSU", "Yuki Tsunoda"),
     "bottas": ("BOT", "Valtteri Bottas"), "perez": ("PER", "Sergio Perez"),
     "stroll": ("STR", "Lance Stroll"), "ryo_hirakawa": ("HIR", "Ryo Hirakawa"),
+    "rafael_camara": ("CAM", "Rafael Câmara"),
 }
 
 

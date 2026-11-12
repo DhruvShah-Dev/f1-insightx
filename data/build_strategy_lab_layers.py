@@ -73,6 +73,7 @@ DRIVER_CODE_FALLBACK = {
     "ocon": "OCO",
     "perez": "PER",
     "piastri": "PIA",
+    "rafael_camara": "CAM",
     "russell": "RUS",
     "sainz": "SAI",
     "stroll": "STR",

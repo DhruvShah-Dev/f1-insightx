@@ -1,0 +1,25 @@
+{
+  "season": 2026,
+  "round": 20,
+  "event_name": "Brazilian Grand Prix",
+  "event_format": "conventional",
+  "session_code": "Q",
+  "session_name": "Qualifying",
+  "event_date": "2026-11-07",
+  "country": "Brazil",
+  "location": "S\u00e3o Paulo",
+  "status": "complete",
+  "error": null,
+  "telemetry_requested": true,
+  "telemetry_available": true,
+  "position_available": true,
+  "source": "openf1_post_session_bridge_v1",
+  "row_counts": {
+    "results": 22,
+    "laps": 391,
+    "weather": 160,
+    "stints": 62,
+    "telemetry_rows": 7595,
+    "position_rows": 7633
+  }
+}

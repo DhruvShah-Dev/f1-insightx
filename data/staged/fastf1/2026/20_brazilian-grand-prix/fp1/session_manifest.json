@@ -1,0 +1,25 @@
+{
+  "season": 2026,
+  "round": 20,
+  "event_name": "Brazilian Grand Prix",
+  "event_format": "conventional",
+  "session_code": "FP1",
+  "session_name": "Practice 1",
+  "event_date": "2026-11-06",
+  "country": "Brazil",
+  "location": "S\u00e3o Paulo",
+  "status": "complete",
+  "error": null,
+  "telemetry_requested": true,
+  "telemetry_available": true,
+  "position_available": true,
+  "source": "openf1_post_session_bridge_v1",
+  "row_counts": {
+    "results": 22,
+    "laps": 570,
+    "weather": 81,
+    "stints": 96,
+    "telemetry_rows": 6042,
+    "position_rows": 6291
+  }
+}

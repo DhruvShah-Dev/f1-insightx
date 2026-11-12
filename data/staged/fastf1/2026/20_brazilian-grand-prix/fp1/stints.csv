@@ -1,0 +1,97 @@
+season,round,event_name,session_code,driver,team,stint,compound,lap_count,mean_lap_time_s,degradation_per_lap_s,degradation_index,start_tyre_life,end_tyre_life,source_label
+2026,20,Brazilian Grand Prix,FP1,ALB,Williams,1,MEDIUM,6,96.01833333333333,-1.7281999999999982,0.2,2,7,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALB,Williams,2,MEDIUM,4,202.28125,-1.9316666666666673,-0.39999999999999997,9,12,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALB,Williams,3,SOFT,3,178.12400000000002,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALB,Williams,4,SOFT,2,108.185,-10.0,0.0,4,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALO,Aston Martin,1,HARD,1,82.306,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALO,Aston Martin,2,HARD,3,162.13,-4.914499999999997,-0.5,3,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALO,Aston Martin,3,HARD,9,141.94588888888885,-1.641,-0.31666666666666665,6,14,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALO,Aston Martin,4,SOFT,5,176.8886,-2.2577500000000015,-0.3,1,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ALO,Aston Martin,5,SOFT,7,139.69614285714286,1.9628333333333334,0.25,6,12,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ANT,Mercedes,1,MEDIUM,4,99.6565,3.3333333333333335,0.39999999999999997,2,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ANT,Mercedes,2,MEDIUM,1,109.346,0.0,0.0,6,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ANT,Mercedes,3,MEDIUM,5,181.5476,0.0,-0.49999999999999994,8,12,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ANT,Mercedes,4,SOFT,4,165.90975,-3.3333333333333335,-0.7999999999999999,1,4,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ANT,Mercedes,5,MEDIUM,9,108.92366666666668,-0.19512500000000088,0.3666666666666667,13,21,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,ANT,Mercedes,6,SOFT,7,97.56157142857144,-1.5583333333333325,0.6071428571428572,5,11,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BEA,Haas F1 Team,1,MEDIUM,4,93.4185,3.3333333333333335,0.0,2,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BEA,Haas F1 Team,2,MEDIUM,8,179.55225000000002,-3.377285714285715,-0.30952380952380953,6,13,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BEA,Haas F1 Team,3,SOFT,3,153.272,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BEA,Haas F1 Team,4,SOFT,11,131.40727272727273,-0.8405999999999991,0.3727272727272728,4,14,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BEG,Ferrari,1,HARD,3,99.96266666666668,0.0,0.5,2,4,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BEG,Ferrari,2,HARD,5,244.66459999999998,0.0,-0.3,5,9,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BEG,Ferrari,3,SOFT,2,810.0505,-10.0,0.0,1,2,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOR,Audi,1,MEDIUM,4,96.925,3.3333333333333335,0.0,2,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOR,Audi,2,MEDIUM,1,103.505,0.0,0.0,6,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOR,Audi,3,MEDIUM,4,233.71525000000003,-3.3333333333333335,-0.39999999999999997,8,11,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOR,Audi,4,SOFT,3,213.35333333333335,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOR,Audi,5,SOFT,3,95.95933333333333,0.0,-0.5,4,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOR,Audi,6,SOFT,10,100.5033,-0.4742222222222223,0.41818181818181815,7,16,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOR,Audi,7,MEDIUM,3,113.91833333333334,0.0,0.5,12,14,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOT,Cadillac,1,HARD,5,90.4698,0.0,0.09999999999999999,2,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOT,Cadillac,2,HARD,4,277.57124999999996,-3.3333333333333335,-0.39999999999999997,7,10,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BOT,Cadillac,3,SOFT,6,124.988,1.848399999999998,-0.3142857142857143,1,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BRO,Williams,2,MEDIUM,4,228.08049999999997,-3.3333333333333335,-0.39999999999999997,3,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,BRO,Williams,3,SOFT,6,164.208,-2.0,-0.2571428571428572,1,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,CAM,Haas F1 Team,1,MEDIUM,6,82.97866666666665,1.5415999999999996,0.08571428571428573,2,7,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,CAM,Haas F1 Team,2,MEDIUM,7,172.36514285714287,-3.1698333333333344,-0.28571428571428575,9,15,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,CAM,Haas F1 Team,3,SOFT,3,192.85466666666665,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,CAM,Haas F1 Team,4,SOFT,2,173.089,-10.0,0.0,4,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,CAM,Haas F1 Team,5,MEDIUM,10,116.6174,-0.7621111111111121,0.10303030303030303,16,25,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,COL,Alpine,1,MEDIUM,6,101.50766666666665,2.0,-0.2,2,7,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,COL,Alpine,2,MEDIUM,5,179.10840000000002,0.0,-0.3,9,13,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,COL,Alpine,3,SOFT,8,104.729625,-4.285714285714286,-0.2142857142857143,1,8,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,COL,Alpine,4,SOFT,13,106.64861538461538,0.35875000000000057,0.4230769230769231,9,21,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,2,SOFT,1,131.663,0.0,0.0,1,1,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,3,SOFT,1,153.238,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,4,SOFT,1,127.746,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,5,MEDIUM,6,201.97850000000003,-2.0,-0.3714285714285715,1,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,6,MEDIUM,6,96.58383333333335,-1.6458,-0.2571428571428572,7,12,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,7,MEDIUM,1,124.605,0.0,0.0,13,13,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,8,MEDIUM,1,115.963,0.0,0.0,14,14,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,FOR,McLaren,9,SOFT,10,122.5251,-0.8289999999999998,-0.09090909090909088,5,14,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAD,Red Bull Racing,1,HARD,2,92.537,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAD,Red Bull Racing,2,HARD,3,97.75766666666668,0.0,0.5,4,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAD,Red Bull Racing,3,HARD,4,236.617,-3.3333333333333335,-0.39999999999999997,8,11,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAD,Red Bull Racing,4,HARD,3,91.27533333333334,0.0,-0.5,12,14,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAD,Red Bull Racing,5,SOFT,6,196.4631666666667,-2.0,-0.5428571428571429,1,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAD,Red Bull Racing,6,SOFT,5,165.7824,0.8114999999999988,0.0,7,11,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAM,Ferrari,1,HARD,5,106.45459999999999,0.0,0.3,2,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAM,Ferrari,2,HARD,6,185.63833333333332,-2.0,-0.3714285714285715,8,13,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAM,Ferrari,3,SOFT,3,186.3983333333333,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HAM,Ferrari,4,SOFT,15,104.72019999999998,0.7824999999999999,0.5035714285714286,4,18,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HER,Cadillac,1,HARD,5,97.4008,4.287749999999999,0.39999999999999997,2,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HER,Cadillac,2,HARD,5,207.0212,0.0,-0.3,8,12,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HER,Cadillac,3,SOFT,8,125.92399999999999,-2.0025714285714287,-0.3333333333333334,1,8,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,HER,Cadillac,4,SOFT,11,115.26945454545454,-0.31000000000000083,0.46363636363636374,9,19,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LAW,Racing Bulls,1,HARD,4,90.08,3.3333333333333335,0.0,2,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LAW,Racing Bulls,2,HARD,2,97.215,-10.0,0.0,6,7,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LAW,Racing Bulls,3,HARD,7,161.354,0.0,-0.42857142857142866,9,15,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LAW,Racing Bulls,4,SOFT,7,126.23157142857144,-3.3333333333333335,-0.5,1,7,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LAW,Racing Bulls,5,SOFT,10,118.9333,0.7678888888888906,0.4545454545454545,8,17,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LIN,Racing Bulls,1,HARD,6,91.00133333333332,2.0,0.2571428571428572,2,7,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LIN,Racing Bulls,2,HARD,8,146.97537499999999,-0.04357142857142752,-0.1666666666666667,8,15,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LIN,Racing Bulls,3,SOFT,8,119.91937500000002,-1.4285714285714286,-0.2380952380952381,1,8,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,LIN,Racing Bulls,4,HARD,9,117.5528888888889,1.43525,0.39999999999999997,16,24,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,MIN,Alpine,1,MEDIUM,1,102.738,0.0,0.0,2,2,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,MIN,Alpine,2,MEDIUM,2,107.5875,-10.0,0.0,3,4,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,MIN,Alpine,3,MEDIUM,12,154.1555,-0.9218181818181819,-0.30069930069930073,5,16,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,MIN,Alpine,4,SOFT,12,140.58366666666666,-2.046454545454545,0.04195804195804196,1,12,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,NOR,McLaren,1,MEDIUM,2,87.7935,10.0,0.0,2,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,NOR,McLaren,2,MEDIUM,3,109.33300000000001,0.0,0.5,8,10,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,NOR,McLaren,3,MEDIUM,7,165.1314285714286,0.0,-0.42857142857142866,8,14,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,NOR,McLaren,4,SOFT,3,241.97366666666665,0.0,-0.5,1,3,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,NOR,McLaren,5,SOFT,16,86.399625,0.7264,0.6058823529411764,4,19,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,RUS,Mercedes,1,MEDIUM,5,96.46900000000001,0.0,0.3,2,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,RUS,Mercedes,2,MEDIUM,5,203.869,0.0,-0.3,7,11,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,RUS,Mercedes,3,SOFT,4,153.27075000000002,-3.3333333333333335,-0.39999999999999997,1,4,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,RUS,Mercedes,4,SOFT,15,106.20113333333332,-0.6182142857142858,0.37857142857142856,5,19,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,SLA,Audi,1,HARD,5,87.82600000000001,2.6020000000000003,0.39999999999999997,2,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,STR,Aston Martin,1,MEDIUM,5,90.1434,0.0,0.3,2,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,STR,Aston Martin,2,MEDIUM,8,158.429,-1.7108571428571449,0.0,8,15,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,STR,Aston Martin,3,SOFT,10,134.9264,-3.1081111111111124,-0.0303030303030303,1,10,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,STR,Aston Martin,4,MEDIUM,3,202.37266666666667,0.0,-0.5,16,18,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,VER,Red Bull Racing,1,HARD,5,93.98659999999998,0.0,-0.09999999999999999,2,6,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,VER,Red Bull Racing,2,SOFT,5,245.8294,0.0,-0.3,1,5,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,VER,Red Bull Racing,3,SOFT,12,123.91675,-0.455909090909091,0.3916083916083916,6,17,openf1_post_session_bridge_v1
+2026,20,Brazilian Grand Prix,FP1,VER,Red Bull Racing,4,HARD,5,97.4164,-2.4695,0.19999999999999998,8,12,openf1_post_session_bridge_v1
