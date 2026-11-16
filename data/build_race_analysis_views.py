@@ -13,7 +13,7 @@ import pandas as pd
 
 DATA_DIR = Path(__file__).resolve().parent
 ROOT_DIR = DATA_DIR.parent
-CANONICAL_DIR = DATA_DIR / "canonical_fastf1"
+CANONICAL_DIR = DATA_DIR / "canonical_sessions"
 CURATED_DIR = DATA_DIR / "curated"
 STRATEGY_DIR = DATA_DIR / "strategy_lab"
 ANALYTICS_DIR = DATA_DIR / "analytics"
@@ -755,7 +755,7 @@ def build_track_status_context(race_id: str, race_laps: pd.DataFrame) -> tuple[l
                 "track_status_raw": raw_status,
                 "track_status_label": label,
                 "confidence": confidence,
-                "source": "canonical_fastf1_laps.track_status",
+                "source": "canonical_sessions_laps.track_status",
                 "note": note,
             }
         )

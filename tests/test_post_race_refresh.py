@@ -55,7 +55,7 @@ def test_enriched_waits_for_all_current_race_surfaces(monkeypatch: pytest.Monkey
     monkeypatch.setattr(refresh, "ROOT", tmp_path)
     target = race(18, datetime(2026, 10, 25, 20, tzinfo=UTC))
     files = (
-        ("data/canonical_fastf1/sessions.csv", "session_code"),
+        ("data/canonical_sessions/sessions.csv", "session_code"),
         ("data/telemetry_features/telemetry_lap_summary.csv", "session"),
         ("data/analytics/analytics_session_index.csv", "session"),
         ("data/race_analysis/race_analysis_index.csv", None),
@@ -75,11 +75,15 @@ def test_enriched_waits_for_all_current_race_surfaces(monkeypatch: pytest.Monkey
 def test_missing_race_telemetry_requests_retry(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
     monkeypatch.setattr(refresh, "ROOT", tmp_path)
     target = race(18, datetime(2026, 10, 25, 20, tzinfo=UTC))
-    folder = tmp_path / "data/raw/fastf1/2026/18_test-grand-prix/R"
+    folder = tmp_path / "data/staged/sessions/2026/18_test-grand-prix/r"
     folder.mkdir(parents=True)
-    (folder / "session_manifest.json").write_text(json.dumps({"status": "complete", "telemetry_available": False}))
+    (folder / "session_manifest.json").write_text(json.dumps({
+        "status": "pending_openf1", "source_provider": "openf1"
+    }))
     assert not refresh.race_telemetry_ready(target)
-    (folder / "session_manifest.json").write_text(json.dumps({"status": "complete", "telemetry_available": True}))
+    (folder / "session_manifest.json").write_text(json.dumps({
+        "status": "complete", "source_provider": "openf1"
+    }))
     (folder / "telemetry.parquet").write_bytes(b"fixture")
     assert refresh.race_telemetry_ready(target)
 

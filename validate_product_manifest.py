@@ -15,7 +15,7 @@ REQUIRED_SURFACES = {
     "telemetry_features",
     "analytics",
     "analytics_index",
-    "canonical_fastf1",
+    "canonical_sessions",
 }
 
 

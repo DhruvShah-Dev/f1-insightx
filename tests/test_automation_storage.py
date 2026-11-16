@@ -30,7 +30,7 @@ def test_archive_is_chunked_idempotent_and_restorable(monkeypatch, tmp_path: Pat
     first = archive.save()
     assert first["uploaded"] == 3
     assert archive.save()["uploaded"] == 0
-    manifest = json.loads(bucket.download("v1/archive-manifest.json"))
+    manifest = json.loads(bucket.download("v2/archive-manifest.json"))
     assert manifest["files"]["data/raw/fastf1/session.bin"]["chunks"] == 3
     source.unlink()
     assert archive.restore()["restored"] == 1

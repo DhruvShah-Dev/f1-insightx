@@ -3,13 +3,50 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import json
 import os
+from datetime import UTC, datetime
 from pathlib import Path
 
 import psycopg
 from dotenv import load_dotenv
 
 from f1_insightx_data.settings import ROOT_DIR, load_settings
+
+
+def load_pipeline_release(cursor, settings) -> None:
+    manifest_path = settings.quarantine_dir.parent / "reports" / "product_manifest.json"
+    cleaning_path = settings.quarantine_dir.parent / "reports" / "openf1_cleaning_quality.json"
+    if not manifest_path.exists():
+        return
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    cleaning = json.loads(cleaning_path.read_text(encoding="utf-8")) if cleaning_path.exists() else {}
+    providers = ["openf1", "jolpica", "fastf1_legacy"]
+    status = "passed" if manifest.get("overall_status") == "passed" else "warning"
+    warnings = [
+        warning
+        for surface in (manifest.get("surfaces") or {}).values()
+        if isinstance(surface, dict)
+        for warning in surface.get("warnings", [])
+    ]
+    cursor.execute(
+        """
+        INSERT INTO data_pipeline_releases
+          (build_version, generated_at, source_providers, cleaning_statistics, validation_status, warnings)
+        VALUES (%s, %s, %s::jsonb, %s::jsonb, %s, %s::jsonb)
+        ON CONFLICT (build_version) DO UPDATE SET
+          generated_at = EXCLUDED.generated_at,
+          source_providers = EXCLUDED.source_providers,
+          cleaning_statistics = EXCLUDED.cleaning_statistics,
+          validation_status = EXCLUDED.validation_status,
+          warnings = EXCLUDED.warnings
+        """,
+        (
+            manifest.get("build_version") or f"pipeline_{datetime.now(UTC).strftime('%Y%m%dT%H%M%SZ')}",
+            manifest.get("generated_at") or datetime.now(UTC).isoformat(),
+            json.dumps(providers), json.dumps(cleaning), status, json.dumps(warnings),
+        ),
+    )
 
 
 TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
@@ -346,8 +383,8 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
         ],
     ),
     (
-        "fastf1_prediction_snapshots",
-        "predictions/fastf1_prediction_snapshots.csv",
+        "session_prediction_snapshots",
+        "predictions/session_prediction_snapshots.csv",
         [
             "id",
             "season",
@@ -369,7 +406,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     ),
     (
         "sessions",
-        "canonical_fastf1/sessions.csv",
+        "canonical_sessions/sessions.csv",
         [
             "id",
             "race_id",
@@ -380,16 +417,19 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
             "event_name",
             "scheduled_at",
             "source_label",
+            "source_provider",
+            "source_session_key",
+            "source_fetched_at",
         ],
     ),
     (
         "event_entries",
-        "canonical_fastf1/event_entries.csv",
+        "canonical_sessions/event_entries.csv",
         ["id", "race_id", "driver_id", "constructor_id", "source_label"],
     ),
     (
         "session_results",
-        "canonical_fastf1/session_results.csv",
+        "canonical_sessions/session_results.csv",
         [
             "id",
             "session_id",
@@ -409,7 +449,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     ),
     (
         "session_laps",
-        "canonical_fastf1/session_laps.csv",
+        "canonical_sessions/session_laps.csv",
         [
             "id",
             "session_id",
@@ -444,7 +484,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     ),
     (
         "session_stints",
-        "canonical_fastf1/session_stints.csv",
+        "canonical_sessions/session_stints.csv",
         [
             "id",
             "session_id",
@@ -466,7 +506,7 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
     ),
     (
         "session_weather",
-        "canonical_fastf1/session_weather.csv",
+        "canonical_sessions/session_weather.csv",
         [
             "id",
             "session_id",
@@ -1659,7 +1699,7 @@ OPTIONAL_TABLES = {
     "constructor_form_snapshots",
     "prediction_feature_snapshots",
     "strategy_baselines",
-    "fastf1_prediction_snapshots",
+    "session_prediction_snapshots",
     "sessions",
     "event_entries",
     "session_results",
@@ -1970,7 +2010,7 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
         "pit_window_start_lap",
         "pit_window_end_lap",
     },
-    "fastf1_prediction_snapshots": {"season", "round", "projected_finish"},
+    "session_prediction_snapshots": {"season", "round", "projected_finish"},
     "sessions": {"season", "round"},
     "session_results": {
         "classification_position",
@@ -2579,6 +2619,8 @@ def main() -> None:
                     upsert=upsert_mode and not replace_mode,
                     reference_maps=reference_maps,
                 )
+
+            load_pipeline_release(cursor, settings)
 
         connection.commit()
 

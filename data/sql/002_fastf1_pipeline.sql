@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS strategy_baselines (
   source_label TEXT NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS fastf1_prediction_snapshots (
+CREATE TABLE IF NOT EXISTS session_prediction_snapshots (
   id TEXT PRIMARY KEY,
   season INTEGER NOT NULL,
   round INTEGER NOT NULL,
@@ -104,15 +104,15 @@ CREATE INDEX IF NOT EXISTS idx_driver_form_snapshots_race_id ON driver_form_snap
 CREATE INDEX IF NOT EXISTS idx_constructor_form_snapshots_race_id ON constructor_form_snapshots (race_id);
 CREATE INDEX IF NOT EXISTS idx_prediction_feature_snapshots_race_id ON prediction_feature_snapshots (race_id);
 CREATE INDEX IF NOT EXISTS idx_strategy_baselines_race_id ON strategy_baselines (race_id);
-CREATE INDEX IF NOT EXISTS idx_fastf1_prediction_snapshots_race_id ON fastf1_prediction_snapshots (race_id);
+CREATE INDEX IF NOT EXISTS idx_session_prediction_snapshots_race_id ON session_prediction_snapshots (race_id);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_driver_form_snapshots_unique ON driver_form_snapshots (season, round, race_id, driver_id);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_constructor_form_snapshots_unique ON constructor_form_snapshots (season, round, race_id, constructor_id);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_prediction_feature_snapshots_unique ON prediction_feature_snapshots (season, round, race_id, driver_id);
 CREATE UNIQUE INDEX IF NOT EXISTS idx_strategy_baselines_unique ON strategy_baselines (season, round, race_id, driver_id);
-CREATE UNIQUE INDEX IF NOT EXISTS idx_fastf1_prediction_snapshots_unique ON fastf1_prediction_snapshots (model_version, season, round, race_id, driver_id);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_session_prediction_snapshots_unique ON session_prediction_snapshots (model_version, season, round, race_id, driver_id);
 
 ALTER TABLE driver_form_snapshots ENABLE ROW LEVEL SECURITY;
 ALTER TABLE constructor_form_snapshots ENABLE ROW LEVEL SECURITY;
 ALTER TABLE prediction_feature_snapshots ENABLE ROW LEVEL SECURITY;
 ALTER TABLE strategy_baselines ENABLE ROW LEVEL SECURITY;
-ALTER TABLE fastf1_prediction_snapshots ENABLE ROW LEVEL SECURITY;
+ALTER TABLE session_prediction_snapshots ENABLE ROW LEVEL SECURITY;

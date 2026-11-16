@@ -31,9 +31,9 @@ def parse_args() -> argparse.Namespace:
         nargs="*",
         default=list(DEFAULT_SESSIONS),
         choices=SUPPORTED_SESSIONS,
-        help="FastF1 session codes to target. Defaults to FP1 FP2 FP3 Q.",
+        help="OpenF1 session codes to target. Defaults to FP1 FP2 FP3 Q.",
     )
-    parser.add_argument("--dry-run", action="store_true", help="Plan FastF1 ingestion without writing data or rebuilding views.")
+    parser.add_argument("--dry-run", action="store_true", help="Plan OpenF1 ingestion without writing data or rebuilding views.")
     parser.add_argument("--retry-failed", action="store_true", help="Retry previously failed or unavailable sessions.")
     parser.add_argument("--max-retries", type=int, default=3)
     parser.add_argument("--sleep-seconds", type=float, default=1.5)
@@ -111,23 +111,17 @@ def main() -> None:
 
     ingest_command = [
         sys.executable,
-        "data/fastf1_ingest.py",
+        "data/run_openf1_pipeline.py",
         "--season",
         str(season),
         "--round",
         str(round_number),
         "--sessions",
         *sessions,
+        "--race-date",
+        str(race.get("scheduled_at") or ""),
         "--only-missing",
-        "--sleep-seconds",
-        str(max(0.0, float(args.sleep_seconds))),
-        "--max-retries",
-        str(max(1, int(args.max_retries))),
-        "--completion-buffer-minutes",
-        str(max(0, int(args.completion_buffer_minutes))),
     ]
-    if args.retry_failed:
-        ingest_command.append("--retry-failed")
     if args.dry_run:
         ingest_command.append("--dry-run")
 

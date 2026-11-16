@@ -1139,7 +1139,7 @@ export type Database = {
         }
         Relationships: []
       }
-      fastf1_prediction_snapshots: {
+      session_prediction_snapshots: {
         Row: {
           confidence_score: number | null
           constructor_id: string
@@ -1196,21 +1196,21 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "fastf1_prediction_snapshots_constructor_id_fkey"
+            foreignKeyName: "session_prediction_snapshots_constructor_id_fkey"
             columns: ["constructor_id"]
             isOneToOne: false
             referencedRelation: "constructors"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "fastf1_prediction_snapshots_driver_id_fkey"
+            foreignKeyName: "session_prediction_snapshots_driver_id_fkey"
             columns: ["driver_id"]
             isOneToOne: false
             referencedRelation: "drivers"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "fastf1_prediction_snapshots_race_id_fkey"
+            foreignKeyName: "session_prediction_snapshots_race_id_fkey"
             columns: ["race_id"]
             isOneToOne: false
             referencedRelation: "races"
@@ -4055,6 +4055,36 @@ export type Database = {
           },
         ]
       }
+      data_pipeline_releases: {
+        Row: {
+          build_version: string
+          cleaning_statistics: Json
+          generated_at: string
+          id: string
+          source_providers: Json
+          validation_status: string
+          warnings: Json
+        }
+        Insert: {
+          build_version: string
+          cleaning_statistics?: Json
+          generated_at?: string
+          id?: string
+          source_providers?: Json
+          validation_status: string
+          warnings?: Json
+        }
+        Update: {
+          build_version?: string
+          cleaning_statistics?: Json
+          generated_at?: string
+          id?: string
+          source_providers?: Json
+          validation_status?: string
+          warnings?: Json
+        }
+        Relationships: []
+      }
       sessions: {
         Row: {
           event_name: string | null
@@ -4065,7 +4095,10 @@ export type Database = {
           season: number
           session_code: string
           session_name: string | null
+          source_fetched_at: string | null
           source_label: string
+          source_provider: string
+          source_session_key: string | null
         }
         Insert: {
           event_name?: string | null
@@ -4076,7 +4109,10 @@ export type Database = {
           season: number
           session_code: string
           session_name?: string | null
+          source_fetched_at?: string | null
           source_label?: string
+          source_provider?: string
+          source_session_key?: string | null
         }
         Update: {
           event_name?: string | null
@@ -4087,7 +4123,10 @@ export type Database = {
           season?: number
           session_code?: string
           session_name?: string | null
+          source_fetched_at?: string | null
           source_label?: string
+          source_provider?: string
+          source_session_key?: string | null
         }
         Relationships: [
           {
@@ -5164,6 +5203,27 @@ export type Database = {
       }
     }
     Views: {
+      fastf1_prediction_snapshots: {
+        Row: {
+          confidence_score: number | null
+          constructor_id: string | null
+          driver_id: string | null
+          generated_at: string | null
+          id: string | null
+          model_version: string | null
+          podium_probability: number | null
+          predicted_score: number | null
+          projected_finish: number | null
+          race_id: string | null
+          rationale: string | null
+          round: number | null
+          season: number | null
+          source_label: string | null
+          top10_probability: number | null
+          winner_probability: number | null
+        }
+        Relationships: []
+      }
       pit_window_view: {
         Row: {
           compound_in: string | null

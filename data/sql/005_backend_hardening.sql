@@ -156,9 +156,9 @@ CREATE INDEX IF NOT EXISTS idx_strategy_baselines_driver_id ON strategy_baseline
 CREATE INDEX IF NOT EXISTS idx_strategy_baselines_constructor_id ON strategy_baselines(constructor_id);
 CREATE INDEX IF NOT EXISTS idx_strategy_baselines_race_id ON strategy_baselines(race_id);
 
-CREATE INDEX IF NOT EXISTS idx_fastf1_prediction_snapshots_driver_id ON fastf1_prediction_snapshots(driver_id);
-CREATE INDEX IF NOT EXISTS idx_fastf1_prediction_snapshots_constructor_id ON fastf1_prediction_snapshots(constructor_id);
-CREATE INDEX IF NOT EXISTS idx_fastf1_prediction_snapshots_race_id ON fastf1_prediction_snapshots(race_id);
+CREATE INDEX IF NOT EXISTS idx_session_prediction_snapshots_driver_id ON session_prediction_snapshots(driver_id);
+CREATE INDEX IF NOT EXISTS idx_session_prediction_snapshots_constructor_id ON session_prediction_snapshots(constructor_id);
+CREATE INDEX IF NOT EXISTS idx_session_prediction_snapshots_race_id ON session_prediction_snapshots(race_id);
 
 -- Race Week schema indexes
 CREATE INDEX IF NOT EXISTS idx_sessions_race_id ON sessions(race_id);

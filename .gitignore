@@ -26,6 +26,14 @@ data/raw/openf1/**/location.json
 data/staged/openf1/**/car_data.csv
 data/staged/openf1/**/location.csv
 
+# Reproducible OpenF1 v2 build products. Durable copies live in the pipeline
+# archive; Git contains the builders, policy, schemas, and tests.
+data/staged/sessions/
+data/quarantine/
+data/canonical_sessions/
+data/reports/openf1_cleaning_quality.json
+data/reports/canonical_sessions_quality.json
+
 # Local browser QA artifacts
 .chrome-qa/
 picks-check.png

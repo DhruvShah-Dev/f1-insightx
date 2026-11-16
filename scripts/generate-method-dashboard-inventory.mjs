@@ -4,7 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const dataRoot = path.join(root, "data");
 const outputPath = path.join(root, "src", "data", "method-dashboard-inventory.ts");
-const skippedTopLevelDirs = new Set(["raw", "staged", "ml"]);
+const skippedTopLevelDirs = new Set(["raw", "staged", "ml", "quarantine", "canonical_fastf1"]);
 
 function walk(dir, output = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -20,7 +20,11 @@ function walk(dir, output = []) {
       continue;
     }
 
-    if (entry.isFile() && entry.name.endsWith(".csv")) {
+    if (
+      entry.isFile() &&
+      entry.name.endsWith(".csv") &&
+      entry.name !== "fastf1_prediction_snapshots.csv"
+    ) {
       output.push(fullPath);
     }
   }

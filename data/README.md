@@ -1,6 +1,6 @@
 # Data Platform
 
-This directory contains the F1 InsightX data platform: source snapshots, staged session extracts, canonical FastF1 tables, deterministic feature layers, product-facing views, and SQL loaders.
+This directory contains the F1 InsightX data platform: immutable source snapshots, provider-neutral cleaned sessions, canonical session tables, deterministic feature layers, product-facing views, and SQL loaders.
 
 Treat this as the operating backbone of a real race-intelligence startup. The app should earn user trust by showing only data that is current enough, validated enough, and explainable enough for the product surface using it.
 
@@ -34,20 +34,22 @@ Latest local season state: `season_state_20261005T191203Z`, generated at `2026-1
 
 - `data/raw/reference`: snapshotted Jolpica/reference API payloads.
 - `data/raw/openf1`: snapshotted OpenF1 meetings, sessions, and selected session endpoints from 2023 onward.
-- `data/raw/fastf1`: FastF1 archive manifests, per-session source tables, optional telemetry parquet, and completion summaries.
+- `data/raw/fastf1`: read-only legacy evidence; no new production writes.
 
 Raw folders are ignored and can be regenerated. They should not be used directly by the web app.
 
 ### 2. Staged source consolidation
 
-- `data/staged/fastf1`: per-session extracts for practice, qualifying, sprint, and race sessions.
+- `data/staged/fastf1`: read-only legacy session extracts.
 - `data/staged/openf1`: per-season meetings, sessions, endpoint snapshots, and quality reports.
+- `data/staged/sessions`: deterministic provider-neutral cleaned session packages.
+- `data/quarantine/openf1`: rejected rows with reason, endpoint, source path, and timestamp.
 
 Staged outputs are reproducible feature-engineering inputs and stay out of browser runtime code.
 
-### 3. Canonical FastF1
+### 3. Canonical sessions
 
-- `data/canonical_fastf1`: manifest-gated canonical laps, results, stints, session summaries, sessions, entrants, and weather.
+- `data/canonical_sessions`: manifest-gated canonical laps, results, stints, summaries, sessions, entrants, and weather with provenance.
 
 Canonical outputs are the validated base for telemetry features, race-week layers, race analysis, and strategy products.
 
@@ -70,15 +72,11 @@ Core refresh order from the repo root:
 
 ```bash
 python data/fetch_reference_data.py --start-season 2025 --end-season 2026
-python data/fastf1_ingest.py --season 2026 --round 16 --sessions FP1 FP2 FP3 Q R --include-telemetry --only-missing --retry-failed --max-retries 3 --sleep-seconds 2 --completion-buffer-minutes 30
-python data/fetch_openf1_data.py --start-season 2026 --end-season 2026 --meeting-key 1308 --session-types FP1 FP2 FP3 Q R --only-missing
-python data/build_openf1_quality_report.py
-python validate_openf1_quality.py
+python data/run_openf1_pipeline.py --season 2026 --round 20 --sessions FP1 FP2 FP3 Q R --only-missing
 python data/normalize_results.py
 python data/build_product_views.py
-python data/load_supabase.py
-python build_canonical_fastf1.py --start-season 2020 --end-season 2026
-python validate_canonical_fastf1.py
+python build_canonical_sessions.py --start-season 2020 --end-season 2026
+python validate_canonical_sessions.py
 python build_telemetry_features.py --start-season 2020 --end-season 2026
 python validate_telemetry_features.py
 python data/build_race_week_layers.py
@@ -102,7 +100,7 @@ available. The root `package.json` does not define a `data:refresh` script.
 
 ```bash
 python validate_openf1_quality.py
-python validate_canonical_fastf1.py
+python validate_canonical_sessions.py
 python validate_telemetry_features.py
 python validate_analytics_views.py
 python validate_analytics_telemetry_traces.py
@@ -118,7 +116,7 @@ python check_generated_artifacts.py
 - Energy fields are proxies and must never be labelled as true ERS or battery state.
 - Position movement, DRS windows, traffic, dirty-air, overtakes, and race-control causes must be labelled as derived/proxy unless exact source evidence exists.
 - Public runtime code should read compact product views or Supabase views, not raw telemetry archives.
-- Do not commit raw FastF1 archives, parquet telemetry, canonical CSVs, telemetry features, indexed analytics shards, or large generated reports without an explicit release decision.
+- Do not commit raw source archives, parquet telemetry, canonical CSVs, quarantine files, telemetry features, indexed analytics shards, or large generated reports without an explicit release decision.
 
 ## Release Gate
 

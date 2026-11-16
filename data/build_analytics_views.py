@@ -525,7 +525,7 @@ def main() -> None:
     straight = session_id_columns(read_csv(telemetry_dir / "straight_speed_profile.csv"))
     energy = session_id_columns(read_csv(telemetry_dir / "energy_deployment_proxy.csv"))
     archetypes = archetype_lookup(read_csv(strategy_lab_dir / "track_archetype_weights.csv"))
-    results = read_csv(settings.canonical_fastf1_dir / "results_canonical.csv")
+    results = read_csv(settings.canonical_sessions_dir / "results_canonical.csv")
     race_index = read_csv(race_analysis_dir / "race_analysis_index.csv")
     race_pace = read_csv(race_analysis_dir / "race_analysis_pace_evolution.csv")
     race_positions = read_csv(race_analysis_dir / "race_analysis_position_timeline.csv")

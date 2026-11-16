@@ -22,6 +22,7 @@ jobs:
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       PIPELINE_STORAGE_BUCKET: ${{ vars.PIPELINE_STORAGE_BUCKET }}
       JOLPICA_BASE_URL: ${{ secrets.JOLPICA_BASE_URL }}
+      OPENF1_BASE_URL: ${{ vars.OPENF1_BASE_URL || 'https://api.openf1.org/v1' }}
     steps:
       - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
@@ -54,7 +55,7 @@ jobs:
         if: steps.gate.outputs.refresh == 'true'
         run: python data/automation_storage.py restore
 
-      - name: Refresh completed race-week sessions
+      - name: Refresh completed OpenF1 race-week sessions
         if: steps.gate.outputs.refresh == 'true'
         run: python data/refresh_current_race_week_sessions.py --sessions FP1 FP2 FP3 Q SQ S R --retry-failed --completion-buffer-minutes 30
 

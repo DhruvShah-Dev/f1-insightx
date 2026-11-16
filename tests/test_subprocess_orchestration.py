@@ -78,7 +78,7 @@ def test_race_week_refresh_builds_allowlisted_commands() -> None:
 
     assert commands[0][:7] == [
         sys.executable,
-        "data/fastf1_ingest.py",
+        "data/run_openf1_pipeline.py",
         "--season",
         "2026",
         "--round",
@@ -86,7 +86,7 @@ def test_race_week_refresh_builds_allowlisted_commands() -> None:
         "--sessions",
     ]
     assert commands[0][7:9] == ["FP1", "Q"]
-    assert "--retry-failed" in commands[0]
+    assert "--only-missing" in commands[0]
     assert commands[1:] == [
         [sys.executable, "data/build_race_week_layers.py"],
         [sys.executable, "build_product_manifest.py"],

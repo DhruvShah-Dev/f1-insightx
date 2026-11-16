@@ -152,7 +152,7 @@ const monacoMetadata: RaceWeekCircuitMetadata = {
     },
   ],
   startFinish: { x: 248, y: 399 },
-  source: "Manual circuit annotation aligned to FastF1-derived path geometry",
+  source: "Manual circuit annotation aligned to fastf1_legacy path geometry",
   verified: true,
   note: "Corner and circuit-feature markers are approximate visual annotations.",
 };
@@ -206,7 +206,7 @@ const redBullRingMetadata: RaceWeekCircuitMetadata = {
     },
   ],
   startFinish: { x: 678.3, y: 518.6 },
-  source: "Manual Red Bull Ring annotation aligned to FastF1-derived path geometry",
+  source: "Manual Red Bull Ring annotation aligned to fastf1_legacy path geometry",
   verified: true,
   note: "Corner names, sector guides, and overtake feature markers are approximate visual annotations for the F1 Grand Prix layout.",
 };
@@ -248,7 +248,7 @@ const spaMetadata: RaceWeekCircuitMetadata = {
     laps: 44,
     raceDistanceKm: "308.052",
   },
-  source: "Manual Spa-Francorchamps 2026 annotation aligned to FastF1-derived path geometry",
+  source: "Manual Spa-Francorchamps 2026 annotation aligned to fastf1_legacy path geometry",
   verified: true,
   note: "2026 Belgian Grand Prix specs from Formula 1. Corner labels are approximate visual annotations aligned to existing track geometry.",
 };
@@ -288,7 +288,7 @@ function applyCornerNameOverrides(metadata: RaceWeekCircuitMetadata): RaceWeekCi
       ...corner,
       label: overrides[String(corner.number)] ?? corner.label,
     })),
-    note: "Corner numbers are FastF1-supported visual annotations. Named corners use manually verified public corner-name references where available.",
+    note: "Corner numbers are fastf1_legacy visual annotations. Named corners use manually verified public corner-name references where available.",
     verified: true,
   };
 }

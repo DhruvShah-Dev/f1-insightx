@@ -11,12 +11,15 @@ from supabase import create_client
 
 ROOT = Path(__file__).resolve().parents[1]
 BUCKET = "f1-insightx-pipeline"
-PREFIX = "v1"
+PREFIX = "v2"
+LEGACY_PREFIX = "v1"
 CHUNK_SIZE = 5 * 1024 * 1024
 ARCHIVE_DIRS = (
     "data/raw",
     "data/staged",
     "data/canonical_fastf1",
+    "data/canonical_sessions",
+    "data/quarantine",
     "data/telemetry_features",
     "data/analytics",
     "data/race_analysis",
@@ -70,6 +73,10 @@ def archive_files() -> list[Path]:
 def restore() -> dict:
     bucket = storage()
     manifest = read_json(bucket, f"{PREFIX}/archive-manifest.json")
+    prefix = PREFIX
+    if not manifest:
+        manifest = read_json(bucket, f"{LEGACY_PREFIX}/archive-manifest.json")
+        prefix = LEGACY_PREFIX
     entries = manifest.get("files", {})
     if not isinstance(entries, dict):
         raise RuntimeError("Invalid pipeline archive manifest")
@@ -83,11 +90,11 @@ def restore() -> dict:
             continue
         if isinstance(entry, dict):
             content = b"".join(
-                bucket.download(f"{PREFIX}/archive/{name}/{expected_hash}/part-{index:05d}")
+                bucket.download(f"{prefix}/archive/{name}/{expected_hash}/part-{index:05d}")
                 for index in range(entry["chunks"])
             )
         else:
-            content = bucket.download(f"{PREFIX}/archive/{name}")
+            content = bucket.download(f"{prefix}/archive/{name}")
         if digest(content) != expected_hash:
             raise RuntimeError(f"Archive checksum mismatch: {name}")
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -95,7 +102,7 @@ def restore() -> dict:
         temporary.write_bytes(content)
         temporary.replace(path)
         restored += 1
-    return {"manifest_files": len(entries), "restored": restored}
+    return {"archive_prefix": prefix, "manifest_files": len(entries), "restored": restored}
 
 
 def save() -> dict:
@@ -123,7 +130,9 @@ def save() -> dict:
 
 
 def release_state() -> dict:
-    return read_json(storage(), f"{PREFIX}/release-state.json")
+    bucket = storage()
+    current = read_json(bucket, f"{PREFIX}/release-state.json")
+    return current or read_json(bucket, f"{LEGACY_PREFIX}/release-state.json")
 
 
 def save_release_state(value: dict) -> None:

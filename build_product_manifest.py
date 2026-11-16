@@ -13,17 +13,17 @@ MANIFEST_PATH = REPORT_DIR / "product_manifest.json"
 
 
 SURFACES: dict[str, dict[str, Any]] = {
-    "canonical_fastf1": {
+    "canonical_sessions": {
         "artifact_paths": [
-            "data/canonical_fastf1/laps_canonical.csv",
-            "data/canonical_fastf1/results_canonical.csv",
-            "data/canonical_fastf1/stints_canonical.csv",
-            "data/canonical_fastf1/session_summary_canonical.csv",
-            "data/canonical_fastf1/drivers_canonical.csv",
+            "data/canonical_sessions/laps_canonical.csv",
+            "data/canonical_sessions/results_canonical.csv",
+            "data/canonical_sessions/stints_canonical.csv",
+            "data/canonical_sessions/session_summary_canonical.csv",
+            "data/canonical_sessions/drivers_canonical.csv",
         ],
-        "source_files": ["data/raw/fastf1", "data/staged/fastf1"],
-        "quality_report": "data/reports/fastf1_data_quality.json",
-        "validation_command": "python validate_canonical_fastf1.py",
+        "source_files": ["data/staged/sessions", "data/raw/fastf1 (legacy)"],
+        "quality_report": "data/reports/canonical_sessions_quality.json",
+        "validation_command": "python validate_canonical_sessions.py",
         "stale_after_hours": 2160,
     },
     "season_state": {
@@ -31,7 +31,7 @@ SURFACES: dict[str, dict[str, Any]] = {
             "data/season_state.json",
             "data/reports/season_state_quality_report.json",
         ],
-        "source_files": ["data/curated", "data/canonical_fastf1", "data/telemetry_features", "data/analytics", "data/strategy_lab", "data/race_week"],
+        "source_files": ["data/curated", "data/canonical_sessions", "data/telemetry_features", "data/analytics", "data/strategy_lab", "data/race_week"],
         "quality_report": "data/reports/season_state_quality_report.json",
         "validation_command": "python build_season_state.py && python validate_season_state.py",
         "stale_after_hours": 168,
@@ -46,7 +46,7 @@ SURFACES: dict[str, dict[str, Any]] = {
             "data/telemetry_features/energy_deployment_proxy.csv",
             "data/telemetry_features/driver_corner_delta.csv",
         ],
-        "source_files": ["data/canonical_fastf1", "data/raw/fastf1 telemetry parquet"],
+        "source_files": ["data/canonical_sessions", "data/staged/sessions telemetry parquet", "data/raw/fastf1 legacy telemetry parquet"],
         "quality_report": "data/reports/telemetry_feature_quality.json",
         "validation_command": "python validate_telemetry_features.py",
         "stale_after_hours": 2160,
@@ -75,7 +75,7 @@ SURFACES: dict[str, dict[str, Any]] = {
             "data/strategy_lab/driver_strategy_profile.csv",
             "data/strategy_lab/constructor_strategy_profile.csv",
         ],
-        "source_files": ["data/canonical_fastf1", "data/telemetry_features", "data/strategy_lab"],
+        "source_files": ["data/canonical_sessions", "data/telemetry_features", "data/strategy_lab"],
         "quality_report": "data/reports/strategy_lab_signal_quality.json",
         "validation_command": "python data/build_strategy_lab_layers.py",
         "stale_after_hours": 720,
@@ -123,7 +123,7 @@ SURFACES: dict[str, dict[str, Any]] = {
             "data/race_analysis/race_analysis_position_swing_events.csv",
             "data/race_analysis/race_analysis_traffic_proxy.csv",
         ],
-        "source_files": ["data/canonical_fastf1", "data/curated", "data/analytics", "data/strategy_lab"],
+        "source_files": ["data/canonical_sessions", "data/curated", "data/analytics", "data/strategy_lab"],
         "quality_report": "data/reports/race_analysis_quality_report.json",
         "validation_command": "python data/build_race_analysis_views.py && python validate_race_analysis_views.py",
         "stale_after_hours": 720,

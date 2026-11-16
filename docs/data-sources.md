@@ -1,6 +1,6 @@
 # Data Sources
 
-## V1 source strategy
+## V2 source strategy
 
 Use free, public, and stable sources with different roles instead of relying on one endpoint for everything.
 
@@ -27,21 +27,18 @@ Reference:
 
 - https://github.com/jolpica/jolpica-f1
 
-### FastF1
+### FastF1 legacy
 
 Role:
 
-- session loading
-- lap-level timing
-- weather
-- results
-- optional telemetry and position extraction
-- Python-side analysis and feature engineering
+- immutable session evidence through 2026 round 17
+- pre-2023 session history, outside OpenF1 coverage
+- reviewed legacy circuit geometry
 
 Why:
 
-- now powers the session-rich ingestion layer in this repository
-- strong tooling for later model development and backtesting
+- preserves reproducibility of previously published releases
+- never receives new production writes
 
 Reference:
 
@@ -51,15 +48,15 @@ Reference:
 
 Role:
 
-- historical session cross-checks from 2023 onward
-- lap, weather, stint, pit, race-control, grid, and session-result snapshots
-- fallback coverage for session-rich product confidence reports
+- sole session-data provider from 2026 round 18 onward
+- required session, timing, telemetry, weather, tyre, and location endpoints
+- deterministic cleaned inputs for all enriched products
 
 Why:
 
 - free historical access without authentication
 - JSON/CSV REST API is easy to snapshot into the offline pipeline
-- complements FastF1 by giving an independent session-data source for source agreement scoring
+- retains exact raw JSON and quarantines invalid records instead of rewriting them
 
 Limits:
 

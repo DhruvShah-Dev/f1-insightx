@@ -33,6 +33,7 @@ jobs:
       PIPELINE_STORAGE_BUCKET: ${{ vars.PIPELINE_STORAGE_BUCKET }}
       PRODUCTION_BASE_URL: ${{ vars.PRODUCTION_BASE_URL }}
       JOLPICA_BASE_URL: ${{ secrets.JOLPICA_BASE_URL }}
+      OPENF1_BASE_URL: ${{ vars.OPENF1_BASE_URL || 'https://api.openf1.org/v1' }}
       AUTOMATION_RACE_ID: ${{ inputs.race_id }}
       AUTOMATION_FORCE: ${{ inputs.force }}
     steps:

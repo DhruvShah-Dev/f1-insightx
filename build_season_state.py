@@ -89,7 +89,7 @@ def build_state() -> tuple[dict[str, Any], dict[str, Any]]:
     now = utc_now()
     races = read_csv(DATA_DIR / "curated" / "races.csv")
     race_results = read_csv(DATA_DIR / "curated" / "race_results.csv")
-    canonical_results = read_csv(DATA_DIR / "canonical_fastf1" / "results_canonical.csv")
+    canonical_results = read_csv(DATA_DIR / "canonical_sessions" / "results_canonical.csv")
     telemetry_laps = read_csv(DATA_DIR / "telemetry_features" / "telemetry_lap_summary.csv")
     analytics_sessions = read_csv(DATA_DIR / "analytics" / "analytics_session_index.csv")
     strategy_overview = read_csv(DATA_DIR / "strategy_lab" / "strategy_lab_overview.csv")

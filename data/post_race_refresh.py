@@ -58,7 +58,7 @@ def result_ready(race: dict[str, str]) -> bool:
 def enriched_ready(race: dict[str, str]) -> bool:
     season, round_number = int(race["season"]), int(race["round"])
     checks = (
-        ("data/canonical_fastf1/sessions.csv", "session_code", "R"),
+        ("data/canonical_sessions/sessions.csv", "session_code", "R"),
         ("data/telemetry_features/telemetry_lap_summary.csv", "session", "R"),
         ("data/analytics/analytics_session_index.csv", "session", "R"),
         ("data/race_analysis/race_analysis_index.csv", None, None),
@@ -78,11 +78,11 @@ def enriched_ready(race: dict[str, str]) -> bool:
 
 
 def race_telemetry_ready(race: dict[str, str]) -> bool:
-    raw_root = ROOT / "data/raw/fastf1" / race["season"]
-    manifests = raw_root.glob(f"{int(race['round']):02d}_*/R/session_manifest.json")
+    staged_root = ROOT / "data/staged/sessions" / race["season"]
+    manifests = staged_root.glob(f"{int(race['round']):02d}_*/r/session_manifest.json")
     for path in manifests:
         manifest = json.loads(path.read_text(encoding="utf-8"))
-        if manifest.get("status") == "complete" and manifest.get("telemetry_available") and (path.parent / "telemetry.parquet").exists():
+        if manifest.get("status") == "complete" and manifest.get("source_provider") == "openf1" and (path.parent / "telemetry.parquet").exists():
             return True
     return False
 
@@ -136,7 +136,7 @@ def validate_enriched(race: dict[str, str]) -> None:
     if not enriched_ready(race):
         raise RuntimeError("Enriched views do not cover the completed race")
     for validator in (
-        "validate_canonical_fastf1.py",
+        "validate_canonical_sessions.py",
         "validate_telemetry_features.py",
         "validate_analytics_views.py",
         "validate_analytics_telemetry_traces.py",
@@ -163,30 +163,22 @@ def refresh(race: dict[str, str], stage: str) -> None:
     run("data/build_pit_wall_picks.py")
     if stage == "enriched":
         try:
-            run("data/fastf1_ingest.py", "--season", season, "--round", round_number,
-                "--sessions", "FP1", "FP2", "FP3", "Q", "SQ", "S", "R",
-                "--include-telemetry", "--only-missing", "--retry-failed", "--completion-buffer-minutes", "30")
-            if not race_telemetry_ready(race):
-                run("data/fastf1_ingest.py", "--season", season, "--round", round_number,
-                    "--sessions", "R", "--include-telemetry", "--force", "--completion-buffer-minutes", "30")
-        finally:
-            print("Persisting FastF1 downloads:", archive.save(), flush=True)
-        try:
-            run("data/fetch_openf1_data.py", "--start-season", season, "--end-season", season,
-                "--race-date", race["scheduled_at"],
-                "--session-types", "FP1", "FP2", "FP3", "Q", "SQ", "S", "R")
-            run("data/build_openf1_quality_report.py")
-            run("validate_openf1_quality.py")
-            run("data/build_openf1_telemetry_bridge.py", "--season", season, "--round", round_number)
+            run("data/run_openf1_pipeline.py", "--season", season, "--round", round_number,
+                "--race-date", race["scheduled_at"], "--sessions", "FP1", "FP2", "FP3", "Q", "SQ", "S", "R", "--only-missing")
         except subprocess.CalledProcessError:
-            print("OpenF1 is delayed; continuing with explicit source gaps.", flush=True)
+            print("OpenF1 is delayed; enriched release remains pending_openf1.", flush=True)
+            write_output(stage="none", race_id=race["id"])
+            return
         print("Persisting downloaded sessions:", archive.save(), flush=True)
+        if not race_telemetry_ready(race):
+            print("OpenF1 telemetry is not complete; enriched release remains pending_openf1.", flush=True)
+            write_output(stage="none", race_id=race["id"])
+            return
         run("data/build_pit_wall_picks.py")
-        run("build_canonical_fastf1.py", "--start-season", "2020", "--end-season", season)
-        run("build_telemetry_features.py", "--start-season", "2020", "--end-season", season)
-        run("data/build_fastf1_features.py")
-        run("data/build_fastf1_models.py")
-        run("data/build_fastf1_track_paths.py", "--local-only", "--circuit-id", race["circuit_id"])
+        run("build_canonical_sessions.py", "--start-season", "2020", "--end-season", season)
+        run("build_session_telemetry_features.py", "--start-season", "2020", "--end-season", season)
+        run("data/build_session_features.py")
+        run("data/build_session_models.py")
         run("data/build_analytics_views.py")
         run("data/build_analytics_indexes.py")
         run("data/build_analytics_telemetry_traces.py")

@@ -8,6 +8,8 @@ BLOCKED_PATTERNS = [
     "data/raw/**",
     "data/staged/**",
     "data/canonical_fastf1/*.csv",
+    "data/canonical_sessions/*.csv",
+    "data/quarantine/**",
     "data/telemetry_features/**",
     "data/analytics/*.csv",
     "data/analytics/indexed/**",

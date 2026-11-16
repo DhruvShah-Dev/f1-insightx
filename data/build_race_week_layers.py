@@ -7,7 +7,7 @@ from typing import Any
 
 import pandas as pd
 
-from f1_insightx_data.fastf1_pipeline import staged_session_directories, write_frame
+from f1_insightx_data.session_pipeline import staged_session_directories, write_frame
 from f1_insightx_data.settings import load_settings
 
 
@@ -283,7 +283,8 @@ def build_canonical_session_layer(
         session_code = session_dir.name.upper()
         manifest_path = session_dir / "session_manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
-        source_prefix = "openf1" if str(manifest.get("source", "")).startswith("openf1") else "fastf1"
+        source_provider = str(manifest.get("source_provider") or "fastf1_legacy")
+        source_prefix = "openf1" if source_provider == "openf1" else "fastf1_legacy"
         summary = read_csv(session_dir / "session_summary.csv")
         laps = read_csv(session_dir / "laps.csv")
         stints = read_csv(session_dir / "stints.csv")
@@ -310,6 +311,9 @@ def build_canonical_session_layer(
                     "event_name": event_name or race_id,
                     "scheduled_at": None,
                     "source_label": f"{source_prefix}_canonical_v1",
+                    "source_provider": source_provider,
+                    "source_session_key": manifest.get("source_session_key"),
+                    "source_fetched_at": manifest.get("source_fetched_at"),
                 }
             )
             seen_sessions.add(session_id)
@@ -2974,7 +2978,7 @@ def main() -> None:
     curated = settings.curated_dir
 
     canonical_columns = {
-        "sessions": ["id", "race_id", "season", "round", "session_code", "session_name", "event_name", "scheduled_at", "source_label"],
+        "sessions": ["id", "race_id", "season", "round", "session_code", "session_name", "event_name", "scheduled_at", "source_label", "source_provider", "source_session_key", "source_fetched_at"],
         "event_entries": ["id", "race_id", "driver_id", "constructor_id", "source_label"],
         "session_results": ["id", "session_id", "event_entry_id", "race_id", "driver_id", "constructor_id", "classification_position", "grid_position", "finish_position", "points", "status", "laps_completed", "fastest_lap_rank", "source_label"],
         "session_laps": ["id", "session_id", "event_entry_id", "race_id", "driver_id", "constructor_id", "lap_number", "stint_number", "compound", "tyre_life", "lap_time_s", "sector_1_s", "sector_2_s", "sector_3_s", "top_speed_kph", "track_status", "fresh_tyre", "is_personal_best", "is_accurate", "deleted", "lap_start_time", "position", "air_temp_c", "track_temp_c", "humidity_pct", "rainfall", "wind_speed_mps", "wind_direction_deg", "source_label"],
@@ -3039,7 +3043,7 @@ def main() -> None:
         constructor_lookup=constructor_lookup,
     )
     fastf1_predictions = normalize_feature_ids(
-        read_csv(settings.predictions_dir / "fastf1_prediction_snapshots.csv"),
+        read_csv(settings.predictions_dir / "session_prediction_snapshots.csv"),
         driver_column="driver_id",
         constructor_column="constructor_id",
         driver_lookup=driver_lookup,
@@ -3115,11 +3119,11 @@ def main() -> None:
         if not frame.empty:
             processed[table_name] = frame
 
-    settings.canonical_fastf1_dir.mkdir(parents=True, exist_ok=True)
+    settings.canonical_sessions_dir.mkdir(parents=True, exist_ok=True)
     settings.race_week_dir.mkdir(parents=True, exist_ok=True)
 
     for table_name, columns in canonical_columns.items():
-        write_frame(ensure_columns(canonical.get(table_name, pd.DataFrame()), columns), settings.canonical_fastf1_dir / f"{table_name}.csv")
+        write_frame(ensure_columns(canonical.get(table_name, pd.DataFrame()), columns), settings.canonical_sessions_dir / f"{table_name}.csv")
 
     for table_name, columns in processed_columns.items():
         write_frame(ensure_columns(processed.get(table_name, pd.DataFrame()), columns), settings.race_week_dir / f"{table_name}.csv")

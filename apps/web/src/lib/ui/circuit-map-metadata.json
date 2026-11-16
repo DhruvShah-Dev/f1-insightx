@@ -1,4 +1,4 @@
-{
+﻿{
   "albert_park": {
     "circuitId": "albert_park",
     "viewBox": "0 0 960 620",
@@ -117,9 +117,9 @@
       "x": 434.0,
       "y": 448.7
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "shanghai": {
     "circuitId": "shanghai",
@@ -251,9 +251,9 @@
       "x": 407.4,
       "y": 503.4
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "suzuka": {
     "circuitId": "suzuka",
@@ -397,9 +397,9 @@
       "x": 728.9,
       "y": 252.6
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "miami": {
     "circuitId": "miami",
@@ -549,9 +549,9 @@
       "x": 410.6,
       "y": 195.7
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "villeneuve": {
     "circuitId": "villeneuve",
@@ -671,9 +671,9 @@
       "x": 556.9,
       "y": 497.0
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "monaco": {
     "circuitId": "monaco",
@@ -823,9 +823,9 @@
       "x": 265.4,
       "y": 399.5
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "catalunya": {
     "circuitId": "catalunya",
@@ -945,9 +945,9 @@
       "x": 633.1,
       "y": 249.5
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "red_bull_ring": {
     "circuitId": "red_bull_ring",
@@ -1043,9 +1043,9 @@
       "x": 678.3,
       "y": 518.6
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "silverstone": {
     "circuitId": "silverstone",
@@ -1189,9 +1189,9 @@
       "x": 338.1,
       "y": 412.5
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "spa": {
     "circuitId": "spa",
@@ -1341,9 +1341,9 @@
       "x": 413.0,
       "y": 120.2
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "hungaroring": {
     "circuitId": "hungaroring",
@@ -1475,9 +1475,9 @@
       "x": 446.2,
       "y": 522.0
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "zandvoort": {
     "circuitId": "zandvoort",
@@ -1597,9 +1597,9 @@
       "x": 259.9,
       "y": 224.4
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "monza": {
     "circuitId": "monza",
@@ -1701,14 +1701,14 @@
       "x": 323.2,
       "y": 456.0
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "madring": {
     "circuitId": "madring",
     "geometryPending": true,
-    "source": "No FastF1-derived track path artifact available",
+    "source": "No fastf1_legacy track path artifact available",
     "verified": false,
     "note": "Track geometry unavailable; do not render a fake circuit."
   },
@@ -1866,9 +1866,9 @@
       "x": 774.9,
       "y": 189.3
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "marina_bay": {
     "circuitId": "marina_bay",
@@ -2018,9 +2018,9 @@
       "x": 908.1,
       "y": 295.4
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "americas": {
     "circuitId": "americas",
@@ -2176,9 +2176,9 @@
       "x": 102.0,
       "y": 386.8
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "rodriguez": {
     "circuitId": "rodriguez",
@@ -2316,9 +2316,9 @@
       "x": 220.9,
       "y": 38.9
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "interlagos": {
     "circuitId": "interlagos",
@@ -2444,9 +2444,9 @@
       "x": 332.5,
       "y": 418.6
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "vegas": {
     "circuitId": "vegas",
@@ -2584,9 +2584,9 @@
       "x": 593.1,
       "y": 554.9
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "losail": {
     "circuitId": "losail",
@@ -2718,9 +2718,9 @@
       "x": 371.2,
       "y": 450.6
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   },
   "yas_marina": {
     "circuitId": "yas_marina",
@@ -2852,8 +2852,8 @@
       "x": 447.8,
       "y": 345.8
     },
-    "source": "FastF1 circuit_info corners aligned to fastf1_position_parquet track path",
+    "source": "fastf1_legacy circuit_info corners aligned to fastf1_position_parquet track path",
     "verified": false,
-    "note": "Corner numbers are FastF1-supported visual annotations. Public exact corner names are withheld until manually verified."
+    "note": "Corner numbers are fastf1_legacy visual annotations. Public exact corner names are withheld until manually verified."
   }
 }

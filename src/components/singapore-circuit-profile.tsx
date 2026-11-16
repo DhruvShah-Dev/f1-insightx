@@ -3,7 +3,7 @@ import type { TrackPath } from "@/lib/f1.functions";
 
 type Point = { x: number; y: number };
 
-// Positions follow the Marina Bay layout in the curated FastF1 path.
+// Positions follow the Marina Bay layout in the curated fastf1_legacy path.
 const turns: Point[] = [
   { x: 884, y: 109 }, { x: 837, y: 64 }, { x: 795, y: 37 },
   { x: 783, y: 113 }, { x: 808, y: 265 }, { x: 501, y: 242 },
@@ -97,7 +97,7 @@ export function SingaporeCircuitProfile({ path }: { path: TrackPath }) {
           <text x="488" y="383" transform="rotate(3 488 383)">SECTOR 3</text>
         </g>
       </svg>
-      <span className="rw-sg-source">Track coordinates: {path.sourceSeason ?? "archived"} FastF1 qualifying</span>
+      <span className="rw-sg-source">Track coordinates: {path.sourceSeason ?? "archived"} fastf1_legacy qualifying</span>
     </div>
   );
 }

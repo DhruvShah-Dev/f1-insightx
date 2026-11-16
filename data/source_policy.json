@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "cutover": {
+    "season": 2026,
+    "round": 18
+  },
+  "openf1_available_from_season": 2023,
+  "precedence": [
+    "fastf1_legacy_before_cutover",
+    "openf1_missing_session_fill",
+    "openf1_at_or_after_cutover"
+  ],
+  "legacy_paths": [
+    "data/raw/fastf1",
+    "data/staged/fastf1",
+    "data/canonical_fastf1"
+  ],
+  "new_write_paths": [
+    "data/raw/openf1",
+    "data/staged/openf1",
+    "data/staged/sessions",
+    "data/quarantine/openf1",
+    "data/canonical_sessions"
+  ]
+}

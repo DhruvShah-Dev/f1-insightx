@@ -148,6 +148,7 @@ def nearest_weather(laps: pd.DataFrame, weather: pd.DataFrame) -> pd.DataFrame:
         right[["_date", *weather_columns.values()]].dropna(subset=["_date"]).sort_values("_date"),
         on="_date",
         direction="nearest",
+        tolerance=pd.Timedelta(minutes=5),
     )
     if invalid_left.empty:
         combined = merged_valid
@@ -327,7 +328,9 @@ def fastest_lap_traces(
             & car["throttle"].between(0, 100, inclusive="both")
             & car["brake"].between(0, 100, inclusive="both")
         ].sort_values("date").drop_duplicates("date")
-        if len(trace) < 20:
+        trace_gap = trace["date"].diff().dt.total_seconds().max()
+        trace_coverage = (trace["date"].max() - trace["date"].min()).total_seconds() / float(lap["lap_time_s"])
+        if len(trace) < 100 or trace_coverage < 0.8 or pd.isna(trace_gap) or trace_gap > 2:
             continue
         elapsed = trace["date"] - start
         distance = integrated_distance(trace["speed"], trace["date"])
@@ -354,7 +357,10 @@ def fastest_lap_traces(
                     "nGear": trace["n_gear"],
                     "Throttle": trace["throttle"],
                     "Brake": trace["brake"].gt(0),
-                    "DRS": trace["drs"].fillna(0),
+                    "DRS": pd.to_numeric(trace["drs"], errors="coerce").fillna(0),
+                    "source_valid": True,
+                    "analytically_eligible": True,
+                    "exclusion_reason": "",
                     "Source": "openf1_post_session",
                 }
             )
@@ -364,7 +370,13 @@ def fastest_lap_traces(
             & loc["date"].between(start, end, inclusive="both")
             & ~((loc["x"] == 0) & (loc["y"] == 0) & (loc["z"] == 0))
         ].sort_values("date").drop_duplicates("date")
-        if driver_location.empty:
+        location_gap = driver_location["date"].diff().dt.total_seconds().max()
+        location_coverage = (
+            (driver_location["date"].max() - driver_location["date"].min()).total_seconds()
+            / float(lap["lap_time_s"])
+            if not driver_location.empty else 0
+        )
+        if len(driver_location) < 50 or location_coverage < 0.7 or pd.isna(location_gap) or location_gap > 2:
             continue
         position_frames.append(
             pd.DataFrame(
@@ -377,12 +389,29 @@ def fastest_lap_traces(
                     "Y": driver_location["y"],
                     "Z": driver_location["z"],
                     "Status": "OnTrack",
+                    "source_valid": True,
+                    "analytically_eligible": True,
+                    "exclusion_reason": "",
                     "Source": "openf1_post_session",
                 }
             )
         )
     telemetry = pd.concat(telemetry_frames, ignore_index=True) if telemetry_frames else pd.DataFrame()
     position = pd.concat(position_frames, ignore_index=True) if position_frames else pd.DataFrame()
+    if not telemetry.empty and not position.empty:
+        merged: list[pd.DataFrame] = []
+        for (driver, lap_number), trace in telemetry.groupby(["driver", "lap_number"], sort=False):
+            locations = position[
+                position["driver"].eq(driver) & position["lap_number"].eq(lap_number)
+            ][["Date", "X", "Y", "Z"]].copy()
+            left = trace.copy()
+            left["_date"] = pd.to_datetime(left["Date"], utc=True, format="mixed")
+            locations["_date"] = pd.to_datetime(locations["Date"], utc=True, format="mixed")
+            merged.append(pd.merge_asof(
+                left.sort_values("_date"), locations.drop(columns="Date").sort_values("_date"),
+                on="_date", direction="nearest", tolerance=pd.Timedelta(milliseconds=500),
+            ).drop(columns="_date"))
+        telemetry = pd.concat(merged, ignore_index=True)
     return telemetry, position
 
 

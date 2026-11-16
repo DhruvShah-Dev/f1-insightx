@@ -6,22 +6,23 @@ F1 InsightX uses an offline data pipeline. The application runtime consumes comp
 
 - `data/raw/openf1`: generated OpenF1 historical JSON snapshots for meetings, sessions, and selected session endpoints.
 - `data/staged/openf1`: generated OpenF1 CSV snapshots and source-quality reports used for cross-checking.
-- `data/raw/fastf1`: generated FastF1 source archive, manifests, failed-session records, and cache-adjacent data.
-- `data/staged/fastf1`: generated session-level extracts such as laps, weather, stints, results, and summaries.
-- `data/canonical_fastf1`: generated manifest-gated canonical tables with weather propagated into lap and session summary outputs.
+- `data/raw/fastf1` and `data/staged/fastf1`: immutable legacy evidence only; no new writes.
+- `data/staged/sessions`: provider-neutral cleaned packages; rejected rows go to `data/quarantine/openf1`.
+- `data/canonical_sessions`: manifest-gated canonical tables with provider provenance.
 - `data/telemetry_features`: generated telemetry-derived lap, segment, braking, throttle, straight-line, and energy proxy features.
 - `data/strategy_lab`: strategy-modeling feature and product CSVs.
 - `data/analytics`: analytics product views and indexed session shards for the Compare surface.
 - `data/race_analysis`: completed-race product views for strategy, pace, traffic proxy, position movement, and story context.
 
-## Canonical FastF1
+## OpenF1 and canonical sessions
 
 ```bash
-python build_canonical_fastf1.py --start-season 2020 --end-season 2026
-python validate_canonical_fastf1.py
+python data/run_openf1_pipeline.py --season 2026 --round 20 --sessions FP1 FP2 FP3 Q R --only-missing
+python build_canonical_sessions.py --start-season 2020 --end-season 2026
+python validate_canonical_sessions.py
 ```
 
-Canonical output should include only complete manifest-gated sessions. Failed or partial sessions may exist in raw/staged folders, but they must not flow into canonical tables.
+Canonical output includes only complete, manifest-gated sessions. `data/source_policy.json` defines FastF1 legacy precedence through 2026 round 17 and OpenF1-only ingestion from round 18. Raw JSON is never cleaned or rewritten.
 
 ## OpenF1 Source Consolidation
 
@@ -31,7 +32,7 @@ python data/build_openf1_quality_report.py
 python validate_openf1_quality.py
 ```
 
-OpenF1 is used offline to strengthen source coverage and agreement scoring. The free tier covers historical data from 2023 onward with no authentication, but live-session data requires paid access. Keep refresh jobs under 3 requests per second and 30 requests per minute; the client throttles to those limits by default.
+OpenF1 is the active session-data provider. Its historical API covers data from 2023 onward. Keep refresh jobs under 3 requests per second and 30 requests per minute; the client enforces both limits. Delayed publication remains `pending_openf1` for the two-hour retry workflow.
 
 Use `--session-types FP1 FP2 FP3 Q R` for heavier race-week backfills. Add endpoints explicitly when needed, for example:
 
@@ -46,7 +47,7 @@ python build_telemetry_features.py --start-season 2020 --end-season 2026
 python validate_telemetry_features.py
 ```
 
-Telemetry features are derived offline from FastF1 telemetry and position parquet. They are reusable inputs for strategy modeling and Compare. They must remain deterministic and clearly label energy deployment as a proxy.
+Telemetry features are derived offline from provider-neutral telemetry and location parquet. New traces use cleaned OpenF1 car/location samples; reviewed historical geometry remains labelled `fastf1_legacy`.
 
 For a completed race-week backfill, ingest the missing FastF1 sessions with
 telemetry first. The Azerbaijan GP round 15 refresh used:

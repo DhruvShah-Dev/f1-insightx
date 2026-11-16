@@ -24,6 +24,9 @@ class PipelineSettings:
     staged_openf1_dir: Path
     staged_fastf1_dir: Path
     canonical_fastf1_dir: Path
+    staged_sessions_dir: Path
+    canonical_sessions_dir: Path
+    quarantine_dir: Path
     features_dir: Path
     model_inputs_dir: Path
     predictions_dir: Path
@@ -52,6 +55,9 @@ def load_settings() -> PipelineSettings:
         staged_openf1_dir=DATA_DIR / "staged" / "openf1",
         staged_fastf1_dir=DATA_DIR / "staged" / "fastf1",
         canonical_fastf1_dir=DATA_DIR / "canonical_fastf1",
+        staged_sessions_dir=DATA_DIR / "staged" / "sessions",
+        canonical_sessions_dir=DATA_DIR / "canonical_sessions",
+        quarantine_dir=DATA_DIR / "quarantine",
         features_dir=DATA_DIR / "features",
         model_inputs_dir=DATA_DIR / "model_inputs",
         predictions_dir=DATA_DIR / "predictions",

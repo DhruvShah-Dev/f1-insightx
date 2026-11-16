@@ -600,7 +600,7 @@ def main() -> None:
     corner_throttle = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "corner_throttle_profile.csv")
     straight_speed = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "straight_speed_profile.csv")
     energy_proxy = read_csv(settings.strategy_lab_dir.parent / "telemetry_features" / "energy_deployment_proxy.csv")
-    canonical_stints = read_csv(settings.canonical_fastf1_dir / "stints_canonical.csv")
+    canonical_stints = read_csv(settings.canonical_sessions_dir / "stints_canonical.csv")
 
     driver_name_map = dict(zip(drivers["id"], drivers["full_name"])) if not drivers.empty else {}
     driver_code_map = dict(zip(drivers["id"], drivers["driver_code"])) if not drivers.empty and "driver_code" in drivers.columns else {}

@@ -22,6 +22,9 @@ DEFAULT_ENDPOINTS = [
     "stints",
     "pit",
     "race_control",
+    "position",
+    "intervals",
+    "overtakes",
 ]
 DRIVER_PARTITIONED_ENDPOINTS = {"car_data", "location"}
 SESSION_TYPE_ALIASES = {
@@ -35,9 +38,21 @@ SESSION_TYPE_ALIASES = {
 }
 
 
+def endpoint_applicable(endpoint: str, session_name: str) -> bool:
+    if endpoint in {"starting_grid", "pit", "intervals", "overtakes"}:
+        return session_name in {"Race", "Sprint"}
+    return True
+
+
 def write_json(path: Path, payload: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+
+def write_raw_response(path: Path, payload: bytes) -> None:
+    """Persist provider bytes exactly; raw evidence is never reformatted."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(payload)
 
 
 def parse_args() -> argparse.Namespace:
@@ -110,10 +125,10 @@ def main() -> None:
     try:
         for season in range(max(2023, args.start_season), args.end_season + 1):
             season_raw_dir = settings.raw_openf1_dir / str(season)
-            meetings = client.fetch_meetings(season)
-            sessions = client.fetch_sessions(season=season)
-            write_json(season_raw_dir / "meetings.json", meetings)
-            write_json(season_raw_dir / "sessions.json", sessions)
+            meetings, meetings_raw = client.fetch_meetings_snapshot(season)
+            sessions, sessions_raw = client.fetch_sessions_snapshot(season=season)
+            write_raw_response(season_raw_dir / "meetings.json", meetings_raw)
+            write_raw_response(season_raw_dir / "sessions.json", sessions_raw)
             write_records_csv(meetings, settings.staged_openf1_dir / str(season) / "meetings.csv")
             write_records_csv(sessions, settings.staged_openf1_dir / str(season) / "sessions.csv")
 
@@ -129,14 +144,17 @@ def main() -> None:
             for session in target_sessions:
                 raw_session_dir = session_dir_for(settings.raw_openf1_dir, session)
                 staged_session_dir = session_dir_for(settings.staged_openf1_dir, session)
-                write_json(raw_session_dir / "session.json", session)
                 session_drivers: list[int] | None = None
 
                 for endpoint in args.endpoints:
                     raw_path = raw_session_dir / f"{endpoint}.json"
+                    raw_partition_dir = raw_session_dir / endpoint
                     staged_path = staged_session_dir / f"{endpoint}.csv"
-                    if args.only_missing and raw_path.exists() and staged_path.exists():
-                        status = "skipped_existing"
+                    if not endpoint_applicable(endpoint, str(session["session_name"])):
+                        status = "not_applicable"
+                        row_count = 0
+                    elif args.only_missing and (raw_path.exists() or raw_partition_dir.exists()) and staged_path.exists():
+                        status = "complete"
                         row_count = None
                     else:
                         try:
@@ -148,21 +166,20 @@ def main() -> None:
                                     )
                                 records = []
                                 for driver_number in session_drivers:
-                                    records.extend(
-                                        client.fetch_endpoint_for_session(
-                                            endpoint,
-                                            session_key,
-                                            driver_number=driver_number,
-                                        )
+                                    driver_records, raw_bytes = client.fetch_endpoint_snapshot(
+                                        endpoint, session_key, driver_number=driver_number
                                     )
+                                    records.extend(driver_records)
+                                    write_raw_response(raw_partition_dir / f"driver_{driver_number}.json", raw_bytes)
                             else:
-                                records = client.fetch_endpoint_for_session(endpoint, session_key)
-                            write_json(raw_path, records)
+                                records, raw_bytes = client.fetch_endpoint_snapshot(endpoint, session_key)
+                                write_raw_response(raw_path, raw_bytes)
                             write_records_csv(records, staged_path)
-                            status = "fetched"
+                            status = "complete" if records else "empty"
                             row_count = len(records)
                         except Exception as error:  # noqa: BLE001
-                            status = f"failed: {error}"
+                            message = str(error)
+                            status = "pending" if "404" in message else "failed"
                             row_count = None
 
                     manifest_rows.append(
@@ -174,14 +191,17 @@ def main() -> None:
                             "session_name": session.get("session_name"),
                             "endpoint": endpoint,
                             "status": status,
+                            "error": None if status not in {"pending", "failed"} else message,
                             "row_count": row_count,
-                            "raw_path": raw_path.relative_to(settings.raw_openf1_dir).as_posix(),
+                            "raw_path": (
+                                raw_partition_dir if endpoint in DRIVER_PARTITIONED_ENDPOINTS else raw_path
+                            ).relative_to(settings.raw_openf1_dir).as_posix(),
                             "staged_path": staged_path.relative_to(settings.staged_openf1_dir).as_posix(),
                         }
                     )
 
         write_json(
-            settings.raw_openf1_dir / "metadata.json",
+            settings.staged_openf1_dir / "metadata.json",
             {
                 "fetched_at": fetched_at,
                 "start_season": max(2023, args.start_season),

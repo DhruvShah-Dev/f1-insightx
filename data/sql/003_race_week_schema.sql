@@ -7,7 +7,10 @@ CREATE TABLE IF NOT EXISTS sessions (
     session_name text,
     event_name text,
     scheduled_at timestamptz,
-    source_label text NOT NULL DEFAULT 'fastf1_canonical_v1',
+    source_label text NOT NULL DEFAULT 'session_canonical_v2',
+    source_provider text NOT NULL DEFAULT 'openf1',
+    source_session_key text,
+    source_fetched_at timestamptz,
     UNIQUE (race_id, session_code)
 );
 
@@ -18,7 +21,7 @@ CREATE TABLE IF NOT EXISTS event_entries (
     race_id text NOT NULL REFERENCES races(id) ON DELETE CASCADE,
     driver_id text NOT NULL REFERENCES drivers(id) ON DELETE CASCADE,
     constructor_id text NOT NULL REFERENCES constructors(id) ON DELETE CASCADE,
-    source_label text NOT NULL DEFAULT 'fastf1_entry_v1',
+    source_label text NOT NULL DEFAULT 'session_entry_v2',
     UNIQUE (race_id, driver_id)
 );
 
@@ -38,7 +41,7 @@ CREATE TABLE IF NOT EXISTS session_results (
     status text,
     laps_completed integer,
     fastest_lap_rank integer,
-    source_label text NOT NULL DEFAULT 'fastf1_session_result_v1'
+    source_label text NOT NULL DEFAULT 'session_result_v2'
 );
 
 CREATE INDEX IF NOT EXISTS idx_session_results_session_entry ON session_results (session_id, event_entry_id);
@@ -72,7 +75,7 @@ CREATE TABLE IF NOT EXISTS session_laps (
     rainfall boolean,
     wind_speed_mps numeric,
     wind_direction_deg numeric,
-    source_label text NOT NULL DEFAULT 'fastf1_session_lap_v1'
+    source_label text NOT NULL DEFAULT 'session_lap_v2'
 );
 
 CREATE INDEX IF NOT EXISTS idx_session_laps_session_entry_lap ON session_laps (session_id, event_entry_id, lap_number);
@@ -93,7 +96,7 @@ CREATE TABLE IF NOT EXISTS session_stints (
     start_tyre_life integer,
     end_tyre_life integer,
     session_code text,
-    source_label text NOT NULL DEFAULT 'fastf1_session_stint_v1'
+    source_label text NOT NULL DEFAULT 'session_stint_v2'
 );
 
 CREATE INDEX IF NOT EXISTS idx_session_stints_session_entry_stint ON session_stints (session_id, event_entry_id, stint_number);
@@ -111,7 +114,7 @@ CREATE TABLE IF NOT EXISTS session_weather (
     rainfall boolean,
     wind_speed_mps numeric,
     wind_direction_deg numeric,
-    source_label text NOT NULL DEFAULT 'fastf1_session_weather_v1'
+    source_label text NOT NULL DEFAULT 'session_weather_v2'
 );
 
 CREATE INDEX IF NOT EXISTS idx_session_weather_session_order ON session_weather (session_id, sample_order);

@@ -4,10 +4,10 @@
 three hours until seven days after a race, it fetches Jolpica results. Fewer than
 ten classified drivers postpones publication. Its first successful run publishes
 results, standings, Picks inputs, and a new home-page race. A later run attempts
-the FastF1, OpenF1, canonical, telemetry, Compare, Analysis, strategy, and Race
-Week build. It retries until all required enriched views validate. OpenF1 gaps
-are reported by the existing quality reports; FastF1 telemetry and the race
-analysis are required for the enriched stage.
+the OpenF1 fetch, deterministic cleaning, canonical, telemetry, Compare,
+Analysis, strategy, and Race Week build. It retries until all required enriched
+views validate. Delayed publication produces `pending_openf1`; it never blocks
+the core result release or deletes an older validated enriched session.
 
 ## One-time setup
 
@@ -19,11 +19,11 @@ analysis are required for the enriched stage.
    `SUPABASE_SERVICE_ROLE_KEY`. The workflow uses its `contents: write` GitHub
    token to push normal commits to `main`. Configure the repository
    variable `PRODUCTION_BASE_URL` with the deployed site origin. Optional
-   `JOLPICA_BASE_URL` overrides the reference API endpoint.
+   `JOLPICA_BASE_URL` and `OPENF1_BASE_URL` override source API endpoints.
 3. On a machine with the current historical `data/raw`, `data/staged`, and
    generated product files, set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`,
    then run `python data/automation_storage.py save`. This seeds the private
-   archive before the first scheduled job. The command is safe to rerun and
+v2 archive before the first scheduled job. The command is safe to rerun and
    uploads only changed files. Keep raw archives out of git.
 4. Trigger **Post Race Refresh** with `workflow_dispatch` after seeding to
    confirm the configuration. Outside a post-race window it exits without a

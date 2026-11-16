@@ -220,7 +220,7 @@ export function AnalyticsTrackDominanceMap({
             </div>
           )}
           <div className="analytics-track-map__caption">
-            <span>{hasTrackGeometry ? "FastF1-derived path" : "Circuit map unavailable"}</span>
+            <span>{hasTrackGeometry ? "fastf1_legacy reviewed path" : "Circuit map unavailable"}</span>
             <strong>Segment markers</strong>
           </div>
         </div>

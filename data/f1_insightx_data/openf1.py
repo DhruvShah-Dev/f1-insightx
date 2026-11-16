@@ -53,7 +53,9 @@ class OpenF1Client:
 
         self._request_times.append(time.monotonic())
 
-    def _get(self, endpoint: str, params: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    def _get_snapshot(
+        self, endpoint: str, params: dict[str, Any] | None = None
+    ) -> tuple[list[dict[str, Any]], bytes]:
         for attempt in range(self._max_retries + 1):
             self._throttle()
             response = self._client.get(endpoint, params=params)
@@ -62,7 +64,7 @@ class OpenF1Client:
                 payload = response.json()
                 if not isinstance(payload, list):
                     raise TypeError(f"OpenF1 {endpoint} returned {type(payload).__name__}, expected list")
-                return payload
+                return payload, response.content
 
             if attempt == self._max_retries:
                 response.raise_for_status()
@@ -72,6 +74,23 @@ class OpenF1Client:
             time.sleep(delay_seconds)
 
         raise RuntimeError(f"Failed to fetch OpenF1 endpoint {endpoint}")
+
+    def _get(self, endpoint: str, params: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+        return self._get_snapshot(endpoint, params)[0]
+
+    def fetch_meetings_snapshot(self, season: int) -> tuple[list[dict[str, Any]], bytes]:
+        return self._get_snapshot("/meetings", {"year": season})
+
+    def fetch_sessions_snapshot(self, *, season: int) -> tuple[list[dict[str, Any]], bytes]:
+        return self._get_snapshot("/sessions", {"year": season})
+
+    def fetch_endpoint_snapshot(
+        self, endpoint: str, session_key: int | str, *, driver_number: int | str | None = None
+    ) -> tuple[list[dict[str, Any]], bytes]:
+        params: dict[str, Any] = {"session_key": session_key}
+        if driver_number is not None:
+            params["driver_number"] = driver_number
+        return self._get_snapshot(f"/{endpoint}", params)
 
     def fetch_meetings(self, season: int) -> list[dict[str, Any]]:
         return self._get("/meetings", {"year": season})
