@@ -10,7 +10,7 @@
 
 ```bash
 npm install
-npm run data:install
+pip install -c data/constraints.txt -r data/requirements.txt # only for pipeline work
 ```
 
 Use `.env.local` for local Supabase settings. Real environment files are ignored by git and must stay local.
@@ -61,3 +61,6 @@ python -m pytest tests/test_analytics_views.py tests/test_telemetry_features.py
 ```
 
 Review generated data before staging. Large generated CSVs and indexes should normally be regenerated, not committed.
+
+For the active app's environment variables, start with [`.env.example`](../.env.example).
+For current data coverage and refresh commands, see the [data platform guide](../data/README.md).

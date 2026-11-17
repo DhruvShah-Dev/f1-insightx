@@ -8,6 +8,8 @@ import {
   fetchPicksBoard,
   fetchLapTrace,
   fetchRaceReport,
+  fetchRacePositionStory,
+  localRacePositionStory,
   fetchRaceReports,
   fetchRaceWeek,
   fetchSeasonTelemetry,
@@ -27,6 +29,8 @@ import {
   fallbackWeekendIndex,
 } from "./f1.fallback";
 import { shouldUseSupabaseProductData } from "./env.server";
+import { TELEMETRY_SESSIONS } from "./telemetry-comparison";
+import type { TelemetryComparison } from "./telemetry-comparison";
 
 export type {
   ConstructorStanding,
@@ -34,6 +38,7 @@ export type {
   DriverTelemetry,
   LapPoint,
   PositionLap,
+  RacePositionStoryRow,
   RaceOption,
   RaceReportRow,
   RaceWeekDriver,
@@ -112,6 +117,15 @@ export const getWeekend = createServerFn({ method: "GET" })
     ),
   );
 
+export const getRacePositionStory = createServerFn({ method: "GET" })
+  .validator((input) => z.object({ slug: z.string().min(1) }).parse(input))
+  .handler(({ data }) =>
+    withFallback(
+      () => fetchRacePositionStory(data.slug),
+      () => localRacePositionStory(data.slug),
+    ),
+  );
+
 export const getChampionship = createServerFn({ method: "GET" })
   .validator((input) => z.object({ season: z.number().int().optional() }).parse(input ?? {}))
   .handler(({ data }) =>
@@ -131,6 +145,40 @@ export const getHeadToHead = createServerFn({ method: "GET" })
       () => fallbackHeadToHead(data.slug, data.a, data.b),
     ),
   );
+
+export const getTelemetryComparison = createServerFn({ method: "GET" })
+  .validator((input) =>
+    z
+      .object({
+        slug: z.string().min(1),
+        session: z.enum(TELEMETRY_SESSIONS),
+        a: z.string().min(2),
+        b: z.string().min(2),
+      })
+      .refine((value) => value.a.toUpperCase() !== value.b.toUpperCase(), {
+        message: "Select two different drivers.",
+      })
+      .parse(input),
+  )
+  .handler(async ({ data }): Promise<TelemetryComparison> => {
+    const weekend = await withFallback(
+      () => fetchWeekend(data.slug),
+      () => fallbackWeekend(data.slug),
+    );
+    if (!weekend) throw new Error("Weekend not found.");
+    const { fetchTelemetryComparison } = await import("./telemetry-comparison.server");
+    return fetchTelemetryComparison({
+      season: weekend.season,
+      round: weekend.round,
+      event: weekend.name,
+      resultsOnly: weekend.resultsOnly,
+      session: data.session,
+      a: data.a,
+      b: data.b,
+    });
+  });
+
+export type { TelemetryComparison } from "./telemetry-comparison";
 
 export type {
   MethodDashboardData,

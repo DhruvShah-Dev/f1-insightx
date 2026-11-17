@@ -71,7 +71,8 @@ CREATE TRIGGER trig_check_user_profile_mutation
 -- 3. Enable Row-Level Security (RLS) on all 22 Race Week schema tables (003_race_week_schema.sql)
 -- Note: These tables are treated as server-only/internal. They do not have public SELECT policies,
 -- keeping them fully locked down from direct anon/authenticated PostgREST CRUD operations.
--- Views (e.g., race_week_overview_view) run with postgres superuser privileges and bypass this RLS to present aggregate data.
+-- The later 202611170001 migration changes legacy views to security-invoker
+-- and removes unused public view grants after this base SQL is applied.
 ALTER TABLE sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE event_entries ENABLE ROW LEVEL SECURITY;
 ALTER TABLE session_results ENABLE ROW LEVEL SECURITY;

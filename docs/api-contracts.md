@@ -6,13 +6,11 @@ longer active product contracts.
 
 ## Data Source Mode
 
-Public F1 product pages use the generated bundled snapshot by default. This
-keeps production and local previews current even when Supabase public tables are
-behind the latest data pipeline refresh.
-
-Set `F1_INSIGHTX_PUBLIC_DATA_SOURCE=supabase` only when the Supabase public
-product tables have been refreshed and validated through the latest completed
-race.
+Public F1 product pages try Supabase when runtime URL and publishable key are
+configured, then fall back to the generated bundled snapshot if a read fails.
+Set `F1_INSIGHTX_PUBLIC_DATA_SOURCE=local` to force the bundled snapshot, or
+`=supabase` to force a Supabase attempt. Verify release freshness separately;
+the source switch does not prove that either data source is current.
 
 Supabase remains the required runtime service for account/auth profile flows.
 
@@ -24,17 +22,17 @@ Supabase remains the required runtime service for account/auth profile flows.
 | `/raceweek`       | Current race-week command center and projections                    | `getRaceWeek`                                         |
 | `/championship`   | Driver and constructor standings                                    | `getChampionship`                                     |
 | `/analysis`       | Completed-race report index                                         | `getRaceReports`                                      |
-| `/analysis/$slug` | Completed-race report detail                                        | `getRaceReport`, `getLapTrace`                        |
-| `/vs`             | Driver-vs-driver comparison workspace                               | `getWeekendIndex`, `getHeadToHead`, `getLapTrace`     |
+| `/analysis/$slug` | Completed-race report detail                                        | `getRaceReport`, `getRacePositionStory`, `getLapTrace` |
+| `/vs`             | Driver-vs-driver comparison workspace                               | `getWeekendIndex`, `getHeadToHead`, `getLapTrace`, `getTelemetryComparison` |
 | `/picks`          | Race-week picks board                                               | `getPicksBoard`                                       |
 | `/method`         | Methodology and product honesty notes                               | Static route content                                  |
 | `/account`        | Supabase-backed account and profile surface                         | Account/auth helpers                                  |
 
 ## Public F1 Server Functions
 
-All public F1 functions live in `src/lib/f1.functions.ts` and delegate to
-`src/lib/f1.server.ts` only when Supabase public data is explicitly enabled.
-Otherwise they use `src/lib/f1.fallback.ts` and the generated local snapshot.
+All public F1 functions live in `src/lib/f1.functions.ts`. They delegate to
+`src/lib/f1.server.ts` when Supabase is selected and use
+`src/lib/f1.fallback.ts` for local or failed remote reads.
 
 | Function             | Input                         | Output                                                                         |
 | -------------------- | ----------------------------- | ------------------------------------------------------------------------------ |
@@ -42,10 +40,12 @@ Otherwise they use `src/lib/f1.fallback.ts` and the generated local snapshot.
 | `getRaceWeek`        | none                          | next-race metadata, weather, projected order, strategy, qualifying predictions |
 | `getRaceReports`     | none                          | completed-race report summaries                                                |
 | `getRaceReport`      | `{ slug }`                    | report detail, stints, positions, stories, weather, lap context                |
+| `getRacePositionStory` | `{ slug }`                  | bounded position timeline and opening-story context                          |
 | `getWeekendIndex`    | optional `{ season }`         | available completed weekends                                                   |
 | `getWeekend`         | `{ slug }`                    | weekend detail payload                                                         |
 | `getHeadToHead`      | `{ slug, a, b }`              | two-driver comparison payload                                                  |
 | `getLapTrace`        | `{ raceAnalysisId, drivers }` | bounded lap trace rows for one or two drivers                                  |
+| `getTelemetryComparison` | `{ slug, session, a, b }` | session-scoped driver telemetry comparison or explicit availability state      |
 | `getPicksBoard`      | optional `{ season }`         | current picks challenge and leaderboard state                                  |
 
 ## Contract Rules

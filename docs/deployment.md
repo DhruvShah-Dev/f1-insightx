@@ -4,7 +4,7 @@
 
 - TanStack Start root app on Vercel/Lovable
 - Supabase for auth, profile, and database-backed surfaces
-- Offline Python builders for FastF1, Race Week, strategy modeling, analytics/Compare, representative telemetry traces, and Analysis product views
+- Offline Python builders for Jolpica and OpenF1, legacy FastF1 evidence, Race Week, strategy modeling, analytics/Compare, representative telemetry traces, and Analysis product views
 
 ## Vercel Setup
 
@@ -27,12 +27,14 @@ Required environment variables:
 
 ## Generated Data Expectations
 
-The app is designed to consume compact product views. Raw FastF1 data, staged data, cache files, and telemetry parquet should never be deployed.
+The app is designed to consume compact product views. Raw OpenF1 and FastF1
+archives, staged data, cache files, and telemetry parquet should never be
+deployed as browser assets.
 
 If Compare, strategy-modeling, Race Week, or Analysis needs bundled CSV/JSON artifacts in production, generate them before packaging:
 
 ```bash
-python build_canonical_fastf1.py --start-season 2020 --end-season 2026
+python build_canonical_sessions.py --start-season 2020 --end-season 2026
 python build_telemetry_features.py --start-season 2020 --end-season 2026
 python data/build_strategy_lab_layers.py
 python data/build_race_week_layers.py
@@ -40,7 +42,7 @@ python data/build_analytics_views.py
 python data/build_analytics_indexes.py
 python data/build_analytics_telemetry_traces.py
 python data/build_race_analysis_views.py
-python validate_canonical_fastf1.py
+python validate_canonical_sessions.py
 python validate_telemetry_features.py
 python validate_analytics_views.py
 python validate_analytics_telemetry_traces.py

@@ -15,18 +15,20 @@ The repository includes validated release snapshots alongside code, validators, 
 - Prefer compact Supabase/product views for runtime reads.
 - Keep freshness visible when a feature depends on partial or delayed data.
 
-## Current Local State
+## Current state and coverage
 
-Latest local season state: `season_state_20261005T191203Z`, generated at `2026-10-05T19:12:03Z`.
+Read [`season_state.json`](season_state.json) for the latest validated product
+release and its per-layer freshness. It is generated data; this README does not
+pin a race or round that will become stale after the next refresh.
 
-| Layer                      | Current evidence                                                                                                        |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| FastF1 archive             | 2026 round 16 Bahrain Grand Prix in Malaysia sessions ingested for FP1, FP2, FP3, qualifying, and race with telemetry available |
-| Canonical FastF1           | 64 sessions, 37,786 session laps, 1,408 session results, 4,685 session stints, 1,385 session-summary rows               |
-| Analysis                   | 16 race analyses; analysis includes Bahrain Grand Prix in Malaysia round 16                                              |
-| Race Week                  | Singapore Grand Prix, round 17, product view available                                                                    |
-| Strategy modeling          | Singapore Grand Prix, round 17, Strategy Lab view available                                                             |
-| Compare / telemetry caveat | Analytics-backed Compare and telemetry product views are available through round 16                                       |
+The separate local 2026 OpenF1 archive was audited on November 17, 2026:
+100 completed sessions have provider data, and 10 scheduled sessions have no
+provider feed. Both car telemetry and GPS are present for all 100 available
+sessions. See the [telemetry coverage](reports/openf1_telemetry_2026_download.json),
+[other endpoint coverage](reports/openf1_extras_2026_download.json), and
+[baseline gap report](reports/openf1_missing_2026_download.json). These archive
+downloads are source evidence; a product view changes only after the relevant
+builders, validators, and release steps run.
 
 ## Layers
 
@@ -36,7 +38,9 @@ Latest local season state: `season_state_20261005T191203Z`, generated at `2026-1
 - `data/raw/openf1`: snapshotted OpenF1 meetings, sessions, and selected session endpoints from 2023 onward.
 - `data/raw/fastf1`: read-only legacy evidence; no new production writes.
 
-Raw folders are ignored and can be regenerated. They should not be used directly by the web app.
+New OpenF1 raw downloads are Git-ignored and can be restored from the pipeline
+archive or fetched again. Older raw snapshots already tracked by Git remain
+tracked. Raw files should not be used directly by the web app.
 
 ### 2. Staged source consolidation
 
@@ -46,6 +50,13 @@ Raw folders are ignored and can be regenerated. They should not be used directly
 - `data/quarantine/openf1`: rejected rows with reason, endpoint, source path, and timestamp.
 
 Staged outputs are reproducible feature-engineering inputs and stay out of browser runtime code.
+New OpenF1 staged downloads are Git-ignored; previously tracked snapshots stay
+tracked until a deliberate migration removes them from Git.
+
+Small generated files imported by the app at build time are release artifacts,
+not bulk archives. In particular, `data/reports/position_story_backfill.json`
+and `data/analytics/analytics_segment_map.csv` must be included in a release
+that imports them, or generated before that release's build.
 
 ### 3. Canonical sessions
 
@@ -93,8 +104,29 @@ python validate_season_state.py
 python data/load_supabase.py
 ```
 
+The loader reapplies the current 2026-11-17 Supabase migrations after its
+base schema SQL. This keeps public grants, view permissions, and the account
+profile contract consistent.
+when the schema is refreshed.
+
 Run the relevant commands above in order when the full local data estate is
 available. The root `package.json` does not define a `data:refresh` script.
+The `--round 20` command above is an example; select the completed round you
+are refreshing.
+
+For a one-time, resumable 2026 source archive backfill, run these in order
+from the repository root:
+
+```bash
+python data/fetch_missing_openf1_2026.py
+python data/fetch_missing_openf1_telemetry_2026.py
+python data/fetch_missing_openf1_extras_2026.py
+```
+
+These scripts write raw JSON, staged CSV, and their coverage reports. The
+telemetry script stores large responses in time or driver partitions rather
+than one session JSON file. Run the scripts one at a time to respect the shared
+OpenF1 request limit.
 
 ## Validation
 

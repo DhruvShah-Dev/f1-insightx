@@ -9,7 +9,7 @@
 | Area | What you can do |
 | --- | --- |
 | **Race Week** | Check the next event's schedule, circuit profile, weather, and qualifying and race projections. |
-| **Analysis** | Browse the 2026 race calendar and open completed Grand Prix reports with results, position changes, pace, tyres, pit stops, and timelines where data is available. |
+| **Analysis** | Browse the 2026 race calendar and open completed Grand Prix reports with results, qualifying-to-grid stakes, opening-lap movement, pace, tyres, pit stops, and timelines where data is available. |
 | **Vs** | Select two drivers and a weekend to compare qualifying, race performance, strategy, and available lap and sector data. |
 | **Picks** | Fill a race-week card with qualifying, race, position, and speed picks; see lock status and points when results are available. |
 | **Championship** | Follow driver and constructor standings, season leaders, wins, and performance rankings. |
@@ -31,7 +31,9 @@
 
 ## Data behind the product
 
-F1 InsightX combines reference race results from Jolpica, session and race-control context from OpenF1, and timing, lap, stint, weather, and telemetry data from FastF1. The Python pipeline under [data](data/README.md) validates and turns those inputs into compact product views. The TanStack Start app reads those views from Supabase.
+F1 InsightX combines reference race results from Jolpica with OpenF1 session, timing, race-control, weather, and telemetry data. FastF1 remains as historical evidence for earlier releases. The Python pipeline under [data](data/README.md) validates those inputs and builds compact product views. The TanStack Start app reads validated Supabase views when configured and otherwise uses a bundled fallback snapshot; it does not serve raw telemetry files.
+
+The local 2026 OpenF1 archive includes high-frequency car and GPS feeds. Its [download coverage report](data/reports/openf1_telemetry_2026_download.json) distinguishes available sessions from provider gaps. Raw and staged archives stay local and are not part of the website bundle or normal Git releases.
 
 Projections and comparisons are derived from stored inputs. Available data varies by session and race, so some report panels or telemetry views may be absent. The in-app Method page and data dashboard explain sources, freshness, and limitations.
 
@@ -76,6 +78,7 @@ npm run build
 | [public/assets](public/assets) | Driver portraits, team logos, and other visual assets |
 | [data](data/README.md) | Current ingestion, validation, product views, and Supabase loading |
 | [data_pipeline](data_pipeline/README.md) | Historical FastF1 ingestion foundation |
+| [docs](docs/README.md) | Development, architecture, release, and operations guides |
 
 The active application is the TanStack Start project at the repository root. The older Next.js application under `apps/web` is archived.
 

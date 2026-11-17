@@ -19,12 +19,11 @@ dist-ssr
 # Rebuildable ML pipeline outputs
 data/ml/generated/
 
-# Large, reproducible OpenF1 high-frequency downloads (kept in pipeline archives,
-# not Git; normalized compatibility and analytics outputs remain versioned).
-data/raw/openf1/**/car_data.json
-data/raw/openf1/**/location.json
-data/staged/openf1/**/car_data.csv
-data/staged/openf1/**/location.csv
+# OpenF1 source archives and staging are local pipeline inputs, not release
+# artifacts. Existing tracked snapshots remain tracked; new downloads stay out
+# of git, including partitioned car telemetry and GPS files.
+data/raw/openf1/
+data/staged/openf1/
 
 # Reproducible OpenF1 v2 build products. Durable copies live in the pipeline
 # archive; Git contains the builders, policy, schemas, and tests.

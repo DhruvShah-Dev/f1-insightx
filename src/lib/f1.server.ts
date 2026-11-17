@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import productManifestRaw from "../../data/reports/product_manifest.json?raw";
 import analyticsQualityRaw from "../../data/reports/analytics_quality_report.json?raw";
 import raceAnalysisQualityRaw from "../../data/reports/race_analysis_quality_report.json?raw";
+import positionStoryBackfillRaw from "../../data/reports/position_story_backfill.json?raw";
 import seasonStateRaw from "../../data/season_state.json?raw";
 import seasonStateQualityRaw from "../../data/reports/season_state_quality_report.json?raw";
 import strategyLabQualityRaw from "../../data/reports/strategy_lab_signal_quality.json?raw";
@@ -624,6 +625,7 @@ export async function fetchWeekend(slug: string) {
     { data: qualiRows },
     { data: sprintRows },
     { data: resultRows },
+    { data: previousResultRows, error: previousResultsError },
     { data: summary },
     { data: stintRows },
     { data: pitRows },
@@ -655,6 +657,12 @@ export async function fetchWeekend(slug: string) {
       )
       .eq("race_id", raceId)
       .order("finish_position", { ascending: true }),
+    sb
+      .from("race_results")
+      .select("race_id, driver_id, finish_position, finish_status")
+      .like("race_id", `${season}-%`)
+      .lt("race_id", raceId)
+      .limit(1000),
     sb.from("race_analysis_summary").select("*").eq("race_analysis_id", slug).maybeSingle(),
     sb.from("race_analysis_stints").select("*").eq("race_analysis_id", slug).limit(500),
     sb.from("race_analysis_pit_strategy").select("*").eq("race_analysis_id", slug).limit(400),
@@ -744,6 +752,23 @@ export async function fetchWeekend(slug: string) {
       fastestLapRank: num(r["fastest_lap_rank"]),
     };
   });
+
+  const priorResultsByDriver = new Map<string, { round: number; finish: number | null; status: string | null }[]>();
+  for (const r of (previousResultRows ?? []) as Row[]) {
+    const match = String(r["race_id"] ?? "").match(/^\d{4}-(\d{2})-/);
+    const priorRound = match ? Number(match[1]) : 0;
+    if (!priorRound || priorRound >= round) continue;
+    const code = ident(String(r["driver_id"] ?? "")).code;
+    const results = priorResultsByDriver.get(code) ?? [];
+    results.push({ round: priorRound, finish: num(r["finish_position"]), status: str(r["finish_status"]) });
+    priorResultsByDriver.set(code, results);
+  }
+  const priorResults = [...priorResultsByDriver.entries()].flatMap(([code, results]) =>
+    results
+      .sort((a, b) => b.round - a.round)
+      .slice(0, 3)
+      .map((result) => ({ code, ...result })),
+  );
 
   const stints = ((stintRows ?? []) as Row[])
     .map((r) => {
@@ -954,6 +979,8 @@ export async function fetchWeekend(slug: string) {
     qualifying,
     sprint,
     classification,
+    priorResults,
+    priorResultsAvailable: !previousResultsError,
     stints,
     pits,
     positions,
@@ -1312,6 +1339,50 @@ export type PositionLap = {
   status: string | null;
   phase: string | null;
 };
+
+export type RacePositionStoryRow = {
+  code: string;
+  lap: number;
+  position: number;
+  status: string | null;
+  source?: "position-feed" | "openf1-position" | "lap-timing-estimate";
+};
+
+const positionStoryBackfill = JSON.parse(positionStoryBackfillRaw) as Record<string, RacePositionStoryRow[]>;
+
+export function localRacePositionStory(slug: string): RacePositionStoryRow[] {
+  return positionStoryBackfill[slug] ?? [];
+}
+
+/** Full derived running order, paged so races over 1,000 rows remain complete. */
+export async function fetchRacePositionStory(slug: string): Promise<RacePositionStoryRow[]> {
+  const sb = serverClient();
+  const pageSize = 1000;
+  const rows: Row[] = [];
+  for (let offset = 0; offset < 5000; offset += pageSize) {
+    const { data, error } = await sb
+      .from("race_analysis_position_timeline")
+      .select("driver, lap_number, position, track_status_label")
+      .eq("race_analysis_id", slug)
+      .order("driver", { ascending: true })
+      .order("lap_number", { ascending: true })
+      .range(offset, offset + pageSize - 1);
+    if (error) throw error;
+    rows.push(...((data ?? []) as Row[]));
+    if (!data || data.length < pageSize) break;
+    if (offset + pageSize >= 5000) throw new Error("Race position timeline exceeded the supported row count.");
+  }
+  const keyed = new Map<string, RacePositionStoryRow>();
+  for (const row of rows) {
+    const code = String(row["driver"] ?? "").toUpperCase();
+    const lap = Number(row["lap_number"]);
+    const position = Number(row["position"]);
+    if (!/^[A-Z]{3}$/.test(code) || !Number.isInteger(lap) || lap < 1 || !Number.isInteger(position) || position < 1) continue;
+    keyed.set(`${code}:${lap}`, { code, lap, position, status: str(row["track_status_label"]), source: "position-feed" });
+  }
+  const result = [...keyed.values()].sort((a, b) => a.code.localeCompare(b.code) || a.lap - b.lap);
+  return result.length ? result : localRacePositionStory(slug);
+}
 
 /** Raw lap-by-lap running order for one driver. */
 async function fetchPositionLaps(sb: SB, slug: string, code: string): Promise<PositionLap[]> {

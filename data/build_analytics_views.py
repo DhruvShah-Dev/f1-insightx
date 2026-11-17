@@ -26,6 +26,7 @@ OUTPUT_FILES = {
     "energy_proxy_comparison": "analytics_energy_proxy_comparison.csv",
     "lap_pace_driver": "analytics_lap_pace_driver.csv",
     "track_summary": "analytics_track_summary.csv",
+    "segment_map": "analytics_segment_map.csv",
 }
 PROXY_NOTE = "Energy deployment proxy derived from speed/throttle/RPM/gear/DRS features; not true ERS or battery state."
 WEAKEST_ASSUMPTION = "Approximate segment IDs from precomputed telemetry features; not manually named corners."
@@ -157,6 +158,67 @@ def build_session_index(laps: pd.DataFrame, corner: pd.DataFrame, straight: pd.D
             }
         )
     return pd.DataFrame(rows).sort_values(["season", "round", "session"])
+
+
+def build_segment_map(laps: pd.DataFrame, braking: pd.DataFrame, throttle: pd.DataFrame) -> pd.DataFrame:
+    """Build approximate, confidence-labelled distance windows for coordinated UI focus."""
+    if laps.empty:
+        return pd.DataFrame()
+    lap_distance = (
+        laps.assign(distance_covered_m=pd.to_numeric(laps["distance_covered_m"], errors="coerce"))
+        .groupby("session_id")["distance_covered_m"]
+        .median()
+        .to_dict()
+    )
+    rows: list[dict[str, Any]] = []
+    session_ids = sorted(set(braking.get("session_id", pd.Series(dtype=str)).dropna().astype(str)) | set(throttle.get("session_id", pd.Series(dtype=str)).dropna().astype(str)))
+    for session_id in session_ids:
+        brake_rows = braking[braking["session_id"] == session_id] if not braking.empty else pd.DataFrame()
+        throttle_rows = throttle[throttle["session_id"] == session_id] if not throttle.empty else pd.DataFrame()
+        segment_ids = sorted(set(brake_rows.get("segment_id", pd.Series(dtype=str)).dropna().astype(str)) | set(throttle_rows.get("segment_id", pd.Series(dtype=str)).dropna().astype(str)))
+        distance = float(lap_distance.get(session_id) or 0)
+        for index, segment_id in enumerate(segment_ids):
+            brake_segment = brake_rows[brake_rows["segment_id"] == segment_id]
+            throttle_segment = throttle_rows[throttle_rows["segment_id"] == segment_id]
+            brake_values = pd.to_numeric(brake_segment.get("braking_start_distance_m"), errors="coerce").dropna() if not brake_segment.empty else pd.Series(dtype=float)
+            throttle_values = pd.to_numeric(throttle_segment.get("throttle_pickup_distance_m"), errors="coerce").dropna() if not throttle_segment.empty else pd.Series(dtype=float)
+            brake_start = brake_values.median() if not brake_values.empty else float("nan")
+            throttle_pickup = throttle_values.median() if not throttle_values.empty else float("nan")
+            confidence_values = pd.concat(
+                [
+                    pd.to_numeric(brake_segment.get("segmentation_confidence"), errors="coerce"),
+                    pd.to_numeric(throttle_segment.get("segmentation_confidence"), errors="coerce"),
+                ],
+                ignore_index=True,
+            ).dropna()
+            if distance > 0 and pd.notna(brake_start) and pd.notna(throttle_pickup):
+                start_m = max(0.0, float(brake_start) - 35.0)
+                end_m = min(distance, max(float(throttle_pickup) + 55.0, start_m + 25.0))
+                apex_m = min(end_m, max(start_m, (float(brake_start) + float(throttle_pickup)) / 2.0))
+                method = "brake_throttle_distance_proxy"
+            else:
+                width = 1.0 / max(len(segment_ids), 1)
+                start_m = index * width * max(distance, 1.0)
+                end_m = (index + 1) * width * max(distance, 1.0)
+                apex_m = (start_m + end_m) / 2.0
+                method = "ordinal_equal_window_fallback"
+            denominator = max(distance, end_m, 1.0)
+            rows.append(
+                {
+                    "session_id": session_id,
+                    "segment_id": segment_id,
+                    "start_distance_m": round(start_m, 3),
+                    "end_distance_m": round(end_m, 3),
+                    "apex_distance_m": round(apex_m, 3),
+                    "normalized_start": round(max(0.0, min(1.0, start_m / denominator)), 6),
+                    "normalized_end": round(max(0.0, min(1.0, end_m / denominator)), 6),
+                    "normalized_apex": round(max(0.0, min(1.0, apex_m / denominator)), 6),
+                    "confidence": clamp01(confidence_values.mean() if not confidence_values.empty else 0.35),
+                    "boundary_method": method,
+                    "approximation_note": "Telemetry-derived approximate zone; not an official corner boundary.",
+                }
+            )
+    return pd.DataFrame(rows).sort_values(["session_id", "normalized_start", "segment_id"])
 
 
 def build_segment_comparison(corner: pd.DataFrame) -> pd.DataFrame:
@@ -549,6 +611,7 @@ def main() -> None:
     )
     track_summary = build_track_summary(session_index, archetypes)
     lap_pace_driver = build_lap_pace_driver(session_index, race_index, race_pace, race_positions, race_traffic)
+    segment_map = build_segment_map(laps, braking, throttle)
 
     outputs = {
         "session_index": session_index,
@@ -560,6 +623,7 @@ def main() -> None:
         "energy_proxy_comparison": energy_comparison,
         "lap_pace_driver": lap_pace_driver,
         "track_summary": track_summary,
+        "segment_map": segment_map,
     }
     for name, filename in OUTPUT_FILES.items():
         write_csv(outputs[name], analytics_dir / filename)

@@ -1,5 +1,9 @@
 # FastF1 Pipeline
 
+> Historical reference. FastF1 is retained as legacy session evidence; new
+> production session ingestion uses OpenF1. See [the data platform guide](README.md)
+> for current refresh commands and source policy.
+
 ## Purpose
 
 This pipeline extends the existing Jolpica -> curated -> product-view flow with a session-rich FastF1 intelligence layer for:

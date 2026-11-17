@@ -25,6 +25,7 @@ REQUIRED = {
         "dirty_air_proxy_s", "drs_window_proxy", "confidence", "traffic_proxy_note",
     ],
     "analytics_track_summary.csv": ["session_id", "track_archetype", "straight_line_weight", "braking_weight", "traction_weight", "degradation_weight", "track_position_weight", "archetype_confidence"],
+    "analytics_segment_map.csv": ["session_id", "segment_id", "normalized_start", "normalized_end", "normalized_apex", "confidence", "boundary_method", "approximation_note"],
 }
 KEYS = {
     "analytics_driver_comparison.csv": ["session_id", "driver_a", "driver_b"],
@@ -35,6 +36,7 @@ KEYS = {
     "analytics_energy_proxy_comparison.csv": ["session_id", "segment_id", "driver_a", "driver_b"],
     "analytics_lap_pace_driver.csv": ["session_id", "driver", "lap_number"],
     "analytics_track_summary.csv": ["session_id"],
+    "analytics_segment_map.csv": ["session_id", "segment_id"],
 }
 
 
@@ -80,6 +82,14 @@ def main() -> None:
             reversed_or_self = int((frame["driver_a"].astype(str) >= frame["driver_b"].astype(str)).sum())
             if reversed_or_self:
                 errors.append(f"{filename} has {reversed_or_self} self/reversed-order pairs")
+        if filename == "analytics_segment_map.csv":
+            for column in ["normalized_start", "normalized_end", "normalized_apex"]:
+                values = pd.to_numeric(frame[column], errors="coerce")
+                if not ((values >= 0).all() and (values <= 1).all()):
+                    errors.append(f"{filename}.{column} has values outside [0, 1]")
+            invalid_order = int(((frame["normalized_start"] > frame["normalized_apex"]) | (frame["normalized_apex"] > frame["normalized_end"])).sum())
+            if invalid_order:
+                errors.append(f"{filename} has {invalid_order} invalid segment windows")
 
     energy = frames.get("analytics_energy_proxy_comparison.csv", pd.DataFrame())
     if not energy.empty and "proxy_note" in energy.columns:

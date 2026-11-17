@@ -43,15 +43,16 @@ export const Route = createFileRoute("/account")({
 });
 
 function defaultUsername(user: User) {
-  const emailName = cleanUsername(user.email?.split("@")[0] ?? "").slice(0, 18);
-  return emailName || `driver_${user.id.slice(0, 8)}`;
+  const emailName = cleanUsername(user.email?.split("@")[0] ?? "").slice(0, 7) || "driver";
+  return `${emailName}_${user.id.replace(/-/g, "").slice(0, 16)}`;
 }
 
 function cleanUsername(value: string) {
   return value
     .trim()
-    .replace(/\s+/g, "_")
-    .replace(/[^a-zA-Z0-9_-]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9_]/g, "_")
+    .replace(/^_+/, "")
     .slice(0, 24);
 }
 

@@ -1,9 +1,12 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { queryOptions, useQuery, useSuspenseQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight } from "iconoir-react/regular";
+import { z } from "zod";
 import { SiteShell } from "@/components/site-shell";
 import { CompoundLegend, LapTraceChart } from "@/components/telemetry";
+import { StakesStory } from "@/components/stakes-story";
+import { OpeningShiftStory } from "@/components/opening-shift-story";
 import { buildCornerModel, CornerMap, CornerMapLegend } from "@/components/corner-profile";
 import {
   DriverChips,
@@ -14,7 +17,7 @@ import {
 } from "@/components/analysis-viz";
 import { team } from "@/data/teams";
 import { fmtDate, fmtDelta, fmtNum, titleCase } from "@/lib/format";
-import { getWeekend } from "@/lib/f1.functions";
+import { getRacePositionStory, getWeekend } from "@/lib/f1.functions";
 import { pageSeo } from "@/lib/seo";
 import "@/analysis-report.css";
 
@@ -26,6 +29,10 @@ const weekendQuery = (slug: string) =>
   });
 
 export const Route = createFileRoute("/analysis/$slug")({
+  validateSearch: z.object({
+    driver: z.string().regex(/^[a-z]{3}$/i).optional(),
+    lap: z.coerce.number().int().min(1).max(500).optional().catch(undefined),
+  }),
   loader: async ({ context, params }) => {
     const data = await context.queryClient.ensureQueryData(weekendQuery(params.slug));
     if (!data) throw notFound();
@@ -185,8 +192,27 @@ function StintBars({
 
 function WeekendPage() {
   const { slug } = Route.useParams();
+  const search = Route.useSearch();
+  const navigate = useNavigate({ from: "/analysis/$slug" });
   const { data } = useSuspenseQuery(weekendQuery(slug));
   const w = data!;
+  const positionStory = useQuery({
+    queryKey: ["race-position-story", slug],
+    queryFn: () => getRacePositionStory({ data: { slug } }),
+    staleTime: 5 * 60_000,
+  });
+
+  const biggestGainer = [...w.classification]
+    .filter((row) => row.grid != null && row.grid > 0 && row.finish != null && row.finish > 0)
+    .sort((a, b) => (b.grid! - b.finish!) - (a.grid! - a.finish!))[0];
+  const stakesQuestion = biggestGainer && biggestGainer.grid! > biggestGainer.finish!
+    ? `How did P${biggestGainer.grid} become P${biggestGainer.finish}?`
+    : "What changed before lights out?";
+  const stakesCodes = new Set([...w.qualifying.map((row) => row.code), ...w.classification.map((row) => row.code)]);
+  const selectedStakesDriver = search.driver?.toUpperCase();
+  const stakesDriver = selectedStakesDriver && stakesCodes.has(selectedStakesDriver)
+    ? selectedStakesDriver
+    : biggestGainer?.code ?? w.qualifying[0]?.code ?? w.classification[0]?.code ?? null;
 
   const available = useMemo(() => {
     const list: Session[] = [];
@@ -278,10 +304,38 @@ function WeekendPage() {
       <div className="analysis-detail">
         <div className="report-wrap">
           <Link to="/analysis" className="report-back"><ArrowLeft width={17} height={17} /> All reports</Link>
+          <header className="report-story-intro">
+            <h1>{w.name}</h1>
+            <p>Round {w.round} · {w.scheduledAt ? fmtDate(w.scheduledAt) : "Date TBC"} · {w.circuit}</p>
+          </header>
+          <StakesStory
+            qualifying={w.qualifying}
+            classification={w.classification}
+            priorResults={w.priorResults}
+            priorResultsAvailable={w.priorResultsAvailable}
+            selectedCode={stakesDriver}
+            onSelect={(code) => navigate({ search: (previous) => ({ ...previous, driver: code.toLowerCase() }), replace: true })}
+            question={stakesQuestion}
+            round={w.round}
+          />
+
+          <OpeningShiftStory
+            rows={positionStory.data ?? []}
+            drivers={[
+              ...w.classification.map((row) => ({ code: row.code, name: row.name, team: row.team, grid: row.grid })),
+              ...w.qualifying.filter((row) => !w.classification.some((result) => result.code === row.code)).map((row) => ({ code: row.code, name: row.name, team: row.team, grid: null })),
+            ]}
+            selectedCode={stakesDriver}
+            selectedLap={search.lap}
+            onSelectDriver={(code) => navigate({ search: (previous) => ({ ...previous, driver: code.toLowerCase() }), replace: true })}
+            onSelectLap={(lap) => navigate({ search: (previous) => ({ ...previous, lap }), replace: true })}
+            loading={positionStory.isPending}
+          />
+
           <section className="report-hero">
             <div className="report-hero-photo" aria-hidden="true"><ReportDriverPhoto code={w.winner.code} name={w.winner.name} large /></div>
             <div className="report-hero-main">
-              <h1>{w.name}</h1>
+              <h2>{w.name}</h2>
               <p className="report-meta">Round {w.round} <span>·</span> {w.scheduledAt ? fmtDate(w.scheduledAt) : "Date TBC"} <span>·</span> {w.circuit}</p>
               <div className="report-winner">
                 <span>Winner</span>

@@ -1,13 +1,15 @@
 # Supabase Auth Setup
 
-This project uses Supabase in two distinct ways:
+This project uses Supabase in three ways:
 
 - browser auth: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`; the TanStack app also accepts `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` as compatibility aliases
 - server-side profile persistence and username availability: `SUPABASE_SERVICE_ROLE_KEY`
+- public race and analytics data: server-side queries with the publishable key when Supabase is configured
 
 ## Required environment variables
 
-Put these in the repo-root `.env.local`:
+Put these in the repo-root `.env.local` as needed. `DATABASE_URL` is for the
+offline loader and migrations; it is not required by browser auth:
 
 ```env
 NEXT_PUBLIC_APP_URL=http://127.0.0.1:8080
@@ -31,14 +33,11 @@ In Supabase:
 
 ## Run the schema
 
-Run the SQL in:
-
-- `data/sql/001_core_schema.sql`
-- `data/sql/002_fastf1_pipeline.sql`
-- `data/sql/003_race_week_schema.sql`
-- `data/sql/004_strategy_lab_schema.sql`
-- `data/sql/005_backend_hardening.sql`
-- `supabase/migrations/202605270001_explicit_data_api_grants.sql`
+The data loader executes `data/sql/*.sql` in filename order and reapplies the
+2026-11-17 Supabase migrations after the base SQL. Apply the other
+versioned migrations through the project's migration process, checking the
+live migration ledger first. Do not replay the historical policy migrations
+blindly against an existing database; some predate the current base schema.
 
 This:
 
@@ -114,6 +113,8 @@ Provider callback errors are intentionally mapped to safe account-page error cod
 ## Security model
 
 - public F1 reference/product tables have RLS enabled, explicit read-only policies, and explicit `SELECT` grants
+- canonical `sessions` and `session_laps` have public read policies for Compare sector data
+- unused legacy view aliases have no browser grants; the two active telemetry views use invoker permissions
 - private profile rows are protected by authenticated-only grants plus RLS ownership checks
 - server-side data access uses the service role key
 - the service role key must never be exposed to browser code
@@ -129,6 +130,7 @@ Supabase requires explicit table grants for newly created public-schema tables. 
 - authenticated user-owned table: grant only the needed authenticated operations and enforce row ownership with RLS
 - server/admin table: do not grant anon/authenticated access
 - never grant public write access unless there is a reviewed product requirement and matching RLS policy
+- check new tables created by `supabase_admin`: its platform-owned default grants cannot be changed by the project `postgres` login; explicitly revoke unwanted grants in each migration
 
 ## Abuse and cost notes
 

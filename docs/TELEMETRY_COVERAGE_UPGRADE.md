@@ -2,6 +2,10 @@
 
 Last audited: 2026-05-10
 
+> Historical audit and upgrade plan. Its counts predate the full 2026 OpenF1
+> telemetry and GPS backfill. For current source coverage, see the
+> [2026 download report](../data/reports/openf1_telemetry_2026_download.json).
+
 ## Current Coverage
 
 F1 InsightX currently stores FastF1 telemetry as precomputed offline artifacts. Runtime APIs and UI do not read raw telemetry.

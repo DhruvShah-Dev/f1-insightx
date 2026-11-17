@@ -1,0 +1,1957 @@
+{
+  "started_at": "2026-11-17T01:08:58.503142+00:00",
+  "season": 2026,
+  "scope": "car_data and location for provider-available completed sessions",
+  "sessions": {
+    "11227": {
+      "meeting_key": 1279,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 383790,
+          "status": "complete"
+        },
+        "location": {
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 400466,
+          "status": "complete"
+        }
+      }
+    },
+    "11228": {
+      "meeting_key": 1279,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 385946,
+          "status": "complete"
+        },
+        "location": {
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 392700,
+          "status": "complete"
+        }
+      }
+    },
+    "11229": {
+      "meeting_key": 1279,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 488302,
+          "status": "complete"
+        },
+        "location": {
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 483176,
+          "status": "complete"
+        }
+      }
+    },
+    "11230": {
+      "meeting_key": 1279,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 462132,
+          "status": "complete"
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 471900,
+          "reference_driver": 1,
+          "reference_rows": 21450
+        }
+      }
+    },
+    "11234": {
+      "meeting_key": 1279,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete",
+          "error": "Time coverage mismatch for driver 1: 31179 != 31180",
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 685960
+        },
+        "location": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 707124,
+          "reference_driver": 1,
+          "reference_rows": 32142
+        }
+      }
+    },
+    "11235": {
+      "meeting_key": 1280,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 409926,
+          "reference_driver": 1,
+          "reference_rows": 18633
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 415646,
+          "reference_driver": 1,
+          "reference_rows": 18893
+        }
+      }
+    },
+    "11236": {
+      "meeting_key": 1280,
+      "code": "SQ",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 2,
+          "status": "complete_time_windows",
+          "rows": 286550,
+          "reference_driver": 1,
+          "reference_rows": 13025
+        },
+        "location": {
+          "windows_downloaded": 2,
+          "status": "complete_time_windows",
+          "rows": 295394,
+          "reference_driver": 1,
+          "reference_rows": 13427
+        }
+      }
+    },
+    "11240": {
+      "meeting_key": 1280,
+      "code": "S",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 409508,
+          "reference_driver": 1,
+          "reference_rows": 18614
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 422877,
+          "reference_driver": 1,
+          "reference_rows": 18981
+        }
+      }
+    },
+    "11241": {
+      "meeting_key": 1280,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 391380,
+          "reference_driver": 1,
+          "reference_rows": 17790
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 396176,
+          "reference_driver": 1,
+          "reference_rows": 18008
+        }
+      }
+    },
+    "11245": {
+      "meeting_key": 1280,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 743666,
+          "reference_driver": 1,
+          "reference_rows": 33803
+        },
+        "location": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 761813,
+          "reference_driver": 1,
+          "reference_rows": 34385
+        }
+      }
+    },
+    "11246": {
+      "meeting_key": 1281,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete",
+          "error": "[WinError 5] Access is denied: 'D:\\\\projects\\\\f1-insightx\\\\data\\\\reports\\\\openf1_telemetry_2026_download.json.tmp' -> 'D:\\\\projects\\\\f1-insightx\\\\data\\\\reports\\\\openf1_telemetry_2026_download.json'",
+          "downloaded_drivers": 22,
+          "expected_drivers": 22,
+          "errors": {},
+          "rows": 404690
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 415976,
+          "reference_driver": 1,
+          "reference_rows": 18908
+        }
+      }
+    },
+    "11247": {
+      "meeting_key": 1281,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 385726,
+          "reference_driver": 1,
+          "reference_rows": 17533
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 397540,
+          "reference_driver": 1,
+          "reference_rows": 18070
+        }
+      }
+    },
+    "11248": {
+      "meeting_key": 1281,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 394614,
+          "reference_driver": 1,
+          "reference_rows": 17937
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 402248,
+          "reference_driver": 1,
+          "reference_rows": 18284
+        }
+      }
+    },
+    "11249": {
+      "meeting_key": 1281,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 366410,
+          "reference_driver": 1,
+          "reference_rows": 16655
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 376112,
+          "reference_driver": 1,
+          "reference_rows": 17096
+        }
+      }
+    },
+    "11253": {
+      "meeting_key": 1281,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 764808,
+          "reference_driver": 1,
+          "reference_rows": 34764
+        },
+        "location": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 795257,
+          "reference_driver": 1,
+          "reference_rows": 35735
+        }
+      }
+    },
+    "11254": {
+      "meeting_key": 1282,
+      "code": "FP1",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11255": {
+      "meeting_key": 1282,
+      "code": "FP2",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11256": {
+      "meeting_key": 1282,
+      "code": "FP3",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11257": {
+      "meeting_key": 1282,
+      "code": "Q",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11261": {
+      "meeting_key": 1282,
+      "code": "R",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11262": {
+      "meeting_key": 1283,
+      "code": "FP1",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11263": {
+      "meeting_key": 1283,
+      "code": "FP2",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11264": {
+      "meeting_key": 1283,
+      "code": "FP3",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11265": {
+      "meeting_key": 1283,
+      "code": "Q",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11269": {
+      "meeting_key": 1283,
+      "code": "R",
+      "endpoints": {},
+      "status": "provider_unavailable"
+    },
+    "11270": {
+      "meeting_key": 1284,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 491480,
+          "reference_driver": 1,
+          "reference_rows": 22340
+        },
+        "location": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 503470,
+          "reference_driver": 1,
+          "reference_rows": 22885
+        }
+      }
+    },
+    "11271": {
+      "meeting_key": 1284,
+      "code": "SQ",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 284306,
+          "reference_driver": 1,
+          "reference_rows": 12923
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 292380,
+          "reference_driver": 1,
+          "reference_rows": 13290
+        }
+      }
+    },
+    "11275": {
+      "meeting_key": 1284,
+      "code": "S",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 373868,
+          "reference_driver": 1,
+          "reference_rows": 16994
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 392480,
+          "reference_driver": 1,
+          "reference_rows": 17840
+        }
+      }
+    },
+    "11276": {
+      "meeting_key": 1284,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 386232,
+          "reference_driver": 1,
+          "reference_rows": 17556
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 401962,
+          "reference_driver": 1,
+          "reference_rows": 18271
+        }
+      }
+    },
+    "11280": {
+      "meeting_key": 1284,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 750750,
+          "reference_driver": 1,
+          "reference_rows": 34125
+        },
+        "location": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 786279,
+          "reference_driver": 1,
+          "reference_rows": 35325
+        }
+      }
+    },
+    "11281": {
+      "meeting_key": 1285,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 491590,
+          "reference_driver": 1,
+          "reference_rows": 22345
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 511390,
+          "reference_driver": 1,
+          "reference_rows": 23245
+        }
+      }
+    },
+    "11282": {
+      "meeting_key": 1285,
+      "code": "SQ",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 369160,
+          "reference_driver": 1,
+          "reference_rows": 16780
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 384010,
+          "reference_driver": 1,
+          "reference_rows": 17455
+        }
+      }
+    },
+    "11286": {
+      "meeting_key": 1285,
+      "code": "S",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 366938,
+          "reference_driver": 1,
+          "reference_rows": 16679
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 376596,
+          "reference_driver": 1,
+          "reference_rows": 17118
+        }
+      }
+    },
+    "11287": {
+      "meeting_key": 1285,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 352044,
+          "reference_driver": 1,
+          "reference_rows": 16002
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 358138,
+          "reference_driver": 1,
+          "reference_rows": 16279
+        }
+      }
+    },
+    "11291": {
+      "meeting_key": 1285,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 759594,
+          "reference_driver": 1,
+          "reference_rows": 34527
+        },
+        "location": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 777062,
+          "reference_driver": 1,
+          "reference_rows": 35321
+        }
+      }
+    },
+    "11292": {
+      "meeting_key": 1286,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 384538,
+          "reference_driver": 1,
+          "reference_rows": 17479
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 399432,
+          "reference_driver": 1,
+          "reference_rows": 18156
+        }
+      }
+    },
+    "11293": {
+      "meeting_key": 1286,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 390346,
+          "reference_driver": 1,
+          "reference_rows": 17743
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 404426,
+          "reference_driver": 1,
+          "reference_rows": 18383
+        }
+      }
+    },
+    "11294": {
+      "meeting_key": 1286,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 385748,
+          "reference_driver": 1,
+          "reference_rows": 17534
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 393756,
+          "reference_driver": 1,
+          "reference_rows": 17898
+        }
+      }
+    },
+    "11295": {
+      "meeting_key": 1286,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 408474,
+          "reference_driver": 1,
+          "reference_rows": 18567
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 416724,
+          "reference_driver": 1,
+          "reference_rows": 18942
+        }
+      }
+    },
+    "11299": {
+      "meeting_key": 1286,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 984918,
+          "reference_driver": 1,
+          "reference_rows": 44769
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 177914,
+          "reference_driver": 1,
+          "reference_rows": 8087
+        }
+      }
+    },
+    "11300": {
+      "meeting_key": 1287,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 392414,
+          "reference_driver": 3,
+          "reference_rows": 17837
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 401126,
+          "reference_driver": 3,
+          "reference_rows": 18233
+        }
+      }
+    },
+    "11301": {
+      "meeting_key": 1287,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 397034,
+          "reference_driver": 1,
+          "reference_rows": 18046
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 405790,
+          "reference_driver": 1,
+          "reference_rows": 18443
+        }
+      }
+    },
+    "11302": {
+      "meeting_key": 1287,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 383064,
+          "reference_driver": 1,
+          "reference_rows": 17412
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 397166,
+          "reference_driver": 1,
+          "reference_rows": 18053
+        }
+      }
+    },
+    "11303": {
+      "meeting_key": 1287,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 413952,
+          "reference_driver": 1,
+          "reference_rows": 18816
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 433510,
+          "reference_driver": 1,
+          "reference_rows": 19705
+        }
+      }
+    },
+    "11307": {
+      "meeting_key": 1287,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 730730,
+          "reference_driver": 1,
+          "reference_rows": 33215
+        },
+        "location": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 747824,
+          "reference_driver": 1,
+          "reference_rows": 33992
+        }
+      }
+    },
+    "11308": {
+      "meeting_key": 1288,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 365838,
+          "reference_driver": 1,
+          "reference_rows": 16629
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 378796,
+          "reference_driver": 1,
+          "reference_rows": 17218
+        }
+      }
+    },
+    "11309": {
+      "meeting_key": 1288,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 389840,
+          "reference_driver": 1,
+          "reference_rows": 17720
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 405174,
+          "reference_driver": 1,
+          "reference_rows": 18417
+        }
+      }
+    },
+    "11310": {
+      "meeting_key": 1288,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 385647,
+          "reference_driver": 1,
+          "reference_rows": 17529
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 389532,
+          "reference_driver": 1,
+          "reference_rows": 17706
+        }
+      }
+    },
+    "11311": {
+      "meeting_key": 1288,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 369358,
+          "reference_driver": 1,
+          "reference_rows": 16789
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 377520,
+          "reference_driver": 1,
+          "reference_rows": 17160
+        }
+      }
+    },
+    "11315": {
+      "meeting_key": 1288,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 714604,
+          "reference_driver": 1,
+          "reference_rows": 32482
+        },
+        "location": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 733502,
+          "reference_driver": 1,
+          "reference_rows": 33341
+        }
+      }
+    },
+    "11316": {
+      "meeting_key": 1289,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 405636,
+          "reference_driver": 1,
+          "reference_rows": 18438
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 418176,
+          "reference_driver": 1,
+          "reference_rows": 19008
+        }
+      }
+    },
+    "11317": {
+      "meeting_key": 1289,
+      "code": "SQ",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 290510,
+          "reference_driver": 1,
+          "reference_rows": 13205
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 298518,
+          "reference_driver": 1,
+          "reference_rows": 13569
+        }
+      }
+    },
+    "11321": {
+      "meeting_key": 1289,
+      "code": "S",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 366542,
+          "reference_driver": 1,
+          "reference_rows": 16661
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 390192,
+          "reference_driver": 1,
+          "reference_rows": 17736
+        }
+      }
+    },
+    "11322": {
+      "meeting_key": 1289,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 411180,
+          "reference_driver": 1,
+          "reference_rows": 18690
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 421806,
+          "reference_driver": 1,
+          "reference_rows": 19173
+        }
+      }
+    },
+    "11326": {
+      "meeting_key": 1289,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 737264,
+          "reference_driver": 1,
+          "reference_rows": 33512
+        },
+        "location": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 768191,
+          "reference_driver": 1,
+          "reference_rows": 34529
+        }
+      }
+    },
+    "11327": {
+      "meeting_key": 1290,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 390148,
+          "reference_driver": 1,
+          "reference_rows": 17734
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 401874,
+          "reference_driver": 1,
+          "reference_rows": 18267
+        }
+      }
+    },
+    "11328": {
+      "meeting_key": 1290,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 395736,
+          "reference_driver": 1,
+          "reference_rows": 17988
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 415470,
+          "reference_driver": 1,
+          "reference_rows": 18885
+        }
+      }
+    },
+    "11329": {
+      "meeting_key": 1290,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 403832,
+          "reference_driver": 1,
+          "reference_rows": 18356
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 413270,
+          "reference_driver": 1,
+          "reference_rows": 18794
+        }
+      }
+    },
+    "11330": {
+      "meeting_key": 1290,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 427966,
+          "reference_driver": 1,
+          "reference_rows": 19453
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 440682,
+          "reference_driver": 1,
+          "reference_rows": 20031
+        }
+      }
+    },
+    "11334": {
+      "meeting_key": 1290,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 707988,
+          "reference_driver": 1,
+          "reference_rows": 32187
+        },
+        "location": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 726689,
+          "reference_driver": 1,
+          "reference_rows": 32771
+        }
+      }
+    },
+    "11335": {
+      "meeting_key": 1291,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 371338,
+          "reference_driver": 1,
+          "reference_rows": 16879
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 393976,
+          "reference_driver": 1,
+          "reference_rows": 17908
+        }
+      }
+    },
+    "11336": {
+      "meeting_key": 1291,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 399300,
+          "reference_driver": 1,
+          "reference_rows": 18150
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 403508,
+          "reference_driver": 1,
+          "reference_rows": 18341
+        }
+      }
+    },
+    "11337": {
+      "meeting_key": 1291,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 387398,
+          "reference_driver": 1,
+          "reference_rows": 17609
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 403092,
+          "reference_driver": 1,
+          "reference_rows": 18322
+        }
+      }
+    },
+    "11338": {
+      "meeting_key": 1291,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 376046,
+          "reference_driver": 1,
+          "reference_rows": 17093
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 384744,
+          "reference_driver": 1,
+          "reference_rows": 17488
+        }
+      }
+    },
+    "11342": {
+      "meeting_key": 1291,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 765226,
+          "reference_driver": 1,
+          "reference_rows": 34783
+        },
+        "location": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 783772,
+          "reference_driver": 1,
+          "reference_rows": 35626
+        }
+      }
+    },
+    "11343": {
+      "meeting_key": 1292,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 402578,
+          "reference_driver": 1,
+          "reference_rows": 18299
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 410278,
+          "reference_driver": 1,
+          "reference_rows": 18649
+        }
+      }
+    },
+    "11344": {
+      "meeting_key": 1292,
+      "code": "SQ",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 278586,
+          "reference_driver": 1,
+          "reference_rows": 12663
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 288750,
+          "reference_driver": 1,
+          "reference_rows": 13125
+        }
+      }
+    },
+    "11348": {
+      "meeting_key": 1292,
+      "code": "S",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 385682,
+          "reference_driver": 1,
+          "reference_rows": 17531
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 378356,
+          "reference_driver": 1,
+          "reference_rows": 17198
+        }
+      }
+    },
+    "11349": {
+      "meeting_key": 1292,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 361658,
+          "reference_driver": 1,
+          "reference_rows": 16439
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 349690,
+          "reference_driver": 1,
+          "reference_rows": 15895
+        }
+      }
+    },
+    "11353": {
+      "meeting_key": 1292,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 9,
+          "status": "complete_time_windows",
+          "rows": 942040,
+          "reference_driver": 1,
+          "reference_rows": 42820
+        },
+        "location": {
+          "windows_downloaded": 9,
+          "status": "complete_time_windows",
+          "rows": 930710,
+          "reference_driver": 1,
+          "reference_rows": 42305
+        }
+      }
+    },
+    "11354": {
+      "meeting_key": 1293,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 384076,
+          "reference_driver": 1,
+          "reference_rows": 17458
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 397122,
+          "reference_driver": 1,
+          "reference_rows": 18051
+        }
+      }
+    },
+    "11355": {
+      "meeting_key": 1293,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 401082,
+          "reference_driver": 1,
+          "reference_rows": 18231
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 411268,
+          "reference_driver": 1,
+          "reference_rows": 18694
+        }
+      }
+    },
+    "11356": {
+      "meeting_key": 1293,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 388520,
+          "reference_driver": 1,
+          "reference_rows": 17660
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 399608,
+          "reference_driver": 1,
+          "reference_rows": 18164
+        }
+      }
+    },
+    "11357": {
+      "meeting_key": 1293,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 371998,
+          "reference_driver": 1,
+          "reference_rows": 16909
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 381810,
+          "reference_driver": 1,
+          "reference_rows": 17355
+        }
+      }
+    },
+    "11361": {
+      "meeting_key": 1293,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 848694,
+          "reference_driver": 1,
+          "reference_rows": 38577
+        },
+        "location": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 861777,
+          "reference_driver": 1,
+          "reference_rows": 39144
+        }
+      }
+    },
+    "11362": {
+      "meeting_key": 1294,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 400466,
+          "reference_driver": 1,
+          "reference_rows": 18203
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 409266,
+          "reference_driver": 1,
+          "reference_rows": 18603
+        }
+      }
+    },
+    "11363": {
+      "meeting_key": 1294,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 418000,
+          "reference_driver": 1,
+          "reference_rows": 19000
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 412962,
+          "reference_driver": 1,
+          "reference_rows": 18771
+        }
+      }
+    },
+    "11364": {
+      "meeting_key": 1294,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 6,
+          "status": "complete_time_windows",
+          "rows": 471014,
+          "reference_driver": 1,
+          "reference_rows": 21409
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 475494,
+          "reference_driver": 27,
+          "reference_rows": 21613
+        }
+      }
+    },
+    "11365": {
+      "meeting_key": 1294,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 385154,
+          "reference_driver": 1,
+          "reference_rows": 17507
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 390254,
+          "reference_driver": 1,
+          "reference_rows": 17738
+        }
+      }
+    },
+    "11369": {
+      "meeting_key": 1294,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 786720,
+          "reference_driver": 1,
+          "reference_rows": 35556
+        },
+        "location": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 797900,
+          "reference_driver": 1,
+          "reference_rows": 36042
+        }
+      }
+    },
+    "11370": {
+      "meeting_key": 1295,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 387750,
+          "reference_driver": 1,
+          "reference_rows": 17625
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 403898,
+          "reference_driver": 1,
+          "reference_rows": 18359
+        }
+      }
+    },
+    "11371": {
+      "meeting_key": 1295,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 412258,
+          "reference_driver": 1,
+          "reference_rows": 18739
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 423764,
+          "reference_driver": 1,
+          "reference_rows": 19262
+        }
+      }
+    },
+    "11372": {
+      "meeting_key": 1295,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 385154,
+          "reference_driver": 1,
+          "reference_rows": 17507
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 395582,
+          "reference_driver": 1,
+          "reference_rows": 17981
+        }
+      }
+    },
+    "11373": {
+      "meeting_key": 1295,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 392414,
+          "reference_driver": 1,
+          "reference_rows": 17837
+        },
+        "location": {
+          "windows_downloaded": 3,
+          "status": "complete_time_windows",
+          "rows": 405526,
+          "reference_driver": 1,
+          "reference_rows": 18433
+        }
+      }
+    },
+    "11377": {
+      "meeting_key": 1295,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 794354,
+          "reference_driver": 1,
+          "reference_rows": 36107
+        },
+        "location": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 829536,
+          "reference_driver": 1,
+          "reference_rows": 37095
+        }
+      }
+    },
+    "11727": {
+      "meeting_key": 1308,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 394460,
+          "reference_driver": 1,
+          "reference_rows": 17930
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 402380,
+          "reference_driver": 1,
+          "reference_rows": 18290
+        }
+      }
+    },
+    "11728": {
+      "meeting_key": 1308,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 410212,
+          "reference_driver": 1,
+          "reference_rows": 18646
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 419056,
+          "reference_driver": 1,
+          "reference_rows": 19048
+        }
+      }
+    },
+    "11729": {
+      "meeting_key": 1308,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 396792,
+          "reference_driver": 1,
+          "reference_rows": 18036
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 403942,
+          "reference_driver": 1,
+          "reference_rows": 18361
+        }
+      }
+    },
+    "11730": {
+      "meeting_key": 1308,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 363836,
+          "reference_driver": 1,
+          "reference_rows": 16538
+        },
+        "location": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 373648,
+          "reference_driver": 1,
+          "reference_rows": 16984
+        }
+      }
+    },
+    "11731": {
+      "meeting_key": 1308,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 10,
+          "status": "complete_time_windows",
+          "rows": 1235960,
+          "reference_driver": 1,
+          "reference_rows": 56180
+        },
+        "location": {
+          "windows_downloaded": 10,
+          "status": "complete_time_windows",
+          "rows": 1275963,
+          "reference_driver": 1,
+          "reference_rows": 57288
+        }
+      }
+    },
+    "11378": {
+      "meeting_key": 1296,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 412302,
+          "reference_driver": 1,
+          "reference_rows": 18741
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 417208,
+          "reference_driver": 1,
+          "reference_rows": 18964
+        }
+      }
+    },
+    "11379": {
+      "meeting_key": 1296,
+      "code": "SQ",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 417318,
+          "reference_driver": 1,
+          "reference_rows": 18969
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 425678,
+          "reference_driver": 1,
+          "reference_rows": 19349
+        }
+      }
+    },
+    "11383": {
+      "meeting_key": 1296,
+      "code": "S",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 620444,
+          "reference_driver": 1,
+          "reference_rows": 28202
+        },
+        "location": {
+          "windows_downloaded": 7,
+          "status": "complete_time_windows",
+          "rows": 632888,
+          "reference_driver": 1,
+          "reference_rows": 28388
+        }
+      }
+    },
+    "11384": {
+      "meeting_key": 1296,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 4,
+          "status": "complete_time_windows",
+          "rows": 378334,
+          "reference_driver": 1,
+          "reference_rows": 17197
+        },
+        "location": {
+          "windows_downloaded": 5,
+          "status": "complete_time_windows",
+          "rows": 388146,
+          "reference_driver": 1,
+          "reference_rows": 17643
+        }
+      }
+    },
+    "11388": {
+      "meeting_key": 1296,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 799898,
+          "reference_driver": 1,
+          "reference_rows": 36359
+        },
+        "location": {
+          "windows_downloaded": 8,
+          "status": "complete_time_windows",
+          "rows": 801460,
+          "reference_driver": 1,
+          "reference_rows": 36430
+        }
+      }
+    },
+    "11389": {
+      "meeting_key": 1297,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11390": {
+      "meeting_key": 1297,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11391": {
+      "meeting_key": 1297,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11392": {
+      "meeting_key": 1297,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11396": {
+      "meeting_key": 1297,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11397": {
+      "meeting_key": 1298,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11398": {
+      "meeting_key": 1298,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11399": {
+      "meeting_key": 1298,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11400": {
+      "meeting_key": 1298,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11404": {
+      "meeting_key": 1298,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11405": {
+      "meeting_key": 1299,
+      "code": "FP1",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11406": {
+      "meeting_key": 1299,
+      "code": "FP2",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11407": {
+      "meeting_key": 1299,
+      "code": "FP3",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11408": {
+      "meeting_key": 1299,
+      "code": "Q",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    },
+    "11412": {
+      "meeting_key": 1299,
+      "code": "R",
+      "endpoints": {
+        "car_data": {
+          "status": "existing_aggregate"
+        },
+        "location": {
+          "status": "existing_aggregate"
+        }
+      }
+    }
+  },
+  "updated_at": "2026-11-17T16:32:29.562074+00:00",
+  "counts": {
+    "complete": 9,
+    "complete_time_windows": 161,
+    "existing_aggregate": 30
+  }
+}

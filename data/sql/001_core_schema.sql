@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS user_profiles (
   profile_locked_until TIMESTAMPTZ,
   favorite_constructor_id TEXT REFERENCES constructors(id),
   favorite_driver_id TEXT REFERENCES drivers(id),
-  avatar_type TEXT NOT NULL CHECK (avatar_type IN ('constructor_logo', 'driver_image')) DEFAULT 'constructor_logo',
+  avatar_type TEXT NOT NULL CHECK (avatar_type IN ('helmet', 'pit-wall', 'timing', 'constructor_logo', 'driver_image')) DEFAULT 'helmet',
   onboarding_completed BOOLEAN NOT NULL DEFAULT FALSE,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()

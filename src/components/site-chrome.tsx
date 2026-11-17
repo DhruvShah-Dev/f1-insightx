@@ -76,7 +76,12 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link to="/account" className="ix-account" activeProps={{ className: "is-active" }}>
+        <Link
+          to="/account"
+          className="ix-account"
+          activeProps={{ className: "is-active" }}
+          aria-label="Account"
+        >
           <CircleUserRound aria-hidden="true" /><span>Account</span>
         </Link>
       </div>

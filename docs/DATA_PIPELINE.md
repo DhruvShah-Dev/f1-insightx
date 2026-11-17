@@ -49,12 +49,9 @@ python validate_telemetry_features.py
 
 Telemetry features are derived offline from provider-neutral telemetry and location parquet. New traces use cleaned OpenF1 car/location samples; reviewed historical geometry remains labelled `fastf1_legacy`.
 
-For a completed race-week backfill, ingest the missing FastF1 sessions with
-telemetry first. The Azerbaijan GP round 15 refresh used:
-
-```bash
-python data/fastf1_ingest.py --season 2026 --round 15 --sessions FP1 FP2 FP3 Q R --include-telemetry --only-missing --retry-failed --max-retries 3 --sleep-seconds 2 --completion-buffer-minutes 30
-```
+For new 2026 sessions, backfill from OpenF1 before building canonical sessions.
+The historical FastF1 ingest instructions live in
+[`data_pipeline/README.md`](../data_pipeline/README.md).
 
 ## Strategy Modeling Views
 
@@ -102,8 +99,8 @@ It does not rebuild heavy data. It only inspects existing artifacts and quality 
 python data/fetch_openf1_data.py --start-season 2023 --end-season 2026 --session-types Q R --only-missing
 python data/build_openf1_quality_report.py
 python validate_openf1_quality.py
-python build_canonical_fastf1.py --start-season 2020 --end-season 2026
-python validate_canonical_fastf1.py
+python build_canonical_sessions.py --start-season 2020 --end-season 2026
+python validate_canonical_sessions.py
 python build_telemetry_features.py --start-season 2020 --end-season 2026
 python validate_telemetry_features.py
 python data/build_strategy_lab_layers.py
@@ -121,10 +118,9 @@ python validate_season_state.py
 python data/load_supabase.py
 ```
 
-As of the 2026 Azerbaijan Grand Prix refresh, the production product tables are
-current through round 15 for race analysis, Driver vs Driver, analytics traces,
-strategy lab, and telemetry comparison surfaces. The next race-week view points
-at round 16, Bahrain Grand Prix in Malaysia at Sepang.
+For current product freshness, inspect [`data/season_state.json`](../data/season_state.json)
+and the quality reports under `data/reports/`. The local 2026 source archive has
+separate [download coverage](../data/reports/openf1_telemetry_2026_download.json).
 
 ## Git Policy
 

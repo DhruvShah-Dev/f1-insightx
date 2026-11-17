@@ -9,6 +9,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data"))
 
 from f1_insightx_data.telemetry_features import segment_profiles, telemetry_lap_summary
+from build_analytics_views import build_segment_map, session_id_columns
 from build_strategy_lab_layers import build_track_archetype_table, telemetry_strategy_signals, track_archetype_from_features
 
 
@@ -54,6 +55,22 @@ class TelemetryFeatureTests(unittest.TestCase):
 
         self.assertFalse(energy.empty)
         self.assertTrue(energy["label"].str.contains("not true ERS", case=False).any())
+
+    def test_segment_map_builds_ordered_normalized_proxy_windows(self) -> None:
+        trace = self.sample_trace()
+        profiles = segment_profiles(trace)
+        laps = session_id_columns(telemetry_lap_summary(trace))
+        braking = session_id_columns(profiles["corner_braking"])
+        throttle = session_id_columns(profiles["corner_throttle"])
+
+        segment_map = build_segment_map(laps, braking, throttle)
+
+        self.assertFalse(segment_map.empty)
+        self.assertTrue((segment_map["normalized_start"] <= segment_map["normalized_apex"]).all())
+        self.assertTrue((segment_map["normalized_apex"] <= segment_map["normalized_end"]).all())
+        for column in ["normalized_start", "normalized_apex", "normalized_end", "confidence"]:
+            self.assertTrue(((segment_map[column] >= 0) & (segment_map[column] <= 1)).all())
+        self.assertTrue(segment_map["approximation_note"].str.contains("not an official corner", case=False).all())
 
     def test_strategy_signals_are_generated_and_bounded(self) -> None:
         trace = self.sample_trace()

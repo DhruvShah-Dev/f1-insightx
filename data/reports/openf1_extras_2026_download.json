@@ -1,0 +1,1074 @@
+{
+  "checked_at": "2026-11-17T16:33:09.866556+00:00",
+  "season": 2026,
+  "counts": {
+    "unavailable": 23,
+    "downloaded": 129
+  },
+  "records": [
+    {
+      "session_key": 11227,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11227'"
+    },
+    {
+      "session_key": 11228,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 1
+    },
+    {
+      "session_key": 11229,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 1
+    },
+    {
+      "session_key": 11230,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11230'"
+    },
+    {
+      "session_key": 11234,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11234'"
+    },
+    {
+      "session_key": 11234,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11234,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11235,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11235'"
+    },
+    {
+      "session_key": 11236,
+      "session": "SQ",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11236'"
+    },
+    {
+      "session_key": 11240,
+      "session": "S",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11240'"
+    },
+    {
+      "session_key": 11240,
+      "session": "S",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11240,
+      "session": "S",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11241,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11241'"
+    },
+    {
+      "session_key": 11245,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11245'"
+    },
+    {
+      "session_key": 11245,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11245,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11246,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11246'"
+    },
+    {
+      "session_key": 11247,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11247'"
+    },
+    {
+      "session_key": 11248,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11248'"
+    },
+    {
+      "session_key": 11249,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11249'"
+    },
+    {
+      "session_key": 11253,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11253'"
+    },
+    {
+      "session_key": 11253,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11253,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11270,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11270'"
+    },
+    {
+      "session_key": 11271,
+      "session": "SQ",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11271'"
+    },
+    {
+      "session_key": 11275,
+      "session": "S",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11275'"
+    },
+    {
+      "session_key": 11275,
+      "session": "S",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11275,
+      "session": "S",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11276,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11276'"
+    },
+    {
+      "session_key": 11280,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11280'"
+    },
+    {
+      "session_key": 11280,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11280,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11281,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11281'"
+    },
+    {
+      "session_key": 11282,
+      "session": "SQ",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11282'"
+    },
+    {
+      "session_key": 11286,
+      "session": "S",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 13
+    },
+    {
+      "session_key": 11286,
+      "session": "S",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11286,
+      "session": "S",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11287,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 19
+    },
+    {
+      "session_key": 11291,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 33
+    },
+    {
+      "session_key": 11291,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11291,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11292,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11292'"
+    },
+    {
+      "session_key": 11293,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11293'"
+    },
+    {
+      "session_key": 11294,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11295,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 18
+    },
+    {
+      "session_key": 11299,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 36
+    },
+    {
+      "session_key": 11299,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11299,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11300,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 6
+    },
+    {
+      "session_key": 11301,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 6
+    },
+    {
+      "session_key": 11302,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 8
+    },
+    {
+      "session_key": 11303,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 8
+    },
+    {
+      "session_key": 11307,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 40
+    },
+    {
+      "session_key": 11307,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11307,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11308,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 13
+    },
+    {
+      "session_key": 11309,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/team_radio?session_key=11309'"
+    },
+    {
+      "session_key": 11310,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 12
+    },
+    {
+      "session_key": 11311,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 12
+    },
+    {
+      "session_key": 11315,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11315,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11315,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11316,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 9
+    },
+    {
+      "session_key": 11317,
+      "session": "SQ",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 7
+    },
+    {
+      "session_key": 11321,
+      "session": "S",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 4
+    },
+    {
+      "session_key": 11321,
+      "session": "S",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11321,
+      "session": "S",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11322,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 12
+    },
+    {
+      "session_key": 11326,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 20
+    },
+    {
+      "session_key": 11326,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11326,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11327,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 4
+    },
+    {
+      "session_key": 11328,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 4
+    },
+    {
+      "session_key": 11329,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 10
+    },
+    {
+      "session_key": 11330,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 5
+    },
+    {
+      "session_key": 11334,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 29
+    },
+    {
+      "session_key": 11334,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11334,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11335,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 15
+    },
+    {
+      "session_key": 11336,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 7
+    },
+    {
+      "session_key": 11337,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 7
+    },
+    {
+      "session_key": 11338,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 17
+    },
+    {
+      "session_key": 11342,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 36
+    },
+    {
+      "session_key": 11342,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11342,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11343,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 8
+    },
+    {
+      "session_key": 11344,
+      "session": "SQ",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 14
+    },
+    {
+      "session_key": 11348,
+      "session": "S",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 6
+    },
+    {
+      "session_key": 11348,
+      "session": "S",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11348,
+      "session": "S",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11349,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 7
+    },
+    {
+      "session_key": 11353,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 31
+    },
+    {
+      "session_key": 11353,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11353,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11354,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 7
+    },
+    {
+      "session_key": 11355,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 9
+    },
+    {
+      "session_key": 11356,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 14
+    },
+    {
+      "session_key": 11357,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 13
+    },
+    {
+      "session_key": 11361,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 24
+    },
+    {
+      "session_key": 11361,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11361,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11362,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11363,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 17
+    },
+    {
+      "session_key": 11364,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 6
+    },
+    {
+      "session_key": 11365,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 15
+    },
+    {
+      "session_key": 11369,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 26
+    },
+    {
+      "session_key": 11369,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11369,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11370,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11371,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 14
+    },
+    {
+      "session_key": 11372,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 22
+    },
+    {
+      "session_key": 11373,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 20
+    },
+    {
+      "session_key": 11377,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 31
+    },
+    {
+      "session_key": 11377,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11377,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11727,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 7
+    },
+    {
+      "session_key": 11728,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 9
+    },
+    {
+      "session_key": 11729,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 4
+    },
+    {
+      "session_key": 11730,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 18
+    },
+    {
+      "session_key": 11731,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 40
+    },
+    {
+      "session_key": 11731,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11731,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11378,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 10
+    },
+    {
+      "session_key": 11379,
+      "session": "SQ",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 14
+    },
+    {
+      "session_key": 11383,
+      "session": "S",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 20
+    },
+    {
+      "session_key": 11383,
+      "session": "S",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11383,
+      "session": "S",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11384,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 12
+    },
+    {
+      "session_key": 11388,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 32
+    },
+    {
+      "session_key": 11388,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11388,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11389,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 8
+    },
+    {
+      "session_key": 11390,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 12
+    },
+    {
+      "session_key": 11391,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 19
+    },
+    {
+      "session_key": 11392,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 18
+    },
+    {
+      "session_key": 11396,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 36
+    },
+    {
+      "session_key": 11396,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 23
+    },
+    {
+      "session_key": 11396,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11397,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 17
+    },
+    {
+      "session_key": 11398,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 13
+    },
+    {
+      "session_key": 11399,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 10
+    },
+    {
+      "session_key": 11400,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 14
+    },
+    {
+      "session_key": 11404,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 27
+    },
+    {
+      "session_key": 11404,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 24
+    },
+    {
+      "session_key": 11404,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    },
+    {
+      "session_key": 11405,
+      "session": "FP1",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 14
+    },
+    {
+      "session_key": 11406,
+      "session": "FP2",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 12
+    },
+    {
+      "session_key": 11407,
+      "session": "FP3",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 13
+    },
+    {
+      "session_key": 11408,
+      "session": "Q",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 33
+    },
+    {
+      "session_key": 11412,
+      "session": "R",
+      "endpoint": "team_radio",
+      "status": "downloaded",
+      "rows": 30
+    },
+    {
+      "session_key": 11412,
+      "session": "R",
+      "endpoint": "championship_drivers",
+      "status": "downloaded",
+      "rows": 25
+    },
+    {
+      "session_key": 11412,
+      "session": "R",
+      "endpoint": "championship_teams",
+      "status": "downloaded",
+      "rows": 11
+    }
+  ]
+}

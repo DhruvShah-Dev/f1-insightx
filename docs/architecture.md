@@ -1,6 +1,6 @@
 # Architecture
 
-F1 InsightX is a server-first TanStack Start product backed by offline FastF1 data builders and Supabase auth/profile storage. The runtime consumes compact product views; raw telemetry, canonical rebuilds, and heavy generated artifacts stay outside request handling.
+F1 InsightX is a server-first TanStack Start product backed by offline OpenF1 and Jolpica builders, legacy FastF1 evidence, and Supabase auth/profile storage. The runtime consumes compact product views; raw telemetry, canonical rebuilds, and heavy generated artifacts stay outside request handling.
 
 ## Product Surfaces
 
@@ -15,7 +15,7 @@ Fantasy work is intentionally hidden from the public product until it is rebuilt
 ## Runtime Flow
 
 1. A user opens a TanStack Start route.
-2. Server functions load small curated/product views from Supabase when runtime Supabase env vars are present, or from the bundled generated snapshot when `F1_INSIGHTX_PUBLIC_DATA_SOURCE=local` is set.
+2. Server functions load small curated/product views from Supabase when runtime Supabase env vars are present, with a bundled snapshot fallback. `F1_INSIGHTX_PUBLIC_DATA_SOURCE=local` forces that fallback.
 3. Client components only manage interaction state such as form controls, synchronized telemetry focus, picks, and auth/profile forms.
 4. Server functions return bounded product payloads and never parse raw FastF1 telemetry at runtime.
 5. Product surfaces display data quality, proxy wording, and unavailable states instead of inventing missing precision.
@@ -23,8 +23,8 @@ Fantasy work is intentionally hidden from the public product until it is rebuilt
 ## Data Flow
 
 ```text
-FastF1 archive
-  -> staged session extracts
+Jolpica reference + OpenF1 session archive + legacy FastF1 evidence
+  -> staged, provider-neutral session extracts
   -> canonical laps/results/stints/weather
   -> telemetry and deterministic feature layers
   -> strategy modeling, analytics/Compare, Race Week, and Analysis product views

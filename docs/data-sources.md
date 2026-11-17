@@ -112,6 +112,9 @@ Reference:
 
 ## Modeling principle
 
-Historical structured data should be trusted first. Rich telemetry and weather features are now ingested through FastF1, but should remain additive rather than mandatory for every product surface.
+Historical structured data should be trusted first. OpenF1 telemetry and weather
+are ingested offline for enriched surfaces; legacy FastF1 evidence remains for
+earlier releases. Rich telemetry should remain additive rather than mandatory
+for every product surface.
 
 OpenF1 should be used as a consolidation source, not as a browser runtime dependency. Snapshot it offline, generate coverage/source-agreement reports, then let product builders consume compact CSV outputs.

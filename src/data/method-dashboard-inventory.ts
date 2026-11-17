@@ -12,12 +12,12 @@ export type MethodDashboardInventoryFile = {
 
 export const methodDashboardInventory = [
   {
-    path: "data/analytics/analytics_braking_comparison.csv",
-    category: "analytics",
-    table: "analytics_braking_comparison",
-    rows: 81423,
-    columns: 11,
-    header: [
+    "path": "data/analytics/analytics_braking_comparison.csv",
+    "category": "analytics",
+    "table": "analytics_braking_comparison",
+    "rows": 145199,
+    "columns": 11,
+    "header": [
       "session_id",
       "segment_id",
       "driver_a",
@@ -28,16 +28,16 @@ export const methodDashboardInventory = [
       "late_brake_delta",
       "brake_intensity_delta",
       "confidence",
-      "favorable_driver",
-    ],
+      "favorable_driver"
+    ]
   },
   {
-    path: "data/analytics/analytics_driver_comparison.csv",
-    category: "analytics",
-    table: "analytics_driver_comparison",
-    rows: 10156,
-    columns: 17,
-    header: [
+    "path": "data/analytics/analytics_driver_comparison.csv",
+    "category": "analytics",
+    "table": "analytics_driver_comparison",
+    "rows": 18078,
+    "columns": 17,
+    "header": [
       "session_id",
       "driver_a",
       "driver_b",
@@ -54,16 +54,16 @@ export const methodDashboardInventory = [
       "energy_proxy_delta",
       "confidence",
       "weakest_assumption",
-      "strategy_relevance_note",
-    ],
+      "strategy_relevance_note"
+    ]
   },
   {
-    path: "data/analytics/analytics_energy_proxy_comparison.csv",
-    category: "analytics",
-    table: "analytics_energy_proxy_comparison",
-    rows: 69589,
-    columns: 10,
-    header: [
+    "path": "data/analytics/analytics_energy_proxy_comparison.csv",
+    "category": "analytics",
+    "table": "analytics_energy_proxy_comparison",
+    "rows": 125212,
+    "columns": 10,
+    "header": [
       "session_id",
       "segment_id",
       "driver_a",
@@ -73,16 +73,16 @@ export const methodDashboardInventory = [
       "clipping_proxy_delta",
       "recovery_zone_delta",
       "confidence",
-      "proxy_note",
-    ],
+      "proxy_note"
+    ]
   },
   {
-    path: "data/analytics/analytics_lap_pace_driver.csv",
-    category: "analytics",
-    table: "analytics_lap_pace_driver",
-    rows: 15155,
-    columns: 21,
-    header: [
+    "path": "data/analytics/analytics_lap_pace_driver.csv",
+    "category": "analytics",
+    "table": "analytics_lap_pace_driver",
+    "rows": 21651,
+    "columns": 21,
+    "header": [
       "session_id",
       "driver",
       "team",
@@ -103,16 +103,16 @@ export const methodDashboardInventory = [
       "drs_window_proxy",
       "confidence",
       "evidence_type",
-      "traffic_proxy_note",
-    ],
+      "traffic_proxy_note"
+    ]
   },
   {
-    path: "data/analytics/analytics_segment_comparison.csv",
-    category: "analytics",
-    table: "analytics_segment_comparison",
-    rows: 81423,
-    columns: 26,
-    header: [
+    "path": "data/analytics/analytics_segment_comparison.csv",
+    "category": "analytics",
+    "table": "analytics_segment_comparison",
+    "rows": 145199,
+    "columns": 26,
+    "header": [
       "session_id",
       "segment_id",
       "segment_kind",
@@ -138,16 +138,36 @@ export const methodDashboardInventory = [
       "exit_gear_a",
       "exit_gear_b",
       "faster_driver",
-      "confidence",
-    ],
+      "confidence"
+    ]
   },
   {
-    path: "data/analytics/analytics_session_index.csv",
-    category: "analytics",
-    table: "analytics_session_index",
-    rows: 46,
-    columns: 12,
-    header: [
+    "path": "data/analytics/analytics_segment_map.csv",
+    "category": "analytics",
+    "table": "analytics_segment_map",
+    "rows": 661,
+    "columns": 11,
+    "header": [
+      "session_id",
+      "segment_id",
+      "start_distance_m",
+      "end_distance_m",
+      "apex_distance_m",
+      "normalized_start",
+      "normalized_end",
+      "normalized_apex",
+      "confidence",
+      "boundary_method",
+      "approximation_note"
+    ]
+  },
+  {
+    "path": "data/analytics/analytics_session_index.csv",
+    "category": "analytics",
+    "table": "analytics_session_index",
+    "rows": 82,
+    "columns": 12,
+    "header": [
       "session_id",
       "season",
       "round",
@@ -159,16 +179,16 @@ export const methodDashboardInventory = [
       "telemetry_quality_mean",
       "track_archetype",
       "generated_at",
-      "build_version",
-    ],
+      "build_version"
+    ]
   },
   {
-    path: "data/analytics/analytics_straight_comparison.csv",
-    category: "analytics",
-    table: "analytics_straight_comparison",
-    rows: 69589,
-    columns: 11,
-    header: [
+    "path": "data/analytics/analytics_straight_comparison.csv",
+    "category": "analytics",
+    "table": "analytics_straight_comparison",
+    "rows": 125212,
+    "columns": 11,
+    "header": [
       "session_id",
       "segment_id",
       "driver_a",
@@ -179,16 +199,16 @@ export const methodDashboardInventory = [
       "drs_active_delta_pct",
       "clipping_proxy_delta",
       "confidence",
-      "favorable_driver",
-    ],
+      "favorable_driver"
+    ]
   },
   {
-    path: "data/analytics/analytics_throttle_comparison.csv",
-    category: "analytics",
-    table: "analytics_throttle_comparison",
-    rows: 81423,
-    columns: 9,
-    header: [
+    "path": "data/analytics/analytics_throttle_comparison.csv",
+    "category": "analytics",
+    "table": "analytics_throttle_comparison",
+    "rows": 145199,
+    "columns": 9,
+    "header": [
       "session_id",
       "segment_id",
       "driver_a",
@@ -197,16 +217,16 @@ export const methodDashboardInventory = [
       "full_throttle_exit_delta_m",
       "traction_exit_delta",
       "confidence",
-      "favorable_driver",
-    ],
+      "favorable_driver"
+    ]
   },
   {
-    path: "data/analytics/analytics_track_summary.csv",
-    category: "analytics",
-    table: "analytics_track_summary",
-    rows: 46,
-    columns: 8,
-    header: [
+    "path": "data/analytics/analytics_track_summary.csv",
+    "category": "analytics",
+    "table": "analytics_track_summary",
+    "rows": 82,
+    "columns": 8,
+    "header": [
       "session_id",
       "track_archetype",
       "straight_line_weight",
@@ -214,32 +234,31 @@ export const methodDashboardInventory = [
       "traction_weight",
       "degradation_weight",
       "track_position_weight",
-      "archetype_confidence",
-    ],
+      "archetype_confidence"
+    ]
   },
   {
-    path: "data/canonical_fastf1/drivers_canonical.csv",
-    category: "canonical_fastf1",
-    table: "drivers_canonical",
-    rows: 31,
-    columns: 6,
-    header: ["driver", "full_name", "driver_number", "team", "first_season", "last_season"],
+    "path": "data/canonical_sessions/drivers_canonical.csv",
+    "category": "canonical_sessions",
+    "table": "drivers_canonical",
+    "rows": 36,
+    "columns": 6,
+    "header": [
+      "driver",
+      "full_name",
+      "driver_number",
+      "team",
+      "first_season",
+      "last_season"
+    ]
   },
   {
-    path: "data/canonical_fastf1/event_entries.csv",
-    category: "canonical_fastf1",
-    table: "event_entries",
-    rows: 305,
-    columns: 5,
-    header: ["id", "race_id", "driver_id", "constructor_id", "source_label"],
-  },
-  {
-    path: "data/canonical_fastf1/laps_canonical.csv",
-    category: "canonical_fastf1",
-    table: "laps_canonical",
-    rows: 30806,
-    columns: 32,
-    header: [
+    "path": "data/canonical_sessions/laps_canonical.csv",
+    "category": "canonical_sessions",
+    "table": "laps_canonical",
+    "rows": 50491,
+    "columns": 34,
+    "header": [
       "session_id",
       "season",
       "round",
@@ -272,15 +291,17 @@ export const methodDashboardInventory = [
       "rainfall",
       "wind_speed_mps",
       "wind_direction_deg",
-    ],
+      "source_provider",
+      "source_label"
+    ]
   },
   {
-    path: "data/canonical_fastf1/results_canonical.csv",
-    category: "canonical_fastf1",
-    table: "results_canonical",
-    rows: 1122,
-    columns: 20,
-    header: [
+    "path": "data/canonical_sessions/results_canonical.csv",
+    "category": "canonical_sessions",
+    "table": "results_canonical",
+    "rows": 1847,
+    "columns": 23,
+    "header": [
       "session_id",
       "session_code",
       "event_name",
@@ -301,101 +322,18 @@ export const methodDashboardInventory = [
       "time",
       "status",
       "points",
-    ],
+      "source_provider",
+      "laps",
+      "source_label"
+    ]
   },
   {
-    path: "data/canonical_fastf1/session_laps.csv",
-    category: "canonical_fastf1",
-    table: "session_laps",
-    rows: 30161,
-    columns: 29,
-    header: [
-      "id",
-      "session_id",
-      "event_entry_id",
-      "race_id",
-      "driver_id",
-      "constructor_id",
-      "lap_number",
-      "stint_number",
-      "compound",
-      "tyre_life",
-      "lap_time_s",
-      "sector_1_s",
-      "sector_2_s",
-      "sector_3_s",
-      "top_speed_kph",
-      "track_status",
-      "fresh_tyre",
-      "is_personal_best",
-      "is_accurate",
-      "deleted",
-      "lap_start_time",
-      "position",
-      "air_temp_c",
-      "track_temp_c",
-      "humidity_pct",
-      "rainfall",
-      "wind_speed_mps",
-      "wind_direction_deg",
-      "source_label",
-    ],
-  },
-  {
-    path: "data/canonical_fastf1/session_results.csv",
-    category: "canonical_fastf1",
-    table: "session_results",
-    rows: 1097,
-    columns: 14,
-    header: [
-      "id",
-      "session_id",
-      "event_entry_id",
-      "race_id",
-      "driver_id",
-      "constructor_id",
-      "classification_position",
-      "grid_position",
-      "finish_position",
-      "points",
-      "status",
-      "laps_completed",
-      "fastest_lap_rank",
-      "source_label",
-    ],
-  },
-  {
-    path: "data/canonical_fastf1/session_stints.csv",
-    category: "canonical_fastf1",
-    table: "session_stints",
-    rows: 3619,
-    columns: 16,
-    header: [
-      "id",
-      "session_id",
-      "event_entry_id",
-      "race_id",
-      "driver_id",
-      "constructor_id",
-      "stint_number",
-      "compound",
-      "lap_count",
-      "mean_lap_time_s",
-      "degradation_per_lap_s",
-      "degradation_index",
-      "start_tyre_life",
-      "end_tyre_life",
-      "session_code",
-      "source_label",
-    ],
-  },
-  {
-    path: "data/canonical_fastf1/session_summary_canonical.csv",
-    category: "canonical_fastf1",
-    table: "session_summary_canonical",
-    rows: 1102,
-    columns: 24,
-    header: [
+    "path": "data/canonical_sessions/session_summary_canonical.csv",
+    "category": "canonical_sessions",
+    "table": "session_summary_canonical",
+    "rows": 1487,
+    "columns": 25,
+    "header": [
       "session_id",
       "season",
       "round",
@@ -420,55 +358,16 @@ export const methodDashboardInventory = [
       "gap_to_session_best_s",
       "pace_rank",
       "gap_to_teammate_s",
-    ],
+      "source_provider"
+    ]
   },
   {
-    path: "data/canonical_fastf1/session_weather.csv",
-    category: "canonical_fastf1",
-    table: "session_weather",
-    rows: 5222,
-    columns: 13,
-    header: [
-      "id",
-      "session_id",
-      "race_id",
-      "sample_order",
-      "sample_time",
-      "air_temp_c",
-      "track_temp_c",
-      "humidity_pct",
-      "pressure_hpa",
-      "rainfall",
-      "wind_speed_mps",
-      "wind_direction_deg",
-      "source_label",
-    ],
-  },
-  {
-    path: "data/canonical_fastf1/sessions.csv",
-    category: "canonical_fastf1",
-    table: "sessions",
-    rows: 51,
-    columns: 9,
-    header: [
-      "id",
-      "race_id",
-      "season",
-      "round",
-      "session_code",
-      "session_name",
-      "event_name",
-      "scheduled_at",
-      "source_label",
-    ],
-  },
-  {
-    path: "data/canonical_fastf1/stints_canonical.csv",
-    category: "canonical_fastf1",
-    table: "stints_canonical",
-    rows: 3708,
-    columns: 15,
-    header: [
+    "path": "data/canonical_sessions/stints_canonical.csv",
+    "category": "canonical_sessions",
+    "table": "stints_canonical",
+    "rows": 4993,
+    "columns": 16,
+    "header": [
       "session_id",
       "season",
       "round",
@@ -484,23 +383,31 @@ export const methodDashboardInventory = [
       "degradation_index",
       "start_tyre_life",
       "end_tyre_life",
-    ],
+      "source_provider"
+    ]
   },
   {
-    path: "data/curated/circuit_segment_aliases_template.csv",
-    category: "curated",
-    table: "circuit_segment_aliases_template",
-    rows: 0,
-    columns: 6,
-    header: ["circuit_id", "segment_id", "alias", "language", "source", "confidence"],
+    "path": "data/curated/circuit_segment_aliases_template.csv",
+    "category": "curated",
+    "table": "circuit_segment_aliases_template",
+    "rows": 0,
+    "columns": 6,
+    "header": [
+      "circuit_id",
+      "segment_id",
+      "alias",
+      "language",
+      "source",
+      "confidence"
+    ]
   },
   {
-    path: "data/curated/circuit_segments_template.csv",
-    category: "curated",
-    table: "circuit_segments_template",
-    rows: 0,
-    columns: 15,
-    header: [
+    "path": "data/curated/circuit_segments_template.csv",
+    "category": "curated",
+    "table": "circuit_segments_template",
+    "rows": 0,
+    "columns": 15,
+    "header": [
       "circuit_id",
       "circuit_name",
       "segment_id",
@@ -515,16 +422,16 @@ export const methodDashboardInventory = [
       "confidence",
       "source",
       "notes",
-      "verified",
-    ],
+      "verified"
+    ]
   },
   {
-    path: "data/curated/circuits.csv",
-    category: "curated",
-    table: "circuits",
-    rows: 78,
-    columns: 12,
-    header: [
+    "path": "data/curated/circuits.csv",
+    "category": "curated",
+    "table": "circuits",
+    "rows": 78,
+    "columns": 12,
+    "header": [
       "id",
       "circuit_code",
       "name",
@@ -536,16 +443,16 @@ export const methodDashboardInventory = [
       "track_length_km",
       "high_speed_bias",
       "overtake_difficulty",
-      "tire_degradation_bias",
-    ],
+      "tire_degradation_bias"
+    ]
   },
   {
-    path: "data/curated/constructor_standings.csv",
-    category: "curated",
-    table: "constructor_standings",
-    rows: 154,
-    columns: 9,
-    header: [
+    "path": "data/curated/constructor_standings.csv",
+    "category": "curated",
+    "table": "constructor_standings",
+    "rows": 460,
+    "columns": 9,
+    "header": [
       "id",
       "season",
       "round",
@@ -554,24 +461,29 @@ export const methodDashboardInventory = [
       "standing_position",
       "points",
       "wins",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/curated/constructors.csv",
-    category: "curated",
-    table: "constructors",
-    rows: 100,
-    columns: 4,
-    header: ["id", "constructor_code", "name", "nationality"],
+    "path": "data/curated/constructors.csv",
+    "category": "curated",
+    "table": "constructors",
+    "rows": 100,
+    "columns": 4,
+    "header": [
+      "id",
+      "constructor_code",
+      "name",
+      "nationality"
+    ]
   },
   {
-    path: "data/curated/driver_standings.csv",
-    category: "curated",
-    table: "driver_standings",
-    rows: 322,
-    columns: 10,
-    header: [
+    "path": "data/curated/driver_standings.csv",
+    "category": "curated",
+    "table": "driver_standings",
+    "rows": 1004,
+    "columns": 10,
+    "header": [
       "id",
       "season",
       "round",
@@ -581,16 +493,16 @@ export const methodDashboardInventory = [
       "standing_position",
       "points",
       "wins",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/curated/drivers.csv",
-    category: "curated",
-    table: "drivers",
-    rows: 100,
-    columns: 8,
-    header: [
+    "path": "data/curated/drivers.csv",
+    "category": "curated",
+    "table": "drivers",
+    "rows": 100,
+    "columns": 8,
+    "header": [
       "id",
       "driver_code",
       "permanent_number",
@@ -598,16 +510,16 @@ export const methodDashboardInventory = [
       "last_name",
       "full_name",
       "nationality",
-      "date_of_birth",
-    ],
+      "date_of_birth"
+    ]
   },
   {
-    path: "data/curated/fantasy_inputs.csv",
-    category: "curated",
-    table: "fantasy_inputs",
-    rows: 297,
-    columns: 15,
-    header: [
+    "path": "data/curated/fantasy_inputs.csv",
+    "category": "curated",
+    "table": "fantasy_inputs",
+    "rows": 99,
+    "columns": 15,
+    "header": [
       "id",
       "season",
       "round",
@@ -622,24 +534,32 @@ export const methodDashboardInventory = [
       "podium_probability",
       "top10_probability",
       "volatility_proxy",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/curated/fantasy_pricing.csv",
-    category: "curated",
-    table: "fantasy_pricing",
-    rows: 0,
-    columns: 7,
-    header: ["id", "season", "round", "entity_type", "entity_id", "price", "source_label"],
+    "path": "data/curated/fantasy_pricing.csv",
+    "category": "curated",
+    "table": "fantasy_pricing",
+    "rows": 0,
+    "columns": 7,
+    "header": [
+      "id",
+      "season",
+      "round",
+      "entity_type",
+      "entity_id",
+      "price",
+      "source_label"
+    ]
   },
   {
-    path: "data/curated/model_features.csv",
-    category: "curated",
-    table: "model_features",
-    rows: 503,
-    columns: 21,
-    header: [
+    "path": "data/curated/model_features.csv",
+    "category": "curated",
+    "table": "model_features",
+    "rows": 980,
+    "columns": 21,
+    "header": [
       "id",
       "season",
       "round",
@@ -660,16 +580,16 @@ export const methodDashboardInventory = [
       "driver_standing_position",
       "constructor_standing_position",
       "field_status",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/curated/prediction_snapshots.csv",
-    category: "curated",
-    table: "prediction_snapshots",
-    rows: 198,
-    columns: 15,
-    header: [
+    "path": "data/curated/prediction_snapshots.csv",
+    "category": "curated",
+    "table": "prediction_snapshots",
+    "rows": 66,
+    "columns": 15,
+    "header": [
       "id",
       "season",
       "round",
@@ -684,16 +604,16 @@ export const methodDashboardInventory = [
       "podium_probability",
       "top10_probability",
       "rationale",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/curated/qualifying_results.csv",
-    category: "curated",
-    table: "qualifying_results",
-    rows: 305,
-    columns: 9,
-    header: [
+    "path": "data/curated/qualifying_results.csv",
+    "category": "curated",
+    "table": "qualifying_results",
+    "rows": 914,
+    "columns": 9,
+    "header": [
       "id",
       "race_id",
       "driver_id",
@@ -702,16 +622,16 @@ export const methodDashboardInventory = [
       "q1_time_ms",
       "q2_time_ms",
       "q3_time_ms",
-      "status",
-    ],
+      "status"
+    ]
   },
   {
-    path: "data/curated/race_results.csv",
-    category: "curated",
-    table: "race_results",
-    rows: 308,
-    columns: 10,
-    header: [
+    "path": "data/curated/race_results.csv",
+    "category": "curated",
+    "table": "race_results",
+    "rows": 919,
+    "columns": 10,
+    "header": [
       "id",
       "race_id",
       "driver_id",
@@ -721,16 +641,16 @@ export const methodDashboardInventory = [
       "finish_status",
       "points",
       "laps_completed",
-      "fastest_lap_rank",
-    ],
+      "fastest_lap_rank"
+    ]
   },
   {
-    path: "data/curated/race_week_context.csv",
-    category: "curated",
-    table: "race_week_context",
-    rows: 23,
-    columns: 14,
-    header: [
+    "path": "data/curated/race_week_context.csv",
+    "category": "curated",
+    "table": "race_week_context",
+    "rows": 47,
+    "columns": 14,
+    "header": [
       "id",
       "season",
       "round",
@@ -744,16 +664,16 @@ export const methodDashboardInventory = [
       "latest_completed_season",
       "latest_completed_round",
       "latest_completed_race_name",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/curated/races.csv",
-    category: "curated",
-    table: "races",
-    rows: 23,
-    columns: 8,
-    header: [
+    "path": "data/curated/races.csv",
+    "category": "curated",
+    "table": "races",
+    "rows": 47,
+    "columns": 8,
+    "header": [
       "id",
       "season",
       "round",
@@ -761,16 +681,16 @@ export const methodDashboardInventory = [
       "official_name",
       "circuit_id",
       "scheduled_at",
-      "sprint_weekend",
-    ],
+      "sprint_weekend"
+    ]
   },
   {
-    path: "data/curated/sprint_results.csv",
-    category: "curated",
-    table: "sprint_results",
-    rows: 110,
-    columns: 9,
-    header: [
+    "path": "data/curated/sprint_results.csv",
+    "category": "curated",
+    "table": "sprint_results",
+    "rows": 252,
+    "columns": 9,
+    "header": [
       "id",
       "race_id",
       "driver_id",
@@ -779,16 +699,16 @@ export const methodDashboardInventory = [
       "finish_position",
       "finish_status",
       "points",
-      "laps_completed",
-    ],
+      "laps_completed"
+    ]
   },
   {
-    path: "data/curated/strategy_profiles.csv",
-    category: "curated",
-    table: "strategy_profiles",
-    rows: 286,
-    columns: 9,
-    header: [
+    "path": "data/curated/strategy_profiles.csv",
+    "category": "curated",
+    "table": "strategy_profiles",
+    "rows": 919,
+    "columns": 9,
+    "header": [
       "id",
       "race_id",
       "driver_id",
@@ -797,16 +717,16 @@ export const methodDashboardInventory = [
       "overtake_score",
       "reliability_score",
       "wet_weather_score",
-      "safety_car_gain_score",
-    ],
+      "safety_car_gain_score"
+    ]
   },
   {
-    path: "data/features/constructor_form_snapshots.csv",
-    category: "features",
-    table: "constructor_form_snapshots",
-    rows: 131,
-    columns: 12,
-    header: [
+    "path": "data/features/constructor_form_snapshots.csv",
+    "category": "features",
+    "table": "constructor_form_snapshots",
+    "rows": 220,
+    "columns": 12,
+    "header": [
       "id",
       "season",
       "round",
@@ -818,16 +738,16 @@ export const methodDashboardInventory = [
       "recent_pace_rank",
       "reliability_index",
       "weather_risk_index",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/features/driver_form_snapshots.csv",
-    category: "features",
-    table: "driver_form_snapshots",
-    rows: 262,
-    columns: 21,
-    header: [
+    "path": "data/features/driver_form_snapshots.csv",
+    "category": "features",
+    "table": "driver_form_snapshots",
+    "rows": 466,
+    "columns": 21,
+    "header": [
       "id",
       "season",
       "round",
@@ -848,16 +768,16 @@ export const methodDashboardInventory = [
       "top_speed_kph",
       "reliability_index",
       "weather_risk_index",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/model_inputs/prediction_model_inputs.csv",
-    category: "model_inputs",
-    table: "prediction_model_inputs",
-    rows: 262,
-    columns: 22,
-    header: [
+    "path": "data/model_inputs/prediction_model_inputs.csv",
+    "category": "model_inputs",
+    "table": "prediction_model_inputs",
+    "rows": 466,
+    "columns": 22,
+    "header": [
       "id",
       "season",
       "round",
@@ -879,16 +799,16 @@ export const methodDashboardInventory = [
       "constructor_reliability_index",
       "weather_risk_index",
       "driver_reliability_index",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/model_inputs/stint_model_inputs.csv",
-    category: "model_inputs",
-    table: "stint_model_inputs",
-    rows: 1360,
-    columns: 17,
-    header: [
+    "path": "data/model_inputs/stint_model_inputs.csv",
+    "category": "model_inputs",
+    "table": "stint_model_inputs",
+    "rows": 4099,
+    "columns": 18,
+    "header": [
       "season",
       "round",
       "event_name",
@@ -903,43 +823,19 @@ export const methodDashboardInventory = [
       "degradation_index",
       "start_tyre_life",
       "end_tyre_life",
+      "source_label",
       "practice_importance",
       "degradation_risk",
-      "tyre_life_index",
-    ],
+      "tyre_life_index"
+    ]
   },
   {
-    path: "data/predictions/fastf1_prediction_snapshots.csv",
-    category: "predictions",
-    table: "fastf1_prediction_snapshots",
-    rows: 262,
-    columns: 16,
-    header: [
-      "id",
-      "season",
-      "round",
-      "race_id",
-      "driver_id",
-      "constructor_id",
-      "generated_at",
-      "model_version",
-      "predicted_score",
-      "projected_finish",
-      "winner_probability",
-      "podium_probability",
-      "top10_probability",
-      "confidence_score",
-      "rationale",
-      "source_label",
-    ],
-  },
-  {
-    path: "data/predictions/race_pick_challenges.csv",
-    category: "predictions",
-    table: "race_pick_challenges",
-    rows: 23,
-    columns: 8,
-    header: [
+    "path": "data/predictions/race_pick_challenges.csv",
+    "category": "predictions",
+    "table": "race_pick_challenges",
+    "rows": 47,
+    "columns": 8,
+    "header": [
       "race_id",
       "season",
       "round",
@@ -947,24 +843,31 @@ export const methodDashboardInventory = [
       "random_position_1",
       "random_position_2",
       "random_position_3",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/predictions/race_pit_stop_results.csv",
-    category: "predictions",
-    table: "race_pit_stop_results",
-    rows: 13,
-    columns: 6,
-    header: ["race_id", "season", "round", "driver_id", "pit_duration_s", "source_label"],
+    "path": "data/predictions/race_pit_stop_results.csv",
+    "category": "predictions",
+    "table": "race_pit_stop_results",
+    "rows": 19,
+    "columns": 6,
+    "header": [
+      "race_id",
+      "season",
+      "round",
+      "driver_id",
+      "pit_duration_s",
+      "source_label"
+    ]
   },
   {
-    path: "data/predictions/strategy_baselines.csv",
-    category: "predictions",
-    table: "strategy_baselines",
-    rows: 43,
-    columns: 16,
-    header: [
+    "path": "data/predictions/strategy_baselines.csv",
+    "category": "predictions",
+    "table": "strategy_baselines",
+    "rows": 218,
+    "columns": 16,
+    "header": [
       "id",
       "season",
       "round",
@@ -980,16 +883,16 @@ export const methodDashboardInventory = [
       "degradation_risk",
       "strategy_confidence",
       "rationale",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_index.csv",
-    category: "race_analysis",
-    table: "race_analysis_index",
-    rows: 14,
-    columns: 20,
-    header: [
+    "path": "data/race_analysis/race_analysis_index.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_index",
+    "rows": 20,
+    "columns": 20,
+    "header": [
       "race_analysis_id",
       "season",
       "round",
@@ -1009,32 +912,32 @@ export const methodDashboardInventory = [
       "analysis_quality_score",
       "generated_at",
       "build_version",
-      "freshness_status",
-    ],
+      "freshness_status"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_links.csv",
-    category: "race_analysis",
-    table: "race_analysis_links",
-    rows: 42,
-    columns: 7,
-    header: [
+    "path": "data/race_analysis/race_analysis_links.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_links",
+    "rows": 60,
+    "columns": 7,
+    "header": [
       "race_analysis_id",
       "surface",
       "label",
       "href",
       "relevance_note",
       "enabled",
-      "unavailable_reason",
-    ],
+      "unavailable_reason"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_neutralization_phases.csv",
-    category: "race_analysis",
-    table: "race_analysis_neutralization_phases",
-    rows: 70,
-    columns: 10,
-    header: [
+    "path": "data/race_analysis/race_analysis_neutralization_phases.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_neutralization_phases",
+    "rows": 91,
+    "columns": 10,
+    "header": [
       "race_analysis_id",
       "phase_id",
       "start_lap",
@@ -1044,16 +947,16 @@ export const methodDashboardInventory = [
       "confidence",
       "evidence_type",
       "cause_available",
-      "cause_note",
-    ],
+      "cause_note"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_pace_evolution.csv",
-    category: "race_analysis",
-    table: "race_analysis_pace_evolution",
-    rows: 16261,
-    columns: 15,
-    header: [
+    "path": "data/race_analysis/race_analysis_pace_evolution.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_pace_evolution",
+    "rows": 23590,
+    "columns": 15,
+    "header": [
       "race_analysis_id",
       "driver",
       "team",
@@ -1068,16 +971,16 @@ export const methodDashboardInventory = [
       "tyre_age",
       "fuel_corrected_delta_s",
       "weather_adjusted_flag",
-      "pace_confidence",
-    ],
+      "pace_confidence"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_pit_strategy.csv",
-    category: "race_analysis",
-    table: "race_analysis_pit_strategy",
-    rows: 554,
-    columns: 18,
-    header: [
+    "path": "data/race_analysis/race_analysis_pit_strategy.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_pit_strategy",
+    "rows": 836,
+    "columns": 18,
+    "header": [
       "race_analysis_id",
       "driver",
       "team",
@@ -1095,16 +998,16 @@ export const methodDashboardInventory = [
       "traffic_penalty_proxy_s",
       "strategy_effect",
       "confidence",
-      "weakest_assumption",
-    ],
+      "weakest_assumption"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_position_changes.csv",
-    category: "race_analysis",
-    table: "race_analysis_position_changes",
-    rows: 308,
-    columns: 13,
-    header: [
+    "path": "data/race_analysis/race_analysis_position_changes.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_position_changes",
+    "rows": 440,
+    "columns": 13,
+    "header": [
       "race_analysis_id",
       "driver",
       "team",
@@ -1117,16 +1020,16 @@ export const methodDashboardInventory = [
       "largest_loss_phase",
       "position_volatility_score",
       "confidence",
-      "note",
-    ],
+      "note"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_position_swing_events.csv",
-    category: "race_analysis",
-    table: "race_analysis_position_swing_events",
-    rows: 2661,
-    columns: 12,
-    header: [
+    "path": "data/race_analysis/race_analysis_position_swing_events.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_position_swing_events",
+    "rows": 3272,
+    "columns": 12,
+    "header": [
       "race_analysis_id",
       "event_id",
       "driver",
@@ -1138,16 +1041,16 @@ export const methodDashboardInventory = [
       "event_type",
       "evidence_type",
       "confidence",
-      "note",
-    ],
+      "note"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_position_timeline.csv",
-    category: "race_analysis",
-    table: "race_analysis_position_timeline",
-    rows: 16231,
-    columns: 11,
-    header: [
+    "path": "data/race_analysis/race_analysis_position_timeline.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_position_timeline",
+    "rows": 19586,
+    "columns": 11,
+    "header": [
       "race_analysis_id",
       "driver",
       "team",
@@ -1158,16 +1061,16 @@ export const methodDashboardInventory = [
       "phase",
       "track_status_label",
       "confidence",
-      "evidence_type",
-    ],
+      "evidence_type"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_stints.csv",
-    category: "race_analysis",
-    table: "race_analysis_stints",
-    rows: 861,
-    columns: 18,
-    header: [
+    "path": "data/race_analysis/race_analysis_stints.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_stints",
+    "rows": 1275,
+    "columns": 18,
+    "header": [
       "race_analysis_id",
       "driver",
       "team",
@@ -1185,16 +1088,16 @@ export const methodDashboardInventory = [
       "compound_phase",
       "traffic_adjusted_flag",
       "stint_quality_score",
-      "note",
-    ],
+      "note"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_story_points.csv",
-    category: "race_analysis",
-    table: "race_analysis_story_points",
-    rows: 57,
-    columns: 13,
-    header: [
+    "path": "data/race_analysis/race_analysis_story_points.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_story_points",
+    "rows": 77,
+    "columns": 13,
+    "header": [
       "race_analysis_id",
       "story_point_id",
       "lap_number",
@@ -1207,16 +1110,16 @@ export const methodDashboardInventory = [
       "related_metric",
       "impact_score",
       "confidence",
-      "data_limit_note",
-    ],
+      "data_limit_note"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_summary.csv",
-    category: "race_analysis",
-    table: "race_analysis_summary",
-    rows: 14,
-    columns: 14,
-    header: [
+    "path": "data/race_analysis/race_analysis_summary.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_summary",
+    "rows": 20,
+    "columns": 14,
+    "header": [
       "race_analysis_id",
       "winner",
       "winner_team",
@@ -1230,16 +1133,16 @@ export const methodDashboardInventory = [
       "key_position_factor",
       "weather_summary",
       "confidence",
-      "weakest_assumption",
-    ],
+      "weakest_assumption"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_track_status.csv",
-    category: "race_analysis",
-    table: "race_analysis_track_status",
-    rows: 855,
-    columns: 8,
-    header: [
+    "path": "data/race_analysis/race_analysis_track_status.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_track_status",
+    "rows": 1221,
+    "columns": 8,
+    "header": [
       "race_analysis_id",
       "lap_number",
       "phase",
@@ -1247,16 +1150,16 @@ export const methodDashboardInventory = [
       "track_status_label",
       "confidence",
       "source",
-      "note",
-    ],
+      "note"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_traffic_proxy.csv",
-    category: "race_analysis",
-    table: "race_analysis_traffic_proxy",
-    rows: 16261,
-    columns: 14,
-    header: [
+    "path": "data/race_analysis/race_analysis_traffic_proxy.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_traffic_proxy",
+    "rows": 19627,
+    "columns": 14,
+    "header": [
       "race_analysis_id",
       "driver",
       "team",
@@ -1270,16 +1173,16 @@ export const methodDashboardInventory = [
       "drs_window_proxy",
       "confidence",
       "evidence_type",
-      "note",
-    ],
+      "note"
+    ]
   },
   {
-    path: "data/race_analysis/race_analysis_weather_context.csv",
-    category: "race_analysis",
-    table: "race_analysis_weather_context",
-    rows: 855,
-    columns: 12,
-    header: [
+    "path": "data/race_analysis/race_analysis_weather_context.csv",
+    "category": "race_analysis",
+    "table": "race_analysis_weather_context",
+    "rows": 1221,
+    "columns": 12,
+    "header": [
       "race_analysis_id",
       "lap_number",
       "race_phase",
@@ -1291,16 +1194,16 @@ export const methodDashboardInventory = [
       "weather_state",
       "track_temp_delta_from_start_c",
       "weather_impact_label",
-      "confidence",
-    ],
+      "confidence"
+    ]
   },
   {
-    path: "data/race_week/constructor_features.csv",
-    category: "race_week",
-    table: "constructor_features",
-    rows: 11,
-    columns: 15,
-    header: [
+    "path": "data/race_week/constructor_features.csv",
+    "category": "race_week",
+    "table": "constructor_features",
+    "rows": 11,
+    "columns": 15,
+    "header": [
       "id",
       "season",
       "round",
@@ -1315,16 +1218,16 @@ export const methodDashboardInventory = [
       "avg_finish_position_recent",
       "strategy_tendency_score",
       "strategy_confidence",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/constructor_race_week_features.csv",
-    category: "race_week",
-    table: "constructor_race_week_features",
-    rows: 11,
-    columns: 13,
-    header: [
+    "path": "data/race_week/constructor_race_week_features.csv",
+    "category": "race_week",
+    "table": "constructor_race_week_features",
+    "rows": 11,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1337,16 +1240,16 @@ export const methodDashboardInventory = [
       "weather_risk_index",
       "readiness_score",
       "signal_confidence",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/constructor_signals.csv",
-    category: "race_week",
-    table: "constructor_signals",
-    rows: 11,
-    columns: 12,
-    header: [
+    "path": "data/race_week/constructor_signals.csv",
+    "category": "race_week",
+    "table": "constructor_signals",
+    "rows": 11,
+    "columns": 12,
+    "header": [
       "id",
       "season",
       "round",
@@ -1358,16 +1261,16 @@ export const methodDashboardInventory = [
       "strategy_signal",
       "track_affinity_signal",
       "overall_signal",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/driver_features.csv",
-    category: "race_week",
-    table: "driver_features",
-    rows: 22,
-    columns: 21,
-    header: [
+    "path": "data/race_week/driver_features.csv",
+    "category": "race_week",
+    "table": "driver_features",
+    "rows": 22,
+    "columns": 21,
+    "header": [
       "id",
       "season",
       "round",
@@ -1388,16 +1291,16 @@ export const methodDashboardInventory = [
       "reliability_score",
       "avg_quali_yoy_delta_s",
       "form_bias_score",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/driver_race_week_features.csv",
-    category: "race_week",
-    table: "driver_race_week_features",
-    rows: 22,
-    columns: 21,
-    header: [
+    "path": "data/race_week/driver_race_week_features.csv",
+    "category": "race_week",
+    "table": "driver_race_week_features",
+    "rows": 22,
+    "columns": 21,
+    "header": [
       "id",
       "season",
       "round",
@@ -1418,16 +1321,16 @@ export const methodDashboardInventory = [
       "signal_confidence",
       "overperforming_delta",
       "projected_finish",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/driver_signals.csv",
-    category: "race_week",
-    table: "driver_signals",
-    rows: 22,
-    columns: 17,
-    header: [
+    "path": "data/race_week/driver_signals.csv",
+    "category": "race_week",
+    "table": "driver_signals",
+    "rows": 22,
+    "columns": 17,
+    "header": [
       "id",
       "season",
       "round",
@@ -1444,16 +1347,16 @@ export const methodDashboardInventory = [
       "trend_signal",
       "track_affinity_signal",
       "overall_signal",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/fp2_long_run_summary.csv",
-    category: "race_week",
-    table: "fp2_long_run_summary",
-    rows: 85,
-    columns: 13,
-    header: [
+    "path": "data/race_week/fp2_long_run_summary.csv",
+    "category": "race_week",
+    "table": "fp2_long_run_summary",
+    "rows": 215,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1466,16 +1369,16 @@ export const methodDashboardInventory = [
       "lap_sample_size",
       "compound",
       "signal_confidence",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/prediction_signal_quality.csv",
-    category: "race_week",
-    table: "prediction_signal_quality",
-    rows: 8,
-    columns: 13,
-    header: [
+    "path": "data/race_week/prediction_signal_quality.csv",
+    "category": "race_week",
+    "table": "prediction_signal_quality",
+    "rows": 8,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1488,16 +1391,16 @@ export const methodDashboardInventory = [
       "evidence_rows",
       "quality_band",
       "recommendation",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/qualifying_driver_deltas.csv",
-    category: "race_week",
-    table: "qualifying_driver_deltas",
-    rows: 0,
-    columns: 16,
-    header: [
+    "path": "data/race_week/qualifying_driver_deltas.csv",
+    "category": "race_week",
+    "table": "qualifying_driver_deltas",
+    "rows": 0,
+    "columns": 16,
+    "header": [
       "id",
       "season",
       "round",
@@ -1513,16 +1416,16 @@ export const methodDashboardInventory = [
       "pairwise_delta_gap_s",
       "avg_quali_yoy_delta_s",
       "source_sample_size",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_context_features.csv",
-    category: "race_week",
-    table: "race_context_features",
-    rows: 1,
-    columns: 13,
-    header: [
+    "path": "data/race_week/race_context_features.csv",
+    "category": "race_week",
+    "table": "race_context_features",
+    "rows": 1,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1535,16 +1438,16 @@ export const methodDashboardInventory = [
       "weather_risk_index",
       "safety_car_probability",
       "strategic_complexity_score",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_context_signals.csv",
-    category: "race_week",
-    table: "race_context_signals",
-    rows: 1,
-    columns: 10,
-    header: [
+    "path": "data/race_week/race_context_signals.csv",
+    "category": "race_week",
+    "table": "race_context_signals",
+    "rows": 1,
+    "columns": 10,
+    "header": [
       "id",
       "season",
       "round",
@@ -1554,16 +1457,16 @@ export const methodDashboardInventory = [
       "safety_car_signal",
       "overtaking_signal",
       "high_speed_signal",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_week_confidence.csv",
-    category: "race_week",
-    table: "race_week_confidence",
-    rows: 34,
-    columns: 14,
-    header: [
+    "path": "data/race_week/race_week_confidence.csv",
+    "category": "race_week",
+    "table": "race_week_confidence",
+    "rows": 34,
+    "columns": 14,
+    "header": [
       "id",
       "season",
       "round",
@@ -1577,16 +1480,16 @@ export const methodDashboardInventory = [
       "confidence_score",
       "confidence_band",
       "rationale",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_week_constructor_board.csv",
-    category: "race_week",
-    table: "race_week_constructor_board",
-    rows: 11,
-    columns: 13,
-    header: [
+    "path": "data/race_week/race_week_constructor_board.csv",
+    "category": "race_week",
+    "table": "race_week_constructor_board",
+    "rows": 11,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1599,16 +1502,16 @@ export const methodDashboardInventory = [
       "readiness_score",
       "signal_confidence",
       "summary",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_week_driver_board.csv",
-    category: "race_week",
-    table: "race_week_driver_board",
-    rows: 22,
-    columns: 18,
-    header: [
+    "path": "data/race_week/race_week_driver_board.csv",
+    "category": "race_week",
+    "table": "race_week_driver_board",
+    "rows": 22,
+    "columns": 18,
+    "header": [
       "id",
       "season",
       "round",
@@ -1626,16 +1529,16 @@ export const methodDashboardInventory = [
       "signal_confidence",
       "projected_finish",
       "summary",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_week_overview.csv",
-    category: "race_week",
-    table: "race_week_overview",
-    rows: 1,
-    columns: 18,
-    header: [
+    "path": "data/race_week/race_week_overview.csv",
+    "category": "race_week",
+    "table": "race_week_overview",
+    "rows": 1,
+    "columns": 18,
+    "header": [
       "id",
       "season",
       "round",
@@ -1653,16 +1556,16 @@ export const methodDashboardInventory = [
       "signal_confidence",
       "generated_at",
       "build_version",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_week_storylines.csv",
-    category: "race_week",
-    table: "race_week_storylines",
-    rows: 2,
-    columns: 16,
-    header: [
+    "path": "data/race_week/race_week_storylines.csv",
+    "category": "race_week",
+    "table": "race_week_storylines",
+    "rows": 2,
+    "columns": 16,
+    "header": [
       "id",
       "season",
       "round",
@@ -1678,16 +1581,16 @@ export const methodDashboardInventory = [
       "source_title",
       "source_url",
       "published_at",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/race_week_strategy.csv",
-    category: "race_week",
-    table: "race_week_strategy",
-    rows: 22,
-    columns: 15,
-    header: [
+    "path": "data/race_week/race_week_strategy.csv",
+    "category": "race_week",
+    "table": "race_week_strategy",
+    "rows": 22,
+    "columns": 15,
+    "header": [
       "id",
       "season",
       "round",
@@ -1702,16 +1605,16 @@ export const methodDashboardInventory = [
       "degradation_risk",
       "strategy_confidence",
       "rationale",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/session_features.csv",
-    category: "race_week",
-    table: "session_features",
-    rows: 22,
-    columns: 16,
-    header: [
+    "path": "data/race_week/session_features.csv",
+    "category": "race_week",
+    "table": "session_features",
+    "rows": 22,
+    "columns": 16,
+    "header": [
       "id",
       "season",
       "round",
@@ -1727,16 +1630,16 @@ export const methodDashboardInventory = [
       "session_trend_delta_s",
       "session_completeness",
       "signal_confidence",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/session_pace_summary.csv",
-    category: "race_week",
-    table: "session_pace_summary",
-    rows: 1077,
-    columns: 20,
-    header: [
+    "path": "data/race_week/session_pace_summary.csv",
+    "category": "race_week",
+    "table": "session_pace_summary",
+    "rows": 1763,
+    "columns": 20,
+    "header": [
       "id",
       "season",
       "round",
@@ -1756,16 +1659,16 @@ export const methodDashboardInventory = [
       "air_temp_c",
       "track_temp_c",
       "rainfall_flag",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/session_year_over_year_deltas.csv",
-    category: "race_week",
-    table: "session_year_over_year_deltas",
-    rows: 0,
-    columns: 14,
-    header: [
+    "path": "data/race_week/session_year_over_year_deltas.csv",
+    "category": "race_week",
+    "table": "session_year_over_year_deltas",
+    "rows": 0,
+    "columns": 14,
+    "header": [
       "id",
       "season",
       "round",
@@ -1779,16 +1682,16 @@ export const methodDashboardInventory = [
       "current_gap_s",
       "prior_gap_s",
       "delta_gap_s",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/spain_qualifying_prediction.csv",
-    category: "race_week",
-    table: "spain_qualifying_prediction",
-    rows: 22,
-    columns: 39,
-    header: [
+    "path": "data/race_week/spain_qualifying_prediction.csv",
+    "category": "race_week",
+    "table": "spain_qualifying_prediction",
+    "rows": 22,
+    "columns": 39,
+    "header": [
       "id",
       "season",
       "round",
@@ -1827,16 +1730,16 @@ export const methodDashboardInventory = [
       "clamped_prediction",
       "missing_flags",
       "baseline_method",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/standings_context_snapshot.csv",
-    category: "race_week",
-    table: "standings_context_snapshot",
-    rows: 34,
-    columns: 12,
-    header: [
+    "path": "data/race_week/standings_context_snapshot.csv",
+    "category": "race_week",
+    "table": "standings_context_snapshot",
+    "rows": 36,
+    "columns": 12,
+    "header": [
       "id",
       "season",
       "round",
@@ -1848,16 +1751,16 @@ export const methodDashboardInventory = [
       "points",
       "wins",
       "source_race_id",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/stint_degradation_summary.csv",
-    category: "race_week",
-    table: "stint_degradation_summary",
-    rows: 0,
-    columns: 13,
-    header: [
+    "path": "data/race_week/stint_degradation_summary.csv",
+    "category": "race_week",
+    "table": "stint_degradation_summary",
+    "rows": 0,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1870,16 +1773,16 @@ export const methodDashboardInventory = [
       "avg_degradation_per_lap_s",
       "avg_tyre_life",
       "degradation_risk",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/weather_risk_summary.csv",
-    category: "race_week",
-    table: "weather_risk_summary",
-    rows: 14,
-    columns: 10,
-    header: [
+    "path": "data/race_week/weather_risk_summary.csv",
+    "category": "race_week",
+    "table": "weather_risk_summary",
+    "rows": 20,
+    "columns": 10,
+    "header": [
       "id",
       "season",
       "round",
@@ -1889,16 +1792,16 @@ export const methodDashboardInventory = [
       "track_temp_volatility_c",
       "wind_speed_mean_mps",
       "weather_risk_index",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/race_week/weekend_readiness_summary.csv",
-    category: "race_week",
-    table: "weekend_readiness_summary",
-    rows: 22,
-    columns: 11,
-    header: [
+    "path": "data/race_week/weekend_readiness_summary.csv",
+    "category": "race_week",
+    "table": "weekend_readiness_summary",
+    "rows": 22,
+    "columns": 11,
+    "header": [
       "id",
       "season",
       "round",
@@ -1909,16 +1812,16 @@ export const methodDashboardInventory = [
       "signal_confidence",
       "readiness_rank",
       "rationale",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/constructor_strategy_profile.csv",
-    category: "strategy_lab",
-    table: "constructor_strategy_profile",
-    rows: 11,
-    columns: 11,
-    header: [
+    "path": "data/strategy_lab/constructor_strategy_profile.csv",
+    "category": "strategy_lab",
+    "table": "constructor_strategy_profile",
+    "rows": 11,
+    "columns": 11,
+    "header": [
       "id",
       "season",
       "round",
@@ -1929,16 +1832,16 @@ export const methodDashboardInventory = [
       "strategy_success_proxy",
       "double_stack_risk_score",
       "confidence_score",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/driver_strategy_profile.csv",
-    category: "strategy_lab",
-    table: "driver_strategy_profile",
-    rows: 22,
-    columns: 13,
-    header: [
+    "path": "data/strategy_lab/driver_strategy_profile.csv",
+    "category": "strategy_lab",
+    "table": "driver_strategy_profile",
+    "rows": 22,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1951,16 +1854,16 @@ export const methodDashboardInventory = [
       "late_pit_bias_score",
       "racecraft_proxy_score",
       "confidence_score",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/pit_window.csv",
-    category: "strategy_lab",
-    table: "pit_window",
-    rows: 132,
-    columns: 13,
-    header: [
+    "path": "data/strategy_lab/pit_window.csv",
+    "category": "strategy_lab",
+    "table": "pit_window",
+    "rows": 132,
+    "columns": 13,
+    "header": [
       "id",
       "season",
       "round",
@@ -1973,16 +1876,16 @@ export const methodDashboardInventory = [
       "window_end_lap",
       "compound_in",
       "compound_out",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/race_projection.csv",
-    category: "strategy_lab",
-    table: "race_projection",
-    rows: 22,
-    columns: 15,
-    header: [
+    "path": "data/strategy_lab/race_projection.csv",
+    "category": "strategy_lab",
+    "table": "race_projection",
+    "rows": 22,
+    "columns": 15,
+    "header": [
       "id",
       "season",
       "round",
@@ -1997,16 +1900,16 @@ export const methodDashboardInventory = [
       "win_probability",
       "podium_probability",
       "confidence_score",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/strategy_comparison.csv",
-    category: "strategy_lab",
-    table: "strategy_comparison",
-    rows: 88,
-    columns: 20,
-    header: [
+    "path": "data/strategy_lab/strategy_comparison.csv",
+    "category": "strategy_lab",
+    "table": "strategy_comparison",
+    "rows": 88,
+    "columns": 20,
+    "header": [
       "id",
       "season",
       "round",
@@ -2026,16 +1929,16 @@ export const methodDashboardInventory = [
       "confidence_score",
       "recommendation_rank",
       "rationale",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/strategy_features.csv",
-    category: "strategy_lab",
-    table: "strategy_features",
-    rows: 22,
-    columns: 45,
-    header: [
+    "path": "data/strategy_lab/strategy_features.csv",
+    "category": "strategy_lab",
+    "table": "strategy_features",
+    "rows": 22,
+    "columns": 45,
+    "header": [
       "id",
       "season",
       "round",
@@ -2080,16 +1983,16 @@ export const methodDashboardInventory = [
       "stint_length_soft_laps",
       "stint_length_medium_laps",
       "stint_length_hard_laps",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/strategy_lab_overview.csv",
-    category: "strategy_lab",
-    table: "strategy_lab_overview",
-    rows: 1,
-    columns: 20,
-    header: [
+    "path": "data/strategy_lab/strategy_lab_overview.csv",
+    "category": "strategy_lab",
+    "table": "strategy_lab_overview",
+    "rows": 1,
+    "columns": 20,
+    "header": [
       "id",
       "season",
       "round",
@@ -2109,16 +2012,16 @@ export const methodDashboardInventory = [
       "feature_build_version",
       "generated_at",
       "build_version",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/telemetry_strategy_signals.csv",
-    category: "strategy_lab",
-    table: "telemetry_strategy_signals",
-    rows: 22,
-    columns: 26,
-    header: [
+    "path": "data/strategy_lab/telemetry_strategy_signals.csv",
+    "category": "strategy_lab",
+    "table": "telemetry_strategy_signals",
+    "rows": 22,
+    "columns": 26,
+    "header": [
       "id",
       "season",
       "round",
@@ -2144,16 +2047,16 @@ export const methodDashboardInventory = [
       "telemetry_proxy_confidence",
       "telemetry_signal_source",
       "proxy_note",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/strategy_lab/track_archetype_weights.csv",
-    category: "strategy_lab",
-    table: "track_archetype_weights",
-    rows: 13,
-    columns: 14,
-    header: [
+    "path": "data/strategy_lab/track_archetype_weights.csv",
+    "category": "strategy_lab",
+    "table": "track_archetype_weights",
+    "rows": 20,
+    "columns": 14,
+    "header": [
       "id",
       "season",
       "round",
@@ -2167,16 +2070,16 @@ export const methodDashboardInventory = [
       "track_position_weight",
       "archetype_confidence",
       "formula_note",
-      "source_label",
-    ],
+      "source_label"
+    ]
   },
   {
-    path: "data/telemetry_features/corner_braking_profile.csv",
-    category: "telemetry_features",
-    table: "corner_braking_profile",
-    rows: 7953,
-    columns: 17,
-    header: [
+    "path": "data/telemetry_features/corner_braking_profile.csv",
+    "category": "telemetry_features",
+    "table": "corner_braking_profile",
+    "rows": 14170,
+    "columns": 17,
+    "header": [
       "season",
       "round",
       "event",
@@ -2193,16 +2096,16 @@ export const methodDashboardInventory = [
       "braking_distance_m",
       "min_speed_during_brake_kph",
       "brake_intensity_proxy",
-      "late_brake_score",
-    ],
+      "late_brake_score"
+    ]
   },
   {
-    path: "data/telemetry_features/corner_speed_profile.csv",
-    category: "telemetry_features",
-    table: "corner_speed_profile",
-    rows: 7953,
-    columns: 20,
-    header: [
+    "path": "data/telemetry_features/corner_speed_profile.csv",
+    "category": "telemetry_features",
+    "table": "corner_speed_profile",
+    "rows": 14170,
+    "columns": 20,
+    "header": [
       "season",
       "round",
       "event",
@@ -2222,16 +2125,16 @@ export const methodDashboardInventory = [
       "apex_gear",
       "exit_gear",
       "speed_delta_vs_session_best",
-      "speed_delta_vs_teammate",
-    ],
+      "speed_delta_vs_teammate"
+    ]
   },
   {
-    path: "data/telemetry_features/corner_throttle_profile.csv",
-    category: "telemetry_features",
-    table: "corner_throttle_profile",
-    rows: 7953,
-    columns: 15,
-    header: [
+    "path": "data/telemetry_features/corner_throttle_profile.csv",
+    "category": "telemetry_features",
+    "table": "corner_throttle_profile",
+    "rows": 14170,
+    "columns": 15,
+    "header": [
       "season",
       "round",
       "event",
@@ -2246,16 +2149,16 @@ export const methodDashboardInventory = [
       "throttle_pickup_distance_m",
       "throttle_pickup_time_s",
       "full_throttle_exit_distance_m",
-      "traction_exit_score",
-    ],
+      "traction_exit_score"
+    ]
   },
   {
-    path: "data/telemetry_features/driver_corner_delta.csv",
-    category: "telemetry_features",
-    table: "driver_corner_delta",
-    rows: 7953,
-    columns: 11,
-    header: [
+    "path": "data/telemetry_features/driver_corner_delta.csv",
+    "category": "telemetry_features",
+    "table": "driver_corner_delta",
+    "rows": 14170,
+    "columns": 11,
+    "header": [
       "season",
       "round",
       "event",
@@ -2266,16 +2169,16 @@ export const methodDashboardInventory = [
       "apex_speed_delta_kph",
       "entry_speed_delta_kph",
       "exit_speed_delta_kph",
-      "comparison_scope",
-    ],
+      "comparison_scope"
+    ]
   },
   {
-    path: "data/telemetry_features/energy_deployment_proxy.csv",
-    category: "telemetry_features",
-    table: "energy_deployment_proxy",
-    rows: 6824,
-    columns: 15,
-    header: [
+    "path": "data/telemetry_features/energy_deployment_proxy.csv",
+    "category": "telemetry_features",
+    "table": "energy_deployment_proxy",
+    "rows": 12247,
+    "columns": 15,
+    "header": [
       "season",
       "round",
       "event",
@@ -2290,16 +2193,16 @@ export const methodDashboardInventory = [
       "clipping_proxy_score",
       "recovery_zone_score",
       "confidence",
-      "label",
-    ],
+      "label"
+    ]
   },
   {
-    path: "data/telemetry_features/straight_speed_profile.csv",
-    category: "telemetry_features",
-    table: "straight_speed_profile",
-    rows: 6824,
-    columns: 15,
-    header: [
+    "path": "data/telemetry_features/straight_speed_profile.csv",
+    "category": "telemetry_features",
+    "table": "straight_speed_profile",
+    "rows": 12247,
+    "columns": 15,
+    "header": [
       "season",
       "round",
       "event",
@@ -2314,16 +2217,16 @@ export const methodDashboardInventory = [
       "acceleration_score",
       "drs_active_pct",
       "clipping_proxy_score",
-      "segmentation_confidence",
-    ],
+      "segmentation_confidence"
+    ]
   },
   {
-    path: "data/telemetry_features/telemetry_lap_summary.csv",
-    category: "telemetry_features",
-    table: "telemetry_lap_summary",
-    rows: 989,
-    columns: 18,
-    header: [
+    "path": "data/telemetry_features/telemetry_lap_summary.csv",
+    "category": "telemetry_features",
+    "table": "telemetry_lap_summary",
+    "rows": 1761,
+    "columns": 18,
+    "header": [
       "season",
       "round",
       "event",
@@ -2341,7 +2244,7 @@ export const methodDashboardInventory = [
       "max_rpm",
       "drs_pct",
       "distance_covered_m",
-      "telemetry_quality_score",
-    ],
-  },
+      "telemetry_quality_score"
+    ]
+  }
 ] satisfies MethodDashboardInventoryFile[];

@@ -10,8 +10,8 @@ The legacy `apps/web` Next.js app is not part of the active root build. Do not a
 
 - `raceweek.tsx` (`/raceweek`) shows the next weekend's circuit profile, schedule, weather, and qualifying and race projections.
 - `analysis.index.tsx` (`/analysis`) shows the 2026 season index, a selectable featured race, search, completed/all/upcoming filters, and links to completed reports.
-- `analysis.$slug.tsx` (`/analysis/:slug`) shows the selected race's result table by default, with position movement, lap pace, pits, timeline, and circuit views when the underlying data supports them. Qualifying and sprint sessions appear when available.
-- `vs.tsx` (`/vs`) compares two drivers across sessions, including sector bests when Supabase lap data is available.
+- `analysis.$slug.tsx` (`/analysis/:slug`) shows the selected race's result table, qualifying-to-grid Stakes scene, opening position story, and deeper pace, pit, timeline, and circuit views when data supports them. Qualifying and sprint sessions appear when available.
+- `vs.tsx` (`/vs`) compares two drivers across sessions, including sector and telemetry views when the selected session has data.
 - `championship.tsx` (`/championship`) shows driver and constructor standings and sortable season metrics.
 - `picks.tsx` (`/picks`) loads the picks board and renders `src/components/picks-experience.tsx` inside `src/components/picks-shell.tsx`. Signed-in users can select drivers until the round locks. Cards are stored per user in browser local storage; completed-round points are calculated from stored results in that browser.
 - `account.tsx` (`/account`) handles Google sign-in, profile details, and account controls.
@@ -27,18 +27,11 @@ The shared responsive navigation and footer live in `src/components/site-chrome.
 - Avoid route-local data hacks when `src/lib/f1.server.ts` or Supabase views already provide the contract.
 - Keep `routeTree.gen.ts` generated; do not edit it by hand.
 
-## Conventions
+## Route conventions
 
-| File                     | URL                            |
-| ------------------------ | ------------------------------ |
-| `index.tsx`              | `/`                            |
-| `about.tsx`              | `/about`                       |
-| `users/index.tsx`        | `/users`                       |
-| `users/$id.tsx`          | `/users/:id`                   |
-| `posts/{-$category}.tsx` | `/posts/:category?`            |
-| `files/$.tsx`            | `/files/*`                     |
-| `_layout.tsx`            | layout route with `<Outlet />` |
-| `__root.tsx`             | app shell wrapping every page  |
+`analysis.index.tsx` maps to `/analysis`, `analysis.$slug.tsx` maps to
+`/analysis/:slug`, and `__root.tsx` wraps every route. Keep page-specific CSS
+beside the route when it is not shared across the product.
 
 ## Shipping Checklist
 

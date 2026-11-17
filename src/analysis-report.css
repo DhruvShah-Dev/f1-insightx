@@ -14,12 +14,17 @@
 .report-wrap { max-width: 1600px; margin: auto; padding: 28px clamp(20px, 4vw, 64px) 90px; }
 .report-back { display: inline-flex; align-items: center; gap: 9px; min-height: 28px; color: #bebdb5; font-size: 12px; transition: color .2s; }
 .report-back:hover { color: #fffffc; }
+.report-story-intro { display: flex; align-items: end; justify-content: space-between; gap: 22px; margin-top: 15px; }
+.report-story-intro h1 { max-width: 950px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(45px, 5.2vw, 75px); font-weight: 400; letter-spacing: -.058em; line-height: .98; }
+.report-story-intro p { flex: none; margin: 0 0 5px; color: #aeb8ae; font-size: 11px; }
+.report-story-intro p span { padding: 0 4px; color: #67756b; }
+.stakes-story + .report-hero { margin-top: 35px; }
 .report-hero { position: relative; display: flex; min-height: 455px; overflow: hidden; margin-top: 14px; border-top: 1px solid #343735; border-bottom: 1px solid #343735; background: radial-gradient(ellipse at 62% 60%, #363a38 0%, #1b1d1c 39%, #191b1a 74%); }
 .report-hero::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, #191b1a 0%, #191b1a 33%, #191b1ac4 44%, transparent 63%), linear-gradient(0deg, #191b1a 0%, transparent 25%); }
 .report-hero-photo { position: absolute; z-index: 1; top: 2%; right: 19%; bottom: 0; width: 39%; overflow: hidden; }
 .report-driver-hero { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; filter: saturate(.82) contrast(1.04); }
 .report-hero-main { position: relative; z-index: 2; width: min(60%, 715px); padding: 30px 0 25px 28px; }
-.report-hero h1 { max-width: 650px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(51px, 5.4vw, 86px); font-weight: 400; letter-spacing: -.059em; line-height: .96; }
+.report-hero h2 { max-width: 650px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(51px, 5.4vw, 86px); font-weight: 400; letter-spacing: -.059em; line-height: .96; }
 .report-meta { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0 0; color: #bbbcb6; font-size: 13px; }
 .report-meta span { color: #65716d; }
 .report-winner { display: flex; flex-direction: column; align-items: start; margin-top: 34px; }
@@ -91,9 +96,12 @@
 }
 @media (max-width: 600px) {
   .report-wrap { padding: 20px 18px 70px; }
+  .report-story-intro { display: block; }
+  .report-story-intro h1 { font-size: clamp(43px, 11vw, 65px); }
+  .report-story-intro p { margin-top: 10px; }
   .report-hero { min-height: 480px; }
   .report-hero-main { width: 100%; padding: 26px 18px; }
-  .report-hero h1 { max-width: 78%; font-size: clamp(45px, 12vw, 67px); }
+  .report-hero h2 { max-width: 78%; font-size: clamp(45px, 12vw, 67px); }
   .report-meta { max-width: 70%; font-size: 11px; }
   .report-hero-photo { top: 10%; right: -25%; bottom: 9%; width: 88%; opacity: .68; }
   .report-hero::after { background: linear-gradient(90deg, #191b1a 0%, #191b1ad4 38%, transparent 100%), linear-gradient(0deg, #191b1a 0%, transparent 58%); }

@@ -2565,6 +2565,10 @@ def main() -> None:
         path.read_text(encoding="utf-8")
         for path in sorted(settings.sql_dir.glob("*.sql"))
     )
+    access_hardening_sql = "\n\n".join(
+        path.read_text(encoding="utf-8")
+        for path in sorted((ROOT_DIR / "supabase" / "migrations").glob("2026111700*_*.sql"))
+    )
     validate_load_inputs(settings)
     missing_driver_ids, missing_constructor_ids = scan_missing_reference_ids(
         settings.curated_dir
@@ -2575,6 +2579,9 @@ def main() -> None:
         with connection.cursor() as cursor:
             if not args.skip_schema:
                 cursor.execute(schema_sql)
+                # The base SQL recreates older policies, views, and default grants.
+                # Reapply the current Data API boundary in the same transaction.
+                cursor.execute(access_hardening_sql)
 
             upsert_mode = not args.allow_destructive_reset
             if upsert_mode:

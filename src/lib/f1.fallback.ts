@@ -367,6 +367,8 @@ export function fallbackWeekend(slug: string) {
       points: index === 0 ? 25 : index === 1 ? 18 : 15,
       fastestLapRank: null,
     })),
+    priorResults: [],
+    priorResultsAvailable: false,
     positions: [],
     pace: [],
     stints: fallbackRaceReport(slug).stints.map((s) => ({

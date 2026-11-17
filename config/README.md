@@ -26,13 +26,17 @@ Runtime behavior is controlled by root environment variables, framework config, 
 | Area                  | Variables                                                                                   |
 | --------------------- | ------------------------------------------------------------------------------------------- |
 | Public app config     | `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_PRIVACY_CONTACT_EMAIL`                                  |
-| Supabase browser auth | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`                                 |
+| Supabase browser auth | `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`                                         |
 | Supabase server/admin | `SUPABASE_SERVICE_ROLE_KEY`                                                                 |
 | Rate limiting         | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`                                        |
 | Strategy Lab access   | `STRATEGY_LAB_ACCESS_TOKEN`, `STRATEGY_LAB_ALLOWED_EMAILS`, `STRATEGY_LAB_ALLOWED_USER_IDS` |
 | Data sources          | `JOLPICA_BASE_URL`, `OPENF1_BASE_URL`, `DATABASE_URL`, `F1_INSIGHTX_PUBLIC_DATA_SOURCE`     |
 
 Keep service-role keys, database URLs, OAuth secrets, and Upstash tokens server-side only.
+
+The active app also accepts `NEXT_PUBLIC_SUPABASE_URL` and
+`NEXT_PUBLIC_SUPABASE_ANON_KEY` as compatibility aliases. New local setup should
+use the `VITE_` names in `.env.example`.
 
 Public F1 pages use Supabase when the runtime Supabase URL/key are present.
 Set `F1_INSIGHTX_PUBLIC_DATA_SOURCE=local` only when deliberately testing the

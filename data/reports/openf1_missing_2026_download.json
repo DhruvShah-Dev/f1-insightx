@@ -1,0 +1,3084 @@
+{
+  "checked_at": "2026-11-17T00:48:00.366981+00:00",
+  "season": 2026,
+  "counts": {
+    "downloaded": 258,
+    "unavailable": 94
+  },
+  "records": [
+    {
+      "session_key": 11227,
+      "meeting_key": 1279,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 717,
+      "raw_path": "2026/1279/11227_FP1/position.json"
+    },
+    {
+      "session_key": 11228,
+      "meeting_key": 1279,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 550,
+      "raw_path": "2026/1279/11228_FP2/position.json"
+    },
+    {
+      "session_key": 11229,
+      "meeting_key": 1279,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 473,
+      "raw_path": "2026/1279/11229_FP3/position.json"
+    },
+    {
+      "session_key": 11230,
+      "meeting_key": 1279,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1070,
+      "raw_path": "2026/1279/11230_Q/position.json"
+    },
+    {
+      "session_key": 11234,
+      "meeting_key": 1279,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11234'"
+    },
+    {
+      "session_key": 11234,
+      "meeting_key": 1279,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 531,
+      "raw_path": "2026/1279/11234_R/position.json"
+    },
+    {
+      "session_key": 11234,
+      "meeting_key": 1279,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 22276,
+      "raw_path": "2026/1279/11234_R/intervals.json"
+    },
+    {
+      "session_key": 11234,
+      "meeting_key": 1279,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 299,
+      "raw_path": "2026/1279/11234_R/overtakes.json"
+    },
+    {
+      "session_key": 11235,
+      "meeting_key": 1280,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 779,
+      "raw_path": "2026/1280/11235_FP1/position.json"
+    },
+    {
+      "session_key": 11236,
+      "meeting_key": 1280,
+      "session": "SQ",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1280/11236_SQ/drivers.json"
+    },
+    {
+      "session_key": 11236,
+      "meeting_key": 1280,
+      "session": "SQ",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 21,
+      "raw_path": "2026/1280/11236_SQ/session_result.json"
+    },
+    {
+      "session_key": 11236,
+      "meeting_key": 1280,
+      "session": "SQ",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 60,
+      "raw_path": "2026/1280/11236_SQ/weather.json"
+    },
+    {
+      "session_key": 11236,
+      "meeting_key": 1280,
+      "session": "SQ",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 257,
+      "raw_path": "2026/1280/11236_SQ/laps.json"
+    },
+    {
+      "session_key": 11236,
+      "meeting_key": 1280,
+      "session": "SQ",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 48,
+      "raw_path": "2026/1280/11236_SQ/stints.json"
+    },
+    {
+      "session_key": 11236,
+      "meeting_key": 1280,
+      "session": "SQ",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 43,
+      "raw_path": "2026/1280/11236_SQ/race_control.json"
+    },
+    {
+      "session_key": 11236,
+      "meeting_key": 1280,
+      "session": "SQ",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1041,
+      "raw_path": "2026/1280/11236_SQ/position.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1280/11240_S/drivers.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1280/11240_S/session_result.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11240'"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 83,
+      "raw_path": "2026/1280/11240_S/weather.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 399,
+      "raw_path": "2026/1280/11240_S/laps.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 34,
+      "raw_path": "2026/1280/11240_S/stints.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "pit",
+      "status": "downloaded",
+      "rows": 12,
+      "raw_path": "2026/1280/11240_S/pit.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 51,
+      "raw_path": "2026/1280/11240_S/race_control.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 351,
+      "raw_path": "2026/1280/11240_S/position.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 9019,
+      "raw_path": "2026/1280/11240_S/intervals.json"
+    },
+    {
+      "session_key": 11240,
+      "meeting_key": 1280,
+      "session": "S",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 175,
+      "raw_path": "2026/1280/11240_S/overtakes.json"
+    },
+    {
+      "session_key": 11241,
+      "meeting_key": 1280,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 922,
+      "raw_path": "2026/1280/11241_Q/position.json"
+    },
+    {
+      "session_key": 11245,
+      "meeting_key": 1280,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11245'"
+    },
+    {
+      "session_key": 11245,
+      "meeting_key": 1280,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 524,
+      "raw_path": "2026/1280/11245_R/position.json"
+    },
+    {
+      "session_key": 11245,
+      "meeting_key": 1280,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 20663,
+      "raw_path": "2026/1280/11245_R/intervals.json"
+    },
+    {
+      "session_key": 11245,
+      "meeting_key": 1280,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 279,
+      "raw_path": "2026/1280/11245_R/overtakes.json"
+    },
+    {
+      "session_key": 11246,
+      "meeting_key": 1281,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 709,
+      "raw_path": "2026/1281/11246_FP1/position.json"
+    },
+    {
+      "session_key": 11247,
+      "meeting_key": 1281,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 576,
+      "raw_path": "2026/1281/11247_FP2/position.json"
+    },
+    {
+      "session_key": 11248,
+      "meeting_key": 1281,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 516,
+      "raw_path": "2026/1281/11248_FP3/position.json"
+    },
+    {
+      "session_key": 11249,
+      "meeting_key": 1281,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 950,
+      "raw_path": "2026/1281/11249_Q/position.json"
+    },
+    {
+      "session_key": 11253,
+      "meeting_key": 1281,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11253'"
+    },
+    {
+      "session_key": 11253,
+      "meeting_key": 1281,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 445,
+      "raw_path": "2026/1281/11253_R/position.json"
+    },
+    {
+      "session_key": 11253,
+      "meeting_key": 1281,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 28324,
+      "raw_path": "2026/1281/11253_R/intervals.json"
+    },
+    {
+      "session_key": 11253,
+      "meeting_key": 1281,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 218,
+      "raw_path": "2026/1281/11253_R/overtakes.json"
+    },
+    {
+      "session_key": 11254,
+      "meeting_key": 1282,
+      "session": "FP1",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11254'"
+    },
+    {
+      "session_key": 11254,
+      "meeting_key": 1282,
+      "session": "FP1",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11254'"
+    },
+    {
+      "session_key": 11254,
+      "meeting_key": 1282,
+      "session": "FP1",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11254'"
+    },
+    {
+      "session_key": 11254,
+      "meeting_key": 1282,
+      "session": "FP1",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11254'"
+    },
+    {
+      "session_key": 11254,
+      "meeting_key": 1282,
+      "session": "FP1",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11254'"
+    },
+    {
+      "session_key": 11254,
+      "meeting_key": 1282,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11254'"
+    },
+    {
+      "session_key": 11255,
+      "meeting_key": 1282,
+      "session": "FP2",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11255'"
+    },
+    {
+      "session_key": 11255,
+      "meeting_key": 1282,
+      "session": "FP2",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11255'"
+    },
+    {
+      "session_key": 11255,
+      "meeting_key": 1282,
+      "session": "FP2",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11255'"
+    },
+    {
+      "session_key": 11255,
+      "meeting_key": 1282,
+      "session": "FP2",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11255'"
+    },
+    {
+      "session_key": 11255,
+      "meeting_key": 1282,
+      "session": "FP2",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11255'"
+    },
+    {
+      "session_key": 11255,
+      "meeting_key": 1282,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11255'"
+    },
+    {
+      "session_key": 11256,
+      "meeting_key": 1282,
+      "session": "FP3",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11256'"
+    },
+    {
+      "session_key": 11256,
+      "meeting_key": 1282,
+      "session": "FP3",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11256'"
+    },
+    {
+      "session_key": 11256,
+      "meeting_key": 1282,
+      "session": "FP3",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11256'"
+    },
+    {
+      "session_key": 11256,
+      "meeting_key": 1282,
+      "session": "FP3",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11256'"
+    },
+    {
+      "session_key": 11256,
+      "meeting_key": 1282,
+      "session": "FP3",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11256'"
+    },
+    {
+      "session_key": 11256,
+      "meeting_key": 1282,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11256'"
+    },
+    {
+      "session_key": 11257,
+      "meeting_key": 1282,
+      "session": "Q",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11257'"
+    },
+    {
+      "session_key": 11257,
+      "meeting_key": 1282,
+      "session": "Q",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11257'"
+    },
+    {
+      "session_key": 11257,
+      "meeting_key": 1282,
+      "session": "Q",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11257'"
+    },
+    {
+      "session_key": 11257,
+      "meeting_key": 1282,
+      "session": "Q",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11257'"
+    },
+    {
+      "session_key": 11257,
+      "meeting_key": 1282,
+      "session": "Q",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11257'"
+    },
+    {
+      "session_key": 11257,
+      "meeting_key": 1282,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11257'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "pit",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/pit?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/intervals?session_key=11261'"
+    },
+    {
+      "session_key": 11261,
+      "meeting_key": 1282,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/overtakes?session_key=11261'"
+    },
+    {
+      "session_key": 11262,
+      "meeting_key": 1283,
+      "session": "FP1",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11262'"
+    },
+    {
+      "session_key": 11262,
+      "meeting_key": 1283,
+      "session": "FP1",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11262'"
+    },
+    {
+      "session_key": 11262,
+      "meeting_key": 1283,
+      "session": "FP1",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11262'"
+    },
+    {
+      "session_key": 11262,
+      "meeting_key": 1283,
+      "session": "FP1",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11262'"
+    },
+    {
+      "session_key": 11262,
+      "meeting_key": 1283,
+      "session": "FP1",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11262'"
+    },
+    {
+      "session_key": 11262,
+      "meeting_key": 1283,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11262'"
+    },
+    {
+      "session_key": 11263,
+      "meeting_key": 1283,
+      "session": "FP2",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11263'"
+    },
+    {
+      "session_key": 11263,
+      "meeting_key": 1283,
+      "session": "FP2",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11263'"
+    },
+    {
+      "session_key": 11263,
+      "meeting_key": 1283,
+      "session": "FP2",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11263'"
+    },
+    {
+      "session_key": 11263,
+      "meeting_key": 1283,
+      "session": "FP2",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11263'"
+    },
+    {
+      "session_key": 11263,
+      "meeting_key": 1283,
+      "session": "FP2",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11263'"
+    },
+    {
+      "session_key": 11263,
+      "meeting_key": 1283,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11263'"
+    },
+    {
+      "session_key": 11264,
+      "meeting_key": 1283,
+      "session": "FP3",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11264'"
+    },
+    {
+      "session_key": 11264,
+      "meeting_key": 1283,
+      "session": "FP3",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11264'"
+    },
+    {
+      "session_key": 11264,
+      "meeting_key": 1283,
+      "session": "FP3",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11264'"
+    },
+    {
+      "session_key": 11264,
+      "meeting_key": 1283,
+      "session": "FP3",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11264'"
+    },
+    {
+      "session_key": 11264,
+      "meeting_key": 1283,
+      "session": "FP3",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11264'"
+    },
+    {
+      "session_key": 11264,
+      "meeting_key": 1283,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11264'"
+    },
+    {
+      "session_key": 11265,
+      "meeting_key": 1283,
+      "session": "Q",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11265'"
+    },
+    {
+      "session_key": 11265,
+      "meeting_key": 1283,
+      "session": "Q",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11265'"
+    },
+    {
+      "session_key": 11265,
+      "meeting_key": 1283,
+      "session": "Q",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11265'"
+    },
+    {
+      "session_key": 11265,
+      "meeting_key": 1283,
+      "session": "Q",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11265'"
+    },
+    {
+      "session_key": 11265,
+      "meeting_key": 1283,
+      "session": "Q",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11265'"
+    },
+    {
+      "session_key": 11265,
+      "meeting_key": 1283,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11265'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "session_result",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/session_result?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "weather",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/weather?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "laps",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/laps?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "stints",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/stints?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "pit",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/pit?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "race_control",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/race_control?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "position",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/position?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/intervals?session_key=11269'"
+    },
+    {
+      "session_key": 11269,
+      "meeting_key": 1283,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/overtakes?session_key=11269'"
+    },
+    {
+      "session_key": 11270,
+      "meeting_key": 1284,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 670,
+      "raw_path": "2026/1284/11270_FP1/position.json"
+    },
+    {
+      "session_key": 11271,
+      "meeting_key": 1284,
+      "session": "SQ",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1284/11271_SQ/drivers.json"
+    },
+    {
+      "session_key": 11271,
+      "meeting_key": 1284,
+      "session": "SQ",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 21,
+      "raw_path": "2026/1284/11271_SQ/session_result.json"
+    },
+    {
+      "session_key": 11271,
+      "meeting_key": 1284,
+      "session": "SQ",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 59,
+      "raw_path": "2026/1284/11271_SQ/weather.json"
+    },
+    {
+      "session_key": 11271,
+      "meeting_key": 1284,
+      "session": "SQ",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 237,
+      "raw_path": "2026/1284/11271_SQ/laps.json"
+    },
+    {
+      "session_key": 11271,
+      "meeting_key": 1284,
+      "session": "SQ",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 59,
+      "raw_path": "2026/1284/11271_SQ/stints.json"
+    },
+    {
+      "session_key": 11271,
+      "meeting_key": 1284,
+      "session": "SQ",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 49,
+      "raw_path": "2026/1284/11271_SQ/race_control.json"
+    },
+    {
+      "session_key": 11271,
+      "meeting_key": 1284,
+      "session": "SQ",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 941,
+      "raw_path": "2026/1284/11271_SQ/position.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1284/11275_S/drivers.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1284/11275_S/session_result.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11275'"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 80,
+      "raw_path": "2026/1284/11275_S/weather.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 381,
+      "raw_path": "2026/1284/11275_S/laps.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 23,
+      "raw_path": "2026/1284/11275_S/stints.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "pit",
+      "status": "downloaded",
+      "rows": 1,
+      "raw_path": "2026/1284/11275_S/pit.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 84,
+      "raw_path": "2026/1284/11275_S/race_control.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 164,
+      "raw_path": "2026/1284/11275_S/position.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 9347,
+      "raw_path": "2026/1284/11275_S/intervals.json"
+    },
+    {
+      "session_key": 11275,
+      "meeting_key": 1284,
+      "session": "S",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 72,
+      "raw_path": "2026/1284/11275_S/overtakes.json"
+    },
+    {
+      "session_key": 11276,
+      "meeting_key": 1284,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 981,
+      "raw_path": "2026/1284/11276_Q/position.json"
+    },
+    {
+      "session_key": 11280,
+      "meeting_key": 1284,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11280'"
+    },
+    {
+      "session_key": 11280,
+      "meeting_key": 1284,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 550,
+      "raw_path": "2026/1284/11280_R/position.json"
+    },
+    {
+      "session_key": 11280,
+      "meeting_key": 1284,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 25483,
+      "raw_path": "2026/1284/11280_R/intervals.json"
+    },
+    {
+      "session_key": 11280,
+      "meeting_key": 1284,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 267,
+      "raw_path": "2026/1284/11280_R/overtakes.json"
+    },
+    {
+      "session_key": 11281,
+      "meeting_key": 1285,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 843,
+      "raw_path": "2026/1285/11281_FP1/position.json"
+    },
+    {
+      "session_key": 11282,
+      "meeting_key": 1285,
+      "session": "SQ",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1285/11282_SQ/drivers.json"
+    },
+    {
+      "session_key": 11282,
+      "meeting_key": 1285,
+      "session": "SQ",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 20,
+      "raw_path": "2026/1285/11282_SQ/session_result.json"
+    },
+    {
+      "session_key": 11282,
+      "meeting_key": 1285,
+      "session": "SQ",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 77,
+      "raw_path": "2026/1285/11282_SQ/weather.json"
+    },
+    {
+      "session_key": 11282,
+      "meeting_key": 1285,
+      "session": "SQ",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 300,
+      "raw_path": "2026/1285/11282_SQ/laps.json"
+    },
+    {
+      "session_key": 11282,
+      "meeting_key": 1285,
+      "session": "SQ",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 56,
+      "raw_path": "2026/1285/11282_SQ/stints.json"
+    },
+    {
+      "session_key": 11282,
+      "meeting_key": 1285,
+      "session": "SQ",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 65,
+      "raw_path": "2026/1285/11282_SQ/race_control.json"
+    },
+    {
+      "session_key": 11282,
+      "meeting_key": 1285,
+      "session": "SQ",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1035,
+      "raw_path": "2026/1285/11282_SQ/position.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1285/11286_S/drivers.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1285/11286_S/session_result.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11286'"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 76,
+      "raw_path": "2026/1285/11286_S/weather.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 491,
+      "raw_path": "2026/1285/11286_S/laps.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 28,
+      "raw_path": "2026/1285/11286_S/stints.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "pit",
+      "status": "downloaded",
+      "rows": 6,
+      "raw_path": "2026/1285/11286_S/pit.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 71,
+      "raw_path": "2026/1285/11286_S/race_control.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 200,
+      "raw_path": "2026/1285/11286_S/position.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 9131,
+      "raw_path": "2026/1285/11286_S/intervals.json"
+    },
+    {
+      "session_key": 11286,
+      "meeting_key": 1285,
+      "session": "S",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 91,
+      "raw_path": "2026/1285/11286_S/overtakes.json"
+    },
+    {
+      "session_key": 11287,
+      "meeting_key": 1285,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1449,
+      "raw_path": "2026/1285/11287_Q/position.json"
+    },
+    {
+      "session_key": 11291,
+      "meeting_key": 1285,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11291'"
+    },
+    {
+      "session_key": 11291,
+      "meeting_key": 1285,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 470,
+      "raw_path": "2026/1285/11291_R/position.json"
+    },
+    {
+      "session_key": 11291,
+      "meeting_key": 1285,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 22532,
+      "raw_path": "2026/1285/11291_R/intervals.json"
+    },
+    {
+      "session_key": 11291,
+      "meeting_key": 1285,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 243,
+      "raw_path": "2026/1285/11291_R/overtakes.json"
+    },
+    {
+      "session_key": 11292,
+      "meeting_key": 1286,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1015,
+      "raw_path": "2026/1286/11292_FP1/position.json"
+    },
+    {
+      "session_key": 11293,
+      "meeting_key": 1286,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 816,
+      "raw_path": "2026/1286/11293_FP2/position.json"
+    },
+    {
+      "session_key": 11294,
+      "meeting_key": 1286,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 592,
+      "raw_path": "2026/1286/11294_FP3/position.json"
+    },
+    {
+      "session_key": 11295,
+      "meeting_key": 1286,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1616,
+      "raw_path": "2026/1286/11295_Q/position.json"
+    },
+    {
+      "session_key": 11299,
+      "meeting_key": 1286,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11299'"
+    },
+    {
+      "session_key": 11299,
+      "meeting_key": 1286,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 291,
+      "raw_path": "2026/1286/11299_R/position.json"
+    },
+    {
+      "session_key": 11299,
+      "meeting_key": 1286,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 29916,
+      "raw_path": "2026/1286/11299_R/intervals.json"
+    },
+    {
+      "session_key": 11299,
+      "meeting_key": 1286,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 132,
+      "raw_path": "2026/1286/11299_R/overtakes.json"
+    },
+    {
+      "session_key": 11300,
+      "meeting_key": 1287,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 612,
+      "raw_path": "2026/1287/11300_FP1/position.json"
+    },
+    {
+      "session_key": 11301,
+      "meeting_key": 1287,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 424,
+      "raw_path": "2026/1287/11301_FP2/position.json"
+    },
+    {
+      "session_key": 11302,
+      "meeting_key": 1287,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 465,
+      "raw_path": "2026/1287/11302_FP3/position.json"
+    },
+    {
+      "session_key": 11303,
+      "meeting_key": 1287,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1116,
+      "raw_path": "2026/1287/11303_Q/position.json"
+    },
+    {
+      "session_key": 11307,
+      "meeting_key": 1287,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11307'"
+    },
+    {
+      "session_key": 11307,
+      "meeting_key": 1287,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 613,
+      "raw_path": "2026/1287/11307_R/position.json"
+    },
+    {
+      "session_key": 11307,
+      "meeting_key": 1287,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 25022,
+      "raw_path": "2026/1287/11307_R/intervals.json"
+    },
+    {
+      "session_key": 11307,
+      "meeting_key": 1287,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 296,
+      "raw_path": "2026/1287/11307_R/overtakes.json"
+    },
+    {
+      "session_key": 11308,
+      "meeting_key": 1288,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 640,
+      "raw_path": "2026/1288/11308_FP1/position.json"
+    },
+    {
+      "session_key": 11309,
+      "meeting_key": 1288,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 509,
+      "raw_path": "2026/1288/11309_FP2/position.json"
+    },
+    {
+      "session_key": 11310,
+      "meeting_key": 1288,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 475,
+      "raw_path": "2026/1288/11310_FP3/position.json"
+    },
+    {
+      "session_key": 11311,
+      "meeting_key": 1288,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 982,
+      "raw_path": "2026/1288/11311_Q/position.json"
+    },
+    {
+      "session_key": 11315,
+      "meeting_key": 1288,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11315'"
+    },
+    {
+      "session_key": 11315,
+      "meeting_key": 1288,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 499,
+      "raw_path": "2026/1288/11315_R/position.json"
+    },
+    {
+      "session_key": 11315,
+      "meeting_key": 1288,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 26312,
+      "raw_path": "2026/1288/11315_R/intervals.json"
+    },
+    {
+      "session_key": 11315,
+      "meeting_key": 1288,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 242,
+      "raw_path": "2026/1288/11315_R/overtakes.json"
+    },
+    {
+      "session_key": 11316,
+      "meeting_key": 1289,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 788,
+      "raw_path": "2026/1289/11316_FP1/position.json"
+    },
+    {
+      "session_key": 11317,
+      "meeting_key": 1289,
+      "session": "SQ",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1289/11317_SQ/drivers.json"
+    },
+    {
+      "session_key": 11317,
+      "meeting_key": 1289,
+      "session": "SQ",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1289/11317_SQ/session_result.json"
+    },
+    {
+      "session_key": 11317,
+      "meeting_key": 1289,
+      "session": "SQ",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 60,
+      "raw_path": "2026/1289/11317_SQ/weather.json"
+    },
+    {
+      "session_key": 11317,
+      "meeting_key": 1289,
+      "session": "SQ",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 236,
+      "raw_path": "2026/1289/11317_SQ/laps.json"
+    },
+    {
+      "session_key": 11317,
+      "meeting_key": 1289,
+      "session": "SQ",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 63,
+      "raw_path": "2026/1289/11317_SQ/stints.json"
+    },
+    {
+      "session_key": 11317,
+      "meeting_key": 1289,
+      "session": "SQ",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 64,
+      "raw_path": "2026/1289/11317_SQ/race_control.json"
+    },
+    {
+      "session_key": 11317,
+      "meeting_key": 1289,
+      "session": "SQ",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 839,
+      "raw_path": "2026/1289/11317_SQ/position.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1289/11321_S/drivers.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1289/11321_S/session_result.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11321'"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 79,
+      "raw_path": "2026/1289/11321_S/weather.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 372,
+      "raw_path": "2026/1289/11321_S/laps.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 24,
+      "raw_path": "2026/1289/11321_S/stints.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "pit",
+      "status": "downloaded",
+      "rows": 2,
+      "raw_path": "2026/1289/11321_S/pit.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 95,
+      "raw_path": "2026/1289/11321_S/race_control.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 196,
+      "raw_path": "2026/1289/11321_S/position.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 9414,
+      "raw_path": "2026/1289/11321_S/intervals.json"
+    },
+    {
+      "session_key": 11321,
+      "meeting_key": 1289,
+      "session": "S",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 94,
+      "raw_path": "2026/1289/11321_S/overtakes.json"
+    },
+    {
+      "session_key": 11322,
+      "meeting_key": 1289,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 968,
+      "raw_path": "2026/1289/11322_Q/position.json"
+    },
+    {
+      "session_key": 11326,
+      "meeting_key": 1289,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11326'"
+    },
+    {
+      "session_key": 11326,
+      "meeting_key": 1289,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 467,
+      "raw_path": "2026/1289/11326_R/position.json"
+    },
+    {
+      "session_key": 11326,
+      "meeting_key": 1289,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 28253,
+      "raw_path": "2026/1289/11326_R/intervals.json"
+    },
+    {
+      "session_key": 11326,
+      "meeting_key": 1289,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 232,
+      "raw_path": "2026/1289/11326_R/overtakes.json"
+    },
+    {
+      "session_key": 11327,
+      "meeting_key": 1290,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 600,
+      "raw_path": "2026/1290/11327_FP1/position.json"
+    },
+    {
+      "session_key": 11328,
+      "meeting_key": 1290,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 464,
+      "raw_path": "2026/1290/11328_FP2/position.json"
+    },
+    {
+      "session_key": 11329,
+      "meeting_key": 1290,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 485,
+      "raw_path": "2026/1290/11329_FP3/position.json"
+    },
+    {
+      "session_key": 11330,
+      "meeting_key": 1290,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1064,
+      "raw_path": "2026/1290/11330_Q/position.json"
+    },
+    {
+      "session_key": 11334,
+      "meeting_key": 1290,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11334'"
+    },
+    {
+      "session_key": 11334,
+      "meeting_key": 1290,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 443,
+      "raw_path": "2026/1290/11334_R/position.json"
+    },
+    {
+      "session_key": 11334,
+      "meeting_key": 1290,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 23116,
+      "raw_path": "2026/1290/11334_R/intervals.json"
+    },
+    {
+      "session_key": 11334,
+      "meeting_key": 1290,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 214,
+      "raw_path": "2026/1290/11334_R/overtakes.json"
+    },
+    {
+      "session_key": 11335,
+      "meeting_key": 1291,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 734,
+      "raw_path": "2026/1291/11335_FP1/position.json"
+    },
+    {
+      "session_key": 11336,
+      "meeting_key": 1291,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 608,
+      "raw_path": "2026/1291/11336_FP2/position.json"
+    },
+    {
+      "session_key": 11337,
+      "meeting_key": 1291,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 513,
+      "raw_path": "2026/1291/11337_FP3/position.json"
+    },
+    {
+      "session_key": 11338,
+      "meeting_key": 1291,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1016,
+      "raw_path": "2026/1291/11338_Q/position.json"
+    },
+    {
+      "session_key": 11342,
+      "meeting_key": 1291,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11342'"
+    },
+    {
+      "session_key": 11342,
+      "meeting_key": 1291,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 536,
+      "raw_path": "2026/1291/11342_R/position.json"
+    },
+    {
+      "session_key": 11342,
+      "meeting_key": 1291,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 29593,
+      "raw_path": "2026/1291/11342_R/intervals.json"
+    },
+    {
+      "session_key": 11342,
+      "meeting_key": 1291,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 262,
+      "raw_path": "2026/1291/11342_R/overtakes.json"
+    },
+    {
+      "session_key": 11343,
+      "meeting_key": 1292,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 803,
+      "raw_path": "2026/1292/11343_FP1/position.json"
+    },
+    {
+      "session_key": 11344,
+      "meeting_key": 1292,
+      "session": "SQ",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1292/11344_SQ/drivers.json"
+    },
+    {
+      "session_key": 11344,
+      "meeting_key": 1292,
+      "session": "SQ",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1292/11344_SQ/session_result.json"
+    },
+    {
+      "session_key": 11344,
+      "meeting_key": 1292,
+      "session": "SQ",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 62,
+      "raw_path": "2026/1292/11344_SQ/weather.json"
+    },
+    {
+      "session_key": 11344,
+      "meeting_key": 1292,
+      "session": "SQ",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 254,
+      "raw_path": "2026/1292/11344_SQ/laps.json"
+    },
+    {
+      "session_key": 11344,
+      "meeting_key": 1292,
+      "session": "SQ",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 57,
+      "raw_path": "2026/1292/11344_SQ/stints.json"
+    },
+    {
+      "session_key": 11344,
+      "meeting_key": 1292,
+      "session": "SQ",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 62,
+      "raw_path": "2026/1292/11344_SQ/race_control.json"
+    },
+    {
+      "session_key": 11344,
+      "meeting_key": 1292,
+      "session": "SQ",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 767,
+      "raw_path": "2026/1292/11344_SQ/position.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "drivers",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1292/11348_S/drivers.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1292/11348_S/session_result.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11348'"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 80,
+      "raw_path": "2026/1292/11348_S/weather.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 506,
+      "raw_path": "2026/1292/11348_S/laps.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 24,
+      "raw_path": "2026/1292/11348_S/stints.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "pit",
+      "status": "downloaded",
+      "rows": 2,
+      "raw_path": "2026/1292/11348_S/pit.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 65,
+      "raw_path": "2026/1292/11348_S/race_control.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 65,
+      "raw_path": "2026/1292/11348_S/position.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 11063,
+      "raw_path": "2026/1292/11348_S/intervals.json"
+    },
+    {
+      "session_key": 11348,
+      "meeting_key": 1292,
+      "session": "S",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1292/11348_S/overtakes.json"
+    },
+    {
+      "session_key": 11349,
+      "meeting_key": 1292,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1184,
+      "raw_path": "2026/1292/11349_Q/position.json"
+    },
+    {
+      "session_key": 11353,
+      "meeting_key": 1292,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11353'"
+    },
+    {
+      "session_key": 11353,
+      "meeting_key": 1292,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 608,
+      "raw_path": "2026/1292/11353_R/position.json"
+    },
+    {
+      "session_key": 11353,
+      "meeting_key": 1292,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 30616,
+      "raw_path": "2026/1292/11353_R/intervals.json"
+    },
+    {
+      "session_key": 11353,
+      "meeting_key": 1292,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 292,
+      "raw_path": "2026/1292/11353_R/overtakes.json"
+    },
+    {
+      "session_key": 11354,
+      "meeting_key": 1293,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 686,
+      "raw_path": "2026/1293/11354_FP1/position.json"
+    },
+    {
+      "session_key": 11355,
+      "meeting_key": 1293,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 561,
+      "raw_path": "2026/1293/11355_FP2/position.json"
+    },
+    {
+      "session_key": 11356,
+      "meeting_key": 1293,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 617,
+      "raw_path": "2026/1293/11356_FP3/position.json"
+    },
+    {
+      "session_key": 11357,
+      "meeting_key": 1293,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 890,
+      "raw_path": "2026/1293/11357_Q/position.json"
+    },
+    {
+      "session_key": 11361,
+      "meeting_key": 1293,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11361'"
+    },
+    {
+      "session_key": 11361,
+      "meeting_key": 1293,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 678,
+      "raw_path": "2026/1293/11361_R/position.json"
+    },
+    {
+      "session_key": 11361,
+      "meeting_key": 1293,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 21955,
+      "raw_path": "2026/1293/11361_R/intervals.json"
+    },
+    {
+      "session_key": 11361,
+      "meeting_key": 1293,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 334,
+      "raw_path": "2026/1293/11361_R/overtakes.json"
+    },
+    {
+      "session_key": 11362,
+      "meeting_key": 1294,
+      "session": "FP1",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1294/11362_FP1/session_result.json"
+    },
+    {
+      "session_key": 11362,
+      "meeting_key": 1294,
+      "session": "FP1",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 86,
+      "raw_path": "2026/1294/11362_FP1/weather.json"
+    },
+    {
+      "session_key": 11362,
+      "meeting_key": 1294,
+      "session": "FP1",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 561,
+      "raw_path": "2026/1294/11362_FP1/laps.json"
+    },
+    {
+      "session_key": 11362,
+      "meeting_key": 1294,
+      "session": "FP1",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 90,
+      "raw_path": "2026/1294/11362_FP1/stints.json"
+    },
+    {
+      "session_key": 11362,
+      "meeting_key": 1294,
+      "session": "FP1",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 98,
+      "raw_path": "2026/1294/11362_FP1/race_control.json"
+    },
+    {
+      "session_key": 11362,
+      "meeting_key": 1294,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 851,
+      "raw_path": "2026/1294/11362_FP1/position.json"
+    },
+    {
+      "session_key": 11363,
+      "meeting_key": 1294,
+      "session": "FP2",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1294/11363_FP2/session_result.json"
+    },
+    {
+      "session_key": 11363,
+      "meeting_key": 1294,
+      "session": "FP2",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 85,
+      "raw_path": "2026/1294/11363_FP2/weather.json"
+    },
+    {
+      "session_key": 11363,
+      "meeting_key": 1294,
+      "session": "FP2",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 481,
+      "raw_path": "2026/1294/11363_FP2/laps.json"
+    },
+    {
+      "session_key": 11363,
+      "meeting_key": 1294,
+      "session": "FP2",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 90,
+      "raw_path": "2026/1294/11363_FP2/stints.json"
+    },
+    {
+      "session_key": 11363,
+      "meeting_key": 1294,
+      "session": "FP2",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 108,
+      "raw_path": "2026/1294/11363_FP2/race_control.json"
+    },
+    {
+      "session_key": 11363,
+      "meeting_key": 1294,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 593,
+      "raw_path": "2026/1294/11363_FP2/position.json"
+    },
+    {
+      "session_key": 11364,
+      "meeting_key": 1294,
+      "session": "FP3",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1294/11364_FP3/session_result.json"
+    },
+    {
+      "session_key": 11364,
+      "meeting_key": 1294,
+      "session": "FP3",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 95,
+      "raw_path": "2026/1294/11364_FP3/weather.json"
+    },
+    {
+      "session_key": 11364,
+      "meeting_key": 1294,
+      "session": "FP3",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 261,
+      "raw_path": "2026/1294/11364_FP3/laps.json"
+    },
+    {
+      "session_key": 11364,
+      "meeting_key": 1294,
+      "session": "FP3",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 67,
+      "raw_path": "2026/1294/11364_FP3/stints.json"
+    },
+    {
+      "session_key": 11364,
+      "meeting_key": 1294,
+      "session": "FP3",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 179,
+      "raw_path": "2026/1294/11364_FP3/race_control.json"
+    },
+    {
+      "session_key": 11364,
+      "meeting_key": 1294,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 496,
+      "raw_path": "2026/1294/11364_FP3/position.json"
+    },
+    {
+      "session_key": 11365,
+      "meeting_key": 1294,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 953,
+      "raw_path": "2026/1294/11365_Q/position.json"
+    },
+    {
+      "session_key": 11369,
+      "meeting_key": 1294,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11369'"
+    },
+    {
+      "session_key": 11369,
+      "meeting_key": 1294,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 254,
+      "raw_path": "2026/1294/11369_R/position.json"
+    },
+    {
+      "session_key": 11369,
+      "meeting_key": 1294,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 26935,
+      "raw_path": "2026/1294/11369_R/intervals.json"
+    },
+    {
+      "session_key": 11369,
+      "meeting_key": 1294,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 123,
+      "raw_path": "2026/1294/11369_R/overtakes.json"
+    },
+    {
+      "session_key": 11370,
+      "meeting_key": 1295,
+      "session": "FP1",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1295/11370_FP1/session_result.json"
+    },
+    {
+      "session_key": 11370,
+      "meeting_key": 1295,
+      "session": "FP1",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 75,
+      "raw_path": "2026/1295/11370_FP1/weather.json"
+    },
+    {
+      "session_key": 11370,
+      "meeting_key": 1295,
+      "session": "FP1",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 463,
+      "raw_path": "2026/1295/11370_FP1/laps.json"
+    },
+    {
+      "session_key": 11370,
+      "meeting_key": 1295,
+      "session": "FP1",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 77,
+      "raw_path": "2026/1295/11370_FP1/stints.json"
+    },
+    {
+      "session_key": 11370,
+      "meeting_key": 1295,
+      "session": "FP1",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 88,
+      "raw_path": "2026/1295/11370_FP1/race_control.json"
+    },
+    {
+      "session_key": 11370,
+      "meeting_key": 1295,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 786,
+      "raw_path": "2026/1295/11370_FP1/position.json"
+    },
+    {
+      "session_key": 11371,
+      "meeting_key": 1295,
+      "session": "FP2",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1295/11371_FP2/session_result.json"
+    },
+    {
+      "session_key": 11371,
+      "meeting_key": 1295,
+      "session": "FP2",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 85,
+      "raw_path": "2026/1295/11371_FP2/weather.json"
+    },
+    {
+      "session_key": 11371,
+      "meeting_key": 1295,
+      "session": "FP2",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 457,
+      "raw_path": "2026/1295/11371_FP2/laps.json"
+    },
+    {
+      "session_key": 11371,
+      "meeting_key": 1295,
+      "session": "FP2",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 62,
+      "raw_path": "2026/1295/11371_FP2/stints.json"
+    },
+    {
+      "session_key": 11371,
+      "meeting_key": 1295,
+      "session": "FP2",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 90,
+      "raw_path": "2026/1295/11371_FP2/race_control.json"
+    },
+    {
+      "session_key": 11371,
+      "meeting_key": 1295,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 596,
+      "raw_path": "2026/1295/11371_FP2/position.json"
+    },
+    {
+      "session_key": 11372,
+      "meeting_key": 1295,
+      "session": "FP3",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1295/11372_FP3/session_result.json"
+    },
+    {
+      "session_key": 11372,
+      "meeting_key": 1295,
+      "session": "FP3",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 81,
+      "raw_path": "2026/1295/11372_FP3/weather.json"
+    },
+    {
+      "session_key": 11372,
+      "meeting_key": 1295,
+      "session": "FP3",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 446,
+      "raw_path": "2026/1295/11372_FP3/laps.json"
+    },
+    {
+      "session_key": 11372,
+      "meeting_key": 1295,
+      "session": "FP3",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 57,
+      "raw_path": "2026/1295/11372_FP3/stints.json"
+    },
+    {
+      "session_key": 11372,
+      "meeting_key": 1295,
+      "session": "FP3",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 149,
+      "raw_path": "2026/1295/11372_FP3/race_control.json"
+    },
+    {
+      "session_key": 11372,
+      "meeting_key": 1295,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 811,
+      "raw_path": "2026/1295/11372_FP3/position.json"
+    },
+    {
+      "session_key": 11373,
+      "meeting_key": 1295,
+      "session": "Q",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1295/11373_Q/session_result.json"
+    },
+    {
+      "session_key": 11373,
+      "meeting_key": 1295,
+      "session": "Q",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 81,
+      "raw_path": "2026/1295/11373_Q/weather.json"
+    },
+    {
+      "session_key": 11373,
+      "meeting_key": 1295,
+      "session": "Q",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 373,
+      "raw_path": "2026/1295/11373_Q/laps.json"
+    },
+    {
+      "session_key": 11373,
+      "meeting_key": 1295,
+      "session": "Q",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 66,
+      "raw_path": "2026/1295/11373_Q/stints.json"
+    },
+    {
+      "session_key": 11373,
+      "meeting_key": 1295,
+      "session": "Q",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 134,
+      "raw_path": "2026/1295/11373_Q/race_control.json"
+    },
+    {
+      "session_key": 11373,
+      "meeting_key": 1295,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1301,
+      "raw_path": "2026/1295/11373_Q/position.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "session_result",
+      "status": "downloaded",
+      "rows": 22,
+      "raw_path": "2026/1295/11377_R/session_result.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11377'"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "weather",
+      "status": "downloaded",
+      "rows": 168,
+      "raw_path": "2026/1295/11377_R/weather.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "laps",
+      "status": "downloaded",
+      "rows": 983,
+      "raw_path": "2026/1295/11377_R/laps.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "stints",
+      "status": "downloaded",
+      "rows": 58,
+      "raw_path": "2026/1295/11377_R/stints.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "pit",
+      "status": "downloaded",
+      "rows": 36,
+      "raw_path": "2026/1295/11377_R/pit.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "race_control",
+      "status": "downloaded",
+      "rows": 141,
+      "raw_path": "2026/1295/11377_R/race_control.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 311,
+      "raw_path": "2026/1295/11377_R/position.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 24933,
+      "raw_path": "2026/1295/11377_R/intervals.json"
+    },
+    {
+      "session_key": 11377,
+      "meeting_key": 1295,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 160,
+      "raw_path": "2026/1295/11377_R/overtakes.json"
+    },
+    {
+      "session_key": 11727,
+      "meeting_key": 1308,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 639,
+      "raw_path": "2026/1308/11727_FP1/position.json"
+    },
+    {
+      "session_key": 11728,
+      "meeting_key": 1308,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 433,
+      "raw_path": "2026/1308/11728_FP2/position.json"
+    },
+    {
+      "session_key": 11729,
+      "meeting_key": 1308,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 450,
+      "raw_path": "2026/1308/11729_FP3/position.json"
+    },
+    {
+      "session_key": 11730,
+      "meeting_key": 1308,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 786,
+      "raw_path": "2026/1308/11730_Q/position.json"
+    },
+    {
+      "session_key": 11731,
+      "meeting_key": 1308,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11731'"
+    },
+    {
+      "session_key": 11731,
+      "meeting_key": 1308,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 880,
+      "raw_path": "2026/1308/11731_R/position.json"
+    },
+    {
+      "session_key": 11731,
+      "meeting_key": 1308,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 21448,
+      "raw_path": "2026/1308/11731_R/intervals.json"
+    },
+    {
+      "session_key": 11731,
+      "meeting_key": 1308,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 505,
+      "raw_path": "2026/1308/11731_R/overtakes.json"
+    },
+    {
+      "session_key": 11378,
+      "meeting_key": 1296,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 972,
+      "raw_path": "2026/1296/11378_FP1/position.json"
+    },
+    {
+      "session_key": 11379,
+      "meeting_key": 1296,
+      "session": "SQ",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 998,
+      "raw_path": "2026/1296/11379_SQ/position.json"
+    },
+    {
+      "session_key": 11383,
+      "meeting_key": 1296,
+      "session": "S",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11383'"
+    },
+    {
+      "session_key": 11383,
+      "meeting_key": 1296,
+      "session": "S",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 206,
+      "raw_path": "2026/1296/11383_S/position.json"
+    },
+    {
+      "session_key": 11383,
+      "meeting_key": 1296,
+      "session": "S",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 6839,
+      "raw_path": "2026/1296/11383_S/intervals.json"
+    },
+    {
+      "session_key": 11383,
+      "meeting_key": 1296,
+      "session": "S",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 94,
+      "raw_path": "2026/1296/11383_S/overtakes.json"
+    },
+    {
+      "session_key": 11384,
+      "meeting_key": 1296,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1032,
+      "raw_path": "2026/1296/11384_Q/position.json"
+    },
+    {
+      "session_key": 11388,
+      "meeting_key": 1296,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11388'"
+    },
+    {
+      "session_key": 11388,
+      "meeting_key": 1296,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 396,
+      "raw_path": "2026/1296/11388_R/position.json"
+    },
+    {
+      "session_key": 11388,
+      "meeting_key": 1296,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 28131,
+      "raw_path": "2026/1296/11388_R/intervals.json"
+    },
+    {
+      "session_key": 11388,
+      "meeting_key": 1296,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 191,
+      "raw_path": "2026/1296/11388_R/overtakes.json"
+    },
+    {
+      "session_key": 11389,
+      "meeting_key": 1297,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 901,
+      "raw_path": "2026/1297/11389_FP1/position.json"
+    },
+    {
+      "session_key": 11390,
+      "meeting_key": 1297,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 701,
+      "raw_path": "2026/1297/11390_FP2/position.json"
+    },
+    {
+      "session_key": 11391,
+      "meeting_key": 1297,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 620,
+      "raw_path": "2026/1297/11391_FP3/position.json"
+    },
+    {
+      "session_key": 11392,
+      "meeting_key": 1297,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 966,
+      "raw_path": "2026/1297/11392_Q/position.json"
+    },
+    {
+      "session_key": 11396,
+      "meeting_key": 1297,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11396'"
+    },
+    {
+      "session_key": 11396,
+      "meeting_key": 1297,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 455,
+      "raw_path": "2026/1297/11396_R/position.json"
+    },
+    {
+      "session_key": 11396,
+      "meeting_key": 1297,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 24227,
+      "raw_path": "2026/1297/11396_R/intervals.json"
+    },
+    {
+      "session_key": 11396,
+      "meeting_key": 1297,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 220,
+      "raw_path": "2026/1297/11396_R/overtakes.json"
+    },
+    {
+      "session_key": 11397,
+      "meeting_key": 1298,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1012,
+      "raw_path": "2026/1298/11397_FP1/position.json"
+    },
+    {
+      "session_key": 11398,
+      "meeting_key": 1298,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 717,
+      "raw_path": "2026/1298/11398_FP2/position.json"
+    },
+    {
+      "session_key": 11399,
+      "meeting_key": 1298,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 498,
+      "raw_path": "2026/1298/11399_FP3/position.json"
+    },
+    {
+      "session_key": 11400,
+      "meeting_key": 1298,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1133,
+      "raw_path": "2026/1298/11400_Q/position.json"
+    },
+    {
+      "session_key": 11404,
+      "meeting_key": 1298,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11404'"
+    },
+    {
+      "session_key": 11404,
+      "meeting_key": 1298,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 557,
+      "raw_path": "2026/1298/11404_R/position.json"
+    },
+    {
+      "session_key": 11404,
+      "meeting_key": 1298,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 28176,
+      "raw_path": "2026/1298/11404_R/intervals.json"
+    },
+    {
+      "session_key": 11404,
+      "meeting_key": 1298,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 273,
+      "raw_path": "2026/1298/11404_R/overtakes.json"
+    },
+    {
+      "session_key": 11405,
+      "meeting_key": 1299,
+      "session": "FP1",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 694,
+      "raw_path": "2026/1299/11405_FP1/position.json"
+    },
+    {
+      "session_key": 11406,
+      "meeting_key": 1299,
+      "session": "FP2",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 557,
+      "raw_path": "2026/1299/11406_FP2/position.json"
+    },
+    {
+      "session_key": 11407,
+      "meeting_key": 1299,
+      "session": "FP3",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 557,
+      "raw_path": "2026/1299/11407_FP3/position.json"
+    },
+    {
+      "session_key": 11408,
+      "meeting_key": 1299,
+      "session": "Q",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 1885,
+      "raw_path": "2026/1299/11408_Q/position.json"
+    },
+    {
+      "session_key": 11412,
+      "meeting_key": 1299,
+      "session": "R",
+      "endpoint": "starting_grid",
+      "status": "unavailable",
+      "error": "Client error '404 Not Found' for url 'https://api.openf1.org/v1/starting_grid?session_key=11412'"
+    },
+    {
+      "session_key": 11412,
+      "meeting_key": 1299,
+      "session": "R",
+      "endpoint": "position",
+      "status": "downloaded",
+      "rows": 576,
+      "raw_path": "2026/1299/11412_R/position.json"
+    },
+    {
+      "session_key": 11412,
+      "meeting_key": 1299,
+      "session": "R",
+      "endpoint": "intervals",
+      "status": "downloaded",
+      "rows": 29368,
+      "raw_path": "2026/1299/11412_R/intervals.json"
+    },
+    {
+      "session_key": 11412,
+      "meeting_key": 1299,
+      "session": "R",
+      "endpoint": "overtakes",
+      "status": "downloaded",
+      "rows": 297,
+      "raw_path": "2026/1299/11412_R/overtakes.json"
+    }
+  ]
+}

@@ -141,12 +141,13 @@ Required environment variables:
 Deployment options:
 
 1. **Source-only deploy with bundled public data**
-   - Uses the generated `src/data` snapshot by default.
-   - Keep `F1_INSIGHTX_PUBLIC_DATA_SOURCE` unset unless Supabase product tables
-     have been refreshed through the latest completed race.
+   - Set `F1_INSIGHTX_PUBLIC_DATA_SOURCE=local` to force the generated `src/data`
+     snapshot, even if Supabase credentials are configured.
 
 2. **Source-only deploy with Supabase-backed public data**
    - Requires Supabase tables/views to be loaded and granted.
+   - When credentials are configured, this is the default source attempt;
+     failed reads fall back to the bundled snapshot.
    - Compare and Analysis still need generated file artifacts unless
      those surfaces are intentionally degraded.
 
