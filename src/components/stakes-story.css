@@ -20,10 +20,10 @@
 .stakes-selected-mark circle { fill: currentColor; stroke: #101310; stroke-width: 3; }
 .stakes-selected-mark text { fill: #fff; font: 700 13px Inter, sans-serif; }
 .stakes-driver-picker { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -8px; }
-.stakes-driver-picker button { min-width: 45px; min-height: 36px; padding: 0 8px; border: 1px solid #45504a; background: transparent; color: #c3cbc3; font-size: 10px; font-weight: 700; cursor: pointer; transition: background .16s, border-color .16s; }
+.stakes-driver-picker button { min-width: 45px; min-height: 44px; padding: 0 8px; border: 1px solid #45504a; background: transparent; color: #c3cbc3; font-size: 10px; font-weight: 700; cursor: pointer; transition: background .16s, border-color .16s; }
 .stakes-driver-picker button:hover, .stakes-driver-picker button:focus-visible { border-color: var(--stakes-team); color: #fff; }
 .stakes-driver-picker button[aria-pressed="true"] { border-color: var(--stakes-team); background: color-mix(in srgb, var(--stakes-team) 23%, #111211); color: #fff; box-shadow: inset 0 2px var(--stakes-team); }
-.stakes-driver-picker button:focus-visible, .stakes-mobile-list button:focus-visible { outline: 2px solid #76d5d6; outline-offset: 2px; }
+.stakes-driver-picker button:focus-visible { outline: 2px solid #76d5d6; outline-offset: 2px; }
 .stakes-source-note { margin: 16px 0 0; color: #929c96; font-size: 10px; line-height: 1.5; }
 .stakes-inspector { padding: 20px 0 20px 25px; border-left: 1px solid #343b38; }
 .stakes-identity { display: flex; align-items: center; gap: 12px; margin-bottom: 23px; }
@@ -34,6 +34,7 @@
 .stakes-position-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 14px; border-top: 1px solid #343b38; }
 .stakes-position-pair span, .stakes-qualifying-detail span, .stakes-history > div > span { display: block; color: #9fa9a2; font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
 .stakes-position-pair strong { display: block; margin-top: 6px; color: #fff; font-family: Georgia, serif; font-size: 34px; font-weight: 400; line-height: 1; }
+.stakes-position-pair strong.is-missing { font-family: Inter, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.3; }
 .stakes-grid-note { min-height: 31px; margin: 11px 0 17px; color: #b7c0b8; font-size: 11px; line-height: 1.45; }
 .stakes-qualifying-detail { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 5px 10px; padding: 13px 0; border-top: 1px solid #343b38; border-bottom: 1px solid #343b38; }
 .stakes-qualifying-detail strong { color: #fff; font-size: 16px; font-variant-numeric: tabular-nums; }
@@ -46,7 +47,7 @@
 .stakes-history li span { color: #a0aaa2; }
 .stakes-history li strong { color: #fff; font-weight: 600; }
 .stakes-history p, .stakes-empty { margin: 12px 0; color: #aab3ac; font-size: 12px; line-height: 1.5; }
-.stakes-mobile-list, .stakes-mobile-focus, .stakes-mobile-selector { display: none; }
+.stakes-chart-mobile, .stakes-mobile-focus { display: none; }
 @media (max-width: 900px) {
   .stakes-layout { grid-template-columns: minmax(0, 1fr) 230px; }
   .stakes-main { padding-right: 16px; }
@@ -60,29 +61,19 @@
   .stakes-layout { display: flex; flex-direction: column; }
   .stakes-main { padding: 17px 0 16px; }
   .stakes-chart-head span:last-child { text-align: right; }
-  .stakes-chart-desktop, .stakes-driver-picker { display: none; }
-  .stakes-mobile-selector { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 17px; color: #aab5ab; font-size: 11px; }
-  .stakes-mobile-selector select { min-height: 44px; max-width: 65%; padding: 0 10px; border: 1px solid #526258; border-radius: 0; background: #19221d; color: #fff; font: inherit; font-size: 12px; }
-  .stakes-mobile-selector select:focus-visible { outline: 2px solid #76d5d6; outline-offset: 2px; }
+  .stakes-chart-desktop { display: none; }
+  .stakes-chart-mobile { display: block; margin-top: 12px; }
+  .stakes-chart-mobile svg { display: block; width: 100%; height: auto; }
+  .stakes-chart-mobile .stakes-axis-label { font-size: 9px; letter-spacing: 1px; }
+  .stakes-driver-picker { display: grid; grid-template-columns: repeat(auto-fit, minmax(48px, 1fr)); gap: 7px; margin-top: 14px; }
+  .stakes-driver-picker button { min-width: 0; min-height: 44px; font-size: 11px; }
   .stakes-mobile-focus { display: grid; grid-template-columns: 1fr 48px 1fr; align-items: center; gap: 9px; min-height: 106px; margin-top: 13px; border-top: 1px solid #38423b; border-bottom: 1px solid #38423b; }
   .stakes-mobile-focus > div:last-child { text-align: right; }
   .stakes-mobile-focus > div > span { display: block; color: #9da9a0; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
   .stakes-mobile-focus strong { display: block; margin-top: 6px; color: #fff; font-family: Georgia, serif; font-size: 37px; font-weight: 400; line-height: 1; }
+  .stakes-mobile-focus strong.is-missing { font-family: Inter, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.3; }
   .stakes-mobile-connector { position: relative; display: block; height: 2px; background: var(--stakes-team); }
   .stakes-mobile-connector::after { content: ""; position: absolute; top: -4px; right: 0; width: 10px; height: 10px; border-top: 2px solid var(--stakes-team); border-right: 2px solid var(--stakes-team); transform: rotate(45deg); }
-  .stakes-mobile-list { display: block; width: 100%; margin: 12px 0 19px; }
-  .stakes-mobile-list-title { margin: 0 0 11px; color: #b4bfb6; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-  .stakes-mobile-columns, .stakes-mobile-list button { display: grid; grid-template-columns: 50px minmax(0, 1fr) 61px; align-items: center; gap: 8px; }
-  .stakes-mobile-columns { padding: 0 8px 6px; color: #8e9991; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
-  .stakes-mobile-columns span:last-child { text-align: right; }
-  .stakes-mobile-list button { width: 100%; min-height: 45px; padding: 5px 8px; border: 0; border-top: 1px solid #303832; background: transparent; color: #dce2db; text-align: left; cursor: pointer; }
-  .stakes-mobile-list button:last-child { border-bottom: 1px solid #303832; }
-  .stakes-mobile-list button.is-selected { background: #25302c; color: #fff; }
-  .stakes-mobile-list button > span:first-child, .stakes-mobile-list button > span:last-child { font-size: 12px; font-variant-numeric: tabular-nums; }
-  .stakes-mobile-list button > span:last-child { text-align: right; }
-  .stakes-mobile-name { display: flex; align-items: center; min-width: 0; gap: 8px; font-size: 12px; font-weight: 700; }
-  .stakes-mobile-name i { display: block; width: 3px; height: 23px; flex: none; }
-  .stakes-mobile-name small { min-width: 0; overflow: hidden; color: #9ca8a0; font-size: 10px; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; }
   .stakes-inspector { padding: 21px 0 18px; border-top: 1px solid #343b38; border-left: 0; }
   .stakes-position-pair { max-width: 280px; }
 }

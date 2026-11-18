@@ -96,6 +96,12 @@ python data/build_analytics_views.py
 python data/build_analytics_indexes.py
 python data/build_analytics_telemetry_traces.py
 python data/build_race_analysis_views.py
+python data/build_race_evidence.py
+python data/build_decisive_lap_evidence.py
+python validate_race_evidence.py
+python validate_decisive_lap_evidence.py
+python data/build_opening_evidence.py
+python validate_opening_evidence.py
 python data/build_pit_wall_picks.py
 python build_season_state.py
 python build_product_manifest.py
@@ -104,10 +110,30 @@ python validate_season_state.py
 python data/load_supabase.py
 ```
 
+Section 00 race evidence uses the local staged OpenF1 archive without exposing
+bulk telemetry to the app. Audit all 2026 session and feed coverage with
+`python data/audit_openf1_2026.py`; its report is
+`data/reports/openf1_2026_session_audit.json`. The compact race evidence
+views provide recorded events, lap-sampled intervals, featured telemetry/GPS
+traces, recorded sectors, and per-race scene readiness. Rebuild them after race analysis, run
+`python data/build_decisive_lap_evidence.py` to expand two featured laps to
+all available drivers, then run both race-evidence validators and publish with
+`python data/load_race_evidence.py`. The targeted loader replaces the affected
+races in one database transaction, preserving the previous release if a check
+or copy fails. The normal full loader also includes these views.
+
+Section 02 uses a separate bounded first-lap position view. Rebuild it with
+`python data/build_opening_evidence.py`, check it with
+`python validate_opening_evidence.py`, and publish with
+`python data/load_opening_evidence.py`. It retains only timestamped OpenF1
+position changes between the canonical first timed lap start and the leader's
+lap-one completion. Sparse drivers stay sparse; race-control messages are
+filtered to this same UTC window at read time. The normal full loader includes
+the opening view as well.
+
 The loader reapplies the current 2026-11-17 Supabase migrations after its
 base schema SQL. This keeps public grants, view permissions, and the account
-profile contract consistent.
-when the schema is refreshed.
+profile contract consistent when the schema is refreshed.
 
 Run the relevant commands above in order when the full local data estate is
 available. The root `package.json` does not define a `data:refresh` script.
@@ -137,6 +163,7 @@ python validate_telemetry_features.py
 python validate_analytics_views.py
 python validate_analytics_telemetry_traces.py
 python validate_race_analysis_views.py
+python validate_race_evidence.py
 python validate_product_manifest.py
 python validate_season_state.py
 python check_generated_artifacts.py

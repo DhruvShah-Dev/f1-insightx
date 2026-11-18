@@ -384,6 +384,7 @@ export function fallbackWeekend(slug: string) {
       bestS: null,
       degS: s.degS,
       quality: null,
+      note: "Local snapshot; timing and compound provenance are unavailable.",
     })),
     pits: [],
     stories: [

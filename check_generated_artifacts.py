@@ -19,15 +19,27 @@ BLOCKED_PATTERNS = [
     "*.arrow",
 ]
 
+# Compact validation snapshots are part of the release contract. Bulk source
+# archives and generated session shards are not.
+RELEASE_REPORTS = {
+    "data/reports/openf1_2026_session_audit.json",
+    "data/reports/race_evidence_quality_report.json",
+    "data/reports/opening_evidence_quality_report.json",
+    "data/reports/decisive_lap_quality_report.json",
+}
 
-def git_ls_files() -> list[str]:
-    result = subprocess.run(
-        ["git", "ls-files"],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return [line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip()]
+
+def new_files() -> list[str]:
+    # The repository contains historical tracked archives. Guard newly added
+    # files without requiring an unrelated rewrite of that published history.
+    paths: set[str] = set()
+    for args in (
+        ["git", "ls-files", "--others", "--exclude-standard"],
+        ["git", "diff", "--cached", "--name-only", "--diff-filter=A"],
+    ):
+        result = subprocess.run(args, check=True, capture_output=True, text=True)
+        paths.update(line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip())
+    return sorted(paths)
 
 
 def matches(path: str, pattern: str) -> bool:
@@ -36,15 +48,16 @@ def matches(path: str, pattern: str) -> bool:
 
 
 def main() -> None:
-    tracked = git_ls_files()
+    added = new_files()
     violations = sorted(
         path
-        for path in tracked
-        if not path.endswith(".gitkeep") and any(matches(path, pattern) for pattern in BLOCKED_PATTERNS)
+        for path in added
+        if path not in RELEASE_REPORTS and not path.endswith(".gitkeep")
+        and any(matches(path, pattern) for pattern in BLOCKED_PATTERNS)
     )
 
     if violations:
-        print("Generated or large artifacts are tracked and should be removed from git:")
+        print("New bulk or generated artifacts would enter git:")
         for path in violations:
             print(f"- {path}")
         raise SystemExit(1)

@@ -128,6 +128,28 @@ SURFACES: dict[str, dict[str, Any]] = {
         "validation_command": "python data/build_race_analysis_views.py && python validate_race_analysis_views.py",
         "stale_after_hours": 720,
     },
+    "race_evidence": {
+        "artifact_paths": [
+            "data/race_analysis/race_analysis_events.csv",
+            "data/race_analysis/race_analysis_gap_timeline.csv",
+            "data/race_analysis/race_analysis_lap_traces.csv",
+            "data/race_analysis/race_analysis_evidence_manifest.csv",
+            "data/race_analysis/race_analysis_featured_laps.csv",
+            "data/race_analysis/race_analysis_featured_lap_sectors.csv",
+            "data/reports/decisive_lap_quality_report.json",
+        ],
+        "source_files": ["data/staged/openf1/2026", "data/race_analysis/race_analysis_story_points.csv"],
+        "quality_report": "data/reports/race_evidence_quality_report.json",
+        "validation_command": "python data/build_race_evidence.py && python data/build_decisive_lap_evidence.py && python validate_race_evidence.py && python validate_decisive_lap_evidence.py",
+        "stale_after_hours": 720,
+    },
+    "opening_evidence": {
+        "artifact_paths": ["data/race_analysis/race_analysis_opening_positions.csv"],
+        "source_files": ["data/raw/openf1/2026", "data/canonical_fastf1/laps_canonical.csv"],
+        "quality_report": "data/reports/opening_evidence_quality_report.json",
+        "validation_command": "python data/build_opening_evidence.py && python validate_opening_evidence.py",
+        "stale_after_hours": 720,
+    },
 }
 
 

@@ -82,19 +82,19 @@
       "status": "strategy_lab_available"
     }
   },
-  "build_version": "season_state_20261112T145916Z",
+  "build_version": "season_state_20261117T195651Z",
   "data_gaps": {
     "clean_lap_filtering": "inferred/proxy",
     "drs_gap_context": "partial",
-    "overtakes": "missing",
-    "position_evolution": "partial",
-    "race_control": "missing",
+    "overtakes": "recorded_unverified",
+    "position_evolution": "observed_in_evidence",
+    "race_control": "available_in_evidence",
     "race_results": "available",
     "telemetry_sessions": "available",
     "weather": "available"
   },
   "errors": [],
-  "generated_at": "2026-11-12T14:59:16Z",
+  "generated_at": "2026-11-17T19:56:51Z",
   "missing_data_flags": [],
   "schema_version": 1,
   "status": "passed",

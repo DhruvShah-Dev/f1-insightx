@@ -34,7 +34,12 @@ type StakesDriver = {
 };
 
 const rank = (value: number | null | undefined) => value != null && value > 0 ? value : null;
-const rankLabel = (value: number | null) => value == null ? "—" : `P${value}`;
+const qualifyingLabel = (driver: StakesDriver) => driver.qualiRank != null
+  ? `P${driver.qualiRank}`
+  : driver.qualifying ? "No position" : "No record";
+const gridLabel = (driver: StakesDriver) => driver.gridRank != null
+  ? `P${driver.gridRank}`
+  : driver.classification?.grid === 0 ? "Pit lane" : driver.classification ? "No position" : "No record";
 
 export function StakesStory({
   qualifying,
@@ -45,6 +50,7 @@ export function StakesStory({
   onSelect,
   question,
   round,
+  sprintWeekend,
 }: {
   qualifying: Qualifying[];
   classification: Classification[];
@@ -54,6 +60,7 @@ export function StakesStory({
   onSelect: (code: string) => void;
   question: string;
   round: number;
+  sprintWeekend: boolean;
 }) {
   const drivers = useMemo(() => {
     const byCode = new Map<string, StakesDriver>();
@@ -78,11 +85,12 @@ export function StakesStory({
 
   const selected = drivers.find((driver) => driver.code === selectedCode) ?? drivers[0] ?? null;
   const history = selected
-    ? priorResults.filter((result) => result.code === selected.code).sort((a, b) => b.round - a.round).slice(0, 3)
+    ? priorResults.filter((result) => result.code === selected.code && result.round < round).sort((a, b) => b.round - a.round).slice(0, 3)
     : [];
   const chartDrivers = drivers.filter((driver) => driver.qualiRank != null || driver.gridRank != null);
   const maxRank = Math.max(20, ...chartDrivers.flatMap((driver) => [driver.qualiRank ?? 0, driver.gridRank ?? 0]));
   const x = (position: number) => 48 + ((position - 1) / Math.max(1, maxRank - 1)) * 904;
+  const mobileX = (position: number) => 22 + ((position - 1) / Math.max(1, maxRank - 1)) * 316;
   const ticks = [1, 5, 10, 15, 20, maxRank].filter((value, index, values) => value <= maxRank && values.indexOf(value) === index);
 
   return (
@@ -97,14 +105,14 @@ export function StakesStory({
 
       <div className="stakes-layout">
         <div className="stakes-main">
-          <div className="stakes-chart-head"><span>Qualifying → Grid</span><span>{chartDrivers.length} drivers with a recorded position</span></div>
+          <div className="stakes-chart-head"><span>{sprintWeekend ? "Grand Prix qualifying" : "Qualifying"} → Race grid</span><span>{chartDrivers.length} drivers with a recorded position</span></div>
           {chartDrivers.length ? (
             <>
               <div className="stakes-chart-desktop">
                 <svg viewBox="0 0 1000 298" role="img" aria-label="Qualifying position compared with starting grid position. Use the driver buttons below to select a driver.">
                   {ticks.map((tick) => <g key={tick} className="stakes-axis-tick"><line x1={x(tick)} x2={x(tick)} y1="53" y2="241" /><text x={x(tick)} y="270" textAnchor="middle">{tick}</text></g>)}
-                  <text className="stakes-axis-label" x="48" y="27">QUALIFYING</text>
-                  <text className="stakes-axis-label" x="48" y="238">STARTING GRID</text>
+                  <text className="stakes-axis-label" x="48" y="27">{sprintWeekend ? "GRAND PRIX QUALIFYING" : "QUALIFYING"}</text>
+                  <text className="stakes-axis-label" x="48" y="238">RACE STARTING GRID</text>
                   {chartDrivers.filter((driver) => driver.code !== selected?.code).map((driver) => (
                     <g key={driver.code} className="stakes-driver-mark" onClick={() => onSelect(driver.code)}>
                       {driver.qualiRank != null && driver.gridRank != null ? <line x1={x(driver.qualiRank)} x2={x(driver.gridRank)} y1="69" y2="216" /> : null}
@@ -123,26 +131,43 @@ export function StakesStory({
                   ) : null}
                 </svg>
               </div>
-              {selected ? <label className="stakes-mobile-selector">Choose driver
-                <select value={selected.code} onChange={(event) => onSelect(event.target.value)}>
-                  {drivers.map((driver) => <option key={driver.code} value={driver.code}>{driver.name}</option>)}
-                </select>
-              </label> : null}
-              {selected ? <div className="stakes-mobile-focus" style={{ "--stakes-team": team(selected.team).color } as React.CSSProperties} aria-label={`${selected.name}: qualified ${rankLabel(selected.qualiRank)}, started ${selected.classification?.grid === 0 ? "from the pit lane" : rankLabel(selected.gridRank)}`}>
-                <div><span>Qualified</span><strong>{rankLabel(selected.qualiRank)}</strong></div>
-                <span className="stakes-mobile-connector" aria-hidden="true" />
-                <div><span>Started</span><strong>{selected.classification?.grid === 0 ? "Pit lane" : rankLabel(selected.gridRank)}</strong></div>
-              </div> : null}
-              <div className="stakes-driver-picker" role="group" aria-label="Select driver">
-                {drivers.map((driver) => (
-                  <button key={driver.code} type="button" aria-pressed={driver.code === selected?.code} onClick={() => onSelect(driver.code)} style={{ "--stakes-team": team(driver.team).color } as React.CSSProperties}>
-                    {driver.code}
-                  </button>
-                ))}
+              <div className="stakes-chart-mobile">
+                <svg viewBox="0 0 360 166" role="img" aria-label="Qualifying position compared with race grid position. Select a driver using the buttons below.">
+                  {[1, 5, 10, 15, 20, maxRank].filter((value, index, values) => value <= maxRank && values.indexOf(value) === index).map((tick) =>
+                    <g key={tick} className="stakes-axis-tick"><line x1={mobileX(tick)} x2={mobileX(tick)} y1="38" y2="130" /><text x={mobileX(tick)} y="157" textAnchor="middle">{tick}</text></g>,
+                  )}
+                  <text className="stakes-axis-label" x="22" y="17">{sprintWeekend ? "GRAND PRIX QUALIFYING" : "QUALIFYING"}</text>
+                  <text className="stakes-axis-label" x="22" y="126">RACE GRID</text>
+                  {chartDrivers.filter((driver) => driver.code !== selected?.code).map((driver) =>
+                    <g key={driver.code} className="stakes-driver-mark">
+                      {driver.qualiRank != null && driver.gridRank != null ? <line x1={mobileX(driver.qualiRank)} x2={mobileX(driver.gridRank)} y1="46" y2="105" /> : null}
+                      {driver.qualiRank != null ? <circle cx={mobileX(driver.qualiRank)} cy="46" r="3" /> : null}
+                      {driver.gridRank != null ? <circle cx={mobileX(driver.gridRank)} cy="105" r="3" /> : null}
+                    </g>,
+                  )}
+                  {selected && (selected.qualiRank != null || selected.gridRank != null) ?
+                    <g className="stakes-selected-mark" style={{ color: team(selected.team).color }}>
+                      {selected.qualiRank != null && selected.gridRank != null ? <line x1={mobileX(selected.qualiRank)} x2={mobileX(selected.gridRank)} y1="46" y2="105" /> : null}
+                      {selected.qualiRank != null ? <circle cx={mobileX(selected.qualiRank)} cy="46" r="7" /> : null}
+                      {selected.gridRank != null ? <circle cx={mobileX(selected.gridRank)} cy="105" r="7" /> : null}
+                    </g> : null}
+                </svg>
               </div>
             </>
           ) : <p className="stakes-empty">Qualifying and starting-grid positions are not stored for this report.</p>}
-          <p className="stakes-source-note">Positions are observed session results. A blank position means no usable position was recorded; pit-lane starts are identified separately.</p>
+          {selected ? <div className="stakes-mobile-focus" style={{ "--stakes-team": team(selected.team).color } as React.CSSProperties} aria-label={`${selected.name}: qualified ${qualifyingLabel(selected)}, grid ${gridLabel(selected)}`}>
+            <div><span>Qualified</span><strong className={selected.qualiRank == null ? "is-missing" : ""}>{qualifyingLabel(selected)}</strong></div>
+            <span className="stakes-mobile-connector" aria-hidden="true" />
+            <div><span>Grid</span><strong className={selected.gridRank == null ? "is-missing" : ""}>{gridLabel(selected)}</strong></div>
+          </div> : null}
+          {drivers.length ? <div className="stakes-driver-picker" role="group" aria-label="Select driver">
+            {drivers.map((driver) => (
+              <button key={driver.code} type="button" aria-label={`Select ${driver.name}: qualifying ${qualifyingLabel(driver)}, grid ${gridLabel(driver)}`} aria-pressed={driver.code === selected?.code} onClick={() => onSelect(driver.code)} style={{ "--stakes-team": team(driver.team).color } as React.CSSProperties}>
+                {driver.code}
+              </button>
+            ))}
+          </div> : null}
+          <p className="stakes-source-note">Recorded positions come from curated Grand Prix qualifying results and the race starting grid in race results. Earlier form uses race results from prior rounds only. Missing records and pit-lane starts are shown explicitly; a grid change alone does not establish its cause.</p>
         </div>
 
         <aside className="stakes-inspector" aria-live="polite">
@@ -150,10 +175,10 @@ export function StakesStory({
           {selected ? (
             <>
               <div className="stakes-identity"><span style={{ background: team(selected.team).color }} /><div><strong>{selected.name}</strong><small>{team(selected.team).name}</small></div></div>
-              <div className="stakes-position-pair"><div><span>Qualified</span><strong>{rankLabel(selected.qualiRank)}</strong></div><div><span>Started</span><strong>{selected.classification?.grid === 0 ? "Pit lane" : rankLabel(selected.gridRank)}</strong></div></div>
+              <div className="stakes-position-pair"><div><span>Qualified</span><strong className={selected.qualiRank == null ? "is-missing" : ""}>{qualifyingLabel(selected)}</strong></div><div><span>Grid</span><strong className={selected.gridRank == null ? "is-missing" : ""}>{gridLabel(selected)}</strong></div></div>
               <p className="stakes-grid-note">{selected.qualiRank != null && selected.gridRank != null
                 ? selected.qualiRank === selected.gridRank ? "Started in the position earned in qualifying."
-                  : `Started ${Math.abs(selected.gridRank - selected.qualiRank)} place${Math.abs(selected.gridRank - selected.qualiRank) === 1 ? "" : "s"} ${selected.gridRank > selected.qualiRank ? "behind" : "ahead of"} the qualifying result.`
+                  : `Grid place was ${Math.abs(selected.gridRank - selected.qualiRank)} position${Math.abs(selected.gridRank - selected.qualiRank) === 1 ? "" : "s"} ${selected.gridRank > selected.qualiRank ? "behind" : "ahead of"} the qualifying result.`
                 : "A direct qualifying-to-grid comparison is unavailable for this driver."}</p>
               <div className="stakes-qualifying-detail"><span>Best qualifying lap</span><strong>{fmtLapMs(selected.qualifying?.bestMs ?? null)}</strong><small>{selected.qualifying?.bestMs != null ? selected.qualifying?.segment : selected.qualifying?.status ?? "No recorded time"}</small></div>
               <div className="stakes-history"><div><span>Previous race results</span><small>Before round {round}</small></div>
@@ -164,15 +189,6 @@ export function StakesStory({
             </>
           ) : <p className="stakes-empty">No driver results are stored for this report.</p>}
         </aside>
-        {drivers.length ? <div className="stakes-mobile-list" role="group" aria-label="Choose a driver from qualifying and grid positions">
-          <p className="stakes-mobile-list-title">Full qualifying and grid order</p>
-          <div className="stakes-mobile-columns"><span>Quali</span><span>Driver</span><span>Grid</span></div>
-          {drivers.map((driver) => (
-            <button key={driver.code} type="button" className={driver.code === selected?.code ? "is-selected" : ""} aria-pressed={driver.code === selected?.code} onClick={() => onSelect(driver.code)}>
-              <span>{rankLabel(driver.qualiRank)}</span><span className="stakes-mobile-name"><i style={{ background: team(driver.team).color }} />{driver.code}<small>{driver.name}</small></span><span>{driver.classification?.grid === 0 ? "Pit lane" : rankLabel(driver.gridRank)}</span>
-            </button>
-          ))}
-        </div> : null}
       </div>
     </section>
   );

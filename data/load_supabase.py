@@ -1692,6 +1692,44 @@ TABLE_LOAD_ORDER: list[tuple[str, str, list[str]]] = [
             "note",
         ],
     ),
+    ("race_analysis_events", "race_analysis/race_analysis_events.csv", [
+        "race_analysis_id", "event_id", "source_session_key", "timestamp_utc", "lap_number",
+        "lap_alignment", "event_type", "driver", "other_driver", "position", "detail",
+        "source_endpoint", "confidence", "limitation",
+    ]),
+    ("race_analysis_gap_timeline", "race_analysis/race_analysis_gap_timeline.csv", [
+        "race_analysis_id", "source_session_key", "driver", "lap_number", "timestamp_utc",
+        "position", "position_timestamp_utc", "interval_s", "gap_to_leader_s",
+        "source_endpoint", "confidence", "limitation",
+    ]),
+    ("race_analysis_lap_traces", "race_analysis/race_analysis_lap_traces.csv", [
+        "race_analysis_id", "source_session_key", "driver", "lap_number", "trace_kind",
+        "sample_index", "timestamp_utc", "lap_progress", "speed_kph", "throttle_pct",
+        "brake_pct", "gear", "rpm", "drs", "x", "y", "z", "source_endpoint",
+        "confidence", "limitation",
+    ]),
+    ("race_analysis_evidence_manifest", "race_analysis/race_analysis_evidence_manifest.csv", [
+        "race_analysis_id", "season", "round", "source_meeting_key", "source_session_key",
+        "source_policy", "grid_source", "qualifying_source", "position_available",
+        "intervals_available", "overtakes_available", "race_control_available",
+        "weather_available", "pit_available", "stints_available", "car_data_available",
+        "gps_available", "radio_available", "championship_available", "event_count",
+        "gap_count", "trace_count", "scene_03_ready", "scene_04_ready", "scene_05_ready",
+        "scene_06_ready", "generated_at", "limitation",
+    ]),
+    ("race_analysis_featured_laps", "race_analysis/race_analysis_featured_laps.csv", [
+        "race_analysis_id", "lap_number", "feature_rank", "title", "reason", "evidence_type",
+        "confidence", "driver_count", "car_driver_count", "gps_driver_count", "source_endpoint", "limitation",
+    ]),
+    ("race_analysis_featured_lap_sectors", "race_analysis/race_analysis_featured_lap_sectors.csv", [
+        "race_analysis_id", "driver", "lap_number", "lap_time_s", "sector_1_s", "sector_2_s",
+        "sector_3_s", "source_endpoint", "limitation",
+    ]),
+    ("race_analysis_opening_positions", "race_analysis/race_analysis_opening_positions.csv", [
+        "race_analysis_id", "source_session_key", "driver", "event_index", "timestamp_utc",
+        "elapsed_ms", "position", "window_start_utc", "window_end_utc",
+        "source_endpoint", "confidence", "limitation",
+    ]),
 ]
 
 OPTIONAL_TABLES = {
@@ -1774,6 +1812,13 @@ REPLACE_LOAD_TABLES = {
     "race_analysis_position_timeline",
     "race_analysis_position_swing_events",
     "race_analysis_traffic_proxy",
+    "race_analysis_events",
+    "race_analysis_gap_timeline",
+    "race_analysis_lap_traces",
+    "race_analysis_evidence_manifest",
+    "race_analysis_featured_laps",
+    "race_analysis_featured_lap_sectors",
+    "race_analysis_opening_positions",
 }
 
 UPSERT_CONFLICT_COLUMNS = {
@@ -2173,6 +2218,13 @@ INTEGER_COLUMNS: dict[str, set[str]] = {
     },
     "race_analysis_position_swing_events": {"start_lap", "end_lap", "position_delta"},
     "race_analysis_traffic_proxy": {"lap_number", "position"},
+    "race_analysis_events": {"source_session_key", "lap_number", "position"},
+    "race_analysis_gap_timeline": {"source_session_key", "lap_number", "position"},
+    "race_analysis_lap_traces": {"source_session_key", "lap_number", "sample_index", "gear", "rpm", "drs"},
+    "race_analysis_evidence_manifest": {"season", "round", "source_meeting_key", "source_session_key", "event_count", "gap_count", "trace_count"},
+    "race_analysis_featured_laps": {"lap_number", "feature_rank", "driver_count", "car_driver_count", "gps_driver_count"},
+    "race_analysis_featured_lap_sectors": {"lap_number"},
+    "race_analysis_opening_positions": {"source_session_key", "event_index", "elapsed_ms", "position"},
 }
 
 
@@ -2533,6 +2585,19 @@ def validate_csv_headers(file_path: Path, expected_columns: list[str]) -> list[s
 
 def validate_load_inputs(settings) -> None:
     errors: list[str] = []
+
+    evidence_report = ROOT_DIR / "data" / "reports" / "race_evidence_quality_report.json"
+    if not evidence_report.exists() or json.loads(evidence_report.read_text(encoding="utf-8")).get("validation_status") != "passed":
+        errors.append("Race evidence must pass validate_race_evidence.py before publication")
+    decisive_report = ROOT_DIR / "data" / "reports" / "decisive_lap_quality_report.json"
+    if not decisive_report.exists() or json.loads(decisive_report.read_text(encoding="utf-8")).get("validation_status") != "passed":
+        errors.append("Decisive-lap evidence must pass validate_decisive_lap_evidence.py before publication")
+    opening_report = ROOT_DIR / "data" / "reports" / "opening_evidence_quality_report.json"
+    if not opening_report.exists() or json.loads(opening_report.read_text(encoding="utf-8")).get("validation_status") != "passed":
+        errors.append("Opening evidence must pass validate_opening_evidence.py before publication")
+    audit_report = ROOT_DIR / "data" / "reports" / "openf1_2026_session_audit.json"
+    if not audit_report.exists() or json.loads(audit_report.read_text(encoding="utf-8")).get("status") != "passed":
+        errors.append("All available 2026 OpenF1 sessions must pass the normalization audit")
 
     for table, file_name, columns in TABLE_LOAD_ORDER:
         file_path = resolve_table_path(settings, file_name)

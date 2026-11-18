@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-11-18T04:08:07Z",
+  "races_expected": 20,
+  "races_built": 20,
+  "rows": {
+    "events": 11209,
+    "gaps": 23416,
+    "traces": 120340
+  },
+  "scene_readiness": {
+    "scene_03": 20,
+    "scene_04": 20,
+    "scene_05": 20,
+    "scene_06": 20
+  },
+  "feed_coverage": {
+    "position": 20,
+    "intervals": 20,
+    "overtakes": 20,
+    "race_control": 20,
+    "weather": 20,
+    "pit": 20,
+    "stints": 20,
+    "car_data": 20,
+    "gps": 20,
+    "radio": 16,
+    "championship": 20
+  },
+  "errors": [],
+  "status": "passed",
+  "validation_errors": [],
+  "validation_status": "passed"
+}

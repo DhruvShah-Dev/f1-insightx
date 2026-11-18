@@ -9,6 +9,14 @@ import {
   fetchLapTrace,
   fetchRaceReport,
   fetchRacePositionStory,
+  fetchRaceShapeEvidence,
+  emptyRaceShapeEvidence,
+  fetchVerdictEvidence,
+  emptyVerdictEvidence,
+  fetchDecisiveLapEvidence,
+  emptyDecisiveLapEvidence,
+  fetchOpeningEvidence,
+  emptyOpeningEvidence,
   localRacePositionStory,
   fetchRaceReports,
   fetchRaceWeek,
@@ -39,6 +47,10 @@ export type {
   LapPoint,
   PositionLap,
   RacePositionStoryRow,
+  RaceShapeEvidence,
+  VerdictEvidence,
+  DecisiveLapEvidence,
+  OpeningEvidence,
   RaceOption,
   RaceReportRow,
   RaceWeekDriver,
@@ -125,6 +137,38 @@ export const getRacePositionStory = createServerFn({ method: "GET" })
       () => localRacePositionStory(data.slug),
     ),
   );
+
+export const getRaceShapeEvidence = createServerFn({ method: "GET" })
+  .validator((input) => z.object({ slug: z.string().min(1), drivers: z.array(z.string().regex(/^[A-Z]{3}$/i)).min(1).max(2) }).parse(input))
+  .handler(({ data }) => withFallback(
+    () => fetchRaceShapeEvidence(data.slug, data.drivers),
+    emptyRaceShapeEvidence,
+  ));
+
+export const getVerdictEvidence = createServerFn({ method: "GET" })
+  .validator((input) => z.object({ slug: z.string().min(1), drivers: z.array(z.string().regex(/^[A-Z]{3}$/i)).min(1).max(2) }).parse(input))
+  .handler(({ data }) => withFallback(
+    () => fetchVerdictEvidence(data.slug, data.drivers),
+    emptyVerdictEvidence,
+  ));
+
+export const getDecisiveLapEvidence = createServerFn({ method: "GET" })
+  .validator((input) => z.object({
+    slug: z.string().min(1),
+    lap: z.number().int().min(1).max(500).optional(),
+    drivers: z.array(z.string().regex(/^[A-Z]{3}$/i)).min(1).max(2),
+  }).parse(input))
+  .handler(({ data }) => withFallback(
+    () => fetchDecisiveLapEvidence(data.slug, data.lap, data.drivers),
+    emptyDecisiveLapEvidence,
+  ));
+
+export const getOpeningEvidence = createServerFn({ method: "GET" })
+  .validator((input) => z.object({ slug: z.string().min(1) }).parse(input))
+  .handler(({ data }) => withFallback(
+    () => fetchOpeningEvidence(data.slug),
+    emptyOpeningEvidence,
+  ));
 
 export const getChampionship = createServerFn({ method: "GET" })
   .validator((input) => z.object({ season: z.number().int().optional() }).parse(input ?? {}))

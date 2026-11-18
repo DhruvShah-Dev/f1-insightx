@@ -40,6 +40,19 @@ def test_mixed_iso_timestamps_are_normalized_to_utc(tmp_path: Path) -> None:
     assert str(output["date"].dt.tz) == "UTC"
 
 
+def test_partition_order_and_full_pedal_sentinel_are_normalized(tmp_path: Path) -> None:
+    rows = [
+        {"meeting_key": 10, "session_key": 100, "driver_number": 1, "date": "2026-01-01T00:00:02Z", "throttle": 104, "brake": 0},
+        {"meeting_key": 10, "session_key": 100, "driver_number": 1, "date": "2026-01-01T00:00:01Z", "throttle": 0, "brake": 104},
+    ]
+    output, rejected, stats = clean("car_data", rows, tmp_path)
+    assert stats["quarantined"] == 0
+    assert not rejected
+    assert output["date"].is_monotonic_increasing
+    assert output["throttle"].tolist() == [0, 100]
+    assert output["brake"].tolist() == [100, 0]
+
+
 def test_conflicting_duplicate_keeps_most_complete_row(tmp_path: Path) -> None:
     rows = [
         {"meeting_key": 10, "session_key": 100, "driver_number": 1, "lap_number": 1, "lap_duration": 90.0},

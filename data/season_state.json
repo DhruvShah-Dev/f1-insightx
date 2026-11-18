@@ -11,7 +11,7 @@
       "status": "data_available"
     }
   },
-  "build_version": "season_state_20261112T145916Z",
+  "build_version": "season_state_20261117T195651Z",
   "current_race_week": {
     "available": true,
     "product_view_race": {
@@ -36,9 +36,9 @@
   "data_gaps": {
     "clean_lap_filtering": "inferred/proxy",
     "drs_gap_context": "partial",
-    "overtakes": "missing",
-    "position_evolution": "partial",
-    "race_control": "missing",
+    "overtakes": "recorded_unverified",
+    "position_evolution": "observed_in_evidence",
+    "race_control": "available_in_evidence",
     "race_results": "available",
     "telemetry_sessions": "available",
     "weather": "available"
@@ -56,15 +56,21 @@
       "validation_status": "passed",
       "warnings": []
     },
-    "canonical_fastf1": {
-      "build_version": "canonical_fastf1_20261112T145328Z",
-      "generated_at": "2026-11-12T14:53:28Z",
+    "canonical_sessions": {
+      "build_version": "canonical_sessions_20261117T194703Z",
+      "generated_at": "2026-11-17T19:47:03Z",
       "validation_status": "passed",
       "warnings": []
     },
     "race_analysis": {
       "build_version": "race-analysis-v1",
       "generated_at": "2026-11-12T14:56:31Z",
+      "validation_status": "passed",
+      "warnings": []
+    },
+    "race_evidence": {
+      "build_version": "race_evidence_20261117T195423Z",
+      "generated_at": "2026-11-17T19:54:23Z",
       "validation_status": "passed",
       "warnings": []
     },
@@ -75,8 +81,8 @@
       "warnings": []
     },
     "season_state": {
-      "build_version": "season_state_20261112T145809Z",
-      "generated_at": "2026-11-12T14:58:09Z",
+      "build_version": "season_state_20261117T194758Z",
+      "generated_at": "2026-11-17T19:47:58Z",
       "validation_status": "passed",
       "warnings": []
     },
@@ -87,13 +93,13 @@
       "warnings": []
     },
     "telemetry_features": {
-      "build_version": "telemetry_features_20261112T145507Z",
-      "generated_at": "2026-11-12T14:55:07Z",
+      "build_version": "telemetry_features_20261116T001354Z",
+      "generated_at": "2026-11-16T00:13:54Z",
       "validation_status": "passed",
       "warnings": []
     }
   },
-  "generated_at": "2026-11-12T14:59:16Z",
+  "generated_at": "2026-11-17T19:56:51Z",
   "latest_completed_race": {
     "circuit_id": "interlagos",
     "id": "2026-20-interlagos",

@@ -202,15 +202,18 @@ def build_state() -> tuple[dict[str, Any], dict[str, Any]]:
         if isinstance(surface, dict)
     }
 
+    evidence = read_csv(DATA_DIR / "race_analysis" / "race_analysis_evidence_manifest.csv")
+    evidence_complete = bool(evidence) and len(evidence) >= len(race_analysis_index)
+    evidence_has = lambda column: evidence_complete and all(str(row.get(column, "")).lower() == "true" for row in evidence)
     data_gaps = {
         "telemetry_sessions": "partial" if latest_telemetry and latest_completed and latest_telemetry["id"] != latest_completed["id"] else "available",
         "race_results": "partial" if "latest_completed_results_missing" in missing_flags else "available",
-        "race_control": "missing",
+        "race_control": "available_in_evidence" if evidence_has("race_control_available") else "partial" if evidence else "missing",
         "weather": "available",
         "drs_gap_context": "partial",
-        "overtakes": "missing",
+        "overtakes": "recorded_unverified" if evidence_has("overtakes_available") else "partial" if evidence else "missing",
         "clean_lap_filtering": "inferred/proxy",
-        "position_evolution": "partial",
+        "position_evolution": "observed_in_evidence" if evidence_has("position_available") else "partial",
     }
 
     build_version = f"season_state_{now.strftime('%Y%m%dT%H%M%SZ')}"

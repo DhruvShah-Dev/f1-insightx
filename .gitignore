@@ -35,6 +35,7 @@ data/reports/canonical_sessions_quality.json
 
 # Local browser QA artifacts
 .chrome-qa/
+.tmp-vs-chrome/
 picks-check.png
 
 # Wrangler / Cloudflare

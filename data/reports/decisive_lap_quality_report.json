@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-11-18T04:08:07Z",
+  "races": 20,
+  "featured_laps": 40,
+  "sector_rows": 760,
+  "trace_rows": 120340,
+  "errors": [],
+  "status": "passed",
+  "validation_errors": [],
+  "validation_status": "passed"
+}

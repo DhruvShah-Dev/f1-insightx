@@ -786,6 +786,7 @@ export async function fetchWeekend(slug: string) {
         bestS: num(r["best_lap_time_s"]),
         degS: num(r["degradation_s_per_lap"]),
         quality: num(r["stint_quality_score"]),
+        note: str(r["note"]),
       };
     })
     .sort((a, b) => a.code.localeCompare(b.code) || a.stint - b.stint);
@@ -809,6 +810,11 @@ export async function fetchWeekend(slug: string) {
         stintBefore: num(r["stint_length_before"]),
         label: str(r["undercut_overcut_label"]),
         effect: str(r["strategy_effect"]),
+        confidence: num(r["confidence"]),
+        weakestAssumption: str(r["weakest_assumption"])?.replace(
+          "no gap feed is available.",
+          "gap samples were not used in this estimate.",
+        ) ?? null,
       };
     })
     .sort((a, b) => (a.lap ?? 0) - (b.lap ?? 0));
@@ -847,7 +853,7 @@ export async function fetchWeekend(slug: string) {
     airC: num(r["air_temp_c"]),
     trackC: num(r["track_temp_c"]),
     humidity: num(r["humidity_pct"]),
-    rain: Boolean(r["rainfall"]),
+    rain: String(r["rainfall"]).toLowerCase() === "true",
     state: str(r["weather_state"]),
     impact: str(r["weather_impact_label"]),
   }));
@@ -1345,8 +1351,267 @@ export type RacePositionStoryRow = {
   lap: number;
   position: number;
   status: string | null;
-  source?: "position-feed" | "openf1-position" | "lap-timing-estimate";
+  source?: "derived-lap" | "openf1-position" | "lap-timing-estimate" | "position-feed";
 };
+
+export type RaceShapeEvidence = {
+  gaps: { code: string; lap: number; gapSeconds: number | null; timestampUtc: string; source: string; limitation: string | null }[];
+  pits: { id: string; code: string; lap: number; timestampUtc: string; detail: string; source: string; limitation: string | null }[];
+  statuses: { id: string; startLap: number; endLap: number; label: string; source: string; limitation: string | null }[];
+  rain: { lap: number; timestampUtc: string | null; source: string; limitation: string | null }[];
+};
+
+export const emptyRaceShapeEvidence = (): RaceShapeEvidence => ({ gaps: [], pits: [], statuses: [], rain: [] });
+
+export type DecisiveLapEvidence = {
+  featuredLaps: {
+    lap: number; rank: number; title: string; reason: string; evidenceType: string;
+    confidence: number; driverCount: number; carDriverCount: number; gpsDriverCount: number;
+    source: string; limitation: string | null;
+  }[];
+  selectedLap: number | null;
+  traces: {
+    code: string; kind: "car" | "gps"; index: number; timestampUtc: string;
+    timeProgress: number; speedKph: number | null; throttlePct: number | null;
+    brakePct: number | null; gear: number | null; x: number | null; y: number | null;
+    source: string; confidence: number; limitation: string | null;
+  }[];
+  sectors: {
+    code: string; lapTimeS: number | null; sector1S: number | null;
+    sector2S: number | null; sector3S: number | null; source: string; limitation: string | null;
+  }[];
+};
+
+export const emptyDecisiveLapEvidence = (): DecisiveLapEvidence => ({ featuredLaps: [], selectedLap: null, traces: [], sectors: [] });
+
+export async function fetchDecisiveLapEvidence(slug: string, lap: number | undefined, drivers: string[]): Promise<DecisiveLapEvidence> {
+  const sb = serverClient();
+  const codes = [...new Set(drivers.map((code) => code.toUpperCase()))].filter((code) => /^[A-Z]{3}$/.test(code)).slice(0, 2);
+  const { data: featureRows, error: featureError } = await sb.from("race_analysis_featured_laps")
+    .select("lap_number,feature_rank,title,reason,evidence_type,confidence,driver_count,car_driver_count,gps_driver_count,source_endpoint,limitation")
+    .eq("race_analysis_id", slug).order("feature_rank").limit(2);
+  if (featureError) throw featureError;
+  const featuredLaps = ((featureRows ?? []) as Row[]).map((row) => ({
+    lap: Number(row["lap_number"]), rank: Number(row["feature_rank"]), title: String(row["title"]),
+    reason: String(row["reason"]), evidenceType: String(row["evidence_type"]),
+    confidence: Number(row["confidence"]), driverCount: Number(row["driver_count"]),
+    carDriverCount: Number(row["car_driver_count"]), gpsDriverCount: Number(row["gps_driver_count"]),
+    source: String(row["source_endpoint"]), limitation: str(row["limitation"]),
+  }));
+  const selectedLap = featuredLaps.find((item) => item.lap === lap)?.lap ?? featuredLaps[0]?.lap ?? null;
+  if (selectedLap == null || !codes.length) return { featuredLaps, selectedLap, traces: [], sectors: [] };
+  const [traceResult, sectorResult] = await Promise.all([
+    sb.from("race_analysis_lap_traces")
+      .select("driver,trace_kind,sample_index,timestamp_utc,lap_progress,speed_kph,throttle_pct,brake_pct,gear,x,y,source_endpoint,confidence,limitation")
+      .eq("race_analysis_id", slug).eq("lap_number", selectedLap).in("driver", codes)
+      .order("driver").order("trace_kind").order("sample_index").limit(400),
+    sb.from("race_analysis_featured_lap_sectors")
+      .select("driver,lap_time_s,sector_1_s,sector_2_s,sector_3_s,source_endpoint,limitation")
+      .eq("race_analysis_id", slug).eq("lap_number", selectedLap).in("driver", codes).limit(2),
+  ]);
+  if (traceResult.error) throw traceResult.error;
+  if (sectorResult.error) throw sectorResult.error;
+  return {
+    featuredLaps, selectedLap,
+    traces: ((traceResult.data ?? []) as Row[]).filter((row) => row["trace_kind"] === "car" || row["trace_kind"] === "gps").map((row) => ({
+      code: String(row["driver"]), kind: row["trace_kind"] as "car" | "gps", index: Number(row["sample_index"]),
+      timestampUtc: String(row["timestamp_utc"]), timeProgress: Number(row["lap_progress"]),
+      speedKph: num(row["speed_kph"]), throttlePct: num(row["throttle_pct"]), brakePct: num(row["brake_pct"]),
+      gear: num(row["gear"]), x: num(row["x"]), y: num(row["y"]),
+      source: String(row["source_endpoint"]), confidence: Number(row["confidence"]), limitation: str(row["limitation"]),
+    })),
+    sectors: ((sectorResult.data ?? []) as Row[]).map((row) => ({
+      code: String(row["driver"]), lapTimeS: num(row["lap_time_s"]), sector1S: num(row["sector_1_s"]),
+      sector2S: num(row["sector_2_s"]), sector3S: num(row["sector_3_s"]),
+      source: String(row["source_endpoint"]), limitation: str(row["limitation"]),
+    })),
+  };
+}
+
+export async function fetchRaceShapeEvidence(slug: string, drivers: string[]): Promise<RaceShapeEvidence> {
+  const sb = serverClient();
+  const codes = [...new Set(drivers.map((code) => code.toUpperCase()))].filter((code) => /^[A-Z]{3}$/.test(code)).slice(0, 2);
+  const [gapsResult, pitsResult, statusesResult, weatherResult] = await Promise.all([
+    codes.length ? sb.from("race_analysis_gap_timeline")
+      .select("driver,lap_number,gap_to_leader_s,timestamp_utc,source_endpoint,limitation")
+      .eq("race_analysis_id", slug).in("driver", codes).order("lap_number").limit(500) : Promise.resolve({ data: [], error: null }),
+    sb.from("race_analysis_events")
+      .select("event_id,driver,lap_number,timestamp_utc,detail,source_endpoint,limitation")
+      .eq("race_analysis_id", slug).eq("event_type", "pit").order("timestamp_utc").limit(500),
+    sb.from("race_analysis_neutralization_phases")
+      .select("phase_id,start_lap,end_lap,status_label,evidence_type")
+      .eq("race_analysis_id", slug).order("start_lap").limit(100),
+    sb.from("race_analysis_weather_context")
+      .select("lap_number,rainfall")
+      .eq("race_analysis_id", slug).order("lap_number").limit(200),
+  ]);
+  for (const result of [gapsResult, pitsResult, statusesResult, weatherResult]) {
+    if (result.error) throw result.error;
+  }
+  return {
+    gaps: ((gapsResult.data ?? []) as Row[]).map((row) => ({
+      code: String(row["driver"]), lap: Number(row["lap_number"]), gapSeconds: num(row["gap_to_leader_s"]),
+      timestampUtc: String(row["timestamp_utc"]), source: String(row["source_endpoint"]), limitation: str(row["limitation"]),
+    })),
+    pits: ((pitsResult.data ?? []) as Row[]).filter((row) => row["driver"] && Number.isInteger(Number(row["lap_number"])) && row["timestamp_utc"]).map((row) => ({
+      id: String(row["event_id"]), code: String(row["driver"]), lap: Number(row["lap_number"]),
+      timestampUtc: String(row["timestamp_utc"]), detail: String(row["detail"] ?? "Recorded pit stop"),
+      source: String(row["source_endpoint"]), limitation: str(row["limitation"]),
+    })),
+    statuses: ((statusesResult.data ?? []) as Row[]).filter((row) => Number.isInteger(Number(row["start_lap"])) && Number.isInteger(Number(row["end_lap"]))).map((row) => ({
+      id: String(row["phase_id"]), startLap: Number(row["start_lap"]), endLap: Number(row["end_lap"]),
+      label: String(row["status_label"]), source: String(row["evidence_type"] ?? "stored track status"),
+      limitation: "Lap-level track status identifies the condition, not its cause or exact UTC start time.",
+    })),
+    rain: ((weatherResult.data ?? []) as Row[]).filter((row) => Number.isInteger(Number(row["lap_number"])) && String(row["rainfall"]).toLowerCase() === "true").map((row) => ({
+      lap: Number(row["lap_number"]), timestampUtc: null,
+      source: "stored weather context", limitation: "Rainfall was observed for this lap; conditions can vary around the circuit.",
+    })),
+  };
+}
+
+export type VerdictEvidence = {
+  overtakes: { code: string; count: number | null; source: string; limitation: string }[];
+  raceControl: { id: string; timestampUtc: string; lap: number | null; detail: string; source: string; limitation: string | null }[];
+  radio: { id: string; code: string; timestampUtc: string; url: string; source: string; limitation: string | null }[];
+  availability: { overtakes: boolean; raceControl: boolean; radio: boolean };
+};
+
+export const emptyVerdictEvidence = (): VerdictEvidence => ({
+  overtakes: [], raceControl: [], radio: [],
+  availability: { overtakes: false, raceControl: false, radio: false },
+});
+
+const raceControlPriority = (detail: string) => {
+  const value = detail.toUpperCase();
+  if (/RED FLAG|SAFETY CAR|VIRTUAL SAFETY CAR/.test(value)) return 3;
+  if (/PENALTY|INVESTIGATION|BLACK FLAG/.test(value)) return 2;
+  if (/YELLOW FLAG|DOUBLE YELLOW|YELLOW IN TRACK/.test(value)) return 1;
+  return 0;
+};
+
+function verifiedRadioUrl(value: unknown): string | null {
+  try {
+    const url = new URL(String(value));
+    return url.protocol === "https:" && url.hostname === "livetiming.formula1.com" &&
+      url.pathname.includes("/TeamRadio/") && url.pathname.toLowerCase().endsWith(".mp3")
+      ? url.toString() : null;
+  } catch { return null; }
+}
+
+export async function fetchVerdictEvidence(slug: string, drivers: string[]): Promise<VerdictEvidence> {
+  const sb = serverClient();
+  const codes = [...new Set(drivers.map((code) => code.toUpperCase()))].filter((code) => /^[A-Z]{3}$/.test(code)).slice(0, 2);
+  const [manifest, opening, controls, radio, ...counts] = await Promise.all([
+    sb.from("race_analysis_evidence_manifest")
+      .select("overtakes_available,race_control_available,radio_available")
+      .eq("race_analysis_id", slug).maybeSingle(),
+    sb.from("race_analysis_opening_positions")
+      .select("window_start_utc").eq("race_analysis_id", slug).limit(1).maybeSingle(),
+    sb.from("race_analysis_events")
+      .select("event_id,timestamp_utc,lap_number,detail,source_endpoint,limitation")
+      .eq("race_analysis_id", slug).eq("event_type", "race_control")
+      .order("timestamp_utc").limit(400),
+    codes.length ? sb.from("race_analysis_events")
+      .select("event_id,driver,timestamp_utc,detail,source_endpoint,limitation")
+      .eq("race_analysis_id", slug).eq("event_type", "radio_available")
+      .in("driver", codes).order("timestamp_utc").limit(40) : Promise.resolve({ data: [], error: null }),
+    ...codes.map((code) => sb.from("race_analysis_events")
+      .select("event_id", { count: "exact", head: true })
+      .eq("race_analysis_id", slug).eq("event_type", "recorded_overtake").eq("driver", code)),
+  ]);
+  for (const result of [manifest, opening, controls, radio, ...counts]) if (result.error) throw result.error;
+  const availability = {
+    overtakes: Boolean(manifest.data?.overtakes_available),
+    raceControl: Boolean(manifest.data?.race_control_available),
+    radio: Boolean(manifest.data?.radio_available),
+  };
+  const raceStartUtc = str(opening.data?.window_start_utc);
+  const selectedControl = [...new Map(((controls.data ?? []) as Row[])
+    .filter((row) => row["timestamp_utc"] && row["detail"] && raceStartUtc && String(row["timestamp_utc"]) >= raceStartUtc)
+    .map((row) => [`${row["timestamp_utc"]}:${row["detail"]}`, row])).values()]
+    .filter((row) => raceControlPriority(String(row["detail"])) > 0)
+    .sort((a, b) => raceControlPriority(String(b["detail"])) - raceControlPriority(String(a["detail"])) ||
+      String(a["timestamp_utc"]).localeCompare(String(b["timestamp_utc"])))
+    .slice(0, 6).sort((a, b) => String(a["timestamp_utc"]).localeCompare(String(b["timestamp_utc"])));
+  const radioByDriver = new Map<string, Row[]>();
+  for (const row of (radio.data ?? []) as Row[]) {
+    const code = String(row["driver"] ?? "");
+    if (!verifiedRadioUrl(row["detail"])) continue;
+    const list = radioByDriver.get(code) ?? [];
+    if (list.length < 3) list.push(row);
+    radioByDriver.set(code, list);
+  }
+  return {
+    overtakes: codes.map((code, index) => ({
+      code, count: availability.overtakes ? counts[index]?.count ?? null : null,
+      source: "openf1:overtakes", limitation: "Recorded position exchanges credited to the driver; on-track circumstances and effects are unverified.",
+    })),
+    raceControl: selectedControl.map((row) => ({
+      id: String(row["event_id"]), timestampUtc: String(row["timestamp_utc"]),
+      lap: num(row["lap_number"]), detail: String(row["detail"]),
+      source: String(row["source_endpoint"]), limitation: str(row["limitation"]),
+    })),
+    radio: [...radioByDriver.values()].flat().map((row) => ({
+      id: String(row["event_id"]), code: String(row["driver"]), timestampUtc: String(row["timestamp_utc"]),
+      url: verifiedRadioUrl(row["detail"])!, source: String(row["source_endpoint"]), limitation: str(row["limitation"]),
+    })),
+    availability,
+  };
+}
+
+export type OpeningEvidence = {
+  window: { startUtc: string; endUtc: string; durationMs: number } | null;
+  positions: {
+    code: string; timestampUtc: string; elapsedMs: number; position: number;
+    source: string; confidence: number; limitation: string | null;
+  }[];
+  raceControl: {
+    id: string; timestampUtc: string; elapsedMs: number; detail: string;
+    source: string; limitation: string | null;
+  }[];
+};
+
+export const emptyOpeningEvidence = (): OpeningEvidence => ({ window: null, positions: [], raceControl: [] });
+
+export async function fetchOpeningEvidence(slug: string): Promise<OpeningEvidence> {
+  const sb = serverClient();
+  const { data, error } = await sb.from("race_analysis_opening_positions")
+    .select("driver,timestamp_utc,elapsed_ms,position,window_start_utc,window_end_utc,source_endpoint,confidence,limitation")
+    .eq("race_analysis_id", slug)
+    .order("timestamp_utc", { ascending: true })
+    .limit(1000);
+  if (error) throw error;
+  const rows = (data ?? []) as Row[];
+  if (!rows.length) return emptyOpeningEvidence();
+  const startUtc = String(rows[0]!["window_start_utc"]);
+  const endUtc = String(rows[0]!["window_end_utc"]);
+  const durationMs = Math.max(1, Date.parse(endUtc) - Date.parse(startUtc));
+  const { data: control, error: controlError } = await sb.from("race_analysis_events")
+    .select("event_id,timestamp_utc,detail,source_endpoint,limitation")
+    .eq("race_analysis_id", slug)
+    .eq("event_type", "race_control")
+    .gte("timestamp_utc", startUtc)
+    .lte("timestamp_utc", endUtc)
+    .order("timestamp_utc", { ascending: true })
+    .limit(100);
+  if (controlError) throw controlError;
+  return {
+    window: { startUtc, endUtc, durationMs },
+    positions: rows.map((row) => ({
+      code: String(row["driver"]), timestampUtc: String(row["timestamp_utc"]),
+      elapsedMs: Number(row["elapsed_ms"]), position: Number(row["position"]),
+      source: String(row["source_endpoint"]), confidence: Number(row["confidence"]),
+      limitation: str(row["limitation"]),
+    })),
+    raceControl: ((control ?? []) as Row[]).map((row) => ({
+      id: String(row["event_id"]), timestampUtc: String(row["timestamp_utc"]),
+      elapsedMs: Date.parse(String(row["timestamp_utc"])) - Date.parse(startUtc),
+      detail: String(row["detail"] ?? "Race-control message"),
+      source: String(row["source_endpoint"]), limitation: str(row["limitation"]),
+    })),
+  };
+}
 
 const positionStoryBackfill = JSON.parse(positionStoryBackfillRaw) as Record<string, RacePositionStoryRow[]>;
 
@@ -1362,7 +1627,7 @@ export async function fetchRacePositionStory(slug: string): Promise<RacePosition
   for (let offset = 0; offset < 5000; offset += pageSize) {
     const { data, error } = await sb
       .from("race_analysis_position_timeline")
-      .select("driver, lap_number, position, track_status_label")
+      .select("driver, lap_number, position, track_status_label, evidence_type")
       .eq("race_analysis_id", slug)
       .order("driver", { ascending: true })
       .order("lap_number", { ascending: true })
@@ -1378,7 +1643,7 @@ export async function fetchRacePositionStory(slug: string): Promise<RacePosition
     const lap = Number(row["lap_number"]);
     const position = Number(row["position"]);
     if (!/^[A-Z]{3}$/.test(code) || !Number.isInteger(lap) || lap < 1 || !Number.isInteger(position) || position < 1) continue;
-    keyed.set(`${code}:${lap}`, { code, lap, position, status: str(row["track_status_label"]), source: "position-feed" });
+    keyed.set(`${code}:${lap}`, { code, lap, position, status: str(row["track_status_label"]), source: row["evidence_type"] === "derived" ? "derived-lap" : "position-feed" });
   }
   const result = [...keyed.values()].sort((a, b) => a.code.localeCompare(b.code) || a.lap - b.lap);
   return result.length ? result : localRacePositionStory(slug);

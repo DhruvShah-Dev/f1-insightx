@@ -82,19 +82,32 @@ def load_openf1_sessions(staged_openf1_dir: Path) -> pd.DataFrame:
 
 
 def load_endpoint_counts(staged_openf1_dir: Path) -> pd.DataFrame:
+    def count_high_frequency_rows(path: Path) -> int:
+        # These numeric feeds have one record per line. Counting bytes avoids
+        # materializing millions of telemetry/GPS rows just for coverage.
+        lines = 0
+        last_byte = b""
+        with path.open("rb") as handle:
+            while chunk := handle.read(1024 * 1024):
+                lines += chunk.count(b"\n")
+                last_byte = chunk[-1:]
+        if last_byte and last_byte != b"\n":
+            lines += 1
+        return max(lines - 1, 0)
+
     rows: list[dict[str, Any]] = []
     for path in sorted(staged_openf1_dir.glob("*/*/*/*.csv")):
         endpoint = path.stem
         if endpoint == "session":
             continue
-        frame = read_csv_or_empty(path)
+        row_count = count_high_frequency_rows(path) if endpoint in {"car_data", "location", "position"} else len(read_csv_or_empty(path))
         session_dir = path.parent.name
         session_key = session_dir.split("_", 1)[0]
         rows.append(
             {
                 "session_key": int(session_key) if session_key.isdigit() else session_key,
                 "endpoint": endpoint,
-                "row_count": int(len(frame)),
+                "row_count": int(row_count),
             }
         )
     return pd.DataFrame(rows)
