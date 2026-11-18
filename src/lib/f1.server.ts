@@ -8,6 +8,7 @@ import seasonStateQualityRaw from "../../data/reports/season_state_quality_repor
 import strategyLabQualityRaw from "../../data/reports/strategy_lab_signal_quality.json?raw";
 import { methodDashboardInventory } from "@/data/method-dashboard-inventory";
 import { localTrackPathForCircuit } from "@/data/track-paths";
+import { localRaceWeekSessions, trackReferenceFor } from "@/data/race-week-reference";
 import { readSupabaseRuntimeEnv, shouldUseSupabaseProductData } from "./env.server";
 import { safeExternalHref } from "./security";
 
@@ -185,7 +186,11 @@ export async function fetchRaceWeek() {
 
   const races = raceRows ?? [];
   const upcoming = races.filter((r) => String(r["scheduled_at"] ?? "") > nowISO);
-  const race = (upcoming[0] ??
+  const recentlyStarted = [...races].reverse().find((r) => {
+    const startedAt = Date.parse(String(r["scheduled_at"] ?? ""));
+    return Number.isFinite(startedAt) && startedAt <= Date.now() && Date.now() - startedAt < 72 * 60 * 60_000;
+  });
+  const race = (recentlyStarted ?? upcoming[0] ??
     races[races.length - 1]) as Row | undefined;
   if (!race) return null;
 
@@ -206,6 +211,13 @@ export async function fetchRaceWeek() {
     path,
     history,
     standings,
+    sessionRows,
+    sessionResults,
+    practiceRows,
+    qualifyingResults,
+    raceResults,
+    predictionSnapshots,
+    priorRace,
   ] = await Promise.all([
     sb.from("race_week_driver_board").select("*").eq("season", SEASON).eq("round", round),
     sb.from("race_week_constructor_board").select("*").eq("season", SEASON).eq("round", round),
@@ -244,7 +256,16 @@ export async function fetchRaceWeek() {
       .eq("season", SEASON)
       .order("round", { ascending: false })
       .limit(200),
+    sb.from("sessions").select("id, session_code, session_name, scheduled_at").eq("race_id", raceId),
+    sb.from("session_results").select("session_id, driver_id, classification_position").eq("race_id", raceId),
+    sb.from("session_pace_summary").select("session_code, driver_id, best_lap_s, long_run_lap_s, long_run_degradation_s, top_speed_kph").eq("race_id", raceId),
+    sb.from("qualifying_results").select("driver_id, position, q1_time_ms, q2_time_ms, q3_time_ms").eq("race_id", raceId),
+    sb.from("race_results").select("driver_id, finish_position, status").eq("race_id", raceId),
+    sb.from("prediction_snapshots").select("generated_at, driver_id, projected_finish, rationale").eq("race_id", raceId).order("generated_at", { ascending: true }),
+    sb.from("races").select("id, season, race_name").eq("circuit_id", circuitId).lt("season", SEASON).order("season", { ascending: false }).limit(1).maybeSingle(),
   ]);
+  const priorRaceRow = (priorRace.data ?? null) as Row | null;
+  const priorResultRows = priorRaceRow ? await sb.from("race_results").select("driver_id, grid_position, finish_position, finish_status").eq("race_id", String(priorRaceRow["id"])).order("finish_position", { ascending: true }).limit(30) : null;
 
   const { byId } = idx;
   const ident = (id: string) =>
@@ -303,6 +324,7 @@ export async function fetchRaceWeek() {
     .map((r) => {
       const who = ident(String(r["driver_id"]));
       return {
+        driverId: who.id,
         code: who.code,
         name: who.name,
         team: String(r["constructor_id"] ?? ""),
@@ -384,6 +406,31 @@ export async function fetchRaceWeek() {
   const w = (weather.data ?? undefined) as Row | undefined;
   const o = (overview.data ?? undefined) as Row | undefined;
   const c = (ctx.data ?? undefined) as Row | undefined;
+  const reference = trackReferenceFor(circuitId, SEASON);
+  const resultsBySession = new Map<string, number>();
+  for (const result of (sessionResults.data ?? []) as Row[]) {
+    const id = String(result["session_id"] ?? "");
+    resultsBySession.set(id, (resultsBySession.get(id) ?? 0) + 1);
+  }
+  const publishedSessions = ((sessionRows.data ?? []) as Row[]).map((session) => {
+    const id = String(session["id"] ?? "");
+    const resultCount = resultsBySession.get(id) ?? 0;
+    return {
+      code: String(session["session_code"] ?? ""),
+      label: String(session["session_name"] ?? session["session_code"] ?? ""),
+      startISO: String(session["scheduled_at"] ?? ""),
+      status: resultCount ? "complete" as const : (String(session["scheduled_at"] ?? "") <= nowISO ? "data_pending" as const : "scheduled" as const),
+      resultCount,
+    };
+  }).filter((session) => session.startISO).sort((a, b) => a.startISO.localeCompare(b.startISO));
+  const sessionsByCode = new Map(localRaceWeekSessions(round).map((session) => [session.code, session]));
+  for (const session of publishedSessions) sessionsByCode.set(session.code, session);
+  const sessions = [...sessionsByCode.values()].sort((a, b) => a.startISO.localeCompare(b.startISO));
+  const snapshotRows = (predictionSnapshots.data ?? []) as Row[];
+  const raceStart = String(race["scheduled_at"] ?? "");
+  const frozenSnapshots = snapshotRows.filter((row) => String(row["generated_at"] ?? "") <= raceStart);
+  const snapshotAt = frozenSnapshots.at(-1)?.["generated_at"];
+  const snapshotByDriver = new Map(frozenSnapshots.filter((row) => row["generated_at"] === snapshotAt).map((row) => [String(row["driver_id"]), row]));
 
   return {
     season: SEASON,
@@ -392,7 +439,7 @@ export async function fetchRaceWeek() {
     raceName: String(race["race_name"] ?? ""),
     officialName: str(race["official_name"]),
     scheduledAt: String(race["scheduled_at"] ?? ""),
-    seasonComplete: upcoming.length === 0,
+    seasonComplete: upcoming.length === 0 && !recentlyStarted,
     sprintWeekend: Boolean(race["sprint_weekend"]),
     circuit: {
       id: circuitId,
@@ -405,6 +452,37 @@ export async function fetchRaceWeek() {
       degBias: circuit ? num(circuit["tire_degradation_bias"]) : null,
     },
     trackPath: path,
+    trackReference: reference,
+    venueTimeZone: reference?.venueTimeZone ?? "UTC",
+    sessions,
+    predictionGeneratedAt: str(snapshotAt) ?? str(o?.["generated_at"]),
+    qualifyingPredictionGeneratedAt: str(o?.["generated_at"]),
+    practicePace: ((practiceRows.data ?? []) as Row[]).filter((row) => /^FP\d$/.test(String(row["session_code"] ?? ""))).map((row) => ({
+      sessionCode: String(row["session_code"]),
+      driverId: String(row["driver_id"]),
+      name: ident(String(row["driver_id"])).name,
+      code: ident(String(row["driver_id"])).code,
+      bestLapS: num(row["best_lap_s"]),
+      longRunS: num(row["long_run_lap_s"]),
+      degradationS: num(row["long_run_degradation_s"]),
+      topSpeedKph: num(row["top_speed_kph"]),
+    })),
+    qualifyingResults: ((qualifyingResults.data ?? []) as Row[]).map((row) => ({
+      driverId: String(row["driver_id"]),
+      position: num(row["position"]),
+      timeMs: num(row["q3_time_ms"]) ?? num(row["q2_time_ms"]) ?? num(row["q1_time_ms"]),
+    })),
+    raceResults: ((raceResults.data ?? []) as Row[]).map((row) => ({
+      driverId: String(row["driver_id"]),
+      position: num(row["finish_position"]),
+      status: str(row["status"]),
+    })),
+    frozenRaceRanks: [...snapshotByDriver].map(([driverId, row]) => ({ driverId, rank: num(row["projected_finish"]), rationale: str(row["rationale"]) })),
+    historicalMovement: ((priorResultRows?.data ?? []) as Row[]).filter((row) => {
+      const finish = num(row["finish_position"]);
+      return num(row["grid_position"]) != null && finish != null && finish <= 10 && str(row["finish_status"]) === "Finished";
+    }).map((row) => ({ driverId: String(row["driver_id"]), name: ident(String(row["driver_id"])).name, grid: num(row["grid_position"])!, finish: num(row["finish_position"])! })),
+    historicalRaceLabel: priorRaceRow ? `${String(priorRaceRow["season"])} ${String(priorRaceRow["race_name"])}` : null,
     archetype: o ? str(o["archetype_label"]) : null,
     strategyDifficulty: o ? str(o["strategy_difficulty"]) : null,
     weather: w

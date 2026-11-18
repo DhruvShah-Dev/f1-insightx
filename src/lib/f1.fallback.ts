@@ -9,6 +9,7 @@ import {
 import { fallbackQualifyingPredictions } from "@/data/race-week-qualifying";
 import { team } from "@/data/teams";
 import { localTrackPathForCircuit } from "@/data/track-paths";
+import { historicalVegas2025, localRaceWeekSessions, trackReferenceFor } from "@/data/race-week-reference";
 
 const DRIVER_ID_BY_CODE: Record<string, string> = {
   ALB: "albon",
@@ -107,6 +108,17 @@ export function fallbackRaceWeek() {
       degBias: null,
     },
     trackPath: localTrackPathForCircuit(fallbackCircuitId),
+    trackReference: trackReferenceFor(fallbackCircuitId, seasonState.season),
+    venueTimeZone: nextRace.timeZone,
+    sessions: localRaceWeekSessions(nextRace.round),
+    predictionGeneratedAt: seasonState.snapshotISO,
+    qualifyingPredictionGeneratedAt: seasonState.snapshotISO,
+    practicePace: [],
+    qualifyingResults: [],
+    raceResults: [],
+    frozenRaceRanks: sortedProjection.map((d) => ({ driverId: codeToDriverId(d.code), rank: d.pos, rationale: null })),
+    historicalMovement: fallbackCircuitId === "vegas" ? historicalVegas2025 : [],
+    historicalRaceLabel: fallbackCircuitId === "vegas" ? "2025 Las Vegas Grand Prix" : null,
     archetype: sortedProjection.length ? "track-position-dominant" : null,
     strategyDifficulty: sortedProjection.length ? "medium" : null,
     weather: null,
@@ -151,12 +163,13 @@ export function fallbackRaceWeek() {
       rationale: "Estimated pit window from the local race week snapshot; compounds pending session data.",
     })),
     projections: sortedProjection.map((d) => ({
+      driverId: codeToDriverId(d.code),
       code: d.code,
       name: d.name,
       team: constructorName(d.team),
       projected: d.pos,
       low: d.pos,
-      high: Math.min(20, d.pos + 3),
+      high: Math.min(sortedProjection.length, d.pos + 3),
       winProb: d.pos === 1 ? 0.3 : Math.max(0.01, 0.12 - d.pos * 0.01),
       podiumProb: d.pos <= 3 ? 0.7 : Math.max(0.02, 0.4 - d.pos * 0.03),
       confidence: d.conf,
@@ -206,14 +219,7 @@ export function fallbackRaceWeek() {
         sourceUrl: null,
       },
     ],
-    previous: staticRaceReports.slice(0, 3).map((r) => ({
-      slug: r.slug,
-      season: 2026,
-      round: r.round,
-      winnerCode: r.winner.code,
-      winnerTeam: constructorName(r.winner.team),
-      date: r.dateISO,
-    })),
+    previous: [],
   };
 }
 
